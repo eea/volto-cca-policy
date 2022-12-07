@@ -1,6 +1,8 @@
 import superagent from 'superagent';
 import config from '@plone/volto/registry';
 import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
+import { isArray } from 'lodash';
+import { serializeNodes } from '@plone/volto-slate/editor/render';
 
 /**
  * Get a resource image/file with authenticated (if token exist) API headers
@@ -32,3 +34,11 @@ export const getBackendResourceWithAuth = (req) =>
     request.use(addHeadersFactory(req));
     request.then(resolve).catch(reject);
   });
+
+export const createSlateParagraph = (text) => {
+  return isArray(text) ? text : config.settings.slate.defaultValue();
+};
+
+export const serializeText = (text) => {
+  return isArray(text) ? serializeNodes(text) : text;
+};

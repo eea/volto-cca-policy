@@ -2,6 +2,8 @@ import { List } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 
 import * as eea from './config';
+import installPolicy from './policy';
+
 import InpageNavigation from '@eeacms/volto-eea-design-system/ui/InpageNavigation/InpageNavigation';
 import installCustomTitle from './components/manage/Blocks/Title';
 import CustomCSS from './components/theme/CustomCSS/CustomCSS';
@@ -205,7 +207,10 @@ const applyConfig = (config) => {
   ];
 
   // Custom blocks
-  return [installCustomTitle].reduce((acc, apply) => apply(acc), config);
+  return [installCustomTitle, installPolicy].reduce(
+    (acc, apply) => apply(acc),
+    config,
+  );
 };
 
 export default applyConfig;
