@@ -4,7 +4,7 @@ pipeline {
   environment {
         GIT_NAME = "volto-cca-policy"
         NAMESPACE = "@eeacms"
-        SONARQUBE_TAGS = "volto.eea.europa.eu"
+        SONARQUBE_TAGS = "volto-cca-policy"
         DEPENDENCIES = ""
         VOLTO = "alpha"
     }
