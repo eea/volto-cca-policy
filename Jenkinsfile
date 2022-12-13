@@ -2,9 +2,9 @@ pipeline {
   agent any
 
   environment {
-        GIT_NAME = "volto-addon-template"
+        GIT_NAME = "volto-cca-policy"
         NAMESPACE = "@eeacms"
-        SONARQUBE_TAGS = "volto.eea.europa.eu"
+        SONARQUBE_TAGS = "volto-cca-policy"
         DEPENDENCIES = ""
         VOLTO = "alpha"
     }
