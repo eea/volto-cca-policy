@@ -165,30 +165,35 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               role="listbox"
               aria-label="language switcher"
             >
-              {eea.languages.map((item, index) => (
-                <Dropdown.Item
-                  as="li"
-                  key={index}
-                  text={
-                    <span>
-                      {item.name}
-                      <span className="country-code">
-                        {item.code.toUpperCase()}
+              {eea.languages.map((item, index) => {
+                if (!config.settings.supportedLanguages.includes(item.code)) {
+                  return null;
+                }
+                return (
+                  <Dropdown.Item
+                    as="li"
+                    key={index}
+                    text={
+                      <span>
+                        {item.name}
+                        <span className="country-code">
+                          {item.code.toUpperCase()}
+                        </span>
                       </span>
-                    </span>
-                  }
-                  onClick={() => {
-                    const translation = find(translations, {
-                      language: item.code,
-                    });
-                    const to = translation
-                      ? flattenToAppURL(translation['@id'])
-                      : `/${item.code}`;
-                    setLanguage(item.code);
-                    history.push(to);
-                  }}
-                ></Dropdown.Item>
-              ))}
+                    }
+                    onClick={() => {
+                      const translation = find(translations, {
+                        language: item.code,
+                      });
+                      const to = translation
+                        ? flattenToAppURL(translation['@id'])
+                        : `/${item.code}`;
+                      setLanguage(item.code);
+                      history.push(to);
+                    }}
+                  ></Dropdown.Item>
+                );
+              })}
             </ul>
           </Header.TopDropdownMenu>
         )}

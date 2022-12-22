@@ -6,7 +6,7 @@ const applyConfig = (config) => {
   // config.settings.supportedLanguages = config.settings.eea?.languages?.map(
   //   (item) => item.code,
   // ) || ['en'];
-  config.settings.supportedLanguages = ['en', 'de', 'es', 'fr', 'it', 'ro'];
+  config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it'];
 
   return config;
 };
