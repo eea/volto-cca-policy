@@ -85,6 +85,11 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.dividerBlock.mostUsed = true;
   }
 
+  // Enable volto-embed
+  if (config.blocks.blocksConfig.maps) {
+    config.blocks.blocksConfig.maps.restricted = false;
+  }
+
   // Call to Action
   if (config.blocks.blocksConfig.callToActionBlock) {
     config.blocks.blocksConfig.callToActionBlock.mostUsed = true;
