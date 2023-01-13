@@ -8,6 +8,11 @@ const applyConfig = (config) => {
   // ) || ['en'];
   config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it'];
 
+  // Enable volto-embed
+  if (config.blocks.blocksConfig.maps) {
+    config.blocks.blocksConfig.maps.restricted = false;
+  }
+
   return config;
 };
 
