@@ -1,3 +1,5 @@
+import ToolView from './components/theme/Views/ToolView';
+
 const applyConfig = (config) => {
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -12,6 +14,8 @@ const applyConfig = (config) => {
   if (config.blocks.blocksConfig.maps) {
     config.blocks.blocksConfig.maps.restricted = false;
   }
+
+  config.views.contentTypesViews['eea.climateadapt.tool'] = ToolView;
 
   return config;
 };

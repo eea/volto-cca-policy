@@ -4,8 +4,6 @@ import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 function ToolView(props) {
   const { content } = props;
 
-  console.log(content);
-
   return (
     <div className="tool-view">
       <div style={{}}>
@@ -19,12 +17,19 @@ function ToolView(props) {
       />
       <hr />
       <h4>Reference information</h4>
-      <h5>Websites</h5>
-      {content.websites.map((url) => (
-        <a key={url} href={url}>
-          {url}
-        </a>
-      ))}
+
+      {content?.websites?.length > 0 && (
+        <>
+          <h5>Websites</h5>
+
+          {content.websites.map((url) => (
+            <a key={url} href={url}>
+              {url}
+            </a>
+          ))}
+        </>
+      )}
+
       <h5>Source</h5>
       <HTMLField value={content.source} />
     </div>
