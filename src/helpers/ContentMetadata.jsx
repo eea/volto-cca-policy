@@ -4,128 +4,151 @@ import {
   SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
 
-function render(value, valueType) {
+function renderElement(value) {
+  return [BIOREGIONS[value]];
+}
+
+function renderMacrotrans(value) {
+  let out = [];
+  let temp = null;
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return null;
+    }
+  } else {
+    temp = BIOREGIONS[value];
+    if (temp !== undefined) {
+      return [temp];
+    } else {
+      return [value];
+    }
+  }
+  for (let region of value) {
+    temp = BIOREGIONS[region];
+    if (temp !== undefined) {
+      out.push(temp);
+    } else {
+      out.push(region);
+    }
+  }
+  return out;
+}
+
+function renderBiotrans(value) {
+  let out = [];
+  let temp = null;
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return null;
+    }
+  } else {
+    temp = BIOREGIONS[value];
+    if (temp !== undefined) {
+      return [temp];
+    } else {
+      return [value];
+    }
+  }
+  for (let region of value) {
+    temp = BIOREGIONS[region];
+    if (temp !== undefined) {
+      out.push(temp);
+    } else {
+      out.push(region);
+    }
+  }
+  return out;
+}
+
+function renderCountries(value) {
+  let out = [];
+  let temp = null;
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return null;
+    }
+  } else {
+    temp = ACE_COUNTRIES[value];
+    if (temp !== undefined) {
+      return [temp];
+    } else {
+      return [value];
+    }
+  }
+  for (let region of value) {
+    temp = ACE_COUNTRIES[region];
+    if (temp !== undefined) {
+      out.push(temp);
+    } else {
+      out.push(region);
+    }
+  }
+  return out;
+}
+
+function renderSubnational(value) {
+  let out = [];
+  let temp = null;
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return null;
+    }
+  } else {
+    temp = SUBNATIONAL_REGIONS[value];
+    if (temp !== undefined) {
+      return [temp];
+    } else {
+      return [value];
+    }
+  }
+  for (let region of value) {
+    temp = SUBNATIONAL_REGIONS[region];
+    if (temp !== undefined) {
+      out.push(temp);
+    } else {
+      out.push(region);
+    }
+  }
+  return out;
+}
+
+function renderCity(value) {
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      return null;
+    }
+    return value;
+  } else {
+    let out = [];
+    out.push(value);
+    return out;
+  }
+}
+
+function renderSection(value, valueType) {
   if (valueType === 'element') {
-    return [BIOREGIONS[value]];
+    return renderElement(value);
   }
 
   if (valueType === 'macrotrans') {
-    let out = [];
-    let temp = null;
-    if (Array.isArray(value)) {
-      if (value.length === 0) {
-        return null;
-      }
-    } else {
-      temp = BIOREGIONS[value];
-      if (temp !== undefined) {
-        return [temp];
-      } else {
-        return [value];
-      }
-    }
-    for (let region of value) {
-      temp = BIOREGIONS[region];
-      if (temp !== undefined) {
-        out.push(temp);
-      } else {
-        out.push(region);
-      }
-    }
-    return out;
+    return renderMacrotrans(value);
   }
 
   if (valueType === 'biotrans') {
-    let out = [];
-    let temp = null;
-    if (Array.isArray(value)) {
-      if (value.length === 0) {
-        return null;
-      }
-    } else {
-      temp = BIOREGIONS[value];
-      if (temp !== undefined) {
-        return [temp];
-      } else {
-        return [value];
-      }
-    }
-    for (let region of value) {
-      temp = BIOREGIONS[region];
-      if (temp !== undefined) {
-        out.push(temp);
-      } else {
-        out.push(region);
-      }
-    }
-    return out;
+    return renderBiotrans(value);
   }
 
   if (valueType === 'countries') {
-    let out = [];
-    let temp = null;
-    if (Array.isArray(value)) {
-      if (value.length === 0) {
-        return null;
-      }
-    } else {
-      temp = ACE_COUNTRIES[value];
-      if (temp !== undefined) {
-        return [temp];
-      } else {
-        return [value];
-      }
-    }
-    for (let region of value) {
-      temp = ACE_COUNTRIES[region];
-      if (temp !== undefined) {
-        out.push(temp);
-      } else {
-        out.push(region);
-      }
-    }
-    return out;
+    return renderCountries(value);
   }
 
   if (valueType === 'subnational') {
-    let out = [];
-    let temp = null;
-    if (Array.isArray(value)) {
-      if (value.length === 0) {
-        return null;
-      }
-    } else {
-      temp = SUBNATIONAL_REGIONS[value];
-      if (temp !== undefined) {
-        return [temp];
-      } else {
-        return [value];
-      }
-    }
-    for (let region of value) {
-      temp = SUBNATIONAL_REGIONS[region];
-      if (temp !== undefined) {
-        out.push(temp);
-      } else {
-        out.push(region);
-      }
-    }
-    return out;
+    return renderSubnational(value);
   }
 
   if (valueType === 'city') {
-    if (Array.isArray(value)) {
-      if (value.length === 0) {
-        return null;
-      }
-      return value;
-    } else {
-      let out = [];
-      out.push(value);
-      return out;
-    }
+    return renderCity(value);
   }
-
   return null;
 }
 
@@ -141,7 +164,7 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
   }
 
   let out = [];
-  let order = [
+  let orderedSections = [
     'element',
     'macrotrans',
     'biotrans',
@@ -151,7 +174,7 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
   ];
 
   const sectionTitles = {
-    element: '',
+    element: null,
     macrotrans: 'Macro-Transnational region',
     biotrans: 'Biogeographical regions',
     countries: 'Countries',
@@ -160,15 +183,14 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
   };
 
   if (isObservatoryPage) {
-    order = ['element', 'macrotrans'];
+    orderedSections = ['element', 'macrotrans'];
   }
 
-  for (let key of order) {
-    let element = geoElements[key];
+  for (let key of orderedSections) {
+    let section = geoElements[key];
 
-    if (element) {
-      let rendered = render(element, key);
-      console.log(rendered);
+    if (section !== undefined) {
+      let rendered = renderSection(section, key);
       out[key] = out.push({
         title: sectionTitles[key],
         value: rendered,
@@ -186,52 +208,16 @@ function GeoChar(props) {
   const { geoElements } = j;
 
   let rendered = renderGeochar(geoElements);
-  console.log('geoElements', geoElements);
-  console.log('rendered', rendered);
-
-  // element
-  // --
-  // <p>BIOREGIONS[v]</p>
-  //
-  // macrotrans
-  // <div class='sidebar_bold'>
-  // <h5>Macro-Transnational region:</h5>
-  // <p>join BIOREGIONS[v]</p>
-  // </div>
-  //
-  // biotrans
-  // <div class='sidebar_bold'>
-  // <h5>Biogeographical regions</h5>
-  // <p>join BIOREGIONS[v] sau v</p>
-  // </div>
-  //
-  // countries
-  // <div class='sidebar_bold'>
-  // h5 Countries
-  // p join COUNTRIES[v] sau v
-  // </div>
-  //
-  // subnational
-  // <div class='sidebar_bold'>
-  // h5 Sub Nationals
-  // p join SUBNATIONALS[v] sau v
-  // </div>
-  //
-  // city
-  // <div class='sidebar_bold'>
-  // h5 City
-  // p join v
-  // <div>
 
   if (rendered === null) {
     return <div>TODO</div>;
     /* TODO
       https://github.com/eea/eea.climateadapt.plone/blob/master/eea/climateadapt/browser/pt/ace_macros.pt#L245
-      geochar = view.render_geochar(context.geochars)
-      DA geochar --> structure geochar
-      NU geochar -->
         ? spatial_layer
         ? spatial_values, adica Countries: join context.spatial_values
+
+
+      TODO observatory case
     */
   }
 
@@ -241,7 +227,7 @@ function GeoChar(props) {
         (section, index) =>
           section.value && (
             <div className="geochar-section" key={index}>
-              <h5>{section.title}</h5>
+              {section.title && <h5>{section.title}</h5>}
               <p>{section.value.join(', ')}</p>
             </div>
           ),
