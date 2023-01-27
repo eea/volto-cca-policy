@@ -17,9 +17,9 @@ function GeoChar(props) {
     if (valueType === 'macrotrans') {
       return BIOREGIONS[value];
     }
-    // if (valueType === 'biotrans') {
-    //   return BIOREGIONS[value];
-    // }
+    if (valueType === 'biotrans') {
+      return BIOREGIONS[value];
+    }
     if (valueType === 'countries') {
       if (Array.isArray(value)) {
         let out = [];
@@ -91,11 +91,8 @@ function GeoChar(props) {
     return out.join(' ');
   }
 
-  console.log("ZZZZZZZZZZ");
-  console.log(renderGeochar(geoElements));
-  console.log(geoElements);
-
-  // if (geoElements.element === 'GLOBAL') elements.push('Global');
+  console.log('geoElements', geoElements);
+  console.log('rendered', renderGeochar(geoElements));
 
   return renderGeochar(geoElements);
 
