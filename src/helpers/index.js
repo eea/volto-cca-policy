@@ -5,6 +5,7 @@ import { isArray } from 'lodash';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
 export { HTMLField } from './Utils';
 export ContentMetadata from './ContentMetadata';
+export { ACE_COUNTRIES, BIOREGIONS, SUBNATIONAL_REGIONS } from './Constants';
 
 /**
  * Get a resource image/file with authenticated (if token exist) API headers
