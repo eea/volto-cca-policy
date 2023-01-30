@@ -258,8 +258,6 @@ function PublicationDateInfo(props) {
 function ContentMetadata(props) {
   const { content } = props;
 
-  console.log(content.publication_date);
-
   return (
     <div className="content-metadata">
       <h5>Date of creation:</h5>
@@ -267,11 +265,13 @@ function ContentMetadata(props) {
       <h5>Keywords:</h5>
       <span>{content.keywords.sort().join(', ')}</span>
       <h5>Climate impacts:</h5>
-      <span>TODO Extreme Temperatures, Water Scarcity, Flooding, Droughts</span>
+      <span>
+        {content.climate_impacts.map((item) => item.title).join(', ')}
+      </span>
       <h5>Elements:</h5>
-      <span>TODO Observations and Scenarios, Vulnerability Assessment</span>
+      <span>{content.elements.map((item) => item.title).join(', ')}</span>
       <h5>Sectors:</h5>
-      <span>TODO: Buildings, Energy, Health, Transport, Urban</span>
+      <span>{content.sectors.map((item) => item.title).join(', ')}</span>
       <h5>Geographic characterisation:</h5>
       <GeoChar value={content.geochars} />
     </div>
