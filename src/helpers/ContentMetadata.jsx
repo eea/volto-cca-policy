@@ -9,6 +9,9 @@ function renderElement(value) {
 }
 
 function renderMacrotrans(value) {
+  if (value === null) {
+    return null;
+  }
   let out = [];
   let temp = null;
   if (Array.isArray(value)) {
@@ -35,6 +38,9 @@ function renderMacrotrans(value) {
 }
 
 function renderBiotrans(value) {
+  if (value === null) {
+    return null;
+  }
   let out = [];
   let temp = null;
   if (Array.isArray(value)) {
