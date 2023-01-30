@@ -119,6 +119,9 @@ function renderCity(value) {
     }
     return value;
   } else {
+    if (value.length === 0) {
+      return null;
+    }
     let out = [];
     out.push(value);
     return out;
