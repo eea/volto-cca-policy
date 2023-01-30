@@ -255,6 +255,12 @@ function PublicationDateInfo(props) {
   );
 } // TODO: replace span with (?) tooltip
 
+function ItemsList(props) {
+  const { value } = props;
+
+  return <span>{value.map((item) => item.title).join(', ')}</span>;
+}
+
 function ContentMetadata(props) {
   const { content } = props;
 
@@ -265,13 +271,11 @@ function ContentMetadata(props) {
       <h5>Keywords:</h5>
       <span>{content.keywords.sort().join(', ')}</span>
       <h5>Climate impacts:</h5>
-      <span>
-        {content.climate_impacts.map((item) => item.title).join(', ')}
-      </span>
+      <ItemsList value={content.climate_impacts} />
       <h5>Elements:</h5>
-      <span>{content.elements.map((item) => item.title).join(', ')}</span>
+      <ItemsList value={content.elements} />
       <h5>Sectors:</h5>
-      <span>{content.sectors.map((item) => item.title).join(', ')}</span>
+      <ItemsList value={content.sectors} />
       <h5>Geographic characterisation:</h5>
       <GeoChar value={content.geochars} />
     </div>
