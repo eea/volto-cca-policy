@@ -112,7 +112,8 @@ function renderSubnational(value) {
     if (temp !== undefined) {
       out.push(temp);
     } else {
-      out.push(region);
+      // Show only defined terms, or show all (including missing IDs):
+      // out.push(region);
     }
   }
   return out;
