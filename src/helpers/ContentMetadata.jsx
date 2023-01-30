@@ -239,13 +239,39 @@ function GeoChar(props) {
   );
 }
 
+function PublicationDateInfo(props) {
+  const { value } = props;
+
+  const publicationYear = new Date(value).getFullYear();
+  return (
+    <>
+      <p>{publicationYear}</p>
+      <span>
+        The date refers to the moment in which the item has been prepared or
+        updated by contributing experts to be submitted for the publication in
+        Climate ADAPT
+      </span>
+    </>
+  );
+} // TODO: replace span with (?) tooltip
+
 function ContentMetadata(props) {
   const { content } = props;
 
+  console.log(content.publication_date);
+
   return (
     <div className="content-metadata">
-      <h5>Keywords</h5>
+      <h5>Date of creation:</h5>
+      <PublicationDateInfo value={content.publication_date} />
+      <h5>Keywords:</h5>
       <span>{content.keywords.sort().join(', ')}</span>
+      <h5>Climate impacts:</h5>
+      <span>TODO Extreme Temperatures, Water Scarcity, Flooding, Droughts</span>
+      <h5>Elements:</h5>
+      <span>TODO Observations and Scenarios, Vulnerability Assessment</span>
+      <h5>Sectors:</h5>
+      <span>TODO: Buildings, Energy, Health, Transport, Urban</span>
       <h5>Geographic characterisation:</h5>
       <GeoChar value={content.geochars} />
     </div>
