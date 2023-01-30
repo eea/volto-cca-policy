@@ -220,15 +220,8 @@ function GeoChar(props) {
   let rendered = renderGeochar(geoElements);
 
   if (rendered === null) {
-    return <div>TODO</div>;
-    /* TODO
-      https://github.com/eea/eea.climateadapt.plone/blob/master/eea/climateadapt/browser/pt/ace_macros.pt#L245
-        ? spatial_layer
-        ? spatial_values, adica Countries: join context.spatial_values
-
-
-      TODO observatory case
-    */
+    return <div>TODO: .spatial_layer / .spatial_values case</div>;
+    /* https://github.com/eea/eea.climateadapt.plone/blob/master/eea/climateadapt/browser/pt/ace_macros.pt#L245 */
   }
 
   return (
