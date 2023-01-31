@@ -185,11 +185,11 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
 
   const sectionTitles = {
     element: null,
-    macrotrans: 'Macro-Transnational region',
-    biotrans: 'Biogeographical regions',
-    countries: 'Countries',
-    subnational: 'Sub Nationals',
-    city: 'City',
+    macrotrans: 'Macro-Transnational region:',
+    biotrans: 'Biogeographical regions:',
+    countries: 'Countries:',
+    subnational: 'Sub Nationals:',
+    city: 'City:',
   };
 
   if (isObservatoryPage) {
@@ -215,8 +215,8 @@ function GeoChar(props) {
   const { value } = props;
   const j = JSON.parse(value);
 
-  if (j === null ) {
-    return ''
+  if (j === null) {
+    return '';
   }
 
   const { geoElements } = j;
@@ -286,10 +286,10 @@ function ContentMetadata(props) {
       <ItemsList value={content.sectors} />
       {content.geochars && (
         <>
-        <h5>Geographic characterisation:</h5>
-        <GeoChar value={content.geochars} />
+          <h5>Geographic characterisation:</h5>
+          <GeoChar value={content.geochars} />
         </>
-      )};
+      )}
     </div>
   );
 }
