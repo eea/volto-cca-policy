@@ -215,6 +215,10 @@ function GeoChar(props) {
   const { value } = props;
   const j = JSON.parse(value);
 
+  if (j === null ) {
+    return ''
+  }
+
   const { geoElements } = j;
 
   let rendered = renderGeochar(geoElements);
@@ -270,14 +274,22 @@ function ContentMetadata(props) {
       <PublicationDateInfo value={content.publication_date} />
       <h5>Keywords:</h5>
       <span>{content.keywords.sort().join(', ')}</span>
-      <h5>Climate impacts:</h5>
-      <ItemsList value={content.climate_impacts} />
+      {content.climate_impacts?.length && (
+        <>
+          <h5>Climate impacts:</h5>
+          <ItemsList value={content.climate_impacts} />
+        </>
+      )}
       <h5>Elements:</h5>
       <ItemsList value={content.elements} />
       <h5>Sectors:</h5>
       <ItemsList value={content.sectors} />
-      <h5>Geographic characterisation:</h5>
-      <GeoChar value={content.geochars} />
+      {content.geochars && (
+        <>
+        <h5>Geographic characterisation:</h5>
+        <GeoChar value={content.geochars} />
+        </>
+      )};
     </div>
   );
 }
