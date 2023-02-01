@@ -28,15 +28,14 @@ function VideoView(props) {
       {content?.websites?.length > 0 && (
         <>
           <h5>Websites</h5>
-
-          {content.websites.map((url) => (
-            <>
-              <a key={url} href={url}>
-                {url}
-              </a>
-              <br />
-            </>
-          ))}
+          <ul>
+            {content.websites.map((url, index) => (
+              <li key={index}>
+                <a href={url}>{url}</a>
+                <br />
+              </li>
+            ))}
+          </ul>
         </>
       )}
 
