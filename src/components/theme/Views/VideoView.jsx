@@ -9,66 +9,76 @@ function VideoView(props) {
   );
 
   return (
-    <div className="tool-view">
-      <div style={{}}>
-        <ContentMetadata {...props} />
+    <div className="video-view">
+      <div className="ui container">
+        <div className="ui grid">
+          <div className="row">
+            <div className="nine wide column left-col">
+              <h1>{content.title}</h1>
+              <HTMLField
+                value={content.long_description}
+                className="long_description"
+              />
+              {!is_cmshare_video && (
+                <a href="{content.embed_url}" target="_blank">
+                  See video outside Climate-ADAPT
+                </a>
+              )}
+
+              {content?.websites?.length > 0 && (
+                <>
+                  <h5>Websites</h5>
+                  <ul>
+                    {content.websites.map((url, index) => (
+                      <li key={index}>
+                        <a href={url}>{url}</a>
+                        <br />
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              {content?.source && (
+                <>
+                  <h5>Source</h5>
+                  <HTMLField value={content.source} />
+                </>
+              )}
+
+              {content?.contributor_list?.length > 0 && (
+                <>
+                  <h4>Contributor</h4>
+                  {content.contributor_list
+                    .map((item) => item.title)
+                    .sort()
+                    .join('<br>')}
+                  {content.other_contributor}
+                </>
+              )}
+
+              {is_cmshare_video && (
+                <center>
+                  <video
+                    controls="controls"
+                    preload="metadata"
+                    width="640px"
+                    height="360"
+                    src={content.embed_url}
+                  >
+                    <track default kind="captions" srcLang="en" src="" />
+                  </video>
+                </center>
+              )}
+            </div>
+            <div className="three wide column right-col">
+              <div style={{}}>
+                <ContentMetadata {...props} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1>{content.title}</h1>
-      <HTMLField
-        value={content.long_description}
-        className="long_description"
-      />
-      {!is_cmshare_video && (
-        <a href="{content.embed_url}" target="_blank">
-          See video outside Climate-ADAPT
-        </a>
-      )}
-
-      {content?.websites?.length > 0 && (
-        <>
-          <h5>Websites</h5>
-          <ul>
-            {content.websites.map((url, index) => (
-              <li key={index}>
-                <a href={url}>{url}</a>
-                <br />
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-
-      {content?.source && (
-        <>
-          <h5>Source</h5>
-          <HTMLField value={content.source} />
-        </>
-      )}
-
-      {content?.contributor_list?.length > 0 && (
-        <>
-          <h4>Contributor</h4>
-          {content.contributor_list
-            .map((item) => item.title)
-            .sort()
-            .join('<br>')}
-          {content.other_contributor}
-        </>
-      )}
-
-      {is_cmshare_video && (
-        <center>
-          <video
-            controls="controls"
-            preload="metadata"
-            width="640px"
-            height="360"
-            src={content.embed_url}
-          >
-            <track default kind="captions" srcLang="en" src="" />
-          </video>
-        </center>
-      )}
     </div>
   );
 }
