@@ -12,6 +12,15 @@ function VideoView(props) {
     content.embed_url.includes(domain),
   );
 
+  const fixEmbedURL = (url) => {
+    const domain = 'shareit.eea.europa.eu';
+    const suffix = '/download';
+    if (url.includes(domain) && !url.includes(suffix)) {
+      return url + suffix;
+    }
+    return url;
+  };
+
   return (
     <div className="video-view">
       <div className="ui container">
@@ -70,7 +79,7 @@ function VideoView(props) {
                     preload="metadata"
                     width="640px"
                     height="360"
-                    src={content.embed_url}
+                    src={fixEmbedURL(content.embed_url)}
                   >
                     <track default kind="captions" srcLang="en" src="" />
                   </video>
