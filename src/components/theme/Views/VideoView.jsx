@@ -14,7 +14,6 @@ function VideoView(props) {
         <ContentMetadata {...props} />
       </div>
       <h1>{content.title}</h1>
-      <h4>Description</h4>
       <HTMLField
         value={content.long_description}
         className="long_description"
