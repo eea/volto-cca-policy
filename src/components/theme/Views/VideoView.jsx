@@ -41,6 +41,15 @@ function VideoView(props) {
                 </div>
               )}
 
+              {content?.related_documents_presentations && (
+                <>
+                  <h4 className="reference-title">
+                    Related documents and presentations
+                  </h4>
+                  <HTMLField value={content.related_documents_presentations} />
+                </>
+              )}
+
               {content?.websites?.length > 0 && (
                 <h4 className="reference-title">Reference information</h4>
               )}
