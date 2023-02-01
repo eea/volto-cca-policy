@@ -45,12 +45,16 @@ function VideoView(props) {
         </>
       )}
 
-      <h4>Contributor</h4>
-      {content.contributor_list
-        .map((item) => item.title)
-        .sort()
-        .join('<br>')}
-      {content.other_contributor}
+      {content?.contributor_list?.length > 0 && (
+        <>
+          <h4>Contributor</h4>
+          {content.contributor_list
+            .map((item) => item.title)
+            .sort()
+            .join('<br>')}
+          {content.other_contributor}
+        </>
+      )}
 
       {is_cmshare_video && (
         <center>
