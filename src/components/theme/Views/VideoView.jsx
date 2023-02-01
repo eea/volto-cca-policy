@@ -42,6 +42,10 @@ function VideoView(props) {
               )}
 
               {content?.websites?.length > 0 && (
+                <h4 className="reference-title">Reference information</h4>
+              )}
+
+              {content?.websites?.length > 0 && (
                 <>
                   <h5>Websites</h5>
                   <ul>
