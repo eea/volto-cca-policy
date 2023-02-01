@@ -249,12 +249,14 @@ function PublicationDateInfo(props) {
   const publicationYear = new Date(value).getFullYear();
   return (
     <>
-      <p
-        title="The date refers to the moment in which the item has been
-        prepared or updated by contributing experts to be submitted for the
-        publication in Climate ADAPT"
-      >
+      <p>
         {publicationYear}
+        <i
+          class="ri-question-fill"
+          title="The date refers to the moment in which the item has been
+          prepared or updated by contributing experts to be submitted for the
+          publication in Climate ADAPT"
+        ></i>
       </p>
     </>
   );
