@@ -1,7 +1,7 @@
 import React from 'react';
 import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 
-function ToolView(props) {
+function OrganisationView(props) {
   const { content } = props;
 
   return (
@@ -29,8 +29,9 @@ function ToolView(props) {
           ))}
         </>
       )}
+
     </div>
   );
 }
 
-export default ToolView;
+export default OrganisationView;

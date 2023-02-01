@@ -1,7 +1,7 @@
 import React from 'react';
 import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 
-function ToolView(props) {
+function IndicatorView(props) {
   const { content } = props;
 
   return (
@@ -29,8 +29,11 @@ function ToolView(props) {
           ))}
         </>
       )}
+
+      <h5>Source</h5>
+      <HTMLField value={content.source} />
     </div>
   );
 }
 
-export default ToolView;
+export default IndicatorView;

@@ -261,7 +261,6 @@ function PublicationDateInfo(props) {
 
 function ItemsList(props) {
   const { value } = props;
-
   return <span>{value.map((item) => item.title).join(', ')}</span>;
 }
 
@@ -280,10 +279,18 @@ function ContentMetadata(props) {
           <ItemsList value={content.climate_impacts} />
         </>
       )}
-      <h5>Elements:</h5>
-      <ItemsList value={content.elements} />
-      <h5>Sectors:</h5>
-      <ItemsList value={content.sectors} />
+      {content.elements?.length && (
+        <>
+          <h5>Elements:</h5>
+          <ItemsList value={content.elements} />
+        </>
+      )}
+      {content.sectors?.length && (
+        <>
+          <h5>Sectors:</h5>
+          <ItemsList value={content.sectors} />
+        </>
+      )}
       {content.geochars && (
         <>
           <h5>Geographic characterisation:</h5>

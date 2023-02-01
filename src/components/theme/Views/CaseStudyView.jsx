@@ -1,7 +1,7 @@
 import React from 'react';
 import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 
-function ToolView(props) {
+function CaseStudyView(props) {
   const { content } = props;
 
   return (
@@ -14,6 +14,16 @@ function ToolView(props) {
       <HTMLField
         value={content.long_description}
         className="long_description"
+      />
+      <h4>Challenges</h4>
+      <HTMLField
+        value={content.challenges}
+        className="challenges"
+      />
+      <h4>Objectives</h4>
+      <HTMLField
+        value={content.objectives}
+        className="objectives"
       />
       <hr />
       <h4>Reference information</h4>
@@ -29,8 +39,11 @@ function ToolView(props) {
           ))}
         </>
       )}
+
+      <h5>Source</h5>
+      <HTMLField value={content.source} />
     </div>
   );
 }
 
-export default ToolView;
+export default CaseStudyView;
