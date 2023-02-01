@@ -59,9 +59,9 @@ function VideoView(props) {
             preload="metadata"
             width="640px"
             height="360"
-            src="{content.embed_url}"
+            src={content.embed_url}
           >
-            <track default kind="captions" srclang="en" src="" />
+            <track default kind="captions" srcLang="en" src="" />
           </video>
         </center>
       )}
