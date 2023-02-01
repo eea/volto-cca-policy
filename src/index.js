@@ -25,14 +25,24 @@ const applyConfig = (config) => {
   }
 
   //console.log(config);
-  config.views.contentTypesViews['eea.climateadapt.adaptationoption'] = AdaptationOptionView;
+  config.views.contentTypesViews[
+    'eea.climateadapt.adaptationoption'
+  ] = AdaptationOptionView;
   config.views.contentTypesViews['eea.climateadapt.casestudy'] = CaseStudyView;
-  config.views.contentTypesViews['eea.climateadapt.guidancedocument'] = GuidanceView;
+  config.views.contentTypesViews[
+    'eea.climateadapt.guidancedocument'
+  ] = GuidanceView;
   config.views.contentTypesViews['eea.climateadapt.indicator'] = IndicatorView;
-  config.views.contentTypesViews['eea.climateadapt.informationportal'] = InformationPortalView;
-  config.views.contentTypesViews['eea.climateadapt.organisation'] = OrganisationView;
+  config.views.contentTypesViews[
+    'eea.climateadapt.informationportal'
+  ] = InformationPortalView;
+  config.views.contentTypesViews[
+    'eea.climateadapt.organisation'
+  ] = OrganisationView;
   config.views.contentTypesViews['eea.climateadapt.aceproject'] = ProjectView;
-  config.views.contentTypesViews['eea.climateadapt.publicationreport'] = PublicationReportView;
+  config.views.contentTypesViews[
+    'eea.climateadapt.publicationreport'
+  ] = PublicationReportView;
   config.views.contentTypesViews['eea.climateadapt.tool'] = ToolView;
   config.views.contentTypesViews['eea.climateadapt.video'] = VideoView;
 
