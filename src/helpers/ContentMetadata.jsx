@@ -3,6 +3,7 @@ import {
   BIOREGIONS,
   SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Fragment } from 'react';
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -233,10 +234,10 @@ function GeoChar(props) {
       {rendered.map(
         (section, index) =>
           section.value && (
-            <div className="geochar-section" key={index}>
+            <Fragment key={index}>
               {section.title && <h5>{section.title}</h5>}
               <p>{section.value.join(', ')}</p>
-            </div>
+            </Fragment>
           ),
       )}
     </div>
