@@ -51,13 +51,14 @@ function VideoView(props) {
                 </>
               )}
 
-              {content?.contributor_list?.length > 0 && (
+              {(content?.contributor_list?.length > 0 ||
+                content?.other_contributor?.length > 0) && (
                 <>
                   <h4>Contributor</h4>
                   {content.contributor_list
                     .map((item) => item.title)
                     .sort()
-                    .join('<br>')}
+                    .join('<br />')}
                   {content.other_contributor}
                 </>
               )}
