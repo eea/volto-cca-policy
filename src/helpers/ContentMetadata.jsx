@@ -249,7 +249,7 @@ function PublicationDateInfo(props) {
   console.log(portaltype);
   let tooltipText = '';
 
-  if (portaltype == 'eea.climateadapt.video') {
+  if (portaltype === 'eea.climateadapt.video') {
     tooltipText = 'The date refers to the date of release of the video';
   } else {
     tooltipText =
