@@ -6,3 +6,18 @@ export const HTMLField = ({ value, className }) => {
     ></div>
   );
 };
+
+export const ExternalLink = (props) => {
+  let { url, text } = props;
+
+  if (text === undefined) {
+    text = url;
+  }
+
+  return (
+    <a href={url}>
+      <i aria-hidden="true" className="icon ri-share-box-fill" />
+      {text}
+    </a>
+  );
+};

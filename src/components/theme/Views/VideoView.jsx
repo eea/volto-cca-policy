@@ -1,5 +1,9 @@
 import React from 'react';
-import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  ContentMetadata,
+  ExternalLink,
+} from '@eeacms/volto-cca-policy/helpers';
 
 function VideoView(props) {
   const { content } = props;
@@ -21,9 +25,10 @@ function VideoView(props) {
                 className="long_description"
               />
               {!is_cmshare_video && (
-                <a href="{content.embed_url}" target="_blank">
-                  See video outside Climate-ADAPT
-                </a>
+                <ExternalLink
+                  url={content.embed_url}
+                  text="See video outside Climate-ADAPT"
+                />
               )}
 
               {content?.websites?.length > 0 && (
@@ -32,14 +37,7 @@ function VideoView(props) {
                   <ul>
                     {content.websites.map((url, index) => (
                       <li key={index}>
-                        <a href={url}>
-                          <i
-                            aria-hidden="true"
-                            className="icon ri-share-box-fill"
-                          />
-                          {url}
-                        </a>
-                        <br />
+                        <ExternalLink url={url} text={url} />
                       </li>
                     ))}
                   </ul>
