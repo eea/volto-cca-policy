@@ -261,6 +261,7 @@ function PublicationDateInfo(props) {
 
 function ItemsList(props) {
   const { value } = props;
+  console.log(value.map((item) => item.title).join(', '));
   return <span>{value.map((item) => item.title).join(', ')}</span>;
 }
 
@@ -271,25 +272,25 @@ function ContentMetadata(props) {
     <div className="content-metadata">
       <h5>Date of creation:</h5>
       <PublicationDateInfo value={content.publication_date} />
-      {content?.keywords?.length && (
+      {content?.keywords?.length > 0 && (
         <>
           <h5>Keywords:</h5>
           <span>{content?.keywords?.sort().join(', ')}</span>
         </>
       )}
-      {content.climate_impacts?.length && (
+      {content.climate_impacts?.length > 0 && (
         <>
           <h5>Climate impacts:</h5>
           <ItemsList value={content.climate_impacts} />
         </>
       )}
-      {content.elements?.length && (
+      {content.elements?.length > 0 && (
         <>
           <h5>Elements:</h5>
           <ItemsList value={content.elements} />
         </>
       )}
-      {content.sectors?.length && (
+      {content.sectors?.length > 0 && (
         <>
           <h5>Sectors:</h5>
           <ItemsList value={content.sectors} />
