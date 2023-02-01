@@ -271,8 +271,12 @@ function ContentMetadata(props) {
     <div className="content-metadata">
       <h5>Date of creation:</h5>
       <PublicationDateInfo value={content.publication_date} />
-      <h5>Keywords:</h5>
-      <span>{content.keywords.sort().join(', ')}</span>
+      {content?.keywords?.length && (
+        <>
+          <h5>Keywords:</h5>
+          <span>{content?.keywords?.sort().join(', ')}</span>
+        </>
+      )}
       {content.climate_impacts?.length && (
         <>
           <h5>Climate impacts:</h5>
