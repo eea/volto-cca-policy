@@ -245,19 +245,23 @@ function GeoChar(props) {
 }
 
 function PublicationDateInfo(props) {
-  const { value } = props;
+  const { value, portaltype } = props;
+  console.log(portaltype);
+  let tooltipText = '';
+
+  if (portaltype == 'eea.climateadapt.video') {
+    tooltipText = 'The date refers to the date of release of the video';
+  } else {
+    tooltipText =
+      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
+  }
 
   const publicationYear = new Date(value).getFullYear();
   return (
     <>
       <p>
         {publicationYear}
-        <i
-          className="ri-question-fill"
-          title="The date refers to the moment in which the item has been
-          prepared or updated by contributing experts to be submitted for the
-          publication in Climate ADAPT"
-        ></i>
+        <i className="ri-question-fill" title={tooltipText}></i>
       </p>
     </>
   );
@@ -274,7 +278,10 @@ function ContentMetadata(props) {
   return (
     <div className="content-metadata">
       <h5>Date of creation:</h5>
-      <PublicationDateInfo value={content.publication_date} />
+      <PublicationDateInfo
+        value={content.publication_date}
+        portaltype={content.portal_type}
+      />
       {content?.keywords?.length > 0 && (
         <>
           <h5>Keywords:</h5>
