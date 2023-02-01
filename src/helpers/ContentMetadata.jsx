@@ -249,19 +249,19 @@ function PublicationDateInfo(props) {
   const publicationYear = new Date(value).getFullYear();
   return (
     <>
-      <p>{publicationYear}</p>
-      <span>
-        The date refers to the moment in which the item has been prepared or
-        updated by contributing experts to be submitted for the publication in
-        Climate ADAPT
-      </span>
+      <p
+        title="The date refers to the moment in which the item has been
+        prepared or updated by contributing experts to be submitted for the
+        publication in Climate ADAPT"
+      >
+        {publicationYear}
+      </p>
     </>
   );
-} // TODO: replace span with (?) tooltip
+} // TODO: (?) tooltip
 
 function ItemsList(props) {
   const { value } = props;
-  console.log(value.map((item) => item.title).join(', '));
   return <span>{value.map((item) => item.title).join(', ')}</span>;
 }
 
