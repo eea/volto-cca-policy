@@ -13,9 +13,8 @@ function VideoView(props) {
   );
 
   const fixEmbedURL = (url) => {
-    const domain = 'shareit.eea.europa.eu';
     const suffix = '/download';
-    if (url.includes(domain) && !url.includes(suffix)) {
+    if (is_cmshare_video && !url.includes(suffix)) {
       return url + suffix;
     }
     return url;
