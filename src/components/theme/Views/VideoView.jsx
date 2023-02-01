@@ -3,9 +3,10 @@ import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 
 function VideoView(props) {
   const { content } = props;
-  const share_eea = ["https://cmshare.eea.eu", "shareit.eea.europa.eu"];
-  const is_cmshare_video = share_eea.some(domain => content.embed_url.includes(domain));
-  console.log('IS CMS SHARE', is_cmshare_video);
+  const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
+  const is_cmshare_video = share_eea.some((domain) =>
+    content.embed_url.includes(domain),
+  );
 
   return (
     <div className="tool-view">
@@ -19,7 +20,9 @@ function VideoView(props) {
         className="long_description"
       />
       {!is_cmshare_video && (
-      <a href="{content.embed_url}" target="_blank" >See video outside Climate-ADAPT</a>
+        <a href="{content.embed_url}" target="_blank">
+          See video outside Climate-ADAPT
+        </a>
       )}
 
       {content?.websites?.length > 0 && (
@@ -28,9 +31,10 @@ function VideoView(props) {
 
           {content.websites.map((url) => (
             <>
-            <a key={url} href={url}>
-              {url}
-            </a><br/>
+              <a key={url} href={url}>
+                {url}
+              </a>
+              <br />
             </>
           ))}
         </>
@@ -44,12 +48,23 @@ function VideoView(props) {
       )}
 
       <h4>Contributor</h4>
-      {content.contributor_list.map((item) => item.title).sort().join('<br>')}
+      {content.contributor_list
+        .map((item) => item.title)
+        .sort()
+        .join('<br>')}
       {content.other_contributor}
 
       {is_cmshare_video && (
         <center>
-        <video controls="controls" preload="metadata" src="" width="640px" height="360" src="{content.embed_url}"></video>
+          <video
+            controls="controls"
+            preload="metadata"
+            width="640px"
+            height="360"
+            src="{content.embed_url}"
+          >
+            <track default kind="captions" srclang="en" src="" />
+          </video>
         </center>
       )}
     </div>

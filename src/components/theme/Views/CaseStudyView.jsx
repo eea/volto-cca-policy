@@ -16,15 +16,9 @@ function CaseStudyView(props) {
         className="long_description"
       />
       <h4>Challenges</h4>
-      <HTMLField
-        value={content.challenges}
-        className="challenges"
-      />
+      <HTMLField value={content.challenges} className="challenges" />
       <h4>Objectives</h4>
-      <HTMLField
-        value={content.objectives}
-        className="objectives"
-      />
+      <HTMLField value={content.objectives} className="objectives" />
       <hr />
       <h4>Reference information</h4>
 

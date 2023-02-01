@@ -29,7 +29,6 @@ function OrganisationView(props) {
           ))}
         </>
       )}
-
     </div>
   );
 }
