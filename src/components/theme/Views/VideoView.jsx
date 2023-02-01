@@ -14,6 +14,7 @@ function VideoView(props) {
         <div className="ui grid">
           <div className="row">
             <div className="nine wide column left-col">
+              <div class="ui label">Video</div>
               <h1>{content.title}</h1>
               <HTMLField
                 value={content.long_description}
@@ -31,7 +32,13 @@ function VideoView(props) {
                   <ul>
                     {content.websites.map((url, index) => (
                       <li key={index}>
-                        <a href={url}>{url}</a>
+                        <a href={url}>
+                          <i
+                            aria-hidden="true"
+                            className="icon ri-share-box-fill"
+                          />
+                          {url}
+                        </a>
                         <br />
                       </li>
                     ))}
