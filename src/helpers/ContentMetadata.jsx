@@ -246,7 +246,6 @@ function GeoChar(props) {
 
 function PublicationDateInfo(props) {
   const { value, portaltype } = props;
-  console.log(portaltype);
   let tooltipText = '';
 
   if (portaltype === 'eea.climateadapt.video') {
