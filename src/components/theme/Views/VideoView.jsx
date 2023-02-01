@@ -14,7 +14,7 @@ function VideoView(props) {
         <div className="ui grid">
           <div className="row">
             <div className="nine wide column left-col">
-              <div class="ui label">Video</div>
+              <div className="ui label">Video</div>
               <h1>{content.title}</h1>
               <HTMLField
                 value={content.long_description}
