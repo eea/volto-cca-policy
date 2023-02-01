@@ -252,7 +252,7 @@ function PublicationDateInfo(props) {
       <p>
         {publicationYear}
         <i
-          class="ri-question-fill"
+          className="ri-question-fill"
           title="The date refers to the moment in which the item has been
           prepared or updated by contributing experts to be submitted for the
           publication in Climate ADAPT"
