@@ -33,10 +33,12 @@ function VideoView(props) {
                 className="long_description"
               />
               {!is_cmshare_video && (
-                <ExternalLink
-                  url={content.embed_url}
-                  text="See video outside Climate-ADAPT"
-                />
+                <div className="external-video">
+                  <ExternalLink
+                    url={content.embed_url}
+                    text="See video outside Climate-ADAPT"
+                  />
+                </div>
               )}
 
               {content?.websites?.length > 0 && (
