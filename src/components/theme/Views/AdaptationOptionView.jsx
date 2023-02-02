@@ -1,5 +1,9 @@
 import React from 'react';
-import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  ContentMetadata,
+  ExternalLink,
+} from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
 
 function AdaptationOptionView(props) {
@@ -7,14 +11,14 @@ function AdaptationOptionView(props) {
 
   let dataDisplay = [
     {
-      type: 'TODO',
-      field: 'TODO',
+      type: 'other',
+      field: 'category',
       section: 'ao_category',
       title: 'Category',
     },
     {
-      type: 'TODO',
-      field: 'TODO',
+      type: 'other',
+      field: 'ipcc_category',
       section: 'ipcc_category',
       title: 'IPCC categories',
     },
@@ -72,9 +76,9 @@ function AdaptationOptionView(props) {
     return found.section;
   };
 
-  const usedSections = () => {
-    return dataDisplay.filter((data) => content.hasOwnProperty(data.field));
-  };
+  const usedSections = dataDisplay.filter((data) =>
+    content.hasOwnProperty(data.field),
+  );
 
   return (
     <div className="adaptation-option-view">
@@ -89,13 +93,13 @@ function AdaptationOptionView(props) {
                 className="long_description"
               />
 
-              {dataDisplay.length > 0 && (
+              {usedSections.length > 0 && (
                 <>
                   <h5 className="Adaptation-option-selector">
                     Additional Details
                   </h5>
                   <ul>
-                    {usedSections().map((data, index) => (
+                    {usedSections.map((data, index) => (
                       <li key={index}>
                         <a href={'#' + sectionID(data.title)}>{data.title}</a>
                       </li>
@@ -103,35 +107,6 @@ function AdaptationOptionView(props) {
                   </ul>
                 </>
               )}
-
-              <h5 className="Adaptation-option-selector">
-                Additional Details Old
-              </h5>
-              <ul>
-                <li>
-                  <a href="#ao_category">Category</a>
-                </li>
-                <li>
-                  <a href="#ipcc_category">IPCC categories</a>
-                </li>
-                <li>
-                  <a href="#stakeholder_participation">
-                    Stakeholder participation
-                  </a>
-                </li>
-                <li>
-                  <a href="#success_factors">Success and Limiting Factors</a>
-                </li>
-                <li>
-                  <a href="#costs_benefits">Costs and Benefits</a>
-                </li>
-                <li>
-                  <a href="#legal">Legal Aspects</a>
-                </li>
-                <li>
-                  <a href="#implementation">Implementation Time</a>
-                </li>
-              </ul>
 
               <h5 className="Adaptation-option-selector">
                 Reference information
@@ -172,26 +147,23 @@ function AdaptationOptionView(props) {
                   .map((item) => item.title)
                   .sort()
                   .join(', ')}
-                {dataDisplay.length > 0 && (
+                {usedSections.length > 0 && (
                   <>
-                    {dataDisplay.map(
-                      (data, index) =>
-                        content.hasOwnProperty(data.field) && (
-                          <Fragment key={index}>
-                            <br />
+                    {usedSections.map((data, index) => (
+                      <Fragment key={index}>
+                        <br />
 
-                            <div id={sectionID(data.title)}>
-                              <p>
-                                <i>{data.title}</i>
-                              </p>
-                              <HTMLField
-                                value={content[data.field]}
-                                className="long_description"
-                              />
-                            </div>
-                          </Fragment>
-                        ),
-                    )}
+                        <div id={sectionID(data.title)}>
+                          <p>
+                            <i>{data.title}</i>
+                          </p>
+                          <HTMLField
+                            value={content[data.field]}
+                            className="long_description"
+                          />
+                        </div>
+                      </Fragment>
+                    ))}
                   </>
                 )}
               </div>
@@ -202,12 +174,13 @@ function AdaptationOptionView(props) {
               {content?.websites?.length > 0 && (
                 <>
                   <h5>Websites</h5>
-
-                  {content.websites.map((url) => (
-                    <a key={url} href={url}>
-                      {url}
-                    </a>
-                  ))}
+                  <ul>
+                    {content.websites.map((url, index) => (
+                      <li key={index}>
+                        <ExternalLink url={url} text={url} />
+                      </li>
+                    ))}
+                  </ul>
                 </>
               )}
 
