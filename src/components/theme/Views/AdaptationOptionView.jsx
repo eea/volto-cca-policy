@@ -58,10 +58,7 @@ function AdaptationOptionView(props) {
 
   const findSection = (title) => {
     const found = dataDisplay.filter((item) => item.title === title);
-    console.log("SEARCH", title);
-    console.log("FOUND", found);
     if (found.length > 0) {
-      console.log(found[0]);
       return found[0];
     }
     return null;
