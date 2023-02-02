@@ -166,7 +166,7 @@ function AdaptationOptionView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <>
+                <div id="websites" className="section">
                   <h5>Websites</h5>
                   <ul>
                     {content.websites.map((url, index) => (
@@ -175,11 +175,13 @@ function AdaptationOptionView(props) {
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
               )}
 
-              <h5>Source</h5>
-              <HTMLField value={content.source} />
+              <div id="source" className="section">
+                <h5>Source</h5>
+                <HTMLField value={content.source} />
+              </div>
             </div>
             <div className="three wide column right-col">
               <div style={{}}>
