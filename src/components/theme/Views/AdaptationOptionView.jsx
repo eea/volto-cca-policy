@@ -1,41 +1,79 @@
 import React from 'react';
 import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import { Fragment } from 'react';
 
 function AdaptationOptionView(props) {
   const { content } = props;
 
   let dataDisplay = [
     {
+      type: 'TODO',
+      field: 'TODO',
+      section: 'ao_category',
+      title: 'Category',
+    },
+    {
+      type: 'TODO',
+      field: 'TODO',
+      section: 'ipcc_category',
+      title: 'IPCC categories',
+    },
+    {
       type: 'HTMLField',
       field: 'stakeholder_participation',
+      section: 'stakeholder_participation',
       title: 'Stakeholder participation',
     },
     {
       type: 'HTMLField',
       field: 'success_limitations',
+      section: 'success_factors',
       title: 'Success and Limiting Factors',
     },
     {
       type: 'HTMLField',
       field: 'cost_benefit',
+      section: 'costs_benefits',
       title: 'Costs and Benefits',
     },
     {
       type: 'HTMLField',
       field: 'legal_aspects',
+      section: 'legal',
       title: 'Legal Aspects',
     },
     {
       type: 'HTMLField',
       field: 'implementation_time',
+      section: 'implementation',
       title: 'Implementation Time',
     },
     {
       type: 'HTMLField',
       field: 'life_time',
+      section: 'life_time',
       title: 'Life Time',
     },
   ];
+
+  const findSection = (title) => {
+    const found = dataDisplay.filter((item) => item.title === title);
+    console.log("SEARCH", title);
+    console.log("FOUND", found);
+    if (found.length > 0) {
+      console.log(found[0]);
+      return found[0];
+    }
+    return null;
+  };
+
+  const sectionID = (title) => {
+    const found = findSection(title);
+    if (found === null) {
+      return title;
+    }
+    return found.section;
+  };
 
   return (
     <div className="adaptation-option-view">
@@ -111,46 +149,56 @@ function AdaptationOptionView(props) {
 
               <h4>Adaptation Details</h4>
               <br />
-              <p>
-                <i>Category</i>
-              </p>
-              {content.category
-                .map((item) => item.token)
-                .sort()
-                .map((cat) => (
-                  <>
-                    {cat}
-                    <br />
-                  </>
-                ))}
+
+              <div id={sectionID('Category')}>
+                <p>
+                  <i>Category</i>
+                </p>
+                {content.category
+                  .map((item) => item.token)
+                  .sort()
+                  .map((cat, index) => (
+                    <Fragment key={index}>
+                      {cat}
+                      <br />
+                    </Fragment>
+                  ))}
+              </div>
               <br />
-              <p>
-                <i>IPCC Categories</i>
-              </p>
-              {content.ipcc_category
-                .map((item) => item.title)
-                .sort()
-                .join(', ')}
-              {dataDisplay.length > 0 && (
-                <>
-                  {dataDisplay.map(
-                    (data) =>
-                      content.hasOwnProperty(data.field) && (
-                        <>
-                          <br />
-                          <p>
-                            <i>{data.title}</i>
-                          </p>
-                          <HTMLField
-                            value={content[data.field]}
-                            className="long_description"
-                          />
-                        </>
-                      ),
-                  )}
-                </>
-              )}
+
+              <div id={sectionID('IPCC categories')}>
+                <p>
+                  <i>IPCC categories</i>
+                </p>
+                {content.ipcc_category
+                  .map((item) => item.title)
+                  .sort()
+                  .join(', ')}
+                {dataDisplay.length > 0 && (
+                  <>
+                    {dataDisplay.map(
+                      (data, index) =>
+                        content.hasOwnProperty(data.field) && (
+                          <Fragment key={index}>
+                            <br />
+
+                            <div id={sectionID(data.title)}>
+                              <p>
+                                <i>{data.title}</i>
+                              </p>
+                              <HTMLField
+                                value={content[data.field]}
+                                className="long_description"
+                              />
+                            </div>
+                          </Fragment>
+                        ),
+                    )}
+                  </>
+                )}
+              </div>
               <hr />
+
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
