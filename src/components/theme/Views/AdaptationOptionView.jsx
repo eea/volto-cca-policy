@@ -72,6 +72,10 @@ function AdaptationOptionView(props) {
     return found.section;
   };
 
+  const usedSections = () => {
+    return dataDisplay.filter((data) => content.hasOwnProperty(data.field));
+  };
+
   return (
     <div className="adaptation-option-view">
       <div className="ui container">
@@ -91,14 +95,11 @@ function AdaptationOptionView(props) {
                     Additional Details
                   </h5>
                   <ul>
-                    {dataDisplay.map(
-                      (data, index) =>
-                        content.hasOwnProperty(data.field) && (
-                          <li key={index}>
-                            <a href="#ao_category">{data.title}</a>
-                          </li>
-                        ),
-                    )}
+                    {usedSections().map((data, index) => (
+                      <li key={index}>
+                        <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                      </li>
+                    ))}
                   </ul>
                 </>
               )}
