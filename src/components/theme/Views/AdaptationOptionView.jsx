@@ -4,37 +4,38 @@ import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 function AdaptationOptionView(props) {
   const { content } = props;
 
-  let dataDisplay = [];
-  dataDisplay.push({
-    type: 'HTMLField',
-    field: 'stakeholder_participation',
-    title: 'Stakeholder participation',
-  });
-  dataDisplay.push({
-    type: 'HTMLField',
-    field: 'success_limitations',
-    title: 'Success and Limiting Factors',
-  });
-  dataDisplay.push({
-    type: 'HTMLField',
-    field: 'cost_benefit',
-    title: 'Costs and Benefits',
-  });
-  dataDisplay.push({
-    type: 'HTMLField',
-    field: 'legal_aspects',
-    title: 'Legal Aspects',
-  });
-  dataDisplay.push({
-    type: 'HTMLField',
-    field: 'implementation_time',
-    title: 'Implementation Time',
-  });
-  dataDisplay.push({
-    type: 'HTMLField',
-    field: 'life_time',
-    title: 'Life Time',
-  });
+  let dataDisplay = [
+    {
+      type: 'HTMLField',
+      field: 'stakeholder_participation',
+      title: 'Stakeholder participation',
+    },
+    {
+      type: 'HTMLField',
+      field: 'success_limitations',
+      title: 'Success and Limiting Factors',
+    },
+    {
+      type: 'HTMLField',
+      field: 'cost_benefit',
+      title: 'Costs and Benefits',
+    },
+    {
+      type: 'HTMLField',
+      field: 'legal_aspects',
+      title: 'Legal Aspects',
+    },
+    {
+      type: 'HTMLField',
+      field: 'implementation_time',
+      title: 'Implementation Time',
+    },
+    {
+      type: 'HTMLField',
+      field: 'life_time',
+      title: 'Life Time',
+    },
+  ];
 
   return (
     <div className="adaptation-option-view">
@@ -42,8 +43,8 @@ function AdaptationOptionView(props) {
         <div className="ui grid">
           <div className="row">
             <div className="nine wide column left-col">
+              <div className="ui label">Adaptation option</div>
               <h1>{content.title}</h1>
-              <h4>Description</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
