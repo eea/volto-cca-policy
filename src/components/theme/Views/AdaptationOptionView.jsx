@@ -3,6 +3,7 @@ import {
   HTMLField,
   ContentMetadata,
   ExternalLink,
+  PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
 
@@ -183,6 +184,8 @@ function AdaptationOptionView(props) {
                 <h5>Source</h5>
                 <HTMLField value={content.source} />
               </div>
+
+              <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
               <div style={{}}>
