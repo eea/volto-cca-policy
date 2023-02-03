@@ -101,6 +101,7 @@ const SectionsMenu = (props) => {
           </li>
         </ul>
       </>
+      <hr />
     </>
   );
 };
