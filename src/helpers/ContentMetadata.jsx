@@ -280,11 +280,11 @@ function ItemsList(props) {
   if (join === '<br />') {
     return (
       <span>
-        {value.map((item) => (
-          <>
+        {value.map((item, index) => (
+          <Fragment key={index}>
             <span>{item.title}</span>
             <br />
-          </>
+          </Fragment>
         ))}
       </span>
     );
