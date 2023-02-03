@@ -274,6 +274,53 @@ function ItemsList(props) {
 function ContentMetadata(props) {
   const { content } = props;
 
+  if (content['@type'] === 'eea.climateadapt.adaptationoption') {
+    return (
+      <div className="content-metadata">
+        <h5>Date of creation:</h5>
+        <PublicationDateInfo
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        <h5>Governance level:</h5>
+        <p>TODO</p>
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.geochars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar value={content.geochars} />
+          </>
+        )}
+        <h5>Case studies related to this option:</h5>
+        <p>TODO</p>
+      </div>
+    );
+  }
+
+  // Default render
   return (
     <div className="content-metadata">
       <h5>Date of creation:</h5>
