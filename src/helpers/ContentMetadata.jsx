@@ -267,12 +267,35 @@ function PublicationDateInfo(props) {
 } // TODO: (?) tooltip
 
 function ItemsList(props) {
-  const { value } = props;
-  return <span>{value.map((item) => item.title).join(', ')}</span>;
+  // Usage:
+  // <ItemsList value={content.governance_level} join="<br />" />
+  // result: items on per line
+  //
+  // <ItemsList value={content.governance_level} />
+  // result: item1, item2, item3
+  let { value, join } = props;
+  if (join === undefined) {
+    join = ', ';
+  }
+  if (join === '<br />') {
+    return (
+      <span>
+        {value.map((item) => (
+          <>
+            <span>{item.title}</span>
+            <br />
+          </>
+        ))}
+      </span>
+    );
+  }
+  return <span>{value.map((item) => item.title).join(join)}</span>;
 }
 
 function ContentMetadata(props) {
   const { content } = props;
+
+  // console.log(content);
 
   if (content['@type'] === 'eea.climateadapt.adaptationoption') {
     return (
@@ -300,8 +323,12 @@ function ContentMetadata(props) {
             <ItemsList value={content.climate_impacts} />
           </>
         )}
-        <h5>Governance level:</h5>
-        <p>TODO</p>
+        {content.governance_level?.length > 0 && (
+          <>
+            <h5>Governance level:</h5>
+            <ItemsList value={content.governance_level} join="<br />" />
+          </>
+        )}
         {content.elements?.length > 0 && (
           <>
             <h5>Elements:</h5>
