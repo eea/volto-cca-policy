@@ -6,11 +6,11 @@ function InformationPortalView(props) {
 
   return (
     <div className="tool-view">
-    <div className="ui container">
-      <div className="ui grid">
-        <div className="row">
-          <div className="nine wide column left-col">
-            <div className="ui label">Information Portal</div>
+      <div className="ui container">
+        <div className="ui grid">
+          <div className="row">
+            <div className="nine wide column left-col">
+              <div className="ui label">Information Portal</div>
               <h1>{content.title}</h1>
               <h4>Description</h4>
               <HTMLField
@@ -24,12 +24,17 @@ function InformationPortalView(props) {
                   <h5>Websites</h5>
 
                   {content.websites
-                    .map((url) => <>{url}<br /></>)
                     .map((url) => (
-                    <a key={url} href={url}>
-                      {url}
-                    </a>
-                  ))}
+                      <>
+                        {url}
+                        <br />
+                      </>
+                    ))
+                    .map((url) => (
+                      <a key={url} href={url}>
+                        {url}
+                      </a>
+                    ))}
                 </>
               )}
             </div>
@@ -41,7 +46,7 @@ function InformationPortalView(props) {
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 
