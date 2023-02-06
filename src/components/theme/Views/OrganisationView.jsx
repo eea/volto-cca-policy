@@ -1,5 +1,10 @@
 import React from 'react';
-import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  ContentMetadata,
+  ExternalLink,
+  PublishedModifiedInfo,
+} from '@eeacms/volto-cca-policy/helpers';
 
 function OrganisationView(props) {
   const { content } = props;
@@ -35,14 +40,16 @@ function OrganisationView(props) {
               {content?.websites?.length > 0 && (
                 <>
                   <h5>Websites</h5>
-
-                  {content.websites.map((url) => (
-                    <a key={url} href={url}>
-                      {url}
-                    </a>
-                  ))}
+                  <ul>
+                    {content.websites.map((url, index) => (
+                      <li key={index}>
+                        <ExternalLink url={url} text={url} />
+                      </li>
+                    ))}
+                  </ul>
                 </>
               )}
+
               {relatedItems.length > 0 && (
                 <>
                   <h5>Related content:</h5>
@@ -57,6 +64,8 @@ function OrganisationView(props) {
                   ))}
                 </>
               )}
+
+              <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
               {organisationDocuments.length > 0 && (
