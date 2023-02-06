@@ -1,5 +1,10 @@
 import React from 'react';
-import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  ContentMetadata,
+  ExternalLink,
+  PublishedModifiedInfo,
+} from '@eeacms/volto-cca-policy/helpers';
 
 function InformationPortalView(props) {
   const { content } = props;
@@ -19,24 +24,21 @@ function InformationPortalView(props) {
               />
 
               <h4>Reference information</h4>
-              {content?.websites?.length > 0 && (
-                <>
-                  <h5>Websites</h5>
 
-                  {content.websites
-                    .map((url) => (
-                      <>
-                        {url}
-                        <br />
-                      </>
-                    ))
-                    .map((url) => (
-                      <a key={url} href={url}>
-                        {url}
-                      </a>
+              {content?.websites?.length > 0 && (
+                <div id="websites" className="section">
+                  <h5>Websites</h5>
+                  <ul>
+                    {content.websites.map((url, index) => (
+                      <li key={index}>
+                        <ExternalLink url={url} text={url} />
+                      </li>
                     ))}
-                </>
+                  </ul>
+                </div>
               )}
+
+              <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
               <div style={{}}>

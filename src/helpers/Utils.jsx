@@ -45,6 +45,7 @@ export const PublishedModifiedInfo = (props) => {
     dateFormatOptions,
   );
 
+  // TODO fix wrong information for some cases. Test for each content type.
   return (
     <div className="published-modified-info">
       <p>
