@@ -31,18 +31,18 @@ function ToolView(props) {
               {content?.websites?.length > 0 && (
                 <>
                   <h5>Websites</h5>
-
-                  {content.websites.map((url) =>
-                    (
+                  {content.websites
+                    .map((url) => (
                       <>
                         {url}
                         <br />
                       </>
-                    ).map((url) => (
+                    ))
+                    .map((url) => (
                       <a key={url} href={url}>
                         {url}
                       </a>
-                    )),
+                    ))}
                   )}
                 </>
               )}
