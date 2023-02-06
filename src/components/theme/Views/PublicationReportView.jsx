@@ -2,7 +2,7 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  ExternalLink,
+  LinksList,
   PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 
@@ -25,16 +25,7 @@ function PublicationReportView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <>
-                  <h5>Websites</h5>
-                  <ul>
-                    {content.websites.map((url, index) => (
-                      <li key={index}>
-                        <ExternalLink url={url} text={url} />
-                      </li>
-                    ))}
-                  </ul>
-                </>
+                <LinksList title="Websites" value={content.websites} />
               )}
 
               {content.source && (

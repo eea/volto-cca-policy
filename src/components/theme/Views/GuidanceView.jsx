@@ -1,5 +1,9 @@
 import React from 'react';
-import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  ContentMetadata,
+  LinksList,
+} from '@eeacms/volto-cca-policy/helpers';
 
 function GuidanceView(props) {
   const { content } = props;
@@ -21,15 +25,7 @@ function GuidanceView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <>
-                  <h5>Websites</h5>
-
-                  {content.websites.map((url) => (
-                    <a key={url} href={url}>
-                      {url}
-                    </a>
-                  ))}
-                </>
+                <LinksList title="Websites" value={content.websites} />
               )}
 
               <h5>Source</h5>

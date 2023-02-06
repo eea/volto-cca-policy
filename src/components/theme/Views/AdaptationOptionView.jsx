@@ -2,7 +2,7 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  ExternalLink,
+  LinksList,
   PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
@@ -168,16 +168,7 @@ function AdaptationOptionView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <div id="websites" className="section">
-                  <h5>Websites</h5>
-                  <ul>
-                    {content.websites.map((url, index) => (
-                      <li key={index}>
-                        <ExternalLink url={url} text={url} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <LinksList title="Websites" value={content.websites} />
               )}
 
               <div id="source" className="section">
