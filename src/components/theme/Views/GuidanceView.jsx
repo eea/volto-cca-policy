@@ -5,33 +5,44 @@ function GuidanceView(props) {
   const { content } = props;
 
   return (
-    <div className="tool-view">
-      <div style={{}}>
-        <ContentMetadata {...props} />
+    <div className="guidance-view">
+      <div className="ui container">
+        <div className="ui grid">
+          <div className="row">
+            <div className="nine wide column left-col">
+              <div className="ui label">Guidance Document</div>
+              <h1>{content.title}</h1>
+              <h4>Description</h4>
+              <HTMLField
+                value={content.long_description}
+                className="long_description"
+              />
+              <hr />
+              <h4>Reference information</h4>
+
+              {content?.websites?.length > 0 && (
+                <>
+                  <h5>Websites</h5>
+
+                  {content.websites.map((url) => (
+                    <a key={url} href={url}>
+                      {url}
+                    </a>
+                  ))}
+                </>
+              )}
+
+              <h5>Source</h5>
+              <HTMLField value={content.source} />
+            </div>
+            <div className="three wide column right-col">
+              <div style={{}}>
+                <ContentMetadata {...props} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1>{content.title}</h1>
-      <h4>Description</h4>
-      <HTMLField
-        value={content.long_description}
-        className="long_description"
-      />
-      <hr />
-      <h4>Reference information</h4>
-
-      {content?.websites?.length > 0 && (
-        <>
-          <h5>Websites</h5>
-
-          {content.websites.map((url) => (
-            <a key={url} href={url}>
-              {url}
-            </a>
-          ))}
-        </>
-      )}
-
-      <h5>Source</h5>
-      <HTMLField value={content.source} />
     </div>
   );
 }
