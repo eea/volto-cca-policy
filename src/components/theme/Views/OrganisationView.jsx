@@ -22,7 +22,7 @@ function OrganisationView(props) {
   }
 
   return (
-    <div className="tool-view">
+    <div className="organisation-view">
       <div className="ui container">
         <div className="ui grid">
           <div className="row">
