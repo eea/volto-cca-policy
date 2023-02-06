@@ -1,17 +1,13 @@
 import React from 'react';
-import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  ContentMetadata,
+  ExternalLink,
+  PublishedModifiedInfo,
+} from '@eeacms/volto-cca-policy/helpers';
 
 function ProjectView(props) {
   const { content } = props;
-  const modification_date = new Date(content.modification_date).toLocaleString(
-    'en-us',
-    {
-      month: 'long',
-      year: 'numeric',
-      day: 'numeric',
-    },
-  );
-
   return (
     <div className="project-view">
       <div className="ui container">
@@ -44,26 +40,17 @@ function ProjectView(props) {
               {content?.websites?.length > 0 && (
                 <>
                   <h5>Websites</h5>
-
-                  {content.websites
-                    .map((url) => (
-                      <>
-                        {url}
-                        <br />
-                      </>
-                    ))
-                    .map((url) => (
-                      <a key={url} href={url}>
-                        {url}
-                      </a>
+                  <ul>
+                    {content.websites.map((url, index) => (
+                      <li key={index}>
+                        <ExternalLink url={url} text={url} />
+                      </li>
                     ))}
+                  </ul>
                 </>
               )}
-              <p>
-                <br />
-                <strong>Last Modified in Climate-ADAPT</strong>
-                <span>{modification_date}</span>
-              </p>
+
+              <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
               <div style={{}}>
