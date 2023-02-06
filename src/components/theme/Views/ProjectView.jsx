@@ -3,16 +3,25 @@ import { HTMLField, ContentMetadata } from '@eeacms/volto-cca-policy/helpers';
 
 function ProjectView(props) {
   const { content } = props;
-  const modification_date = new Date(content.modification_date).toLocaleString('en-us',{month:'long', year:'numeric', day:'numeric'});
+  const modification_date = new Date(content.modification_date).toLocaleString(
+    'en-us',
+    {
+      month: 'long',
+      year: 'numeric',
+      day: 'numeric',
+    },
+  );
 
   return (
     <div className="project-view">
-    <div className="ui container">
-      <div className="ui grid">
-        <div className="row">
-          <div className="nine wide column left-col">
-            <div className="ui label">Project</div>
-              <h1>{content.title} ({content.acronym})</h1>
+      <div className="ui container">
+        <div className="ui grid">
+          <div className="row">
+            <div className="nine wide column left-col">
+              <div className="ui label">Project</div>
+              <h1>
+                {content.title} ({content.acronym})
+              </h1>
               <h4>Description</h4>
               <HTMLField
                 value={content.long_description}
@@ -22,10 +31,7 @@ function ProjectView(props) {
               <h5>Lead</h5>
               <p>{content.lead}</p>
               <h5>Partners</h5>
-              <HTMLField
-                value={content.partners}
-                className="partners"
-              />
+              <HTMLField value={content.partners} className="partners" />
               {content.funding && (
                 <>
                   <h5>Source of funding</h5>
@@ -40,16 +46,23 @@ function ProjectView(props) {
                   <h5>Websites</h5>
 
                   {content.websites
-                    .map((url) => <>{url}<br /></>)
                     .map((url) => (
-                    <a key={url} href={url}>
-                      {url}
-                    </a>
-                  ))}
+                      <>
+                        {url}
+                        <br />
+                      </>
+                    ))
+                    .map((url) => (
+                      <a key={url} href={url}>
+                        {url}
+                      </a>
+                    ))}
                 </>
               )}
-              <p><br/>
-                <strong>Last Modified in Climate-ADAPT</strong> <span>{modification_date}</span>
+              <p>
+                <br />
+                <strong>Last Modified in Climate-ADAPT</strong>
+                <span>{modification_date}</span>
               </p>
             </div>
             <div className="three wide column right-col">
@@ -60,7 +73,7 @@ function ProjectView(props) {
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 
