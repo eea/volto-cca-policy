@@ -79,9 +79,8 @@ function VideoView(props) {
                 <>
                   <h4>Contributor</h4>
                   {content.contributor_list
-                    .map((item) => item.title)
-                    .sort()
-                    .join('<br />')}
+                    .map((item) => <>{item.title}<br /></>)
+                    .sort()}
                   {content.other_contributor}
                 </>
               )}
