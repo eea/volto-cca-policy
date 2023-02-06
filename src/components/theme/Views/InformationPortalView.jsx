@@ -10,7 +10,7 @@ function InformationPortalView(props) {
   const { content } = props;
 
   return (
-    <div className="tool-view">
+    <div className="information-portal-view">
       <div className="ui container">
         <div className="ui grid">
           <div className="row">
