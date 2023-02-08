@@ -20,7 +20,7 @@ export const ExternalLink = (props) => {
 
   return (
     <a href={url}>
-      <i aria-hidden="true" className="icon ri-share-box-fill" />
+      <i aria-hidden="true" className="ri-external-link-line" />
       {text}
     </a>
   );

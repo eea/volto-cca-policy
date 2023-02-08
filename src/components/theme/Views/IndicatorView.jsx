@@ -3,6 +3,7 @@ import {
   HTMLField,
   ContentMetadata,
   LinksList,
+  PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 
 function IndicatorView(props) {
@@ -30,6 +31,7 @@ function IndicatorView(props) {
 
               <h5>Source</h5>
               <HTMLField value={content.source} />
+              <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
               <div style={{}}>

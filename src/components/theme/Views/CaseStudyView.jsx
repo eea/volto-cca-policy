@@ -3,6 +3,7 @@ import {
   HTMLField,
   ContentMetadata,
   LinksList,
+  PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 
 function CaseStudyView(props) {
@@ -33,6 +34,7 @@ function CaseStudyView(props) {
 
               <h5>Source</h5>
               <HTMLField value={content.source} />
+              <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
               <div style={{}}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {UniversalLink} from '@plone/volto/components'
 import {
   HTMLField,
   ContentMetadata,
@@ -47,9 +48,9 @@ function OrganisationView(props) {
 
                   {relatedItems.map((item, index) => (
                     <>
-                      <a key={index} href={item['@id']}>
+                      <UniversalLink key={index} item={item}>
                         {item.title}
-                      </a>
+                      </UniversalLink>
                       <br />
                     </>
                   ))}
@@ -68,6 +69,7 @@ function OrganisationView(props) {
                   {organisationDocuments.map((item, index) => (
                     <>
                       <a key={index} href={item['@id']}>
+                        <i class="ri-file-line" />
                         {item.title}
                       </a>
                       <br />
