@@ -3,7 +3,7 @@ import {
   HTMLField,
   ContentMetadata,
   LinksList,
-  PublishedModifiedInfo
+  PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 
 function GuidanceView(props) {

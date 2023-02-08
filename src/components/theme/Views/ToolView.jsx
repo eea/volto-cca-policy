@@ -37,14 +37,12 @@ function ToolView(props) {
               {content?.contributor_list?.length > 0 && (
                 <>
                   <h4>Contributor</h4>
-                  {content.contributor_list.sort().map((item) =>
-                    (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    )
-                  )}
+                  {content.contributor_list.sort().map((item) => (
+                    <>
+                      {item.title}
+                      <br />
+                    </>
+                  ))}
                 </>
               )}
 
