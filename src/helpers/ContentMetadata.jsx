@@ -4,6 +4,7 @@ import {
   SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
+import { UniversalLink } from '@plone/volto/components';
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -295,8 +296,6 @@ function ItemsList(props) {
 function ContentMetadata(props) {
   const { content } = props;
 
-  // console.log(content);
-
   if (content['@type'] === 'eea.climateadapt.adaptationoption') {
     return (
       <div className="content-metadata">
@@ -341,8 +340,20 @@ function ContentMetadata(props) {
             <GeoChar value={content.geochars} />
           </>
         )}
-        <h5>Case studies related to this option:</h5>
-        <p>TODO</p>
+        {content.related_case_studies?.length > 0 && (
+          <>
+            <h5>Case studies related to this option</h5>
+            <ul className="related-case-studies">
+              {content.related_case_studies.map((item, index) => (
+                <li key={index}>
+                  <UniversalLink key={index} href={item.url}>
+                    {item.title}
+                  </UniversalLink>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     );
   }
