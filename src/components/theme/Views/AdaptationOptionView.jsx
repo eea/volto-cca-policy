@@ -52,7 +52,7 @@ const dataDisplay = [
   },
   {
     type: 'HTMLField',
-    field: 'life_time',
+    field: 'lifetime',
     section: 'life_time',
     title: 'Life Time',
   },
