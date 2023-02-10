@@ -146,8 +146,8 @@ function CaseStudyView(props) {
                       </div>
                     </Fragment>
                   ))}
-                  </>
-                )}
+                </>
+              )}
               <h4>Challenges</h4>
               <HTMLField value={content.challenges} className="challenges" />
               <h4>Objectives</h4>
