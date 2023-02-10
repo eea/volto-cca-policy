@@ -46,21 +46,32 @@ export const LinksList = (props) => {
 export const PublishedModifiedInfo = (props) => {
   const { content } = props;
 
+  const cca_modif = content.cca_last_modified;
+  const cca_publ = content.cca_published;
+
+  let published = null;
+  let modified = null;
   const dateFormatOptions = {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   };
-
-  const published = new Date(content.publication_date).toLocaleString(
-    'default',
-    dateFormatOptions,
-  );
-
-  const modified = new Date(content.modification_date).toLocaleString(
-    'default',
-    dateFormatOptions,
-  );
+  if (cca_modif !== undefined) {
+    modified = new Date(cca_modif).toLocaleString('default', dateFormatOptions);
+  } else {
+    modified = new Date(content.modification_date).toLocaleString(
+      'default',
+      dateFormatOptions,
+    );
+  }
+  if (cca_publ !== undefined) {
+    published = new Date(cca_publ).toLocaleString('default', dateFormatOptions);
+  } else {
+    published = new Date(content.publication_date).toLocaleString(
+      'default',
+      dateFormatOptions,
+    );
+  }
 
   // TODO fix wrong information for some cases. Test for each content type.
   return (
