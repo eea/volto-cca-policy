@@ -6,6 +6,20 @@ import {
   PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 
+const PrimaryPhoto = (props) => {
+  const { content } = props;
+
+  return (
+    <div>
+      <img
+        src={content.primary_photo.scales.preview.download}
+        alt={content.title}
+      />
+      <p>{content.primary_photo_copyright}</p>
+    </div>
+  );
+};
+
 function CaseStudyView(props) {
   const { content } = props;
 
@@ -17,6 +31,8 @@ function CaseStudyView(props) {
             <div className="nine wide column left-col">
               <div className="ui label">Case Study</div>
               <h1>{content.title}</h1>
+              <PrimaryPhoto {...props} />
+
               <HTMLField
                 value={content.long_description}
                 className="long_description"
