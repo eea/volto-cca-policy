@@ -9,7 +9,7 @@ import {
 const PrimaryPhoto = (props) => {
   const { content } = props;
 
-  return (
+  return content.primary_photo !== null ? (
     <div>
       <img
         src={content.primary_photo.scales.preview.download}
@@ -17,7 +17,7 @@ const PrimaryPhoto = (props) => {
       />
       <p>{content.primary_photo_copyright}</p>
     </div>
-  );
+  ) : null;
 };
 
 function CaseStudyView(props) {
@@ -29,7 +29,7 @@ function CaseStudyView(props) {
         <div className="ui grid">
           <div className="row">
             <div className="nine wide column left-col">
-              <div className="ui label">Case Study</div>
+              <div className="ui label">Case studies</div>
               <h1>{content.title}</h1>
               <PrimaryPhoto {...props} />
 
