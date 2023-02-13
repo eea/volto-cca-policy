@@ -76,6 +76,23 @@ const sectionID = (title) => {
   return found.section;
 };
 
+const PhotoGallery = (props) => {
+  const { content } = props;
+  const photos = content.cca_gallery;
+  return (
+    <>
+      <h5>Case Study Illustrations</h5>
+      <ul className="gallery-placeholder">
+        {photos.map((photo) => (
+          <li>
+            <a href={photo.url}>{photo.title}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
 const SectionsMenu = (props) => {
   const { sections } = props;
 
@@ -165,6 +182,7 @@ function CaseStudyView(props) {
             </div>
             <div className="three wide column right-col">
               <div style={{}}>
+                <PhotoGallery {...props} />
                 <ContentMetadata {...props} />
               </div>
             </div>
