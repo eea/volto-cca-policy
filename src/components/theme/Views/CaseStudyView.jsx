@@ -38,7 +38,7 @@ const dataDisplay = [
   },
   {
     type: 'HTMLField',
-    field: 'adapt_options',
+    field: 'adaptationoptions',
     section: 'adapt_options_anchor',
     title: 'Adaptation Options Implemented In This Case',
     group: 1,
@@ -122,6 +122,12 @@ const dataDisplay = [
   },
 ];
 
+const groups = {
+  1: 'Case Study Description',
+  2: 'Additional Details',
+  3: 'Reference Information',
+};
+
 const findSection = (title) => {
   const found = dataDisplay.filter((item) => item.title === title);
   if (found.length > 0) {
@@ -156,53 +162,22 @@ const PhotoGallery = (props) => {
 };
 
 const SectionsMenu = (props) => {
-  const { sections } = props;
+  const { sections, title } = props;
 
   return (
     <>
       {sections.length > 0 && (
         <>
-          <h5>Case Study Description</h5>
+          <h5>{title}</h5>
           <ul>
-            {sections
-              .filter((item) => item.group === 1)
-              .map((data, index) => (
-                <li key={index}>
-                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
-                </li>
-              ))}
+            {sections.map((data, index) => (
+              <li key={index}>
+                <a href={'#' + sectionID(data.title)}>{data.title}</a>
+              </li>
+            ))}
           </ul>
         </>
       )}
-      {sections.length > 0 && (
-        <>
-          <h5>Additional Details</h5>
-          <ul>
-            {sections
-              .filter((item) => item.group === 2)
-              .map((data, index) => (
-                <li key={index}>
-                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
-                </li>
-              ))}
-          </ul>
-        </>
-      )}
-      {sections.length > 0 && (
-        <>
-          <h5>Reference Information</h5>
-          <ul>
-            {sections
-              .filter((item) => item.group === 3)
-              .map((data, index) => (
-                <li key={index}>
-                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
-                </li>
-              ))}
-          </ul>
-        </>
-      )}
-      <hr />
     </>
   );
 };
@@ -210,8 +185,16 @@ const SectionsMenu = (props) => {
 function CaseStudyView(props) {
   const { content } = props;
 
-  const usedSections = dataDisplay.filter((data) =>
-    content.hasOwnProperty(data.field),
+  const usedSectionsGroup1 = dataDisplay.filter((data) =>
+    data.group === 1 && content.hasOwnProperty(data.field),
+  );
+
+  const usedSectionsGroup2 = dataDisplay.filter((data) =>
+    data.group === 2 && content.hasOwnProperty(data.field),
+  );
+
+  const usedSectionsGroup3 = dataDisplay.filter((data) =>
+    data.group === 3 && content.hasOwnProperty(data.field),
   );
 
   return (
@@ -229,11 +212,48 @@ function CaseStudyView(props) {
                 className="long_description"
               />
 
-              <SectionsMenu sections={usedSections} />
+              <SectionsMenu sections={usedSectionsGroup1} title={groups['1']} />
+              <SectionsMenu sections={usedSectionsGroup2} title={groups['2']} />
+              <SectionsMenu sections={usedSectionsGroup3} title={groups['3']} />
 
-              {usedSections.length > 0 && (
+              {usedSectionsGroup1.length > 0 && (
                 <>
-                  {usedSections.map((data, index) => (
+                  <h4>{groups['1']}</h4>
+                  {usedSectionsGroup1.map((data, index) => (
+                    <Fragment key={index}>
+                      <div id={sectionID(data.title)} className="section">
+                        <h5 className="section-title">{data.title}</h5>
+                        <HTMLField
+                          value={content[data.field]}
+                          className="long_description"
+                        />
+                      </div>
+                    </Fragment>
+                  ))}
+                </>
+              )}
+
+              {usedSectionsGroup2.length > 0 && (
+                <>
+                  <h4>{groups['2']}</h4>
+                  {usedSectionsGroup2.map((data, index) => (
+                    <Fragment key={index}>
+                      <div id={sectionID(data.title)} className="section">
+                        <h5 className="section-title">{data.title}</h5>
+                        <HTMLField
+                          value={content[data.field]}
+                          className="long_description"
+                        />
+                      </div>
+                    </Fragment>
+                  ))}
+                </>
+              )}
+
+              {usedSectionsGroup3.length > 0 && (
+                <>
+                  <h4>{groups['3']}</h4>
+                  {usedSectionsGroup3.map((data, index) => (
                     <Fragment key={index}>
                       <div id={sectionID(data.title)} className="section">
                         <h5 className="section-title">{data.title}</h5>
