@@ -185,16 +185,16 @@ const SectionsMenu = (props) => {
 function CaseStudyView(props) {
   const { content } = props;
 
-  const usedSectionsGroup1 = dataDisplay.filter((data) =>
-    data.group === 1 && content.hasOwnProperty(data.field),
+  const usedSectionsGroup1 = dataDisplay.filter(
+    (data) => data.group === 1 && content.hasOwnProperty(data.field),
   );
 
-  const usedSectionsGroup2 = dataDisplay.filter((data) =>
-    data.group === 2 && content.hasOwnProperty(data.field),
+  const usedSectionsGroup2 = dataDisplay.filter(
+    (data) => data.group === 2 && content.hasOwnProperty(data.field),
   );
 
-  const usedSectionsGroup3 = dataDisplay.filter((data) =>
-    data.group === 3 && content.hasOwnProperty(data.field),
+  const usedSectionsGroup3 = dataDisplay.filter(
+    (data) => data.group === 3 && content.hasOwnProperty(data.field),
   );
 
   return (
