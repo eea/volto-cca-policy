@@ -55,6 +55,7 @@ const dataDisplay = [
     field: 'relevance',
     section: 'relevance_anchor',
     title: 'Importance and Relevance of Adaptation',
+    contentTitle: 'Relevance', // override the title in content section
     group: 1,
   },
   {
