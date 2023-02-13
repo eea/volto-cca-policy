@@ -118,6 +118,7 @@ const dataDisplay = [
     field: 'source',
     section: 'source',
     title: 'Source',
+    contentTitle: 'Reference', // override the title in content section
     group: 3,
   },
 ];
@@ -186,7 +187,11 @@ const SectionContent = (props) => {
   const { sectionData, content } = props;
   return (
     <div id={sectionID(sectionData.title)} className="section">
-      <h5 className="section-title">{sectionData.title}</h5>
+      <h5 className="section-title">
+        {sectionData.contentTitle !== undefined
+          ? sectionData.contentTitle
+          : sectionData.title}
+      </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
       ) : (
