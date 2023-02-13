@@ -245,7 +245,7 @@ function CaseStudyView(props) {
                           key={index}
                         />
                       ))}
-                      <hr />
+                      {groupID !== 3 ? <hr /> : null}
                     </Fragment>
                   ),
               )}
