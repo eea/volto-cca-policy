@@ -145,8 +145,8 @@ const PhotoGallery = (props) => {
     <>
       <h5>Case Study Illustrations</h5>
       <ul className="gallery-placeholder">
-        {photos.map((photo) => (
-          <li>
+        {photos.map((photo, index) => (
+          <li key={index}>
             <a href={photo.url}>{photo.title}</a>
           </li>
         ))}
