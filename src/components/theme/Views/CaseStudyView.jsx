@@ -107,7 +107,7 @@ const dataDisplay = [
     group: 3,
   },
   {
-    type: 'HTMLField',
+    type: 'LinksList',
     field: 'websites',
     section: 'websites',
     title: 'Websites',
@@ -215,6 +215,7 @@ function CaseStudyView(props) {
               <SectionsMenu sections={usedSectionsGroup1} title={groups['1']} />
               <SectionsMenu sections={usedSectionsGroup2} title={groups['2']} />
               <SectionsMenu sections={usedSectionsGroup3} title={groups['3']} />
+              <hr />
 
               {usedSectionsGroup1.length > 0 && (
                 <>
@@ -230,6 +231,7 @@ function CaseStudyView(props) {
                       </div>
                     </Fragment>
                   ))}
+                  <hr />
                 </>
               )}
 
@@ -247,6 +249,7 @@ function CaseStudyView(props) {
                       </div>
                     </Fragment>
                   ))}
+                  <hr />
                 </>
               )}
 
@@ -257,29 +260,36 @@ function CaseStudyView(props) {
                     <Fragment key={index}>
                       <div id={sectionID(data.title)} className="section">
                         <h5 className="section-title">{data.title}</h5>
-                        <HTMLField
-                          value={content[data.field]}
-                          className="long_description"
-                        />
+                        {data.type === 'LinksList' ? (
+                          <LinksList value={content[data.field]} />
+                        ) : (
+                          <HTMLField
+                            value={content[data.field]}
+                            className="long_description"
+                          />
+                        )}
                       </div>
                     </Fragment>
                   ))}
                 </>
               )}
-              <h4>Challenges</h4>
-              <HTMLField value={content.challenges} className="challenges" />
-              <h4>Objectives</h4>
-              <HTMLField value={content.objectives} className="objectives" />
-              <hr />
-              <h4>Reference information</h4>
 
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
-              )}
-
-              <h5>Source</h5>
-              <HTMLField value={content.source} />
               <PublishedModifiedInfo {...props} />
+              <hr />
+              <p>
+                Please contact us for any other enquiry on this Case Study or to
+                share a new Case Study (email{' '}
+                <span className="link-mailto">
+                  <a
+                    href="mailto: climate.adapt@eea.europa.eu"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    climate.adapt@eea.europa.eu
+                  </a>
+                </span>
+                )
+              </p>
             </div>
             <div className="three wide column right-col">
               <div style={{}}>
