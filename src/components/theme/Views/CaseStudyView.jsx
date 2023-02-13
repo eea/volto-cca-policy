@@ -24,39 +24,101 @@ const PrimaryPhoto = (props) => {
 const dataDisplay = [
   {
     type: 'HTMLField',
+    field: 'challenges',
+    section: 'challenges_anchor',
+    title: 'Challenges',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'objectives',
+    section: 'objectives_anchor',
+    title: 'Objectives',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'adapt_options',
+    section: 'adapt_options_anchor',
+    title: 'Adaptation Options Implemented In This Case',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'solutions',
+    section: 'solutions_anchor',
+    title: 'Solutions',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'relevance',
+    section: 'relevance_anchor',
+    title: 'Importance and Relevance of Adaptation',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
     field: 'stakeholder_participation',
     section: 'stake_holder_anchor',
     title: 'Stakeholder participation',
+    group: 2,
   },
   {
     type: 'HTMLField',
     field: 'success_limitations',
     section: 'success_limitations_anchor',
     title: 'Success and Limiting Factors',
+    group: 2,
   },
   {
     type: 'HTMLField',
     field: 'cost_benefit',
     section: 'cost_benefit_anchor',
     title: 'Costs and Benefits',
+    group: 2,
   },
   {
     type: 'HTMLField',
     field: 'legal_aspects',
     section: 'legal_aspects',
     title: 'Legal Aspects',
+    group: 2,
   },
   {
     type: 'HTMLField',
     field: 'implementation_time',
     section: 'implementation_time_anchor',
     title: 'Implementation Time',
+    group: 2,
   },
   {
     type: 'HTMLField',
     field: 'lifetime',
     section: 'life_time_anchor',
     title: 'Life Time',
+    group: 2,
+  },
+  {
+    type: 'HTMLField',
+    field: 'contact',
+    section: 'contact',
+    title: 'Contact',
+    group: 3,
+  },
+  {
+    type: 'HTMLField',
+    field: 'websites',
+    section: 'websites',
+    title: 'Websites',
+    group: 3,
+  },
+  {
+    type: 'HTMLField',
+    field: 'source',
+    section: 'source',
+    title: 'Source',
+    group: 3,
   },
 ];
 
@@ -100,27 +162,46 @@ const SectionsMenu = (props) => {
     <>
       {sections.length > 0 && (
         <>
-          <h5 className="Adaptation-option-selector">Additional Details</h5>
+          <h5>Case Study Description</h5>
           <ul>
-            {sections.map((data, index) => (
-              <li key={index}>
-                <a href={'#' + sectionID(data.title)}>{data.title}</a>
-              </li>
-            ))}
+            {sections
+              .filter((item) => item.group === 1)
+              .map((data, index) => (
+                <li key={index}>
+                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                </li>
+              ))}
           </ul>
         </>
       )}
-      <>
-        <h5 className="Adaptation-option-selector">Reference information</h5>
-        <ul>
-          <li>
-            <a href="#websites">Websites</a>
-          </li>
-          <li>
-            <a href="#source">Source</a>
-          </li>
-        </ul>
-      </>
+      {sections.length > 0 && (
+        <>
+          <h5>Additional Details</h5>
+          <ul>
+            {sections
+              .filter((item) => item.group === 2)
+              .map((data, index) => (
+                <li key={index}>
+                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                </li>
+              ))}
+          </ul>
+        </>
+      )}
+      {sections.length > 0 && (
+        <>
+          <h5>Reference Information</h5>
+          <ul>
+            {sections
+              .filter((item) => item.group === 3)
+              .map((data, index) => (
+                <li key={index}>
+                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                </li>
+              ))}
+          </ul>
+        </>
+      )}
       <hr />
     </>
   );
