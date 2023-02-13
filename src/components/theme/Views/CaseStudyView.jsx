@@ -51,7 +51,7 @@ const dataDisplay = [
     group: 1,
   },
   {
-    type: 'HTMLField',
+    type: 'RelevanceItems',
     field: 'relevance',
     section: 'relevance_anchor',
     title: 'Importance and Relevance of Adaptation',
@@ -206,6 +206,10 @@ const SectionContent = (props) => {
         <LinksList value={content[sectionData.field]} />
       ) : sectionData.type === 'AdaptationOptionsItems' ? (
         <LinksList value={adaptationOptionsLinks()} withText={true} />
+      ) : sectionData.type === 'RelevanceItems' ? (
+        content[sectionData.field].map((relevanceItem, index) => (
+          <p key={index}>{relevanceItem.title}</p>
+        ))
       ) : (
         <HTMLField
           value={content[sectionData.field]}
