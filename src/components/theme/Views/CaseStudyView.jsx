@@ -182,20 +182,31 @@ const SectionsMenu = (props) => {
   );
 };
 
+const SectionContent = (props) => {
+  const { sectionData, content } = props;
+  return (
+    <div id={sectionID(sectionData.title)} className="section">
+      <h5 className="section-title">{sectionData.title}</h5>
+      {sectionData.type === 'LinksList' ? (
+        <LinksList value={content[sectionData.field]} />
+      ) : (
+        <HTMLField
+          value={content[sectionData.field]}
+          className="long_description"
+        />
+      )}
+    </div>
+  );
+};
+
 function CaseStudyView(props) {
   const { content } = props;
 
-  const usedSectionsGroup1 = dataDisplay.filter(
-    (data) => data.group === 1 && content.hasOwnProperty(data.field),
-  );
-
-  const usedSectionsGroup2 = dataDisplay.filter(
-    (data) => data.group === 2 && content.hasOwnProperty(data.field),
-  );
-
-  const usedSectionsGroup3 = dataDisplay.filter(
-    (data) => data.group === 3 && content.hasOwnProperty(data.field),
-  );
+  const usedSections = (group) => {
+    return dataDisplay.filter(
+      (data) => data.group === group && content.hasOwnProperty(data.field),
+    );
+  };
 
   return (
     <div className="case-study-view">
@@ -212,66 +223,26 @@ function CaseStudyView(props) {
                 className="long_description"
               />
 
-              <SectionsMenu sections={usedSectionsGroup1} title={groups['1']} />
-              <SectionsMenu sections={usedSectionsGroup2} title={groups['2']} />
-              <SectionsMenu sections={usedSectionsGroup3} title={groups['3']} />
+              <SectionsMenu sections={usedSections(1)} title={groups['1']} />
+              <SectionsMenu sections={usedSections(2)} title={groups['2']} />
+              <SectionsMenu sections={usedSections(3)} title={groups['3']} />
               <hr />
 
-              {usedSectionsGroup1.length > 0 && (
-                <>
-                  <h4>{groups['1']}</h4>
-                  {usedSectionsGroup1.map((data, index) => (
+              {[1, 2, 3].map(
+                (groupID, index) =>
+                  usedSections(groupID).length > 0 && (
                     <Fragment key={index}>
-                      <div id={sectionID(data.title)} className="section">
-                        <h5 className="section-title">{data.title}</h5>
-                        <HTMLField
-                          value={content[data.field]}
-                          className="long_description"
+                      <h4>{groups[groupID]}</h4>
+                      {usedSections(groupID).map((data, index) => (
+                        <SectionContent
+                          sectionData={data}
+                          content={content}
+                          key={index}
                         />
-                      </div>
+                      ))}
+                      <hr />
                     </Fragment>
-                  ))}
-                  <hr />
-                </>
-              )}
-
-              {usedSectionsGroup2.length > 0 && (
-                <>
-                  <h4>{groups['2']}</h4>
-                  {usedSectionsGroup2.map((data, index) => (
-                    <Fragment key={index}>
-                      <div id={sectionID(data.title)} className="section">
-                        <h5 className="section-title">{data.title}</h5>
-                        <HTMLField
-                          value={content[data.field]}
-                          className="long_description"
-                        />
-                      </div>
-                    </Fragment>
-                  ))}
-                  <hr />
-                </>
-              )}
-
-              {usedSectionsGroup3.length > 0 && (
-                <>
-                  <h4>{groups['3']}</h4>
-                  {usedSectionsGroup3.map((data, index) => (
-                    <Fragment key={index}>
-                      <div id={sectionID(data.title)} className="section">
-                        <h5 className="section-title">{data.title}</h5>
-                        {data.type === 'LinksList' ? (
-                          <LinksList value={content[data.field]} />
-                        ) : (
-                          <HTMLField
-                            value={content[data.field]}
-                            className="long_description"
-                          />
-                        )}
-                      </div>
-                    </Fragment>
-                  ))}
-                </>
+                  ),
               )}
 
               <PublishedModifiedInfo {...props} />
