@@ -37,7 +37,7 @@ const dataDisplay = [
     group: 1,
   },
   {
-    type: 'HTMLField',
+    type: 'AdaptationOptionsItems',
     field: 'adaptationoptions',
     section: 'adapt_options_anchor',
     title: 'Adaptation Options Implemented In This Case',
@@ -185,6 +185,15 @@ const SectionsMenu = (props) => {
 
 const SectionContent = (props) => {
   const { sectionData, content } = props;
+
+  const adaptationOptionsLinks = () => {
+    let list = [];
+    for (let adaptOpt of content[sectionData.field]) {
+      list.push([adaptOpt['@id'], adaptOpt.title]);
+    }
+    return list;
+  };
+
   return (
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
@@ -194,6 +203,8 @@ const SectionContent = (props) => {
       </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
+      ) : sectionData.type === 'AdaptationOptionsItems' ? (
+        <LinksList value={adaptationOptionsLinks()} withText={true} />
       ) : (
         <HTMLField
           value={content[sectionData.field]}

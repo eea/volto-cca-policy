@@ -27,20 +27,35 @@ export const ExternalLink = (props) => {
 };
 
 export const LinksList = (props) => {
-  let { title, value } = props;
+  let { title, value, withText } = props;
 
-  return (
-    <>
-      <h5>{title}</h5>
-      <ul>
-        {value.map((url, index) => (
-          <li key={index}>
-            <ExternalLink url={url} text={url} />
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  if (withText === true) {
+    return (
+      <>
+        <h5>{title}</h5>
+        <ul>
+          {value.map((linkItem, index) => (
+            <li key={index}>
+              <ExternalLink url={linkItem[0]} text={linkItem[1]} />
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h5>{title}</h5>
+        <ul>
+          {value.map((url, index) => (
+            <li key={index}>
+              <ExternalLink url={url} text={url} />
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
 };
 
 export const PublishedModifiedInfo = (props) => {
