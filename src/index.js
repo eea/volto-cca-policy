@@ -9,6 +9,8 @@ import PublicationReportView from './components/theme/Views/PublicationReportVie
 import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 
+import installBlocks from './components/manage/Blocks';
+
 const applyConfig = (config) => {
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -46,7 +48,7 @@ const applyConfig = (config) => {
   config.views.contentTypesViews['eea.climateadapt.tool'] = ToolView;
   config.views.contentTypesViews['eea.climateadapt.video'] = VideoView;
 
-  return config;
+  return installBlocks(config);
 };
 
 export default applyConfig;
