@@ -390,6 +390,12 @@ function ContentMetadata(props) {
             <ItemsList value={content.elements} />
           </>
         )}
+        {content.governance_level?.length > 0 && (
+          <>
+            <h5>Governance level:</h5>
+            <ItemsList value={content.governance_level} join="<br />" />
+          </>
+        )}
         {content.geochars && (
           <>
             <h5>Geographic characterisation:</h5>
