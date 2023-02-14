@@ -223,9 +223,22 @@ const SectionContent = (props) => {
 function CaseStudyView(props) {
   const { content } = props;
 
+  const hasValue = (field) => {
+    if (!content.hasOwnProperty(field)) {
+      return false;
+    }
+    if (content[field] === undefined || content[field] === null) {
+      return false;
+    }
+    if (Array.isArray(content[field]) && content[field].length === 0) {
+      return false;
+    }
+    return true;
+  };
+
   const usedSections = (group) => {
     return dataDisplay.filter(
-      (data) => data.group === group && content.hasOwnProperty(data.field),
+      (data) => data.group === group && hasValue(data.field),
     );
   };
 
