@@ -205,7 +205,11 @@ const SectionContent = (props) => {
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
       ) : sectionData.type === 'AdaptationOptionsItems' ? (
-        <LinksList value={adaptationOptionsLinks()} withText={true} />
+        <LinksList
+          value={adaptationOptionsLinks()}
+          withText={true}
+          isInternal={true}
+        />
       ) : sectionData.type === 'RelevanceItems' ? (
         content[sectionData.field].map((relevanceItem, index) => (
           <p key={index}>{relevanceItem.title}</p>

@@ -1,3 +1,5 @@
+import { UniversalLink } from '@plone/volto/components';
+
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
     return <></>;
@@ -27,7 +29,11 @@ export const ExternalLink = (props) => {
 };
 
 export const LinksList = (props) => {
-  let { title, value, withText } = props;
+  let { title, value, withText, isInternal } = props;
+
+  if (isInternal === undefined) {
+    isInternal = false;
+  }
 
   if (withText === true) {
     return (
@@ -36,7 +42,11 @@ export const LinksList = (props) => {
         <ul>
           {value.map((linkItem, index) => (
             <li key={index}>
-              <ExternalLink url={linkItem[0]} text={linkItem[1]} />
+              {isInternal ? (
+                <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
+              ) : (
+                <ExternalLink url={linkItem[0]} text={linkItem[1]} />
+              )}
             </li>
           ))}
         </ul>
