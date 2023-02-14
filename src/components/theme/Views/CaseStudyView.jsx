@@ -163,6 +163,27 @@ const PhotoGallery = (props) => {
   );
 };
 
+const DocumentsList = (props) => {
+  const { content } = props;
+  const files = content.cca_files;
+  if (files.length === 0) {
+    return null;
+  }
+
+  return (
+    <>
+      <h5>Case Studies Documents ({files.length})</h5>
+      <ul className="documents-list">
+        {files.map((file, index) => (
+          <li key={index}>
+            <a href={file.url}>{file.title}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
 const SectionsMenu = (props) => {
   const { sections, title } = props;
 
@@ -303,6 +324,7 @@ function CaseStudyView(props) {
             <div className="three wide column right-col">
               <div style={{}}>
                 <PhotoGallery {...props} />
+                <DocumentsList {...props} />
                 <ContentMetadata {...props} />
               </div>
             </div>
