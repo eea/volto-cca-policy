@@ -17,7 +17,8 @@ function GuidanceView(props) {
             <div className="nine wide column left-col">
               <div className="ui label">Guidance Document</div>
               <h1>{content.title}</h1>
-              <h4>Description</h4>
+              <hr />
+              <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
