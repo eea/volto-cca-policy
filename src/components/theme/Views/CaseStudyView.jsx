@@ -176,7 +176,10 @@ const DocumentsList = (props) => {
       <ul className="documents-list">
         {files.map((file, index) => (
           <li key={index}>
-            <a href={file.url}>{file.title}</a>
+            <a href={file.url}>
+              <i className="file alternate icon"></i>
+              {file.title}
+            </a>
           </li>
         ))}
       </ul>
