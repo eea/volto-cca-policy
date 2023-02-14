@@ -9,7 +9,7 @@ const LayoutSettingsEdit = (props) => {
   return (
     <>
       <h3>Page layout settings</h3>
-      <LayoutSettingsView {...props} />
+      <LayoutSettingsView {...props} mode="edit" />
       <SidebarPortal selected={props.selected}>
         {props.selected && (
           <BlockDataForm
