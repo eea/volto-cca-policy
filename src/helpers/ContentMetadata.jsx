@@ -247,13 +247,15 @@ function GeoChar(props) {
 
 function PublicationDateInfo(props) {
   const { value, portaltype } = props;
-  let tooltipText = '';
+  let tooltipText =
+    'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
 
   if (portaltype === 'eea.climateadapt.video') {
     tooltipText = 'The date refers to the date of release of the video';
-  } else {
+  }
+  if (portaltype === 'eea.climateadapt.guidancedocument') {
     tooltipText =
-      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
+      'The date refers to the latest date of publication of the item';
   }
 
   const publicationYear = new Date(value).getFullYear();
