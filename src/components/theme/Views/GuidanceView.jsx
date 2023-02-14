@@ -30,8 +30,12 @@ function GuidanceView(props) {
                 <LinksList title="Websites" value={content.websites} />
               )}
 
-              <h5>Source</h5>
-              <HTMLField value={content.source} />
+              {content?.source && (
+                <>
+                  <h5>Source</h5>
+                  <HTMLField value={content.source} />
+                </>
+              )}
               <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
