@@ -1,12 +1,50 @@
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import mapSVG from './map.svg';
 
 const serviceUrl =
-  'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer';
+  'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer/';
 
-console.log('ol', ol);
+// console.log('ol', ol);
+
+function r() {
+  return Math.floor(Math.random() * 256);
+}
+
+const fillColors = {
+  // 'Lost To Sea Since 1965': [0, 0, 0, 1],
+  // 'Urban/Built-up': [104, 104, 104, 1],
+  // Shacks: [115, 76, 0, 1],
+  // Industry: [230, 0, 0, 1],
+  // Wasteland: [230, 0, 0, 1],
+  // Caravans: [0, 112, 255, 0.5],
+  // Defence: [230, 152, 0, 0.5],
+  // Transport: [230, 152, 0, 1],
+  // 'Open Countryside': [255, 255, 115, 1],
+  // Woodland: [38, 115, 0, 1],
+  // 'Managed Recreation/Sport': [85, 255, 0, 1],
+  // 'Amenity Water': [0, 112, 255, 1],
+  // 'Inland Water': [0, 38, 115, 1],
+};
 
 const makeLayer = (layerId) => {
   // return null;
+
+  const fillStyle = new ol.style.Style({
+    fill: new ol.style.Fill(),
+    stroke: new ol.style.Stroke({
+      color: [0, 0, 0, 1],
+      width: 0.5,
+    }),
+  });
+
+  const pinStyle = new ol.style.Style({
+    image: new ol.style.Icon({
+      src: mapSVG,
+      color: '#BADA55',
+      crossOrigin: 'anonymous',
+    }),
+  });
+
   const vectorSource = new ol.source.Vector({
     format: new ol.format.EsriJSON(),
     url: function (extent, resolution, projection) {
@@ -47,25 +85,32 @@ const makeLayer = (layerId) => {
         tileSize: 512,
       }),
     ),
-    // attributions:
-    //   'University of Leicester (commissioned by the ' +
-    //   '<a href="https://www.arcgis.com/home/item.html?id=' +
-    //   'd5f05b1dc3dd4d76906c421bc1727805">National Trust</a>)',
+    attributions: 'European Environment Agency',
   });
 
-  const vector = new ol.layer.Vector({
+  return {
     source: vectorSource,
-    // style: function (feature) {
-    //   const classify = feature.get('LU_2014');
-    //   const color = fillColors[classify] || [0, 0, 0, 0];
-    //   style.getFill().setColor(color);
-    //   return style;
-    // },
-    // opacity: 0.7,
-  });
+    style: function (feature) {
+      // console.log('feature', feature);
 
-  return vector;
+      const country_code = feature.get('CNTR_CODE');
+      const nuts_id = feature.get('NUTS_ID');
+      const nuts_name = feature.get('NUTS_NAME');
+      const level_code = feature.get('LEVEL_CODE');
+      // const shape = feature.get('SHAPE');
+
+      console.log({ country_code, nuts_id, nuts_name, level_code, feature });
+
+      const classify = feature.get('LU_2014');
+      const color = fillColors[classify] || [r(), r(), r(), 1];
+      fillStyle.getFill().setColor(color);
+
+      return level_code ? fillStyle : pinStyle;
+    },
+    opacity: 0.7,
+  };
 };
 
-export const nuts0source = __CLIENT__ && makeLayer('0');
-export const nuts2source = __CLIENT__ && makeLayer('2');
+export const countries = __CLIENT__ && makeLayer('0');
+export const cities = __CLIENT__ && makeLayer('1');
+export const regions = __CLIENT__ && makeLayer('2');
