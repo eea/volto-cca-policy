@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Message, Container } from 'semantic-ui-react';
-import { connect } from 'react-redux';
+// import { Message, Container } from 'semantic-ui-react';
 import Map from '@eeacms/volto-openlayers-map/Map';
 import { Interactions } from '@eeacms/volto-openlayers-map/Interactions';
 import { Controls } from '@eeacms/volto-openlayers-map/Controls';
 import { Layers, Layer } from '@eeacms/volto-openlayers-map/Layers';
 import { openlayers } from '@eeacms/volto-openlayers-map';
+
+import { nuts0source, nuts2source } from './layers';
+
 import './style.less';
 
-// export function getActiveSitesURL(site_codes) {
-//   return encodeURI(
-//     `https://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000Sites/MapServer/2/query?f=json&where=SITECODE IN (${site_codes.join(
-//       ',',
-//     )})&returnGeometry=true&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID&outSR=102100`,
-//   );
-// }
-
-const View = (props) => {
+export default function View(props) {
   console.log('view');
+
   const [options, setOptions] = React.useState({});
   const [vectorSource, setVectorSource] = useState(null);
   const [tileWMSSources, setTileWMSSources] = useState([]);
@@ -45,6 +40,7 @@ const View = (props) => {
         serverType: 'geoserver',
         transition: 0,
       }),
+      // new source.
       // new source.TileWMS({
       //   extent: [
       //     -3603195.606899999,
@@ -131,29 +127,13 @@ const View = (props) => {
             <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
             {/* <Layer.Tile source={tileWMSSources[1]} zIndex={1} /> */}
             <Layer.Vector
-              source={vectorSource}
+              source={nuts0source}
               title="highlightLayer"
-              style={
-                new style.Style({
-                  fill: new style.Fill({
-                    color: 'rgba(255,255,255,0.4)',
-                  }),
-                  stroke: new style.Stroke({
-                    color: '#00A390',
-                    // color: '#F8E473',
-                    width: 3,
-                  }),
-                  image: new style.Circle({
-                    radius: 5,
-                    fill: new style.Fill({ color: 'rgba(4, 167, 125,0.6)' }),
-                    // fill: new style.Fill({ color: 'rgba(248,228,115,0.6)' }),
-                    stroke: new style.Stroke({
-                      color: 'rgba(242, 180, 87, 1)',
-                      width: 2,
-                    }),
-                  }),
-                })
-              }
+              zIndex={2}
+            />
+            <Layer.Vector
+              source={nuts2source}
+              title="highlightLayer"
               zIndex={2}
             />
           </Layers>
@@ -172,8 +152,26 @@ const View = (props) => {
       </div>
     </div>
   );
-};
+}
 
-export default connect((state) => ({
-  search: state.table_search || {},
-}))(View);
+// style={
+//   new style.Style({
+//     fill: new style.Fill({
+//       color: 'rgba(255,255,255,0.4)',
+//     }),
+//     stroke: new style.Stroke({
+//       color: '#00A390',
+//       // color: '#F8E473',
+//       width: 3,
+//     }),
+//     image: new style.Circle({
+//       radius: 5,
+//       fill: new style.Fill({ color: 'rgba(4, 167, 125,0.6)' }),
+//       // fill: new style.Fill({ color: 'rgba(248,228,115,0.6)' }),
+//       stroke: new style.Stroke({
+//         color: 'rgba(242, 180, 87, 1)',
+//         width: 2,
+//       }),
+//     }),
+//   })
+// }
