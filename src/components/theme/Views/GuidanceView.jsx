@@ -6,6 +6,24 @@ import {
   PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 
+const ContributorsList = (props) => {
+  const { content } = props;
+
+  if (
+    content.contributor_list?.length > 0 ||
+    content.other_contributor?.length > 0
+  ) {
+    return (
+      <>
+        <h5>Contributors</h5>
+        {content.other_contributor && <p>{content.other_contributor}</p>}
+      </>
+    );
+  }
+
+  return null;
+};
+
 function GuidanceView(props) {
   const { content } = props;
 
@@ -36,6 +54,7 @@ function GuidanceView(props) {
                   <HTMLField value={content.source} />
                 </>
               )}
+              <ContributorsList {...props} />
               <PublishedModifiedInfo {...props} />
             </div>
             <div className="three wide column right-col">
