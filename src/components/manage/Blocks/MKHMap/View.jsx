@@ -23,14 +23,14 @@ const View = (props) => {
   const [tileWMSSources, setTileWMSSources] = useState([]);
   const { extent, format, proj, style, source } = openlayers;
 
-  const { results = [], payload = {} } = props.search || {};
+  // const { results = [], payload = {} } = props.search || {};
 
-  const activePageResults = results.filter((_, index) => {
-    return (
-      index >= (payload?.activePage - 1) * payload?.row_size &&
-      index <= payload?.activePage * payload?.row_size - 1
-    );
-  });
+  // const activePageResults = results.filter((_, index) => {
+  //   return (
+  //     index >= (payload?.activePage - 1) * payload?.row_size &&
+  //     index <= payload?.activePage * payload?.row_size - 1
+  //   );
+  // });
 
   useEffect(() => {
     if (__SERVER__) return;
@@ -45,19 +45,20 @@ const View = (props) => {
         serverType: 'geoserver',
         transition: 0,
       }),
-      new source.TileWMS({
-        extent: [
-          -3603195.606899999,
-          3197087.8112000003,
-          3796164.5945000015,
-          1.1077138825000003e7,
-        ],
-        url:
-          'https://bio.discomap.eea.europa.eu/arcgis/services/ProtectedSites/Natura2000Sites/MapServer/WMSServer',
-        params: { LAYERS: '2', TILED: true },
-        serverType: 'geoserver',
-        transition: 0,
-      }),
+      // new source.TileWMS({
+      //   extent: [
+      //     -3603195.606899999,
+      //     3197087.8112000003,
+      //     3796164.5945000015,
+      //     1.1077138825000003e7,
+      //   ],
+      //   url:
+      //     // 'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer',
+      //     'https://bio.discomap.eea.europa.eu/arcgis/services/ProtectedSites/Natura2000Sites/MapServer/WMSServer',
+      //   params: { LAYERS: '2', TILED: true },
+      //   serverType: 'geoserver',
+      //   transition: 0,
+      // }),
     ]);
     /* eslint-disable-next-line */
   }, []);
@@ -115,7 +116,7 @@ const View = (props) => {
   if (__SERVER__ || !vectorSource) return '';
   console.log('vectorSource', vectorSource);
   return (
-    <div className="explore-sites-wrapper full-width">
+    <div className="explore-sites-wrapper">
       <div className="explore-sites">
         <Map
           view={{
@@ -128,7 +129,7 @@ const View = (props) => {
         >
           <Layers>
             <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
-            <Layer.Tile source={tileWMSSources[1]} zIndex={1} />
+            {/* <Layer.Tile source={tileWMSSources[1]} zIndex={1} /> */}
             <Layer.Vector
               source={vectorSource}
               title="highlightLayer"
@@ -169,21 +170,6 @@ const View = (props) => {
           />
         </Map>
       </div>
-      <Container className="map-info-notice">
-        <Message style={{ color: '#005248' }}>
-          <p>
-            The designations employed and the presentation of material on this
-            map do not imply the expression of any opinion whatsoever on the
-            part of the European Union concerning the legal status of any
-            country, territory, city or area or of its authorities, or
-            concerning the delimitation of its frontiers or boundaries.
-          </p>
-          <p>
-            <strong>Note:</strong> When you perform a search we will highlight
-            only the results available on the active page of the results table.
-          </p>
-        </Message>
-      </Container>
     </div>
   );
 };
