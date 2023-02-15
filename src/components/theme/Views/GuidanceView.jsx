@@ -15,7 +15,11 @@ const ContributorsList = (props) => {
   ) {
     return (
       <>
-        <h5>Contributors</h5>
+        <h5>Contributor:</h5>
+        {content.contributor_list?.length > 0 &&
+          content.contributor_list.map((contributor, index) => (
+            <p key={index}>{contributor.title}</p>
+          ))}
         {content.other_contributor && <p>{content.other_contributor}</p>}
       </>
     );
@@ -45,12 +49,12 @@ function GuidanceView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
               {content?.source && (
                 <>
-                  <h5>Source</h5>
+                  <h5>Source:</h5>
                   <HTMLField value={content.source} />
                 </>
               )}
