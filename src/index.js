@@ -27,26 +27,22 @@ const applyConfig = (config) => {
   }
 
   //console.log(config);
-  config.views.contentTypesViews[
-    'eea.climateadapt.adaptationoption'
-  ] = AdaptationOptionView;
-  config.views.contentTypesViews['eea.climateadapt.casestudy'] = CaseStudyView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.guidancedocument'
-  ] = GuidanceView;
-  config.views.contentTypesViews['eea.climateadapt.indicator'] = IndicatorView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.informationportal'
-  ] = InformationPortalView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.organisation'
-  ] = OrganisationView;
-  config.views.contentTypesViews['eea.climateadapt.aceproject'] = ProjectView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.publicationreport'
-  ] = PublicationReportView;
-  config.views.contentTypesViews['eea.climateadapt.tool'] = ToolView;
-  config.views.contentTypesViews['eea.climateadapt.video'] = VideoView;
+  config.views.contentTypesViews = {
+    ...config.views.contentTypesViews,
+    'eea.climateadapt.adaptationoption': AdaptationOptionView,
+    'eea.climateadapt.casestudy': CaseStudyView,
+    'eea.climateadapt.guidancedocument': GuidanceView,
+    'eea.climateadapt.indicator': IndicatorView,
+    'eea.climateadapt.informationportal': InformationPortalView,
+    'eea.climateadapt.organisation': OrganisationView,
+    'eea.climateadapt.aceproject': ProjectView,
+    'eea.climateadapt.publicationreport': PublicationReportView,
+    'eea.climateadapt.tool': ToolView,
+    'eea.climateadapt.video': VideoView,
+  };
+
+  // we won't need the listing for Folders
+  delete config.views.layoutViews.listing_view;
 
   return installBlocks(config);
 };

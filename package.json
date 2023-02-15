@@ -47,5 +47,8 @@
     "i18n": "make i18n",
     "cypress:run": "make cypress-run",
     "cypress:open": "make cypress-open"
+  },
+  "dependencies": {
+    "@eeacms/volto-openlayers-map": "0.2.1"
   }
 }
