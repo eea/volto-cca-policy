@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Radio } from 'semantic-ui-react';
-import Map from '@eeacms/volto-openlayers-map/Map';
-import { Interactions } from '@eeacms/volto-openlayers-map/Interactions';
-import { Controls } from '@eeacms/volto-openlayers-map/Controls';
-import { Layer } from '@eeacms/volto-openlayers-map/Layers'; // Layers,
+import {
+  Controls,
+  Interactions,
+  Layer,
+  Map,
+  useMapContext,
+} from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 import * as layers from './layers';
@@ -34,6 +37,61 @@ function SourceSelector(props) {
       </Form.Field>
     </Form>
   );
+}
+
+function FeatureInteraction(props) {
+  const { map } = useMapContext();
+
+  const selected = React.useMemo(
+    () =>
+      new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: '#eeeeee',
+        }),
+        stroke: new ol.style.Stroke({
+          color: 'rgba(255, 255, 255, 0.7)',
+          width: 2,
+        }),
+      }),
+    [],
+  );
+
+  const selectStyle = React.useCallback(
+    (feature) => {
+      const color = feature.get('COLOR') || '#eeeeee';
+      selected.getFill().setColor(color);
+      return selected;
+    },
+    [selected],
+  );
+
+  React.useEffect(() => {
+    if (!map) return;
+    const select = new ol.interaction.Select({
+      condition: ol.condition.click,
+      style: selectStyle,
+    });
+    map.addInteraction(select);
+    select.on('select', function (e) {
+      const features = e.target.getFeatures().getArray();
+      features.forEach((feature) => {
+        // const country_code = feature.get('CNTR_CODE');
+        // const nuts_id = feature.get('NUTS_ID');
+        // const nuts_name = feature.get('NUTS_NAME');
+        // const level_code = feature.get('LEVEL_CODE');
+        console.log(feature.values_);
+      });
+      // const clicked =
+      // console.log({
+      //   target: e.target,
+      //   features: e.target.getFeatures(),
+      //   event: e,
+      // });
+    });
+    return () => map.removeInteraction(select);
+  }, [map, selectStyle]);
+
+  return null;
 }
 
 export default function View(props) {
@@ -95,6 +153,7 @@ export default function View(props) {
               {...layers[name]}
             />
           ))}
+          <FeatureInteraction />
         </Map>
       </div>
     </div>
