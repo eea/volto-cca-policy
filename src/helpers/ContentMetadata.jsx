@@ -253,7 +253,10 @@ function PublicationDateInfo(props) {
   if (portaltype === 'eea.climateadapt.video') {
     tooltipText = 'The date refers to the date of release of the video';
   }
-  if (portaltype === 'eea.climateadapt.guidancedocument') {
+  if (
+    portaltype === 'eea.climateadapt.guidancedocument' ||
+    portaltype === 'eea.climateadapt.indicator'
+  ) {
     tooltipText =
       'The date refers to the latest date of publication of the item';
   }
@@ -409,6 +412,48 @@ function ContentMetadata(props) {
   }
 
   if (content['@type'] === 'eea.climateadapt.guidancedocument') {
+    return (
+      <div className="content-metadata">
+        <h5>Date of publication:</h5>
+        <PublicationDateInfo
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {content.geochars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar value={content.geochars} />
+          </>
+        )}
+      </div>
+    );
+  }
+
+  if (content['@type'] === 'eea.climateadapt.indicator') {
     return (
       <div className="content-metadata">
         <h5>Date of publication:</h5>
