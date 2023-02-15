@@ -105,7 +105,7 @@ const makeLayer = (layerId) => {
       const color = fillColors[classify] || [r(), r(), r(), 1];
       fillStyle.getFill().setColor(color);
 
-      return level_code ? fillStyle : pinStyle;
+      return nuts_id ? fillStyle : pinStyle;
     },
     opacity: 0.7,
   };
