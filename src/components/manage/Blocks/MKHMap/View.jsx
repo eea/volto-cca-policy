@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Form, Radio } from 'semantic-ui-react';
 import {
   Controls,
   Interactions,
   Layer,
   Map,
-  useMapContext,
+  Layers,
 } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 import * as layers from './layers';
+import FeatureInteraction from './FeatureInteraction';
+import InfoOverlay from './InfoOverlay';
+// import { v4 as uuid } from 'uuid';
 
 import './style.less';
 
@@ -19,6 +22,7 @@ function SourceSelector(props) {
     <Form>
       <Form.Field>
         <Radio
+          key="all"
           label="All"
           name={id}
           value="all"
@@ -27,6 +31,7 @@ function SourceSelector(props) {
         />
         {choices.map((name) => (
           <Radio
+            key={name}
             label={name}
             name={id}
             value={name}
@@ -39,65 +44,11 @@ function SourceSelector(props) {
   );
 }
 
-function FeatureInteraction(props) {
-  const { map } = useMapContext();
-
-  const selected = React.useMemo(
-    () =>
-      new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#eeeeee',
-        }),
-        stroke: new ol.style.Stroke({
-          color: 'rgba(255, 255, 255, 0.7)',
-          width: 2,
-        }),
-      }),
-    [],
-  );
-
-  const selectStyle = React.useCallback(
-    (feature) => {
-      const color = feature.get('COLOR') || '#eeeeee';
-      selected.getFill().setColor(color);
-      return selected;
-    },
-    [selected],
-  );
+export default function View(props) {
+  const [tileWMSSources, setTileWMSSources] = React.useState([]);
+  const [selectedFeature, onFeatureSelect] = React.useState();
 
   React.useEffect(() => {
-    if (!map) return;
-    const select = new ol.interaction.Select({
-      condition: ol.condition.click,
-      style: selectStyle,
-    });
-    map.addInteraction(select);
-    select.on('select', function (e) {
-      const features = e.target.getFeatures().getArray();
-      features.forEach((feature) => {
-        // const country_code = feature.get('CNTR_CODE');
-        // const nuts_id = feature.get('NUTS_ID');
-        // const nuts_name = feature.get('NUTS_NAME');
-        // const level_code = feature.get('LEVEL_CODE');
-        console.log(feature.values_);
-      });
-      // const clicked =
-      // console.log({
-      //   target: e.target,
-      //   features: e.target.getFeatures(),
-      //   event: e,
-      // });
-    });
-    return () => map.removeInteraction(select);
-  }, [map, selectStyle]);
-
-  return null;
-}
-
-export default function View(props) {
-  const [tileWMSSources, setTileWMSSources] = useState([]);
-
-  useEffect(() => {
     setTileWMSSources([
       new ol.source.TileWMS({
         url: 'https://gisco-services.ec.europa.eu/maps/service',
@@ -111,7 +62,7 @@ export default function View(props) {
     ]);
   }, []); // ol.source.TileWMS, ol.source.Vector
 
-  const [sources, setSources] = React.useState([Object.keys(layers)[1]]);
+  const [sources, setSources] = React.useState([Object.keys(layers)[2]]);
 
   if (__SERVER__) return '';
 
@@ -123,7 +74,7 @@ export default function View(props) {
         selected={sources}
         onChange={setSources}
       />
-      <div className="explore-sites">
+      <div id="explore-sites">
         <Map
           view={{
             center: ol.proj.fromLonLat([20, 50]),
@@ -133,27 +84,30 @@ export default function View(props) {
           pixelRatio={1}
           controls={ol.control.defaults({ attribution: false })}
         >
-          <Controls attribution={false} zoom={false} />
-          <Interactions
-            doubleClickZoom={true}
-            dragAndDrop={false}
-            dragPan={true}
-            keyboardPan={true}
-            keyboardZoom={true}
-            mouseWheelZoom={true}
-            pointer={false}
-            select={false}
-          />
-          <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
-          {sources.map((name, index) => (
-            <Layer.Vector
-              key={name}
-              title={name}
-              zIndex={index}
-              {...layers[name]}
+          <Layers>
+            <InfoOverlay selectedFeature={selectedFeature} />
+            <Controls attribution={false} zoom={false} />
+            <Interactions
+              doubleClickZoom={true}
+              dragAndDrop={false}
+              dragPan={true}
+              keyboardPan={true}
+              keyboardZoom={true}
+              mouseWheelZoom={true}
+              pointer={false}
+              select={false}
             />
-          ))}
-          <FeatureInteraction />
+            <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+            {sources.map((name, index) => (
+              <Layer.Vector
+                key={name}
+                title={name}
+                zIndex={index}
+                {...layers[name]}
+              />
+            ))}
+            <FeatureInteraction onFeatureSelect={onFeatureSelect} />
+          </Layers>
         </Map>
       </div>
     </div>

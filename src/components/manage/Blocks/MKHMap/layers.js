@@ -11,19 +11,11 @@ function r() {
 }
 
 const fillColors = {
-  // 'Lost To Sea Since 1965': [0, 0, 0, 1],
-  // 'Urban/Built-up': [104, 104, 104, 1],
-  // Shacks: [115, 76, 0, 1],
-  // Industry: [230, 0, 0, 1],
-  // Wasteland: [230, 0, 0, 1],
-  // Caravans: [0, 112, 255, 0.5],
-  // Defence: [230, 152, 0, 0.5],
-  // Transport: [230, 152, 0, 1],
-  // 'Open Countryside': [255, 255, 115, 1],
-  // Woodland: [38, 115, 0, 1],
-  // 'Managed Recreation/Sport': [85, 255, 0, 1],
-  // 'Amenity Water': [0, 112, 255, 1],
-  // 'Inland Water': [0, 38, 115, 1],
+  '0': [0, 0, 0, 1],
+  'NUTS 0': [0, 0, 0, 1],
+  'NUTS 1': [255, 0, 0, 1],
+  'NUTS 2': [0, 255, 0, 1],
+  'NUTS 3': [0, 0, 255, 1],
 };
 
 const makeLayer = (layerId) => {
@@ -101,8 +93,8 @@ const makeLayer = (layerId) => {
 
       // console.log({ country_code, nuts_id, nuts_name, level_code, feature });
 
-      const classify = feature.get('LU_2014');
-      const color = fillColors[classify] || [r(), r(), r(), 1];
+      // const classify = feature.get('LU_2014');
+      const color = fillColors[level_code] || [r(), r(), r(), 1];
       fillStyle.getFill().setColor(color);
 
       return nuts_id ? fillStyle : pinStyle;
