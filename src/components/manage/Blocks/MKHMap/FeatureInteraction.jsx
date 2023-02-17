@@ -9,7 +9,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
     () =>
       new ol.style.Style({
         fill: new ol.style.Fill({
-          color: 'rgba(255, 0, 0, 0.7)',
+          color: '#cccccc',
         }),
         stroke: new ol.style.Stroke({
           color: 'rgba(255, 0, 0, 0.7)',
@@ -43,15 +43,8 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         // const nuts_name = feature.get('NUTS_NAME');
         // const level_code = feature.get('LEVEL_CODE');
         // console.log(feature.values_);
-        // console.log(e, e.target);
         onFeatureSelect(feature.values_);
       });
-      // const clicked =
-      // console.log({
-      //   target: e.target,
-      //   features: e.target.getFeatures(),
-      //   event: e,
-      // });
     });
     return () => map.removeInteraction(select);
   }, [map, selectStyle, onFeatureSelect]);

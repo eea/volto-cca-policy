@@ -12,9 +12,8 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import * as layers from './layers';
 import FeatureInteraction from './FeatureInteraction';
 import InfoOverlay from './InfoOverlay';
-// import { v4 as uuid } from 'uuid';
 
-import './style.less';
+import './styles.less';
 
 function SourceSelector(props) {
   const { id, choices, selected, onChange } = props;

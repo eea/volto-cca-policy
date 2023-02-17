@@ -2,8 +2,9 @@ import React from 'react';
 import { Message } from 'semantic-ui-react';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import FeatureDisplay from './FeatureDisplay';
 
-export default function InfoOverlay(props) {
+export default function InfoOverlay({ selectedFeature }) {
   const { map } = useMapContext();
   const [tooltip, setTooltipRef] = React.useState();
   const [showTooltip, setShowTooltip] = React.useState();
@@ -53,7 +54,9 @@ export default function InfoOverlay(props) {
       }}
       ref={setTooltipRef}
     >
-      <Message>Hello world</Message>
+      <Message>
+        <FeatureDisplay feature={selectedFeature} />
+      </Message>
     </div>
   ) : null;
 }
