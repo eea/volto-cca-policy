@@ -3,11 +3,20 @@ import { Message } from 'semantic-ui-react';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import FeatureDisplay from './FeatureDisplay';
+import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 
-export default function InfoOverlay({ selectedFeature }) {
+export default function InfoOverlay({ selectedFeature, layerId }) {
   const { map } = useMapContext();
   const [tooltip, setTooltipRef] = React.useState();
   const [showTooltip, setShowTooltip] = React.useState();
+
+  const prevLayerId = usePrevious(layerId);
+
+  React.useEffect(() => {
+    if (prevLayerId && layerId !== prevLayerId) {
+      setShowTooltip(false);
+    }
+  }, [layerId, prevLayerId]);
 
   React.useEffect(() => {
     if (!(map && tooltip)) return;
@@ -24,7 +33,6 @@ export default function InfoOverlay({ selectedFeature }) {
       const coordinate = evt.coordinate;
       const { pixel, target } = evt;
       const features = target.getFeaturesAtPixel(pixel);
-      // console.log('features', features, features.length);
 
       if (features.length) {
         overlay.setPosition(coordinate);
@@ -38,6 +46,7 @@ export default function InfoOverlay({ selectedFeature }) {
 
     return () => {
       map.un('click', handler);
+      map.removeOverlay(overlay);
     };
   }, [map, tooltip]); //
 

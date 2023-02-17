@@ -45,6 +45,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         // console.log(feature.values_);
         onFeatureSelect(feature.values_);
       });
+      // if (!features.length) onFeatureSelect(null);
     });
     return () => map.removeInteraction(select);
   }, [map, selectStyle, onFeatureSelect]);

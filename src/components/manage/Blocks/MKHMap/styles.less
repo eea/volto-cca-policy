@@ -1,0 +1,33 @@
+div#view .ui.container > .explore-sites-wrapper,
+div#view .ui.container > .explore-sites {
+  margin-bottom: 0;
+}
+
+.explore-sites {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  background-color: #f8f8f8;
+
+  &.visible.transition {
+    display: flex !important;
+  }
+}
+
+.explore-sites-wrapper {
+  .field .ui {
+    margin-right: 2em;
+  }
+}
+
+.feature-info {
+  font-size: small;
+
+  div {
+    display: flex;
+    column-gap: 1em;
+    dt {
+      font-weight: bold;
+    }
+  }
+}

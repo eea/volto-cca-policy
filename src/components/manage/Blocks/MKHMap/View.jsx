@@ -84,7 +84,10 @@ export default function View(props) {
           controls={ol.control.defaults({ attribution: false })}
         >
           <Layers>
-            <InfoOverlay selectedFeature={selectedFeature} />
+            <InfoOverlay
+              selectedFeature={selectedFeature}
+              layerId={sources?.[0]}
+            />
             <Controls attribution={false} zoom={false} />
             <Interactions
               doubleClickZoom={true}
