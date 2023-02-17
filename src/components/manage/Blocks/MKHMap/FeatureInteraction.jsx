@@ -46,9 +46,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
     map.on('pointermove', (e) => {
       const pixel = map.getEventPixel(e.originalEvent);
       const hit = map.hasFeatureAtPixel(pixel);
-      document.getElementById('explore-sites').style.cursor = hit
-        ? 'pointer'
-        : '';
+      map.getViewport().style.cursor = hit ? 'pointer' : '';
     });
 
     return () => map.removeInteraction(select);
