@@ -38,15 +38,19 @@ export default function FeatureInteraction({ onFeatureSelect }) {
     select.on('select', function (e) {
       const features = e.target.getFeatures().getArray();
       features.forEach((feature) => {
-        // const country_code = feature.get('CNTR_CODE');
-        // const nuts_id = feature.get('NUTS_ID');
-        // const nuts_name = feature.get('NUTS_NAME');
-        // const level_code = feature.get('LEVEL_CODE');
-        // console.log(feature.values_);
         onFeatureSelect(feature.values_);
       });
       // if (!features.length) onFeatureSelect(null);
     });
+
+    map.on('pointermove', (e) => {
+      const pixel = map.getEventPixel(e.originalEvent);
+      const hit = map.hasFeatureAtPixel(pixel);
+      document.getElementById('explore-sites').style.cursor = hit
+        ? 'pointer'
+        : '';
+    });
+
     return () => map.removeInteraction(select);
   }, [map, selectStyle, onFeatureSelect]);
 

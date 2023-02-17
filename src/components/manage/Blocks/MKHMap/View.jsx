@@ -96,7 +96,7 @@ export default function View(props) {
               keyboardPan={true}
               keyboardZoom={true}
               mouseWheelZoom={true}
-              pointer={false}
+              pointer={true}
               select={false}
             />
             <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
