@@ -1,5 +1,4 @@
 import React from 'react';
-import { Message } from 'semantic-ui-react';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import FeatureDisplay from './FeatureDisplay';

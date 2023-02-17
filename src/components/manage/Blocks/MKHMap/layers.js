@@ -4,7 +4,7 @@ import mapSVG from './map.svg';
 const serviceUrl =
   'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer/';
 
-console.log('ol', ol);
+// console.log('ol', ol);
 
 function r() {
   return Math.floor(Math.random() * 256);
@@ -83,12 +83,11 @@ const makeLayer = (layerId) => {
   return {
     source: vectorSource,
     style: function (feature) {
-      // console.log('feature', feature);
-
-      const country_code = feature.get('CNTR_CODE');
       const nuts_id = feature.get('NUTS_ID');
-      const nuts_name = feature.get('NUTS_NAME');
       const level_code = feature.get('LEVEL_CODE');
+
+      // const nuts_name = feature.get('NUTS_NAME');
+      // const country_code = feature.get('CNTR_CODE');
       // const shape = feature.get('SHAPE');
 
       // console.log({ country_code, nuts_id, nuts_name, level_code, feature });
