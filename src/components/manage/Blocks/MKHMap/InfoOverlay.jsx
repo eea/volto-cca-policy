@@ -63,9 +63,7 @@ export default function InfoOverlay({ selectedFeature, layerId }) {
       }}
       ref={setTooltipRef}
     >
-      <Message>
-        <FeatureDisplay feature={selectedFeature} />
-      </Message>
+      <FeatureDisplay feature={selectedFeature} />
     </div>
   ) : null;
 }
