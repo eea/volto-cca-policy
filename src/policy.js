@@ -1,8 +1,7 @@
 import { runtimeConfig } from '@plone/volto/runtime_config';
 import installCallout from '@plone/volto-slate/editor/plugins/Callout';
-import installContextNavigationBlock from './components/manage/Blocks/ContextNavigation';
-import installLayoutSettingsBlock from './components/manage/Blocks/LayoutSettings';
-import { addStylingFieldsetSchemaEnhancer } from './components/manage/Blocks/schema';
+// import installContextNavigationBlock from './components/manage/Blocks/ContextNavigation';
+// import installLayoutSettingsBlock from './components/manage/Blocks/LayoutSettings';
 
 const applyConfig = (config) => {
   // if (process.env.NODE_ENV === 'production') {
@@ -95,15 +94,9 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.callToActionBlock.mostUsed = true;
   }
 
-  // Group
-  if (config.blocks.blocksConfig.group) {
-    config.blocks.blocksConfig.group.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
-  }
-
   // Columns
   if (config.blocks.blocksConfig.columnsBlock) {
     config.blocks.blocksConfig.columnsBlock.mostUsed = true;
-    config.blocks.blocksConfig.columnsBlock.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
   }
 
   // Accordion
@@ -114,21 +107,20 @@ const applyConfig = (config) => {
   // Listing
   if (config.blocks.blocksConfig.listing) {
     config.blocks.blocksConfig.listing.title = 'Listing (Content)';
-    config.blocks.blocksConfig.listing.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
   }
 
   // Custom blocks
   // context navigation
-  config = [installContextNavigationBlock].reduce(
-    (acc, apply) => apply(acc),
-    config,
-  );
+  // config = [installContextNavigationBlock].reduce(
+  //   (acc, apply) => apply(acc),
+  //   config,
+  // );
 
-  // layout settings
-  config = [installLayoutSettingsBlock].reduce(
-    (acc, apply) => apply(acc),
-    config,
-  );
+  // // layout settings
+  // config = [installLayoutSettingsBlock].reduce(
+  //   (acc, apply) => apply(acc),
+  //   config,
+  // );
 
   // Disable some blocks
   if (config.blocks.blocksConfig.imagecards) {
