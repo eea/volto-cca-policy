@@ -9,6 +9,8 @@ import PublicationReportView from './components/theme/Views/PublicationReportVie
 import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 
+import ccaLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Header/climate-adapt-logo.svg';
+
 import installBlocks from './components/manage/Blocks';
 
 const applyConfig = (config) => {
@@ -20,6 +22,26 @@ const applyConfig = (config) => {
   //   (item) => item.code,
   // ) || ['en'];
   config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it'];
+
+  // EEA customizations
+  config.settings.eea = {
+    ...(config.settings.eea || {}),
+    headerOpts: {
+      ...(config.settings.eea?.headerOpts || {}),
+      logo: ccaLogo,
+    },
+    headerSearchBox: [
+      {
+        isDefault: true,
+        path: '/advanced-search',
+        placeholder: 'Search...',
+        // description:
+        //   'Looking for more information? Try searching the full EEA website content',
+        // buttonTitle: 'Go to full site search',
+      },
+    ],
+    logoTargetUrl: '/en',
+  };
 
   // Enable volto-embed
   if (config.blocks.blocksConfig.maps) {
@@ -43,6 +65,8 @@ const applyConfig = (config) => {
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
+
+  console.log('config', config);
 
   return installBlocks(config);
 };

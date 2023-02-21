@@ -1,0 +1,16 @@
+/*******************************
+         Site Settings
+*******************************/
+
+@import '@eeacms/volto-cca-policy/../theme/tokens/tokens';
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+// @primaryColor: @green-6;
+// @secondaryColor: @green-4;
+
+// @linkColor: @secondaryColor;
+// @linkHoverColor: @primaryColor;
+// @linkActiveColor: @linkHoverColor;

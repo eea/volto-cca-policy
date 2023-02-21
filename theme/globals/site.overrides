@@ -1,0 +1,27 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+@subsiteBackgroundGradient: linear-gradient(
+  248.86deg,
+  @green-1 24.22%,
+  @green-2 97.12%
+);
+
+p.has--clear--both:empty {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body.subsite-mkh {
+  .search-action {
+    background-color: @green-1;
+  }
+
+  footer,
+  #mega-menu,
+  #search-box,
+  .eea.banner .gradient {
+    background: @subsiteBackgroundGradient;
+  }
+}
