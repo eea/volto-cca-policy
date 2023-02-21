@@ -17,21 +17,18 @@
     "url": "git@github.com:eea/volto-cca-policy.git"
   },
   "addons": [
-    "volto-subsites",
-    "@eeacms/volto-eea-kitkat",
-    "@eeacms/volto-eea-design-system",
-    "@eeacms/volto-eea-website-theme",
-    "@eeacms/volto-eea-map",
-    "@eeacms/volto-embed"
+    "@eeacms/volto-eea-design-system"
   ],
+  "dependencies": {
+    "@eeacms/volto-eea-design-system": "*",
+    "@eeacms/volto-openlayers-map": "0.2.1"
+  },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
-    "@eeacms/volto-eea-design-system": "*",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress-fail-fast": "^5.0.1",
-    "md5": "^2.3.0",
-    "volto-subsites": "*"
+    "md5": "^2.3.0"
   },
   "scripts": {
     "release": "release-it",
@@ -51,8 +48,5 @@
     "i18n": "make i18n",
     "cypress:run": "make cypress-run",
     "cypress:open": "make cypress-open"
-  },
-  "dependencies": {
-    "@eeacms/volto-openlayers-map": "0.2.1"
   }
 }
