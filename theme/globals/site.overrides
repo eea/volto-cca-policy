@@ -19,6 +19,18 @@ body.subsite-mkh {
       padding-top: 0;
       margin-top: 0;
     }
+
+    #page-document {
+      > div.styled-group:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .ui.menu .green.active.item,
+  .ui.green.menu .active.item {
+    border-color: @green-1 !important;
+    color: @green-1 !important;
   }
 
   .main-menu {
@@ -56,10 +68,13 @@ body.subsite-mkh {
     }
   }
 
+  .eea.banner {
+    background: @green-1;
+  }
+
   footer,
   #mega-menu,
-  #search-box,
-  .eea.banner .gradient {
+  #search-box {
     background: @subsiteBackgroundGradient;
   }
 }
