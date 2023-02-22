@@ -14,8 +14,46 @@ p.has--clear--both:empty {
 }
 
 body.subsite-mkh {
+  &.subsite-root {
+    .segment.content-area {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+
+  .main-menu {
+    .ui.text.menu {
+      position: absolute;
+      right: 80px;
+      width: 120% !important;
+    }
+
+    .item a {
+      color: @blue-1;
+    }
+
+    .item a:hover {
+      border-color: @green-1;
+    }
+
+    .item.active a {
+      border-color: @green-1;
+      color: @green-1;
+    }
+  }
+
   .search-action {
     background-color: @green-1;
+  }
+
+  .eea.header .subsite-logo {
+    .ui.image {
+      max-height: 80px;
+    }
+
+    &:before {
+      background-color: transparent;
+    }
   }
 
   footer,
