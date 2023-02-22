@@ -66,8 +66,6 @@ const applyConfig = (config) => {
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
 
-  console.log('config', config);
-
   return installBlocks(config);
 };
 
