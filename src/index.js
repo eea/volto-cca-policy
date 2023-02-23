@@ -63,6 +63,25 @@ const applyConfig = (config) => {
     'eea.climateadapt.video': VideoView,
   };
 
+  config.settings.contextNavigationLocations = [
+    {
+      title: 'RAST',
+      topLevel: 1, // mkh is a navigation root
+      rootPath: '/mkh/rast',
+      columns: 4,
+    },
+    {
+      title: 'UrbanAST',
+      topLevel: 3,
+      rootPath: '/knowledge/tools/urban-ast',
+    },
+    {
+      title: 'Adaptation Suport Tool',
+      topLevel: 3,
+      rootPath: '/knowledge/tools/adaptation-support-tool',
+    },
+  ];
+
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
 

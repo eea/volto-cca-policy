@@ -66,36 +66,16 @@ const DefaultView = (props) => {
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
-  const availableNavigations = [
-    {
-      title: 'RAT',
-      topLevel: 2,
-      rootPath: '/mkh2/rast',
-      columns: 4,
-    },
-    {
-      title: 'UrbanAST',
-      topLevel: 3,
-      rootPath: '/knowledge/tools/urban-ast',
-    },
-    {
-      title: 'Adaptation Suport Tool',
-      topLevel: 3,
-      rootPath: '/knowledge/tools/adaptation-support-tool',
-    },
-  ];
-  let currentNavigation = null;
-  availableNavigations.forEach((element) => {
-    if (location.pathname.substr(3).startsWith(element.rootPath)) {
-      currentNavigation = element;
-    }
-  });
-  console.log('CurrentNavigation', currentNavigation);
+  let currentNavigation = config.settings.contextNavigationLocations.find(
+    (element) => location.pathname.indexOf(element.rootPath) > -1,
+  );
+  // console.log('CurrentNavigation', currentNavigation);
 
   const gridColumns =
     currentNavigation && currentNavigation?.columns
       ? currentNavigation.columns
       : 3;
+  const currentLang = useSelector((state) => state.intl.locale);
 
   // If the content is not yet loaded, then do not show anything
   return contentLoaded ? (
@@ -114,7 +94,7 @@ const DefaultView = (props) => {
                   // currentFolderOnly: true,
                   topLevel: currentNavigation.topLevel,
                   bottomLevel: 2,
-                  rootPath: currentNavigation.rootPath,
+                  rootPath: `${currentLang}/${currentNavigation.rootPath}`,
                 }}
               />
             </Grid.Column>

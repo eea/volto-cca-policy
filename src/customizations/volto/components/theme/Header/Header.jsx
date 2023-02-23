@@ -165,7 +165,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               role="listbox"
               aria-label="language switcher"
             >
-              {eea.languages.map((item, index) => {
+              {eea.languages?.map((item, index) => {
                 if (!config.settings.supportedLanguages.includes(item.code)) {
                   return null;
                 }
