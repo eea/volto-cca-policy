@@ -95,34 +95,18 @@ const createIframe = (details_url) => {
 export default function ECDEIndicator(props) {
   const { indicatorUrl, selectedRegion } = props;
   const indicator = useIndicator(indicatorUrl);
-  const [loadedScript, setLoadedScript] = React.useState();
+  // const [loadedScript, setLoadedScript] = React.useState();
 
   const details_url = indicator?.details_app_toolbox_url;
   const ID = 'toolbox-app';
 
   React.useEffect(() => {
-    if (loadedScript) {
-      // if (window.cds_toolbox[ID]?.app_instance) {
-      //   window.cds_toolbox[ID].app_instance.destroy();
-      // }
-      window.cds_toolbox.runApp(
-        ID,
-        details_url,
-
-        {
-          workflowParams: {
-            default: 'Bayern',
-          },
-        },
-      );
+    if (window.cds_toolbox[ID]?.app_instance) {
+      window.cds_toolbox[ID].app_instance.destroy();
     }
-    return () => {
-      if (window.cds_toolbox[ID]?.app_instance) {
-        window.cds_toolbox[ID].app_instance.destroy();
-      }
-    };
-    // console.log(window.cds_toolbox.runApp, window.cds_toolbox);
-  }, [loadedScript, details_url]);
+    // console.log("DESTROYED");
+    // console.log(selectedRegion);
+  }, [details_url]);
 
   return (
     <>

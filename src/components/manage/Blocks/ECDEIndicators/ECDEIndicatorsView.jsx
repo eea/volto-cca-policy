@@ -90,7 +90,12 @@ export default function ECDEIndicatorsView(props) {
                 value: indic['@id'],
               }))}
               selection
-              onChange={(e, { value }) => setSelectedIndicator(value)}
+              onChange={(e, { value }) => {
+                setSelectedIndicator(value);
+                setSelectedRegion(
+                  indicators.filter((item) => item['@id'] === value)[0].title,
+                );
+              }}
             />
           </div>
         </Grid.Column>
