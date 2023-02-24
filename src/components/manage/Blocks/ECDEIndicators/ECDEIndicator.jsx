@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions';
-import { Helmet } from '@plone/volto/helpers';
 
 if (__CLIENT__) {
   window.cds_toolbox = {
@@ -22,33 +21,6 @@ function useIndicator(path) {
   );
 }
 
-//    <Helmet
-//      script={[{ src: CDS_TOOLBOX }]}
-//      onChangeClientState={(newState, addedTags) => {
-//        if (addedTags.scriptTags) {
-//          const script = addedTags.scriptTags[0];
-//          script.onload = () => setLoadedScript(true);
-//        }
-//      }}
-//    />
-
-const CDS_TOOLBOX =
-  'https://cds.climate.copernicus.eu/toolbox/toolbox-4.35.4.js';
-
-// handleScriptInject({ scriptTags }) {
-//     if (scriptTags) {
-//         const scriptTag = scriptTags[0];
-//         scriptTag.onload = this.handleOnLoad;
-//     }
-// }
-//
-// // ...
-//
-// <Helmet
-//     script={[{ src: '//cdn.example.com/script.js' }]}
-//     // Helmet doesn't support `onload` in script objects so we have to hack in our own
-//     onChangeClientState={(newState, addedTags) => this.handleScriptInject(addedTags)}
-// />
 const createIframe = (details_url) => {
   return `
   <iframe srcdoc="<head>
@@ -149,7 +121,7 @@ export default function ECDEIndicator(props) {
         window.cds_toolbox[ID].app_instance.destroy();
       }
     };
-    console.log(window.cds_toolbox.runApp, window.cds_toolbox);
+    // console.log(window.cds_toolbox.runApp, window.cds_toolbox);
   }, [loadedScript, details_url]);
 
   return (
