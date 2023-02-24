@@ -22,8 +22,17 @@ function useIndicator(path) {
 }
 
 const createIframe = (details_url) => {
+  // DEMO (and working case):
+  let selected_app = 'ecde-app-growing-degree-days';
+
+  // WIP (with real data):
+  selected_app = details_url
+    .split('https://cds.climate.copernicus.eu/workflows/c3s/')[1]
+    .split('/')[0];
+  // console.log("selected app: ", selected_app);
+
   return `
-  <iframe srcdoc="<head>
+  <iframe width="1000" height="1000" srcdoc="<head>
     <title>CDS integration test</title>
     <meta charset='utf-8' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
@@ -58,7 +67,7 @@ const createIframe = (details_url) => {
         (function () {
             const ID = 'toolbox-app';
             $(document).ready(() => {
-                window.cds_toolbox.runApp(ID, 'https://cds.climate.copernicus.eu/workflows/c3s/ecde-app-growing-degree-days/master/configuration.json', {
+                window.cds_toolbox.runApp(ID, 'https://cds.climate.copernicus.eu/workflows/c3s/${selected_app}/master/configuration.json', {
                     workflowParams: {
                         default: 'Bayern'
                     }
@@ -119,7 +128,7 @@ export default function ECDEIndicator(props) {
       window.cds_toolbox[ID].app_instance.destroy();
     }
     // console.log("DESTROYED");
-    console.log(selectedRegion);
+    // console.log(selectedRegion);
   }, [details_url]);
 
   return (
