@@ -8,8 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 const comunities_url =
   'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer/1/query?where=1+%3D+1&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson';
 
-//
-//
 function useCommunities() {
   const [communities, setCommunities] = React.useState([]);
 
@@ -93,7 +91,7 @@ export default function ECDEIndicatorsView(props) {
               onChange={(e, { value }) => {
                 setSelectedIndicator(value);
                 setSelectedRegion(
-                  indicators.filter((item) => item['@id'] === value)[0].title,
+                  indicators.filter((item) => item['@id'] === value)[0]?.title,
                 );
               }}
             />

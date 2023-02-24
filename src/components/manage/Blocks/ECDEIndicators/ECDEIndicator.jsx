@@ -92,6 +92,20 @@ const createIframe = (details_url) => {
 </body>" />`;
 };
 
+const IframeMap = (props) => {
+  const { url, region } = props;
+  return (
+    <>
+      {url ? (
+        <>
+          <h2>{region}</h2>
+          <div dangerouslySetInnerHTML={{ __html: createIframe(url) }} />
+        </>
+      ) : null}
+    </>
+  );
+};
+
 export default function ECDEIndicator(props) {
   const { indicatorUrl, selectedRegion } = props;
   const indicator = useIndicator(indicatorUrl);
@@ -105,14 +119,12 @@ export default function ECDEIndicator(props) {
       window.cds_toolbox[ID].app_instance.destroy();
     }
     // console.log("DESTROYED");
-    // console.log(selectedRegion);
+    console.log(selectedRegion);
   }, [details_url]);
 
   return (
     <>
-      {details_url ? (
-        <div dangerouslySetInnerHTML={{ __html: createIframe(details_url) }} />
-      ) : null}
+      <IframeMap url={details_url} region={selectedRegion} />
     </>
   );
 }
