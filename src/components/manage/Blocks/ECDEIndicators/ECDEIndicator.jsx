@@ -21,15 +21,17 @@ function useIndicator(path) {
   );
 }
 
-const createIframe = (details_url) => {
+const createIframe = (details_url, selected_region) => {
   // DEMO (and working case):
   let selected_app = 'ecde-app-growing-degree-days';
+  // selected_region = 'Bayern';
 
   // WIP (with real data):
   selected_app = details_url
     .split('https://cds.climate.copernicus.eu/workflows/c3s/')[1]
     .split('/')[0];
-  // console.log("selected app: ", selected_app);
+  console.log('selected app: ', selected_app);
+  console.log('region: ', selected_region);
 
   return `
   <iframe width="1000" height="1000" srcdoc="<head>
@@ -69,16 +71,16 @@ const createIframe = (details_url) => {
             $(document).ready(() => {
                 window.cds_toolbox.runApp(ID, 'https://cds.climate.copernicus.eu/workflows/c3s/${selected_app}/master/configuration.json', {
                     workflowParams: {
-                        default: 'Bayern'
+                        default: '${selected_region}'
                     }
                 });
 
                 const defaults = {
-                    'ecde-app-growing-degree-days': 'Bayern',
+                    'ecde-app-growing-degree-days': '${selected_region}',
                     'ecde-app-mean-temperature': 'Occitanie'
                 }
 
-                let selectedApp = 'ecde-app-growing-degree-days';
+                let selectedApp = '${selected_app}';
                 const $appSelector = $('#app-selection');
 
                 $appSelector.on('change', () => {
@@ -108,7 +110,7 @@ const IframeMap = (props) => {
       {url ? (
         <>
           <h2>{region}</h2>
-          <div dangerouslySetInnerHTML={{ __html: createIframe(url) }} />
+          <div dangerouslySetInnerHTML={{ __html: createIframe(url, region) }} />
         </>
       ) : null}
     </>
