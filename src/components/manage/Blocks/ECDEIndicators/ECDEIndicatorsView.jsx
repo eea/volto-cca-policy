@@ -49,13 +49,14 @@ function useIndicators() {
   const indicators = useSelector(
     (state) => state.search.subrequests.ecde_indicators?.items || [],
   );
-  console.log('indicators', indicators);
+  // console.log('indicators', indicators);
 
   return indicators;
 }
 
 export default function ECDEIndicatorsView(props) {
   const [selectedIndicator, setSelectedIndicator] = React.useState();
+  const [selectedRegion, setSelectedRegion] = React.useState();
 
   const communities = useCommunities();
   const indicators = useIndicators();
@@ -76,6 +77,7 @@ export default function ECDEIndicatorsView(props) {
                 value: key,
               }))}
               selection
+              onChange={(e, { value }) => setSelectedRegion(value)}
             />
           </div>
           <div>
@@ -94,7 +96,10 @@ export default function ECDEIndicatorsView(props) {
         </Grid.Column>
         <Grid.Column width={8}>
           {selectedIndicator ? (
-            <ECDEIndicator indicatorUrl={selectedIndicator} />
+            <ECDEIndicator
+              indicatorUrl={selectedIndicator}
+              selectedRegion={selectedRegion}
+            />
           ) : null}
         </Grid.Column>
       </Grid>
