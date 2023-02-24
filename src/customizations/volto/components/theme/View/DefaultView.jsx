@@ -102,7 +102,7 @@ const DefaultView = (props) => {
         </Container>
       ) : (
         <Container id="page-document">
-          <RenderBlocks {...props} path={path} />i
+          <RenderBlocks {...props} path={path} />
         </Container>
       )
     ) : (
