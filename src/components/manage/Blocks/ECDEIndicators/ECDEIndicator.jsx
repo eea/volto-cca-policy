@@ -30,8 +30,8 @@ const createIframe = (details_url, selected_region) => {
   selected_app = details_url
     .split('https://cds.climate.copernicus.eu/workflows/c3s/')[1]
     .split('/')[0];
-  console.log('selected app: ', selected_app);
-  console.log('region: ', selected_region);
+  // console.log('selected app: ', selected_app);
+  // console.log('region: ', selected_region);
 
   return `
   <iframe width="1000" height="1000" srcdoc="<head>
@@ -108,10 +108,7 @@ const IframeMap = (props) => {
   return (
     <>
       {url ? (
-        <>
-          <h2>{region}</h2>
-          <div dangerouslySetInnerHTML={{ __html: createIframe(url, region) }} />
-        </>
+        <div dangerouslySetInnerHTML={{ __html: createIframe(url, region) }} />
       ) : null}
     </>
   );
