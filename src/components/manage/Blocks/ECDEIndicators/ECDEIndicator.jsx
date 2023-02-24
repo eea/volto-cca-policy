@@ -22,15 +22,13 @@ function useIndicator(path) {
 }
 
 const createIframe = (details_url, selected_region) => {
-  // DEMO (and working case):
-  let selected_app = 'ecde-app-growing-degree-days';
+  let selected_app;
   // selected_region = 'Bayern';
 
-  // WIP (with real data):
   selected_app = details_url
     .split('https://cds.climate.copernicus.eu/workflows/c3s/')[1]
     .split('/')[0];
-  // console.log('selected app: ', selected_app);
+  console.log('selected app: ', selected_app);
   // console.log('region: ', selected_region);
 
   return `
@@ -45,15 +43,7 @@ const createIframe = (details_url, selected_region) => {
     <script src='https://code.jquery.com/jquery-3.6.3.min.js'
         integrity='sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=' crossorigin='anonymous'></script>
 
-<body>
-
-    <h1>Hello world</h1>
-
-    <select id='app-selection'>
-        <option selected value='ecde-app-growing-degree-days'>ECDE growing degree days</option>
-        <option value='ecde-app-mean-temperature'>ECDE Mean Temperature</option>
-    </select>
-
+  <body>
     <div class='t-ct'>
         <div id='toolbox-app'>
             <div class='pre-app-loading'>
