@@ -94,7 +94,7 @@ export default function ECDEIndicatorsView(props) {
         </Grid.Column>
         <Grid.Column width={8}>
           {selectedIndicator ? (
-            <ECDEIndicator indicator={selectedIndicator} />
+            <ECDEIndicator indicatorUrl={selectedIndicator} />
           ) : null}
         </Grid.Column>
       </Grid>
