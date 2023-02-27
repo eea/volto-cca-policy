@@ -1,0 +1,45 @@
+nav.context-navigation {
+  .context-navigation-header {
+    &:before {
+      content: '';
+      display: none;
+    }
+  }
+
+  .ui.list {
+    > .active.item {
+      > .content {
+        > a {
+          background-color: @blue;
+          color: @white !important;
+        }
+      }
+    }
+
+    .active.item.level-2 {
+      > .content {
+        > a {
+          background-color: @blue;
+          color: @white !important;
+        }
+      }
+    }
+  }
+
+  .item {
+    background-color: @lightGrey;
+
+    a {
+      font-size: 1.125rem;
+    }
+
+    .level-2 {
+      margin: 0;
+
+      a {
+        padding-left: 2em;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
