@@ -30,6 +30,11 @@ const applyConfig = (config) => {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,
     },
+    footerOpts: {
+      ...(config.settings.eea?.footerOpts || {}),
+      description:
+        'The European Climate Adaptation Platform Climate-ADAPT is a partnership between the European Commission and the European Environment Agency.',
+    },
     headerSearchBox: [
       {
         isDefault: true,
@@ -65,9 +70,9 @@ const applyConfig = (config) => {
 
   config.settings.contextNavigationLocations = [
     {
-      title: 'RAST',
+      title: 'Regional Adaptation Tool',
       topLevel: 1, // mkh is a navigation root
-      rootPath: '/mkh/rast',
+      rootPath: '/mkh/regional-adaptation-tool',
       columns: 4,
     },
     {
