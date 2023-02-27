@@ -93,36 +93,21 @@ const createIframe = (details_url, selected_region) => {
 </body>" />`;
 };
 
-const IframeMap = (props) => {
-  const { url, region } = props;
-  return (
-    <>
-      {url ? (
-        <div dangerouslySetInnerHTML={{ __html: createIframe(url, region) }} />
-      ) : null}
-    </>
-  );
-};
-
 export default function ECDEIndicator(props) {
   const { indicatorUrl, selectedRegion } = props;
   const indicator = useIndicator(indicatorUrl);
-  // const [loadedScript, setLoadedScript] = React.useState();
 
   const details_url = indicator?.details_app_toolbox_url;
-  const ID = 'toolbox-app';
-
-  React.useEffect(() => {
-    if (window.cds_toolbox[ID]?.app_instance) {
-      window.cds_toolbox[ID].app_instance.destroy();
-    }
-    // console.log("DESTROYED");
-    // console.log(selectedRegion);
-  }, [details_url]);
 
   return (
     <>
-      <IframeMap url={details_url} region={selectedRegion} />
+      {details_url ? (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: createIframe(details_url, selectedRegion),
+          }}
+        />
+      ) : null}
     </>
   );
 }
