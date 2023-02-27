@@ -65,26 +65,26 @@ const createIframe = (details_url, selected_region) => {
                     }
                 });
 
-                const defaults = {
-                    'ecde-app-growing-degree-days': '${selected_region}',
-                    'ecde-app-mean-temperature': 'Occitanie'
-                }
+                // const defaults = {
+                //     'ecde-app-growing-degree-days': '${selected_region}',
+                //     'ecde-app-mean-temperature': 'Occitanie'
+                // }
+                //
+                // let selectedApp = '${selected_app}';
+                // const $appSelector = $('#app-selection');
 
-                let selectedApp = '${selected_app}';
-                const $appSelector = $('#app-selection');
-
-                $appSelector.on('change', () => {
-                    const value = $appSelector.val();
-                    if (value !== selectedApp) {
-                        selectedApp = value;
-                        window.cds_toolbox[ID].app_instance.destroy();
-                        window.cds_toolbox.runApp(ID, 'https://cds.climate.copernicus.eu/workflows/c3s/' + selectedApp + '/master/configuration.json', {
-                            workflowParams: {
-                                default: defaults[selectedApp]
-                            }
-                        });
-                    }
-                })
+                // $appSelector.on('change', () => {
+                //     const value = $appSelector.val();
+                //     if (value !== selectedApp) {
+                //         selectedApp = value;
+                //         window.cds_toolbox[ID].app_instance.destroy();
+                //         window.cds_toolbox.runApp(ID, 'https://cds.climate.copernicus.eu/workflows/c3s/' + selectedApp + '/master/configuration.json', {
+                //             workflowParams: {
+                //                 default: defaults[selectedApp]
+                //             }
+                //         });
+                //     }
+                // })
             });
         })();
 
@@ -96,15 +96,19 @@ const createIframe = (details_url, selected_region) => {
 export default function ECDEIndicator(props) {
   const { indicatorUrl, selectedRegion } = props;
   const indicator = useIndicator(indicatorUrl);
+  console.log('real indicator url', indicator?.details_app_toolbox_url);
 
-  const details_url = indicator?.details_app_toolbox_url;
+  // const details_url = indicator?.details_app_toolbox_url;
+  // Hardcoded, to be replaced;
+  const details_url =
+    'https://cds.climate.copernicus.eu/workflows/c3s/ecde-app-growing-degree-days/master/configuration.json';
 
   return (
     <>
       {details_url ? (
         <div
           dangerouslySetInnerHTML={{
-            __html: createIframe(details_url, selectedRegion),
+            __html: createIframe(details_url, selectedRegion), // selectedRegion // 'Vest'
           }}
         />
       ) : null}
