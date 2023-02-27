@@ -66,7 +66,6 @@ export default function ECDEIndicatorsView(props) {
   // console.log(regions);
   return (
     <div>
-      {selectedIndicator}
       <Grid>
         <Grid.Column width={4}>
           <div>

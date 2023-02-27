@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
+import './styles.less';
 
 if (__CLIENT__) {
   window.cds_toolbox = {
@@ -33,7 +34,7 @@ const createIframe = (details_url, selected_region, spinner_url) => {
   // console.log('region: ', selected_region);
 
   return `
-  <iframe width="1000" height="1000" srcdoc="<head>
+  <iframe srcdoc="<head>
     <title>CDS integration test</title>
     <meta charset='utf-8' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
@@ -115,6 +116,7 @@ export default function ECDEIndicator(props) {
     <>
       {details_url ? (
         <div
+          className="iframe-container"
           dangerouslySetInnerHTML={{
             __html: createIframe(details_url, selectedRegion, spinnerUrl), // selectedRegion // 'Vest'
           }}
