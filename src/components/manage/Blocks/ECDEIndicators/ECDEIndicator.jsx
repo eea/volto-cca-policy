@@ -95,10 +95,11 @@ const createIframe = (details_url, selected_region, spinner_url) => {
 };
 
 export default function ECDEIndicator(props) {
-  const { indicatorUrl, selectedRegion } = props;
+  const { selectedRegion } = props;
+  // const { indicatorUrl, selectedRegion } = props;
   const [spinnerUrl, setSpinnerUrl] = useState(null);
 
-  const indicator = useIndicator(indicatorUrl);
+  // const indicator = useIndicator(indicatorUrl);
   // console.log('real indicator url', indicator?.details_app_toolbox_url);
 
   // const details_url = indicator?.details_app_toolbox_url;
