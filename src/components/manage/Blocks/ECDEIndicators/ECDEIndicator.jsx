@@ -96,7 +96,7 @@ const createIframe = (details_url, selected_region) => {
 export default function ECDEIndicator(props) {
   const { indicatorUrl, selectedRegion } = props;
   const indicator = useIndicator(indicatorUrl);
-  console.log('real indicator url', indicator?.details_app_toolbox_url);
+  // console.log('real indicator url', indicator?.details_app_toolbox_url);
 
   // const details_url = indicator?.details_app_toolbox_url;
   // Hardcoded, to be replaced;
