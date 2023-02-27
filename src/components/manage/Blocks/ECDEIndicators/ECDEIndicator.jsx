@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
-import { Image } from 'semantic-ui-react';
 
 if (__CLIENT__) {
   window.cds_toolbox = {
