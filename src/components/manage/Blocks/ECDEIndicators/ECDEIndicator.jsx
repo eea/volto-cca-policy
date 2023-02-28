@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions';
+import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
+import './styles.less';
 
 if (__CLIENT__) {
   window.cds_toolbox = {
@@ -21,7 +23,7 @@ function useIndicator(path) {
   );
 }
 
-const createIframe = (details_url, selected_region) => {
+const createIframe = (details_url, selected_region, spinner_url) => {
   let selected_app;
   // selected_region = 'Bayern';
 
@@ -32,7 +34,7 @@ const createIframe = (details_url, selected_region) => {
   // console.log('region: ', selected_region);
 
   return `
-  <iframe width="1000" height="1000" srcdoc="<head>
+  <iframe srcdoc="<head>
     <title>CDS integration test</title>
     <meta charset='utf-8' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
@@ -47,7 +49,7 @@ const createIframe = (details_url, selected_region) => {
     <div class='t-ct'>
         <div id='toolbox-app'>
             <div class='pre-app-loading'>
-                <img src='/toolbox/assets/spinner.svg' alt='Loading'>
+                <img src='${spinner_url}' alt='Loading'>
                 <div>
                     ...loading configuration...
                 </div>
@@ -94,8 +96,11 @@ const createIframe = (details_url, selected_region) => {
 };
 
 export default function ECDEIndicator(props) {
-  const { indicatorUrl, selectedRegion } = props;
-  const indicator = useIndicator(indicatorUrl);
+  const { selectedRegion } = props;
+  // const { indicatorUrl, selectedRegion } = props;
+  const [spinnerUrl, setSpinnerUrl] = useState(null);
+
+  // const indicator = useIndicator(indicatorUrl);
   // console.log('real indicator url', indicator?.details_app_toolbox_url);
 
   // const details_url = indicator?.details_app_toolbox_url;
@@ -103,12 +108,17 @@ export default function ECDEIndicator(props) {
   const details_url =
     'https://cds.climate.copernicus.eu/workflows/c3s/ecde-app-growing-degree-days/master/configuration.json';
 
+  React.useEffect(() => {
+    setSpinnerUrl(spinner);
+  }, []);
+
   return (
     <>
       {details_url ? (
         <div
+          className="iframe-container"
           dangerouslySetInnerHTML={{
-            __html: createIframe(details_url, selectedRegion), // selectedRegion // 'Vest'
+            __html: createIframe(details_url, selectedRegion, spinnerUrl), // selectedRegion // 'Vest'
           }}
         />
       ) : null}

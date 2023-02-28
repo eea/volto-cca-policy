@@ -66,10 +66,9 @@ export default function ECDEIndicatorsView(props) {
   // console.log(regions);
   return (
     <div>
-      {selectedIndicator}
-      <Grid>
-        <Grid.Column width={4}>
-          <div>
+      <Grid columns="12">
+        <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
+          <div className="regions-selector">
             <strong>Regions</strong>
             <Dropdown
               clearable
@@ -82,7 +81,7 @@ export default function ECDEIndicatorsView(props) {
               onChange={(e, { value }) => setSelectedRegion(value)}
             />
           </div>
-          <div>
+          <div className="indicators-selector">
             <strong>Indicators</strong>
             <Dropdown
               clearable
@@ -101,7 +100,12 @@ export default function ECDEIndicatorsView(props) {
             />
           </div>
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column
+          mobile={12}
+          tablet={12}
+          computer={10}
+          className="col-right"
+        >
           {selectedIndicator ? (
             <ECDEIndicator
               indicatorUrl={selectedIndicator}
