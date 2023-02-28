@@ -29,4 +29,4 @@
 /* Folders - Level 1 */
 @sidenavFolderFontSize: @font-size-1;
 @sidenavFolderFontWeight: normal;
-@sidenavFolderItemPadding: @rem-space-4 0 @rem-space-4 @rem-space-4;
+@sidenavFolderItemPadding: @rem-space-3 0 @rem-space-3 @rem-space-3;
