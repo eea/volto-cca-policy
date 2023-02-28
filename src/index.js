@@ -10,6 +10,8 @@ import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 
 import ccaLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Header/climate-adapt-logo.svg';
+import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
+import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Footer/ec_logo.svg';
 
 import installBlocks from './components/manage/Blocks';
 
@@ -34,6 +36,48 @@ const applyConfig = (config) => {
       ...(config.settings.eea?.footerOpts || {}),
       description:
         'The European Climate Adaptation Platform Climate-ADAPT is a partnership between the European Commission and the European Environment Agency.',
+      managedBy: [
+        {
+          link: 'https://www.eea.europa.eu/',
+          src: eeaWhiteLogo,
+          alt: 'EEA Logo',
+          className: 'site logo',
+          columnSize: {
+            mobile: 6,
+            tablet: 12,
+            computer: 4,
+          },
+        },
+        {
+          link: 'https://commission.europa.eu/',
+          src: europeanComissionLogo,
+          alt: 'European Commission Logo',
+          className: 'ec logo',
+          columnSize: {
+            mobile: 6,
+            tablet: 12,
+            computer: 4,
+          },
+        },
+      ],
+      contacts: [
+        {
+          icon: 'comment outline',
+          text: 'About us',
+          link: '/about',
+          children: [],
+        },
+        {
+          icon: 'comment outline',
+          text: 'Contact us',
+          link: '/contact-us',
+        },
+        {
+          icon: 'envelope outline',
+          text: 'Sign up to our newsletter',
+          link: '/newsletter',
+        },
+      ],
     },
     headerSearchBox: [
       {
