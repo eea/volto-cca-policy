@@ -1,12 +1,27 @@
 nav.context-navigation {
   .context-navigation-header {
-    &:before {
-      content: '';
-      display: none;
-    }
+    display: none;
   }
 
   .ui.list {
+    a.in_path {
+      background-color: @midWhite;
+      font-weight: 700;
+    }
+
+    .item.level-2 {
+      > .content {
+        > a {
+          background-color: @midWhite;
+
+          &:hover {
+            background-color: @blue;
+            color: @white !important;
+          }
+        }
+      }
+    }
+
     > .active.item {
       > .content {
         > a {
@@ -28,10 +43,6 @@ nav.context-navigation {
 
   .item {
     background-color: @lightGrey;
-
-    a {
-      font-size: 1.125rem;
-    }
 
     .level-2 {
       margin: 0;
