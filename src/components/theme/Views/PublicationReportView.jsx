@@ -4,6 +4,7 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -27,6 +28,7 @@ function PublicationReportView(props) {
                 value={content.long_description}
                 className="long_description"
               />
+              <hr />
 
               <h4>Reference information</h4>
 
@@ -55,6 +57,7 @@ function PublicationReportView(props) {
               )}
 
               <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
