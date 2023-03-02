@@ -125,9 +125,20 @@ export const DocumentsList = (props) => {
     return null;
   }
 
+  let section_title = 'Documents';
+
+  if (content['@type'] === 'eea.climateadapt.casestudy') {
+    section_title = 'Case Studies Documents';
+  }
+
+  if (content['@type'] === 'eea.climateadapt.publicationreport') {
+    section_title = 'Publications and Reports Documents';
+  }
   return (
     <>
-      <h5>Case Studies Documents ({files.length})</h5>
+      <h5>
+        {section_title} ({files.length})
+      </h5>
       <ul className="documents-list">
         {files.map((file, index) => (
           <li key={index}>
