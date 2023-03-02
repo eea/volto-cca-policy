@@ -588,6 +588,12 @@ function ContentMetadata(props) {
           value={content.publication_date}
           portaltype={content.portal_type}
         />
+        {content.funding_programme?.title?.length > 0 && (
+          <>
+            <h5>Funding Programme:</h5>
+            <span>{content.funding_programme.title}</span>
+          </>
+        )}
         {content?.keywords?.length > 0 && (
           <>
             <h5>Keywords:</h5>
