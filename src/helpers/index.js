@@ -10,6 +10,7 @@ export {
   LinksList,
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
+export ShareInfo from './ShareInfo';
 export { ACE_COUNTRIES, BIOREGIONS, SUBNATIONAL_REGIONS } from './Constants';
 
 /**

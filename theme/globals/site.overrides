@@ -47,6 +47,11 @@ div.video-view {
 }
 
 // General styles
+div.share-info {
+  margin-top: 1em;
+  text-align: right;
+}
+
 h4.reference-title {
   padding-top: 1.5em;
   border-top: 1px solid #ddd;

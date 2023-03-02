@@ -4,6 +4,7 @@ import {
   ContentMetadata,
   ExternalLink,
   LinksList,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -101,6 +102,8 @@ function VideoView(props) {
                   </video>
                 </center>
               )}
+
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
