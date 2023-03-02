@@ -24,7 +24,7 @@ function ProjectView(props) {
               <h1>
                 {content.title} ({content.acronym})
               </h1>
-              <h4>Description</h4>
+              <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
@@ -44,7 +44,7 @@ function ProjectView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
               <PublishedModifiedInfo {...props} />
