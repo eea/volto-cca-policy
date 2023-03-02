@@ -583,7 +583,7 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.aceproject') {
     return (
       <div className="content-metadata">
-        <h5>Date of release:</h5>
+        <h5>Date of creation:</h5>
         <PublicationDateInfo
           value={content.publication_date}
           portaltype={content.portal_type}
