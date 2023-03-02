@@ -43,6 +43,7 @@ function ProjectView(props) {
                 </>
               )}
 
+              <hr />
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (

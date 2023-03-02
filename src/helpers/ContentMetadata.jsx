@@ -246,7 +246,7 @@ function GeoChar(props) {
 }
 
 function PublicationDateInfo(props) {
-  const { value, portaltype } = props;
+  const { value, portaltype, title } = props;
   let tooltipText =
     'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
 
@@ -263,14 +263,15 @@ function PublicationDateInfo(props) {
   }
 
   const publicationYear = new Date(value).getFullYear();
-  return (
+  return publicationYear > 1970 ? (
     <>
+      <h5>{title}</h5>
       <p>
         {publicationYear}
         <i className="ri-question-fill" title={tooltipText}></i>
       </p>
     </>
-  );
+  ) : null;
 } // TODO: (?) tooltip
 
 function ItemsList(props) {
@@ -305,8 +306,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.adaptationoption') {
     return (
       <div className="content-metadata">
-        <h5>Date of creation:</h5>
         <PublicationDateInfo
+          title="Date of creation:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -367,8 +368,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.casestudy') {
     return (
       <div className="content-metadata">
-        <h5>Date of creation:</h5>
         <PublicationDateInfo
+          title="Date of creation:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -415,8 +416,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.guidancedocument') {
     return (
       <div className="content-metadata">
-        <h5>Date of publication:</h5>
         <PublicationDateInfo
+          title="Date of publication:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -457,8 +458,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.indicator') {
     return (
       <div className="content-metadata">
-        <h5>Date of publication:</h5>
         <PublicationDateInfo
+          title="Date of publication:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -499,8 +500,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.publicationreport') {
     return (
       <div className="content-metadata">
-        <h5>Date of publication:</h5>
         <PublicationDateInfo
+          title="Date of publication:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -541,8 +542,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.video') {
     return (
       <div className="content-metadata">
-        <h5>Date of release:</h5>
         <PublicationDateInfo
+          title="Date of release:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -583,8 +584,8 @@ function ContentMetadata(props) {
   if (content['@type'] === 'eea.climateadapt.aceproject') {
     return (
       <div className="content-metadata">
-        <h5>Date of creation:</h5>
         <PublicationDateInfo
+          title="Date of creation:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -636,8 +637,8 @@ function ContentMetadata(props) {
   // Default render
   return (
     <div className="content-metadata">
-      <h5>Date of creation:</h5>
       <PublicationDateInfo
+        title="Date of creation:"
         value={content.publication_date}
         portaltype={content.portal_type}
       />
