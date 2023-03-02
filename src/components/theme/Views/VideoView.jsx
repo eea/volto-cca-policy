@@ -5,6 +5,7 @@ import {
   ExternalLink,
   LinksList,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Grid } from 'semantic-ui-react';
 
 function VideoView(props) {
   const { content } = props;
@@ -24,9 +25,14 @@ function VideoView(props) {
   return (
     <div className="video-view">
       <div className="ui container">
-        <div className="ui grid">
+        <Grid columns="12">
           <div className="row">
-            <div className="nine wide column left-col">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={9}
+              className="col-left"
+            >
               <div className="ui label">Video</div>
               <h1>{content.title}</h1>
               <HTMLField
@@ -69,7 +75,7 @@ function VideoView(props) {
               {(content?.contributor_list?.length > 0 ||
                 content?.other_contributor?.length > 0) && (
                 <>
-                  <h4>Contributor</h4>
+                  <h4>Contributor:</h4>
                   {content.contributor_list
                     .map((item) => (
                       <>
@@ -95,14 +101,19 @@ function VideoView(props) {
                   </video>
                 </center>
               )}
-            </div>
-            <div className="three wide column right-col">
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={3}
+              className="col-right"
+            >
               <div style={{}}>
                 <ContentMetadata {...props} />
               </div>
-            </div>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );
