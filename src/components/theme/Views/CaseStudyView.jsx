@@ -5,6 +5,7 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  DocumentsList,
 } from '@eeacms/volto-cca-policy/helpers';
 
 const PrimaryPhoto = (props) => {
@@ -156,30 +157,6 @@ const PhotoGallery = (props) => {
         {photos.map((photo, index) => (
           <li key={index}>
             <a href={photo.url}>{photo.title}</a>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
-
-const DocumentsList = (props) => {
-  const { content } = props;
-  const files = content.cca_files;
-  if (files.length === 0) {
-    return null;
-  }
-
-  return (
-    <>
-      <h5>Case Studies Documents ({files.length})</h5>
-      <ul className="documents-list">
-        {files.map((file, index) => (
-          <li key={index}>
-            <a href={file.url}>
-              <i className="file alternate icon"></i>
-              {file.title}
-            </a>
           </li>
         ))}
       </ul>

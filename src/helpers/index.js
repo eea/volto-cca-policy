@@ -8,6 +8,7 @@ export {
   ExternalLink,
   PublishedModifiedInfo,
   LinksList,
+  DocumentsList,
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
 export ShareInfo from './ShareInfo';
