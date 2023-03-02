@@ -45,7 +45,7 @@ function PublicationReportView(props) {
               )}
               {content?.contributor_list?.length > 0 && (
                 <>
-                  <h4>Contributor</h4>
+                  <h4>Contributor:</h4>
                   {content.contributor_list
                     .map((item) => (
                       <>
