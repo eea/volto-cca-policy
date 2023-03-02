@@ -580,6 +580,47 @@ function ContentMetadata(props) {
     );
   }
 
+  if (content['@type'] === 'eea.climateadapt.aceproject') {
+    return (
+      <div className="content-metadata">
+        <h5>Date of release:</h5>
+        <PublicationDateInfo
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {content.geochars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar value={content.geochars} />
+          </>
+        )}
+      </div>
+    );
+  }
   // Default render
   return (
     <div className="content-metadata">
