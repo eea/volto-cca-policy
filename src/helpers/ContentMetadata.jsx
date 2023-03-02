@@ -600,6 +600,12 @@ function ContentMetadata(props) {
             <span>{content?.keywords?.sort().join(', ')}</span>
           </>
         )}
+        {content.duration && (
+          <>
+            <h5>Duration:</h5>
+            <span>{content.duration}</span>
+          </>
+        )}
         {content.climate_impacts?.length > 0 && (
           <>
             <h5>Climate impacts:</h5>
