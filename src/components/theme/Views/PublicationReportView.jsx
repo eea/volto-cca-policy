@@ -31,12 +31,12 @@ function PublicationReportView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
               {content.source && (
                 <>
-                  <h4>Source</h4>
+                  <h4>Source:</h4>
                   <HTMLField value={content.source} className="source" />
                 </>
               )}
