@@ -255,7 +255,8 @@ function PublicationDateInfo(props) {
   }
   if (
     portaltype === 'eea.climateadapt.guidancedocument' ||
-    portaltype === 'eea.climateadapt.indicator'
+    portaltype === 'eea.climateadapt.indicator' ||
+    portaltype === 'eea.climateadapt.publicationreport'
   ) {
     tooltipText =
       'The date refers to the latest date of publication of the item';
