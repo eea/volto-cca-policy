@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import {
   HTMLField,
@@ -54,12 +55,10 @@ function OrganisationView(props) {
                   <h5>Related content:</h5>
 
                   {relatedItems.map((item, index) => (
-                    <>
-                      <UniversalLink key={index} item={item}>
-                        {item.title}
-                      </UniversalLink>
+                    <Fragment key={index}>
+                      <UniversalLink item={item}>{item.title}</UniversalLink>
                       <br />
-                    </>
+                    </Fragment>
                   ))}
                 </>
               )}
