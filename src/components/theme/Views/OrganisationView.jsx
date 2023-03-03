@@ -6,6 +6,7 @@ import {
   LinksList,
   PublishedModifiedInfo,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Grid } from 'semantic-ui-react';
 
 function OrganisationView(props) {
   const { content } = props;
@@ -25,10 +26,14 @@ function OrganisationView(props) {
   return (
     <div className="organisation-view">
       <div className="ui container">
-        <div className="ui grid">
+        <Grid columns="12">
           <div className="row">
-            <div className="nine wide column left-col">
-              <div className="ui label">Organisation</div>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={9}
+              className="col-left"
+            >
               <h1>{content.title}</h1>
               <h4>Description</h4>
               <HTMLField
@@ -58,8 +63,13 @@ function OrganisationView(props) {
               )}
 
               <PublishedModifiedInfo {...props} />
-            </div>
-            <div className="three wide column right-col">
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={3}
+              className="col-right"
+            >
               {organisationDocuments.length > 0 && (
                 <>
                   <h5>
@@ -81,9 +91,9 @@ function OrganisationView(props) {
               <div style={{}}>
                 <ContentMetadata {...props} />
               </div>
-            </div>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );
