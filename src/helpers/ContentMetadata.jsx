@@ -214,21 +214,26 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
 }
 
 function GeoChar(props) {
-  const { value } = props;
-  const j = JSON.parse(value);
+  const { content } = props;
+  const j = JSON.parse(content.geochars);
 
   if (j === null) {
+    if (content.spatial_layer) {
+      return (
+        <div className="geochar">
+          <p>{content.spatial_layer}</p>
+          <h5>Countries:</h5>
+          <p>{content.spatial_values.map((item) => item.token).join(', ')}</p>
+        </div>
+      );
+    }
+
     return '';
   }
 
   const { geoElements } = j;
 
   let rendered = renderGeochar(geoElements);
-
-  if (rendered === null) {
-    return <div>TODO: .spatial_layer / .spatial_values case</div>;
-    /* https://github.com/eea/eea.climateadapt.plone/blob/master/eea/climateadapt/browser/pt/ace_macros.pt#L245 */
-  }
 
   return (
     <div className="geochar">
@@ -303,6 +308,9 @@ function ItemsList(props) {
 function ContentMetadata(props) {
   const { content } = props;
 
+  const hasGeoChars =
+    content.geochars !== null || content.spatial_layer !== null;
+
   if (content['@type'] === 'eea.climateadapt.adaptationoption') {
     return (
       <div className="content-metadata">
@@ -341,10 +349,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.elements} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
         {content.related_case_studies?.length > 0 && (
@@ -403,10 +411,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.governance_level} join="<br />" />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
       </div>
@@ -445,10 +453,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.sectors} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
       </div>
@@ -487,10 +495,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.sectors} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
       </div>
@@ -529,10 +537,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.sectors} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
       </div>
@@ -571,10 +579,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.sectors} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
       </div>
@@ -625,10 +633,10 @@ function ContentMetadata(props) {
             <ItemsList value={content.sectors} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
       </div>
@@ -666,10 +674,10 @@ function ContentMetadata(props) {
           <ItemsList value={content.sectors} />
         </>
       )}
-      {content.geochars && (
+      {hasGeoChars && (
         <>
           <h5>Geographic characterisation:</h5>
-          <GeoChar value={content.geochars} />
+          <GeoChar {...props} />
         </>
       )}
     </div>
