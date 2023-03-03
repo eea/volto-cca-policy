@@ -6,6 +6,7 @@ import {
   LinksList,
   PublishedModifiedInfo,
   DocumentsList,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -306,6 +307,7 @@ function CaseStudyView(props) {
                 </span>
                 )
               </p>
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
