@@ -5,6 +5,7 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -64,6 +65,7 @@ function OrganisationView(props) {
               )}
 
               <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
