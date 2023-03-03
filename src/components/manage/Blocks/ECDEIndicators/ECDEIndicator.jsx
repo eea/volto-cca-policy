@@ -31,6 +31,7 @@ const createIframe = (details_url, selected_region, spinner_url) => {
     .split('https://cds.climate.copernicus.eu/workflows/c3s/')[1]
     .split('/')[0];
   // console.log('selected app: ', selected_app);
+  //
   // console.log('region: ', selected_region);
 
   return `
