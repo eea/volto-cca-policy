@@ -4,6 +4,7 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 import { Fragment } from 'react';
@@ -183,6 +184,7 @@ function AdaptationOptionView(props) {
               </div>
 
               <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
