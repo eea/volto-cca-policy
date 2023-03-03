@@ -34,8 +34,9 @@ function OrganisationView(props) {
               computer={9}
               className="col-left"
             >
+              <div className="ui label">Organisation</div>
               <h1>{content.title}</h1>
-              <h4>Description</h4>
+              <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
@@ -44,7 +45,7 @@ function OrganisationView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
               {relatedItems.length > 0 && (
