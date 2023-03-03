@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getContent } from '@plone/volto/actions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getContent } from '@plone/volto/actions';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
 import './styles.less';
 
@@ -10,18 +10,18 @@ if (__CLIENT__) {
   };
 }
 
-function useIndicator(path) {
-  const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    const action = getContent(path, null, 'fetch_indicator', null, false);
-    dispatch(action);
-  }, [dispatch, path]);
-
-  return useSelector(
-    (state) => state.content.subrequests.fetch_indicator?.data,
-  );
-}
+// function useIndicator(path) {
+//   const dispatch = useDispatch();
+//
+//   React.useEffect(() => {
+//     const action = getContent(path, null, 'fetch_indicator', null, false);
+//     dispatch(action);
+//   }, [dispatch, path]);
+//
+//   return useSelector(
+//     (state) => state.content.subrequests.fetch_indicator?.data,
+//   );
+// }
 
 const createIframe = (details_url, selected_region, spinner_url) => {
   let selected_app;
