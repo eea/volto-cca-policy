@@ -4,6 +4,7 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -32,10 +33,11 @@ function InformationPortalView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
               <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
