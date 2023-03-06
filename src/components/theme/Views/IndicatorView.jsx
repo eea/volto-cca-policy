@@ -38,6 +38,21 @@ function IndicatorView(props) {
 
               <h5>Source:</h5>
               <HTMLField value={content.source} />
+              {(content?.contributor_list?.length > 0 ||
+                content?.other_contributor?.length > 0) && (
+                <>
+                  <h4>Contributor:</h4>
+                  {content.contributor_list
+                    .map((item) => (
+                      <>
+                        {item.title}
+                        <br />
+                      </>
+                    ))
+                    .sort()}
+                  {content.other_contributor}
+                </>
+              )}
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
