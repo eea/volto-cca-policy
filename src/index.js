@@ -116,7 +116,8 @@ const applyConfig = (config) => {
     {
       title: 'Regional Adaptation Tool',
       topLevel: 1, // mkh is a navigation root
-      rootPath: '/mkh/regional-adaptation-tool',
+      rootPath:
+        '/mission-knowledge-hub/adaptation-knowledge-data/regional-adaptation-support-tool',
       columns: 4,
     },
     {
