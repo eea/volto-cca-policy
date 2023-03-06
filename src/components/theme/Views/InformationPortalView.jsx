@@ -36,6 +36,12 @@ function InformationPortalView(props) {
                 <LinksList title="Websites:" value={content.websites} />
               )}
 
+              {content?.source && (
+                <>
+                  <h5>Source:</h5>
+                  <HTMLField value={content.source} />
+                </>
+              )}
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
