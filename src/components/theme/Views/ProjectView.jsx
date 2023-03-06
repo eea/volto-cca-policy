@@ -4,25 +4,33 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Grid } from 'semantic-ui-react';
 
 function ProjectView(props) {
   const { content } = props;
   return (
     <div className="project-view">
       <div className="ui container">
-        <div className="ui grid">
+        <Grid columns="12">
           <div className="row">
-            <div className="nine wide column left-col">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={9}
+              className="col-left"
+            >
               <div className="ui label">Project</div>
               <h1>
                 {content.title} ({content.acronym})
               </h1>
-              <h4>Description</h4>
+              <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
               />
+              <hr />
               <h4>Project information</h4>
               <h5>Lead</h5>
               <p>{content.lead}</p>
@@ -35,21 +43,28 @@ function ProjectView(props) {
                 </>
               )}
 
+              <hr />
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
               <PublishedModifiedInfo {...props} />
-            </div>
-            <div className="three wide column right-col">
+              <ShareInfo {...props} />
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={3}
+              className="col-right"
+            >
               <div style={{}}>
                 <ContentMetadata {...props} />
               </div>
-            </div>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

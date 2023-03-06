@@ -3,7 +3,32 @@ import {
   HTMLField,
   ContentMetadata,
   LinksList,
+  PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Grid } from 'semantic-ui-react';
+
+const ContributorsList = (props) => {
+  const { content } = props;
+
+  if (
+    content.contributor_list?.length > 0 ||
+    content.other_contributor?.length > 0
+  ) {
+    return (
+      <>
+        <h5>Contributor:</h5>
+        {content.contributor_list?.length > 0 &&
+          content.contributor_list.map((contributor, index) => (
+            <p key={index}>{contributor.title}</p>
+          ))}
+        {content.other_contributor && <p>{content.other_contributor}</p>}
+      </>
+    );
+  }
+
+  return null;
+};
 
 function GuidanceView(props) {
   const { content } = props;
@@ -11,12 +36,18 @@ function GuidanceView(props) {
   return (
     <div className="guidance-view">
       <div className="ui container">
-        <div className="ui grid">
+        <Grid columns="12">
           <div className="row">
-            <div className="nine wide column left-col">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={9}
+              className="col-left"
+            >
               <div className="ui label">Guidance Document</div>
               <h1>{content.title}</h1>
-              <h4>Description</h4>
+              <hr />
+              <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
@@ -25,19 +56,31 @@ function GuidanceView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
-              <h5>Source</h5>
-              <HTMLField value={content.source} />
-            </div>
-            <div className="three wide column right-col">
+              {content?.source && (
+                <>
+                  <h5>Source:</h5>
+                  <HTMLField value={content.source} />
+                </>
+              )}
+              <ContributorsList {...props} />
+              <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={3}
+              className="col-right"
+            >
               <div style={{}}>
                 <ContentMetadata {...props} />
               </div>
-            </div>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

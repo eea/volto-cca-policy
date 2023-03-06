@@ -1,0 +1,32 @@
+/*******************************
+        Sidebar Nav
+*******************************/
+
+/* Header */
+@sidenavHeaderColor: @blue-grey-5;
+@sidenavHeaderFontSize: @font-size-3;
+@sidenavHeaderFontWeight: @font-weight-7;
+@sidenavHeaderPadding: @rem-space-4;
+@sidenavHeaderBorderBottom: @2px solid @blue-2;
+@sidenavHeaderIconMarginRight: @rem-space-4;
+
+/* Nav item */
+@sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
+@sidenavItemFontSize: @font-size-1;
+@sidenavItemFontWeight: @font-weight-4;
+@sidenavItemColor: @blue-grey-5;
+@sidenavItemHoverBackground: @blue-2;
+@sidenavItemHoverColor: @white;
+
+/* Content */
+@sidenavContentBorderBottom: 2px solid @white;
+
+/* Item active */
+@sidenavItemActiveColor: @blue-2;
+@sidenavItemActiveFontWeight: normal;
+@sidenavItemActiveColorHover: @grey-0;
+
+/* Folders - Level 1 */
+@sidenavFolderFontSize: @font-size-1;
+@sidenavFolderFontWeight: normal;
+@sidenavFolderItemPadding: @rem-space-3 0 @rem-space-3 @rem-space-3;

@@ -1,0 +1,17 @@
+/*******************************
+             Table
+*******************************/
+@tableHoverBackgroundColor: transparent;
+
+/*-------------------
+       Element
+--------------------*/
+
+@background: transparent;
+
+/*--------------
+     Parts
+---------------*/
+
+/* Table Header */
+@headerBackground: transparent;

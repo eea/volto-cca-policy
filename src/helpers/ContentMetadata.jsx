@@ -4,6 +4,7 @@ import {
   SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
+import { UniversalLink } from '@plone/volto/components';
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -213,21 +214,26 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
 }
 
 function GeoChar(props) {
-  const { value } = props;
-  const j = JSON.parse(value);
+  const { content } = props;
+  const j = JSON.parse(content.geochars);
 
   if (j === null) {
+    if (content.spatial_layer) {
+      return (
+        <div className="geochar">
+          <p>{content.spatial_layer}</p>
+          <h5>Countries:</h5>
+          <p>{content.spatial_values.map((item) => item.token).join(', ')}</p>
+        </div>
+      );
+    }
+
     return '';
   }
 
   const { geoElements } = j;
 
   let rendered = renderGeochar(geoElements);
-
-  if (rendered === null) {
-    return <div>TODO: .spatial_layer / .spatial_values case</div>;
-    /* https://github.com/eea/eea.climateadapt.plone/blob/master/eea/climateadapt/browser/pt/ace_macros.pt#L245 */
-  }
 
   return (
     <div className="geochar">
@@ -245,25 +251,32 @@ function GeoChar(props) {
 }
 
 function PublicationDateInfo(props) {
-  const { value, portaltype } = props;
-  let tooltipText = '';
+  const { value, portaltype, title } = props;
+  let tooltipText =
+    'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
 
   if (portaltype === 'eea.climateadapt.video') {
     tooltipText = 'The date refers to the date of release of the video';
-  } else {
+  }
+  if (
+    portaltype === 'eea.climateadapt.guidancedocument' ||
+    portaltype === 'eea.climateadapt.indicator' ||
+    portaltype === 'eea.climateadapt.publicationreport'
+  ) {
     tooltipText =
-      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
+      'The date refers to the latest date of publication of the item';
   }
 
   const publicationYear = new Date(value).getFullYear();
-  return (
+  return publicationYear > 1970 ? (
     <>
+      <h5>{title}</h5>
       <p>
         {publicationYear}
         <i className="ri-question-fill" title={tooltipText}></i>
       </p>
     </>
-  );
+  ) : null;
 } // TODO: (?) tooltip
 
 function ItemsList(props) {
@@ -295,13 +308,14 @@ function ItemsList(props) {
 function ContentMetadata(props) {
   const { content } = props;
 
-  // console.log(content);
+  const hasGeoChars =
+    content.geochars !== null || content.spatial_layer !== null;
 
   if (content['@type'] === 'eea.climateadapt.adaptationoption') {
     return (
       <div className="content-metadata">
-        <h5>Date of creation:</h5>
         <PublicationDateInfo
+          title="Date of creation:"
           value={content.publication_date}
           portaltype={content.portal_type}
         />
@@ -335,23 +349,304 @@ function ContentMetadata(props) {
             <ItemsList value={content.elements} />
           </>
         )}
-        {content.geochars && (
+        {hasGeoChars && (
           <>
             <h5>Geographic characterisation:</h5>
-            <GeoChar value={content.geochars} />
+            <GeoChar {...props} />
           </>
         )}
-        <h5>Case studies related to this option:</h5>
-        <p>TODO</p>
+        {content.related_case_studies?.length > 0 && (
+          <>
+            <h5>Case studies related to this option</h5>
+            <ul className="related-case-studies">
+              {content.related_case_studies.map((item, index) => (
+                <li key={index}>
+                  <UniversalLink key={index} href={item.url}>
+                    {item.title}
+                  </UniversalLink>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     );
   }
 
+  if (content['@type'] === 'eea.climateadapt.casestudy') {
+    return (
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title="Date of creation:"
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.governance_level?.length > 0 && (
+          <>
+            <h5>Governance level:</h5>
+            <ItemsList value={content.governance_level} join="<br />" />
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    );
+  }
+
+  if (content['@type'] === 'eea.climateadapt.guidancedocument') {
+    return (
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title="Date of publication:"
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    );
+  }
+
+  if (content['@type'] === 'eea.climateadapt.indicator') {
+    return (
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title="Date of publication:"
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    );
+  }
+
+  if (content['@type'] === 'eea.climateadapt.publicationreport') {
+    return (
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title="Date of publication:"
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    );
+  }
+
+  if (content['@type'] === 'eea.climateadapt.video') {
+    return (
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title="Date of release:"
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    );
+  }
+
+  if (content['@type'] === 'eea.climateadapt.aceproject') {
+    return (
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title="Date of creation:"
+          value={content.publication_date}
+          portaltype={content.portal_type}
+        />
+        {content.funding_programme?.title?.length > 0 && (
+          <>
+            <h5>Funding Programme:</h5>
+            <span>{content.funding_programme.title}</span>
+          </>
+        )}
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content.duration && (
+          <>
+            <h5>Duration:</h5>
+            <span>{content.duration}</span>
+          </>
+        )}
+        {content.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content.elements?.length > 0 && (
+          <>
+            <h5>Elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    );
+  }
   // Default render
   return (
     <div className="content-metadata">
-      <h5>Date of creation:</h5>
       <PublicationDateInfo
+        title="Date of creation:"
         value={content.publication_date}
         portaltype={content.portal_type}
       />
@@ -379,10 +674,10 @@ function ContentMetadata(props) {
           <ItemsList value={content.sectors} />
         </>
       )}
-      {content.geochars && (
+      {hasGeoChars && (
         <>
           <h5>Geographic characterisation:</h5>
-          <GeoChar value={content.geochars} />
+          <GeoChar {...props} />
         </>
       )}
     </div>

@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-cca-policy",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "@eeacms/volto-cca-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -17,17 +17,19 @@
     "url": "git@github.com:eea/volto-cca-policy.git"
   },
   "addons": [
-    "@eeacms/volto-eea-design-system",
-    "volto-subsites"
+    "@eeacms/volto-openlayers-map",
+    "@eeacms/volto-eea-design-system"
   ],
+  "dependencies": {
+    "@eeacms/volto-eea-design-system": "1.0.0-beta.4",
+    "@eeacms/volto-openlayers-map": "*"
+  },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
-    "@eeacms/volto-eea-design-system": "*",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress-fail-fast": "^5.0.1",
-    "md5": "^2.3.0",
-    "volto-subsites": "*"
+    "md5": "^2.3.0"
   },
   "scripts": {
     "release": "release-it",

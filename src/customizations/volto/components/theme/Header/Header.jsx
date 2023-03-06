@@ -165,7 +165,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               role="listbox"
               aria-label="language switcher"
             >
-              {eea.languages.map((item, index) => {
+              {eea.languages?.map((item, index) => {
                 if (!config.settings.supportedLanguages.includes(item.code)) {
                   return null;
                 }
@@ -213,7 +213,14 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
             {!!subsite && subsite.title && (
               <UniversalLink item={subsite} className="subsite-logo">
-                {subsite.title}
+                {subsite.subsite_logo ? (
+                  <Image
+                    src={subsite.subsite_logo.scales.mini.download}
+                    alt={subsite.title}
+                  />
+                ) : (
+                  subsite.title
+                )}
               </UniversalLink>
             )}
           </div>

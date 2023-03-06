@@ -1,0 +1,142 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+@subsiteBackgroundGradient: linear-gradient(
+  248.86deg,
+  @green-1 24.22%,
+  @green-2 97.12%
+);
+
+p.has--clear--both:empty {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Adaptation option view styles
+div.adaptation-option-view,
+div.case-study-view {
+  div.section {
+    h5.section-title {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    margin-top: 2em;
+  }
+}
+
+// Case study view styles
+div.case-study-view {
+  .case-studies-review-image-wrapper {
+    position: relative;
+    margin: 0 1em 1em 0;
+    float: left;
+  }
+}
+
+// Video view styles
+div.video-view {
+  video {
+    margin-top: 1.5em;
+  }
+
+  div.external-video {
+    margin-top: 1.5em;
+  }
+}
+
+// General styles
+div.share-info {
+  margin-top: 1em;
+  text-align: right;
+}
+
+h4.reference-title {
+  padding-top: 1.5em;
+  border-top: 1px solid #ddd;
+  margin-top: 1.5em;
+}
+
+div.published-modified-info {
+  margin-top: 2em;
+  font-size: 0.75rem;
+}
+
+div.content-metadata {
+  ul.related-case-studies {
+    padding-left: 0px;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+// Mission subsites
+body.subsite-mkh {
+  &.subsite-root {
+    .segment.content-area {
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    #page-document {
+      > div.styled-group:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .ui.menu .green.active.item,
+  .ui.green.menu .active.item {
+    border-color: @green-1 !important;
+    color: @green-1 !important;
+  }
+
+  .main-menu {
+    .ui.text.menu {
+      position: absolute;
+      right: 80px;
+      width: 120% !important;
+    }
+
+    .item a {
+      color: @blue-1;
+    }
+
+    .item a:hover {
+      border-color: @green-1;
+    }
+
+    .item.active a {
+      border-color: @green-1;
+      color: @green-1;
+    }
+  }
+
+  .search-action {
+    background-color: @green-1;
+  }
+
+  .eea.header .subsite-logo {
+    .ui.image {
+      max-height: 80px;
+    }
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  .eea.banner {
+    background: @green-1;
+  }
+
+  footer,
+  #mega-menu,
+  #search-box {
+    background: @subsiteBackgroundGradient;
+  }
+}

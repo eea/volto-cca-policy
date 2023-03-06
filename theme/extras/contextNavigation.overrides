@@ -1,0 +1,60 @@
+nav.context-navigation {
+  .context-navigation-header {
+    display: none;
+  }
+
+  .ui.list {
+    a.in_path {
+      background-color: @midWhite;
+      font-weight: 700;
+    }
+
+    .item a:hover {
+      background-color: @blue;
+    }
+
+    .item.level-2 {
+      > .content {
+        > a {
+          background-color: @midWhite;
+
+          &:hover {
+            background-color: @blue;
+            color: @white !important;
+          }
+        }
+      }
+    }
+
+    > .active.item {
+      > .content {
+        > a {
+          background-color: @blue;
+          color: @white !important;
+        }
+      }
+    }
+
+    .active.item.level-2 {
+      > .content {
+        > a {
+          background-color: @blue;
+          color: @white !important;
+        }
+      }
+    }
+  }
+
+  .item {
+    background-color: @lightGrey;
+
+    .level-2 {
+      margin: 0;
+
+      a {
+        padding-left: 2em;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

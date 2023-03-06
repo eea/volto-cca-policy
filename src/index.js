@@ -9,6 +9,12 @@ import PublicationReportView from './components/theme/Views/PublicationReportVie
 import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 
+import ccaLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Header/climate-adapt-logo.svg';
+import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
+import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Footer/ec_logo.svg';
+
+import installBlocks from './components/manage/Blocks';
+
 const applyConfig = (config) => {
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -19,34 +25,116 @@ const applyConfig = (config) => {
   // ) || ['en'];
   config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it'];
 
+  // EEA customizations
+  config.settings.eea = {
+    ...(config.settings.eea || {}),
+    headerOpts: {
+      ...(config.settings.eea?.headerOpts || {}),
+      logo: ccaLogo,
+    },
+    footerOpts: {
+      ...(config.settings.eea?.footerOpts || {}),
+      description:
+        'The European Climate Adaptation Platform Climate-ADAPT is a partnership between the European Commission and the European Environment Agency.',
+      managedBy: [
+        {
+          link: 'https://www.eea.europa.eu/',
+          src: eeaWhiteLogo,
+          alt: 'EEA Logo',
+          className: 'site logo',
+          columnSize: {
+            mobile: 6,
+            tablet: 12,
+            computer: 4,
+          },
+        },
+        {
+          link: 'https://commission.europa.eu/',
+          src: europeanComissionLogo,
+          alt: 'European Commission Logo',
+          className: 'ec logo',
+          columnSize: {
+            mobile: 6,
+            tablet: 12,
+            computer: 4,
+          },
+        },
+      ],
+      contacts: [
+        {
+          icon: 'comment outline',
+          text: 'About us',
+          link: '/about',
+          children: [],
+        },
+        {
+          icon: 'comment outline',
+          text: 'Contact us',
+          link: '/contact-us',
+        },
+        {
+          icon: 'envelope outline',
+          text: 'Sign up to our newsletter',
+          link: '/newsletter',
+        },
+      ],
+    },
+    headerSearchBox: [
+      {
+        isDefault: true,
+        path: '/advanced-search',
+        placeholder: 'Search...',
+        // description:
+        //   'Looking for more information? Try searching the full EEA website content',
+        // buttonTitle: 'Go to full site search',
+      },
+    ],
+    logoTargetUrl: '/en',
+  };
+
   // Enable volto-embed
   if (config.blocks.blocksConfig.maps) {
     config.blocks.blocksConfig.maps.restricted = false;
   }
 
   //console.log(config);
-  config.views.contentTypesViews[
-    'eea.climateadapt.adaptationoption'
-  ] = AdaptationOptionView;
-  config.views.contentTypesViews['eea.climateadapt.casestudy'] = CaseStudyView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.guidancedocument'
-  ] = GuidanceView;
-  config.views.contentTypesViews['eea.climateadapt.indicator'] = IndicatorView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.informationportal'
-  ] = InformationPortalView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.organisation'
-  ] = OrganisationView;
-  config.views.contentTypesViews['eea.climateadapt.aceproject'] = ProjectView;
-  config.views.contentTypesViews[
-    'eea.climateadapt.publicationreport'
-  ] = PublicationReportView;
-  config.views.contentTypesViews['eea.climateadapt.tool'] = ToolView;
-  config.views.contentTypesViews['eea.climateadapt.video'] = VideoView;
+  config.views.contentTypesViews = {
+    ...config.views.contentTypesViews,
+    'eea.climateadapt.adaptationoption': AdaptationOptionView,
+    'eea.climateadapt.casestudy': CaseStudyView,
+    'eea.climateadapt.guidancedocument': GuidanceView,
+    'eea.climateadapt.indicator': IndicatorView,
+    'eea.climateadapt.informationportal': InformationPortalView,
+    'eea.climateadapt.organisation': OrganisationView,
+    'eea.climateadapt.aceproject': ProjectView,
+    'eea.climateadapt.publicationreport': PublicationReportView,
+    'eea.climateadapt.tool': ToolView,
+    'eea.climateadapt.video': VideoView,
+  };
 
-  return config;
+  config.settings.contextNavigationLocations = [
+    {
+      title: 'Regional Adaptation Tool',
+      topLevel: 1, // mkh is a navigation root
+      rootPath: '/mkh/regional-adaptation-tool',
+      columns: 4,
+    },
+    {
+      title: 'UrbanAST',
+      topLevel: 3,
+      rootPath: '/knowledge/tools/urban-ast',
+    },
+    {
+      title: 'Adaptation Suport Tool',
+      topLevel: 3,
+      rootPath: '/knowledge/tools/adaptation-support-tool',
+    },
+  ];
+
+  // we won't need the listing for Folders
+  delete config.views.layoutViews.listing_view;
+
+  return installBlocks(config);
 };
 
 export default applyConfig;

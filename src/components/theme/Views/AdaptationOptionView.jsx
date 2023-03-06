@@ -4,7 +4,9 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Grid } from 'semantic-ui-react';
 import { Fragment } from 'react';
 
 const dataDisplay = [
@@ -52,7 +54,7 @@ const dataDisplay = [
   },
   {
     type: 'HTMLField',
-    field: 'life_time',
+    field: 'lifetime',
     section: 'life_time',
     title: 'Life Time',
   },
@@ -117,9 +119,14 @@ function AdaptationOptionView(props) {
   return (
     <div className="adaptation-option-view">
       <div className="ui container">
-        <div className="ui grid">
+        <Grid columns="12">
           <div className="row">
-            <div className="nine wide column left-col">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={9}
+              className="col-left"
+            >
               <div className="ui label">Adaptation option</div>
               <h1>{content.title}</h1>
               <HTMLField
@@ -177,14 +184,20 @@ function AdaptationOptionView(props) {
               </div>
 
               <PublishedModifiedInfo {...props} />
-            </div>
-            <div className="three wide column right-col">
+              <ShareInfo {...props} />
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={3}
+              className="col-right"
+            >
               <div style={{}}>
                 <ContentMetadata {...props} />
               </div>
-            </div>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

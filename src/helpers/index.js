@@ -1,4 +1,3 @@
-import './custom-styles.less';
 import superagent from 'superagent';
 import config from '@plone/volto/registry';
 import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
@@ -9,8 +8,10 @@ export {
   ExternalLink,
   PublishedModifiedInfo,
   LinksList,
+  DocumentsList,
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
+export ShareInfo from './ShareInfo';
 export { ACE_COUNTRIES, BIOREGIONS, SUBNATIONAL_REGIONS } from './Constants';
 
 /**
