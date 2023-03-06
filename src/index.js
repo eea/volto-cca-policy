@@ -115,19 +115,22 @@ const applyConfig = (config) => {
   config.settings.contextNavigationLocations = [
     {
       title: 'Regional Adaptation Tool',
+      columns: 4,
       topLevel: 1, // mkh is a navigation root
+      bottomLevel: 0,
       rootPath:
         '/mission-knowledge-hub/adaptation-knowledge-data/regional-adaptation-support-tool',
-      columns: 4,
     },
     {
       title: 'UrbanAST',
       topLevel: 3,
+      bottomLevel: 2,
       rootPath: '/knowledge/tools/urban-ast',
     },
     {
       title: 'Adaptation Suport Tool',
       topLevel: 3,
+      bottomLevel: 2,
       rootPath: '/knowledge/tools/adaptation-support-tool',
     },
   ];
