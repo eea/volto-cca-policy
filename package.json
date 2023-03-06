@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-cca-policy",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "@eeacms/volto-cca-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
