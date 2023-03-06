@@ -32,10 +32,10 @@ function IndicatorView(props) {
               <h4>Reference information</h4>
 
               {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
+                <LinksList title="Websites:" value={content.websites} />
               )}
 
-              <h5>Source</h5>
+              <h5>Source:</h5>
               <HTMLField value={content.source} />
               <PublishedModifiedInfo {...props} />
             </Grid.Column>
