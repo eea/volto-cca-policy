@@ -4,6 +4,7 @@ import {
   ContentMetadata,
   LinksList,
   PublishedModifiedInfo,
+  ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -38,6 +39,7 @@ function IndicatorView(props) {
               <h5>Source:</h5>
               <HTMLField value={content.source} />
               <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
