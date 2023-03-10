@@ -1,14 +1,17 @@
 import React from 'react';
 import superagent from 'superagent';
+import { addAppURL } from '@plone/volto/helpers';
 import { Dropdown, Grid } from 'semantic-ui-react';
-import { searchContent } from '@plone/volto/actions';
+import { getVocabulary, searchContent } from '@plone/volto/actions';
 //import ECDEIndicator from './ECDEIndicator';
 import { useDispatch, useSelector } from 'react-redux';
 
-const cases_url =
-  'http://localhost:3000/en/mkh/case-studies-map-arcgis.json/@@download/file';
+// const cases_url =
+//   'http://localhost:3000/en/mkh/case-studies-map-arcgis.json/@@download/file';
+const cases_url = '@@case-studies-map.arcgis.json';
+const IPCC = 'eea.climateadapt.aceitems_ipcc_category';
 
-function useCases() {
+function useCases(url) {
   const [cases, setCases] = React.useState([]);
 
   React.useEffect(() => {
@@ -16,9 +19,7 @@ function useCases() {
       .get(cases_url)
       .set('accept', 'json')
       .then((resp) => {
-        console.log('RESPONSE');
         const res = JSON.parse(resp.text);
-        console.log(res.features);
         setCases(res.features);
       });
   }, []);
@@ -32,17 +33,29 @@ function useFilters() {
 
 export default function CaseStudyExplorerView(props) {
   // console.log(regions);
-  const cases = useCases();
+  const cases = useCases(addAppURL(cases_url));
+
   //const filters = useFilters();
   const [filters, setFilters] = React.useState([]);
+  const dispatch = useDispatch();
+  const ipcc_categories = useSelector(
+    (state) => state.vocabularies?.[IPCC]?.items,
+  );
+
+  React.useEffect(() => {
+    const action = getVocabulary({
+      vocabNameOrURL: IPCC,
+    });
+    dispatch(action);
+  }, [dispatch]);
 
   React.useEffect(() => {
     let _filters = { sectors: {}, impacts: {} };
 
-    console.log('acis', typeof cases, cases[0], cases);
-    console.log(Object.keys(cases));
+    // console.log('acis', typeof cases, cases[0], cases);
+    // console.log(Object.keys(cases));
     for (var key of Object.keys(cases)) {
-      console.log(key, cases[key]);
+      // console.log(key, cases[key]);
       var _case = cases[key];
       let sectorKeys = _case.properties.sectors.split(',');
       let sectorNames = _case.properties.sectors_str.split(',');
@@ -60,8 +73,11 @@ export default function CaseStudyExplorerView(props) {
       }
     }
     setFilters(_filters);
-    console.log(_filters);
   }, [cases]);
+
+  const [activeFilters, setActiveFilters] = React.useState({});
+
+  console.log({ ipcc_categories, filters });
 
   return (
     <div>
@@ -70,13 +86,22 @@ export default function CaseStudyExplorerView(props) {
           MAP HERE
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
-          {/*
-          {Object.entries(filters.sectors).map((item, index) => (
-            <div key={index}>
-              <input value={index} type="checkbox" />
-              <span>{item}</span>
-            </div>
-          ))}*/}
+          {Object.entries(filters?.sectors || {}).map(
+            ([value, label], index) => (
+              <div key={index}>
+                <input
+                  value={value}
+                  type="checkbox"
+                  onChange={(e) => {
+                    // const value =
+                    console.log(e.target.checked);
+                    // setActiveFilters({...activeFilters, sector: [...activeFilters
+                  }}
+                />
+                <span>{label}</span>
+              </div>
+            ),
+          )}
         </Grid.Column>
       </Grid>
     </div>
