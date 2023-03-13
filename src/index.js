@@ -8,6 +8,7 @@ import ProjectView from './components/theme/Views/ProjectView';
 import PublicationReportView from './components/theme/Views/PublicationReportView';
 import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
+import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 
 import ccaLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Header/climate-adapt-logo.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
@@ -110,6 +111,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.publicationreport': PublicationReportView,
     'eea.climateadapt.tool': ToolView,
     'eea.climateadapt.video': VideoView,
+    'eea.climateadapt.c3sindicator': C3SIndicatorView,
   };
 
   config.settings.contextNavigationLocations = [
