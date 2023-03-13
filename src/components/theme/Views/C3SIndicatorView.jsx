@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  // HTMLField,
-  ContentMetadata,
+  HTMLField,
+  // ContentMetadata,
   // LinksList,
   // PublishedModifiedInfo,
   // ShareInfo,
@@ -10,7 +10,7 @@ import { Grid } from 'semantic-ui-react';
 // import { Fragment } from 'react';
 
 function C3SIndicatorView(props) {
-  // const { content } = props;
+  const { content } = props;
 
   return (
     <div className="c3sindicator-view">
@@ -20,20 +20,14 @@ function C3SIndicatorView(props) {
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={9}
-              className="col-left"
+              computer={12}
+              className="col-full"
             >
-              C3S indicator WIP
-            </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
+              <h1>{content.title}</h1>
+              <HTMLField
+                value={content.long_description}
+                className="long_description"
+              />
             </Grid.Column>
           </div>
         </Grid>
