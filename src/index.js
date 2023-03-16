@@ -61,6 +61,7 @@ const applyConfig = (config) => {
           },
         },
       ],
+      social: [],
       contacts: [
         {
           icon: 'comment outline',
@@ -73,11 +74,11 @@ const applyConfig = (config) => {
           text: 'Contact us',
           link: '/contact-us',
         },
-        {
-          icon: 'envelope outline',
-          text: 'Sign up to our newsletter',
-          link: '/newsletter',
-        },
+        // {
+        //   icon: 'envelope outline',
+        //   text: 'Sign up to our newsletter',
+        //   link: '/newsletter',
+        // },
       ],
     },
     headerSearchBox: [
