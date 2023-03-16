@@ -121,8 +121,7 @@ const applyConfig = (config) => {
       columns: 4,
       topLevel: 2,
       bottomLevel: 0,
-      rootPath:
-        '/mission-knowledge-hub/adaptation-knowledge-data/regional-adaptation-support-tool',
+      rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
     },
     {
       title: 'UrbanAST',
