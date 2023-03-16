@@ -145,6 +145,10 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
+  config.settings.eea.footerOpts.actions = [
+    { link: '/en/mission/login', title: 'CMS Login' },
+  ];
+
   return installBlocks(config);
 };
 
