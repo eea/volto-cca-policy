@@ -7,7 +7,7 @@ import React from 'react';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
 import {
   getBaseUrl,
@@ -204,25 +204,26 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         transparency={isHomePageInverse ? true : false}
         logo={
           <div {...(isSubsite ? { className: 'logo-wrapper' } : {})}>
-            <Logo
-              src={subsite.subsite_logo?.scales.preview.download}
-              title={eea.websiteTitle}
-              alt={eea.organisationName}
-              url={eea.logoTargetUrl}
-            />
-
             {!!subsite && subsite.title && (
-              <UniversalLink item={subsite} className="subsite-logo">
+              <>
                 {subsite.subsite_logo ? (
-                  <Image
-                    src={isHomePageInverse ? logoWhite : logo}
+                  <Logo
+                    src={subsite.subsite_logo?.scales.preview.download}
+                    title={subsite.title}
                     alt={subsite.title}
+                    url={subsite['@id']}
                   />
                 ) : (
                   subsite.title
                 )}
-              </UniversalLink>
+              </>
             )}
+            <Link to={eea.logoTargetUrl} className="subsite-logo">
+              <Image
+                src={isHomePageInverse ? logoWhite : logo}
+                alt={eea.websiteTitle}
+              />
+            </Link>
           </div>
         }
         menuItems={items}
