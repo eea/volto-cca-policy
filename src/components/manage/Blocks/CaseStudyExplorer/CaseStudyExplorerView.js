@@ -1,10 +1,10 @@
 import React from 'react';
 import superagent from 'superagent';
 import { addAppURL } from '@plone/volto/helpers';
-import { Dropdown, Grid } from 'semantic-ui-react';
-import { getVocabulary, searchContent } from '@plone/volto/actions';
+import { Grid } from 'semantic-ui-react'; // Dropdown,
+import { getVocabulary } from '@plone/volto/actions'; // , searchContent
 //import ECDEIndicator from './ECDEIndicator';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux'; // , useSelector
 
 // const cases_url =
 //   'http://localhost:3000/en/mkh/case-studies-map-arcgis.json/@@download/file';
@@ -27,9 +27,9 @@ function useCases(url) {
   return cases;
 }
 
-function useFilters() {
-  const [filters, setFilters] = React.useState([]);
-}
+// function useFilters() {
+//   const [filters, setFilters] = React.useState([]);
+// }
 
 export default function CaseStudyExplorerView(props) {
   // console.log(regions);
@@ -38,9 +38,9 @@ export default function CaseStudyExplorerView(props) {
   //const filters = useFilters();
   const [filters, setFilters] = React.useState([]);
   const dispatch = useDispatch();
-  const ipcc_categories = useSelector(
-    (state) => state.vocabularies?.[IPCC]?.items,
-  );
+  // const ipcc_categories = useSelector(
+  //   (state) => state.vocabularies?.[IPCC]?.items,
+  // );
 
   React.useEffect(() => {
     const action = getVocabulary({
@@ -75,9 +75,9 @@ export default function CaseStudyExplorerView(props) {
     setFilters(_filters);
   }, [cases]);
 
-  const [activeFilters, setActiveFilters] = React.useState({});
-
-  console.log({ ipcc_categories, filters });
+  // const [activeFilters, setActiveFilters] = React.useState({});
+  //
+  // console.log({ ipcc_categories, filters });
 
   return (
     <div>
@@ -94,7 +94,7 @@ export default function CaseStudyExplorerView(props) {
                   type="checkbox"
                   onChange={(e) => {
                     // const value =
-                    console.log(e.target.checked);
+                    // console.log(e.target.checked);
                     // setActiveFilters({...activeFilters, sector: [...activeFilters
                   }}
                 />
