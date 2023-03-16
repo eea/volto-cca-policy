@@ -8,6 +8,7 @@ import ProjectView from './components/theme/Views/ProjectView';
 import PublicationReportView from './components/theme/Views/PublicationReportView';
 import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
+import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 
 import ccaLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Header/climate-adapt-logo.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
@@ -60,6 +61,7 @@ const applyConfig = (config) => {
           },
         },
       ],
+      social: [],
       contacts: [
         {
           icon: 'comment outline',
@@ -72,11 +74,11 @@ const applyConfig = (config) => {
           text: 'Contact us',
           link: '/contact-us',
         },
-        {
-          icon: 'envelope outline',
-          text: 'Sign up to our newsletter',
-          link: '/newsletter',
-        },
+        // {
+        //   icon: 'envelope outline',
+        //   text: 'Sign up to our newsletter',
+        //   link: '/newsletter',
+        // },
       ],
     },
     headerSearchBox: [
@@ -110,30 +112,42 @@ const applyConfig = (config) => {
     'eea.climateadapt.publicationreport': PublicationReportView,
     'eea.climateadapt.tool': ToolView,
     'eea.climateadapt.video': VideoView,
+    'eea.climateadapt.c3sindicator': C3SIndicatorView,
   };
 
   config.settings.contextNavigationLocations = [
     {
       title: 'Regional Adaptation Tool',
-      topLevel: 1, // mkh is a navigation root
-      rootPath:
-        '/mission-knowledge-hub/adaptation-knowledge-data/regional-adaptation-support-tool',
       columns: 4,
+      topLevel: 2,
+      bottomLevel: 0,
+      rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
     },
     {
       title: 'UrbanAST',
       topLevel: 3,
+      bottomLevel: 2,
       rootPath: '/knowledge/tools/urban-ast',
     },
     {
       title: 'Adaptation Suport Tool',
       topLevel: 3,
+      bottomLevel: 2,
       rootPath: '/knowledge/tools/adaptation-support-tool',
     },
   ];
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
+
+  if (__SERVER__) {
+    const installExpressMiddleware = require('./express-middleware').default;
+    config = installExpressMiddleware(config);
+  }
+
+  config.settings.eea.footerOpts.actions = [
+    { link: '/en/mission/login', title: 'CMS Login' },
+  ];
 
   return installBlocks(config);
 };

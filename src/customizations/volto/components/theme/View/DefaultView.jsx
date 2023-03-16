@@ -93,7 +93,7 @@ const DefaultView = (props) => {
                   includeTop: false,
                   // currentFolderOnly: true,
                   topLevel: currentNavigation.topLevel,
-                  bottomLevel: 2,
+                  bottomLevel: currentNavigation.bottomLevel,
                   rootPath: `${currentLang}/${currentNavigation.rootPath}`,
                 }}
               />
