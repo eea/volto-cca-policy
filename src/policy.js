@@ -1,5 +1,6 @@
-import { runtimeConfig } from '@plone/volto/runtime_config';
 import installCallout from '@plone/volto-slate/editor/plugins/Callout';
+
+// import { runtimeConfig } from '@plone/volto/runtime_config';
 // import installContextNavigationBlock from './components/manage/Blocks/ContextNavigation';
 // import installLayoutSettingsBlock from './components/manage/Blocks/LayoutSettings';
 
@@ -32,25 +33,25 @@ const applyConfig = (config) => {
   config.settings.dateLocale = 'en-gb';
 
   // #137187 Keycloak integration
-  if (runtimeConfig['RAZZLE_KEYCLOAK'] === 'Yes') {
-    config.settings.externalRoutes = [
-      ...(config.settings.externalRoutes || []),
-      {
-        match: {
-          path: '/login',
-          exact: true,
-          strict: false,
-        },
-      },
-      {
-        match: {
-          path: '/logout',
-          exact: true,
-          strict: false,
-        },
-      },
-    ];
-  }
+  // if (runtimeConfig['RAZZLE_KEYCLOAK'] === 'Yes') {
+  //   config.settings.externalRoutes = [
+  //     ...(config.settings.externalRoutes || []),
+  //     {
+  //       match: {
+  //         path: '/en/mission/login',
+  //         exact: true,
+  //         strict: false,
+  //       },
+  //     },
+  //     {
+  //       match: {
+  //         path: '/logout',
+  //         exact: true,
+  //         strict: false,
+  //       },
+  //     },
+  //   ];
+  // }
 
   // Working-copy
   config.settings.hasWorkingCopySupport = true;
@@ -126,6 +127,8 @@ const applyConfig = (config) => {
   if (config.blocks.blocksConfig.imagecards) {
     config.blocks.blocksConfig.imagecards.restricted = true;
   }
+
+  console.log(config);
 
   // Done
   return config;
