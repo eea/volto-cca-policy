@@ -89,6 +89,23 @@ body.subsite-mkh {
     }
   }
 
+  .eea.header .eea-logo {
+    max-width: 252px;
+  }
+
+  .eea.header .subsite-logo {
+    left: 280px;
+  }
+
+  .subfooter .footer-description {
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    p {
+      font-size: 1.125rem;
+    }
+  }
+
   .ui.menu .green.active.item,
   .ui.green.menu .active.item {
     border-color: @green-1 !important;
@@ -122,7 +139,7 @@ body.subsite-mkh {
 
   .eea.header .subsite-logo {
     .ui.image {
-      max-height: 80px;
+      max-height: 60px;
     }
 
     &:before {

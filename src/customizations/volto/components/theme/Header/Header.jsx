@@ -205,7 +205,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         logo={
           <div {...(isSubsite ? { className: 'logo-wrapper' } : {})}>
             <Logo
-              src={isHomePageInverse ? logoWhite : logo}
+              src={subsite.subsite_logo.scales.preview.download}
               title={eea.websiteTitle}
               alt={eea.organisationName}
               url={eea.logoTargetUrl}
@@ -215,7 +215,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               <UniversalLink item={subsite} className="subsite-logo">
                 {subsite.subsite_logo ? (
                   <Image
-                    src={subsite.subsite_logo.scales.mini.download}
+                    src={isHomePageInverse ? logoWhite : logo}
                     alt={subsite.title}
                   />
                 ) : (
