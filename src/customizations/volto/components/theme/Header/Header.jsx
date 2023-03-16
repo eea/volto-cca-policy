@@ -211,7 +211,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                     src={subsite.subsite_logo?.scales.preview.download}
                     title={subsite.title}
                     alt={subsite.title}
-                    url={subsite['@id']}
+                    url={flattenToAppURL(subsite['@id'])}
                   />
                 ) : (
                   subsite.title
