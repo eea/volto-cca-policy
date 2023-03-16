@@ -205,7 +205,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         logo={
           <div {...(isSubsite ? { className: 'logo-wrapper' } : {})}>
             <Logo
-              src={subsite.subsite_logo.scales.preview.download}
+              src={subsite.subsite_logo?.scales.preview.download}
               title={eea.websiteTitle}
               alt={eea.organisationName}
               url={eea.logoTargetUrl}
