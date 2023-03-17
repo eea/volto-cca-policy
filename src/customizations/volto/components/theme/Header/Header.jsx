@@ -204,7 +204,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         transparency={isHomePageInverse ? true : false}
         logo={
           <div {...(isSubsite ? { className: 'logo-wrapper' } : {})}>
-            {!!subsite && subsite.title && (
+            {!!subsite && subsite.title ? (
               <>
                 {subsite.subsite_logo ? (
                   <Logo
@@ -216,14 +216,23 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                 ) : (
                   subsite.title
                 )}
+                <div className="subsite-logo">
+                  <Logo
+                    src={isHomePageInverse ? logoWhite : logo}
+                    title={eea.websiteTitle}
+                    alt={eea.organisationName}
+                    url={eea.logoTargetUrl}
+                  />
+                </div>
               </>
-            )}
-            <Link to={eea.logoTargetUrl} className="subsite-logo">
-              <Image
+            ) : (
+              <Logo
                 src={isHomePageInverse ? logoWhite : logo}
-                alt={eea.websiteTitle}
+                title={eea.websiteTitle}
+                alt={eea.organisationName}
+                url={eea.logoTargetUrl}
               />
-            </Link>
+            )}
           </div>
         }
         menuItems={items}
