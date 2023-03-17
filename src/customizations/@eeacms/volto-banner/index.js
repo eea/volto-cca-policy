@@ -1,3 +1,3 @@
-export default function dummyConfig (config) {
-  return config;t
+export default function dummyConfig(config) {
+  return config;
 }
