@@ -62,17 +62,23 @@ const applyConfig = (config) => {
         },
       ],
       social: [],
+      actions: [
+        {
+          link: '/en/mission/login',
+          title: 'CMS Login',
+        },
+      ],
       contacts: [
         {
           icon: 'comment outline',
           text: 'About us',
-          link: '/about',
+          link: '/en/mission/about-us',
           children: [],
         },
         {
           icon: 'comment outline',
           text: 'Contact us',
-          link: '/contact-us',
+          link: '/en/mission/contact-us',
         },
         // {
         //   icon: 'envelope outline',
@@ -144,10 +150,6 @@ const applyConfig = (config) => {
     const installExpressMiddleware = require('./express-middleware').default;
     config = installExpressMiddleware(config);
   }
-
-  config.settings.eea.footerOpts.actions = [
-    { link: '/en/mission/login', title: 'CMS Login' },
-  ];
 
   return installBlocks(config);
 };
