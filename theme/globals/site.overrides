@@ -93,10 +93,6 @@ body.subsite-mkh {
     max-width: 252px;
   }
 
-  .eea.header .subsite-logo {
-    left: 280px;
-  }
-
   .subfooter .footer-description {
     margin-top: 3em;
     margin-bottom: 1em;
@@ -138,8 +134,15 @@ body.subsite-mkh {
   }
 
   .eea.header .subsite-logo {
-    .ui.image {
-      max-height: 60px;
+    height: 100%;
+
+    .logo {
+      display: inline-block;
+      height: 100%;
+
+      img {
+        max-width: 320px;
+      }
     }
 
     &:before {
@@ -155,5 +158,11 @@ body.subsite-mkh {
   #mega-menu,
   #search-box {
     background: @subsiteBackgroundGradient;
+  }
+}
+
+@media only screen and (min-width: @largestSmallMonitor) {
+  .eea.header .subsite-logo {
+    left: 280px !important;
   }
 }
