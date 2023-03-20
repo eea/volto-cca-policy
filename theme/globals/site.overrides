@@ -13,6 +13,21 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
+[class~='view-defaultview'] [id='page-document'] > .full,
+[class~='view-viewview'] [id='page-document'] > .full {
+  max-width: initial !important;
+}
+
+.full {
+  position: relative !important;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+}
+
 // Adaptation option view styles
 div.adaptation-option-view,
 div.case-study-view {
