@@ -1,0 +1,22 @@
+.ui.basic.button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: initial;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ui.basic.primary.button,
+.ui.basic.secondary.button {
+  box-shadow: none !important;
+
+  &:hover,
+  &:active {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}
