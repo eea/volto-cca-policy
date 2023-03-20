@@ -134,6 +134,7 @@ body.subsite-mkh {
   }
 
   .eea.header .subsite-logo {
+    z-index: unset;
     height: 100%;
 
     .logo {
