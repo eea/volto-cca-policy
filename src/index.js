@@ -17,6 +17,20 @@ import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/ima
 import installBlocks from './components/manage/Blocks';
 
 const applyConfig = (config) => {
+  const notInEnMission = /^(?!(\/en\/mission)).*$/;
+  if (!__DEVELOPMENT__) {
+    config.settings.externalRoutes = [
+      ...(config.settings.externalRoutes || []),
+      {
+        match: {
+          path: notInEnMission,
+          exact: false,
+          strict: false,
+        },
+      },
+    ];
+  }
+
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
   config.settings.defaultLanguage =
