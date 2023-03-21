@@ -13,21 +13,6 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
-[class~='view-defaultview'] [id='page-document'] > .full,
-[class~='view-viewview'] [id='page-document'] > .full {
-  max-width: initial !important;
-}
-
-.full {
-  position: relative !important;
-  right: 50%;
-  left: 50%;
-  width: 100vw !important;
-  max-width: initial !important;
-  margin-right: -50vw !important;
-  margin-left: -50vw !important;
-}
-
 // Adaptation option view styles
 div.adaptation-option-view,
 div.case-study-view {
@@ -180,5 +165,80 @@ body.subsite-mkh {
 @media only screen and (min-width: @largestSmallMonitor) {
   .eea.header .subsite-logo {
     left: 280px !important;
+  }
+}
+
+body.view-viewview .full {
+  position: relative !important;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+
+  > div {
+    display: block;
+    width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  .full > div {
+    width: calc(100% - @toolbarWidth) !important;
+  }
+}
+
+@media screen and (min-width: @largestMobileScreen) {
+  body.has-toolbar.has-sidebar {
+    .full > div {
+      width: calc(100% - (@toolbarWidth + @sidebarWidth)) !important;
+    }
+  }
+
+  body.has-toolbar.has-sidebar-collapsed {
+    .full > div {
+      width: calc(100% - (@toolbarWidth + @collapsedToolbarWidth)) !important;
+    }
+  }
+
+  body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+    .full > div {
+      width: calc(100% - @collapsedToolbarWidth) !important;
+    }
+  }
+
+  body.has-toolbar-collapsed.has-sidebar {
+    .full > div {
+      .full-width-block {
+        width: calc(100% - (@collapsedToolbarWidth + @sidebarWidth)) !important;
+      }
+    }
+  }
+
+  body.has-toolbar-collapsed.has-sidebar-collapsed {
+    .full > div {
+      width: calc(
+        100% - (@collapsedToolbarWidth + @collapsedToolbarWidth)
+      ) !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body.has-toolbar-collapsed.has-sidebar-collapsed .full.full-width-block,
+  body.has-toolbar.has-sidebar-collapsed .full.full-width-block {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: @largestMobileScreen) {
+  body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed),
+  body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+    .full > div {
+      width: 100% !important;
+    }
   }
 }

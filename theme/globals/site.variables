@@ -14,3 +14,10 @@
 // @linkColor: @secondaryColor;
 // @linkHoverColor: @primaryColor;
 // @linkActiveColor: @linkHoverColor;
+
+// Toolbar
+@toolbarWidth                  : 80px;
+@collapsedToolbarWidth         : 20px;
+@mobileToolbarHeight           : 100px;
+@mobileCollapsedToolbarHeight  : 20px;
+@sidebarWidth                  : 375px;
