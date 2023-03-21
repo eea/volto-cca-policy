@@ -86,13 +86,13 @@ const applyConfig = (config) => {
         {
           icon: 'comment outline',
           text: 'About us',
-          link: '/en/mission/about-us',
+          link: '/en/mission/about',
           children: [],
         },
         {
           icon: 'comment outline',
           text: 'Contact us',
-          link: '/en/mission/about-us/contact-us',
+          link: '/en/mission/about/contact',
         },
         // {
         //   icon: 'envelope outline',
