@@ -86,13 +86,13 @@ const applyConfig = (config) => {
         {
           icon: 'comment outline',
           text: 'About us',
-          link: '/en/mission/about-us',
+          link: '/en/mission/about',
           children: [],
         },
         {
           icon: 'comment outline',
           text: 'Contact us',
-          link: '/en/mission/about-us/contact-us',
+          link: '/en/mission/about/contact',
         },
         // {
         //   icon: 'envelope outline',
@@ -119,6 +119,11 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.maps.restricted = false;
   }
 
+  // Enable video
+  if (config.blocks.blocksConfig.video) {
+    config.blocks.blocksConfig.video.restricted = false;
+  }
+
   //console.log(config);
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
@@ -137,7 +142,7 @@ const applyConfig = (config) => {
 
   config.settings.contextNavigationLocations = [
     {
-      title: 'Regional Adaptation Tool',
+      title: 'Regional Adaptation Support Tool',
       columns: 4,
       topLevel: 2,
       bottomLevel: 0,
