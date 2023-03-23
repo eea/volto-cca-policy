@@ -133,7 +133,6 @@ class AddLinkForm extends Component {
         nextState = { value: flattenToAppURL(value) };
       }
     }
-    console.log('onChange nextState', nextState);
     this.setState(nextState, callback);
 
     if (clear) this.props.onClear();
@@ -147,7 +146,6 @@ class AddLinkForm extends Component {
    * @returns {undefined}
    */
   onSelectItem = (e, url) => {
-    console.log('onSelectItem', url);
     e.preventDefault();
     this.setState({
       value: url,
@@ -163,7 +161,6 @@ class AddLinkForm extends Component {
    * @returns {undefined}
    */
   clear() {
-    console.log('clearing');
     const nextState = { value: '' };
     this.setState(nextState);
 
@@ -201,8 +198,6 @@ class AddLinkForm extends Component {
    */
   onSubmit() {
     let { value: url } = this.state;
-
-    console.log('onSubmit', this.state);
 
     const checkedURL = URLUtils.checkAndNormalizeUrl(url);
     url = checkedURL.url;
@@ -289,7 +284,7 @@ class AddLinkForm extends Component {
                         mode: 'link',
                         overlay: true,
                         onSelectItem: (url) => {
-                          console.log('incoming onchange', url);
+                          // console.log('incoming onchange', url);
                           this.onChange(url, null, this.onSubmit);
                           // console.log('now state is', this.state);
                           // this.onSubmit();
