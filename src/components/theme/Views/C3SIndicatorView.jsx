@@ -102,7 +102,6 @@ const Overview = (props) => {
 function C3SIndicatorView(props) {
   const { content } = props;
   const [showDetails, setShowDetails] = useState(false);
-  console.log(content);
 
   const toggleIframe = () => {
     setShowDetails(!showDetails);
@@ -113,6 +112,14 @@ function C3SIndicatorView(props) {
       setShowDetails(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (showDetails) {
+      window.history.pushState({}, '', '#details');
+    } else {
+      window.history.pushState({}, '', window.location.pathname);
+    }
+  }, [showDetails]);
 
   return (
     <div className="c3sindicator-view">
