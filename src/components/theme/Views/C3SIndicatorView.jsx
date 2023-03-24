@@ -11,10 +11,10 @@ if (!__SERVER__) {
 
 const createIframe = (details_url, details_params, spinner_url) => {
   return `
-  <iframe width="100%" height="500px" srcdoc="<html><head>
+  <iframe width="100%" height="800px" srcdoc="<html><head>
     <title>CDS integration test</title>
     <meta charset='utf-8' />
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <script>
         window.cds_toolbox = { cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/' };
     </script>
@@ -32,13 +32,12 @@ const createIframe = (details_url, details_params, spinner_url) => {
         </div>
       </div>
       <script type='text/javascript'>
-      var url = 'https://cds.climate.copernicus.eu/workflows/c3s/hidden-app-health-heatwave-overview-web/master/configuration.json?configuration_version=3.0';
       document.addEventListener('DOMContentLoaded',
         function () {
           window.cds_toolbox.runApp(
             'toolbox-app-details',
-            url,
-            {'workflowParams': {'hdef': 'climatological_related'}}
+            '${details_url}',
+            ${details_params}
           );
         }, false);
       </script>
@@ -49,7 +48,9 @@ const createIframe = (details_url, details_params, spinner_url) => {
 const Details = (props) => {
   const { content } = props;
   const c3s_details_url = content.details_app_toolbox_url;
-  const c3s_details_params = content.details_app_parameters;
+  const c3s_details_params = JSON.stringify(
+    content.details_app_parameters,
+  ).replace(/"/g, "'"); // we avoid double quotes in iframe text
   const [spinnerUrl, setSpinnerUrl] = useState(null);
 
   React.useEffect(() => {
