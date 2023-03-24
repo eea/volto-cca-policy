@@ -9,60 +9,7 @@ if (!__SERVER__) {
   };
 }
 
-const createIframe2 = (details_url, selected_region, spinner_url) => {
-  let selected_app;
-  // selected_region = 'Bayern';
-
-  selected_app = details_url
-    .split('https://cds.climate.copernicus.eu/workflows/c3s/')[1]
-    .split('/')[0];
-  // console.log('selected app: ', selected_app);
-  //
-  // console.log('region: ', selected_region);
-
-  return `
-  <iframe width="100%" height="800px" srcdoc="<head>
-    <title>CDS integration test</title>
-    <meta charset='utf-8' />
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-    <script type='text/javascript'>
-        window.cds_toolbox = { cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/' };
-    </script>
-    <script type='text/javascript' src='https://cds.climate.copernicus.eu/toolbox/toolbox-latest.js'></script>
-  </head>
-
-  <body>
-    <div class='t-ct'>
-        <div id='toolbox-app'>
-            <div class='pre-app-loading'>
-                <img src='${spinner_url}' alt='Loading'>
-                <div>
-                    ...loading configuration...
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-            const ID = 'toolbox-app';
-            $(document).ready(() => {
-                window.cds_toolbox.runApp(ID, 'https://cds.climate.copernicus.eu/workflows/c3s/${selected_app}/master/configuration.json', {
-                    workflowParams: {
-                        default: '${selected_region}'
-                    }
-                });
-            });
-        })();
-
-    </script>
-
-</body>" />`;
-};
-
-const createIframe1 = (details_url, details_params, spinner_url) => {
-  console.log('AAAAAAAAAAAAAAAa');
-  console.log('details url', details_url);
-
+const createIframe = (details_url, details_params, spinner_url) => {
   return `
   <iframe width="100%" height="500px" srcdoc="<html><head>
     <title>CDS integration test</title>
@@ -103,33 +50,17 @@ const Details = (props) => {
   const { content } = props;
   const c3s_details_url = content.details_app_toolbox_url;
   const c3s_details_params = content.details_app_parameters;
-  console.log('content', content);
-  console.log('def app', content.definition_app);
-  console.log('app 1', c3s_details_url);
-  console.log('app 2', c3s_details_params);
   const [spinnerUrl, setSpinnerUrl] = useState(null);
-  const details_url =
-    'https://cds.climate.copernicus.eu/workflows/c3s/ecde-app-growing-degree-days/master/configuration.json';
-
-  console.log(details_url);
 
   React.useEffect(() => {
     setSpinnerUrl(spinner);
   }, []);
 
-  // return (
-  //   <div
-  //     className="iframe-container"
-  //     dangerouslySetInnerHTML={{
-  //       __html: createIframe2(details_url, 'Vest', spinnerUrl),
-  //     }}
-  //   />
-  // );
   return (
     <div
       className="iframe-container"
       dangerouslySetInnerHTML={{
-        __html: createIframe1(c3s_details_url, c3s_details_params, spinnerUrl),
+        __html: createIframe(c3s_details_url, c3s_details_params, spinnerUrl),
       }}
     />
   );
