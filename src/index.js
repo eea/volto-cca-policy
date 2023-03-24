@@ -78,7 +78,7 @@ const applyConfig = (config) => {
       social: [],
       actions: [
         {
-          link: '/en/mission/privacy',
+          link: '/en/mission/the-mission/privacy',
           title: 'Privacy',
         },
         {
