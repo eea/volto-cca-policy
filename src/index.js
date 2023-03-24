@@ -78,6 +78,10 @@ const applyConfig = (config) => {
       social: [],
       actions: [
         {
+          link: '/en/mission/privacy',
+          title: 'Privacy',
+        },
+        {
           link: '/en/mission/login',
           title: 'CMS Login',
         },
