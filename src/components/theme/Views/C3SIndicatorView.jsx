@@ -102,6 +102,7 @@ const Overview = (props) => {
 function C3SIndicatorView(props) {
   const { content } = props;
   const [showDetails, setShowDetails] = useState(false);
+  console.log(content);
 
   const toggleIframe = () => {
     setShowDetails(!showDetails);
@@ -132,6 +133,9 @@ function C3SIndicatorView(props) {
                 value={content.long_description}
                 className="long_description"
               />
+              <h2>
+                {content.indicator_title} {showDetails && ' - Explore index'}
+              </h2>
               <a href="#details">
                 <button className="ui button primary" onClick={toggleIframe}>
                   {showDetails ? 'Go back' : 'Explore in detail'}
