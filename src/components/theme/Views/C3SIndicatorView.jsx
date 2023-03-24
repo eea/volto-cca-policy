@@ -9,7 +9,7 @@ if (!__SERVER__) {
   };
 }
 
-const createIframe = (details_url, details_params, spinner_url) => {
+const createIframe = (div_id, details_url, details_params, spinner_url) => {
   return `
   <iframe width="100%" height="800px" srcdoc="<html><head>
     <title>CDS integration test</title>
@@ -22,7 +22,7 @@ const createIframe = (details_url, details_params, spinner_url) => {
     </head>
     <body>
       <div class='t-ct'>
-        <div id='toolbox-app-details'>
+        <div id='${div_id}'>
           <div class='pre-app-loading'>
             <img src='${spinner_url}' alt='Loading'>
             <div>
@@ -35,7 +35,7 @@ const createIframe = (details_url, details_params, spinner_url) => {
       document.addEventListener('DOMContentLoaded',
         function () {
           window.cds_toolbox.runApp(
-            'toolbox-app-details',
+            '${div_id}',
             '${details_url}',
             ${details_params}
           );
@@ -61,7 +61,39 @@ const Details = (props) => {
     <div
       className="iframe-container"
       dangerouslySetInnerHTML={{
-        __html: createIframe(c3s_details_url, c3s_details_params, spinnerUrl),
+        __html: createIframe(
+          'toolbox-app-details',
+          c3s_details_url,
+          c3s_details_params,
+          spinnerUrl,
+        ),
+      }}
+    />
+  );
+};
+
+const Overview = (props) => {
+  const { content } = props;
+  const c3s_overview_url = content.overview_app_toolbox_url;
+  const c3s_overview_params = JSON.stringify(
+    content.overview_app_parameters,
+  ).replace(/"/g, "'"); // we avoid double quotes in iframe text
+  const [spinnerUrl, setSpinnerUrl] = useState(null);
+
+  React.useEffect(() => {
+    setSpinnerUrl(spinner);
+  }, []);
+
+  return (
+    <div
+      className="iframe-container"
+      dangerouslySetInnerHTML={{
+        __html: createIframe(
+          'toolbox-app-overview',
+          c3s_overview_url,
+          c3s_overview_params,
+          spinnerUrl,
+        ),
       }}
     />
   );
@@ -89,6 +121,7 @@ function C3SIndicatorView(props) {
                 value={content.long_description}
                 className="long_description"
               />
+              {!__SERVER__ && <Overview {...props} />}
               {!__SERVER__ && <Details {...props} />}
             </Grid.Column>
           </div>
