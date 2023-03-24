@@ -47,6 +47,20 @@ div.video-view {
 }
 
 // General styles
+.custom-align {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .align-left {
+    margin-right: auto;
+  }
+
+  .align-right {
+    margin-left: auto;
+  }
+}
+
 div.share-info {
   margin-top: 1em;
   text-align: right;
