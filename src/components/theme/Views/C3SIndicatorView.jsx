@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
@@ -106,6 +106,12 @@ function C3SIndicatorView(props) {
   const toggleIframe = () => {
     setShowDetails(!showDetails);
   };
+
+  useEffect(() => {
+    if (window.location.hash === '#details') {
+      setShowDetails(true);
+    }
+  }, []);
 
   return (
     <div className="c3sindicator-view">
