@@ -116,6 +116,8 @@ const applyConfig = (config) => {
       },
     ],
     logoTargetUrl: '/en',
+    organisationName: 'Climate-ADAPT',
+    websiteTitle: 'Climate-ADAPT',
   };
 
   // Enable volto-embed
