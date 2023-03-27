@@ -166,6 +166,13 @@ const applyConfig = (config) => {
     },
   ];
 
+  config.blocks.initialBlocks = {
+    ...config.blocks.initialBlocks,
+    Folder: ['title', 'description', 'slate'],
+    Event: ['title', 'description', 'slate'],
+    'News Item': ['title', 'description', 'slate'],
+  };
+
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
 
