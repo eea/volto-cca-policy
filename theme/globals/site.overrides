@@ -46,6 +46,13 @@ div.video-view {
   }
 }
 
+// C3S Indicator view styles
+div.c3sindicator-view {
+  iframe {
+    border: none;
+  }
+}
+
 // General styles
 .btn-right {
   margin: calc(2rem - 0.1em) 0em 1rem;
