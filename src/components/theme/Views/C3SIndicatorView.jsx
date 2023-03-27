@@ -132,29 +132,25 @@ function C3SIndicatorView(props) {
               computer={12}
               className="col-full"
             >
-              <div className="custom-align">
-                <h1 className="align-left">{content.title}</h1>
-                <a
-                  href="/knowledge/european-climate-data-explorer/"
-                  className="align-right"
-                >
-                  <button className="ui button primary">ECDE homepage</button>
-                </a>
-              </div>
+              <a
+                href="/knowledge/european-climate-data-explorer/"
+                className="btn-right"
+              >
+                <button className="ui button primary">ECDE homepage</button>
+              </a>
+              <h1>{content.title}</h1>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
               />
-              <div className="custom-align">
-                <h2 className="align-left">
-                  {content.indicator_title} {showDetails && ' - Explore index'}
-                </h2>
-                <a href="#details" className="align-right">
-                  <button className="ui button primary" onClick={toggleIframe}>
-                    {showDetails ? 'Go back' : 'Explore in detail'}
-                  </button>
-                </a>
-              </div>
+              <a href="#details" className="btn-right">
+                <button className="ui button primary" onClick={toggleIframe}>
+                  {showDetails ? 'Go back' : 'Explore in detail'}
+                </button>
+              </a>
+              <h2>
+                {content.indicator_title} {showDetails && ' - Explore index'}
+              </h2>
               {!__SERVER__ && !showDetails && <Overview {...props} />}
               {!__SERVER__ && showDetails && <Details {...props} />}
             </Grid.Column>
