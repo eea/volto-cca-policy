@@ -114,6 +114,12 @@ const applyConfig = (config) => {
         //   'Looking for more information? Try searching the full EEA website content',
         // buttonTitle: 'Go to full site search',
       },
+      // {
+      //   path: '/en/mission',
+      //   placeholder: 'Search...',
+      //   description: 'Looking for more information?',
+      //   buttonTitle: 'Go to advanced search',
+      // },
     ],
     logoTargetUrl: '/en',
     organisationName: 'Climate-ADAPT',

@@ -59,6 +59,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
   const { eea } = config.settings;
   const headerOpts = eea.headerOpts || {};
+  const headerSearchBox = eea.headerSearchBox || [];
   const { logo, logoWhite } = headerOpts || {};
   const width = useSelector((state) => state.screen?.width);
   const dispatch = useDispatch();
@@ -200,6 +201,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
       </Header.TopHeader>
       <Header.Main
         pathname={pathname}
+        headerSearchBox={headerSearchBox}
         inverted={isHomePageInverse ? true : false}
         transparency={isHomePageInverse ? true : false}
         logo={
