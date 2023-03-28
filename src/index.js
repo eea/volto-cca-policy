@@ -136,6 +136,11 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.video.restricted = false;
   }
 
+  config.blocks.blocksConfig.__grid = {
+    ...config.blocks.blocksConfig.__grid,
+    maxNumberOfColumns: 5,
+  };
+
   //console.log(config);
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
