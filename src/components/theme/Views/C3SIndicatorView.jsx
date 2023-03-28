@@ -153,6 +153,18 @@ function C3SIndicatorView(props) {
               </h2>
               {!__SERVER__ && !showDetails && <Overview {...props} />}
               {!__SERVER__ && showDetails && <Details {...props} />}
+
+              <p>
+                Content in the European Climate Data Explorer pages is delivered
+                by the{' '}
+                <a href="https://climate.copernicus.eu/">
+                  Copernicus Climate Change Service (C3S)
+                </a>{' '}
+                implemented by ECMWF.{' '}
+                <a href="/knowledge/european-climate-data-explorer/disclaimer">
+                  Disclaimer
+                </a>
+              </p>
             </Grid.Column>
           </div>
         </Grid>
