@@ -141,6 +141,13 @@ const applyConfig = (config) => {
     maxNumberOfColumns: 5,
   };
 
+  config.blocks.blocksConfig.nextCloudVideo = {
+    whiteList: [
+      'https://cmshare.eea.europa.eu',
+      'https://shareit.eea.europa.eu',
+    ],
+  };
+
   //console.log(config);
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
