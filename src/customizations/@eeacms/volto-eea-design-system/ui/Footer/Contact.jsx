@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { UniversalLink } from '@plone/volto/components';
 
 const Contact = ({ children, contacts }) =>
   children?.length ? (
@@ -8,24 +8,17 @@ const Contact = ({ children, contacts }) =>
   ) : (
     <div className="contact-block">
       {contacts?.map((contact, index) => {
-        const isMailTo = contact.link.startsWith('mailto:');
         return (
           <div className="contact" key={index}>
-            {isMailTo ? (
-              <a href={contact.link} className="bold">
-                {contact.text}
-              </a>
-            ) : (
-              <Link to={contact.link} className="bold">
-                {contact.text}
-              </Link>
-            )}
+            <UniversalLink href={contact.link} className="bold">
+              {contact.text}
+            </UniversalLink>
             {contact.children && (
               <div className="subcontact">
                 {contact.children.map((child, index) => (
-                  <Link to={child.link} key={index}>
+                  <UniversalLink href={child.link} key={index}>
                     {child.text}
-                  </Link>
+                  </UniversalLink>
                 ))}
               </div>
             )}

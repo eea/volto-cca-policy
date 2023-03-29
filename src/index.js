@@ -96,7 +96,7 @@ const applyConfig = (config) => {
         {
           icon: 'comment outline',
           text: 'Contact',
-          link: 'mailto:climate.adapt@eea.europa.eu',
+          link: 'climate.adapt@eea.europa.eu',
         },
       ],
     },
