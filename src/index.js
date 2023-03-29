@@ -96,13 +96,8 @@ const applyConfig = (config) => {
         {
           icon: 'comment outline',
           text: 'Contact',
-          link: '/en/mission/the-mission/contact-us',
+          link: 'mailto:climate.adapt@eea.europa.eu',
         },
-        // {
-        //   icon: 'envelope outline',
-        //   text: 'Sign up to our newsletter',
-        //   link: '/newsletter',
-        // },
       ],
     },
     headerSearchBox: [
