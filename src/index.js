@@ -137,6 +137,7 @@ const applyConfig = (config) => {
   };
 
   config.blocks.blocksConfig.nextCloudVideo = {
+    ...config.blocks.blocksConfig.nextCloudVideo,
     whiteList: [
       'https://cmshare.eea.europa.eu',
       'https://shareit.eea.europa.eu',
