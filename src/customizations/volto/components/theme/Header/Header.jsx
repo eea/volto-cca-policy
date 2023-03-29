@@ -4,9 +4,8 @@
  */
 
 import React from 'react';
-import { Dropdown, Image } from 'semantic-ui-react';
+import { Dropdown, Image } from 'semantic-ui-react'; // Container, Menu, Grid
 import { connect, useDispatch, useSelector } from 'react-redux';
-
 import { withRouter } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
 import {
@@ -24,8 +23,9 @@ import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/
 import config from '@plone/volto/registry';
 import { compose } from 'recompose';
 import { BodyClass } from '@plone/volto/helpers';
-
 import cx from 'classnames';
+
+import HeaderMain from './HeaderMain';
 
 function removeTrailingSlash(path) {
   return path.replace(/\/+$/, '');
@@ -59,7 +59,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
   const { eea } = config.settings;
   const headerOpts = eea.headerOpts || {};
-  const headerSearchBox = eea.headerSearchBox || [];
+  // const headerSearchBox = eea.headerSearchBox || [];
   const { logo, logoWhite } = headerOpts || {};
   const width = useSelector((state) => state.screen?.width);
   const dispatch = useDispatch();
@@ -199,7 +199,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
           </Header.TopDropdownMenu>
         )}
       </Header.TopHeader>
-      <Header.Main
+      {/* <Header.Main
         pathname={pathname}
         headerSearchBox={headerSearchBox}
         inverted={isHomePageInverse ? true : false}
@@ -264,7 +264,73 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
             {props?.iconPosition === 'right' && props?.children}
           </UniversalLink>
         )}
-      ></Header.Main>
+      ></Header.Main> */}
+
+      <HeaderMain
+        inverted={isHomePageInverse ? true : false}
+        transparency={isHomePageInverse ? true : false}
+        pathname={pathname}
+        logo={
+          <div {...(isSubsite ? { className: 'logo-wrapper' } : {})}>
+            {!!subsite && subsite.title ? (
+              <>
+                {subsite.subsite_logo ? (
+                  <Logo
+                    src={subsite.subsite_logo?.scales.preview.download}
+                    title={subsite.title}
+                    alt={subsite.title}
+                    url={flattenToAppURL(subsite['@id'])}
+                  />
+                ) : (
+                  subsite.title
+                )}
+                <div className="subsite-logo">
+                  <Logo
+                    src={isHomePageInverse ? logoWhite : logo}
+                    title={eea.websiteTitle}
+                    alt={eea.organisationName}
+                    url={eea.logoTargetUrl}
+                  />
+                </div>
+              </>
+            ) : (
+              <Logo
+                src={isHomePageInverse ? logoWhite : logo}
+                title={eea.websiteTitle}
+                alt={eea.organisationName}
+                url={eea.logoTargetUrl}
+              />
+            )}
+          </div>
+        }
+        menuItems={items}
+        renderGlobalMenuItem={(item, { onClick }) => (
+          <a
+            href={item.url || '/'}
+            title={item.title}
+            onClick={(e) => {
+              e.preventDefault();
+              onClick(e, item);
+            }}
+          >
+            {item.title}
+          </a>
+        )}
+        renderMenuItem={(item, options, props) => (
+          <UniversalLink
+            href={item.url || '/'}
+            title={item.title}
+            {...(options || {})}
+            className={cx(options?.className, {
+              active: item.url === router_pathname,
+            })}
+          >
+            {props?.iconPosition !== 'right' && props?.children}
+            <span>{item.title}</span>
+            {props?.iconPosition === 'right' && props?.children}
+          </UniversalLink>
+        )}
+      />
     </Header>
   );
 };

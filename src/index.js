@@ -96,13 +96,8 @@ const applyConfig = (config) => {
         {
           icon: 'comment outline',
           text: 'Contact',
-          link: '/en/mission/the-mission/contact-us',
+          link: 'climate.adapt@eea.europa.eu',
         },
-        // {
-        //   icon: 'envelope outline',
-        //   text: 'Sign up to our newsletter',
-        //   link: '/newsletter',
-        // },
       ],
     },
     headerSearchBox: [
@@ -165,13 +160,13 @@ const applyConfig = (config) => {
   };
 
   config.settings.contextNavigationLocations = [
-    {
-      title: 'Regional Adaptation Support Tool',
-      columns: 4,
-      topLevel: 2,
-      bottomLevel: 0,
-      rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
-    },
+    // {
+    //   title: 'Regional Adaptation Support Tool',
+    //   columns: 4,
+    //   topLevel: 2,
+    //   bottomLevel: 0,
+    //   rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
+    // },
     {
       title: 'UrbanAST',
       topLevel: 3,
