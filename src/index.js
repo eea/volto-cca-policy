@@ -96,13 +96,8 @@ const applyConfig = (config) => {
         {
           icon: 'comment outline',
           text: 'Contact',
-          link: '/en/mission/the-mission/contact-us',
+          link: 'climate.adapt@eea.europa.eu',
         },
-        // {
-        //   icon: 'envelope outline',
-        //   text: 'Sign up to our newsletter',
-        //   link: '/newsletter',
-        // },
       ],
     },
     headerSearchBox: [
@@ -114,8 +109,16 @@ const applyConfig = (config) => {
         //   'Looking for more information? Try searching the full EEA website content',
         // buttonTitle: 'Go to full site search',
       },
+      // {
+      //   path: '/en/mission',
+      //   placeholder: 'Search...',
+      //   description: 'Looking for more information?',
+      //   buttonTitle: 'Go to advanced search',
+      // },
     ],
     logoTargetUrl: '/en',
+    organisationName: 'Climate-ADAPT',
+    websiteTitle: 'Climate-ADAPT',
   };
 
   // Enable volto-embed
@@ -127,6 +130,19 @@ const applyConfig = (config) => {
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
   }
+
+  config.blocks.blocksConfig.__grid = {
+    ...config.blocks.blocksConfig.__grid,
+    maxNumberOfColumns: 5,
+  };
+
+  config.blocks.blocksConfig.nextCloudVideo = {
+    ...config.blocks.blocksConfig.nextCloudVideo,
+    whiteList: [
+      'https://cmshare.eea.europa.eu',
+      'https://shareit.eea.europa.eu',
+    ],
+  };
 
   //console.log(config);
   config.views.contentTypesViews = {
@@ -145,13 +161,13 @@ const applyConfig = (config) => {
   };
 
   config.settings.contextNavigationLocations = [
-    {
-      title: 'Regional Adaptation Support Tool',
-      columns: 4,
-      topLevel: 2,
-      bottomLevel: 0,
-      rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
-    },
+    // {
+    //   title: 'Regional Adaptation Support Tool',
+    //   columns: 4,
+    //   topLevel: 2,
+    //   bottomLevel: 0,
+    //   rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
+    // },
     {
       title: 'UrbanAST',
       topLevel: 3,

@@ -46,7 +46,19 @@ div.video-view {
   }
 }
 
+// C3S Indicator view styles
+div.c3sindicator-view {
+  iframe {
+    border: none;
+  }
+}
+
 // General styles
+.btn-right {
+  margin: calc(2rem - 0.1em) 0em 1rem;
+  float: right;
+}
+
 div.share-info {
   margin-top: 1em;
   text-align: right;
@@ -76,6 +88,10 @@ div.content-metadata {
 
 // Mission subsites
 body.subsite-mkh {
+  .top.bar .ui.container {
+    z-index: 3;
+  }
+
   &.subsite-root {
     .segment.content-area {
       padding-top: 0;
@@ -99,6 +115,7 @@ body.subsite-mkh {
 
     p {
       font-size: 1.125rem;
+      font-weight: 600;
     }
   }
 
@@ -134,7 +151,7 @@ body.subsite-mkh {
   }
 
   .eea.header .subsite-logo {
-    z-index: unset;
+    z-index: 1;
     height: 100%;
 
     .logo {
