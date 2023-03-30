@@ -165,7 +165,6 @@ const GeocharsWidget = (props) => {
   };
 
   const handleIsGlobal = (e, { value }) => {
-    console.log(value);
     setIsGlobal(value === 'GLOBAL');
   };
 
