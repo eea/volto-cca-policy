@@ -133,6 +133,37 @@ const SelectBiogeographicalRegions = (props) => {
   );
 };
 
+const SUBNATIONAL_REGIONS_OPTIONS = Object.entries(SUBNATIONAL_REGIONS)
+  .map(([key, value]) => ({
+    key,
+    value,
+    text: value,
+  }))
+  .sort((a, b) => a.text.localeCompare(b.name));
+
+const SelectSubnationalRegions = (props) => {
+  const [selectedValues, setSelectedValues] = useState([]);
+
+  const handleSelectChange = (e, { value }) => {
+    setSelectedValues(value);
+  };
+
+  return (
+    <div className="select-subnational-regions">
+      <h5>Subnational Regions</h5>
+      <Dropdown
+        placeholder="Subnational Regions"
+        fluid
+        multiple
+        selection
+        options={SUBNATIONAL_REGIONS_OPTIONS}
+        value={selectedValues}
+        onChange={handleSelectChange}
+      />
+    </div>
+  );
+};
+
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
 
@@ -150,6 +181,7 @@ const GeocharsWidget = (props) => {
       <SelectMacroTransnationalRegions selectedValues={[]} />
       <SelectBiogeographicalRegions selectedValues={[]} />
       <SelectCountries selectedCountries={countries} />
+      <SelectSubnationalRegions selectedValues={[]} />
       <TextArea
         id={`field-${id}`}
         name={id}
