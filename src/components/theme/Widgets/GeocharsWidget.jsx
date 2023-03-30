@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TextArea, Radio, Checkbox } from 'semantic-ui-react';
+import { TextArea, Radio, Checkbox, Dropdown } from 'semantic-ui-react';
 import {
   ACE_COUNTRIES,
-  // BIOREGIONS,
-  // SUBNATIONAL_REGIONS,
+  BIOREGIONS,
+  SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
 
 import { injectIntl } from 'react-intl';
@@ -23,7 +23,7 @@ export const SelectElement = (props) => {
 
   return (
     <div className="select-element">
-      <p>Select the characterisation for this item</p>
+      <h5>Select the characterisation for this item</h5>
       <Radio
         label="Global"
         name="radioGroup"
@@ -55,7 +55,7 @@ const SelectCountries = (props) => {
 
   return (
     <div className="select-countries">
-      <h4>Countries</h4>
+      <h5>Countries</h5>
       <p>Select one or more European Union countries covered by this item</p>
       {COUNTRIES.map((country) => (
         <Checkbox
@@ -65,6 +65,38 @@ const SelectCountries = (props) => {
           checked={selectedCountries.includes(country.code)}
         />
       ))}
+    </div>
+  );
+};
+
+const MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
+  .map(([key, value]) => ({
+    key,
+    value,
+    text: value,
+  }))
+  .filter((macro) => macro.key.startsWith('TRANS_MACRO_'))
+  .sort((a, b) => a.text.localeCompare(b.name));
+
+const SelectMacroTransnationalRegions = (props) => {
+  const [selectedValues, setSelectedValues] = useState([]);
+
+  const handleSelectChange = (e, { value }) => {
+    setSelectedValues(value);
+  };
+
+  return (
+    <div className="select-macro-trans-regions">
+      <h5>Macro-Transnational Regions</h5>
+      <Dropdown
+        placeholder="Macro-Transnational Regions"
+        fluid
+        multiple
+        selection
+        options={MACRO_TRANS_REGIONS}
+        value={selectedValues}
+        onChange={handleSelectChange}
+      />
     </div>
   );
 };
@@ -83,6 +115,7 @@ const GeocharsWidget = (props) => {
   return (
     <FormFieldWrapper {...props} className="textarea">
       <SelectElement element={element} />
+      <SelectMacroTransnationalRegions selectedValues={[]} />
       <SelectCountries selectedCountries={countries} />
       <TextArea
         id={`field-${id}`}
