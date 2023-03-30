@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TextArea, Radio, Checkbox, Dropdown } from 'semantic-ui-react';
+import { TextArea, Radio, Checkbox, Dropdown, Input } from 'semantic-ui-react';
 import {
   ACE_COUNTRIES,
   BIOREGIONS,
@@ -164,6 +164,26 @@ const SelectSubnationalRegions = (props) => {
   );
 };
 
+const SelectCity = (props) => {
+  const [selectedCity, setSelectedCity] = useState('');
+
+  const handleSelectChange = (e, { value }) => {
+    setSelectedCity(value);
+  };
+
+  return (
+    <div className="select-city">
+      <h5>Municipality Name</h5>
+      <Input
+        type="text"
+        placeholder=""
+        value={selectedCity}
+        onChange={handleSelectChange}
+      />
+    </div>
+  );
+};
+
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
 
@@ -182,6 +202,7 @@ const GeocharsWidget = (props) => {
       <SelectBiogeographicalRegions selectedValues={[]} />
       <SelectCountries selectedCountries={countries} />
       <SelectSubnationalRegions selectedValues={[]} />
+      <SelectCity value={''} />
       <TextArea
         id={`field-${id}`}
         name={id}
