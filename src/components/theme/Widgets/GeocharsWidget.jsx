@@ -22,7 +22,7 @@ export const SelectElement = (props) => {
   }, [element]);
 
   return (
-    <div className="select-element">
+    <div className="select-element ui segment">
       <h5>Select the characterisation for this item</h5>
       <Radio
         label="Global"
@@ -54,7 +54,7 @@ const SelectCountries = (props) => {
   const { selectedCountries } = props;
 
   return (
-    <div className="select-countries">
+    <div className="select-countries ui segment">
       <h5>Countries</h5>
       <p>Select one or more European Union countries covered by this item</p>
       {COUNTRIES.map((country) => (
@@ -86,7 +86,7 @@ const SelectMacroTransnationalRegions = (props) => {
   };
 
   return (
-    <div className="select-macro-trans-regions">
+    <div className="select-macro-trans-regions ui segment">
       <h5>Macro-Transnational Regions</h5>
       <Dropdown
         placeholder="Macro-Transnational Regions"
@@ -118,7 +118,7 @@ const SelectBiogeographicalRegions = (props) => {
   };
 
   return (
-    <div className="select-biogeographical-regions">
+    <div className="select-biogeographical-regions ui segment">
       <h5>Biogeographical Regions</h5>
       <Dropdown
         placeholder="Biogeographical Regions"
@@ -149,7 +149,7 @@ const SelectSubnationalRegions = (props) => {
   };
 
   return (
-    <div className="select-subnational-regions">
+    <div className="select-subnational-regions ui segment">
       <h5>Subnational Regions</h5>
       <Dropdown
         placeholder="Subnational Regions"
@@ -172,7 +172,7 @@ const SelectCity = (props) => {
   };
 
   return (
-    <div className="select-city">
+    <div className="select-city ui segment">
       <h5>Municipality Name</h5>
       <Input
         type="text"
