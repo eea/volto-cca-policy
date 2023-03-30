@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TextArea, Radio } from 'semantic-ui-react';
+import { TextArea, Radio, Checkbox } from 'semantic-ui-react';
+import {
+  ACE_COUNTRIES,
+  // BIOREGIONS,
+  // SUBNATIONAL_REGIONS,
+} from '@eeacms/volto-cca-policy/helpers';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
 
-export const GlobalLocal = (props) => {
+export const SelectElement = (props) => {
   const [value, setValue] = useState(null);
   const handleChange = (event, { value }) => setValue(value);
   const { element } = props;
@@ -17,7 +22,8 @@ export const GlobalLocal = (props) => {
   }, [element]);
 
   return (
-    <>
+    <div className="select-element">
+      <p>Select the characterisation for this item</p>
       <Radio
         label="Global"
         name="radioGroup"
@@ -32,7 +38,34 @@ export const GlobalLocal = (props) => {
         checked={value === 'EUROPE'}
         onChange={handleChange}
       />
-    </>
+    </div>
+  );
+};
+
+const COUNTRIES = Object.entries(ACE_COUNTRIES)
+  .map(([code, name]) => ({
+    code,
+    name,
+    label: 'chk_countries_' + code,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const SelectCountries = (props) => {
+  const { selectedCountries } = props;
+
+  return (
+    <div className="select-countries">
+      <h4>Countries</h4>
+      <p>Select one or more European Union countries covered by this item</p>
+      {COUNTRIES.map((country) => (
+        <Checkbox
+          key={country.code}
+          value={country.label}
+          label={country.name}
+          checked={selectedCountries.includes(country.code)}
+        />
+      ))}
+    </div>
   );
 };
 
@@ -41,6 +74,7 @@ const GeocharsWidget = (props) => {
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
+  const countries = geoElements.countries;
 
   const onhandleChange = (id, value) => {
     onChange(id, value);
@@ -48,7 +82,8 @@ const GeocharsWidget = (props) => {
 
   return (
     <FormFieldWrapper {...props} className="textarea">
-      <GlobalLocal element={element} />
+      <SelectElement element={element} />
+      <SelectCountries selectedCountries={countries} />
       <TextArea
         id={`field-${id}`}
         name={id}
