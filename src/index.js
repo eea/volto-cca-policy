@@ -16,6 +16,8 @@ import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/ima
 
 import installBlocks from './components/manage/Blocks';
 
+import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+
 const applyConfig = (config) => {
   const notInEnMission = /^(?!(\/en\/mission)).*$/;
   if (!__DEVELOPMENT__) {
@@ -181,6 +183,9 @@ const applyConfig = (config) => {
       rootPath: '/knowledge/tools/adaptation-support-tool',
     },
   ];
+
+  // Custom widgets
+  config.widgets.id.geochars = GeocharsWidget;
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
