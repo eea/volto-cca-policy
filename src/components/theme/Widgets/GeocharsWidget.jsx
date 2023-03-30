@@ -101,6 +101,38 @@ const SelectMacroTransnationalRegions = (props) => {
   );
 };
 
+const BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
+  .map(([key, value]) => ({
+    key,
+    value,
+    text: value,
+  }))
+  .filter((macro) => macro.key.startsWith('TRANS_BIO_'))
+  .sort((a, b) => a.text.localeCompare(b.name));
+
+const SelectBiogeographicalRegions = (props) => {
+  const [selectedValues, setSelectedValues] = useState([]);
+
+  const handleSelectChange = (e, { value }) => {
+    setSelectedValues(value);
+  };
+
+  return (
+    <div className="select-biogeographical-regions">
+      <h5>Biogeographical Regions</h5>
+      <Dropdown
+        placeholder="Biogeographical Regions"
+        fluid
+        multiple
+        selection
+        options={BIOGEOGRAPHICAL_REGIONS}
+        value={selectedValues}
+        onChange={handleSelectChange}
+      />
+    </div>
+  );
+};
+
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
 
@@ -116,6 +148,7 @@ const GeocharsWidget = (props) => {
     <FormFieldWrapper {...props} className="textarea">
       <SelectElement element={element} />
       <SelectMacroTransnationalRegions selectedValues={[]} />
+      <SelectBiogeographicalRegions selectedValues={[]} />
       <SelectCountries selectedCountries={countries} />
       <TextArea
         id={`field-${id}`}
