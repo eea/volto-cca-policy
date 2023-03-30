@@ -10,38 +10,6 @@ import {
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
 
-export const SelectElement = (props) => {
-  const [value, setValue] = useState(null);
-  const handleChange = (event, { value }) => setValue(value);
-  const { element } = props;
-
-  React.useEffect(() => {
-    if (element) {
-      setValue(element);
-    }
-  }, [element]);
-
-  return (
-    <div className="select-element ui segment">
-      <h5>Select the characterisation for this item</h5>
-      <Radio
-        label="Global"
-        name="radioGroup"
-        value="GLOBAL"
-        checked={value === 'GLOBAL'}
-        onChange={handleChange}
-      />
-      <Radio
-        label="Europe"
-        name="radioGroup"
-        value="EUROPE"
-        checked={value === 'EUROPE'}
-        onChange={handleChange}
-      />
-    </div>
-  );
-};
-
 const COUNTRIES = Object.entries(ACE_COUNTRIES)
   .map(([code, name]) => ({
     code,
@@ -186,6 +154,7 @@ const SelectCity = (props) => {
 
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
+  const [isGlobal, setIsGlobal] = useState(false);
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
@@ -195,14 +164,43 @@ const GeocharsWidget = (props) => {
     onChange(id, value);
   };
 
+  const handleIsGlobal = (e, { value }) => {
+    console.log(value);
+    setIsGlobal(value === 'GLOBAL');
+  };
+
+  React.useEffect(() => {
+    setIsGlobal(element === 'GLOBAL');
+  }, [element]);
+
   return (
     <FormFieldWrapper {...props} className="textarea">
-      <SelectElement element={element} />
-      <SelectMacroTransnationalRegions selectedValues={[]} />
-      <SelectBiogeographicalRegions selectedValues={[]} />
-      <SelectCountries selectedCountries={countries} />
-      <SelectSubnationalRegions selectedValues={[]} />
-      <SelectCity value={''} />
+      <div className="select-element ui segment">
+        <h5>Select the characterisation for this item</h5>
+        <Radio
+          label="Global"
+          name="radioGroup"
+          value="GLOBAL"
+          checked={isGlobal}
+          onChange={handleIsGlobal}
+        />
+        <Radio
+          label="Europe"
+          name="radioGroup"
+          value="EUROPE"
+          checked={!isGlobal}
+          onChange={handleIsGlobal}
+        />
+      </div>
+      {!isGlobal && (
+        <>
+          <SelectMacroTransnationalRegions selectedValues={[]} />
+          <SelectBiogeographicalRegions selectedValues={[]} />
+          <SelectCountries selectedCountries={countries} />
+          <SelectSubnationalRegions selectedValues={[]} />
+          <SelectCity value={''} />
+        </>
+      )}
       <TextArea
         id={`field-${id}`}
         name={id}
