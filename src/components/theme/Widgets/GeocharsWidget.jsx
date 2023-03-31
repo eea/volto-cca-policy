@@ -18,25 +18,6 @@ const COUNTRIES = Object.entries(ACE_COUNTRIES)
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
-const SelectCountries = (props) => {
-  const { selectedCountries } = props;
-
-  return (
-    <div className="select-countries ui segment">
-      <h5>Countries</h5>
-      <p>Select one or more European Union countries covered by this item</p>
-      {COUNTRIES.map((country) => (
-        <Checkbox
-          key={country.code}
-          value={country.label}
-          label={country.name}
-          checked={selectedCountries.includes(country.code)}
-        />
-      ))}
-    </div>
-  );
-};
-
 const MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
   .map(([key, value]) => ({
     key,
@@ -155,6 +136,7 @@ const SelectCity = (props) => {
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
   const [isGlobal, setIsGlobal] = useState(false);
+  const [selectedCountries, setSelectedCountries] = useState([]);
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
@@ -179,9 +161,29 @@ const GeocharsWidget = (props) => {
     onChange(id, updateJSON(valueJSON));
   };
 
+  const handleCountries = (e, { value }) => {
+    if (selectedCountries.includes(value)) {
+      setSelectedCountries(
+        selectedCountries.filter((country) => country !== value),
+      );
+    } else {
+      setSelectedCountries([...selectedCountries, value]);
+    }
+    let valueJSON = getJSON();
+    valueJSON.geoElements.countries = selectedCountries;
+    onChange(id, updateJSON(valueJSON));
+  };
+
   React.useEffect(() => {
     setIsGlobal(element === 'GLOBAL');
   }, [element]);
+
+  React.useEffect(() => {
+    if (countries !== selectedCountries) {
+      setSelectedCountries(countries);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <FormFieldWrapper {...props} className="textarea">
@@ -206,7 +208,21 @@ const GeocharsWidget = (props) => {
         <>
           <SelectMacroTransnationalRegions selectedValues={[]} />
           <SelectBiogeographicalRegions selectedValues={[]} />
-          <SelectCountries selectedCountries={countries} />
+          <div className="select-countries ui segment">
+            <h5>Countries</h5>
+            <p>
+              Select one or more European Union countries covered by this item
+            </p>
+            {COUNTRIES.map((country) => (
+              <Checkbox
+                key={country.code}
+                value={country.code}
+                label={country.name}
+                checked={selectedCountries.includes(country.code)}
+                onChange={handleCountries}
+              />
+            ))}
+          </div>
           <SelectSubnationalRegions selectedValues={[]} />
           <SelectCity value={''} />
         </>
