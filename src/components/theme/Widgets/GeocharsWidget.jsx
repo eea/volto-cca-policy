@@ -32,34 +32,11 @@ const MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
 const BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
   .map(([key, value]) => ({
     key,
-    value,
+    value: key,
     text: value,
   }))
   .filter((macro) => macro.key.startsWith('TRANS_BIO_'))
   .sort((a, b) => a.text.localeCompare(b.name));
-
-const SelectBiogeographicalRegions = (props) => {
-  const [selectedValues, setSelectedValues] = useState([]);
-
-  const handleSelectChange = (e, { value }) => {
-    setSelectedValues(value);
-  };
-
-  return (
-    <div className="select-biogeographical-regions ui segment">
-      <h5>Biogeographical Regions</h5>
-      <Dropdown
-        placeholder="Biogeographical Regions"
-        fluid
-        multiple
-        selection
-        options={BIOGEOGRAPHICAL_REGIONS}
-        value={selectedValues}
-        onChange={handleSelectChange}
-      />
-    </div>
-  );
-};
 
 const SUBNATIONAL_REGIONS_OPTIONS = Object.entries(SUBNATIONAL_REGIONS)
   .map(([key, value]) => ({
@@ -118,12 +95,14 @@ const GeocharsWidget = (props) => {
   const [selectedMacroTransRegions, setSelectedMacroTransRegions] = useState(
     [],
   );
+  const [selectedBioRegions, setSelectedBioRegions] = useState([]);
   const [selectedCountries, setSelectedCountries] = useState([]);
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
   const countries = geoElements.countries;
   const macroTransRegions = geoElements.macrotrans;
+  const bioRegions = geoElements.biotrans;
 
   const getJSON = () => {
     return JSON.parse(value);
@@ -160,6 +139,15 @@ const GeocharsWidget = (props) => {
     updateTextarea(updated);
   };
 
+  const handleBioRegions = (e, { value }) => {
+    setSelectedBioRegions(value);
+    let valueJSON = getJSON();
+    valueJSON.geoElements.biotrans = value;
+    let updated = updateJSON(valueJSON);
+    onChange(id, updated);
+    updateTextarea(updated);
+  };
+
   const handleCountries = (e, { value }) => {
     let updated = [];
     if (selectedCountries.includes(value)) {
@@ -185,6 +173,9 @@ const GeocharsWidget = (props) => {
     }
     if (macroTransRegions !== selectedMacroTransRegions) {
       setSelectedMacroTransRegions(macroTransRegions);
+    }
+    if (bioRegions !== selectedBioRegions) {
+      setSelectedBioRegions(bioRegions);
     }
     updateTextarea(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -223,7 +214,18 @@ const GeocharsWidget = (props) => {
               onChange={handleMacroTransRegions}
             />
           </div>
-          <SelectBiogeographicalRegions selectedValues={[]} />
+          <div className="select-biogeographical-regions ui segment">
+            <h5>Biogeographical Regions</h5>
+            <Dropdown
+              placeholder="Biogeographical Regions"
+              fluid
+              multiple
+              selection
+              options={BIOGEOGRAPHICAL_REGIONS}
+              value={selectedBioRegions}
+              onChange={handleBioRegions}
+            />
+          </div>
           <div className="select-countries ui segment">
             <h5>Countries</h5>
             <p>
