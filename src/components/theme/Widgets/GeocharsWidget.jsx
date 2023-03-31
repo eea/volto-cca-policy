@@ -11,6 +11,16 @@ import {
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
 
+const SelectCity = (props) => {
+  const { city, handleSelect } = props;
+  return (
+    <div className="select-city ui segment">
+      <h5>Municipality Name</h5>
+      <Input type="text" placeholder="" value={city} onChange={handleSelect} />
+    </div>
+  );
+};
+
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
   const [isGlobal, setIsGlobal] = useState(false);
@@ -201,15 +211,7 @@ const GeocharsWidget = (props) => {
               onChange={handleSubRegions}
             />
           </div>
-          <div className="select-city ui segment">
-            <h5>Municipality Name</h5>
-            <Input
-              type="text"
-              placeholder=""
-              value={selectedCity}
-              onChange={handleSelectCity}
-            />
-          </div>
+          <SelectCity city={selectedCity} handleSelect={handleSelectCity} />
         </>
       )}
       <TextArea
