@@ -41,33 +41,10 @@ const BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
 const SUBNATIONAL_REGIONS_OPTIONS = Object.entries(SUBNATIONAL_REGIONS)
   .map(([key, value]) => ({
     key,
-    value,
+    value: key,
     text: value,
   }))
   .sort((a, b) => a.text.localeCompare(b.name));
-
-const SelectSubnationalRegions = (props) => {
-  const [selectedValues, setSelectedValues] = useState([]);
-
-  const handleSelectChange = (e, { value }) => {
-    setSelectedValues(value);
-  };
-
-  return (
-    <div className="select-subnational-regions ui segment">
-      <h5>Subnational Regions</h5>
-      <Dropdown
-        placeholder="Subnational Regions"
-        fluid
-        multiple
-        selection
-        options={SUBNATIONAL_REGIONS_OPTIONS}
-        value={selectedValues}
-        onChange={handleSelectChange}
-      />
-    </div>
-  );
-};
 
 const SelectCity = (props) => {
   const [selectedCity, setSelectedCity] = useState('');
@@ -97,12 +74,14 @@ const GeocharsWidget = (props) => {
   );
   const [selectedBioRegions, setSelectedBioRegions] = useState([]);
   const [selectedCountries, setSelectedCountries] = useState([]);
+  const [selectedSubRegions, setSelectedSubRegions] = useState([]);
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
   const countries = geoElements.countries;
   const macroTransRegions = geoElements.macrotrans;
   const bioRegions = geoElements.biotrans;
+  const subRegions = geoElements.subnational;
 
   const getJSON = () => {
     return JSON.parse(value);
@@ -148,6 +127,15 @@ const GeocharsWidget = (props) => {
     updateTextarea(updated);
   };
 
+  const handleSubRegions = (e, { value }) => {
+    setSelectedSubRegions(value);
+    let valueJSON = getJSON();
+    valueJSON.geoElements.subnational = value;
+    let updated = updateJSON(valueJSON);
+    onChange(id, updated);
+    updateTextarea(updated);
+  };
+
   const handleCountries = (e, { value }) => {
     let updated = [];
     if (selectedCountries.includes(value)) {
@@ -176,6 +164,9 @@ const GeocharsWidget = (props) => {
     }
     if (bioRegions !== selectedBioRegions) {
       setSelectedBioRegions(bioRegions);
+    }
+    if (subRegions !== selectedSubRegions) {
+      setSelectedBioRegions(subRegions);
     }
     updateTextarea(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -241,7 +232,18 @@ const GeocharsWidget = (props) => {
               />
             ))}
           </div>
-          <SelectSubnationalRegions selectedValues={[]} />
+          <div className="select-subnational-regions ui segment">
+            <h5>Subnational Regions</h5>
+            <Dropdown
+              placeholder="Subnational Regions"
+              fluid
+              multiple
+              selection
+              options={SUBNATIONAL_REGIONS_OPTIONS}
+              value={selectedSubRegions}
+              onChange={handleSubRegions}
+            />
+          </div>
           <SelectCity value={''} />
         </>
       )}
