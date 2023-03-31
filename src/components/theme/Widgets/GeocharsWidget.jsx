@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { TextArea, Radio, Checkbox, Dropdown, Input } from 'semantic-ui-react';
 import {
   ACE_COUNTRIES,
+  EU_COUNTRIES,
   BIOREGIONS,
   SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
@@ -16,6 +17,7 @@ const COUNTRIES = Object.entries(ACE_COUNTRIES)
     name,
     label: 'chk_countries_' + code,
   }))
+  .filter((country) => EU_COUNTRIES.includes(country.code))
   .sort((a, b) => a.name.localeCompare(b.name));
 
 const MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
