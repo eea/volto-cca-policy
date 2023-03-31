@@ -11,6 +11,24 @@ import {
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
 
+const SelectSubRegions = (props) => {
+  const { regions, handleSelect } = props;
+  return (
+    <div className="select-subnational-regions ui segment">
+      <h5>Subnational Regions</h5>
+      <Dropdown
+        placeholder="Subnational Regions"
+        fluid
+        multiple
+        selection
+        options={WIDGET_SUBNATIONAL_REGIONS_OPTIONS}
+        value={regions}
+        onChange={handleSelect}
+      />
+    </div>
+  );
+};
+
 const SelectCity = (props) => {
   const { city, handleSelect } = props;
   return (
@@ -139,6 +157,8 @@ const GeocharsWidget = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // TODO: move each segment in a sub component
+  //
   return (
     <FormFieldWrapper {...props} className="geochars-field">
       <div className="select-element ui segment">
@@ -199,18 +219,10 @@ const GeocharsWidget = (props) => {
               />
             ))}
           </div>
-          <div className="select-subnational-regions ui segment">
-            <h5>Subnational Regions</h5>
-            <Dropdown
-              placeholder="Subnational Regions"
-              fluid
-              multiple
-              selection
-              options={WIDGET_SUBNATIONAL_REGIONS_OPTIONS}
-              value={selectedSubRegions}
-              onChange={handleSubRegions}
-            />
-          </div>
+          <SelectSubRegions
+            regions={selectedSubRegions}
+            handleSelect={handleSubRegions}
+          />
           <SelectCity city={selectedCity} handleSelect={handleSelectCity} />
         </>
       )}
