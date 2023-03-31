@@ -23,34 +23,11 @@ const COUNTRIES = Object.entries(ACE_COUNTRIES)
 const MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
   .map(([key, value]) => ({
     key,
-    value,
+    value: key,
     text: value,
   }))
   .filter((macro) => macro.key.startsWith('TRANS_MACRO_'))
   .sort((a, b) => a.text.localeCompare(b.name));
-
-const SelectMacroTransnationalRegions = (props) => {
-  const [selectedValues, setSelectedValues] = useState([]);
-
-  const handleSelectChange = (e, { value }) => {
-    setSelectedValues(value);
-  };
-
-  return (
-    <div className="select-macro-trans-regions ui segment">
-      <h5>Macro-Transnational Regions</h5>
-      <Dropdown
-        placeholder="Macro-Transnational Regions"
-        fluid
-        multiple
-        selection
-        options={MACRO_TRANS_REGIONS}
-        value={selectedValues}
-        onChange={handleSelectChange}
-      />
-    </div>
-  );
-};
 
 const BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
   .map(([key, value]) => ({
@@ -138,11 +115,15 @@ const SelectCity = (props) => {
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
   const [isGlobal, setIsGlobal] = useState(false);
+  const [selectedMacroTransRegions, setSelectedMacroTransRegions] = useState(
+    [],
+  );
   const [selectedCountries, setSelectedCountries] = useState([]);
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
   const countries = geoElements.countries;
+  const macroTransRegions = geoElements.macrotrans;
 
   const getJSON = () => {
     return JSON.parse(value);
@@ -165,6 +146,15 @@ const GeocharsWidget = (props) => {
     setIsGlobal(value === 'GLOBAL');
     let valueJSON = getJSON();
     valueJSON.geoElements.element = value;
+    let updated = updateJSON(valueJSON);
+    onChange(id, updated);
+    updateTextarea(updated);
+  };
+
+  const handleMacroTransRegions = (e, { value }) => {
+    setSelectedMacroTransRegions(value);
+    let valueJSON = getJSON();
+    valueJSON.geoElements.macrotrans = value;
     let updated = updateJSON(valueJSON);
     onChange(id, updated);
     updateTextarea(updated);
@@ -193,6 +183,9 @@ const GeocharsWidget = (props) => {
     if (countries !== selectedCountries) {
       setSelectedCountries(countries);
     }
+    if (macroTransRegions !== selectedMacroTransRegions) {
+      setSelectedMacroTransRegions(macroTransRegions);
+    }
     updateTextarea(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -218,7 +211,18 @@ const GeocharsWidget = (props) => {
       </div>
       {!isGlobal && (
         <>
-          <SelectMacroTransnationalRegions selectedValues={[]} />
+          <div className="select-macro-trans-regions ui segment">
+            <h5>Macro-Transnational Regions</h5>
+            <Dropdown
+              placeholder="Macro-Transnational Regions"
+              fluid
+              multiple
+              selection
+              options={MACRO_TRANS_REGIONS}
+              value={selectedMacroTransRegions}
+              onChange={handleMacroTransRegions}
+            />
+          </div>
           <SelectBiogeographicalRegions selectedValues={[]} />
           <div className="select-countries ui segment">
             <h5>Countries</h5>
