@@ -2,49 +2,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TextArea, Radio, Checkbox, Dropdown, Input } from 'semantic-ui-react';
 import {
-  ACE_COUNTRIES,
-  EU_COUNTRIES,
-  BIOREGIONS,
-  SUBNATIONAL_REGIONS,
+  WIDGET_COUNTRIES,
+  WIDGET_MACRO_TRANS_REGIONS,
+  WIDGET_BIOGEOGRAPHICAL_REGIONS,
+  WIDGET_SUBNATIONAL_REGIONS_OPTIONS,
 } from '@eeacms/volto-cca-policy/helpers';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
-
-const COUNTRIES = Object.entries(ACE_COUNTRIES)
-  .map(([code, name]) => ({
-    code,
-    name,
-    label: 'chk_countries_' + code,
-  }))
-  .filter((country) => EU_COUNTRIES.includes(country.code))
-  .sort((a, b) => a.name.localeCompare(b.name));
-
-const MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
-  .map(([key, value]) => ({
-    key,
-    value: key,
-    text: value,
-  }))
-  .filter((macro) => macro.key.startsWith('TRANS_MACRO_'))
-  .sort((a, b) => a.text.localeCompare(b.name));
-
-const BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
-  .map(([key, value]) => ({
-    key,
-    value: key,
-    text: value,
-  }))
-  .filter((macro) => macro.key.startsWith('TRANS_BIO_'))
-  .sort((a, b) => a.text.localeCompare(b.name));
-
-const SUBNATIONAL_REGIONS_OPTIONS = Object.entries(SUBNATIONAL_REGIONS)
-  .map(([key, value]) => ({
-    key,
-    value: key,
-    text: value,
-  }))
-  .sort((a, b) => a.text.localeCompare(b.name));
 
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
@@ -194,7 +159,7 @@ const GeocharsWidget = (props) => {
               fluid
               multiple
               selection
-              options={MACRO_TRANS_REGIONS}
+              options={WIDGET_MACRO_TRANS_REGIONS}
               value={selectedMacroTransRegions}
               onChange={handleMacroTransRegions}
             />
@@ -206,7 +171,7 @@ const GeocharsWidget = (props) => {
               fluid
               multiple
               selection
-              options={BIOGEOGRAPHICAL_REGIONS}
+              options={WIDGET_BIOGEOGRAPHICAL_REGIONS}
               value={selectedBioRegions}
               onChange={handleBioRegions}
             />
@@ -216,7 +181,7 @@ const GeocharsWidget = (props) => {
             <p>
               Select one or more European Union countries covered by this item
             </p>
-            {COUNTRIES.map((country) => (
+            {WIDGET_COUNTRIES.map((country) => (
               <Checkbox
                 key={country.code}
                 value={country.code}
@@ -233,7 +198,7 @@ const GeocharsWidget = (props) => {
               fluid
               multiple
               selection
-              options={SUBNATIONAL_REGIONS_OPTIONS}
+              options={WIDGET_SUBNATIONAL_REGIONS_OPTIONS}
               value={selectedSubRegions}
               onChange={handleSubRegions}
             />
