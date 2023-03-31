@@ -14,9 +14,7 @@ import { FormFieldWrapper } from '@plone/volto/components';
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
   const [isGlobal, setIsGlobal] = useState(false);
-  const [selectedMacroTransRegions, setSelectedMacroTransRegions] = useState(
-    [],
-  );
+  const [selectedMacroRegions, setSelectedMacroRegions] = useState([]);
   const [selectedBioRegions, setSelectedBioRegions] = useState([]);
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [selectedSubRegions, setSelectedSubRegions] = useState([]);
@@ -25,7 +23,7 @@ const GeocharsWidget = (props) => {
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
   const countries = geoElements.countries;
-  const macroTransRegions = geoElements.macrotrans;
+  const macroRegions = geoElements.macrotrans;
   const bioRegions = geoElements.biotrans;
   const subRegions = geoElements.subnational;
   const city = geoElements.city;
@@ -56,8 +54,8 @@ const GeocharsWidget = (props) => {
     updateTextarea(updated);
   };
 
-  const handleMacroTransRegions = (e, { value }) => {
-    setSelectedMacroTransRegions(value);
+  const handleMacroRegions = (e, { value }) => {
+    setSelectedMacroRegions(value);
     let valueJSON = getJSON();
     valueJSON.geoElements.macrotrans = value;
     let updated = updateJSON(valueJSON);
@@ -115,8 +113,8 @@ const GeocharsWidget = (props) => {
     if (countries !== selectedCountries) {
       setSelectedCountries(countries);
     }
-    if (macroTransRegions !== selectedMacroTransRegions) {
-      setSelectedMacroTransRegions(macroTransRegions);
+    if (macroRegions !== selectedMacroRegions) {
+      setSelectedMacroRegions(macroRegions);
     }
     if (bioRegions !== selectedBioRegions) {
       setSelectedBioRegions(bioRegions);
@@ -160,8 +158,8 @@ const GeocharsWidget = (props) => {
               multiple
               selection
               options={WIDGET_MACRO_TRANS_REGIONS}
-              value={selectedMacroTransRegions}
-              onChange={handleMacroTransRegions}
+              value={selectedMacroRegions}
+              onChange={handleMacroRegions}
             />
           </div>
           <div className="select-biogeographical-regions ui segment">
