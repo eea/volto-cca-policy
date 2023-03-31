@@ -46,26 +46,6 @@ const SUBNATIONAL_REGIONS_OPTIONS = Object.entries(SUBNATIONAL_REGIONS)
   }))
   .sort((a, b) => a.text.localeCompare(b.name));
 
-const SelectCity = (props) => {
-  const [selectedCity, setSelectedCity] = useState('');
-
-  const handleSelectChange = (e, { value }) => {
-    setSelectedCity(value);
-  };
-
-  return (
-    <div className="select-city ui segment">
-      <h5>Municipality Name</h5>
-      <Input
-        type="text"
-        placeholder=""
-        value={selectedCity}
-        onChange={handleSelectChange}
-      />
-    </div>
-  );
-};
-
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
   const [isGlobal, setIsGlobal] = useState(false);
@@ -75,6 +55,7 @@ const GeocharsWidget = (props) => {
   const [selectedBioRegions, setSelectedBioRegions] = useState([]);
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [selectedSubRegions, setSelectedSubRegions] = useState([]);
+  const [selectedCity, setSelectedCity] = useState('');
 
   const geoElements = JSON.parse(value).geoElements;
   const element = geoElements.element;
@@ -82,6 +63,7 @@ const GeocharsWidget = (props) => {
   const macroTransRegions = geoElements.macrotrans;
   const bioRegions = geoElements.biotrans;
   const subRegions = geoElements.subnational;
+  const city = geoElements.city;
 
   const getJSON = () => {
     return JSON.parse(value);
@@ -151,6 +133,15 @@ const GeocharsWidget = (props) => {
     updateTextarea(updated);
   };
 
+  const handleSelectCity = (e, { value }) => {
+    setSelectedCity(value);
+    let valueJSON = getJSON();
+    valueJSON.geoElements.city = value;
+    let updated = updateJSON(valueJSON);
+    onChange(id, updated);
+    updateTextarea(updated);
+  };
+
   React.useEffect(() => {
     setIsGlobal(element === 'GLOBAL');
   }, [element]);
@@ -167,6 +158,9 @@ const GeocharsWidget = (props) => {
     }
     if (subRegions !== selectedSubRegions) {
       setSelectedSubRegions(subRegions);
+    }
+    if (city !== selectedCity) {
+      setSelectedCity(city);
     }
     updateTextarea(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -244,7 +238,15 @@ const GeocharsWidget = (props) => {
               onChange={handleSubRegions}
             />
           </div>
-          <SelectCity value={''} />
+          <div className="select-city ui segment">
+            <h5>Municipality Name</h5>
+            <Input
+              type="text"
+              placeholder=""
+              value={selectedCity}
+              onChange={handleSelectCity}
+            />
+          </div>
         </>
       )}
       <TextArea
