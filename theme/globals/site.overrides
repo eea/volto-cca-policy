@@ -57,9 +57,10 @@ div.c3sindicator-view {
 div.geochars-field.field-wrapper-geochars {
   div.checkbox {
     margin-right: 1em;
+
     label {
       padding-left: 1.5em;
-      }
+    }
   }
 }
 
