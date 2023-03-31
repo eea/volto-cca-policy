@@ -154,24 +154,33 @@ const GeocharsWidget = (props) => {
     onChange(id, value);
   };
 
+  const updateTextarea = (value) => {
+    const textarea = document.getElementById('field-geochars');
+    textarea.value = value;
+  };
+
   const handleIsGlobal = (e, { value }) => {
     setIsGlobal(value === 'GLOBAL');
     let valueJSON = getJSON();
     valueJSON.geoElements.element = value;
-    onChange(id, updateJSON(valueJSON));
+    let updated = updateJSON(valueJSON);
+    onChange(id, updated);
+    updateTextarea(updated);
   };
 
   const handleCountries = (e, { value }) => {
+    let updated = [];
     if (selectedCountries.includes(value)) {
-      setSelectedCountries(
-        selectedCountries.filter((country) => country !== value),
-      );
+      updated = selectedCountries.filter((country) => country !== value);
     } else {
-      setSelectedCountries([...selectedCountries, value]);
+      updated = [...selectedCountries, value];
     }
+    setSelectedCountries(updated);
     let valueJSON = getJSON();
-    valueJSON.geoElements.countries = selectedCountries;
-    onChange(id, updateJSON(valueJSON));
+    valueJSON.geoElements.countries = updated;
+    updated = updateJSON(valueJSON);
+    onChange(id, updated);
+    updateTextarea(updated);
   };
 
   React.useEffect(() => {
@@ -182,11 +191,12 @@ const GeocharsWidget = (props) => {
     if (countries !== selectedCountries) {
       setSelectedCountries(countries);
     }
+    updateTextarea(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <FormFieldWrapper {...props} className="textarea">
+    <FormFieldWrapper {...props} className="geochars-field">
       <div className="select-element ui segment">
         <h5>Select the characterisation for this item</h5>
         <Radio
@@ -230,7 +240,6 @@ const GeocharsWidget = (props) => {
       <TextArea
         id={`field-${id}`}
         name={id}
-        value={value || ''}
         disabled={props.isDisabled}
         placeholder={placeholder}
         onChange={({ target }) =>

@@ -54,7 +54,7 @@ div.c3sindicator-view {
 }
 
 // Geochars widget
-div.geochars-field.field-wrapper-geochars {
+div.geochars-field {
   div.checkbox {
     margin-right: 1em;
 
