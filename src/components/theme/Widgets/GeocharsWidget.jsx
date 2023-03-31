@@ -160,12 +160,23 @@ const GeocharsWidget = (props) => {
   const element = geoElements.element;
   const countries = geoElements.countries;
 
+  const getJSON = () => {
+    return JSON.parse(value);
+  };
+
+  const updateJSON = (value) => {
+    return JSON.stringify(value);
+  };
+
   const onhandleChange = (id, value) => {
     onChange(id, value);
   };
 
   const handleIsGlobal = (e, { value }) => {
     setIsGlobal(value === 'GLOBAL');
+    let valueJSON = getJSON();
+    valueJSON.geoElements.element = value;
+    onChange(id, updateJSON(valueJSON));
   };
 
   React.useEffect(() => {
