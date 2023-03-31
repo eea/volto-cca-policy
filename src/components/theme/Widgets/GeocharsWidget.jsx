@@ -166,7 +166,7 @@ const GeocharsWidget = (props) => {
       setSelectedBioRegions(bioRegions);
     }
     if (subRegions !== selectedSubRegions) {
-      setSelectedBioRegions(subRegions);
+      setSelectedSubRegions(subRegions);
     }
     updateTextarea(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
