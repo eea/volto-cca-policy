@@ -39,6 +39,24 @@ const SelectCity = (props) => {
   );
 };
 
+const SelectBioRegions = (props) => {
+  const { regions, handleSelect } = props;
+  return (
+    <div className="select-biogeographical-regions ui segment">
+      <h5>Biogeographical Regions</h5>
+      <Dropdown
+        placeholder="Biogeographical Regions"
+        fluid
+        multiple
+        selection
+        options={WIDGET_BIOGEOGRAPHICAL_REGIONS}
+        value={regions}
+        onChange={handleSelect}
+      />
+    </div>
+  );
+};
+
 const SelectCountries = (props) => {
   const { countries, handleSelect } = props;
   return (
@@ -211,18 +229,10 @@ const GeocharsWidget = (props) => {
               onChange={handleMacroRegions}
             />
           </div>
-          <div className="select-biogeographical-regions ui segment">
-            <h5>Biogeographical Regions</h5>
-            <Dropdown
-              placeholder="Biogeographical Regions"
-              fluid
-              multiple
-              selection
-              options={WIDGET_BIOGEOGRAPHICAL_REGIONS}
-              value={selectedBioRegions}
-              onChange={handleBioRegions}
-            />
-          </div>
+          <SelectBioRegions
+            regions={selectedBioRegions}
+            handleSelect={handleBioRegions}
+          />
           <SelectCountries
             countries={selectedCountries}
             handleSelect={handleCountries}
