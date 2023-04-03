@@ -220,6 +220,10 @@ const GeocharsWidget = (props) => {
     return false;
   };
 
+  const isSelectedRegion = (region) => {
+    return selectedSubRegions.includes(region.key);
+  };
+
   const handleCountries = (e, { value }) => {
     let updated = [];
     if (selectedCountries.includes(value)) {
@@ -229,8 +233,8 @@ const GeocharsWidget = (props) => {
     }
     setSelectedCountries(updated);
     setAvailableRegions(
-      WIDGET_SUBNATIONAL_REGIONS_OPTIONS.filter((reg) =>
-        isRegionOfCountries(reg, updated),
+      WIDGET_SUBNATIONAL_REGIONS_OPTIONS.filter(
+        (reg) => isRegionOfCountries(reg, updated) || isSelectedRegion(reg),
       ),
     );
     let valueJSON = getJSON();
