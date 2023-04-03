@@ -303,6 +303,7 @@ const GeocharsWidget = (props) => {
         </>
       )}
       <TextArea
+        style={{ display: 'none' }}
         id={`field-${id}`}
         name={id}
         disabled={props.isDisabled}
