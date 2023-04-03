@@ -39,6 +39,7 @@ const SelectSubRegions = (props) => {
   return (
     <div className="select-subnational-regions ui segment">
       <h5>Subnational Regions</h5>
+      <p>Select applicable regions:</p>
       <Dropdown
         placeholder="Subnational Regions"
         fluid
