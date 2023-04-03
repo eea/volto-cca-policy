@@ -119,6 +119,7 @@ const SelectCountries = (props) => {
 
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
+  const [tempJSON, setTempJSON] = useState(null);
   const [isGlobal, setIsGlobal] = useState(false);
   const [selectedMacroRegions, setSelectedMacroRegions] = useState([]);
   const [selectedBioRegions, setSelectedBioRegions] = useState([]);
@@ -133,6 +134,17 @@ const GeocharsWidget = (props) => {
   const bioRegions = geoElements.biotrans;
   const subRegions = geoElements.subnational;
   const city = geoElements.city;
+
+  const DEFAULT_GEOCHARS = {
+    geoElements: {
+      element: 'GLOBAL',
+      macrotrans: [],
+      biotrans: [],
+      countries: [],
+      subnational: [],
+      city: '',
+    },
+  };
 
   const getJSON = () => {
     return JSON.parse(value);
@@ -154,6 +166,15 @@ const GeocharsWidget = (props) => {
   const handleIsGlobal = (e, { value }) => {
     setIsGlobal(value === 'GLOBAL');
     let valueJSON = getJSON();
+    if (value === 'GLOBAL') {
+      setTempJSON(valueJSON);
+      valueJSON = DEFAULT_GEOCHARS;
+    } else {
+      if (tempJSON !== null) {
+        valueJSON = tempJSON;
+        setTempJSON(null);
+      }
+    }
     valueJSON.geoElements.element = value;
     let updated = updateJSON(valueJSON);
     onChange(id, updated);
