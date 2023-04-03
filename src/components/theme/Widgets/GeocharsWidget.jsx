@@ -39,6 +39,25 @@ const SelectCity = (props) => {
   );
 };
 
+const SelectCountries = (props) => {
+  const { countries, handleSelect } = props;
+  return (
+    <div className="select-countries ui segment">
+      <h5>Countries</h5>
+      <p>Select one or more European Union countries covered by this item</p>
+      {WIDGET_COUNTRIES.map((country) => (
+        <Checkbox
+          key={country.code}
+          value={country.code}
+          label={country.name}
+          checked={countries.includes(country.code)}
+          onChange={handleSelect}
+        />
+      ))}
+    </div>
+  );
+};
+
 const GeocharsWidget = (props) => {
   const { id, value, onChange, placeholder } = props;
   const [isGlobal, setIsGlobal] = useState(false);
@@ -204,21 +223,10 @@ const GeocharsWidget = (props) => {
               onChange={handleBioRegions}
             />
           </div>
-          <div className="select-countries ui segment">
-            <h5>Countries</h5>
-            <p>
-              Select one or more European Union countries covered by this item
-            </p>
-            {WIDGET_COUNTRIES.map((country) => (
-              <Checkbox
-                key={country.code}
-                value={country.code}
-                label={country.name}
-                checked={selectedCountries.includes(country.code)}
-                onChange={handleCountries}
-              />
-            ))}
-          </div>
+          <SelectCountries
+            countries={selectedCountries}
+            handleSelect={handleCountries}
+          />
           <SelectSubRegions
             regions={selectedSubRegions}
             handleSelect={handleSubRegions}
