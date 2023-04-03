@@ -11,6 +11,29 @@ import {
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
 
+const SelectElement = (props) => {
+  const { element, handleSelect } = props;
+  return (
+    <div className="select-element ui segment">
+      <h5>Select the characterisation for this item</h5>
+      <Radio
+        label="Global"
+        name="radioGroup"
+        value="GLOBAL"
+        checked={element}
+        onChange={handleSelect}
+      />
+      <Radio
+        label="Europe"
+        name="radioGroup"
+        value="EUROPE"
+        checked={!element}
+        onChange={handleSelect}
+      />
+    </div>
+  );
+};
+
 const SelectSubRegions = (props) => {
   const { regions, handleSelect } = props;
   return (
@@ -212,27 +235,9 @@ const GeocharsWidget = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // TODO: move each segment in a sub component
-  //
   return (
     <FormFieldWrapper {...props} className="geochars-field">
-      <div className="select-element ui segment">
-        <h5>Select the characterisation for this item</h5>
-        <Radio
-          label="Global"
-          name="radioGroup"
-          value="GLOBAL"
-          checked={isGlobal}
-          onChange={handleIsGlobal}
-        />
-        <Radio
-          label="Europe"
-          name="radioGroup"
-          value="EUROPE"
-          checked={!isGlobal}
-          onChange={handleIsGlobal}
-        />
-      </div>
+      <SelectElement element={isGlobal} handleSelect={handleIsGlobal} />
       {!isGlobal && (
         <>
           <SelectMacroRegions
