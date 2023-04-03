@@ -39,6 +39,24 @@ const SelectCity = (props) => {
   );
 };
 
+const SelectMacroRegions = (props) => {
+  const { regions, handleSelect } = props;
+  return (
+    <div className="select-macro-trans-regions ui segment">
+      <h5>Macro-Transnational Regions</h5>
+      <Dropdown
+        placeholder="Macro-Transnational Regions"
+        fluid
+        multiple
+        selection
+        options={WIDGET_MACRO_TRANS_REGIONS}
+        value={regions}
+        onChange={handleSelect}
+      />
+    </div>
+  );
+};
+
 const SelectBioRegions = (props) => {
   const { regions, handleSelect } = props;
   return (
@@ -217,18 +235,10 @@ const GeocharsWidget = (props) => {
       </div>
       {!isGlobal && (
         <>
-          <div className="select-macro-trans-regions ui segment">
-            <h5>Macro-Transnational Regions</h5>
-            <Dropdown
-              placeholder="Macro-Transnational Regions"
-              fluid
-              multiple
-              selection
-              options={WIDGET_MACRO_TRANS_REGIONS}
-              value={selectedMacroRegions}
-              onChange={handleMacroRegions}
-            />
-          </div>
+          <SelectMacroRegions
+            regions={selectedMacroRegions}
+            handleSelect={handleMacroRegions}
+          />
           <SelectBioRegions
             regions={selectedBioRegions}
             handleSelect={handleBioRegions}
