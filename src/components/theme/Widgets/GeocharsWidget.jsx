@@ -35,7 +35,7 @@ const SelectElement = (props) => {
 };
 
 const SelectSubRegions = (props) => {
-  const { regions, handleSelect } = props;
+  const { regions, availableRegions, handleSelect } = props;
   return (
     <div className="select-subnational-regions ui segment">
       <h5>Subnational Regions</h5>
@@ -44,7 +44,7 @@ const SelectSubRegions = (props) => {
         fluid
         multiple
         selection
-        options={WIDGET_SUBNATIONAL_REGIONS_OPTIONS}
+        options={availableRegions}
         value={regions}
         onChange={handleSelect}
       />
@@ -125,6 +125,9 @@ const GeocharsWidget = (props) => {
   const [selectedBioRegions, setSelectedBioRegions] = useState([]);
   const [selectedCountries, setSelectedCountries] = useState([]);
   const [selectedSubRegions, setSelectedSubRegions] = useState([]);
+  const [availableRegions, setAvailableRegions] = useState(
+    WIDGET_SUBNATIONAL_REGIONS_OPTIONS,
+  );
   const [selectedCity, setSelectedCity] = useState('');
 
   const geoElements = JSON.parse(value).geoElements;
@@ -208,6 +211,15 @@ const GeocharsWidget = (props) => {
     updateTextarea(updated);
   };
 
+  const isRegionOfCountries = (region, countries) => {
+    for (let country of countries) {
+      if (region.key.includes('_' + country)) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   const handleCountries = (e, { value }) => {
     let updated = [];
     if (selectedCountries.includes(value)) {
@@ -216,6 +228,11 @@ const GeocharsWidget = (props) => {
       updated = [...selectedCountries, value];
     }
     setSelectedCountries(updated);
+    setAvailableRegions(
+      WIDGET_SUBNATIONAL_REGIONS_OPTIONS.filter((reg) =>
+        isRegionOfCountries(reg, updated),
+      ),
+    );
     let valueJSON = getJSON();
     valueJSON.geoElements.countries = updated;
     updated = updateJSON(valueJSON);
@@ -275,6 +292,7 @@ const GeocharsWidget = (props) => {
           />
           <SelectSubRegions
             regions={selectedSubRegions}
+            availableRegions={availableRegions}
             handleSelect={handleSubRegions}
           />
           <SelectCity city={selectedCity} handleSelect={handleSelectCity} />
