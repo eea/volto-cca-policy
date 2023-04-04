@@ -17,6 +17,7 @@ import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/ima
 import installBlocks from './components/manage/Blocks';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const applyConfig = (config) => {
   const notInEnMission = /^(?!(\/en\/mission)).*$/;
@@ -186,6 +187,7 @@ const applyConfig = (config) => {
 
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
+  config.widgets.id.geolocation = GeolocationWidget;
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
