@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TextArea } from 'semantic-ui-react';
+import { Input, TextArea } from 'semantic-ui-react';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
@@ -22,9 +22,9 @@ const GeolocationWidget = (props) => {
   //   onChange(id, value);
   // };
 
-  const latitude = value.latitude;
-  const longitude = value.longitude;
   const [tileWMSSources, setTileWMSSources] = React.useState([]);
+  const [latitude, setLatitude] = React.useState(value.latitude);
+  const [longitude, setLongitude] = React.useState(value.longitude);
 
   React.useEffect(() => {
     setTileWMSSources([
@@ -44,16 +44,29 @@ const GeolocationWidget = (props) => {
 
   return (
     <FormFieldWrapper {...props} className="geolocation-field">
-      <h5>
-        {latitude}, {longitude}
-      </h5>
+      <Input
+        type="number"
+        placeholder="latitude"
+        value={latitude}
+        onChange={(ev) => {
+          setLatitude(ev.target.value);
+        }}
+      />
+      <Input
+        type="number"
+        placeholder="longitude"
+        value={longitude}
+        onChange={(ev) => {
+          setLongitude(ev.target.value);
+        }}
+      />
       <div className="explore-sites-wrapper">
         <div id="explore-sites">
           <Map
             view={{
-              center: ol.proj.fromLonLat([20, 50]),
+              center: ol.proj.fromLonLat([longitude, latitude]),
               showFullExtent: true,
-              zoom: 5,
+              zoom: 15,
             }}
             pixelRatio={1}
             controls={ol.control.defaults({ attribution: false })}
