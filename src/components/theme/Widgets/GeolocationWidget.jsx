@@ -14,6 +14,36 @@ import {
 } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
+const MapContainer = (props) => {
+  const { longitude, latitude, source } = props;
+  return (
+    <Map
+      view={{
+        center: ol.proj.fromLonLat([longitude, latitude]),
+        showFullExtent: true,
+        zoom: 15,
+      }}
+      pixelRatio={1}
+      controls={ol.control.defaults({ attribution: false })}
+    >
+      <Layers>
+        <Controls attribution={false} zoom={false} />
+        <Interactions
+          doubleClickZoom={true}
+          dragAndDrop={false}
+          dragPan={true}
+          keyboardPan={true}
+          keyboardZoom={true}
+          mouseWheelZoom={true}
+          pointer={true}
+          select={false}
+        />
+        <Layer.Tile source={source} zIndex={0} />
+      </Layers>
+    </Map>
+  );
+};
+
 const GeolocationWidget = (props) => {
   // const { id, value, onChange, placeholder } = props;
   const { id, value, placeholder } = props;
@@ -62,30 +92,12 @@ const GeolocationWidget = (props) => {
       />
       <div className="explore-sites-wrapper">
         <div id="explore-sites">
-          <Map
-            view={{
-              center: ol.proj.fromLonLat([longitude, latitude]),
-              showFullExtent: true,
-              zoom: 15,
-            }}
-            pixelRatio={1}
-            controls={ol.control.defaults({ attribution: false })}
-          >
-            <Layers>
-              <Controls attribution={false} zoom={false} />
-              <Interactions
-                doubleClickZoom={true}
-                dragAndDrop={false}
-                dragPan={true}
-                keyboardPan={true}
-                keyboardZoom={true}
-                mouseWheelZoom={true}
-                pointer={true}
-                select={false}
-              />
-              <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
-            </Layers>
-          </Map>
+          <MapContainer
+            key={`${latitude}_${longitude}`}
+            longitude={longitude}
+            latitude={latitude}
+            source={tileWMSSources[0]}
+          />
         </div>
       </div>
       <TextArea
