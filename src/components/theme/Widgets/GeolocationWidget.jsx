@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Input, TextArea } from 'semantic-ui-react';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
+
+import axios from 'axios';
 
 import {
   Controls,
@@ -52,9 +54,31 @@ const GeolocationWidget = (props) => {
   //   onChange(id, value);
   // };
 
-  const [tileWMSSources, setTileWMSSources] = React.useState([]);
-  const [latitude, setLatitude] = React.useState(value.latitude);
-  const [longitude, setLongitude] = React.useState(value.longitude);
+  const [tileWMSSources, setTileWMSSources] = useState([]);
+  const [latitude, setLatitude] = useState(value.latitude);
+  const [longitude, setLongitude] = useState(value.longitude);
+  const [address, setAddress] = useState('');
+
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    axios
+      .get(
+        `https://nominatim.openstreetmap.org/search?q=${address}&format=json`,
+      )
+      .then((response) => {
+        const { lat, lon } = response.data[0];
+        setLatitude(lat);
+        setLongitude(lon);
+      })
+      .catch((error) => {
+        // console.error(error);
+      });
+  };
 
   React.useEffect(() => {
     setTileWMSSources([
@@ -100,6 +124,8 @@ const GeolocationWidget = (props) => {
           />
         </div>
       </div>
+      <input type="text" value={address} onChange={handleAddressChange} />
+      <button onClick={handleSearch}>Search</button>
       <TextArea
         id={`field-${id}`}
         name={id}
