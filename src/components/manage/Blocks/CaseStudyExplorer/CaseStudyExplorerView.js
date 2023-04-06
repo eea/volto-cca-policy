@@ -1,29 +1,27 @@
 import React from 'react';
 import superagent from 'superagent';
-import { addAppURL } from '@plone/volto/helpers';
 import { Grid } from 'semantic-ui-react'; // Dropdown,
-import { getVocabulary } from '@plone/volto/actions'; // , searchContent
-//import ECDEIndicator from './ECDEIndicator';
 import { useDispatch } from 'react-redux'; // , useSelector
 
-import Feature from 'ol/Feature.js';
-import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
-import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
+import { getVocabulary } from '@plone/volto/actions'; // , searchContent
+import { addAppURL } from '@plone/volto/helpers';
 
-import {
-  Controls,
-  Interactions,
-  Layer,
-  Map,
-  Layers,
-  Circle as CircleStyle,
-  Geom,
-  Style,
-} from '@eeacms/volto-openlayers-map/api';
+import { Map, Layer, Layers } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-//import { Vector as VectorLayer } from 'ol/layer.js';
 
 /***********/
+// Controls,
+// Interactions,
+// Circle as CircleStyle,
+// Feature,
+// Geom,
+// Style,
+//import { Vector as VectorLayer } from 'ol/layer.js';
+//import ECDEIndicator from './ECDEIndicator';
+// import Feature from 'ol/Feature.js';
+// import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
+// import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
+
 // import { Point } from 'ol/geom/Point.js';
 //import { Circle as CircleStyle, Fill, Stroke, Style, Text } from 'ol/style.js';
 // import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
@@ -31,6 +29,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 //
 // const cases_url =
 //   'http://localhost:3000/en/mkh/case-studies-map-arcgis.json/@@download/file';
+
 const cases_url = '@@case-studies-map.arcgis.json';
 const IPCC = 'eea.climateadapt.aceitems_ipcc_category';
 
@@ -52,6 +51,8 @@ function useCases(url) {
 
 function TheMap() {
   /****/
+  const Feature = ol.ol.Feature;
+  console.log('Feature');
   var distance = 10;
 
   var count = 2000;
@@ -62,35 +63,35 @@ function TheMap() {
     features[i] = new Feature(new ol.geom.Point(coordinates));
   }
 
-  var source = new VectorSource({
+  var source = new ol.source.Vector({
     features: features,
   });
 
-  var clusterSource = new Cluster({
+  var clusterSource = new ol.source.Cluster({
     distance: 100,
     source: source,
   });
 
   var styleCache = {};
-  var clusters = new VectorLayer({
+  var clusterOptions = {
     source: clusterSource,
     style: function (feature) {
       var size = feature.get('features').length;
       var style = styleCache[size];
       if (!style) {
-        style = new ol.Style({
-          image: new ol.Style.Circle({
+        style = new ol.style.Style({
+          image: new ol.style.Circle({
             radius: 10,
-            stroke: new ol.Style.Stroke({
+            stroke: new ol.style.Stroke({
               color: '#fff',
             }),
-            fill: new ol.Style.Fill({
+            fill: new ol.style.Fill({
               color: '#3399CC',
             }),
           }),
-          text: new ol.Style.Text({
+          text: new ol.style.Text({
             text: size.toString(),
-            fill: new ol.Style.Fill({
+            fill: new ol.style.Fill({
               color: '#fff',
             }),
           }),
@@ -99,7 +100,7 @@ function TheMap() {
       }
       return style;
     },
-  });
+  };
   /***********/
 
   /****/
@@ -120,10 +121,11 @@ function TheMap() {
     ]);
   }, []); // ol.source.TileWMS, ol.source.Vector
 
-  var raster = new TileLayer({
-    source: new OSM(),
-  });
+  // var raster = new TileLayer({
+  //   source: new OSM(),
+  // });
 
+  // layers={[raster, clusters]}
   return (
     <Map
       view={{
@@ -131,16 +133,15 @@ function TheMap() {
         showFullExtent: true,
         zoom: 4,
       }}
-      layers={[raster, clusters]}
       pixelRatio={1}
       controls={ol.control.defaults({ attribution: false })}
-    ></Map>
-  );
-  /*
+    >
       <Layers>
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+        <Layer.Vector {...clusterOptions} />
       </Layers>
-      */
+    </Map>
+  );
 }
 // function useFilters() {
 //   const [filters, setFilters] = React.useState([]);
