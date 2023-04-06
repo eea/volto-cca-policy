@@ -6,6 +6,29 @@ import { getVocabulary } from '@plone/volto/actions'; // , searchContent
 //import ECDEIndicator from './ECDEIndicator';
 import { useDispatch } from 'react-redux'; // , useSelector
 
+import Feature from 'ol/Feature.js';
+import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
+import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
+
+import {
+  Controls,
+  Interactions,
+  Layer,
+  Map,
+  Layers,
+  Circle as CircleStyle,
+  Geom,
+  Style,
+} from '@eeacms/volto-openlayers-map/api';
+import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+//import { Vector as VectorLayer } from 'ol/layer.js';
+
+/***********/
+// import { Point } from 'ol/geom/Point.js';
+//import { Circle as CircleStyle, Fill, Stroke, Style, Text } from 'ol/style.js';
+// import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
+
+//
 // const cases_url =
 //   'http://localhost:3000/en/mkh/case-studies-map-arcgis.json/@@download/file';
 const cases_url = '@@case-studies-map.arcgis.json';
@@ -27,6 +50,98 @@ function useCases(url) {
   return cases;
 }
 
+function TheMap() {
+  /****/
+  var distance = 10;
+
+  var count = 2000;
+  var features = new Array(count);
+  var e = 4500000;
+  for (var i = 0; i < count; ++i) {
+    var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
+    features[i] = new Feature(new ol.geom.Point(coordinates));
+  }
+
+  var source = new VectorSource({
+    features: features,
+  });
+
+  var clusterSource = new Cluster({
+    distance: 100,
+    source: source,
+  });
+
+  var styleCache = {};
+  var clusters = new VectorLayer({
+    source: clusterSource,
+    style: function (feature) {
+      var size = feature.get('features').length;
+      var style = styleCache[size];
+      if (!style) {
+        style = new ol.Style({
+          image: new ol.Style.Circle({
+            radius: 10,
+            stroke: new ol.Style.Stroke({
+              color: '#fff',
+            }),
+            fill: new ol.Style.Fill({
+              color: '#3399CC',
+            }),
+          }),
+          text: new ol.Style.Text({
+            text: size.toString(),
+            fill: new ol.Style.Fill({
+              color: '#fff',
+            }),
+          }),
+        });
+        styleCache[size] = style;
+      }
+      return style;
+    },
+  });
+  /***********/
+
+  /****/
+
+  const [tileWMSSources, setTileWMSSources] = React.useState([]);
+
+  React.useEffect(() => {
+    setTileWMSSources([
+      new ol.source.TileWMS({
+        url: 'https://gisco-services.ec.europa.eu/maps/service',
+        params: {
+          LAYERS: 'OSMBlossomComposite',
+          TILED: true,
+        },
+        serverType: 'geoserver',
+        transition: 0,
+      }),
+    ]);
+  }, []); // ol.source.TileWMS, ol.source.Vector
+
+  var raster = new TileLayer({
+    source: new OSM(),
+  });
+
+  return (
+    <Map
+      view={{
+        center: ol.proj.fromLonLat([20, 50]),
+        showFullExtent: true,
+        zoom: 4,
+      }}
+      layers={[raster, clusters]}
+      pixelRatio={1}
+      controls={ol.control.defaults({ attribution: false })}
+    ></Map>
+  );
+  /*
+      <Layers>
+        <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+      </Layers>
+      */
+}
 // function useFilters() {
 //   const [filters, setFilters] = React.useState([]);
 // }
@@ -79,11 +194,12 @@ export default function CaseStudyExplorerView(props) {
   //
   // console.log({ ipcc_categories, filters });
 
+  if (__SERVER__) return '';
   return (
     <div>
       <Grid columns="12">
         <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
-          MAP HERE
+          <TheMap />
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
           {Object.entries(filters?.sectors || {}).map(
