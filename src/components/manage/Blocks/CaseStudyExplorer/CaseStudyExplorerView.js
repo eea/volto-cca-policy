@@ -50,46 +50,19 @@ function useCases(url) {
 }
 
 function TheMap(cases) {
-  console.log('TheMap Cases', cases);
-  /****/
   const Feature = ol.ol.Feature;
-  console.log('Feature');
-  var distance = 10;
 
-  var count = cases.cases.length;
-  var features = new Array(count);
-  var e = 4500000;
-  for (var i = 0; i < count; ++i) {
-    var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
-    //console.log('V1', coordinates);
-    features[i] = new Feature(new ol.geom.Point(coordinates));
-  }
-  features[0] = new Feature(
-    //new ol.geom.Point(ol.proj.fromLonLat([48.864716, 2.349014])),
-    //new ol.geom.Point(ol.proj.fromLonLat([2.349014, 48.864716])),
-    new ol.geom.Point(ol.proj.fromLonLat([4.35609, 50.84439])),
-  );
-  features[1] = new Feature(
-    new ol.geom.Point(ol.proj.fromLonLat([13.37691, 52.51604])),
-  );
-  //features[0] = new Feature(new ol.geom.Point([2.3522, 48.8566]));
-  console.log('TheMap totalCases', cases, typeof cases, cases.cases.length);
-  var casePoints = [];
-  for (let i = 0; i < cases.cases.length; i++) {
-    var _case = cases.cases[i].geometry.coordinates;
-    //_case = [_case[1], _case[0]];
-    console.log(i + ' V2', _case);
-    //console.log('VT', ol.proj.fromLonLat([19.062072, 47.473478]));
-    console.log('VT2', ol.proj.fromLonLat(_case));
-    casePoints.push(new Feature(new ol.geom.Point(ol.proj.fromLonLat(_case))));
-    features[i] = new Feature(new ol.geom.Point(ol.proj.fromLonLat(_case)));
-  }
+  const features = cases.cases.map((c) => {
+    const {
+      geometry: { coordinates },
+    } = c;
+    const point = new ol.geom.Point(ol.proj.fromLonLat(coordinates));
+    return new Feature(point);
+  });
 
   var source = new ol.source.Vector({
-    features: features,
-    //features: casePoints,
+    features,
   });
-  console.log('TheMap Data', features, casePoints);
 
   var clusterSource = new ol.source.Cluster({
     distance: 100,
@@ -126,9 +99,6 @@ function TheMap(cases) {
       return style;
     },
   };
-  /***********/
-
-  /****/
 
   const [tileWMSSources, setTileWMSSources] = React.useState([]);
 
@@ -151,7 +121,7 @@ function TheMap(cases) {
   // });
 
   // layers={[raster, clusters]}
-  return (
+  return features.length > 0 ? (
     <Map
       view={{
         center: ol.proj.fromLonLat([20, 50]),
@@ -166,7 +136,7 @@ function TheMap(cases) {
         <Layer.Vector {...clusterOptions} />
       </Layers>
     </Map>
-  );
+  ) : null;
 }
 // function useFilters() {
 //   const [filters, setFilters] = React.useState([]);
@@ -249,3 +219,36 @@ export default function CaseStudyExplorerView(props) {
     </div>
   );
 }
+
+// console.log('TheMap Cases', cases);
+/****/
+// console.log('Feature');
+// const distance = 10;
+// var e = 4500000;
+// for (var i = 0; i < count; ++i) {
+//   var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
+//   //console.log('V1', coordinates);
+//   features[i] = new Feature(new ol.geom.Point(coordinates));
+// }
+// features[0] = new Feature(
+//   //new ol.geom.Point(ol.proj.fromLonLat([48.864716, 2.349014])),
+//   //new ol.geom.Point(ol.proj.fromLonLat([2.349014, 48.864716])),
+//   new ol.geom.Point(ol.proj.fromLonLat([4.35609, 50.84439])),
+// );
+// features[1] = new Feature(
+//   new ol.geom.Point(ol.proj.fromLonLat([13.37691, 52.51604])),
+// );
+//features[0] = new Feature(new ol.geom.Point([2.3522, 48.8566]));
+// console.log('TheMap totalCases', cases, typeof cases, cases.cases.length);
+// var casePoints = [];
+// for (let i = 0; i < cases.cases.length; i++) {
+//   var _case = cases.cases[i].geometry.coordinates;
+//   //_case = [_case[1], _case[0]];
+//   // console.log(i + ' V2', _case);
+//   //console.log('VT', ol.proj.fromLonLat([19.062072, 47.473478]));
+//   // console.log('VT2', ol.proj.fromLonLat(_case));
+//   casePoints.push(new Feature(new ol.geom.Point(ol.proj.fromLonLat(_case))));
+//   features[i] = new Feature(new ol.geom.Point(ol.proj.fromLonLat(_case)));
+// }
+//features: casePoints,
+// console.log('TheMap Data', features, casePoints);
