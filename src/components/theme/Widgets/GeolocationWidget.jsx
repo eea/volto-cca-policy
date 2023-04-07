@@ -90,26 +90,40 @@ const GeolocationWidget = (props) => {
 
   return (
     <FormFieldWrapper {...props} className="geolocation-field">
-      <Input type="number" placeholder="latitude" value={value.latitude} />
-      <Input type="number" placeholder="longitude" value={value.longitude} />
-      <div className="explore-sites-wrapper">
-        <div id="explore-sites">
-          <MapContainer
-            key={`${value.latitude}_${value.longitude}`}
-            longitude={value.longitude}
-            latitude={value.latitude}
-            source={tileWMSSources[0]}
-          />
+      <div className="ui form">
+        <div className="inline fields">
+          <div className="field">
+            <Input type="text" value={address} onChange={handleAddressChange} />
+          </div>
+          <div className="field">
+            <button onClick={handleSearch}>Search</button>
+          </div>
         </div>
       </div>
-      <input type="text" value={address} onChange={handleAddressChange} />
-      <button onClick={handleSearch}>Search</button>
-      <TextArea
-        id={`field-${id}`}
-        name={id}
-        disabled={true}
-        placeholder={placeholder}
+      <MapContainer
+        key={`${value.latitude}_${value.longitude}`}
+        longitude={value.longitude}
+        latitude={value.latitude}
+        source={tileWMSSources[0]}
       />
+      <div className="ui form">
+        <div className="inline fields">
+          <div className="field">
+            <Input
+              type="number"
+              placeholder="latitude"
+              value={value.latitude}
+            />
+          </div>
+          <div className="field">
+            <Input
+              type="number"
+              placeholder="longitude"
+              value={value.longitude}
+            />
+          </div>
+        </div>
+      </div>
     </FormFieldWrapper>
   );
 };
