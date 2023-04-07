@@ -47,16 +47,9 @@ const MapContainer = (props) => {
 };
 
 const GeolocationWidget = (props) => {
-  // const { id, value, onChange, placeholder } = props;
-  const { id, value, placeholder } = props;
-
-  // const onhandleChange = (id, value) => {
-  //   onChange(id, value);
-  // };
+  const { id, value, onChange, placeholder } = props;
 
   const [tileWMSSources, setTileWMSSources] = useState([]);
-  const [latitude, setLatitude] = useState(value.latitude);
-  const [longitude, setLongitude] = useState(value.longitude);
   const [address, setAddress] = useState('');
 
   const handleAddressChange = (event) => {
@@ -72,8 +65,7 @@ const GeolocationWidget = (props) => {
       )
       .then((response) => {
         const { lat, lon } = response.data[0];
-        setLatitude(lat);
-        setLongitude(lon);
+        onChange(id, { latitude: lat, longitude: lon });
       })
       .catch((error) => {
         // console.error(error);
@@ -98,28 +90,14 @@ const GeolocationWidget = (props) => {
 
   return (
     <FormFieldWrapper {...props} className="geolocation-field">
-      <Input
-        type="number"
-        placeholder="latitude"
-        value={latitude}
-        onChange={(ev) => {
-          setLatitude(ev.target.value);
-        }}
-      />
-      <Input
-        type="number"
-        placeholder="longitude"
-        value={longitude}
-        onChange={(ev) => {
-          setLongitude(ev.target.value);
-        }}
-      />
+      <Input type="number" placeholder="latitude" value={value.latitude} />
+      <Input type="number" placeholder="longitude" value={value.longitude} />
       <div className="explore-sites-wrapper">
         <div id="explore-sites">
           <MapContainer
-            key={`${latitude}_${longitude}`}
-            longitude={longitude}
-            latitude={latitude}
+            key={`${value.latitude}_${value.longitude}`}
+            longitude={value.longitude}
+            latitude={value.latitude}
             source={tileWMSSources[0]}
           />
         </div>
