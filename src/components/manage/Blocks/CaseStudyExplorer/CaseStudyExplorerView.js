@@ -49,23 +49,47 @@ function useCases(url) {
   return cases;
 }
 
-function TheMap() {
+function TheMap(cases) {
+  console.log('TheMap Cases', cases);
   /****/
   const Feature = ol.ol.Feature;
   console.log('Feature');
   var distance = 10;
 
-  var count = 2000;
+  var count = cases.cases.length;
   var features = new Array(count);
   var e = 4500000;
   for (var i = 0; i < count; ++i) {
     var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
+    //console.log('V1', coordinates);
     features[i] = new Feature(new ol.geom.Point(coordinates));
+  }
+  features[0] = new Feature(
+    //new ol.geom.Point(ol.proj.fromLonLat([48.864716, 2.349014])),
+    //new ol.geom.Point(ol.proj.fromLonLat([2.349014, 48.864716])),
+    new ol.geom.Point(ol.proj.fromLonLat([4.35609, 50.84439])),
+  );
+  features[1] = new Feature(
+    new ol.geom.Point(ol.proj.fromLonLat([13.37691, 52.51604])),
+  );
+  //features[0] = new Feature(new ol.geom.Point([2.3522, 48.8566]));
+  console.log('TheMap totalCases', cases, typeof cases, cases.cases.length);
+  var casePoints = [];
+  for (let i = 0; i < cases.cases.length; i++) {
+    var _case = cases.cases[i].geometry.coordinates;
+    //_case = [_case[1], _case[0]];
+    console.log(i + ' V2', _case);
+    //console.log('VT', ol.proj.fromLonLat([19.062072, 47.473478]));
+    console.log('VT2', ol.proj.fromLonLat(_case));
+    casePoints.push(new Feature(new ol.geom.Point(ol.proj.fromLonLat(_case))));
+    features[i] = new Feature(new ol.geom.Point(ol.proj.fromLonLat(_case)));
   }
 
   var source = new ol.source.Vector({
     features: features,
+    //features: casePoints,
   });
+  console.log('TheMap Data', features, casePoints);
 
   var clusterSource = new ol.source.Cluster({
     distance: 100,
@@ -77,6 +101,7 @@ function TheMap() {
     source: clusterSource,
     style: function (feature) {
       var size = feature.get('features').length;
+      //var size = feature.get('casePoints').length;
       var style = styleCache[size];
       if (!style) {
         style = new ol.style.Style({
@@ -200,7 +225,7 @@ export default function CaseStudyExplorerView(props) {
     <div>
       <Grid columns="12">
         <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
-          <TheMap />
+          <TheMap cases={cases} />
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
           {Object.entries(filters?.sectors || {}).map(
