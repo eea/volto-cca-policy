@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input, TextArea } from 'semantic-ui-react';
+import { Input } from 'semantic-ui-react';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
