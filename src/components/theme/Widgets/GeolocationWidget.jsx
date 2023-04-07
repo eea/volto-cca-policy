@@ -47,7 +47,7 @@ const MapContainer = (props) => {
 };
 
 const GeolocationWidget = (props) => {
-  const { id, value, onChange, placeholder } = props;
+  const { id, value, onChange } = props;
 
   const [tileWMSSources, setTileWMSSources] = useState([]);
   const [address, setAddress] = useState('');
