@@ -147,6 +147,8 @@ const applyConfig = (config) => {
     ],
   };
 
+  config.blocks.groupBlocksOrder.push({ id: 'site', title: 'Site' });
+
   //console.log(config);
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
