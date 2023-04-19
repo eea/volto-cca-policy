@@ -9,6 +9,18 @@ import RelevantAceContentView from './RelevantAceContentView';
 export default function RelevantAceContentEdit(props) {
   const { block, data, onChangeBlock, selected, id } = props;
 
+  const { items = [] } = data;
+  const [refresh, forceRefresh] = React.useState(0);
+
+  React.useEffect(() => {
+    items.forEach((item, index) => {
+      if (item.source?.length && !item.item_title) {
+        item.item_title = item.source[0].title;
+        forceRefresh(refresh + 1);
+      }
+    });
+  }, [items, refresh]);
+
   return (
     <div>
       <RelevantAceContentView data={data} id={id} mode="edit" />

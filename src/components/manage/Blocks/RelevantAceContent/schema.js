@@ -1,11 +1,35 @@
+const Item = () => ({
+  title: 'Item',
+  fieldsets: [
+    {
+      id: 'content',
+      title: 'Default',
+      fields: ['source', 'item_title'],
+    },
+  ],
+  properties: {
+    source: {
+      widget: 'object_browser',
+      mode: 'link',
+      title: 'Source',
+      description: 'Choose an existing content as source',
+    },
+    item_title: {
+      type: 'string',
+      title: 'Title',
+    },
+  },
+
+  required: ['title'],
+});
+
 export default {
   title: 'Relevant Ace Content',
   fieldsets: [
     {
-      id: 'default',
-      title: 'Default',
+      id: 'query',
+      title: 'Query',
       fields: [
-        'title',
         'search_text',
         'origin_website',
         'search_type',
@@ -22,8 +46,19 @@ export default {
         'sortBy',
       ],
     },
+    {
+      id: 'default',
+      title: 'Default',
+      fields: ['title', 'items'],
+    },
   ],
   properties: {
+    items: {
+      widget: 'object_list',
+      title: 'Items',
+      description: 'Add a list of items',
+      schema: Item(),
+    },
     title: {
       title: 'Block title',
     },
