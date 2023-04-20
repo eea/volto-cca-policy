@@ -12,27 +12,6 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import InfoOverlay from './InfoOverlay';
 import FeatureInteraction from './FeatureInteraction';
 
-/***********/
-// Controls,
-// Interactions,
-// Circle as CircleStyle,
-// Feature,
-// Geom,
-// Style,
-//import { Vector as VectorLayer } from 'ol/layer.js';
-//import ECDEIndicator from './ECDEIndicator';
-// import Feature from 'ol/Feature.js';
-// import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
-// import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
-
-// import { Point } from 'ol/geom/Point.js';
-//import { Circle as CircleStyle, Fill, Stroke, Style, Text } from 'ol/style.js';
-// import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
-
-//
-// const cases_url =
-//   'http://localhost:3000/en/mkh/case-studies-map-arcgis.json/@@download/file';
-
 const cases_url = '@@case-studies-map.arcgis.json';
 const IPCC = 'eea.climateadapt.aceitems_ipcc_category';
 
@@ -52,12 +31,12 @@ function useCases(url) {
   return cases;
 }
 
-function TheMap(cases, filters) {
+function TheMap(cases) {
   const [selectedCase, onSelectedCase] = React.useState();
-  const [casesDisplay, setCasesDisplay] = React.useState([]);
+  //const [casesDisplay, setCasesDisplay] = React.useState([]);
   const [singlePointCases, setSinglePointCases] = React.useState([]);
   const Feature = ol.ol.Feature;
-  console.log('THE MAP FILTERS', filters);
+  //console.log('CASES', cases);
 
   const features = cases.cases.map((c, index) => {
     const {
@@ -134,14 +113,10 @@ function TheMap(cases, filters) {
             }),
           }),
         });
-        singlePoints.push(feature);
-        //console.log('Found single Point', singlePoints.length, feature);
-        return [];
       }
       return style;
     },
   };
-  //console.log('Single points', singlePoints);
 
   var pointsOptions = {
     //source: new ol.source.Vector({ features }),
@@ -214,12 +189,16 @@ export default function CaseStudyExplorerView(props) {
   const cases = useCases(addAppURL(cases_url));
 
   //const filters = useFilters();
+  const [activeFilters, setActiveFilters] = React.useState({
+    sectors: [],
+    impacts: [],
+  });
   const [casesDisplay, setCasesDisplay] = React.useState(cases);
   const [filters, setFilters] = React.useState([]);
   const dispatch = useDispatch();
-  // const ipcc_categories = useSelector(
-  //   (state) => state.vocabularies?.[IPCC]?.items,
-  // );
+  //const ipcc_categories = useSelector(
+  //  (state) => state.vocabularies?.[IPCC]?.items,
+  //);
 
   React.useEffect(() => {
     const action = getVocabulary({
@@ -254,8 +233,6 @@ export default function CaseStudyExplorerView(props) {
     setFilters(_filters);
   }, [cases]);
 
-  const [activeFilters, setActiveFilters] = React.useState({ sectors: [] });
-
   React.useEffect(() => {
     var data = cases.filter((_case) => {
       if (activeFilters.sectors.length === 0) {
@@ -267,26 +244,31 @@ export default function CaseStudyExplorerView(props) {
           temp = true;
         }
       });
+      activeFilters.impacts.map((filter) => {
+        if (_case.properties.impacts.includes(',' + filter + ',')) {
+          temp = true;
+        }
+      });
       if (temp) {
         return _case;
       }
     });
-    console.log(data);
+    //console.log('activeFilters filter cases', data);
     setCasesDisplay(data);
   }, [activeFilters]);
 
-  //
-  // console.log({ ipcc_categories, filters });
-
   if (__SERVER__) return '';
-  console.log('ACTIVE FILTERS', activeFilters);
+  //console.log('ACTIVE FILTERS', activeFilters);
+  var mapKey = casesDisplay.length + '-' + activeFilters.sectors;
+  //console.log(mapKey);
   return (
     <div>
       <Grid columns="12">
         <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
-          <TheMap cases={casesDisplay} filters={activeFilters} />
+          <TheMap key={mapKey} cases={casesDisplay} filters={activeFilters} />
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
+          <h2>Adaptation sectors</h2>
           {Object.entries(filters?.sectors || {}).map(
             ([value, label], index) => (
               <div key={index}>
@@ -300,6 +282,31 @@ export default function CaseStudyExplorerView(props) {
                       temp.sectors.push(e.target.value);
                     } else {
                       temp.sectors = temp.sectors.filter((value) => {
+                        if (value !== e.target.value) return value;
+                        return null;
+                      });
+                    }
+                    setActiveFilters(temp);
+                  }}
+                />
+                <span>{label}</span>
+              </div>
+            ),
+          )}
+          <h2>Climate impacts</h2>
+          {Object.entries(filters?.impacts || {}).map(
+            ([value, label], index) => (
+              <div key={index}>
+                <input
+                  value={value}
+                  type="checkbox"
+                  onChange={(e) => {
+                    // const value =
+                    var temp = JSON.parse(JSON.stringify(activeFilters));
+                    if (e.target.checked) {
+                      temp.impacts.push(e.target.value);
+                    } else {
+                      temp.impacts = temp.impacts.filter((value) => {
                         if (value !== e.target.value) return value;
                         return null;
                       });

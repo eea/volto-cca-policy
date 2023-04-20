@@ -37,13 +37,9 @@ export default function FeatureInteraction({ onFeatureSelect }) {
     map.addInteraction(select);
     select.on('select', function (e) {
       const features = e.target.getFeatures().getArray();
-      console.log(features);
       features.forEach((feature) => {
         //onFeatureSelect(feature.values_);
-        console.log(feature.values_.features[0].values_);
-        console.log('NR FEATURES', feature.values_.features.length);
-        if (feature.values_.features.length == 1) {
-          console.log('NR FEATURES', feature.values_.features.length);
+        if (feature.values_.features.length === 1) {
           onFeatureSelect(feature.values_.features[0].values_);
         }
       });
