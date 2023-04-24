@@ -2,9 +2,7 @@ import React from 'react';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
-export default function FeatureInteraction({ onFeatureSelect }) {
-  const { map } = useMapContext();
-
+const useStyles = () => {
   const selected = React.useMemo(
     () =>
       new ol.style.Style({
@@ -28,23 +26,49 @@ export default function FeatureInteraction({ onFeatureSelect }) {
     [selected],
   );
 
+  return { selected, selectStyle };
+};
+
+function getExtentOfFeatures(features) {
+  const points = features.map((f) => f.getGeometry().flatCoordinates);
+  const point = new ol.geom.MultiPoint(points);
+  return point.getExtent();
+}
+
+export default function FeatureInteraction({ onFeatureSelect }) {
+  const { map } = useMapContext();
+  const { selectStyle } = useStyles();
+
   React.useEffect(() => {
     if (!map) return;
+
     const select = new ol.interaction.Select({
       condition: ol.condition.click,
       style: selectStyle,
     });
-    map.addInteraction(select);
+
     select.on('select', function (e) {
       const features = e.target.getFeatures().getArray();
+
       features.forEach((feature) => {
-        //onFeatureSelect(feature.values_);
-        if (feature.values_.features.length === 1) {
-          onFeatureSelect(feature.values_.features[0].values_);
+        const subfeatures = feature.values_.features;
+        if (subfeatures.length === 1) {
+          const selectedFeature = subfeatures[0].values_;
+          // console.log('selected', selectedFeature);
+          onFeatureSelect(selectedFeature);
+        } else {
+          const extent = getExtentOfFeatures(subfeatures);
+          const paddedExtent = ol.extent.buffer(extent, -50);
+          map.getView().fit(paddedExtent, map.getSize());
         }
       });
+
+      return null;
+
       // if (!features.length) onFeatureSelect(null);
     });
+
+    map.addInteraction(select);
 
     map.on('pointermove', (e) => {
       const pixel = map.getEventPixel(e.originalEvent);

@@ -64,12 +64,12 @@ export default function CaseStudyMap(props) {
       <Layers>
         <InfoOverlay
           selectedFeature={selectedCase}
+          onFeatureSelect={onSelectedCase}
           layerId={tileWMSSources?.[0]}
         />
         <FeatureInteraction onFeatureSelect={onSelectedCase} />
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
         <Layer.Vector style={clusterStyle} source={clusterSource} zIndex={1} />
-        {/* <Layer.Vector style={pointStyle} source={pointsSource} zIndex={2} /> */}
       </Layers>
     </Map>
   ) : null;
@@ -101,24 +101,17 @@ function clusterStyle(feature) {
     styleCache[size] = style;
   }
 
-  return size === 1 ? pointStyle() : size;
+  return size === 1
+    ? new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 5,
+          stroke: new ol.style.Stroke({
+            color: '#fff',
+          }),
+          fill: new ol.style.Fill({
+            color: '#000000',
+          }),
+        }),
+      })
+    : style;
 }
-
-function pointStyle(feature) {
-  return new ol.style.Style({
-    image: new ol.style.Circle({
-      radius: 5,
-      stroke: new ol.style.Stroke({
-        color: '#fff',
-      }),
-      fill: new ol.style.Fill({
-        color: '#3399CC',
-      }),
-    }),
-  });
-}
-
-// const Feature = ol.ol.Feature;
-// const singlePoints = [
-//   new Feature(new ol.geom.Point(ol.proj.fromLonLat([4.35609, 50.84439]))),
-// ];
