@@ -11,6 +11,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 import InfoOverlay from './InfoOverlay';
 import FeatureInteraction from './FeatureInteraction';
+import './styles.less';
 
 const cases_url = '@@case-studies-map.arcgis.json';
 const IPCC = 'eea.climateadapt.aceitems_ipcc_category';
@@ -187,6 +188,7 @@ function TheMap(cases) {
 export default function CaseStudyExplorerView(props) {
   // console.log(regions);
   const cases = useCases(addAppURL(cases_url));
+  const [mapKey, setMapKey] = React.useState('-');
 
   //const filters = useFilters();
   const [activeFilters, setActiveFilters] = React.useState({
@@ -231,6 +233,13 @@ export default function CaseStudyExplorerView(props) {
       }
     }
     setFilters(_filters);
+    setMapKey(
+      casesDisplay.length +
+        '-' +
+        activeFilters.sectors +
+        '-' +
+        activeFilters.impacts,
+    );
   }, [cases]);
 
   React.useEffect(() => {
@@ -255,23 +264,36 @@ export default function CaseStudyExplorerView(props) {
     });
     //console.log('activeFilters filter cases', data);
     setCasesDisplay(data);
+    setMapKey(
+      casesDisplay.length +
+        '-' +
+        activeFilters.sectors +
+        '-' +
+        activeFilters.impacts,
+    );
   }, [activeFilters]);
 
   if (__SERVER__) return '';
   //console.log('ACTIVE FILTERS', activeFilters);
-  var mapKey = casesDisplay.length + '-' + activeFilters.sectors;
   //console.log(mapKey);
   return (
     <div>
       <Grid columns="12">
-        <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
+        <Grid.Column mobile={12} tablet={12} computer={9} className="col-left">
           <TheMap key={mapKey} cases={casesDisplay} filters={activeFilters} />
         </Grid.Column>
-        <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
-          <h2>Adaptation sectors</h2>
+        <Grid.Column
+          mobile={12}
+          tablet={12}
+          computer={3}
+          className="col-left"
+          id="cse-filter"
+        >
+          <h4>Adaptation sectors</h4>
           {Object.entries(filters?.sectors || {}).map(
             ([value, label], index) => (
-              <div key={index}>
+              <p key={index}>
+                <span>{label}</span>
                 <input
                   value={value}
                   type="checkbox"
@@ -289,14 +311,14 @@ export default function CaseStudyExplorerView(props) {
                     setActiveFilters(temp);
                   }}
                 />
-                <span>{label}</span>
-              </div>
+              </p>
             ),
           )}
-          <h2>Climate impacts</h2>
+          <h4>Climate impacts</h4>
           {Object.entries(filters?.impacts || {}).map(
             ([value, label], index) => (
-              <div key={index}>
+              <p key={index}>
+                <span>{label}</span>
                 <input
                   value={value}
                   type="checkbox"
@@ -314,8 +336,7 @@ export default function CaseStudyExplorerView(props) {
                     setActiveFilters(temp);
                   }}
                 />
-                <span>{label}</span>
-              </div>
+              </p>
             ),
           )}
         </Grid.Column>
