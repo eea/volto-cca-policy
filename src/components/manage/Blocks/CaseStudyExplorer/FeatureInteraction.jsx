@@ -54,18 +54,15 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         const subfeatures = feature.values_.features;
         if (subfeatures.length === 1) {
           const selectedFeature = subfeatures[0].values_;
-          // console.log('selected', selectedFeature);
           onFeatureSelect(selectedFeature);
         } else {
           const extent = getExtentOfFeatures(subfeatures);
-          const paddedExtent = ol.extent.buffer(extent, -50);
+          const paddedExtent = ol.extent.buffer(extent, 50000);
           map.getView().fit(paddedExtent, map.getSize());
         }
       });
 
       return null;
-
-      // if (!features.length) onFeatureSelect(null);
     });
 
     map.addInteraction(select);
