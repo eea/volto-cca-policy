@@ -16,6 +16,7 @@ export default function RelevantAceContentEdit(props) {
     items.forEach((item, index) => {
       if (item.source?.length && !item.item_title) {
         item.item_title = item.source[0].title;
+        item.link = item.source['@id'];
         forceRefresh(refresh + 1);
       }
     });

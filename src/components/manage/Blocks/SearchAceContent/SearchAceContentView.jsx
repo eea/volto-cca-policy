@@ -7,7 +7,7 @@ export default function SearchAceContentView(props) {
   const results = data._v_results || [];
 
   return results && results.length > 0 ? (
-    <div className="search-acecontent-block">
+    <div className="block search-acecontent-block">
       {data.title && <h4>{data.title}</h4>}
       <List>
         {results.map((result, index) => (
