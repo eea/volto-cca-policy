@@ -143,9 +143,14 @@ export default {
     },
     sortBy: {
       title: 'Sort order for results and assigned items',
-      vocabulary: {
-        '@id': 'sortby_vocabulary',
-      },
+      choices: [
+        ['MODIFIED', 'Last Modified'],
+        ['EFFECTIVE', 'Last Published'],
+        ['NAME', 'Alphabetical sorting'],
+      ],
+      // vocabulary: {
+      //   '@id': 'sortby_vocabulary',
+      // },
     },
   },
   required: [],
