@@ -2,7 +2,7 @@ const Item = () => ({
   title: 'Item',
   fieldsets: [
     {
-      id: 'content',
+      id: 'default',
       title: 'Default',
       fields: ['source', 'item_title'],
     },
@@ -27,9 +27,11 @@ export default {
   title: 'Relevant Ace Content',
   fieldsets: [
     {
-      id: 'query',
-      title: 'Query',
+      id: 'default',
+      title: 'Default',
       fields: [
+        'title',
+        'items',
         'search_text',
         'origin_website',
         'search_type',
@@ -45,11 +47,6 @@ export default {
         'combine_results',
         'sortBy',
       ],
-    },
-    {
-      id: 'default',
-      title: 'Default',
-      fields: ['title', 'items'],
     },
   ],
   properties: {
@@ -142,7 +139,8 @@ export default {
       type: 'boolean',
     },
     sortBy: {
-      title: 'Sort order for results and assigned items',
+      title: 'Sort by',
+      description: 'Sort order for results and assigned items',
       choices: [
         ['MODIFIED', 'Last Modified'],
         ['EFFECTIVE', 'Last Published'],
