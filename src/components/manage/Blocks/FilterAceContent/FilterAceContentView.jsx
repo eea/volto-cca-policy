@@ -5,10 +5,11 @@ import React from 'react';
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 
 const FilterAceContentView = (props) => {
-  const { data, block, mode = 'view' } = props;
+  const { data, id, mode = 'view' } = props;
   //   const { title } = data;
   //   const results = _v_results || [];
   const queryData = {
+    block: id,
     querystring: {
       query: [
         {
@@ -21,18 +22,16 @@ const FilterAceContentView = (props) => {
     sort_order: 'ascending',
   };
 
-  console.log(data);
-
   return (
     <div className="block filter-acecontent-block">
       Filter ace content view
       {data.title && <h4>{data.title}</h4>}
       <ListingBody
-        id={block}
-        variation={{ ...data }}
+        id={id}
         data={queryData}
         path={props.path}
         isEditMode={mode === 'edit'}
+        variation={null}
       />
     </div>
   );
