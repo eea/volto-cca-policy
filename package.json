@@ -18,12 +18,13 @@
   },
   "addons": [
     "@eeacms/volto-openlayers-map",
-    "@eeacms/volto-eea-design-system"
+    "@eeacms/volto-eea-design-system",
+    "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
     "@eeacms/volto-eea-design-system": "*",
-    "@eeacms/volto-openlayers-map": "*",
-    "@eeacms/volto-globalsearch": "*"
+    "@eeacms/volto-globalsearch": "*",
+    "@eeacms/volto-openlayers-map": "*"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",

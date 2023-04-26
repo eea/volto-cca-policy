@@ -16,7 +16,7 @@ function tweakForNLPService(body, config) {
 }
 
 const applyConfig = (config) => {
-  config.settings.searchlib = installMainSearch(config.settings.searchlib);
+  // config.settings.searchlib = installMainSearch(config.settings.searchlib);
 
   const {
     // resolve,
