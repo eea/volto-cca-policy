@@ -31,7 +31,7 @@ export default {
       title: 'Origin website',
       widget: 'array',
       vocabulary: {
-        '@id': 'eea.climateadapt.funding_programme',
+        '@id': 'eea.climateadapt.origin_website',
       },
     },
     search_type: {
