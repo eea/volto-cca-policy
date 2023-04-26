@@ -4,6 +4,7 @@ import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
 import installSearchAceContent from './SearchAceContent';
 import installRelevantAceContent from './RelevantAceContent';
+import installFilterAceContent from './FilterAceContent';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -13,5 +14,6 @@ export default function installBlocks(config) {
     installCaseStudyExplorerBlock,
     installSearchAceContent,
     installRelevantAceContent,
+    installFilterAceContent,
   )(config);
 }
