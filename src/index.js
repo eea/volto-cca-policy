@@ -1,3 +1,5 @@
+import loadable from '@loadable/component';
+
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import GuidanceView from './components/theme/Views/GuidanceView';
@@ -33,6 +35,8 @@ const applyConfig = (config) => {
       },
     ];
   }
+
+  config.settings.loadables.d3 = loadable.lib(() => import('d3'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
