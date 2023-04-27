@@ -26,6 +26,11 @@ const addonAliases = Object.keys(reg.packages).map((o) => [
   reg.packages[o].modulePath,
 ]);
 
+const voltoSearchlibPath = path.dirname(
+  reg.packages['@eeacms/volto-searchlib'].modulePath,
+);
+const searchlibPath = path.resolve(`${voltoSearchlibPath}/searchlib`);
+
 module.exports = {
   extends: `${projectRootPath}/node_modules/@plone/volto/.eslintrc`,
   settings: {
@@ -34,6 +39,7 @@ module.exports = {
         map: [
           ['@plone/volto', '@plone/volto/src'],
           ...addonAliases,
+          ['@eeacms/search', searchlibPath],
           ['@package', `${__dirname}/src`],
           ['~', `${__dirname}/src`],
         ],
