@@ -178,7 +178,7 @@ export default function installMainSearch(config) {
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 
-  console.log(config.searchui.ccaSearch);
+  // console.log(config.searchui.ccaSearch);
 
   return config;
 }
