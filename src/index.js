@@ -1,3 +1,4 @@
+import { compose } from 'redux';
 import loadable from '@loadable/component';
 
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
@@ -17,6 +18,7 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Footer/ec_logo.svg';
 
 import installBlocks from './components/manage/Blocks';
+import installSearchEngine from './search';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
@@ -203,7 +205,7 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
-  return installBlocks(config);
+  return compose(installBlocks, installSearchEngine)(config);
 };
 
 export default applyConfig;

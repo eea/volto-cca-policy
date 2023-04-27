@@ -5,6 +5,7 @@ import installCaseStudyExplorerBlock from './CaseStudyExplorer';
 import installCountryMapBlock from './CountryMap';
 import installSearchAceContent from './SearchAceContent';
 import installRelevantAceContent from './RelevantAceContent';
+import installFilterAceContent from './FilterAceContent';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -15,5 +16,6 @@ export default function installBlocks(config) {
     installCountryMapBlock,
     installSearchAceContent,
     installRelevantAceContent,
+    installFilterAceContent,
   )(config);
 }
