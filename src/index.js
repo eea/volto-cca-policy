@@ -125,7 +125,7 @@ const applyConfig = (config) => {
       //   buttonTitle: 'Go to advanced search',
       // },
     ],
-    logoTargetUrl: '/en',
+    logoTargetUrl: '/',
     organisationName: 'Climate-ADAPT',
     websiteTitle: 'Climate-ADAPT',
   };
