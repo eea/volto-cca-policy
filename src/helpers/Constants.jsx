@@ -465,3 +465,70 @@ export const SUBNATIONAL_REGIONS = {
   SUBN_Northern_Ireland__GB_: 'Northern Ireland (UK)',
   SUBN_Extra_Regio_NUTS_2__GB_: 'Extra-Regio NUTS 2 (UK)',
 };
+
+export const EU_COUNTRIES = [
+  'AT',
+  'BE',
+  'BG',
+  'CY',
+  'CZ',
+  'DE',
+  'DK',
+  'EE',
+  'ES',
+  'FI',
+  'FR',
+  'GR',
+  'HR',
+  'HU',
+  'IE',
+  'IT',
+  'LT',
+  'LU',
+  'LV',
+  'MT',
+  'NL',
+  'PL',
+  'PT',
+  'RO',
+  'SE',
+  'SI',
+  'SK',
+];
+
+export const WIDGET_COUNTRIES = Object.entries(ACE_COUNTRIES)
+  .map(([code, name]) => ({
+    code,
+    name,
+    label: 'chk_countries_' + code,
+  }))
+  .filter((country) => EU_COUNTRIES.includes(country.code))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+export const WIDGET_MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
+  .map(([key, value]) => ({
+    key,
+    value: key,
+    text: value,
+  }))
+  .filter((macro) => macro.key.startsWith('TRANS_MACRO_'))
+  .sort((a, b) => a.text.localeCompare(b.name));
+
+export const WIDGET_BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
+  .map(([key, value]) => ({
+    key,
+    value: key,
+    text: value,
+  }))
+  .filter((macro) => macro.key.startsWith('TRANS_BIO_'))
+  .sort((a, b) => a.text.localeCompare(b.name));
+
+export const WIDGET_SUBNATIONAL_REGIONS_OPTIONS = Object.entries(
+  SUBNATIONAL_REGIONS,
+)
+  .map(([key, value]) => ({
+    key,
+    value: key,
+    text: value,
+  }))
+  .sort((a, b) => a.text.localeCompare(b.name));

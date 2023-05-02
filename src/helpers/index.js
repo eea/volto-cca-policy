@@ -12,7 +12,16 @@ export {
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
 export ShareInfo from './ShareInfo';
-export { ACE_COUNTRIES, BIOREGIONS, SUBNATIONAL_REGIONS } from './Constants';
+export {
+  ACE_COUNTRIES,
+  BIOREGIONS,
+  SUBNATIONAL_REGIONS,
+  EU_COUNTRIES,
+  WIDGET_COUNTRIES,
+  WIDGET_MACRO_TRANS_REGIONS,
+  WIDGET_BIOGEOGRAPHICAL_REGIONS,
+  WIDGET_SUBNATIONAL_REGIONS_OPTIONS,
+} from './Constants';
 
 /**
  * Get a resource image/file with authenticated (if token exist) API headers

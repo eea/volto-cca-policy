@@ -1,11 +1,37 @@
+const Item = () => ({
+  title: 'Item',
+  fieldsets: [
+    {
+      id: 'default',
+      title: 'Default',
+      fields: ['source', 'item_title'],
+    },
+  ],
+  properties: {
+    source: {
+      widget: 'object_browser',
+      mode: 'link',
+      title: 'Source',
+      description: 'Choose an existing content as source',
+    },
+    item_title: {
+      type: 'string',
+      title: 'Title',
+    },
+  },
+
+  required: ['title'],
+});
+
 export default {
-  title: 'Search Ace Content',
+  title: 'Relevant Ace Content',
   fieldsets: [
     {
       id: 'default',
       title: 'Default',
       fields: [
         'title',
+        'items',
         'search_text',
         'origin_website',
         'search_type',
@@ -17,10 +43,19 @@ export default {
         'bio_regions',
         'funding_programme',
         'nr_items',
+        'show_share_btn',
+        'combine_results',
+        'sortBy',
       ],
     },
   ],
   properties: {
+    items: {
+      widget: 'object_list',
+      title: 'Items',
+      description: 'Add a list of items',
+      schema: Item(),
+    },
     title: {
       title: 'Block title',
     },
@@ -31,7 +66,7 @@ export default {
       title: 'Origin website',
       widget: 'array',
       vocabulary: {
-        '@id': 'eea.climateadapt.origin_website',
+        '@id': 'eea.climateadapt.funding_programme',
       },
     },
     search_type: {
@@ -94,6 +129,26 @@ export default {
       title: 'Nr of items to show',
       type: 'number',
       default: '0',
+    },
+    show_share_btn: {
+      title: 'Show the share button',
+      type: 'boolean',
+    },
+    combine_results: {
+      title: 'Show listing results, in addition to assigned items',
+      type: 'boolean',
+    },
+    sortBy: {
+      title: 'Sort by',
+      description: 'Sort order for results and assigned items',
+      choices: [
+        ['MODIFIED', 'Last Modified'],
+        ['EFFECTIVE', 'Last Published'],
+        ['NAME', 'Alphabetical sorting'],
+      ],
+      // vocabulary: {
+      //   '@id': 'sortby_vocabulary',
+      // },
     },
   },
   required: [],

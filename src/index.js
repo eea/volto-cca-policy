@@ -1,3 +1,5 @@
+import { compose } from 'redux';
+
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import GuidanceView from './components/theme/Views/GuidanceView';
@@ -15,6 +17,10 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Footer/ec_logo.svg';
 
 import installBlocks from './components/manage/Blocks';
+import installSearchEngine from './search';
+
+import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const applyConfig = (config) => {
   const notInEnMission = /^(?!(\/en\/mission)).*$/;
@@ -116,7 +122,7 @@ const applyConfig = (config) => {
       //   buttonTitle: 'Go to advanced search',
       // },
     ],
-    logoTargetUrl: '/en',
+    logoTargetUrl: '/',
     organisationName: 'Climate-ADAPT',
     websiteTitle: 'Climate-ADAPT',
   };
@@ -143,6 +149,8 @@ const applyConfig = (config) => {
       'https://shareit.eea.europa.eu',
     ],
   };
+
+  config.blocks.groupBlocksOrder.push({ id: 'site', title: 'Site' });
 
   //console.log(config);
   config.views.contentTypesViews = {
@@ -182,6 +190,10 @@ const applyConfig = (config) => {
     },
   ];
 
+  // Custom widgets
+  config.widgets.id.geochars = GeocharsWidget;
+  config.widgets.id.geolocation = GeolocationWidget;
+
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
 
@@ -190,7 +202,7 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
-  return installBlocks(config);
+  return compose(installBlocks, installSearchEngine)(config);
 };
 
 export default applyConfig;

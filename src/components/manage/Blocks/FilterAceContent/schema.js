@@ -1,5 +1,5 @@
 export default {
-  title: 'Search Ace Content',
+  title: 'Filter Ace Content',
   fieldsets: [
     {
       id: 'default',
@@ -31,7 +31,7 @@ export default {
       title: 'Origin website',
       widget: 'array',
       vocabulary: {
-        '@id': 'eea.climateadapt.origin_website',
+        '@id': 'eea.climateadapt.funding_programme',
       },
     },
     search_type: {
@@ -94,6 +94,18 @@ export default {
       title: 'Nr of items to show',
       type: 'number',
       default: '0',
+    },
+    sortBy: {
+      title: 'Sort by',
+      description: 'Sort order for results and assigned items',
+      choices: [
+        ['MODIFIED', 'Last Modified'],
+        ['EFFECTIVE', 'Last Published'],
+        ['NAME', 'Alphabetical sorting'],
+      ],
+      // vocabulary: {
+      //   '@id': 'sortby_vocabulary',
+      // },
     },
   },
   required: [],
