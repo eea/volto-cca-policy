@@ -18,10 +18,12 @@
   },
   "addons": [
     "@eeacms/volto-openlayers-map",
-    "@eeacms/volto-eea-design-system"
+    "@eeacms/volto-eea-design-system",
+    "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
     "@eeacms/volto-eea-design-system": "*",
+    "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-openlayers-map": "*"
   },
   "devDependencies": {

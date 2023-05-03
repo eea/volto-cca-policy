@@ -1,3 +1,5 @@
+import { compose } from 'redux';
+
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import GuidanceView from './components/theme/Views/GuidanceView';
@@ -15,6 +17,7 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Footer/ec_logo.svg';
 
 import installBlocks from './components/manage/Blocks';
+import installSearchEngine from './search';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
@@ -119,7 +122,7 @@ const applyConfig = (config) => {
       //   buttonTitle: 'Go to advanced search',
       // },
     ],
-    logoTargetUrl: '/en',
+    logoTargetUrl: '/',
     organisationName: 'Climate-ADAPT',
     websiteTitle: 'Climate-ADAPT',
   };
@@ -199,7 +202,7 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
-  return installBlocks(config);
+  return compose(installBlocks, installSearchEngine)(config);
 };
 
 export default applyConfig;
