@@ -1,6 +1,4 @@
 const FilterSchema = (data, macro_regions) => {
-  console.log('macro_regions', macro_regions);
-
   return {
     title: 'Filter Ace Content',
     fieldsets: [

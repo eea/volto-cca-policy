@@ -4,8 +4,6 @@ import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBo
 import { useSelector, useDispatch } from 'react-redux';
 import { getVocabulary } from '@plone/volto/actions';
 import { OTHER_REGIONS } from '@eeacms/volto-cca-policy/helpers';
-import config from '@plone/volto/registry';
-
 import {
   Option,
   DropdownIndicator,
@@ -148,11 +146,6 @@ const FilterAceContentView = (props) => {
     impactsQuery,
     sectorsQuery,
   );
-  const { variations } = config.blocks.blocksConfig.listing;
-
-  console.log('listing variations', variations);
-
-  // console.log(variations.filter((v) => v.id === 'summary'));
 
   return (
     <div className="block filter-acecontent-block">
