@@ -75,8 +75,10 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
       let values = [];
       if (value.includes(OTHER_REGIONS)) {
         values = [...value, ...otherMacroRegions];
+        values.splice(values.indexOf(OTHER_REGIONS), 1);
+      } else {
+        values = value;
       }
-      values.splice(values.indexOf(OTHER_REGIONS), 1);
 
       return {
         i: fieldmap[field],
@@ -100,6 +102,8 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
     query: defaultQuery,
     sort_on: data.sortBy,
     sort_order: 'descending',
+    template: 'summary',
+    itemModel: { '@type': 'simpleItem' },
   };
 };
 
@@ -135,7 +139,7 @@ const FilterAceContentView = (props) => {
     dispatch(action);
   }, [dispatch]);
 
-  console.log('data', data);
+  // console.log('data', data);
 
   const listingBodyData = applyQuery(
     id,
@@ -204,7 +208,6 @@ const FilterAceContentView = (props) => {
         data={listingBodyData}
         path={props.path}
         isEditMode={mode === 'edit'}
-        variation={null}
       />
     </div>
   );

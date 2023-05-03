@@ -31,7 +31,7 @@ const getMacroRegions = (regions, bioregions) => {
 };
 
 export default function RelevantAceContentEdit(props) {
-  const { block, data, onChangeBlock, selected, id } = props;
+  const { block, data, onChangeBlock, selected, id, pathname } = props;
   const dispatch = useDispatch();
 
   const regionsVocabItems = useSelector((state) =>
@@ -52,7 +52,7 @@ export default function RelevantAceContentEdit(props) {
 
   return (
     <div>
-      <FilterAceContentView data={data} id={id} mode="edit" />
+      <FilterAceContentView data={data} id={id} mode="edit" path={pathname} />
       <SidebarPortal selected={selected}>
         <BlockDataForm
           block={block}
