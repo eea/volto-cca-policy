@@ -11,6 +11,8 @@ import {
   customSelectStyles,
 } from '@plone/volto/components/manage/Widgets/SelectStyling';
 
+import './style.less';
+
 const Select = loadable(() => import('react-select'));
 
 const IMPACTS = 'eea.climateadapt.aceitems_climateimpacts';
@@ -196,12 +198,14 @@ const FilterAceContentView = (props) => {
           }
         }}
       />
-      <ListingBody
-        id={id}
-        data={listingBodyData}
-        path={props.path}
-        isEditMode={mode === 'edit'}
-      />
+      <div className="listing-wrapper">
+        <ListingBody
+          id={id}
+          data={listingBodyData}
+          path={props.path}
+          isEditMode={mode === 'edit'}
+        />
+      </div>
     </div>
   );
 };
