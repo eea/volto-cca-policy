@@ -128,7 +128,7 @@ export default {
     nr_items: {
       title: 'Nr of items to show',
       type: 'number',
-      default: '0',
+      default: '5',
     },
     show_share_btn: {
       title: 'Show the share button',
