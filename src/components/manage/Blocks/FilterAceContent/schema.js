@@ -73,7 +73,10 @@ const FilterSchema = (data, macro_regions) => {
       macro_regions: {
         title: 'Macro-Transnational Regions',
         widget: 'array',
-        choices: macro_regions,
+        vocabulary: {
+          '@id': 'eea.climateadapt.regions',
+        },
+        choices: macro_regions, // override to set correct values
       },
       bio_regions: {
         title: 'Biogeographical Regions',
@@ -92,7 +95,7 @@ const FilterSchema = (data, macro_regions) => {
       nr_items: {
         title: 'Nr of items to show',
         type: 'number',
-        default: '0',
+        default: '5',
       },
       sortBy: {
         title: 'Sort by',

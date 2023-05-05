@@ -10,19 +10,11 @@ import FilterAceContentView from './FilterAceContentView';
 const REGIONS = 'eea.climateadapt.regions';
 
 const getMacroRegions = (regions, bioregions) => {
-  const macro_regions = [
-    {
-      label: OTHER_REGIONS,
-      value: OTHER_REGIONS,
-    },
-  ];
+  const macro_regions = [[OTHER_REGIONS, OTHER_REGIONS]];
   regions.forEach((region) => {
     Object.entries(bioregions).forEach(([k, v]) => {
       if (region.label === v) {
-        macro_regions.push({
-          label: region.label,
-          value: k,
-        });
+        macro_regions.push([k, region.label]);
       }
     });
   });

@@ -139,8 +139,6 @@ const FilterAceContentView = (props) => {
     dispatch(action);
   }, [dispatch]);
 
-  // console.log('data', data);
-
   const listingBodyData = applyQuery(
     id,
     data,
