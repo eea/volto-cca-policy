@@ -23,6 +23,7 @@ export {
   WIDGET_BIOGEOGRAPHICAL_REGIONS,
   WIDGET_SUBNATIONAL_REGIONS_OPTIONS,
 } from './Constants';
+export clientOnly from './clientOnly';
 
 /**
  * Get a resource image/file with authenticated (if token exist) API headers

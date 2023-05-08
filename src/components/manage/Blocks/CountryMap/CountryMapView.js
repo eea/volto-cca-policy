@@ -4,7 +4,9 @@ import cpath from './euro-countries-simplified.json';
 import flags from './flags.js';
 import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import loadable from '@loadable/component';
+import { compose } from 'redux';
+import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+// import loadable from '@loadable/component';
 
 const CountryMapView = (props) => {
   const svgRef = useRef(null);
@@ -406,4 +408,4 @@ function getIEVersion() {
 }
 
 //export default CountryMapView;
-export default injectLazyLibs(['d3'])(CountryMapView);
+export default compose(clientOnly, injectLazyLibs(['d3']))(CountryMapView);
