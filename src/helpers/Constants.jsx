@@ -96,6 +96,8 @@ export const BIOREGIONS = {
   TRANS_BIO_STEPPIC: 'Steppic',
 };
 
+export const OTHER_REGIONS = 'Other Regions';
+
 export const SUBNATIONAL_REGIONS = {
   SUBN_Région_de_Bruxelles_Capit:
     'Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE)',

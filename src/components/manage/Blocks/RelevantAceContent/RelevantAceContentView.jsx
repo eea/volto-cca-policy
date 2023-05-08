@@ -5,15 +5,12 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 
 const RelevantAceContentView = (props) => {
   const { data } = props;
-  const { title, _v_results, items, combine_results } = data;
+  const { title, _v_results, items = [], combine_results } = data;
   const results = _v_results || [];
-
-  // console.log(data);
 
   return (
     <div className="block relevant-acecontent-block">
       {title && <h4>{title}</h4>}
-
       {combine_results ? (
         <>
           {(items || []).map((item, index) => (
@@ -49,6 +46,7 @@ const RelevantAceContentView = (props) => {
           )}
         </>
       )}
+      {results.length === 0 && items.length === 0 && <div>No items</div>}
     </div>
   );
 };

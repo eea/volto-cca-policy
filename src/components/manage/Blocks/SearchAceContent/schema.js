@@ -93,7 +93,7 @@ export default {
     nr_items: {
       title: 'Nr of items to show',
       type: 'number',
-      default: '0',
+      default: '5',
     },
   },
   required: [],

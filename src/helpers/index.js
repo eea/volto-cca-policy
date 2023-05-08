@@ -15,6 +15,7 @@ export ShareInfo from './ShareInfo';
 export {
   ACE_COUNTRIES,
   BIOREGIONS,
+  OTHER_REGIONS,
   SUBNATIONAL_REGIONS,
   EU_COUNTRIES,
   WIDGET_COUNTRIES,
