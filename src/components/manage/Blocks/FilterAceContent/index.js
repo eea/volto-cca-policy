@@ -5,7 +5,7 @@ import FilterAceContentView from './FilterAceContentView';
 export default function installBlock(config) {
   config.blocks.blocksConfig.filterAceContent = {
     id: 'filterAceContent',
-    title: 'Filter Ace Content',
+    title: 'Filter AceContent',
     icon: zoomSVG,
     group: 'site',
     view: FilterAceContentView,
