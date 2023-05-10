@@ -89,7 +89,7 @@ export const regionCountries = [
     ],
   },
   {
-    region: 'Danube',
+    region: 'Danube Area',
     countries: [
       ['Austria', '/countries/austria'],
       ['Bulgaria', '/countries/bulgaria'],
@@ -108,7 +108,7 @@ export const regionCountries = [
     ],
   },
   {
-    region: 'Mediterranean',
+    region: 'Mediterranean Area',
     countries: [
       ['Albania', ''],
       ['Bosnia and Herzegovina', ''],
