@@ -11,6 +11,7 @@ import PublicationReportView from './components/theme/Views/PublicationReportVie
 import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
+import OrganisationCardsListingView from './components/theme/Listing/OrganisationCardsListingView';
 
 import ccaLogo from '@eeacms/volto-cca-policy/../theme//assets/images/Header/climate-adapt-logo.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
@@ -147,6 +148,19 @@ const applyConfig = (config) => {
     whiteList: [
       'https://cmshare.eea.europa.eu',
       'https://shareit.eea.europa.eu',
+    ],
+  };
+
+  config.blocks.blocksConfig.listing = {
+    ...config.blocks.blocksConfig.listing,
+    variations: [
+      ...config.blocks.blocksConfig.listing.variations,
+      {
+        id: 'organisationCards',
+        title: 'Organisation Cards',
+        template: OrganisationCardsListingView,
+        isDefault: false,
+      },
     ],
   };
 
