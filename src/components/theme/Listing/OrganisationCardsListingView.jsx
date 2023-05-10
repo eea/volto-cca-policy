@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 
 const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
-  console.log(items[0]);
+  // console.log(items[0]);
 
   const observatoryURL = (item) => {
     return item.getURL.replace('/metadata/', '/observatory/++aq++metadata/');
