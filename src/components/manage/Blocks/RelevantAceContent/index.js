@@ -5,7 +5,7 @@ import RelevantAceContentView from './RelevantAceContentView';
 export default function installBlock(config) {
   config.blocks.blocksConfig.relevantAceContent = {
     id: 'relevantAceContent',
-    title: 'Relevant acecontent',
+    title: 'Relevant AceContent',
     icon: zoomSVG,
     group: 'site',
     view: RelevantAceContentView,
