@@ -26,7 +26,7 @@ export const regionCountries = [
     ],
   },
   {
-    region: 'Northern Periphery and Artic',
+    region: 'Northern Periphery and Arctic',
     countries: [
       ['Finland', '/countries/finland'],
       ['Ireland', '/countries/ireland'],
@@ -128,7 +128,7 @@ export const regionCountries = [
     ],
   },
   {
-    region: 'North Sea',
+    region: 'North Sea Region',
     countries: [
       ['Belgium', '/countries/belgium'],
       ['Denmark', '/countries/denmark'],
@@ -165,6 +165,6 @@ export const regionCountries = [
   },
   {
     region: 'Other regions',
-    countries: [['', '']],
+    countries: [],
   },
 ];
