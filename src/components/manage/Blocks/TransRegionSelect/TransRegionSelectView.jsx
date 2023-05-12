@@ -32,6 +32,8 @@ const TransRegionSelectView = (props) => {
   );
   const currentLang = useSelector((state) => state.intl.locale);
   const regions = getSiblings(querystringResults[id]?.items);
+  const other_regions =
+    'EU outermost regions and the overseas countries and territories';
 
   React.useEffect(() => {
     dispatch(
@@ -64,20 +66,22 @@ const TransRegionSelectView = (props) => {
     );
   }, [dispatch, id]);
 
+  const defaultValue =
+    content.title === other_regions ? 'Other regions' : content.title;
+
   return (
     <div className="block">
       {data.title && <h5>{data.title}</h5>}
       <Dropdown
         selection
-        // text={content.title}
         text="Choose a region"
         options={regions}
-        defaultValue={content.title}
+        defaultValue={defaultValue}
         icon="angle down"
       />
       <p></p>
       <div className="countries">
-        <h5>Region's countries:</h5>
+        {content.title !== other_regions && <h5>Region's countries:</h5>}
         {regionCountries
           .filter((item) => item.region === content.title)
           .map((item, i) => (
