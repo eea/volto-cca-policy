@@ -163,8 +163,8 @@ export const regionCountries = [
       ['Andorra', ''],
     ],
   },
-  {
-    region: 'Other regions',
-    countries: [],
-  },
+  // {
+  //   region: 'Other regions',
+  //   countries: [],
+  // },
 ];

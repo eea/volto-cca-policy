@@ -26,13 +26,14 @@ const getSiblings = (items) => {
 
 const TransRegionSelectView = (props) => {
   const { id, data, content } = props;
+  const { title } = content;
   const dispatch = useDispatch();
   const querystringResults = useSelector(
     (state) => state.querystringsearch.subrequests,
   );
   const currentLang = useSelector((state) => state.intl.locale);
   const regions = getSiblings(querystringResults[id]?.items);
-  const other_regions =
+  const otherRegionsCoverTitle =
     'EU outermost regions and the overseas countries and territories';
 
   React.useEffect(() => {
@@ -67,7 +68,7 @@ const TransRegionSelectView = (props) => {
   }, [dispatch, id]);
 
   const defaultValue =
-    content.title === other_regions ? 'Other regions' : content.title;
+    title === otherRegionsCoverTitle ? 'Other regions' : title;
 
   return (
     <div className="block">
@@ -81,9 +82,12 @@ const TransRegionSelectView = (props) => {
       />
       <p></p>
       <div className="countries">
-        {content.title !== other_regions && <h5>Region's countries:</h5>}
+        {title === otherRegionsCoverTitle ||
+        title === 'Other regions' ? null : (
+          <h5>Region's countries:</h5>
+        )}
         {regionCountries
-          .filter((item) => item.region === content.title)
+          .filter((item) => item.region === title)
           .map((item, i) => (
             <div className="countries-listing" key={i}>
               {item.countries.map((country, i) => {
