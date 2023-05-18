@@ -183,9 +183,18 @@ body.subsite-mkh {
     background: @green-1;
   }
 
+  #mega-menu {
+    .ui.accordion .title i,
+    .ui.accordion button.title i {
+      color: @white;
+    }
+  }
+
   footer,
+  .burger-action,
+  #search-box,
   #mega-menu,
-  #search-box {
+  #mega-menu .ui.accordion .content {
     background: @subsiteBackgroundGradient;
   }
 }

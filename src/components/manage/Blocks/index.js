@@ -5,6 +5,7 @@ import installCaseStudyExplorerBlock from './CaseStudyExplorer';
 import installSearchAceContent from './SearchAceContent';
 import installRelevantAceContent from './RelevantAceContent';
 import installFilterAceContent from './FilterAceContent';
+import installTransRegionSelect from './TransRegionSelect';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -15,5 +16,6 @@ export default function installBlocks(config) {
     installSearchAceContent,
     installRelevantAceContent,
     installFilterAceContent,
+    installTransRegionSelect,
   )(config);
 }
