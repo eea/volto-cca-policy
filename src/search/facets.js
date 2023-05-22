@@ -680,7 +680,7 @@ const facets = [
   {
     field: 'objectProvides',
     factory: 'MultiTermFacet',
-    label: 'Content types',
+    label: 'Type of item',
     showInFacetsList: true,
     filterType: 'any',
     isFilterable: false,
@@ -1157,6 +1157,18 @@ const facets = [
      sortOnCustomLabel: 'Alphabetical'
   },
    {
+     field: 'cca_geographic_transnational_region.keyword',
+     factory: 'MultiTermFacet',
+     label: 'Transnational regions',
+     showInFacetsList: true,
+     filterType: 'any',
+     isFilterable: false,
+     show: 10000,
+     isMulti: true,
+     sortOn: 'custom',
+     sortOnCustomLabel: 'Alphabetical'
+  },
+   {
      field: 'cca_adaptation_elements.keyword',
      factory: 'MultiTermFacet',
      label: 'Adaptation Elements',
@@ -1169,9 +1181,33 @@ const facets = [
      sortOnCustomLabel: 'Alphabetical'
   },
    {
-     field: 'cca_funding_programme',
+     field: 'cca_funding_programme.keyword',
      factory: 'MultiTermFacet',
      label: 'Funding Programme',
+     showInFacetsList: true,
+     filterType: 'any',
+     isFilterable: false,
+     show: 10000,
+     isMulti: true,
+     sortOn: 'custom',
+     sortOnCustomLabel: 'Alphabetical'
+  },
+   {
+     field: 'cca_origin_websites.keyword',
+     factory: 'MultiTermFacet',
+     label: 'Item from third parties',
+     showInFacetsList: true,
+     filterType: 'any',
+     isFilterable: false,
+     show: 10000,
+     isMulti: true,
+     sortOn: 'custom',
+     sortOnCustomLabel: 'Alphabetical'
+  },
+   {
+     field: 'cca_geographic_countries.keyword',
+     factory: 'MultiTermFacet',
+     label: 'Countries',
      showInFacetsList: true,
      filterType: 'any',
      isFilterable: false,
