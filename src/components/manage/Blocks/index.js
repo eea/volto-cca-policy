@@ -9,6 +9,8 @@ import installTransRegionSelect from './TransRegionSelect';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
+  config.blocks.blocksConfig.layoutSettings.restricted = false;
+
   return compose(
     installMKHMap,
     installECDEIndicatorsBlock,

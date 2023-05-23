@@ -13,6 +13,11 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
+#page-edit .block-editor-layoutSettings,
+#page-add .block-editor-layoutSettings {
+  display: block;
+}
+
 // Adaptation option view styles
 div.adaptation-option-view,
 div.case-study-view {
