@@ -202,6 +202,12 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
+  // fixes bug caused by https://github.com/eea/volto-eea-website-theme/commit/94078403458a5a3ea725ce9126fffed9d463097d
+  config.settings.apiExpanders.push({
+    match: '',
+    GET_CONTENT: ['breadcrumbs'], // 'navigation', 'actions', 'types'],
+  });
+
   return compose(installBlocks, installSearchEngine)(config);
 };
 
