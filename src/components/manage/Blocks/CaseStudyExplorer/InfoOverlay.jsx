@@ -45,6 +45,8 @@ export default function InfoOverlay({
         overlay.setPosition(coordinate);
         setShowTooltip(true);
       } else {
+        // handle a click in an overlay popup
+        if (evt.originalEvent.target.tagName === 'A') return;
         setShowTooltip(false);
         onFeatureSelect(null);
       }

@@ -1,4 +1,5 @@
 import { compose } from 'redux';
+import loadable from '@loadable/component';
 
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
@@ -36,6 +37,8 @@ const applyConfig = (config) => {
       },
     ];
   }
+
+  config.settings.loadables.d3 = loadable.lib(() => import('d3'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -109,18 +112,26 @@ const applyConfig = (config) => {
     headerSearchBox: [
       {
         isDefault: true,
-        path: '/advanced-search',
-        placeholder: 'Search...',
-        // description:
-        //   'Looking for more information? Try searching the full EEA website content',
-        // buttonTitle: 'Go to full site search',
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/en/mission',
+        path: '/en/mission/advanced-search',
+        placeholder: 'Search Climate-ADAPT...',
+        description:
+          'Looking for more information? Try searching the full EEA website content',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
       },
-      // {
-      //   path: '/en/mission',
-      //   placeholder: 'Search...',
-      //   description: 'Looking for more information?',
-      //   buttonTitle: 'Go to advanced search',
-      // },
+      {
+        isDefault: false,
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/en/observatory',
+        path: '/en/observatory/advanced-search',
+        placeholder: 'Search Observatory Climate-ADAPT...',
+        description:
+          'Looking for more information? Try searching the full EEA website content',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
+      },
     ],
     logoTargetUrl: '/',
     organisationName: 'Climate-ADAPT',
@@ -188,6 +199,19 @@ const applyConfig = (config) => {
       bottomLevel: 2,
       rootPath: '/knowledge/tools/adaptation-support-tool',
     },
+    {
+      title: 'Adaptation',
+      topLevel: 4,
+      bottomLevel: 2,
+      rootPath:
+        '/countries-regions/transnational-regions/baltic-sea-region/adaptation',
+    },
+    {
+      title: 'Adaptation in Carpathian Mountains',
+      topLevel: 4,
+      bottomLevel: 2,
+      rootPath: '/countries-regions/transnational-regions/carpathian-mountains',
+    },
   ];
 
   // Custom widgets
@@ -201,6 +225,12 @@ const applyConfig = (config) => {
     const installExpressMiddleware = require('./express-middleware').default;
     config = installExpressMiddleware(config);
   }
+
+  // fixes bug caused by https://github.com/eea/volto-eea-website-theme/commit/94078403458a5a3ea725ce9126fffed9d463097d
+  config.settings.apiExpanders.push({
+    match: '',
+    GET_CONTENT: ['breadcrumbs'], // 'navigation', 'actions', 'types'],
+  });
 
   return compose(installBlocks, installSearchEngine)(config);
 };

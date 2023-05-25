@@ -39,7 +39,7 @@ export const regionCountries = [
     ],
   },
   {
-    region: 'Atlantic',
+    region: 'Atlantic Area',
     countries: [
       ['France', '/countries/france'],
       ['Ireland', '/countries/ireland'],
@@ -163,8 +163,8 @@ export const regionCountries = [
       ['Andorra', ''],
     ],
   },
-  {
-    region: 'Other regions',
-    countries: [],
-  },
+  // {
+  //   region: 'Other regions',
+  //   countries: [],
+  // },
 ];

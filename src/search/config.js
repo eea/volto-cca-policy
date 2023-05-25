@@ -40,6 +40,9 @@ export default function installMainSearch(config) {
     term: {
       cluster_name: 'cca',
     },
+    term: {
+      cca_include_in_search: 'true',
+    },
   });
 
   ccaSearch.facets = facets;
@@ -177,7 +180,6 @@ export default function installMainSearch(config) {
     config.searchui.ccaSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-
   // console.log(config.searchui.ccaSearch);
 
   return config;
