@@ -7,10 +7,30 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 // import loadable from '@loadable/component';
+//
+//
+const withResponsiveContainer = (WrappedComponent) => {
+  return (props) => {
+    const [size, setSize] = React.useState();
+    return (
+      <div
+        className="sized-wrapper"
+        ref={(node) => {
+          // console.log(node, node.clientHeight);
+          if (node && !size)
+            setSize({ height: node.clientHeight, width: node.clientWidth });
+        }}
+      >
+        {size ? <WrappedComponent size={size} {...props} /> : null}
+      </div>
+    );
+  };
+};
 
 const CountryMapView = (props) => {
   const svgRef = useRef(null);
-  const { d3 } = props;
+  const { d3, size } = props;
+  const { height, width } = size;
 
   useEffect(() => {
     // D3 Code
@@ -19,8 +39,8 @@ const CountryMapView = (props) => {
     //const parentDiv = document.getElementById('page-document');
     let dimensions = {
       //width: parentDiv.offsetWidth,
-      width: 800,
-      height: 500,
+      width,
+      height,
       margins: 50,
     };
 
@@ -408,4 +428,8 @@ function getIEVersion() {
 }
 
 //export default CountryMapView;
-export default compose(clientOnly, injectLazyLibs(['d3']))(CountryMapView);
+export default compose(
+  clientOnly,
+  injectLazyLibs(['d3']),
+  withResponsiveContainer,
+)(CountryMapView);
