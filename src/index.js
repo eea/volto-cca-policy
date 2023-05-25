@@ -188,6 +188,19 @@ const applyConfig = (config) => {
       bottomLevel: 2,
       rootPath: '/knowledge/tools/adaptation-support-tool',
     },
+    {
+      title: 'Adaptation',
+      topLevel: 4,
+      bottomLevel: 2,
+      rootPath:
+        '/countries-regions/transnational-regions/baltic-sea-region/adaptation',
+    },
+    {
+      title: 'Adaptation in Carpathian Mountains',
+      topLevel: 4,
+      bottomLevel: 2,
+      rootPath: '/countries-regions/transnational-regions/carpathian-mountains',
+    },
   ];
 
   // Custom widgets
