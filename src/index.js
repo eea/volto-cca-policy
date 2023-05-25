@@ -1,4 +1,5 @@
 import { compose } from 'redux';
+import loadable from '@loadable/component';
 
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
@@ -36,6 +37,8 @@ const applyConfig = (config) => {
       },
     ];
   }
+
+  config.settings.loadables.d3 = loadable.lib(() => import('d3'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
