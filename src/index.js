@@ -112,18 +112,26 @@ const applyConfig = (config) => {
     headerSearchBox: [
       {
         isDefault: true,
-        path: '/advanced-search',
-        placeholder: 'Search...',
-        // description:
-        //   'Looking for more information? Try searching the full EEA website content',
-        // buttonTitle: 'Go to full site search',
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/en/mission',
+        path: '/en/mission/advanced-search',
+        placeholder: 'Search Climate-ADAPT...',
+        description:
+          'Looking for more information? Try searching the full EEA website content',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
       },
-      // {
-      //   path: '/en/mission',
-      //   placeholder: 'Search...',
-      //   description: 'Looking for more information?',
-      //   buttonTitle: 'Go to advanced search',
-      // },
+      {
+        isDefault: false,
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/en/observatory',
+        path: '/en/observatory/advanced-search',
+        placeholder: 'Search Observatory Climate-ADAPT...',
+        description:
+          'Looking for more information? Try searching the full EEA website content',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
+      },
     ],
     logoTargetUrl: '/',
     organisationName: 'Climate-ADAPT',
