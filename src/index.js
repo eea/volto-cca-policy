@@ -208,9 +208,9 @@ const applyConfig = (config) => {
     },
     {
       title: 'Adaptation in Carpathian Mountains',
-      topLevel: 4,
+      topLevel: 3,
       bottomLevel: 2,
-      rootPath: '/countries-regions/transnational-regions/carpathian-mountains',
+      rootPath: 'countries-regions/transnational-regions/carpathian-mountains',
     },
   ];
 
