@@ -40,6 +40,8 @@ export default function installMainSearch(config) {
     term: {
       cluster_name: 'cca',
     },
+  });
+  ccaSearch.permanentFilters.push({
     term: {
       cca_include_in_search: 'true',
     },
