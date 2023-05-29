@@ -191,26 +191,32 @@ const applyConfig = (config) => {
       title: 'UrbanAST',
       topLevel: 3,
       bottomLevel: 2,
-      rootPath: '/knowledge/tools/urban-ast',
+      rootPath: 'knowledge/tools/urban-ast',
     },
     {
       title: 'Adaptation Suport Tool',
       topLevel: 3,
       bottomLevel: 2,
-      rootPath: '/knowledge/tools/adaptation-support-tool',
+      rootPath: 'knowledge/tools/adaptation-support-tool',
     },
     {
       title: 'Adaptation',
       topLevel: 4,
       bottomLevel: 2,
       rootPath:
-        '/countries-regions/transnational-regions/baltic-sea-region/adaptation',
+        'countries-regions/transnational-regions/baltic-sea-region/adaptation',
     },
     {
       title: 'Adaptation in Carpathian Mountains',
       topLevel: 3,
       bottomLevel: 2,
       rootPath: 'countries-regions/transnational-regions/carpathian-mountains',
+    },
+    {
+      title: 'Share your info',
+      topLevel: 2,
+      bottomLevel: 2,
+      rootPath: 'help/share-your-info',
     },
   ];
 
