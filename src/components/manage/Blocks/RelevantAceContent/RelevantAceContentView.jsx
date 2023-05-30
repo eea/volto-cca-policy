@@ -10,7 +10,7 @@ const RelevantAceContentView = (props) => {
 
   return (
     <div className="block relevant-acecontent-block">
-      {title && <h4>{title}</h4>}
+      {title && <h3>{title}</h3>}
       {combine_results ? (
         <>
           {(items || []).map((item, index) => (
