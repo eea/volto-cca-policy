@@ -43,7 +43,7 @@ export default function installMainSearch(config) {
   });
   ccaSearch.permanentFilters.push({
     term: {
-      cca_include_in_search: 'true',
+      cca_include_in_mission: 'true',
     },
   });
 
