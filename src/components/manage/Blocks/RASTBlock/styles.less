@@ -1,9 +1,15 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
 .link-active {
+  .circle,
   .circle:hover {
-    fill: red;
+    fill: @green-1;
   }
 }
 
-.link-active {
-  fill: green;
+.circle:hover {
+  fill: @green-1;
 }
