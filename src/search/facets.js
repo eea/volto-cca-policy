@@ -1,8 +1,8 @@
 const facets = [
   {
-    field: 'sectors',
+    field: 'cca_adaptation_sectors.keyword',
     factory: 'MultiTermFacet',
-    label: 'Sectors',
+    label: 'Adaptation Sectors',
     showInFacetsList: true,
     filterType: 'any',
     isFilterable: true,
@@ -1220,7 +1220,7 @@ const facets = [
      field: 'language',
      factory: 'MultiTermFacet',
      label: 'Language',
-     showInFacetsList: true,
+     showInFacetsList: false,
      filterType: 'any',
      isFilterable: false,
      show: 10000,

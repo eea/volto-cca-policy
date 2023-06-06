@@ -32,6 +32,11 @@ export default function installMainSearch(config) {
     elastic_index: '_es/globalsearch',
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
+    vocab: {
+      cluster_name: {
+        cca: 'MIP4Adapt',
+      }
+    }
   };
 
   const { ccaSearch } = config.searchui;
