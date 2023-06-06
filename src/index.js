@@ -25,7 +25,7 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const applyConfig = (config) => {
   const notInEnMission = /^(?!(\/en\/mission)).*$/;
-  if (!__DEVELOPMENT__) {
+  if (!__DEVELOPMENT__ || process.env.SET_EXTERNAL_ROUTES) {
     config.settings.externalRoutes = [
       ...(config.settings.externalRoutes || []),
       {
