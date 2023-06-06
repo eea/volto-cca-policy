@@ -35,8 +35,8 @@ export default function installMainSearch(config) {
     vocab: {
       cluster_name: {
         cca: 'MIP4Adapt',
-      }
-    }
+      },
+    },
   };
 
   const { ccaSearch } = config.searchui;
@@ -49,6 +49,23 @@ export default function installMainSearch(config) {
   ccaSearch.permanentFilters.push({
     term: {
       cca_include_in_mission: 'true',
+    },
+  });
+
+  ccaSearch.permanentFilters.push({
+    terms: {
+      objectProvides: [
+        'Adaptation option',
+        'Case study',
+        'Guidance',
+        'Video',
+        'Indicator',
+        'Information portal',
+        'Organisation',
+        'Publication reference',
+        'Research and knowledge project',
+        'Tool',
+      ],
     },
   });
 
