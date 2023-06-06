@@ -7,12 +7,14 @@ import installSearchAceContent from './SearchAceContent';
 import installRelevantAceContent from './RelevantAceContent';
 import installFilterAceContent from './FilterAceContent';
 import installTransRegionSelect from './TransRegionSelect';
+import installRAST from './RASTBlock';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
   config.blocks.blocksConfig.layoutSettings.restricted = false;
 
   return compose(
+    installRAST,
     installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
