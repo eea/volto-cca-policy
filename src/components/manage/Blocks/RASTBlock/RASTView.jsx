@@ -5,7 +5,7 @@ import './styles.less';
 // const fields = ['step_1', 'step_2', 'step_3', 'step_4', 'step_5', 'step_6'];
 
 const LinkWrap = ({ item, pathname, children }) => {
-  const isActive = item ? pathname === item['@id'] : null;
+  const isActive = item && pathname ? pathname.includes(item?.['@id']) : null;
   return item ? (
     <UniversalLink item={item}>
       <g className={isActive ? 'link-active' : ''}>
