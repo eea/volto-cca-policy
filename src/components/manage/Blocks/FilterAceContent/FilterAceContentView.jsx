@@ -149,7 +149,7 @@ const FilterAceContentView = (props) => {
 
   return (
     <div className="block filter-acecontent-block">
-      {data.title && <h4>{data.title}</h4>}
+      {data.title && <h3>{data.title}</h3>}
       <Select
         id="field-impacts"
         name="impacts"

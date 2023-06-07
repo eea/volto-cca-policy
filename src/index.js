@@ -1,4 +1,5 @@
 import { compose } from 'redux';
+import loadable from '@loadable/component';
 
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
@@ -24,7 +25,7 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const applyConfig = (config) => {
   const notInEnMission = /^(?!(\/en\/mission)).*$/;
-  if (!__DEVELOPMENT__) {
+  if (!__DEVELOPMENT__ || process.env.SET_EXTERNAL_ROUTES) {
     config.settings.externalRoutes = [
       ...(config.settings.externalRoutes || []),
       {
@@ -36,6 +37,8 @@ const applyConfig = (config) => {
       },
     ];
   }
+
+  config.settings.loadables.d3 = loadable.lib(() => import('d3'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -109,18 +112,25 @@ const applyConfig = (config) => {
     headerSearchBox: [
       {
         isDefault: true,
-        path: '/advanced-search',
-        placeholder: 'Search...',
-        // description:
-        //   'Looking for more information? Try searching the full EEA website content',
-        // buttonTitle: 'Go to full site search',
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/en/mission',
+        path: '/en/mission/knowledge-and-data/search-the-database',
+        placeholder: 'Search the Mission Portal',
+        description: 'Looking for more information?',
+        buttonTitle: 'Explore more on Climate-ADAPT',
+        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
       },
-      // {
-      //   path: '/en/mission',
-      //   placeholder: 'Search...',
-      //   description: 'Looking for more information?',
-      //   buttonTitle: 'Go to advanced search',
-      // },
+      {
+        isDefault: false,
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/en/observatory',
+        path: '/en/observatory/advanced-search',
+        placeholder: 'Search Observatory Climate-ADAPT...',
+        description:
+          'Looking for more information? Try searching the full EEA website content',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
+      },
     ],
     logoTargetUrl: '/',
     organisationName: 'Climate-ADAPT',
@@ -180,13 +190,32 @@ const applyConfig = (config) => {
       title: 'UrbanAST',
       topLevel: 3,
       bottomLevel: 2,
-      rootPath: '/knowledge/tools/urban-ast',
+      rootPath: 'knowledge/tools/urban-ast',
     },
     {
       title: 'Adaptation Suport Tool',
       topLevel: 3,
       bottomLevel: 2,
-      rootPath: '/knowledge/tools/adaptation-support-tool',
+      rootPath: 'knowledge/tools/adaptation-support-tool',
+    },
+    {
+      title: 'Adaptation',
+      topLevel: 4,
+      bottomLevel: 2,
+      rootPath:
+        'countries-regions/transnational-regions/baltic-sea-region/adaptation',
+    },
+    {
+      title: 'Adaptation in Carpathian Mountains',
+      topLevel: 3,
+      bottomLevel: 2,
+      rootPath: 'countries-regions/transnational-regions/carpathian-mountains',
+    },
+    {
+      title: 'Share your info',
+      topLevel: 2,
+      bottomLevel: 2,
+      rootPath: 'help/share-your-info',
     },
   ];
 
@@ -202,7 +231,15 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
+  // fixes bug caused by https://github.com/eea/volto-eea-website-theme/commit/94078403458a5a3ea725ce9126fffed9d463097d
+  config.settings.apiExpanders.push({
+    match: '',
+    GET_CONTENT: ['breadcrumbs'], // 'navigation', 'actions', 'types'],
+  });
+
   return compose(installBlocks, installSearchEngine)(config);
 };
 
 export default applyConfig;
+
+// ('emit("_all_"); def clusters_settings = [["name": "News", "values": ["News","Article"]],["name": "Publications", "values": ["Report","Indicator","Briefing","Topic page","Country fact sheet"]],["name": "Maps and charts", "values": ["Figure (chart/map)","Chart (interactive)","Infographic","Dashboard","Map (interactive)"]],["name": "Data", "values": ["Data set"]],["name": "Others", "values": ["Webpage","Organisation","FAQ","Video","Contract opportunity","Glossary term","Collection","File","Adaptation option","Guidance","Research and knowledge project","Information portal","Tool","Case study","External data reference","Publication reference"]]]; def vals = doc[\'objectProvides\']; def clusters = [\'All\']; for (val in vals) { for (cs in clusters_settings) { if (cs.values.contains(val)) { emit(cs.name) } } }');

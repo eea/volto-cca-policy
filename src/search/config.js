@@ -32,6 +32,11 @@ export default function installMainSearch(config) {
     elastic_index: '_es/globalsearch',
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
+    vocab: {
+      cluster_name: {
+        cca: 'MIP4Adapt',
+      },
+    },
   };
 
   const { ccaSearch } = config.searchui;
@@ -39,6 +44,28 @@ export default function installMainSearch(config) {
   ccaSearch.permanentFilters.push({
     term: {
       cluster_name: 'cca',
+    },
+  });
+  ccaSearch.permanentFilters.push({
+    term: {
+      cca_include_in_search: 'true',
+    },
+  });
+
+  ccaSearch.permanentFilters.push({
+    terms: {
+      objectProvides: [
+        'Adaptation option',
+        'Case study',
+        'Guidance',
+        'Video',
+        'Indicator',
+        'Information portal',
+        'Organisation',
+        'Publication reference',
+        'Research and knowledge project',
+        'Tool',
+      ],
     },
   });
 
@@ -177,7 +204,6 @@ export default function installMainSearch(config) {
     config.searchui.ccaSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-
   // console.log(config.searchui.ccaSearch);
 
   return config;

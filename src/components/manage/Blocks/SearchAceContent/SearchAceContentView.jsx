@@ -8,7 +8,7 @@ export default function SearchAceContentView(props) {
 
   return results && results.length > 0 ? (
     <div className="block search-acecontent-block">
-      {data.title && <h4>{data.title}</h4>}
+      {data.title && <h3>{data.title}</h3>}
       <List>
         {results.map((result, index) => (
           <List.Item key={index}>

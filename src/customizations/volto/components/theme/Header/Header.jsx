@@ -4,8 +4,9 @@
  */
 
 import React from 'react';
-import { Dropdown, Image } from 'semantic-ui-react'; // Container, Menu, Grid
+import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
+
 import { withRouter } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
 import {
@@ -23,9 +24,8 @@ import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/
 import config from '@plone/volto/registry';
 import { compose } from 'recompose';
 import { BodyClass } from '@plone/volto/helpers';
-import cx from 'classnames';
 
-import HeaderMain from './HeaderMain';
+import cx from 'classnames';
 
 function removeTrailingSlash(path) {
   return path.replace(/\/+$/, '');
@@ -53,13 +53,14 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
       (__CLIENT__ && document.body.classList.contains('homepage-inverse'));
     return (
       has_home_layout &&
-      (pathname === router_pathname || router_pathname.endsWith('/edit'))
+      (removeTrailingSlash(pathname) === router_pathname ||
+        router_pathname.endsWith('/edit'))
     );
   });
 
   const { eea } = config.settings;
   const headerOpts = eea.headerOpts || {};
-  // const headerSearchBox = eea.headerSearchBox || [];
+  const headerSearchBox = eea.headerSearchBox || [];
   const { logo, logoWhite } = headerOpts || {};
   const width = useSelector((state) => state.screen?.width);
   const dispatch = useDispatch();
@@ -101,10 +102,9 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
             className=""
             viewportWidth={width}
           >
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div
               className="content"
-              role="menu"
-              tabIndex="0"
               onClick={(evt) => evt.stopPropagation()}
               onKeyDown={(evt) => evt.stopPropagation()}
             >
@@ -116,8 +116,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                 href="https://europa.eu/european-union/contact/institutions-bodies_en"
                 target="_blank"
                 rel="noreferrer"
-                role="option"
-                aria-selected="false"
+                onKeyDown={(evt) => evt.stopPropagation()}
               >
                 See all EU institutions and bodies
               </a>
@@ -140,6 +139,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                       className="site"
                       target="_blank"
                       rel="noreferrer"
+                      onKeyDown={(evt) => evt.stopPropagation()}
                     >
                       {item.title}
                     </a>
@@ -154,6 +154,10 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
           <Header.TopDropdownMenu
             id="language-switcher"
             className="item"
+            hasLanguageDropdown={
+              config.settings.supportedLanguages.length > 1 &&
+              config.settings.hasLanguageDropdown
+            }
             text={`${language.toUpperCase()}`}
             mobileText={`${language.toUpperCase()}`}
             icon={
@@ -166,41 +170,37 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               role="listbox"
               aria-label="language switcher"
             >
-              {eea.languages?.map((item, index) => {
-                if (!config.settings.supportedLanguages.includes(item.code)) {
-                  return null;
-                }
-                return (
-                  <Dropdown.Item
-                    as="li"
-                    key={index}
-                    text={
-                      <span>
-                        {item.name}
-                        <span className="country-code">
-                          {item.code.toUpperCase()}
-                        </span>
+              {eea.languages.map((item, index) => (
+                <Dropdown.Item
+                  as="li"
+                  key={index}
+                  text={
+                    <span>
+                      {item.name}
+                      <span className="country-code">
+                        {item.code.toUpperCase()}
                       </span>
-                    }
-                    onClick={() => {
-                      const translation = find(translations, {
-                        language: item.code,
-                      });
-                      const to = translation
-                        ? flattenToAppURL(translation['@id'])
-                        : `/${item.code}`;
-                      setLanguage(item.code);
-                      history.push(to);
-                    }}
-                  ></Dropdown.Item>
-                );
-              })}
+                    </span>
+                  }
+                  onClick={() => {
+                    const translation = find(translations, {
+                      language: item.code,
+                    });
+                    const to = translation
+                      ? flattenToAppURL(translation['@id'])
+                      : `/${item.code}`;
+                    setLanguage(item.code);
+                    history.push(to);
+                  }}
+                ></Dropdown.Item>
+              ))}
             </ul>
           </Header.TopDropdownMenu>
         )}
       </Header.TopHeader>
-      {/* <Header.Main
+      <Header.Main
         pathname={pathname}
+        isMultilingual={config.settings.isMultilingual}
         headerSearchBox={headerSearchBox}
         inverted={isHomePageInverse ? true : false}
         transparency={isHomePageInverse ? true : false}
@@ -253,84 +253,18 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         renderMenuItem={(item, options, props) => (
           <UniversalLink
             href={item.url || '/'}
-            title={item.title}
+            title={item.nav_title || item.title}
             {...(options || {})}
             className={cx(options?.className, {
               active: item.url === router_pathname,
             })}
           >
             {props?.iconPosition !== 'right' && props?.children}
-            <span>{item.title}</span>
+            <span>{item.nav_title || item.title}</span>
             {props?.iconPosition === 'right' && props?.children}
           </UniversalLink>
         )}
-      ></Header.Main> */}
-
-      <HeaderMain
-        inverted={isHomePageInverse ? true : false}
-        transparency={isHomePageInverse ? true : false}
-        pathname={pathname}
-        logo={
-          <div {...(isSubsite ? { className: 'logo-wrapper' } : {})}>
-            {!!subsite && subsite.title ? (
-              <>
-                {subsite.subsite_logo ? (
-                  <Logo
-                    src={subsite.subsite_logo?.scales.preview.download}
-                    title={subsite.title}
-                    alt={subsite.title}
-                    url={flattenToAppURL(subsite['@id'])}
-                  />
-                ) : (
-                  subsite.title
-                )}
-                <div className="subsite-logo">
-                  <Logo
-                    src={isHomePageInverse ? logoWhite : logo}
-                    title={eea.websiteTitle}
-                    alt={eea.organisationName}
-                    url={eea.logoTargetUrl}
-                  />
-                </div>
-              </>
-            ) : (
-              <Logo
-                src={isHomePageInverse ? logoWhite : logo}
-                title={eea.websiteTitle}
-                alt={eea.organisationName}
-                url={eea.logoTargetUrl}
-              />
-            )}
-          </div>
-        }
-        menuItems={items}
-        renderGlobalMenuItem={(item, { onClick }) => (
-          <a
-            href={item.url || '/'}
-            title={item.title}
-            onClick={(e) => {
-              e.preventDefault();
-              onClick(e, item);
-            }}
-          >
-            {item.title}
-          </a>
-        )}
-        renderMenuItem={(item, options, props) => (
-          <UniversalLink
-            href={item.url || '/'}
-            title={item.title}
-            {...(options || {})}
-            className={cx(options?.className, {
-              active: item.url === router_pathname,
-            })}
-          >
-            {props?.iconPosition !== 'right' && props?.children}
-            <span>{item.title}</span>
-            {props?.iconPosition === 'right' && props?.children}
-          </UniversalLink>
-        )}
-      />
+      ></Header.Main>
     </Header>
   );
 };
