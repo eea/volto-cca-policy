@@ -50,6 +50,17 @@ const facets = [
     showInSecondaryFacetsList: true,
     isFilter: true,
   },
+  {
+    field: 'op_cluster',
+    factory: 'MultiTermFacet',
+    isFilterable: true,
+    isMulti: true,
+    label: 'Section',
+    show: 10000,
+    showInFacetsList: false,
+    ignoreNLPWhenActive: true,
+    blacklist: ['Others', 'Publications'],
+  },
 
   // {
   //   field: 'moreLikeThis',

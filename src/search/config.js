@@ -46,11 +46,11 @@ export default function installMainSearch(config) {
       cluster_name: 'cca',
     },
   });
-  // ccaSearch.permanentFilters.push({
-  //   term: {
-  //     cca_include_in_mission: 'true',
-  //   },
-  // });
+  ccaSearch.permanentFilters.push({
+    term: {
+      cca_include_in_search: 'true',
+    },
+  });
 
   ccaSearch.permanentFilters.push({
     terms: {
