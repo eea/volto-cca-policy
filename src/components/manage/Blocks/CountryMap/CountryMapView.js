@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 //import * as d3 from 'd3';
-import cpath from './euro-countries-simplified';
+// import cpath from './euro-countries-simplified';
 import flags from './flags.js';
 import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -31,6 +31,15 @@ const CountryMapView = (props) => {
   const svgRef = useRef(null);
   const { d3, size } = props;
   const { height, width } = size;
+  let [cpath, setCpath] = React.useState();
+
+  useEffect(() => {
+    if (!cpath) {
+      import('./euro-countries-simplified').then((mod) => {
+        setCpath(mod.default);
+      });
+    }
+  }, [cpath]);
 
   useEffect(() => {
     // D3 Code
