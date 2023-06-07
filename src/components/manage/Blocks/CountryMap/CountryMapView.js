@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 //import * as d3 from 'd3';
-import cpath from './euro-countries-simplified.json';
+import cpath from './euro-countries-simplified';
 import flags from './flags.js';
 import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
