@@ -114,7 +114,7 @@ const applyConfig = (config) => {
         isDefault: true,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/mission',
-        path: '/en/mission/advanced-search',
+        path: '/en/mission/knowledge-and-data/search-the-database',
         placeholder: 'Search the Mission Portal',
         description: 'Looking for more information?',
         buttonTitle: 'Explore more on Climate-ADAPT',
