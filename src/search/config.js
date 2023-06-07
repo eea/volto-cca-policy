@@ -46,11 +46,11 @@ export default function installMainSearch(config) {
       cluster_name: 'cca',
     },
   });
-  ccaSearch.permanentFilters.push({
-    term: {
-      cca_include_in_mission: 'true',
-    },
-  });
+  // ccaSearch.permanentFilters.push({
+  //   term: {
+  //     cca_include_in_mission: 'true',
+  //   },
+  // });
 
   ccaSearch.permanentFilters.push({
     terms: {
@@ -204,7 +204,7 @@ export default function installMainSearch(config) {
     config.searchui.ccaSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-  // console.log(config.searchui.ccaSearch);
+  console.log(config.searchui.ccaSearch);
 
   return config;
 }

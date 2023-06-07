@@ -24,7 +24,8 @@
   "dependencies": {
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-globalsearch": "*",
-    "@eeacms/volto-openlayers-map": "*"
+    "@eeacms/volto-openlayers-map": "*",
+    "d3": "7.8.5"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
