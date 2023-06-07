@@ -110,7 +110,7 @@ const CountryMapView = (props) => {
     renderCountriesBox(opts, d3);
     // Draw Circle
     //container.append("circle").attr("r", 25).style("color","blue");
-  }, [props.Data, svgRef.current]); // redraw chart if data changes
+  }, [props.Data, d3, width, height]); // redraw chart if data changes
 
   return <svg ref={svgRef} />;
 };
@@ -305,7 +305,7 @@ function getCountryClass(country, countries) {
   return k;
 }
 
-function renderCountryLabel(country, path, force) {
+export function renderCountryLabel(country, path, force, d3) {
   var parent = d3.select('.svg-map-container svg');
   var klass = force ? 'country-label maplet-label' : 'country-label';
   var g = parent.append('g').attr('class', klass);
@@ -323,7 +323,7 @@ function renderCountryLabel(country, path, force) {
 
   var pId = 'pl-' + country.id;
   var center = path.centroid(country);
-  console.log(center, path);
+  // console.log(center, path);
 
   var label = g
     .append('text')
@@ -374,27 +374,27 @@ function renderCountryFlag(parent, country, bbox, cpId, d3) {
     .attr('height', bbox.height)
     .attr('width', bbox.width)
     .on('click', function () {
-      var link = country.properties.SHRT_ENGL.toLowerCase().replace(' ', '-');
-      if (getFocusCountryNames().indexOf(country.properties.SHRT_ENGL) > -1)
-        console.log('will redirect to country:', link);
-      //location.href = location.href.endsWith('/') ? location.href + link : location.href + '/' + link;
-      console.log(
-        window.location.href.endsWith('/')
-          ? window.location.href + link
-          : window.location.href + '/' + link,
-      );
+      // var link = country.properties.SHRT_ENGL.toLowerCase().replace(' ', '-');
+      // if (getFocusCountryNames().indexOf(country.properties.SHRT_ENGL) > -1)
+      //   // console.log('will redirect to country:', link);
+      // //location.href = location.href.endsWith('/') ? location.href + link : location.href + '/' + link;
+      // console.log(
+      //   window.location.href.endsWith('/')
+      //     ? window.location.href + link
+      //     : window.location.href + '/' + link,
+      // );
     })
     .on('mouseover', function () {
-      var countryName = country.properties.SHRT_ENGL.toUpperCase();
+      // var countryName = country.properties.SHRT_ENGL.toUpperCase();
       d3.select(this).attr('opacity', 1);
       //return countryNameTooltip.style('display', 'block').html(countryName);
     })
     .on('mousemove', function (event) {
-      var countryName = country.properties.SHRT_ENGL.toUpperCase();
+      // var countryName = country.properties.SHRT_ENGL.toUpperCase();
       //console.log(event, d3.select(this));
       //console.log(event.screenX, event.screenY, event, d3.select(this),this.getAttribute("cx"));
       //console.log(d3.mouse(this));
-      var bbox = this.getBBox();
+      // var bbox = this.getBBox();
       /*
       const cmt = countryNameTooltip
         .style('display', 'block')
