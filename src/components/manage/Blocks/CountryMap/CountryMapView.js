@@ -119,7 +119,7 @@ const CountryMapView = (props) => {
     renderCountriesBox(opts, d3);
     // Draw Circle
     //container.append("circle").attr("r", 25).style("color","blue");
-  }, [props.Data, d3, width, height]); // redraw chart if data changes
+  }, [props.Data, d3, width, height, cpath]); // redraw chart if data changes
 
   return <svg ref={svgRef} />;
 };
