@@ -1,4 +1,5 @@
 import { mergeConfig } from '@eeacms/search';
+import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 
 import facets from './facets';
 
@@ -15,6 +16,19 @@ const getClientProxyAddress = () => {
 
 const ccaConfig = {
   title: 'ClimateAdapt Main',
+};
+
+export const clusters = {
+  name: 'op_cluster',
+  field: 'objectProvides',
+  clusters: [
+    // {
+    //   name: 'Type1',
+    //   icon: { name: 'bullhorn' },
+    //   values: ['Video', 'Guidance'],
+    //   defaultResultView: 'horizontalCard',
+    // },
+  ],
 };
 
 export default function installMainSearch(config) {
@@ -37,6 +51,7 @@ export default function installMainSearch(config) {
         cca: 'MIP4Adapt',
       },
     },
+    runtime_mappings: build_runtime_mappings(clusters),
   };
 
   const { ccaSearch } = config.searchui;
