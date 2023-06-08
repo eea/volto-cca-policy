@@ -61,7 +61,6 @@ const facets = [
     ignoreNLPWhenActive: true,
     blacklist: ['Others', 'Publications'],
   },
-
   // {
   //   field: 'moreLikeThis',
   //   factory: 'MoreLikeThis',
@@ -1165,6 +1164,7 @@ const facets = [
     isMulti: true,
     sortOn: 'custom',
     sortOnCustomLabel: 'Alphabetical',
+    alwaysVisible: true,
   },
   {
     field: 'cca_geographic_transnational_region.keyword',
