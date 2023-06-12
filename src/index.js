@@ -34,6 +34,9 @@ const applyConfig = (config) => {
           exact: false,
           strict: false,
         },
+        url(payload) {
+          return payload.location.pathname;
+        },
       },
     ];
   }
