@@ -24,23 +24,22 @@ import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const applyConfig = (config) => {
-  // const notInEnMission = /^(?!(\/en\/mission)).*$/;
-  // WIP, test redirect issue (do not deploy in production)
-  // if (!__DEVELOPMENT__ && !process.env.RAZZLE_DISABLE_EXTERNAL_ROUTES) {
-  //   config.settings.externalRoutes = [
-  //     ...(config.settings.externalRoutes || []),
-  //     {
-  //       match: {
-  //         path: notInEnMission,
-  //         exact: false,
-  //         strict: false,
-  //       },
-  //       url(payload) {
-  //         return payload.location.pathname;
-  //       },
-  //     },
-  //   ];
-  // }
+  const notInEnMission = /^(?!(\/en\/mission)).*$/;
+  if (!__DEVELOPMENT__ && !process.env.RAZZLE_DISABLE_EXTERNAL_ROUTES) {
+    config.settings.externalRoutes = [
+      ...(config.settings.externalRoutes || []),
+      {
+        match: {
+          path: notInEnMission,
+          exact: false,
+          strict: false,
+        },
+        url(payload) {
+          return payload.location.pathname;
+        },
+      },
+    ];
+  }
 
   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
 
