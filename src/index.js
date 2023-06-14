@@ -23,15 +23,15 @@ import installSearchEngine from './search';
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
+const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
+
 const applyConfig = (config) => {
   const notInEnMission = /^(?!(\/en\/mission)).*$/;
-  if (
-    !(
-      __DEVELOPMENT__ ||
-      (process.env.RAZZLE_DISABLE_EXTERNAL_ROUTES &&
-        process.env.RAZZLE_DISABLE_EXTERNAL_ROUTES === 'True')
-    )
-  ) {
+  const env = getEnv();
+  const isStaging = !!env.RAZZLE_IS_STAGING;
+  const enableMissionIsExternal = !isStaging && !__DEVELOPMENT__;
+
+  if (enableMissionIsExternal) {
     config.settings.externalRoutes = [
       ...(config.settings.externalRoutes || []),
       {
