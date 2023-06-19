@@ -96,11 +96,11 @@ const applyConfig = (config) => {
       social: [],
       actions: [
         {
-          link: '/en/mission/the-mission/privacy',
+          url: '/en/mission/the-mission/privacy',
           title: 'Privacy',
         },
         {
-          link: '/en/mission/login',
+          url: '/en/mission/login',
           title: 'CMS Login',
         },
       ],
