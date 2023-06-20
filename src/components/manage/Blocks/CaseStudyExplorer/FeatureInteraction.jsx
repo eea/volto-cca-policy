@@ -60,7 +60,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         if (subfeatures.length === 1) {
           const selectedFeature = subfeatures[0].values_;
           onFeatureSelect(selectedFeature);
-          console.log('onfeatureselect');
+          // console.log('onfeatureselect');
         } else {
           // zoom to extent of cluster points
           const extent = getExtentOfFeatures(subfeatures);
@@ -73,7 +73,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
 
           // const paddedExtent = ol.extent.buffer(extent, 50000);
           map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
-          console.log('onclusterzoom');
+          // console.log('onclusterzoom');
         }
       });
 
