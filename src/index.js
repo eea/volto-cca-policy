@@ -47,7 +47,10 @@ const applyConfig = (config) => {
     ];
   }
 
-  config.settings.loadables.d3 = loadable.lib(() => import('d3'));
+  if (!config.settings.loadables.d3)
+    config.settings.loadables.d3 = loadable.lib(() => import('d3'));
+  if (!config.settings.loadables.d3Geo)
+    config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
