@@ -10,6 +10,7 @@ import {
   selectTheme,
   customSelectStyles,
 } from '@plone/volto/components/manage/Widgets/SelectStyling';
+// TODO: internationalize
 
 import './style.less';
 
@@ -150,6 +151,7 @@ const FilterAceContentView = (props) => {
   return (
     <div className="block filter-acecontent-block">
       {data.title && <h3>{data.title}</h3>}
+      <h5>Climate impact</h5>
       <Select
         id="field-impacts"
         name="impacts"
@@ -173,6 +175,8 @@ const FilterAceContentView = (props) => {
           }
         }}
       />
+
+      <h5>Sector</h5>
       <Select
         id="field-sectors"
         name="sectors"
