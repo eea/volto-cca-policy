@@ -2,14 +2,22 @@ import React, { useRef, useEffect } from 'react';
 import flags from './flags.js';
 import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { Grid } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from './withResponsiveContainer';
+import withResponsiveContainer from './withResponsiveContainer.js';
+import { addAppURL } from '@plone/volto/helpers';
 import {
   getFocusCountriesFeature,
   getFocusCountryNames,
   renderCountriesBox,
-} from './map-utils';
+} from './map-utils.js';
+
+import Filter from './Filter';
+
+import { useCountriesMetadata } from './hooks';
+
+const countries_metadata_url = '/en/@@countries-heat-index-json';
 
 const withCountriesData = (WrappedComponent) => {
   function WithCountriesDataWrapped(props) {
@@ -17,7 +25,7 @@ const withCountriesData = (WrappedComponent) => {
 
     useEffect(() => {
       if (!cpath) {
-        import('./euro-countries-simplified').then((mod) => {
+        import('./euro-countries-simplified.js').then((mod) => {
           const _cpath = mod.default;
           _cpath.features = _cpath.features.map(function (c) {
             //console.log(c);
@@ -48,12 +56,18 @@ const withCountriesData = (WrappedComponent) => {
   return WithCountriesDataWrapped;
 };
 
-const CountryMapView = (props) => {
+const CountryMapObservatoryView = (props) => {
   const svgRef = useRef(null);
   const { d3, d3Geo, size, cpath } = props;
   const { height, width } = size;
+  const [thematicMapMode, setThematicMapMode] = React.useState('hhap');
+
+  const countries_metadata = useCountriesMetadata(
+    addAppURL(countries_metadata_url),
+  );
 
   useEffect(() => {
+    console.log('COUNTRIES METADATA', countries_metadata);
     // D3 Code
 
     // Dimensions
@@ -96,6 +110,8 @@ const CountryMapView = (props) => {
 
     var opts = {
       world: cpath.features,
+      countries_metadata: countries_metadata,
+      thematic_map_mode: thematicMapMode,
       svg: svg,
       coordinates: {
         x: 0,
@@ -112,9 +128,38 @@ const CountryMapView = (props) => {
     renderCountriesBox(opts, d3, d3Geo);
     // Draw Circle
     //container.append("circle").attr("r", 25).style("color","blue");
-  }, [props.Data, d3, width, height, cpath, d3Geo]); // redraw chart if data changes
+  }, [
+    props.Data,
+    d3,
+    width,
+    height,
+    cpath,
+    d3Geo,
+    thematicMapMode,
+    countries_metadata,
+  ]); // redraw chart if data changes
 
-  return <svg ref={svgRef} />;
+  return (
+    <div>
+      <Grid columns="12">
+        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+          <svg ref={svgRef} />
+        </Grid.Column>
+        <Grid.Column
+          mobile={3}
+          tablet={3}
+          computer={2}
+          className="col-left"
+          id="cse-filter"
+        >
+          <Filter
+            thematicMapMode={thematicMapMode}
+            setThematicMapMode={setThematicMapMode}
+          />
+        </Grid.Column>
+      </Grid>
+    </div>
+  );
 };
 
 export default compose(
@@ -122,7 +167,7 @@ export default compose(
   injectLazyLibs(['d3', 'd3Geo']),
   withResponsiveContainer,
   withCountriesData,
-)(CountryMapView);
+)(CountryMapObservatoryView);
 
 // import loadable from '@loadable/component';
 //import * as d3 from 'd3';

@@ -1,8 +1,14 @@
+let _selectedMapSection = null;
 export function getFocusCountryNames() {
   return [
+    'Albania',
     'Austria',
     'Belgium',
+    'Bosnia-Herzegovina',
+    'Bosnia and Herzegovina',
+    'Bulgaria',
     'Cyprus',
+    'Croatia',
     'Czechia',
     'Denmark',
     'Estonia',
@@ -14,13 +20,17 @@ export function getFocusCountryNames() {
     'Iceland',
     'Ireland',
     'Italy',
+    'Latvia',
     'Lithuania',
     'Luxembourg',
     'Malta',
+    'Montenegro',
     'Netherlands',
+    'North Macedonia',
     'Poland',
     'Portugal',
     'Romania',
+    'Serbia',
     'Slovakia',
     'Slovenia',
     'Spain',
@@ -48,43 +58,47 @@ export function getFocusCountriesFeature(world) {
   return features;
 }
 
+// tooltip with country names on hover
+let countryNameTooltip = null;
+
 export function renderCountriesBox(opts, d3, d3Geo) {
-  var coords = opts.coordinates;
-  var countries = opts.focusCountries;
+  countryNameTooltip = d3.select('body').append('div').attr('class', 'tooltip');
 
-  var svg = opts.svg;
-  var world = opts.world;
-  var zoom = opts.zoom;
-  var cprectid = makeid(); // unique id for this map drawing
+  const coords = opts.coordinates;
+  const countries = opts.focusCountries;
+  const countries_metadata = opts.countries_metadata;
+  window._selectedMapSection = opts.thematic_map_mode;
 
-  var globalMapProjection = d3Geo.geoAzimuthalEqualArea();
+  const svg = opts.svg;
+  const world = opts.world;
+  const zoom = opts.zoom;
+  const cprectid = makeid(); // unique id for this map drawing
+
+  const globalMapProjection = d3Geo.geoAzimuthalEqualArea();
 
   globalMapProjection.scale(1).translate([0, 0]);
 
   // the path transformer
-  var path = d3Geo.geoPath().projection(globalMapProjection);
+  let path = d3Geo.geoPath().projection(globalMapProjection);
 
-  var x = coords.x;
-  var y = coords.y;
-  var width = coords.width;
-  var height = coords.height;
-  // var extent = [[x + 20, y + 20], [x + coords.width - 20 , y + coords.height - 20]];
-  // console.log('fitting extent', extent);
-  // globalMapProjection.fitExtent(extent, countries.feature);
+  const x = coords.x;
+  const y = coords.y;
+  const width = coords.width;
+  const height = coords.height;
 
-  var b = path.bounds(countries.feature);
-  var cwRatio = (b[1][0] - b[0][0]) / width; // bounds to width ratio
-  var chRatio = (b[1][1] - b[0][1]) / height; // bounds to height ratio
-  var s = zoom / Math.max(cwRatio, chRatio);
-  var t = [
+  const b = path.bounds(countries.feature);
+  const cwRatio = (b[1][0] - b[0][0]) / width; // bounds to width ratio
+  const chRatio = (b[1][1] - b[0][1]) / height; // bounds to height ratio
+  const s = zoom / Math.max(cwRatio, chRatio);
+  const t = [
     (width - s * (b[1][0] + b[0][0])) / 2 + x,
     (height - s * (b[0][1] + b[1][1])) / 2 + y,
   ];
 
   globalMapProjection.scale(s).translate(t);
 
-  svg
-    .append('defs') // rectangular clipping path for the whole drawn map
+  let defs = svg.append('defs'); // rectangular clipping path for the whole drawn map
+  defs
     .append('clipPath')
     .attr('id', cprectid)
     .append('rect')
@@ -95,8 +109,6 @@ export function renderCountriesBox(opts, d3, d3Geo) {
 
   var map = svg // the map will be drawn in this group
     .append('g');
-  // .attr('clip-path', 'url(#' + cprectid + ')')
-  //.attr("clip-path", opts.isMaplet ? "url(#" + cprectid + ")" : null
   map // the world sphere, acts as ocean
     .append('path')
     .datum({
@@ -108,10 +120,8 @@ export function renderCountriesBox(opts, d3, d3Geo) {
   renderGraticule(map, 'graticule', [20, 10], path, d3Geo);
   renderGraticule(map, 'semi-graticule', [5, 5], path, d3Geo);
 
-  //setCountryFlags(countries.feature.features, window._flags);
-
   world.forEach(function (country) {
-    renderCountry(map, country, path, countries, x, y, d3);
+    renderCountry(map, country, path, countries, x, y, d3, countries_metadata);
   });
 
   return path;
@@ -138,13 +148,25 @@ function makeid() {
   return text;
 }
 
-function renderCountry(map, country, path, countries, x, y, d3) {
+function renderCountry(
+  map,
+  country,
+  path,
+  countries,
+  x,
+  y,
+  d3,
+  countries_metadata,
+) {
   var cprectid = makeid(); // unique id for this map drawing
-  var klass = getCountryClass(country, countries);
+  var klass = getCountryClass(country, countries, countries_metadata);
   var cId = 'c-' + cprectid + '-' + country.properties.id;
   var cpId = 'cp-' + cprectid + '-' + country.properties.id;
 
   var available = countries.names.indexOf(country.properties.SHRT_ENGL) !== -1;
+  if (available) {
+    klass += ' ue';
+  }
 
   var parent = map.append('g').attr('class', klass);
   parent // define clipping path for this country
@@ -164,28 +186,54 @@ function renderCountry(map, country, path, countries, x, y, d3) {
     .attr('d', path(country));
   if (available) {
     var bbox = outline.node().getBBox();
-    renderCountryFlag(parent, country, bbox, cpId, d3);
-    //renderCountryLabel(country, path);
+    renderCountryFlag(parent, country, bbox, cpId, d3, countries_metadata);
   }
 }
 
-function getCountryClass(country, countries) {
-  //console.log('getCountryClass',country, countries);
-  var k = 'country-outline';
-  //var k = "country-blue";
-  //var available =
-  //window.countrySettings.indexOf(country.properties.SHRT_ENGL) !== -1;
-  //if (available) k += " country-available";
-
-  //var meta = window.countrySettings[country.properties.SHRT_ENGL];
-  //var _selectedMapSection = null;
-
-  if (getFocusCountryNames().includes(country.properties.SHRT_ENGL)) {
-    k += ' country-available';
+function getCountryClass(country, countries, countries_metadata) {
+  let k = 'country-outline';
+  const countryName = country.properties.SHRT_ENGL;
+  if (!countries_metadata) {
+    return 'country-outline';
   }
-  //if (available && meta && meta[0] && meta[0][_selectedMapSection]) {
-  //  k += " country-blue";
-  //}
+  if (countries_metadata.length < 1) {
+    return 'country-outline';
+  }
+  if (!countries_metadata.hasOwnProperty(countryName)) {
+    return 'country-outline';
+  }
+  const countryNoData = ['United Kingdom'];
+  const meta = countries_metadata[countryName];
+  if (window._selectedMapSection === 'hhap') {
+    switch (meta.hhap) {
+      case 'National HHAP':
+        k += ' country-nationalhhap';
+        break;
+      case 'Subnational or local HHAP':
+        k += ' country-subnationalhhap';
+        break;
+      case 'No HHAP':
+        k += ' country-no-hhap';
+        break;
+      case 'No information':
+        k += ' country-none';
+        break;
+      default:
+    }
+  }
+
+  if (window._selectedMapSection === 'hhws') {
+    switch (meta.hhws) {
+      case 'HWWS exists':
+        k += ' country-nationalhhap';
+        break;
+      case 'No information':
+        k += ' country-none';
+        break;
+      default:
+    }
+  }
+
   return k;
 }
 
@@ -230,15 +278,15 @@ export function renderCountryLabel(country, path, force, d3) {
   //passThruEvents(g);
 }
 
-// tooltip with country names on hover
-/*
-var countryNameTooltip = d3
-  .select('body')
-  .append('div')
-  .attr('class', 'tooltip');
-  */
-
-function renderCountryFlag(parent, country, bbox, cpId, d3) {
+function renderCountryFlag(
+  parent,
+  country,
+  bbox,
+  cpId,
+  d3,
+  countries_metadata,
+) {
+  const countryName = country.properties.SHRT_ENGL;
   var flag = parent
     .append('image')
     .attr('class', 'country-flag')
@@ -258,43 +306,34 @@ function renderCountryFlag(parent, country, bbox, cpId, d3) {
     .attr('height', bbox.height)
     .attr('width', bbox.width)
     .on('click', function () {
-      // var link = country.properties.SHRT_ENGL.toLowerCase().replace(' ', '-');
-      // if (getFocusCountryNames().indexOf(country.properties.SHRT_ENGL) > -1)
-      //   // console.log('will redirect to country:', link);
-      // //location.href = location.href.endsWith('/') ? location.href + link : location.href + '/' + link;
-      // console.log(
-      //   window.location.href.endsWith('/')
-      //     ? window.location.href + link
-      //     : window.location.href + '/' + link,
-      // );
+      if (
+        window._selectedMapSection === 'hhws' &&
+        countries_metadata[countryName].hhws == 'HWWS exists'
+      ) {
+        // console.log(
+        //   'Popup :',
+        //   countryName,
+        //   countries_metadata[countryName].hhws,
+        //   d3.select(this).parent,
+        // );
+        showMapTooltip(country, countries_metadata, d3);
+      }
     })
     .on('mouseover', function () {
-      // var countryName = country.properties.SHRT_ENGL.toUpperCase();
       d3.select(this).attr('opacity', 1);
-      //return countryNameTooltip.style('display', 'block').html(countryName);
+      return countryNameTooltip.style('display', 'block').html(countryName);
     })
     .on('mousemove', function (event) {
-      // var countryName = country.properties.SHRT_ENGL.toUpperCase();
-      //console.log(event, d3.select(this));
-      //console.log(event.screenX, event.screenY, event, d3.select(this),this.getAttribute("cx"));
-      //console.log(d3.mouse(this));
-      // var bbox = this.getBBox();
-      /*
       const cmt = countryNameTooltip
         .style('display', 'block')
-        //.style("top", event.layerY+ "px")
-        //.style("left", event.layerX+ 10 + "px")
-        .style('top', event.layerY + bbox.height + 'px')
-        .style('left', event.layerX + 50 + 'px')
-        //.style("top", d3.currentEvent.pageY + "px")
-        //.style("left", d3.currentEvent.pageX + 10 + "px")
+        .style('top', d3.event.pageY + 'px')
+        .style('left', d3.event.pageX + 10 + 'px')
         .html(countryName);
       return cmt;
-      */
     })
     .on('mouseout', function () {
       d3.select(this).attr('opacity', 0);
-      //return countryNameTooltip.style('display', 'none');
+      return countryNameTooltip.style('display', 'none');
     });
   return flag;
 }
@@ -309,4 +348,74 @@ function getIEVersion() {
   // If IE 11 then look for Updated user agent string.
   else if (navigator.userAgent.match(/Trident\/7\./)) return 11;
   else return 0; //It is not IE
+}
+
+function showMapTooltip(d, countries_metadata, d3) {
+  const countryName = d.properties.SHRT_ENGL;
+  const coords = [d3.event.pageY, d3.event.pageX];
+  // debugger;
+  const info = countries_metadata[countryName];
+  const website = info['website'];
+  if (!info) return;
+  let content = info['heat_index_description'];
+
+  if (content)
+    createTooltip({
+      coords: coords,
+      content: content,
+      name: countryName,
+      website: website,
+    });
+
+  // TODO: are there multiple onclick handlers here??
+  // $('body').on('click', function () {
+  //   $('#map-tooltip').remove();
+  // });
+
+  document.body.addEventListener('click', function (evt) {
+    removeTooltip();
+  });
+  d3.event.stopPropagation();
+}
+
+function removeTooltip() {
+  const elem = document.getElementById('map-tooltip');
+  if (elem) {
+    elem.parentElement.removeChild(elem);
+  }
+}
+
+function createTooltip(opts) {
+  const x = opts['coords'][0];
+  const y = opts['coords'][1];
+  const content = opts['content'];
+  const name = opts['name'];
+  const website = opts['website'];
+
+  removeTooltip();
+
+  let contentHTML =
+    '<div id="country-name"><h3>' +
+    name +
+    '</h3><i class="fa fa-times close-tooltip"></i></div>' +
+    '<div id="tooltip-content"><div class="tooltip-content"><div class="heat_index_value">' +
+    '<strong>Heat index of HHWS:</strong><span class="value">' +
+    content +
+    '</span></div>';
+  if (website) {
+    contentHTML +=
+      '<p class="heat_index_website" style="margin-top:2em"><span class="link-https"><a href="' +
+      website +
+      '" target="_blank">HHWS website</a></span></p>';
+  }
+  contentHTML += '</div></div>';
+
+  const style = 'top:' + x + 'px; left: ' + y + 'px';
+
+  const node = document.createElement('div');
+  node.setAttribute('id', 'map-tooltip');
+  node.setAttribute('style', style);
+  const body = document.getElementsByTagName('body')[0];
+  node.innerHTML = contentHTML;
+  body.appendChild(node);
 }
