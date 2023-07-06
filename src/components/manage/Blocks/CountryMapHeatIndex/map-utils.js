@@ -1,4 +1,3 @@
-let _selectedMapSection = null;
 export function getFocusCountryNames() {
   return [
     'Albania',
@@ -202,7 +201,6 @@ function getCountryClass(country, countries, countries_metadata) {
   if (!countries_metadata.hasOwnProperty(countryName)) {
     return 'country-outline';
   }
-  const countryNoData = ['United Kingdom'];
   const meta = countries_metadata[countryName];
   if (window._selectedMapSection === 'hhap') {
     switch (meta.hhap) {
@@ -308,7 +306,7 @@ function renderCountryFlag(
     .on('click', function () {
       if (
         window._selectedMapSection === 'hhws' &&
-        countries_metadata[countryName].hhws == 'HWWS exists'
+        countries_metadata[countryName].hhws === 'HWWS exists'
       ) {
         // console.log(
         //   'Popup :',

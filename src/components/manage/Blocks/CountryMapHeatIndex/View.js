@@ -67,7 +67,6 @@ const CountryMapObservatoryView = (props) => {
   );
 
   useEffect(() => {
-    console.log('COUNTRIES METADATA', countries_metadata);
     // D3 Code
 
     // Dimensions

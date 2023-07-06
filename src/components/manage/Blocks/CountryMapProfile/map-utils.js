@@ -1,4 +1,3 @@
-let _selectedMapSection = null;
 export function getFocusCountryNames() {
   return [
     'Austria',
@@ -61,7 +60,6 @@ export function renderCountriesBox(opts, d3, d3Geo) {
   const coords = opts.coordinates;
   const countries = opts.focusCountries;
   const countries_metadata = opts.countries_metadata;
-  let _selectedMapSection = 'general';
   if (opts.thematic_map_mode.toLowerCase().indexOf('policy') > -1) {
     window._selectedMapSection = 'overview';
   } else if (opts.thematic_map_mode.toLowerCase().indexOf('climate') > -1) {
@@ -315,7 +313,7 @@ function getCountryClass(country, countries, countries_metadata) {
   }
 
   if (window._selectedMapSection === 'climate') {
-    var { cciva_info, notreported } = discodata;
+    let { cciva_info, notreported } = discodata;
 
     if (notreported) {
       k += ' country-notreported';
@@ -330,7 +328,7 @@ function getCountryClass(country, countries, countries_metadata) {
     }
   }
   if (window._selectedMapSection === 'portals') {
-    var { focus_info, notreported } = discodata;
+    let { focus_info, notreported } = discodata;
 
     if (notreported) {
       k += ' country-notreported';
@@ -360,7 +358,6 @@ function renderCountryFlag(
   const countryName = country.properties.SHRT_ENGL;
   var flag = parent
     .on('click', function () {
-      console.log('Popup :', countryName);
       showMapTooltip(country, countries_metadata, d3);
     })
     .on('mouseover', function () {
@@ -381,7 +378,7 @@ function renderCountryFlag(
   return flag;
 }
 
-function getIEVersion() {
+/*function getIEVersion() {
   var sAgent = window.navigator.userAgent;
   var Idx = sAgent.indexOf('MSIE');
 
@@ -391,7 +388,7 @@ function getIEVersion() {
   // If IE 11 then look for Updated user agent string.
   else if (navigator.userAgent.match(/Trident\/7\./)) return 11;
   else return 0; //It is not IE
-}
+}*/
 
 function showMapTooltip(d, countries_metadata, d3) {
   const countryName = d.properties.SHRT_ENGL;

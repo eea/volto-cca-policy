@@ -10,7 +10,6 @@ export default function Filter(props) {
           value="National adaption policy"
           checked="checked"
           onChange={(e) => {
-            console.log(e.target.value);
             setThematicMapMode(e.target.value);
           }}
         />
@@ -21,7 +20,6 @@ export default function Filter(props) {
           name="country-map-section"
           value="Climate change impact and vulnerability assessments"
           onChange={(e) => {
-            console.log(e.target.value);
             setThematicMapMode(e.target.value);
           }}
         />
@@ -32,14 +30,13 @@ export default function Filter(props) {
           name="country-map-section"
           value="Adaptation portals and platforms"
           onChange={(e) => {
-            console.log(e.target.value);
             setThematicMapMode(e.target.value);
           }}
         />
         Adaptation portals and platforms
       </div>
 
-      {thematicMapMode ==
+      {thematicMapMode ===
         'Climate change impact and vulnerability assessments' && (
         <div className="legend climate-legend">
           <div className="legend-el">
@@ -61,7 +58,7 @@ export default function Filter(props) {
         </div>
       )}
 
-      {thematicMapMode == 'Adaptation portals and platforms' && (
+      {thematicMapMode === 'Adaptation portals and platforms' && (
         <div className="legend portals-legend">
           <div className="legend-el">
             <span className="country-both legend-box"></span>
@@ -84,7 +81,7 @@ export default function Filter(props) {
         </div>
       )}
 
-      {thematicMapMode == 'National adaption policy' && (
+      {thematicMapMode === 'National adaption policy' && (
         <div className="legend nasnap-legend">
           <div className="legend-el">
             <span className="country-nasnap legend-box"></span>

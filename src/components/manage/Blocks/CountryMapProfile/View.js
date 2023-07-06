@@ -70,7 +70,6 @@ const CountryMapObservatoryView = (props) => {
   );
 
   useEffect(() => {
-    console.log('COUNTRIES METADATA', countries_metadata);
     // D3 Code
 
     // Dimensions
@@ -93,21 +92,6 @@ const CountryMapObservatoryView = (props) => {
       //.classed("line-chart", true)
       .attr('width', dimensions.width)
       .attr('height', dimensions.height);
-    //console.log('SVG x-y', svg.getBBox());
-    /*
-    const container = svg
-      .append('g')
-      .classed('container', true)
-      .attr(
-        'transform',
-        `translate(${dimensions.margins}, ${dimensions.margins})`,
-      );
-      */
-
-    //console.log('cpath', cpath);
-    //console.log(fpath);
-    //console.log('Flags',flags);
-    //console.log('filtered', getFocusCountriesFeature(cpath));
 
     window.countrySettings = cpath.features;
 
@@ -171,8 +155,3 @@ export default compose(
   withResponsiveContainer,
   withCountriesData,
 )(CountryMapObservatoryView);
-
-// import loadable from '@loadable/component';
-//import * as d3 from 'd3';
-// import cpath from './euro-countries-simplified';
-//

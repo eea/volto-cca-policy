@@ -10,7 +10,6 @@ export default function Filter(props) {
           value="hhap"
           checked="checked"
           onChange={(e) => {
-            console.log(e.target.value);
             setThematicMapMode(e.target.value);
           }}
         />
@@ -21,14 +20,13 @@ export default function Filter(props) {
           name="country-map-section"
           value="hhws"
           onChange={(e) => {
-            console.log(e.target.value);
             setThematicMapMode(e.target.value);
           }}
         />
         Heat health warning systems (HHWS)
       </div>
 
-      {thematicMapMode == 'hhap' && (
+      {thematicMapMode === 'hhap' && (
         <div className="legend climate-legend">
           <div className="legend-el">
             <span className="country-national-hhap legend-box"></span>
@@ -49,7 +47,7 @@ export default function Filter(props) {
         </div>
       )}
 
-      {thematicMapMode == 'hhws' && (
+      {thematicMapMode === 'hhws' && (
         <div className="legend portals-legend">
           <div className="legend-el">
             <span className="country-national-hhap legend-box"></span>
