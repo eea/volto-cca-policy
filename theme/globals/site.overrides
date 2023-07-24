@@ -51,6 +51,16 @@ div.video-view {
   }
 }
 
+// Organisation Cards Listing
+a.org-name {
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+
+a.org-site {
+  font-size: 0.7em;
+}
+
 // C3S Indicator view styles
 div.c3sindicator-view {
   iframe {

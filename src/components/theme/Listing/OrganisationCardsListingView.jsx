@@ -22,13 +22,13 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
                   className="ui image"
                 ></img>
               </a>
-              <a className="header-link" href={observatoryURL(item)}>
+              <a className="header-link org-name" href={observatoryURL(item)}>
                 {item.title}
               </a>
-              <a className="header-link" href={observatoryURL(item)}>
+              <a className="header-link org-site" href={observatoryURL(item)}>
                 Web site
               </a>
-              <a className="header-link" href={observatoryURL(item)}>
+              <a className="header-link org-site" href={observatoryURL(item)}>
                 Observatory contributions
               </a>
             </div>
