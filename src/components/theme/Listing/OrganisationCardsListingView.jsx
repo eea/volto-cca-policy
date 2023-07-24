@@ -10,9 +10,9 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
     return item.getURL.replace('/metadata/', '/observatory/++aq++metadata/');
   };
   return (
-    <div className="items">
+    <div className="ui fluid four cards">
       {items.map((item, index) => (
-        <div className="listing-item" key={item['@id']}>
+        <div className="ui fluid card u-card" key={item['@id']}>
           <div className="content">
             <div className="header">
               <a className="image" href={observatoryURL(item)}>
