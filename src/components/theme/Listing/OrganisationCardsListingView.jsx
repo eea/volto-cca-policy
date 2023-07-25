@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 
 const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
-  // console.log(items[0]);
-
   const observatoryURL = (item) => {
     return item['@id'].replace('/metadata/', '/observatory/++aq++metadata/');
   };
+
   return (
     <div className="ui fluid four cards">
       {items.map((item, index) => (
@@ -25,7 +24,7 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
               <a className="header-link org-name" href={observatoryURL(item)}>
                 {item.title}
               </a>
-              <a className="header-link org-site" href={observatoryURL(item)}>
+              <a className="header-link org-site" href={item.websites[0]}>
                 Web site
               </a>
               <a className="header-link org-site" href={observatoryURL(item)}>
