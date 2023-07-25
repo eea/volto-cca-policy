@@ -182,6 +182,7 @@ const applyConfig = (config) => {
         title: 'Organisation Cards',
         template: OrganisationCardsListingView,
         isDefault: false,
+        fullobjects: true,
       },
     ],
   };

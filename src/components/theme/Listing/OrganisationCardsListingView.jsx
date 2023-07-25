@@ -7,7 +7,7 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
   // console.log(items[0]);
 
   const observatoryURL = (item) => {
-    return item.getURL.replace('/metadata/', '/observatory/++aq++metadata/');
+    return item['@id'].replace('/metadata/', '/observatory/++aq++metadata/');
   };
   return (
     <div className="ui fluid four cards">
