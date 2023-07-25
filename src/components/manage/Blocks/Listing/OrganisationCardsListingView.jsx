@@ -24,7 +24,10 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
               <a className="header-link org-name" href={observatoryURL(item)}>
                 {item.title}
               </a>
-              <a className="header-link org-site" href={item.websites[0]}>
+              <a
+                className="header-link org-site"
+                href={item.websites?.[0] ?? '#'}
+              >
                 Web site
               </a>
               <a className="header-link org-site" href={observatoryURL(item)}>
