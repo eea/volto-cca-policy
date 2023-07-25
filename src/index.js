@@ -104,6 +104,10 @@ const applyConfig = (config) => {
           title: 'Privacy',
         },
         {
+          url: '/en/mission/sitemap',
+          title: 'Sitemap',
+        },
+        {
           url: '/en/mission/login',
           title: 'CMS Login',
         },
