@@ -9,6 +9,7 @@ import installTransRegionSelect from './TransRegionSelect';
 import installCountryMapObservatory from './CountryMapObservatory';
 import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
+import installListing from './Listing';
 import installRAST from './RASTBlock';
 
 export default function installBlocks(config) {
@@ -27,5 +28,6 @@ export default function installBlocks(config) {
     installRelevantAceContent,
     installFilterAceContent,
     installTransRegionSelect,
+    installListing,
   )(config);
 }

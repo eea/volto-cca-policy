@@ -173,20 +173,6 @@ const applyConfig = (config) => {
     ],
   };
 
-  config.blocks.blocksConfig.listing = {
-    ...config.blocks.blocksConfig.listing,
-    variations: [
-      ...config.blocks.blocksConfig.listing.variations,
-      {
-        id: 'organisationCards',
-        title: 'Organisation Cards',
-        template: OrganisationCardsListingView,
-        isDefault: false,
-        fullobjects: true,
-      },
-    ],
-  };
-
   config.blocks.groupBlocksOrder.push({ id: 'site', title: 'Site' });
 
   //console.log(config);
