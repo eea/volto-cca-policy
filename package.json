@@ -26,13 +26,13 @@
     "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
+    "@eeacms/volto-accordion-block": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-widget-dataprovenance": "*",
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",
-    "@eeacms/volto-accordion-block": "*",
     "d3": "3",
     "d3-geo": "3"
   },
