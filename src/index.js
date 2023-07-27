@@ -1,6 +1,7 @@
 import { compose } from 'redux';
 import loadable from '@loadable/component';
 
+import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import GuidanceView from './components/theme/Views/GuidanceView';
@@ -101,6 +102,10 @@ const applyConfig = (config) => {
         {
           url: '/en/mission/the-mission/privacy',
           title: 'Privacy',
+        },
+        {
+          url: '/en/mission/sitemap',
+          title: 'Sitemap',
         },
         {
           url: '/en/mission/login',
@@ -248,6 +253,17 @@ const applyConfig = (config) => {
     match: '',
     GET_CONTENT: ['breadcrumbs'], // 'navigation', 'actions', 'types'],
   });
+
+  config.addonRoutes = [
+    {
+      path: `/(${config.settings?.supportedLanguages.join(
+        '|',
+      )})/mission/sitemap`,
+      component: Sitemap,
+    },
+
+    ...(config.addonRoutes || []),
+  ];
 
   return compose(installBlocks, installSearchEngine)(config);
 };
