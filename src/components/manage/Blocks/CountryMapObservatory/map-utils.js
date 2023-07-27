@@ -1,130 +1,4 @@
-import React, { useRef, useEffect } from 'react';
-//import * as d3 from 'd3';
-// import cpath from './euro-countries-simplified';
-import flags from './flags.js';
-import './styles.css';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { compose } from 'redux';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-// import loadable from '@loadable/component';
-//
-//
-const withResponsiveContainer = (WrappedComponent) => {
-  return (props) => {
-    const [size, setSize] = React.useState();
-    return (
-      <div
-        className="sized-wrapper"
-        ref={(node) => {
-          // console.log(node, node.clientHeight);
-          if (node && !size)
-            setSize({ height: node.clientHeight, width: node.clientWidth });
-        }}
-      >
-        {size ? <WrappedComponent size={size} {...props} /> : null}
-      </div>
-    );
-  };
-};
-
-const CountryMapView = (props) => {
-  const svgRef = useRef(null);
-  const { d3, size } = props;
-  const { height, width } = size;
-  let [cpath, setCpath] = React.useState();
-
-  useEffect(() => {
-    if (!cpath) {
-      import('./euro-countries-simplified').then((mod) => {
-        setCpath(mod.default);
-      });
-    }
-  }, [cpath]);
-
-  useEffect(() => {
-    // D3 Code
-
-    // Dimensions
-    //const parentDiv = document.getElementById('page-document');
-    let dimensions = {
-      //width: parentDiv.offsetWidth,
-      width,
-      height,
-      margins: 50,
-    };
-
-    dimensions.containerWidth = dimensions.width - dimensions.margins * 2;
-    dimensions.containerHeight = dimensions.height - dimensions.margins * 2;
-
-    //const d3 = loadable.lib(() => import('d3'));
-    // SELECTIONS
-    const svg = d3
-      .select(svgRef.current)
-      .attr('id', 'country_map')
-      //.classed("line-chart", true)
-      .attr('width', dimensions.width)
-      .attr('height', dimensions.height);
-    //console.log('SVG x-y', svg.getBBox());
-    /*
-    const container = svg
-      .append('g')
-      .classed('container', true)
-      .attr(
-        'transform',
-        `translate(${dimensions.margins}, ${dimensions.margins})`,
-      );
-      */
-
-    cpath.features = cpath.features.map(function (c) {
-      //console.log(c);
-      var name = c.properties.SHRT_ENGL;
-      if (!name) {
-        // console.log('No flag for', c.properties);
-        return c;
-      } else if (name === 'Czechia') {
-        name = 'Czech Republic';
-      }
-      var cname = name.replace(' ', '_');
-      flags.forEach(function (f) {
-        if (f.indexOf(cname) > -1) {
-          c.url = f;
-          //console.log(c.url);
-        }
-      });
-      return c;
-    });
-
-    //console.log('cpath', cpath);
-    //console.log(fpath);
-    //console.log('Flags',flags);
-    //console.log('filtered', getFocusCountriesFeature(cpath));
-
-    window.countrySettings = cpath.features;
-
-    var opts = {
-      world: cpath.features,
-      svg: svg,
-      coordinates: {
-        x: 0,
-        y: 0,
-        width: dimensions.containerWidth,
-        height: dimensions.containerHeight,
-      },
-      focusCountries: {
-        names: getFocusCountryNames(),
-        feature: getFocusCountriesFeature(cpath),
-      },
-      zoom: 0.95,
-    };
-    renderCountriesBox(opts, d3);
-    // Draw Circle
-    //container.append("circle").attr("r", 25).style("color","blue");
-  }, [props.Data, d3, width, height, cpath]); // redraw chart if data changes
-
-  return <svg ref={svgRef} />;
-};
-
-function getFocusCountryNames() {
+export function getFocusCountryNames() {
   return [
     'Austria',
     'Belgium',
@@ -158,7 +32,8 @@ function getFocusCountryNames() {
     'Turkey',
   ];
 }
-function getFocusCountriesFeature(world) {
+
+export function getFocusCountriesFeature(world) {
   const focusCountryNames = getFocusCountryNames();
   let features = {
     type: 'FeatureCollection',
@@ -173,7 +48,7 @@ function getFocusCountriesFeature(world) {
   return features;
 }
 
-function renderCountriesBox(opts, d3) {
+export function renderCountriesBox(opts, d3, d3Geo) {
   var coords = opts.coordinates;
   var countries = opts.focusCountries;
 
@@ -182,12 +57,12 @@ function renderCountriesBox(opts, d3) {
   var zoom = opts.zoom;
   var cprectid = makeid(); // unique id for this map drawing
 
-  var globalMapProjection = d3.geoAzimuthalEqualArea();
+  var globalMapProjection = d3Geo.geoAzimuthalEqualArea();
 
   globalMapProjection.scale(1).translate([0, 0]);
 
   // the path transformer
-  var path = d3.geoPath().projection(globalMapProjection);
+  var path = d3Geo.geoPath().projection(globalMapProjection);
 
   var x = coords.x;
   var y = coords.y;
@@ -230,8 +105,8 @@ function renderCountriesBox(opts, d3) {
     .attr('class', 'sphere')
     .attr('d', path);
 
-  renderGraticule(map, 'graticule', [20, 10], path, d3);
-  renderGraticule(map, 'semi-graticule', [5, 5], path, d3);
+  renderGraticule(map, 'graticule', [20, 10], path, d3Geo);
+  renderGraticule(map, 'semi-graticule', [5, 5], path, d3Geo);
 
   //setCountryFlags(countries.feature.features, window._flags);
 
@@ -242,12 +117,12 @@ function renderCountriesBox(opts, d3) {
   return path;
 }
 
-function renderGraticule(container, klass, steps, pathTransformer, d3) {
+function renderGraticule(container, klass, steps, pathTransformer, d3Geo) {
   container // draw primary graticule lines
     .append('g')
     .attr('class', klass)
     .selectAll('path')
-    .data(d3.geoGraticule().step(steps).lines())
+    .data(d3Geo.geoGraticule().step(steps).lines())
     .enter()
     .append('path')
     .attr('d', pathTransformer);
@@ -435,10 +310,3 @@ function getIEVersion() {
   else if (navigator.userAgent.match(/Trident\/7\./)) return 11;
   else return 0; //It is not IE
 }
-
-//export default CountryMapView;
-export default compose(
-  clientOnly,
-  injectLazyLibs(['d3']),
-  withResponsiveContainer,
-)(CountryMapView);

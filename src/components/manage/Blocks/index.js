@@ -2,11 +2,14 @@ import { compose } from 'redux';
 import installMKHMap from './MKHMap';
 import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
-import installCountryMapBlock from './CountryMap';
 import installSearchAceContent from './SearchAceContent';
 import installRelevantAceContent from './RelevantAceContent';
 import installFilterAceContent from './FilterAceContent';
 import installTransRegionSelect from './TransRegionSelect';
+import installCountryMapObservatory from './CountryMapObservatory';
+import installCountryMapHeatIndex from './CountryMapHeatIndex';
+import installCountryMapProfile from './CountryMapProfile';
+import installListing from './Listing';
 import installRAST from './RASTBlock';
 
 export default function installBlocks(config) {
@@ -18,10 +21,13 @@ export default function installBlocks(config) {
     installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
-    installCountryMapBlock,
+    installCountryMapObservatory,
+    installCountryMapHeatIndex,
+    installCountryMapProfile,
     installSearchAceContent,
     installRelevantAceContent,
     installFilterAceContent,
     installTransRegionSelect,
+    installListing,
   )(config);
 }

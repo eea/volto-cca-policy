@@ -6,12 +6,15 @@ const useStyles = () => {
   const selected = React.useMemo(
     () =>
       new ol.style.Style({
-        fill: new ol.style.Fill({
-          color: '#cccccc',
-        }),
-        stroke: new ol.style.Stroke({
-          color: 'rgba(255, 0, 0, 0.7)',
-          width: 2,
+        image: new ol.style.Circle({
+          radius: 12,
+          fill: new ol.style.Fill({
+            color: '#ccc',
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgba(255, 0, 0, 0.7)',
+            width: 2,
+          }),
         }),
       }),
     [],
@@ -19,8 +22,10 @@ const useStyles = () => {
 
   const selectStyle = React.useCallback(
     (feature) => {
-      const color = feature.get('COLOR') || '#eeeeee';
-      selected.getFill().setColor(color);
+      // const color = feature.get('COLOR') || '#eeeeee';
+      // selected.getFill().setColor(color);
+      const color = feature.values_.features[0].values_['color'] || '#ccc';
+      selected.image_.getFill().setColor(color);
       return selected;
     },
     [selected],
@@ -55,10 +60,20 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         if (subfeatures.length === 1) {
           const selectedFeature = subfeatures[0].values_;
           onFeatureSelect(selectedFeature);
+          // console.log('onfeatureselect');
         } else {
+          // zoom to extent of cluster points
           const extent = getExtentOfFeatures(subfeatures);
-          const paddedExtent = ol.extent.buffer(extent, 50000);
+
+          let extentBuffer =
+            (extent[3] - extent[1] + extent[2] - extent[0]) / 4;
+          extentBuffer = extentBuffer < 500 ? 500 : extentBuffer;
+          // console.log('extentBuffer', { extent, extentBuffer });
+          const paddedExtent = ol.extent.buffer(extent, extentBuffer);
+
+          // const paddedExtent = ol.extent.buffer(extent, 50000);
           map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
+          // console.log('onclusterzoom');
         }
       });
 
@@ -67,6 +82,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
 
     map.addInteraction(select);
 
+    // TODO: does this accumulate?
     map.on('pointermove', (e) => {
       const pixel = map.getEventPixel(e.originalEvent);
       const hit = map.hasFeatureAtPixel(pixel);
