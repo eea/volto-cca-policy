@@ -7,7 +7,7 @@ export default function installCountryMapProfile(config) {
     id: 'countryMapProfile',
     title: 'Country Map Profile',
     icon: worldSVG,
-    group: 'common',
+    group: 'site',
     edit: Edit,
     view: View,
   };

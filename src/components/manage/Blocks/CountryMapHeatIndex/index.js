@@ -7,7 +7,7 @@ export default function installCountryMapHeatIndex(config) {
     id: 'countryMapHeatIndex',
     title: 'Country Map Observatory Heat Index',
     icon: worldSVG,
-    group: 'common',
+    group: 'site',
     edit: Edit,
     view: View,
   };

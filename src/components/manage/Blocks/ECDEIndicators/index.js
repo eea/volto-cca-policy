@@ -7,7 +7,7 @@ export default function installECDEIndicatorsBlock(config) {
     id: 'ecdeIndicators',
     title: 'ECDE Indicators',
     icon: worldSVG,
-    group: 'common',
+    group: 'site',
     edit: ECDEIndicatorsEdit,
     view: ECDEIndicatorsView,
   };
