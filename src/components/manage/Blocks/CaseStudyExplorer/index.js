@@ -7,7 +7,7 @@ export default function installCaseStudyExplorerBlock(config) {
     id: 'caseStudyExplorer',
     title: 'Case Study Explorer',
     icon: worldSVG,
-    group: 'common',
+    group: 'site',
     edit: CaseStudyExplorerEdit,
     view: CaseStudyExplorerView,
   };

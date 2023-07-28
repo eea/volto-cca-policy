@@ -7,7 +7,7 @@ export default function installCountryMapObservatoryBlock(config) {
     id: 'countryMapObservatory',
     title: 'Country Map Observatory',
     icon: worldSVG,
-    group: 'common',
+    group: 'site',
     edit: CountryMapObservatoryEdit,
     view: CountryMapObservatoryView,
   };

@@ -8,7 +8,7 @@ export default (config) => {
     id: 'mkh_map',
     title: 'MKH Viewer map',
     icon: worldSVG,
-    group: 'common',
+    group: 'site',
     edit: MapBlockEdit,
     view: MapBlockView,
   };
