@@ -162,6 +162,7 @@ const applyConfig = (config) => {
   // Enable video
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
+    config.blocks.blocksConfig.video.group = 'site';
   }
 
   config.blocks.blocksConfig.__grid = {
