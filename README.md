@@ -23,9 +23,22 @@ Demo GIF
 
 ## Getting started
 
+### Try volto-cca-policy with Docker
+
+      git clone https://github.com/eea/volto-cca-policy.git
+      cd volto-cca-policy
+      make
+      make start
+
+Go to http://localhost:3000
+
 ### Add volto-cca-policy to your Volto project
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
+
+   ```Bash
+   docker compose up backend
+   ```
 
 1. Start Volto frontend
 

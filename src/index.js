@@ -164,6 +164,21 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.video.restricted = false;
   }
 
+  // Move blocks to Site group
+  const move_to_site = [
+    'video',
+    'maps',
+    'countryFlag',
+    'searchlib',
+    'layoutSettings',
+  ];
+
+  for (let block_id of move_to_site) {
+    if (config.blocks.blocksConfig[block_id]) {
+      config.blocks.blocksConfig[block_id].group = 'site';
+    }
+  }
+
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
     maxNumberOfColumns: 5,
