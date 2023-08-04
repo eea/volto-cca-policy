@@ -166,11 +166,11 @@ const applyConfig = (config) => {
 
   // Move blocks to Site group
   const move_to_site = [
-    'video',
-    'maps',
     'countryFlag',
-    'searchlib',
+    'imagecards',
     'layoutSettings',
+    'maps',
+    'video',
   ];
 
   for (let block_id of move_to_site) {
