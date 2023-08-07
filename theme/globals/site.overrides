@@ -299,7 +299,7 @@ body.subsite-root.section-mission {
         div.listing-item {
           h4 {
             padding-left: 1.5em;
-            margin-bottom: 0px;
+            margin-bottom: 0.5em;
 
             &:before {
               position: absolute;
@@ -310,10 +310,11 @@ body.subsite-root.section-mission {
               font-weight: normal;
             }
           }
-          padding-bottom: 0px !important;
+          padding-bottom: 0.5em;
           border: none;
           margin-bottom: 0px !important;
         }
+        margin-top: 1.5em;
       }
     }
   }
