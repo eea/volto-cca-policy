@@ -290,3 +290,32 @@ body.view-viewview.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
     }
   }
 }
+
+/* Mission: Latest news updates, Latest events */
+body.subsite-root.section-mission {
+  div.columns-view {
+    div.block.listing.default {
+      div.items {
+        div.listing-item {
+          h4 {
+            padding-left: 1.5em;
+            margin-bottom: 0.5em;
+
+            &:before {
+              position: absolute;
+              left: 0;
+              content: '\ea6c';
+              font-family: remixicon !important;
+              font-style: normal;
+              font-weight: normal;
+            }
+          }
+          padding-bottom: 0.5em;
+          border: none;
+          margin-bottom: 0px !important;
+        }
+        margin-top: 1.5em;
+      }
+    }
+  }
+}
