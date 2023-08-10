@@ -5,6 +5,6 @@ export const blockAvailableInMission = (properties, block) => {
   if (isMission) {
     return missionBlocks.includes(block.id) ? false : true;
   } else {
-    return false;
+    return missionBlocks.includes(block.id) ? true : false;
   }
 };
