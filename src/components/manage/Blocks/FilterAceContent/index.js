@@ -1,6 +1,7 @@
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import FilterAceContentEdit from './FilterAceContentEdit';
 import FilterAceContentView from './FilterAceContentView';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 export default function installBlock(config) {
   config.blocks.blocksConfig.filterAceContent = {
@@ -15,7 +16,9 @@ export default function installBlock(config) {
       addPermission: [],
       view: [],
     },
-    variations: [],
+    restricted: ({ properties, block }) => {
+      return blockAvailableInMission(properties, block);
+    },
   };
 
   return config;

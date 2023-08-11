@@ -1,9 +1,12 @@
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import RASTEdit from './RASTEdit';
 import RASTView from './RASTView';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 export default function installBlock(config) {
-  config.blocks.blocksConfig.rastBlock = {
+  const blocksConfig = config.blocks.blocksConfig;
+
+  blocksConfig.rastBlock = {
     id: 'rastBlock',
     title: 'RAST',
     icon: zoomSVG,
@@ -16,6 +19,9 @@ export default function installBlock(config) {
       view: [],
     },
     variations: [],
+    restricted: ({ properties, block }) => {
+      return blockAvailableInMission(properties, block);
+    },
   };
 
   return config;

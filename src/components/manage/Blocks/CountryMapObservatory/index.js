@@ -1,6 +1,7 @@
 import worldSVG from '@plone/volto/icons/world.svg';
 import CountryMapObservatoryEdit from './CountryMapObservatoryEdit';
 import CountryMapObservatoryView from './CountryMapObservatoryView';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 export default function installCountryMapObservatoryBlock(config) {
   config.blocks.blocksConfig.countryMapObservatory = {
@@ -10,6 +11,14 @@ export default function installCountryMapObservatoryBlock(config) {
     group: 'site',
     edit: CountryMapObservatoryEdit,
     view: CountryMapObservatoryView,
+    sidebarTab: 1,
+    security: {
+      addPermission: [],
+      view: [],
+    },
+    restricted: ({ properties, block }) => {
+      return blockAvailableInMission(properties, block);
+    },
   };
 
   return config;
