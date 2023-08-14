@@ -32,6 +32,34 @@ function removeTrailingSlash(path) {
 }
 
 /**
+ * Logo component class.
+ * @function Logo
+ * @param {Object} intl Intl object
+ * @returns {string} Markup of the component.
+ */
+const DirectLinkLogo = ({
+  src,
+  invertedSrc,
+  id,
+  url,
+  alt,
+  title,
+  inverted,
+}) => {
+  return (
+    <a href={url} title={title} className={'logo'}>
+      <Image
+        src={inverted ? invertedSrc : src}
+        alt={alt}
+        title={title}
+        className="eea-logo"
+        id={id}
+      />
+    </a>
+  );
+};
+
+/**
  * EEA Specific Header component.
  */
 const EEAHeader = ({ pathname, token, items, history, subsite }) => {
@@ -219,7 +247,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                   subsite.title
                 )}
                 <div className="subsite-logo">
-                  <Logo
+                  <DirectLinkLogo
                     src={isHomePageInverse ? logoWhite : logo}
                     title={eea.websiteTitle}
                     alt={eea.organisationName}
