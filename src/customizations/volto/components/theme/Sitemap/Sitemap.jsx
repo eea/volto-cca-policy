@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { asyncConnect } from '@plone/volto/helpers';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Container } from 'semantic-ui-react';
-import { Helmet, toBackendLang } from '@plone/volto/helpers';
+import { Helmet } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
 import config from '@plone/volto/registry';
 
@@ -28,6 +28,27 @@ export function getSitemapPath(pathname = '', lang) {
   const path = prefix || lang || '';
   return path;
 }
+
+export const toReactIntlLang = (language) => {
+  if (language.includes('_') || language.includes('-')) {
+    let langCode = language.split(/[-_]/);
+    langCode = `${langCode[0]}-${langCode[1].toUpperCase()}`;
+    return langCode;
+  }
+
+  return language;
+};
+// export const toLangUnderscoreRegion = toReactIntlLang; // old name for backwards-compat
+
+/**
+ * Converts a language code like pt_BR or pt-BR to the format `pt-br`.
+ * This format is used on the backend and in volto config settings.
+ * @param {string} language Language to be converted
+ * @returns {string} Language converted
+ */
+export const toBackendLang = (language) => {
+  return toReactIntlLang(language).toLowerCase();
+};
 
 /**
  * Sitemap class.
