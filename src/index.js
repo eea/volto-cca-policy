@@ -30,6 +30,11 @@ const pathToNegRegex = (p) => `(?!(${p}))`;
 
 const applyConfig = (config) => {
   const env = getEnv();
+
+  // VOLTO_LOCATIONS is a list of paths that should be handled by Volto.
+  // All other paths (meaning, everything that's not specifically set in this
+  // variable) will be treated as an external path and the browser will fully
+  // load the link as a separate document, and it will load from Plone 4
   const voltoLocations = (env.RAZZLE_VOLTO_LOCATIONS || '')
     .split(';')
     .map((s) => s.trim().replaceAll('/', '\\/'))
