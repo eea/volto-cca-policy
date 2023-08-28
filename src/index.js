@@ -26,20 +26,30 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
+const pathToNegRegex = (p) => `(?!(${p}))`;
+
 const restrictedBlocks = ['countryFlag'];
 
 const applyConfig = (config) => {
-  const notInEnMission = /^(?!(\/en\/mission)).*$/;
   const env = getEnv();
-  const isStaging = !!env.RAZZLE_IS_STAGING;
-  const enableMissionIsExternal = !isStaging && !__DEVELOPMENT__;
 
-  if (enableMissionIsExternal) {
+  // VOLTO_LOCATIONS is a list of paths that should be handled by Volto.
+  // All other paths (meaning, everything that's not specifically set in this
+  // variable) will be treated as an external path and the browser will fully
+  // load the link as a separate document, and it will load from Plone 4
+  const voltoLocations = (env.RAZZLE_VOLTO_LOCATIONS || '')
+    .split(';')
+    .map((s) => s.trim().replaceAll('/', '\\/'))
+    .filter((s) => !!s);
+
+  if (voltoLocations.length) {
+    const voltoLocationsRegex =
+      '^' + voltoLocations.map(pathToNegRegex).join('') + '.*$';
     config.settings.externalRoutes = [
       ...(config.settings.externalRoutes || []),
       {
         match: {
-          path: notInEnMission,
+          path: new RegExp(voltoLocationsRegex),
           exact: false,
           strict: false,
         },
