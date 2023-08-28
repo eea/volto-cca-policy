@@ -28,6 +28,8 @@ const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
 const pathToNegRegex = (p) => `(?!(${p}))`;
 
+const restrictedBlocks = ['countryFlag'];
+
 const applyConfig = (config) => {
   const env = getEnv();
 
@@ -173,6 +175,13 @@ const applyConfig = (config) => {
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
   }
+
+  // Disable blocks
+  restrictedBlocks.forEach((block) => {
+    if (config.blocks.blocksConfig[block]) {
+      config.blocks.blocksConfig[block].restricted = true;
+    }
+  });
 
   // Move blocks to Site group
   const move_to_site = [
