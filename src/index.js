@@ -26,20 +26,23 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
-const restrictedBlocks = ['countryFlag'];
+const pathToNegRegex = (p) => `(?!(${p}))`;
 
 const applyConfig = (config) => {
-  const notInEnMission = /^(?!(\/en\/mission)).*$/;
   const env = getEnv();
-  const isStaging = !!env.RAZZLE_IS_STAGING;
-  const enableMissionIsExternal = !isStaging && !__DEVELOPMENT__;
+  const voltoLocations = (env.RAZZLE_VOLTO_LOCATIONS || '')
+    .split(';')
+    .map((s) => s.trim().replaceAll('/', '\\/'))
+    .filter((s) => !!s);
 
-  if (enableMissionIsExternal) {
+  if (voltoLocations.length) {
+    const voltoLocationsRegex =
+      '^' + voltoLocations.map(pathToNegRegex).join('') + '.*$';
     config.settings.externalRoutes = [
       ...(config.settings.externalRoutes || []),
       {
         match: {
-          path: notInEnMission,
+          path: new RegExp(voltoLocationsRegex),
           exact: false,
           strict: false,
         },
@@ -165,13 +168,6 @@ const applyConfig = (config) => {
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
   }
-
-  // Disable blocks
-  restrictedBlocks.forEach((block) => {
-    if (config.blocks.blocksConfig[block]) {
-      config.blocks.blocksConfig[block].restricted = true;
-    }
-  });
 
   // Move blocks to Site group
   const move_to_site = [
