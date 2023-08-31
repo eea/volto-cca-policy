@@ -1,4 +1,6 @@
 import installMainSearch from './config';
+import installHealthSearch from './config-health';
+
 // import DatahubCardItem from './components/Result/DatahubCardItem';
 // import DatahubItemView from './components/ItemView/ItemView';
 //
@@ -16,7 +18,9 @@ import installMainSearch from './config';
 // }
 
 const applyConfig = (config) => {
-  config.settings.searchlib = installMainSearch(config.settings.searchlib);
+  config.settings.searchlib = installHealthSearch(
+    installMainSearch(config.settings.searchlib),
+  );
 
   return config;
 };
