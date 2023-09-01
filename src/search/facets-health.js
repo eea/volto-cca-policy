@@ -169,7 +169,7 @@ const facets = [
     optionsFilter: 'typesForClustersOptionsFilter',
   },
   {
-    field: 'health_impacts.keyword',
+    field: 'cca_health_impacts.keyword',
     factory: 'MultiTermFacet',
     label: 'Health impacts',
     showInFacetsList: true,

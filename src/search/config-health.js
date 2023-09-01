@@ -56,12 +56,6 @@ export default function installMainSearch(config) {
 
   const { ccaHealthSearch } = config.searchui;
 
-  // ccaHealthSearch.permanentFilters.push({
-  //   term: {
-  //     cluster_name: 'cca',
-  //   },
-  // });
-
   ccaHealthSearch.permanentFilters.push({
     term: {
       cca_include_in_search_observatory: 'true',
@@ -100,11 +94,8 @@ export default function installMainSearch(config) {
     {
       id: 'healthImpacts',
       title: 'Health Impacts',
-      facetField: 'health_impacts.keyword',
+      facetField: 'cca_health_impacts.keyword',
       sortOn: 'alpha',
-      // icon: {
-      //   family: 'Content types',
-      // },
       whitelist: [
         'Wildfires',
         'Air pollution and aero-allergens',
@@ -113,85 +104,12 @@ export default function installMainSearch(config) {
         'Heat',
       ],
     },
-
-    // {
-    //   id: 'language',
-    //   title: 'Languages',
-    //   facetField: 'language',
-    //   sortOn: 'custom',
-    //   sortOrder: 'asc',
-    // },
-    // {
-    //   id: 'website',
-    //   title: 'Websites',
-    //   facetField: 'cluster_name',
-    //   sortOn: 'count',
-    //   sortOrder: 'desc',
-    //   icon: {
-    //     family: 'Sources',
-    //     className: 'facet-option-icon',
-    //   },
-    // },
   ];
 
   if (typeof window !== 'undefined') {
     config.searchui.ccaHealthSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-  // console.log(config.searchui.ccaHealthSearch);
 
   return config;
 }
-
-// {
-//       id: 'cca_geographic_countries',
-//       title: 'Countries',
-//       facetField: 'cca_geographic_countries.keyword',
-//       // filterType: 'any:exact',
-//       sortOn: 'alpha',
-//       // maxPerSection: 100,
-//       whitelist: [
-//         'Austria',
-//         'Belgium',
-//         'Bulgaria',
-//         'Croatia',
-//         'Cyprus',
-//         'Czechia',
-//         'Denmark',
-//         'Estonia',
-//         'Finland',
-//         'France',
-//         'Germany',
-//         'Greece',
-//         'Hungary',
-//         'Iceland',
-//         'Ireland',
-//         'Italy',
-//         'Latvia',
-//         'Liechtenstein',
-//         'Lithuania',
-//         'Luxembourg',
-//         'Malta',
-//         'Netherlands',
-//         'Norway',
-//         'Poland',
-//         'Portugal',
-//         'Romania',
-//         'Slovakia',
-//         'Slovenia',
-//         'Spain',
-//         'Sweden',
-//         'Switzerland',
-//         'Türkiye',
-//         'Albania',
-//         'Bosnia and Herzegovina',
-//         'Kosovo',
-//         'Montenegro',
-//         'North Macedonia',
-//         'Serbia',
-//       ],
-//       icon: {
-//         family: 'CountryFlags',
-//         className: 'facet-option-icon',
-//       },
-//     },
