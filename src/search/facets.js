@@ -1181,6 +1181,18 @@ const facets = [
     sortOnCustomLabel: 'Alphabetical',
   },
   {
+    field: 'cca_key_type_measure.keyword',
+    factory: 'MultiTermFacet',
+    label: 'Key Type Measure',
+    showInFacetsList: true,
+    filterType: 'any',
+    isFilterable: false,
+    show: 10000,
+    isMulti: true,
+    sortOn: 'custom',
+    sortOnCustomLabel: 'Alphabetical',
+  },
+  {
     field: 'cca_funding_programme.keyword',
     factory: 'MultiTermFacet',
     label: 'Funding Programme',
