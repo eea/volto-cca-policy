@@ -50,6 +50,26 @@ export default function installMainSearch(config) {
       cluster_name: {
         cca: 'Climate-ADAPT',
       },
+      key_type_measure: {
+        C2: 'zzzzzzzzzzz C2',
+        E2: 'zzzzzzzzzzz E2',
+      },
+      key_type_measures: {
+        C2: 'zzzzzzzzzzz C2',
+        E2: 'zzzzzzzzzzz E2',
+      },
+      cca_key_type_measure: {
+        C2: 'zzzzzzzzzzz C2',
+        E2: 'zzzzzzzzzzz E2',
+      },
+      cca_key_type_measures: {
+        C2: 'zzzzzzzzzzz C2',
+        E2: 'zzzzzzzzzzz E2',
+      },
+      'Key Type Measure': {
+        C2: 'zzzzzzzzzzz C2',
+        E2: 'zzzzzzzzzzz E2',
+      },
     },
     runtime_mappings: build_runtime_mappings(clusters),
   };
@@ -172,7 +192,8 @@ export default function installMainSearch(config) {
     config.searchui.ccaSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-  // console.log(config.searchui.ccaSearch);
+
+  console.log(config.searchui.ccaSearch);
 
   return config;
 }
