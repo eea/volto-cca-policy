@@ -131,14 +131,6 @@ const GeocharsWidget = (props) => {
   );
   const [selectedCity, setSelectedCity] = useState('');
 
-  const geoElements = JSON.parse(value).geoElements;
-  const element = geoElements.element;
-  const countries = geoElements.countries;
-  const macroRegions = geoElements.macrotrans;
-  const bioRegions = geoElements.biotrans;
-  const subRegions = geoElements.subnational;
-  const city = geoElements.city;
-
   const DEFAULT_GEOCHARS = {
     geoElements: {
       element: 'GLOBAL',
@@ -149,6 +141,21 @@ const GeocharsWidget = (props) => {
       city: '',
     },
   };
+
+  let geoElements;
+
+  if (value !== null) {
+    geoElements = JSON.parse(value).geoElements;
+  } else {
+    geoElements = DEFAULT_GEOCHARS;
+  }
+
+  const element = geoElements.element;
+  const countries = geoElements.countries;
+  const macroRegions = geoElements.macrotrans;
+  const bioRegions = geoElements.biotrans;
+  const subRegions = geoElements.subnational;
+  const city = geoElements.city;
 
   const getJSON = () => {
     return JSON.parse(value);
