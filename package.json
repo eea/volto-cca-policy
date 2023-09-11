@@ -22,6 +22,7 @@
     "@eeacms/volto-widget-geolocation",
     "@eeacms/volto-widget-dataprovenance",
     "@eeacms/volto-accordion-block",
+    "@eeacms/volto-slate-label",
     "@eeacms/volto-eea-design-system",
     "@eeacms/volto-globalsearch"
   ],
@@ -30,6 +31,7 @@
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-openlayers-map": "*",
+    "@eeacms/volto-slate-label": "*",
     "@eeacms/volto-widget-dataprovenance": "*",
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",
@@ -41,9 +43,9 @@
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress-fail-fast": "^5.0.1",
-    "md5": "^2.3.0",
     "husky": "*",
-    "lint-staged": "*"
+    "lint-staged": "*",
+    "md5": "^2.3.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
