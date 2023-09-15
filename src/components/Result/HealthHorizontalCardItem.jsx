@@ -62,13 +62,16 @@ const HealthHorizontalCardItem = (props) => {
 
   const UniversalCard = registry.resolve['UniversalCard'].component;
 
+  const healthURL = (href) => {
+    return href.replace(/\/metadata\//, '/observatory/++aq++metadata/');
+  };
+
   const item = {
     '@id': result.href,
     title: (
       <>
-        <ExternalLink href={result.href} title={result.title}>
+        <ExternalLink href={healthURL(result.href)} title={result.title}>
           {result.title}
-          TODO CUSTOM
           {result.isNew && <Label className="new-item">New</Label>}
           {result.isExpired && (
             <Label className="archived-item">Archived</Label>
