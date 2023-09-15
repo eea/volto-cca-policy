@@ -14,6 +14,8 @@ import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 
+import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
+
 import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
@@ -269,6 +271,11 @@ const applyConfig = (config) => {
       rootPath: 'help/share-your-info',
     },
   ];
+
+  // Custom results
+  config.settings.searchlib.resolve.HealthHorizontalCardItem = {
+    component: HealthHorizontalCardItem,
+  };
 
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;

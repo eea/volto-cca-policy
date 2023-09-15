@@ -2,8 +2,8 @@ import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 
 import facets from './facets-health';
+import views from './views-health';
 
-// import views from './views';
 // import filters from './filters';
 // import vocabs from './vocabulary';
 
@@ -16,6 +16,7 @@ const getClientProxyAddress = () => {
 
 const ccaConfig = {
   title: 'ClimateAdapt Health',
+  ...views,
 };
 
 export const clusters = {
@@ -80,6 +81,7 @@ export default function installMainSearch(config) {
   });
 
   ccaHealthSearch.facets = facets;
+  // ccaHealthSearch.views = views;
 
   ccaHealthSearch.initialView.tilesLandingPageParams.sections = [
     {
