@@ -56,6 +56,11 @@ const GeolocationWidget = (props) => {
     setAddress(event.target.value);
   };
 
+  const defaultValue = {
+    latitude: 55.6761,
+    longitude: 12.5683,
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -101,9 +106,11 @@ const GeolocationWidget = (props) => {
         </div>
       </div>
       <MapContainer
-        key={`${value.latitude}_${value.longitude}`}
-        longitude={value.longitude}
-        latitude={value.latitude}
+        key={`${value?.latitude || defaultValue.latitude}_${
+          value?.longitude || defaultValue.longitude
+        }`}
+        longitude={value?.longitude || defaultValue.longitude}
+        latitude={value?.latitude || defaultValue.latitude}
         source={tileWMSSources[0]}
       />
       <div className="ui form">
@@ -112,14 +119,14 @@ const GeolocationWidget = (props) => {
             <Input
               type="number"
               placeholder="latitude"
-              value={value.latitude}
+              value={value?.latitude || defaultValue.latitude}
             />
           </div>
           <div className="field">
             <Input
               type="number"
               placeholder="longitude"
-              value={value.longitude}
+              value={value?.longitude || defaultValue.longitude}
             />
           </div>
         </div>
