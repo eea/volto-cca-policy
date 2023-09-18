@@ -110,7 +110,7 @@ const SelectCountries = (props) => {
           key={country.code}
           value={country.code}
           label={country.name}
-          checked={countries.includes(country.code)}
+          checked={countries?.includes(country.code) || false}
           onChange={handleSelect}
         />
       ))}
