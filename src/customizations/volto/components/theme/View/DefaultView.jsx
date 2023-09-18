@@ -69,7 +69,6 @@ const DefaultView = (props) => {
   let currentNavigation = config.settings.contextNavigationLocations.find(
     (element) => location.pathname.indexOf(element.rootPath) > -1,
   );
-  // console.log('CurrentNavigation', currentNavigation);
 
   const gridColumns =
     currentNavigation && currentNavigation?.columns
