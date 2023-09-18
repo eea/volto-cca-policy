@@ -1,0 +1,25 @@
+.styled-readMoreBlock {
+  display: flex;
+  margin: 1.5em 0;
+
+  &.right {
+    flex-direction: row-reverse;
+  }
+
+  button {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 18px !important;
+  }
+
+  i.icon {
+    font-size: 26px !important;
+  }
+}
+
+body.closed {
+  .panel-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent);
+  }
+}
