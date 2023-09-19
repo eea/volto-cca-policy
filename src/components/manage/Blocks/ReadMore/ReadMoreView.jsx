@@ -32,17 +32,12 @@ const ReadMoreView = (props) => {
       nodes.push(prev_elem);
       prev_elem = prev_elem.previousSibling;
     }
-
-    const filtered = Array.from(nodes)
-      .filter((element) => !element.matches('.eea.banner'))
-      .filter((element) => !element.matches('.panel-wrapper'));
-
-    filtered.forEach((e) => {
-      wrapper.appendChild(e);
-    });
-
     const section = document.getElementsByClassName('panel-wrapper');
     if (section.length > 0) return;
+
+    Array.from(nodes).forEach((e) => {
+      wrapper.appendChild(e);
+    });
 
     button.parentNode.insertBefore(wrapper, button);
     wrapper.append(...Array.from(wrapper.childNodes).reverse());
