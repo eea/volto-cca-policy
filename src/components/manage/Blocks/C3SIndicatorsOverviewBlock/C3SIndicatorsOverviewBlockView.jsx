@@ -5,10 +5,13 @@ export default function C3SIndicatorsOverviewBlockView(props) {
   const [pageDescription, setPageDescription] = React.useState('');
   const [indicators, setIndicators] = React.useState([]);
 
+  const category = props.data.category;
+
   const getIndicatorsData = () => {
-    // TODO fix url (use a selected category)
     const url =
-      '/++api++/en/knowledge/european-climate-data-explorer/health/@c3s_indicators_overview';
+      '/++api++/en/knowledge/european-climate-data-explorer/' +
+      category +
+      '/@c3s_indicators_overview';
 
     axios
       .get(url)
@@ -23,7 +26,7 @@ export default function C3SIndicatorsOverviewBlockView(props) {
 
   React.useEffect(() => {
     getIndicatorsData();
-  }, []);
+  });
 
   return (
     <div className="block c3sindicators-overview-block">
