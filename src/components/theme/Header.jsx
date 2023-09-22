@@ -73,7 +73,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
 
-  const isSubsite = subsite?.['@type'] === 'Subsite';
+  const isSubsite = ['Folder', 'Subsite'].indexOf(subsite?.['@type']) > -1;
 
   const isHomePageInverse = useSelector((state) => {
     const layout = state.content?.data?.layout;
