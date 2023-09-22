@@ -106,6 +106,12 @@ export default function installMainSearch(config) {
         'Heat',
       ],
     },
+    {
+      id: 'observatoryPartner',
+      title: 'Observatory partner',
+      facetField: 'cca_partner_contributors.keyword',
+      sortOn: 'alpha',
+    },
   ];
 
   if (typeof window !== 'undefined') {

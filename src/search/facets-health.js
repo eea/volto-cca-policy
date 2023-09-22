@@ -173,7 +173,7 @@ const facets = [
     sortOnCustomLabel: 'Alphabetical',
   },
   {
-    field: 'cca_origin_websites.keyword',
+    field: 'cca_partner_contributors.keyword',
     factory: 'MultiTermFacet',
     label: 'Observatory partner',
     showInFacetsList: true,

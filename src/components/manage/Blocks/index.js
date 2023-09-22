@@ -11,6 +11,8 @@ import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
 import installListing from './Listing';
 import installRAST from './RASTBlock';
+import installC3SIndicatorsOverviewBlock from './C3SIndicatorsOverviewBlock';
+import installReadMore from './ReadMore';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -18,6 +20,8 @@ export default function installBlocks(config) {
 
   return compose(
     installRAST,
+    installReadMore,
+    installC3SIndicatorsOverviewBlock,
     installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
