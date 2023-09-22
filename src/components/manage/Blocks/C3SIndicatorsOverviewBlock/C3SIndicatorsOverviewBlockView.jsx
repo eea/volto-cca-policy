@@ -31,7 +31,13 @@ export default function C3SIndicatorsOverviewBlockView(props) {
 
   return (
     <div className="block c3sindicators-overview-block">
-      <p>{pageDescription}</p>
+      <div
+        className="description"
+        dangerouslySetInnerHTML={{
+          __html: pageDescription,
+        }}
+      />
+
       {indicators ? (
         <ul>
           {indicators.map((item, index) => (
