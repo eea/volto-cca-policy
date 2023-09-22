@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { UniversalLink } from '@plone/volto/components';
 
 export default function C3SIndicatorsOverviewBlockView(props) {
   const [pageDescription, setPageDescription] = React.useState('');
@@ -35,7 +36,7 @@ export default function C3SIndicatorsOverviewBlockView(props) {
         <ul>
           {indicators.map((item, index) => (
             <li key={index}>
-              <a href={item.url}>{item.title}</a>
+              <UniversalLink href={item.url}>{item.title}</UniversalLink>
             </li>
           ))}
         </ul>
