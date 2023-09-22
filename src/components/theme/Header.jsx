@@ -20,6 +20,7 @@ import { usePrevious } from '@eeacms/volto-eea-design-system/helpers';
 import { find } from 'lodash';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
+import { toPublicURL } from '@plone/volto/helpers';
 
 import config from '@plone/volto/registry';
 import { compose } from 'recompose';
@@ -114,6 +115,11 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
       }
     }
   }, [token, dispatch, pathname, previousToken]);
+
+  const subsiteLogo = subsite?.subsite_logo
+    ? subsite.subsite_logo.scales?.preview?.download ||
+      toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
+    : null;
 
   return (
     <Header menuItems={items}>
@@ -238,7 +244,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               <>
                 {subsite.subsite_logo ? (
                   <Logo
-                    src={subsite.subsite_logo?.scales.preview.download}
+                    src={subsiteLogo}
                     title={subsite.title}
                     alt={subsite.title}
                     url={flattenToAppURL(subsite['@id'])}
