@@ -121,7 +121,7 @@ export const PublishedModifiedInfo = (props) => {
 export const DocumentsList = (props) => {
   const { content } = props;
   const files = content.cca_files;
-  if (files.length === 0) {
+  if (!files || files.length === 0) {
     return null;
   }
 
