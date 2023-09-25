@@ -310,5 +310,3 @@ const applyConfig = (config) => {
 };
 
 export default applyConfig;
-
-// ('emit("_all_"); def clusters_settings = [["name": "News", "values": ["News","Article"]],["name": "Publications", "values": ["Report","Indicator","Briefing","Topic page","Country fact sheet"]],["name": "Maps and charts", "values": ["Figure (chart/map)","Chart (interactive)","Infographic","Dashboard","Map (interactive)"]],["name": "Data", "values": ["Data set"]],["name": "Others", "values": ["Webpage","Organisation","FAQ","Video","Contract opportunity","Glossary term","Collection","File","Adaptation option","Guidance","Research and knowledge project","Information portal","Tool","Case study","External data reference","Publication reference"]]]; def vals = doc[\'objectProvides\']; def clusters = [\'All\']; for (val in vals) { for (cs in clusters_settings) { if (cs.values.contains(val)) { emit(cs.name) } } }');
