@@ -27,7 +27,8 @@ export default function C3SIndicatorsOverviewBlockView(props) {
 
   React.useEffect(() => {
     getIndicatorsData();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category]);
 
   return (
     <div className="block c3sindicators-overview-block">
