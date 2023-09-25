@@ -138,16 +138,6 @@ function AdaptationOptionView(props) {
 
               <h4>Adaptation Details</h4>
 
-              <div id={sectionID('Category')} className="section">
-                <h5 className="section-title">Category</h5>
-                {content.category
-                  .map((item) => item.token)
-                  .sort()
-                  .map((cat, index) => (
-                    <Fragment key={index}>{cat}</Fragment>
-                  ))}
-              </div>
-
               <div id={sectionID('IPCC categories')} className="section">
                 <h5 className="section-title">IPCC categories</h5>
                 {content.ipcc_category

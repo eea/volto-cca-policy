@@ -27,7 +27,7 @@ export default function C3SIndicatorsOverviewBlockView(props) {
 
   React.useEffect(() => {
     getIndicatorsData();
-  });
+  }, []);
 
   return (
     <div className="block c3sindicators-overview-block">
