@@ -260,27 +260,45 @@ body.view-viewview.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
 /* Mission: Latest news updates, Latest events */
 body.subsite-root.section-mission {
   div.columns-view {
-    div.block.listing.default {
+    div.block.listing.default,
+    div.block.listing.summary {
       div.items {
         div.listing-item {
-          h4 {
-            padding-left: 1.5em;
-            margin-bottom: 0.5em;
-
-            &:before {
-              position: absolute;
-              left: 0;
-              content: '\ea6c';
-              font-family: remixicon !important;
-              font-style: normal;
-              font-weight: normal;
-            }
-          }
-          padding-bottom: 0.5em;
           border: none;
           margin-bottom: 0px !important;
         }
+
+        .listing-body {
+          position: relative;
+          padding-left: 2em;
+
+          &:before {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            color: inherit;
+            content: '\ea6c';
+            font-family: remixicon !important;
+            font-size: 1.5em;
+          }
+        }
         margin-top: 1.5em;
+      }
+    }
+
+    div.block.listing.summary {
+      .u-item {
+        padding: 0;
+      }
+    }
+
+    div.block.listing.default {
+      div.listing-item {
+        padding-bottom: 0.5em;
+
+        h4 {
+          margin-bottom: 0.5em;
+        }
       }
     }
   }
