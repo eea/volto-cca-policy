@@ -320,7 +320,7 @@ body.subsite-root.section-mission {
 
     div.block.listing.summary {
       .u-item {
-        padding: 0;
+        padding: 0 0 0.8em 0;
       }
     }
 
