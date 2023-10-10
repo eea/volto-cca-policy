@@ -28,7 +28,7 @@ export function getFocusCountryNames() {
     'Slovenia',
     'Spain',
     'Sweden',
-    'United Kingdom',
+    // 'United Kingdom',
     'Liechtenstein',
     'Norway',
     'Switzerland',
@@ -283,6 +283,27 @@ function getCountryClass(country, countries, countries_metadata) {
   }
   const countryNoData = ['United Kingdom'];
   const discodata = countries_metadata[0][countryName][0];
+  let discodataKeys = Object.keys(discodata);
+  let discodataValues = [];
+  for (let i = 0; i < discodataKeys.length; i++) {
+    let key = discodataKeys[i];
+    if (
+      [
+        'nas_info',
+        'nap_info',
+        'sap_info',
+        'nas_mixed',
+        'nap_mixed',
+        'sap_mixed',
+      ].includes(key)
+    ) {
+      if (discodata[key].length) {
+        discodataValues.push(key);
+      }
+    }
+  }
+  // console.log(countryName, discodata);
+  console.log(window._selectedMapSection);
   if (window._selectedMapSection === 'overview') {
     let { nap_info, nas_info, sap_info, notreported } = discodata;
     const nasNapSapAdopted = nap_info && nas_info && sap_info;
@@ -293,44 +314,23 @@ function getCountryClass(country, countries, countries_metadata) {
     const onlyNapAdopted = nap_info && !nas_info && !sap_info;
     const noneAdopted = !(nap_info && nas_info && sap_info);
 
-    if (notreported) {
-      k += ' country-notreported';
-    } else if (nasNapSapAdopted) {
-      k += ' country-nasnapsap';
-    } else if (nasSapAdopted) {
-      k += ' country-nassap';
-    } else if (napSapAdopted) {
-      k += ' country-napsap';
-    } else if (nasNapAdopted) {
-      k += ' country-nasnap';
-    } else if (onlyNapAdopted) {
-      k += ' country-nap';
-    } else if (onlyNasAdopted) {
-      k += ' country-nas';
-    } else if (noneAdopted) {
-      k += ' country-none';
-    }
-  }
-
-  if (window._selectedMapSection === 'climate') {
-    let { cciva_info, notreported } = discodata;
-
-    if (notreported) {
-      k += ' country-notreported';
-    } else if (cciva_info) {
-      k += ' country-nasnap';
-    } else if (!cciva_info) {
-      k += ' country-none';
-    }
-
     if (countryNoData.indexOf(countryName) > -1) {
-      k += ' country-nodata';
+      k += '';
+    } else if (notreported) {
+      k += ' country-nas';
+    } else if (discodataValues.length) {
+      k += ' country-nasnap';
+    } else {
+      k += ' country-nodata2';
     }
   }
+
   if (window._selectedMapSection === 'portals') {
     let { focus_info, notreported } = discodata;
 
-    if (notreported) {
+    if (countryNoData.indexOf(countryName) > -1) {
+      k += '';
+    } else if (notreported) {
       k += ' country-notreported';
     } else if (
       ['both', 'hazard', 'adaptation', 'not_specified'].includes(focus_info)
@@ -338,10 +338,6 @@ function getCountryClass(country, countries, countries_metadata) {
       k += ' country-nasnap';
     } else {
       k += ' country-noportal';
-    }
-
-    if (countryNoData.indexOf(countryName) > -1) {
-      k += ' country-nodata';
     }
   }
   return k;
@@ -397,11 +393,18 @@ function showMapTooltip(d, countries_metadata, d3) {
   let content = info[0];
   const url = info[1];
 
-  const noDataReportedMsg =
+  let noDataReportedMsg =
     'No data reported through the reporting mechanism of the Governance Regulation. Last information is available <a href="' +
     url +
     '">here</a>';
   const coords = [d3.event.pageY, d3.event.pageX];
+  console.log(d.properties.SHRT_ENGL);
+  if (['Turkiye', 'Turkey'].indexOf(d.properties.SHRT_ENGL) >= 0) {
+    noDataReportedMsg =
+      'Data reported in 2021 through the reporting mechanism of the Governance Regulation. Information is available <a href="' +
+      url +
+      '">here</a>';
+  }
 
   if (window._selectedMapSection === 'overview') {
     let napInfo, nasInfo, sapInfo;
@@ -427,7 +430,7 @@ function showMapTooltip(d, countries_metadata, d3) {
     if (content['notreported']) {
       content = noDataReportedMsg;
     } else {
-      content = nasInfo + napInfo + sapInfo || 'NAS and NAP not reported';
+      content = content['mixed'] || 'NAS and NAP not reported';
     }
   }
 

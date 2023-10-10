@@ -18,16 +18,6 @@ export default function Filter(props) {
         <input
           type="radio"
           name="country-map-section"
-          value="Climate change impact and vulnerability assessments"
-          onChange={(e) => {
-            setThematicMapMode(e.target.value);
-          }}
-        />
-        Climate change impact and vulnerability assessments
-        <br />
-        <input
-          type="radio"
-          name="country-map-section"
           value="Adaptation portals and platforms"
           onChange={(e) => {
             setThematicMapMode(e.target.value);
@@ -35,28 +25,6 @@ export default function Filter(props) {
         />
         Adaptation portals and platforms
       </div>
-
-      {thematicMapMode ===
-        'Climate change impact and vulnerability assessments' && (
-        <div className="legend climate-legend">
-          <div className="legend-el">
-            <span className="content-available legend-box"></span>
-            <p className="legend-text">One or more assessments reported</p>
-          </div>
-          <div className="legend-el">
-            <span className="country-none legend-box"></span>
-            <p className="legend-text">No assessments reported</p>
-          </div>
-          <div className="legend-el">
-            <span className="country-outside legend-box"></span>
-            <p className="legend-text">Outside EEA coverage</p>
-          </div>
-          <div className="legend-el">
-            <span className="country-notreported legend-box"></span>
-            <p className="legend-text">No data reported in 2021</p>
-          </div>
-        </div>
-      )}
 
       {thematicMapMode === 'Adaptation portals and platforms' && (
         <div className="legend portals-legend">
@@ -67,16 +35,16 @@ export default function Filter(props) {
             </p>
           </div>
           <div className="legend-el">
-            <span className="country-noportal legend-box"></span>
+            <span className="country-nodata2 legend-box"></span>
             <p className="legend-text">No portal or platform reported</p>
           </div>
           <div className="legend-el">
-            <span className="country-outside legend-box"></span>
-            <p className="legend-text">Outside EEA coverage</p>
+            <span className="country-nas legend-box"></span>
+            <p className="legend-text">No data reported in 2023</p>
           </div>
           <div className="legend-el">
-            <span className="country-notreported legend-box"></span>
-            <p className="legend-text">No data reported in 2021</p>
+            <span className="country-none legend-box"></span>
+            <p className="legend-text">Outside EEA coverage</p>
           </div>
         </div>
       )}
@@ -85,27 +53,24 @@ export default function Filter(props) {
         <div className="legend nasnap-legend">
           <div className="legend-el">
             <span className="country-nasnap legend-box"></span>
-            <p className="legend-text">NAS and NAP reported as adopted</p>
+            <p className="legend-text">
+              National adaptation policy reported in 2023
+            </p>
           </div>
           <div className="legend-el">
-            <span className="country-nap legend-box"></span>
-            <p className="legend-text">Only NAP reported as adopted</p>
+            <span className="country-nodata2 legend-box"></span>
+            <p className="legend-text">
+              National adaptation policy not reported beyond mandatory reporting
+              in 2023
+            </p>
           </div>
           <div className="legend-el">
             <span className="country-nas legend-box"></span>
-            <p className="legend-text">Only NAS reported as adopted</p>
-          </div>
-          <div className="legend-el">
-            <span className="country-sap legend-box"></span>
-            <p className="legend-text">SAP reported as adopted</p>
+            <p className="legend-text">No data reported in 2023</p>
           </div>
           <div className="legend-el">
             <span className="country-none legend-box"></span>
             <p className="legend-text">Outside EEA coverage</p>
-          </div>
-          <div className="legend-el">
-            <span className="country-notreported legend-box"></span>
-            <p className="legend-text">No data reported in 2021</p>
           </div>
         </div>
       )}

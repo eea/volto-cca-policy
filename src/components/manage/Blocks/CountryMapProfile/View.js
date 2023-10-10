@@ -5,7 +5,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Grid } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from './withResponsiveContainer.js';
+// import withResponsiveContainer from './withResponsiveContainer.js';
 import { addAppURL } from '@plone/volto/helpers';
 import {
   getFocusCountriesFeature,
@@ -29,10 +29,8 @@ const withCountriesData = (WrappedComponent) => {
         import('./euro-countries-simplified.js').then((mod) => {
           const _cpath = mod.default;
           _cpath.features = _cpath.features.map(function (c) {
-            //console.log(c);
             var name = c.properties.SHRT_ENGL;
             if (!name) {
-              // console.log('No flag for', c.properties);
               return c;
             } else if (name === 'Czechia') {
               name = 'Czech Republic';
@@ -41,7 +39,6 @@ const withCountriesData = (WrappedComponent) => {
             flags.forEach(function (f) {
               if (f.indexOf(cname) > -1) {
                 c.url = f;
-                //console.log(c.url);
               }
             });
             return c;
@@ -60,7 +57,7 @@ const withCountriesData = (WrappedComponent) => {
 const CountryMapObservatoryView = (props) => {
   const svgRef = useRef(null);
   const { d3, d3Geo, size, cpath } = props;
-  const { height, width } = size;
+  // const { height, width } = size;
   const [thematicMapMode, setThematicMapMode] = React.useState(
     'National adaption policy',
   );
@@ -76,22 +73,24 @@ const CountryMapObservatoryView = (props) => {
     //const parentDiv = document.getElementById('page-document');
     let dimensions = {
       //width: parentDiv.offsetWidth,
-      width,
-      height,
-      margins: 50,
+      width: 0,
+      height: 0,
+      margins: 20,
     };
+    document.querySelectorAll('.display-map').forEach(function (element) {
+      dimensions.width = element.clientWidth;
+      dimensions.height = element.clientHeight;
+    });
+    dimensions.containerWidth = dimensions.width - dimensions.margins;
+    dimensions.containerHeight = dimensions.height - dimensions.margins;
 
-    dimensions.containerWidth = dimensions.width - dimensions.margins * 2;
-    dimensions.containerHeight = dimensions.height - dimensions.margins * 2;
-
-    //const d3 = loadable.lib(() => import('d3'));
     // SELECTIONS
     const svg = d3
       .select(svgRef.current)
       .attr('id', 'country_map')
       //.classed("line-chart", true)
-      .attr('width', dimensions.width)
-      .attr('height', dimensions.height);
+      .attr('width', dimensions.containerWidth)
+      .attr('height', dimensions.containerHeight);
 
     window.countrySettings = cpath.features;
 
@@ -118,8 +117,8 @@ const CountryMapObservatoryView = (props) => {
   }, [
     props.Data,
     d3,
-    width,
-    height,
+    // width,
+    // height,
     cpath,
     d3Geo,
     thematicMapMode,
@@ -129,7 +128,12 @@ const CountryMapObservatoryView = (props) => {
   return (
     <div>
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column
+          mobile={9}
+          tablet={9}
+          computer={10}
+          className="col-left display-map"
+        >
           <svg ref={svgRef} />
         </Grid.Column>
         <Grid.Column
@@ -152,6 +156,6 @@ const CountryMapObservatoryView = (props) => {
 export default compose(
   clientOnly,
   injectLazyLibs(['d3', 'd3Geo']),
-  withResponsiveContainer,
+  // withResponsiveContainer,
   withCountriesData,
 )(CountryMapObservatoryView);
