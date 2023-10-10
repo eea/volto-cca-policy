@@ -8,8 +8,8 @@ export default function Filter(props) {
           type="radio"
           name="country-map-section"
           value="National adaption policy"
-          checked="checked"
-          onChange={(e) => {
+          checked={thematicMapMode === 'National adaption policy'}
+          onClick={(e) => {
             setThematicMapMode(e.target.value);
           }}
         />
@@ -19,7 +19,8 @@ export default function Filter(props) {
           type="radio"
           name="country-map-section"
           value="Adaptation portals and platforms"
-          onChange={(e) => {
+          checked={thematicMapMode === 'Adaptation portals and platforms'}
+          onClick={(e) => {
             setThematicMapMode(e.target.value);
           }}
         />
