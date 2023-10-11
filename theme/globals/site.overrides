@@ -286,11 +286,16 @@ body.subsite-root.section-mission {
     div.block.listing.summary {
       .u-item {
         padding-top: 0;
+        padding-bottom: 20px;
         border: none;
       }
 
       .listing-header {
         font-size: @h4;
+      }
+
+      .listing-body.has-icon i.icon {
+        margin-top: 1px;
       }
     }
 
@@ -304,6 +309,10 @@ body.subsite-root.section-mission {
       }
     }
   }
+}
+
+.listing-body-dates:empty {
+  margin-bottom: 0;
 }
 
 body.subsite {
