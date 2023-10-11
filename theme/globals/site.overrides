@@ -292,12 +292,10 @@ body.view-viewview.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
 /* Mission: Latest news updates, Latest events */
 body.subsite-root.section-mission {
   div.columns-view {
-    div.block.listing.default,
-    div.block.listing.summary {
+    div.block.listing.default {
       div.items {
         div.listing-item {
           border: none;
-          margin-bottom: 0px !important;
         }
 
         .listing-body {
@@ -314,13 +312,22 @@ body.subsite-root.section-mission {
             font-size: 1.5em;
           }
         }
-        margin-top: 1.5em;
       }
     }
 
     div.block.listing.summary {
       .u-item {
-        padding: 0 0 0.8em 0;
+        padding-top: 0;
+        padding-bottom: 20px;
+        border: none;
+      }
+
+      .listing-header {
+        font-size: @h4;
+      }
+
+      .listing-body.has-icon i.icon {
+        margin-top: 1px;
       }
     }
 
@@ -334,6 +341,10 @@ body.subsite-root.section-mission {
       }
     }
   }
+}
+
+.listing-body-dates:empty {
+  margin-bottom: 0;
 }
 
 body.subsite {
