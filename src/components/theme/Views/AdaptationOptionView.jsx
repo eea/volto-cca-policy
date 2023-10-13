@@ -136,31 +136,35 @@ function AdaptationOptionView(props) {
 
               <SectionsMenu sections={usedSections} />
 
-              <h4>Adaptation Details</h4>
+              {content?.ipcc_category?.length > 0 && (
+                <Fragment>
+                  <h4>Adaptation Details</h4>
 
-              <div id={sectionID('IPCC categories')} className="section">
-                <h5 className="section-title">IPCC categories</h5>
-                {content.ipcc_category
-                  .map((item) => item.title)
-                  .sort()
-                  .join(', ')}
-                {usedSections.length > 0 && (
-                  <>
-                    {usedSections.map((data, index) => (
-                      <Fragment key={index}>
-                        <div id={sectionID(data.title)} className="section">
-                          <h5 className="section-title">{data.title}</h5>
-                          <HTMLField
-                            value={content[data.field]}
-                            className="long_description"
-                          />
-                        </div>
-                      </Fragment>
-                    ))}
-                  </>
-                )}
-              </div>
-              <hr />
+                  <div id={sectionID('IPCC categories')} className="section">
+                    <h5 className="section-title">IPCC categories</h5>
+                    {content.ipcc_category
+                      .map((item) => item.title)
+                      .sort()
+                      .join(', ')}
+                    {usedSections.length > 0 && (
+                      <>
+                        {usedSections.map((data, index) => (
+                          <Fragment key={index}>
+                            <div id={sectionID(data.title)} className="section">
+                              <h5 className="section-title">{data.title}</h5>
+                              <HTMLField
+                                value={content[data.field]}
+                                className="long_description"
+                              />
+                            </div>
+                          </Fragment>
+                        ))}
+                      </>
+                    )}
+                  </div>
+                  <hr />
+                </Fragment>
+              )}
 
               <h4>Reference information</h4>
 
