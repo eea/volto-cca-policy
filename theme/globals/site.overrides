@@ -26,8 +26,8 @@ p.has--clear--both:empty {
 // Add icon for external links
 #page-document {
   p {
-    a[rel='noopener noreferrer']:not(.ui.button),
-    a[target='_blank']:not(.ui.button) {
+    a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
+    a[target='_blank']:not(.ui.button):not(:empty) {
       &:before {
         position: relative;
         top: 2px;
