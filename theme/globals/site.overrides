@@ -25,31 +25,33 @@ p.has--clear--both:empty {
 
 // Add icon for external links
 #page-document {
-  a[rel='noopener noreferrer']:not(.ui.button),
-  a[target='_blank']:not(.ui.button) {
-    &:before {
-      position: relative;
-      top: 2px;
-      margin-right: 3px;
-      color: inherit;
-      content: '\ecaf';
-      font-family: remixicon;
-      font-size: 1em;
-    }
-
-    &:visited {
+  p {
+    a[rel='noopener noreferrer']:not(.ui.button),
+    a[target='_blank']:not(.ui.button) {
       &:before {
-        // fix visited link icon color
-        // doesn't work with color: inherit
-        color: @linkVisitedColor;
+        position: relative;
+        top: 2px;
+        margin-right: 3px;
+        color: inherit;
+        content: '\ecaf';
+        font-family: remixicon;
+        font-size: 1em;
       }
-    }
 
-    &:active {
-      &:before {
-        // fix active link icon color
-        // doesn't work with color: inherit
-        color: @linkActiveColor;
+      &:visited {
+        &:before {
+          // fix visited link icon color
+          // doesn't work with color: inherit
+          color: @linkVisitedColor;
+        }
+      }
+
+      &:active {
+        &:before {
+          // fix active link icon color
+          // doesn't work with color: inherit
+          color: @linkActiveColor;
+        }
       }
     }
   }
@@ -296,6 +298,7 @@ body.subsite-root.section-mission {
       div.items {
         div.listing-item {
           border: none;
+          margin: 0;
         }
 
         .listing-body {
