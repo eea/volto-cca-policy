@@ -29,7 +29,13 @@ export function getFeatures(cases) {
 
 export function filterCases(cases, activeFilters) {
   const data = cases.filter((_case) => {
-    if (activeFilters.sectors.length === 0) return _case;
+    if (
+      activeFilters.sectors.length +
+        activeFilters.impacts.length +
+        activeFilters.measures.length ===
+      0
+    )
+      return _case;
 
     let flag = false;
 
@@ -39,6 +45,10 @@ export function filterCases(cases, activeFilters) {
 
     activeFilters.impacts.forEach((filter) => {
       if (_case.properties.impacts.includes(',' + filter + ',')) flag = true;
+    });
+
+    activeFilters.measures.forEach((filter) => {
+      if (_case.properties.ktms.includes(',' + filter + ',')) flag = true;
     });
 
     return flag ? _case : false;

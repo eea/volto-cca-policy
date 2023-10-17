@@ -12,7 +12,7 @@ export function useCases(url) {
       .set('accept', 'json')
       .then((resp) => {
         const res = JSON.parse(resp.text);
-        setCases(res.features);
+        setCases({ features: res.features, filters: res.filters });
       });
   }, []);
 
