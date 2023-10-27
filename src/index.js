@@ -231,6 +231,8 @@ const applyConfig = (config) => {
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
   };
 
+  config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
+
   config.settings.contextNavigationLocations = [
     // {
     //   title: 'Regional Adaptation Support Tool',
