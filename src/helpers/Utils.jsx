@@ -124,8 +124,15 @@ export const DocumentsList = (props) => {
   if (!files || files.length === 0) {
     return null;
   }
+  if (!content.hasOwnProperty('show_counter')) {
+    content.show_counter = true;
+  }
 
   let section_title = 'Documents';
+
+  if (content['section_title']) {
+    section_title = content['section_title'];
+  }
 
   if (content['@type'] === 'eea.climateadapt.casestudy') {
     section_title = 'Case Studies Documents';
@@ -137,7 +144,7 @@ export const DocumentsList = (props) => {
   return (
     <>
       <h5>
-        {section_title} ({files.length})
+        {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
       <ul className="documents-list">
         {files.map((file, index) => (
