@@ -24,11 +24,13 @@
     "@eeacms/volto-accordion-block",
     "@eeacms/volto-slate-label",
     "@eeacms/volto-eea-design-system",
+    "@eeacms/volto-eea-website-theme",
     "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "*",
     "@eeacms/volto-eea-design-system": "*",
+    "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-slate-label": "*",
