@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  DocumentsList,
-  HTMLField,
-  ContentMetadata,
-  LinksList,
-  PublishedModifiedInfo,
-  ShareInfo,
-} from '@eeacms/volto-cca-policy/helpers';
+import { DocumentsList, HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
