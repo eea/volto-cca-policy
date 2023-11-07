@@ -7,19 +7,27 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 function CcaEventView(props) {
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig.title.view;
   const { content } = props;
   // cca_files: [content.agenda_file]}
   if (content.agenda_file) {
     content.agenda_file['url'] = content.agenda_file['download'];
+    content.agenda_file['title'] = content.agenda_file['filename'];
   }
   if (content.background_documents) {
     content.background_documents['url'] =
       content.background_documents['download'];
+    content.background_documents['title'] =
+      content.background_documents['filename'];
   }
-  console.log(content.agenda_file);
   const agenda_files = {
     section_title: 'Download the detailed agenda',
     cca_files: [content.agenda_file],
@@ -30,35 +38,15 @@ function CcaEventView(props) {
     cca_files: [content.background_documents],
     show_counter: false,
   };
+
   return (
     <div className="cca-event-view">
       {content?.image !== null && (
-        <div className="eea hero-block">
-          <div className="hero-block-image-wrapper full-width">
-            <div
-              className="hero-block-image has--bg--center"
-              style={{
-                backgroundImage:
-                  `url("` +
-                  content.image['scales']['panoramic']['download'] +
-                  `")`,
-              }}
-              en=""
-              about=""
-              test-001=""
-            ></div>
-            <div className="hero-block-image-overlay dark-overlay-4"></div>
-          </div>
-          <div className="hero-block-inner-wrapper d-flex flex-items-center">
-            <div className="hero-block-body">
-              <div className="hero-block-text color-fg-white text-left">
-                <div className="">
-                  <h2>{content.title}</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <TitleBlockView
+          {...props}
+          data={{ info: [{ description: '' }] }}
+          metadata={content}
+        />
       )}
       <div className="ui container">
         <Grid columns="12">
@@ -69,8 +57,12 @@ function CcaEventView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Climate adapt event</div>
-              <h1>{content.title}</h1>
+              {content?.image === null && (
+                <>
+                  <div className="ui label">Climate adapt event</div>
+                  <h1>{content.title}</h1>
+                </>
+              )}
               <HTMLField value={content.text} className="long_description" />
               <h2>Agenda and supporting documents</h2>
               <HTMLField value={content.agenda} className="long_description" />
@@ -101,9 +93,12 @@ function CcaEventView(props) {
               className="col-right"
             >
               <h3>When</h3>
-              <p>{content.start}</p>
-              <p>{content.end}</p>
-              <p>{content.timezone}</p>
+              <When
+                start={content.start}
+                end={content.end}
+                whole_day={content.whole_day}
+                open_end={content.open_end}
+              />
               {content?.location !== null && (
                 <>
                   <h3>Where</h3>
