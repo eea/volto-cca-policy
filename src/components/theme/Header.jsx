@@ -239,7 +239,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         inverted={isHomePageInverse ? true : false}
         transparency={isHomePageInverse ? true : false}
         logo={
-          <div className={isSubsite && 'logo-wrapper'}>
+          <div className={isSubsite ? 'logo-wrapper' : ''}>
             {subsite?.title ? (
               <>
                 {subsite.subsite_logo ? (
