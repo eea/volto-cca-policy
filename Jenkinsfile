@@ -8,7 +8,7 @@ pipeline {
     NAMESPACE = "@eeacms"
     SONARQUBE_TAGS = "volto-cca-policy,climate-adapt.eea.europa.eu"
     DEPENDENCIES = ""
-    BACKEND_PROFILES = "eea.kitkat:testing,plone.app.multilingual"
+    BACKEND_PROFILES = "eea.kitkat:testing plone.app.multilingual"
     BACKEND_ADDONS = "plone.app.multilingual"
     VOLTO = "16.24.0"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
