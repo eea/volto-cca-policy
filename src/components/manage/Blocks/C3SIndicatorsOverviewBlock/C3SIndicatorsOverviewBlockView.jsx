@@ -12,7 +12,7 @@ export default function C3SIndicatorsOverviewBlockView(props) {
     const url =
       '/++api++/en/knowledge/european-climate-data-explorer/' +
       category +
-      '/@c3s_indicators_overview';
+      '/@c3s_indicators_overview_api';
 
     axios
       .get(url)

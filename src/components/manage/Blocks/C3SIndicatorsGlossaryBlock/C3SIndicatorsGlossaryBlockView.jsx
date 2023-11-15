@@ -6,7 +6,7 @@ export default function C3SIndicatorsGlossaryBlockView(props) {
 
   const getIndicatorsData = () => {
     const url =
-      '/++api++/en/knowledge/european-climate-data-explorer/@c3s_indicators_glossary_table';
+      '/++api++/en/knowledge/european-climate-data-explorer/@c3s_indicators_glossary_table_api';
 
     axios
       .get(url)

@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
+import CcaEventView from './components/theme/Views/CcaEventView';
 import GuidanceView from './components/theme/Views/GuidanceView';
 import IndicatorView from './components/theme/Views/IndicatorView';
 import InformationPortalView from './components/theme/Views/InformationPortalView';
@@ -220,6 +221,7 @@ const applyConfig = (config) => {
     ...config.views.contentTypesViews,
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'eea.climateadapt.casestudy': CaseStudyView,
+    'cca-event': CcaEventView,
     'eea.climateadapt.guidancedocument': GuidanceView,
     'eea.climateadapt.indicator': IndicatorView,
     'eea.climateadapt.informationportal': InformationPortalView,
@@ -230,6 +232,8 @@ const applyConfig = (config) => {
     'eea.climateadapt.video': VideoView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
   };
+
+  config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
 
   config.settings.contextNavigationLocations = [
     // {
