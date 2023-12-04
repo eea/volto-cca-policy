@@ -30,14 +30,6 @@ const RASTAccordionContent = (props) => {
                       <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
                         {item.title}
                       </Link>
-                      {/* <a
-                        className="item-link"
-                        href={item.href}
-                        target="_self"
-                        // rel="noreferrer"
-                      >
-                        {item.title}
-                      </a> */}
                     </div>
                   </List.Content>
                 </List.Item>

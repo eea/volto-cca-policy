@@ -11,7 +11,7 @@ const RASTAccordion = (props) => {
     setActiveIndex(index);
   };
   const handleClick = (e, titleProps) => {
-    const { index, id, item } = titleProps;
+    const { index } = titleProps;
 
     const newIndex =
       activeIndex.indexOf(index) === -1
