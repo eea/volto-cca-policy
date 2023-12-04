@@ -20,7 +20,6 @@ export function ContextNavigationComponent(props) {
   let activeMenu = null;
 
   const location = useLocation();
-  location.pathname;
   for (let i = 0; i < items.length; i++) {
     let itemUrl = '/' + items[i].href.split('/').slice(3).join('/');
     items[i].is_active = false;
