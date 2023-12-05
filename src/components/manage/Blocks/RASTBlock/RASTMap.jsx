@@ -21,13 +21,6 @@ export default function RASTMap(props) {
   const { path, pathname, activeMenu } = props;
   const currentPath = path || pathname;
 
-  const fields = ['step_1', 'step_2', 'step_3', 'step_4', 'step_5', 'step_6'];
-
-  const getItem = (count) => {
-    const key = `step_${count}`;
-    const item = fields[key]?.[0];
-    return item;
-  };
   const items = props.items;
 
   return (
