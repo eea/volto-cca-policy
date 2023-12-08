@@ -8,7 +8,7 @@ function CcaEventView(props) {
   const {
     blocks: { blocksConfig },
   } = config;
-  const TitleBlockView = blocksConfig.title.view;
+  const TitleBlockView = blocksConfig?.title?.view;
   const { content } = props;
   // cca_files: [content.agenda_file]}
   if (content.agenda_file) {

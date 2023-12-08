@@ -113,7 +113,7 @@ function AdaptationOptionView(props) {
   const { content } = props;
 
   const usedSections = dataDisplay.filter((data) =>
-    content.hasOwnProperty(data.field),
+    content?.hasOwnProperty(data.field),
   );
 
   return (

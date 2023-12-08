@@ -16,7 +16,7 @@ const PrimaryPhoto = (props) => {
   return content.primary_photo !== null ? (
     <div className="case-studies-review-image-wrapper">
       <img
-        src={content.primary_photo.scales.mini.download}
+        src={content?.primary_photo?.scales?.mini?.download}
         alt={content.title}
       />
       <p>{content.primary_photo_copyright}</p>

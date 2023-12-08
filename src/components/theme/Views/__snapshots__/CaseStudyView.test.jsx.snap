@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaseStudyView should render the component 1`] = `
+<div
+  className="case-study-view"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <div
+            className="ui label"
+          >
+            Case studies
+          </div>
+          <h1>
+            CaseStudyView
+          </h1>
+          <div
+            className="case-studies-review-image-wrapper"
+          >
+            <img
+              alt="CaseStudyView"
+            />
+            <p />
+          </div>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <hr />
+          <div
+            className="published-modified-info"
+          >
+            <p>
+              <span>
+                <strong>
+                  Published in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+              <span>
+                   -   
+              </span>
+              <span>
+                <strong>
+                  Last Modified in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+            </p>
+          </div>
+          <hr />
+          <p>
+            Please contact us for any other enquiry on this Case Study or to share a new Case Study (email
+             
+            <span
+              className="link-mailto"
+            >
+              <a
+                href="mailto: climate.adapt@eea.europa.eu"
+                rel="noreferrer"
+                target="_blank"
+              >
+                climate.adapt@eea.europa.eu
+              </a>
+            </span>
+            )
+          </p>
+          <div
+            className="share-info"
+          >
+            <a
+              href="/help/share-your-info"
+            >
+              <button
+                className="ui button primary icon labeled"
+              >
+                Share your information
+                <i
+                  aria-hidden="true"
+                  className="arrow right icon"
+                />
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <div
+            style={Object {}}
+          >
+            <h5>
+              Case Study Illustrations
+            </h5>
+            <ul
+              className="gallery-placeholder"
+            />
+            <div
+              className="content-metadata"
+            >
+              <h5>
+                Geographic characterisation:
+              </h5>
+              <div
+                className="geochar"
+              >
+                <p>
+                  Global
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
