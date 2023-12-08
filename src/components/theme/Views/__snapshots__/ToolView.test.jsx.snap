@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolView should render the component 1`] = `
+<div
+  className="tool-view"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <div
+            className="ui label"
+          >
+            Tools
+          </div>
+          <h1>
+            My ToolView
+          </h1>
+          <h4>
+            Description
+          </h4>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <hr />
+          <h4>
+            Reference information
+          </h4>
+          <div
+            className="published-modified-info"
+          >
+            <p>
+              <span>
+                <strong>
+                  Published in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+              <span>
+                   -   
+              </span>
+              <span>
+                <strong>
+                  Last Modified in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <div
+            style={Object {}}
+          >
+            <div
+              className="content-metadata"
+            >
+              <h5>
+                Geographic characterisation:
+              </h5>
+              <div
+                className="geochar"
+              >
+                <p>
+                  Global
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
