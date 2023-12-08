@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchAceContentView should render the component 1`] = `
+<div
+  className="block search-acecontent-block"
+>
+  <div
+    className="ui list"
+    role="list"
+  >
+    <div
+      className="item"
+      onClick={[Function]}
+      role="listitem"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Publications and reports
+         (
+        154
+        )
+      </a>
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+      role="listitem"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Information portals
+         (
+        57
+        )
+      </a>
+    </div>
+  </div>
+  <a
+    className="ui button icon left labeled primary"
+    href="/en/help/share-your-info"
+    onClick={[Function]}
+  >
+    <div>
+      Icon
+    </div>
+    Share your information
+  </a>
+</div>
+`;

@@ -140,7 +140,6 @@
   }
 
   .country-noportal {
-    //background-color: #999;
     background-color: #c0c0c0;
   }
 }
@@ -156,7 +155,6 @@
 }
 
 .country-noportal path {
-  //fill: #999;
   cursor: pointer;
   fill: #e0e0e0;
 }
