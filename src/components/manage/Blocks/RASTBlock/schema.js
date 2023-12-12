@@ -1,4 +1,4 @@
-const fields = ['top_level'];
+const fields = ['root_path'];
 
 export default {
   title: 'RAST',
@@ -12,10 +12,11 @@ export default {
   ],
 
   properties: {
-    top_level: {
-      title: 'Top Level',
+    root_path: {
+      title: 'Rooth path',
       type: 'string',
-      description: 'Ex 2 for /en/about/rast',
+      description:
+        'Ex: /en/knowledge-and-data/regional-adaptation-support-tool',
       required: true,
       noValueOption: false,
     },
