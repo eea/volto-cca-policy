@@ -41,4 +41,5 @@ export function ContextNavigationComponent(props) {
   );
 }
 
-export default compose(withContentNavigation)(ContextNavigationComponent);
+// withContentNavigation
+export default compose()(ContextNavigationComponent);

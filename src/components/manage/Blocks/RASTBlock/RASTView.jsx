@@ -10,11 +10,12 @@ export default function RASTView(props) {
     root_path = '/';
   }
   top_level = (root_path.match(/\//g) || []).length - 1;
-  // const {items} = properties
+  const { items } = properties;
 
   return (
     <div className="block rast-block">
       <ContextNavigation
+        items={items}
         params={{
           // name: 'CurrentTitle',
           // includeTop: false,
