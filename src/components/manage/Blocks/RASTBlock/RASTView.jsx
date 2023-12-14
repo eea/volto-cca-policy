@@ -3,13 +3,14 @@ import './styles.less';
 import ContextNavigation from './ContextNavigation';
 
 export default function RASTView(props) {
-  const { data } = props;
+  const { data, properties } = props;
   let root_path = data?.root_path;
   let top_level = 1;
   if (typeof root_path === 'undefined') {
     root_path = '/';
   }
   top_level = (root_path.match(/\//g) || []).length - 1;
+  // const {items} = properties
 
   return (
     <div className="block rast-block">
