@@ -1,6 +1,6 @@
 import { mergeConfig } from '@eeacms/search';
 
-import facets from './facets-mission-stories';
+import facets from './facets-stories';
 
 const getClientProxyAddress = () => {
   const url = new URL(window.location);
