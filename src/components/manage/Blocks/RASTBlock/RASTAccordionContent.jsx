@@ -8,7 +8,7 @@ import { getContent } from '@plone/volto/actions';
 // import useChildren from './RASTView';
 
 const RASTAccordionContent = (props) => {
-  const { main, url } = props;
+  const { main } = props;
   const dispatch = useDispatch();
   const location = main.url;
   let items = [];
