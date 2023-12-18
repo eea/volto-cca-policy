@@ -11,12 +11,12 @@ const mockStore = configureStore();
 describe('RASTAccordion', () => {
   it('should render the component', () => {
     const data = {
-      datasets: [
+      items: [
         {
-          id: 'my-dataset',
+          id: 'my-item',
           title: 'Hello',
-          '@id': '/my-dataset',
-          href: '/my-dataset-href',
+          '@id': '/my-item',
+          href: '/my-item-href',
         },
       ],
       activeMenu: 1,
