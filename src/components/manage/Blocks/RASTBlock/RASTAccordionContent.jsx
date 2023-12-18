@@ -19,7 +19,7 @@ const RASTAccordionContent = (props) => {
   }, [location, dispatch]);
 
   items = useSelector(
-    (state) => state.content.subrequests?.[location]?.data?.items || [],
+    (state) => state.content?.subrequests?.[location]?.data?.items || [],
   );
   // const items = useChildren(location);
 
