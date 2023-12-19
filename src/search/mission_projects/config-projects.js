@@ -1,17 +1,11 @@
 import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
+import { getClientProxyAddress } from './../utils';
 
 import facets from './facets-projects';
 
-const getClientProxyAddress = () => {
-  const url = new URL(window.location);
-  url.pathname = '';
-  url.search = '';
-  return url.toString();
-};
-
-const ccaConfig = {
-  title: 'ClimateAdapt Health',
+const missionProjectsConfig = {
+  title: 'Mission Projects',
 };
 
 export const clusters = {
@@ -30,7 +24,7 @@ export const clusters = {
 export default function installMainSearch(config) {
   const envConfig = process.env.RAZZLE_ENV_CONFIG
     ? JSON.parse(process.env.RAZZLE_ENV_CONFIG)
-    : ccaConfig;
+    : missionProjectsConfig;
 
   const pjson = require('@eeacms/volto-cca-policy/../package.json');
 

@@ -1,18 +1,9 @@
 import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
+import { getClientProxyAddress } from './../utils';
 
 import facets from './facets-health';
 import views from './views-health';
-
-// import filters from './filters';
-// import vocabs from './vocabulary';
-
-const getClientProxyAddress = () => {
-  const url = new URL(window.location);
-  url.pathname = '';
-  url.search = '';
-  return url.toString();
-};
 
 const ccaConfig = {
   title: 'ClimateAdapt Health',

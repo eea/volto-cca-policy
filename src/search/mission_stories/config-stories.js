@@ -1,18 +1,10 @@
 import { mergeConfig } from '@eeacms/search';
-
+import { getClientProxyAddress } from './../utils';
 import facets from './facets-stories';
-
-const getClientProxyAddress = () => {
-  const url = new URL(window.location);
-  url.pathname = '';
-  url.search = '';
-  return url.toString();
-};
 
 const missionStoriesConfig = {
   title: 'Mission stories',
   ...facets,
-  //   ...views,
 };
 
 export default function installMissionStoriesSearch(config) {

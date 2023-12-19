@@ -1,18 +1,8 @@
 import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
+import { getClientProxyAddress } from './utils';
 
 import facets from './facets';
-
-// import views from './views';
-// import filters from './filters';
-// import vocabs from './vocabulary';
-
-const getClientProxyAddress = () => {
-  const url = new URL(window.location);
-  url.pathname = '';
-  url.search = '';
-  return url.toString();
-};
 
 const ccaConfig = {
   title: 'ClimateAdapt Main',
@@ -185,8 +175,6 @@ export default function installMainSearch(config) {
     config.searchui.ccaSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-
-  // console.log(config.searchui.ccaSearch);
 
   return config;
 }
