@@ -3,7 +3,7 @@ import { Accordion, Icon } from 'semantic-ui-react';
 import RASTAccordionContent from './RASTAccordionContent';
 
 const RASTAccordion = (props) => {
-  const { datasets = {}, activeMenu } = props;
+  const { items = {}, activeMenu } = props;
 
   const [activeIndex, setActiveIndex] = React.useState([activeMenu]);
 
@@ -25,10 +25,9 @@ const RASTAccordion = (props) => {
   };
   return (
     <>
-      {datasets.map((dataset, index) => {
-        const { id } = dataset;
+      {items.map((item, index) => {
+        const { id } = item;
         const active = isActive(index);
-        let datasetPath = '/' + dataset.href.split('/').slice(3).join('/');
 
         return (
           <Accordion id={id} key={index} className="secondary">
@@ -38,15 +37,15 @@ const RASTAccordion = (props) => {
               active={active}
               aria-expanded={active}
               index={index}
-              onClick={(e) => handleClick(e, { index, id, dataset })}
+              onClick={(e) => handleClick(e, { index, id, item })}
               onKeyDown={(e) => {
                 if (e.keyCode === 13 || e.keyCode === 32) {
                   e.preventDefault();
-                  handleClick(e, { index, id, dataset });
+                  handleClick(e, { index, id, item });
                 }
               }}
             >
-              <span className="dataset-title">{dataset.title}</span>
+              <span className="item-title">{item.title}</span>
               {active ? (
                 <Icon className="ri-arrow-up-s-line" />
               ) : (
@@ -56,17 +55,11 @@ const RASTAccordion = (props) => {
             <Accordion.Content active={active}>
               <RASTAccordionContent
                 key={index}
-                params={{
-                  name: 'CurrentTitle',
-                  includeTop: false,
-                  currentFolderOnly: true,
-                  topLevel: 3,
-                  bottomLevel: 6,
-                  rootPath: datasetPath,
-                  title: dataset.title,
+                main={{
+                  title: item.title,
+                  href: item['@id'],
+                  url: item.url,
                 }}
-                location={{ pathname: datasetPath }}
-                main={{ title: dataset.title, href: dataset['@id'] }}
               />
             </Accordion.Content>
           </Accordion>

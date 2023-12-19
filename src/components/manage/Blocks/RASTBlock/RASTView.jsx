@@ -1,27 +1,35 @@
 import React from 'react';
 import './styles.less';
 import ContextNavigation from './ContextNavigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { getContent } from '@plone/volto/actions';
+
+function useChildren(location) {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    const action = getContent(location, null, location);
+    dispatch(action);
+  }, [location, dispatch]);
+
+  const items = useSelector(
+    (state) => state.content.subrequests?.[location]?.data?.items || [],
+  );
+  return items;
+}
 
 export default function RASTView(props) {
   const { data } = props;
   let root_path = data?.root_path;
-  let top_level = 1;
   if (typeof root_path === 'undefined') {
     root_path = '/';
   }
-  top_level = (root_path.match(/\//g) || []).length - 1;
+
+  const items = useChildren(root_path);
 
   return (
     <div className="block rast-block">
       <ContextNavigation
-        params={{
-          // name: 'CurrentTitle',
-          // includeTop: false,
-          // currentFolderOnly: false,
-          topLevel: top_level,
-          // topLevel: 2,
-          // rootPath: '/en/about/test-rast/',
-        }}
+        items={items}
         location={{
           pathname: root_path,
         }}
