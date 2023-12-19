@@ -36,7 +36,9 @@ const RASTAccordionContent = (props) => {
           </List.Content>
         </List.Item>
         {items.length
-          ? items.map((item) => (
+          ? items
+          .filter((item) => item['@type'] === "Folder")
+          .map((item) => (
               <List.Item key={item.id}>
                 <List.Content>
                   <div className="dataset-item">
