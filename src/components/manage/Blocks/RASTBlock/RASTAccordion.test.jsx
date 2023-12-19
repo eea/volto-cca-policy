@@ -16,6 +16,7 @@ describe('RASTAccordion', () => {
           id: 'my-item',
           title: 'Hello',
           '@id': '/my-item',
+          '@type': 'Folder',
           href: '/my-item-href',
         },
       ],
