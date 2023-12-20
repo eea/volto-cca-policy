@@ -21,7 +21,7 @@ describe('RASTAccordion', () => {
         },
       ],
       activeMenu: 1,
-      curent_location: '/'
+      curent_location: '/',
     };
 
     const store = mockStore({
