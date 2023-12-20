@@ -4,7 +4,7 @@ import RASTAccordionContent from './RASTAccordionContent';
 import { useHistory } from 'react-router-dom';
 
 const RASTAccordion = (props) => {
-  const { items = {}, activeMenu, curent_location } = props;
+  const { items = {}, curent_location, activeMenu } = props;
 
   const history = useHistory();
 
@@ -12,14 +12,11 @@ const RASTAccordion = (props) => {
     let itemUrl = '/' + item['@id'].split('/').slice(3).join('/');
     history.push(itemUrl);
   };
-  const isActive = (id) => {
-    return activeIndex.includes(id);
-  };
   return (
     <>
       {items.map((item, index) => {
         const { id } = item;
-        const active = isActive(index);
+        const active = activeMenu === index;
 
         return (
           <Accordion id={id} key={index} className="secondary">
