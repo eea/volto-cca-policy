@@ -1,33 +1,22 @@
 import React from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 import RASTAccordionContent from './RASTAccordionContent';
+import { useHistory } from 'react-router-dom';
 
 const RASTAccordion = (props) => {
-  const { items = {}, activeMenu } = props;
+  const { items = {}, curent_location, activeMenu } = props;
 
-  const [activeIndex, setActiveIndex] = React.useState([activeMenu]);
+  const history = useHistory();
 
-  const handleActiveIndex = (index) => {
-    setActiveIndex(index);
-  };
-  const handleClick = (e, titleProps) => {
-    const { index } = titleProps;
-
-    const newIndex =
-      activeIndex.indexOf(index) === -1
-        ? [...activeIndex, index]
-        : activeIndex.filter((item) => item !== index);
-
-    handleActiveIndex(newIndex);
-  };
-  const isActive = (id) => {
-    return activeIndex.includes(id);
+  const handleClick = (e, item) => {
+    let itemUrl = '/' + item['@id'].split('/').slice(3).join('/');
+    history.push(itemUrl);
   };
   return (
     <>
       {items.map((item, index) => {
         const { id } = item;
-        const active = isActive(index);
+        const active = activeMenu === index;
 
         return (
           <Accordion id={id} key={index} className="secondary">
@@ -37,7 +26,7 @@ const RASTAccordion = (props) => {
               active={active}
               aria-expanded={active}
               index={index}
-              onClick={(e) => handleClick(e, { index, id, item })}
+              onClick={(e) => handleClick(e, item)}
               onKeyDown={(e) => {
                 if (e.keyCode === 13 || e.keyCode === 32) {
                   e.preventDefault();
@@ -54,6 +43,7 @@ const RASTAccordion = (props) => {
             </Accordion.Title>
             <Accordion.Content active={active}>
               <RASTAccordionContent
+                curent_location={curent_location}
                 key={index}
                 main={{
                   title: item.title,

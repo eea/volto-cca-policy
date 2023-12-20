@@ -32,7 +32,11 @@ export function ContextNavigationComponent(props) {
         activeMenu={activeMenu}
       />
       {items.length ? (
-        <RASTAccordion items={items} activeMenu={activeMenu} />
+        <RASTAccordion
+          items={items}
+          curent_location={curent_location}
+          activeMenu={activeMenu}
+        />
       ) : null}
     </>
   );

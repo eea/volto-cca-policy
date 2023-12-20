@@ -8,7 +8,7 @@ import { getContent } from '@plone/volto/actions';
 // import useChildren from './RASTView';
 
 const RASTAccordionContent = (props) => {
-  const { main } = props;
+  const { main, curent_location } = props;
   const dispatch = useDispatch();
   const location = main.url;
   let items = [];
@@ -22,31 +22,30 @@ const RASTAccordionContent = (props) => {
     (state) => state.content?.subrequests?.[location]?.data?.items || [],
   );
   // const items = useChildren(location);
-
   return (
     <div className="dataset-content">
       <div>
-        <List.Item key={'0'}>
-          <List.Content>
-            <div className="dataset-item">
-              <Link to={flattenToAppURL(getBaseUrl(main.href))}>
-                {main.title}
-              </Link>
-            </div>
-          </List.Content>
-        </List.Item>
         {items.length
-          ? items.map((item) => (
-              <List.Item key={item.id}>
-                <List.Content>
-                  <div className="dataset-item">
-                    <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
-                      {item.title}
-                    </Link>
-                  </div>
-                </List.Content>
-              </List.Item>
-            ))
+          ? items
+              .filter((item) => item['@type'] === 'Folder')
+              .map((item) => (
+                <List.Item
+                  key={item.id}
+                  className={`${
+                    item['@id'].endsWith(curent_location.pathname)
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+                  <List.Content>
+                    <div className="dataset-item">
+                      <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
+                        {item.title}
+                      </Link>
+                    </div>
+                  </List.Content>
+                </List.Item>
+              ))
           : null}
       </div>
     </div>

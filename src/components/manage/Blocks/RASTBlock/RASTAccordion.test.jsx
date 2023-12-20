@@ -16,10 +16,12 @@ describe('RASTAccordion', () => {
           id: 'my-item',
           title: 'Hello',
           '@id': '/my-item',
+          '@type': 'Folder',
           href: '/my-item-href',
         },
       ],
       activeMenu: 1,
+      curent_location: '/',
     };
 
     const store = mockStore({
