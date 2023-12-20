@@ -29,7 +29,14 @@ const RASTAccordionContent = (props) => {
           ? items
               .filter((item) => item['@type'] === 'Folder')
               .map((item) => (
-                <List.Item key={item.id} className={`${item['@id'].endsWith(curent_location.pathname) ? 'active' : ''}`}>
+                <List.Item
+                  key={item.id}
+                  className={`${
+                    item['@id'].endsWith(curent_location.pathname)
+                      ? 'active'
+                      : ''
+                  }`}
+                >
                   <List.Content>
                     <div className="dataset-item">
                       <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>

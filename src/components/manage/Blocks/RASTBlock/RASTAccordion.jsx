@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 import RASTAccordionContent from './RASTAccordionContent';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 const RASTAccordion = (props) => {
   const { items = {}, activeMenu, curent_location } = props;
@@ -13,7 +13,7 @@ const RASTAccordion = (props) => {
   const handleClick = (e, item) => {
     let itemUrl = '/' + item['@id'].split('/').slice(3).join('/');
     history.push(itemUrl);
-  }
+  };
   const isActive = (id) => {
     return activeIndex.includes(id);
   };
