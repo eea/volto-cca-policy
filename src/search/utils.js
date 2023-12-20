@@ -27,3 +27,10 @@ export function getTodayWithTime() {
   ].join('');
   return output;
 }
+
+export function getClientProxyAddress() {
+  const url = new URL(window.location);
+  url.pathname = '';
+  url.search = '';
+  return url.toString();
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   HTMLField,
   ContentMetadata,
@@ -7,7 +7,6 @@ import {
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
-import { Fragment } from 'react';
 
 const dataDisplay = [
   {

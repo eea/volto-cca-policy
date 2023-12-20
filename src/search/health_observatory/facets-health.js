@@ -1,5 +1,5 @@
 import { booleanFacet } from '@eeacms/search';
-import { getTodayWithTime } from './utils';
+import { getTodayWithTime } from './../utils';
 
 const special = [
   {
