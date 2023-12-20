@@ -6,8 +6,6 @@ import { useHistory } from 'react-router-dom';
 const RASTAccordion = (props) => {
   const { items = {}, activeMenu, curent_location } = props;
 
-  const [activeIndex, setActiveIndex] = React.useState([activeMenu]);
-
   const history = useHistory();
 
   const handleClick = (e, item) => {
