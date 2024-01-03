@@ -23,6 +23,7 @@ export default function RASTView(props) {
   if (typeof root_path === 'undefined') {
     root_path = '/';
   }
+  console.log('Props', props, 'RootPath', root_path);
 
   const items = useChildren(root_path);
 
