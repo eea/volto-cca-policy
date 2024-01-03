@@ -30,7 +30,7 @@ const RASTAccordion = (props) => {
               onKeyDown={(e) => {
                 if (e.keyCode === 13 || e.keyCode === 32) {
                   e.preventDefault();
-                  handleClick(e, { index, id, item });
+                  handleClick(e, item);
                 }
               }}
             >
