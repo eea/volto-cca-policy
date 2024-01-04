@@ -118,7 +118,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
   const subsiteLogo = subsite?.subsite_logo
     ? subsite.subsite_logo.scales?.preview?.download ||
-    toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
+      toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
     : null;
 
   return (
