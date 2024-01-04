@@ -118,7 +118,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
 
   const subsiteLogo = subsite?.subsite_logo
     ? subsite.subsite_logo.scales?.preview?.download ||
-      toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
+    toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
     : null;
 
   return (
@@ -277,7 +277,8 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
             href={item.url || '/'}
             title={item.title}
             onClick={(e) => {
-              e.preventDefault();
+              // e.preventDefault();
+              // debugger;
               onClick(e, item);
             }}
           >

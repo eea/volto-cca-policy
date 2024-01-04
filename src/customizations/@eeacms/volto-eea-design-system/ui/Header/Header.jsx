@@ -232,7 +232,8 @@ const Main = ({
       if (isInternalURL(item.url)) {
         history.push(item.url);
       } else if (isClient) {
-        window.location.replace(item.url);
+        // window.location.href = item.url;
+        // window.location.replace(item.url);
       }
     }
   };
