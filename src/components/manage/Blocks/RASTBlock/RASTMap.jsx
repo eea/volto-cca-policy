@@ -24,7 +24,7 @@ export default function RASTMap(props) {
   const items = props.items;
 
   return (
-    <div className="block rast-block">
+    <div className="rast-map-block">
       <svg
         width="290"
         height="280"
