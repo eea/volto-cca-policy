@@ -277,7 +277,6 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
             href={item.url || '/'}
             title={item.title}
             onClick={(e) => {
-              // e.preventDefault();
               // debugger;
               onClick(e, item);
             }}

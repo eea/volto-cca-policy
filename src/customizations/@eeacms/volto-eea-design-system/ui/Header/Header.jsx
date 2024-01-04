@@ -230,6 +230,7 @@ const Main = ({
       setMenuIsActive(true);
     } else {
       if (isInternalURL(item.url)) {
+        e.preventDefault();
         history.push(item.url);
       } else if (isClient) {
         // window.location.href = item.url;
