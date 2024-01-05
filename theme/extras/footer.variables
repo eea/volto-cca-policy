@@ -2,5 +2,14 @@
             Footer
 *******************************/
 
-// @mobileFooterBackgroundGrandient    : linear-gradient(45deg, @primaryColor 12%, @secondaryColor 80%);
-// @computerFooterBackgroundGrandient  : linear-gradient(45deg, @primaryColor 12%, @secondaryColor 80%);
+@mobileFooterBackgroundGradient: linear-gradient(
+  212.33deg,
+  @secondaryColor 12%,
+  #004c80 80%
+);
+
+@computerFooterBackgroundGradient: linear-gradient(
+  212.33deg,
+  @secondaryColor 12%,
+  #004c80 80%
+);

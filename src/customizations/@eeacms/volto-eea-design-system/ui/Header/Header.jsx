@@ -227,6 +227,7 @@ const Main = ({
     if (searchIsActive) setSearchIsActive(false);
     setActiveItem(item['@id'] || item.url);
     if (item.items.length) {
+      e.preventDefault();
       setMenuIsActive(true);
     } else {
       if (isInternalURL(item.url)) {
