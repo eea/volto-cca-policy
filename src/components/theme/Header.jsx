@@ -286,6 +286,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
         )}
         renderMenuItem={(item, options, props) => (
           <UniversalLink
+            openLinkInNewTab={false}
             href={item.url || '/'}
             title={item.nav_title || item.title}
             {...(options || {})}
