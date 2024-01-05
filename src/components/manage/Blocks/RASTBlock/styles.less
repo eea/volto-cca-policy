@@ -3,6 +3,19 @@
 
 @import (multiple, reference, optional) '../../theme.config';
 
+a rect.circle:hover {
+  fill: #183 !important;
+}
+
+a rect.circle {
+  pointer-events: all !important;
+}
+
+svg,
+svg * {
+  pointer-events: none;
+}
+
 .link-active {
   .circle,
   .circle:hover {

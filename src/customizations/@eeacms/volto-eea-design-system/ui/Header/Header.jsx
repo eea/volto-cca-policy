@@ -230,9 +230,11 @@ const Main = ({
       setMenuIsActive(true);
     } else {
       if (isInternalURL(item.url)) {
+        e.preventDefault();
         history.push(item.url);
       } else if (isClient) {
-        window.location.replace(item.url);
+        // window.location.href = item.url;
+        // window.location.replace(item.url);
       }
     }
   };
