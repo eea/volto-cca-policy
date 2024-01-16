@@ -276,6 +276,19 @@ const applyConfig = (config) => {
     },
   ];
 
+  // mega menu layout settings
+  config.settings.menuItemsLayouts = {
+    // '*': {
+    //   hideChildrenFromNavigation: false,
+    // },
+    '/en/eu-policy': {
+      hideChildrenFromNavigation: false,
+    },
+    '/en/knowledge-1': {
+      hideChildrenFromNavigation: false,
+    },
+  };
+
   // Custom results
   config.settings.searchlib.resolve.HealthHorizontalCardItem = {
     component: HealthHorizontalCardItem,
