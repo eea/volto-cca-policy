@@ -24,7 +24,7 @@ export default function RASTView(props) {
     root_path = '/';
   }
   let items = useChildren(root_path);
-  if (root_path == '/') {
+  if (root_path === '/') {
     items = [];
   }
 
