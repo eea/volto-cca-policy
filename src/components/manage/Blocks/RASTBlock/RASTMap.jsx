@@ -70,7 +70,7 @@ export default function RASTMap(props) {
             height="43"
             rx="21.5"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </LinkWrap>
         <LinkWrap
@@ -98,7 +98,7 @@ export default function RASTMap(props) {
             height="43"
             rx="21.5"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </LinkWrap>
         <LinkWrap
@@ -126,7 +126,7 @@ export default function RASTMap(props) {
             height="43"
             rx="21.5"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </LinkWrap>
         <LinkWrap
@@ -154,7 +154,7 @@ export default function RASTMap(props) {
             height="43"
             rx="21.5"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </LinkWrap>
         <LinkWrap
@@ -182,7 +182,7 @@ export default function RASTMap(props) {
             height="43"
             rx="21.5"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </LinkWrap>
 
@@ -211,7 +211,7 @@ export default function RASTMap(props) {
             height="43"
             rx="21.5"
             stroke="white"
-            stroke-width="2"
+            strokeWidth="2"
           />
         </LinkWrap>
 
@@ -362,7 +362,7 @@ export default function RASTMap(props) {
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#BFDC80" />
-            <stop offset="1" stop-color="#AAD055" stop-opacity="0.1" />
+            <stop offset="1" stop-color="#AAD055" stopOpacity="0.1" />
           </linearGradient>
         </defs>
       </svg>
