@@ -23,8 +23,10 @@ export default function RASTView(props) {
   if (typeof root_path === 'undefined') {
     root_path = '/';
   }
-
-  const items = useChildren(root_path);
+  let items = useChildren(root_path);
+  if (root_path === '/') {
+    items = [];
+  }
 
   return (
     <div className="block rast-block">

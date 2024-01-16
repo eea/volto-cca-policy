@@ -347,9 +347,11 @@ function HeaderMenuPopUp({
   );
 
   const layout =
-    !!menuItemsLayouts &&
-    Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
-    menuItemsLayouts[menuItem.url];
+    (!!menuItemsLayouts &&
+      Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
+      menuItemsLayouts[menuItem.url]) ||
+    (!!menuItemsLayouts && menuItemsLayouts['*']) ||
+    {};
 
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
