@@ -20,11 +20,12 @@ function useChildren(location) {
 export default function RASTView(props) {
   const { data } = props;
   let root_path = data?.root_path;
-  let items = [];
   if (typeof root_path === 'undefined') {
     root_path = '/';
-  } else {
-    items = useChildren(root_path);
+  }
+  let items = useChildren(root_path);
+  if (root_path == '/') {
+    items = [];
   }
 
   return (
