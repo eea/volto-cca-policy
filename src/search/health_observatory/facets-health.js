@@ -26,6 +26,7 @@ const healthImpacts = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
+  alwaysVisible: true,
   // sortOn: 'custom',
   // sortOnCustomLabel: 'Alphabetical',
 };
@@ -39,6 +40,7 @@ const partnerContributions = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
+  alwaysVisible: true,
   // sortOn: 'custom',
   // sortOnCustomLabel: 'Alphabetical',
 };
