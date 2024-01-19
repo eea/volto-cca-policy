@@ -249,7 +249,7 @@ class ContentTypeLayout extends Component {
    * @returns {undefined}
    */
   onEnableBlocks = () => {
-    const { properties = {} } = this.props.schema;
+    const properties = this.props.schema?.properties || {};
     const blocksFieldName = getBlocksFieldname(properties);
     const blocksLayoutFieldname = getBlocksLayoutFieldname(properties);
     const schema = {
