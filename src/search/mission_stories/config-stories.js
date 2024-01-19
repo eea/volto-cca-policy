@@ -1,5 +1,5 @@
 import { mergeConfig } from '@eeacms/search';
-import { getClientProxyAddress } from './../utils';
+import { getClientProxyAddress, getSearchThumbUrl } from './../utils';
 import facets from './facets-stories';
 
 const missionStoriesConfig = {
@@ -25,18 +25,28 @@ export default function installMissionStoriesSearch(config) {
 
   const { missionStoriesSearch } = config.searchui;
 
-  missionStoriesSearch.permanentFilters.push({
-    terms: {
-      objectProvides: ['mission_storyy'],
-    },
-  });
-
   missionStoriesSearch.facets = facets;
 
   if (typeof window !== 'undefined') {
     config.searchui.missionStoriesSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
+
+  missionStoriesSearch.resultItemModel = {
+    factory: 'ResultModel',
+    urlField: 'about',
+    titleField: 'title',
+    metatypeField: 'objectProvides',
+    descriptionField: 'description',
+    tagsField: 'topic',
+    issuedField: 'issued',
+    getThumbnailUrl: 'getSearchThumbUrl',
+    getIconUrl: 'getGlobalsearchIconUrl',
+    fallbackThumbUrl:
+      'https://react.semantic-ui.com/images/wireframe/white-image.png',
+  };
+
+  config.resolve.getSearchThumbUrl = getSearchThumbUrl();
 
   return config;
 }
