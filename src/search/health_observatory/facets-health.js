@@ -171,6 +171,7 @@ const facets = [
     isMulti: true,
     sortOn: 'custom',
     sortOnCustomLabel: 'Alphabetical',
+    alwaysVisible: true,
   },
   {
     field: 'cca_partner_contributors.keyword',
@@ -183,6 +184,7 @@ const facets = [
     isMulti: true,
     sortOn: 'custom',
     sortOnCustomLabel: 'Alphabetical',
+    alwaysVisible: true,
   },
   {
     field: 'year',

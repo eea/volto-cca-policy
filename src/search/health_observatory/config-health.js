@@ -14,12 +14,54 @@ export const clusters = {
   name: 'op_cluster',
   field: 'objectProvides',
   clusters: [
-    // {
-    //   name: 'Type1',
-    //   icon: { name: 'bullhorn' },
-    //   values: ['Video', 'Guidance'],
-    //   defaultResultView: 'horizontalCard',
-    // },
+    {
+      name: 'Case studies',
+      icon: { name: 'bullhorn' },
+      values: ['Case study'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Guidance',
+      icon: { name: 'bullhorn' },
+      values: ['Guidance'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Indicators',
+      icon: { name: 'bullhorn' },
+      values: ['Indicator'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Information portals',
+      icon: { name: 'bullhorn' },
+      values: ['Information portal'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Publications and reports',
+      icon: { name: 'bullhorn' },
+      values: ['Publication reference'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Research and knowledge projects',
+      icon: { name: 'bullhorn' },
+      values: ['Research and knowledge project'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Tools',
+      icon: { name: 'bullhorn' },
+      values: ['Tool'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Videos',
+      icon: { name: 'bullhorn' },
+      values: ['Video'],
+      defaultResultView: 'horizontalCard',
+    },
   ],
 };
 
@@ -53,7 +95,17 @@ export default function installMainSearch(config) {
       cca_include_in_search_observatory: 'true',
     },
   });
-
+  ccaHealthSearch.contentSectionsParams = {
+    enable: true,
+    sectionFacetsField: 'op_cluster',
+    sections: clusters.clusters,
+    clusterMapping: Object.assign(
+      {},
+      ...clusters.clusters.map(({ name, values }) =>
+        Object.assign({}, ...values.map((v) => ({ [v]: name }))),
+      ),
+    ),
+  };
   ccaHealthSearch.permanentFilters.push({
     terms: {
       objectProvides: [
