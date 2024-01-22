@@ -1,0 +1,129 @@
+/* Mission subsite */
+
+body.subsite-mkh {
+  .top.bar .ui.container {
+    z-index: 3;
+  }
+
+  &.subsite-root {
+    .segment.content-area {
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    #page-document {
+      > div.styled-group:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .subfooter .footer-description {
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    p {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+  }
+
+  .ui.menu .green.active.item,
+  .ui.green.menu .active.item {
+    border-color: @green-1 !important;
+    color: @green-1 !important;
+  }
+
+  .main-menu {
+    .item a {
+      color: @blue-1;
+    }
+
+    .item a:hover {
+      border-color: @green-1;
+    }
+
+    .item.active a {
+      border-color: @green-1;
+      color: @green-1;
+    }
+  }
+
+  .search-action {
+    background-color: @green-1;
+  }
+
+  .eea.banner {
+    background: @green-1;
+  }
+
+  #mega-menu {
+    .ui.accordion .title i,
+    .ui.accordion button.title i {
+      color: @white;
+    }
+  }
+
+  footer,
+  .burger-action,
+  #search-box,
+  #mega-menu,
+  #mega-menu .ui.accordion .content {
+    background: @subsiteBackgroundGradient;
+  }
+}
+
+/* Latest news updates, Latest events */
+body.subsite-root.section-mission {
+  div.columns-view {
+    div.block.listing.default {
+      div.items {
+        div.listing-item {
+          border: none;
+          margin: 0;
+        }
+
+        .listing-body {
+          position: relative;
+          padding-left: 2em;
+
+          &:before {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            color: inherit;
+            content: '\ea6c';
+            font-family: remixicon !important;
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+
+    div.block.listing.summary {
+      .u-item {
+        padding-top: 0;
+        padding-bottom: 20px;
+        border: none;
+      }
+
+      .listing-header {
+        font-size: @h4;
+      }
+
+      .listing-body.has-icon i.icon {
+        margin-top: 1px;
+      }
+    }
+
+    div.block.listing.default {
+      div.listing-item {
+        padding-bottom: 0.5em;
+
+        h4 {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}
