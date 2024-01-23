@@ -33,6 +33,7 @@
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-openlayers-map": "*",
+    "@eeacms/volto-searchlib": "*",
     "@eeacms/volto-slate-label": "*",
     "@eeacms/volto-widget-dataprovenance": "*",
     "@eeacms/volto-widget-geolocation": "*",
