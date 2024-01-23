@@ -284,7 +284,37 @@ const applyConfig = (config) => {
     '/en/eu-policy': {
       hideChildrenFromNavigation: false,
     },
+    '/de/eu-policy': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/eu-policy': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/eu-policy': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/eu-policy': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/eu-policy': {
+      hideChildrenFromNavigation: false,
+    },
     '/en/knowledge-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/de/knowledge-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/knowledge-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/knowledge-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/knowledge-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/knowledge-1': {
       hideChildrenFromNavigation: false,
     },
   };
