@@ -41,17 +41,17 @@ const include_archived = booleanFacet(() => ({
   on: null,
 }));
 
-const clusters = {
-  field: 'op_cluster',
-  factory: 'MultiTermFacet',
-  isFilterable: true,
-  isMulti: true,
-  label: 'Section',
-  show: 10000,
-  showInFacetsList: false,
-  ignoreNLPWhenActive: true,
-  blacklist: ['Others', 'Publications'],
-};
+// const clusters = {
+//   field: 'op_cluster',
+//   factory: 'MultiTermFacet',
+//   isFilterable: true,
+//   isMulti: true,
+//   label: 'Section',
+//   show: 10000,
+//   showInFacetsList: false,
+//   ignoreNLPWhenActive: true,
+//   blacklist: ['Others', 'Publications'],
+// };
 
 const objectProvides = {
   field: 'objectProvides',
