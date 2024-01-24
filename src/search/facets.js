@@ -129,8 +129,8 @@ const climate_impacts = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
   alwaysVisible: true,
 };
 
@@ -143,8 +143,8 @@ const transnational_regions = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
 };
 
 const adaptation_elements = {
@@ -156,8 +156,8 @@ const adaptation_elements = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
 };
 
 const key_type_measure = {
@@ -169,8 +169,8 @@ const key_type_measure = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
 };
 
 const funding_programme = {
@@ -182,8 +182,8 @@ const funding_programme = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
 };
 
 const origin_websites = {
@@ -195,8 +195,8 @@ const origin_websites = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
 };
 
 const geographic_countries = {
@@ -208,8 +208,8 @@ const geographic_countries = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
+  // sortOn: 'custom',
+  // sortOnCustomLabel: 'Alphabetical',
 };
 
 const language = {
@@ -268,7 +268,7 @@ const language = {
 const facets = [
   adaptation_sectors,
   include_archived,
-  clusters,
+  // clusters,
   objectProvides,
   issued,
   climate_impacts,
