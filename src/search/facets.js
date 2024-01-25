@@ -1,4 +1,9 @@
-import { include_archived } from './common';
+import {
+  include_archived,
+  objectProvides,
+  language,
+  issued_date,
+} from './common';
 
 const adaptation_sectors = {
   field: 'cca_adaptation_sectors.keyword',
@@ -25,73 +30,6 @@ const adaptation_sectors = {
 //   ignoreNLPWhenActive: true,
 //   blacklist: ['Others', 'Publications'],
 // };
-
-const objectProvides = {
-  field: 'objectProvides',
-  factory: 'MultiTermFacet',
-  label: 'Type of item',
-  showInFacetsList: true,
-  filterType: 'any',
-  isFilterable: false,
-  show: 10000,
-  isMulti: true,
-  iconsFamily: 'Content types',
-  optionsFilter: 'typesForClustersOptionsFilter',
-};
-
-const issued = {
-  field: 'issued.date',
-  factory: 'DropdownRangeFilter',
-  wrapper: 'DummySUIFacetWrapper',
-  label: ' ',
-  showInFacetsList: false,
-  filterType: 'any',
-  isFilterable: false,
-  activeFilterLabel: 'Published',
-  isFilter: true,
-  showInSecondaryFacetsList: true,
-  isMulti: false,
-  ignoreFromNlp: true,
-  ranges: [
-    {
-      key: 'All time',
-    },
-    {
-      key: 'Last week',
-      from: 'now-1w',
-      to: 'now',
-    },
-    {
-      key: 'Last month',
-      from: 'now-1m',
-      to: 'now',
-    },
-    {
-      key: 'Last 3 months',
-      from: 'now-3m',
-      to: 'now',
-    },
-    {
-      key: 'Last year',
-      from: 'now-1y',
-      to: 'now',
-    },
-    {
-      key: 'Last 2 years',
-      from: 'now-2y',
-      to: 'now',
-    },
-    {
-      key: 'Last 5 years',
-      from: 'now-5y',
-      to: 'now',
-    },
-  ],
-  default: {
-    values: ['Last 5 years'],
-    type: 'any',
-  },
-};
 
 const climate_impacts = {
   field: 'cca_climate_impacts.keyword',
@@ -185,65 +123,12 @@ const geographic_countries = {
   // sortOnCustomLabel: 'Alphabetical',
 };
 
-const language = {
-  field: 'language',
-  factory: 'MultiTermFacet',
-  label: 'Language',
-  showInFacetsList: false,
-  filterType: 'any',
-  isFilterable: false,
-  show: 10000,
-  isMulti: true,
-  default: {
-    values: ['en'],
-    type: 'any',
-  },
-  facetValues: [
-    'ar',
-    'sr',
-    'sq',
-    'bg',
-    'bs',
-    'cs',
-    'hr',
-    'da',
-    'nl',
-    'el',
-    'en',
-    'et',
-    'fi',
-    'fr',
-    'ga',
-    'de',
-    'hu',
-    'is',
-    'it',
-    'lv',
-    'lt',
-    'mk',
-    'mt',
-    'no',
-    'pl',
-    'pt',
-    'ro',
-    'ru',
-    'sh',
-    'sk',
-    'sl',
-    'es',
-    'sv',
-    'tr',
-  ],
-  sortOn: 'custom',
-  sortOnCustomLabel: 'Alphabetical',
-};
-
 const facets = [
   adaptation_sectors,
   include_archived,
   // clusters,
   objectProvides,
-  issued,
+  issued_date,
   climate_impacts,
   transnational_regions,
   adaptation_elements,
