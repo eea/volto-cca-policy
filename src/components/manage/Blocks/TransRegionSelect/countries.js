@@ -31,7 +31,6 @@ export const regionCountries = [
       ['Finland', '/countries/finland'],
       ['Ireland', '/countries/ireland'],
       ['Sweden', '/countries/sweden'],
-      // ['United Kingdom', '/countries/united-kingdom'],
       ['Iceland', '/countries/iceland'],
       ['Norway', '/countries/norway'],
       ['Greenland', ''],
@@ -45,19 +44,8 @@ export const regionCountries = [
       ['Ireland', '/countries/ireland'],
       ['Portugal', '/countries/portugal'],
       ['Spain', '/countries/spain'],
-      // ['United Kingdom', '/countries/united-kingdom'],
     ],
   },
-  // {
-  //   region: 'Balkan-Mediterranean',
-  //   countries: [
-  //     ['Bulgaria', '/countries/bulgaria'],
-  //     ['Cyprus', '/countries/cyprus'],
-  //     ['Greece', '/countries/greece'],
-  //     ['Albania', ''],
-  //     ['Republic of North Macedonia', ''],
-  //   ],
-  // },
   {
     region: 'Baltic Sea',
     countries: [
@@ -70,8 +58,6 @@ export const regionCountries = [
       ['Poland', '/countries/poland'],
       ['Sweden', '/countries/sweden'],
       ['Norway', '/countries/norway'],
-      // ['Russia', ''],
-      // ['Belarus', ''],
     ],
   },
   {
@@ -124,7 +110,6 @@ export const regionCountries = [
       ['Republic of North Macedonia', ''],
       ['Slovenia', '/countries/slovenia'],
       ['Spain', '/countries/spain'],
-      // ['United Kingdom', '/countries/united-kingdom'],
     ],
   },
   {
@@ -136,7 +121,6 @@ export const regionCountries = [
       ['France', '/countries/france'],
       ['Netherlands', '/countries/netherlands'],
       ['Sweden', '/countries/sweden'],
-      // ['United Kingdom', '/countries/united-kingdom'],
       ['Norway', '/countries/norway'],
     ],
   },
@@ -150,7 +134,6 @@ export const regionCountries = [
       ['Luxembourg', '/countries/luxembourg'],
       ['Netherlands', '/countries/netherlands'],
       ['Switzerland', '/countries/switzerland'],
-      // ['United Kingdom', '/countries/united-kingdom'],
     ],
   },
   {
@@ -159,12 +142,7 @@ export const regionCountries = [
       ['France', '/countries/france'],
       ['Portugal', '/countries/portugal'],
       ['Spain', '/countries/spain'],
-      // ['United Kingdom', '/countries/united-kingdom'],
       ['Andorra', ''],
     ],
   },
-  // {
-  //   region: 'Other regions',
-  //   countries: [],
-  // },
 ];
