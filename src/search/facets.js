@@ -1,5 +1,6 @@
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
+import { include_archived } from './common';
 
 const adaptation_sectors = {
   field: 'cca_adaptation_sectors.keyword',
@@ -14,32 +15,6 @@ const adaptation_sectors = {
   showAllOptions: true,
   alwaysVisible: true,
 };
-
-const include_archived = booleanFacet(() => ({
-  field: 'IncludeArchived',
-  label: 'Include archived content',
-  id: 'archived-facet',
-  showInFacetsList: false,
-  showInSecondaryFacetsList: true,
-  isFilter: true, // filters don't need facet options to show up
-
-  // we want this to be applied by default
-  // when the facet is checked, then apply the `on` key:
-  off: {
-    constant_score: {
-      filter: {
-        bool: {
-          should: [
-            { bool: { must_not: { exists: { field: 'expires' } } } },
-            // Functions should be supported in the buildFilters
-            { range: { expires: { gte: getTodayWithTime() } } },
-          ],
-        },
-      },
-    },
-  },
-  on: null,
-}));
 
 // const clusters = {
 //   field: 'op_cluster',
