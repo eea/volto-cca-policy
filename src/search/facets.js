@@ -1,5 +1,3 @@
-import { booleanFacet } from '@eeacms/search';
-import { getTodayWithTime } from './utils';
 import { include_archived } from './common';
 
 const adaptation_sectors = {
