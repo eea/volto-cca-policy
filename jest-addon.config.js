@@ -1,5 +1,3 @@
-require('dotenv').config({ path: __dirname + '/.env' })
-
 module.exports = {
   testMatch: ['**/src/addons/**/?(*.)+(spec|test).[jt]s?(x)'],
   collectCoverageFrom: [
@@ -11,21 +9,16 @@ module.exports = {
     '@plone/volto/cypress': '<rootDir>/node_modules/@plone/volto/cypress',
     '@plone/volto/babel': '<rootDir>/node_modules/@plone/volto/babel',
     '@plone/volto/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
-    '@package/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
-    '@root/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
+    '@package/(.*)$': '<rootDir>/src/$1',
+    '@root/(.*)$': '<rootDir>/src/$1',
     '@plone/volto-quanta/(.*)$': '<rootDir>/src/addons/volto-quanta/src/$1',
     '@eeacms/(.*?)/(.*)$': '<rootDir>/node_modules/@eeacms/$1/src/$2',
-    '@plone/volto-slate$':
+    '@plone/volto-slate':
       '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src',
-    '@plone/volto-slate/(.*)$':
-      '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src/$1',
     '~/(.*)$': '<rootDir>/src/$1',
     'load-volto-addons':
       '<rootDir>/node_modules/@plone/volto/jest-addons-loader.js',
   },
-  transformIgnorePatterns: [
-    '/node_modules/(?!(@plone|@root|@package|@eeacms)/).*/',
-  ],
   transform: {
     '^.+\\.js(x)?$': 'babel-jest',
     '^.+\\.(png)$': 'jest-file',
@@ -40,9 +33,4 @@ module.exports = {
       statements: 5,
     },
   },
-  ...(process.env.JEST_USE_SETUP === 'ON' && {
-    setupFilesAfterEnv: [
-      '<rootDir>/node_modules/@eeacms/volto-cca-policy/jest.setup.js',
-    ],
-  }),
-}
+};
