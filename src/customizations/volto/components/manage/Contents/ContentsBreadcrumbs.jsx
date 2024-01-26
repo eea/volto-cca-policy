@@ -7,7 +7,6 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import ContentsBreadcrumbsRootItem from '@plone/volto/components/manage/Contents/ContentsBreadcrumbsRootItem';
 
-import config from '@plone/volto/registry';
 import { getPhysicalBreadcrumbs } from '@eeacms/volto-cca-policy/store';
 
 const messages = defineMessages({
