@@ -23,6 +23,7 @@ import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/imag
 
 import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
+import installStore from './store';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
@@ -346,12 +347,6 @@ const applyConfig = (config) => {
     config = installExpressMiddleware(config);
   }
 
-  // fixes bug caused by https://github.com/eea/volto-eea-website-theme/commit/94078403458a5a3ea725ce9126fffed9d463097d
-  config.settings.apiExpanders.push({
-    match: '',
-    GET_CONTENT: ['breadcrumbs'], // 'navigation', 'actions', 'types'],
-  });
-
   config.addonRoutes = [
     {
       path: `/(${config.settings?.supportedLanguages.join(
@@ -363,7 +358,7 @@ const applyConfig = (config) => {
     ...(config.addonRoutes || []),
   ];
 
-  return compose(installBlocks, installSearchEngine)(config);
+  return compose(installBlocks, installSearchEngine, installStore)(config);
 };
 
 export default applyConfig;
