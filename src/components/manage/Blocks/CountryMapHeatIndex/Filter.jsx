@@ -1,30 +1,35 @@
+import { Form, Radio } from 'semantic-ui-react';
+
 export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
       <h2>Choose thematic map:</h2>
-      <div id="sections-selector">
-        <input
-          type="radio"
-          name="country-map-section"
-          value="hhap"
-          checked="checked"
-          onChange={(e) => {
-            setThematicMapMode(e.target.value);
-          }}
-        />
-        Heat health action plans (HHAP)
-        <br />
-        <input
-          type="radio"
-          name="country-map-section"
-          value="hhws"
-          onChange={(e) => {
-            setThematicMapMode(e.target.value);
-          }}
-        />
-        Heat health warning systems (HHWS)
-      </div>
+      <Form>
+        <Form.Field>
+          <Radio
+            id="HHAP"
+            key="HHAP"
+            label="Heat health action plans (HHAP)"
+            name="country-map-section"
+            value="hhap"
+            checked={thematicMapMode === 'hhap'}
+            onChange={(_e, { value }) => {
+              setThematicMapMode(value);
+            }}
+          />
+          <Radio
+            id="HHWS"
+            label="Heat health warning systems (HHWS)"
+            name="country-map-section"
+            value="hhws"
+            checked={thematicMapMode === 'hhws'}
+            onChange={(_e, { value }) => {
+              setThematicMapMode(value);
+            }}
+          />
+        </Form.Field>
+      </Form>
 
       {thematicMapMode === 'hhap' && (
         <div className="legend climate-legend">

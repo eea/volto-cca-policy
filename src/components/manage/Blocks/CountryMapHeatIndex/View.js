@@ -70,10 +70,9 @@ const CountryMapObservatoryView = (props) => {
     // D3 Code
 
     // Dimensions
-    //const parentDiv = document.getElementById('page-document');
+    const parentDiv = document.getElementById('svg-map');
     let dimensions = {
-      //width: parentDiv.offsetWidth,
-      width,
+      width: parentDiv.offsetWidth,
       height,
       margins: 50,
     };
@@ -81,7 +80,6 @@ const CountryMapObservatoryView = (props) => {
     dimensions.containerWidth = dimensions.width - dimensions.margins * 2;
     dimensions.containerHeight = dimensions.height - dimensions.margins * 2;
 
-    //const d3 = loadable.lib(() => import('d3'));
     // SELECTIONS
     const svg = d3
       .select(svgRef.current)
@@ -141,13 +139,19 @@ const CountryMapObservatoryView = (props) => {
   return (
     <div>
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column
+          mobile={9}
+          tablet={9}
+          computer={9}
+          className="col-left"
+          id="svg-map"
+        >
           <svg ref={svgRef} />
         </Grid.Column>
         <Grid.Column
           mobile={3}
           tablet={3}
-          computer={2}
+          computer={3}
           className="col-left"
           id="cse-filter"
         >
