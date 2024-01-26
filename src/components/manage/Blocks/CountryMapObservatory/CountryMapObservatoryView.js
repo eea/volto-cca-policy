@@ -4,7 +4,7 @@ import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from './withResponsiveContainer.js';
+import withResponsiveContainer from './../withResponsiveContainer.js';
 import {
   getFocusCountriesFeature,
   getFocusCountryNames,

@@ -5,7 +5,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Grid } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from './withResponsiveContainer.js';
+import withResponsiveContainer from './../withResponsiveContainer.js';
 import { addAppURL } from '@plone/volto/helpers';
 import {
   getFocusCountriesFeature,

@@ -80,7 +80,7 @@ pipeline {
             sh '''docker build --pull --build-arg="VOLTO_VERSION=$VOLTO" --build-arg="ADDON_NAME=$NAMESPACE/$GIT_NAME"  --build-arg="ADDON_PATH=$GIT_NAME" . -t $IMAGE_NAME-frontend'''
           }
         }
-        
+
         stage('Fix code') {
           when {
               environment name: 'CHANGE_ID', value: ''
@@ -128,7 +128,7 @@ pipeline {
 
         stage('Coverage Tests') {
           parallel {
-            
+
             stage('Unit tests') {
               steps {
                 script {
@@ -156,7 +156,7 @@ pipeline {
                 }
               }
             }
-            
+
             stage('Integration tests') {
               steps {
                 script {

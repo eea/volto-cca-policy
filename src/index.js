@@ -143,7 +143,7 @@ const applyConfig = (config) => {
     },
     headerSearchBox: [
       {
-        isDefault: true,
+        isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/mission',
         path: '/en/mission/knowledge-and-data/search-the-database',
@@ -162,6 +162,16 @@ const applyConfig = (config) => {
           'Looking for more information? Try searching the full EEA website content',
         buttonTitle: 'Go to advanced search',
         buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
+      },
+      {
+        isDefault: true,
+        // to replace search path change path to whatever you want and match with the page in volto website
+        matchpath: '/',
+        path: '/en/data-and-downloads',
+        placeholder: 'Search the Climate-ADAPT database',
+        description: 'Looking for more information?',
+        buttonTitle: 'Explore more on Climate-ADAPT',
+        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
       },
     ],
     logoTargetUrl: '/',
