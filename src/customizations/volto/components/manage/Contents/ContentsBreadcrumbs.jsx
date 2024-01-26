@@ -4,10 +4,8 @@ import { Breadcrumb } from 'semantic-ui-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
-import { langmap } from '@plone/volto/helpers';
 
 import ContentsBreadcrumbsRootItem from '@plone/volto/components/manage/Contents/ContentsBreadcrumbsRootItem';
-import ContentsBreadcrumbsHomeItem from '@plone/volto/components/manage/Contents/ContentsBreadcrumbsHomeItem';
 
 import config from '@plone/volto/registry';
 import { getPhysicalBreadcrumbs } from '@eeacms/volto-cca-policy/store';
@@ -24,11 +22,9 @@ const messages = defineMessages({
 });
 
 const ContentsBreadcrumbs = () => {
-  const { settings } = config;
   const items = useSelector((state) => state.physicalBreadcrumbs.items || []);
   const intl = useIntl();
   const pathname = useLocation().pathname;
-  const lang = pathname.split('/')[1];
   const dispatch = useDispatch();
 
   React.useEffect(() => {
