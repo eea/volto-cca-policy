@@ -226,6 +226,7 @@ function getMapletStartingPoint(
       mutPoint[0] = startPoint[0];
       break;
     case 'right':
+    default:
       mutPoint[0] = startPoint[0] - bws;
       break;
   }
