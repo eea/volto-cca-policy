@@ -13,7 +13,7 @@ describe('Filter', () => {
     const data = {
       thematicMapMode: 'hhap',
       setThematicMapMode: function() {
-        return 'hhap'
+        return 'hhap';
       }
     };
 
