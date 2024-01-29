@@ -26,7 +26,10 @@ const healthImpacts = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
+<<<<<<< HEAD
   alwaysVisible: true,
+=======
+>>>>>>> origin/develop
   // sortOn: 'custom',
   // sortOnCustomLabel: 'Alphabetical',
 };
@@ -40,7 +43,10 @@ const partnerContributions = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
+<<<<<<< HEAD
   alwaysVisible: true,
+=======
+>>>>>>> origin/develop
   // sortOn: 'custom',
   // sortOnCustomLabel: 'Alphabetical',
 };
