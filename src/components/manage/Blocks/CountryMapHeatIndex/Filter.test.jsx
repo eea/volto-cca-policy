@@ -32,6 +32,6 @@ describe('Filter', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(container.querySelector('#cse-filter')).toBeInTheDocument();
+    expect(container.querySelector('#sections-selector')).toBeInTheDocument();
   });
 });
