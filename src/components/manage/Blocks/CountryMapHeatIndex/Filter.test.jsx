@@ -12,7 +12,9 @@ describe('Filter', () => {
   it('should render the component', () => {
     const data = {
       thematicMapMode: 'hhap',
-      setThematicMapMode: function() {return 'hhap'} 
+      setThematicMapMode: function() {
+        return 'hhap'
+      }
     };
 
     const store = mockStore({
