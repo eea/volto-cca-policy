@@ -11,8 +11,10 @@ const mockStore = configureStore();
 describe('Filter', () => {
   it('should render the component', () => {
     const data = {
-      thematicMapMode: "hhap",
-      setThematicMapMode: function() {},
+      thematicMapMode: 'hhap',
+      setThematicMapMode(param) {
+        return param;
+      },
     };
 
     const store = mockStore({
