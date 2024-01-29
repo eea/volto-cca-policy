@@ -186,7 +186,7 @@ function drawMaplet(opts, d3) {
     .attr('width', msp.width)
     .attr('height', msp.height);
 
-  var path = renderCountriesBox(opts, d3);
+  // var path = renderCountriesBox(opts, d3);
   // renderCountryLabel(opts.focusCountries.feature.features[0], path, true);
 }
 
