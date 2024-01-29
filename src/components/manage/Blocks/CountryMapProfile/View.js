@@ -73,12 +73,12 @@ const CountryMapObservatoryView = (props) => {
     // D3 Code
 
     // Dimensions
-    //const parentDiv = document.getElementById('page-document');
+    const parentDiv = document.getElementById('svg-map');
+    // let widthComputed = parseInt((width / 12) * 10);
     let dimensions = {
-      //width: parentDiv.offsetWidth,
-      width,
+      width: parentDiv.offsetWidth,
       height,
-      margins: 50,
+      margins: 0,
     };
 
     dimensions.containerWidth = dimensions.width - dimensions.margins * 2;
@@ -129,7 +129,13 @@ const CountryMapObservatoryView = (props) => {
   return (
     <div>
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column
+          mobile={9}
+          tablet={9}
+          computer={10}
+          className="col-left"
+          id="svg-map"
+        >
           <svg ref={svgRef} />
         </Grid.Column>
         <Grid.Column

@@ -4,7 +4,7 @@ export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
-      <h2>Choose thematic map:</h2>
+      <p className="formTitle">Choose thematic map:</p>
       <Form>
         <Form.Field>
           <Radio
