@@ -10,6 +10,7 @@
 
 // @primaryColor: @green-6;
 @secondaryColor: #005c97;
+@ccaGreenColor: #8a9c39;
 
 // @linkColor: @secondaryColor;
 // @linkHoverColor: @primaryColor;
