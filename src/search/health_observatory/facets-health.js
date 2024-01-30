@@ -29,6 +29,17 @@ const healthImpacts = {
   alwaysVisible: true,
   // sortOn: 'custom',
   // sortOnCustomLabel: 'Alphabetical',
+  facetValues: [
+    'Air pollution and aero-allergens',
+    'Climate-sensitive diseases',
+    'Droughts and floods',
+    'Heat',
+    'Wildfires',
+    '-NONSPECIFIC-',
+  ],
+  sortOn: 'custom',
+  sortOrder: 'ascending',
+  sortOnCustomLabel: 'Alphabetical',
 };
 
 const partnerContributions = {
