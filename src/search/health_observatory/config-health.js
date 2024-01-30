@@ -58,7 +58,7 @@ export const clusters = {
     },
     {
       name: 'Videos',
-      icon: { name: 'video' },
+      icon: { name: 'video play' },
       values: ['Video'],
       defaultResultView: 'horizontalCard',
     },
