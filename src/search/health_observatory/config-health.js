@@ -16,13 +16,13 @@ export const clusters = {
   clusters: [
     {
       name: 'Case studies',
-      icon: { name: 'bullhorn' },
+      icon: { name: 'file text' },
       values: ['Case study'],
       defaultResultView: 'horizontalCard',
     },
     {
       name: 'Guidance',
-      icon: { name: 'bullhorn' },
+      icon: { name: 'compass' },
       values: ['Guidance'],
       defaultResultView: 'horizontalCard',
     },
@@ -161,6 +161,13 @@ export default function installMainSearch(config) {
     config.searchui.ccaHealthSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
+
+  ccaHealthSearch.icons['Content types'] = Object.assign(
+    {
+      ...ccaHealthSearch.icons['Content types'],
+    },
+    ...clusters.clusters.map((cluster) => ({ [cluster.name]: cluster.icon })),
+  );
 
   return config;
 }
