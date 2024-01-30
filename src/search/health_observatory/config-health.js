@@ -46,7 +46,7 @@ export const clusters = {
     },
     {
       name: 'Research and knowledge projects',
-      icon: { name: 'book' },
+      icon: { name: 'university' },
       values: ['Research and knowledge project'],
       defaultResultView: 'horizontalCard',
     },
