@@ -1,36 +1,6 @@
+import { euCountryNames } from '../countryMap.js';
 export function getFocusCountryNames() {
-  return [
-    'Austria',
-    'Belgium',
-    'Cyprus',
-    'Czechia',
-    'Denmark',
-    'Estonia',
-    'Finland',
-    'France',
-    'Germany',
-    'Greece',
-    'Hungary',
-    'Iceland',
-    'Ireland',
-    'Italy',
-    'Lithuania',
-    'Luxembourg',
-    'Malta',
-    'Netherlands',
-    'Poland',
-    'Portugal',
-    'Romania',
-    'Slovakia',
-    'Slovenia',
-    'Spain',
-    'Sweden',
-    'United Kingdom',
-    'Liechtenstein',
-    'Norway',
-    'Switzerland',
-    'Turkey',
-  ];
+  return euCountryNames;
 }
 
 export function getFocusCountriesFeature(world) {

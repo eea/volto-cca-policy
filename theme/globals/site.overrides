@@ -273,3 +273,12 @@ body.subsite {
   display: flex;
   margin-right: auto;
 }
+
+body.searchlib-page .searchlib-block {
+  .ui.secondary.pointing.content-section-tabs.menu {
+    .active.item .tab-icon .count {
+      background-color: @ccaGreenColor;
+      border-color: @ccaGreenColor;
+    }
+  }
+}

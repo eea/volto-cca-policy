@@ -1,45 +1,6 @@
+import { euCountryNames } from '../countryMap.js';
 export function getFocusCountryNames() {
-  return [
-    'Albania',
-    'Austria',
-    'Belgium',
-    'Bosnia-Herzegovina',
-    'Bosnia and Herzegovina',
-    'Bulgaria',
-    'Cyprus',
-    'Croatia',
-    'Czechia',
-    'Denmark',
-    'Estonia',
-    'Finland',
-    'France',
-    'Germany',
-    'Greece',
-    'Hungary',
-    'Iceland',
-    'Ireland',
-    'Italy',
-    'Latvia',
-    'Lithuania',
-    'Luxembourg',
-    'Malta',
-    'Montenegro',
-    'Netherlands',
-    'North Macedonia',
-    'Poland',
-    'Portugal',
-    'Romania',
-    'Serbia',
-    'Slovakia',
-    'Slovenia',
-    'Spain',
-    'Sweden',
-    'United Kingdom',
-    'Liechtenstein',
-    'Norway',
-    'Switzerland',
-    'Turkey',
-  ];
+  return euCountryNames;
 }
 
 export function getFocusCountriesFeature(world) {
@@ -123,7 +84,173 @@ export function renderCountriesBox(opts, d3, d3Geo) {
     renderCountry(map, country, path, countries, x, y, d3, countries_metadata);
   });
 
+  var mo = {
+    svg: svg,
+    world: world,
+    viewport: [width, height],
+    countries: ['Malta', 'Liechtenstein', 'Luxembourg'],
+    start: [width + 10, 10],
+    side: 'left',
+    // 'size': 80,
+    // 'space': 6,
+  };
+  drawMaplets(mo, d3);
+
   return path;
+}
+
+function filterCountriesByNames(countries, filterIds) {
+  var features = {
+    type: 'FeatureCollection',
+    features: [],
+  };
+
+  // console.log('filterids', filterIds);
+  // filterIds has "Kosovo (under UNSCR 1244/99)" SHRT_ENGL is Kosovo
+  // filterIds has "Bosnia-Herzegovina", SHRT_ENGL is "Bosnia and Herzegovina"
+
+  // debugger;
+  countries.forEach(function (c) {
+    // var correct_name =
+    //   correct_country_names[c.properties.SHRT_ENGL] || c.properties.SHRT_ENGL;
+    if (filterIds.indexOf(c.properties.SHRT_ENGL) === -1) {
+      return;
+    }
+    features.features.push(c);
+  });
+  return features;
+}
+
+function drawMaplets(opts, d3) {
+  var svg = opts.svg;
+  var world = opts.world;
+  var viewport = opts.viewport;
+  var start = opts.start;
+  var side = opts.side;
+
+  var g = svg // the map will be drawn in this group
+    .append('g')
+    .attr('class', 'maplet-container');
+  var countries = opts.countries;
+
+  // debugger;
+
+  countries.forEach(function (name, index) {
+    var feature = filterCountriesByNames(world, [name]);
+    var boxw = 50;
+    var boxh = 50;
+    var space = 10;
+
+    var mapletWorld = world.filter(function (country) {
+      return country.properties.SHRT_ENGL === name;
+    });
+
+    var msp = getMapletStartingPoint(
+      viewport,
+      start,
+      index,
+      side,
+      space,
+      [boxw, boxh],
+      0,
+    );
+
+    var zo = {
+      world: mapletWorld,
+      svg: g,
+      coordinates: {
+        x: msp.x,
+        y: msp.y,
+        width: boxw,
+        height: boxh,
+      },
+      focusCountries: {
+        names: [name],
+        feature: feature,
+      },
+      zoom: 0.5,
+      isMaplet: true,
+    };
+    drawMaplet(zo, d3);
+  });
+}
+
+function drawMaplet(opts, d3) {
+  var msp = opts.coordinates;
+  var svg = opts.svg;
+  svg
+    .append('rect')
+    .attr('class', 'maplet-outline')
+    .attr('x', msp.x)
+    .attr('y', msp.y)
+    .attr('width', msp.width)
+    .attr('height', msp.height);
+
+  // var path = renderCountriesBox(opts, d3);
+  // renderCountryLabel(opts.focusCountries.feature.features[0], path, true);
+}
+
+function getMapletStartingPoint(
+  viewport, // an array of two integers, width and height
+  startPoint, // an array of two numbers, x, y for position in viewport
+  index, // integer, position in layout
+  side, // one of ['top', 'bottom', 'left', right']
+  spacer, // integer with amount of space to leave between Maplets
+  boxDim, // array of two numbers, box width and box height
+  titleHeight, // height of title box
+) {
+  // return value is array of x,y
+  // x: horizontal coordinate
+  // y: vertical coordinate
+
+  var bws = boxDim[0] + spacer; // box width including space to the right
+  var bhs = boxDim[1] + spacer + titleHeight;
+
+  var mutator = travelToOppositeMutator(startPoint, viewport, [bws, bhs]);
+
+  var mutPoint = [startPoint[0], startPoint[1]];
+
+  for (var i = 0; i < index; i++) {
+    mutPoint = mutator(mutPoint, index);
+  }
+
+  // TODO: this could be improved, there are many edge cases
+  switch (side) {
+    case 'top':
+      mutPoint[1] = startPoint[1];
+      break;
+    case 'bottom':
+      mutPoint[1] = startPoint[1] - bhs;
+      break;
+    case 'left':
+      mutPoint[0] = startPoint[0];
+      break;
+    case 'right':
+    default:
+      mutPoint[0] = startPoint[0] - bws;
+      break;
+  }
+
+  return {
+    x: mutPoint[0],
+    y: mutPoint[1],
+  };
+}
+
+function travelToOppositeMutator(start, viewport, delta) {
+  // point: the point we want to mutate
+  // start: starting point (the initial anchor point)
+  // viewport: array of width, height
+  // delta: array of dimensions to travel
+
+  var center = [viewport[0] / 2, viewport[1] / 2];
+
+  var dirx = start[0] > center[0] ? -1 : 1;
+  var diry = start[1] > center[1] ? -1 : 1;
+  return function (point) {
+    var res = [point[0] + delta[0] * dirx, point[1] + delta[1] * diry];
+    return res;
+  };
 }
 
 function renderGraticule(container, klass, steps, pathTransformer, d3Geo) {

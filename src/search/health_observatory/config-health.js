@@ -14,12 +14,54 @@ export const clusters = {
   name: 'op_cluster',
   field: 'objectProvides',
   clusters: [
-    // {
-    //   name: 'Type1',
-    //   icon: { name: 'bullhorn' },
-    //   values: ['Video', 'Guidance'],
-    //   defaultResultView: 'horizontalCard',
-    // },
+    {
+      name: 'Case studies',
+      icon: { name: 'file text' },
+      values: ['Case study'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Guidance',
+      icon: { name: 'compass' },
+      values: ['Guidance'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Indicators',
+      icon: { name: 'area chart' },
+      values: ['Indicator'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Information portals',
+      icon: { name: 'info circle' },
+      values: ['Information portal'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Publications and reports',
+      icon: { name: 'newspaper' },
+      values: ['Publication reference'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Research and knowledge projects',
+      icon: { name: 'university' },
+      values: ['Research and knowledge project'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Tools',
+      icon: { name: 'wrench' },
+      values: ['Tool'],
+      defaultResultView: 'horizontalCard',
+    },
+    {
+      name: 'Videos',
+      icon: { name: 'video play' },
+      values: ['Video'],
+      defaultResultView: 'horizontalCard',
+    },
   ],
 };
 
@@ -53,7 +95,17 @@ export default function installMainSearch(config) {
       cca_include_in_search_observatory: 'true',
     },
   });
-
+  ccaHealthSearch.contentSectionsParams = {
+    enable: true,
+    sectionFacetsField: 'op_cluster',
+    sections: clusters.clusters,
+    clusterMapping: Object.assign(
+      {},
+      ...clusters.clusters.map(({ name, values }) =>
+        Object.assign({}, ...values.map((v) => ({ [v]: name }))),
+      ),
+    ),
+  };
   ccaHealthSearch.permanentFilters.push({
     terms: {
       objectProvides: [
@@ -109,6 +161,13 @@ export default function installMainSearch(config) {
     config.searchui.ccaHealthSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
+
+  ccaHealthSearch.icons['Content types'] = Object.assign(
+    {
+      ...ccaHealthSearch.icons['Content types'],
+    },
+    ...clusters.clusters.map((cluster) => ({ [cluster.name]: cluster.icon })),
+  );
 
   return config;
 }
