@@ -1,4 +1,4 @@
-import { getFocusCountryNames } from '../countryMap.js';
+import { getFocusCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 
 export function renderCountriesBox(opts, d3, d3Geo) {
   var coords = opts.coordinates;

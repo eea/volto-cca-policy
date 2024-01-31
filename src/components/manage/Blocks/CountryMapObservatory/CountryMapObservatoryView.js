@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import flags from './flags.js';
 import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
@@ -9,44 +8,8 @@ import { renderCountriesBox } from './map-utils.js';
 import {
   getFocusCountriesFeature,
   getFocusCountryNames,
-} from './../countryMap.js';
-
-const withCountriesData = (WrappedComponent) => {
-  function WithCountriesDataWrapped(props) {
-    let [cpath, setCpath] = React.useState();
-
-    useEffect(() => {
-      if (!cpath) {
-        import('./euro-countries-simplified.js').then((mod) => {
-          const _cpath = mod.default;
-          _cpath.features = _cpath.features.map(function (c) {
-            //console.log(c);
-            var name = c.properties.SHRT_ENGL;
-            if (!name) {
-              // console.log('No flag for', c.properties);
-              return c;
-            } else if (name === 'Czechia') {
-              name = 'Czech Republic';
-            }
-            var cname = name.replace(' ', '_');
-            flags.forEach(function (f) {
-              if (f.indexOf(cname) > -1) {
-                c.url = f;
-                //console.log(c.url);
-              }
-            });
-            return c;
-          });
-
-          setCpath(_cpath);
-        });
-      }
-    }, [cpath]);
-
-    return cpath ? <WrappedComponent {...props} cpath={cpath} /> : null;
-  }
-  return WithCountriesDataWrapped;
-};
+  withCountriesData,
+} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 
 const CountryMapObservatoryView = (props) => {
   const svgRef = useRef(null);

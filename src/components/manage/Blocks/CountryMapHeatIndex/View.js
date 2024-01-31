@@ -8,7 +8,7 @@ import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import withResponsiveContainer from './../withResponsiveContainer.js';
 import { addAppURL } from '@plone/volto/helpers';
 import { getFocusCountryNames, renderCountriesBox } from './map-utils.js';
-import { getFocusCountriesFeature } from './../countryMap.js';
+import { getFocusCountriesFeature } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 
 import Filter from './Filter';
 
