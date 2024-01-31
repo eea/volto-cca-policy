@@ -1,22 +1,4 @@
-import { euCountryNames } from '../countryMap.js';
-export function getFocusCountryNames() {
-  return euCountryNames;
-}
-
-export function getFocusCountriesFeature(world) {
-  const focusCountryNames = getFocusCountryNames();
-  let features = {
-    type: 'FeatureCollection',
-    features: [],
-  };
-  world.features.forEach(function (c) {
-    if (focusCountryNames.indexOf(c.properties.SHRT_ENGL) === -1) {
-      return;
-    }
-    features.features.push(c);
-  });
-  return features;
-}
+import { removeTooltip } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 
 // tooltip with country names on hover
 let countryNameTooltip = null;
@@ -442,13 +424,6 @@ function showMapTooltip(d, countries_metadata, d3) {
     removeTooltip();
   });
   d3.event.stopPropagation();
-}
-
-function removeTooltip() {
-  const elem = document.getElementById('map-tooltip');
-  if (elem) {
-    elem.parentElement.removeChild(elem);
-  }
 }
 
 function createTooltip(opts) {

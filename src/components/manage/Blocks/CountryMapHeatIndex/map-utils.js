@@ -1,4 +1,7 @@
-import { euCountryNames } from '../countryMap.js';
+import {
+  euCountryNames,
+  removeTooltip,
+} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 export function getFocusCountryNames() {
   return euCountryNames;
 }
@@ -501,13 +504,6 @@ function showMapTooltip(d, countries_metadata, d3) {
     removeTooltip();
   });
   d3.event.stopPropagation();
-}
-
-function removeTooltip() {
-  const elem = document.getElementById('map-tooltip');
-  if (elem) {
-    elem.parentElement.removeChild(elem);
-  }
 }
 
 function createTooltip(opts) {
