@@ -386,9 +386,6 @@ const applyConfig = (config) => {
     '/en/observatory/resource-catalogue-1': {
       hideChildrenFromNavigation: false,
     },
-    '/en/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
     '/de/observatory/resource-catalogue-1': {
       hideChildrenFromNavigation: false,
     },
