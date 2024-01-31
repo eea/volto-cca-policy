@@ -328,6 +328,100 @@ const applyConfig = (config) => {
     '/pl/knowledge-1': {
       hideChildrenFromNavigation: false,
     },
+    // observatory
+    '/en/observatory/about': {
+      hideChildrenFromNavigation: false,
+    },
+    '/de/observatory/about': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/observatory/about': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/observatory/about': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/observatory/about': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/observatory/about': {
+      hideChildrenFromNavigation: false,
+    },
+    '/en/observatory/policy-context-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/de/observatory/policy-context-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/observatory/policy-context-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/observatory/policy-context-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/observatory/policy-context-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/observatory/policy-context-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/en/observatory/evidence-on-climate-and-health': {
+      hideChildrenFromNavigation: false,
+    },
+    '/de/observatory/evidence-on-climate-and-health': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/observatory/evidence-on-climate-and-health': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/observatory/evidence-on-climate-and-health': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/observatory/evidence-on-climate-and-health': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/observatory/evidence-on-climate-and-health': {
+      hideChildrenFromNavigation: false,
+    },
+    '/en/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/en/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/de/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/observatory/resource-catalogue-1': {
+      hideChildrenFromNavigation: false,
+    },
+    '/en/observatory/publications-and-outreach': {
+      hideChildrenFromNavigation: false,
+    },
+    '/de/observatory/publications-and-outreach': {
+      hideChildrenFromNavigation: false,
+    },
+    '/fr/observatory/publications-and-outreach': {
+      hideChildrenFromNavigation: false,
+    },
+    '/es/observatory/publications-and-outreach': {
+      hideChildrenFromNavigation: false,
+    },
+    '/it/observatory/publications-and-outreach': {
+      hideChildrenFromNavigation: false,
+    },
+    '/pl/observatory/publications-and-outreach': {
+      hideChildrenFromNavigation: false,
+    },
   };
 
   // Custom results
