@@ -39,3 +39,22 @@ export const euCountryNames = [
   'Switzerland',
   'Turkey',
 ];
+
+export function getFocusCountryNames() {
+  return euCountryNames;
+}
+
+export const getFocusCountriesFeature = (world) => {
+  const focusCountryNames = getFocusCountryNames();
+  let features = {
+    type: 'FeatureCollection',
+    features: [],
+  };
+  world.features.forEach(function (c) {
+    if (focusCountryNames.indexOf(c.properties.SHRT_ENGL) === -1) {
+      return;
+    }
+    features.features.push(c);
+  });
+  return features;
+};

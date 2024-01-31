@@ -5,11 +5,11 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import withResponsiveContainer from './../withResponsiveContainer.js';
+import { renderCountriesBox } from './map-utils.js';
 import {
   getFocusCountriesFeature,
   getFocusCountryNames,
-  renderCountriesBox,
-} from './map-utils.js';
+} from './../countryMap.js';
 
 const withCountriesData = (WrappedComponent) => {
   function WithCountriesDataWrapped(props) {

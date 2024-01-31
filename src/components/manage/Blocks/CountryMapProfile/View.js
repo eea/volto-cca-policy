@@ -7,11 +7,11 @@ import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import withResponsiveContainer from './../withResponsiveContainer.js';
 import { addAppURL } from '@plone/volto/helpers';
+import { renderCountriesBox } from './map-utils.js';
 import {
   getFocusCountriesFeature,
   getFocusCountryNames,
-  renderCountriesBox,
-} from './map-utils.js';
+} from './../countryMap.js';
 
 import Filter from './Filter';
 
