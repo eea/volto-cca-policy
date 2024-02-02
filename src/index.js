@@ -159,10 +159,9 @@ const applyConfig = (config) => {
         matchpath: '/en/observatory',
         path: '/en/observatory/advanced-search',
         placeholder: 'Search Observatory Climate-ADAPT...',
-        description:
-          'Looking for more information? Try searching the full EEA website content',
-        buttonTitle: 'Go to advanced search',
-        buttonUrl: 'https://www.eea.europa.eu/en/advanced-search',
+        description: 'Looking for more information?',
+        buttonTitle: 'Explore more on Climate-ADAPT',
+        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
       },
       {
         isDefault: true,
