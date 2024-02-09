@@ -201,11 +201,13 @@ const CountryMapObservatoryView = (props) => {
       <div ref={tooltipRef} style={tooltipStyle} className="map-tooltip"></div>
       <Controls attribution={false} />
       <Layers>
-        <Interactions
-          overlaySource={overlaySource}
-          tooltipRef={tooltipRef}
-          baseUrl={props.path || props.location?.pathname || ''}
-        />
+        {props.mode !== 'edit' && (
+          <Interactions
+            overlaySource={overlaySource}
+            tooltipRef={tooltipRef}
+            baseUrl={props.path || props.location?.pathname || ''}
+          />
+        )}
         <Layer.Vector source={overlaySource} zIndex={3} style={overlayStyle} />
         <Layer.Vector
           source={euCountriesSource}
