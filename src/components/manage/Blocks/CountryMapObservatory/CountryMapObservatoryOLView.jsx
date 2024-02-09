@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import withResponsiveContainer from '../withResponsiveContainer.js';
@@ -12,9 +13,22 @@ import './styles.less';
 const url =
   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
-let highlight = null;
+let highlight = null; // easy global
 
-const Interactions = ({ overlaySource }) => {
+const tooltipStyle = {
+  position: 'absolute',
+  zIndex: 2,
+  top: '0px',
+  left: '0px',
+  backgroundColor: 'black',
+  color: 'white',
+  padding: '0.3em',
+  cursor: 'pointer',
+  fontSize: '10px',
+};
+
+const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
+  const history = useHistory();
   const map = useMapContext().map;
   React.useEffect(() => {
     if (!map) return;
@@ -34,6 +48,12 @@ const Interactions = ({ overlaySource }) => {
         }
         if (feature && euCountryNames.includes(feature.get('na'))) {
           overlaySource.addFeature(feature);
+          const node = tooltipRef.current;
+          if (node) {
+            node.innerHTML = feature.get('na');
+            node.style.left = `${Math.floor(evt.originalEvent.pageX)}px`;
+            node.style.top = `${Math.floor(evt.originalEvent.pageY)}px`;
+          }
           highlight = feature;
         }
       }
@@ -48,14 +68,15 @@ const Interactions = ({ overlaySource }) => {
       });
       if (feature) {
         const country = feature.get('na');
-        console.log('clicked', country);
+        history.push(`${baseUrl}/${country.toLowerCase()}`);
       }
     });
-  }, [map, overlaySource]);
+  }, [map, overlaySource, tooltipRef]);
   return null;
 };
 
 const CountryMapObservatoryView = (props) => {
+  console.log('props', props);
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [rectsSource, setRectsSource] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
@@ -166,6 +187,8 @@ const CountryMapObservatoryView = (props) => {
     }),
   });
 
+  const tooltipRef = React.useRef();
+
   return rectsSource ? (
     <Map
       view={{
@@ -175,9 +198,14 @@ const CountryMapObservatoryView = (props) => {
       }}
       pixelRatio={1}
     >
+      <div ref={tooltipRef} style={tooltipStyle} className="map-tooltip"></div>
       <Controls attribution={false} />
       <Layers>
-        <Interactions overlaySource={overlaySource} />
+        <Interactions
+          overlaySource={overlaySource}
+          tooltipRef={tooltipRef}
+          baseUrl={props.path || props.location?.pathname || ''}
+        />
         <Layer.Vector source={overlaySource} zIndex={3} style={overlayStyle} />
         <Layer.Vector
           source={euCountriesSource}
