@@ -27,6 +27,7 @@ import installStore from './store';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import MigrationButtons from './components/MigrationButtons';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -446,6 +447,14 @@ const applyConfig = (config) => {
     },
 
     ...(config.addonRoutes || []),
+  ];
+
+  config.settings.appExtras = [
+    ...(config.settings.appExtras || []),
+    {
+      match: '',
+      component: MigrationButtons,
+    },
   ];
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
