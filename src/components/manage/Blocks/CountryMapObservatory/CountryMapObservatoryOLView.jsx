@@ -192,9 +192,9 @@ const CountryMapObservatoryView = (props) => {
   return rectsSource ? (
     <Map
       view={{
-        center: ol.proj.fromLonLat([10, 49]),
+        center: ol.proj.fromLonLat([10, 52]),
         showFullExtent: true,
-        zoom: 4,
+        zoom: 3.8,
       }}
       pixelRatio={1}
     >
