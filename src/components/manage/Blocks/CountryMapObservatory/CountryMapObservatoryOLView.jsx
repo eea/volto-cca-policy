@@ -43,11 +43,13 @@ const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
       if (feature !== highlight) {
         if (highlight) {
           try {
+            map.getTargetElement().style.cursor = '';
             overlaySource.removeFeature(highlight);
           } catch {}
         }
         if (feature && euCountryNames.includes(feature.get('na'))) {
           overlaySource.addFeature(feature);
+          map.getTargetElement().style.cursor = 'pointer';
           const node = tooltipRef.current;
           if (node) {
             node.innerHTML = feature.get('na');
