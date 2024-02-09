@@ -19,6 +19,7 @@ const tooltipStyle = {
   position: 'relative',
   zIndex: 2,
   display: 'inline-block',
+  visibility: 'hidden',
   top: '0px',
   left: '0px',
   backgroundColor: 'black',
@@ -54,6 +55,7 @@ const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
           const node = tooltipRef.current;
           if (node) {
             node.innerHTML = feature.get('na');
+            node.style.visibility = 'visible';
             node.style.left = `${Math.floor(evt.originalEvent.layerX)}px`;
             node.style.top = `${Math.floor(evt.originalEvent.layerY)}px`;
           }
