@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Grid } from 'semantic-ui-react';
 import { compose } from 'redux';
@@ -12,6 +11,8 @@ import {
   getFocusCountryNames,
   withCountriesData,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
+
+import './styles.less';
 
 import Filter from './Filter';
 
@@ -115,6 +116,6 @@ const CountryMapObservatoryView = (props) => {
 export default compose(
   clientOnly,
   injectLazyLibs(['d3', 'd3Geo']),
-  withResponsiveContainer,
+  withResponsiveContainer('countryMapProfile'),
   withCountriesData,
 )(CountryMapObservatoryView);

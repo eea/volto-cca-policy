@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
@@ -10,6 +9,8 @@ import {
   getFocusCountryNames,
   withCountriesData,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
+
+import './styles.less';
 
 const CountryMapObservatoryView = (props) => {
   const svgRef = useRef(null);
@@ -72,6 +73,7 @@ const CountryMapObservatoryView = (props) => {
       },
       zoom: 0.95,
     };
+    console.log('d3geo', d3Geo);
     renderCountriesBox(opts, d3, d3Geo);
     // Draw Circle
     //container.append("circle").attr("r", 25).style("color","blue");
@@ -83,7 +85,7 @@ const CountryMapObservatoryView = (props) => {
 export default compose(
   clientOnly,
   injectLazyLibs(['d3', 'd3Geo']),
-  withResponsiveContainer,
+  withResponsiveContainer('countryMapObservatory'),
   withCountriesData,
 )(CountryMapObservatoryView);
 
