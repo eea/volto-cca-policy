@@ -114,6 +114,7 @@ function renderCountry(map, country, path, countries, x, y, d3) {
     .attr('x', x)
     .attr('y', y)
     .attr('d', path(country));
+
   if (available) {
     var bbox = outline.node().getBBox();
     renderCountryFlag(parent, country, bbox, cpId, d3);
@@ -195,11 +196,7 @@ function renderCountryFlag(parent, country, bbox, cpId, d3) {
     .append('image')
     .attr('class', 'country-flag')
     .attr('href', function () {
-      if (getIEVersion() > 0) {
-        return '++theme++climateadaptv2/static/images/fallback.svg';
-      } else {
-        return country.url;
-      }
+      return country.url;
     })
     .attr('preserveAspectRatio', 'none')
     .attr('opacity', '0')

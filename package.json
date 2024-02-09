@@ -38,7 +38,7 @@
     "@eeacms/volto-widget-dataprovenance": "*",
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",
-    "d3": "3",
+    "d3": "4",
     "d3-geo": "3"
   },
   "devDependencies": {

@@ -3,32 +3,35 @@
 
 @import (multiple, reference, optional) '../../theme.config';
 
-a rect.circle:hover {
-  fill: #183 !important;
-}
+.rast-block {
 
-a rect.circle {
-  pointer-events: all !important;
-}
+  a rect.circle:hover {
+    fill: #183 !important;
+  }
 
-svg,
-svg * {
-  pointer-events: none;
-}
+  a rect.circle {
+    pointer-events: all !important;
+  }
 
-.link-active {
-  .circle,
+  svg,
+  svg * {
+    pointer-events: none;
+  }
+
+  .link-active {
+    .circle,
+    .circle:hover {
+      fill: @green-1;
+    }
+  }
+
   .circle:hover {
     fill: @green-1;
   }
-}
 
-.circle:hover {
-  fill: @green-1;
-}
-
-.rast-block .item.active a {
-  font-weight: bold;
+  .item.active a {
+    font-weight: bold;
+  }
 }
 
 .rast-map-block {
