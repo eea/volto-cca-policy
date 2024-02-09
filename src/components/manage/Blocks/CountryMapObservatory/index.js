@@ -1,6 +1,6 @@
 import worldSVG from '@plone/volto/icons/world.svg';
 import CountryMapObservatoryEdit from './CountryMapObservatoryEdit';
-import CountryMapObservatoryView from './CountryMapObservatoryView';
+import CountryMapObservatoryView from './CountryMapObservatoryOLView';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 export default function installCountryMapObservatoryBlock(config) {

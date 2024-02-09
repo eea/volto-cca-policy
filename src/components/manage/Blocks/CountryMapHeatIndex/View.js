@@ -1,6 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import flags from './flags.js';
-import './styles.css';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Grid } from 'semantic-ui-react';
 import { compose } from 'redux';
@@ -11,6 +9,9 @@ import { getFocusCountryNames, renderCountriesBox } from './map-utils.js';
 import { getFocusCountriesFeature } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 
 import Filter from './Filter';
+
+import flags from './flags.js';
+import './styles.less';
 
 import { useCountriesMetadata } from './hooks';
 
@@ -161,7 +162,7 @@ const CountryMapObservatoryView = (props) => {
 export default compose(
   clientOnly,
   injectLazyLibs(['d3', 'd3Geo']),
-  withResponsiveContainer,
+  withResponsiveContainer('countryMapHeatIndex'),
   withCountriesData,
 )(CountryMapObservatoryView);
 
