@@ -29,11 +29,11 @@ import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
 
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
 const pathToNegRegex = (p) => `(?!(${p}))`;
-
-const restrictedBlocks = ['countryFlag'];
 
 const applyConfig = (config) => {
   const env = getEnv();
@@ -190,12 +190,15 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.video.restricted = false;
   }
 
-  // Disable blocks
-  restrictedBlocks.forEach((block) => {
-    if (config.blocks.blocksConfig[block]) {
-      config.blocks.blocksConfig[block].restricted = true;
-    }
-  });
+  // Disable blocks on Mission
+  if (config.blocks.blocksConfig.countryFlag) {
+    config.blocks.blocksConfig.countryFlag = {
+      ...config.blocks.blocksConfig.countryFlag,
+      restricted: ({ properties, block }) => {
+        return blockAvailableInMission(properties, block);
+      },
+    };
+  }
 
   // Move blocks to Site group
   const move_to_site = [
