@@ -16,8 +16,9 @@ const url =
 let highlight = null; // easy global
 
 const tooltipStyle = {
-  position: 'absolute',
+  position: 'relative',
   zIndex: 2,
+  display: 'inline-block',
   top: '0px',
   left: '0px',
   backgroundColor: 'black',
@@ -53,8 +54,8 @@ const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
           const node = tooltipRef.current;
           if (node) {
             node.innerHTML = feature.get('na');
-            node.style.left = `${Math.floor(evt.originalEvent.pageX)}px`;
-            node.style.top = `${Math.floor(evt.originalEvent.pageY)}px`;
+            node.style.left = `${Math.floor(evt.originalEvent.layerX)}px`;
+            node.style.top = `${Math.floor(evt.originalEvent.layerY)}px`;
           }
           highlight = feature;
         }
