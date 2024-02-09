@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from './../withResponsiveContainer.js';
+import withResponsiveContainer from '../withResponsiveContainer.js';
 import { renderCountriesBox } from './map-utils.js';
 import {
   getFocusCountriesFeature,
@@ -88,8 +88,3 @@ export default compose(
   withResponsiveContainer('countryMapObservatory'),
   withCountriesData,
 )(CountryMapObservatoryView);
-
-// import loadable from '@loadable/component';
-//import * as d3 from 'd3';
-// import cpath from './euro-countries-simplified';
-//
