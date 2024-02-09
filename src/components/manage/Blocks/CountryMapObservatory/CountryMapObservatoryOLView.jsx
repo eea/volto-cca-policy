@@ -10,8 +10,10 @@ import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
 
 import './styles.less';
-const url =
-  'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
+// const url =
+//   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
+
+import geoJsonUrl from '@eeacms/volto-cca-policy/cntrg.data';
 
 let highlight = null; // easy global
 
@@ -78,6 +80,7 @@ const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
 };
 
 const CountryMapObservatoryView = (props) => {
+  const { geofeatures } = props;
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [rectsSource, setRectsSource] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
@@ -87,12 +90,14 @@ const CountryMapObservatoryView = (props) => {
     setOverlaySource(new ol.source.Vector());
     const euSource = new ol.source.Vector();
     setEuCountriessource(euSource);
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+
     const vs = new ol.source.Vector({
-      url,
-      format: new ol.format.GeoJSON(),
+      features,
+      // format: new ol.format.GeoJSON(),
     });
-    vs.on('addfeature', function (evt) {
-      const { feature } = evt;
+
+    features.forEach((feature) => {
       const img = new Image();
       img.onload = function () {
         feature.set('flag', img);
@@ -100,12 +105,13 @@ const CountryMapObservatoryView = (props) => {
       img.src =
         'https://flagcdn.com/w320/' + feature.get('id').toLowerCase() + '.png';
     });
-    vs.on('featuresloadend', (ev) => {
-      const filtered = ev.features.filter((f) =>
-        euCountryNames.includes(f.get('na')),
-      );
-      euSource.addFeatures(filtered);
-    });
+
+    const filtered = features.filter((f) =>
+      euCountryNames.includes(f.get('na')),
+    );
+    console.log('filtered', filtered);
+    euSource.addFeatures(filtered);
+
     setRectsSource(vs);
 
     setTileWMSSources([
@@ -120,7 +126,7 @@ const CountryMapObservatoryView = (props) => {
         transition: 0,
       }),
     ]);
-  }, []);
+  }, [geofeatures]);
 
   const fill = new ol.style.Fill();
   const stroke = new ol.style.Stroke({
@@ -219,7 +225,28 @@ const CountryMapObservatoryView = (props) => {
   ) : null;
 };
 
+const withGeoJsonData = (WrappedComponent) => {
+  function Wrapper(props) {
+    const [geofeatures, setGeofeatures] = React.useState();
+    React.useEffect(() => {
+      async function handler() {
+        const resp = await fetch(geoJsonUrl);
+        const features = await resp.json();
+        setGeofeatures(features);
+      }
+      handler();
+    }, []);
+
+    return geofeatures ? (
+      <WrappedComponent {...props} geofeatures={geofeatures} />
+    ) : null;
+  }
+
+  return Wrapper;
+};
+
 export default compose(
   clientOnly,
+  withGeoJsonData,
   withResponsiveContainer('countryMapObservatory'),
 )(CountryMapObservatoryView);
