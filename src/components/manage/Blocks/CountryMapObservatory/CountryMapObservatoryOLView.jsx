@@ -90,7 +90,11 @@ const CountryMapObservatoryView = (props) => {
     setOverlaySource(new ol.source.Vector());
     const euSource = new ol.source.Vector();
     setEuCountriessource(euSource);
-    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures, {
+      dataProjection: 'EPSG:4326',
+      fetureProjection: 'EPSG:4326',
+    });
+    console.log('f', features);
 
     const vs = new ol.source.Vector({
       features,
