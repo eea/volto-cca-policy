@@ -71,12 +71,11 @@ const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
         history.push(`${baseUrl}/${country.toLowerCase()}`);
       }
     });
-  }, [map, overlaySource, tooltipRef]);
+  }, [map, overlaySource, tooltipRef, baseUrl, history]);
   return null;
 };
 
 const CountryMapObservatoryView = (props) => {
-  console.log('props', props);
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [rectsSource, setRectsSource] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
@@ -99,8 +98,7 @@ const CountryMapObservatoryView = (props) => {
       img.src =
         'https://flagcdn.com/w320/' + feature.get('id').toLowerCase() + '.png';
     });
-    vs.on('featuresloadend', (ev, data) => {
-      console.log(ev, data);
+    vs.on('featuresloadend', (ev) => {
       const filtered = ev.features.filter((f) =>
         euCountryNames.includes(f.get('na')),
       );
