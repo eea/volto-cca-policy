@@ -151,6 +151,8 @@ const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
 };
 
 const CountryMapObservatoryView = (props) => {
+  const styles = React.useMemo(makeStyles, []);
+  const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [rectsSource, setRectsSource] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
@@ -194,10 +196,6 @@ const CountryMapObservatoryView = (props) => {
       }),
     ]);
   }, []);
-
-  const styles = React.useMemo(makeStyles, []);
-
-  const tooltipRef = React.useRef();
 
   return rectsSource ? (
     <Map
