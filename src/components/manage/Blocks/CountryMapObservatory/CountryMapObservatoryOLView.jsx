@@ -12,8 +12,8 @@ import { withGeoJsonData } from './hocs';
 
 import './styles.less';
 
-const url =
-  'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
+// const url =
+//   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const tooltipStyle = {
   position: 'relative',
