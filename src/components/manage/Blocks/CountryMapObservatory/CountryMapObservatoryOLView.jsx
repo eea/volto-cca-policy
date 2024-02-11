@@ -8,8 +8,10 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
+import { withGeoJsonData } from './hocs';
 
 import './styles.less';
+
 const url =
   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
@@ -27,59 +29,65 @@ const tooltipStyle = {
   fontSize: '10px',
 };
 
+function getImageUrl(feature) {
+  let id = feature.get('id').toLowerCase();
+  if (id === 'el') {
+    id = 'gr'; // fix Greece
+  }
+  if (id === 'uk') {
+    id = 'gb'; // fix Greece
+  }
+  return 'https://flagcdn.com/w320/' + id + '.png';
+}
+
 const CountryMapObservatoryView = (props) => {
+  const { geofeatures } = props;
   const styles = React.useMemo(makeStyles, []);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
-  const [rectsSource, setRectsSource] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
 
   React.useEffect(() => {
     setOverlaySource(new ol.source.Vector());
-    const euSource = new ol.source.Vector();
-    setEuCountriessource(euSource);
-    const vs = new ol.source.Vector({
-      url,
-      format: new ol.format.GeoJSON(),
-    });
-    vs.on('addfeature', function (evt) {
-      const { feature } = evt;
+
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const filtered = features.filter((f) =>
+      euCountryNames.includes(f.get('na')),
+    );
+
+    filtered.forEach((feature) => {
       const img = new Image();
       img.onload = function () {
         feature.set('flag', img);
       };
-      img.src =
-        'https://flagcdn.com/w320/' + feature.get('id').toLowerCase() + '.png';
+      img.src = getImageUrl(feature);
     });
-    vs.on('featuresloadend', (ev) => {
-      const filtered = ev.features.filter((f) =>
-        euCountryNames.includes(f.get('na')),
-      );
-      euSource.addFeatures(filtered);
-    });
-    setRectsSource(vs);
+
+    const euSource = new ol.source.Vector({ features: filtered });
+    setEuCountriessource(euSource);
 
     setTileWMSSources([
       new ol.source.TileWMS({
         url: 'https://gisco-services.ec.europa.eu/maps/service',
         params: {
           // LAYERS: 'OSMBlossomComposite', OSMCartoComposite, OSMPositronComposite
-          LAYERS: 'OSMPositronComposite',
+          LAYERS: 'OSMBrightBackground',
           TILED: true,
         },
         serverType: 'geoserver',
         transition: 0,
       }),
     ]);
-  }, []);
+  }, [geofeatures]);
 
-  return rectsSource ? (
+  return tileWMSSources ? (
     <Map
       view={{
-        center: ol.proj.fromLonLat([10, 52]),
+        center: ol.proj.fromLonLat([10, 50], 'EPSG:4326'),
+        projection: 'EPSG:4326',
         showFullExtent: true,
-        zoom: 3.8,
+        zoom: 4,
       }}
       pixelRatio={1}
     >
@@ -103,11 +111,6 @@ const CountryMapObservatoryView = (props) => {
           zIndex={2}
           style={styles.eucountriesStyle}
         />
-        <Layer.Vector
-          source={rectsSource}
-          zIndex={1}
-          style={styles.emptyStyle}
-        />
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
       </Layers>
     </Map>
@@ -116,5 +119,6 @@ const CountryMapObservatoryView = (props) => {
 
 export default compose(
   clientOnly,
+  withGeoJsonData,
   withResponsiveContainer('countryMapObservatory'),
 )(CountryMapObservatoryView);

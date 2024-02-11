@@ -30,6 +30,8 @@ export const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
       if (evt.dragging) {
         return;
       }
+      // eslint-disable-next-line no-console
+      console.log('CountryObservatoryMap event');
       const domEvt = evt.originalEvent;
       const pixel = map.getEventPixel(evt.originalEvent);
       const feature = map.forEachFeatureAtPixel(pixel, function (feature) {

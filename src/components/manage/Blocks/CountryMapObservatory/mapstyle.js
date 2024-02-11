@@ -16,7 +16,7 @@ export const makeStyles = () => {
     fill: new ol.style.Fill({
       color: 'rgb(1, 112, 183, 0.8)',
     }),
-    renderer: function(pixelCoordinates, state) {
+    renderer: function (pixelCoordinates, state) {
       const context = state.context;
       const geometry = state.geometry.clone();
       geometry.setCoordinates(pixelCoordinates);
@@ -46,25 +46,15 @@ export const makeStyles = () => {
     },
   });
 
-  const emptyStyle = new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      color: 'rgb(1, 1, 1, 0)',
-      width: 1,
-    }),
-    fill: new ol.style.Fill({
-      color: 'rgb(1, 1, 1, 0)',
-    }),
-  });
-
   const eucountriesStyle = new ol.style.Style({
     stroke: new ol.style.Stroke({
-      color: '#A0A0A0',
+      color: '#FFFFFF',
       width: 1,
     }),
     fill: new ol.style.Fill({
-      color: 'rgb(1, 112, 183, 0.3)',
+      color: 'rgb(1, 112, 183, 0.6)',
     }),
   });
 
-  return { eucountriesStyle, emptyStyle, overlayStyle };
+  return { eucountriesStyle, overlayStyle };
 };
