@@ -1,11 +1,12 @@
 import React from 'react';
 
-const withResponsiveContainer = (WrappedComponent) => {
+const withResponsiveContainer = (className) => (WrappedComponent) => {
   return (props) => {
     const [size, setSize] = React.useState();
+    const klass = className ? `${className} sized-wrapper` : 'sized-wrapper';
     return (
       <div
-        className="sized-wrapper"
+        className={klass}
         ref={(node) => {
           // console.log(node, node.clientHeight);
           if (node && !size)
