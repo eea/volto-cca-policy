@@ -43,7 +43,7 @@ function getImageUrl(feature) {
 }
 
 const CountryMapObservatoryView = (props) => {
-  const { geofeatures } = props;
+  const { geofeatures, projection } = props;
 
   const history = useHistory();
   const styles = React.useMemo(makeStyles, []);
@@ -98,8 +98,8 @@ const CountryMapObservatoryView = (props) => {
   return tileWMSSources ? (
     <Map
       view={{
-        center: ol.proj.fromLonLat([10, 50], 'EPSG:4326'),
-        projection: 'EPSG:4326',
+        center: ol.proj.fromLonLat([10, 50], projection),
+        projection,
         showFullExtent: true,
         zoom: 4,
       }}
