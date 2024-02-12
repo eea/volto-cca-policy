@@ -92,7 +92,7 @@ const CountryMapObservatoryView = (props) => {
       const country = feature.get('na');
       history.push(`${baseUrl}/${country.toLowerCase()}`);
     },
-    [baseUrl],
+    [baseUrl, history],
   );
 
   return tileWMSSources ? (
