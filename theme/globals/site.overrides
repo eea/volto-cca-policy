@@ -20,6 +20,11 @@
   @green-2 97.12%
 );
 
+body.subsite-root .content-area {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
 p.has--clear--both:empty {
   margin-top: 0;
   margin-bottom: 0;
