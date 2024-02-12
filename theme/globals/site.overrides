@@ -217,3 +217,8 @@ body.searchlib-page .searchlib-block {
     }
   }
 }
+
+// Fix margin in simple item listing
+.u-item.listing-item.simple-listing-item .listing-body {
+  margin-top: 0;
+}
