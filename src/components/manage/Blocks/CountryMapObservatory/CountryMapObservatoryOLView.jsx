@@ -18,7 +18,7 @@ import './styles.less';
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const tooltipStyle = {
-  position: 'relative',
+  position: 'absolute',
   zIndex: 2,
   display: 'inline-block',
   visibility: 'hidden',
