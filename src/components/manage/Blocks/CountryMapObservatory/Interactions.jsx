@@ -2,7 +2,6 @@ import React from 'react';
 
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
-import { useHistory } from 'react-router-dom';
 
 let highlight = null; // easy global
 
@@ -19,8 +18,7 @@ function setTooltipVisibility(node, label, event, visible) {
   }
 }
 
-export const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
-  const history = useHistory();
+export const Interactions = ({ overlaySource, tooltipRef, onFeatureClick }) => {
   const map = useMapContext().map;
 
   React.useEffect(() => {
@@ -65,11 +63,10 @@ export const Interactions = ({ overlaySource, tooltipRef, baseUrl }) => {
         return feature;
       });
       if (feature) {
-        const country = feature.get('na');
-        history.push(`${baseUrl}/${country.toLowerCase()}`);
+        onFeatureClick(feature);
       }
     });
-  }, [map, overlaySource, tooltipRef, baseUrl, history]);
+  }, [map, overlaySource, tooltipRef, onFeatureClick]);
 
   return null;
 };

@@ -1,11 +1,13 @@
 import React from 'react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from '../withResponsiveContainer';
+import { useHistory } from 'react-router-dom';
 
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+
+import withResponsiveContainer from '../withResponsiveContainer';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 import { withGeoJsonData } from './hocs';
@@ -42,6 +44,8 @@ function getImageUrl(feature) {
 
 const CountryMapObservatoryView = (props) => {
   const { geofeatures } = props;
+
+  const history = useHistory();
   const styles = React.useMemo(makeStyles, []);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
@@ -81,6 +85,16 @@ const CountryMapObservatoryView = (props) => {
     ]);
   }, [geofeatures]);
 
+  const baseUrl = props.path || props.location?.pathname || '';
+
+  const onFeatureClick = React.useCallback(
+    (feature) => {
+      const country = feature.get('na');
+      history.push(`${baseUrl}/${country.toLowerCase()}`);
+    },
+    [baseUrl],
+  );
+
   return tileWMSSources ? (
     <Map
       view={{
@@ -98,7 +112,7 @@ const CountryMapObservatoryView = (props) => {
           <Interactions
             overlaySource={overlaySource}
             tooltipRef={tooltipRef}
-            baseUrl={props.path || props.location?.pathname || ''}
+            onFeatureClick={onFeatureClick}
           />
         )}
         <Layer.Vector
