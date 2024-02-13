@@ -3,6 +3,7 @@ import {
   objectProvides,
   language,
   issued_date,
+  geographic_countries,
 } from './common';
 
 const adaptation_sectors = {
@@ -101,19 +102,6 @@ const origin_websites = {
   field: 'cca_origin_websites.keyword',
   factory: 'MultiTermFacet',
   label: 'Item from third parties',
-  showInFacetsList: true,
-  filterType: 'any',
-  isFilterable: false,
-  show: 10000,
-  isMulti: true,
-  // sortOn: 'custom',
-  // sortOnCustomLabel: 'Alphabetical',
-};
-
-const geographic_countries = {
-  field: 'cca_geographic_countries.keyword',
-  factory: 'MultiTermFacet',
-  label: 'Countries',
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,

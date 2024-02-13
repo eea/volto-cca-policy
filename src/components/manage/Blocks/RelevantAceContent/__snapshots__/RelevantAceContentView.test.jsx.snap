@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelevantAceContentView should render the component 1`] = `
+<div
+  className="block relevant-acecontent-block"
+>
+  <div
+    className="item"
+    onClick={[Function]}
+    role="listitem"
+    title="Publications and reports"
+  >
+    <div>
+      Link
+    </div>
+  </div>
+  <div
+    className="item"
+    onClick={[Function]}
+    role="listitem"
+    title="Information portals"
+  >
+    <div>
+      Link
+    </div>
+  </div>
+</div>
+`;

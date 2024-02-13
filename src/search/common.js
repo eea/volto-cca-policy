@@ -1,6 +1,17 @@
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
 
+export const geographic_countries = {
+  field: 'cca_geographic_countries.keyword',
+  factory: 'MultiTermFacet',
+  label: 'Countries',
+  showInFacetsList: true,
+  filterType: 'any',
+  isFilterable: false,
+  show: 10000,
+  isMulti: true,
+};
+
 export const include_archived = booleanFacet(() => ({
   field: 'IncludeArchived',
   label: 'Include archived content',
