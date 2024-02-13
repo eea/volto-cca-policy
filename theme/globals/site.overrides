@@ -1,9 +1,3 @@
-.searchlib-page .content-section-tabs.menu .item i.icon.small {
-  width: 32px;
-  height: 32px;
-  font-size: 32px;
-}
-
 /*******************************
         Global Overrides
 *******************************/
@@ -28,11 +22,6 @@ body.subsite-root .content-area {
 p.has--clear--both:empty {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-#page-edit .block-editor-layoutSettings,
-#page-add .block-editor-layoutSettings {
-  display: block;
 }
 
 // Add icon for external links
@@ -218,14 +207,23 @@ body.searchlib-page .searchlib-block {
   }
 }
 
+.searchlib-page .content-section-tabs.menu .item i.icon.small {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+}
+
 // Fix margin in simple item listing
 .u-item.listing-item.simple-listing-item .listing-body {
   margin-top: 0;
 }
 
-
 #page-header .styled-group.has--useAsPageHeader--true {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+#toolbar .toolbar-content {
+  z-index: 4 !important;
 }
