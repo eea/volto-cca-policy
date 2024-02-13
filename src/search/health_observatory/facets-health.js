@@ -3,6 +3,7 @@ import {
   objectProvides,
   language,
   issued_date,
+  geographic_countries,
 } from './../common';
 
 const op_cluster = {
@@ -195,6 +196,7 @@ const facets = [
   issued_date,
   include_archived,
   op_cluster,
+  geographic_countries,
   language,
 ];
 
