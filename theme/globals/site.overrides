@@ -222,3 +222,10 @@ body.searchlib-page .searchlib-block {
 .u-item.listing-item.simple-listing-item .listing-body {
   margin-top: 0;
 }
+
+
+#page-header .styled-group.has--useAsPageHeader--true {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
