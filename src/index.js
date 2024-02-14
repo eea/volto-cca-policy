@@ -74,9 +74,6 @@ const applyConfig = (config) => {
   config.settings.isMultilingual = true;
   config.settings.hasLanguageDropdown = true;
   config.settings.defaultLanguage = 'en';
-  // config.settings.supportedLanguages = config.settings.eea?.languages?.map(
-  //   (item) => item.code,
-  // ) || ['en'];
   config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it'];
 
   // EEA customizations
