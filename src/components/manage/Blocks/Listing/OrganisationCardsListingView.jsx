@@ -52,7 +52,7 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
             <div className="header">
               <a className="image" href={observatoryURL(item)}>
                 <img
-                  src={observatoryURL(item) + '/@@images/logo'}
+                  src={item['@id'] + '/@@images/logo/preview'}
                   alt={item.title}
                   className="ui image"
                 ></img>
