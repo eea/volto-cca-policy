@@ -43,7 +43,10 @@ const IndicatorCardsListingView = ({ items, isEditMode, token }) => {
                   new Date(item?.publication_date).getFullYear()}
               </span>
               <span className="text-left">
-                {fixTitle(item?.origin_website[0]?.title)}
+                {item &&
+                  item.origin_website &&
+                  item.origin_website.length > 0 &&
+                  fixTitle(item?.origin_website[0]?.title)}
               </span>
             </div>
           </div>
