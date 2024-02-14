@@ -20,7 +20,10 @@ const IndicatorCardsListingView = ({ items, isEditMode, token }) => {
   return (
     <div className={cx('ui fluid indicatorCards')}>
       {items.map((item, index) => (
-        <div className={cx('u-item listing-item simple-listing-item')}>
+        <div
+          className={cx('u-item listing-item simple-listing-item')}
+          key={item['@id']}
+        >
           <div className="wrapper">
             <div className="slot-top">
               <ConditionalLink
