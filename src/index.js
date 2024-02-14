@@ -74,10 +74,7 @@ const applyConfig = (config) => {
   config.settings.isMultilingual = true;
   config.settings.hasLanguageDropdown = true;
   config.settings.defaultLanguage = 'en';
-  // config.settings.supportedLanguages = config.settings.eea?.languages?.map(
-  //   (item) => item.code,
-  // ) || ['en'];
-  config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it'];
+  config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it', 'pl'];
 
   // EEA customizations
   config.settings.eea = {
@@ -88,6 +85,7 @@ const applyConfig = (config) => {
       { name: 'Français', code: 'fr' },
       { name: 'Español', code: 'es' },
       { name: 'Italiano', code: 'it' },
+      { name: 'Polski', code: 'pl' },
     ],
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
