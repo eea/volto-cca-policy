@@ -69,6 +69,8 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
     (state) => state.content.data?.['@components']?.translations?.items,
   );
 
+  console.log('translations', translations);
+
   const router_pathname = useSelector((state) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
