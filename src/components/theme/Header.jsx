@@ -17,14 +17,13 @@ import {
 import { getNavigation } from '@plone/volto/actions';
 import { Header, Logo } from '@eeacms/volto-eea-design-system/ui';
 import { usePrevious } from '@eeacms/volto-eea-design-system/helpers';
-import { find } from 'lodash';
-import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 import { toPublicURL } from '@plone/volto/helpers';
 
 import config from '@plone/volto/registry';
 import { compose } from 'recompose';
 import { BodyClass } from '@plone/volto/helpers';
+import LanguageSwitch from './LanguageSwitch';
 
 import cx from 'classnames';
 
@@ -63,14 +62,8 @@ const DirectLinkLogo = ({
 /**
  * EEA Specific Header component.
  */
-const EEAHeader = ({ pathname, token, items, history, subsite }) => {
-  const currentLang = useSelector((state) => state.intl.locale);
-  const translations = useSelector(
-    (state) => state.content.data?.['@components']?.translations?.items,
-  );
-
-  console.log('translations', translations);
-
+const EEAHeader = (props) => {
+  const { pathname, token, items, subsite } = props;
   const router_pathname = useSelector((state) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
@@ -96,9 +89,6 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
   const width = useSelector((state) => state.screen?.width);
   const dispatch = useDispatch();
   const previousToken = usePrevious(token);
-  const [language, setLanguage] = React.useState(
-    currentLang || eea.defaultLanguage,
-  );
 
   React.useEffect(() => {
     const { settings } = config;
@@ -186,53 +176,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
           </Header.TopItem>
         )}
 
-        {config.settings.isMultilingual && (
-          <Header.TopDropdownMenu
-            id="language-switcher"
-            className="item"
-            hasLanguageDropdown={
-              config.settings.supportedLanguages.length > 1 &&
-              config.settings.hasLanguageDropdown
-            }
-            text={`${language.toUpperCase()}`}
-            mobileText={`${language.toUpperCase()}`}
-            icon={
-              <Image src={globeIcon} alt="language dropdown globe icon"></Image>
-            }
-            viewportWidth={width}
-          >
-            <ul
-              className="wrapper language-list"
-              role="listbox"
-              aria-label="language switcher"
-            >
-              {eea.languages.map((item, index) => (
-                <Dropdown.Item
-                  as="li"
-                  key={index}
-                  text={
-                    <span>
-                      {item.name}
-                      <span className="country-code">
-                        {item.code.toUpperCase()}
-                      </span>
-                    </span>
-                  }
-                  onClick={() => {
-                    const translation = find(translations, {
-                      language: item.code,
-                    });
-                    const to = translation
-                      ? flattenToAppURL(translation['@id'])
-                      : `/${item.code}`;
-                    setLanguage(item.code);
-                    history.push(to);
-                  }}
-                ></Dropdown.Item>
-              ))}
-            </ul>
-          </Header.TopDropdownMenu>
-        )}
+        {config.settings.isMultilingual && <LanguageSwitch {...props} />}
       </Header.TopHeader>
       <Header.Main
         pathname={pathname}
