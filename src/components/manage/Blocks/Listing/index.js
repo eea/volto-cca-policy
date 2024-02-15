@@ -1,4 +1,5 @@
 import OrganisationCardsListingView from './OrganisationCardsListingView';
+import IndicatorCardsListingView from './IndicatorCardsListingView';
 
 export default function installListing(config) {
   config.blocks.blocksConfig.listing = {
@@ -9,6 +10,13 @@ export default function installListing(config) {
         id: 'organisationCards',
         title: 'Organisation Cards',
         template: OrganisationCardsListingView,
+        isDefault: false,
+        fullobjects: true,
+      },
+      {
+        id: 'indicatorCards',
+        title: 'Indicator Cards',
+        template: IndicatorCardsListingView,
         isDefault: false,
         fullobjects: true,
       },

@@ -24,6 +24,10 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
+.ui.basic.segment.content-area {
+  padding: 0;
+}
+
 // Add icon for external links
 #page-document {
   p {
