@@ -37,7 +37,7 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'climate_impacts.keyword',
+    field: 'cca_climate_impacts.keyword',
     isFilterable: false,
     isMulti: true,
     label: 'Climate Impacts',
@@ -45,7 +45,7 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'funding_programme.keyword',
+    field: 'cca_funding_programme.keyword',
     isFilterable: false,
     isMulti: true,
     label: 'Funding Programme',
