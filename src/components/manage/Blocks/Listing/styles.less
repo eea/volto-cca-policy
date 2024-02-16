@@ -1,12 +1,28 @@
 // Organisation Cards Listing
 div.organisationCards {
-  a.org-name {
-    font-size: 0.7em;
-    text-transform: uppercase;
-  }
+  div.card.u-card {
+    border: 1px solid #ccc;
+    margin: 10px;
 
-  a.org-site {
-    font-size: 0.7em;
+    div.img-container {
+      min-height: 120px;
+      text-align: center;
+
+      img {
+        width: auto;
+        max-height: 100px;
+      }
+    }
+
+    a.org-name {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      font-size: 1em;
+    }
+
+    a.org-site {
+      font-size: 0.7em;
+    }
   }
 }
 

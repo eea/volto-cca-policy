@@ -38,7 +38,7 @@ export default function installMainSearch(config) {
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     vocab: {
       cluster_name: {
-        cca: 'Climate-ADAPT',
+        cca: 'Mission Portal',
       },
     },
     runtime_mappings: build_runtime_mappings(clusters),

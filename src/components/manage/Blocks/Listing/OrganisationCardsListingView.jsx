@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { observatoryURL } from './common';
 import './styles.less';
 
 const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
-  const observatoryURL = (item) => {
-    return item['@id'].replace('/metadata/', '/observatory/++aq++metadata/');
-  };
-
   const contributionsURL = (item) => {
     const mapContributorValues = {
       'copernicus-climate-change-service-ecmw':
@@ -51,11 +48,13 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
           <div className="content">
             <div className="header">
               <a className="image" href={observatoryURL(item)}>
-                <img
-                  src={item['@id'] + '/@@images/logo/preview'}
-                  alt={item.title}
-                  className="ui image"
-                ></img>
+                <div className="img-container">
+                  <img
+                    src={item['@id'] + '/@@images/logo/preview'}
+                    alt={item.title}
+                    className="ui image"
+                  ></img>
+                </div>
               </a>
               <a className="header-link org-name" href={observatoryURL(item)}>
                 {item.title}
