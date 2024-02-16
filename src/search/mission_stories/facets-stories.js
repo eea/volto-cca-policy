@@ -36,6 +36,22 @@ const facets = [
     iconsFamily: 'Hazard Type',
     alwaysVisible: false,
   }),
+  multiTermFacet({
+    field: 'climate_impacts.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: 'Climate Impacts',
+    iconsFamily: 'Climate Impacts',
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'funding_programme.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: 'Funding Programme',
+    iconsFamily: 'Funding Programme',
+    alwaysVisible: false,
+  }),
 ];
 
 export default facets;
