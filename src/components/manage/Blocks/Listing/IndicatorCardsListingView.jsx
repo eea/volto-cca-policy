@@ -5,6 +5,7 @@ import { compose } from 'redux';
 import cx from 'classnames';
 import { ConditionalLink } from '@plone/volto/components';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import { observatoryURL } from './common';
 import './styles.less';
 
 const fixedTitles = {
@@ -27,7 +28,7 @@ const IndicatorCardsListingView = ({ items, isEditMode, token }) => {
           <div className="wrapper">
             <div className="slot-top">
               <ConditionalLink
-                to={flattenToAppURL(getBaseUrl(item['@id']))}
+                to={flattenToAppURL(getBaseUrl(observatoryURL(item)))}
                 condition={!isEditMode}
               >
                 <div className="listing-body">

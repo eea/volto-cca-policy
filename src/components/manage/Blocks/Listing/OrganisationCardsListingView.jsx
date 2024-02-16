@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { observatoryURL } from './common';
 import './styles.less';
 
 const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
-  const observatoryURL = (item) => {
-    return item['@id'].replace('/metadata/', '/observatory/++aq++metadata/');
-  };
-
   const contributionsURL = (item) => {
     const mapContributorValues = {
       'copernicus-climate-change-service-ecmw':
