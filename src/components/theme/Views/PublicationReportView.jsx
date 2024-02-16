@@ -1,16 +1,16 @@
 import React from 'react';
 import {
-  HTMLField,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
   DocumentsList,
   ShareInfo,
+  ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
 function PublicationReportView(props) {
   const { content } = props;
+
   return (
     <div className="publication-report-view">
       <div className="ui container">
@@ -23,40 +23,8 @@ function PublicationReportView(props) {
               className="col-left"
             >
               <div className="ui label">Publications and Reports</div>
-              <h1>{content.title}</h1>
-              <h4>Description</h4>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <hr />
 
-              <h4>Reference information</h4>
-
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites:" value={content.websites} />
-              )}
-
-              {content.source && (
-                <>
-                  <h4>Source:</h4>
-                  <HTMLField value={content.source} className="source" />
-                </>
-              )}
-              {content?.contributor_list?.length > 0 && (
-                <>
-                  <h4>Contributor:</h4>
-                  {content.contributor_list
-                    .map((item) => (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    ))
-                    .sort()}
-                </>
-              )}
-
+              <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
