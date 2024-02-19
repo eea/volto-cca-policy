@@ -7,6 +7,7 @@ import {
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 const dataDisplay = [
   {
@@ -110,6 +111,10 @@ const SectionsMenu = (props) => {
 
 function AdaptationOptionView(props) {
   const { content } = props;
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
 
   const usedSections = dataDisplay.filter((data) =>
     content?.hasOwnProperty(data.field),
@@ -117,6 +122,20 @@ function AdaptationOptionView(props) {
 
   return (
     <div className="adaptation-option-view">
+      <TitleBlockView
+        {...props}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: true,
+          hideShareButton: false,
+          subtitle: 'Adaptation Option',
+        }}
+        metadata={content}
+      />
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -126,8 +145,6 @@ function AdaptationOptionView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Adaptation option</div>
-              <h1>{content.title}</h1>
               <HTMLField
                 value={content.long_description}
                 className="long_description"

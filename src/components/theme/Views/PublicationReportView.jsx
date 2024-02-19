@@ -7,12 +7,31 @@ import {
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 function PublicationReportView(props) {
   const { content } = props;
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
 
   return (
     <div className="publication-report-view">
+      <TitleBlockView
+        {...props}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: true,
+          hideShareButton: false,
+          subtitle: 'Publications and Report',
+        }}
+        metadata={content}
+      />
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -22,8 +41,6 @@ function PublicationReportView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Publications and Reports</div>
-
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />

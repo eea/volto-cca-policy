@@ -7,11 +7,34 @@ import {
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 function ProjectView(props) {
   const { content } = props;
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
+
   return (
     <div className="project-view">
+      <TitleBlockView
+        {...props}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: true,
+          hideShareButton: false,
+          subtitle: 'Project',
+        }}
+        metadata={{
+          ...content,
+          title: content.title + ' (' + content.acronym + ')',
+        }}
+      />
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -21,10 +44,6 @@ function ProjectView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Project</div>
-              <h1>
-                {content.title} ({content.acronym})
-              </h1>
               <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}

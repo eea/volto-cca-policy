@@ -7,6 +7,7 @@ import {
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 const ContributorsList = (props) => {
   const { content } = props;
@@ -32,9 +33,27 @@ const ContributorsList = (props) => {
 
 function GuidanceView(props) {
   const { content } = props;
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
 
   return (
     <div className="guidance-view">
+      <TitleBlockView
+        {...props}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: true,
+          hideShareButton: false,
+          subtitle: 'Guidance Document',
+        }}
+        metadata={content}
+      />
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -44,9 +63,6 @@ function GuidanceView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Guidance Document</div>
-              <h1>{content.title}</h1>
-              <hr />
               <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}

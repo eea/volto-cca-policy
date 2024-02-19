@@ -72,7 +72,6 @@ export const ReferenceInfo = (props) => {
   const { content } = props;
   return (
     <>
-      <h1>{content.title}</h1>
       <h4>Description</h4>
       <HTMLField
         value={content.long_description}

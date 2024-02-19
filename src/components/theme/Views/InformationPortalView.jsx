@@ -7,12 +7,31 @@ import {
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 function InformationPortalView(props) {
   const { content } = props;
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
 
   return (
     <div className="information-portal-view">
+      <TitleBlockView
+        {...props}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: true,
+          hideShareButton: false,
+          subtitle: 'Information Portal',
+        }}
+        metadata={content}
+      />
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -22,9 +41,7 @@ function InformationPortalView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Information Portal</div>
-              <h1>{content.title}</h1>
-              <h4>Description</h4>
+              <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}
                 className="long_description"
