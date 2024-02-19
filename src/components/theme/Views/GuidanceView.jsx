@@ -8,7 +8,6 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
-import config from '@plone/volto/registry';
 
 const ContributorsList = (props) => {
   const { content } = props;
