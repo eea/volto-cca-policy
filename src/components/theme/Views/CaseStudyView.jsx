@@ -6,9 +6,9 @@ import {
   PublishedModifiedInfo,
   DocumentsList,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
-import config from '@plone/volto/registry';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -229,10 +229,6 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -255,20 +251,8 @@ function CaseStudyView(props) {
 
   return (
     <div className="case-study-view">
-      <TitleBlockView
-        {...props}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: true,
-          hideShareButton: false,
-          subtitle: 'Case Studies',
-        }}
-        metadata={content}
-      />
+      <BannerTitle content={content} type="Case Studies" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">

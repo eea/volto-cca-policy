@@ -5,33 +5,17 @@ import {
   LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
-import config from '@plone/volto/registry';
 
 function IndicatorView(props) {
   const { content } = props;
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
 
   return (
     <div className="indicator-view">
-      <TitleBlockView
-        {...props}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: true,
-          hideShareButton: false,
-          subtitle: 'Indicator',
-        }}
-        metadata={content}
-      />
+      <BannerTitle content={content} type="Indicator" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">

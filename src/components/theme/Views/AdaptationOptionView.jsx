@@ -5,6 +5,7 @@ import {
   LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
@@ -111,10 +112,6 @@ const SectionsMenu = (props) => {
 
 function AdaptationOptionView(props) {
   const { content } = props;
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
 
   const usedSections = dataDisplay.filter((data) =>
     content?.hasOwnProperty(data.field),
@@ -122,20 +119,8 @@ function AdaptationOptionView(props) {
 
   return (
     <div className="adaptation-option-view">
-      <TitleBlockView
-        {...props}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: true,
-          hideShareButton: false,
-          subtitle: 'Adaptation Option',
-        }}
-        metadata={content}
-      />
+      <BannerTitle content={content} type="Adaptation Option" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">

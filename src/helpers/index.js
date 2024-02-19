@@ -10,6 +10,7 @@ export {
   LinksList,
   DocumentsList,
   ReferenceInfo,
+  BannerTitle,
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
 export ShareInfo from './ShareInfo';

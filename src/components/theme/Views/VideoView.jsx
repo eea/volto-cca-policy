@@ -5,16 +5,12 @@ import {
   ExternalLink,
   LinksList,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
-import config from '@plone/volto/registry';
 
 function VideoView(props) {
   const { content } = props;
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
 
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
   const is_cmshare_video = share_eea.some((domain) =>
@@ -31,20 +27,8 @@ function VideoView(props) {
 
   return (
     <div className="video-view">
-      <TitleBlockView
-        {...props}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: true,
-          hideShareButton: false,
-          subtitle: 'Video',
-        }}
-        metadata={content}
-      />
+      <BannerTitle content={content} type="Video" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
