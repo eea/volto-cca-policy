@@ -4,6 +4,9 @@ exports[`ToolView should render the component 1`] = `
 <div
   className="tool-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,14 +19,6 @@ exports[`ToolView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Tools
-          </div>
-          <h1>
-            My ToolView
-          </h1>
           <h4>
             Description
           </h4>

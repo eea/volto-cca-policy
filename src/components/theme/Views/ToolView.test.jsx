@@ -5,6 +5,15 @@ import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-intl-redux';
 import ToolView from './ToolView';
 import renderer from 'react-test-renderer';
+import config from '@plone/volto/registry';
+
+config.blocks = {
+  blocksConfig: {
+    title: {
+      view: () => <div>Title Block Component</div>,
+    },
+  },
+};
 
 const mockStore = configureStore();
 

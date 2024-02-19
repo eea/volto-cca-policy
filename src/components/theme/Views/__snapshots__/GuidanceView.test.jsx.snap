@@ -4,6 +4,9 @@ exports[`GuidanceView should render the component 1`] = `
 <div
   className="guidance-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,15 +19,6 @@ exports[`GuidanceView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Guidance Document
-          </div>
-          <h1>
-            My GuidanceView
-          </h1>
-          <hr />
           <h4>
             Description:
           </h4>

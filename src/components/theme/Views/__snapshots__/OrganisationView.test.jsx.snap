@@ -4,6 +4,9 @@ exports[`OrganisationView should render the component 1`] = `
 <div
   className="organisation-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,14 +19,6 @@ exports[`OrganisationView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Organisation
-          </div>
-          <h1>
-            My OrganisationView
-          </h1>
           <h4>
             Description:
           </h4>

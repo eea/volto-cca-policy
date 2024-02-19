@@ -4,6 +4,9 @@ exports[`IndicatorView should render the component 1`] = `
 <div
   className="indicator-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,14 +19,6 @@ exports[`IndicatorView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Indicator
-          </div>
-          <h1>
-            My IndicatorView
-          </h1>
           <h4>
             Description
           </h4>
