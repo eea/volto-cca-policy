@@ -9,55 +9,44 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
+function createDataField(type, field, section, title) {
+  return {
+    type,
+    field,
+    section,
+    title,
+  };
+}
+
 const dataDisplay = [
-  {
-    type: 'other',
-    field: 'category',
-    section: 'ao_category',
-    title: 'Category',
-  },
-  {
-    type: 'other',
-    field: 'ipcc_category',
-    section: 'ipcc_category',
-    title: 'IPCC categories',
-  },
-  {
-    type: 'HTMLField',
-    field: 'stakeholder_participation',
-    section: 'stakeholder_participation',
-    title: 'Stakeholder participation',
-  },
-  {
-    type: 'HTMLField',
-    field: 'success_limitations',
-    section: 'success_factors',
-    title: 'Success and Limiting Factors',
-  },
-  {
-    type: 'HTMLField',
-    field: 'cost_benefit',
-    section: 'costs_benefits',
-    title: 'Costs and Benefits',
-  },
-  {
-    type: 'HTMLField',
-    field: 'legal_aspects',
-    section: 'legal',
-    title: 'Legal Aspects',
-  },
-  {
-    type: 'HTMLField',
-    field: 'implementation_time',
-    section: 'implementation',
-    title: 'Implementation Time',
-  },
-  {
-    type: 'HTMLField',
-    field: 'lifetime',
-    section: 'life_time',
-    title: 'Life Time',
-  },
+  createDataField('other', 'category', 'ao_category', 'Category'),
+  createDataField('other', 'ipcc_category', 'ipcc_category', 'IPCC categories'),
+  createDataField(
+    'HTMLField',
+    'stakeholder_participation',
+    'stakeholder_participation',
+    'Stakeholder participation',
+  ),
+  createDataField(
+    'HTMLField',
+    'success_limitations',
+    'success_factors',
+    'Success and Limiting Factors',
+  ),
+  createDataField(
+    'HTMLField',
+    'cost_benefit',
+    'costs_benefits',
+    'Costs and Benefits',
+  ),
+  createDataField('HTMLField', 'legal_aspects', 'legal', 'Legal Aspects'),
+  createDataField(
+    'HTMLField',
+    'implementation_time',
+    'implementation',
+    'Implementation Time',
+  ),
+  createDataField('HTMLField', 'lifetime', 'life_time', 'Life Time'),
 ];
 
 const findSection = (title) => {
