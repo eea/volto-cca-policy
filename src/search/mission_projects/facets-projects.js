@@ -1,6 +1,9 @@
 import { multiTermFacet } from '@eeacms/search';
-
-import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
+import {
+  include_archived,
+  issued_date,
+  geographic_countries,
+} from './../common';
 
 const facets = [
   multiTermFacet({
@@ -32,7 +35,9 @@ const facets = [
     label: 'Adaptation Elements',
     alwaysVisible: false,
   }),
-  ...globalSearchBaseConfig.facets,
+  geographic_countries,
+  include_archived,
+  issued_date,
 ];
 
 export default facets;
