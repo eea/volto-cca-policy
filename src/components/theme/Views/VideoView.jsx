@@ -5,11 +5,13 @@ import {
   ExternalLink,
   LinksList,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
 function VideoView(props) {
   const { content } = props;
+
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
   const is_cmshare_video = share_eea.some((domain) =>
     content.embed_url.includes(domain),
@@ -25,6 +27,8 @@ function VideoView(props) {
 
   return (
     <div className="video-view">
+      <BannerTitle content={content} type="Video" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -34,8 +38,6 @@ function VideoView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Video</div>
-              <h1>{content.title}</h1>
               <HTMLField
                 value={content.long_description}
                 className="long_description"

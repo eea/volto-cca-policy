@@ -4,6 +4,9 @@ exports[`ProjectView should render the component 1`] = `
 <div
   className="project-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,16 +19,6 @@ exports[`ProjectView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Project
-          </div>
-          <h1>
-            My ProjectView
-             (
-            )
-          </h1>
           <h4>
             Description:
           </h4>

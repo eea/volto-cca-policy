@@ -4,6 +4,9 @@ exports[`AdaptationOptionView should render the component 1`] = `
 <div
   className="adaptation-option-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,14 +19,6 @@ exports[`AdaptationOptionView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Adaptation option
-          </div>
-          <h1>
-            AdaptationOptionView
-          </h1>
           <div
             className="long_description"
             dangerouslySetInnerHTML={

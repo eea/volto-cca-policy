@@ -1,4 +1,5 @@
 import { UniversalLink } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -68,11 +69,37 @@ export const LinksList = (props) => {
   }
 };
 
+export const BannerTitle = (props) => {
+  const { content, type } = props;
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
+
+  return (
+    <>
+      <TitleBlockView
+        {...props}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: true,
+          hideShareButton: false,
+          subtitle: type,
+        }}
+        metadata={content}
+      />
+    </>
+  );
+};
+
 export const ReferenceInfo = (props) => {
   const { content } = props;
   return (
     <>
-      <h1>{content.title}</h1>
       <h4>Description</h4>
       <HTMLField
         value={content.long_description}

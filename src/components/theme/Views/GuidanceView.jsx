@@ -5,6 +5,7 @@ import {
   LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -35,6 +36,7 @@ function GuidanceView(props) {
 
   return (
     <div className="guidance-view">
+      <BannerTitle content={content} type="Guidance Document" />
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -44,9 +46,6 @@ function GuidanceView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Guidance Document</div>
-              <h1>{content.title}</h1>
-              <hr />
               <h4>Description:</h4>
               <HTMLField
                 value={content.long_description}

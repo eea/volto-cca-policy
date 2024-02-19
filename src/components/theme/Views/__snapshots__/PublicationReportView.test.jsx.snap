@@ -4,6 +4,9 @@ exports[`PublicationReportView should render the component 1`] = `
 <div
   className="publication-report-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,14 +19,6 @@ exports[`PublicationReportView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Publications and Reports
-          </div>
-          <h1>
-            My PublicationReportView
-          </h1>
           <h4>
             Description
           </h4>

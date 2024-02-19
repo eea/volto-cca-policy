@@ -5,6 +5,7 @@ import {
   DocumentsList,
   ShareInfo,
   ReferenceInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -13,6 +14,8 @@ function PublicationReportView(props) {
 
   return (
     <div className="publication-report-view">
+      <BannerTitle content={content} type="Publications and Report" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -22,8 +25,6 @@ function PublicationReportView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Publications and Reports</div>
-
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
