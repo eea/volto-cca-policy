@@ -1,5 +1,4 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import {
   HTMLField,
@@ -39,13 +38,15 @@ function OrganisationView(props) {
               computer={9}
               className="col-left"
             >
-              <h4>Description:</h4>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <hr />
-              <h4>Reference information</h4>
+              <div>
+                <h4>Description:</h4>
+                <HTMLField
+                  value={content.long_description}
+                  className="long_description"
+                />
+                <hr />
+                <h4>Reference information</h4>
+              </div>
 
               {content?.websites?.length > 0 && (
                 <LinksList title="Websites:" value={content.websites} />
