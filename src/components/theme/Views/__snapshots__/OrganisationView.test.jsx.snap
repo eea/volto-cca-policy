@@ -19,21 +19,23 @@ exports[`OrganisationView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <h4>
-            Description:
-          </h4>
-          <div
-            className="long_description"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
+          <div>
+            <h4>
+              Description:
+            </h4>
+            <div
+              className="long_description"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": undefined,
+                }
               }
-            }
-          />
-          <hr />
-          <h4>
-            Reference information
-          </h4>
+            />
+            <hr />
+            <h4>
+              Reference information
+            </h4>
+          </div>
           <div
             className="published-modified-info"
           >
