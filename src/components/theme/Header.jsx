@@ -110,7 +110,7 @@ const EEAHeader = (props) => {
 
   const subsiteLogo = subsite?.subsite_logo
     ? subsite.subsite_logo.scales?.preview?.download ||
-    PublicURL(`${subsite['@id']}/@@images/subsite_logo`)
+    toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
     : null;
 
   return (
