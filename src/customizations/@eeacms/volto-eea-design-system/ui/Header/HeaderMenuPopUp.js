@@ -123,10 +123,10 @@ export const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
           {columnIndex !== menuItemColumnsLength
             ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
             : menuItem.items
-              .slice(menuItemColumnsLength)
-              .map((section, _idx) =>
-                renderColumnContent(section, columnIndex),
-              )}
+                .slice(menuItemColumnsLength)
+                .map((section, _idx) =>
+                  renderColumnContent(section, columnIndex),
+                )}
         </div>
       ))}
     </Grid>
