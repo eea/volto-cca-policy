@@ -108,9 +108,9 @@ const EEAHeader = (props) => {
     }
   }, [token, dispatch, pathname, previousToken]);
 
+  const download = subsite?.subsite_logo.scales?.preview?.download;
   const subsiteLogo = subsite?.subsite_logo
-    ? subsite.subsite_logo.scales?.preview?.download ||
-    toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
+    ? download || toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
     : null;
 
   return (
