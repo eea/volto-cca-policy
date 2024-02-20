@@ -110,7 +110,7 @@ const EEAHeader = (props) => {
 
   const subsiteLogo = subsite?.subsite_logo
     ? subsite.subsite_logo.scales?.preview?.download ||
-      toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
+    toPublicURL(`${subsite['@id']}/@@images/subsite_logo`)
     : null;
 
   return (
@@ -230,21 +230,24 @@ const EEAHeader = (props) => {
             {item.title}
           </a>
         )}
-        renderMenuItem={(item, options, props) => (
-          <UniversalLink
-            openLinkInNewTab={false}
-            href={item.url || '/'}
-            title={item.nav_title || item.title}
-            {...(options || {})}
-            className={cx(options?.className, {
-              active: item.url === router_pathname,
-            })}
-          >
-            {props?.iconPosition !== 'right' && props?.children}
-            <span>{item.nav_title || item.title}</span>
-            {props?.iconPosition === 'right' && props?.children}
-          </UniversalLink>
-        )}
+        renderMenuItem={(item, options, props) => {
+          console.log('render', item);
+          return (
+            <UniversalLink
+              openLinkInNewTab={false}
+              href={item.nonclickable ? null : item.url || '/'}
+              title={item.nav_title || item.title}
+              {...(options || {})}
+              className={cx(options?.className, {
+                active: item.url === router_pathname,
+              })}
+            >
+              {props?.iconPosition !== 'right' && props?.children}
+              <span>{item.nav_title || item.title}</span>
+              {props?.iconPosition === 'right' && props?.children}
+            </UniversalLink>
+          );
+        }}
       ></Header.Main>
     </Header>
   );
