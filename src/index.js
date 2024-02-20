@@ -453,6 +453,12 @@ const applyConfig = (config) => {
       )})/mission/sitemap`,
       component: Sitemap,
     },
+    {
+      path: `/(${config.settings?.supportedLanguages.join(
+        '|',
+      )})/observatory/sitemap`,
+      component: Sitemap,
+    },
 
     ...(config.addonRoutes || []),
   ];
