@@ -123,10 +123,10 @@ export const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
           {columnIndex !== menuItemColumnsLength
             ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
             : menuItem.items
-                .slice(menuItemColumnsLength)
-                .map((section, _idx) =>
-                  renderColumnContent(section, columnIndex),
-                )}
+              .slice(menuItemColumnsLength)
+              .map((section, _idx) =>
+                renderColumnContent(section, columnIndex),
+              )}
         </div>
       ))}
     </Grid>
@@ -187,9 +187,10 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             overflow_item.title = 'See all';
             x.content = (
               <Accordion.Content>
-                {renderMenuItem(overflow_item, {
-                  className: 'item title-item',
-                })}
+                {!item.nonclickable &&
+                  renderMenuItem(overflow_item, {
+                    className: 'item title-item',
+                  })}
                 <SecondLevelContent
                   element={item}
                   renderMenuItem={renderMenuItem}

@@ -240,6 +240,7 @@ const EEAHeader = (props) => {
               {...(options || {})}
               className={cx(options?.className, {
                 active: item.url === router_pathname,
+                'item-nonclickable': item.nonclickable,
               })}
             >
               {props?.iconPosition !== 'right' && props?.children}
