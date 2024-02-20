@@ -187,9 +187,10 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             overflow_item.title = 'See all';
             x.content = (
               <Accordion.Content>
-                {renderMenuItem(overflow_item, {
-                  className: 'item title-item',
-                })}
+                {!item.nonclickable &&
+                  renderMenuItem(overflow_item, {
+                    className: 'item title-item',
+                  })}
                 <SecondLevelContent
                   element={item}
                   renderMenuItem={renderMenuItem}
