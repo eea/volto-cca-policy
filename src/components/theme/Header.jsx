@@ -230,24 +230,22 @@ const EEAHeader = (props) => {
             {item.title}
           </a>
         )}
-        renderMenuItem={(item, options, props) =>
-          options.className !== 'ui button inverted icon right labeled' && (
-            <UniversalLink
-              openLinkInNewTab={false}
-              href={item.nonclickable ? null : item.url || '/'}
-              title={item.nav_title || item.title}
-              {...(options || {})}
-              className={cx(options?.className, {
-                active: item.url === router_pathname,
-                'item-nonclickable': item.nonclickable,
-              })}
-            >
-              {props?.iconPosition !== 'right' && props?.children}
-              <span>{item.nav_title || item.title}</span>
-              {props?.iconPosition === 'right' && props?.children}
-            </UniversalLink>
-          )
-        }
+        renderMenuItem={(item, options, props) => (
+          <UniversalLink
+            openLinkInNewTab={false}
+            href={item.nonclickable ? null : item.url || '/'}
+            title={item.nav_title || item.title}
+            {...(options || {})}
+            className={cx(options?.className, {
+              active: item.url === router_pathname,
+              'item-nonclickable': item.nonclickable,
+            })}
+          >
+            {props?.iconPosition !== 'right' && props?.children}
+            <span>{item.nav_title || item.title}</span>
+            {props?.iconPosition === 'right' && props?.children}
+          </UniversalLink>
+        )}
       ></Header.Main>
     </Header>
   );
