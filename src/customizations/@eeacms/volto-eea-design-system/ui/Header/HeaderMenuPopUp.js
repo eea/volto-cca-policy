@@ -200,6 +200,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             firstLevelPanels.push(x);
             return (
               <Accordion.Accordion
+                className={'ui'}
                 panels={firstLevelPanels}
                 key={index}
                 defaultActiveIndex={defaultIndex === index ? 0 : -1}

@@ -13,7 +13,6 @@
   }
 }
 
-
 .item-nonclickable {
   pointer-events: none;
 }
