@@ -1,6 +1,8 @@
 /**
  * CreatableSelectWidget component.
  * @module components/manage/Widgets/SelectWidget
+ *
+ * A copy of the SelectWidget component. The only difference is that is uses the Creatable component as a base
  */
 
 import React, { Component } from 'react';
@@ -144,9 +146,9 @@ class SelectWidget extends Component {
     error: [],
     choices: [],
     value: null,
-    onChange: () => { },
-    onBlur: () => { },
-    onClick: () => { },
+    onChange: () => {},
+    onBlur: () => {},
+    onClick: () => {},
     onEdit: null,
     onDelete: null,
     noValueOption: true,
@@ -202,24 +204,24 @@ class SelectWidget extends Component {
     let options = this.props.vocabBaseUrl
       ? this.props.choices
       : [
-        ...map(choices, (option) => ({
-          value: option[0],
-          label:
-            // Fix "None" on the serializer, to remove when fixed in p.restapi
-            option[1] !== 'None' && option[1] ? option[1] : option[0],
-        })),
-        // Only set "no-value" option if there's no default in the field
-        // TODO: also if this.props.defaultValue?
-        ...(this.props.noValueOption &&
+          ...map(choices, (option) => ({
+            value: option[0],
+            label:
+              // Fix "None" on the serializer, to remove when fixed in p.restapi
+              option[1] !== 'None' && option[1] ? option[1] : option[0],
+          })),
+          // Only set "no-value" option if there's no default in the field
+          // TODO: also if this.props.defaultValue?
+          ...(this.props.noValueOption &&
           (this.props.default === undefined || this.props.default === null)
-          ? [
-            {
-              label: this.props.intl.formatMessage(messages.no_value),
-              value: 'no-value',
-            },
-          ]
-          : []),
-      ];
+            ? [
+                {
+                  label: this.props.intl.formatMessage(messages.no_value),
+                  value: 'no-value',
+                },
+              ]
+            : []),
+        ];
 
     const isMulti = this.props.isMulti
       ? this.props.isMulti
@@ -283,8 +285,8 @@ export default compose(
     (state, props) => {
       const vocabBaseUrl = !props.choices
         ? getVocabFromHint(props) ||
-        getVocabFromField(props) ||
-        getVocabFromItems(props)
+          getVocabFromField(props) ||
+          getVocabFromItems(props)
         : '';
 
       const vocabState =
