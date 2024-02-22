@@ -196,10 +196,6 @@ class SelectWidget extends Component {
     const normalizedValue = normalizeValue(choices, value, intl);
     // Make sure that both disabled and isDisabled (from the DX layout feat work)
     const disabled = this.props.disabled || this.props.isDisabled;
-    const Select = this.props.reactSelect.default;
-
-    console.log('creatable', Creatable);
-    console.log(this.props.reactSelect);
 
     let options = this.props.vocabBaseUrl
       ? this.props.choices

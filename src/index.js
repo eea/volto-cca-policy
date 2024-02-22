@@ -440,7 +440,6 @@ const applyConfig = (config) => {
   config.widgets.id.geolocation = GeolocationWidget;
   config.widgets.widget.creatableselect = CreatableSelectWidget;
 
-  const oldEnhancer = config.blocks.blocksConfig.layoutSettings.schemaEnhancer;
   config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
     schema.properties.body_class.widget = 'creatableselect';
     return schema;
