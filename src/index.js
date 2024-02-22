@@ -30,6 +30,7 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -437,6 +438,12 @@ const applyConfig = (config) => {
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
+  config.widgets.widget.creatableselect = CreatableSelectWidget;
+
+  config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
+    schema.properties.body_class.widget = 'creatableselect';
+    return schema;
+  };
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
