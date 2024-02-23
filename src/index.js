@@ -5,6 +5,7 @@ import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import CcaEventView from './components/theme/Views/CcaEventView';
+import EventView from './components/theme/Views/EventView';
 import GuidanceView from './components/theme/Views/GuidanceView';
 import IndicatorView from './components/theme/Views/IndicatorView';
 import InformationPortalView from './components/theme/Views/InformationPortalView';
@@ -246,6 +247,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'eea.climateadapt.casestudy': CaseStudyView,
     'cca-event': CcaEventView,
+    Event: EventView,
     'eea.climateadapt.guidancedocument': GuidanceView,
     'eea.climateadapt.indicator': IndicatorView,
     'eea.climateadapt.informationportal': InformationPortalView,
