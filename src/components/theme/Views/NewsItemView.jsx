@@ -5,14 +5,14 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import config from '@plone/volto/registry';
 import { Label } from 'semantic-ui-react';
 
-const Date = (props) => {
-  const date = props.content?.effective;
-  return date ? (
-    <>
-      <When start={date} end={date} whole_day={true} open_end={false} />
-    </>
-  ) : null;
-};
+// const Date = (props) => {
+//   const date = props.content?.effective;
+//   return date ? (
+//     <>
+//       <When start={date} end={date} whole_day={true} open_end={false} />
+//     </>
+//   ) : null;
+// };
 
 const SubjectTags = (props) => {
   const tags = props.content?.subjects;
