@@ -5,6 +5,7 @@ import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import CcaEventView from './components/theme/Views/CcaEventView';
+import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
 import GuidanceView from './components/theme/Views/GuidanceView';
 import IndicatorView from './components/theme/Views/IndicatorView';
@@ -257,6 +258,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.tool': ToolView,
     'eea.climateadapt.video': VideoView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
+    'News Item': NewsItemView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
