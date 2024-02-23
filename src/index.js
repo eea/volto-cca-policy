@@ -191,6 +191,10 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.maps.restricted = false;
   }
 
+  if (config.blocks.blocksConfig.layoutSettings) {
+    config.blocks.blocksConfig.layoutSettings.blockHasOwnFocusManagement = false;
+  }
+
   // Enable video
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
