@@ -1,4 +1,4 @@
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
+// import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import React from 'react';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
