@@ -2,6 +2,7 @@ import React from 'react';
 import { DocumentsList, HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import config from '@plone/volto/registry';
 
 function CcaEventView(props) {
@@ -57,6 +58,8 @@ function CcaEventView(props) {
                 </>
               )}
               <HTMLField value={content.text} className="long_description" />
+              <RenderBlocks {...props} />
+
               <h2>Agenda and supporting documents</h2>
               <HTMLField value={content.agenda} className="long_description" />
               {content?.agenda_file && <DocumentsList content={agenda_files} />}
