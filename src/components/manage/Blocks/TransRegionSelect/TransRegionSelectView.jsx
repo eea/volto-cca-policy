@@ -1,10 +1,9 @@
 import React from 'react';
-import { compose } from 'redux';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getQueryStringResults } from '@plone/volto/actions';
-import { regionCountries } from './countries';
+import regionCountries from './countries.json';
 
 const getSiblings = (items) => {
   const regionsDropdown = (items || []).map((item) => {
@@ -24,8 +23,9 @@ const getSiblings = (items) => {
   return regionsDropdown;
 };
 
-const TransRegionSelectView = (props) => {
-  const { id, data, content } = props;
+export default function TransRegionSelectView(props) {
+  const { id, data } = props;
+  const content = useSelector((state) => state.content.data);
   const { title } = content;
   const dispatch = useDispatch();
   const querystringResults = useSelector(
@@ -86,7 +86,7 @@ const TransRegionSelectView = (props) => {
         title === 'Other regions' ? null : (
           <h5>Region's countries:</h5>
         )}
-        {regionCountries
+        {regionCountries.countries
           .filter((item) => item.region === title)
           .map((item, i) => (
             <div className="countries-listing" key={i}>
@@ -115,10 +115,4 @@ const TransRegionSelectView = (props) => {
       </div>
     </div>
   );
-};
-
-export default compose(
-  connect((state, props) => ({
-    content: state.content.data,
-  })),
-)(TransRegionSelectView);
+}

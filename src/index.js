@@ -5,6 +5,8 @@ import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import CcaEventView from './components/theme/Views/CcaEventView';
+import NewsItemView from './components/theme/Views/NewsItemView';
+import EventView from './components/theme/Views/EventView';
 import GuidanceView from './components/theme/Views/GuidanceView';
 import IndicatorView from './components/theme/Views/IndicatorView';
 import InformationPortalView from './components/theme/Views/InformationPortalView';
@@ -30,6 +32,7 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -190,6 +193,10 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.maps.restricted = false;
   }
 
+  if (config.blocks.blocksConfig.layoutSettings) {
+    config.blocks.blocksConfig.layoutSettings.blockHasOwnFocusManagement = false;
+  }
+
   // Enable video
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
@@ -241,6 +248,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'eea.climateadapt.casestudy': CaseStudyView,
     'cca-event': CcaEventView,
+    Event: EventView,
     'eea.climateadapt.guidancedocument': GuidanceView,
     'eea.climateadapt.indicator': IndicatorView,
     'eea.climateadapt.informationportal': InformationPortalView,
@@ -250,6 +258,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.tool': ToolView,
     'eea.climateadapt.video': VideoView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
+    'News Item': NewsItemView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
@@ -437,6 +446,12 @@ const applyConfig = (config) => {
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
+  config.widgets.widget.creatableselect = CreatableSelectWidget;
+
+  config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
+    schema.properties.body_class.widget = 'creatableselect';
+    return schema;
+  };
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
