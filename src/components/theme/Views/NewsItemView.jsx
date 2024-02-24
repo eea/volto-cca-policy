@@ -16,7 +16,7 @@ import { Label } from 'semantic-ui-react';
 
 const SubjectTags = (props) => {
   const tags = props.content?.subjects;
-  return tags ? (
+  return tags?.length > 0 ? (
     <>
       Filed under:{' '}
       {tags.map((tag) => (

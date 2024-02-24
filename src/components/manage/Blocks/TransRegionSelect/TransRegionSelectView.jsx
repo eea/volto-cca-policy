@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { getQueryStringResults } from '@plone/volto/actions';
-import { regionCountries } from './countries';
+// import { regionCountries } from './countries';
+import regionCountries from './countries.json';
 
 const getSiblings = (items) => {
   const regionsDropdown = (items || []).map((item) => {
@@ -86,7 +87,7 @@ const TransRegionSelectView = (props) => {
         title === 'Other regions' ? null : (
           <h5>Region's countries:</h5>
         )}
-        {regionCountries
+        {regionCountries.countries
           .filter((item) => item.region === title)
           .map((item, i) => (
             <div className="countries-listing" key={i}>
