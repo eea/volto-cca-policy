@@ -122,6 +122,7 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                           <>
                             <Separator />
                             <div className="email-info">
+                              <Icon className="mail" />
                               <a
                                 className="contact_email"
                                 title=""
@@ -129,7 +130,6 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <Icon className="mail" />
                                 {item.contact_email}
                               </a>
                             </div>
