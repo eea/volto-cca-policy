@@ -77,22 +77,20 @@ export const BannerTitle = (props) => {
   const TitleBlockView = blocksConfig?.title?.view;
 
   return (
-    <>
-      <TitleBlockView
-        {...props}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: true,
-          hideShareButton: false,
-          subtitle: type,
-        }}
-        metadata={content}
-      />
-    </>
+    <TitleBlockView
+      {...props}
+      data={{
+        info: [{ description: '' }],
+        hideContentType: true,
+        hideCreationDate: false,
+        hideModificationDate: false,
+        hidePublishingDate: false,
+        hideDownloadButton: false,
+        hideShareButton: false,
+        subtitle: type,
+      }}
+      metadata={content}
+    />
   );
 };
 
