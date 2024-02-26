@@ -32,7 +32,9 @@ const StartDate = (start) => {
 
   const monthName = monthNames[monthIndex];
 
-  const dayOfWeek = start_date.toLocaleDateString('en', { weekday: 'short' });
+  const dayOfWeek = start_date
+    .toLocaleDateString('en', { weekday: 'short' })
+    .substring(0, 2);
 
   return (
     <div className="start-date">
