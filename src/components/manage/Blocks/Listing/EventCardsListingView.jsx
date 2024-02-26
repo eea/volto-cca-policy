@@ -8,6 +8,11 @@ import { ConditionalLink } from '@plone/volto/components';
 import { Icon } from 'semantic-ui-react';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Card, Grid } from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
+
+const Separator = () => {
+  return <div className="sep">&nbsp;&nbsp;⎯&nbsp;&nbsp;</div>;
+};
 
 const StartDate = (start) => {
   const start_date = new Date(start);
@@ -94,9 +99,43 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                           {item.description}
                         </p>
                       )}
-                      <ConditionalLink item={item} condition={!isEditMode}>
-                        Climate Adapt page for this event
-                      </ConditionalLink>
+                      <div className="bottom-info">
+                        {!!item.subjects && item.subjects.length > 0 && (
+                          <>
+                            <div className="subjects">
+                              {item.subjects.map((tag) => (
+                                <Label key={tag} size="small">
+                                  {tag}
+                                </Label>
+                              ))}
+                            </div>
+
+                            <Separator />
+                          </>
+                        )}
+                        <div className="source">
+                          <ConditionalLink item={item} condition={!isEditMode}>
+                            Climate Adapt page for this event
+                          </ConditionalLink>
+                        </div>
+                        {!!item.contact_email && (
+                          <>
+                            <Separator />
+                            <div className="email-info">
+                              <a
+                                className="contact_email"
+                                title=""
+                                href="mailto:office@ephconference.eu"
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <Icon className="mail" />
+                                {item.contact_email}
+                              </a>
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </Grid.Column>
                 </Grid>

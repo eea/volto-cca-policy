@@ -56,6 +56,8 @@ div.eventCards {
   }
 
   div.start-date {
+    max-width: 80px;
+
     .day {
       border-bottom: 3px solid #ef7000;
       color: #ef7000;
@@ -66,6 +68,35 @@ div.eventCards {
     .date {
       font-size: 1.5em;
       font-weight: 600;
+    }
+  }
+
+  div.bottom-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    .sep {
+      position: relative;
+      top: -2px;
+      color: #ddd;
+    }
+
+    .email-info {
+      .icon {
+        position: relative;
+        top: 4px;
+      }
+    }
+
+    div.subjects {
+      .label {
+        margin-right: 0.3em;
+        margin-bottom: 0.3em;
+        background: #eee;
+        color: #3d5265;
+      }
     }
   }
 }
