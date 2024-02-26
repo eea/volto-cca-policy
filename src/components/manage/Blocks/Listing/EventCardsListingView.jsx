@@ -52,6 +52,13 @@ const StartDate = (start) => {
 };
 
 const EventCardsListingView = ({ items, isEditMode, token }) => {
+  const go_to_contact = (contact_info) => {
+    if (contact_info.includes('http')) {
+      return contact_info;
+    }
+    return `mailto:${contact_info}`;
+  };
+
   return (
     <div className={cx('ui fluid eventCards')}>
       {items.map((item, index) => (
@@ -126,7 +133,7 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                               <a
                                 className="contact_email"
                                 title=""
-                                href="mailto:office@ephconference.eu"
+                                href={go_to_contact(item.contact_email)}
                                 target="_blank"
                                 rel="noreferrer"
                               >
