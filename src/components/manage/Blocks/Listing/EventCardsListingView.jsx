@@ -53,10 +53,10 @@ const StartDate = (start) => {
 
 const EventCardsListingView = ({ items, isEditMode, token }) => {
   const go_to_contact = (contact_info) => {
-    if (contact_info.includes('http')) {
-      return contact_info;
+    if (contact_info.includes('@')) {
+      return `mailto:${contact_info}`;
     }
-    return `mailto:${contact_info}`;
+    return contact_info;
   };
 
   return (
