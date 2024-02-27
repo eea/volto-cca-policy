@@ -1,6 +1,6 @@
 import worldSVG from '@plone/volto/icons/world.svg';
 import Edit from './Edit';
-import View from './View';
+import View from './OLView';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 export default function installCountryMapProfile(config) {
