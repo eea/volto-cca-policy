@@ -188,8 +188,8 @@ function C3SIndicatorView(props) {
           {!__SERVER__ && showDetails && <Details {...props} />}
         </div>
 
-        <div class="content-box">
-          <div class="content-box-inner">
+        <div className="content-box">
+          <div className="content-box-inner">
             <Segment>
               <p>
                 Content in the European Climate Data Explorer pages is delivered

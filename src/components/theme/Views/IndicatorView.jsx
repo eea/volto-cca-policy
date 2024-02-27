@@ -52,8 +52,8 @@ function IndicatorView(props) {
         <PublishedModifiedInfo {...props} />
         <ShareInfo {...props} />
 
-        <div class="content-box">
-          <div class="content-box-inner">
+        <div className="content-box">
+          <div className="content-box-inner">
             <Segment>
               <ContentMetadata {...props} />
             </Segment>
