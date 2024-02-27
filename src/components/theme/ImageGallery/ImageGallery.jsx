@@ -1,7 +1,6 @@
 import React from 'react';
 import loadable from '@loadable/component';
 import { Modal, Image } from 'semantic-ui-react';
-import cx from 'classnames';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
