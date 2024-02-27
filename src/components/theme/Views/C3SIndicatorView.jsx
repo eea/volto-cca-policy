@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
 import { HTMLField, BannerTitle } from '@eeacms/volto-cca-policy/helpers';
-// import { Accordion, Icon } from 'semantic-ui-react';
-
-// import { Icon } from '@plone/volto/components';
-// import rightSVG from '@plone/volto/icons/right-key.svg';
-// import downSVG from '@plone/volto/icons/down-key.svg';
+import { Accordion, Icon } from 'semantic-ui-react';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -110,20 +106,19 @@ const Overview = (props) => {
 
 function C3SIndicatorView(props) {
   const { content } = props;
-  const {
-    // definition_app,
-    long_description,
-    indicator_title,
-  } = content;
+  const { definition_app, long_description, indicator_title } = content;
   const [showDetails, setShowDetails] = useState(false);
-  // const [activeAccIndex, setActiveAccIndex] = React.useState(0);
+  const hasIndicatorTitle =
+    indicator_title && indicator_title !== '_' && indicator_title !== '-';
 
-  // function handleAccClick(e, titleProps) {
-  //   const { index } = titleProps;
-  //   const newIndex = activeAccIndex === index ? -1 : index;
+  const [activeAccIndex, setActiveAccIndex] = React.useState(null);
 
-  //   setActiveAccIndex(newIndex);
-  // }
+  function handleAccClick(e, titleProps) {
+    const { index } = titleProps;
+    const newIndex = activeAccIndex === index ? -1 : index;
+
+    setActiveAccIndex(newIndex);
+  }
 
   const toggleIframe = () => {
     setShowDetails(!showDetails);
@@ -162,31 +157,29 @@ function C3SIndicatorView(props) {
           </a>
         </div>
 
-        {/* {definition_app && (
-          <>
-            <Accordion>
-              <Accordion.Title
-                className="accordion-title "
-                active={activeAccIndex === 0}
-                index={0}
-                onClick={handleAccClick}
-              >
-                <span>Visualisation and Navigation</span>
-                {activeAccIndex === 0 ? (
-                  <Icon name={'ri-arrow-up-s-line'} size="24px" />
-                ) : (
-                  <Icon name={'ri-arrow-down-s-line'} size="24px" />
-                )}
-              </Accordion.Title>
-              <Accordion.Content active={activeAccIndex === 0}>
-                <HTMLField value={definition_app} />
-              </Accordion.Content>
-            </Accordion>
-          </>
-        )} */}
+        {definition_app && !hasIndicatorTitle && (
+          <Accordion>
+            <Accordion.Title
+              className="accordion-title "
+              active={activeAccIndex === 0}
+              index={0}
+              onClick={handleAccClick}
+            >
+              <span>Visualisation and Navigation</span>
+              {activeAccIndex === 0 ? (
+                <Icon name="ri-arrow-up-s-line" size="24px" />
+              ) : (
+                <Icon name="ri-arrow-down-s-line" size="24px" />
+              )}
+            </Accordion.Title>
+            <Accordion.Content active={activeAccIndex === 0}>
+              <HTMLField value={definition_app} />
+            </Accordion.Content>
+          </Accordion>
+        )}
 
         <h2>
-          {indicator_title && indicator_title !== '_' && <>{indicator_title}</>}
+          {hasIndicatorTitle && <>{indicator_title}</>}
           {showDetails && ' - Explore index'}
         </h2>
         {!__SERVER__ && !showDetails && <Overview {...props} />}
