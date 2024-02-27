@@ -49,7 +49,7 @@ function ProjectView(props) {
       />
 
       <div className="ui container">
-        <h2>Description:</h2>
+        <h2>Description</h2>
         <HTMLField value={long_description} />
 
         <Divider />

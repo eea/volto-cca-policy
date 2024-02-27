@@ -18,7 +18,7 @@ function InformationPortalView(props) {
       <BannerTitle content={content} type="Information Portal" />
 
       <div className="ui container">
-        <h2>Description:</h2>
+        <h2>Description</h2>
         <HTMLField value={long_description} />
 
         <h2>Reference information</h2>

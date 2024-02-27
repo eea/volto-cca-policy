@@ -38,7 +38,7 @@ function GuidanceView(props) {
     <div className="db-item-view guidance-view">
       <BannerTitle content={content} type="Guidance Document" />
       <div className="ui container">
-        <h2>Description:</h2>
+        <h2>Description</h2>
         <HTMLField value={long_description} />
         <Divider />
         <h2>Reference information</h2>

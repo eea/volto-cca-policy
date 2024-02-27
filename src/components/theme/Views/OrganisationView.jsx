@@ -32,7 +32,7 @@ function OrganisationView(props) {
 
       <div className="ui container">
         <div>
-          <h2>Description:</h2>
+          <h2>Description</h2>
           <HTMLField value={long_description} />
           <Divider />
           <h2>Reference information</h2>
