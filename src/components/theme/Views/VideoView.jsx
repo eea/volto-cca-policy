@@ -77,7 +77,7 @@ function VideoView(props) {
           </>
         )}
 
-        {websites?.length > 0 && (
+        {websites && websites?.length > 0 && (
           <>
             <h2 className="reference-title">Reference information</h2>
             <LinksList title="Websites" value={websites} />

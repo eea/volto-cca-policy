@@ -155,7 +155,7 @@ function AdaptationOptionView(props) {
 
         <h2>Reference information</h2>
 
-        {websites?.length > 0 && (
+        {websites && websites?.length > 0 && (
           <LinksList title="Websites:" value={websites} />
         )}
 

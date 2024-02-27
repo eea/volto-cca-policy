@@ -12,15 +12,16 @@ import { Segment, Divider } from 'semantic-ui-react';
 
 function OrganisationView(props) {
   const { content } = props;
+  const { long_description, websites, relatedItems } = content;
 
   let organisationDocuments = [];
-  let relatedItems = [];
-  if (content?.relatedItems?.length > 0) {
-    organisationDocuments = content.relatedItems.filter(
+  let contentRelatedItems = [];
+  if (relatedItems && relatedItems?.length > 0) {
+    organisationDocuments = relatedItems.filter(
       (item) => item['@type'] === 'File',
     );
 
-    relatedItems = content.relatedItems.filter((item) =>
+    contentRelatedItems = relatedItems.filter((item) =>
       item['@type'].includes('eea.climateadapt'),
     );
   }
@@ -32,20 +33,20 @@ function OrganisationView(props) {
       <div className="ui container">
         <div>
           <h2>Description:</h2>
-          <HTMLField value={content.long_description} />
+          <HTMLField value={long_description} />
           <Divider />
           <h2>Reference information</h2>
         </div>
 
-        {content?.websites?.length > 0 && (
-          <LinksList title="Websites:" value={content.websites} />
+        {websites && websites?.length > 0 && (
+          <LinksList title="Websites:" value={websites} />
         )}
 
-        {relatedItems.length > 0 && (
+        {contentRelatedItems.length > 0 && (
           <>
             <h5>Related content:</h5>
 
-            {relatedItems.map((item, index) => (
+            {contentRelatedItems.map((item, index) => (
               <Fragment key={index}>
                 <UniversalLink item={item}>{item.title}</UniversalLink>
                 <br />

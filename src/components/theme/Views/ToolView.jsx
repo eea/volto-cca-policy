@@ -16,7 +16,6 @@ function ToolView(props) {
 
       <div className="ui container">
         <ReferenceInfo content={content} />
-
         <PublishedModifiedInfo {...props} />
 
         <div class="content-box">
