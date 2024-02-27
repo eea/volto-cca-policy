@@ -209,15 +209,18 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
 
 function GeoChar(props) {
   const { content } = props;
-  const j = JSON.parse(content.geochars);
+  const { spatial_values, spatial_layer, geochars } = content;
+  const j = JSON.parse(geochars);
 
   if (j === null) {
-    if (content.spatial_layer) {
+    if (spatial_layer) {
       return (
         <div className="geochar">
-          <p>{content.spatial_layer}</p>
+          <p>{spatial_layer}</p>
           <h5>Countries:</h5>
-          <p>{content.spatial_values.map((item) => item.token).join(', ')}</p>
+          {spatial_values && spatial_values.length > 0 && (
+            <p>{spatial_values.map((item) => item.token).join(', ')}</p>
+          )}
         </div>
       );
     }
