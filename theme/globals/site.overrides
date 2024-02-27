@@ -120,7 +120,7 @@ div.geochars-field {
 }
 
 div.share-info {
-  margin-top: 1em;
+  margin-top: 2.5em;
   text-align: right;
 }
 
@@ -205,8 +205,8 @@ body.subsite {
 body.searchlib-page .searchlib-block {
   .ui.secondary.pointing.content-section-tabs.menu {
     .active.item .tab-icon .count {
-      background-color: @ccaGreenColor;
       border-color: @ccaGreenColor;
+      background-color: @ccaGreenColor;
     }
   }
 }
@@ -223,9 +223,9 @@ body.searchlib-page .searchlib-block {
 }
 
 #page-header .styled-group.has--useAsPageHeader--true {
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #toolbar .toolbar-content {
