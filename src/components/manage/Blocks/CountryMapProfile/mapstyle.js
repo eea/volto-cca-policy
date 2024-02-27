@@ -29,7 +29,7 @@ const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
   context.restore();
 };
 
-export const makeStyles = () => {
+export const makeStyles = (highlight) => {
   const fill = new ol.style.Fill();
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',
@@ -50,14 +50,36 @@ export const makeStyles = () => {
     // renderer: flagRenderer({ fill, stroke }),
   });
 
+  const colored = new ol.style.Fill({
+    color: 'red',
+  });
+
   const eucountriesStyle = new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      color: '#d1d1d1',
-      width: 1,
-    }),
-    fill: new ol.style.Fill({
-      color: 'rgb(245, 245, 245, 0.8)',
-    }),
+    renderer: (pixelCoordinates, state) => {
+      console.log('render', state.feature.get('na'));
+      const context = state.context;
+      const geometry = state.geometry.clone();
+      geometry.setCoordinates(pixelCoordinates);
+      // const extent = geometry.getExtent();
+      // const width = ol.extent.getWidth(extent);
+      // const height = ol.extent.getHeight(extent);
+      const feature = state.feature;
+      const name = feature.get('na');
+
+      context.save();
+      const renderContext = ol.render.toContext(context, {
+        pixelRatio: 1,
+      });
+      renderContext.setFillStrokeStyle(
+        name === highlight.current ? colored : fill,
+        stroke,
+      );
+      console.log(highlight.current);
+
+      renderContext.drawGeometry(geometry);
+      context.clip();
+      context.restore();
+    },
   });
 
   const blue1Style = new ol.style.Style({

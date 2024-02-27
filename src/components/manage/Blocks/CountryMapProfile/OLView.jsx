@@ -51,11 +51,12 @@ const View = (props) => {
   const { geofeatures, projection } = props;
 
   const history = useHistory();
-  const styles = React.useMemo(makeStyles, []);
+  const highlight = React.useRef();
+  const [stateHighlight, setStateHighlight] = React.useState();
+
+  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
-  const [overlaySource, setOverlaySource] = React.useState();
-  // const [overlaySource2, setOverlaySource2] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
   const [thematicMapMode, setThematicMapMode] = React.useState(
     'National adaption policy',
@@ -77,16 +78,16 @@ const View = (props) => {
       euCountryNames[i] = 'United Kingdom DEL';
     }
   }
-  // setOverlaySource(new ol.source.Vector());
-  // const overlaySource2 = setOverlaySource(new ol.source.Vector());
+
+  const euCountryFeatures = React.useRef();
 
   React.useEffect(() => {
-    setOverlaySource(new ol.source.Vector());
-
     const features = new ol.format.GeoJSON().readFeatures(geofeatures);
     const filtered = features.filter((f) =>
       euCountryNames.includes(f.get('na')),
     );
+
+    euCountryFeatures.current = filtered;
 
     filtered.forEach((feature) => {
       const img = new Image();
@@ -179,10 +180,8 @@ const View = (props) => {
     [baseUrl, history],
   );
   console.log('thematicMapMode', thematicMapMode);
-  console.log('overlaySource', overlaySource);
   console.log('euCountriesSource', euCountriesSource);
   console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
-  console.log('OVERLAY SOURCE ROOT:', overlaySource?.getFeatures());
   // console.log('OVERLAY SOURCE2 ROOT:', overlaySource2?.getFeatures());
 
   return (
@@ -208,19 +207,16 @@ const View = (props) => {
               <Layers>
                 {props.mode !== 'edit' && (
                   <Interactions
-                    overlaySource={overlaySource}
                     tooltipRef={tooltipRef}
                     onFeatureClick={onFeatureClick}
                     countries_metadata={countries_metadata}
                     baseUrl={baseUrl}
                     thematicMapMode={thematicMapMode}
+                    euCountryFeatures={euCountryFeatures}
+                    highlight={highlight}
+                    setStateHighlight={setStateHighlight}
                   />
                 )}
-                <Layer.Vector
-                  source={overlaySource}
-                  zIndex={4}
-                  style={styles.overlayStyle}
-                />
                 <Layer.Vector
                   source={nap3}
                   zIndex={3}
@@ -238,7 +234,7 @@ const View = (props) => {
                 />
                 <Layer.Vector
                   source={euCountriesSource}
-                  zIndex={2}
+                  zIndex={7}
                   style={styles.eucountriesStyle}
                 />
                 <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
