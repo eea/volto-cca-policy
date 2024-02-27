@@ -120,7 +120,7 @@ function AdaptationOptionView(props) {
       <BannerTitle content={content} type="Adaptation Option" />
 
       <div className="ui container">
-        <HTMLField value={long_description} className="long_description" />
+        <HTMLField value={long_description} />
         <SectionsMenu sections={usedSections} />
         <Divider />
 
@@ -142,10 +142,7 @@ function AdaptationOptionView(props) {
                       <Fragment key={index}>
                         <div id={sectionID(data.title)} className="section">
                           <h5 className="section-title">{data.title}</h5>
-                          <HTMLField
-                            value={content[data.field]}
-                            className="long_description"
-                          />
+                          <HTMLField value={content[data.field]} />
                         </div>
                       </Fragment>
                     ))}

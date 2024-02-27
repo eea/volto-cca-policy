@@ -134,9 +134,26 @@ div.geochars-field {
   }
 }
 
+hr {
+  height: 1px;
+  border: none;
+  margin: 2em 0;
+  background-color: #e6e7e8;
+}
+
 .db-item-view {
   .ui.divider {
     margin: 2em 0;
+  }
+
+  .bottom-text {
+    margin-bottom: 2em;
+  }
+
+  .c3s-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .adaptation-details {
@@ -156,8 +173,18 @@ div.geochars-field {
     }
   }
 
-  .share-info .ui.button {
+  .documents-list {
+    li a:before {
+      content: '' !important;
+    }
+  }
+
+  .share-info {
     margin: 3.5em 0 !important;
+
+    .ui.button {
+      margin: 0 !important;
+    }
   }
 
   .ui.button {
@@ -166,6 +193,10 @@ div.geochars-field {
 
   .content-box {
     margin: 0;
+
+    h5 {
+      color: @secondaryColor;
+    }
 
     .content-box-inner {
       padding: 3.5em 0;
@@ -195,7 +226,7 @@ div.geochars-field {
 }
 
 .published-modified-info {
-  margin-top: 2em;
+  margin: 2em 0;
   font-size: 0.8em;
 }
 

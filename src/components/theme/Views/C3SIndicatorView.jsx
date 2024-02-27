@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
 import { HTMLField, BannerTitle } from '@eeacms/volto-cca-policy/helpers';
-import { Accordion, Icon } from 'semantic-ui-react';
+// import { Accordion, Icon } from 'semantic-ui-react';
 
 // import { Icon } from '@plone/volto/components';
-import rightSVG from '@plone/volto/icons/right-key.svg';
-import downSVG from '@plone/volto/icons/down-key.svg';
+// import rightSVG from '@plone/volto/icons/right-key.svg';
+// import downSVG from '@plone/volto/icons/down-key.svg';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -110,16 +110,20 @@ const Overview = (props) => {
 
 function C3SIndicatorView(props) {
   const { content } = props;
-  const { long_description, definition_app, indicator_title } = content;
+  const {
+    // definition_app,
+    long_description,
+    indicator_title,
+  } = content;
   const [showDetails, setShowDetails] = useState(false);
-  const [activeAccIndex, setActiveAccIndex] = React.useState(0);
+  // const [activeAccIndex, setActiveAccIndex] = React.useState(0);
 
-  function handleAccClick(e, titleProps) {
-    const { index } = titleProps;
-    const newIndex = activeAccIndex === index ? -1 : index;
+  // function handleAccClick(e, titleProps) {
+  //   const { index } = titleProps;
+  //   const newIndex = activeAccIndex === index ? -1 : index;
 
-    setActiveAccIndex(newIndex);
-  }
+  //   setActiveAccIndex(newIndex);
+  // }
 
   const toggleIframe = () => {
     setShowDetails(!showDetails);
@@ -144,14 +148,21 @@ function C3SIndicatorView(props) {
       <BannerTitle content={content} />
 
       <div className="ui container">
-        <a href="/knowledge/european-climate-data-explorer/">
-          <button className="ui button primary">ECDE homepage</button>
-        </a>
-
         <h2>Background information</h2>
-        <HTMLField value={long_description} className="long_description" />
+        <HTMLField value={long_description} />
 
-        {definition_app && (
+        <div className="c3s-buttons">
+          <a href="#details">
+            <button className="ui button primary" onClick={toggleIframe}>
+              {showDetails ? 'Go back' : 'Explore in detail'}
+            </button>
+          </a>
+          <a href="/knowledge/european-climate-data-explorer/">
+            <button className="ui button primary">ECDE homepage</button>
+          </a>
+        </div>
+
+        {/* {definition_app && (
           <>
             <Accordion>
               <Accordion.Title
@@ -172,30 +183,28 @@ function C3SIndicatorView(props) {
               </Accordion.Content>
             </Accordion>
           </>
-        )}
+        )} */}
 
-        <a href="#details">
-          <button className="ui button primary" onClick={toggleIframe}>
-            {showDetails ? 'Go back' : 'Explore in detail'}
-          </button>
-        </a>
         <h2>
-          {indicator_title} {showDetails && ' - Explore index'}
+          {indicator_title && indicator_title !== '_' && <>{indicator_title}</>}
+          {showDetails && ' - Explore index'}
         </h2>
         {!__SERVER__ && !showDetails && <Overview {...props} />}
         {!__SERVER__ && showDetails && <Details {...props} />}
 
-        <p>
-          Content in the European Climate Data Explorer pages is delivered by
-          the{' '}
-          <a href="https://climate.copernicus.eu/">
-            Copernicus Climate Change Service (C3S)
-          </a>{' '}
-          implemented by ECMWF.{' '}
-          <a href="/knowledge/european-climate-data-explorer/disclaimer">
-            Disclaimer
-          </a>
-        </p>
+        <div className="bottom-text">
+          <p>
+            Content in the European Climate Data Explorer pages is delivered by
+            the{' '}
+            <a href="https://climate.copernicus.eu/">
+              Copernicus Climate Change Service (C3S)
+            </a>{' '}
+            implemented by ECMWF.{' '}
+            <a href="/knowledge/european-climate-data-explorer/disclaimer">
+              Disclaimer
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );

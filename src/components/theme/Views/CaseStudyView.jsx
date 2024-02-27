@@ -218,10 +218,7 @@ const SectionContent = (props) => {
           <p key={index}>{relevanceItem.title}</p>
         ))
       ) : (
-        <HTMLField
-          value={content[sectionData.field]}
-          className="long_description"
-        />
+        <HTMLField value={content[sectionData.field]} />
       )}
     </div>
   );
@@ -264,10 +261,7 @@ function CaseStudyView(props) {
             >
               <PrimaryPhoto {...props} />
 
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
+              <HTMLField value={content.long_description} />
 
               <SectionsMenu sections={usedSections(1)} title={groups['1']} />
               <SectionsMenu sections={usedSections(2)} title={groups['2']} />

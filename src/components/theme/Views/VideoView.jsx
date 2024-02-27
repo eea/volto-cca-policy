@@ -11,6 +11,15 @@ import { Divider, Segment } from 'semantic-ui-react';
 
 function VideoView(props) {
   const { content } = props;
+  const {
+    source,
+    websites,
+    embed_url,
+    contributor_list,
+    long_description,
+    other_contributor,
+    related_documents_presentations,
+  } = content;
 
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
   const is_cmshare_video = share_eea.some((domain) =>
@@ -38,7 +47,7 @@ function VideoView(props) {
                 preload="metadata"
                 width="100%"
                 height="480"
-                src={fixEmbedURL(content.embed_url)}
+                src={fixEmbedURL(embed_url)}
               >
                 <track default kind="captions" srcLang="en" src="" />
               </video>
@@ -46,15 +55,12 @@ function VideoView(props) {
           </div>
         )}
 
-        <HTMLField
-          value={content.long_description}
-          className="long_description"
-        />
+        <HTMLField value={long_description} />
 
         {!is_cmshare_video && (
           <div className="external-video">
             <ExternalLink
-              url={content.embed_url}
+              url={embed_url}
               text="See video outside Climate-ADAPT"
             />
           </div>
@@ -62,35 +68,33 @@ function VideoView(props) {
 
         <Divider />
 
-        {content?.related_documents_presentations && (
+        {related_documents_presentations && (
           <>
             <h2 className="reference-title">
               Related documents and presentations
             </h2>
-            <HTMLField value={content.related_documents_presentations} />
+            <HTMLField value={related_documents_presentations} />
           </>
         )}
 
-        {content?.websites?.length > 0 && (
-          <h2 className="reference-title">Reference information</h2>
+        {websites?.length > 0 && (
+          <>
+            <h2 className="reference-title">Reference information</h2>
+            <LinksList title="Websites" value={websites} />
+          </>
         )}
 
-        {content?.websites?.length > 0 && (
-          <LinksList title="Websites" value={content.websites} />
-        )}
-
-        {content?.source && (
+        {source && (
           <>
             <h5>Source</h5>
-            <HTMLField value={content.source} />
+            <HTMLField value={source} />
           </>
         )}
 
-        {(content?.contributor_list?.length > 0 ||
-          content?.other_contributor?.length > 0) && (
+        {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
           <>
             <h5>Contributor:</h5>
-            {content.contributor_list
+            {contributor_list
               .map((item) => (
                 <>
                   {item.title}
@@ -98,7 +102,7 @@ function VideoView(props) {
                 </>
               ))
               .sort()}
-            {content.other_contributor}
+            {other_contributor}
           </>
         )}
 
