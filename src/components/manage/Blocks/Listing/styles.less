@@ -44,3 +44,58 @@ div.indicatorCards {
     margin-bottom: 1em !important;
   }
 }
+
+// Event Cards Listing
+div.eventCards {
+  div.simple-listing-item {
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  a {
+    color: #006bb8 !important;
+  }
+
+  div.start-date {
+    max-width: 80px;
+
+    .day {
+      border-bottom: 3px solid #ef7000;
+      color: #ef7000;
+      font-size: 2.5em;
+      font-weight: 900;
+    }
+
+    .date {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+  }
+
+  div.bottom-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    .sep {
+      position: relative;
+      top: -2px;
+      color: #ddd;
+    }
+
+    .email-info {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    div.subjects {
+      .label {
+        margin-right: 0.3em;
+        margin-bottom: 0.3em;
+        background: #eee;
+        color: #3d5265;
+      }
+    }
+  }
+}

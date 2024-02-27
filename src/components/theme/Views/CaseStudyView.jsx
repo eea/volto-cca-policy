@@ -6,6 +6,7 @@ import {
   PublishedModifiedInfo,
   DocumentsList,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -250,6 +251,8 @@ function CaseStudyView(props) {
 
   return (
     <div className="case-study-view">
+      <BannerTitle content={content} type="Case Studies" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -259,8 +262,6 @@ function CaseStudyView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Case studies</div>
-              <h1>{content.title}</h1>
               <PrimaryPhoto {...props} />
 
               <HTMLField

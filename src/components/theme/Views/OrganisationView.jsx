@@ -1,5 +1,4 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import {
   HTMLField,
@@ -7,6 +6,7 @@ import {
   LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -27,6 +27,8 @@ function OrganisationView(props) {
 
   return (
     <div className="organisation-view">
+      <BannerTitle content={content} type="Organisation" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -36,15 +38,15 @@ function OrganisationView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Organisation</div>
-              <h1>{content.title}</h1>
-              <h4>Description:</h4>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <hr />
-              <h4>Reference information</h4>
+              <div>
+                <h4>Description:</h4>
+                <HTMLField
+                  value={content.long_description}
+                  className="long_description"
+                />
+                <hr />
+                <h4>Reference information</h4>
+              </div>
 
               {content?.websites?.length > 0 && (
                 <LinksList title="Websites:" value={content.websites} />

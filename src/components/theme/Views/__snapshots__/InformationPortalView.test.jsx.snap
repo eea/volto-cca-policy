@@ -4,6 +4,9 @@ exports[`InformationPortalView should render the component 1`] = `
 <div
   className="information-portal-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,16 +19,8 @@ exports[`InformationPortalView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Information Portal
-          </div>
-          <h1>
-            My InformationPortalView
-          </h1>
           <h4>
-            Description
+            Description:
           </h4>
           <div
             className="long_description"

@@ -7,13 +7,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { asyncConnect } from '@plone/volto/helpers';
+import { asyncConnect, Helmet } from '@plone/volto/helpers';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Container } from 'semantic-ui-react';
-import { Helmet } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
 import config from '@plone/volto/registry';
-
+import { BannerTitle } from '@eeacms/volto-cca-policy/components';
 import { getNavigation } from '@plone/volto/actions';
 
 const messages = defineMessages({
@@ -97,13 +96,17 @@ class Sitemap extends Component {
       </ul>
     );
   };
+
   render() {
     const { items } = this.props;
+    const content = {
+      title: this.props.intl.formatMessage(messages.Sitemap),
+    };
     return (
       <div id="page-sitemap">
         <Helmet title={this.props.intl.formatMessage(messages.Sitemap)} />
+        <BannerTitle content={content} />
         <Container className="view-wrapper">
-          <h1>{this.props.intl.formatMessage(messages.Sitemap)} </h1>
           {items && this.renderItems(items)}
         </Container>
       </div>

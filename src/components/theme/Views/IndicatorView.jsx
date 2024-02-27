@@ -5,6 +5,7 @@ import {
   LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
@@ -13,6 +14,8 @@ function IndicatorView(props) {
 
   return (
     <div className="indicator-view">
+      <BannerTitle content={content} type="Indicator" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -22,8 +25,6 @@ function IndicatorView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Indicator</div>
-              <h1>{content.title}</h1>
               <h4>Description</h4>
               <HTMLField
                 value={content.long_description}

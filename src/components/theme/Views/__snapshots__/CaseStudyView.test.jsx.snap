@@ -4,6 +4,9 @@ exports[`CaseStudyView should render the component 1`] = `
 <div
   className="case-study-view"
 >
+  <div>
+    Title Block Component
+  </div>
   <div
     className="ui container"
   >
@@ -16,14 +19,6 @@ exports[`CaseStudyView should render the component 1`] = `
         <div
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <div
-            className="ui label"
-          >
-            Case studies
-          </div>
-          <h1>
-            CaseStudyView
-          </h1>
           <div
             className="case-studies-review-image-wrapper"
           >

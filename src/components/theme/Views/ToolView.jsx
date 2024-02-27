@@ -3,13 +3,17 @@ import {
   ContentMetadata,
   PublishedModifiedInfo,
   ReferenceInfo,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Grid } from 'semantic-ui-react';
 
 function ToolView(props) {
   const { content } = props;
+
   return (
     <div className="tool-view">
+      <BannerTitle content={content} type="Tools" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
@@ -19,8 +23,6 @@ function ToolView(props) {
               computer={9}
               className="col-left"
             >
-              <div className="ui label">Tools</div>
-
               <ReferenceInfo content={content} />
 
               <PublishedModifiedInfo {...props} />
