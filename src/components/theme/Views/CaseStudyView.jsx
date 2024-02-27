@@ -8,7 +8,8 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Divider, Segment, Grid, Icon } from 'semantic-ui-react';
+import { ImageGallery } from '@eeacms/volto-cca-policy/components';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -151,18 +152,21 @@ const sectionID = (title) => {
 
 const PhotoGallery = (props) => {
   const { content } = props;
-  const photos = content.cca_gallery;
+  const { cca_gallery } = content;
+
   return (
-    <>
-      <h5>Case Study Illustrations</h5>
-      <ul className="gallery-placeholder">
-        {photos.map((photo, index) => (
-          <li key={index}>
-            <a href={photo.url}>{photo.title}</a>
-          </li>
-        ))}
-      </ul>
-    </>
+    <div className="casetstudy-gallery">
+      {cca_gallery && cca_gallery.length > 0 && (
+        <>
+          <div className="gallery-title">
+            <span>Case Study illustrations</span>
+            <span> ({cca_gallery.length}) </span>
+            <Icon name="ri-image-fill" />
+          </div>
+          <ImageGallery items={cca_gallery} />
+        </>
+      )}
+    </div>
   );
 };
 
@@ -172,8 +176,8 @@ const SectionsMenu = (props) => {
   return (
     <>
       {sections.length > 0 && (
-        <>
-          <h5>{title}</h5>
+        <div>
+          <h3>{title}</h3>
           <ul>
             {sections.map((data, index) => (
               <li key={index}>
@@ -181,7 +185,7 @@ const SectionsMenu = (props) => {
               </li>
             ))}
           </ul>
-        </>
+        </div>
       )}
     </>
   );
@@ -197,6 +201,14 @@ const SectionContent = (props) => {
     }
     return list;
   };
+
+  const section = content[sectionData.field];
+
+  for (var key in section) {
+    if (section[key] === '') {
+      section[key] = '<p>-</p>';
+    }
+  }
 
   return (
     <div id={sectionID(sectionData.title)} className="section">
@@ -226,6 +238,7 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
+  const { cca_files, long_description } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -247,76 +260,79 @@ function CaseStudyView(props) {
   };
 
   return (
-    <div className="case-study-view">
+    <div className="db-item-view case-study-view">
       <BannerTitle content={content} type="Case Studies" />
 
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
+            <Grid.Column mobile={12} tablet={12} computer={9}>
               <PrimaryPhoto {...props} />
-
-              <HTMLField value={content.long_description} />
-
-              <SectionsMenu sections={usedSections(1)} title={groups['1']} />
-              <SectionsMenu sections={usedSections(2)} title={groups['2']} />
-              <SectionsMenu sections={usedSections(3)} title={groups['3']} />
-              <hr />
-
-              {[1, 2, 3].map(
-                (groupID, index) =>
-                  usedSections(groupID).length > 0 && (
-                    <Fragment key={index}>
-                      <h4>{groups[groupID]}</h4>
-                      {usedSections(groupID).map((data, index) => (
-                        <SectionContent
-                          sectionData={data}
-                          content={content}
-                          key={index}
-                        />
-                      ))}
-                      {groupID !== 3 ? <hr /> : null}
-                    </Fragment>
-                  ),
-              )}
-
-              <PublishedModifiedInfo {...props} />
-              <hr />
-              <p>
-                Please contact us for any other enquiry on this Case Study or to
-                share a new Case Study (email{' '}
-                <span className="link-mailto">
-                  <a
-                    href="mailto: climate.adapt@eea.europa.eu"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    climate.adapt@eea.europa.eu
-                  </a>
-                </span>
-                )
-              </p>
-              <ShareInfo {...props} />
+              <HTMLField value={long_description} />
             </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              <div style={{}}>
-                <PhotoGallery {...props} />
-                <DocumentsList {...props} />
-                <ContentMetadata {...props} />
-              </div>
+
+            <Grid.Column mobile={12} tablet={12} computer={3}>
+              <PhotoGallery {...props} />
             </Grid.Column>
           </div>
         </Grid>
+
+        <div className="adaptation-details">
+          <SectionsMenu sections={usedSections(1)} title={groups['1']} />
+          <SectionsMenu sections={usedSections(2)} title={groups['2']} />
+          <SectionsMenu sections={usedSections(3)} title={groups['3']} />
+        </div>
+
+        <Divider />
+
+        {[1, 2, 3].map(
+          (groupID, index) =>
+            usedSections(groupID).length > 0 && (
+              <Fragment key={index}>
+                <h2>{groups[groupID]}</h2>
+                {usedSections(groupID).map((data, index) => (
+                  <SectionContent
+                    sectionData={data}
+                    content={content}
+                    key={index}
+                  />
+                ))}
+                {groupID !== 3 ? <Divider /> : null}
+              </Fragment>
+            ),
+        )}
+
+        <PublishedModifiedInfo {...props} />
+        <Divider />
+
+        <p>
+          Please contact us for any other enquiry on this Case Study or to share
+          a new Case Study (email{' '}
+          <span className="link-mailto">
+            <a
+              href="mailto: climate.adapt@eea.europa.eu"
+              target="_blank"
+              rel="noreferrer"
+            >
+              climate.adapt@eea.europa.eu
+            </a>
+          </span>
+          )
+        </p>
+        <ShareInfo {...props} />
+
+        <div className="content-box">
+          <div className="content-box-inner">
+            <Segment>
+              <ContentMetadata {...props} />
+            </Segment>
+            {cca_files && cca_files.length > 0 && (
+              <Segment>
+                <DocumentsList {...props} />
+              </Segment>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

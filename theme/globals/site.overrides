@@ -40,6 +40,7 @@ p.has--clear--both:empty {
     a[href^="https://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
     a[href^="http://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty),
     a[href^="https://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty)
+    // a[rel='noopener']:not(.ui.button):not(:empty)
   {
     &:before {
       position: relative;
@@ -87,11 +88,15 @@ p.has--clear--both:empty {
 // }
 
 // Case study view styles
-div.case-study-view {
+.case-study-view {
   .case-studies-review-image-wrapper {
     position: relative;
-    margin: 0 1em 1em 0;
+    margin-right: 1.5em;
     float: left;
+
+    p {
+      font-size: 90%;
+    }
   }
 }
 
@@ -141,9 +146,51 @@ hr {
   background-color: #e6e7e8;
 }
 
+.ui.modal.slider-modal {
+  .content {
+    padding: 2em;
+  }
+
+  .slick-slider {
+    padding: 1em 2em;
+  }
+
+  .slide-image-count {
+    text-align: center;
+  }
+
+  .slick-arrow {
+    width: 35px;
+    height: 35px;
+
+    &:before {
+      font-size: 30px;
+    }
+  }
+
+  .slick-prev {
+    left: -13px;
+  }
+
+  .slick-next {
+    right: -13px;
+  }
+}
+
 .db-item-view {
   .ui.divider {
     margin: 2em 0;
+  }
+
+  .casetstudy-gallery {
+    cursor: pointer;
+
+    .gallery-title {
+      padding: 2px 4px;
+      background-color: #f2c94c;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 
   .bottom-text {
