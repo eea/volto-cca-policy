@@ -12,10 +12,9 @@ const ImageGallery = (props) => {
   const { items = [] } = props;
 
   const [open, setOpen] = React.useState(false);
-  const sliderRef = React.useRef(null);
-
   const [slideIndex, setSlideIndex] = React.useState(0);
   const [updateCount, setUpdateCount] = React.useState(0);
+  const sliderRef = React.useRef(null);
 
   const carouselSettings = React.useMemo(
     () => ({
@@ -43,7 +42,7 @@ const ImageGallery = (props) => {
   };
 
   return (
-    <div className="image-album">
+    <div className="image-gallery">
       <div
         tabIndex={0}
         role="button"
@@ -53,17 +52,16 @@ const ImageGallery = (props) => {
         <Image
           src={items[0]?.url}
           alt={items[0]?.title}
-          className={cx('preview-image')}
+          className="preview-image"
         />
       </div>
 
       <Modal
-        // size="large"
         closeIcon
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
         open={open}
         className="slider-modal"
+        onClose={() => setOpen(false)}
+        onOpen={() => setOpen(true)}
       >
         <Modal.Content>
           <h3>{items[slideIndex].title}</h3>

@@ -238,7 +238,9 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
-  const { cca_files, long_description } = content;
+  const { cca_files, long_description, cca_gallery } = content;
+  const hasFiles = cca_files && cca_files.length > 0;
+  const hasGallery = cca_gallery && cca_gallery.length > 0;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -266,7 +268,7 @@ function CaseStudyView(props) {
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
-            <Grid.Column mobile={12} tablet={12} computer={9}>
+            <Grid.Column mobile={12} tablet={12} computer={hasGallery ? 9 : 12}>
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
             </Grid.Column>
@@ -326,7 +328,7 @@ function CaseStudyView(props) {
             <Segment>
               <ContentMetadata {...props} />
             </Segment>
-            {cca_files && cca_files.length > 0 && (
+            {hasFiles && (
               <Segment>
                 <DocumentsList {...props} />
               </Segment>

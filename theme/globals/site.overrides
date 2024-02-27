@@ -74,19 +74,6 @@ p.has--clear--both:empty {
   // }
 }
 
-// Adaptation option view styles
-// div.adaptation-option-view,
-// div.case-study-view {
-//   div.section {
-//     h5.section-title {
-//       font-size: 1em;
-//       font-style: italic;
-//     }
-
-//     margin-top: 2em;
-//   }
-// }
-
 // Case study view styles
 .case-study-view {
   .case-studies-review-image-wrapper {
@@ -221,6 +208,9 @@ hr {
   }
 
   .documents-list {
+    padding: 0;
+    list-style-type: none;
+
     li a:before {
       content: '' !important;
     }
@@ -256,7 +246,12 @@ hr {
 
   .content-metadata {
     h5 {
+      margin: 1em 0 0.5em 0;
       color: @secondaryColor;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     p,
