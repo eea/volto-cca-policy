@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
 import { HTMLField, BannerTitle } from '@eeacms/volto-cca-policy/helpers';
-import { Accordion, Icon } from 'semantic-ui-react';
+import { Accordion, Icon, Segment } from 'semantic-ui-react';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -182,21 +182,30 @@ function C3SIndicatorView(props) {
           {hasIndicatorTitle && <>{indicator_title}</>}
           {showDetails && ' - Explore index'}
         </h2>
-        {!__SERVER__ && !showDetails && <Overview {...props} />}
-        {!__SERVER__ && showDetails && <Details {...props} />}
 
-        <div className="bottom-text">
-          <p>
-            Content in the European Climate Data Explorer pages is delivered by
-            the{' '}
-            <a href="https://climate.copernicus.eu/">
-              Copernicus Climate Change Service (C3S)
-            </a>{' '}
-            implemented by ECMWF.{' '}
-            <a href="/knowledge/european-climate-data-explorer/disclaimer">
-              Disclaimer
-            </a>
-          </p>
+        <div>
+          {!__SERVER__ && !showDetails && <Overview {...props} />}
+          {!__SERVER__ && showDetails && <Details {...props} />}
+        </div>
+
+        <div class="content-box">
+          <div class="content-box-inner">
+            <Segment>
+              <p>
+                Content in the European Climate Data Explorer pages is delivered
+                by the{' '}
+                <a href="https://climate.copernicus.eu/">
+                  Copernicus Climate Change Service (C3S)
+                </a>{' '}
+                implemented by ECMWF.
+              </p>
+              <p>
+                <a href="/knowledge/european-climate-data-explorer/disclaimer">
+                  Disclaimer
+                </a>
+              </p>
+            </Segment>
+          </div>
         </div>
       </div>
     </div>
