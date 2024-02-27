@@ -21,12 +21,7 @@ export const ExternalLink = (props) => {
     text = url;
   }
 
-  return (
-    <a href={url}>
-      <i aria-hidden="true" className="ri-external-link-line" />
-      {text}
-    </a>
-  );
+  return <a href={url}>{text}</a>;
 };
 
 export const LinksList = (props) => {
@@ -39,7 +34,7 @@ export const LinksList = (props) => {
   if (withText === true) {
     return (
       <>
-        <h5>{title}</h5>
+        <h5 id="websites">{title}</h5>
         <ul>
           {value.map((linkItem, index) => (
             <li key={index}>
@@ -56,7 +51,7 @@ export const LinksList = (props) => {
   } else {
     return (
       <>
-        <h5>{title}</h5>
+        <h5 id="websites">{title}</h5>
         <ul>
           {value.map((url, index) => (
             <li key={index}>

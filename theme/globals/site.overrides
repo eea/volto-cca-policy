@@ -29,51 +29,62 @@ p.has--clear--both:empty {
 }
 
 // Add icon for external links
-#page-document {
-  p {
-    a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
-    a[target='_blank']:not(.ui.button):not(:empty) {
+.content-area #view {
+  a[data-linktype='internal'] {
+    &:before {
+      content: '' !important;
+    }
+  }
+
+  a[href^="http://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
+    a[href^="https://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
+    a[href^="http://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty),
+    a[href^="https://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty)
+  {
+    &:before {
+      position: relative;
+      top: 0;
+      margin-right: 3px;
+      color: inherit;
+      content: '\ecaf';
+      font-family: remixicon;
+      font-size: 1em;
+    }
+
+    &:visited {
       &:before {
-        position: relative;
-        top: 2px;
-        margin-right: 3px;
-        color: inherit;
-        content: '\ecaf';
-        font-family: remixicon;
-        font-size: 1em;
+        // fix visited link icon color
+        // doesn't work with color: inherit
+        color: @linkVisitedColor;
       }
+    }
 
-      &:visited {
-        &:before {
-          // fix visited link icon color
-          // doesn't work with color: inherit
-          color: @linkVisitedColor;
-        }
-      }
-
-      &:active {
-        &:before {
-          // fix active link icon color
-          // doesn't work with color: inherit
-          color: @linkActiveColor;
-        }
+    &:active {
+      &:before {
+        // fix active link icon color
+        // doesn't work with color: inherit
+        color: @linkActiveColor;
       }
     }
   }
+
+  // a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
+  // a[target='_blank']:not(.ui.button):not(:empty) {
+  // }
 }
 
 // Adaptation option view styles
-div.adaptation-option-view,
-div.case-study-view {
-  div.section {
-    h5.section-title {
-      font-size: 1em;
-      font-style: italic;
-    }
+// div.adaptation-option-view,
+// div.case-study-view {
+//   div.section {
+//     h5.section-title {
+//       font-size: 1em;
+//       font-style: italic;
+//     }
 
-    margin-top: 2em;
-  }
-}
+//     margin-top: 2em;
+//   }
+// }
 
 // Case study view styles
 div.case-study-view {
@@ -100,6 +111,10 @@ div.c3sindicator-view {
   iframe {
     border: none;
   }
+
+  .ui.accordion {
+    margin: 1.5em 0;
+  }
 }
 
 // Geochars widget
@@ -113,33 +128,84 @@ div.geochars-field {
   }
 }
 
+.section-metadata {
+  .content-area {
+    margin-bottom: 0 !important;
+  }
+}
+
+.db-item-view {
+  .ui.divider {
+    margin: 2em 0;
+  }
+
+  .adaptation-details {
+    display: flex;
+    flex-direction: row;
+    margin: 2em 0;
+    gap: 5em;
+  }
+
+  .ui.segment {
+    margin-bottom: 1.5em;
+  }
+
+  .section {
+    .section-title {
+      margin-top: 1em;
+    }
+  }
+
+  .share-info .ui.button {
+    margin: 3.5em 0 !important;
+  }
+
+  .ui.button {
+    margin: 1.5em 0 !important;
+  }
+
+  .content-box {
+    margin: 0;
+
+    .content-box-inner {
+      padding: 3.5em 0;
+    }
+  }
+
+  .video-wrapper {
+    margin-bottom: 2em;
+  }
+
+  .content-metadata {
+    h5 {
+      color: @secondaryColor;
+    }
+
+    p,
+    span {
+      color: @grey-4;
+    }
+  }
+}
+
 // General styles
 .btn-right {
   margin: calc(2rem - 0.1em) 0em 1rem;
   float: right;
 }
 
-div.share-info {
-  margin-top: 2.5em;
-  text-align: right;
-}
-
-h4.reference-title {
-  padding-top: 1.5em;
-  border-top: 1px solid #ddd;
-  margin-top: 1.5em;
-}
-
-div.published-modified-info {
+.published-modified-info {
   margin-top: 2em;
-  font-size: 0.75rem;
+  font-size: 0.8em;
 }
 
-div.content-metadata {
-  ul.related-case-studies {
-    padding-left: 0px;
-    list-style: none;
+.content-metadata {
+  .columned.related-case-studies {
+    column-count: 2;
+    column-gap: 4em;
+  }
 
+  .related-case-studies {
     li {
       margin-bottom: 0.5em;
     }
