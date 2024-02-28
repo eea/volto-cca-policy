@@ -191,7 +191,7 @@ export const Interactions = ({
       //   onFeatureClick(feature);
       // }
     });
-  }, [map, tooltipRef, onFeatureClick]);
-
+  });
+  // }, [map, tooltipRef, onFeatureClick]);
   return null;
 };
