@@ -122,7 +122,7 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                         )}
                         <div className="source">
                           <ConditionalLink item={item} condition={!isEditMode}>
-                            Climate Adapt page for this event
+                            Climate-ADAPT page for this event
                           </ConditionalLink>
                         </div>
                         {!!item.contact_email && (

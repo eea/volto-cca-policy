@@ -7,41 +7,33 @@ import {
   ReferenceInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 
 function PublicationReportView(props) {
   const { content } = props;
+  const { cca_files } = content;
 
   return (
-    <div className="publication-report-view">
+    <div className="db-item-view publication-report-view">
       <BannerTitle content={content} type="Publications and Report" />
 
       <div className="ui container">
-        <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
-              <ReferenceInfo content={content} />
-              <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
-            </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              <div style={{}}>
+        <ReferenceInfo content={content} />
+        <PublishedModifiedInfo {...props} />
+        <ShareInfo {...props} />
+
+        <div className="content-box">
+          <div className="content-box-inner">
+            <Segment>
+              <ContentMetadata {...props} />
+            </Segment>
+            {cca_files && cca_files.length > 0 && (
+              <Segment>
                 <DocumentsList {...props} />
-                <ContentMetadata {...props} />
-              </div>
-            </Grid.Column>
+              </Segment>
+            )}
           </div>
-        </Grid>
+        </div>
       </div>
     </div>
   );

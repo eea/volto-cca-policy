@@ -1,27 +1,18 @@
 import React from 'react';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { BannerTitle } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
-import config from '@plone/volto/registry';
 
 function CcaEventView(props) {
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
   const { content } = props;
   // cca_files: [content.agenda_file]}
 
   return (
     <div className="cca-event-view">
-      {content?.image !== null && (
-        <TitleBlockView
-          {...props}
-          data={{ info: [{ description: '' }] }}
-          metadata={content}
-        />
-      )}
+      <BannerTitle content={content} type="Event" />
+
       <div className="ui container">
         <Grid columns="12">
           <div className="row">

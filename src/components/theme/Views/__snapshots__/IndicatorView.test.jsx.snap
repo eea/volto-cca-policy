@@ -2,7 +2,7 @@
 
 exports[`IndicatorView should render the component 1`] = `
 <div
-  className="indicator-view"
+  className="db-item-view indicator-view"
 >
   <div>
     Title Block Component
@@ -10,100 +10,93 @@ exports[`IndicatorView should render the component 1`] = `
   <div
     className="ui container"
   >
+    <h2>
+      Description
+    </h2>
     <div
-      className="ui twelve column grid"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": undefined,
+        }
+      }
+    />
+    <div
+      className="ui divider"
+    />
+    <h2>
+      Reference information
+    </h2>
+    <h5>
+      Source:
+    </h5>
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": undefined,
+        }
+      }
+    />
+    <div
+      className="published-modified-info"
+    >
+      <p>
+        <span>
+          <strong>
+            Published in Climate-ADAPT
+          </strong>
+           
+          Invalid Date
+        </span>
+        <span>
+             -   
+        </span>
+        <span>
+          <strong>
+            Last Modified in Climate-ADAPT
+          </strong>
+           
+          Invalid Date
+        </span>
+      </p>
+    </div>
+    <div
+      className="share-info"
+    >
+      <a
+        href="/help/share-your-info"
+      >
+        <button
+          className="ui button primary icon labeled"
+        >
+          Share your information
+          <i
+            aria-hidden="true"
+            className="arrow right icon"
+          />
+        </button>
+      </a>
+    </div>
+    <div
+      className="content-box"
     >
       <div
-        className="row"
+        className="content-box-inner"
       >
         <div
-          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
-        >
-          <h4>
-            Description
-          </h4>
-          <div
-            className="long_description"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
-          <hr />
-          <h4>
-            Reference information
-          </h4>
-          <h5>
-            Source:
-          </h5>
-          <div
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
-          <div
-            className="published-modified-info"
-          >
-            <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-            </p>
-          </div>
-          <div
-            className="share-info"
-          >
-            <a
-              href="/help/share-your-info"
-            >
-              <button
-                className="ui button primary icon labeled"
-              >
-                Share your information
-                <i
-                  aria-hidden="true"
-                  className="arrow right icon"
-                />
-              </button>
-            </a>
-          </div>
-        </div>
-        <div
-          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+          className="ui segment"
         >
           <div
-            style={Object {}}
+            className="content-metadata"
           >
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
+              <p>
+                Global
+              </p>
             </div>
           </div>
         </div>

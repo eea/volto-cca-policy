@@ -128,8 +128,6 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.imagecards.restricted = true;
   }
 
-  // console.log(config);
-
   // Done
   return config;
 };
