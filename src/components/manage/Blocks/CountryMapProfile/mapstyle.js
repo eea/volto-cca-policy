@@ -42,7 +42,6 @@ export const makeStyles = (highlight) => {
   });
 
   const getFillColor = (feature) => {
-    console.log('getFillColor:', feature.get('na'), feature.get('fillBlue'));
     if (feature.get('fillBlue') === 'blue1') {
       return new ol.style.Fill({ color: 'rgb(0, 75, 127, 0.8)' });
     }
@@ -58,11 +57,6 @@ export const makeStyles = (highlight) => {
 
   const eucountriesStyle = new ol.style.Style({
     renderer: (pixelCoordinates, state) => {
-      console.log(
-        'render',
-        state.feature.get('na'),
-        state.feature.get('fillBlue'),
-      );
       const context = state.context;
       const geometry = state.geometry.clone();
       geometry.setCoordinates(pixelCoordinates);

@@ -50,11 +50,11 @@ function getImageUrl(feature) {
 const View = (props) => {
   const { geofeatures, projection } = props;
 
-  const history = useHistory();
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
-  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
+  // const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
+  const styles = React.useMemo(() => makeStyles(highlight));
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
@@ -66,7 +66,6 @@ const View = (props) => {
   const countries_metadata = useCountriesMetadata(
     addAppURL(countries_metadata_url),
   );
-  console.log('countries_metadata:', countries_metadata);
   for (let i = 0; i < euCountryNames.length; i++) {
     if (euCountryNames[i] === 'Turkey') {
       euCountryNames[i] = 'Türkiye';
@@ -86,7 +85,6 @@ const View = (props) => {
 
     euCountryFeatures.current = filtered;
 
-    let fillCountries = { blue1: [], blue2: [], blue3: [] };
     if (countries_metadata.length > 0) {
       filtered.forEach((feature) => {
         let countryName = feature.get('na');
@@ -96,7 +94,7 @@ const View = (props) => {
         if (Object.hasOwn(countries_metadata[0], countryName)) {
           let metadata = countries_metadata[0][countryName];
           if (metadata !== undefined) {
-            if (thematicMapMode == 'National adaption policy') {
+            if (thematicMapMode === 'National adaption policy') {
               if (metadata[0]?.notreported) {
                 feature.set('fillBlue', 'blue3');
               } else if (
@@ -153,7 +151,6 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
-    console.log('countries_metadata:', countries_metadata);
   }, [geofeatures, countries_metadata, thematicMapMode]);
 
   const baseUrl = props.path || props.location?.pathname || '';
