@@ -2,6 +2,7 @@
         Global Overrides
 *******************************/
 @import './mission.less';
+@import './observatory.less';
 
 // [class~='view-defaultview'] [id='page-document'] > *,
 // [class~='view-viewview'] [id='page-document'] > * {
@@ -13,6 +14,10 @@
   @green-1 24.22%,
   @green-2 97.12%
 );
+
+.section-search-the-database .block.call-to-action.align.center a {
+  display: block;
+}
 
 body.subsite-root .content-area {
   padding-top: 0 !important;
