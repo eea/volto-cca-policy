@@ -1,4 +1,4 @@
-const FilterSchema = () => {
+const Schema = () => {
   return {
     title: 'Country Map',
     fieldsets: [
@@ -23,4 +23,4 @@ const FilterSchema = () => {
   };
 };
 
-export default FilterSchema;
+export default Schema;
