@@ -109,6 +109,7 @@ const CountryMapObservatoryView = (props) => {
     },
     [baseUrl, history],
   );
+  // console.log(geofeatures, projection, euCountriesSource, overlaySource);
 
   return tileWMSSources ? (
     <Map
