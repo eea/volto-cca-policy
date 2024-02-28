@@ -68,7 +68,6 @@ export const Interactions = ({
 
       highlight.current = feature && feature.get('na');
       setStateHighlight(highlight.current);
-      console.log('set highlight', highlight.current);
 
       // const domEvt = evt.originalEvent;
       // const pixel = map.getEventPixel(evt.originalEvent);
@@ -105,13 +104,12 @@ export const Interactions = ({
         return;
       }
       const domEvt = evt.originalEvent;
-      const pixel = map.getEventPixel(evt.originalEvent);
+      // const pixel = map.getEventPixel(evt.originalEvent);
 
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
       );
-      console.log('current feature', feature.get('na'));
 
       // map.forEachFeatureAtPixel(pixel, function (f) {
       //   if (f && !feature) {

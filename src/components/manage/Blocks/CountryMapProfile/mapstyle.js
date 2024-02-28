@@ -1,33 +1,33 @@
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
-const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
-  const context = state.context;
-  const geometry = state.geometry.clone();
-  geometry.setCoordinates(pixelCoordinates);
-  const extent = geometry.getExtent();
-  const width = ol.extent.getWidth(extent);
-  const height = ol.extent.getHeight(extent);
-  const flag = state.feature.get('flag');
-  if (!flag || height < 1 || width < 1) {
-    return;
-  }
+// const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
+//   const context = state.context;
+//   const geometry = state.geometry.clone();
+//   geometry.setCoordinates(pixelCoordinates);
+//   const extent = geometry.getExtent();
+//   const width = ol.extent.getWidth(extent);
+//   const height = ol.extent.getHeight(extent);
+//   const flag = state.feature.get('flag');
+//   if (!flag || height < 1 || width < 1) {
+//     return;
+//   }
 
-  // Stitch out country shape from the blue canvas
-  context.save();
-  const renderContext = ol.render.toContext(context, {
-    pixelRatio: 1,
-  });
-  renderContext.setFillStrokeStyle(fill, stroke);
-  renderContext.drawGeometry(geometry);
-  context.clip();
+//   // Stitch out country shape from the blue canvas
+//   context.save();
+//   const renderContext = ol.render.toContext(context, {
+//     pixelRatio: 1,
+//   });
+//   renderContext.setFillStrokeStyle(fill, stroke);
+//   renderContext.drawGeometry(geometry);
+//   context.clip();
 
-  // Fill transparent country with the flag image
-  const bottomLeft = ol.extent.getBottomLeft(extent);
-  const left = bottomLeft[0];
-  const bottom = bottomLeft[1];
-  context.drawImage(flag, left, bottom, width, height);
-  context.restore();
-};
+//   // Fill transparent country with the flag image
+//   const bottomLeft = ol.extent.getBottomLeft(extent);
+//   const left = bottomLeft[0];
+//   const bottom = bottomLeft[1];
+//   context.drawImage(flag, left, bottom, width, height);
+//   context.restore();
+// };
 
 export const makeStyles = (highlight) => {
   const fill = new ol.style.Fill({ color: '#990000' });

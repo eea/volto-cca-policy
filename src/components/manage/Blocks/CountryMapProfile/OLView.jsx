@@ -68,10 +68,10 @@ const View = (props) => {
   );
   console.log('countries_metadata:', countries_metadata);
   for (let i = 0; i < euCountryNames.length; i++) {
-    if (euCountryNames[i] == 'Turkey') {
+    if (euCountryNames[i] === 'Turkey') {
       euCountryNames[i] = 'Türkiye';
     }
-    if (euCountryNames[i] == 'United Kingdom') {
+    if (euCountryNames[i] === 'United Kingdom') {
       euCountryNames[i] = 'United Kingdom DEL';
     }
   }
@@ -158,13 +158,13 @@ const View = (props) => {
 
   const baseUrl = props.path || props.location?.pathname || '';
 
-  const onFeatureClick = React.useCallback(
-    (feature) => {
-      const country = feature.get('na');
-      // history.push(`${baseUrl}/${country.toLowerCase()}`);
-    },
-    [baseUrl, history],
-  );
+  // const onFeatureClick = React.useCallback(
+  //   (feature) => {
+  //     const country = feature.get('na');
+  //     // history.push(`${baseUrl}/${country.toLowerCase()}`);
+  //   },
+  //   [baseUrl, history],
+  // );
   // console.log('thematicMapMode', thematicMapMode);
   // console.log('euCountriesSource', euCountriesSource);
   // console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
@@ -193,7 +193,7 @@ const View = (props) => {
                 {props.mode !== 'edit' && (
                   <Interactions
                     tooltipRef={tooltipRef}
-                    onFeatureClick={onFeatureClick}
+                    // onFeatureClick={onFeatureClick}
                     countries_metadata={countries_metadata}
                     baseUrl={baseUrl}
                     thematicMapMode={thematicMapMode}
