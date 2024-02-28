@@ -2,7 +2,7 @@
 
 exports[`AdaptationOptionView should render the component 1`] = `
 <div
-  className="adaptation-option-view"
+  className="db-item-view adaptation-option-view"
 >
   <div>
     Title Block Component
@@ -11,185 +11,166 @@ exports[`AdaptationOptionView should render the component 1`] = `
     className="ui container"
   >
     <div
-      className="ui twelve column grid"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": undefined,
+        }
+      }
+    />
+    <div
+      className="adaptation-details"
     >
-      <div
-        className="row"
-      >
-        <div
-          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
-        >
-          <div
-            className="long_description"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
-          <h5
-            className="Adaptation-option-selector"
-          >
-            Additional Details
-          </h5>
-          <ul>
-            <li>
-              <a
-                href="#ipcc_category"
-              >
-                IPCC categories
-              </a>
-            </li>
-          </ul>
-          <h5
-            className="Adaptation-option-selector"
-          >
-            Reference information
-          </h5>
-          <ul>
-            <li>
-              <a
-                href="#websites"
-              >
-                Websites
-              </a>
-            </li>
-            <li>
-              <a
-                href="#source"
-              >
-                Source
-              </a>
-            </li>
-          </ul>
-          <hr />
-          <h4>
-            Adaptation Details
-          </h4>
-          <div
-            className="section"
-            id="ipcc_category"
-          >
-            <h5
-              className="section-title"
+      <div>
+        <h3>
+          Additional Details
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="#ipcc_category"
             >
               IPCC categories
-            </h5>
-            Structural and physical: Ecosystem-based adaptation options
-            <div
-              className="section"
-              id="ipcc_category"
-            >
-              <h5
-                className="section-title"
-              >
-                IPCC categories
-              </h5>
-              <div
-                className="long_description"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": undefined,
-                  }
-                }
-              />
-            </div>
-          </div>
-          <hr />
-          <h4>
-            Reference information
-          </h4>
-          <h5>
-            Websites:
-          </h5>
-          <ul>
-            <li>
-              <a
-                href="https://my-website.com"
-              >
-                <i
-                  aria-hidden="true"
-                  className="ri-external-link-line"
-                />
-                https://my-website.com
-              </a>
-            </li>
-          </ul>
-          <div
-            className="section"
-            id="source"
-          >
-            <h5>
-              References:
-            </h5>
-            <div
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<p>Some text</p>",
-                }
-              }
-            />
-          </div>
-          <div
-            className="published-modified-info"
-          >
-            <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-            </p>
-          </div>
-          <div
-            className="share-info"
-          >
-            <a
-              href="/help/share-your-info"
-            >
-              <button
-                className="ui button primary icon labeled"
-              >
-                Share your information
-                <i
-                  aria-hidden="true"
-                  className="arrow right icon"
-                />
-              </button>
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>
+          Reference information
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="#websites"
+            >
+              Websites
+            </a>
+          </li>
+          <li>
+            <a
+              href="#source"
+            >
+              Source
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="ui divider"
+    />
+    <h2>
+      Adaptation Details
+    </h2>
+    <div
+      className="section"
+      id="ipcc_category"
+    >
+      <h5
+        className="section-title"
+      >
+        IPCC categories
+      </h5>
+      Structural and physical: Ecosystem-based adaptation options
+    </div>
+    <div
+      className="ui divider"
+    />
+    <h2>
+      Reference information
+    </h2>
+    <h5
+      id="websites"
+    >
+      Websites:
+    </h5>
+    <ul>
+      <li>
+        <a
+          href="https://my-website.com"
+        >
+          https://my-website.com
+        </a>
+      </li>
+    </ul>
+    <div
+      className="section"
+      id="source"
+    >
+      <h5
+        id="source"
+      >
+        References:
+      </h5>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Some text</p>",
+          }
+        }
+      />
+    </div>
+    <div
+      className="published-modified-info"
+    >
+      <p>
+        <span>
+          <strong>
+            Published in Climate-ADAPT
+          </strong>
+           
+          Invalid Date
+        </span>
+        <span>
+             -   
+        </span>
+        <span>
+          <strong>
+            Last Modified in Climate-ADAPT
+          </strong>
+           
+          Invalid Date
+        </span>
+      </p>
+    </div>
+    <div
+      className="share-info"
+    >
+      <a
+        href="/help/share-your-info"
+      >
+        <button
+          className="ui button primary icon labeled"
+        >
+          Share your information
+          <i
+            aria-hidden="true"
+            className="arrow right icon"
+          />
+        </button>
+      </a>
+    </div>
+    <div
+      className="content-box"
+    >
+      <div
+        className="content-box-inner"
+      >
         <div
-          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+          className="ui segment"
         >
           <div
-            style={Object {}}
+            className="content-metadata"
           >
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
+              <p>
+                Global
+              </p>
             </div>
           </div>
         </div>

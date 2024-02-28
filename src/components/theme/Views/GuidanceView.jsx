@@ -6,24 +6,23 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
+  DocumentsList,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Segment, Divider } from 'semantic-ui-react';
 
 const ContributorsList = (props) => {
   const { content } = props;
+  const { contributor_list, other_contributor } = content;
 
-  if (
-    content.contributor_list?.length > 0 ||
-    content.other_contributor?.length > 0
-  ) {
+  if (contributor_list?.length > 0 || other_contributor?.length > 0) {
     return (
       <>
         <h5>Contributor:</h5>
-        {content.contributor_list?.length > 0 &&
-          content.contributor_list.map((contributor, index) => (
+        {contributor_list?.length > 0 &&
+          contributor_list.map((contributor, index) => (
             <p key={index}>{contributor.title}</p>
           ))}
-        {content.other_contributor && <p>{content.other_contributor}</p>}
+        {other_contributor && <p>{other_contributor}</p>}
       </>
     );
   }
@@ -33,53 +32,44 @@ const ContributorsList = (props) => {
 
 function GuidanceView(props) {
   const { content } = props;
+  const { long_description, websites, source, cca_files } = content;
 
   return (
-    <div className="guidance-view">
+    <div className="db-item-view guidance-view">
       <BannerTitle content={content} type="Guidance Document" />
       <div className="ui container">
-        <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
-              <h4>Description:</h4>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <hr />
-              <h4>Reference information</h4>
+        <h2>Description</h2>
+        <HTMLField value={long_description} />
+        <Divider />
+        <h2>Reference information</h2>
 
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites:" value={content.websites} />
-              )}
+        {websites && websites?.length > 0 && (
+          <LinksList title="Websites:" value={websites} />
+        )}
 
-              {content?.source && (
-                <>
-                  <h5>Source:</h5>
-                  <HTMLField value={content.source} />
-                </>
-              )}
-              <ContributorsList {...props} />
-              <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
-            </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
-            </Grid.Column>
+        {source && (
+          <>
+            <h5>Source:</h5>
+            <HTMLField value={source} />
+          </>
+        )}
+        <ContributorsList {...props} />
+        <PublishedModifiedInfo {...props} />
+        <ShareInfo {...props} />
+
+        <div className="content-box">
+          <div className="content-box-inner">
+            <Segment>
+              <ContentMetadata {...props} />
+            </Segment>
+
+            {cca_files && cca_files.length > 0 && (
+              <Segment>
+                <DocumentsList {...props} />
+              </Segment>
+            )}
           </div>
-        </Grid>
+        </div>
       </div>
     </div>
   );

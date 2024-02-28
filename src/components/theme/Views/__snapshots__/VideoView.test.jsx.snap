@@ -2,7 +2,7 @@
 
 exports[`VideoView should render the component 1`] = `
 <div
-  className="tool-view"
+  className="db-item-view tool-view"
 >
   <div>
     Title Block Component
@@ -10,73 +10,66 @@ exports[`VideoView should render the component 1`] = `
   <div
     className="ui container"
   >
+    <h2>
+      Description
+    </h2>
     <div
-      className="ui twelve column grid"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": undefined,
+        }
+      }
+    />
+    <div
+      className="ui divider"
+    />
+    <h2>
+      Reference information
+    </h2>
+    <div
+      className="published-modified-info"
+    >
+      <p>
+        <span>
+          <strong>
+            Published in Climate-ADAPT
+          </strong>
+           
+          Invalid Date
+        </span>
+        <span>
+             -   
+        </span>
+        <span>
+          <strong>
+            Last Modified in Climate-ADAPT
+          </strong>
+           
+          Invalid Date
+        </span>
+      </p>
+    </div>
+    <div
+      className="content-box"
     >
       <div
-        className="row"
+        className="content-box-inner"
       >
         <div
-          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
-        >
-          <h4>
-            Description
-          </h4>
-          <div
-            className="long_description"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
-          <hr />
-          <h4>
-            Reference information
-          </h4>
-          <div
-            className="published-modified-info"
-          >
-            <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-            </p>
-          </div>
-        </div>
-        <div
-          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+          className="ui segment"
         >
           <div
-            style={Object {}}
+            className="content-metadata"
           >
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
+              <p>
+                Global
+              </p>
             </div>
           </div>
         </div>

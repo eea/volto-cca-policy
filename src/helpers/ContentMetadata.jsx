@@ -4,7 +4,7 @@ import {
   SUBNATIONAL_REGIONS,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
-import { UniversalLink } from '@plone/volto/components';
+import { Popup } from 'semantic-ui-react';
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -165,12 +165,6 @@ function renderSection(value, valueType) {
 }
 
 function renderGeochar(geoElements, isObservatoryPage = false) {
-  // u'{"geoElements":{"element":"EUROPE",
-  //                   "macrotrans":["TRANS_MACRO_ALP_SPACE"],
-  //                   "biotrans":[],
-  //                   "countries":[],
-  //                   "subnational":[],
-  //                   "city":""}}'
   if (!geoElements) {
     return null;
   }
@@ -215,15 +209,18 @@ function renderGeochar(geoElements, isObservatoryPage = false) {
 
 function GeoChar(props) {
   const { content } = props;
-  const j = JSON.parse(content.geochars);
+  const { spatial_values, spatial_layer, geochars } = content;
+  const j = JSON.parse(geochars);
 
   if (j === null) {
-    if (content.spatial_layer) {
+    if (spatial_layer) {
       return (
         <div className="geochar">
-          <p>{content.spatial_layer}</p>
+          <p>{spatial_layer}</p>
           <h5>Countries:</h5>
-          <p>{content.spatial_values.map((item) => item.token).join(', ')}</p>
+          {spatial_values && spatial_values.length > 0 && (
+            <p>{spatial_values.map((item) => item.token).join(', ')}</p>
+          )}
         </div>
       );
     }
@@ -273,19 +270,16 @@ function PublicationDateInfo(props) {
       <h5>{title}</h5>
       <p>
         {publicationYear}
-        <i className="ri-question-fill" title={tooltipText}></i>
+        <Popup
+          content={tooltipText}
+          trigger={<i className="ri-question-fill"></i>}
+        />
       </p>
     </>
   ) : null;
-} // TODO: (?) tooltip
+}
 
 function ItemsList(props) {
-  // Usage:
-  // <ItemsList value={content.governance_level} join="<br />" />
-  // result: items on per line
-  //
-  // <ItemsList value={content.governance_level} />
-  // result: item1, item2, item3
   let { value, join } = props;
   if (join === undefined) {
     join = ', ';
@@ -353,20 +347,6 @@ function ContentMetadata(props) {
           <>
             <h5>Geographic characterisation:</h5>
             <GeoChar {...props} />
-          </>
-        )}
-        {content.related_case_studies?.length > 0 && (
-          <>
-            <h5>Case studies related to this option</h5>
-            <ul className="related-case-studies">
-              {content.related_case_studies.map((item, index) => (
-                <li key={index}>
-                  <UniversalLink key={index} href={item.url}>
-                    {item.title}
-                  </UniversalLink>
-                </li>
-              ))}
-            </ul>
           </>
         )}
       </div>

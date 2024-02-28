@@ -7,10 +7,19 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Divider, Segment } from 'semantic-ui-react';
 
 function VideoView(props) {
   const { content } = props;
+  const {
+    source,
+    websites,
+    embed_url,
+    contributor_list,
+    long_description,
+    other_contributor,
+    related_documents_presentations,
+  } = content;
 
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
   const is_cmshare_video = share_eea.some((domain) =>
@@ -26,99 +35,86 @@ function VideoView(props) {
   };
 
   return (
-    <div className="video-view">
+    <div className="db-item-view video-view">
       <BannerTitle content={content} type="Video" />
 
       <div className="ui container">
-        <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              {!is_cmshare_video && (
-                <div className="external-video">
-                  <ExternalLink
-                    url={content.embed_url}
-                    text="See video outside Climate-ADAPT"
-                  />
-                </div>
-              )}
-
-              {content?.related_documents_presentations && (
-                <>
-                  <h4 className="reference-title">
-                    Related documents and presentations
-                  </h4>
-                  <HTMLField value={content.related_documents_presentations} />
-                </>
-              )}
-
-              {content?.websites?.length > 0 && (
-                <h4 className="reference-title">Reference information</h4>
-              )}
-
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites" value={content.websites} />
-              )}
-
-              {content?.source && (
-                <>
-                  <h5>Source</h5>
-                  <HTMLField value={content.source} />
-                </>
-              )}
-
-              {(content?.contributor_list?.length > 0 ||
-                content?.other_contributor?.length > 0) && (
-                <>
-                  <h4>Contributor:</h4>
-                  {content.contributor_list
-                    .map((item) => (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    ))
-                    .sort()}
-                  {content.other_contributor}
-                </>
-              )}
-
-              {is_cmshare_video && (
-                <center>
-                  <video
-                    controls="controls"
-                    preload="metadata"
-                    width="640px"
-                    height="360"
-                    src={fixEmbedURL(content.embed_url)}
-                  >
-                    <track default kind="captions" srcLang="en" src="" />
-                  </video>
-                </center>
-              )}
-
-              <ShareInfo {...props} />
-            </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
-            </Grid.Column>
+        {is_cmshare_video && (
+          <div className="video-wrapper">
+            <center>
+              <video
+                controls="controls"
+                preload="metadata"
+                width="100%"
+                height="480"
+                src={fixEmbedURL(embed_url)}
+              >
+                <track default kind="captions" srcLang="en" src="" />
+              </video>
+            </center>
           </div>
-        </Grid>
+        )}
+
+        <HTMLField value={long_description} />
+
+        {!is_cmshare_video && (
+          <div className="external-video">
+            <ExternalLink
+              url={embed_url}
+              text="See video outside Climate-ADAPT"
+            />
+          </div>
+        )}
+
+        <Divider />
+
+        {related_documents_presentations && (
+          <>
+            <h2 className="reference-title">
+              Related documents and presentations
+            </h2>
+            <HTMLField value={related_documents_presentations} />
+          </>
+        )}
+
+        {websites && websites?.length > 0 && (
+          <>
+            <h2 className="reference-title">Reference information</h2>
+            <LinksList title="Websites" value={websites} />
+          </>
+        )}
+
+        {source && (
+          <>
+            <h5>Source</h5>
+            <HTMLField value={source} />
+          </>
+        )}
+
+        {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
+          <>
+            <h5>Contributor:</h5>
+            {contributor_list
+              .map((item) => (
+                <>
+                  {item.title}
+                  <br />
+                </>
+              ))
+              .sort()}
+            {other_contributor}
+          </>
+        )}
+
+        <ShareInfo {...props} />
+
+        <div className="content-box">
+          <div className="content-box-inner">
+            <Segment>
+              <ContentMetadata {...props} />
+            </Segment>
+          </div>
+        </div>
       </div>
     </div>
   );

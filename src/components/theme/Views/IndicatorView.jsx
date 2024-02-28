@@ -7,68 +7,58 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Segment, Divider } from 'semantic-ui-react';
 
 function IndicatorView(props) {
   const { content } = props;
+  const {
+    long_description,
+    websites,
+    source,
+    contributor_list,
+    other_contributor,
+  } = content;
 
   return (
-    <div className="indicator-view">
+    <div className="db-item-view indicator-view">
       <BannerTitle content={content} type="Indicator" />
 
       <div className="ui container">
-        <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
-              <h4>Description</h4>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <hr />
-              <h4>Reference information</h4>
+        <h2>Description</h2>
+        <HTMLField value={long_description} />
+        <Divider />
+        <h2>Reference information</h2>
 
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites:" value={content.websites} />
-              )}
+        {websites && websites?.length > 0 && (
+          <LinksList title="Websites:" value={websites} />
+        )}
 
-              <h5>Source:</h5>
-              <HTMLField value={content.source} />
-              {(content?.contributor_list?.length > 0 ||
-                content?.other_contributor?.length > 0) && (
+        <h5>Source:</h5>
+        <HTMLField value={source} />
+        {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
+          <>
+            <h4>Contributor:</h4>
+            {contributor_list
+              .map((item) => (
                 <>
-                  <h4>Contributor:</h4>
-                  {content.contributor_list
-                    .map((item) => (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    ))
-                    .sort()}
-                  {content.other_contributor}
+                  {item.title}
+                  <br />
                 </>
-              )}
-              <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
-            </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
-            </Grid.Column>
+              ))
+              .sort()}
+            {other_contributor}
+          </>
+        )}
+        <PublishedModifiedInfo {...props} />
+        <ShareInfo {...props} />
+
+        <div className="content-box">
+          <div className="content-box-inner">
+            <Segment>
+              <ContentMetadata {...props} />
+            </Segment>
           </div>
-        </Grid>
+        </div>
       </div>
     </div>
   );

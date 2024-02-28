@@ -8,96 +8,79 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Segment, Divider } from 'semantic-ui-react';
 
 function OrganisationView(props) {
   const { content } = props;
+  const { long_description, websites, relatedItems } = content;
 
   let organisationDocuments = [];
-  let relatedItems = [];
-  if (content?.relatedItems?.length > 0) {
-    organisationDocuments = content.relatedItems.filter(
+  let contentRelatedItems = [];
+  if (relatedItems && relatedItems?.length > 0) {
+    organisationDocuments = relatedItems.filter(
       (item) => item['@type'] === 'File',
     );
 
-    relatedItems = content.relatedItems.filter((item) =>
+    contentRelatedItems = relatedItems.filter((item) =>
       item['@type'].includes('eea.climateadapt'),
     );
   }
 
   return (
-    <div className="organisation-view">
+    <div className="db-item-view organisation-view">
       <BannerTitle content={content} type="Organisation" />
 
       <div className="ui container">
-        <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
-              <div>
-                <h4>Description:</h4>
-                <HTMLField
-                  value={content.long_description}
-                  className="long_description"
-                />
-                <hr />
-                <h4>Reference information</h4>
-              </div>
+        <div>
+          <h2>Description</h2>
+          <HTMLField value={long_description} />
+          <Divider />
+          <h2>Reference information</h2>
+        </div>
 
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites:" value={content.websites} />
-              )}
+        {websites && websites?.length > 0 && (
+          <LinksList title="Websites:" value={websites} />
+        )}
 
-              {relatedItems.length > 0 && (
-                <>
-                  <h5>Related content:</h5>
+        {contentRelatedItems.length > 0 && (
+          <>
+            <h5>Related content:</h5>
 
-                  {relatedItems.map((item, index) => (
-                    <Fragment key={index}>
-                      <UniversalLink item={item}>{item.title}</UniversalLink>
-                      <br />
-                    </Fragment>
-                  ))}
-                </>
-              )}
+            {contentRelatedItems.map((item, index) => (
+              <Fragment key={index}>
+                <UniversalLink item={item}>{item.title}</UniversalLink>
+                <br />
+              </Fragment>
+            ))}
+          </>
+        )}
 
-              <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
-            </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
-              {organisationDocuments.length > 0 && (
-                <>
-                  <h5>
-                    Organisation Documents ({organisationDocuments.length})
-                  </h5>
+        <PublishedModifiedInfo {...props} />
+        <ShareInfo {...props} />
 
-                  {organisationDocuments.map((item, index) => (
-                    <>
-                      <a key={index} href={item['@id']}>
-                        <i class="ri-file-line" />
-                        {item.title}
-                      </a>
-                      <br />
-                    </>
-                  ))}
-                  <br />
-                </>
-              )}
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
-            </Grid.Column>
+        {organisationDocuments.length > 0 && (
+          <>
+            <h5>Organisation Documents ({organisationDocuments.length})</h5>
+
+            {organisationDocuments.map((item, index) => (
+              <>
+                <a key={index} href={item['@id']}>
+                  <i class="ri-file-line" />
+                  {item.title}
+                </a>
+                <br />
+              </>
+            ))}
+            <br />
+          </>
+        )}
+        <div className="content-box">
+          <div className="content-box-inner">
+            <Segment>
+              <ContentMetadata {...props} />
+            </Segment>
           </div>
-        </Grid>
+        </div>
       </div>
     </div>
   );
