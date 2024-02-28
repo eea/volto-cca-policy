@@ -40,7 +40,8 @@
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",
     "d3": "4",
-    "d3-geo": "3"
+    "d3-geo": "3",
+    "react-visibility-sensor": "5.1.1"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
