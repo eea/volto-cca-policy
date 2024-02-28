@@ -30,33 +30,39 @@ const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
 };
 
 export const makeStyles = (highlight) => {
-  const fill = new ol.style.Fill();
+  const fill = new ol.style.Fill({ color: '#990000' });
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',
-    color: '#000000',
+    color: '#d1d1d1',
     width: 1,
   });
 
-  const overlayStyle = new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      // color: '#A0A0A0',
-      color: '#000000',
-      width: 1,
-    }),
-    fill: new ol.style.Fill({
-      color: 'rgb(138, 156, 58, 0.8)',
-      // color: 'rgb(245, 245, 245, 0.8)',
-    }),
-    // renderer: flagRenderer({ fill, stroke }),
+  const colored = new ol.style.Fill({
+    color: 'rgb(138, 156, 58, 0.8)',
   });
 
-  const colored = new ol.style.Fill({
-    color: 'red',
-  });
+  const getFillColor = (feature) => {
+    console.log('getFillColor:', feature.get('na'), feature.get('fillBlue'));
+    if (feature.get('fillBlue') === 'blue1') {
+      return new ol.style.Fill({ color: 'rgb(0, 75, 127, 0.8)' });
+    }
+    if (feature.get('fillBlue') === 'blue2') {
+      return new ol.style.Fill({ color: 'rgb(10, 153, 255, 0.8)' });
+    }
+    if (feature.get('fillBlue') === 'blue3') {
+      return new ol.style.Fill({ color: 'rgb(120, 217, 252, 0.8)' });
+    }
+    // console.log(feature.get('fillBlue'));
+    return fill;
+  };
 
   const eucountriesStyle = new ol.style.Style({
     renderer: (pixelCoordinates, state) => {
-      console.log('render', state.feature.get('na'));
+      console.log(
+        'render',
+        state.feature.get('na'),
+        state.feature.get('fillBlue'),
+      );
       const context = state.context;
       const geometry = state.geometry.clone();
       geometry.setCoordinates(pixelCoordinates);
@@ -71,10 +77,10 @@ export const makeStyles = (highlight) => {
         pixelRatio: 1,
       });
       renderContext.setFillStrokeStyle(
-        name === highlight.current ? colored : fill,
+        name === highlight.current ? colored : getFillColor(feature),
         stroke,
       );
-      console.log(highlight.current);
+      // console.log(highlight.current);
 
       renderContext.drawGeometry(geometry);
       context.clip();
@@ -82,35 +88,5 @@ export const makeStyles = (highlight) => {
     },
   });
 
-  const blue1Style = new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      color: '#d1d1d1',
-      width: 1,
-    }),
-    fill: new ol.style.Fill({
-      color: 'rgb(0, 75, 127, 0.8)',
-    }),
-  });
-
-  const blue2Style = new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      color: '#d1d1d1',
-      width: 1,
-    }),
-    fill: new ol.style.Fill({
-      color: 'rgb(10, 153, 255, 0.8)',
-    }),
-  });
-
-  const blue3Style = new ol.style.Style({
-    stroke: new ol.style.Stroke({
-      color: '#d1d1d1',
-      width: 1,
-    }),
-    fill: new ol.style.Fill({
-      color: 'rgb(120, 217, 252, 0.8)',
-    }),
-  });
-
-  return { eucountriesStyle, overlayStyle, blue1Style, blue2Style, blue3Style };
+  return { eucountriesStyle };
 };

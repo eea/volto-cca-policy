@@ -61,9 +61,6 @@ const View = (props) => {
   const [thematicMapMode, setThematicMapMode] = React.useState(
     'National adaption policy',
   );
-  const [nap1, setNap1] = React.useState();
-  const [nap2, setNap2] = React.useState();
-  const [nap3, setNap3] = React.useState();
   const countries_metadata_url =
     '/en/countries-regions/countries/@@countries-metadata-extract?langflag=1';
   const countries_metadata = useCountriesMetadata(
@@ -89,6 +86,50 @@ const View = (props) => {
 
     euCountryFeatures.current = filtered;
 
+    let fillCountries = { blue1: [], blue2: [], blue3: [] };
+    if (countries_metadata.length > 0) {
+      filtered.forEach((feature) => {
+        let countryName = feature.get('na');
+        if (countryName === 'Türkiye') {
+          countryName = 'Turkiye';
+        }
+        if (Object.hasOwn(countries_metadata[0], countryName)) {
+          let metadata = countries_metadata[0][countryName];
+          if (metadata !== undefined) {
+            if (thematicMapMode == 'National adaption policy') {
+              if (metadata[0]?.notreported) {
+                feature.set('fillBlue', 'blue3');
+              } else if (
+                metadata[0]?.nap_mixed?.length ||
+                metadata[0]?.nas_mixed.length ||
+                metadata[0]?.sap_mixed.length
+              ) {
+                feature.set('fillBlue', 'blue1');
+              } else {
+                feature.set('fillBlue', 'blue2');
+              }
+            } else {
+              if (metadata[0]?.notreported) {
+                feature.set('fillBlue', 'blue3');
+              } else if (
+                ['both', 'hazard', 'adaptation', 'not_specified'].includes(
+                  metadata[0]?.focus_info || [],
+                )
+              ) {
+                feature.set('fillBlue', 'blue1');
+              } else {
+                feature.set('fillBlue', 'blue2');
+              }
+            }
+          }
+        }
+      });
+    }
+
+    filtered.forEach((feature) => {
+      feature.set('flag2', 'ANother flag');
+    });
+
     filtered.forEach((feature) => {
       const img = new Image();
       img.onload = function () {
@@ -96,61 +137,6 @@ const View = (props) => {
       };
       img.src = getImageUrl(feature);
     });
-
-    // for (let i = 0; i < filtered.length; i++) {
-    //   if (filtered[i].get('na') == 'Romania') {
-    //     // overlaySource2.addFeature(filtered[i]);
-    //   }
-    // }
-
-    let fillCountries = { blue1: [], blue2: [], blue3: [] };
-    if (countries_metadata.length > 0) {
-      for (let i = 0; i < filtered.length; i++) {
-        let countryData = filtered[i];
-        let countryName = countryData.get('na');
-        if (countryName === 'Türkiye') {
-          countryName = 'Turkiye';
-        }
-        if (!Object.hasOwn(countries_metadata[0], countryName)) {
-          continue;
-        }
-        let metadata = countries_metadata[0][countryName];
-        if (metadata === undefined) {
-          continue;
-        }
-        if (thematicMapMode == 'National adaption policy') {
-          if (metadata[0]?.notreported) {
-            fillCountries.blue3.push(countryData);
-          } else if (
-            metadata[0]?.nap_mixed?.length ||
-            metadata[0]?.nas_mixed.length ||
-            metadata[0]?.sap_mixed.length
-          ) {
-            fillCountries.blue1.push(countryData);
-          } else {
-            fillCountries.blue2.push(countryData);
-          }
-        } else {
-          if (metadata[0]?.notreported) {
-            fillCountries.blue3.push(countryData);
-          } else if (
-            ['both', 'hazard', 'adaptation', 'not_specified'].includes(
-              metadata[0]?.focus_info || [],
-            )
-          ) {
-            fillCountries.blue1.push(countryData);
-          } else {
-            fillCountries.blue2.push(countryData);
-          }
-        }
-      }
-    }
-    const nap1Source = new ol.source.Vector({ features: fillCountries.blue1 });
-    setNap1(nap1Source);
-    const nap2Source = new ol.source.Vector({ features: fillCountries.blue2 });
-    setNap2(nap2Source);
-    const nap3Source = new ol.source.Vector({ features: fillCountries.blue3 });
-    setNap3(nap3Source);
 
     const euSource = new ol.source.Vector({ features: filtered });
     setEuCountriessource(euSource);
@@ -179,10 +165,9 @@ const View = (props) => {
     },
     [baseUrl, history],
   );
-  console.log('thematicMapMode', thematicMapMode);
-  console.log('euCountriesSource', euCountriesSource);
-  console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
-  // console.log('OVERLAY SOURCE2 ROOT:', overlaySource2?.getFeatures());
+  // console.log('thematicMapMode', thematicMapMode);
+  // console.log('euCountriesSource', euCountriesSource);
+  // console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
 
   return (
     <div>
@@ -217,21 +202,6 @@ const View = (props) => {
                     setStateHighlight={setStateHighlight}
                   />
                 )}
-                <Layer.Vector
-                  source={nap3}
-                  zIndex={3}
-                  style={styles.blue3Style}
-                />
-                <Layer.Vector
-                  source={nap2}
-                  zIndex={3}
-                  style={styles.blue2Style}
-                />
-                <Layer.Vector
-                  source={nap1}
-                  zIndex={3}
-                  style={styles.blue1Style}
-                />
                 <Layer.Vector
                   source={euCountriesSource}
                   zIndex={7}
