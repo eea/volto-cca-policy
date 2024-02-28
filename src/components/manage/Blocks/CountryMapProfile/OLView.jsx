@@ -52,6 +52,7 @@ const View = (props) => {
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();

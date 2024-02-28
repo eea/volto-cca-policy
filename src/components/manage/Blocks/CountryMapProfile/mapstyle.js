@@ -30,7 +30,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 // };
 
 export const makeStyles = (highlight) => {
-  const fill = new ol.style.Fill({ color: '#990000' });
+  const fill = new ol.style.Fill({ color: 'rgb(251,250,230, 0.8)' });
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',
     color: '#d1d1d1',
