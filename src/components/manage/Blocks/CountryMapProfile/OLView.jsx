@@ -1,7 +1,6 @@
 import React from 'react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import { useHistory } from 'react-router-dom';
 
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
@@ -53,8 +52,7 @@ const View = (props) => {
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
-  // const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
-  const styles = React.useMemo(() => makeStyles(highlight));
+  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();

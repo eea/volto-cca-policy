@@ -43,7 +43,7 @@ const getClosestFeatureToCoordinate = (coordinate, features) => {
 
 export const Interactions = ({
   tooltipRef,
-  onFeatureClick,
+  // onFeatureClick,
   countries_metadata,
   baseUrl,
   thematicMapMode,
