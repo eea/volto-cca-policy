@@ -41,6 +41,7 @@
     "@eeacms/volto-widget-temporal-coverage": "*",
     "d3": "4",
     "d3-geo": "3",
+    "query-string": "7.1.0",
     "react-visibility-sensor": "5.1.1"
   },
   "devDependencies": {
