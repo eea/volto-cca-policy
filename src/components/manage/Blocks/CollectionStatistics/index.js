@@ -22,17 +22,33 @@ const healthImpactIcons = {
 const portalTypeIcons = {
   // 'eea.climateadapt.aceproject': '',
   // 'eea.climateadapt.adaptationoption': '',
-  'eea.climateadapt.casestudy': 'file text',
-  'eea.climateadapt.guidancedocument': 'compass',
-  'eea.climateadapt.indicator': 'area chart',
+  'Case studies': 'file text',
+  Guidance: 'compass',
+  Indicator: 'area chart',
   // 'eea.climateadapt.c3sindicator': '',
-  'eea.climateadapt.informationportal': 'info circle',
+  'Information portals': 'info circle',
   // 'eea.climateadapt.mapgraphdataset': '',
   // 'eea.climateadapt.organisation': '',
-  'eea.climateadapt.publicationreport': 'newspaper',
-  'eea.climateadapt.researchproject': 'university',
-  'eea.climateadapt.tool': 'wrench',
-  'eea.climateadapt.video': 'video play',
+  'Publications and reports': 'newspaper',
+  'Research and knowledge projects': 'university',
+  Tools: 'wrench',
+  Video: 'video play',
+};
+
+const portalTypesToSearchTypes = {
+  // 'eea.climateadapt.aceproject': '',
+  'eea.climateadapt.adaptationoption': 'Adaptation option',
+  'eea.climateadapt.casestudy': 'Case studies',
+  'eea.climateadapt.guidancedocument': 'Guidance',
+  'eea.climateadapt.indicator': 'Indicator',
+  'eea.climateadapt.c3sindicator': 'Indicator',
+  'eea.climateadapt.informationportal': 'Information portals',
+  // 'eea.climateadapt.mapgraphdataset': '',
+  // 'eea.climateadapt.organisation': '',
+  'eea.climateadapt.publicationreport': 'Publications and reports',
+  'eea.climateadapt.researchproject': 'Research and knowledge projects',
+  'eea.climateadapt.tool': 'Tools',
+  'eea.climateadapt.video': 'Video',
 };
 
 export default function installCollectionStatsBlock(config) {
@@ -74,16 +90,16 @@ export default function installCollectionStatsBlock(config) {
         iconComponent: StatVoltoIcon,
       },
       portal_type: {
-        searchFieldName: 'op_cluster',
+        searchFieldName: 'objectProvides',
         cleanup: (stats) => {
           const res = {};
           Object.keys(stats).forEach((name) => {
             const count = parseInt(stats[name]);
 
-            if (!portalTypeIcons[name]) return;
+            name = portalTypesToSearchTypes[name];
+            if (!name) return;
 
-            if (name === 'eea.climateadapt.c3sindicator')
-              name = 'eea.climateadapt.indicator';
+            if (!portalTypeIcons[name]) return;
 
             if (!res[name]) res[name] = 0;
             res[name] += count;
