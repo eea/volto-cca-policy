@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getQueryStats } from '@eeacms/volto-cca-policy/store';
 import { getBaseUrl as getBase } from '@eeacms/volto-cca-policy/utils';
 import { getBaseUrl } from '@plone/volto/helpers';
-import { Icon, UniversalLink } from '@plone/volto/components';
+import { Icon } from '@plone/volto/components';
 import { Icon as UiIcon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 
@@ -90,24 +90,26 @@ export default function CollectionStatsView(props) {
   return (
     (field && keys.length > 0 && (
       <div className="collection-stats">
-        {keys.sort().map((k) => (
-          <UniversalLink
-            key={k}
-            href={urlHandler({
-              base,
-              query: query.query,
-              field: groupDefinition.searchFieldName || field,
-              value: k,
-            })}
-          >
-            <IconComponent
-              name={k}
-              value={stats[k]}
-              field={field}
-              source={icons[k]}
-            />
-          </UniversalLink>
-        ))}
+        {keys
+          .sort((a, b) => a.localeCompare(b))
+          .map((k) => (
+            <a
+              key={k}
+              href={urlHandler({
+                base,
+                query: query.query,
+                field: groupDefinition.searchFieldName || field,
+                value: k,
+              })}
+            >
+              <IconComponent
+                name={k}
+                value={stats[k]}
+                field={field}
+                source={icons[k]}
+              />
+            </a>
+          ))}
       </div>
     )) ||
     'no results'
