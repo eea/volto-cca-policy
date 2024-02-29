@@ -25,9 +25,11 @@ const useStats = (path, id, data) => {
 export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
   return (
     <div className="tab-icon" title={value}>
-      {!source && name}
-      {!!source && <Icon title={name} name={source} size="50" />}
-      <span className="count">{value}</span>
+      <div className="tab-icon-wrapper">
+        {!source && name}
+        {!!source && <Icon title={name} name={source} size="50" />}
+        <span className="count">{value}</span>
+      </div>
       {!!showLabel && <span className="label">{name}</span>}
     </div>
   );
@@ -36,8 +38,10 @@ export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
 export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   return (
     <div className="tab-icon semantic-icon" title={value}>
-      {!!source && <UiIcon title={name} name={source} />}
-      <span className="count">{value}</span>
+      <div className="tab-icon-wrapper">
+        {!!source && <UiIcon title={name} name={source} />}
+        <span className="count">{value}</span>
+      </div>
       {!!showLabel && <span className="label">{name}</span>}
     </div>
   );
