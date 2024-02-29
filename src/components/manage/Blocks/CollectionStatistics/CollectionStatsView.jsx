@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getQueryStats } from '@eeacms/volto-cca-policy/store';
 import { getBaseUrl as getBase } from '@eeacms/volto-cca-policy/utils';
 import { getBaseUrl } from '@plone/volto/helpers';
-import { Icon } from '@plone/volto/components';
+import { Icon, UniversalLink } from '@plone/volto/components';
 import { Icon as UiIcon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 
@@ -91,7 +91,7 @@ export default function CollectionStatsView(props) {
     (field && keys.length > 0 && (
       <div className="collection-stats">
         {keys.sort().map((k) => (
-          <a
+          <UniversalLink
             key={k}
             href={urlHandler({
               base,
@@ -106,7 +106,7 @@ export default function CollectionStatsView(props) {
               field={field}
               source={icons[k]}
             />
-          </a>
+          </UniversalLink>
         ))}
       </div>
     )) ||

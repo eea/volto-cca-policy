@@ -20,35 +20,36 @@ const healthImpactIcons = {
 };
 
 const portalTypeIcons = {
-  // 'eea.climateadapt.aceproject': '',
-  // 'eea.climateadapt.adaptationoption': '',
   'Case study': 'file text',
   Guidance: 'compass',
   Indicator: 'area chart',
-  // 'eea.climateadapt.c3sindicator': '',
   'Information portal': 'info circle',
-  // 'eea.climateadapt.mapgraphdataset': '',
-  // 'eea.climateadapt.organisation': '',
   'Publication reference': 'newspaper',
   'Research and knowledge project': 'university',
   Tool: 'wrench',
   Video: 'video play',
+  // 'eea.climateadapt.aceproject': '',
+  // 'eea.climateadapt.adaptationoption': '',
+  // 'eea.climateadapt.c3sindicator': '',
+  // 'eea.climateadapt.mapgraphdataset': '',
+  // 'eea.climateadapt.organisation': '',
 };
 
 const portalTypesToSearchTypes = {
-  // 'eea.climateadapt.aceproject': '',
   'eea.climateadapt.adaptationoption': 'Adaptation option',
   'eea.climateadapt.casestudy': 'Case study',
   'eea.climateadapt.guidancedocument': 'Guidance',
   'eea.climateadapt.indicator': 'Indicator',
   'eea.climateadapt.c3sindicator': 'Indicator',
   'eea.climateadapt.informationportal': 'Information portal',
-  // 'eea.climateadapt.mapgraphdataset': '',
-  // 'eea.climateadapt.organisation': '',
   'eea.climateadapt.publicationreport': 'Publication reference',
   'eea.climateadapt.researchproject': 'Research and knowledge project',
   'eea.climateadapt.tool': 'Tool',
   'eea.climateadapt.video': 'Video',
+  // TODO: what about these?
+  // 'eea.climateadapt.aceproject': '',
+  // 'eea.climateadapt.mapgraphdataset': '',
+  // 'eea.climateadapt.organisation': '',
 };
 
 export default function installCollectionStatsBlock(config) {
