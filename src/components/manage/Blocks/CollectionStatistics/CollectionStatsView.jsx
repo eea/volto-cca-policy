@@ -26,7 +26,7 @@ export const StatVoltoIcon = ({ name, value, source }) => {
   return (
     <div className="tab-icon" title={value}>
       {!source && name}
-      {!!source && <Icon className="small" title={name} name={source} />}
+      {!!source && <Icon title={name} name={source} size="50" />}
       <span className="count">{value}</span>
     </div>
   );
@@ -35,8 +35,8 @@ export const StatVoltoIcon = ({ name, value, source }) => {
 export const RemixIcon = ({ name, value, source }) => {
   console.log('source', source);
   return (
-    <div className="tab-icon" title={value}>
-      {!!source && <UiIcon className="small" title={name} name={source} />}
+    <div className="tab-icon semantic-icon" title={value}>
+      {!!source && <UiIcon title={name} name={source} />}
       <span className="count">{value}</span>
     </div>
   );
