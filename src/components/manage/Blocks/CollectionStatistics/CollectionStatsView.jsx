@@ -57,6 +57,9 @@ const makeSearchBlockQuery = ({ base, query, field, value }) => {
 };
 
 const makeEEASearchQuery = ({ base, query, field, value }) => {
+  const arr = [{ field, type: 'any', values: [value] }];
+  console.log(qs.stringify(arr));
+
   return '';
 };
 

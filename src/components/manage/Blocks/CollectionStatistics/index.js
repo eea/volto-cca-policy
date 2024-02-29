@@ -20,15 +20,15 @@ const healthImpactIcons = {
 };
 
 const portalTypeIcons = {
-  'eea.climateadapt.aceproject': '',
-  'eea.climateadapt.adaptationoption': '',
+  // 'eea.climateadapt.aceproject': '',
+  // 'eea.climateadapt.adaptationoption': '',
   'eea.climateadapt.casestudy': 'file text',
   'eea.climateadapt.guidancedocument': 'compass',
   'eea.climateadapt.indicator': 'area chart',
-  'eea.climateadapt.c3sindicator': '',
+  // 'eea.climateadapt.c3sindicator': '',
   'eea.climateadapt.informationportal': 'info circle',
-  'eea.climateadapt.mapgraphdataset': '',
-  'eea.climateadapt.organisation': '',
+  // 'eea.climateadapt.mapgraphdataset': '',
+  // 'eea.climateadapt.organisation': '',
   'eea.climateadapt.publicationreport': 'newspaper',
   'eea.climateadapt.researchproject': 'university',
   'eea.climateadapt.tool': 'wrench',
