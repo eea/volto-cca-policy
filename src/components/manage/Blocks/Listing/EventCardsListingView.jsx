@@ -45,7 +45,7 @@ const StartDate = (start) => {
     <div className="start-date">
       <p className="day">{dayOfWeek}</p>
       <p className="date">
-        {day}.{monthName}.
+        {day} {monthName}
       </p>
     </div>
   );
