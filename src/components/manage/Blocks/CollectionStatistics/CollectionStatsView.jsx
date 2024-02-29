@@ -4,6 +4,7 @@ import { getQueryStats } from '@eeacms/volto-cca-policy/store';
 import { getBaseUrl as getBase } from '@eeacms/volto-cca-policy/utils';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { Icon } from '@plone/volto/components';
+import { Icon as UiIcon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 
 import qs from 'query-string';
@@ -32,9 +33,10 @@ export const StatVoltoIcon = ({ name, value, source }) => {
 };
 
 export const RemixIcon = ({ name, value, source }) => {
+  console.log('source', source);
   return (
     <div className="tab-icon" title={value}>
-      {!!source && <Icon className="small" title={name} name={source} />}
+      {!!source && <UiIcon className="small" title={name} name={source} />}
       <span className="count">{value}</span>
     </div>
   );

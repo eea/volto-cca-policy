@@ -20,7 +20,19 @@ const healthImpactIcons = {
 };
 
 const portalTypeIcons = {
-  'Case Study': 'file text',
+  'eea.climateadapt.aceproject': '',
+  'eea.climateadapt.adaptationoption': '',
+  'eea.climateadapt.casestudy': 'file text',
+  'eea.climateadapt.guidancedocument': 'compass',
+  'eea.climateadapt.indicator': 'area chart',
+  'eea.climateadapt.c3sindicator': '',
+  'eea.climateadapt.informationportal': 'info circle',
+  'eea.climateadapt.mapgraphdataset': '',
+  'eea.climateadapt.organisation': '',
+  'eea.climateadapt.publicationreport': 'newspaper',
+  'eea.climateadapt.researchproject': 'university',
+  'eea.climateadapt.tool': 'wrench',
+  'eea.climateadapt.video': 'video play',
 };
 
 export default function installCollectionStatsBlock(config) {
@@ -64,7 +76,19 @@ export default function installCollectionStatsBlock(config) {
       portal_type: {
         searchFieldName: 'op_cluster',
         cleanup: (stats) => {
-          return stats;
+          const res = {};
+          Object.keys(stats).forEach((name) => {
+            const count = parseInt(stats[name]);
+
+            if (!portalTypeIcons[name]) return;
+
+            if (name === 'eea.climateadapt.c3sindicator')
+              name = 'eea.climateadapt.indicator';
+
+            if (!res[name]) res[name] = 0;
+            res[name] += count;
+          });
+          return res;
         },
         icons: portalTypeIcons,
         iconComponent: RemixIcon,
