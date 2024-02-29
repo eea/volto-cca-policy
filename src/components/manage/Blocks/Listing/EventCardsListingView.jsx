@@ -59,6 +59,13 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
     return contact_info;
   };
 
+  const event_url = (item) => {
+    if (!!item.event_url) {
+      return item.event_url;
+    }
+    return item.id;
+  };
+
   return (
     <div className={cx('ui fluid eventCards')}>
       {items.map((item, index) => (
@@ -76,7 +83,7 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                   <Grid.Column width={10}>
                     <div className="event-details">
                       <h3 className={'listing-header'}>
-                        <a href={item.event_url}>
+                        <a href={event_url(item)}>
                           {item.title ? item.title : item.id}
                         </a>
                       </h3>
