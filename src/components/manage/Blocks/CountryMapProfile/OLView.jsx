@@ -124,10 +124,6 @@ const View = (props) => {
     }
 
     filtered.forEach((feature) => {
-      feature.set('flag2', 'ANother flag');
-    });
-
-    filtered.forEach((feature) => {
       const img = new Image();
       img.onload = function () {
         feature.set('flag', img);

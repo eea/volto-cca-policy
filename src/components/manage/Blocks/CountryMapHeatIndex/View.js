@@ -1,153 +1,205 @@
-import React, { useRef, useEffect } from 'react';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { Grid } from 'semantic-ui-react';
+import React from 'react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import withResponsiveContainer from './../withResponsiveContainer.js';
-import { addAppURL } from '@plone/volto/helpers';
-import { getFocusCountryNames, renderCountriesBox } from './map-utils.js';
-import { getFocusCountriesFeature } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap.js';
+
+import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
+import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+
+import withResponsiveContainer from '../withResponsiveContainer';
+import { makeStyles } from './mapstyle';
+import { Interactions } from './Interactions';
+import { withGeoJsonData } from './hocs';
 
 import Filter from './Filter';
+import { Grid } from 'semantic-ui-react';
+import { useCountriesMetadata } from './hooks';
+import { addAppURL } from '@plone/volto/helpers';
 
-import flags from './flags.js';
 import './styles.less';
 
-import { useCountriesMetadata } from './hooks';
+// const url =
+//   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
-const countries_metadata_url = '/en/@@countries-heat-index-json';
-
-const withCountriesData = (WrappedComponent) => {
-  function WithCountriesDataWrapped(props) {
-    let [cpath, setCpath] = React.useState();
-
-    useEffect(() => {
-      if (!cpath) {
-        import('./euro-countries-simplified.js').then((mod) => {
-          const _cpath = mod.default;
-          _cpath.features = _cpath.features.map(function (c) {
-            //console.log(c);
-            var name = c.properties.SHRT_ENGL;
-            if (!name) {
-              // console.log('No flag for', c.properties);
-              return c;
-            } else if (name === 'Czechia') {
-              name = 'Czech Republic';
-            }
-            var cname = name.replace(' ', '_');
-            flags.forEach(function (f) {
-              if (f.indexOf(cname) > -1) {
-                c.url = f;
-                //console.log(c.url);
-              }
-            });
-            return c;
-          });
-
-          setCpath(_cpath);
-        });
-      }
-    }, [cpath]);
-
-    return cpath ? <WrappedComponent {...props} cpath={cpath} /> : null;
-  }
-  return WithCountriesDataWrapped;
+const tooltipStyle = {
+  position: 'absolute',
+  zIndex: 2,
+  display: 'inline-block',
+  visibility: 'hidden',
+  top: '0px',
+  left: '0px',
+  backgroundColor: 'black',
+  color: 'white',
+  padding: '0.3em',
+  cursor: 'pointer',
+  fontSize: '10px',
 };
 
-const CountryMapObservatoryView = (props) => {
-  const svgRef = useRef(null);
-  const { d3, d3Geo, size, cpath } = props;
-  const { height, width } = size;
-  const [thematicMapMode, setThematicMapMode] = React.useState('hhap');
+function getImageUrl(feature) {
+  let id = feature.get('id').toLowerCase();
+  if (id === 'el') {
+    id = 'gr'; // fix Greece
+  }
+  if (id === 'uk') {
+    id = 'gb'; // fix Greece
+  }
+  return 'https://flagcdn.com/w320/' + id + '.png';
+}
 
+const View = (props) => {
+  const { geofeatures, projection } = props;
+
+  const highlight = React.useRef();
+  const [stateHighlight, setStateHighlight] = React.useState();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
+  const tooltipRef = React.useRef();
+  const [tileWMSSources, setTileWMSSources] = React.useState();
+  const [euCountriesSource, setEuCountriessource] = React.useState();
+  const [thematicMapMode, setThematicMapMode] = React.useState('hhap');
+  const countries_metadata_url = '/en/@@countries-heat-index-json?langflag=1';
   const countries_metadata = useCountriesMetadata(
     addAppURL(countries_metadata_url),
   );
+  for (let i = 0; i < euCountryNames.length; i++) {
+    if (euCountryNames[i] === 'Turkey') {
+      euCountryNames[i] = 'Türkiye';
+    }
+    if (euCountryNames[i] === 'United Kingdom') {
+      euCountryNames[i] = 'United Kingdom DEL';
+    }
+  }
 
-  useEffect(() => {
-    // D3 Code
+  const euCountryFeatures = React.useRef();
 
-    // Dimensions
-    //const parentDiv = document.getElementById('page-document');
-    let dimensions = {
-      //width: parentDiv.offsetWidth,
-      width,
-      height,
-      margins: 50,
-    };
+  React.useEffect(() => {
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const filtered = features.filter((f) =>
+      euCountryNames.includes(f.get('na')),
+    );
+    //Update name for Bosnia and Herzegovina
+    for (let i in features) {
+      if (features[i].get('na').includes('Bosnia and Herzegovina')) {
+        features[i].set('na', 'Bosnia-Herzegovina');
+        break;
+      }
+    }
 
-    dimensions.containerWidth = dimensions.width - dimensions.margins * 2;
-    dimensions.containerHeight = dimensions.height - dimensions.margins * 2;
+    euCountryFeatures.current = filtered;
 
-    //const d3 = loadable.lib(() => import('d3'));
-    // SELECTIONS
-    const svg = d3
-      .select(svgRef.current)
-      .attr('id', 'country_map')
-      //.classed("line-chart", true)
-      .attr('width', dimensions.width)
-      .attr('height', dimensions.height);
-    //console.log('SVG x-y', svg.getBBox());
-    /*
-    const container = svg
-      .append('g')
-      .classed('container', true)
-      .attr(
-        'transform',
-        `translate(${dimensions.margins}, ${dimensions.margins})`,
-      );
-      */
+    filtered.forEach((feature) => {
+      let countryName = feature.get('na');
+      if (countryName === 'Türkiye') {
+        countryName = 'Turkiye';
+      }
+      if (Object.hasOwn(countries_metadata, countryName)) {
+        let metadata = countries_metadata[countryName];
+        if (metadata !== undefined) {
+          if (thematicMapMode === 'hhap') {
+            switch (metadata.hhap) {
+              case 'National HHAP':
+                feature.set('fillColor', 'blue1');
+                break;
+              case 'Subnational or local HHAP':
+                feature.set('fillColor', 'blue2');
+                break;
+              case 'No HHAP':
+                feature.set('fillColor', 'gray1');
+                break;
+              case 'No information':
+                feature.set('fillColor', 'gray2');
+                break;
+              default:
+            }
+          } else {
+            switch (metadata.hhws) {
+              case 'HWWS exists':
+                feature.set('fillColor', 'blue1');
+                break;
+              case 'No information':
+                feature.set('fillColor', 'gray2');
+                break;
+              default:
+            }
+          }
+        }
+      }
+    });
 
-    //console.log('cpath', cpath);
-    //console.log(fpath);
-    //console.log('Flags',flags);
-    //console.log('filtered', getFocusCountriesFeature(cpath));
+    filtered.forEach((feature) => {
+      const img = new Image();
+      img.onload = function () {
+        feature.set('flag', img);
+      };
+      img.src = getImageUrl(feature);
+    });
 
-    window.countrySettings = cpath.features;
+    const euSource = new ol.source.Vector({ features: filtered });
+    setEuCountriessource(euSource);
 
-    var opts = {
-      world: cpath.features,
-      countries_metadata: countries_metadata,
-      thematic_map_mode: thematicMapMode,
-      svg: svg,
-      coordinates: {
-        x: 0,
-        y: 0,
-        width: dimensions.containerWidth,
-        height: dimensions.containerHeight,
-      },
-      focusCountries: {
-        names: getFocusCountryNames(),
-        feature: getFocusCountriesFeature(cpath),
-      },
-      zoom: 0.95,
-    };
-    renderCountriesBox(opts, d3, d3Geo);
-    // Draw Circle
-    //container.append("circle").attr("r", 25).style("color","blue");
-  }, [
-    props.Data,
-    d3,
-    width,
-    height,
-    cpath,
-    d3Geo,
-    thematicMapMode,
-    countries_metadata,
-  ]); // redraw chart if data changes
+    setTileWMSSources([
+      new ol.source.TileWMS({
+        url: 'https://gisco-services.ec.europa.eu/maps/service',
+        params: {
+          // LAYERS: 'OSMBlossomComposite', OSMCartoComposite, OSMPositronComposite
+          LAYERS: 'OSMBrightBackground',
+          TILED: true,
+        },
+        serverType: 'geoserver',
+        transition: 0,
+      }),
+    ]);
+  }, [geofeatures, countries_metadata, thematicMapMode]);
 
   return (
     <div>
       <Grid columns="12">
         <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
-          <svg ref={svgRef} />
+          {tileWMSSources ? (
+            <Map
+              view={{
+                center: ol.proj.fromLonLat([10, 50], projection),
+                projection,
+                showFullExtent: true,
+                zoom: 4,
+              }}
+              pixelRatio={1}
+            >
+              <div
+                ref={tooltipRef}
+                style={tooltipStyle}
+                className="map-tooltip"
+              ></div>
+              <Controls attribution={false} />
+              <Layers>
+                {props.mode !== 'edit' && (
+                  <Interactions
+                    tooltipRef={tooltipRef}
+                    // onFeatureClick={onFeatureClick}
+                    countries_metadata={countries_metadata}
+                    thematicMapMode={thematicMapMode}
+                    euCountryFeatures={euCountryFeatures}
+                    highlight={highlight}
+                    setStateHighlight={setStateHighlight}
+                  />
+                )}
+                <Layer.Vector
+                  source={euCountriesSource}
+                  zIndex={7}
+                  style={styles.eucountriesStyle}
+                />
+                <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+              </Layers>
+            </Map>
+          ) : null}
         </Grid.Column>
         <Grid.Column
           mobile={3}
           tablet={3}
           computer={2}
           className="col-left"
-          id="cse-filter"
+          id="country-map-filter"
         >
           <Filter
             thematicMapMode={thematicMapMode}
@@ -161,12 +213,6 @@ const CountryMapObservatoryView = (props) => {
 
 export default compose(
   clientOnly,
-  injectLazyLibs(['d3', 'd3Geo']),
+  withGeoJsonData,
   withResponsiveContainer('countryMapHeatIndex'),
-  withCountriesData,
-)(CountryMapObservatoryView);
-
-// import loadable from '@loadable/component';
-//import * as d3 from 'd3';
-// import cpath from './euro-countries-simplified';
-//
+)(View);
