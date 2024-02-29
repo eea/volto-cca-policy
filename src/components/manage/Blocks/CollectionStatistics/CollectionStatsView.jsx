@@ -22,23 +22,23 @@ const useStats = (path, id, data) => {
   return stats;
 };
 
-export const StatVoltoIcon = ({ name, value, source }) => {
+export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
   return (
     <div className="tab-icon" title={value}>
       {!source && name}
       {!!source && <Icon title={name} name={source} size="50" />}
       <span className="count">{value}</span>
-      <span className="label">{name}</span>
+      {!!showLabel && <span className="label">{name}</span>}
     </div>
   );
 };
 
-export const RemixIcon = ({ name, value, source }) => {
+export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   return (
     <div className="tab-icon semantic-icon" title={value}>
       {!!source && <UiIcon title={name} name={source} />}
       <span className="count">{value}</span>
-      <span className="label">{name}</span>
+      {!!showLabel && <span className="label">{name}</span>}
     </div>
   );
 };
@@ -76,7 +76,7 @@ const nop = () => '';
 export default function CollectionStatsView(props) {
   const { id, data = {}, pathname = props.path } = props;
   const field = data.aggregateField?.value;
-  const { queryParameterStyle = 'SearchBlock', query = {} } = data;
+  const { queryParameterStyle = 'SearchBlock', query = {}, showLabel } = data;
   const base = getBase(props);
   let stats = useStats(getBaseUrl(pathname), id, data);
 
@@ -107,6 +107,7 @@ export default function CollectionStatsView(props) {
               value={stats[k]}
               field={field}
               source={icons[k]}
+              showLabel={showLabel}
             />
           </UniversalLink>
         ))}
