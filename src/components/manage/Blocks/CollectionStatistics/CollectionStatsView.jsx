@@ -96,25 +96,27 @@ export default function CollectionStatsView(props) {
   return (
     (field && keys.length > 0 && (
       <div className="collection-stats">
-        {keys.sort().map((k) => (
-          <UniversalLink
-            key={k}
-            href={urlHandler({
-              base,
-              query: query.query,
-              field: groupDefinition.searchFieldName || field,
-              value: k,
-            })}
-          >
-            <IconComponent
-              name={k}
-              value={stats[k]}
-              field={field}
-              source={icons[k]}
-              showLabel={showLabel}
-            />
-          </UniversalLink>
-        ))}
+        {keys
+          .sort((a, b) => a.localeCompare(b))
+          .map((k) => (
+            <UniversalLink
+              key={k}
+              href={urlHandler({
+                base,
+                query: query.query,
+                field: groupDefinition.searchFieldName || field,
+                value: k,
+              })}
+            >
+              <IconComponent
+                name={k}
+                value={stats[k]}
+                field={field}
+                source={icons[k]}
+                showLabel={showLabel}
+              />
+            </UniversalLink>
+          ))}
       </div>
     )) ||
     'no results'
