@@ -1,5 +1,8 @@
 import CollectionStatsEdit from './CollectionStatsEdit';
-import CollectionStatsView, { StatVoltoIcon } from './CollectionStatsView';
+import CollectionStatsView, {
+  StatVoltoIcon,
+  RemixIcon,
+} from './CollectionStatsView';
 
 import worldSVG from '@plone/volto/icons/world.svg';
 import airPollutionSvg from '@eeacms/volto-cca-policy/icons/air_pollution_and_aero-allergens.svg';
@@ -8,12 +11,16 @@ import climateSensitiveSvg from '@eeacms/volto-cca-policy/icons/climate-sensitiv
 import wildfiresSvg from '@eeacms/volto-cca-policy/icons/wildfires.svg';
 import droughtsSvg from '@eeacms/volto-cca-policy/icons/droughts_and_floods.svg';
 
-const icons = {
+const healthImpactIcons = {
   'Climate-sensitive diseases': climateSensitiveSvg,
   Heat: heatSvg,
   Wildfires: wildfiresSvg,
   'Droughts and floods': droughtsSvg,
   'Air pollution and aero-allergens': airPollutionSvg,
+};
+
+const portalTypeIcons = {
+  'Case Study': 'file text',
 };
 
 export default function installCollectionStatsBlock(config) {
@@ -43,7 +50,7 @@ export default function installCollectionStatsBlock(config) {
 
             // if (name === '-NONSPECIFIC-') return;
             // this excludes options that have no icon
-            if (!icons[name]) return;
+            if (!healthImpactIcons[name]) return;
 
             if (!res[name]) res[name] = 0;
             res[name] += count;
@@ -51,8 +58,16 @@ export default function installCollectionStatsBlock(config) {
 
           return res;
         },
-        icons: icons,
+        icons: healthImpactIcons,
         iconComponent: StatVoltoIcon,
+      },
+      portal_type: {
+        searchFieldName: 'op_cluster',
+        cleanup: (stats) => {
+          return stats;
+        },
+        icons: portalTypeIcons,
+        iconComponent: RemixIcon,
       },
     },
   };

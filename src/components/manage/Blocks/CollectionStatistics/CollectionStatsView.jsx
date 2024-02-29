@@ -31,6 +31,15 @@ export const StatVoltoIcon = ({ name, value, source }) => {
   );
 };
 
+export const RemixIcon = ({ name, value, source }) => {
+  return (
+    <div className="tab-icon" title={value}>
+      {!!source && <Icon className="small" title={name} name={source} />}
+      <span className="count">{value}</span>
+    </div>
+  );
+};
+
 const makeSearchBlockQuery = ({ base, query, field, value }) => {
   const filtered = [
     ...query.filter(({ i }) => i !== field),
@@ -77,6 +86,7 @@ export default function CollectionStatsView(props) {
       <div className="collection-stats">
         {keys.sort().map((k) => (
           <a
+            key={k}
             href={urlHandler({
               base,
               query: query.query,
