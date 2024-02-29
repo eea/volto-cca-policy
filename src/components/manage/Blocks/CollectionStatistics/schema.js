@@ -10,7 +10,7 @@ const Schema = () => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['aggregateField', 'queryParameterStyle', 'href'],
+        fields: ['aggregateField', 'queryParameterStyle', 'href', 'showLabel'],
       },
       {
         id: 'query',
@@ -34,13 +34,13 @@ const Schema = () => {
           // types of facets.
           return Object.assign(
             {},
-            ...Object.keys(options).map((k) =>
-              Object.keys(options[k].values || {}).length ||
-              hasNonValueOperation(options[k].operations) ||
-              hasDateOperation(options[k].operations)
-                ? { [k]: options[k] }
-                : {},
-            ),
+            ...Object.keys(options).map((k) => {
+              const flag =
+                Object.keys(options[k].values || {}).length ||
+                hasNonValueOperation(options[k].operations) ||
+                hasDateOperation(options[k].operations);
+              return flag ? { [k]: options[k] } : {};
+            }),
           );
         },
       },
@@ -52,6 +52,11 @@ const Schema = () => {
           ['EEASemanticSearch', 'EEA Semantic Search'],
         ],
         default: 'ListingBlock',
+      },
+      showLabel: {
+        type: 'boolean',
+        title: 'Show label',
+        default: false,
       },
 
       href: {

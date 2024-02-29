@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getQueryStats } from '@eeacms/volto-cca-policy/store';
 import { getBaseUrl as getBase } from '@eeacms/volto-cca-policy/utils';
 import { getBaseUrl } from '@plone/volto/helpers';
-import { Icon } from '@plone/volto/components';
+import { Icon, UniversalLink } from '@plone/volto/components';
 import { Icon as UiIcon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 
@@ -22,21 +22,27 @@ const useStats = (path, id, data) => {
   return stats;
 };
 
-export const StatVoltoIcon = ({ name, value, source }) => {
+export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
   return (
     <div className="tab-icon" title={value}>
-      {!source && name}
-      {!!source && <Icon title={name} name={source} size="50" />}
-      <span className="count">{value}</span>
+      <div className="tab-icon-wrapper">
+        {!source && name}
+        {!!source && <Icon title={name} name={source} size="50" />}
+        <span className="count">{value}</span>
+      </div>
+      {!!showLabel && <span className="label">{name}</span>}
     </div>
   );
 };
 
-export const RemixIcon = ({ name, value, source }) => {
+export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   return (
     <div className="tab-icon semantic-icon" title={value}>
-      {!!source && <UiIcon title={name} name={source} />}
-      <span className="count">{value}</span>
+      <div className="tab-icon-wrapper">
+        {!!source && <UiIcon title={name} name={source} />}
+        <span className="count">{value}</span>
+      </div>
+      {!!showLabel && <span className="label">{name}</span>}
     </div>
   );
 };
@@ -74,7 +80,7 @@ const nop = () => '';
 export default function CollectionStatsView(props) {
   const { id, data = {}, pathname = props.path } = props;
   const field = data.aggregateField?.value;
-  const { queryParameterStyle = 'SearchBlock', query = {} } = data;
+  const { queryParameterStyle = 'SearchBlock', query = {}, showLabel } = data;
   const base = getBase(props);
   let stats = useStats(getBaseUrl(pathname), id, data);
 
@@ -90,26 +96,25 @@ export default function CollectionStatsView(props) {
   return (
     (field && keys.length > 0 && (
       <div className="collection-stats">
-        {keys
-          .sort((a, b) => a.localeCompare(b))
-          .map((k) => (
-            <a
-              key={k}
-              href={urlHandler({
-                base,
-                query: query.query,
-                field: groupDefinition.searchFieldName || field,
-                value: k,
-              })}
-            >
-              <IconComponent
-                name={k}
-                value={stats[k]}
-                field={field}
-                source={icons[k]}
-              />
-            </a>
-          ))}
+        {keys.sort().map((k) => (
+          <UniversalLink
+            key={k}
+            href={urlHandler({
+              base,
+              query: query.query,
+              field: groupDefinition.searchFieldName || field,
+              value: k,
+            })}
+          >
+            <IconComponent
+              name={k}
+              value={stats[k]}
+              field={field}
+              source={icons[k]}
+              showLabel={showLabel}
+            />
+          </UniversalLink>
+        ))}
       </div>
     )) ||
     'no results'

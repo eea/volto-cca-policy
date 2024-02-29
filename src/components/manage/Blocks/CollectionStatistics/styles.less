@@ -14,9 +14,19 @@
     font-size: 3em;
   }
 
-  .tab-icon {
+  .tab-icon-wrapper {
     position: relative;
+    display: inline-block;
+  }
+
+  .tab-icon {
     color: @secondaryColor;
+    text-align: center;
+
+    .label {
+      display: block;
+      max-width: 130px;
+    }
 
     .count {
       position: absolute;
