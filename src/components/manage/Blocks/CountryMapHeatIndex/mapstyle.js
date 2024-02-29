@@ -1,34 +1,33 @@
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
-const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
-  const context = state.context;
-  const geometry = state.geometry.clone();
-  geometry.setCoordinates(pixelCoordinates);
-  const extent = geometry.getExtent();
-  const width = ol.extent.getWidth(extent);
-  const height = ol.extent.getHeight(extent);
-  const flag = state.feature.get('flag');
-  console.log('flag', flag);
-  if (!flag || height < 1 || width < 1) {
-    return;
-  }
+// const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
+//   const context = state.context;
+//   const geometry = state.geometry.clone();
+//   geometry.setCoordinates(pixelCoordinates);
+//   const extent = geometry.getExtent();
+//   const width = ol.extent.getWidth(extent);
+//   const height = ol.extent.getHeight(extent);
+//   const flag = state.feature.get('flag');
+//   if (!flag || height < 1 || width < 1) {
+//     return;
+//   }
 
-  // Stitch out country shape from the blue canvas
-  context.save();
-  const renderContext = ol.render.toContext(context, {
-    pixelRatio: 1,
-  });
-  renderContext.setFillStrokeStyle(fill, stroke);
-  renderContext.drawGeometry(geometry);
-  context.clip();
+//   // Stitch out country shape from the blue canvas
+//   context.save();
+//   const renderContext = ol.render.toContext(context, {
+//     pixelRatio: 1,
+//   });
+//   renderContext.setFillStrokeStyle(fill, stroke);
+//   renderContext.drawGeometry(geometry);
+//   context.clip();
 
-  // Fill transparent country with the flag image
-  const bottomLeft = ol.extent.getBottomLeft(extent);
-  const left = bottomLeft[0];
-  const bottom = bottomLeft[1];
-  context.drawImage(flag, left, bottom, width, height);
-  context.restore();
-};
+//   // Fill transparent country with the flag image
+//   const bottomLeft = ol.extent.getBottomLeft(extent);
+//   const left = bottomLeft[0];
+//   const bottom = bottomLeft[1];
+//   context.drawImage(flag, left, bottom, width, height);
+//   context.restore();
+// };
 
 export const makeStyles = (highlight) => {
   const fill = new ol.style.Fill({ color: 'rgb(251,250,230, 0.8)' });
@@ -39,23 +38,13 @@ export const makeStyles = (highlight) => {
   });
 
   const getFillColor = (feature) => {
-    switch (feature.get('fillColor')) {
-      case 'blue1':
-        return new ol.style.Fill({ color: 'rgb(0,75,127,0.8)' });
-        break;
-      case 'blue2':
-        return new ol.style.Fill({ color: 'rgb(139,174,206,0.8)' });
-        break;
-      case 'gray1':
-        return new ol.style.Fill({ color: 'rgb(134,134,134,0.8)' });
-        break;
-      case 'gray2':
-        return new ol.style.Fill({ color: 'rgb(191,191,191,0.8)' });
-        break;
-      default:
-    }
-
-    return fill;
+    let colors = {
+      blue1: 'rgb(0,75,127,0.8)',
+      blue2: 'rgb(139,174,206,0.8)',
+      gray1: 'rgb(134,134,134,0.8)',
+      gray2: 'rgb(191,191,191,0.8)',
+    };
+    return new ol.style.Fill({ color: colors[feature.get('fillColor')] });
   };
 
   const eucountriesStyle = new ol.style.Style({
@@ -68,7 +57,7 @@ export const makeStyles = (highlight) => {
       const height = ol.extent.getHeight(extent);
       const feature = state.feature;
       const name = feature.get('na');
-
+      console.log(name);
       context.save();
       const renderContext = ol.render.toContext(context, {
         pixelRatio: 1,
@@ -82,7 +71,7 @@ export const makeStyles = (highlight) => {
       // if (!flag || height < 1 || width < 1) {
       //   return;
       // }
-      if (name == highlight.current && flag && height > 1 && width > 1) {
+      if (name === highlight.current && flag && height > 1 && width > 1) {
         // Fill transparent country with the flag image
         const bottomLeft = ol.extent.getBottomLeft(extent);
         const left = bottomLeft[0];

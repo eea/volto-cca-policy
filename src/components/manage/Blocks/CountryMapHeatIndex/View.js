@@ -91,7 +91,7 @@ const View = (props) => {
     filtered.forEach((feature) => {
       let countryName = feature.get('na');
       if (countryName === 'Türkiye') {
-        countryName = 'Turkiye';
+        countryName = 'Turkey';
       }
       if (Object.hasOwn(countries_metadata, countryName)) {
         let metadata = countries_metadata[countryName];
