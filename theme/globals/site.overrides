@@ -2,6 +2,7 @@
         Global Overrides
 *******************************/
 @import './mission.less';
+@import './observatory.less';
 
 // [class~='view-defaultview'] [id='page-document'] > *,
 // [class~='view-viewview'] [id='page-document'] > * {
@@ -13,6 +14,10 @@
   @green-1 24.22%,
   @green-2 97.12%
 );
+
+.section-search-the-database .block.call-to-action.align.center a {
+  display: block;
+}
 
 body.subsite-root .content-area {
   padding-top: 0 !important;
@@ -29,50 +34,50 @@ p.has--clear--both:empty {
 }
 
 // Add icon for external links
-.content-area #view {
-  a[data-linktype='internal'] {
-    &:before {
-      content: '' !important;
-    }
-  }
+// .content-area #view {
+//   a[data-linktype='internal'] {
+//     &:before {
+//       content: '' !important;
+//     }
+//   }
 
-  a[href^="http://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
-    a[href^="https://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
-    a[href^="http://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty),
-    a[href^="https://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty)
-    // a[rel='noopener']:not(.ui.button):not(:empty)
-  {
-    &:before {
-      position: relative;
-      top: 0;
-      margin-right: 3px;
-      color: inherit;
-      content: '\ecaf';
-      font-family: remixicon;
-      font-size: 1em;
-    }
+//   a[href^="http://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
+//     a[href^="https://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
+//     a[href^="http://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty),
+//     a[href^="https://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty)
+//     // a[rel='noopener']:not(.ui.button):not(:empty)
+//   {
+//     &:before {
+//       position: relative;
+//       top: 0;
+//       margin-right: 3px;
+//       color: inherit;
+//       content: '\ecaf';
+//       font-family: remixicon;
+//       font-size: 1em;
+//     }
 
-    &:visited {
-      &:before {
-        // fix visited link icon color
-        // doesn't work with color: inherit
-        color: @linkVisitedColor;
-      }
-    }
+//     &:visited {
+//       &:before {
+//         // fix visited link icon color
+//         // doesn't work with color: inherit
+//         color: @linkVisitedColor;
+//       }
+//     }
 
-    &:active {
-      &:before {
-        // fix active link icon color
-        // doesn't work with color: inherit
-        color: @linkActiveColor;
-      }
-    }
-  }
+//     &:active {
+//       &:before {
+//         // fix active link icon color
+//         // doesn't work with color: inherit
+//         color: @linkActiveColor;
+//       }
+//     }
+//   }
 
-  // a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
-  // a[target='_blank']:not(.ui.button):not(:empty) {
-  // }
-}
+//   // a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
+//   // a[target='_blank']:not(.ui.button):not(:empty) {
+//   // }
+// }
 
 // Case study view styles
 .case-study-view {

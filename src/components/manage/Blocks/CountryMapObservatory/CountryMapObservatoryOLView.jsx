@@ -1,3 +1,4 @@
+import { getBaseUrl } from '@eeacms/volto-cca-policy/utils';
 import React from 'react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
@@ -8,6 +9,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 
 import withResponsiveContainer from '../withResponsiveContainer';
+import withVisibilitySensor from '../withVisibilitySensor';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 import { withGeoJsonData } from './hocs';
@@ -85,7 +87,7 @@ const CountryMapObservatoryView = (props) => {
     ]);
   }, [geofeatures]);
 
-  const baseUrl = props.path || props.location?.pathname || '';
+  const baseUrl = getBaseUrl(props);
 
   const onFeatureClick = React.useCallback(
     (feature) => {
@@ -94,6 +96,7 @@ const CountryMapObservatoryView = (props) => {
     },
     [baseUrl, history],
   );
+  // console.log(geofeatures, projection, euCountriesSource, overlaySource);
 
   return tileWMSSources ? (
     <Map
@@ -135,4 +138,5 @@ export default compose(
   clientOnly,
   withGeoJsonData,
   withResponsiveContainer('countryMapObservatory'),
+  withVisibilitySensor(),
 )(CountryMapObservatoryView);
