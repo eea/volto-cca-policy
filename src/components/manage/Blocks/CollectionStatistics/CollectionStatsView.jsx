@@ -7,6 +7,7 @@ import { Icon } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 
 import qs from 'query-string';
+import './styles.less';
 
 const useStats = (path, id, data) => {
   const dispatch = useDispatch();
