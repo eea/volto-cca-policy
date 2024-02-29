@@ -1,5 +1,6 @@
 import CollectionStatsEdit from './CollectionStatsEdit';
-import CollectionStatsView from './CollectionStatsView';
+import CollectionStatsView, { StatVoltoIcon } from './CollectionStatsView';
+
 import worldSVG from '@plone/volto/icons/world.svg';
 import airPollutionSvg from '@eeacms/volto-cca-policy/icons/air_pollution_and_aero-allergens.svg';
 import heatSvg from '@eeacms/volto-cca-policy/icons/heat.svg';
@@ -51,6 +52,7 @@ export default function installCollectionStatsBlock(config) {
           return res;
         },
         icons: icons,
+        iconComponent: StatVoltoIcon,
       },
     },
   };

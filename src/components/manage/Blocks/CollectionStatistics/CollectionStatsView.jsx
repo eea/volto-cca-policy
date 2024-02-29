@@ -21,7 +21,7 @@ const useStats = (path, id, data) => {
   return stats;
 };
 
-const StatIcon = ({ name, value, source }) => {
+export const StatVoltoIcon = ({ name, value, source }) => {
   return (
     <div className="tab-icon" title={value}>
       {!source && name}
@@ -62,10 +62,13 @@ export default function CollectionStatsView(props) {
   const { queryParameterStyle = 'SearchBlock', query = {} } = data;
   const base = getBase(props);
   let stats = useStats(getBaseUrl(pathname), id, data);
+
   const groupDefinition =
     config.blocks.blocksConfig.collectionStats.groups[field] || {};
-  const { cleanup, icons = {} } = groupDefinition;
+  const { cleanup, icons = {}, iconComponent: IconComponent } = groupDefinition;
+
   if (cleanup) stats = cleanup(stats);
+
   const keys = Object.keys(stats);
   const urlHandler = urlBuilders[queryParameterStyle] || nop;
 
@@ -81,7 +84,7 @@ export default function CollectionStatsView(props) {
               value: k,
             })}
           >
-            <StatIcon
+            <IconComponent
               name={k}
               value={stats[k]}
               field={field}
