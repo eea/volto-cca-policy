@@ -1,0 +1,39 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.collection-stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2em 0;
+  gap: 2.5em;
+
+  .semantic-icon i.icon {
+    font-size: 3em;
+  }
+
+  .tab-icon {
+    position: relative;
+    color: @secondaryColor;
+
+    .count {
+      position: absolute;
+      z-index: 100;
+      top: auto;
+      bottom: 0;
+      left: 100%;
+      width: 25px;
+      height: 25px;
+      margin-left: -1.5em;
+      background-color: #161c23;
+      border-radius: 50%;
+      color: @white;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+}
