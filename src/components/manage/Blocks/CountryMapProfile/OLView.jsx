@@ -121,7 +121,7 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures, countries_metadata, thematicMapMode]);
+  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames]);
 
   const baseUrl = props.path || props.location?.pathname || '';
 
