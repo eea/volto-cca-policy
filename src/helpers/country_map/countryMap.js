@@ -143,3 +143,28 @@ export const getClosestFeatureToCoordinate = (coordinate, features) => {
 
   return closestFeature;
 };
+
+export const tooltipStyle = {
+  position: 'absolute',
+  zIndex: 2,
+  display: 'inline-block',
+  visibility: 'hidden',
+  top: '0px',
+  left: '0px',
+  backgroundColor: 'black',
+  color: 'white',
+  padding: '0.3em',
+  cursor: 'pointer',
+  fontSize: '10px',
+};
+
+export function getImageUrl(feature) {
+  let id = feature.get('id').toLowerCase();
+  if (id === 'el') {
+    id = 'gr'; // fix Greece
+  }
+  if (id === 'uk') {
+    id = 'gb'; // fix Greece
+  }
+  return 'https://flagcdn.com/w320/' + id + '.png';
+}
