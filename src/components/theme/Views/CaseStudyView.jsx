@@ -8,19 +8,17 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Grid, Icon } from 'semantic-ui-react';
+import { Divider, Segment, Grid, Icon, Image } from 'semantic-ui-react';
 import { ImageGallery } from '@eeacms/volto-cca-policy/components';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
+  const { primary_photo, primary_photo_copyright, title } = content;
 
-  return content.primary_photo !== null ? (
+  return primary_photo !== null ? (
     <div className="case-studies-review-image-wrapper">
-      <img
-        src={content?.primary_photo?.scales?.mini?.download}
-        alt={content.title}
-      />
-      <p>{content.primary_photo_copyright}</p>
+      <Image src={primary_photo?.scales?.mini?.download} alt={title} />
+      <p>{primary_photo_copyright}</p>
     </div>
   ) : null;
 };

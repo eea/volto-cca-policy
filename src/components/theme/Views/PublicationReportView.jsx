@@ -7,17 +7,25 @@ import {
   ReferenceInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Image } from 'semantic-ui-react';
 
 function PublicationReportView(props) {
   const { content } = props;
-  const { cca_files } = content;
+  const { cca_files, logo } = content;
 
   return (
     <div className="db-item-view publication-report-view">
       <BannerTitle content={content} type="Publications and Report" />
 
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
+
         <ReferenceInfo content={content} />
         <PublishedModifiedInfo {...props} />
         <ShareInfo {...props} />

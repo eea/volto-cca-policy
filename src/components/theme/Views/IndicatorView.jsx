@@ -7,7 +7,7 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider } from 'semantic-ui-react';
+import { Segment, Divider, Image } from 'semantic-ui-react';
 
 function IndicatorView(props) {
   const { content } = props;
@@ -17,13 +17,21 @@ function IndicatorView(props) {
     source,
     contributor_list,
     other_contributor,
+    logo,
   } = content;
 
   return (
     <div className="db-item-view indicator-view">
-      <BannerTitle content={content} type="Indicator" />
+      <BannerTitle content={{ ...content, image: '' }} type="Indicator" />
 
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
         <h2>Description</h2>
         <HTMLField value={long_description} />
         <Divider />

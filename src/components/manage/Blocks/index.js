@@ -14,6 +14,7 @@ import installRAST from './RASTBlock';
 import installC3SIndicatorsOverviewBlock from './C3SIndicatorsOverviewBlock';
 import installC3SIndicatorsGlossaryBlock from './C3SIndicatorsGlossaryBlock';
 import installReadMore from './ReadMore';
+import installCollectionStats from './CollectionStatistics';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -34,6 +35,7 @@ export default function installBlocks(config) {
     installRelevantAceContent,
     installFilterAceContent,
     installTransRegionSelect,
+    installCollectionStats,
     installListing,
   )(config);
 }

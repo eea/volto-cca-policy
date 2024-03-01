@@ -5,16 +5,23 @@ import {
   ReferenceInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Image } from 'semantic-ui-react';
 
 function ToolView(props) {
-  const { content } = props;
+  const { content, logo } = props;
 
   return (
     <div className="db-item-view tool-view">
       <BannerTitle content={content} type="Tools" />
 
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
         <ReferenceInfo content={content} />
         <PublishedModifiedInfo {...props} />
 

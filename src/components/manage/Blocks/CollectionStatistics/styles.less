@@ -1,0 +1,68 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.collection-stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1em 0;
+  gap: 1em;
+
+  .semantic-icon {
+    i.icon {
+      font-size: 2em;
+    }
+
+    .label {
+      width: 85px !important;
+    }
+  }
+
+  .tab-icon-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tab-item-link:hover {
+    .count {
+      background-color: @ccaGreenColor;
+    }
+
+    .tab-icon,
+    .label {
+      color: @primaryColor;
+    }
+  }
+
+  .tab-icon {
+    color: @secondaryColor;
+    text-align: center;
+
+    .label {
+      display: block;
+      width: 120px;
+      color: @contentAreaColor;
+      font-size: 14px;
+    }
+
+    .count {
+      position: absolute;
+      z-index: 1;
+      top: auto;
+      bottom: 0;
+      left: 100%;
+      width: 25px;
+      height: 25px;
+      margin-left: -1.5em;
+      background-color: #161c23;
+      border-radius: 50%;
+      color: @white;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+}

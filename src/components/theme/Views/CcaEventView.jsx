@@ -31,7 +31,7 @@ function CcaEventView(props) {
 
   return (
     <div className="cca-event-view">
-      <BannerTitle content={content} type="CCA Event" />
+      <BannerTitle content={content} />
 
       <div className="ui container">
         <Grid columns="12">

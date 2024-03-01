@@ -3,6 +3,8 @@
 *******************************/
 @import './mission.less';
 @import './observatory.less';
+@import './views.less';
+@import './search.less';
 
 // [class~='view-defaultview'] [id='page-document'] > *,
 // [class~='view-viewview'] [id='page-document'] > * {
@@ -15,8 +17,11 @@
   @green-2 97.12%
 );
 
-.section-search-the-database .block.call-to-action.align.center a {
-  display: block;
+.ui.ordered.list,
+.ui.ordered.list .list,
+ol.ui.list,
+ol.ui.list ol {
+  padding-left: 1.25rem;
 }
 
 body.subsite-root .content-area {
@@ -79,216 +84,7 @@ p.has--clear--both:empty {
 //   // }
 // }
 
-// Case study view styles
-.case-study-view {
-  .case-studies-review-image-wrapper {
-    position: relative;
-    margin-right: 1.5em;
-    float: left;
-
-    p {
-      font-size: 90%;
-    }
-  }
-}
-
-// Video view styles
-div.video-view {
-  video {
-    margin-top: 1.5em;
-  }
-
-  div.external-video {
-    margin-top: 1.5em;
-  }
-}
-
-// C3S Indicator view styles
-div.c3sindicator-view {
-  iframe {
-    border: none;
-  }
-
-  .ui.accordion {
-    margin: 1.5em 0;
-  }
-}
-
-// Geochars widget
-div.geochars-field {
-  div.checkbox {
-    margin-right: 1em;
-
-    label {
-      padding-left: 1.5em;
-    }
-  }
-}
-
-.section-metadata {
-  .content-area {
-    margin-bottom: 0 !important;
-  }
-}
-
-hr {
-  height: 1px;
-  border: none;
-  margin: 2em 0;
-  background-color: #e6e7e8;
-}
-
-.ui.modal.slider-modal {
-  .content {
-    padding: 2em;
-  }
-
-  .slick-slider {
-    padding: 1em 2em;
-  }
-
-  .slide-image-count {
-    text-align: center;
-  }
-
-  .slick-arrow {
-    width: 35px;
-    height: 35px;
-
-    &:before {
-      font-size: 30px;
-    }
-  }
-
-  .slick-prev {
-    left: -13px;
-  }
-
-  .slick-next {
-    right: -13px;
-  }
-}
-
-.db-item-view {
-  .ui.divider {
-    margin: 2em 0;
-  }
-
-  .casetstudy-gallery {
-    cursor: pointer;
-
-    .gallery-title {
-      padding: 2px 4px;
-      background-color: #f2c94c;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
-
-  .bottom-text {
-    margin-bottom: 2em;
-  }
-
-  .c3s-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .adaptation-details {
-    display: flex;
-    flex-direction: row;
-    margin: 2em 0;
-    gap: 5em;
-  }
-
-  .ui.segment {
-    margin-bottom: 1.5em;
-  }
-
-  .section {
-    .section-title {
-      margin-top: 1em;
-    }
-  }
-
-  .documents-list {
-    padding: 0;
-    list-style-type: none;
-
-    li a:before {
-      content: '' !important;
-    }
-  }
-
-  .share-info {
-    margin: 3.5em 0 !important;
-
-    .ui.button {
-      margin: 0 !important;
-    }
-  }
-
-  .ui.button {
-    margin: 1.5em 0 !important;
-  }
-
-  .content-box {
-    margin: 0;
-
-    h5 {
-      color: @secondaryColor;
-    }
-
-    .content-box-inner {
-      padding: 3.5em 0;
-    }
-  }
-
-  .video-wrapper {
-    margin-bottom: 2em;
-  }
-
-  .content-metadata {
-    h5 {
-      margin: 1em 0 0.5em 0;
-      color: @secondaryColor;
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    p,
-    span {
-      color: @grey-4;
-    }
-  }
-}
-
 // General styles
-.btn-right {
-  margin: calc(2rem - 0.1em) 0em 1rem;
-  float: right;
-}
-
-.published-modified-info {
-  margin: 2em 0;
-  font-size: 0.8em;
-}
-
-.content-metadata {
-  .columned.related-case-studies {
-    column-count: 2;
-    column-gap: 4em;
-  }
-
-  .related-case-studies {
-    li {
-      margin-bottom: 0.5em;
-    }
-  }
-}
 
 .listing-body-dates:empty {
   margin-bottom: 0;
@@ -344,21 +140,6 @@ body.subsite {
 .header-actions {
   display: flex;
   margin-right: auto;
-}
-
-body.searchlib-page .searchlib-block {
-  .ui.secondary.pointing.content-section-tabs.menu {
-    .active.item .tab-icon .count {
-      border-color: @ccaGreenColor;
-      background-color: @ccaGreenColor;
-    }
-  }
-}
-
-.searchlib-page .content-section-tabs.menu .item i.icon.small {
-  width: 32px;
-  height: 32px;
-  font-size: 32px;
 }
 
 // Fix margin in simple item listing

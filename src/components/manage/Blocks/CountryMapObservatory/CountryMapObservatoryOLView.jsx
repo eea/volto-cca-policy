@@ -1,3 +1,4 @@
+import { getBaseUrl } from '@eeacms/volto-cca-policy/utils';
 import React from 'react';
 import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
@@ -7,7 +8,6 @@ import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
-import { flattenToAppURL } from '@plone/volto/helpers';
 
 import withResponsiveContainer from '../withResponsiveContainer';
 import withVisibilitySensor from '../withVisibilitySensor';
@@ -42,19 +42,6 @@ function getImageUrl(feature) {
     id = 'gb'; // fix Greece
   }
   return 'https://flagcdn.com/w320/' + id + '.png';
-}
-
-function getBaseUrl(props) {
-  let path =
-    props.data?.href?.[0]?.['@id'] ||
-    props.path ||
-    props.location?.pathname ||
-    '';
-
-  if (path) {
-    path = flattenToAppURL(path);
-  }
-  return path;
 }
 
 const CountryMapObservatoryView = (props) => {

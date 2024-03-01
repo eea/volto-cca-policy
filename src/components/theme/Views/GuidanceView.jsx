@@ -8,7 +8,7 @@ import {
   BannerTitle,
   DocumentsList,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider } from 'semantic-ui-react';
+import { Segment, Divider, Image } from 'semantic-ui-react';
 
 const ContributorsList = (props) => {
   const { content } = props;
@@ -32,12 +32,19 @@ const ContributorsList = (props) => {
 
 function GuidanceView(props) {
   const { content } = props;
-  const { long_description, websites, source, cca_files } = content;
+  const { long_description, websites, source, cca_files, logo } = content;
 
   return (
     <div className="db-item-view guidance-view">
       <BannerTitle content={content} type="Guidance Document" />
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
         <h2>Description</h2>
         <HTMLField value={long_description} />
         <Divider />

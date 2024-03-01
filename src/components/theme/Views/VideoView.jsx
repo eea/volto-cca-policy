@@ -7,7 +7,7 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment } from 'semantic-ui-react';
+import { Divider, Segment, Image } from 'semantic-ui-react';
 
 function VideoView(props) {
   const { content } = props;
@@ -19,6 +19,7 @@ function VideoView(props) {
     long_description,
     other_contributor,
     related_documents_presentations,
+    logo,
   } = content;
 
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
@@ -39,6 +40,14 @@ function VideoView(props) {
       <BannerTitle content={content} type="Video" />
 
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
+
         {is_cmshare_video && (
           <div className="video-wrapper">
             <center>
