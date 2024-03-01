@@ -101,17 +101,6 @@ const View = (props) => {
       }
     });
 
-    filtered.forEach((feature) => {
-      const img = new Image();
-      img.onload = function () {
-        feature.set('flag', img);
-      };
-      img.src = getImageUrl(feature);
-    });
-
-    const euSource = new ol.source.Vector({ features: filtered });
-    setEuCountriessource(euSource);
-
     setTileWMSSources([
       new ol.source.TileWMS({
         url: 'https://gisco-services.ec.europa.eu/maps/service',
@@ -124,6 +113,17 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
+
+    filtered.forEach((feature) => {
+      const img = new Image();
+      img.onload = function () {
+        feature.set('flag', img);
+      };
+      img.src = getImageUrl(feature);
+    });
+
+    const euSource = new ol.source.Vector({ features: filtered });
+    setEuCountriessource(euSource);
   }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames]);
 
   return (
@@ -186,8 +186,8 @@ const View = (props) => {
 };
 
 export default compose(
-  clientOnly,
   withGeoJsonData,
+  clientOnly,
   withResponsiveContainer('countryMapHeatIndex'),
   withVisibilitySensor(),
 )(View);

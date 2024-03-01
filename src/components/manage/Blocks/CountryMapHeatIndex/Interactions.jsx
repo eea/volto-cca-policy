@@ -11,11 +11,11 @@ export const Interactions = ({
   tooltipRef,
   // onFeatureClick,
   countries_metadata,
-  baseUrl,
-  thematicMapMode,
-  euCountryFeatures,
+  // baseUrl,
   highlight,
   setStateHighlight,
+  euCountryFeatures,
+  thematicMapMode,
 }) => {
   const map = useMapContext().map;
 
