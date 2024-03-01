@@ -121,7 +121,7 @@ export const Interactions = ({
         if (metadata === undefined) {
           return;
         }
-        let tooltipContent = '<strong>Heat index of HHWS:</strong>';
+        let tooltipContent = '<strong>Heat index of HHWS:</strong> ';
         map.getTargetElement().style.cursor = 'pointer';
         const node = tooltipRef.current;
         let tooltipContentDiv =
