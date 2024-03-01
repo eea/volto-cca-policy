@@ -1,11 +1,22 @@
 import config from '@plone/volto/registry';
 
-const hasTypeOfBlock = (type, blocks) => {
-  const block = blocks
-    ? Object.keys(blocks).find((id) => blocks?.[id]?.['@type'] === type)
-    : null;
+const hasTypeOfBlock = (obj, targetKey, targetValue) => {
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (key === targetKey && obj[key] === targetValue) {
+        // console.log(`Key "${targetKey}" with value "${targetValue}" found`);
+        return true;
+      }
 
-  return block;
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        if (hasTypeOfBlock(obj[key], targetKey, targetValue)) {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
 };
 
 const BannerTitle = (props) => {
@@ -15,8 +26,8 @@ const BannerTitle = (props) => {
     blocks: { blocksConfig },
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
-  const hasTitleBlock = hasTypeOfBlock('title', blocks);
-  const hasCountryFlagBlock = hasTypeOfBlock('countryFlag', blocks);
+  const hasTitleBlock = hasTypeOfBlock(blocks, '@type', 'title');
+  const hasCountryFlagBlock = hasTypeOfBlock(blocks, '@type', 'countryFlag');
   const types = ['Subsite', 'LRF', 'Plone Site'];
   const isHomePage = types.indexOf(content?.['@type']) > -1;
 

@@ -8,11 +8,12 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider } from 'semantic-ui-react';
+import { Segment, Divider, Image } from 'semantic-ui-react';
+import cx from 'classnames';
 
 function OrganisationView(props) {
   const { content } = props;
-  const { long_description, websites, relatedItems } = content;
+  const { long_description, websites, relatedItems, logo } = content;
 
   let organisationDocuments = [];
   let contentRelatedItems = [];
@@ -32,7 +33,16 @@ function OrganisationView(props) {
 
       <div className="ui container">
         <div>
-          <h2>Description</h2>
+          <div className={cx({ 'has-logo': logo })}>
+            <h2>Description</h2>
+
+            <Image
+              src={logo?.scales?.mini?.download}
+              alt={content.title}
+              className="org-logo"
+            />
+          </div>
+
           <HTMLField value={long_description} />
           <Divider />
           <h2>Reference information</h2>
