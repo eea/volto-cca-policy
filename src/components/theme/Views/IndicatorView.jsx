@@ -8,7 +8,6 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Image } from 'semantic-ui-react';
-import cx from 'classnames';
 
 function IndicatorView(props) {
   const { content } = props;
