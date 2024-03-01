@@ -4,12 +4,18 @@ import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import {
+  euCountryNames as euCountryNamesRaw,
+  tooltipStyle,
+  getImageUrl,
+  adjustEuCountryNames,
+} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
 
 import withResponsiveContainer from '../withResponsiveContainer';
+import withVisibilitySensor from '../withVisibilitySensor';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
-import { withGeoJsonData } from './hocs';
 
 import Filter from './Filter';
 import { Grid } from 'semantic-ui-react';
@@ -20,31 +26,6 @@ import './styles.less';
 
 // const url =
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
-
-const tooltipStyle = {
-  position: 'absolute',
-  zIndex: 2,
-  display: 'inline-block',
-  visibility: 'hidden',
-  top: '0px',
-  left: '0px',
-  backgroundColor: 'black',
-  color: 'white',
-  padding: '0.3em',
-  cursor: 'pointer',
-  fontSize: '10px',
-};
-
-function getImageUrl(feature) {
-  let id = feature.get('id').toLowerCase();
-  if (id === 'el') {
-    id = 'gr'; // fix Greece
-  }
-  if (id === 'uk') {
-    id = 'gb'; // fix Greece
-  }
-  return 'https://flagcdn.com/w320/' + id + '.png';
-}
 
 const View = (props) => {
   const { geofeatures, projection } = props;
@@ -65,14 +46,8 @@ const View = (props) => {
   const countries_metadata = useCountriesMetadata(
     addAppURL(countries_metadata_url),
   );
-  for (let i = 0; i < euCountryNames.length; i++) {
-    if (euCountryNames[i] === 'Turkey') {
-      euCountryNames[i] = 'Türkiye';
-    }
-    if (euCountryNames[i] === 'United Kingdom') {
-      euCountryNames[i] = 'United Kingdom DEL';
-    }
-  }
+
+  const euCountryNames = adjustEuCountryNames(euCountryNamesRaw);
 
   const euCountryFeatures = React.useRef();
 
@@ -124,10 +99,6 @@ const View = (props) => {
     }
 
     filtered.forEach((feature) => {
-      feature.set('flag2', 'ANother flag');
-    });
-
-    filtered.forEach((feature) => {
       const img = new Image();
       img.onload = function () {
         feature.set('flag', img);
@@ -150,7 +121,7 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures, countries_metadata, thematicMapMode]);
+  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames]);
 
   const baseUrl = props.path || props.location?.pathname || '';
 
@@ -229,4 +200,5 @@ export default compose(
   clientOnly,
   withGeoJsonData,
   withResponsiveContainer('countryMapProfile'),
+  withVisibilitySensor(),
 )(View);

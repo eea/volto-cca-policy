@@ -1,45 +1,11 @@
 import React from 'react';
 
-import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import {
+  euCountryNames,
+  setTooltipVisibility,
+  getClosestFeatureToCoordinate,
+} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
-
-function setTooltipVisibility(node, label, event, visible) {
-  if (!node) return;
-  if (visible) {
-    node.innerHTML = label;
-    node.style.visibility = 'visible';
-    node.style.left = `${Math.floor(event.layerX)}px`;
-    node.style.top = `${Math.floor(event.layerY)}px`;
-  } else {
-    node.innerHTML = '';
-    node.style.visibility = 'hidden';
-  }
-}
-
-const getClosestFeatureToCoordinate = (coordinate, features) => {
-  if (!features.length) return null;
-  const x = coordinate[0];
-  const y = coordinate[1];
-  let closestFeature = null;
-  const closestPoint = [NaN, NaN];
-  let minSquaredDistance = Infinity;
-
-  features.forEach((feature) => {
-    const geometry = feature.getGeometry();
-    const previousMinSquaredDistance = minSquaredDistance;
-    minSquaredDistance = geometry.closestPointXY(
-      x,
-      y,
-      closestPoint,
-      minSquaredDistance,
-    );
-    if (minSquaredDistance < previousMinSquaredDistance) {
-      closestFeature = feature;
-    }
-  });
-
-  return closestFeature;
-};
 
 export const Interactions = ({
   tooltipRef,
@@ -56,66 +22,16 @@ export const Interactions = ({
   React.useEffect(() => {
     if (!map) return;
 
-    map.on('pointermove', function (evt) {
-      if (evt.dragging) {
-        return;
-      }
-
-      const feature = getClosestFeatureToCoordinate(
-        evt.coordinate,
-        euCountryFeatures.current,
-      );
-
-      highlight.current = feature && feature.get('na');
-      setStateHighlight(highlight.current);
-
-      // const domEvt = evt.originalEvent;
-      // const pixel = map.getEventPixel(evt.originalEvent);
-      // const feature = map.forEachFeatureAtPixel(pixel, function (feature) {
-      //   return feature;
-      // });
-      // console.log('current feature', feature.get('na'));
-      // console.log('FEATURE:', feature?.get('na') || 'NA');
-      // console.log('HIGHLIGHT:', highlight?.get('na') || 'NA');
-      // if (feature && euCountryNames.includes(feature.get('na'))) {
-      //   console.log('FEATURE IS EUROPE COUNTRY');
-      // }
-      // if (feature !== highlight) {
-      //   if (highlight) {
-      //     try {
-      //       map.getTargetElement().style.cursor = '';
-      //       // overlaySource.removeFeature(highlight);
-      //     } catch {}
-      //   }
-      //   if (feature && euCountryNames.includes(feature.get('na'))) {
-      //     // overlaySource.addFeature(feature);
-      //     map.getTargetElement().style.cursor = 'pointer';
-      //     const node = tooltipRef.current;
-      //     setTooltipVisibility(node, feature.get('na'), domEvt, true);
-      //     highlight.current = feature.get('na');
-      //   }
-      // } else {
-      //   // setTooltipVisibility(tooltipRef.current, null, domEvt, false);
-      // }
-    });
-
     map.on('click', function (evt) {
       if (evt.dragging) {
         return;
       }
-      const domEvt = evt.originalEvent;
-      // const pixel = map.getEventPixel(evt.originalEvent);
 
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
       );
-
-      // map.forEachFeatureAtPixel(pixel, function (f) {
-      //   if (f && !feature) {
-      //     feature = f;
-      //   }
-      // });
+      const domEvt = evt.originalEvent;
 
       if (
         countries_metadata.length > 0 &&
@@ -190,6 +106,20 @@ export const Interactions = ({
       // if (feature) {
       //   onFeatureClick(feature);
       // }
+    });
+
+    map.on('pointermove', function (evt) {
+      if (evt.dragging) {
+        return;
+      }
+
+      const feature = getClosestFeatureToCoordinate(
+        evt.coordinate,
+        euCountryFeatures.current,
+      );
+
+      highlight.current = feature && feature.get('na');
+      setStateHighlight(highlight.current);
     });
   });
   // }, [map, tooltipRef, onFeatureClick]);

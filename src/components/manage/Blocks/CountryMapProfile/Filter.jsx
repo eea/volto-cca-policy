@@ -1,11 +1,18 @@
 import React from 'react';
 import { Radio } from 'semantic-ui-react';
 
+function hidePopup() {
+  const collections = document.getElementsByClassName('map-tooltip');
+  for (let i = 0; i < collections.length; i++) {
+    collections[i].style.visibility = 'hidden';
+  }
+}
+
 export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
-      <h2>Choose thematic map:</h2>
+      <p class="title">Choose thematic map:</p>
       <div id="sections-selector">
         <Radio
           label="National adaption policy"
@@ -14,6 +21,7 @@ export default function Filter(props) {
           checked={thematicMapMode === 'National adaption policy'}
           onChange={(_e, { value }) => {
             setThematicMapMode(value);
+            hidePopup();
           }}
         />
         <Radio
@@ -23,6 +31,7 @@ export default function Filter(props) {
           checked={thematicMapMode === 'Adaptation portals and platforms'}
           onChange={(_e, { value }) => {
             setThematicMapMode(value);
+            hidePopup();
           }}
         />
       </div>
