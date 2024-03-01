@@ -1,22 +1,28 @@
 import config from '@plone/volto/registry';
 
+const hasTypeOfBlock = (type, blocks) => {
+  const block = blocks
+    ? Object.keys(blocks).find((id) => blocks?.[id]?.['@type'] === type)
+    : null;
+
+  return block;
+};
+
 const BannerTitle = (props) => {
   const { content } = props;
+  const { blocks } = content;
   const {
     blocks: { blocksConfig },
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
-  const hasTitleBlock = content?.blocks
-    ? Object.keys(content?.blocks).find(
-        (id) => content?.blocks?.[id]?.['@type'] === 'title',
-      )
-    : null;
-  const isHomePage =
-    ['Subsite', 'LRF', 'Plone Site'].indexOf(content?.['@type']) > -1;
+  const hasTitleBlock = hasTypeOfBlock('title', blocks);
+  const hasCountryFlagBlock = hasTypeOfBlock('countryFlag', blocks);
+  const types = ['Subsite', 'LRF', 'Plone Site'];
+  const isHomePage = types.indexOf(content?.['@type']) > -1;
 
   return !isHomePage ? (
     <>
-      {!hasTitleBlock ? (
+      {!hasTitleBlock && !hasCountryFlagBlock ? (
         <TitleBlockView
           {...props}
           data={{

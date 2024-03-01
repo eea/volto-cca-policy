@@ -7,16 +7,33 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 2em 0;
-  gap: 2.5em;
+  margin: 1em 0;
+  gap: 1em;
 
-  .semantic-icon i.icon {
-    font-size: 3em;
+  .semantic-icon {
+    i.icon {
+      font-size: 2em;
+    }
+
+    .label {
+      width: 85px !important;
+    }
   }
 
   .tab-icon-wrapper {
     position: relative;
     display: inline-block;
+  }
+
+  .tab-item-link:hover {
+    .count {
+      background-color: @ccaGreenColor;
+    }
+
+    .tab-icon,
+    .label {
+      color: @primaryColor;
+    }
   }
 
   .tab-icon {
@@ -25,12 +42,14 @@
 
     .label {
       display: block;
-      max-width: 130px;
+      width: 120px;
+      color: @contentAreaColor;
+      font-size: 14px;
     }
 
     .count {
       position: absolute;
-      z-index: 100;
+      z-index: 1;
       top: auto;
       bottom: 0;
       left: 100%;
