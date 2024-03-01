@@ -52,7 +52,6 @@ export function addExpandersToPath(path, type, isAnonymous) {
   const expandersFromConfig = apiExpanders
     .filter((expand) => {
       const res = matchPath(url, expand.match) && expand[type];
-      // console.log(url, expand, res);
       return res;
     })
     .map((expand) => expand[type]);
