@@ -6,13 +6,13 @@ import { useHistory } from 'react-router-dom';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 import withResponsiveContainer from '../withResponsiveContainer';
 import withVisibilitySensor from '../withVisibilitySensor';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
-import { withGeoJsonData } from './hocs';
 
 import './styles.less';
 

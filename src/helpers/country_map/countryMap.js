@@ -105,3 +105,41 @@ export const withCountriesData = (WrappedComponent) => {
   }
   return WithCountriesDataWrapped;
 };
+
+export function setTooltipVisibility(node, label, event, visible) {
+  if (!node) return;
+  if (visible) {
+    node.innerHTML = label;
+    node.style.visibility = 'visible';
+    node.style.left = `${Math.floor(event.layerX)}px`;
+    node.style.top = `${Math.floor(event.layerY)}px`;
+  } else {
+    node.innerHTML = '';
+    node.style.visibility = 'hidden';
+  }
+}
+
+export const getClosestFeatureToCoordinate = (coordinate, features) => {
+  if (!features.length) return null;
+  const x = coordinate[0];
+  const y = coordinate[1];
+  let closestFeature = null;
+  const closestPoint = [NaN, NaN];
+  let minSquaredDistance = Infinity;
+
+  features.forEach((feature) => {
+    const geometry = feature.getGeometry();
+    const previousMinSquaredDistance = minSquaredDistance;
+    minSquaredDistance = geometry.closestPointXY(
+      x,
+      y,
+      closestPoint,
+      minSquaredDistance,
+    );
+    if (minSquaredDistance < previousMinSquaredDistance) {
+      closestFeature = feature;
+    }
+  });
+
+  return closestFeature;
+};
