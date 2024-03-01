@@ -37,7 +37,7 @@ function OrganisationView(props) {
             <h2>Description</h2>
 
             <Image
-              src={logo.scales?.mini?.download}
+              src={logo?.scales?.mini?.download}
               alt={content.title}
               className="org-logo"
             />

@@ -24,6 +24,7 @@ exports[`CaseStudyView should render the component 1`] = `
           >
             <img
               alt="CaseStudyView"
+              className="ui image"
             />
             <p />
           </div>

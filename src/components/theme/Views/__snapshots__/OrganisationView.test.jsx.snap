@@ -11,9 +11,17 @@ exports[`OrganisationView should render the component 1`] = `
     className="ui container"
   >
     <div>
-      <h2>
-        Description
-      </h2>
+      <div
+        className=""
+      >
+        <h2>
+          Description
+        </h2>
+        <img
+          alt="My OrganisationView"
+          className="ui image org-logo"
+        />
+      </div>
       <div
         dangerouslySetInnerHTML={
           Object {
