@@ -6,7 +6,7 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment } from 'semantic-ui-react';
+import { Divider, Segment, Image } from 'semantic-ui-react';
 
 import config from '@plone/volto/registry';
 
@@ -20,6 +20,7 @@ function ProjectView(props) {
     acronym,
     title,
     websites,
+    logo,
   } = content;
 
   const {
@@ -49,6 +50,13 @@ function ProjectView(props) {
       />
 
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
         <h2>Description</h2>
         <HTMLField value={long_description} />
 
