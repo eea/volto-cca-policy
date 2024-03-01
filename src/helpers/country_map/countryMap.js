@@ -168,3 +168,15 @@ export function getImageUrl(feature) {
   }
   return 'https://flagcdn.com/w320/' + id + '.png';
 }
+
+export function adjustEuCountryNames(euCountryNames) {
+  for (let i = 0; i < euCountryNames.length; i++) {
+    if (euCountryNames[i] === 'Turkey') {
+      euCountryNames[i] = 'Türkiye';
+    }
+    if (euCountryNames[i] === 'United Kingdom') {
+      euCountryNames[i] = 'United Kingdom DEL';
+    }
+  }
+  return euCountryNames;
+}

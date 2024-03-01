@@ -34,35 +34,6 @@ export const Interactions = ({
 
       highlight.current = feature && feature.get('na');
       setStateHighlight(highlight.current);
-
-      // const domEvt = evt.originalEvent;
-      // const pixel = map.getEventPixel(evt.originalEvent);
-      // const feature = map.forEachFeatureAtPixel(pixel, function (feature) {
-      //   return feature;
-      // });
-      // console.log('current feature', feature.get('na'));
-      // console.log('FEATURE:', feature?.get('na') || 'NA');
-      // console.log('HIGHLIGHT:', highlight?.get('na') || 'NA');
-      // if (feature && euCountryNames.includes(feature.get('na'))) {
-      //   console.log('FEATURE IS EUROPE COUNTRY');
-      // }
-      // if (feature !== highlight) {
-      //   if (highlight) {
-      //     try {
-      //       map.getTargetElement().style.cursor = '';
-      //       // overlaySource.removeFeature(highlight);
-      //     } catch {}
-      //   }
-      //   if (feature && euCountryNames.includes(feature.get('na'))) {
-      //     // overlaySource.addFeature(feature);
-      //     map.getTargetElement().style.cursor = 'pointer';
-      //     const node = tooltipRef.current;
-      //     setTooltipVisibility(node, feature.get('na'), domEvt, true);
-      //     highlight.current = feature.get('na');
-      //   }
-      // } else {
-      //   // setTooltipVisibility(tooltipRef.current, null, domEvt, false);
-      // }
     });
 
     map.on('click', function (evt) {

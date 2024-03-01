@@ -5,9 +5,10 @@ import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import {
-  euCountryNames,
+  euCountryNames as euCountryNamesRaw,
   tooltipStyle,
   getImageUrl,
+  adjustEuCountryNames,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
 
@@ -42,14 +43,7 @@ const View = (props) => {
   const countries_metadata = useCountriesMetadata(
     addAppURL(countries_metadata_url),
   );
-  for (let i = 0; i < euCountryNames.length; i++) {
-    if (euCountryNames[i] === 'Turkey') {
-      euCountryNames[i] = 'Türkiye';
-    }
-    if (euCountryNames[i] === 'United Kingdom') {
-      euCountryNames[i] = 'United Kingdom DEL';
-    }
-  }
+  const euCountryNames = adjustEuCountryNames(euCountryNamesRaw);
 
   const euCountryFeatures = React.useRef();
 
