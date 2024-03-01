@@ -24,7 +24,7 @@ const useStats = (path, id, data) => {
 
 export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
   return (
-    <div className="tab-icon" title={value}>
+    <div className="tab-icon" title={name}>
       <div className="tab-icon-wrapper">
         {!source && name}
         {!!source && <Icon title={name} name={source} size="50" />}
@@ -37,7 +37,7 @@ export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
 
 export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   return (
-    <div className="tab-icon semantic-icon" title={value}>
+    <div className="tab-icon semantic-icon" title={name}>
       <div className="tab-icon-wrapper">
         {!!source && <UiIcon title={name} name={source} />}
         <span className="count">{value}</span>
@@ -100,6 +100,7 @@ export default function CollectionStatsView(props) {
           .sort((a, b) => a.localeCompare(b))
           .map((k) => (
             <UniversalLink
+              className="tab-item-link"
               key={k}
               href={urlHandler({
                 base,

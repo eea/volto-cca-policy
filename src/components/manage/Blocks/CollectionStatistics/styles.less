@@ -8,7 +8,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin: 2em 0;
-  gap: 2.5em;
+  gap: 2em;
 
   .semantic-icon i.icon {
     font-size: 3em;
@@ -19,13 +19,26 @@
     display: inline-block;
   }
 
+  .tab-item-link:hover {
+    .count {
+      background-color: @ccaGreenColor;
+    }
+
+    .tab-icon,
+    .label {
+      color: @primaryColor;
+    }
+  }
+
   .tab-icon {
     color: @secondaryColor;
     text-align: center;
 
     .label {
       display: block;
-      max-width: 130px;
+      max-width: 110px;
+      color: @contentAreaColor;
+      font-size: 14px;
     }
 
     .count {
