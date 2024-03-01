@@ -485,6 +485,16 @@ const applyConfig = (config) => {
     },
   ];
 
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    {
+      match: {
+        path: /(.*)\/policy-context\/country-profiles\/(.*)/,
+      },
+      GET_CONTENT: ['siblings'],
+    },
+  ];
+
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
 
