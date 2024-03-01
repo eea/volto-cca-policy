@@ -7,7 +7,7 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider } from 'semantic-ui-react';
+import { Segment, Divider, Image } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 
@@ -109,6 +109,7 @@ function AdaptationOptionView(props) {
     websites,
     source,
     ipcc_category,
+    logo,
   } = content;
 
   const usedSections = dataDisplay.filter((data) =>
@@ -120,6 +121,13 @@ function AdaptationOptionView(props) {
       <BannerTitle content={content} type="Adaptation Option" />
 
       <div className="ui container">
+        {logo && (
+          <Image
+            src={logo?.scales?.mini?.download}
+            alt={content.title}
+            className="db-logo"
+          />
+        )}
         <HTMLField value={long_description} />
         <SectionsMenu sections={usedSections} />
         <Divider />
