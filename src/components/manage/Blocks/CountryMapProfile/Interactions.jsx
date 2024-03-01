@@ -22,37 +22,16 @@ export const Interactions = ({
   React.useEffect(() => {
     if (!map) return;
 
-    map.on('pointermove', function (evt) {
-      if (evt.dragging) {
-        return;
-      }
-
-      const feature = getClosestFeatureToCoordinate(
-        evt.coordinate,
-        euCountryFeatures.current,
-      );
-
-      highlight.current = feature && feature.get('na');
-      setStateHighlight(highlight.current);
-    });
-
     map.on('click', function (evt) {
       if (evt.dragging) {
         return;
       }
-      const domEvt = evt.originalEvent;
-      // const pixel = map.getEventPixel(evt.originalEvent);
 
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
       );
-
-      // map.forEachFeatureAtPixel(pixel, function (f) {
-      //   if (f && !feature) {
-      //     feature = f;
-      //   }
-      // });
+      const domEvt = evt.originalEvent;
 
       if (
         countries_metadata.length > 0 &&
@@ -127,6 +106,20 @@ export const Interactions = ({
       // if (feature) {
       //   onFeatureClick(feature);
       // }
+    });
+
+    map.on('pointermove', function (evt) {
+      if (evt.dragging) {
+        return;
+      }
+
+      const feature = getClosestFeatureToCoordinate(
+        evt.coordinate,
+        euCountryFeatures.current,
+      );
+
+      highlight.current = feature && feature.get('na');
+      setStateHighlight(highlight.current);
     });
   });
   // }, [map, tooltipRef, onFeatureClick]);
