@@ -38,7 +38,7 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
     };
 
     const encodedQuery = encodeURIComponent(JSON.stringify(query));
-    return `/en/observatory/catalogue/?source=${encodedQuery}`;
+    return `/en/observatory/advanced-search/?source=${encodedQuery}`;
   };
 
   return (
