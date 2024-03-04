@@ -42,6 +42,7 @@
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",
     "query-string": "7.1.0",
+    "d3-array": "^2.12.1",
     "react-visibility-sensor": "5.1.1"
   },
   "devDependencies": {
