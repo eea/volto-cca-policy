@@ -81,7 +81,7 @@ function OrganisationView(props) {
                   {organisationDocuments.map((item, index) => (
                     <>
                       <a key={index} href={item['@id']}>
-                        <i class="ri-file-line" />
+                        <i className="ri-file-line" />
                         {item.title}
                       </a>
                       <br />
