@@ -153,18 +153,18 @@ const PhotoGallery = (props) => {
   const { cca_gallery } = content;
 
   return (
-    <div className="casetstudy-gallery">
+    <>
       {cca_gallery && cca_gallery.length > 0 && (
-        <>
+        <div className="casetstudy-gallery">
           <div className="gallery-title">
             <span>Case Study illustrations</span>
             <span> ({cca_gallery.length}) </span>
             <Icon name="ri-image-fill" />
           </div>
           <ImageGallery items={cca_gallery} />
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
@@ -175,7 +175,7 @@ const SectionsMenu = (props) => {
     <>
       {sections.length > 0 && (
         <div>
-          <h3>{title}</h3>
+          <h4>{title}</h4>
           <ul>
             {sections.map((data, index) => (
               <li key={index}>
@@ -236,9 +236,8 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
-  const { cca_files, long_description, cca_gallery } = content;
+  const { cca_files, long_description } = content;
   const hasFiles = cca_files && cca_files.length > 0;
-  const hasGallery = cca_gallery && cca_gallery.length > 0;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -261,78 +260,100 @@ function CaseStudyView(props) {
 
   return (
     <div className="db-item-view case-study-view">
-      <BannerTitle content={content} type="Case Studies" />
+      <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
 
       <div className="ui container">
         <Grid columns="12">
           <div className="row">
-            <Grid.Column mobile={12} tablet={12} computer={hasGallery ? 9 : 12}>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={8}
+              className="col-left"
+            >
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
-            </Grid.Column>
 
-            <Grid.Column mobile={12} tablet={12} computer={3}>
+              <Divider />
+              <div className="adaptation-details">
+                <Grid columns="12">
+                  <Grid.Column mobile={12} tablet={12} computer={4}>
+                    <SectionsMenu
+                      sections={usedSections(1)}
+                      title={groups['1']}
+                    />
+                  </Grid.Column>
+                  <Grid.Column mobile={12} tablet={12} computer={4}>
+                    <SectionsMenu
+                      sections={usedSections(2)}
+                      title={groups['2']}
+                    />
+                  </Grid.Column>
+                  <Grid.Column mobile={12} tablet={12} computer={4}>
+                    <SectionsMenu
+                      sections={usedSections(3)}
+                      title={groups['3']}
+                    />
+                  </Grid.Column>
+                </Grid>
+              </div>
+
+              <Divider />
+
+              {[1, 2, 3].map(
+                (groupID, index) =>
+                  usedSections(groupID).length > 0 && (
+                    <Fragment key={index}>
+                      <h2>{groups[groupID]}</h2>
+                      {usedSections(groupID).map((data, index) => (
+                        <SectionContent
+                          sectionData={data}
+                          content={content}
+                          key={index}
+                        />
+                      ))}
+                      {groupID !== 3 ? <Divider /> : null}
+                    </Fragment>
+                  ),
+              )}
+
+              <PublishedModifiedInfo {...props} />
+              <Divider />
+
+              <p>
+                Please contact us for any other enquiry on this Case Study or to
+                share a new Case Study (email{' '}
+                <span className="link-mailto">
+                  <a
+                    href="mailto: climate.adapt@eea.europa.eu"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    climate.adapt@eea.europa.eu
+                  </a>
+                </span>
+                )
+              </p>
+              <ShareInfo {...props} />
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={4}
+              className="col-right"
+            >
               <PhotoGallery {...props} />
+              <Segment>
+                <ContentMetadata {...props} />
+              </Segment>
+              {hasFiles && (
+                <Segment>
+                  <DocumentsList {...props} />
+                </Segment>
+              )}
             </Grid.Column>
           </div>
         </Grid>
-
-        <div className="adaptation-details">
-          <SectionsMenu sections={usedSections(1)} title={groups['1']} />
-          <SectionsMenu sections={usedSections(2)} title={groups['2']} />
-          <SectionsMenu sections={usedSections(3)} title={groups['3']} />
-        </div>
-
-        <Divider />
-
-        {[1, 2, 3].map(
-          (groupID, index) =>
-            usedSections(groupID).length > 0 && (
-              <Fragment key={index}>
-                <h2>{groups[groupID]}</h2>
-                {usedSections(groupID).map((data, index) => (
-                  <SectionContent
-                    sectionData={data}
-                    content={content}
-                    key={index}
-                  />
-                ))}
-                {groupID !== 3 ? <Divider /> : null}
-              </Fragment>
-            ),
-        )}
-
-        <PublishedModifiedInfo {...props} />
-        <Divider />
-
-        <p>
-          Please contact us for any other enquiry on this Case Study or to share
-          a new Case Study (email{' '}
-          <span className="link-mailto">
-            <a
-              href="mailto: climate.adapt@eea.europa.eu"
-              target="_blank"
-              rel="noreferrer"
-            >
-              climate.adapt@eea.europa.eu
-            </a>
-          </span>
-          )
-        </p>
-        <ShareInfo {...props} />
-
-        <div className="content-box">
-          <div className="content-box-inner">
-            <Segment>
-              <ContentMetadata {...props} />
-            </Segment>
-            {hasFiles && (
-              <Segment>
-                <DocumentsList {...props} />
-              </Segment>
-            )}
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -10,104 +10,112 @@ exports[`ProjectView should render the component 1`] = `
   <div
     className="ui container"
   >
-    <h2>
-      Description
-    </h2>
     <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": undefined,
-        }
-      }
-    />
-    <div
-      className="ui divider"
-    />
-    <h2>
-      Project information
-    </h2>
-    <h5>
-      Lead
-    </h5>
-    <p />
-    <h5>
-      Partners
-    </h5>
-    <div
-      className="partners"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": undefined,
-        }
-      }
-    />
-    <div
-      className="ui divider"
-    />
-    <h2>
-      Reference information
-    </h2>
-    <div
-      className="published-modified-info"
-    >
-      <p>
-        <span>
-          <strong>
-            Published in Climate-ADAPT
-          </strong>
-           
-          Invalid Date
-        </span>
-        <span>
-             -   
-        </span>
-        <span>
-          <strong>
-            Last Modified in Climate-ADAPT
-          </strong>
-           
-          Invalid Date
-        </span>
-      </p>
-    </div>
-    <div
-      className="share-info"
-    >
-      <a
-        href="/help/share-your-info"
-      >
-        <button
-          className="ui button primary icon labeled"
-        >
-          Share your information
-          <i
-            aria-hidden="true"
-            className="arrow right icon"
-          />
-        </button>
-      </a>
-    </div>
-    <div
-      className="content-box"
+      className="ui twelve column grid"
     >
       <div
-        className="content-box-inner"
+        className="row"
       >
         <div
-          className="ui segment"
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <h2>
+            Description
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <div
+            className="ui divider"
+          />
+          <h2>
+            Project information
+          </h2>
+          <h5>
+            Lead
+          </h5>
+          <p />
+          <h5>
+            Partners
+          </h5>
+          <div
+            className="partners"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <div
+            className="ui divider"
+          />
+          <h2>
+            Reference information
+          </h2>
+          <div
+            className="published-modified-info"
+          >
+            <p>
+              <span>
+                <strong>
+                  Published in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+              <span>
+                   -   
+              </span>
+              <span>
+                <strong>
+                  Last Modified in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+            </p>
+          </div>
+          <div
+            className="share-info"
+          >
+            <a
+              href="/help/share-your-info"
+            >
+              <button
+                className="ui button primary icon labeled"
+              >
+                Share your information
+                <i
+                  aria-hidden="true"
+                  className="arrow right icon"
+                />
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            className="content-metadata"
+            className="ui segment"
           >
-            <h5>
-              Geographic characterisation:
-            </h5>
             <div
-              className="geochar"
+              className="content-metadata"
             >
-              <p>
-                Global
-              </p>
+              <h5>
+                Geographic characterisation:
+              </h5>
+              <div
+                className="geochar"
+              >
+                <p>
+                  Global
+                </p>
+              </div>
             </div>
           </div>
         </div>
