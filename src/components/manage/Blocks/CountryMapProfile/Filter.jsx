@@ -12,7 +12,7 @@ export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
-      <p class="title">Choose thematic map:</p>
+      <p className="title">Choose thematic map:</p>
       <div id="sections-selector">
         <Radio
           label="National adaption policy"

@@ -68,8 +68,8 @@ function IndicatorView(props) {
                   width="100%"
                   src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
                   title="Interactive or visual content"
-                  class="flourish-embed-iframe"
-                  frameborder="0"
+                  className="flourish-embed-iframe"
+                  frameBorder="0"
                   scrolling="no"
                   // style="width:100%;height:600px;"
                   sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
