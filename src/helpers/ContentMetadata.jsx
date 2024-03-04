@@ -10,35 +10,6 @@ function renderElement(value) {
   return [BIOREGIONS[value]];
 }
 
-function renderMacrotrans(value) {
-  if (value === null) {
-    return null;
-  }
-  let out = [];
-  let temp = null;
-  if (Array.isArray(value)) {
-    if (value.length === 0) {
-      return null;
-    }
-  } else {
-    temp = BIOREGIONS[value];
-    if (temp !== undefined) {
-      return [temp];
-    } else {
-      return [value];
-    }
-  }
-  for (let region of value) {
-    temp = BIOREGIONS[region];
-    if (temp !== undefined) {
-      out.push(temp);
-    } else {
-      out.push(region);
-    }
-  }
-  return out;
-}
-
 function renderBiotrans(value) {
   if (value === null) {
     return null;
@@ -143,7 +114,7 @@ function renderSection(value, valueType) {
   }
 
   if (valueType === 'macrotrans') {
-    return renderMacrotrans(value);
+    return renderBiotrans(value);
   }
 
   if (valueType === 'biotrans') {
