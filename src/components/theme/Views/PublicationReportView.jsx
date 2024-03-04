@@ -15,7 +15,10 @@ function PublicationReportView(props) {
 
   return (
     <div className="db-item-view publication-report-view">
-      <BannerTitle content={content} type="Publications and Report" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        type="Publications and Report"
+      />
 
       <div className="ui container">
         {logo && (

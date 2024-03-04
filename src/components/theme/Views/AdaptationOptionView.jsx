@@ -118,7 +118,10 @@ function AdaptationOptionView(props) {
 
   return (
     <div className="db-item-view adaptation-option-view">
-      <BannerTitle content={content} type="Adaptation Option" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        type="Adaptation Option"
+      />
 
       <div className="ui container">
         {logo && (

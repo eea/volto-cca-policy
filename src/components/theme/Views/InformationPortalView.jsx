@@ -15,7 +15,10 @@ function InformationPortalView(props) {
 
   return (
     <div className="db-item-view information-portal-view">
-      <BannerTitle content={content} type="Information Portal" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        type="Information Portal"
+      />
 
       <div className="ui container">
         {logo && (

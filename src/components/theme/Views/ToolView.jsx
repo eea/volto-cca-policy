@@ -12,7 +12,7 @@ function ToolView(props) {
 
   return (
     <div className="db-item-view tool-view">
-      <BannerTitle content={content} type="Tools" />
+      <BannerTitle content={{ ...content, image: '' }} type="Tools" />
 
       <div className="ui container">
         {logo && (

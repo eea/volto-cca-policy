@@ -37,7 +37,7 @@ function VideoView(props) {
 
   return (
     <div className="db-item-view video-view">
-      <BannerTitle content={content} type="Video" />
+      <BannerTitle content={{ ...content, image: '' }} type="Video" />
 
       <div className="ui container">
         {logo && (

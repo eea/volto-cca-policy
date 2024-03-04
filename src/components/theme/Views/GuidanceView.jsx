@@ -36,7 +36,10 @@ function GuidanceView(props) {
 
   return (
     <div className="db-item-view guidance-view">
-      <BannerTitle content={content} type="Guidance Document" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        type="Guidance Document"
+      />
       <div className="ui container">
         {logo && (
           <Image

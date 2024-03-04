@@ -28,7 +28,7 @@ function OrganisationView(props) {
 
   return (
     <div className="db-item-view organisation-view">
-      <BannerTitle content={content} type="Organisation" />
+      <BannerTitle content={{ ...content, image: '' }} type="Organisation" />
 
       <div className="ui container">
         <div>

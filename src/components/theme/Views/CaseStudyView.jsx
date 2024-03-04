@@ -261,7 +261,7 @@ function CaseStudyView(props) {
 
   return (
     <div className="db-item-view case-study-view">
-      <BannerTitle content={content} type="Case Studies" />
+      <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
 
       <div className="ui container">
         <Grid columns="12">
