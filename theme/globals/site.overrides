@@ -24,18 +24,9 @@ ol.ui.list ol {
   padding-left: 1.25rem;
 }
 
-body.subsite-root .content-area {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
 p.has--clear--both:empty {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.ui.basic.segment.content-area {
-  padding: 0;
 }
 
 // Add icon for external links
