@@ -50,17 +50,19 @@ function IndicatorView(props) {
         <h2>Description</h2>
         <HTMLField value={long_description} />
 
-        <iframe
-          height="980"
-          width="100%"
-          src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
-          title="Interactive or visual content"
-          class="flourish-embed-iframe"
-          frameborder="0"
-          scrolling="no"
-          // style="width:100%;height:600px;"
-          sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
-        ></iframe>
+        {!!data_src(map_graphs) && (
+          <iframe
+            height="980"
+            width="100%"
+            src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
+            title="Interactive or visual content"
+            class="flourish-embed-iframe"
+            frameborder="0"
+            scrolling="no"
+            // style="width:100%;height:600px;"
+            sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+          ></iframe>
+        )}
 
         <Divider />
         <h2>Reference information</h2>
