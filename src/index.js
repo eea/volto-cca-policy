@@ -211,6 +211,27 @@ const applyConfig = (config) => {
     };
   }
 
+  const { facetWidgets } = config.blocks.blocksConfig.search.extensions;
+  const { rewriteOptions } = facetWidgets;
+  const origin_website_blacklist = ['AdapteCCA', 'DRMKC'];
+  facetWidgets.rewriteOptions = (name, choices) => {
+    let base = rewriteOptions(name, choices);
+    if (name === 'origin_website') {
+      base.forEach((pair) => {
+        if (pair.value === 'Lancet Countdown') {
+          pair.label = 'Lancet Countdown in Europe';
+        }
+        if (pair.value === 'C3S') {
+          pair.label = 'Copernicus (C3S)';
+        }
+      });
+      base = base.filter(
+        (f) => origin_website_blacklist.indexOf(f.value) === -1,
+      );
+    }
+    return base;
+  };
+
   // Move blocks to Site group
   const move_to_site = [
     'countryFlag',
