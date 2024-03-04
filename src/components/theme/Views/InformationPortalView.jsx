@@ -6,12 +6,13 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Image } from 'semantic-ui-react';
+import { Segment, Image, Grid, Divider } from 'semantic-ui-react';
 
 function InformationPortalView(props) {
   const { content } = props;
-  const { long_description, websites, source, logo } = content;
+  const { long_description, websites, source, logo, title } = content;
 
   return (
     <div className="db-item-view information-portal-view">
@@ -21,36 +22,54 @@ function InformationPortalView(props) {
       />
 
       <div className="ui container">
-        {logo && (
-          <Image
-            src={logo?.scales?.mini?.download}
-            alt={content.title}
-            className="db-logo"
-          />
-        )}
-        <h2>Description</h2>
-        <HTMLField value={long_description} />
+        <Grid columns="12">
+          <div className="row">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={8}
+              className="col-left"
+            >
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={long_description} />
 
-        <h2>Reference information</h2>
-        {websites && websites?.length > 0 && (
-          <LinksList title="Websites:" value={websites} />
-        )}
-        {source && (
-          <>
-            <h5>Source:</h5>
-            <HTMLField value={source} />
-          </>
-        )}
-        <PublishedModifiedInfo {...props} />
-        <ShareInfo {...props} />
+              <Divider />
 
-        <div className="content-box">
-          <div className="content-box-inner">
-            <Segment>
-              <ContentMetadata {...props} />
-            </Segment>
+              <h2>Reference information</h2>
+              {websites && websites?.length > 0 && (
+                <LinksList title="Websites:" value={websites} />
+              )}
+              {source && (
+                <>
+                  <h5>Source:</h5>
+                  <HTMLField value={source} />
+                </>
+              )}
+              <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
+            </Grid.Column>
+
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={4}
+              className="col-right"
+            >
+              <Segment>
+                <ContentMetadata {...props} />
+              </Segment>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

@@ -5,8 +5,9 @@ import {
   LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Image } from 'semantic-ui-react';
+import { Divider, Segment, Image, Grid } from 'semantic-ui-react';
 
 import config from '@plone/volto/registry';
 
@@ -50,48 +51,62 @@ function ProjectView(props) {
       />
 
       <div className="ui container">
-        {logo && (
-          <Image
-            src={logo?.scales?.mini?.download}
-            alt={content.title}
-            className="db-logo"
-          />
-        )}
-        <h2>Description</h2>
-        <HTMLField value={long_description} />
+        <Grid columns="12">
+          <div className="row">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={8}
+              className="col-left"
+            >
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={long_description} />
 
-        <Divider />
+              <Divider />
 
-        <h2>Project information</h2>
-        <h5>Lead</h5>
-        <p>{lead}</p>
+              <h2>Project information</h2>
+              <h5>Lead</h5>
+              <p>{lead}</p>
+              <h5>Partners</h5>
+              <HTMLField value={partners} className="partners" />
+              {funding && (
+                <>
+                  <h5>Source of funding</h5>
+                  <p>{funding}</p>
+                </>
+              )}
 
-        <h5>Partners</h5>
-        <HTMLField value={partners} className="partners" />
-        {funding && (
-          <>
-            <h5>Source of funding</h5>
-            <p>{funding}</p>
-          </>
-        )}
+              <Divider />
+              <h2>Reference information</h2>
 
-        <Divider />
-        <h2>Reference information</h2>
+              {websites && websites?.length > 0 && (
+                <LinksList title="Websites:" value={websites} />
+              )}
 
-        {websites && websites?.length > 0 && (
-          <LinksList title="Websites:" value={websites} />
-        )}
-
-        <PublishedModifiedInfo {...props} />
-        <ShareInfo {...props} />
-
-        <div className="content-box">
-          <div className="content-box-inner">
-            <Segment>
-              <ContentMetadata {...props} />
-            </Segment>
+              <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
+            </Grid.Column>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={4}
+              className="col-right"
+            >
+              <Segment>
+                <ContentMetadata {...props} />
+              </Segment>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

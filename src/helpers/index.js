@@ -11,6 +11,7 @@ export {
   DocumentsList,
   ReferenceInfo,
   BannerTitle,
+  LogoWrapper,
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
 export ShareInfo from './ShareInfo';

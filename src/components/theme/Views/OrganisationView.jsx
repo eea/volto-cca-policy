@@ -7,12 +7,13 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Image } from 'semantic-ui-react';
+import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 
 function OrganisationView(props) {
   const { content } = props;
-  const { long_description, websites, relatedItems, logo } = content;
+  const { long_description, websites, relatedItems, logo, title } = content;
 
   let organisationDocuments = [];
   let contentRelatedItems = [];
@@ -31,64 +32,78 @@ function OrganisationView(props) {
       <BannerTitle content={{ ...content, image: '' }} type="Organisation" />
 
       <div className="ui container">
-        <div>
-          {logo && (
-            <Image
-              src={logo?.scales?.mini?.download}
-              alt={content.title}
-              className="db-logo"
-            />
-          )}
-          <h2>Description</h2>
+        <Grid columns="12">
+          <div className="row">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={8}
+              className="col-left"
+            >
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={long_description} />
 
-          <HTMLField value={long_description} />
-          <Divider />
-          <h2>Reference information</h2>
-        </div>
+              <Divider />
 
-        {websites && websites?.length > 0 && (
-          <LinksList title="Websites:" value={websites} />
-        )}
+              <h2>Reference information</h2>
+              {websites && websites?.length > 0 && (
+                <LinksList title="Websites:" value={websites} />
+              )}
+              {contentRelatedItems.length > 0 && (
+                <>
+                  <h5>Related content:</h5>
 
-        {contentRelatedItems.length > 0 && (
-          <>
-            <h5>Related content:</h5>
+                  {contentRelatedItems.map((item, index) => (
+                    <Fragment key={index}>
+                      <UniversalLink item={item}>{item.title}</UniversalLink>
+                      <br />
+                    </Fragment>
+                  ))}
+                </>
+              )}
+              <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
+              {organisationDocuments.length > 0 && (
+                <>
+                  <h5>
+                    Organisation Documents ({organisationDocuments.length})
+                  </h5>
 
-            {contentRelatedItems.map((item, index) => (
-              <Fragment key={index}>
-                <UniversalLink item={item}>{item.title}</UniversalLink>
-                <br />
-              </Fragment>
-            ))}
-          </>
-        )}
+                  {organisationDocuments.map((item, index) => (
+                    <>
+                      <a key={index} href={item['@id']}>
+                        <i class="ri-file-line" />
+                        {item.title}
+                      </a>
+                      <br />
+                    </>
+                  ))}
+                  <br />
+                </>
+              )}
+            </Grid.Column>
 
-        <PublishedModifiedInfo {...props} />
-        <ShareInfo {...props} />
-
-        {organisationDocuments.length > 0 && (
-          <>
-            <h5>Organisation Documents ({organisationDocuments.length})</h5>
-
-            {organisationDocuments.map((item, index) => (
-              <>
-                <a key={index} href={item['@id']}>
-                  <i class="ri-file-line" />
-                  {item.title}
-                </a>
-                <br />
-              </>
-            ))}
-            <br />
-          </>
-        )}
-        <div className="content-box">
-          <div className="content-box-inner">
-            <Segment>
-              <ContentMetadata {...props} />
-            </Segment>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={4}
+              className="col-right"
+            >
+              <Segment>
+                <ContentMetadata {...props} />
+              </Segment>
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );

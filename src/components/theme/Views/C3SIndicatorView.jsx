@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
-import { HTMLField, BannerTitle } from '@eeacms/volto-cca-policy/helpers';
-import { Accordion, Icon, Segment } from 'semantic-ui-react';
+import {
+  HTMLField,
+  BannerTitle,
+  LogoWrapper,
+} from '@eeacms/volto-cca-policy/helpers';
+import { Accordion, Icon, Segment, Image } from 'semantic-ui-react';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -47,7 +51,7 @@ const createIframe = (div_id, details_url, details_params, spinner_url) => {
 
 const Details = (props) => {
   const { content } = props;
-  const { details_app_toolbox_url, details_app_parameters } = content;
+  const { details_app_toolbox_url, details_app_parameters, logo } = content;
 
   const c3s_details_url = details_app_toolbox_url;
   const c3s_details_params = JSON.stringify(details_app_parameters).replace(
@@ -106,7 +110,13 @@ const Overview = (props) => {
 
 function C3SIndicatorView(props) {
   const { content } = props;
-  const { definition_app, long_description, indicator_title } = content;
+  const {
+    definition_app,
+    long_description,
+    indicator_title,
+    title,
+    logo,
+  } = content;
   const [showDetails, setShowDetails] = useState(false);
   const hasIndicatorTitle =
     indicator_title && indicator_title !== '_' && indicator_title !== '-';
@@ -140,10 +150,20 @@ function C3SIndicatorView(props) {
 
   return (
     <div className="db-item-view c3sindicator-view">
-      <BannerTitle content={content} />
+      <BannerTitle content={{ ...content, image: '' }} />
 
       <div className="ui container">
-        <h2>Background information</h2>
+        <LogoWrapper logo={logo}>
+          <h2>Background information</h2>
+          {logo && (
+            <Image
+              src={logo?.scales?.mini?.download}
+              alt={title}
+              className="db-logo"
+            />
+          )}
+        </LogoWrapper>
+
         <HTMLField value={long_description} />
 
         <div className="c3s-buttons">
@@ -188,25 +208,21 @@ function C3SIndicatorView(props) {
           {!__SERVER__ && showDetails && <Details {...props} />}
         </div>
 
-        <div className="content-box">
-          <div className="content-box-inner">
-            <Segment>
-              <p>
-                Content in the European Climate Data Explorer pages is delivered
-                by the{' '}
-                <a href="https://climate.copernicus.eu/">
-                  Copernicus Climate Change Service (C3S)
-                </a>{' '}
-                implemented by ECMWF.
-              </p>
-              <p>
-                <a href="/knowledge/european-climate-data-explorer/disclaimer">
-                  Disclaimer
-                </a>
-              </p>
-            </Segment>
-          </div>
-        </div>
+        <Segment>
+          <p>
+            Content in the European Climate Data Explorer pages is delivered by
+            the{' '}
+            <a href="https://climate.copernicus.eu/">
+              Copernicus Climate Change Service (C3S)
+            </a>{' '}
+            implemented by ECMWF.
+          </p>
+          <p>
+            <a href="/knowledge/european-climate-data-explorer/disclaimer">
+              Disclaimer
+            </a>
+          </p>
+        </Segment>
       </div>
     </div>
   );

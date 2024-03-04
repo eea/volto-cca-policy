@@ -6,10 +6,10 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Image } from 'semantic-ui-react';
+import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
-import cx from 'classnames';
 
 function createDataField(type, field, section, title) {
   return {
@@ -110,6 +110,7 @@ function AdaptationOptionView(props) {
     source,
     ipcc_category,
     logo,
+    title,
   } = content;
 
   const usedSections = dataDisplay.filter((data) =>
@@ -124,75 +125,89 @@ function AdaptationOptionView(props) {
       />
 
       <div className="ui container">
-        {logo && (
-          <Image
-            src={logo?.scales?.mini?.download}
-            alt={content.title}
-            className="db-logo"
-          />
-        )}
-        <HTMLField value={long_description} />
-        <SectionsMenu sections={usedSections} />
-        <Divider />
+        <Grid columns="12">
+          <div className="row">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={8}
+              className="col-left"
+            >
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={long_description} />
+              <SectionsMenu sections={usedSections} />
 
-        {content?.ipcc_category?.length > 0 && (
-          <Fragment>
-            <h2>Adaptation Details</h2>
-            <div id={sectionID('IPCC categories')} className="section">
-              <h5 className="section-title">IPCC categories</h5>
-              {ipcc_category
-                .map((item) => item.title)
-                .sort()
-                .join(', ')}
+              <Divider />
 
-              {usedSections.length > 0 && (
-                <>
-                  {usedSections
-                    .filter((data) => data.field !== 'ipcc_category')
-                    .map((data, index) => (
-                      <Fragment key={index}>
-                        <div id={sectionID(data.title)} className="section">
-                          <h5 className="section-title">{data.title}</h5>
-                          <HTMLField value={content[data.field]} />
-                        </div>
-                      </Fragment>
-                    ))}
-                </>
+              {content?.ipcc_category?.length > 0 && (
+                <Fragment>
+                  <h2>Adaptation Details</h2>
+                  <div id={sectionID('IPCC categories')} className="section">
+                    <h5 className="section-title">IPCC categories</h5>
+                    {ipcc_category
+                      .map((item) => item.title)
+                      .sort()
+                      .join(', ')}
+
+                    {usedSections.length > 0 && (
+                      <>
+                        {usedSections
+                          .filter((data) => data.field !== 'ipcc_category')
+                          .map((data, index) => (
+                            <Fragment key={index}>
+                              <div
+                                id={sectionID(data.title)}
+                                className="section"
+                              >
+                                <h5 className="section-title">{data.title}</h5>
+                                <HTMLField value={content[data.field]} />
+                              </div>
+                            </Fragment>
+                          ))}
+                      </>
+                    )}
+                  </div>
+                  <Divider />
+                </Fragment>
               )}
-            </div>
-            <Divider />
-          </Fragment>
-        )}
 
-        <h2>Reference information</h2>
+              <h2>Reference information</h2>
 
-        {websites && websites?.length > 0 && (
-          <LinksList title="Websites:" value={websites} />
-        )}
+              {websites && websites?.length > 0 && (
+                <LinksList title="Websites:" value={websites} />
+              )}
 
-        <div id="source" className="section">
-          <h5 id="source">References:</h5>
-          <HTMLField value={source} />
-        </div>
+              <div id="source" className="section">
+                <h5 id="source">References:</h5>
+                <HTMLField value={source} />
+              </div>
 
-        <PublishedModifiedInfo {...props} />
-        <ShareInfo {...props} />
+              <PublishedModifiedInfo {...props} />
+              <ShareInfo {...props} />
+            </Grid.Column>
 
-        <div className="content-box">
-          <div className="content-box-inner">
-            <Segment>
-              <ContentMetadata {...props} />
-            </Segment>
-
-            {related_case_studies?.length > 0 && (
-              <div className="content-metadata">
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={4}
+              className="col-right"
+            >
+              <Segment>
+                <ContentMetadata {...props} />
+              </Segment>
+              {related_case_studies?.length > 0 && (
                 <Segment>
-                  <h5>Case studies related to this option</h5>
-                  <ul
-                    className={cx('related-case-studies', {
-                      columned: related_case_studies?.length > 5,
-                    })}
-                  >
+                  <h5>Case studies related to this option:</h5>
+                  <ul className="related-case-studies">
                     {related_case_studies.map((item, index) => (
                       <li key={index}>
                         <UniversalLink key={index} href={item.url}>
@@ -202,10 +217,10 @@ function AdaptationOptionView(props) {
                     ))}
                   </ul>
                 </Segment>
-              </div>
-            )}
+              )}
+            </Grid.Column>
           </div>
-        </div>
+        </Grid>
       </div>
     </div>
   );
