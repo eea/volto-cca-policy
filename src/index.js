@@ -1,5 +1,4 @@
 import { compose } from 'redux';
-import loadable from '@loadable/component';
 
 import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
