@@ -53,7 +53,7 @@ export const getFocusCountriesFeature = (world) => {
     type: 'FeatureCollection',
     features: [],
   };
-  world.features.forEach(function(c) {
+  world.features.forEach(function (c) {
     if (focusCountryNames.indexOf(c.properties.SHRT_ENGL) === -1) {
       return;
     }
