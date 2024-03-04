@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import flags from './flags.js';
+// import React, { useEffect } from 'react';
+// import flags from './flags.js';
 
 export const euCountryNames = [
   'Albania',
@@ -53,7 +53,7 @@ export const getFocusCountriesFeature = (world) => {
     type: 'FeatureCollection',
     features: [],
   };
-  world.features.forEach(function (c) {
+  world.features.forEach(function(c) {
     if (focusCountryNames.indexOf(c.properties.SHRT_ENGL) === -1) {
       return;
     }
@@ -69,42 +69,42 @@ export function removeTooltip() {
   }
 }
 
-export const withCountriesData = (WrappedComponent) => {
-  function WithCountriesDataWrapped(props) {
-    let [cpath, setCpath] = React.useState();
-
-    useEffect(() => {
-      if (!cpath) {
-        import('./euro-countries-simplified.js').then((mod) => {
-          const _cpath = mod.default;
-          _cpath.features = _cpath.features.map(function (c) {
-            //console.log(c);
-            var name = c.properties.SHRT_ENGL;
-            if (!name) {
-              // console.log('No flag for', c.properties);
-              return c;
-            } else if (name === 'Czechia') {
-              name = 'Czech Republic';
-            }
-            var cname = name.replace(' ', '_');
-            flags.forEach(function (f) {
-              if (f.indexOf(cname) > -1) {
-                c.url = f;
-                //console.log(c.url);
-              }
-            });
-            return c;
-          });
-
-          setCpath(_cpath);
-        });
-      }
-    }, [cpath]);
-
-    return cpath ? <WrappedComponent {...props} cpath={cpath} /> : null;
-  }
-  return WithCountriesDataWrapped;
-};
+// export const withCountriesData = (WrappedComponent) => {
+//   function WithCountriesDataWrapped(props) {
+//     let [cpath, setCpath] = React.useState();
+//
+//     useEffect(() => {
+//       if (!cpath) {
+//         import('./euro-countries-simplified.js').then((mod) => {
+//           const _cpath = mod.default;
+//           _cpath.features = _cpath.features.map(function (c) {
+//             //console.log(c);
+//             var name = c.properties.SHRT_ENGL;
+//             if (!name) {
+//               // console.log('No flag for', c.properties);
+//               return c;
+//             } else if (name === 'Czechia') {
+//               name = 'Czech Republic';
+//             }
+//             var cname = name.replace(' ', '_');
+//             flags.forEach(function (f) {
+//               if (f.indexOf(cname) > -1) {
+//                 c.url = f;
+//                 //console.log(c.url);
+//               }
+//             });
+//             return c;
+//           });
+//
+//           setCpath(_cpath);
+//         });
+//       }
+//     }, [cpath]);
+//
+//     return cpath ? <WrappedComponent {...props} cpath={cpath} /> : null;
+//   }
+//   return WithCountriesDataWrapped;
+// };
 
 export function setTooltipVisibility(node, label, event, visible) {
   if (!node) return;
