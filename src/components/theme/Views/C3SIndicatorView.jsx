@@ -51,7 +51,7 @@ const createIframe = (div_id, details_url, details_params, spinner_url) => {
 
 const Details = (props) => {
   const { content } = props;
-  const { details_app_toolbox_url, details_app_parameters, logo } = content;
+  const { details_app_toolbox_url, details_app_parameters } = content;
 
   const c3s_details_url = details_app_toolbox_url;
   const c3s_details_params = JSON.stringify(details_app_parameters).replace(
