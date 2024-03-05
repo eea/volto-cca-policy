@@ -82,7 +82,7 @@ describe('UniversalLink', () => {
     );
 
     expect(getByTitle('Volto GitHub repository').getAttribute('rel')).toBe(
-      'noopener noreferrer',
+      'noopener',
     );
   });
 
@@ -121,7 +121,7 @@ describe('UniversalLink', () => {
     );
 
     expect(getByTitle('Volto GitHub repository').getAttribute('target')).toBe(
-      null,
+      '_blank',
     );
   });
 
@@ -189,7 +189,7 @@ describe('UniversalLink', () => {
       '_blank',
     );
     expect(getByTitle('External blacklisted app').getAttribute('rel')).toBe(
-      'noopener noreferrer',
+      'noopener',
     );
   });
 
