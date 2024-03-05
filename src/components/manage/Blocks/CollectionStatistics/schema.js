@@ -51,7 +51,7 @@ const Schema = () => {
           ['SearchBlock', 'Volto Search block'],
           ['EEASemanticSearch', 'EEA Semantic Search'],
         ],
-        default: 'ListingBlock',
+        default: 'SearchBlock',
       },
       showLabel: {
         type: 'boolean',
