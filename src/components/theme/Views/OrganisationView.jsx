@@ -13,7 +13,16 @@ import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 
 function OrganisationView(props) {
   const { content } = props;
-  const { long_description, websites, relatedItems, logo, title } = content;
+  const {
+    long_description,
+    websites,
+    relatedItems,
+    logo,
+    title,
+    organisational_key_activities,
+    organisational_websites,
+    organisational_contact_information,
+  } = content;
 
   let organisationDocuments = [];
   let contentRelatedItems = [];
@@ -52,12 +61,34 @@ function OrganisationView(props) {
               </LogoWrapper>
               <HTMLField value={long_description} />
 
+              {organisational_key_activities && (
+                <>
+                  <h3>Key activities within climate change and health</h3>
+                  <HTMLField value={organisational_key_activities} />
+                </>
+              )}
+
               <Divider />
 
               <h2>Reference information</h2>
               {websites && websites?.length > 0 && (
                 <LinksList title="Websites:" value={websites} />
               )}
+
+              {organisational_websites && (
+                <>
+                  <h5>Links to further information</h5>
+                  <HTMLField value={organisational_websites} />
+                </>
+              )}
+
+              {organisational_contact_information && (
+                <>
+                  <h5>Contact information for the Observatory</h5>
+                  <HTMLField value={organisational_contact_information} />
+                </>
+              )}
+
               {contentRelatedItems.length > 0 && (
                 <>
                   <h5>Related content:</h5>
