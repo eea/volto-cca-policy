@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   HTMLField,
+  ReferenceInfo,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
@@ -12,7 +12,7 @@ import { Segment, Image, Grid, Divider } from 'semantic-ui-react';
 
 function InformationPortalView(props) {
   const { content } = props;
-  const { long_description, websites, source, logo, title } = content;
+  const { long_description, logo, title } = content;
 
   return (
     <div className="db-item-view information-portal-view">
@@ -43,17 +43,7 @@ function InformationPortalView(props) {
               <HTMLField value={long_description} />
 
               <Divider />
-
-              <h2>Reference information</h2>
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-              {source && (
-                <>
-                  <h5>Source:</h5>
-                  <HTMLField value={source} />
-                </>
-              )}
+              <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>

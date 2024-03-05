@@ -2,9 +2,9 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  ReferenceInfo,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Segment, Image, Grid } from 'semantic-ui-react';
@@ -20,7 +20,6 @@ function ProjectView(props) {
     partners,
     acronym,
     title,
-    websites,
     logo,
   } = content;
 
@@ -86,12 +85,7 @@ function ProjectView(props) {
               )}
 
               <Divider />
-              <h2>Reference information</h2>
-
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-
+              <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>

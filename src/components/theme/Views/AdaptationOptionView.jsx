@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
+  ReferenceInfo,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
@@ -106,8 +106,6 @@ function AdaptationOptionView(props) {
   const {
     related_case_studies,
     long_description,
-    websites,
-    source,
     ipcc_category,
     logo,
     title,
@@ -180,16 +178,7 @@ function AdaptationOptionView(props) {
                 </Fragment>
               )}
 
-              <h2>Reference information</h2>
-
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-
-              <div id="source" className="section">
-                <h5 id="source">References:</h5>
-                <HTMLField value={source} />
-              </div>
+              <ReferenceInfo content={content} />
 
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />

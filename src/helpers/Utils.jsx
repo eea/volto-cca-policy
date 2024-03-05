@@ -99,16 +99,16 @@ export const ReferenceInfo = (props) => {
         <LinksList title="Websites:" value={content.websites} />
       )}
 
-      {content.source && (
+      {content?.source && (
         <>
-          <h4>Source:</h4>
+          <h5>Source:</h5>
           <HTMLField value={content.source} className="source" />
         </>
       )}
 
       {content?.contributor_list?.length > 0 && (
         <>
-          <h4>Contributor</h4>
+          <h5>Contributor</h5>
           {content.contributor_list.sort().map((item) => (
             <>
               {item.title}

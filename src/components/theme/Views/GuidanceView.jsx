@@ -2,12 +2,12 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
   DocumentsList,
   LogoWrapper,
+  ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 
@@ -33,14 +33,7 @@ const ContributorsList = (props) => {
 
 function GuidanceView(props) {
   const { content } = props;
-  const {
-    long_description,
-    websites,
-    source,
-    cca_files,
-    logo,
-    title,
-  } = content;
+  const { long_description, cca_files, logo, title } = content;
 
   return (
     <div className="db-item-view guidance-view">
@@ -71,16 +64,7 @@ function GuidanceView(props) {
 
               <Divider />
 
-              <h2>Reference information</h2>
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-              {source && (
-                <>
-                  <h5>Source:</h5>
-                  <HTMLField value={source} />
-                </>
-              )}
+              <ReferenceInfo content={content} />
               <ContributorsList {...props} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
