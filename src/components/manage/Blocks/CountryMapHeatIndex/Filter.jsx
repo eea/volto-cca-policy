@@ -1,29 +1,38 @@
+import React from 'react';
+import { Radio } from 'semantic-ui-react';
+
+function hidePopup() {
+  const collections = document.getElementsByClassName('map-tooltip');
+  for (let i = 0; i < collections.length; i++) {
+    collections[i].style.visibility = 'hidden';
+  }
+}
+
 export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
-      <h2>Choose thematic map:</h2>
+      <p className="title">Choose thematic map:</p>
       <div id="sections-selector">
-        <input
-          type="radio"
+        <Radio
+          label="Heat health action plans (HHAP)"
           name="country-map-section"
           value="hhap"
-          checked="checked"
-          onChange={(e) => {
-            setThematicMapMode(e.target.value);
+          checked={thematicMapMode === 'hhap'}
+          onChange={(_e, { value }) => {
+            setThematicMapMode(value);
+            hidePopup();
           }}
         />
-        Heat health action plans (HHAP)
-        <br />
-        <input
-          type="radio"
+        <Radio
+          label="Heat health warning systems (HHWS)"
           name="country-map-section"
           value="hhws"
-          onChange={(e) => {
-            setThematicMapMode(e.target.value);
+          checked={thematicMapMode === 'hhws'}
+          onChange={(_e, { value }) => {
+            setThematicMapMode(value);
           }}
         />
-        Heat health warning systems (HHWS)
       </div>
 
       {thematicMapMode === 'hhap' && (
@@ -41,7 +50,7 @@ export default function Filter(props) {
             <p className="legend-text">No HHAP</p>
           </div>
           <div className="legend-el">
-            <span className="country-national-hhap legend-box"></span>
+            <span className="country-none legend-box"></span>
             <p className="legend-text">No information</p>
           </div>
         </div>

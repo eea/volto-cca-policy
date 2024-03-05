@@ -1,5 +1,4 @@
 import { compose } from 'redux';
-import loadable from '@loadable/component';
 
 import { Sitemap } from '@plone/volto/components';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
@@ -68,10 +67,10 @@ const applyConfig = (config) => {
     ];
   }
 
-  if (!config.settings.loadables.d3)
-    config.settings.loadables.d3 = loadable.lib(() => import('d3'));
-  if (!config.settings.loadables.d3Geo)
-    config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
+  // if (!config.settings.loadables.d3)
+  //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
+  // if (!config.settings.loadables.d3Geo)
+  //   config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;

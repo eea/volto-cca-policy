@@ -216,3 +216,6 @@ export const DocumentsList = (props) => {
     </>
   );
 };
+
+export const LogoWrapper = ({ logo, children }) =>
+  logo ? <div className="has-logo">{children}</div> : children;

@@ -6,43 +6,22 @@ import { useHistory } from 'react-router-dom';
 
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import {
+  euCountryNames,
+  tooltipStyle,
+  getImageUrl,
+} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
 
 import withResponsiveContainer from '../withResponsiveContainer';
 import withVisibilitySensor from '../withVisibilitySensor';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
-import { withGeoJsonData } from './hocs';
 
 import './styles.less';
 
 // const url =
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
-
-const tooltipStyle = {
-  position: 'absolute',
-  zIndex: 2,
-  display: 'inline-block',
-  visibility: 'hidden',
-  top: '0px',
-  left: '0px',
-  backgroundColor: 'black',
-  color: 'white',
-  padding: '0.3em',
-  cursor: 'pointer',
-  fontSize: '10px',
-};
-
-function getImageUrl(feature) {
-  let id = feature.get('id').toLowerCase();
-  if (id === 'el') {
-    id = 'gr'; // fix Greece
-  }
-  if (id === 'uk') {
-    id = 'gb'; // fix Greece
-  }
-  return 'https://flagcdn.com/w320/' + id + '.png';
-}
 
 const CountryMapObservatoryView = (props) => {
   const { geofeatures, projection } = props;

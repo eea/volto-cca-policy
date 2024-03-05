@@ -17,7 +17,7 @@ exports[`CaseStudyView should render the component 1`] = `
         className="row"
       >
         <div
-          className="twelve wide computer twelve wide mobile twelve wide tablet column"
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
             className="case-studies-review-image-wrapper"
@@ -35,102 +35,108 @@ exports[`CaseStudyView should render the component 1`] = `
               }
             }
           />
-        </div>
-        <div
-          className="three wide computer twelve wide mobile twelve wide tablet column"
-        >
           <div
-            className="casetstudy-gallery"
+            className="ui divider"
           />
-        </div>
-      </div>
-    </div>
-    <div
-      className="adaptation-details"
-    />
-    <div
-      className="ui divider"
-    />
-    <div
-      className="published-modified-info"
-    >
-      <p>
-        <span>
-          <strong>
-            Published in Climate-ADAPT
-          </strong>
-           
-          Invalid Date
-        </span>
-        <span>
-             -   
-        </span>
-        <span>
-          <strong>
-            Last Modified in Climate-ADAPT
-          </strong>
-           
-          Invalid Date
-        </span>
-      </p>
-    </div>
-    <div
-      className="ui divider"
-    />
-    <p>
-      Please contact us for any other enquiry on this Case Study or to share a new Case Study (email
-       
-      <span
-        className="link-mailto"
-      >
-        <a
-          href="mailto: climate.adapt@eea.europa.eu"
-          rel="noreferrer"
-          target="_blank"
-        >
-          climate.adapt@eea.europa.eu
-        </a>
-      </span>
-      )
-    </p>
-    <div
-      className="share-info"
-    >
-      <a
-        href="/help/share-your-info"
-      >
-        <button
-          className="ui button primary icon labeled"
-        >
-          Share your information
-          <i
-            aria-hidden="true"
-            className="arrow right icon"
-          />
-        </button>
-      </a>
-    </div>
-    <div
-      className="content-box"
-    >
-      <div
-        className="content-box-inner"
-      >
-        <div
-          className="ui segment"
-        >
           <div
-            className="content-metadata"
+            className="adaptation-details"
           >
-            <h5>
-              Geographic characterisation:
-            </h5>
             <div
-              className="geochar"
+              className="ui twelve column grid"
             >
-              <p>
-                Global
-              </p>
+              <div
+                className="four wide computer twelve wide mobile twelve wide tablet column"
+              />
+              <div
+                className="four wide computer twelve wide mobile twelve wide tablet column"
+              />
+              <div
+                className="four wide computer twelve wide mobile twelve wide tablet column"
+              />
+            </div>
+          </div>
+          <div
+            className="ui divider"
+          />
+          <div
+            className="published-modified-info"
+          >
+            <p>
+              <span>
+                <strong>
+                  Published in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+              <span>
+                   -   
+              </span>
+              <span>
+                <strong>
+                  Last Modified in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+            </p>
+          </div>
+          <div
+            className="ui divider"
+          />
+          <p>
+            Please contact us for any other enquiry on this Case Study or to share a new Case Study (email
+             
+            <span
+              className="link-mailto"
+            >
+              <a
+                href="mailto: climate.adapt@eea.europa.eu"
+                rel="noreferrer"
+                target="_blank"
+              >
+                climate.adapt@eea.europa.eu
+              </a>
+            </span>
+            )
+          </p>
+          <div
+            className="share-info"
+          >
+            <a
+              href="/help/share-your-info"
+            >
+              <button
+                className="ui button primary icon labeled"
+              >
+                Share your information
+                <i
+                  aria-hidden="true"
+                  className="arrow right icon"
+                />
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <div
+            className="ui segment"
+          >
+            <div
+              className="content-metadata"
+            >
+              <h5>
+                Geographic characterisation:
+              </h5>
+              <div
+                className="geochar"
+              >
+                <p>
+                  Global
+                </p>
+              </div>
             </div>
           </div>
         </div>
