@@ -94,8 +94,8 @@ export const ReferenceInfo = (props) => {
   const { content } = props;
   const { websites, source, contributor_list, other_contributor } = content;
 
-  return websites ||
-    source ||
+  return websites?.length > 0 ||
+    (source && source?.data.length > 0) ||
     contributor_list?.length > 0 ||
     other_contributor?.length > 0 ? (
     <>
