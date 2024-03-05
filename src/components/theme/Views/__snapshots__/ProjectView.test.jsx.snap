@@ -53,9 +53,6 @@ exports[`ProjectView should render the component 1`] = `
           <div
             className="ui divider"
           />
-          <h2>
-            Reference information
-          </h2>
           <div
             className="published-modified-info"
           >

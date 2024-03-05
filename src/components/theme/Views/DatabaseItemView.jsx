@@ -1,18 +1,48 @@
 import React from 'react';
 import {
+  TOOL,
+  GUIDANCE,
+  INDICATOR,
+  INFORMATION_PORTAL,
+  PUBICATION_REPORT,
+} from '@eeacms/volto-cca-policy/helpers/Constants';
+import {
   HTMLField,
-  ContentMetadata,
   ReferenceInfo,
+  ContentMetadata,
   PublishedModifiedInfo,
-  ShareInfo,
-  BannerTitle,
   LogoWrapper,
+  ShareInfo,
+  DocumentsList,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Image, Grid } from 'semantic-ui-react';
 
-function IndicatorView(props) {
+const DatabaseItemView = (props) => {
   const { content } = props;
-  const { long_description, logo, title, map_graphs } = content;
+  const type = content['@type'];
+  const { logo, title, long_description, map_graphs } = content;
+
+  let subtitle;
+  switch (type) {
+    case TOOL:
+      subtitle = 'Tools';
+      break;
+    case PUBICATION_REPORT:
+      subtitle = 'Publications and Report';
+      break;
+    case GUIDANCE:
+      subtitle = 'Guidance Document';
+      break;
+    case INDICATOR:
+      subtitle = 'Indicator';
+      break;
+    case INFORMATION_PORTAL:
+      subtitle = 'Information Portal';
+      break;
+    default:
+      subtitle = '';
+  }
 
   // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
   const data_src = (map_graphs) => {
@@ -29,8 +59,8 @@ function IndicatorView(props) {
   };
 
   return (
-    <div className="db-item-view indicator-view">
-      <BannerTitle content={{ ...content, image: '' }} type="Indicator" />
+    <div className="db-item-view">
+      <BannerTitle content={{ ...content, image: '' }} type={subtitle} />
 
       <div className="ui container">
         <Grid columns="12">
@@ -62,16 +92,15 @@ function IndicatorView(props) {
                   className="flourish-embed-iframe"
                   frameBorder="0"
                   scrolling="no"
-                  // style="width:100%;height:600px;"
                   sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
                 ></iframe>
               )}
-
               <Divider />
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
+
             <Grid.Column
               mobile={12}
               tablet={12}
@@ -79,12 +108,13 @@ function IndicatorView(props) {
               className="col-right"
             >
               <ContentMetadata {...props} />
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>
       </div>
     </div>
   );
-}
+};
 
-export default IndicatorView;
+export default DatabaseItemView;

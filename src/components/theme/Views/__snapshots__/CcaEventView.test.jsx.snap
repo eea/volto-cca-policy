@@ -39,21 +39,25 @@ exports[`renders an event view component with all props 1`] = `
               }
             }
           />
-          <h5>
-            A background document for the event is available 
-             
-          </h5>
-          <ul
-            className="documents-list"
+          <div
+            className="ui segment"
           >
-            <li>
-              <a>
-                <i
-                  className="file alternate icon"
-                />
-              </a>
-            </li>
-          </ul>
+            <h5>
+              A background document for the event is available 
+               
+            </h5>
+            <ul
+              className="documents-list"
+            >
+              <li>
+                <a>
+                  <i
+                    className="file alternate icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
           <h2>
             Practical information
           </h2>
@@ -188,21 +192,25 @@ exports[`renders an event view component with only required props 1`] = `
               }
             }
           />
-          <h5>
-            A background document for the event is available 
-             
-          </h5>
-          <ul
-            className="documents-list"
+          <div
+            className="ui segment"
           >
-            <li>
-              <a>
-                <i
-                  className="file alternate icon"
-                />
-              </a>
-            </li>
-          </ul>
+            <h5>
+              A background document for the event is available 
+               
+            </h5>
+            <ul
+              className="documents-list"
+            >
+              <li>
+                <a>
+                  <i
+                    className="file alternate icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
           <h2>
             Practical information
           </h2>
@@ -313,21 +321,25 @@ exports[`renders an event view component without links to api in the text 1`] = 
               }
             }
           />
-          <h5>
-            A background document for the event is available 
-             
-          </h5>
-          <ul
-            className="documents-list"
+          <div
+            className="ui segment"
           >
-            <li>
-              <a>
-                <i
-                  className="file alternate icon"
-                />
-              </a>
-            </li>
-          </ul>
+            <h5>
+              A background document for the event is available 
+               
+            </h5>
+            <ul
+              className="documents-list"
+            >
+              <li>
+                <a>
+                  <i
+                    className="file alternate icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
           <h2>
             Practical information
           </h2>

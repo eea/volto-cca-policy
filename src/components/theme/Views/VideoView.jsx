@@ -21,7 +21,7 @@ function VideoView(props) {
 
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
   const is_cmshare_video = share_eea.some((domain) =>
-    content.embed_url.includes(domain),
+    content?.embed_url?.includes(domain),
   );
 
   const fixEmbedURL = (url) => {

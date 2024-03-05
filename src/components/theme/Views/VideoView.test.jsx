@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-intl-redux';
-import VideoView from './ToolView';
+import VideoView from './VideoView';
 import renderer from 'react-test-renderer';
 import config from '@plone/volto/registry';
 
