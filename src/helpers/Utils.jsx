@@ -1,6 +1,5 @@
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Divider } from 'semantic-ui-react';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -94,9 +93,6 @@ export const ReferenceInfo = (props) => {
   const { content } = props;
   return (
     <>
-      <h2>Description</h2>
-      <HTMLField value={content.long_description} />
-      <Divider />
       <h2>Reference information</h2>
 
       {content?.websites?.length > 0 && (

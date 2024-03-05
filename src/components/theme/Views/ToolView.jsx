@@ -1,23 +1,20 @@
 import React from 'react';
 import {
+  HTMLField,
   ContentMetadata,
   PublishedModifiedInfo,
   ReferenceInfo,
   BannerTitle,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Image, Grid } from 'semantic-ui-react';
-import cx from 'classnames';
+import { Segment, Image, Grid, Divider } from 'semantic-ui-react';
 
 function ToolView(props) {
   const { content } = props;
   const { logo, title } = content;
 
   return (
-    <div
-      className={cx('db-item-view tool-view', {
-        'logo-right': logo,
-      })}
-    >
+    <div className="db-item-view tool-view">
       <BannerTitle content={{ ...content, image: '' }} type="Tools" />
 
       <div className="ui container">
@@ -29,15 +26,21 @@ function ToolView(props) {
               computer={8}
               className="col-left"
             >
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={content.long_description} />
+
+              <Divider />
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
-              {logo && (
-                <Image
-                  src={logo?.scales?.mini?.download}
-                  alt={title}
-                  className="db-logo"
-                />
-              )}
             </Grid.Column>
             <Grid.Column
               mobile={12}
