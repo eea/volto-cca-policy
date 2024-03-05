@@ -2,7 +2,7 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
+  ReferenceInfo,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
@@ -12,16 +12,7 @@ import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 
 function IndicatorView(props) {
   const { content } = props;
-  const {
-    long_description,
-    websites,
-    source,
-    contributor_list,
-    other_contributor,
-    logo,
-    title,
-    map_graphs,
-  } = content;
+  const { long_description, logo, title, map_graphs } = content;
 
   // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
   const data_src = (map_graphs) => {
@@ -77,29 +68,7 @@ function IndicatorView(props) {
               )}
 
               <Divider />
-              <h2>Reference information</h2>
-
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-
-              <h5>Source:</h5>
-              <HTMLField value={source} />
-              {(contributor_list?.length > 0 ||
-                other_contributor?.length > 0) && (
-                <>
-                  <h4>Contributor:</h4>
-                  {contributor_list
-                    .map((item) => (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    ))
-                    .sort()}
-                  {other_contributor}
-                </>
-              )}
+              <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>

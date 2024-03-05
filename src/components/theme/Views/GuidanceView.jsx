@@ -11,26 +11,6 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 
-const ContributorsList = (props) => {
-  const { content } = props;
-  const { contributor_list, other_contributor } = content;
-
-  if (contributor_list?.length > 0 || other_contributor?.length > 0) {
-    return (
-      <>
-        <h5>Contributor:</h5>
-        {contributor_list?.length > 0 &&
-          contributor_list.map((contributor, index) => (
-            <p key={index}>{contributor.title}</p>
-          ))}
-        {other_contributor && <p>{other_contributor}</p>}
-      </>
-    );
-  }
-
-  return null;
-};
-
 function GuidanceView(props) {
   const { content } = props;
   const { long_description, cca_files, logo, title } = content;
@@ -61,11 +41,8 @@ function GuidanceView(props) {
                 )}
               </LogoWrapper>
               <HTMLField value={long_description} />
-
               <Divider />
-
               <ReferenceInfo content={content} />
-              <ContributorsList {...props} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>

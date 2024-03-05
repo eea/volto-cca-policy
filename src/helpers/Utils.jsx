@@ -106,15 +106,19 @@ export const ReferenceInfo = (props) => {
         </>
       )}
 
-      {content?.contributor_list?.length > 0 && (
+      {(content?.contributor_list?.length > 0 ||
+        content?.other_contributor?.length > 0) && (
         <>
-          <h5>Contributor</h5>
-          {content.contributor_list.sort().map((item) => (
-            <>
-              {item.title}
-              <br />
-            </>
-          ))}
+          <h5>Contributor:</h5>
+          {content?.contributor_list
+            .map((item) => (
+              <>
+                {item.title}
+                <br />
+              </>
+            ))
+            .sort()}
+          {content?.other_contributor}
         </>
       )}
     </>
