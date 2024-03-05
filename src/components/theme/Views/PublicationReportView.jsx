@@ -43,7 +43,6 @@ function PublicationReportView(props) {
               </LogoWrapper>
               <HTMLField value={content.long_description} />
               <Divider />
-
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />

@@ -35,16 +35,6 @@ exports[`IndicatorView should render the component 1`] = `
           <h2>
             Reference information
           </h2>
-          <h5>
-            Source:
-          </h5>
-          <div
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
           <div
             className="published-modified-info"
           >

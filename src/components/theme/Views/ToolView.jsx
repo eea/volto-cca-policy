@@ -37,7 +37,6 @@ function ToolView(props) {
                 )}
               </LogoWrapper>
               <HTMLField value={content.long_description} />
-
               <Divider />
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />

@@ -84,7 +84,6 @@ function VideoView(props) {
               )}
 
               <ReferenceInfo content={content} />
-
               <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
