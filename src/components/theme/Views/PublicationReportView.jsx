@@ -9,11 +9,11 @@ import {
   BannerTitle,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Image, Grid, Divider } from 'semantic-ui-react';
+import { Image, Grid, Divider } from 'semantic-ui-react';
 
 function PublicationReportView(props) {
   const { content } = props;
-  const { cca_files, logo, title } = content;
+  const { logo, title } = content;
 
   return (
     <div className="db-item-view publication-report-view">
@@ -54,14 +54,9 @@ function PublicationReportView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
-              {cca_files && cca_files.length > 0 && (
-                <Segment>
-                  <DocumentsList {...props} />
-                </Segment>
-              )}
+              <ContentMetadata {...props} />
+
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>

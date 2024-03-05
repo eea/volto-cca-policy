@@ -7,7 +7,7 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Image, Grid } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
 
 function VideoView(props) {
   const { content } = props;
@@ -92,9 +92,8 @@ function VideoView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
+
               {logo && (
                 <Image
                   src={logo?.scales?.mini?.download}

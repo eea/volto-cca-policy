@@ -9,11 +9,11 @@ import {
   LogoWrapper,
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
 
 function GuidanceView(props) {
   const { content } = props;
-  const { long_description, cca_files, logo, title } = content;
+  const { long_description, logo, title } = content;
 
   return (
     <div className="db-item-view guidance-view">
@@ -53,15 +53,9 @@ function GuidanceView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
 
-              {cca_files && cca_files.length > 0 && (
-                <Segment>
-                  <DocumentsList {...props} />
-                </Segment>
-              )}
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>

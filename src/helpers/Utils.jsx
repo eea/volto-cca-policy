@@ -1,5 +1,6 @@
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
+import { Segment } from 'semantic-ui-react';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -91,26 +92,32 @@ export const BannerTitle = (props) => {
 
 export const ReferenceInfo = (props) => {
   const { content } = props;
-  return (
+  const { websites, source, contributor_list, other_contributor } = content;
+
+  return websites ||
+    source ||
+    contributor_list?.length > 0 ||
+    other_contributor?.length > 0 ? (
     <>
       <h2>Reference information</h2>
 
-      {content?.websites?.length > 0 && (
-        <LinksList title="Websites:" value={content.websites} />
-      )}
+      {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
 
-      {content?.source && (
+      {content['@type'] !== 'eea.climateadapt.aceproject' && (
         <>
-          <h5>Source:</h5>
-          <HTMLField value={content.source} className="source" />
+          {source && source?.data.length > 0 && (
+            <>
+              <h5>Source:</h5>
+              <HTMLField value={source} className="source" />
+            </>
+          )}
         </>
       )}
 
-      {(content?.contributor_list?.length > 0 ||
-        content?.other_contributor?.length > 0) && (
+      {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
         <>
           <h5>Contributor:</h5>
-          {content?.contributor_list
+          {contributor_list
             .map((item) => (
               <>
                 {item.title}
@@ -118,11 +125,11 @@ export const ReferenceInfo = (props) => {
               </>
             ))
             .sort()}
-          {content?.other_contributor}
+          {other_contributor}
         </>
       )}
     </>
-  );
+  ) : null;
 };
 
 export const PublishedModifiedInfo = (props) => {
@@ -177,7 +184,7 @@ export const PublishedModifiedInfo = (props) => {
 
 export const DocumentsList = (props) => {
   const { content } = props;
-  const files = content.cca_files;
+  const files = content?.cca_files;
   if (!files || files.length === 0) {
     return null;
   }
@@ -199,7 +206,7 @@ export const DocumentsList = (props) => {
     section_title = 'Publications and Reports Documents';
   }
   return (
-    <>
+    <Segment>
       <h5>
         {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
@@ -213,7 +220,7 @@ export const DocumentsList = (props) => {
           </li>
         ))}
       </ul>
-    </>
+    </Segment>
   );
 };
 

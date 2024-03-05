@@ -7,7 +7,7 @@ import {
   BannerTitle,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Image, Grid, Divider } from 'semantic-ui-react';
+import { Image, Grid, Divider } from 'semantic-ui-react';
 
 function ToolView(props) {
   const { content } = props;
@@ -47,9 +47,7 @@ function ToolView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
             </Grid.Column>
           </div>
         </Grid>

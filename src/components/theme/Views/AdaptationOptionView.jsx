@@ -190,9 +190,8 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
+
               {related_case_studies?.length > 0 && (
                 <Segment>
                   <h5>Case studies related to this option:</h5>

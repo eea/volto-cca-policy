@@ -7,7 +7,7 @@ import {
   ReferenceInfo,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Image, Grid } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
 
 import config from '@plone/volto/registry';
 
@@ -95,9 +95,7 @@ function ProjectView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
             </Grid.Column>
           </div>
         </Grid>
