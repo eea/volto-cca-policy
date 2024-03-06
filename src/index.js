@@ -6,7 +6,6 @@ import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
-import OrganisationView from './components/theme/Views/OrganisationView';
 import ProjectView from './components/theme/Views/ProjectView';
 import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
@@ -262,17 +261,17 @@ const applyConfig = (config) => {
     ...config.views.contentTypesViews,
     Event: EventView,
     'cca-event': CcaEventView,
-    'eea.climateadapt.guidancedocument': DatabaseItemView,
+    'eea.climateadapt.tool': DatabaseItemView,
     'eea.climateadapt.indicator': DatabaseItemView,
+    'eea.climateadapt.organisation': DatabaseItemView,
+    'eea.climateadapt.guidancedocument': DatabaseItemView,
     'eea.climateadapt.informationportal': DatabaseItemView,
     'eea.climateadapt.publicationreport': DatabaseItemView,
-    'eea.climateadapt.tool': DatabaseItemView,
-    'eea.climateadapt.aceproject': ProjectView,
-    'eea.climateadapt.organisation': OrganisationView,
     'eea.climateadapt.video': VideoView,
-    'eea.climateadapt.adaptationoption': AdaptationOptionView,
+    'eea.climateadapt.aceproject': ProjectView,
     'eea.climateadapt.casestudy': CaseStudyView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
+    'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
   };
 

@@ -5,6 +5,7 @@ import {
   INDICATOR,
   INFORMATION_PORTAL,
   PUBICATION_REPORT,
+  ORGANISATION,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import {
   HTMLField,
@@ -13,6 +14,7 @@ import {
   PublishedModifiedInfo,
   LogoWrapper,
   ShareInfo,
+  ContentRelatedItems,
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
@@ -22,7 +24,15 @@ import { Divider, Image, Grid } from 'semantic-ui-react';
 const DatabaseItemView = (props) => {
   const { content } = props;
   const type = content['@type'];
-  const { logo, title, long_description, map_graphs } = content;
+  const {
+    logo,
+    title,
+    long_description,
+    map_graphs,
+    organisational_key_activities,
+    organisational_websites,
+    organisational_contact_information,
+  } = content;
 
   let subtitle;
   switch (type) {
@@ -40,6 +50,9 @@ const DatabaseItemView = (props) => {
       break;
     case INFORMATION_PORTAL:
       subtitle = 'Information Portal';
+      break;
+    case ORGANISATION:
+      subtitle = 'Organisation';
       break;
     default:
       subtitle = '';
@@ -85,6 +98,13 @@ const DatabaseItemView = (props) => {
               </LogoWrapper>
               <HTMLField value={long_description} />
 
+              {organisational_key_activities && (
+                <>
+                  <h3>Key activities within climate change and health</h3>
+                  <HTMLField value={organisational_key_activities} />
+                </>
+              )}
+
               {!!data_src(map_graphs) && (
                 <iframe
                   height="980"
@@ -98,7 +118,24 @@ const DatabaseItemView = (props) => {
                 ></iframe>
               )}
               <Divider />
+
               <ReferenceInfo content={content} />
+
+              {organisational_websites && (
+                <>
+                  <h5>Links to further information</h5>
+                  <HTMLField value={organisational_websites} />
+                </>
+              )}
+
+              {organisational_contact_information && (
+                <>
+                  <h5>Contact information for the Observatory</h5>
+                  <HTMLField value={organisational_contact_information} />
+                </>
+              )}
+
+              <ContentRelatedItems {...props} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>

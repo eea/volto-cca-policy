@@ -12,6 +12,7 @@ export {
   ReferenceInfo,
   BannerTitle,
   LogoWrapper,
+  ContentRelatedItems,
 } from './Utils';
 export ContentMetadata from './ContentMetadata';
 export ShareInfo from './ShareInfo';

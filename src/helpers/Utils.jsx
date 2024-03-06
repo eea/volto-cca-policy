@@ -1,3 +1,4 @@
+import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { Segment } from 'semantic-ui-react';
@@ -213,15 +214,40 @@ export const DocumentsList = (props) => {
       <ul className="documents-list">
         {files.map((file, index) => (
           <li key={index}>
-            <a href={file.url}>
+            <a href={file.url} className="document-list-item">
               <i className="file alternate icon"></i>
-              {file.title}
+              <span>{file.title}</span>
             </a>
           </li>
         ))}
       </ul>
     </Segment>
   );
+};
+
+export const ContentRelatedItems = (props) => {
+  const { content } = props;
+  const { relatedItems } = content;
+
+  let contentRelatedItems = [];
+  if (relatedItems && relatedItems?.length > 0) {
+    contentRelatedItems = relatedItems.filter((item) =>
+      item['@type'].includes('eea.climateadapt'),
+    );
+  }
+
+  return contentRelatedItems.length > 0 ? (
+    <>
+      <h5>Related content:</h5>
+
+      {contentRelatedItems.map((item, index) => (
+        <Fragment key={index}>
+          <UniversalLink item={item}>{item.title}</UniversalLink>
+          <br />
+        </Fragment>
+      ))}
+    </>
+  ) : null;
 };
 
 export const LogoWrapper = ({ logo, children }) =>

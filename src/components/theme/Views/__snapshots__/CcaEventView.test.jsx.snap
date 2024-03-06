@@ -49,10 +49,13 @@ exports[`renders an event view component with all props 1`] = `
               className="documents-list"
             >
               <li>
-                <a>
+                <a
+                  className="document-list-item"
+                >
                   <i
                     className="file alternate icon"
                   />
+                  <span />
                 </a>
               </li>
             </ul>
@@ -201,10 +204,13 @@ exports[`renders an event view component with only required props 1`] = `
               className="documents-list"
             >
               <li>
-                <a>
+                <a
+                  className="document-list-item"
+                >
                   <i
                     className="file alternate icon"
                   />
+                  <span />
                 </a>
               </li>
             </ul>
@@ -329,10 +335,13 @@ exports[`renders an event view component without links to api in the text 1`] = 
               className="documents-list"
             >
               <li>
-                <a>
+                <a
+                  className="document-list-item"
+                >
                   <i
                     className="file alternate icon"
                   />
+                  <span />
                 </a>
               </li>
             </ul>
