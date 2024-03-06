@@ -147,3 +147,13 @@ body.subsite {
 #toolbar .toolbar-content {
   z-index: 4 !important;
 }
+
+.ui.message.info {
+  padding: 0.5em 1em;
+  margin-bottom: 1.5em;
+  font-size: 15px;
+
+  .icon {
+    font-size: 16px !important;
+  }
+}

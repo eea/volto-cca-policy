@@ -15,30 +15,32 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
       'european-commission': 'European Commission',
       'european-environment-agency-eea': 'European Environment Agency',
       'european-food-safety-authority': 'European Food Safety Authority',
-      'lancet-countdown': 'Lancet Countdown',
+      'lancet-countdown': 'Lancet Countdown in Europe',
       'who-regional-office-for-europe-who-europe':
         'WHO Regional Office for Europe',
       'world-health-organization': 'World Health Organization',
+      'association-schools-public-health-in-european-region-aspher':
+        'The Association of Schools of Public Health in the European Region',
     };
     const org = mapContributorValues[item['@id'].split('/').pop()] || '';
-    const query = {
-      query: {
-        function_score: {
-          query: {
-            bool: {
-              filter: {
-                bool: {
-                  should: [{ term: { partner_contributors: org } }],
-                },
-              },
-            },
-          },
-        },
-      },
-    };
+    const query =
+      'size=n_10_n' +
+      '&filters[0][field]=cca_partner_contributors.keyword' +
+      '&filters[0][values][0]=' +
+      org +
+      '&filters[0][type]=any' +
+      '&filters[1][field]=issued.date' +
+      '&filters[1][values][0]=Last 5 years' +
+      '&filters[1][type]=any' +
+      '&filters[2][field]=language' +
+      '&filters[2][values][0]=en' +
+      '&filters[2][type]=any' +
+      '&sort-field=issued.date' +
+      '&sort-direction=desc';
 
-    const encodedQuery = encodeURIComponent(JSON.stringify(query));
-    return `/en/observatory/advanced-search/?source=${encodedQuery}`;
+    return `/en/observatory/advanced-search?${query
+      .replaceAll('[', '%5B')
+      .replaceAll(']', '%5D')}`;
   };
 
   return (

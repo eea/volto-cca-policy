@@ -1,6 +1,7 @@
+import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Divider } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -92,37 +93,44 @@ export const BannerTitle = (props) => {
 
 export const ReferenceInfo = (props) => {
   const { content } = props;
-  return (
+  const { websites, source, contributor_list, other_contributor } = content;
+
+  return websites?.length > 0 ||
+    (source && source?.data.length > 0) ||
+    contributor_list?.length > 0 ||
+    other_contributor?.length > 0 ? (
     <>
-      <h2>Description</h2>
-      <HTMLField value={content.long_description} />
-      <Divider />
       <h2>Reference information</h2>
 
-      {content?.websites?.length > 0 && (
-        <LinksList title="Websites:" value={content.websites} />
-      )}
+      {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
 
-      {content.source && (
+      {content['@type'] !== 'eea.climateadapt.aceproject' && (
         <>
-          <h4>Source:</h4>
-          <HTMLField value={content.source} className="source" />
+          {source && source?.data.length > 0 && (
+            <>
+              <h5>Source:</h5>
+              <HTMLField value={source} className="source" />
+            </>
+          )}
         </>
       )}
 
-      {content?.contributor_list?.length > 0 && (
+      {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
         <>
-          <h4>Contributor</h4>
-          {content.contributor_list.sort().map((item) => (
-            <>
-              {item.title}
-              <br />
-            </>
-          ))}
+          <h5>Contributor:</h5>
+          {contributor_list
+            .map((item) => (
+              <>
+                {item.title}
+                <br />
+              </>
+            ))
+            .sort()}
+          {other_contributor}
         </>
       )}
     </>
-  );
+  ) : null;
 };
 
 export const PublishedModifiedInfo = (props) => {
@@ -177,7 +185,7 @@ export const PublishedModifiedInfo = (props) => {
 
 export const DocumentsList = (props) => {
   const { content } = props;
-  const files = content.cca_files;
+  const files = content?.cca_files;
   if (!files || files.length === 0) {
     return null;
   }
@@ -199,22 +207,47 @@ export const DocumentsList = (props) => {
     section_title = 'Publications and Reports Documents';
   }
   return (
-    <>
+    <Segment>
       <h5>
         {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
       <ul className="documents-list">
         {files.map((file, index) => (
           <li key={index}>
-            <a href={file.url}>
+            <a href={file.url} className="document-list-item">
               <i className="file alternate icon"></i>
-              {file.title}
+              <span>{file.title}</span>
             </a>
           </li>
         ))}
       </ul>
-    </>
+    </Segment>
   );
+};
+
+export const ContentRelatedItems = (props) => {
+  const { content } = props;
+  const { relatedItems } = content;
+
+  let contentRelatedItems = [];
+  if (relatedItems && relatedItems?.length > 0) {
+    contentRelatedItems = relatedItems.filter((item) =>
+      item['@type'].includes('eea.climateadapt'),
+    );
+  }
+
+  return contentRelatedItems.length > 0 ? (
+    <>
+      <h5>Related content:</h5>
+
+      {contentRelatedItems.map((item, index) => (
+        <Fragment key={index}>
+          <UniversalLink item={item}>{item.title}</UniversalLink>
+          <br />
+        </Fragment>
+      ))}
+    </>
+  ) : null;
 };
 
 export const LogoWrapper = ({ logo, children }) =>

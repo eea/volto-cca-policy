@@ -2,7 +2,7 @@
 
 exports[`VideoView should render the component 1`] = `
 <div
-  className="db-item-view tool-view"
+  className="db-item-view video-view"
 >
   <div>
     Title Block Component
@@ -19,9 +19,6 @@ exports[`VideoView should render the component 1`] = `
         <div
           className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <h2>
-            Description
-          </h2>
           <div
             dangerouslySetInnerHTML={
               Object {
@@ -30,33 +27,31 @@ exports[`VideoView should render the component 1`] = `
             }
           />
           <div
+            className="external-video"
+          >
+            <a>
+              See video outside Climate-ADAPT
+            </a>
+          </div>
+          <div
             className="ui divider"
           />
-          <h2>
-            Reference information
-          </h2>
           <div
-            className="published-modified-info"
+            className="share-info"
           >
-            <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-            </p>
+            <a
+              href="/help/share-your-info"
+            >
+              <button
+                className="ui button primary icon labeled"
+              >
+                Share your information
+                <i
+                  aria-hidden="true"
+                  className="arrow right icon"
+                />
+              </button>
+            </a>
           </div>
         </div>
         <div

@@ -2,12 +2,13 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  ReferenceInfo,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Image, Grid } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 import config from '@plone/volto/registry';
 
@@ -20,7 +21,6 @@ function ProjectView(props) {
     partners,
     acronym,
     title,
-    websites,
     logo,
   } = content;
 
@@ -51,6 +51,7 @@ function ProjectView(props) {
       />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -86,12 +87,7 @@ function ProjectView(props) {
               )}
 
               <Divider />
-              <h2>Reference information</h2>
-
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-
+              <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
@@ -101,9 +97,7 @@ function ProjectView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
             </Grid.Column>
           </div>
         </Grid>

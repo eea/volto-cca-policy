@@ -8,8 +8,9 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Grid, Icon, Image } from 'semantic-ui-react';
+import { Divider, Grid, Icon, Image } from 'semantic-ui-react';
 import { ImageGallery } from '@eeacms/volto-cca-policy/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -236,8 +237,7 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
-  const { cca_files, long_description } = content;
-  const hasFiles = cca_files && cca_files.length > 0;
+  const { long_description } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -263,6 +263,7 @@ function CaseStudyView(props) {
       <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -343,14 +344,10 @@ function CaseStudyView(props) {
               className="col-right"
             >
               <PhotoGallery {...props} />
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
-              {hasFiles && (
-                <Segment>
-                  <DocumentsList {...props} />
-                </Segment>
-              )}
+
+              <ContentMetadata {...props} />
+
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>
