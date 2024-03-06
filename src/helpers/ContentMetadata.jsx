@@ -313,7 +313,7 @@ function ContentMetadata(props) {
         )}
         {content?.elements?.length > 0 && (
           <>
-            <h5>Elements:</h5>
+            <h5> Adaptation elements:</h5>
             <ItemsList value={content.elements} />
           </>
         )}
