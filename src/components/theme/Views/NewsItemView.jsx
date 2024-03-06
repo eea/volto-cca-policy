@@ -3,7 +3,10 @@ import React from 'react';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { Label } from 'semantic-ui-react';
-import { BannerTitle } from '@eeacms/volto-cca-policy/components';
+import {
+  BannerTitle,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
 
 // const Date = (props) => {
 //   const date = props.content?.effective;
@@ -33,6 +36,7 @@ function CcaEventView(props) {
     <div className="cca-newsitem-view">
       <BannerTitle content={content} />
       <div className="ui container">
+        <PortalMessage content={content} />
         <p>{content.description}</p>
         <HTMLField value={content.text} className="long_description" />
         <RenderBlocks {...props} />

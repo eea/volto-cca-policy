@@ -81,21 +81,23 @@ hr {
   }
 }
 
+.documents-list {
+  padding: 0;
+  list-style-type: none;
+
+  li a:before {
+    content: '' !important;
+  }
+}
+
+.document-list-item {
+  display: flex;
+  align-items: flex-start;
+  word-break: break-all;
+}
+
 .db-item-view {
   position: relative;
-
-  &.logo-right {
-    .db-logo {
-      position: absolute;
-      top: 0;
-      right: 13px;
-    }
-
-    h2:first-child {
-      margin-top: 0.5em;
-      margin-bottom: 1em;
-    }
-  }
 
   .col-left {
     position: relative;
@@ -145,15 +147,6 @@ hr {
     }
   }
 
-  .documents-list {
-    padding: 0;
-    list-style-type: none;
-
-    li a:before {
-      content: '' !important;
-    }
-  }
-
   .share-info {
     margin: 3.5em 0 !important;
 
@@ -186,11 +179,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 
   .db-logo {
-    width: 120px !important;
+    width: auto;
+    max-height: 70px;
   }
 
   .col-right {

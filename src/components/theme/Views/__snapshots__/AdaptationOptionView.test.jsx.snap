@@ -105,23 +105,17 @@ exports[`AdaptationOptionView should render the component 1`] = `
               </a>
             </li>
           </ul>
+          <h5>
+            Source:
+          </h5>
           <div
-            className="section"
-            id="source"
-          >
-            <h5
-              id="source"
-            >
-              References:
-            </h5>
-            <div
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<p>Some text</p>",
-                }
+            className="source"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Some text</p>",
               }
-            />
-          </div>
+            }
+          />
           <div
             className="published-modified-info"
           >

@@ -5,6 +5,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Fragment } from 'react';
 import { Popup } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -291,61 +292,63 @@ function ContentMetadata(props) {
   }
 
   return (
-    <div className="content-metadata">
-      <PublicationDateInfo
-        title={date_title}
-        value={content?.publication_date}
-        portaltype={content?.portal_type}
-      />
-      {content?.keywords?.length > 0 && (
-        <>
-          <h5>Keywords:</h5>
-          <span>{content?.keywords?.sort().join(', ')}</span>
-        </>
-      )}
-      {content?.climate_impacts?.length > 0 && (
-        <>
-          <h5>Climate impacts:</h5>
-          <ItemsList value={content.climate_impacts} />
-        </>
-      )}
-      {content?.elements?.length > 0 && (
-        <>
-          <h5>Elements:</h5>
-          <ItemsList value={content.elements} />
-        </>
-      )}
-      {content?.sectors?.length > 0 && (
-        <>
-          <h5>Sectors:</h5>
-          <ItemsList value={content.sectors} />
-        </>
-      )}
-      {content?.governance_level?.length > 0 && (
-        <>
-          <h5>Governance level:</h5>
-          <ItemsList value={content.governance_level} join="<br />" />
-        </>
-      )}
-      {content?.funding_programme?.title?.length > 0 && (
-        <>
-          <h5>Funding Programme:</h5>
-          <span>{content.funding_programme.title}</span>
-        </>
-      )}
-      {content?.duration && (
-        <>
-          <h5>Duration:</h5>
-          <span>{content.duration}</span>
-        </>
-      )}
-      {hasGeoChars && (
-        <>
-          <h5>Geographic characterisation:</h5>
-          <GeoChar {...props} />
-        </>
-      )}
-    </div>
+    <Segment>
+      <div className="content-metadata">
+        <PublicationDateInfo
+          title={date_title}
+          value={content?.publication_date}
+          portaltype={content?.portal_type}
+        />
+        {content?.keywords?.length > 0 && (
+          <>
+            <h5>Keywords:</h5>
+            <span>{content?.keywords?.sort().join(', ')}</span>
+          </>
+        )}
+        {content?.climate_impacts?.length > 0 && (
+          <>
+            <h5>Climate impacts:</h5>
+            <ItemsList value={content.climate_impacts} />
+          </>
+        )}
+        {content?.elements?.length > 0 && (
+          <>
+            <h5> Adaptation elements:</h5>
+            <ItemsList value={content.elements} />
+          </>
+        )}
+        {content?.sectors?.length > 0 && (
+          <>
+            <h5>Sectors:</h5>
+            <ItemsList value={content.sectors} />
+          </>
+        )}
+        {content?.governance_level?.length > 0 && (
+          <>
+            <h5>Governance level:</h5>
+            <ItemsList value={content.governance_level} join="<br />" />
+          </>
+        )}
+        {content?.funding_programme?.title?.length > 0 && (
+          <>
+            <h5>Funding Programme:</h5>
+            <span>{content.funding_programme.title}</span>
+          </>
+        )}
+        {content?.duration && (
+          <>
+            <h5>Duration:</h5>
+            <span>{content.duration}</span>
+          </>
+        )}
+        {hasGeoChars && (
+          <>
+            <h5>Geographic characterisation:</h5>
+            <GeoChar {...props} />
+          </>
+        )}
+      </div>
+    </Segment>
   );
 }
 

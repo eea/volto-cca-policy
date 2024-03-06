@@ -1,20 +1,15 @@
 import { compose } from 'redux';
 
 import { Sitemap } from '@plone/volto/components';
-import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
-import CaseStudyView from './components/theme/Views/CaseStudyView';
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
-import GuidanceView from './components/theme/Views/GuidanceView';
-import IndicatorView from './components/theme/Views/IndicatorView';
-import InformationPortalView from './components/theme/Views/InformationPortalView';
-import OrganisationView from './components/theme/Views/OrganisationView';
+import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
+import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
-import PublicationReportView from './components/theme/Views/PublicationReportView';
-import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
+import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
@@ -264,19 +259,19 @@ const applyConfig = (config) => {
 
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
-    'eea.climateadapt.adaptationoption': AdaptationOptionView,
-    'eea.climateadapt.casestudy': CaseStudyView,
-    'cca-event': CcaEventView,
     Event: EventView,
-    'eea.climateadapt.guidancedocument': GuidanceView,
-    'eea.climateadapt.indicator': IndicatorView,
-    'eea.climateadapt.informationportal': InformationPortalView,
-    'eea.climateadapt.organisation': OrganisationView,
-    'eea.climateadapt.aceproject': ProjectView,
-    'eea.climateadapt.publicationreport': PublicationReportView,
-    'eea.climateadapt.tool': ToolView,
+    'cca-event': CcaEventView,
+    'eea.climateadapt.tool': DatabaseItemView,
+    'eea.climateadapt.indicator': DatabaseItemView,
+    'eea.climateadapt.organisation': DatabaseItemView,
+    'eea.climateadapt.guidancedocument': DatabaseItemView,
+    'eea.climateadapt.informationportal': DatabaseItemView,
+    'eea.climateadapt.publicationreport': DatabaseItemView,
     'eea.climateadapt.video': VideoView,
+    'eea.climateadapt.aceproject': ProjectView,
+    'eea.climateadapt.casestudy': CaseStudyView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
+    'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
   };
 

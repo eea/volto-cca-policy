@@ -1,27 +1,62 @@
 import React from 'react';
 import {
+  TOOL,
+  GUIDANCE,
+  INDICATOR,
+  INFORMATION_PORTAL,
+  PUBICATION_REPORT,
+  ORGANISATION,
+} from '@eeacms/volto-cca-policy/helpers/Constants';
+import {
   HTMLField,
+  ReferenceInfo,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
-  ShareInfo,
-  BannerTitle,
   LogoWrapper,
+  ShareInfo,
+  ContentRelatedItems,
+  DocumentsList,
+  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import { Divider, Image, Grid } from 'semantic-ui-react';
 
-function IndicatorView(props) {
+const DatabaseItemView = (props) => {
   const { content } = props;
+  const type = content['@type'];
   const {
-    long_description,
-    websites,
-    source,
-    contributor_list,
-    other_contributor,
     logo,
     title,
+    long_description,
     map_graphs,
+    organisational_key_activities,
+    organisational_websites,
+    organisational_contact_information,
   } = content;
+
+  let subtitle;
+  switch (type) {
+    case TOOL:
+      subtitle = 'Tools';
+      break;
+    case PUBICATION_REPORT:
+      subtitle = 'Publications and Report';
+      break;
+    case GUIDANCE:
+      subtitle = 'Guidance Document';
+      break;
+    case INDICATOR:
+      subtitle = 'Indicator';
+      break;
+    case INFORMATION_PORTAL:
+      subtitle = 'Information Portal';
+      break;
+    case ORGANISATION:
+      subtitle = 'Organisation';
+      break;
+    default:
+      subtitle = '';
+  }
 
   // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
   const data_src = (map_graphs) => {
@@ -38,10 +73,11 @@ function IndicatorView(props) {
   };
 
   return (
-    <div className="db-item-view indicator-view">
-      <BannerTitle content={{ ...content, image: '' }} type="Indicator" />
+    <div className="db-item-view">
+      <BannerTitle content={{ ...content, image: '' }} type={subtitle} />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -62,6 +98,13 @@ function IndicatorView(props) {
               </LogoWrapper>
               <HTMLField value={long_description} />
 
+              {organisational_key_activities && (
+                <>
+                  <h3>Key activities within climate change and health</h3>
+                  <HTMLField value={organisational_key_activities} />
+                </>
+              )}
+
               {!!data_src(map_graphs) && (
                 <iframe
                   height="980"
@@ -71,53 +114,46 @@ function IndicatorView(props) {
                   className="flourish-embed-iframe"
                   frameBorder="0"
                   scrolling="no"
-                  // style="width:100%;height:600px;"
                   sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
                 ></iframe>
               )}
-
               <Divider />
-              <h2>Reference information</h2>
 
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
+              <ReferenceInfo content={content} />
 
-              <h5>Source:</h5>
-              <HTMLField value={source} />
-              {(contributor_list?.length > 0 ||
-                other_contributor?.length > 0) && (
+              {organisational_websites && (
                 <>
-                  <h4>Contributor:</h4>
-                  {contributor_list
-                    .map((item) => (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    ))
-                    .sort()}
-                  {other_contributor}
+                  <h5>Links to further information</h5>
+                  <HTMLField value={organisational_websites} />
                 </>
               )}
+
+              {organisational_contact_information && (
+                <>
+                  <h5>Contact information for the Observatory</h5>
+                  <HTMLField value={organisational_contact_information} />
+                </>
+              )}
+
+              <ContentRelatedItems {...props} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
+
             <Grid.Column
               mobile={12}
               tablet={12}
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>
       </div>
     </div>
   );
-}
+};
 
-export default IndicatorView;
+export default DatabaseItemView;

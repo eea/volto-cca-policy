@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
+  ReferenceInfo,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
@@ -10,6 +10,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function createDataField(type, field, section, title) {
   return {
@@ -106,8 +107,6 @@ function AdaptationOptionView(props) {
   const {
     related_case_studies,
     long_description,
-    websites,
-    source,
     ipcc_category,
     logo,
     title,
@@ -125,6 +124,7 @@ function AdaptationOptionView(props) {
       />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -180,16 +180,7 @@ function AdaptationOptionView(props) {
                 </Fragment>
               )}
 
-              <h2>Reference information</h2>
-
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-
-              <div id="source" className="section">
-                <h5 id="source">References:</h5>
-                <HTMLField value={source} />
-              </div>
+              <ReferenceInfo content={content} />
 
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
@@ -201,9 +192,8 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
+
               {related_case_studies?.length > 0 && (
                 <Segment>
                   <h5>Case studies related to this option:</h5>

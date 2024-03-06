@@ -6,6 +6,7 @@ import {
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Accordion, Icon, Segment, Image } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -153,6 +154,7 @@ function C3SIndicatorView(props) {
       <BannerTitle content={{ ...content, image: '' }} />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <LogoWrapper logo={logo}>
           <h2>Background information</h2>
           {logo && (
