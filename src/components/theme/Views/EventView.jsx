@@ -1,6 +1,9 @@
 import React from 'react';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { BannerTitle } from '@eeacms/volto-cca-policy/components';
+import {
+  BannerTitle,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
@@ -14,6 +17,7 @@ function CcaEventView(props) {
       <BannerTitle content={content} />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

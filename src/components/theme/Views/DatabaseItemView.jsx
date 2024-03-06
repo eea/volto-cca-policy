@@ -16,6 +16,7 @@ import {
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Divider, Image, Grid } from 'semantic-ui-react';
 
 const DatabaseItemView = (props) => {
@@ -63,6 +64,7 @@ const DatabaseItemView = (props) => {
       <BannerTitle content={{ ...content, image: '' }} type={subtitle} />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

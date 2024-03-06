@@ -8,6 +8,7 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Image, Grid } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function VideoView(props) {
   const { content } = props;
@@ -37,6 +38,7 @@ function VideoView(props) {
       <BannerTitle content={{ ...content, image: '' }} type="Video" />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

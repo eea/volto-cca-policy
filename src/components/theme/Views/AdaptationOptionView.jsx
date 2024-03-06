@@ -10,6 +10,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function createDataField(type, field, section, title) {
   return {
@@ -123,6 +124,7 @@ function AdaptationOptionView(props) {
       />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

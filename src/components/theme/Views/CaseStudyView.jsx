@@ -10,6 +10,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid, Icon, Image } from 'semantic-ui-react';
 import { ImageGallery } from '@eeacms/volto-cca-policy/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -262,6 +263,7 @@ function CaseStudyView(props) {
       <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

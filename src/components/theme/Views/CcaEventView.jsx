@@ -6,6 +6,7 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function CcaEventView(props) {
   const { content } = props;
@@ -36,6 +37,7 @@ function CcaEventView(props) {
       <BannerTitle content={content} />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

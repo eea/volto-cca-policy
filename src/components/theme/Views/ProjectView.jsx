@@ -8,6 +8,7 @@ import {
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Image, Grid } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 import config from '@plone/volto/registry';
 
@@ -50,6 +51,7 @@ function ProjectView(props) {
       />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

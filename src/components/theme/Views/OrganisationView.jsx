@@ -9,6 +9,7 @@ import {
   BannerTitle,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Divider, Image, Grid } from 'semantic-ui-react';
 
 function OrganisationView(props) {
@@ -41,6 +42,7 @@ function OrganisationView(props) {
       <BannerTitle content={{ ...content, image: '' }} type="Organisation" />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
