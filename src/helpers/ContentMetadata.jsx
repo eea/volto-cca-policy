@@ -287,6 +287,7 @@ function ContentMetadata(props) {
     elements,
     duration,
     spatial_layer,
+    ipcc_category,
     health_impacts,
     climate_impacts,
     governance_level,
@@ -342,6 +343,13 @@ function ContentMetadata(props) {
           <>
             <h5>Key Type Measures:</h5>
             <ItemsList value={key_type_measures} />
+          </>
+        )}
+
+        {ipcc_category && ipcc_category?.length > 0 && (
+          <>
+            <h5>IPCC adaptation options categories:</h5>
+            <ItemsList value={ipcc_category} />
           </>
         )}
 
