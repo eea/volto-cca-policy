@@ -20,6 +20,12 @@ const modify = (config, { target, dev }, webpack) => {
     ? themeLessPath
     : semanticLessPath;
 
+  const voltoSearchlibPath = path.dirname(
+    require.resolve('@eeacms/volto-searchlib'),
+  );
+  const searchlibPath = path.resolve(`${voltoSearchlibPath}/../searchlib`);
+  config.resolve.alias['@eeacms/search'] = searchlibPath;
+
   return config;
 };
 
