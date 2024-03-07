@@ -48,13 +48,8 @@ const defaultConfig = {
     },
   },
   rules: {
-    'react/jsx-no-target-blank': [
-      'error',
-      {
-        allowReferrer: true,
-      },
-    ],
-  }
+    'react/jsx-no-target-blank': 'off',
+  },
 };
 
 const config = addonExtenders.reduce(
