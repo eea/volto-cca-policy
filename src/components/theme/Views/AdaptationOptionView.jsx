@@ -73,31 +73,33 @@ const SectionsMenu = (props) => {
 
   return (
     <div className="adaptation-details">
-      <div>
-        {sections.length > 0 && (
-          <>
-            <h3>Additional Details</h3>
-            <ul>
-              {sections.map((data, index) => (
-                <li key={index}>
-                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
-      <div>
-        <h3>Reference information</h3>
-        <ul>
-          <li>
-            <a href="#websites">Websites</a>
-          </li>
-          <li>
-            <a href="#source">Source</a>
-          </li>
-        </ul>
-      </div>
+      <Grid columns="12">
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          {sections.length > 0 && (
+            <>
+              <h3>Additional Details</h3>
+              <ul>
+                {sections.map((data, index) => (
+                  <li key={index}>
+                    <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </Grid.Column>
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          <h3>Reference information</h3>
+          <ul>
+            <li>
+              <a href="#websites">Websites</a>
+            </li>
+            <li>
+              <a href="#source">Source</a>
+            </li>
+          </ul>
+        </Grid.Column>
+      </Grid>
     </div>
   );
 };
