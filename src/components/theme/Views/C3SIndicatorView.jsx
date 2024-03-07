@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
-import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import {
+  HTMLField,
+  BannerTitle,
+  LogoWrapper,
+} from '@eeacms/volto-cca-policy/helpers';
+import { Accordion, Icon, Segment, Image } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -47,10 +52,13 @@ const createIframe = (div_id, details_url, details_params, spinner_url) => {
 
 const Details = (props) => {
   const { content } = props;
-  const c3s_details_url = content.details_app_toolbox_url;
-  const c3s_details_params = JSON.stringify(
-    content.details_app_parameters,
-  ).replace(/"/g, "'"); // we avoid double quotes in iframe text
+  const { details_app_toolbox_url, details_app_parameters } = content;
+
+  const c3s_details_url = details_app_toolbox_url;
+  const c3s_details_params = JSON.stringify(details_app_parameters).replace(
+    /"/g,
+    "'",
+  ); // we avoid double quotes in iframe text
   const [spinnerUrl, setSpinnerUrl] = useState(null);
 
   React.useEffect(() => {
@@ -74,10 +82,12 @@ const Details = (props) => {
 
 const Overview = (props) => {
   const { content } = props;
-  const c3s_overview_url = content.overview_app_toolbox_url;
-  const c3s_overview_params = JSON.stringify(
-    content.overview_app_parameters,
-  ).replace(/"/g, "'"); // we avoid double quotes in iframe text
+  const { overview_app_toolbox_url, overview_app_parameters } = content;
+  const c3s_overview_url = overview_app_toolbox_url;
+  const c3s_overview_params = JSON.stringify(overview_app_parameters).replace(
+    /"/g,
+    "'",
+  ); // we avoid double quotes in iframe text
   const [spinnerUrl, setSpinnerUrl] = useState(null);
 
   React.useEffect(() => {
@@ -101,7 +111,25 @@ const Overview = (props) => {
 
 function C3SIndicatorView(props) {
   const { content } = props;
+  const {
+    definition_app,
+    long_description,
+    indicator_title,
+    title,
+    logo,
+  } = content;
   const [showDetails, setShowDetails] = useState(false);
+  const hasIndicatorTitle =
+    indicator_title && indicator_title !== '_' && indicator_title !== '-';
+
+  const [activeAccIndex, setActiveAccIndex] = React.useState(null);
+
+  function handleAccClick(e, titleProps) {
+    const { index } = titleProps;
+    const newIndex = activeAccIndex === index ? -1 : index;
+
+    setActiveAccIndex(newIndex);
+  }
 
   const toggleIframe = () => {
     setShowDetails(!showDetails);
@@ -122,52 +150,81 @@ function C3SIndicatorView(props) {
   }, [showDetails]);
 
   return (
-    <div className="c3sindicator-view">
-      <div className="ui container">
-        <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={12}
-              className="col-full"
-            >
-              <a
-                href="/knowledge/european-climate-data-explorer/"
-                className="btn-right"
-              >
-                <button className="ui button primary">ECDE homepage</button>
-              </a>
-              <h1>{content.title}</h1>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <a href="#details" className="btn-right">
-                <button className="ui button primary" onClick={toggleIframe}>
-                  {showDetails ? 'Go back' : 'Explore in detail'}
-                </button>
-              </a>
-              <h2>
-                {content.indicator_title} {showDetails && ' - Explore index'}
-              </h2>
-              {!__SERVER__ && !showDetails && <Overview {...props} />}
-              {!__SERVER__ && showDetails && <Details {...props} />}
+    <div className="db-item-view c3sindicator-view">
+      <BannerTitle content={{ ...content, image: '' }} />
 
-              <p>
-                Content in the European Climate Data Explorer pages is delivered
-                by the{' '}
-                <a href="https://climate.copernicus.eu/">
-                  Copernicus Climate Change Service (C3S)
-                </a>{' '}
-                implemented by ECMWF.{' '}
-                <a href="/knowledge/european-climate-data-explorer/disclaimer">
-                  Disclaimer
-                </a>
-              </p>
-            </Grid.Column>
-          </div>
-        </Grid>
+      <div className="ui container">
+        <PortalMessage content={content} />
+        <LogoWrapper logo={logo}>
+          <h2>Background information</h2>
+          {logo && (
+            <Image
+              src={logo?.scales?.mini?.download}
+              alt={title}
+              className="db-logo"
+            />
+          )}
+        </LogoWrapper>
+
+        <HTMLField value={long_description} />
+
+        <div className="c3s-buttons">
+          <a href="#details">
+            <button className="ui button primary" onClick={toggleIframe}>
+              {showDetails ? 'Go back' : 'Explore in detail'}
+            </button>
+          </a>
+          <a href="/knowledge/european-climate-data-explorer/">
+            <button className="ui button primary">ECDE homepage</button>
+          </a>
+        </div>
+
+        {definition_app && !hasIndicatorTitle && (
+          <Accordion>
+            <Accordion.Title
+              className="accordion-title "
+              active={activeAccIndex === 0}
+              index={0}
+              onClick={handleAccClick}
+            >
+              <span>Visualisation and Navigation</span>
+              {activeAccIndex === 0 ? (
+                <Icon name="ri-arrow-up-s-line" size="24px" />
+              ) : (
+                <Icon name="ri-arrow-down-s-line" size="24px" />
+              )}
+            </Accordion.Title>
+            <Accordion.Content active={activeAccIndex === 0}>
+              <HTMLField value={definition_app} />
+            </Accordion.Content>
+          </Accordion>
+        )}
+
+        <h2>
+          {hasIndicatorTitle && <>{indicator_title}</>}
+          {showDetails && ' - Explore index'}
+        </h2>
+
+        <div>
+          {!__SERVER__ && !showDetails && <Overview {...props} />}
+          {!__SERVER__ && showDetails && <Details {...props} />}
+        </div>
+
+        <Segment>
+          <p>
+            Content in the European Climate Data Explorer pages is delivered by
+            the{' '}
+            <a href="https://climate.copernicus.eu/">
+              Copernicus Climate Change Service (C3S)
+            </a>{' '}
+            implemented by ECMWF.
+          </p>
+          <p>
+            <a href="/knowledge/european-climate-data-explorer/disclaimer">
+              Disclaimer
+            </a>
+          </p>
+        </Segment>
       </div>
     </div>
   );

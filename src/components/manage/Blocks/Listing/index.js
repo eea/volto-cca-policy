@@ -1,5 +1,6 @@
 import OrganisationCardsListingView from './OrganisationCardsListingView';
 import IndicatorCardsListingView from './IndicatorCardsListingView';
+import EventCardsListingView from './EventCardsListingView';
 
 export default function installListing(config) {
   config.blocks.blocksConfig.listing = {
@@ -17,6 +18,13 @@ export default function installListing(config) {
         id: 'indicatorCards',
         title: 'Indicator Cards',
         template: IndicatorCardsListingView,
+        isDefault: false,
+        fullobjects: true,
+      },
+      {
+        id: 'eventCards',
+        title: 'Event Cards',
+        template: EventCardsListingView,
         isDefault: false,
         fullobjects: true,
       },

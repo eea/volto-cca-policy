@@ -1,0 +1,214 @@
+// Case study view styles
+.case-study-view {
+  .case-studies-review-image-wrapper {
+    position: relative;
+    margin-right: 1.5em;
+    float: left;
+
+    p {
+      font-size: 90%;
+    }
+  }
+}
+
+// C3S Indicator view styles
+div.c3sindicator-view {
+  iframe {
+    border: none;
+  }
+
+  .ui.accordion {
+    margin: 1.5em 0;
+  }
+}
+
+// Geochars widget
+div.geochars-field {
+  div.checkbox {
+    margin-right: 1em;
+
+    label {
+      padding-left: 1.5em;
+    }
+  }
+}
+
+.btn-right {
+  margin: calc(2rem - 0.1em) 0em 1rem;
+  float: right;
+}
+
+.published-modified-info {
+  margin: 2em 0;
+  font-size: 0.8em;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  margin: 2em 0;
+  background-color: #e6e7e8;
+}
+
+.ui.modal.slider-modal {
+  .content {
+    padding: 2em;
+  }
+
+  .slick-slider {
+    padding: 1em 2em;
+  }
+
+  .slide-image-count {
+    text-align: center;
+  }
+
+  .slick-arrow {
+    width: 35px;
+    height: 35px;
+
+    &:before {
+      font-size: 30px;
+    }
+  }
+
+  .slick-prev {
+    left: -13px;
+  }
+
+  .slick-next {
+    right: -13px;
+  }
+}
+
+.documents-list {
+  padding: 0;
+  list-style-type: none;
+
+  li a:before {
+    content: '' !important;
+  }
+}
+
+.document-list-item {
+  display: flex;
+  align-items: flex-start;
+  word-break: break-all;
+}
+
+.db-item-view {
+  position: relative;
+
+  .col-left {
+    position: relative;
+  }
+
+  .ui.divider {
+    margin: 2em 0;
+  }
+
+  .casetstudy-gallery {
+    cursor: pointer;
+
+    .preview-image {
+      width: 100%;
+      height: 250px;
+    }
+
+    .gallery-title {
+      padding: 2px 4px;
+      background-color: #f2c94c;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .bottom-text {
+    margin-bottom: 2em;
+  }
+
+  .c3s-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .adaptation-details {
+    margin: 2em 0;
+  }
+
+  .ui.segment {
+    margin-bottom: 1.5em;
+  }
+
+  .section {
+    .section-title {
+      margin-top: 1em;
+    }
+  }
+
+  .share-info {
+    margin: 3.5em 0 !important;
+
+    .ui.button {
+      margin: 0 !important;
+    }
+  }
+
+  .ui.button {
+    margin: 1.5em 0 !important;
+  }
+
+  .content-box {
+    margin: 0;
+
+    h5 {
+      color: @secondaryColor;
+    }
+
+    .content-box-inner {
+      padding: 3.5em 0;
+    }
+  }
+
+  .video-wrapper {
+    margin-bottom: 2em;
+  }
+
+  .has-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+  }
+
+  .db-logo {
+    width: auto;
+    max-height: 70px;
+  }
+
+  .col-right {
+    .ui.segment {
+      border: none;
+      background-color: #f9f9f9;
+
+      h5 {
+        margin: 1em 0 0.5em 0;
+        color: @secondaryColor;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .related-case-studies {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+          margin-bottom: 0.8em;
+        }
+      }
+    }
+  }
+}

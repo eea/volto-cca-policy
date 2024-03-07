@@ -1,14 +1,14 @@
 import React from 'react';
-import { DocumentsList, HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
-import config from '@plone/volto/registry';
+import {
+  DocumentsList,
+  HTMLField,
+  BannerTitle,
+} from '@eeacms/volto-cca-policy/helpers';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function CcaEventView(props) {
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
   const { content } = props;
   // cca_files: [content.agenda_file]}
   if (content.agenda_file) {
@@ -34,14 +34,10 @@ function CcaEventView(props) {
 
   return (
     <div className="cca-event-view">
-      {content?.image !== null && (
-        <TitleBlockView
-          {...props}
-          data={{ info: [{ description: '' }] }}
-          metadata={content}
-        />
-      )}
+      <BannerTitle content={content} />
+
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -57,6 +53,7 @@ function CcaEventView(props) {
                 </>
               )}
               <HTMLField value={content.text} className="long_description" />
+
               <h2>Agenda and supporting documents</h2>
               <HTMLField value={content.agenda} className="long_description" />
               {content?.agenda_file && <DocumentsList content={agenda_files} />}

@@ -50,7 +50,10 @@ export function addExpandersToPath(path, type, isAnonymous) {
   } = qs.parseUrl(path, { decode: false });
 
   const expandersFromConfig = apiExpanders
-    .filter((expand) => matchPath(url, expand.match) && expand[type])
+    .filter((expand) => {
+      const res = matchPath(url, expand.match) && expand[type];
+      return res;
+    })
     .map((expand) => expand[type]);
 
   const expandMerge = compact(

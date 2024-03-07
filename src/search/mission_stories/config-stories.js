@@ -18,8 +18,8 @@ export default function installMissionStoriesSearch(config) {
 
   config.searchui.missionStoriesSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
-    elastic_index: '_es/missionStoriesSearch',
-    index_name: 'ccatest_searchui',
+    elastic_index: '_es/globalsearch',
+    index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     vocab: {
       cluster_name: {

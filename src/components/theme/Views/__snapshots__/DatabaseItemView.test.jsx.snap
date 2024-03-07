@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatabaseItemView should render the component 1`] = `
+<div
+  className="db-item-view"
+>
+  <div>
+    Title Block Component
+  </div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <h2>
+            Description
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>",
+              }
+            }
+          />
+          <div
+            className="ui divider"
+          />
+          <h2>
+            Reference information
+          </h2>
+          <h5
+            id="websites"
+          >
+            Websites:
+          </h5>
+          <ul>
+            <li>
+              <a
+                href="https://example.org/"
+              >
+                https://example.org/
+              </a>
+            </li>
+          </ul>
+          <div
+            className="published-modified-info"
+          >
+            <p>
+              <span>
+                <strong>
+                  Published in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+              <span>
+                   -   
+              </span>
+              <span>
+                <strong>
+                  Last Modified in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+            </p>
+          </div>
+          <div
+            className="share-info"
+          >
+            <a
+              href="/help/share-your-info"
+            >
+              <button
+                className="ui button primary icon labeled"
+              >
+                Share your information
+                <i
+                  aria-hidden="true"
+                  className="arrow right icon"
+                />
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <div
+            className="ui segment"
+          >
+            <div
+              className="content-metadata"
+            >
+              <h5>
+                Keywords:
+              </h5>
+              <span>
+                keyword 1, keyword 2
+              </span>
+              <h5>
+                Geographic characterisation:
+              </h5>
+              <div
+                className="geochar"
+              >
+                <p>
+                  Global
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

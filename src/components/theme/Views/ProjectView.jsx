@@ -2,85 +2,102 @@ import React from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
   PublishedModifiedInfo,
   ShareInfo,
+  ReferenceInfo,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+
 import config from '@plone/volto/registry';
 
 function ProjectView(props) {
   const { content } = props;
   const {
+    long_description,
+    lead,
+    funding,
+    partners,
+    acronym,
+    title,
+    logo,
+  } = content;
+
+  const {
     blocks: { blocksConfig },
   } = config;
+
   const TitleBlockView = blocksConfig?.title?.view;
 
   return (
-    <div className="project-view">
+    <div className="db-item-view project-view">
       <TitleBlockView
         {...props}
         data={{
           info: [{ description: '' }],
           hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: true,
+          hideCreationDate: false,
+          hideModificationDate: false,
+          hidePublishingDate: false,
+          hideDownloadButton: false,
           hideShareButton: false,
           subtitle: 'Project',
         }}
         metadata={{
           ...content,
-          title: content.title + ' (' + content.acronym + ')',
+          title: title + ' (' + acronym + ')',
         }}
       />
+
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={9}
+              computer={8}
               className="col-left"
             >
-              <h4>Description:</h4>
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-              <hr />
-              <h4>Project information</h4>
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={long_description} />
+
+              <Divider />
+
+              <h2>Project information</h2>
               <h5>Lead</h5>
-              <p>{content.lead}</p>
+              <p>{lead}</p>
               <h5>Partners</h5>
-              <HTMLField value={content.partners} className="partners" />
-              {content.funding && (
+              <HTMLField value={partners} className="partners" />
+              {funding && (
                 <>
                   <h5>Source of funding</h5>
-                  <p>{content.funding}</p>
+                  <p>{funding}</p>
                 </>
               )}
 
-              <hr />
-              <h4>Reference information</h4>
-
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites:" value={content.websites} />
-              )}
-
+              <Divider />
+              <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={3}
+              computer={4}
               className="col-right"
             >
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
+              <ContentMetadata {...props} />
             </Grid.Column>
           </div>
         </Grid>

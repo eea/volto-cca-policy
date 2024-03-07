@@ -1,19 +1,15 @@
 import { compose } from 'redux';
-import loadable from '@loadable/component';
 
 import { Sitemap } from '@plone/volto/components';
+import CcaEventView from './components/theme/Views/CcaEventView';
+import NewsItemView from './components/theme/Views/NewsItemView';
+import EventView from './components/theme/Views/EventView';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
-import CcaEventView from './components/theme/Views/CcaEventView';
-import GuidanceView from './components/theme/Views/GuidanceView';
-import IndicatorView from './components/theme/Views/IndicatorView';
-import InformationPortalView from './components/theme/Views/InformationPortalView';
-import OrganisationView from './components/theme/Views/OrganisationView';
 import ProjectView from './components/theme/Views/ProjectView';
-import PublicationReportView from './components/theme/Views/PublicationReportView';
-import ToolView from './components/theme/Views/ToolView';
 import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
+import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
@@ -30,6 +26,7 @@ import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -65,10 +62,10 @@ const applyConfig = (config) => {
     ];
   }
 
-  if (!config.settings.loadables.d3)
-    config.settings.loadables.d3 = loadable.lib(() => import('d3'));
-  if (!config.settings.loadables.d3Geo)
-    config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
+  // if (!config.settings.loadables.d3)
+  //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
+  // if (!config.settings.loadables.d3Geo)
+  //   config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -164,7 +161,7 @@ const applyConfig = (config) => {
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/observatory',
         path: '/en/observatory/advanced-search',
-        placeholder: 'Search Observatory Climate-ADAPT...',
+        placeholder: 'Search the Observatory Resource Catalogue...',
         description: 'Looking for more information?',
         buttonTitle: 'Explore more on Climate-ADAPT',
         buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
@@ -190,6 +187,10 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.maps.restricted = false;
   }
 
+  if (config.blocks.blocksConfig.layoutSettings) {
+    config.blocks.blocksConfig.layoutSettings.blockHasOwnFocusManagement = false;
+  }
+
   // Enable video
   if (config.blocks.blocksConfig.video) {
     config.blocks.blocksConfig.video.restricted = false;
@@ -204,6 +205,27 @@ const applyConfig = (config) => {
       },
     };
   }
+
+  const { facetWidgets } = config.blocks.blocksConfig.search.extensions;
+  const { rewriteOptions } = facetWidgets;
+  const origin_website_blacklist = ['AdapteCCA', 'DRMKC'];
+  facetWidgets.rewriteOptions = (name, choices) => {
+    let base = rewriteOptions(name, choices);
+    if (name === 'origin_website') {
+      base.forEach((pair) => {
+        if (pair.value === 'Lancet Countdown') {
+          pair.label = 'Lancet Countdown in Europe';
+        }
+        if (pair.value === 'C3S') {
+          pair.label = 'Copernicus (C3S)';
+        }
+      });
+      base = base.filter(
+        (f) => origin_website_blacklist.indexOf(f.value) === -1,
+      );
+    }
+    return base;
+  };
 
   // Move blocks to Site group
   const move_to_site = [
@@ -235,21 +257,22 @@ const applyConfig = (config) => {
 
   config.blocks.groupBlocksOrder.push({ id: 'site', title: 'Site' });
 
-  //console.log(config);
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
-    'eea.climateadapt.adaptationoption': AdaptationOptionView,
-    'eea.climateadapt.casestudy': CaseStudyView,
+    Event: EventView,
     'cca-event': CcaEventView,
-    'eea.climateadapt.guidancedocument': GuidanceView,
-    'eea.climateadapt.indicator': IndicatorView,
-    'eea.climateadapt.informationportal': InformationPortalView,
-    'eea.climateadapt.organisation': OrganisationView,
-    'eea.climateadapt.aceproject': ProjectView,
-    'eea.climateadapt.publicationreport': PublicationReportView,
-    'eea.climateadapt.tool': ToolView,
+    'eea.climateadapt.tool': DatabaseItemView,
+    'eea.climateadapt.indicator': DatabaseItemView,
+    'eea.climateadapt.organisation': DatabaseItemView,
+    'eea.climateadapt.guidancedocument': DatabaseItemView,
+    'eea.climateadapt.informationportal': DatabaseItemView,
+    'eea.climateadapt.publicationreport': DatabaseItemView,
     'eea.climateadapt.video': VideoView,
+    'eea.climateadapt.aceproject': ProjectView,
+    'eea.climateadapt.casestudy': CaseStudyView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
+    'eea.climateadapt.adaptationoption': AdaptationOptionView,
+    'News Item': NewsItemView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
@@ -295,138 +318,58 @@ const applyConfig = (config) => {
     },
   ];
 
+  const hideChildren = {
+    hideChildrenFromNavigation: false,
+  };
+
   // mega menu layout settings
   config.settings.menuItemsLayouts = {
     // '*': {
     //   hideChildrenFromNavigation: false,
     // },
-    '/en/eu-policy': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/eu-policy': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/eu-policy': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/eu-policy': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/eu-policy': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/eu-policy': {
-      hideChildrenFromNavigation: false,
-    },
-    '/en/knowledge-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/knowledge-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/knowledge-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/knowledge-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/knowledge-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/knowledge-1': {
-      hideChildrenFromNavigation: false,
-    },
+    '/en/eu-policy': hideChildren,
+    '/de/eu-policy': hideChildren,
+    '/fr/eu-policy': hideChildren,
+    '/es/eu-policy': hideChildren,
+    '/it/eu-policy': hideChildren,
+    '/pl/eu-policy': hideChildren,
+    '/en/knowledge-1': hideChildren,
+    '/de/knowledge-1': hideChildren,
+    '/fr/knowledge-1': hideChildren,
+    '/es/knowledge-1': hideChildren,
+    '/it/knowledge-1': hideChildren,
+    '/pl/knowledge-1': hideChildren,
     // observatory
-    '/en/observatory/about': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/observatory/about': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/observatory/about': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/observatory/about': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/observatory/about': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/observatory/about': {
-      hideChildrenFromNavigation: false,
-    },
-    '/en/observatory/policy-context-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/observatory/policy-context-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/observatory/policy-context-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/observatory/policy-context-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/observatory/policy-context-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/observatory/policy-context-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/en/observatory/evidence-on-climate-and-health': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/observatory/evidence-on-climate-and-health': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/observatory/evidence-on-climate-and-health': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/observatory/evidence-on-climate-and-health': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/observatory/evidence-on-climate-and-health': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/observatory/evidence-on-climate-and-health': {
-      hideChildrenFromNavigation: false,
-    },
-    '/en/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/observatory/resource-catalogue-1': {
-      hideChildrenFromNavigation: false,
-    },
-    '/en/observatory/publications-and-outreach': {
-      hideChildrenFromNavigation: false,
-    },
-    '/de/observatory/publications-and-outreach': {
-      hideChildrenFromNavigation: false,
-    },
-    '/fr/observatory/publications-and-outreach': {
-      hideChildrenFromNavigation: false,
-    },
-    '/es/observatory/publications-and-outreach': {
-      hideChildrenFromNavigation: false,
-    },
-    '/it/observatory/publications-and-outreach': {
-      hideChildrenFromNavigation: false,
-    },
-    '/pl/observatory/publications-and-outreach': {
-      hideChildrenFromNavigation: false,
-    },
+    '/en/observatory/about': hideChildren,
+    '/de/observatory/about': hideChildren,
+    '/fr/observatory/about': hideChildren,
+    '/es/observatory/about': hideChildren,
+    '/it/observatory/about': hideChildren,
+    '/pl/observatory/about': hideChildren,
+    '/en/observatory/policy-context-1': hideChildren,
+    '/de/observatory/policy-context-1': hideChildren,
+    '/fr/observatory/policy-context-1': hideChildren,
+    '/es/observatory/policy-context-1': hideChildren,
+    '/it/observatory/policy-context-1': hideChildren,
+    '/pl/observatory/policy-context-1': hideChildren,
+    '/en/observatory/evidence-on-climate-and-health': hideChildren,
+    '/de/observatory/evidence-on-climate-and-health': hideChildren,
+    '/fr/observatory/evidence-on-climate-and-health': hideChildren,
+    '/es/observatory/evidence-on-climate-and-health': hideChildren,
+    '/it/observatory/evidence-on-climate-and-health': hideChildren,
+    '/pl/observatory/evidence-on-climate-and-health': hideChildren,
+    '/en/observatory/resource-catalogue-1': hideChildren,
+    '/de/observatory/resource-catalogue-1': hideChildren,
+    '/fr/observatory/resource-catalogue-1': hideChildren,
+    '/es/observatory/resource-catalogue-1': hideChildren,
+    '/it/observatory/resource-catalogue-1': hideChildren,
+    '/pl/observatory/resource-catalogue-1': hideChildren,
+    '/en/observatory/publications-and-outreach': hideChildren,
+    '/de/observatory/publications-and-outreach': hideChildren,
+    '/fr/observatory/publications-and-outreach': hideChildren,
+    '/es/observatory/publications-and-outreach': hideChildren,
+    '/it/observatory/publications-and-outreach': hideChildren,
+    '/pl/observatory/publications-and-outreach': hideChildren,
   };
 
   // Custom results
@@ -437,6 +380,12 @@ const applyConfig = (config) => {
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
+  config.widgets.widget.creatableselect = CreatableSelectWidget;
+
+  config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
+    schema.properties.body_class.widget = 'creatableselect';
+    return schema;
+  };
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
@@ -453,6 +402,12 @@ const applyConfig = (config) => {
       )})/mission/sitemap`,
       component: Sitemap,
     },
+    {
+      path: `/(${config.settings?.supportedLanguages.join(
+        '|',
+      )})/observatory/sitemap`,
+      component: Sitemap,
+    },
 
     ...(config.addonRoutes || []),
   ];
@@ -462,6 +417,16 @@ const applyConfig = (config) => {
     {
       match: '',
       component: MigrationButtons,
+    },
+  ];
+
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    {
+      match: {
+        path: /(.*)\/policy-context\/country-profiles\/(.*)/,
+      },
+      GET_CONTENT: ['siblings'],
     },
   ];
 

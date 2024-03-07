@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an event view component with all props 1`] = `
+<div
+  className="cca-event-view"
+>
+  <div>
+    Title Block Component
+  </div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Hello World!</p>",
+              }
+            }
+          />
+          <h2>
+            Agenda and supporting documents
+          </h2>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <div
+            className="ui segment"
+          >
+            <h5>
+              A background document for the event is available 
+               
+            </h5>
+            <ul
+              className="documents-list"
+            >
+              <li>
+                <a
+                  className="document-list-item"
+                >
+                  <i
+                    className="file alternate icon"
+                  />
+                  <span />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <h2>
+            Practical information
+          </h2>
+          <h3>
+            Participation
+          </h3>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <h2>
+            Contact
+          </h2>
+          <p>
+            If you have any further questions you can contact
+             
+            <a
+              href="mailto:{content.contact_email}"
+            >
+              test@example.com
+            </a>
+          </p>
+        </div>
+        <div
+          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <h3>
+            When
+          </h3>
+          <p
+            className="event-when"
+          >
+            <span
+              className="start"
+            >
+              <span
+                className="start-date"
+              >
+                Jun 23, 2019
+              </span>
+              <span>
+                 
+              </span>
+              <span
+                className="start-time"
+              >
+                3:20 PM
+              </span>
+            </span>
+             to 
+            <span
+              className="end"
+            >
+              <span
+                className="end-date"
+              >
+                Jun 24, 2019
+              </span>
+              <span>
+                 
+              </span>
+              <span
+                className="end-time"
+              >
+                3:20 PM
+              </span>
+            </span>
+          </p>
+          <h3>
+            Where
+          </h3>
+          <p>
+            Volto, Plone
+          </p>
+          <h3>
+            Language
+          </h3>
+          <p />
+          <h3>
+            Info
+          </h3>
+          <p>
+            test@example.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders an event view component with only required props 1`] = `
+<div
+  className="cca-event-view"
+>
+  <div>
+    Title Block Component
+  </div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <h2>
+            Agenda and supporting documents
+          </h2>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <div
+            className="ui segment"
+          >
+            <h5>
+              A background document for the event is available 
+               
+            </h5>
+            <ul
+              className="documents-list"
+            >
+              <li>
+                <a
+                  className="document-list-item"
+                >
+                  <i
+                    className="file alternate icon"
+                  />
+                  <span />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <h2>
+            Practical information
+          </h2>
+          <h3>
+            Participation
+          </h3>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <h2>
+            Contact
+          </h2>
+          <p>
+            If you have any further questions you can contact
+             
+            <a
+              href="mailto:{content.contact_email}"
+            />
+          </p>
+        </div>
+        <div
+          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <h3>
+            When
+          </h3>
+          <p
+            className="event-when same-day"
+          >
+            <span
+              className="start-date"
+            >
+              Jun 23, 2019
+            </span>
+             from 
+            <span
+              className="start-time"
+            >
+              3:20 PM
+            </span>
+             to 
+            <span
+              className="end-time"
+            >
+              4:20 PM
+            </span>
+          </p>
+          <h3>
+            Where
+          </h3>
+          <p />
+          <h3>
+            Language
+          </h3>
+          <p />
+          <h3>
+            Info
+          </h3>
+          <p />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders an event view component without links to api in the text 1`] = `
+<div
+  className="cca-event-view"
+>
+  <div>
+    Title Block Component
+  </div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Hello World!</p><p>This is an <a href=\\"http://localhost:8080/Plone/foo/bar\\">internal link</a> and a <a href=\\"http://localhost:8080/Plone/foo/baz\\">second link</a></p>",
+              }
+            }
+          />
+          <h2>
+            Agenda and supporting documents
+          </h2>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <div
+            className="ui segment"
+          >
+            <h5>
+              A background document for the event is available 
+               
+            </h5>
+            <ul
+              className="documents-list"
+            >
+              <li>
+                <a
+                  className="document-list-item"
+                >
+                  <i
+                    className="file alternate icon"
+                  />
+                  <span />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <h2>
+            Practical information
+          </h2>
+          <h3>
+            Participation
+          </h3>
+          <div
+            className="long_description"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": undefined,
+              }
+            }
+          />
+          <h2>
+            Contact
+          </h2>
+          <p>
+            If you have any further questions you can contact
+             
+            <a
+              href="mailto:{content.contact_email}"
+            />
+          </p>
+        </div>
+        <div
+          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <h3>
+            When
+          </h3>
+          <p
+            className="event-when same-day"
+          >
+            <span
+              className="start-date"
+            >
+              Jun 23, 2019
+            </span>
+             from 
+            <span
+              className="start-time"
+            >
+              3:20 PM
+            </span>
+             to 
+            <span
+              className="end-time"
+            >
+              4:20 PM
+            </span>
+          </p>
+          <h3>
+            Where
+          </h3>
+          <p />
+          <h3>
+            Language
+          </h3>
+          <p />
+          <h3>
+            Info
+          </h3>
+          <p />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

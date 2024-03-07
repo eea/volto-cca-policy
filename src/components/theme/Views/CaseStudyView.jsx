@@ -8,18 +8,18 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Divider, Grid, Icon, Image } from 'semantic-ui-react';
+import { ImageGallery } from '@eeacms/volto-cca-policy/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
+  const { primary_photo, primary_photo_copyright, title } = content;
 
-  return content.primary_photo !== null ? (
+  return primary_photo !== null ? (
     <div className="case-studies-review-image-wrapper">
-      <img
-        src={content?.primary_photo?.scales?.mini?.download}
-        alt={content.title}
-      />
-      <p>{content.primary_photo_copyright}</p>
+      <Image src={primary_photo?.scales?.mini?.download} alt={title} />
+      <p>{primary_photo_copyright}</p>
     </div>
   ) : null;
 };
@@ -151,17 +151,20 @@ const sectionID = (title) => {
 
 const PhotoGallery = (props) => {
   const { content } = props;
-  const photos = content.cca_gallery;
+  const { cca_gallery } = content;
+
   return (
     <>
-      <h5>Case Study Illustrations</h5>
-      <ul className="gallery-placeholder">
-        {photos.map((photo, index) => (
-          <li key={index}>
-            <a href={photo.url}>{photo.title}</a>
-          </li>
-        ))}
-      </ul>
+      {cca_gallery && cca_gallery.length > 0 && (
+        <div className="casetstudy-gallery">
+          <div className="gallery-title">
+            <span>Case Study illustrations</span>
+            <span> ({cca_gallery.length}) </span>
+            <Icon name="ri-image-fill" />
+          </div>
+          <ImageGallery items={cca_gallery} />
+        </div>
+      )}
     </>
   );
 };
@@ -172,8 +175,8 @@ const SectionsMenu = (props) => {
   return (
     <>
       {sections.length > 0 && (
-        <>
-          <h5>{title}</h5>
+        <div>
+          <h4>{title}</h4>
           <ul>
             {sections.map((data, index) => (
               <li key={index}>
@@ -181,7 +184,7 @@ const SectionsMenu = (props) => {
               </li>
             ))}
           </ul>
-        </>
+        </div>
       )}
     </>
   );
@@ -197,6 +200,14 @@ const SectionContent = (props) => {
     }
     return list;
   };
+
+  const section = content[sectionData.field];
+
+  for (var key in section) {
+    if (section[key] === '') {
+      section[key] = '<p>-</p>';
+    }
+  }
 
   return (
     <div id={sectionID(sectionData.title)} className="section">
@@ -218,10 +229,7 @@ const SectionContent = (props) => {
           <p key={index}>{relevanceItem.title}</p>
         ))
       ) : (
-        <HTMLField
-          value={content[sectionData.field]}
-          className="long_description"
-        />
+        <HTMLField value={content[sectionData.field]} />
       )}
     </div>
   );
@@ -229,6 +237,7 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
+  const { long_description } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -250,35 +259,53 @@ function CaseStudyView(props) {
   };
 
   return (
-    <div className="case-study-view">
-      <BannerTitle content={content} type="Case Studies" />
+    <div className="db-item-view case-study-view">
+      <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={9}
+              computer={8}
               className="col-left"
             >
               <PrimaryPhoto {...props} />
+              <HTMLField value={long_description} />
 
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
+              <Divider />
+              <div className="adaptation-details">
+                <Grid columns="12">
+                  <Grid.Column mobile={12} tablet={12} computer={4}>
+                    <SectionsMenu
+                      sections={usedSections(1)}
+                      title={groups['1']}
+                    />
+                  </Grid.Column>
+                  <Grid.Column mobile={12} tablet={12} computer={4}>
+                    <SectionsMenu
+                      sections={usedSections(2)}
+                      title={groups['2']}
+                    />
+                  </Grid.Column>
+                  <Grid.Column mobile={12} tablet={12} computer={4}>
+                    <SectionsMenu
+                      sections={usedSections(3)}
+                      title={groups['3']}
+                    />
+                  </Grid.Column>
+                </Grid>
+              </div>
 
-              <SectionsMenu sections={usedSections(1)} title={groups['1']} />
-              <SectionsMenu sections={usedSections(2)} title={groups['2']} />
-              <SectionsMenu sections={usedSections(3)} title={groups['3']} />
-              <hr />
+              <Divider />
 
               {[1, 2, 3].map(
                 (groupID, index) =>
                   usedSections(groupID).length > 0 && (
                     <Fragment key={index}>
-                      <h4>{groups[groupID]}</h4>
+                      <h2>{groups[groupID]}</h2>
                       {usedSections(groupID).map((data, index) => (
                         <SectionContent
                           sectionData={data}
@@ -286,13 +313,14 @@ function CaseStudyView(props) {
                           key={index}
                         />
                       ))}
-                      {groupID !== 3 ? <hr /> : null}
+                      {groupID !== 3 ? <Divider /> : null}
                     </Fragment>
                   ),
               )}
 
               <PublishedModifiedInfo {...props} />
-              <hr />
+              <Divider />
+
               <p>
                 Please contact us for any other enquiry on this Case Study or to
                 share a new Case Study (email{' '}
@@ -312,14 +340,14 @@ function CaseStudyView(props) {
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={3}
+              computer={4}
               className="col-right"
             >
-              <div style={{}}>
-                <PhotoGallery {...props} />
-                <DocumentsList {...props} />
-                <ContentMetadata {...props} />
-              </div>
+              <PhotoGallery {...props} />
+
+              <ContentMetadata {...props} />
+
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>

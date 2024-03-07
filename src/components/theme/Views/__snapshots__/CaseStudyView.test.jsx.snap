@@ -2,7 +2,7 @@
 
 exports[`CaseStudyView should render the component 1`] = `
 <div
-  className="case-study-view"
+  className="db-item-view case-study-view"
 >
   <div>
     Title Block Component
@@ -17,25 +17,47 @@ exports[`CaseStudyView should render the component 1`] = `
         className="row"
       >
         <div
-          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
             className="case-studies-review-image-wrapper"
           >
             <img
               alt="CaseStudyView"
+              className="ui image"
             />
             <p />
           </div>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
               }
             }
           />
-          <hr />
+          <div
+            className="ui divider"
+          />
+          <div
+            className="adaptation-details"
+          >
+            <div
+              className="ui twelve column grid"
+            >
+              <div
+                className="four wide computer twelve wide mobile twelve wide tablet column"
+              />
+              <div
+                className="four wide computer twelve wide mobile twelve wide tablet column"
+              />
+              <div
+                className="four wide computer twelve wide mobile twelve wide tablet column"
+              />
+            </div>
+          </div>
+          <div
+            className="ui divider"
+          />
           <div
             className="published-modified-info"
           >
@@ -59,7 +81,9 @@ exports[`CaseStudyView should render the component 1`] = `
               </span>
             </p>
           </div>
-          <hr />
+          <div
+            className="ui divider"
+          />
           <p>
             Please contact us for any other enquiry on this Case Study or to share a new Case Study (email
              
@@ -95,17 +119,11 @@ exports[`CaseStudyView should render the component 1`] = `
           </div>
         </div>
         <div
-          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            style={Object {}}
+            className="ui segment"
           >
-            <h5>
-              Case Study Illustrations
-            </h5>
-            <ul
-              className="gallery-placeholder"
-            />
             <div
               className="content-metadata"
             >

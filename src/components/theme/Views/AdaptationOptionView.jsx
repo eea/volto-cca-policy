@@ -2,12 +2,15 @@ import React, { Fragment } from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
+  ReferenceInfo,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
+  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Grid } from 'semantic-ui-react';
+import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
+import { UniversalLink } from '@plone/volto/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function createDataField(type, field, section, title) {
   return {
@@ -69,21 +72,23 @@ const SectionsMenu = (props) => {
   const { sections } = props;
 
   return (
-    <>
-      {sections.length > 0 && (
-        <>
-          <h5 className="Adaptation-option-selector">Additional Details</h5>
-          <ul>
-            {sections.map((data, index) => (
-              <li key={index}>
-                <a href={'#' + sectionID(data.title)}>{data.title}</a>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-      <>
-        <h5 className="Adaptation-option-selector">Reference information</h5>
+    <div className="adaptation-details">
+      <div>
+        {sections.length > 0 && (
+          <>
+            <h3>Additional Details</h3>
+            <ul>
+              {sections.map((data, index) => (
+                <li key={index}>
+                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+      <div>
+        <h3>Reference information</h3>
         <ul>
           <li>
             <a href="#websites">Websites</a>
@@ -92,92 +97,117 @@ const SectionsMenu = (props) => {
             <a href="#source">Source</a>
           </li>
         </ul>
-      </>
-      <hr />
-    </>
+      </div>
+    </div>
   );
 };
 
 function AdaptationOptionView(props) {
   const { content } = props;
+  const {
+    related_case_studies,
+    long_description,
+    ipcc_category,
+    logo,
+    title,
+  } = content;
 
   const usedSections = dataDisplay.filter((data) =>
     content?.hasOwnProperty(data.field),
   );
 
   return (
-    <div className="adaptation-option-view">
-      <BannerTitle content={content} type="Adaptation Option" />
+    <div className="db-item-view adaptation-option-view">
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        type="Adaptation Option"
+      />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={9}
+              computer={8}
               className="col-left"
             >
-              <HTMLField
-                value={content.long_description}
-                className="long_description"
-              />
-
+              <LogoWrapper logo={logo}>
+                <h2>Description</h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
+              <HTMLField value={long_description} />
               <SectionsMenu sections={usedSections} />
+
+              <Divider />
 
               {content?.ipcc_category?.length > 0 && (
                 <Fragment>
-                  <h4>Adaptation Details</h4>
-
+                  <h2>Adaptation Details</h2>
                   <div id={sectionID('IPCC categories')} className="section">
                     <h5 className="section-title">IPCC categories</h5>
-                    {content.ipcc_category
+                    {ipcc_category
                       .map((item) => item.title)
                       .sort()
                       .join(', ')}
+
                     {usedSections.length > 0 && (
                       <>
-                        {usedSections.map((data, index) => (
-                          <Fragment key={index}>
-                            <div id={sectionID(data.title)} className="section">
-                              <h5 className="section-title">{data.title}</h5>
-                              <HTMLField
-                                value={content[data.field]}
-                                className="long_description"
-                              />
-                            </div>
-                          </Fragment>
-                        ))}
+                        {usedSections
+                          .filter((data) => data.field !== 'ipcc_category')
+                          .map((data, index) => (
+                            <Fragment key={index}>
+                              <div
+                                id={sectionID(data.title)}
+                                className="section"
+                              >
+                                <h5 className="section-title">{data.title}</h5>
+                                <HTMLField value={content[data.field]} />
+                              </div>
+                            </Fragment>
+                          ))}
                       </>
                     )}
                   </div>
-                  <hr />
+                  <Divider />
                 </Fragment>
               )}
 
-              <h4>Reference information</h4>
-
-              {content?.websites?.length > 0 && (
-                <LinksList title="Websites:" value={content.websites} />
-              )}
-
-              <div id="source" className="section">
-                <h5>References:</h5>
-                <HTMLField value={content.source} />
-              </div>
+              <ReferenceInfo content={content} />
 
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
             </Grid.Column>
+
             <Grid.Column
               mobile={12}
               tablet={12}
-              computer={3}
+              computer={4}
               className="col-right"
             >
-              <div style={{}}>
-                <ContentMetadata {...props} />
-              </div>
+              <ContentMetadata {...props} />
+
+              {related_case_studies?.length > 0 && (
+                <Segment>
+                  <h5>Case studies related to this option:</h5>
+                  <ul className="related-case-studies">
+                    {related_case_studies.map((item, index) => (
+                      <li key={index}>
+                        <UniversalLink key={index} href={item.url}>
+                          {item.title}
+                        </UniversalLink>
+                      </li>
+                    ))}
+                  </ul>
+                </Segment>
+              )}
             </Grid.Column>
           </div>
         </Grid>

@@ -2,7 +2,7 @@
 
 exports[`ProjectView should render the component 1`] = `
 <div
-  className="project-view"
+  className="db-item-view project-view"
 >
   <div>
     Title Block Component
@@ -17,23 +17,24 @@ exports[`ProjectView should render the component 1`] = `
         className="row"
       >
         <div
-          className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <h4>
-            Description:
-          </h4>
+          <h2>
+            Description
+          </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
               }
             }
           />
-          <hr />
-          <h4>
+          <div
+            className="ui divider"
+          />
+          <h2>
             Project information
-          </h4>
+          </h2>
           <h5>
             Lead
           </h5>
@@ -49,10 +50,9 @@ exports[`ProjectView should render the component 1`] = `
               }
             }
           />
-          <hr />
-          <h4>
-            Reference information
-          </h4>
+          <div
+            className="ui divider"
+          />
           <div
             className="published-modified-info"
           >
@@ -95,10 +95,10 @@ exports[`ProjectView should render the component 1`] = `
           </div>
         </div>
         <div
-          className="three wide computer twelve wide mobile twelve wide tablet column col-right"
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            style={Object {}}
+            className="ui segment"
           >
             <div
               className="content-metadata"

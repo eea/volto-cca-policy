@@ -2,6 +2,9 @@
         Global Overrides
 *******************************/
 @import './mission.less';
+@import './observatory.less';
+@import './views.less';
+@import './search.less';
 
 // [class~='view-defaultview'] [id='page-document'] > *,
 // [class~='view-viewview'] [id='page-document'] > * {
@@ -14,9 +17,11 @@
   @green-2 97.12%
 );
 
-body.subsite-root .content-area {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+.ui.ordered.list,
+.ui.ordered.list .list,
+ol.ui.list,
+ol.ui.list ol {
+  padding-left: 1.25rem;
 }
 
 p.has--clear--both:empty {
@@ -24,127 +29,53 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
-.ui.basic.segment.content-area {
-  padding: 0;
-}
-
 // Add icon for external links
-#page-document {
-  p {
-    a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
-    a[target='_blank']:not(.ui.button):not(:empty) {
-      &:before {
-        position: relative;
-        top: 2px;
-        margin-right: 3px;
-        color: inherit;
-        content: '\ecaf';
-        font-family: remixicon;
-        font-size: 1em;
-      }
+// .content-area #view {
+//   a[data-linktype='internal'] {
+//     &:before {
+//       content: '' !important;
+//     }
+//   }
 
-      &:visited {
-        &:before {
-          // fix visited link icon color
-          // doesn't work with color: inherit
-          color: @linkVisitedColor;
-        }
-      }
+//   a[href^="http://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
+//     a[href^="https://"]:not([href*="climate-adapt.eea.europa.eu"]):not(.ui.button):not(:empty),
+//     a[href^="http://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty),
+//     a[href^="https://"]:not([href*="cca-p6.devel5cph.eionet.europa.eu"]):not(.ui.button):not(:empty)
+//     // a[rel='noopener']:not(.ui.button):not(:empty)
+//   {
+//     &:before {
+//       position: relative;
+//       top: 0;
+//       margin-right: 3px;
+//       color: inherit;
+//       content: '\ecaf';
+//       font-family: remixicon;
+//       font-size: 1em;
+//     }
 
-      &:active {
-        &:before {
-          // fix active link icon color
-          // doesn't work with color: inherit
-          color: @linkActiveColor;
-        }
-      }
-    }
-  }
-}
+//     &:visited {
+//       &:before {
+//         // fix visited link icon color
+//         // doesn't work with color: inherit
+//         color: @linkVisitedColor;
+//       }
+//     }
 
-// Adaptation option view styles
-div.adaptation-option-view,
-div.case-study-view {
-  div.section {
-    h5.section-title {
-      font-size: 1em;
-      font-style: italic;
-    }
+//     &:active {
+//       &:before {
+//         // fix active link icon color
+//         // doesn't work with color: inherit
+//         color: @linkActiveColor;
+//       }
+//     }
+//   }
 
-    margin-top: 2em;
-  }
-}
-
-// Case study view styles
-div.case-study-view {
-  .case-studies-review-image-wrapper {
-    position: relative;
-    margin: 0 1em 1em 0;
-    float: left;
-  }
-}
-
-// Video view styles
-div.video-view {
-  video {
-    margin-top: 1.5em;
-  }
-
-  div.external-video {
-    margin-top: 1.5em;
-  }
-}
-
-// C3S Indicator view styles
-div.c3sindicator-view {
-  iframe {
-    border: none;
-  }
-}
-
-// Geochars widget
-div.geochars-field {
-  div.checkbox {
-    margin-right: 1em;
-
-    label {
-      padding-left: 1.5em;
-    }
-  }
-}
+//   // a[rel='noopener noreferrer']:not(.ui.button):not(:empty),
+//   // a[target='_blank']:not(.ui.button):not(:empty) {
+//   // }
+// }
 
 // General styles
-.btn-right {
-  margin: calc(2rem - 0.1em) 0em 1rem;
-  float: right;
-}
-
-div.share-info {
-  margin-top: 1em;
-  text-align: right;
-}
-
-h4.reference-title {
-  padding-top: 1.5em;
-  border-top: 1px solid #ddd;
-  margin-top: 1.5em;
-}
-
-div.published-modified-info {
-  margin-top: 2em;
-  font-size: 0.75rem;
-}
-
-div.content-metadata {
-  ul.related-case-studies {
-    padding-left: 0px;
-    list-style: none;
-
-    li {
-      margin-bottom: 0.5em;
-    }
-  }
-}
 
 .listing-body-dates:empty {
   margin-bottom: 0;
@@ -202,32 +133,27 @@ body.subsite {
   margin-right: auto;
 }
 
-body.searchlib-page .searchlib-block {
-  .ui.secondary.pointing.content-section-tabs.menu {
-    .active.item .tab-icon .count {
-      background-color: @ccaGreenColor;
-      border-color: @ccaGreenColor;
-    }
-  }
-}
-
-.searchlib-page .content-section-tabs.menu .item i.icon.small {
-  width: 32px;
-  height: 32px;
-  font-size: 32px;
-}
-
 // Fix margin in simple item listing
 .u-item.listing-item.simple-listing-item .listing-body {
   margin-top: 0;
 }
 
 #page-header .styled-group.has--useAsPageHeader--true {
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #toolbar .toolbar-content {
   z-index: 4 !important;
+}
+
+.ui.message.info {
+  padding: 0.5em 1em;
+  margin-bottom: 1.5em;
+  font-size: 15px;
+
+  .icon {
+    font-size: 16px !important;
+  }
 }
