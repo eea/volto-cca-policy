@@ -3,6 +3,7 @@ import config from '@plone/volto/registry';
 import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
 import { isArray } from 'lodash';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
+
 export {
   HTMLField,
   ExternalLink,
