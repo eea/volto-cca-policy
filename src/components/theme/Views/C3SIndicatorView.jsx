@@ -5,8 +5,9 @@ import {
   BannerTitle,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Accordion, Icon, Segment, Image } from 'semantic-ui-react';
+import { Accordion, Icon, Segment, Image, Button } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import { Link } from 'react-router-dom';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -170,13 +171,13 @@ function C3SIndicatorView(props) {
 
         <div className="c3s-buttons">
           <a href="#details">
-            <button className="ui button primary" onClick={toggleIframe}>
+            <Button primary onClick={toggleIframe}>
               {showDetails ? 'Go back' : 'Explore in detail'}
-            </button>
+            </Button>
           </a>
-          <a href="/knowledge/european-climate-data-explorer/">
-            <button className="ui button primary">ECDE homepage</button>
-          </a>
+          <Link to="/knowledge/european-climate-data-explorer/">
+            <Button primary>ECDE homepage</Button>
+          </Link>
         </div>
 
         {definition_app && !hasIndicatorTitle && (

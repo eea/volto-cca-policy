@@ -6,11 +6,12 @@ import {
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
-  LogoWrapper,
+  ItemLogo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
+import { Segment, Divider, Grid } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 function createDataField(type, field, section, title) {
   return {
@@ -73,44 +74,42 @@ const SectionsMenu = (props) => {
 
   return (
     <div className="adaptation-details">
-      <div>
-        {sections.length > 0 && (
-          <>
-            <h3>Additional Details</h3>
-            <ul>
-              {sections.map((data, index) => (
-                <li key={index}>
-                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
-      <div>
-        <h3>Reference information</h3>
-        <ul>
-          <li>
-            <a href="#websites">Websites</a>
-          </li>
-          <li>
-            <a href="#source">Source</a>
-          </li>
-        </ul>
-      </div>
+      <Grid columns="12">
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          {sections.length > 0 && (
+            <>
+              <h4>Additional Details</h4>
+              <ul>
+                {sections.map((data, index) => (
+                  <li key={index}>
+                    <AnchorLink href={'#' + sectionID(data.title)}>
+                      {data.title}
+                    </AnchorLink>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </Grid.Column>
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          <h4>Reference information</h4>
+          <ul>
+            <li>
+              <AnchorLink href="#websites">Websites</AnchorLink>
+            </li>
+            <li>
+              <AnchorLink href="#source">Source</AnchorLink>
+            </li>
+          </ul>
+        </Grid.Column>
+      </Grid>
     </div>
   );
 };
 
 function AdaptationOptionView(props) {
   const { content } = props;
-  const {
-    related_case_studies,
-    long_description,
-    ipcc_category,
-    logo,
-    title,
-  } = content;
+  const { related_case_studies, long_description, ipcc_category } = content;
 
   const usedSections = dataDisplay.filter((data) =>
     content?.hasOwnProperty(data.field),
@@ -133,16 +132,7 @@ function AdaptationOptionView(props) {
               computer={8}
               className="col-left"
             >
-              <LogoWrapper logo={logo}>
-                <h2>Description</h2>
-                {logo && (
-                  <Image
-                    src={logo?.scales?.mini?.download}
-                    alt={title}
-                    className="db-logo"
-                  />
-                )}
-              </LogoWrapper>
+              <ItemLogo {...props}></ItemLogo>
               <HTMLField value={long_description} />
               <SectionsMenu sections={usedSections} />
 

@@ -1,7 +1,14 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Image } from 'semantic-ui-react';
+import {
+  CASE_STUDY,
+  PUBICATION_REPORT,
+  ORGANISATION,
+  ADAPTATION_OPTION,
+  ACE_PROJECT,
+} from '@eeacms/volto-cca-policy/helpers/Constants';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -93,7 +100,15 @@ export const BannerTitle = (props) => {
 
 export const ReferenceInfo = (props) => {
   const { content } = props;
+  const type = content['@type'];
   const { websites, source, contributor_list, other_contributor } = content;
+
+  let source_title;
+  if (type === ADAPTATION_OPTION) {
+    source_title = 'References';
+  } else {
+    source_title = 'Source';
+  }
 
   return websites?.length > 0 ||
     (source && source?.data.length > 0) ||
@@ -104,11 +119,11 @@ export const ReferenceInfo = (props) => {
 
       {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
 
-      {content['@type'] !== 'eea.climateadapt.aceproject' && (
+      {type !== ACE_PROJECT && type !== ORGANISATION && (
         <>
           {source && source?.data.length > 0 && (
             <>
-              <h5>Source:</h5>
+              <h5 id="source">{source_title}:</h5>
               <HTMLField value={source} className="source" />
             </>
           )}
@@ -185,6 +200,7 @@ export const PublishedModifiedInfo = (props) => {
 
 export const DocumentsList = (props) => {
   const { content } = props;
+  const type = content['@type'];
   const files = content?.cca_files;
   if (!files || files.length === 0) {
     return null;
@@ -199,13 +215,18 @@ export const DocumentsList = (props) => {
     section_title = content['section_title'];
   }
 
-  if (content['@type'] === 'eea.climateadapt.casestudy') {
+  if (type === CASE_STUDY) {
     section_title = 'Case Studies Documents';
   }
 
-  if (content['@type'] === 'eea.climateadapt.publicationreport') {
+  if (type === PUBICATION_REPORT) {
     section_title = 'Publications and Reports Documents';
   }
+
+  if (type === ORGANISATION) {
+    section_title = 'Organisation Documents';
+  }
+
   return (
     <Segment>
       <h5>
@@ -252,3 +273,34 @@ export const ContentRelatedItems = (props) => {
 
 export const LogoWrapper = ({ logo, children }) =>
   logo ? <div className="has-logo">{children}</div> : children;
+
+export const ItemLogo = (props) => {
+  const { content } = props;
+  const { image, logo, title } = content;
+
+  let logo_image;
+  if (logo) {
+    logo_image = logo;
+  } else if (!logo && image) {
+    logo_image = image;
+  } else {
+    logo_image = null;
+  }
+
+  return (
+    <LogoWrapper logo={logo_image}>
+      <h2>Description</h2>
+      {logo_image && (
+        <Image
+          src={logo_image?.scales?.mini?.download}
+          alt={title}
+          className="db-logo"
+        />
+      )}
+    </LogoWrapper>
+  );
+};
+
+export const isObservatoryURL = (url) => {
+  return url.indexOf('/observatory/++aq++metadata') > -1;
+};
