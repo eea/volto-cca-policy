@@ -283,8 +283,6 @@ export const ItemLogo = (props) => {
     logo_image = logo;
   } else if (!logo && image) {
     logo_image = image;
-  } else if (logo && image) {
-    logo_image = logo;
   } else {
     logo_image = null;
   }
