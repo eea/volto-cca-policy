@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Image } from 'semantic-ui-react';
 import {
   CASE_STUDY,
   PUBICATION_REPORT,
@@ -123,7 +123,7 @@ export const ReferenceInfo = (props) => {
         <>
           {source && source?.data.length > 0 && (
             <>
-              <h5>{source_title}:</h5>
+              <h5 id="source">{source_title}:</h5>
               <HTMLField value={source} className="source" />
             </>
           )}
@@ -273,6 +273,35 @@ export const ContentRelatedItems = (props) => {
 
 export const LogoWrapper = ({ logo, children }) =>
   logo ? <div className="has-logo">{children}</div> : children;
+
+export const ItemLogo = (props) => {
+  const { content } = props;
+  const { image, logo, title } = content;
+
+  let logo_image;
+  if (logo) {
+    logo_image = logo;
+  } else if (!logo && image) {
+    logo_image = image;
+  } else if (logo && image) {
+    logo_image = logo;
+  } else {
+    logo_image = null;
+  }
+
+  return (
+    <LogoWrapper logo={logo_image}>
+      <h2>Description</h2>
+      {logo_image && (
+        <Image
+          src={logo_image?.scales?.mini?.download}
+          alt={title}
+          className="db-logo"
+        />
+      )}
+    </LogoWrapper>
+  );
+};
 
 export const isObservatoryURL = (url) => {
   return url.indexOf('/observatory/++aq++metadata') > -1;

@@ -125,7 +125,7 @@ const dataDisplay = [
     field: 'source',
     section: 'source',
     title: 'Source',
-    contentTitle: 'Reference', // override the title in content section
+    contentTitle: 'References', // override the title in content section
     group: 3,
   },
 ];

@@ -4,25 +4,17 @@ import {
   ContentMetadata,
   PublishedModifiedInfo,
   ShareInfo,
+  ItemLogo,
   ReferenceInfo,
-  LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Image, Grid } from 'semantic-ui-react';
+import { Divider, Grid } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 import config from '@plone/volto/registry';
 
 function ProjectView(props) {
   const { content } = props;
-  const {
-    long_description,
-    lead,
-    funding,
-    partners,
-    acronym,
-    title,
-    logo,
-  } = content;
+  const { long_description, lead, funding, partners, acronym, title } = content;
 
   const {
     blocks: { blocksConfig },
@@ -46,6 +38,7 @@ function ProjectView(props) {
         }}
         metadata={{
           ...content,
+          image: '',
           title: title + ' (' + acronym + ')',
         }}
       />
@@ -60,16 +53,7 @@ function ProjectView(props) {
               computer={8}
               className="col-left"
             >
-              <LogoWrapper logo={logo}>
-                <h2>Description</h2>
-                {logo && (
-                  <Image
-                    src={logo?.scales?.mini?.download}
-                    alt={title}
-                    className="db-logo"
-                  />
-                )}
-              </LogoWrapper>
+              <ItemLogo {...props}></ItemLogo>
               <HTMLField value={long_description} />
 
               <Divider />
