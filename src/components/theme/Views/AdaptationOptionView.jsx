@@ -11,6 +11,7 @@ import {
 import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 function createDataField(type, field, section, title) {
   return {
@@ -81,7 +82,9 @@ const SectionsMenu = (props) => {
               <ul>
                 {sections.map((data, index) => (
                   <li key={index}>
-                    <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                    <AnchorLink href={'#' + sectionID(data.title)}>
+                      {data.title}
+                    </AnchorLink>
                   </li>
                 ))}
               </ul>
@@ -92,10 +95,10 @@ const SectionsMenu = (props) => {
           <h3>Reference information</h3>
           <ul>
             <li>
-              <a href="#websites">Websites</a>
+              <AnchorLink href="#websites">Websites</AnchorLink>
             </li>
             <li>
-              <a href="#source">Source</a>
+              <AnchorLink href="#source">Source</AnchorLink>
             </li>
           </ul>
         </Grid.Column>
