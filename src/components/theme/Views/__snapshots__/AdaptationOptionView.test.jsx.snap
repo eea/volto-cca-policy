@@ -41,16 +41,23 @@ exports[`AdaptationOptionView should render the component 1`] = `
                 <h4>
                   Additional Details
                 </h4>
-                <ul>
-                  <li>
+                <div
+                  className="ui bulleted list"
+                  role="list"
+                >
+                  <div
+                    className="item"
+                    onClick={[Function]}
+                    role="listitem"
+                  >
                     <a
                       href="#ipcc_category"
                       onClick={[Function]}
                     >
                       IPCC categories
                     </a>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
               <div
                 className="six wide computer twelve wide mobile twelve wide tablet column"
@@ -58,24 +65,35 @@ exports[`AdaptationOptionView should render the component 1`] = `
                 <h4>
                   Reference information
                 </h4>
-                <ul>
-                  <li>
+                <div
+                  className="ui bulleted list"
+                  role="list"
+                >
+                  <div
+                    className="item"
+                    onClick={[Function]}
+                    role="listitem"
+                  >
                     <a
                       href="#websites"
                       onClick={[Function]}
                     >
                       Websites
                     </a>
-                  </li>
-                  <li>
+                  </div>
+                  <div
+                    className="item"
+                    onClick={[Function]}
+                    role="listitem"
+                  >
                     <a
                       href="#source"
                       onClick={[Function]}
                     >
                       Source
                     </a>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -107,15 +125,22 @@ exports[`AdaptationOptionView should render the component 1`] = `
           >
             Websites:
           </h5>
-          <ul>
-            <li>
+          <div
+            className="ui bulleted list"
+            role="list"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
               <a
                 href="https://my-website.com"
               >
                 https://my-website.com
               </a>
-            </li>
-          </ul>
+            </div>
+          </div>
           <h5
             id="source"
           >
