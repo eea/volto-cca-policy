@@ -32,40 +32,51 @@ exports[`AdaptationOptionView should render the component 1`] = `
           <div
             className="adaptation-details"
           >
-            <div>
-              <h3>
-                Additional Details
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href="#ipcc_category"
-                  >
-                    IPCC categories
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3>
-                Reference information
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href="#websites"
-                  >
-                    Websites
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#source"
-                  >
-                    Source
-                  </a>
-                </li>
-              </ul>
+            <div
+              className="ui twelve column grid"
+            >
+              <div
+                className="six wide computer twelve wide mobile twelve wide tablet column"
+              >
+                <h4>
+                  Additional Details
+                </h4>
+                <ul>
+                  <li>
+                    <a
+                      href="#ipcc_category"
+                      onClick={[Function]}
+                    >
+                      IPCC categories
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                className="six wide computer twelve wide mobile twelve wide tablet column"
+              >
+                <h4>
+                  Reference information
+                </h4>
+                <ul>
+                  <li>
+                    <a
+                      href="#websites"
+                      onClick={[Function]}
+                    >
+                      Websites
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#source"
+                      onClick={[Function]}
+                    >
+                      Source
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div
@@ -105,8 +116,11 @@ exports[`AdaptationOptionView should render the component 1`] = `
               </a>
             </li>
           </ul>
-          <h5>
-            Source:
+          <h5
+            id="source"
+          >
+            Source
+            :
           </h5>
           <div
             className="source"
@@ -143,15 +157,18 @@ exports[`AdaptationOptionView should render the component 1`] = `
             className="share-info"
           >
             <a
-              href="/help/share-your-info"
+              href="/en/help/share-your-info"
+              onClick={[Function]}
             >
               <button
-                className="ui button primary icon labeled"
+                className="ui icon primary left labeled button"
+                onClick={[Function]}
               >
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="arrow right icon"
+                  className="right arrow icon"
+                  onClick={[Function]}
                 />
               </button>
             </a>
@@ -166,6 +183,12 @@ exports[`AdaptationOptionView should render the component 1`] = `
             <div
               className="content-metadata"
             >
+              <h5>
+                IPCC adaptation options categories:
+              </h5>
+              <span>
+                Structural and physical: Ecosystem-based adaptation options
+              </span>
               <h5>
                 Geographic characterisation:
               </h5>

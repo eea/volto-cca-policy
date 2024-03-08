@@ -12,21 +12,23 @@ import {
   ReferenceInfo,
   ContentMetadata,
   PublishedModifiedInfo,
-  LogoWrapper,
+  ItemLogo,
   ShareInfo,
   ContentRelatedItems,
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
-import { Divider, Image, Grid } from 'semantic-ui-react';
+import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
+import { Divider, Grid } from 'semantic-ui-react';
+import { useLocation } from 'react-router-dom';
 
 const DatabaseItemView = (props) => {
   const { content } = props;
   const type = content['@type'];
+  const location = useLocation();
+  const isObservatoryItem = isObservatoryURL(location.pathname);
   const {
-    logo,
-    title,
     long_description,
     map_graphs,
     organisational_key_activities,
@@ -86,22 +88,17 @@ const DatabaseItemView = (props) => {
               computer={8}
               className="col-left"
             >
-              <LogoWrapper logo={logo}>
-                <h2>Description</h2>
-                {logo && (
-                  <Image
-                    src={logo?.scales?.mini?.download}
-                    alt={title}
-                    className="db-logo"
-                  />
-                )}
-              </LogoWrapper>
+              <ItemLogo {...props}></ItemLogo>
               <HTMLField value={long_description} />
 
-              {organisational_key_activities && (
+              {isObservatoryItem && (
                 <>
-                  <h3>Key activities within climate change and health</h3>
-                  <HTMLField value={organisational_key_activities} />
+                  {organisational_key_activities && (
+                    <>
+                      <h3>Key activities within climate change and health</h3>
+                      <HTMLField value={organisational_key_activities} />
+                    </>
+                  )}
                 </>
               )}
 
@@ -121,17 +118,21 @@ const DatabaseItemView = (props) => {
 
               <ReferenceInfo content={content} />
 
-              {organisational_websites && (
+              {isObservatoryItem && (
                 <>
-                  <h5>Links to further information</h5>
-                  <HTMLField value={organisational_websites} />
-                </>
-              )}
+                  {organisational_websites && (
+                    <>
+                      <h5>Links to further information</h5>
+                      <HTMLField value={organisational_websites} />
+                    </>
+                  )}
 
-              {organisational_contact_information && (
-                <>
-                  <h5>Contact information for the Observatory</h5>
-                  <HTMLField value={organisational_contact_information} />
+                  {organisational_contact_information && (
+                    <>
+                      <h5>Contact information for the Observatory</h5>
+                      <HTMLField value={organisational_contact_information} />
+                    </>
+                  )}
                 </>
               )}
 

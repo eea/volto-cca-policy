@@ -3,12 +3,15 @@ import { SidebarPortal } from '@plone/volto/components';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import Schema from './schema';
 import View from './CollectionStatsView';
+import TransparentOverlay from '../../TransparentOverlay';
 
 const Edit = (props) => {
   const schema = Schema();
   return (
     <>
-      <View {...props} mode="edit" />
+      <TransparentOverlay>
+        <View {...props} mode="edit" />
+      </TransparentOverlay>
 
       <SidebarPortal selected={props.selected}>
         <InlineForm

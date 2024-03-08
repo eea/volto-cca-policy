@@ -9,8 +9,11 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid, Icon, Image } from 'semantic-ui-react';
-import { ImageGallery } from '@eeacms/volto-cca-policy/components';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  ImageGallery,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -122,7 +125,7 @@ const dataDisplay = [
     field: 'source',
     section: 'source',
     title: 'Source',
-    contentTitle: 'Reference', // override the title in content section
+    contentTitle: 'References', // override the title in content section
     group: 3,
   },
 ];
@@ -180,7 +183,9 @@ const SectionsMenu = (props) => {
           <ul>
             {sections.map((data, index) => (
               <li key={index}>
-                <a href={'#' + sectionID(data.title)}>{data.title}</a>
+                <AnchorLink href={'#' + sectionID(data.title)}>
+                  {data.title}
+                </AnchorLink>
               </li>
             ))}
           </ul>
