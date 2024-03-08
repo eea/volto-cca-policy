@@ -8,7 +8,7 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Grid, Icon, Image } from 'semantic-ui-react';
+import { Divider, Grid, Icon, Image, ListItem, List } from 'semantic-ui-react';
 import {
   ImageGallery,
   PortalMessage,
@@ -180,15 +180,15 @@ const SectionsMenu = (props) => {
       {sections.length > 0 && (
         <div>
           <h4>{title}</h4>
-          <ul>
+          <List bulleted>
             {sections.map((data, index) => (
-              <li key={index}>
+              <ListItem key={index}>
                 <AnchorLink href={'#' + sectionID(data.title)}>
                   {data.title}
                 </AnchorLink>
-              </li>
+              </ListItem>
             ))}
-          </ul>
+          </List>
         </div>
       )}
     </>

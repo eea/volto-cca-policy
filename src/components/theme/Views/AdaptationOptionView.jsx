@@ -8,7 +8,7 @@ import {
   BannerTitle,
   ItemLogo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Grid } from 'semantic-ui-react';
+import { Segment, Divider, Grid, ListItem, List } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -79,28 +79,28 @@ const SectionsMenu = (props) => {
           {sections.length > 0 && (
             <>
               <h4>Additional Details</h4>
-              <ul>
+              <List bulleted>
                 {sections.map((data, index) => (
-                  <li key={index}>
+                  <ListItem key={index}>
                     <AnchorLink href={'#' + sectionID(data.title)}>
                       {data.title}
                     </AnchorLink>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             </>
           )}
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={6}>
           <h4>Reference information</h4>
-          <ul>
-            <li>
+          <List bulleted>
+            <ListItem>
               <AnchorLink href="#websites">Websites</AnchorLink>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               <AnchorLink href="#source">Source</AnchorLink>
-            </li>
-          </ul>
+            </ListItem>
+          </List>
         </Grid.Column>
       </Grid>
     </div>
