@@ -42,6 +42,12 @@ function MigrationButtons(props) {
       'T',
       `http://localhost:8080/cca/${base}/@@volto-html`,
     ),
+    button(
+      'preview',
+      'Preview Translation',
+      'P',
+      `http://localhost:8080/cca/${base}/@@volto-html?half=1`,
+    ),
   ];
 
   if (!show) return null;
