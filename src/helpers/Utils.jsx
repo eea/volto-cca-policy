@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment, Image } from 'semantic-ui-react';
+import { Segment, Image, ListItem, List } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import {
   CASE_STUDY,
   PUBICATION_REPORT,
@@ -44,30 +45,30 @@ export const LinksList = (props) => {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <ul>
+        <List bulleted>
           {value.map((linkItem, index) => (
-            <li key={index}>
+            <ListItem key={index}>
               {isInternal ? (
                 <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
               ) : (
                 <ExternalLink url={linkItem[0]} text={linkItem[1]} />
               )}
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </>
     );
   } else {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <ul>
+        <List bulleted>
           {value.map((url, index) => (
-            <li key={index}>
+            <ListItem key={index}>
               <ExternalLink url={url} text={url} />
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </>
     );
   }
@@ -101,7 +102,13 @@ export const BannerTitle = (props) => {
 export const ReferenceInfo = (props) => {
   const { content } = props;
   const type = content['@type'];
-  const { websites, source, contributor_list, other_contributor } = content;
+  const {
+    websites,
+    source,
+    contributor_list,
+    other_contributor,
+    contributions,
+  } = content;
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
@@ -142,6 +149,19 @@ export const ReferenceInfo = (props) => {
             ))
             .sort()}
           {other_contributor}
+        </>
+      )}
+
+      {contributions && contributions.length > 0 && (
+        <>
+          <h5>Observatory Contributions:</h5>
+          <List bulleted>
+            {contributions.map((item, index) => (
+              <ListItem key={index}>
+                <Link to={item.url}>{item.title}</Link>
+              </ListItem>
+            ))}
+          </List>
         </>
       )}
     </>
@@ -232,16 +252,16 @@ export const DocumentsList = (props) => {
       <h5>
         {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
-      <ul className="documents-list">
+      <List className="documents-list">
         {files.map((file, index) => (
-          <li key={index}>
+          <ListItem key={index}>
             <a href={file.url} className="document-list-item">
               <i className="file alternate icon"></i>
               <span>{file.title}</span>
             </a>
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </Segment>
   );
 };
