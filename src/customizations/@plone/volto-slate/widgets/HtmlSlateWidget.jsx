@@ -25,8 +25,7 @@ import '@plone/volto-slate/widgets/style.css';
 
 const messages = defineMessages({
   error: {
-    id:
-      'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
+    id: 'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
     defaultMessage:
       'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
   },

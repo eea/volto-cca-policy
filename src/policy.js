@@ -15,9 +15,10 @@ const applyConfig = (config) => {
   config = installCallout(config);
 
   // Remove blockquote slate button
-  config.settings.slate.toolbarButtons = config.settings.slate.toolbarButtons.filter(
-    (item) => item !== 'blockquote',
-  );
+  config.settings.slate.toolbarButtons =
+    config.settings.slate.toolbarButtons.filter(
+      (item) => item !== 'blockquote',
+    );
 
   // Disable tags on View
   config.settings.showTags = false;

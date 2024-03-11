@@ -112,13 +112,8 @@ const Overview = (props) => {
 
 function C3SIndicatorView(props) {
   const { content } = props;
-  const {
-    definition_app,
-    long_description,
-    indicator_title,
-    title,
-    logo,
-  } = content;
+  const { definition_app, long_description, indicator_title, title, logo } =
+    content;
   const [showDetails, setShowDetails] = useState(false);
   const hasIndicatorTitle =
     indicator_title && indicator_title !== '_' && indicator_title !== '-';

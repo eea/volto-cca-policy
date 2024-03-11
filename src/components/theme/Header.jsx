@@ -142,6 +142,7 @@ const EEAHeader = (props) => {
                 href="https://europa.eu/european-union/contact/institutions-bodies_en"
                 target="_blank"
                 onKeyDown={(evt) => evt.stopPropagation()}
+                rel="noopener"
               >
                 See all EU institutions and bodies
               </a>
@@ -164,6 +165,7 @@ const EEAHeader = (props) => {
                       className="site"
                       target="_blank"
                       onKeyDown={(evt) => evt.stopPropagation()}
+                      rel="noopener"
                     >
                       {item.title}
                     </a>
