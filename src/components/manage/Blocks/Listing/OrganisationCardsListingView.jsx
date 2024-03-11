@@ -5,7 +5,7 @@ import './styles.less';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
-  'Web site': {
+  website: {
     id: 'Web site',
     defaultMessage: 'Web site',
   },
@@ -72,7 +72,7 @@ const OrganisationCardsListingView = ({ items }) => {
                 className="header-link org-site"
                 href={item.websites?.[0] ?? '#'}
               >
-                {intl.formatMessage(messages['Web site'])}
+                {intl.formatMessage(messages.website)}
               </a>
               <a className="header-link org-site" href={contributionsURL(item)}>
                 <FormattedMessage
