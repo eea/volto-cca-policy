@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment, Image, ListItem, List } from 'semantic-ui-react';
+import { Segment, Image, ListItem, List, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import {
   CASE_STUDY,
@@ -10,6 +10,7 @@ import {
   ADAPTATION_OPTION,
   ACE_PROJECT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -45,7 +46,7 @@ export const LinksList = (props) => {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <List bulleted>
+        <List>
           {value.map((linkItem, index) => (
             <ListItem key={index}>
               {isInternal ? (
@@ -62,7 +63,7 @@ export const LinksList = (props) => {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <List bulleted>
+        <List>
           {value.map((url, index) => (
             <ListItem key={index}>
               <ExternalLink url={url} text={url} />
@@ -109,6 +110,7 @@ export const ReferenceInfo = (props) => {
     other_contributor,
     contributions,
   } = content;
+  const link = makeContributionsSearchQuery(content);
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
@@ -162,6 +164,9 @@ export const ReferenceInfo = (props) => {
               </ListItem>
             ))}
           </List>
+          <Button as="a" href={link}>
+            View all contributions in the resource catalogue
+          </Button>
         </>
       )}
     </>
