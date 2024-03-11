@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { observatoryURL } from './common';
 import './styles.less';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
-const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
+// const messages = {
+//   'Web site': defineMessages({
+//     id: 'Web site',
+//     defaultMessage: 'Web site',
+//   }),
+// };
+
+const OrganisationCardsListingView = ({ items }) => {
   const contributionsURL = (item) => {
     const mapContributorValues = {
       'copernicus-climate-change-service-ecmw':
@@ -65,10 +71,13 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
                 className="header-link org-site"
                 href={item.websites?.[0] ?? '#'}
               >
-                Web site
+                <FormattedMessage id="Web site" defaultMessage="Web site" />
               </a>
               <a className="header-link org-site" href={contributionsURL(item)}>
-                Observatory contributions
+                <FormattedMessage
+                  id="Observatory contributions"
+                  defaultMessage="Observatory contributions"
+                />
               </a>
             </div>
           </div>
@@ -83,8 +92,4 @@ OrganisationCardsListingView.propTypes = {
   isEditMode: PropTypes.bool,
 };
 
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(OrganisationCardsListingView);
+export default OrganisationCardsListingView;

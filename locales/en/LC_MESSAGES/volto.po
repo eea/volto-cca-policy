@@ -11,4 +11,67 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Choices
+msgid "Choices"
+msgstr ""
 
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Close
+msgid "Close"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Default
+msgid "Default"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: No options
+msgid "No options"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: No value
+msgid "No value"
+msgstr ""
+
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+# defaultMessage: Observatory contributions
+msgid "Observatory contributions"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Required
+msgid "Required"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Select…
+msgid "Select…"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Short Name
+msgid "Short Name"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Used for programmatic access to the fieldset.
+msgid "Used for programmatic access to the fieldset."
+msgstr ""
+
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+# defaultMessage: Web site
+msgid "Web site"
+msgstr ""
