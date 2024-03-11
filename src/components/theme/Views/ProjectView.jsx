@@ -15,6 +15,7 @@ import config from '@plone/volto/registry';
 function ProjectView(props) {
   const { content } = props;
   const { long_description, lead, funding, partners, acronym, title } = content;
+  const item_title = acronym ? title + ' (' + acronym + ')' : title;
 
   const {
     blocks: { blocksConfig },
@@ -39,7 +40,7 @@ function ProjectView(props) {
         metadata={{
           ...content,
           image: '',
-          title: title + ' (' + acronym + ')',
+          title: item_title,
         }}
       />
 

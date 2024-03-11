@@ -56,6 +56,48 @@ exports[`DatabaseItemView should render the component 1`] = `
               </a>
             </div>
           </div>
+          <h5>
+            Observatory Contributions:
+          </h5>
+          <div
+            className="ui bulleted list"
+            role="list"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Contributor 1
+              </a>
+            </div>
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Contributor 2
+              </a>
+            </div>
+          </div>
+          <div>
+            <a
+              className="ui button"
+              href="/en/observatory/advanced-search?size=n_10_n&filters%5B0%5D%5Bfield%5D=cca_partner_contributors.keyword&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=My DatabaseItemView&filters%5B1%5D%5Bfield%5D=issued.date&filters%5B1%5D%5Bvalues%5D%5B0%5D=All time&filters%5B1%5D%5Btype%5D=any&filters%5B2%5D%5Bfield%5D=language&filters%5B2%5D%5Bvalues%5D%5B0%5D=en&filters%5B2%5D%5Btype%5D=any&sort-field=issued.date&sort-direction=desc"
+              onClick={[Function]}
+              role="button"
+            >
+              View all contributions in the resource catalogue
+            </a>
+          </div>
           <div
             className="published-modified-info"
           >

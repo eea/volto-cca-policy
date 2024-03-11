@@ -1,7 +1,14 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment, Image, ListItem, List, Button } from 'semantic-ui-react';
+import {
+  Segment,
+  Image,
+  ListItem,
+  List,
+  Button,
+  Icon,
+} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import {
   CASE_STUDY,
@@ -111,6 +118,8 @@ export const ReferenceInfo = (props) => {
     contributions,
   } = content;
   const link = makeContributionsSearchQuery(content);
+  const [isReadMore, setIsReadMore] = React.useState(false);
+  const contributions_rest = contributions ? contributions.slice(0, 10) : [];
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
@@ -119,10 +128,11 @@ export const ReferenceInfo = (props) => {
     source_title = 'Source';
   }
 
-  return websites?.length > 0 ||
+  return (websites && websites?.length > 0) ||
     (source && source?.data.length > 0) ||
-    contributor_list?.length > 0 ||
-    other_contributor?.length > 0 ? (
+    (contributor_list && contributor_list?.length > 0) ||
+    (contributions && contributions.length > 0) ||
+    (other_contributor && other_contributor?.length > 0) ? (
     <>
       <h2>Reference information</h2>
 
@@ -157,16 +167,54 @@ export const ReferenceInfo = (props) => {
       {contributions && contributions.length > 0 && (
         <>
           <h5>Observatory Contributions:</h5>
-          <List bulleted>
-            {contributions.map((item, index) => (
-              <ListItem key={index}>
-                <Link to={item.url}>{item.title}</Link>
-              </ListItem>
-            ))}
-          </List>
-          <Button as="a" href={link}>
-            View all contributions in the resource catalogue
-          </Button>
+          {!isReadMore ? (
+            <>
+              <List bulleted>
+                {contributions_rest.map((item, index) => (
+                  <ListItem key={index}>
+                    <Link to={item.url}>{item.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          ) : (
+            <>
+              <List bulleted>
+                {contributions.map((item, index) => (
+                  <ListItem key={index}>
+                    <Link to={item.url}>{item.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          )}
+
+          {contributions.length > 10 && (
+            <Button
+              basic
+              icon
+              primary
+              onClick={() => setIsReadMore(!isReadMore)}
+            >
+              {!isReadMore ? (
+                <>
+                  <strong>See more</strong>
+                  <Icon className="ri-arrow-down-s-line" />
+                </>
+              ) : (
+                <>
+                  <strong>See less</strong>
+                  <Icon className="ri-arrow-up-s-line" />
+                </>
+              )}
+            </Button>
+          )}
+
+          <div>
+            <Button as="a" href={link}>
+              View all contributions in the resource catalogue
+            </Button>
+          </div>
         </>
       )}
     </>

@@ -35,6 +35,16 @@ describe('DatabaseItemView', () => {
         '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
       keywords: ['keyword 1', 'keyword 2'],
       websites: ['https://example.org/'],
+      contributions: [
+        {
+          title: 'Contributor 1',
+          url: '/',
+        },
+        {
+          title: 'Contributor 2',
+          url: '/',
+        },
+      ],
     };
 
     const store = mockStore({
