@@ -21,7 +21,7 @@ import { CookiesProvider } from 'react-cookie';
 import cookiesMiddleware from 'universal-cookie-express';
 import debug from 'debug';
 
-import routes from '@root/routes';
+import routes from '@plone/volto/routes';
 import config from '@plone/volto/registry';
 
 import {

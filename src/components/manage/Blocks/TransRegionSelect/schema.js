@@ -1,4 +1,4 @@
-export default {
+const schema = {
   title: 'Trans Region Select',
   fieldsets: [
     {
@@ -14,3 +14,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;

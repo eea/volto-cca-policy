@@ -3,7 +3,7 @@ import MapBlockView from './View';
 import worldSVG from '@plone/volto/icons/world.svg';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
-export default (config) => {
+const config = (config) => {
   config.blocks.blocksConfig.mkh_map = {
     id: 'mkh_map',
     title: 'MKH Viewer map',
@@ -23,3 +23,5 @@ export default (config) => {
 
   return config;
 };
+
+export default config;

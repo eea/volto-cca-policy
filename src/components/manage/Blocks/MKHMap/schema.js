@@ -1,4 +1,4 @@
-export default {
+const schema = {
   title: 'Explore sites map',
 
   fieldsets: [
@@ -13,3 +13,5 @@ export default {
 
   required: [],
 };
+
+export default schema;
