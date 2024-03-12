@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: Adaptation Details
+msgid "Adaptation Details"
+msgstr "Dettagli sull'adattamento"
+
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Adaptation Options Implemented In This Case
 msgid "Adaptation Options Implemented In This Case"
@@ -26,6 +31,7 @@ msgstr "Elementi di adattamento:"
 msgid "Adaptation sectors"
 msgstr ""
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Additional Details
 msgid "Additional Details"
@@ -55,6 +61,11 @@ msgstr "Descrizione del caso studio"
 # defaultMessage: Case Study illustrations
 msgid "Case Study illustrations"
 msgstr "Illustrazioni del caso studio"
+
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: Case studies related to this option:
+msgid "Case studies related to this option:"
+msgstr ""
 
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Challenges
@@ -202,6 +213,11 @@ msgstr ""
 msgid "IPCC adaptation options categories:"
 msgstr "Categorie delle opzioni di adattamento IPCC:"
 
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: IPCC categories
+msgid "IPCC categories"
+msgstr ""
+
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Implementation Time
 msgid "Implementation Time"
@@ -347,6 +363,7 @@ msgstr "Pubblicato in Climate-ADAPT"
 msgid "Reference Information"
 msgstr "Informazioni di riferimento"
 
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 # defaultMessage: Reference information
 msgid "Reference information"
@@ -495,3 +512,8 @@ msgstr "Siti Web"
 # defaultMessage: Websites
 msgid "Websites"
 msgstr "Siti Web"
+
+#: helpers/Utils
+# defaultMessage: Websites:
+msgid "Websites:"
+msgstr "Siti Web:"

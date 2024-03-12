@@ -132,7 +132,12 @@ export const ReferenceInfo = (props) => {
         />
       </h2>
 
-      {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
+      {websites?.length > 0 && (
+        <LinksList
+          title={<FormattedMessage id="Websites:" defaultMessage="Websites:" />}
+          value={websites}
+        />
+      )}
 
       {type !== ACE_PROJECT && type !== ORGANISATION && (
         <>

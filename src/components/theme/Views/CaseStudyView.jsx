@@ -64,8 +64,6 @@ const messages = defineMessages({
     id: 'Reference Information',
     defaultMessage: 'Reference Information',
   },
-  sa: { id: 'Sa', defaultMessage: 'Sa' },
-  su: { id: 'Su', defaultMessage: 'Su' },
 });
 
 const PrimaryPhoto = (props) => {
