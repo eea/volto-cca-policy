@@ -241,7 +241,7 @@ const SectionsMenu = (props) => {
             {sections.map((data, index) => (
               <ListItem key={index}>
                 <AnchorLink href={'#' + sectionID(data.title)}>
-                  {data.title}
+                  {intl.formatMessage(messages[data.title])}
                 </AnchorLink>
               </ListItem>
             ))}

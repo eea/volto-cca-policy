@@ -424,6 +424,11 @@ msgstr ""
 msgid "Sep"
 msgstr ""
 
+#: helpers/ShareInfo
+# defaultMessage: Share your information
+msgid "Share your information"
+msgstr "Condividi le tue informazioni"
+
 #: components/manage/Widgets/CreatableSelectWidget
 # defaultMessage: Short Name
 msgid "Short Name"
@@ -434,6 +439,7 @@ msgstr ""
 msgid "Solutions"
 msgstr "Soluzioni"
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 # defaultMessage: Source
@@ -517,6 +523,7 @@ msgstr ""
 msgid "Web site"
 msgstr "Siti Web"
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Websites
 msgid "Websites"

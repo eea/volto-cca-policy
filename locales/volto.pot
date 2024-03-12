@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-12T11:54:09.230Z\n"
+"POT-Creation-Date: 2024-03-12T12:49:23.772Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -426,6 +426,11 @@ msgstr ""
 msgid "Sep"
 msgstr ""
 
+#: helpers/ShareInfo
+# defaultMessage: Share your information
+msgid "Share your information"
+msgstr ""
+
 #: components/manage/Widgets/CreatableSelectWidget
 # defaultMessage: Short Name
 msgid "Short Name"
@@ -436,6 +441,7 @@ msgstr ""
 msgid "Solutions"
 msgstr ""
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 # defaultMessage: Source
@@ -519,6 +525,7 @@ msgstr ""
 msgid "Web site"
 msgstr ""
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Websites
 msgid "Websites"
