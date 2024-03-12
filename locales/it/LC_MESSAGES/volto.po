@@ -222,7 +222,7 @@ msgstr "Categorie delle opzioni di adattamento IPCC:"
 #: components/theme/Views/AdaptationOptionView
 # defaultMessage: IPCC categories
 msgid "IPCC categories"
-msgstr ""
+msgstr "Categorie IPCC"
 
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView

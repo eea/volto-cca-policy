@@ -95,6 +95,7 @@ const sectionID = (title) => {
 
 const SectionsMenu = (props) => {
   const { sections } = props;
+  const intl = useIntl();
 
   return (
     <div className="adaptation-details">
@@ -112,7 +113,7 @@ const SectionsMenu = (props) => {
                 {sections.map((data, index) => (
                   <ListItem key={index}>
                     <AnchorLink href={'#' + sectionID(data.title)}>
-                      {data.title}
+                      {intl.formatMessage(messages[data.title])}
                     </AnchorLink>
                   </ListItem>
                 ))}
@@ -129,10 +130,14 @@ const SectionsMenu = (props) => {
           </h4>
           <List bulleted>
             <ListItem>
-              <AnchorLink href="#websites">Websites</AnchorLink>
+              <AnchorLink href="#websites">
+                <FormattedMessage id="Websites" defaultMessage="Websites" />
+              </AnchorLink>
             </ListItem>
             <ListItem>
-              <AnchorLink href="#source">Source</AnchorLink>
+              <AnchorLink href="#source">
+                <FormattedMessage id="Source" defaultMessage="Source" />
+              </AnchorLink>
             </ListItem>
           </List>
         </Grid.Column>
