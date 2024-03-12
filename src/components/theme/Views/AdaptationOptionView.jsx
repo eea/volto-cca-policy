@@ -49,63 +49,40 @@ function createDataField(type, field, section, title) {
   };
 }
 
-const dataDisplayFunc = () => {
-  const intl = useIntl();
-  return [
-    createDataField(
-      'other',
-      'category',
-      'ao_category',
-      intl.formatMessage(messages['Category']),
-    ),
-    createDataField(
-      'other',
-      'ipcc_category',
-      'ipcc_category',
-      intl.formatMessage(messages['IPCC categories']),
-    ),
-    createDataField(
-      'HTMLField',
-      'stakeholder_participation',
-      'stakeholder_participation',
-      intl.formatMessage(messages['Stakeholder participation']),
-    ),
-    createDataField(
-      'HTMLField',
-      'success_limitations',
-      'success_factors',
-      intl.formatMessage(messages['Success and Limiting Factors']),
-    ),
-    createDataField(
-      'HTMLField',
-      'cost_benefit',
-      'costs_benefits',
-      intl.formatMessage(messages['Costs and Benefits']),
-    ),
-    createDataField('HTMLField', 'legal_aspects', 'legal', 'Legal Aspects'),
-    createDataField(
-      'HTMLField',
-      'implementation_time',
-      'implementation',
-      intl.formatMessage(messages['Implementation Time']),
-    ),
-    createDataField(
-      'HTMLField',
-      'lifetime',
-      'life_time',
-      intl.formatMessage(messages['Life Time']),
-    ),
-  ];
-};
-
-const dataDisplay = dataDisplayFunc();
+const dataDisplay = [
+  createDataField('other', 'category', 'ao_category', 'Category'),
+  createDataField('other', 'ipcc_category', 'ipcc_category', 'IPCC categories'),
+  createDataField(
+    'HTMLField',
+    'stakeholder_participation',
+    'stakeholder_participation',
+    'Stakeholder participation',
+  ),
+  createDataField(
+    'HTMLField',
+    'success_limitations',
+    'success_factors',
+    'Success and Limiting Factors',
+  ),
+  createDataField(
+    'HTMLField',
+    'cost_benefit',
+    'costs_benefits',
+    'Costs and Benefits',
+  ),
+  createDataField('HTMLField', 'legal_aspects', 'legal', 'Legal Aspects'),
+  createDataField(
+    'HTMLField',
+    'implementation_time',
+    'implementation',
+    'Implementation Time',
+  ),
+  createDataField('HTMLField', 'lifetime', 'life_time', 'Life Time'),
+];
 
 const findSection = (title) => {
-  const found = dataDisplay.filter((item) => item.title === title);
-  if (found.length > 0) {
-    return found[0];
-  }
-  return null;
+  const found = dataDisplay.find((item) => item.title === title);
+  return found;
 };
 
 const sectionID = (title) => {
@@ -172,6 +149,8 @@ function AdaptationOptionView(props) {
     content?.hasOwnProperty(data.field),
   );
 
+  const intl = useIntl();
+
   return (
     <div className="db-item-view adaptation-option-view">
       <BannerTitle
@@ -225,7 +204,9 @@ function AdaptationOptionView(props) {
                                 id={sectionID(data.title)}
                                 className="section"
                               >
-                                <h5 className="section-title">{data.title}</h5>
+                                <h5 className="section-title">
+                                  {intl.formatMessage(messages[data.title])}
+                                </h5>
                                 <HTMLField value={content[data.field]} />
                               </div>
                             </Fragment>

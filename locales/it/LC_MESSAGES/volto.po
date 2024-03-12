@@ -67,6 +67,11 @@ msgstr "Illustrazioni del caso studio"
 msgid "Case studies related to this option:"
 msgstr ""
 
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: Category
+msgid "Category"
+msgstr ""
+
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Challenges
 msgid "Challenges"
@@ -122,6 +127,7 @@ msgstr "Contatto"
 msgid "Contributor:"
 msgstr "Collaboratore:"
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Costs and Benefits
 msgid "Costs and Benefits"
@@ -218,6 +224,7 @@ msgstr "Categorie delle opzioni di adattamento IPCC:"
 msgid "IPCC categories"
 msgstr ""
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Implementation Time
 msgid "Implementation Time"
@@ -263,11 +270,13 @@ msgstr "Aggiornamento più recente in Climate-ADAPT"
 msgid "Lead"
 msgstr "Guida"
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Legal Aspects
 msgid "Legal Aspects"
 msgstr "Aspetti legali"
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Life Time
 msgid "Life Time"
@@ -391,7 +400,6 @@ msgid "Required"
 msgstr ""
 
 #: components/manage/Blocks/Listing/EventCardsListingView
-#: components/theme/Views/CaseStudyView
 # defaultMessage: Sa
 msgid "Sa"
 msgstr ""
@@ -437,13 +445,13 @@ msgstr "Fonte"
 msgid "Source of funding"
 msgstr "Fonte di finanziamento"
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Stakeholder participation
 msgid "Stakeholder participation"
 msgstr "Partecipazione degli attori interessatI"
 
 #: components/manage/Blocks/Listing/EventCardsListingView
-#: components/theme/Views/CaseStudyView
 # defaultMessage: Su
 msgid "Su"
 msgstr ""
@@ -458,6 +466,7 @@ msgstr "Sub statale:"
 msgid "Subnational or local"
 msgstr ""
 
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 # defaultMessage: Success and Limiting Factors
 msgid "Success and Limiting Factors"
