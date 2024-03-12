@@ -10,6 +10,7 @@ import {
   ADAPTATION_OPTION,
   ACE_PROJECT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { FormattedMessage } from 'react-intl';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -112,9 +113,11 @@ export const ReferenceInfo = (props) => {
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
-    source_title = 'References';
+    source_title = (
+      <FormattedMessage id="References" defaultMessage="References" />
+    );
   } else {
-    source_title = 'Source';
+    source_title = <FormattedMessage id="Source" defaultMessage="Source" />;
   }
 
   return websites?.length > 0 ||
@@ -122,7 +125,12 @@ export const ReferenceInfo = (props) => {
     contributor_list?.length > 0 ||
     other_contributor?.length > 0 ? (
     <>
-      <h2>Reference information</h2>
+      <h2>
+        <FormattedMessage
+          id="Reference information"
+          defaultMessage="Reference information"
+        />
+      </h2>
 
       {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
 
@@ -139,7 +147,9 @@ export const ReferenceInfo = (props) => {
 
       {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
         <>
-          <h5>Contributor:</h5>
+          <h5>
+            <FormattedMessage id="Contributor:" defaultMessage="Contributor:" />
+          </h5>
           {contributor_list
             .map((item) => (
               <>
@@ -154,7 +164,12 @@ export const ReferenceInfo = (props) => {
 
       {contributions && contributions.length > 0 && (
         <>
-          <h5>Observatory Contributions:</h5>
+          <h5>
+            <FormattedMessage
+              id="Observatory Contributions:"
+              defaultMessage="Observatory Contributions:"
+            />
+          </h5>
           <List bulleted>
             {contributions.map((item, index) => (
               <ListItem key={index}>
@@ -203,13 +218,23 @@ export const PublishedModifiedInfo = (props) => {
     <div className="published-modified-info">
       <p>
         <span>
-          <strong>Published in Climate-ADAPT</strong>
+          <strong>
+            <FormattedMessage
+              id="Published in Climate-ADAPT"
+              defaultMessage="Published in Climate-ADAPT"
+            />
+          </strong>
           &nbsp;
           {published}
         </span>
         <span> &nbsp; - &nbsp; </span>
         <span>
-          <strong>Last Modified in Climate-ADAPT</strong>
+          <strong>
+            <FormattedMessage
+              id="Last Modified in Climate-ADAPT"
+              defaultMessage="Last Modified in Climate-ADAPT"
+            />
+          </strong>
           &nbsp;
           {modified}
         </span>
@@ -279,7 +304,12 @@ export const ContentRelatedItems = (props) => {
 
   return contentRelatedItems.length > 0 ? (
     <>
-      <h5>Related content:</h5>
+      <h5>
+        <FormattedMessage
+          id="Related content:"
+          defaultMessage="Related content:"
+        />
+      </h5>
 
       {contentRelatedItems.map((item, index) => (
         <Fragment key={index}>
@@ -309,7 +339,9 @@ export const ItemLogo = (props) => {
 
   return (
     <LogoWrapper logo={logo_image}>
-      <h2>Description</h2>
+      <h2>
+        <FormattedMessage id="Description" defaultMessage="Description" />
+      </h2>
       {logo_image && (
         <Image
           src={logo_image?.scales?.mini?.download}

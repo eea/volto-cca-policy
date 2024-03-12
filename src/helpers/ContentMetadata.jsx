@@ -13,6 +13,33 @@ import { Fragment } from 'react';
 import { Popup, Segment } from 'semantic-ui-react';
 import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
 import { useLocation } from 'react-router-dom';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  'Date of release:': {
+    id: 'Date of release:',
+    defaultMessage: 'Date of release:',
+  },
+  'Date of publication:': {
+    id: 'Date of publication:',
+    defaultMessage: 'Date of publication:',
+  },
+  'Date of creation:': {
+    id: 'Date of creation:',
+    defaultMessage: 'Date of creation:',
+  },
+  'Macro-Transnational region:': {
+    id: 'Macro-Transnational region:',
+    defaultMessage: 'Macro-Transnational region:',
+  },
+  'Biogeographical regions:': {
+    id: 'Biogeographical regions:',
+    defaultMessage: 'Biogeographical regions:',
+  },
+  'Countries:': { id: 'Countries:', defaultMessage: 'Countries:' },
+  'Sub Nationals:': { id: 'Sub Nationals:', defaultMessage: 'Sub Nationals:' },
+  'City:': { id: 'City:', defaultMessage: 'City:' },
+});
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -196,7 +223,9 @@ function GeoChar(props) {
       return (
         <div className="geochar">
           <p>{spatial_layer}</p>
-          <h5>Countries:</h5>
+          <h5>
+            <FormattedMessage id="Countries:" defaultMessage="Countries:" />
+          </h5>
           {spatial_values && spatial_values.length > 0 && (
             <p>{spatial_values.map((item) => item.token).join(', ')}</p>
           )}
@@ -208,6 +237,7 @@ function GeoChar(props) {
   }
 
   const { geoElements } = j;
+  const intl = useIntl();
 
   let rendered = renderGeochar(geoElements);
 
@@ -217,7 +247,15 @@ function GeoChar(props) {
         (section, index) =>
           section.value && (
             <Fragment key={index}>
-              {section.title && <h5>{section.title}</h5>}
+              {section.title && (
+                <h5>
+                  {intl.formatMessage(messages[section.title])}
+                  {/* <FormattedMessage
+                    id="{section.title}"
+                    defaultMessage="Countries2344:"
+                  /> */}
+                </h5>
+              )}
               <p>{section.value.join(', ')}</p>
             </Fragment>
           ),
@@ -299,17 +337,19 @@ function ContentMetadata(props) {
   const isObservatoryItem = isObservatoryURL(location.pathname);
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
+  const intl = useIntl();
+
   let date_title;
   if (type === VIDEO) {
-    date_title = 'Date of release:';
+    date_title = intl.formatMessage(messages['Date of release:']);
   } else if (
     type === PUBICATION_REPORT ||
     type === INDICATOR ||
     type === GUIDANCE
   ) {
-    date_title = 'Date of publication:';
+    date_title = intl.formatMessage(messages['Date of publication:']);
   } else {
-    date_title = 'Date of creation:';
+    date_title = intl.formatMessage(messages['Date of creation:']);
   }
 
   return (
@@ -325,7 +365,12 @@ function ContentMetadata(props) {
           <>
             {health_impacts && health_impacts?.length > 0 && (
               <>
-                <h5>Health impact:</h5>
+                <h5>
+                  <FormattedMessage
+                    id="Health impact:"
+                    defaultMessage="Health impact:"
+                  />
+                </h5>
                 <ItemsList value={health_impacts} />
               </>
             )}
@@ -334,21 +379,33 @@ function ContentMetadata(props) {
 
         {keywords && keywords?.length > 0 && (
           <>
-            <h5>Keywords:</h5>
+            <h5>
+              <FormattedMessage id="Keywords:" defaultMessage="Keywords:" />
+            </h5>
             <span>{keywords?.sort().join(', ')}</span>
           </>
         )}
 
         {key_type_measures && key_type_measures?.length > 0 && (
           <>
-            <h5>Key Type Measures:</h5>
+            <h5>
+              <FormattedMessage
+                id="Key Type Measures:"
+                defaultMessage="Key Type Measures:"
+              />
+            </h5>
             <ItemsList value={key_type_measures} />
           </>
         )}
 
         {ipcc_category && ipcc_category?.length > 0 && (
           <>
-            <h5>IPCC adaptation options categories:</h5>
+            <h5>
+              <FormattedMessage
+                id="IPCC adaptation options categories:"
+                defaultMessage="IPCC adaptation options categories:"
+              />
+            </h5>
             <ItemsList value={ipcc_category} />
           </>
         )}
@@ -357,21 +414,33 @@ function ContentMetadata(props) {
           <>
             {climate_impacts && climate_impacts?.length > 0 && (
               <>
-                <h5>Climate impacts:</h5>
+                <h5>
+                  <FormattedMessage
+                    id="Climate impacts:"
+                    defaultMessage="Climate impacts:"
+                  />
+                </h5>
                 <ItemsList value={climate_impacts} />
               </>
             )}
 
             {elements && elements?.length > 0 && (
               <>
-                <h5> Adaptation elements:</h5>
+                <h5>
+                  <FormattedMessage
+                    id="Adaptation elements:"
+                    defaultMessage="Adaptation elements:"
+                  />
+                </h5>
                 <ItemsList value={elements} />
               </>
             )}
 
             {sectors && sectors?.length > 0 && (
               <>
-                <h5>Sectors:</h5>
+                <h5>
+                  <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
+                </h5>
                 <ItemsList value={sectors} />
               </>
             )}
@@ -380,7 +449,12 @@ function ContentMetadata(props) {
 
         {governance_level && governance_level?.length > 0 && (
           <>
-            <h5>Governance level:</h5>
+            <h5>
+              <FormattedMessage
+                id="Governance level:"
+                defaultMessage="Governance level:"
+              />
+            </h5>
             <ItemsList value={governance_level} join="<br />" />
           </>
         )}
@@ -389,7 +463,12 @@ function ContentMetadata(props) {
           <>
             {funding_programme && funding_programme?.title?.length > 0 && (
               <>
-                <h5>Funding Programme:</h5>
+                <h5>
+                  <FormattedMessage
+                    id="Funding Programme:"
+                    defaultMessage="Funding Programme:"
+                  />
+                </h5>
                 <span>{funding_programme.title}</span>
               </>
             )}
@@ -398,14 +477,21 @@ function ContentMetadata(props) {
 
         {duration && (
           <>
-            <h5>Duration:</h5>
+            <h5>
+              <FormattedMessage id="Duration:" defaultMessage="Duration:" />
+            </h5>
             <span>{duration}</span>
           </>
         )}
 
         {hasGeoChars && (
           <>
-            <h5>Geographic characterisation:</h5>
+            <h5>
+              <FormattedMessage
+                id="Geographic characterisation:"
+                defaultMessage="Geographic characterisation:"
+              />
+            </h5>
             <GeoChar {...props} />
           </>
         )}

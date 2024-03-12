@@ -14,6 +14,59 @@ import {
   PortalMessage,
 } from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  References: { id: 'References', defaultMessage: 'References' },
+  Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
+  Objectives: { id: 'Objectives', defaultMessage: 'Objectives' },
+  'Adaptation Options Implemented In This Case': {
+    id: 'Adaptation Options Implemented In This Case',
+    defaultMessage: 'Adaptation Options Implemented In This Case',
+  },
+  Solutions: { id: 'Solutions', defaultMessage: 'Solutions' },
+  'Importance and Relevance of Adaptation': {
+    id: 'Importance and Relevance of Adaptation',
+    defaultMessage: 'Importance and Relevance of Adaptation',
+  },
+  'Stakeholder participation': {
+    id: 'Stakeholder participation',
+    defaultMessage: 'Stakeholder participation',
+  },
+  'Success and Limiting Factors': {
+    id: 'Success and Limiting Factors',
+    defaultMessage: 'Success and Limiting Factors',
+  },
+  'Costs and Benefits': {
+    id: 'Costs and Benefits',
+    defaultMessage: 'Costs and Benefits',
+  },
+  Relevance: { id: 'Relevance', defaultMessage: 'Relevance' },
+  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Implementation Time': {
+    id: 'Implementation Time',
+    defaultMessage: 'Implementation Time',
+  },
+  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+  Contact: { id: 'Contact', defaultMessage: 'Contact' },
+
+  Websites: { id: 'Websites', defaultMessage: 'Websites' },
+  Source: { id: 'Source', defaultMessage: 'Source' },
+  'Case Study Description': {
+    id: 'Case Study Description',
+    defaultMessage: 'Case Study Description',
+  },
+  'Additional Details': {
+    id: 'Additional Details',
+    defaultMessage: 'Additional Details',
+  },
+  'Reference Information': {
+    id: 'Reference Information',
+    defaultMessage: 'Reference Information',
+  },
+  sa: { id: 'Sa', defaultMessage: 'Sa' },
+  su: { id: 'Su', defaultMessage: 'Su' },
+});
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -161,7 +214,12 @@ const PhotoGallery = (props) => {
       {cca_gallery && cca_gallery.length > 0 && (
         <div className="casetstudy-gallery">
           <div className="gallery-title">
-            <span>Case Study illustrations</span>
+            <span>
+              <FormattedMessage
+                id="Case Study illustrations"
+                defaultMessage="Case Study illustrations"
+              />
+            </span>
             <span> ({cca_gallery.length}) </span>
             <Icon name="ri-image-fill" />
           </div>
@@ -174,12 +232,13 @@ const PhotoGallery = (props) => {
 
 const SectionsMenu = (props) => {
   const { sections, title } = props;
+  const intl = useIntl();
 
   return (
     <>
       {sections.length > 0 && (
         <div>
-          <h4>{title}</h4>
+          <h4>{intl.formatMessage(messages[title])}</h4>
           <List bulleted>
             {sections.map((data, index) => (
               <ListItem key={index}>
@@ -197,6 +256,7 @@ const SectionsMenu = (props) => {
 
 const SectionContent = (props) => {
   const { sectionData, content } = props;
+  const intl = useIntl();
 
   const adaptationOptionsLinks = () => {
     let list = [];
@@ -214,12 +274,15 @@ const SectionContent = (props) => {
     }
   }
 
+  const sectionDataTitle =
+    sectionData.contentTitle !== undefined
+      ? sectionData.contentTitle
+      : sectionData.title;
   return (
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
-        {sectionData.contentTitle !== undefined
-          ? sectionData.contentTitle
-          : sectionData.title}
+        {intl.formatMessage(messages[sectionDataTitle])}
+        {/* {sectionDataTitle} */}
       </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
@@ -262,6 +325,7 @@ function CaseStudyView(props) {
       (data) => data.group === group && hasValue(data.field),
     );
   };
+  const intl = useIntl();
 
   return (
     <div className="db-item-view case-study-view">
@@ -279,7 +343,6 @@ function CaseStudyView(props) {
             >
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
-
               <Divider />
               <div className="adaptation-details">
                 <Grid columns="12">
@@ -303,14 +366,12 @@ function CaseStudyView(props) {
                   </Grid.Column>
                 </Grid>
               </div>
-
               <Divider />
-
               {[1, 2, 3].map(
                 (groupID, index) =>
                   usedSections(groupID).length > 0 && (
                     <Fragment key={index}>
-                      <h2>{groups[groupID]}</h2>
+                      <h2>{intl.formatMessage(messages[groups[groupID]])}</h2>
                       {usedSections(groupID).map((data, index) => (
                         <SectionContent
                           sectionData={data}
@@ -322,10 +383,8 @@ function CaseStudyView(props) {
                     </Fragment>
                   ),
               )}
-
               <PublishedModifiedInfo {...props} />
               <Divider />
-
               <p>
                 Please contact us for any other enquiry on this Case Study or to
                 share a new Case Study (email{' '}
