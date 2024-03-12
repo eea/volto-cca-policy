@@ -16,6 +16,21 @@ import { useLocation } from 'react-router-dom';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
+  'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT': {
+    id:
+      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT',
+    defaultMessage:
+      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT',
+  },
+  'The date refers to the date of release of the video': {
+    id: 'The date refers to the date of release of the video',
+    defaultMessage: 'The date refers to the date of release of the video',
+  },
+  'The date refers to the latest date of publication of the item': {
+    id: 'The date refers to the latest date of publication of the item',
+    defaultMessage:
+      'The date refers to the latest date of publication of the item',
+  },
   'Date of release:': {
     id: 'Date of release:',
     defaultMessage: 'Date of release:',
@@ -217,6 +232,7 @@ function GeoChar(props) {
   const { content } = props;
   const { spatial_values, spatial_layer, geochars } = content;
   const j = JSON.parse(geochars);
+  const intl = useIntl();
 
   if (j === null) {
     if (spatial_layer) {
@@ -237,7 +253,6 @@ function GeoChar(props) {
   }
 
   const { geoElements } = j;
-  const intl = useIntl();
 
   let rendered = renderGeochar(geoElements);
 
@@ -282,13 +297,14 @@ function PublicationDateInfo(props) {
   }
 
   const publicationYear = new Date(value).getFullYear();
+  const intl = useIntl();
   return publicationYear > 1970 ? (
     <>
       <h5>{title}</h5>
       <p>
         {publicationYear}
         <Popup
-          content={tooltipText}
+          content={intl.formatMessage(messages[tooltipText])}
           trigger={<i className="ri-question-fill"></i>}
         />
       </p>

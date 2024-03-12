@@ -352,6 +352,7 @@ msgstr "Informazioni di riferimento"
 msgid "Reference information"
 msgstr "Informazioni di riferimento"
 
+#: components/theme/Views/CaseStudyView
 #: helpers/Utils
 # defaultMessage: References
 msgid "References"
@@ -450,6 +451,21 @@ msgstr "Successo e fattori limitanti"
 msgid "Th"
 msgstr "Gi"
 
+#: helpers/ContentMetadata
+# defaultMessage: The date refers to the date of release of the video
+msgid "The date refers to the date of release of the video"
+msgstr "La data si riferisce alla data di pubblicazione del video"
+
+#: helpers/ContentMetadata
+# defaultMessage: The date refers to the latest date of publication of the item
+msgid "The date refers to the latest date of publication of the item"
+msgstr "La data si riferisce all'ultima data di pubblicazione della scheda"
+
+#: helpers/ContentMetadata
+# defaultMessage: The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "La data si riferisce al momento in cui la scheda è stata preparata o aggiornata dagli esperti e presentata per la pubblicazione in Climate-ADAPT"
+
 #: components/manage/Widgets/CreatableSelectWidget
 # defaultMessage: Title
 msgid "Title"
@@ -479,8 +495,3 @@ msgstr "Siti Web"
 # defaultMessage: Websites
 msgid "Websites"
 msgstr "Siti Web"
-
-#: helpers/ContentMetadata
-# defaultMessage: Countries:
-msgid "{section.title}"
-msgstr ""
