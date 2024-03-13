@@ -12,6 +12,7 @@ import { Divider, Grid, Icon, Image, ListItem, List } from 'semantic-ui-react';
 import {
   ImageGallery,
   PortalMessage,
+  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
@@ -328,6 +329,7 @@ function CaseStudyView(props) {
   return (
     <div className="db-item-view case-study-view">
       <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

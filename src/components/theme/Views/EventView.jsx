@@ -3,6 +3,7 @@ import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
   BannerTitle,
   PortalMessage,
+  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
@@ -16,6 +17,7 @@ function CcaEventView(props) {
   return (
     <div className="cca-event-view">
       <BannerTitle content={content} />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />
