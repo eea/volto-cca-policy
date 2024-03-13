@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { observatoryURL } from './common';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 import './styles.less';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  website: {
+    id: 'Web site',
+    defaultMessage: 'Web site',
+  },
+});
 
 const OrganisationCardsListingView = ({ items }) => {
+  const intl = useIntl();
+
   return (
     <div className="ui fluid four cards">
       {items.map((item, index) => (
@@ -30,13 +38,16 @@ const OrganisationCardsListingView = ({ items }) => {
                 className="header-link org-site"
                 href={item.websites?.[0] ?? '#'}
               >
-                Web site
+                {intl.formatMessage(messages.website)}
               </a>
               <a
                 className="header-link org-site"
                 href={makeContributionsSearchQuery(item)}
               >
-                Observatory contributions
+                <FormattedMessage
+                  id="Observatory contributions"
+                  defaultMessage="Observatory contributions"
+                />
               </a>
             </div>
           </div>
@@ -51,8 +62,4 @@ OrganisationCardsListingView.propTypes = {
   isEditMode: PropTypes.bool,
 };
 
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(OrganisationCardsListingView);
+export default OrganisationCardsListingView;

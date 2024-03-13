@@ -9,37 +9,72 @@ import { Icon } from 'semantic-ui-react';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Card, Grid } from 'semantic-ui-react';
 import { Label } from 'semantic-ui-react';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
 const Separator = () => {
   return <div className="sep">&nbsp;&nbsp;⎯&nbsp;&nbsp;</div>;
 };
 
+const messages = defineMessages({
+  jan: { id: 'Jan', defaultMessage: 'Jan' },
+  feb: { id: 'Feb', defaultMessage: 'Feb' },
+  mar: { id: 'Mar', defaultMessage: 'Mar' },
+  apr: { id: 'Apr', defaultMessage: 'Apr' },
+  may: { id: 'May', defaultMessage: 'May' },
+  jun: { id: 'Jun', defaultMessage: 'Jun' },
+  jul: { id: 'Jul', defaultMessage: 'Jul' },
+  aug: { id: 'Aug', defaultMessage: 'Aug' },
+  sep: { id: 'Sep', defaultMessage: 'Sep' },
+  oct: { id: 'Oct', defaultMessage: 'Ott' },
+  nov: { id: 'Nov', defaultMessage: 'Nov' },
+  dec: { id: 'Dec', defaultMessage: 'Dec' },
+
+  mo: { id: 'Mo', defaultMessage: 'Mo' },
+  tu: { id: 'Tu', defaultMessage: 'Tu' },
+  we: { id: 'We', defaultMessage: 'We' },
+  th: { id: 'Th', defaultMessage: 'Th' },
+  fr: { id: 'Fr', defaultMessage: 'Fr' },
+  sa: { id: 'Sa', defaultMessage: 'Sa' },
+  su: { id: 'Su', defaultMessage: 'Su' },
+});
 const StartDate = (start) => {
   const start_date = new Date(start);
 
   const day = start_date.getDate();
   const monthIndex = start_date.getMonth();
 
+  const intl = useIntl();
   const monthNames = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
+    intl.formatMessage(messages.jan),
+    intl.formatMessage(messages.feb),
+    intl.formatMessage(messages.mar),
+    intl.formatMessage(messages.apr),
+    intl.formatMessage(messages.may),
+    intl.formatMessage(messages.jun),
+    intl.formatMessage(messages.jul),
+    intl.formatMessage(messages.aug),
+    intl.formatMessage(messages.sep),
+    intl.formatMessage(messages.oct),
+    intl.formatMessage(messages.nov),
+    intl.formatMessage(messages.dec),
   ];
+
+  const dayNames = {
+    Mo: intl.formatMessage(messages.mo),
+    Tu: intl.formatMessage(messages.tu),
+    We: intl.formatMessage(messages.we),
+    Th: intl.formatMessage(messages.th),
+    Fr: intl.formatMessage(messages.fr),
+    Sa: intl.formatMessage(messages.sa),
+    Su: intl.formatMessage(messages.su),
+  };
 
   const monthName = monthNames[monthIndex];
 
-  const dayOfWeek = start_date
-    .toLocaleDateString('en', { weekday: 'short' })
-    .substring(0, 2);
+  const dayOfWeek =
+    dayNames[
+      start_date.toLocaleDateString('en', { weekday: 'short' }).substring(0, 2)
+    ];
 
   return (
     <div className="start-date">
@@ -129,7 +164,10 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                         )}
                         <div className="source">
                           <ConditionalLink item={item} condition={!isEditMode}>
-                            Climate-ADAPT page for this event
+                            <FormattedMessage
+                              id="Climate-ADAPT page for this event"
+                              defaultMessage="Climate-ADAPT page for this event"
+                            />
                           </ConditionalLink>
                         </div>
                         {!!item.contact_email && (
