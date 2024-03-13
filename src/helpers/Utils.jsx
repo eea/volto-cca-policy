@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
+import { FormattedMessage } from 'react-intl';
 import {
   Segment,
   Image,
@@ -123,9 +124,11 @@ export const ReferenceInfo = (props) => {
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
-    source_title = 'References';
+    source_title = (
+      <FormattedMessage id="References" defaultMessage="References" />
+    );
   } else {
-    source_title = 'Source';
+    source_title = <FormattedMessage id="Source" defaultMessage="Source" />;
   }
 
   return (websites && websites?.length > 0) ||
@@ -134,9 +137,19 @@ export const ReferenceInfo = (props) => {
     (contributions && contributions.length > 0) ||
     (other_contributor && other_contributor?.length > 0) ? (
     <>
-      <h2>Reference information</h2>
+      <h2>
+        <FormattedMessage
+          id="Reference information"
+          defaultMessage="Reference information"
+        />
+      </h2>
 
-      {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
+      {websites?.length > 0 && (
+        <LinksList
+          title={<FormattedMessage id="Websites:" defaultMessage="Websites:" />}
+          value={websites}
+        />
+      )}
 
       {type !== ACE_PROJECT && type !== ORGANISATION && (
         <>
@@ -151,7 +164,9 @@ export const ReferenceInfo = (props) => {
 
       {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
         <>
-          <h5>Contributor:</h5>
+          <h5>
+            <FormattedMessage id="Contributor:" defaultMessage="Contributor:" />
+          </h5>
           {contributor_list
             .map((item) => (
               <>
@@ -166,7 +181,12 @@ export const ReferenceInfo = (props) => {
 
       {contributions && contributions.length > 0 && (
         <>
-          <h5>Observatory Contributions:</h5>
+          <h5>
+            <FormattedMessage
+              id="Observatory Contributions:"
+              defaultMessage="Observatory Contributions:"
+            />
+          </h5>
           {!isReadMore ? (
             <>
               <List bulleted>
@@ -198,12 +218,16 @@ export const ReferenceInfo = (props) => {
             >
               {!isReadMore ? (
                 <>
-                  <strong>See more</strong>
+                  <strong>
+                    <FormattedMessage id="See more" defaultMessage="See more" />
+                  </strong>
                   <Icon className="ri-arrow-down-s-line" />
                 </>
               ) : (
                 <>
-                  <strong>See less</strong>
+                  <strong>
+                    <FormattedMessage id="See less" defaultMessage="See less" />
+                  </strong>
                   <Icon className="ri-arrow-up-s-line" />
                 </>
               )}
@@ -212,7 +236,10 @@ export const ReferenceInfo = (props) => {
 
           <div>
             <Button as="a" href={link}>
-              View all contributions in the resource catalogue
+              <FormattedMessage
+                id="View all contributions in the resource catalogue"
+                defaultMessage="View all contributions in the resource catalogue"
+              />
             </Button>
           </div>
         </>
@@ -256,13 +283,23 @@ export const PublishedModifiedInfo = (props) => {
     <div className="published-modified-info">
       <p>
         <span>
-          <strong>Published in Climate-ADAPT</strong>
+          <strong>
+            <FormattedMessage
+              id="Published in Climate-ADAPT"
+              defaultMessage="Published in Climate-ADAPT"
+            />
+          </strong>
           &nbsp;
           {published}
         </span>
         <span> &nbsp; - &nbsp; </span>
         <span>
-          <strong>Last Modified in Climate-ADAPT</strong>
+          <strong>
+            <FormattedMessage
+              id="Last Modified in Climate-ADAPT"
+              defaultMessage="Last Modified in Climate-ADAPT"
+            />
+          </strong>
           &nbsp;
           {modified}
         </span>
@@ -332,7 +369,12 @@ export const ContentRelatedItems = (props) => {
 
   return contentRelatedItems.length > 0 ? (
     <>
-      <h5>Related content:</h5>
+      <h5>
+        <FormattedMessage
+          id="Related content:"
+          defaultMessage="Related content:"
+        />
+      </h5>
 
       {contentRelatedItems.map((item, index) => (
         <Fragment key={index}>
@@ -362,7 +404,9 @@ export const ItemLogo = (props) => {
 
   return (
     <LogoWrapper logo={logo_image}>
-      <h2>Description</h2>
+      <h2>
+        <FormattedMessage id="Description" defaultMessage="Description" />
+      </h2>
       {logo_image && (
         <Image
           src={logo_image?.scales?.mini?.download}
