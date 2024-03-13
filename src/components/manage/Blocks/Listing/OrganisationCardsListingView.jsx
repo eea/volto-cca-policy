@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observatoryURL } from './common';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
+
 import './styles.less';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
@@ -12,42 +14,6 @@ const messages = defineMessages({
 });
 
 const OrganisationCardsListingView = ({ items }) => {
-  const contributionsURL = (item) => {
-    const mapContributorValues = {
-      'copernicus-climate-change-service-ecmw':
-        'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring Service',
-      'european-centre-for-disease-prevention-and-control-ecdc':
-        'European Centre for Disease Prevention and Control',
-      'european-commission': 'European Commission',
-      'european-environment-agency-eea': 'European Environment Agency',
-      'european-food-safety-authority': 'European Food Safety Authority',
-      'lancet-countdown': 'Lancet Countdown in Europe',
-      'who-regional-office-for-europe-who-europe':
-        'WHO Regional Office for Europe',
-      'world-health-organization': 'World Health Organization',
-      'association-schools-public-health-in-european-region-aspher':
-        'The Association of Schools of Public Health in the European Region',
-    };
-    const org = mapContributorValues[item['@id'].split('/').pop()] || '';
-    const query =
-      'size=n_10_n' +
-      '&filters[0][field]=cca_partner_contributors.keyword' +
-      '&filters[0][values][0]=' +
-      org +
-      '&filters[0][type]=any' +
-      '&filters[1][field]=issued.date' +
-      '&filters[1][values][0]=Last 5 years' +
-      '&filters[1][type]=any' +
-      '&filters[2][field]=language' +
-      '&filters[2][values][0]=en' +
-      '&filters[2][type]=any' +
-      '&sort-field=issued.date' +
-      '&sort-direction=desc';
-
-    return `/en/observatory/advanced-search?${query
-      .replaceAll('[', '%5B')
-      .replaceAll(']', '%5D')}`;
-  };
   const intl = useIntl();
 
   return (
@@ -74,7 +40,10 @@ const OrganisationCardsListingView = ({ items }) => {
               >
                 {intl.formatMessage(messages.website)}
               </a>
-              <a className="header-link org-site" href={contributionsURL(item)}>
+              <a
+                className="header-link org-site"
+                href={makeContributionsSearchQuery(item)}
+              >
                 <FormattedMessage
                   id="Observatory contributions"
                   defaultMessage="Observatory contributions"

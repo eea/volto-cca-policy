@@ -126,7 +126,7 @@ exports[`AdaptationOptionView should render the component 1`] = `
             Websites:
           </h5>
           <div
-            className="ui bulleted list"
+            className="ui list"
             role="list"
           >
             <div

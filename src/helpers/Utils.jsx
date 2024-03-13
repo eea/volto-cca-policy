@@ -1,7 +1,15 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment, Image, ListItem, List } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
+import {
+  Segment,
+  Image,
+  ListItem,
+  List,
+  Button,
+  Icon,
+} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import {
   CASE_STUDY,
@@ -10,7 +18,7 @@ import {
   ADAPTATION_OPTION,
   ACE_PROJECT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
-import { FormattedMessage } from 'react-intl';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -46,7 +54,7 @@ export const LinksList = (props) => {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <List bulleted>
+        <List>
           {value.map((linkItem, index) => (
             <ListItem key={index}>
               {isInternal ? (
@@ -63,7 +71,7 @@ export const LinksList = (props) => {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <List bulleted>
+        <List>
           {value.map((url, index) => (
             <ListItem key={index}>
               <ExternalLink url={url} text={url} />
@@ -110,6 +118,9 @@ export const ReferenceInfo = (props) => {
     other_contributor,
     contributions,
   } = content;
+  const link = makeContributionsSearchQuery(content);
+  const [isReadMore, setIsReadMore] = React.useState(false);
+  const contributions_rest = contributions ? contributions.slice(0, 10) : [];
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
@@ -120,10 +131,11 @@ export const ReferenceInfo = (props) => {
     source_title = <FormattedMessage id="Source" defaultMessage="Source" />;
   }
 
-  return websites?.length > 0 ||
+  return (websites && websites?.length > 0) ||
     (source && source?.data.length > 0) ||
-    contributor_list?.length > 0 ||
-    other_contributor?.length > 0 ? (
+    (contributor_list && contributor_list?.length > 0) ||
+    (contributions && contributions.length > 0) ||
+    (other_contributor && other_contributor?.length > 0) ? (
     <>
       <h2>
         <FormattedMessage
@@ -175,13 +187,61 @@ export const ReferenceInfo = (props) => {
               defaultMessage="Observatory Contributions:"
             />
           </h5>
-          <List bulleted>
-            {contributions.map((item, index) => (
-              <ListItem key={index}>
-                <Link to={item.url}>{item.title}</Link>
-              </ListItem>
-            ))}
-          </List>
+          {!isReadMore ? (
+            <>
+              <List bulleted>
+                {contributions_rest.map((item, index) => (
+                  <ListItem key={index}>
+                    <Link to={item.url}>{item.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          ) : (
+            <>
+              <List bulleted>
+                {contributions.map((item, index) => (
+                  <ListItem key={index}>
+                    <Link to={item.url}>{item.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          )}
+
+          {contributions.length > 10 && (
+            <Button
+              basic
+              icon
+              primary
+              onClick={() => setIsReadMore(!isReadMore)}
+            >
+              {!isReadMore ? (
+                <>
+                  <strong>
+                    <FormattedMessage id="See more" defaultMessage="See more" />
+                  </strong>
+                  <Icon className="ri-arrow-down-s-line" />
+                </>
+              ) : (
+                <>
+                  <strong>
+                    <FormattedMessage id="See less" defaultMessage="See less" />
+                  </strong>
+                  <Icon className="ri-arrow-up-s-line" />
+                </>
+              )}
+            </Button>
+          )}
+
+          <div>
+            <Button as="a" href={link}>
+              <FormattedMessage
+                id="View all contributions in the resource catalogue"
+                defaultMessage="View all contributions in the resource catalogue"
+              />
+            </Button>
+          </div>
         </>
       )}
     </>
