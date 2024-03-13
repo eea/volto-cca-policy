@@ -21,7 +21,7 @@ const TranslationDisclaimer = (props) => {
         <div className="translation-info">
           {open && (
             <Container>
-              <Message info>
+              <Message warning>
                 <MessageHeader>
                   <h5>Exclusion of liability</h5>
                   <Button
