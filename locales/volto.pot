@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-12T12:49:23.772Z\n"
+"POT-Creation-Date: 2024-03-13T08:36:44.794Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -237,6 +237,11 @@ msgstr ""
 msgid "Importance and Relevance of Adaptation"
 msgstr ""
 
+#: components/theme/Views/EventView
+# defaultMessage: Info
+msgid "Info"
+msgstr ""
+
 #: components/manage/Blocks/Listing/EventCardsListingView
 # defaultMessage: Jan
 msgid "Jan"
@@ -416,6 +421,16 @@ msgstr ""
 msgid "Sectors:"
 msgstr ""
 
+#: helpers/Utils
+# defaultMessage: See less
+msgid "See less"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: See more
+msgid "See more"
+msgstr ""
+
 #: components/manage/Widgets/CreatableSelectWidget
 # defaultMessage: Select…
 msgid "Select…"
@@ -515,6 +530,11 @@ msgstr ""
 msgid "Used for programmatic access to the fieldset."
 msgstr ""
 
+#: helpers/Utils
+# defaultMessage: View all contributions in the resource catalogue
+msgid "View all contributions in the resource catalogue"
+msgstr ""
+
 #: components/manage/Blocks/Listing/EventCardsListingView
 # defaultMessage: We
 msgid "We"
@@ -534,4 +554,14 @@ msgstr ""
 #: helpers/Utils
 # defaultMessage: Websites:
 msgid "Websites:"
+msgstr ""
+
+#: components/theme/Views/EventView
+# defaultMessage: When
+msgid "When"
+msgstr ""
+
+#: components/theme/Views/EventView
+# defaultMessage: Where
+msgid "Where"
 msgstr ""

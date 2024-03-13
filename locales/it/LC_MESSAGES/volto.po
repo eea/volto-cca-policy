@@ -235,6 +235,11 @@ msgstr "Tempo di implementazione"
 msgid "Importance and Relevance of Adaptation"
 msgstr ""
 
+#: components/theme/Views/EventView
+# defaultMessage: Info
+msgid "Info"
+msgstr ""
+
 #: components/manage/Blocks/Listing/EventCardsListingView
 # defaultMessage: Jan
 msgid "Jan"
@@ -414,6 +419,16 @@ msgstr ""
 msgid "Sectors:"
 msgstr "Settori:"
 
+#: helpers/Utils
+# defaultMessage: See less
+msgid "See less"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: See more
+msgid "See more"
+msgstr ""
+
 #: components/manage/Widgets/CreatableSelectWidget
 # defaultMessage: Select…
 msgid "Select…"
@@ -513,6 +528,11 @@ msgstr ""
 msgid "Used for programmatic access to the fieldset."
 msgstr ""
 
+#: helpers/Utils
+# defaultMessage: View all contributions in the resource catalogue
+msgid "View all contributions in the resource catalogue"
+msgstr ""
+
 #: components/manage/Blocks/Listing/EventCardsListingView
 # defaultMessage: We
 msgid "We"
@@ -533,3 +553,13 @@ msgstr "Siti Web"
 # defaultMessage: Websites:
 msgid "Websites:"
 msgstr "Siti Web:"
+
+#: components/theme/Views/EventView
+# defaultMessage: When
+msgid "When"
+msgstr "Quando"
+
+#: components/theme/Views/EventView
+# defaultMessage: Where
+msgid "Where"
+msgstr "Dove"
