@@ -8,7 +8,10 @@ import {
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 
 import config from '@plone/volto/registry';
 
@@ -43,6 +46,7 @@ function ProjectView(props) {
           title: item_title,
         }}
       />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

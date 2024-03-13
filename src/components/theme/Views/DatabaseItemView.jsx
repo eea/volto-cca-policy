@@ -18,7 +18,10 @@ import {
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
 import { Divider, Grid } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
@@ -83,6 +86,7 @@ const DatabaseItemView = (props) => {
         content={{ ...content, image: '', title: item_title }}
         type={subtitle}
       />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

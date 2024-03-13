@@ -10,7 +10,10 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Grid, ListItem, List } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 function createDataField(type, field, section, title) {
@@ -121,6 +124,7 @@ function AdaptationOptionView(props) {
         content={{ ...content, image: '' }}
         type="Adaptation Option"
       />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

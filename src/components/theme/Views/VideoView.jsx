@@ -8,7 +8,10 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Image, Grid } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 
 function VideoView(props) {
   const { content } = props;
@@ -36,6 +39,7 @@ function VideoView(props) {
   return (
     <div className="db-item-view video-view">
       <BannerTitle content={{ ...content, image: '' }} type="Video" />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

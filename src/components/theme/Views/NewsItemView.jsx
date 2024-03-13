@@ -6,6 +6,7 @@ import { Label } from 'semantic-ui-react';
 import {
   BannerTitle,
   PortalMessage,
+  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 
 // const Date = (props) => {
@@ -35,6 +36,7 @@ function CcaEventView(props) {
   return (
     <div className="cca-newsitem-view">
       <BannerTitle content={content} />
+      <TranslationDisclaimer />
       <div className="ui container">
         <PortalMessage content={content} />
         <p>{content.description}</p>
