@@ -18,7 +18,10 @@ import {
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
 import { Divider, Grid } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
@@ -29,12 +32,15 @@ const DatabaseItemView = (props) => {
   const location = useLocation();
   const isObservatoryItem = isObservatoryURL(location.pathname);
   const {
-    long_description,
+    title,
+    acronym,
     map_graphs,
-    organisational_key_activities,
+    long_description,
     organisational_websites,
+    organisational_key_activities,
     organisational_contact_information,
   } = content;
+  const item_title = acronym ? title + ' (' + acronym + ')' : title;
 
   let subtitle;
   switch (type) {
@@ -76,7 +82,11 @@ const DatabaseItemView = (props) => {
 
   return (
     <div className="db-item-view">
-      <BannerTitle content={{ ...content, image: '' }} type={subtitle} />
+      <BannerTitle
+        content={{ ...content, image: '', title: item_title }}
+        type={subtitle}
+      />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

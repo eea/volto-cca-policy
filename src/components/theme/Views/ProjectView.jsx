@@ -8,13 +8,18 @@ import {
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
+import { FormattedMessage } from 'react-intl';
 
 import config from '@plone/volto/registry';
 
 function ProjectView(props) {
   const { content } = props;
   const { long_description, lead, funding, partners, acronym, title } = content;
+  const item_title = acronym ? title + ' (' + acronym + ')' : title;
 
   const {
     blocks: { blocksConfig },
@@ -39,9 +44,10 @@ function ProjectView(props) {
         metadata={{
           ...content,
           image: '',
-          title: title + ' (' + acronym + ')',
+          title: item_title,
         }}
       />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />
@@ -58,14 +64,28 @@ function ProjectView(props) {
 
               <Divider />
 
-              <h2>Project information</h2>
-              <h5>Lead</h5>
+              <h2>
+                <FormattedMessage
+                  id="Project information"
+                  defaultMessage="Project information"
+                />
+              </h2>
+              <h5>
+                <FormattedMessage id="Lead" defaultMessage="Lead" />
+              </h5>
               <p>{lead}</p>
-              <h5>Partners</h5>
+              <h5>
+                <FormattedMessage id="Partners" defaultMessage="Partners" />
+              </h5>
               <HTMLField value={partners} className="partners" />
               {funding && (
                 <>
-                  <h5>Source of funding</h5>
+                  <h5>
+                    <FormattedMessage
+                      id="Source of funding"
+                      defaultMessage="Source of funding"
+                    />
+                  </h5>
                   <p>{funding}</p>
                 </>
               )}

@@ -1,7 +1,16 @@
 import React, { Fragment } from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { Segment, Image } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
+import {
+  Segment,
+  Image,
+  ListItem,
+  List,
+  Button,
+  Icon,
+} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import {
   CASE_STUDY,
   PUBICATION_REPORT,
@@ -9,6 +18,7 @@ import {
   ADAPTATION_OPTION,
   ACE_PROJECT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -44,30 +54,30 @@ export const LinksList = (props) => {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <ul>
+        <List>
           {value.map((linkItem, index) => (
-            <li key={index}>
+            <ListItem key={index}>
               {isInternal ? (
                 <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
               ) : (
                 <ExternalLink url={linkItem[0]} text={linkItem[1]} />
               )}
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </>
     );
   } else {
     return (
       <>
         <h5 id="websites">{title}</h5>
-        <ul>
+        <List>
           {value.map((url, index) => (
-            <li key={index}>
+            <ListItem key={index}>
               <ExternalLink url={url} text={url} />
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       </>
     );
   }
@@ -101,23 +111,45 @@ export const BannerTitle = (props) => {
 export const ReferenceInfo = (props) => {
   const { content } = props;
   const type = content['@type'];
-  const { websites, source, contributor_list, other_contributor } = content;
+  const {
+    websites,
+    source,
+    contributor_list,
+    other_contributor,
+    contributions,
+  } = content;
+  const link = makeContributionsSearchQuery(content);
+  const [isReadMore, setIsReadMore] = React.useState(false);
+  const contributions_rest = contributions ? contributions.slice(0, 10) : [];
 
   let source_title;
   if (type === ADAPTATION_OPTION) {
-    source_title = 'References';
+    source_title = (
+      <FormattedMessage id="References" defaultMessage="References" />
+    );
   } else {
-    source_title = 'Source';
+    source_title = <FormattedMessage id="Source" defaultMessage="Source" />;
   }
 
-  return websites?.length > 0 ||
+  return (websites && websites?.length > 0) ||
     (source && source?.data.length > 0) ||
-    contributor_list?.length > 0 ||
-    other_contributor?.length > 0 ? (
+    (contributor_list && contributor_list?.length > 0) ||
+    (contributions && contributions.length > 0) ||
+    (other_contributor && other_contributor?.length > 0) ? (
     <>
-      <h2>Reference information</h2>
+      <h2>
+        <FormattedMessage
+          id="Reference information"
+          defaultMessage="Reference information"
+        />
+      </h2>
 
-      {websites?.length > 0 && <LinksList title="Websites:" value={websites} />}
+      {websites?.length > 0 && (
+        <LinksList
+          title={<FormattedMessage id="Websites:" defaultMessage="Websites:" />}
+          value={websites}
+        />
+      )}
 
       {type !== ACE_PROJECT && type !== ORGANISATION && (
         <>
@@ -132,7 +164,9 @@ export const ReferenceInfo = (props) => {
 
       {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
         <>
-          <h5>Contributor:</h5>
+          <h5>
+            <FormattedMessage id="Contributor:" defaultMessage="Contributor:" />
+          </h5>
           {contributor_list
             .map((item) => (
               <>
@@ -142,6 +176,72 @@ export const ReferenceInfo = (props) => {
             ))
             .sort()}
           {other_contributor}
+        </>
+      )}
+
+      {contributions && contributions.length > 0 && (
+        <>
+          <h5>
+            <FormattedMessage
+              id="Observatory Contributions:"
+              defaultMessage="Observatory Contributions:"
+            />
+          </h5>
+          {!isReadMore ? (
+            <>
+              <List bulleted>
+                {contributions_rest.map((item, index) => (
+                  <ListItem key={index}>
+                    <Link to={item.url}>{item.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          ) : (
+            <>
+              <List bulleted>
+                {contributions.map((item, index) => (
+                  <ListItem key={index}>
+                    <Link to={item.url}>{item.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          )}
+
+          {contributions.length > 10 && (
+            <Button
+              basic
+              icon
+              primary
+              onClick={() => setIsReadMore(!isReadMore)}
+            >
+              {!isReadMore ? (
+                <>
+                  <strong>
+                    <FormattedMessage id="See more" defaultMessage="See more" />
+                  </strong>
+                  <Icon className="ri-arrow-down-s-line" />
+                </>
+              ) : (
+                <>
+                  <strong>
+                    <FormattedMessage id="See less" defaultMessage="See less" />
+                  </strong>
+                  <Icon className="ri-arrow-up-s-line" />
+                </>
+              )}
+            </Button>
+          )}
+
+          <div>
+            <Button as="a" href={link}>
+              <FormattedMessage
+                id="View all contributions in the resource catalogue"
+                defaultMessage="View all contributions in the resource catalogue"
+              />
+            </Button>
+          </div>
         </>
       )}
     </>
@@ -183,13 +283,23 @@ export const PublishedModifiedInfo = (props) => {
     <div className="published-modified-info">
       <p>
         <span>
-          <strong>Published in Climate-ADAPT</strong>
+          <strong>
+            <FormattedMessage
+              id="Published in Climate-ADAPT"
+              defaultMessage="Published in Climate-ADAPT"
+            />
+          </strong>
           &nbsp;
           {published}
         </span>
         <span> &nbsp; - &nbsp; </span>
         <span>
-          <strong>Last Modified in Climate-ADAPT</strong>
+          <strong>
+            <FormattedMessage
+              id="Last Modified in Climate-ADAPT"
+              defaultMessage="Last Modified in Climate-ADAPT"
+            />
+          </strong>
           &nbsp;
           {modified}
         </span>
@@ -232,16 +342,16 @@ export const DocumentsList = (props) => {
       <h5>
         {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
-      <ul className="documents-list">
+      <List className="documents-list">
         {files.map((file, index) => (
-          <li key={index}>
+          <ListItem key={index}>
             <a href={file.url} className="document-list-item">
               <i className="file alternate icon"></i>
               <span>{file.title}</span>
             </a>
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </Segment>
   );
 };
@@ -259,7 +369,12 @@ export const ContentRelatedItems = (props) => {
 
   return contentRelatedItems.length > 0 ? (
     <>
-      <h5>Related content:</h5>
+      <h5>
+        <FormattedMessage
+          id="Related content:"
+          defaultMessage="Related content:"
+        />
+      </h5>
 
       {contentRelatedItems.map((item, index) => (
         <Fragment key={index}>
@@ -289,7 +404,9 @@ export const ItemLogo = (props) => {
 
   return (
     <LogoWrapper logo={logo_image}>
-      <h2>Description</h2>
+      <h2>
+        <FormattedMessage id="Description" defaultMessage="Description" />
+      </h2>
       {logo_image && (
         <Image
           src={logo_image?.scales?.mini?.download}

@@ -6,7 +6,10 @@ import {
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Accordion, Icon, Segment, Image, Button } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
 
 if (!__SERVER__) {
@@ -153,6 +156,7 @@ function C3SIndicatorView(props) {
   return (
     <div className="db-item-view c3sindicator-view">
       <BannerTitle content={{ ...content, image: '' }} />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />

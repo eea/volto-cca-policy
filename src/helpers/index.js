@@ -16,8 +16,8 @@ export {
   ContentRelatedItems,
   ItemLogo,
 } from './Utils';
-export ContentMetadata from './ContentMetadata';
-export ShareInfo from './ShareInfo';
+export { default as ContentMetadata } from './ContentMetadata';
+export { default as ShareInfo } from './ShareInfo';
 export {
   ACE_COUNTRIES,
   BIOREGIONS,
@@ -68,4 +68,26 @@ export const createSlateParagraph = (text) => {
 
 export const serializeText = (text) => {
   return isArray(text) ? serializeNodes(text) : text;
+};
+
+export const makeContributionsSearchQuery = (props) => {
+  const { title } = props;
+
+  const base = '/en/observatory/advanced-search';
+  const field = 'cca_partner_contributors.keyword';
+  const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${title}`;
+  const rest =
+    'filters[1][field]=issued.date' +
+    '&filters[1][values][0]=All time' +
+    '&filters[1][type]=any' +
+    '&filters[2][field]=language' +
+    '&filters[2][values][0]=en' +
+    '&filters[2][type]=any' +
+    '&sort-field=issued.date' +
+    '&sort-direction=desc';
+
+  const query = `${base}?size=n_10_n&${filter}&${rest}`;
+  const url = query.replaceAll('[', '%5B').replaceAll(']', '%5D');
+
+  return url;
 };

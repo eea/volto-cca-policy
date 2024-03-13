@@ -11,4 +11,555 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: Adaptation Details
+msgid "Adaptation Details"
+msgstr ""
 
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Adaptation Options Implemented In This Case
+msgid "Adaptation Options Implemented In This Case"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Adaptation elements:
+msgid "Adaptation elements:"
+msgstr ""
+
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+# defaultMessage: Adaptation sectors
+msgid "Adaptation sectors"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Additional Details
+msgid "Additional Details"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Apr
+msgid "Apr"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Aug
+msgid "Aug"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Biogeographical regions:
+msgid "Biogeographical regions:"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Case Study Description
+msgid "Case Study Description"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Case Study illustrations
+msgid "Case Study illustrations"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: Case studies related to this option:
+msgid "Case studies related to this option:"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: Category
+msgid "Category"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Challenges
+msgid "Challenges"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Choices
+msgid "Choices"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: Choose thematic map:
+msgid "Choose thematic map:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: City:
+msgid "City:"
+msgstr ""
+
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+# defaultMessage: Climate impact
+msgid "Climate impact"
+msgstr ""
+
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+# defaultMessage: Climate impacts
+msgid "Climate impacts"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Climate impacts:
+msgid "Climate impacts:"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Climate-ADAPT page for this event
+msgid "Climate-ADAPT page for this event"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Close
+msgid "Close"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Contact
+msgid "Contact"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: Contributor:
+msgid "Contributor:"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Costs and Benefits
+msgid "Costs and Benefits"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Countries:
+msgid "Countries:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Date of creation:
+msgid "Date of creation:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Date of publication:
+msgid "Date of publication:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Date of release:
+msgid "Date of release:"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Dec
+msgid "Dec"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Default
+msgid "Default"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+#: helpers/Utils
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Duration:
+msgid "Duration:"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Feb
+msgid "Feb"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Fr
+msgid "Fr"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Funding Programme:
+msgid "Funding Programme:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Geographic characterisation:
+msgid "Geographic characterisation:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Governance level:
+msgid "Governance level:"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: HHWS available (click on country for further information)
+msgid "HHWS available (click on country for further information)"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Health impact:
+msgid "Health impact:"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: Heat health action plans (HHAP)
+msgid "Heat health action plans (HHAP)"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: IPCC adaptation options categories:
+msgid "IPCC adaptation options categories:"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+# defaultMessage: IPCC categories
+msgid "IPCC categories"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Implementation Time
+msgid "Implementation Time"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Importance and Relevance of Adaptation
+msgid "Importance and Relevance of Adaptation"
+msgstr ""
+
+#: components/theme/Views/EventView
+# defaultMessage: Info
+msgid "Info"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Jan
+msgid "Jan"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Jul
+msgid "Jul"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Jun
+msgid "Jun"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Key Type Measures:
+msgid "Key Type Measures:"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Keywords:
+msgid "Keywords:"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: Last Modified in Climate-ADAPT
+msgid "Last Modified in Climate-ADAPT"
+msgstr ""
+
+#: components/theme/Views/ProjectView
+# defaultMessage: Lead
+msgid "Lead"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Legal Aspects
+msgid "Legal Aspects"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Life Time
+msgid "Life Time"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Macro-Transnational region:
+msgid "Macro-Transnational region:"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Mar
+msgid "Mar"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: May
+msgid "May"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Mo
+msgid "Mo"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: National HHAP
+msgid "National HHAP"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: No HHAP
+msgid "No HHAP"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: No information
+msgid "No information"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: No options
+msgid "No options"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: No value
+msgid "No value"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Nov
+msgid "Nov"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Objectives
+msgid "Objectives"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: Observatory Contributions:
+msgid "Observatory Contributions:"
+msgstr ""
+
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+# defaultMessage: Observatory contributions
+msgid "Observatory contributions"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Ott
+msgid "Oct"
+msgstr ""
+
+#: components/theme/Views/ProjectView
+# defaultMessage: Partners
+msgid "Partners"
+msgstr ""
+
+#: components/theme/Views/ProjectView
+# defaultMessage: Project information
+msgid "Project information"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: Published in Climate-ADAPT
+msgid "Published in Climate-ADAPT"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Reference Information
+msgid "Reference Information"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
+# defaultMessage: Reference information
+msgid "Reference information"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
+# defaultMessage: References
+msgid "References"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: Related content:
+msgid "Related content:"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Relevance
+msgid "Relevance"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Required
+msgid "Required"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Sa
+msgid "Sa"
+msgstr ""
+
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+# defaultMessage: Sector
+msgid "Sector"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Sectors:
+msgid "Sectors:"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: See less
+msgid "See less"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: See more
+msgid "See more"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Select…
+msgid "Select…"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Sep
+msgid "Sep"
+msgstr ""
+
+#: helpers/ShareInfo
+# defaultMessage: Share your information
+msgid "Share your information"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Short Name
+msgid "Short Name"
+msgstr ""
+
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Solutions
+msgid "Solutions"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
+# defaultMessage: Source
+msgid "Source"
+msgstr ""
+
+#: components/theme/Views/ProjectView
+# defaultMessage: Source of funding
+msgid "Source of funding"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Stakeholder participation
+msgid "Stakeholder participation"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Su
+msgid "Su"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: Sub Nationals:
+msgid "Sub Nationals:"
+msgstr ""
+
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+# defaultMessage: Subnational or local
+msgid "Subnational or local"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Success and Limiting Factors
+msgid "Success and Limiting Factors"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Th
+msgid "Th"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: The date refers to the date of release of the video
+msgid "The date refers to the date of release of the video"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: The date refers to the latest date of publication of the item
+msgid "The date refers to the latest date of publication of the item"
+msgstr ""
+
+#: helpers/ContentMetadata
+# defaultMessage: The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: Tu
+msgid "Tu"
+msgstr ""
+
+#: components/manage/Widgets/CreatableSelectWidget
+# defaultMessage: Used for programmatic access to the fieldset.
+msgid "Used for programmatic access to the fieldset."
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: View all contributions in the resource catalogue
+msgid "View all contributions in the resource catalogue"
+msgstr ""
+
+#: components/manage/Blocks/Listing/EventCardsListingView
+# defaultMessage: We
+msgid "We"
+msgstr ""
+
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+# defaultMessage: Web site
+msgid "Web site"
+msgstr ""
+
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+# defaultMessage: Websites
+msgid "Websites"
+msgstr ""
+
+#: helpers/Utils
+# defaultMessage: Websites:
+msgid "Websites:"
+msgstr ""
+
+#: components/theme/Views/EventView
+# defaultMessage: When
+msgid "When"
+msgstr ""
+
+#: components/theme/Views/EventView
+# defaultMessage: Where
+msgid "Where"
+msgstr ""

@@ -8,10 +8,40 @@ import {
   BannerTitle,
   ItemLogo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Grid } from 'semantic-ui-react';
+import { Segment, Divider, Grid, ListItem, List } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  Category: { id: 'Category', defaultMessage: 'Category' },
+  'IPCC categories': {
+    id: 'IPCC categories',
+    defaultMessage: 'IPCC categories',
+  },
+  'Stakeholder participation': {
+    id: 'Stakeholder participation',
+    defaultMessage: 'Stakeholder participation',
+  },
+  'Success and Limiting Factors': {
+    id: 'Success and Limiting Factors',
+    defaultMessage: 'Success and Limiting Factors',
+  },
+  'Costs and Benefits': {
+    id: 'Costs and Benefits',
+    defaultMessage: 'Costs and Benefits',
+  },
+  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Implementation Time': {
+    id: 'Implementation Time',
+    defaultMessage: 'Implementation Time',
+  },
+  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+});
 
 function createDataField(type, field, section, title) {
   return {
@@ -54,11 +84,8 @@ const dataDisplay = [
 ];
 
 const findSection = (title) => {
-  const found = dataDisplay.filter((item) => item.title === title);
-  if (found.length > 0) {
-    return found[0];
-  }
-  return null;
+  const found = dataDisplay.find((item) => item.title === title);
+  return found;
 };
 
 const sectionID = (title) => {
@@ -71,6 +98,7 @@ const sectionID = (title) => {
 
 const SectionsMenu = (props) => {
   const { sections } = props;
+  const intl = useIntl();
 
   return (
     <div className="adaptation-details">
@@ -78,29 +106,43 @@ const SectionsMenu = (props) => {
         <Grid.Column mobile={12} tablet={12} computer={6}>
           {sections.length > 0 && (
             <>
-              <h4>Additional Details</h4>
-              <ul>
+              <h4>
+                <FormattedMessage
+                  id="Additional Details"
+                  defaultMessage="Additional Details"
+                />
+              </h4>
+              <List bulleted>
                 {sections.map((data, index) => (
-                  <li key={index}>
+                  <ListItem key={index}>
                     <AnchorLink href={'#' + sectionID(data.title)}>
-                      {data.title}
+                      {intl.formatMessage(messages[data.title])}
                     </AnchorLink>
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
+              </List>
             </>
           )}
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={6}>
-          <h4>Reference information</h4>
-          <ul>
-            <li>
-              <AnchorLink href="#websites">Websites</AnchorLink>
-            </li>
-            <li>
-              <AnchorLink href="#source">Source</AnchorLink>
-            </li>
-          </ul>
+          <h4>
+            <FormattedMessage
+              id="Reference information"
+              defaultMessage="Reference information"
+            />
+          </h4>
+          <List bulleted>
+            <ListItem>
+              <AnchorLink href="#websites">
+                <FormattedMessage id="Websites" defaultMessage="Websites" />
+              </AnchorLink>
+            </ListItem>
+            <ListItem>
+              <AnchorLink href="#source">
+                <FormattedMessage id="Source" defaultMessage="Source" />
+              </AnchorLink>
+            </ListItem>
+          </List>
         </Grid.Column>
       </Grid>
     </div>
@@ -115,12 +157,15 @@ function AdaptationOptionView(props) {
     content?.hasOwnProperty(data.field),
   );
 
+  const intl = useIntl();
+
   return (
     <div className="db-item-view adaptation-option-view">
       <BannerTitle
         content={{ ...content, image: '' }}
         type="Adaptation Option"
       />
+      <TranslationDisclaimer />
 
       <div className="ui container">
         <PortalMessage content={content} />
@@ -140,9 +185,19 @@ function AdaptationOptionView(props) {
 
               {content?.ipcc_category?.length > 0 && (
                 <Fragment>
-                  <h2>Adaptation Details</h2>
+                  <h2>
+                    <FormattedMessage
+                      id="Adaptation Details"
+                      defaultMessage="Adaptation Details"
+                    />
+                  </h2>
                   <div id={sectionID('IPCC categories')} className="section">
-                    <h5 className="section-title">IPCC categories</h5>
+                    <h5 className="section-title">
+                      <FormattedMessage
+                        id="IPCC categories"
+                        defaultMessage="IPCC categories"
+                      />
+                    </h5>
                     {ipcc_category
                       .map((item) => item.title)
                       .sort()
@@ -158,7 +213,9 @@ function AdaptationOptionView(props) {
                                 id={sectionID(data.title)}
                                 className="section"
                               >
-                                <h5 className="section-title">{data.title}</h5>
+                                <h5 className="section-title">
+                                  {intl.formatMessage(messages[data.title])}
+                                </h5>
                                 <HTMLField value={content[data.field]} />
                               </div>
                             </Fragment>
@@ -186,7 +243,12 @@ function AdaptationOptionView(props) {
 
               {related_case_studies?.length > 0 && (
                 <Segment>
-                  <h5>Case studies related to this option:</h5>
+                  <h5>
+                    <FormattedMessage
+                      id="Case studies related to this option:"
+                      defaultMessage="Case studies related to this option:"
+                    />
+                  </h5>
                   <ul className="related-case-studies">
                     {related_case_studies.map((item, index) => (
                       <li key={index}>
