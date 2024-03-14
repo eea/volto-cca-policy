@@ -3,7 +3,7 @@ import config from '@plone/volto/registry';
 import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
 import { isArray } from 'lodash';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
-
+import { OBSERVATORY_PARTNERS } from './Constants';
 export {
   HTMLField,
   ExternalLink,
@@ -71,11 +71,11 @@ export const serializeText = (text) => {
 };
 
 export const makeContributionsSearchQuery = (props) => {
-  const { title } = props;
-
+  const { id } = props;
+  const organisation = OBSERVATORY_PARTNERS[id];
   const base = '/en/observatory/advanced-search';
   const field = 'cca_partner_contributors.keyword';
-  const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${title}`;
+  const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${organisation}`;
   const rest =
     'filters[1][field]=issued.date' +
     '&filters[1][values][0]=All time' +

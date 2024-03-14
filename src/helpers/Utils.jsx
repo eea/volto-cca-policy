@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { FormattedMessage } from 'react-intl';
 import {
   Segment,
   Image,
@@ -10,7 +11,6 @@ import {
   Button,
   Icon,
 } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 import {
   CASE_STUDY,
   PUBICATION_REPORT,
@@ -118,7 +118,7 @@ export const ReferenceInfo = (props) => {
     other_contributor,
     contributions,
   } = content;
-  const link = makeContributionsSearchQuery(content);
+  const search_link = makeContributionsSearchQuery(content);
   const [isReadMore, setIsReadMore] = React.useState(false);
   const contributions_rest = contributions ? contributions.slice(0, 10) : [];
 
@@ -235,11 +235,13 @@ export const ReferenceInfo = (props) => {
           )}
 
           <div>
-            <Button as="a" href={link}>
-              <FormattedMessage
-                id="View all contributions in the resource catalogue"
-                defaultMessage="View all contributions in the resource catalogue"
-              />
+            <Button>
+              <Link to={search_link}>
+                <FormattedMessage
+                  id="View all contributions in the resource catalogue"
+                  defaultMessage="View all contributions in the resource catalogue"
+                />
+              </Link>
             </Button>
           </div>
         </>
