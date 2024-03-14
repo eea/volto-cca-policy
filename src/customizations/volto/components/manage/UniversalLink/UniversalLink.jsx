@@ -29,6 +29,13 @@ const UniversalLink = ({
   const token = useSelector((state) => state.userSession?.token);
 
   let url = href;
+
+  // TODO: customized fixed when url is an empty array
+  if (Array.isArray(url)) {
+    url = url[0];
+  }
+  // end customized
+
   if (!href && item) {
     if (!item['@id']) {
       // eslint-disable-next-line no-console
