@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { observatoryURL } from './common';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
+import { UniversalLink } from '@plone/volto/components';
 
 import './styles.less';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
@@ -22,7 +23,7 @@ const OrganisationCardsListingView = ({ items }) => {
         <div className="ui fluid card u-card" key={item['@id']}>
           <div className="content">
             <div className="header">
-              <a className="image" href={observatoryURL(item)}>
+              <UniversalLink className="image" href={observatoryURL(item)}>
                 <div className="img-container">
                   <img
                     src={item['@id'] + '/@@images/logo/preview'}
@@ -30,17 +31,20 @@ const OrganisationCardsListingView = ({ items }) => {
                     className="ui image"
                   ></img>
                 </div>
-              </a>
-              <a className="header-link org-name" href={observatoryURL(item)}>
+              </UniversalLink>
+              <UniversalLink
+                className="header-link org-name"
+                href={observatoryURL(item)}
+              >
                 {item.title}
-              </a>
-              <a
+              </UniversalLink>
+              <UniversalLink
                 className="header-link org-site"
                 href={item.websites?.[0] ?? '#'}
               >
                 {intl.formatMessage(messages.website)}
-              </a>
-              <a
+              </UniversalLink>
+              <UniversalLink
                 className="header-link org-site"
                 href={makeContributionsSearchQuery(item)}
               >
@@ -48,7 +52,7 @@ const OrganisationCardsListingView = ({ items }) => {
                   id="Observatory contributions"
                   defaultMessage="Observatory contributions"
                 />
-              </a>
+              </UniversalLink>
             </div>
           </div>
         </div>

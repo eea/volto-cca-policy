@@ -27,6 +27,7 @@ import MigrationButtons from './components/MigrationButtons';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
+import { langRedirection } from './store/middleware';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -428,6 +429,14 @@ const applyConfig = (config) => {
       },
       GET_CONTENT: ['siblings'],
     },
+  ];
+
+  // plug custom redux middleware
+  //
+  const storeExtender = (stack) => [langRedirection, ...stack];
+  config.settings.storeExtenders = [
+    storeExtender,
+    ...config.settings.storeExtenders,
   ];
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
