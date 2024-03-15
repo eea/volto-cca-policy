@@ -6,6 +6,7 @@ import { getBaseUrl } from '@plone/volto/helpers';
 import { Icon, UniversalLink } from '@plone/volto/components';
 import { Icon as UiIcon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
+import { useIntl } from 'react-intl';
 
 import qs from 'query-string';
 import './styles.less';
@@ -23,26 +24,30 @@ const useStats = (path, id, data) => {
 };
 
 export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
+  const intl = useIntl();
+  const label = intl.formatMessage({ id: name });
   return (
-    <div className="tab-icon" title={name}>
+    <div className="tab-icon" title={label}>
       <div className="tab-icon-wrapper">
         {!source && name}
-        {!!source && <Icon title={name} name={source} size="50" />}
+        {!!source && <Icon title={label} name={source} size="50" />}
         <span className="count">{value}</span>
       </div>
-      {!!showLabel && <span className="label">{name}</span>}
+      {!!showLabel && <span className="label">{label}</span>}
     </div>
   );
 };
 
 export const RemixIcon = ({ name, value, source, showLabel = false }) => {
+  const intl = useIntl();
+  const label = intl.formatMessage({ id: name });
   return (
-    <div className="tab-icon semantic-icon" title={name}>
+    <div className="tab-icon semantic-icon" title={label}>
       <div className="tab-icon-wrapper">
-        {!!source && <UiIcon title={name} name={source} />}
+        {!!source && <UiIcon title={label} name={source} />}
         <span className="count">{value}</span>
       </div>
-      {!!showLabel && <span className="label">{name}</span>}
+      {!!showLabel && <span className="label">{label}</span>}
     </div>
   );
 };
