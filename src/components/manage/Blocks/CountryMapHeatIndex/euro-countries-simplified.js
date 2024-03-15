@@ -1,4 +1,4 @@
-export default {
+const euroCountries = {
   type: 'FeatureCollection',
   name: 'new-map-1-1',
   crs: {
@@ -46193,3 +46193,5 @@ export default {
     },
   ],
 };
+
+export default euroCountries;

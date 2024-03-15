@@ -1,4 +1,4 @@
-export default {
+const schema = {
   title: 'Search Ace Content',
   fieldsets: [
     {
@@ -98,3 +98,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;

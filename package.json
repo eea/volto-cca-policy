@@ -41,14 +41,15 @@
     "@eeacms/volto-widget-dataprovenance": "*",
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",
-    "query-string": "7.1.0",
     "d3-array": "^2.12.1",
+    "query-string": "7.1.0",
     "react-visibility-sensor": "5.1.1"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "@babel/plugin-proposal-export-default-from": "7.18.10",
     "cypress-fail-fast": "^5.0.1",
     "dotenv": "^16.3.2",
     "husky": "^8.0.3",

@@ -1,6 +1,6 @@
 const fields = ['root_path'];
 
-export default {
+const schema = {
   title: 'RAST',
 
   fieldsets: [
@@ -24,3 +24,5 @@ export default {
 
   required: [],
 };
+
+export default schema;

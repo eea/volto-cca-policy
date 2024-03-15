@@ -35,10 +35,9 @@ const defaultConfig = {
         map: [
           ['@plone/volto', '@plone/volto/src'],
           ['@plone/volto-slate', '@plone/volto/packages/volto-slate/src'],
-          ['@root/routes', '@plone/volto/src'],
           ...addonAliases,
           ['@package', `${__dirname}/src`],
-          // ['@root', `${__dirname}/src`],
+          ['@root', `${__dirname}/src`],
           ['~', `${__dirname}/src`],
         ],
         extensions: ['.js', '.jsx', '.json'],
@@ -49,7 +48,12 @@ const defaultConfig = {
     },
   },
   rules: {
-    'react/jsx-no-target-blank': 'off',
+    'react/jsx-no-target-blank': [
+      'error',
+      {
+        allowReferrer: true,
+      },
+    ],
   },
 };
 
