@@ -8,6 +8,9 @@ exports[`renders an event view component with all props 1`] = `
     Title Block Component
   </div>
   <div
+    className="translation-info"
+  />
+  <div
     className="ui container"
   >
     <div
@@ -168,6 +171,9 @@ exports[`renders an event view component with only required props 1`] = `
     Title Block Component
   </div>
   <div
+    className="translation-info"
+  />
+  <div
     className="ui container"
   >
     <div
@@ -303,6 +309,9 @@ exports[`renders an event view component without links to api in the text 1`] = 
   <div>
     Title Block Component
   </div>
+  <div
+    className="translation-info"
+  />
   <div
     className="ui container"
   >
