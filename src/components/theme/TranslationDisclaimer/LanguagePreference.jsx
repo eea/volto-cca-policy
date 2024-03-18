@@ -35,9 +35,13 @@ const LanguagePreference = (props) => {
 
   React.useEffect(() => {
     if (selectedLanguage && currentLang !== selectedLanguage) {
-      setTimeout(function () {
+      const timeout = setTimeout(() => {
         setShowLangPref(true);
-      }, 100);
+      }, 500);
+
+      return () => {
+        clearTimeout(timeout);
+      };
     }
   }, [currentLang, selectedLanguage]);
 
@@ -55,7 +59,7 @@ const LanguagePreference = (props) => {
                 className="close-button"
                 aria-label="Close"
               >
-                <Icon name="ri-close-line"></Icon>
+                <Icon className="ri-close-line"></Icon>
               </Button>
             </MessageHeader>
             <Message.Content>

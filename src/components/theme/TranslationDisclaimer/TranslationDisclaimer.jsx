@@ -31,7 +31,7 @@ const TranslationDisclaimer = (props) => {
                 className="close-button"
                 aria-label="Close"
               >
-                <Icon name="ri-close-line"></Icon>
+                <Icon className="ri-close-line"></Icon>
               </Button>
             </MessageHeader>
             <Message.Content>
