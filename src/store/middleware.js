@@ -1,5 +1,3 @@
-import { createBrowserHistory } from 'history';
-
 export const langRedirection = ({ dispatch, getState }) => (next) => (
   action,
 ) => {
@@ -11,16 +9,22 @@ export const langRedirection = ({ dispatch, getState }) => (next) => (
     case '@@router/LOCATION_CHANGE':
       const { pathname } = action.payload.location;
       const state = getState();
-      const browserHistory = createBrowserHistory();
       const locale = state.intl.locale || 'en';
       const search = ['/data-and-downloads', '/advanced-search'];
-      const searchPageURL = search.some((el) => pathname.includes(el));
+      const isSearchPage = search.some((el) => pathname.includes(el));
+      const queryString = action.payload.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const hasLanguageQueryParam = urlParams.has('set_language');
 
-      if (locale !== 'en' && !searchPageURL && pathname.indexOf('/en/') > -1) {
+      if (
+        locale !== 'en' &&
+        !isSearchPage &&
+        !hasLanguageQueryParam &&
+        pathname.indexOf('/en/') > -1
+      ) {
         const newPathname = pathname.replaceAll('/en/', `/${locale}/`);
         action.payload.location.pathname = newPathname;
-        browserHistory.replace(newPathname);
-        // window.location.replace(newPathname);
+        window.history.replaceState(window.history.state, '', newPathname);
       }
       return next(action);
     default:
