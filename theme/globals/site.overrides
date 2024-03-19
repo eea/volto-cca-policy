@@ -29,6 +29,10 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
+.ui.button a {
+  color: inherit !important;
+}
+
 // Add icon for external links
 // .content-area #view {
 //   a[data-linktype='internal'] {
