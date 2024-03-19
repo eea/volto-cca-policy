@@ -11,7 +11,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import { Fragment } from 'react';
 import { Popup, Segment } from 'semantic-ui-react';
-import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
+import { isObservatoryMetadataURL } from '@eeacms/volto-cca-policy/helpers';
 import { useLocation } from 'react-router-dom';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
@@ -350,7 +350,7 @@ function ContentMetadata(props) {
   } = content;
   const type = content['@type'];
   const location = useLocation();
-  const isObservatoryItem = isObservatoryURL(location.pathname);
+  const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
   const intl = useIntl();

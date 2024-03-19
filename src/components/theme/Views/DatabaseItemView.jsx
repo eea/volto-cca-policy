@@ -22,7 +22,7 @@ import {
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
-import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
+import { isObservatoryMetadataURL } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ const DatabaseItemView = (props) => {
   const { content } = props;
   const type = content['@type'];
   const location = useLocation();
-  const isObservatoryItem = isObservatoryURL(location.pathname);
+  const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const {
     title,
     acronym,

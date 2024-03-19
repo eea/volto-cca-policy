@@ -1,17 +1,24 @@
 import React from 'react';
-import { Header } from '@eeacms/volto-eea-design-system/ui';
 import { find } from 'lodash';
-import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
+import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
-import config from '@plone/volto/registry';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { useAtom } from 'jotai';
-import { selectedLanguageAtom } from './../../state';
+import config from '@plone/volto/registry';
+import { useLocation } from 'react-router-dom';
+import { Header } from '@eeacms/volto-eea-design-system/ui';
+import {
+  isObservatoryMetadataURL,
+  makeObservatoryMetadataURL,
+} from '@eeacms/volto-cca-policy/helpers';
 
-// dispatch(changeLanguage(redirectToLanguage, locale.default));
+import { selectedLanguageAtom } from './../../state';
+import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
+
 export default function LanguageSwitch({ history }) {
   const { eea } = config.settings;
+  const location = useLocation();
+  const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
   );
@@ -22,6 +29,26 @@ export default function LanguageSwitch({ history }) {
   const [language, setLanguage] = React.useState(
     currentLang || eea.defaultLanguage,
   );
+
+  const handlePageRedirect = (item) => {
+    const searchParams = new URLSearchParams();
+    const translation = find(translations, {
+      language: item.code,
+    });
+    const url = translation
+      ? flattenToAppURL(translation['@id'])
+      : `/${item.code}`;
+    const to = isObservatoryItem ? makeObservatoryMetadataURL(url) : url;
+
+    setLanguage(item.code);
+    setSelectedLanguage(item.code);
+    searchParams.set('set_language', item.code);
+
+    history.push({
+      pathname: to,
+      search: searchParams.toString(),
+    });
+  };
 
   return (
     <Header.TopDropdownMenu
@@ -51,22 +78,7 @@ export default function LanguageSwitch({ history }) {
                 <span className="country-code">{item.code.toUpperCase()}</span>
               </span>
             }
-            onClick={() => {
-              const translation = find(translations, {
-                language: item.code,
-              });
-              const to = translation
-                ? flattenToAppURL(translation['@id'])
-                : `/${item.code}`;
-              setLanguage(item.code);
-              setSelectedLanguage(item.code);
-              const searchParams = new URLSearchParams();
-              searchParams.set('set_language', item.code);
-              history.push({
-                pathname: to,
-                search: searchParams.toString(),
-              });
-            }}
+            onClick={() => handlePageRedirect(item)}
           ></Dropdown.Item>
         ))}
       </ul>
