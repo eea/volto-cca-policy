@@ -25,6 +25,7 @@ import {
 import { isObservatoryMetadataURL } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 const DatabaseItemView = (props) => {
   const { content } = props;
@@ -105,7 +106,12 @@ const DatabaseItemView = (props) => {
                 <>
                   {organisational_key_activities && (
                     <>
-                      <h3>Key activities within climate change and health</h3>
+                      <h3>
+                        <FormattedMessage
+                          id="Key activities within climate change and health"
+                          defaultMessage=" Key activities within climate change and health"
+                        />
+                      </h3>
                       <HTMLField value={organisational_key_activities} />
                     </>
                   )}
@@ -132,14 +138,24 @@ const DatabaseItemView = (props) => {
                 <>
                   {organisational_websites && (
                     <>
-                      <h5>Links to further information</h5>
+                      <h5>
+                        <FormattedMessage
+                          id="Links to further information"
+                          defaultMessage="Links to further information"
+                        />
+                      </h5>
                       <HTMLField value={organisational_websites} />
                     </>
                   )}
 
                   {organisational_contact_information && (
                     <>
-                      <h5>Contact information for the Observatory</h5>
+                      <h5>
+                        <FormattedMessage
+                          id="Contact information for the Observatory"
+                          defaultMessage="Contact information for the Observatory"
+                        />
+                      </h5>
                       <HTMLField value={organisational_contact_information} />
                     </>
                   )}
