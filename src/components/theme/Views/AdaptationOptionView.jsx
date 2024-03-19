@@ -4,13 +4,13 @@ import {
   ContentMetadata,
   ReferenceInfo,
   PublishedModifiedInfo,
-  ShareInfo,
   BannerTitle,
   ItemLogo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Segment, Divider, Grid, ListItem, List } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import {
+  ShareInfoButton,
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
@@ -230,7 +230,7 @@ function AdaptationOptionView(props) {
               <ReferenceInfo content={content} />
 
               <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
 
             <Grid.Column

@@ -6,7 +6,7 @@ import {
   WIDGET_MACRO_TRANS_REGIONS,
   WIDGET_BIOGEOGRAPHICAL_REGIONS,
   WIDGET_SUBNATIONAL_REGIONS_OPTIONS,
-} from '@eeacms/volto-cca-policy/helpers';
+} from './utils';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';

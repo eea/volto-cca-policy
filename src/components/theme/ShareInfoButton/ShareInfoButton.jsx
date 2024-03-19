@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 
-const ShareInfo = (props) => {
+const ShareInfoButton = (props) => {
   const currentLang = useSelector((state) => state.intl.locale);
 
   return (
@@ -23,4 +23,4 @@ const ShareInfo = (props) => {
   );
 };
 
-export default ShareInfo;
+export default ShareInfoButton;

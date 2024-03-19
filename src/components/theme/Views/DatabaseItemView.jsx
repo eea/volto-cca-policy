@@ -13,12 +13,12 @@ import {
   ContentMetadata,
   PublishedModifiedInfo,
   ItemLogo,
-  ShareInfo,
   ContentRelatedItems,
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
+  ShareInfoButton,
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
@@ -164,7 +164,7 @@ const DatabaseItemView = (props) => {
 
               <ContentRelatedItems {...props} />
               <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
 
             <Grid.Column

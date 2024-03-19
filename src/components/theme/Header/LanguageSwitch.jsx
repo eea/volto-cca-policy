@@ -12,7 +12,7 @@ import {
   makeObservatoryMetadataURL,
 } from '@eeacms/volto-cca-policy/helpers';
 
-import { selectedLanguageAtom } from './../../state';
+import { selectedLanguageAtom } from '../../../state';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
 export default function LanguageSwitch({ history }) {

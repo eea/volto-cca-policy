@@ -17,17 +17,12 @@ export {
   ItemLogo,
 } from './Utils';
 export { default as ContentMetadata } from './ContentMetadata';
-export { default as ShareInfo } from './ShareInfo';
 export {
   ACE_COUNTRIES,
   BIOREGIONS,
   OTHER_REGIONS,
   SUBNATIONAL_REGIONS,
   EU_COUNTRIES,
-  WIDGET_COUNTRIES,
-  WIDGET_MACRO_TRANS_REGIONS,
-  WIDGET_BIOGEOGRAPHICAL_REGIONS,
-  WIDGET_SUBNATIONAL_REGIONS_OPTIONS,
 } from './Constants';
 export clientOnly from './clientOnly';
 

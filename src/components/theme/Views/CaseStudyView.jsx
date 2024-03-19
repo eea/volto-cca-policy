@@ -5,11 +5,11 @@ import {
   LinksList,
   PublishedModifiedInfo,
   DocumentsList,
-  ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid, Icon, Image, ListItem, List } from 'semantic-ui-react';
 import {
+  ShareInfoButton,
   ImageGallery,
   PortalMessage,
   TranslationDisclaimer,
@@ -399,7 +399,7 @@ function CaseStudyView(props) {
                 </span>
                 )
               </p>
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
