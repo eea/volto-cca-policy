@@ -26,6 +26,8 @@ const LanguagePreference = (props) => {
   const [showLangPref, setShowLangPref] = React.useState(false);
   const [open, setOpen] = React.useState(true);
   const currentLang = useSelector((state) => state.intl.locale);
+  const search = ['/data-and-downloads', '/advanced-search'];
+  const isSearchPage = search.some((el) => location.pathname.includes(el));
 
   const handlePageReload = () => {
     const pathname = location.pathname;
@@ -45,7 +47,7 @@ const LanguagePreference = (props) => {
     }
   }, [currentLang, selectedLanguage]);
 
-  return showLangPref ? (
+  return !isSearchPage && showLangPref ? (
     <>
       {open && (
         <Container>
