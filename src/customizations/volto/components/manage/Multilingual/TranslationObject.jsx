@@ -119,11 +119,11 @@ const TranslationObject = ({
             isFormSelected={isFormSelected}
             onSelectForm={onSelectForm}
             editable={false}
-            onChange={() => { }}
+            onChange={() => {}}
           />
         )}
         {activeMenu === 'properties' && (
-          <UiForm method="post" onSubmit={() => { }}>
+          <UiForm method="post" onSubmit={() => {}}>
             <fieldset className="invisible">
               {schema &&
                 map(schema.fieldsets, (item) => [
@@ -141,7 +141,7 @@ const TranslationObject = ({
                         value={translationObject[field]}
                         required={schema.required.indexOf(field) !== -1}
                         key={field}
-                        onChange={() => { }}
+                        onChange={() => {}}
                       />
                     ))}
                   </Segment>,
