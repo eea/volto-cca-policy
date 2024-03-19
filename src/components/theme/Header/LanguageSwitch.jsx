@@ -11,6 +11,7 @@ import {
   isObservatoryMetadataURL,
   makeObservatoryMetadataURL,
 } from '@eeacms/volto-cca-policy/helpers';
+import cx from 'classnames';
 
 import { selectedLanguageAtom } from '../../../state';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
@@ -68,19 +69,37 @@ export default function LanguageSwitch({ history }) {
         role="listbox"
         aria-label="language switcher"
       >
-        {eea.languages.map((item, index) => (
-          <Dropdown.Item
-            as="li"
-            key={index}
-            text={
-              <span>
-                {item.name}
-                <span className="country-code">{item.code.toUpperCase()}</span>
-              </span>
-            }
-            onClick={() => handlePageRedirect(item)}
-          ></Dropdown.Item>
-        ))}
+        {eea.languages.map((item, index) => {
+          const translated = (translations || []).some(
+            (obj) => obj.language === item.code,
+          );
+          const active = item.code === currentLang;
+          const disabled = !translated && !active;
+
+          return (
+            <Dropdown.Item
+              className={cx({
+                disabled: disabled,
+                active: active,
+              })}
+              as="li"
+              key={index}
+              text={
+                <span>
+                  {item.name}
+                  <span className="country-code">
+                    {item.code.toUpperCase()}
+                  </span>
+                </span>
+              }
+              onClick={(e) =>
+                disabled || active
+                  ? e.preventDefault()
+                  : handlePageRedirect(item)
+              }
+            ></Dropdown.Item>
+          );
+        })}
       </ul>
     </Header.TopDropdownMenu>
   );
