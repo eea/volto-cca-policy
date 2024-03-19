@@ -8,6 +8,9 @@ exports[`ProjectView should render the component 1`] = `
     Title Block Component
   </div>
   <div
+    className="translation-info"
+  />
+  <div
     className="ui container"
   >
     <div
@@ -53,9 +56,6 @@ exports[`ProjectView should render the component 1`] = `
           <div
             className="ui divider"
           />
-          <h2>
-            Reference information
-          </h2>
           <div
             className="published-modified-info"
           >
@@ -83,15 +83,18 @@ exports[`ProjectView should render the component 1`] = `
             className="share-info"
           >
             <a
-              href="/help/share-your-info"
+              href="/en/help/share-your-info"
+              onClick={[Function]}
             >
               <button
-                className="ui button primary icon labeled"
+                className="ui icon primary left labeled button"
+                onClick={[Function]}
               >
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="arrow right icon"
+                  className="right arrow icon"
+                  onClick={[Function]}
                 />
               </button>
             </a>

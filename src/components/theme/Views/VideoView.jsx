@@ -1,31 +1,31 @@
 import React from 'react';
 import {
   HTMLField,
+  ReferenceInfo,
   ContentMetadata,
   ExternalLink,
-  LinksList,
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Image, Grid } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 
 function VideoView(props) {
   const { content } = props;
   const {
-    source,
-    websites,
-    embed_url,
-    contributor_list,
-    long_description,
-    other_contributor,
-    related_documents_presentations,
     logo,
     title,
+    embed_url,
+    long_description,
+    related_documents_presentations,
   } = content;
 
   const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
   const is_cmshare_video = share_eea.some((domain) =>
-    content.embed_url.includes(domain),
+    content?.embed_url?.includes(domain),
   );
 
   const fixEmbedURL = (url) => {
@@ -39,8 +39,10 @@ function VideoView(props) {
   return (
     <div className="db-item-view video-view">
       <BannerTitle content={{ ...content, image: '' }} type="Video" />
+      <TranslationDisclaimer />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -87,36 +89,7 @@ function VideoView(props) {
                 </>
               )}
 
-              {websites && websites?.length > 0 && (
-                <>
-                  <h2 className="reference-title">Reference information</h2>
-                  <LinksList title="Websites" value={websites} />
-                </>
-              )}
-
-              {source && (
-                <>
-                  <h5>Source</h5>
-                  <HTMLField value={source} />
-                </>
-              )}
-
-              {(contributor_list?.length > 0 ||
-                other_contributor?.length > 0) && (
-                <>
-                  <h5>Contributor:</h5>
-                  {contributor_list
-                    .map((item) => (
-                      <>
-                        {item.title}
-                        <br />
-                      </>
-                    ))
-                    .sort()}
-                  {other_contributor}
-                </>
-              )}
-
+              <ReferenceInfo content={content} />
               <ShareInfo {...props} />
             </Grid.Column>
             <Grid.Column
@@ -125,9 +98,8 @@ function VideoView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
+
               {logo && (
                 <Image
                   src={logo?.scales?.mini?.download}

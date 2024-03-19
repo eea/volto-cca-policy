@@ -1,9 +1,15 @@
 import React from 'react';
-import { DocumentsList, HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { BannerTitle } from '@eeacms/volto-cca-policy/components';
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
-import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
+import {
+  DocumentsList,
+  HTMLField,
+  BannerTitle,
+} from '@eeacms/volto-cca-policy/helpers';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 
 function CcaEventView(props) {
   const { content } = props;
@@ -32,8 +38,10 @@ function CcaEventView(props) {
   return (
     <div className="cca-event-view">
       <BannerTitle content={content} />
+      <TranslationDisclaimer />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -49,7 +57,6 @@ function CcaEventView(props) {
                 </>
               )}
               <HTMLField value={content.text} className="long_description" />
-              <RenderBlocks {...props} />
 
               <h2>Agenda and supporting documents</h2>
               <HTMLField value={content.agenda} className="long_description" />

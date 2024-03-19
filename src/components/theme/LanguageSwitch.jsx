@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { useAtom } from 'jotai';
+import { selectedLanguageAtom } from './../../state';
 
 // dispatch(changeLanguage(redirectToLanguage, locale.default));
 export default function LanguageSwitch({ history }) {
@@ -13,6 +15,7 @@ export default function LanguageSwitch({ history }) {
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
   );
+  const [, setSelectedLanguage] = useAtom(selectedLanguageAtom);
   const width = useSelector((state) => state.screen?.width);
 
   const currentLang = useSelector((state) => state.intl.locale);
@@ -56,7 +59,13 @@ export default function LanguageSwitch({ history }) {
                 ? flattenToAppURL(translation['@id'])
                 : `/${item.code}`;
               setLanguage(item.code);
-              history.push(to);
+              setSelectedLanguage(item.code);
+              const searchParams = new URLSearchParams();
+              searchParams.set('set_language', item.code);
+              history.push({
+                pathname: to,
+                search: searchParams.toString(),
+              });
             }}
           ></Dropdown.Item>
         ))}

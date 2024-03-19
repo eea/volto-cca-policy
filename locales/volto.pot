@@ -1,16 +1,567 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-06-28T10:48:22.678Z\n"
+"POT-Creation-Date: 2024-03-14T19:11:59.972Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Adaptation Details"
+#: components/theme/Views/AdaptationOptionView
+msgid "Adaptation Details"
+msgstr ""
 
+#. Default: "Adaptation Options Implemented In This Case"
+#: components/theme/Views/CaseStudyView
+msgid "Adaptation Options Implemented In This Case"
+msgstr ""
+
+#. Default: "Adaptation elements:"
+#: helpers/ContentMetadata
+msgid "Adaptation elements:"
+msgstr ""
+
+#. Default: "Adaptation sectors"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation sectors"
+msgstr ""
+
+#. Default: "Additional Details"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Additional Details"
+msgstr ""
+
+#. Default: "Apr"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Apr"
+msgstr ""
+
+#. Default: "Aug"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Aug"
+msgstr ""
+
+#. Default: "Biogeographical regions:"
+#: helpers/ContentMetadata
+msgid "Biogeographical regions:"
+msgstr ""
+
+#. Default: "Case Study Description"
+#: components/theme/Views/CaseStudyView
+msgid "Case Study Description"
+msgstr ""
+
+#. Default: "Case Study illustrations"
+#: components/theme/Views/CaseStudyView
+msgid "Case Study illustrations"
+msgstr ""
+
+#. Default: "Case studies related to this option:"
+#: components/theme/Views/AdaptationOptionView
+msgid "Case studies related to this option:"
+msgstr ""
+
+#. Default: "Category"
+#: components/theme/Views/AdaptationOptionView
+msgid "Category"
+msgstr ""
+
+#. Default: "Challenges"
+#: components/theme/Views/CaseStudyView
+msgid "Challenges"
+msgstr ""
+
+#. Default: "Choices"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Choices"
+msgstr ""
+
+#. Default: "Choose thematic map:"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Choose thematic map:"
+msgstr ""
+
+#. Default: "City:"
+#: helpers/ContentMetadata
+msgid "City:"
+msgstr ""
+
+#. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Climate impact"
+msgstr ""
+
+#. Default: "Climate impacts"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Climate impacts"
+msgstr ""
+
+#. Default: "Climate impacts:"
+#: helpers/ContentMetadata
+msgid "Climate impacts:"
+msgstr ""
+
+#. Default: "Climate-ADAPT page for this event"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Climate-ADAPT page for this event"
+msgstr ""
+
+#. Default: "Close"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Close"
+msgstr ""
+
+#. Default: "Contact"
+#: components/theme/Views/CaseStudyView
+msgid "Contact"
+msgstr ""
+
+#. Default: "Contributor:"
+#: helpers/Utils
+msgid "Contributor:"
+msgstr ""
+
+#. Default: "Costs and Benefits"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Costs and Benefits"
+msgstr ""
+
+#. Default: "Countries:"
+#: helpers/ContentMetadata
+msgid "Countries:"
+msgstr ""
+
+#. Default: "Date of creation:"
+#: helpers/ContentMetadata
+msgid "Date of creation:"
+msgstr ""
+
+#. Default: "Date of publication:"
+#: helpers/ContentMetadata
+msgid "Date of publication:"
+msgstr ""
+
+#. Default: "Date of release:"
+#: helpers/ContentMetadata
+msgid "Date of release:"
+msgstr ""
+
+#. Default: "Dec"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Dec"
+msgstr ""
+
+#. Default: "Default"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Default"
+msgstr ""
+
+#. Default: "Description"
+#: components/manage/Widgets/CreatableSelectWidget
+#: helpers/Utils
+msgid "Description"
+msgstr ""
+
+#. Default: "Duration:"
+#: helpers/ContentMetadata
+msgid "Duration:"
+msgstr ""
+
+#. Default: "Feb"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Feb"
+msgstr ""
+
+#. Default: "Fr"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Fr"
+msgstr ""
+
+#. Default: "Funding Programme:"
+#: helpers/ContentMetadata
+msgid "Funding Programme:"
+msgstr ""
+
+#. Default: "Geographic characterisation:"
+#: helpers/ContentMetadata
+msgid "Geographic characterisation:"
+msgstr ""
+
+#. Default: "Governance level:"
+#: helpers/ContentMetadata
+msgid "Governance level:"
+msgstr ""
+
+#. Default: "HHWS available (click on country for further information)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "HHWS available (click on country for further information)"
+msgstr ""
+
+#. Default: "Health impact:"
+#: helpers/ContentMetadata
+msgid "Health impact:"
+msgstr ""
+
+#. Default: "Heat health action plans (HHAP)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health action plans (HHAP)"
+msgstr ""
+
+#. Default: "IPCC adaptation options categories:"
+#: helpers/ContentMetadata
+msgid "IPCC adaptation options categories:"
+msgstr ""
+
+#. Default: "IPCC categories"
+#: components/theme/Views/AdaptationOptionView
+msgid "IPCC categories"
+msgstr ""
+
+#. Default: "Implementation Time"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Implementation Time"
+msgstr ""
+
+#. Default: "Importance and Relevance of Adaptation"
+#: components/theme/Views/CaseStudyView
+msgid "Importance and Relevance of Adaptation"
+msgstr ""
+
+#. Default: "Info"
+#: components/theme/Views/EventView
+msgid "Info"
+msgstr ""
+
+#. Default: "Jan"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Jan"
+msgstr ""
+
+#. Default: "Jul"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Jul"
+msgstr ""
+
+#. Default: "Jun"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Jun"
+msgstr ""
+
+#. Default: "Key Type Measures:"
+#: helpers/ContentMetadata
+msgid "Key Type Measures:"
+msgstr ""
+
+#. Default: "Keywords:"
+#: helpers/ContentMetadata
+msgid "Keywords:"
+msgstr ""
+
+#. Default: "Last Modified in Climate-ADAPT"
+#: helpers/Utils
+msgid "Last Modified in Climate-ADAPT"
+msgstr ""
+
+#. Default: "Lead"
+#: components/theme/Views/ProjectView
+msgid "Lead"
+msgstr ""
+
+#. Default: "Legal Aspects"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Legal Aspects"
+msgstr ""
+
+#. Default: "Life Time"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Life Time"
+msgstr ""
+
+#. Default: "Macro-Transnational region:"
+#: helpers/ContentMetadata
+msgid "Macro-Transnational region:"
+msgstr ""
+
+#. Default: "Mar"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Mar"
+msgstr ""
+
+#. Default: "May"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "May"
+msgstr ""
+
+#. Default: "Mo"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Mo"
+msgstr ""
+
+#. Default: "National HHAP"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "National HHAP"
+msgstr ""
+
+#. Default: "No HHAP"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "No HHAP"
+msgstr ""
+
+#. Default: "No information"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "No information"
+msgstr ""
+
+#. Default: "No options"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No options"
+msgstr ""
+
+#. Default: "No value"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No value"
+msgstr ""
+
+#. Default: "Nov"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Nov"
+msgstr ""
+
+#. Default: "Objectives"
+#: components/theme/Views/CaseStudyView
+msgid "Objectives"
+msgstr ""
+
+#. Default: "Observatory Contributions:"
+#: helpers/Utils
+msgid "Observatory Contributions:"
+msgstr ""
+
+#. Default: "Observatory contributions"
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+msgid "Observatory contributions"
+msgstr ""
+
+#. Default: "Ott"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Oct"
+msgstr ""
+
+#. Default: "Partners"
+#: components/theme/Views/ProjectView
+msgid "Partners"
+msgstr ""
+
+#. Default: "Project information"
+#: components/theme/Views/ProjectView
+msgid "Project information"
+msgstr ""
+
+#. Default: "Published in Climate-ADAPT"
+#: helpers/Utils
+msgid "Published in Climate-ADAPT"
+msgstr ""
+
+#. Default: "Reference Information"
+#: components/theme/Views/CaseStudyView
+msgid "Reference Information"
+msgstr ""
+
+#. Default: "Reference information"
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
+msgid "Reference information"
+msgstr ""
+
+#. Default: "References"
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
+msgid "References"
+msgstr ""
+
+#. Default: "Related content:"
+#: helpers/Utils
+msgid "Related content:"
+msgstr ""
+
+#. Default: "Relevance"
+#: components/theme/Views/CaseStudyView
+msgid "Relevance"
+msgstr ""
+
+#. Default: "Required"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Required"
+msgstr ""
+
+#. Default: "Sa"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Sa"
+msgstr ""
+
+#. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Sector"
+msgstr ""
+
+#. Default: "Sectors:"
+#: helpers/ContentMetadata
+msgid "Sectors:"
+msgstr ""
+
+#. Default: "See less"
+#: helpers/Utils
+msgid "See less"
+msgstr ""
+
+#. Default: "See more"
+#: helpers/Utils
+msgid "See more"
+msgstr ""
+
+#. Default: "Select…"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Select…"
+msgstr ""
+
+#. Default: "Sep"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Sep"
+msgstr ""
+
+#. Default: "Share your information"
+#: helpers/ShareInfo
+msgid "Share your information"
+msgstr ""
+
+#. Default: "Short Name"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Short Name"
+msgstr ""
+
+#. Default: "Solutions"
+#: components/theme/Views/CaseStudyView
+msgid "Solutions"
+msgstr ""
+
+#. Default: "Source"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
+msgid "Source"
+msgstr ""
+
+#. Default: "Source of funding"
+#: components/theme/Views/ProjectView
+msgid "Source of funding"
+msgstr ""
+
+#. Default: "Stakeholder participation"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Stakeholder participation"
+msgstr ""
+
+#. Default: "Su"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Su"
+msgstr ""
+
+#. Default: "Sub Nationals:"
+#: helpers/ContentMetadata
+msgid "Sub Nationals:"
+msgstr ""
+
+#. Default: "Subnational or local"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Subnational or local"
+msgstr ""
+
+#. Default: "Success and Limiting Factors"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Success and Limiting Factors"
+msgstr ""
+
+#. Default: "Th"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Th"
+msgstr ""
+
+#. Default: "The date refers to the date of release of the video"
+#: helpers/ContentMetadata
+msgid "The date refers to the date of release of the video"
+msgstr ""
+
+#. Default: "The date refers to the latest date of publication of the item"
+#: helpers/ContentMetadata
+msgid "The date refers to the latest date of publication of the item"
+msgstr ""
+
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+#: helpers/ContentMetadata
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr ""
+
+#. Default: "Title"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Title"
+msgstr ""
+
+#. Default: "Tu"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Tu"
+msgstr ""
+
+#. Default: "Used for programmatic access to the fieldset."
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Used for programmatic access to the fieldset."
+msgstr ""
+
+#. Default: "View all contributions in the resource catalogue"
+#: helpers/Utils
+msgid "View all contributions in the resource catalogue"
+msgstr ""
+
+#. Default: "We"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "We"
+msgstr ""
+
+#. Default: "Web site"
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+msgid "Web site"
+msgstr ""
+
+#. Default: "Websites"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Websites"
+msgstr ""
+
+#. Default: "Websites:"
+#: helpers/Utils
+msgid "Websites:"
+msgstr ""
+
+#. Default: "When"
+#: components/theme/Views/EventView
+msgid "When"
+msgstr ""
+
+#. Default: "Where"
+#: components/theme/Views/EventView
+msgid "Where"
+msgstr ""

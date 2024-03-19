@@ -8,6 +8,9 @@ exports[`AdaptationOptionView should render the component 1`] = `
     Title Block Component
   </div>
   <div
+    className="translation-info"
+  />
+  <div
     className="ui container"
   >
     <div
@@ -32,40 +35,69 @@ exports[`AdaptationOptionView should render the component 1`] = `
           <div
             className="adaptation-details"
           >
-            <div>
-              <h3>
-                Additional Details
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href="#ipcc_category"
+            <div
+              className="ui twelve column grid"
+            >
+              <div
+                className="six wide computer twelve wide mobile twelve wide tablet column"
+              >
+                <h4>
+                  Additional Details
+                </h4>
+                <div
+                  className="ui bulleted list"
+                  role="list"
+                >
+                  <div
+                    className="item"
+                    onClick={[Function]}
+                    role="listitem"
                   >
-                    IPCC categories
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3>
-                Reference information
-              </h3>
-              <ul>
-                <li>
-                  <a
-                    href="#websites"
+                    <a
+                      href="#ipcc_category"
+                      onClick={[Function]}
+                    >
+                      IPCC categories
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="six wide computer twelve wide mobile twelve wide tablet column"
+              >
+                <h4>
+                  Reference information
+                </h4>
+                <div
+                  className="ui bulleted list"
+                  role="list"
+                >
+                  <div
+                    className="item"
+                    onClick={[Function]}
+                    role="listitem"
                   >
-                    Websites
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#source"
+                    <a
+                      href="#websites"
+                      onClick={[Function]}
+                    >
+                      Websites
+                    </a>
+                  </div>
+                  <div
+                    className="item"
+                    onClick={[Function]}
+                    role="listitem"
                   >
-                    Source
-                  </a>
-                </li>
-              </ul>
+                    <a
+                      href="#source"
+                      onClick={[Function]}
+                    >
+                      Source
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -96,32 +128,36 @@ exports[`AdaptationOptionView should render the component 1`] = `
           >
             Websites:
           </h5>
-          <ul>
-            <li>
+          <div
+            className="ui list"
+            role="list"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
               <a
                 href="https://my-website.com"
               >
                 https://my-website.com
               </a>
-            </li>
-          </ul>
-          <div
-            className="section"
+            </div>
+          </div>
+          <h5
             id="source"
           >
-            <h5
-              id="source"
-            >
-              References:
-            </h5>
-            <div
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<p>Some text</p>",
-                }
+            Source
+            :
+          </h5>
+          <div
+            className="source"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Some text</p>",
               }
-            />
-          </div>
+            }
+          />
           <div
             className="published-modified-info"
           >
@@ -149,15 +185,18 @@ exports[`AdaptationOptionView should render the component 1`] = `
             className="share-info"
           >
             <a
-              href="/help/share-your-info"
+              href="/en/help/share-your-info"
+              onClick={[Function]}
             >
               <button
-                className="ui button primary icon labeled"
+                className="ui icon primary left labeled button"
+                onClick={[Function]}
               >
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="arrow right icon"
+                  className="right arrow icon"
+                  onClick={[Function]}
                 />
               </button>
             </a>
@@ -172,6 +211,12 @@ exports[`AdaptationOptionView should render the component 1`] = `
             <div
               className="content-metadata"
             >
+              <h5>
+                IPCC adaptation options categories:
+              </h5>
+              <span>
+                Structural and physical: Ecosystem-based adaptation options
+              </span>
               <h5>
                 Geographic characterisation:
               </h5>

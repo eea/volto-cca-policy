@@ -1,9 +1,14 @@
 import React from 'react';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { BannerTitle } from '@eeacms/volto-cca-policy/components';
+import {
+  BannerTitle,
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { Grid } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
 
 function CcaEventView(props) {
   const { content } = props;
@@ -12,8 +17,10 @@ function CcaEventView(props) {
   return (
     <div className="cca-event-view">
       <BannerTitle content={content} />
+      <TranslationDisclaimer />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -38,7 +45,9 @@ function CcaEventView(props) {
               computer={3}
               className="col-right"
             >
-              <h3>When</h3>
+              <h3>
+                <FormattedMessage id="When" defaultMessage="When" />
+              </h3>
               <When
                 start={content.start}
                 end={content.end}
@@ -47,13 +56,17 @@ function CcaEventView(props) {
               />
               {content?.location !== null && (
                 <>
-                  <h3>Where</h3>
+                  <h3>
+                    <FormattedMessage id="Where" defaultMessage="Where" />
+                  </h3>
                   <p>{content.location}</p>
                 </>
               )}
               {!!content.contact_email && (
                 <>
-                  <h3>Info</h3>
+                  <h3>
+                    <FormattedMessage id="Info" defaultMessage="Info" />
+                  </h3>
                   <p>{content.contact_email}</p>
                 </>
               )}

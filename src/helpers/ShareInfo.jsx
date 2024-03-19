@@ -1,13 +1,25 @@
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Button, Icon } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
+
 const ShareInfo = (props) => {
+  const currentLang = useSelector((state) => state.intl.locale);
+
   return (
-    <div className="share-info">
-      <a href="/help/share-your-info">
-        <button className="ui button primary icon labeled">
-          Share your information
-          <i aria-hidden="true" className="arrow right icon"></i>
-        </button>
-      </a>
-    </div>
+    <>
+      <div className="share-info">
+        <Link to={`/${currentLang + '/help/share-your-info'}`}>
+          <Button icon primary labelPosition="left">
+            <FormattedMessage
+              id="Share your information"
+              defaultMessage="Share your information"
+            />
+            <Icon name="right arrow" />
+          </Button>
+        </Link>
+      </div>
+    </>
   );
 };
 

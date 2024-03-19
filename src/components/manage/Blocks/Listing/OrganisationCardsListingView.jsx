@@ -1,45 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { observatoryURL } from './common';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
+import { UniversalLink } from '@plone/volto/components';
+
 import './styles.less';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
-const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
-  const contributionsURL = (item) => {
-    const mapContributorValues = {
-      'copernicus-climate-change-service-ecmw':
-        'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring Service',
-      'european-centre-for-disease-prevention-and-control-ecdc':
-        'European Centre for Disease Prevention and Control',
-      'european-commission': 'European Commission',
-      'european-environment-agency-eea': 'European Environment Agency',
-      'european-food-safety-authority': 'European Food Safety Authority',
-      'lancet-countdown': 'Lancet Countdown',
-      'who-regional-office-for-europe-who-europe':
-        'WHO Regional Office for Europe',
-      'world-health-organization': 'World Health Organization',
-    };
-    const org = mapContributorValues[item['@id'].split('/').pop()] || '';
-    const query = {
-      query: {
-        function_score: {
-          query: {
-            bool: {
-              filter: {
-                bool: {
-                  should: [{ term: { partner_contributors: org } }],
-                },
-              },
-            },
-          },
-        },
-      },
-    };
+const messages = defineMessages({
+  website: {
+    id: 'Web site',
+    defaultMessage: 'Web site',
+  },
+});
 
-    const encodedQuery = encodeURIComponent(JSON.stringify(query));
-    return `/en/observatory/advanced-search/?source=${encodedQuery}`;
-  };
+const OrganisationCardsListingView = ({ items }) => {
+  const intl = useIntl();
 
   return (
     <div className="ui fluid four cards">
@@ -47,7 +23,7 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
         <div className="ui fluid card u-card" key={item['@id']}>
           <div className="content">
             <div className="header">
-              <a className="image" href={observatoryURL(item)}>
+              <UniversalLink className="image" href={observatoryURL(item)}>
                 <div className="img-container">
                   <img
                     src={item['@id'] + '/@@images/logo/preview'}
@@ -55,19 +31,28 @@ const OrganisationCardsListingView = ({ items, isEditMode, token }) => {
                     className="ui image"
                   ></img>
                 </div>
-              </a>
-              <a className="header-link org-name" href={observatoryURL(item)}>
+              </UniversalLink>
+              <UniversalLink
+                className="header-link org-name"
+                href={observatoryURL(item)}
+              >
                 {item.title}
-              </a>
-              <a
+              </UniversalLink>
+              <UniversalLink
                 className="header-link org-site"
                 href={item.websites?.[0] ?? '#'}
               >
-                Web site
-              </a>
-              <a className="header-link org-site" href={contributionsURL(item)}>
-                Observatory contributions
-              </a>
+                {intl.formatMessage(messages.website)}
+              </UniversalLink>
+              <UniversalLink
+                className="header-link org-site"
+                href={makeContributionsSearchQuery(item)}
+              >
+                <FormattedMessage
+                  id="Observatory contributions"
+                  defaultMessage="Observatory contributions"
+                />
+              </UniversalLink>
             </div>
           </div>
         </div>
@@ -81,8 +66,4 @@ OrganisationCardsListingView.propTypes = {
   isEditMode: PropTypes.bool,
 };
 
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(OrganisationCardsListingView);
+export default OrganisationCardsListingView;

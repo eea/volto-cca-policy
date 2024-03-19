@@ -2,14 +2,46 @@ import React, { Fragment } from 'react';
 import {
   HTMLField,
   ContentMetadata,
-  LinksList,
+  ReferenceInfo,
   PublishedModifiedInfo,
   ShareInfo,
   BannerTitle,
-  LogoWrapper,
+  ItemLogo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Image, Grid } from 'semantic-ui-react';
+import { Segment, Divider, Grid, ListItem, List } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
+import {
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  Category: { id: 'Category', defaultMessage: 'Category' },
+  'IPCC categories': {
+    id: 'IPCC categories',
+    defaultMessage: 'IPCC categories',
+  },
+  'Stakeholder participation': {
+    id: 'Stakeholder participation',
+    defaultMessage: 'Stakeholder participation',
+  },
+  'Success and Limiting Factors': {
+    id: 'Success and Limiting Factors',
+    defaultMessage: 'Success and Limiting Factors',
+  },
+  'Costs and Benefits': {
+    id: 'Costs and Benefits',
+    defaultMessage: 'Costs and Benefits',
+  },
+  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Implementation Time': {
+    id: 'Implementation Time',
+    defaultMessage: 'Implementation Time',
+  },
+  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+});
 
 function createDataField(type, field, section, title) {
   return {
@@ -52,11 +84,8 @@ const dataDisplay = [
 ];
 
 const findSection = (title) => {
-  const found = dataDisplay.filter((item) => item.title === title);
-  if (found.length > 0) {
-    return found[0];
-  }
-  return null;
+  const found = dataDisplay.find((item) => item.title === title);
+  return found;
 };
 
 const sectionID = (title) => {
@@ -69,53 +98,66 @@ const sectionID = (title) => {
 
 const SectionsMenu = (props) => {
   const { sections } = props;
+  const intl = useIntl();
 
   return (
     <div className="adaptation-details">
-      <div>
-        {sections.length > 0 && (
-          <>
-            <h3>Additional Details</h3>
-            <ul>
-              {sections.map((data, index) => (
-                <li key={index}>
-                  <a href={'#' + sectionID(data.title)}>{data.title}</a>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
-      <div>
-        <h3>Reference information</h3>
-        <ul>
-          <li>
-            <a href="#websites">Websites</a>
-          </li>
-          <li>
-            <a href="#source">Source</a>
-          </li>
-        </ul>
-      </div>
+      <Grid columns="12">
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          {sections.length > 0 && (
+            <>
+              <h4>
+                <FormattedMessage
+                  id="Additional Details"
+                  defaultMessage="Additional Details"
+                />
+              </h4>
+              <List bulleted>
+                {sections.map((data, index) => (
+                  <ListItem key={index}>
+                    <AnchorLink href={'#' + sectionID(data.title)}>
+                      {intl.formatMessage(messages[data.title])}
+                    </AnchorLink>
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          )}
+        </Grid.Column>
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          <h4>
+            <FormattedMessage
+              id="Reference information"
+              defaultMessage="Reference information"
+            />
+          </h4>
+          <List bulleted>
+            <ListItem>
+              <AnchorLink href="#websites">
+                <FormattedMessage id="Websites" defaultMessage="Websites" />
+              </AnchorLink>
+            </ListItem>
+            <ListItem>
+              <AnchorLink href="#source">
+                <FormattedMessage id="Source" defaultMessage="Source" />
+              </AnchorLink>
+            </ListItem>
+          </List>
+        </Grid.Column>
+      </Grid>
     </div>
   );
 };
 
 function AdaptationOptionView(props) {
   const { content } = props;
-  const {
-    related_case_studies,
-    long_description,
-    websites,
-    source,
-    ipcc_category,
-    logo,
-    title,
-  } = content;
+  const { related_case_studies, long_description, ipcc_category } = content;
 
   const usedSections = dataDisplay.filter((data) =>
     content?.hasOwnProperty(data.field),
   );
+
+  const intl = useIntl();
 
   return (
     <div className="db-item-view adaptation-option-view">
@@ -123,8 +165,10 @@ function AdaptationOptionView(props) {
         content={{ ...content, image: '' }}
         type="Adaptation Option"
       />
+      <TranslationDisclaimer />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -133,16 +177,7 @@ function AdaptationOptionView(props) {
               computer={8}
               className="col-left"
             >
-              <LogoWrapper logo={logo}>
-                <h2>Description</h2>
-                {logo && (
-                  <Image
-                    src={logo?.scales?.mini?.download}
-                    alt={title}
-                    className="db-logo"
-                  />
-                )}
-              </LogoWrapper>
+              <ItemLogo {...props}></ItemLogo>
               <HTMLField value={long_description} />
               <SectionsMenu sections={usedSections} />
 
@@ -150,9 +185,19 @@ function AdaptationOptionView(props) {
 
               {content?.ipcc_category?.length > 0 && (
                 <Fragment>
-                  <h2>Adaptation Details</h2>
+                  <h2>
+                    <FormattedMessage
+                      id="Adaptation Details"
+                      defaultMessage="Adaptation Details"
+                    />
+                  </h2>
                   <div id={sectionID('IPCC categories')} className="section">
-                    <h5 className="section-title">IPCC categories</h5>
+                    <h5 className="section-title">
+                      <FormattedMessage
+                        id="IPCC categories"
+                        defaultMessage="IPCC categories"
+                      />
+                    </h5>
                     {ipcc_category
                       .map((item) => item.title)
                       .sort()
@@ -168,7 +213,9 @@ function AdaptationOptionView(props) {
                                 id={sectionID(data.title)}
                                 className="section"
                               >
-                                <h5 className="section-title">{data.title}</h5>
+                                <h5 className="section-title">
+                                  {intl.formatMessage(messages[data.title])}
+                                </h5>
                                 <HTMLField value={content[data.field]} />
                               </div>
                             </Fragment>
@@ -180,16 +227,7 @@ function AdaptationOptionView(props) {
                 </Fragment>
               )}
 
-              <h2>Reference information</h2>
-
-              {websites && websites?.length > 0 && (
-                <LinksList title="Websites:" value={websites} />
-              )}
-
-              <div id="source" className="section">
-                <h5 id="source">References:</h5>
-                <HTMLField value={source} />
-              </div>
+              <ReferenceInfo content={content} />
 
               <PublishedModifiedInfo {...props} />
               <ShareInfo {...props} />
@@ -201,12 +239,16 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
+              <ContentMetadata {...props} />
+
               {related_case_studies?.length > 0 && (
                 <Segment>
-                  <h5>Case studies related to this option:</h5>
+                  <h5>
+                    <FormattedMessage
+                      id="Case studies related to this option:"
+                      defaultMessage="Case studies related to this option:"
+                    />
+                  </h5>
                   <ul className="related-case-studies">
                     {related_case_studies.map((item, index) => (
                       <li key={index}>

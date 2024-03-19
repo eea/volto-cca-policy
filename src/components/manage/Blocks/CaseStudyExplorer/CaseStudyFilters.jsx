@@ -1,8 +1,15 @@
+import { FormattedMessage } from 'react-intl';
+
 export default function CaseStudyFilters(props) {
   const { filters, activeFilters, setActiveFilters } = props;
   return (
     <>
-      <h4>Adaptation sectors</h4>
+      <h4>
+        <FormattedMessage
+          id="Adaptation sectors"
+          defaultMessage="Adaptation sectors"
+        />
+      </h4>
       {Object.entries(filters?.sectors || {}).map(([value, label], index) => (
         <p key={index}>
           <span>{label}</span>
@@ -25,7 +32,12 @@ export default function CaseStudyFilters(props) {
           />
         </p>
       ))}
-      <h4>Climate impacts</h4>
+      <h4>
+        <FormattedMessage
+          id="Climate impacts"
+          defaultMessage="Climate impacts"
+        />
+      </h4>
       {Object.entries(filters?.impacts || {}).map(([value, label], index) => (
         <p key={index}>
           <span>{label}</span>

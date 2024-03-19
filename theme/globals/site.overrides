@@ -29,6 +29,10 @@ p.has--clear--both:empty {
   margin-bottom: 0;
 }
 
+.ui.button a {
+  color: inherit !important;
+}
+
 // Add icon for external links
 // .content-area #view {
 //   a[data-linktype='internal'] {
@@ -146,4 +150,14 @@ body.subsite {
 
 #toolbar .toolbar-content {
   z-index: 4 !important;
+}
+
+.ui.message.info {
+  padding: 0.5em 1em;
+  margin-bottom: 1.5em;
+  font-size: 15px;
+
+  .icon {
+    font-size: 16px !important;
+  }
 }

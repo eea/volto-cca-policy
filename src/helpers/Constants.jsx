@@ -1,3 +1,37 @@
+export const ADAPTATION_OPTION = 'eea.climateadapt.adaptationoption';
+export const CASE_STUDY = 'eea.climateadapt.casestudy';
+export const GUIDANCE = 'eea.climateadapt.guidancedocument';
+export const INDICATOR = 'eea.climateadapt.indicator';
+export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
+export const ORGANISATION = 'eea.climateadapt.organisation';
+export const ACE_PROJECT = 'eea.climateadapt.aceproject';
+export const PUBICATION_REPORT = 'eea.climateadapt.publicationreport';
+export const TOOL = 'eea.climateadapt.tool';
+export const VIDEO = 'eea.climateadapt.video';
+export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
+
+export const OBSERVATORY_PARTNERS = {
+  'copernicus-climate-change-service-ecmw':
+    'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring  Service',
+  'european-centre-for-disease-prevention-and-control-ecdc':
+    'European Centre for Disease Prevention and Control',
+  'european-commission': 'European Commission',
+  'european-commission-directorate-general-for-the-environment':
+    'European Commission Directorate-General for the Environment (DG ENV)',
+  'european-environment-agency-eea': 'European Environment Agency',
+  'european-food-safety-authority': 'European Food Safety Authority',
+  'european-policy-center': 'European Policy Centre',
+  'lancet-countdown': 'Lancet Countdown in Europe',
+  medecc: 'MedECC',
+  'association-schools-public-health-in-european-region-aspher':
+    'The Association of Schools of Public Health in the European Region',
+  'united-nations-environment-programme':
+    'United Nations Environment Programme',
+  'who-regional-office-for-europe-who-europe': 'WHO Regional Office for Europe',
+  'world-health-organization': 'World Health Organization',
+  'world-meteorological-organization-wmo': 'World Meteorological Organization',
+};
+
 export const ACE_COUNTRIES = {
   BE: 'Belgium',
   FR: 'France',

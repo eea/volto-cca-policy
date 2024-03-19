@@ -22,6 +22,16 @@ const store = mockStore({
   },
 });
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: () => ({
+    pathname: '/',
+    hash: '',
+    search: '',
+    state: undefined,
+  }),
+}));
+
 jest.mock('@plone/volto/helpers/Loadable/Loadable');
 beforeAll(
   async () =>

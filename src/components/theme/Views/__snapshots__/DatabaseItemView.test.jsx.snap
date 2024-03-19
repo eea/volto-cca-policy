@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatabaseItemView should render the component 1`] = `
+<div
+  className="db-item-view"
+>
+  <div>
+    Title Block Component
+  </div>
+  <div
+    className="translation-info"
+  />
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <h2>
+            Description
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>",
+              }
+            }
+          />
+          <div
+            className="ui divider"
+          />
+          <h2>
+            Reference information
+          </h2>
+          <h5
+            id="websites"
+          >
+            Websites:
+          </h5>
+          <div
+            className="ui list"
+            role="list"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="https://example.org/"
+              >
+                https://example.org/
+              </a>
+            </div>
+          </div>
+          <h5>
+            Observatory Contributions:
+          </h5>
+          <div
+            className="ui bulleted list"
+            role="list"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Contributor 1
+              </a>
+            </div>
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Contributor 2
+              </a>
+            </div>
+          </div>
+          <div>
+            <button
+              className="ui button"
+              onClick={[Function]}
+            >
+              <a
+                href="/en/observatory/advanced-search?size=n_10_n&filters%5B0%5D%5Bfield%5D=cca_partner_contributors.keyword&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=undefined&filters%5B1%5D%5Bfield%5D=issued.date&filters%5B1%5D%5Bvalues%5D%5B0%5D=All time&filters%5B1%5D%5Btype%5D=any&filters%5B2%5D%5Bfield%5D=language&filters%5B2%5D%5Bvalues%5D%5B0%5D=en&filters%5B2%5D%5Btype%5D=any&sort-field=issued.date&sort-direction=desc"
+                onClick={[Function]}
+              >
+                View all contributions in the resource catalogue
+              </a>
+            </button>
+          </div>
+          <div
+            className="published-modified-info"
+          >
+            <p>
+              <span>
+                <strong>
+                  Published in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+              <span>
+                   -   
+              </span>
+              <span>
+                <strong>
+                  Last Modified in Climate-ADAPT
+                </strong>
+                 
+                Invalid Date
+              </span>
+            </p>
+          </div>
+          <div
+            className="share-info"
+          >
+            <a
+              href="/en/help/share-your-info"
+              onClick={[Function]}
+            >
+              <button
+                className="ui icon primary left labeled button"
+                onClick={[Function]}
+              >
+                Share your information
+                <i
+                  aria-hidden="true"
+                  className="right arrow icon"
+                  onClick={[Function]}
+                />
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <div
+            className="ui segment"
+          >
+            <div
+              className="content-metadata"
+            >
+              <h5>
+                Keywords:
+              </h5>
+              <span>
+                keyword 1, keyword 2
+              </span>
+              <h5>
+                Geographic characterisation:
+              </h5>
+              <div
+                className="geochar"
+              >
+                <p>
+                  Global
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

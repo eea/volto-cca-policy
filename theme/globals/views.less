@@ -81,21 +81,20 @@ hr {
   }
 }
 
+.document-list-item {
+  display: flex;
+  align-items: flex-start;
+  word-break: break-all;
+
+  i.icon {
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
+  }
+}
+
 .db-item-view {
   position: relative;
-
-  &.logo-right {
-    .db-logo {
-      position: absolute;
-      top: 0;
-      right: 13px;
-    }
-
-    h2:first-child {
-      margin-top: 0.5em;
-      margin-bottom: 1em;
-    }
-  }
 
   .col-left {
     position: relative;
@@ -107,6 +106,11 @@ hr {
 
   .casetstudy-gallery {
     cursor: pointer;
+
+    .preview-image {
+      width: 100%;
+      height: 250px;
+    }
 
     .gallery-title {
       padding: 2px 4px;
@@ -137,15 +141,6 @@ hr {
   .section {
     .section-title {
       margin-top: 1em;
-    }
-  }
-
-  .documents-list {
-    padding: 0;
-    list-style-type: none;
-
-    li a:before {
-      content: '' !important;
     }
   }
 
@@ -181,11 +176,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 
   .db-logo {
-    width: 120px !important;
+    width: auto;
+    max-height: 70px;
   }
 
   .col-right {
@@ -210,6 +206,46 @@ hr {
           margin-bottom: 0.8em;
         }
       }
+    }
+  }
+}
+
+// Translation disclaimer
+.contenttype-lrf,
+.subsite-root {
+  .translation-info {
+    margin-top: 1em;
+  }
+}
+
+.translation-info {
+  .ui.message {
+    padding: 0.8em 1em !important;
+    margin-bottom: 1.5em !important;
+    font-size: 0.9rem;
+
+    .ui.button {
+      color: @secondaryColor !important;
+      font-size: 0.9rem;
+    }
+
+    .close-button {
+      i.icon {
+        color: inherit !important;
+        font-size: 20px !important;
+      }
+    }
+
+    .ui.button.basic {
+      margin: 0 !important;
+    }
+
+    .ui.button:focus,
+    .ui.button:hover {
+      border: none !important ;
+      background: transparent !important;
+      box-shadow: none !important;
+      outline: none;
     }
   }
 }

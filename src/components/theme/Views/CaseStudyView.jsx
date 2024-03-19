@@ -8,8 +8,64 @@ import {
   ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Segment, Grid, Icon, Image } from 'semantic-ui-react';
-import { ImageGallery } from '@eeacms/volto-cca-policy/components';
+import { Divider, Grid, Icon, Image, ListItem, List } from 'semantic-ui-react';
+import {
+  ImageGallery,
+  PortalMessage,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  References: { id: 'References', defaultMessage: 'References' },
+  Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
+  Objectives: { id: 'Objectives', defaultMessage: 'Objectives' },
+  'Adaptation Options Implemented In This Case': {
+    id: 'Adaptation Options Implemented In This Case',
+    defaultMessage: 'Adaptation Options Implemented In This Case',
+  },
+  Solutions: { id: 'Solutions', defaultMessage: 'Solutions' },
+  'Importance and Relevance of Adaptation': {
+    id: 'Importance and Relevance of Adaptation',
+    defaultMessage: 'Importance and Relevance of Adaptation',
+  },
+  'Stakeholder participation': {
+    id: 'Stakeholder participation',
+    defaultMessage: 'Stakeholder participation',
+  },
+  'Success and Limiting Factors': {
+    id: 'Success and Limiting Factors',
+    defaultMessage: 'Success and Limiting Factors',
+  },
+  'Costs and Benefits': {
+    id: 'Costs and Benefits',
+    defaultMessage: 'Costs and Benefits',
+  },
+  Relevance: { id: 'Relevance', defaultMessage: 'Relevance' },
+  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Implementation Time': {
+    id: 'Implementation Time',
+    defaultMessage: 'Implementation Time',
+  },
+  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+  Contact: { id: 'Contact', defaultMessage: 'Contact' },
+
+  Websites: { id: 'Websites', defaultMessage: 'Websites' },
+  Source: { id: 'Source', defaultMessage: 'Source' },
+  'Case Study Description': {
+    id: 'Case Study Description',
+    defaultMessage: 'Case Study Description',
+  },
+  'Additional Details': {
+    id: 'Additional Details',
+    defaultMessage: 'Additional Details',
+  },
+  'Reference Information': {
+    id: 'Reference Information',
+    defaultMessage: 'Reference Information',
+  },
+});
 
 const PrimaryPhoto = (props) => {
   const { content } = props;
@@ -121,7 +177,7 @@ const dataDisplay = [
     field: 'source',
     section: 'source',
     title: 'Source',
-    contentTitle: 'Reference', // override the title in content section
+    contentTitle: 'References', // override the title in content section
     group: 3,
   },
 ];
@@ -157,7 +213,12 @@ const PhotoGallery = (props) => {
       {cca_gallery && cca_gallery.length > 0 && (
         <div className="casetstudy-gallery">
           <div className="gallery-title">
-            <span>Case Study illustrations</span>
+            <span>
+              <FormattedMessage
+                id="Case Study illustrations"
+                defaultMessage="Case Study illustrations"
+              />
+            </span>
             <span> ({cca_gallery.length}) </span>
             <Icon name="ri-image-fill" />
           </div>
@@ -170,19 +231,22 @@ const PhotoGallery = (props) => {
 
 const SectionsMenu = (props) => {
   const { sections, title } = props;
+  const intl = useIntl();
 
   return (
     <>
       {sections.length > 0 && (
         <div>
-          <h4>{title}</h4>
-          <ul>
+          <h4>{intl.formatMessage(messages[title])}</h4>
+          <List bulleted>
             {sections.map((data, index) => (
-              <li key={index}>
-                <a href={'#' + sectionID(data.title)}>{data.title}</a>
-              </li>
+              <ListItem key={index}>
+                <AnchorLink href={'#' + sectionID(data.title)}>
+                  {intl.formatMessage(messages[data.title])}
+                </AnchorLink>
+              </ListItem>
             ))}
-          </ul>
+          </List>
         </div>
       )}
     </>
@@ -191,6 +255,7 @@ const SectionsMenu = (props) => {
 
 const SectionContent = (props) => {
   const { sectionData, content } = props;
+  const intl = useIntl();
 
   const adaptationOptionsLinks = () => {
     let list = [];
@@ -208,12 +273,15 @@ const SectionContent = (props) => {
     }
   }
 
+  const sectionDataTitle =
+    sectionData.contentTitle !== undefined
+      ? sectionData.contentTitle
+      : sectionData.title;
   return (
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
-        {sectionData.contentTitle !== undefined
-          ? sectionData.contentTitle
-          : sectionData.title}
+        {intl.formatMessage(messages[sectionDataTitle])}
+        {/* {sectionDataTitle} */}
       </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
@@ -236,8 +304,7 @@ const SectionContent = (props) => {
 
 function CaseStudyView(props) {
   const { content } = props;
-  const { cca_files, long_description } = content;
-  const hasFiles = cca_files && cca_files.length > 0;
+  const { long_description } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -257,12 +324,15 @@ function CaseStudyView(props) {
       (data) => data.group === group && hasValue(data.field),
     );
   };
+  const intl = useIntl();
 
   return (
     <div className="db-item-view case-study-view">
       <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
+      <TranslationDisclaimer />
 
       <div className="ui container">
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
@@ -273,7 +343,6 @@ function CaseStudyView(props) {
             >
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
-
               <Divider />
               <div className="adaptation-details">
                 <Grid columns="12">
@@ -297,14 +366,12 @@ function CaseStudyView(props) {
                   </Grid.Column>
                 </Grid>
               </div>
-
               <Divider />
-
               {[1, 2, 3].map(
                 (groupID, index) =>
                   usedSections(groupID).length > 0 && (
                     <Fragment key={index}>
-                      <h2>{groups[groupID]}</h2>
+                      <h2>{intl.formatMessage(messages[groups[groupID]])}</h2>
                       {usedSections(groupID).map((data, index) => (
                         <SectionContent
                           sectionData={data}
@@ -316,10 +383,8 @@ function CaseStudyView(props) {
                     </Fragment>
                   ),
               )}
-
               <PublishedModifiedInfo {...props} />
               <Divider />
-
               <p>
                 Please contact us for any other enquiry on this Case Study or to
                 share a new Case Study (email{' '}
@@ -343,14 +408,10 @@ function CaseStudyView(props) {
               className="col-right"
             >
               <PhotoGallery {...props} />
-              <Segment>
-                <ContentMetadata {...props} />
-              </Segment>
-              {hasFiles && (
-                <Segment>
-                  <DocumentsList {...props} />
-                </Segment>
-              )}
+
+              <ContentMetadata {...props} />
+
+              <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Radio } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
 
 function hidePopup() {
   const collections = document.getElementsByClassName('map-tooltip');
@@ -12,10 +13,20 @@ export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
-      <p className="title">Choose thematic map:</p>
+      <p className="title">
+        <FormattedMessage
+          id="Choose thematic map:"
+          defaultMessage="Choose thematic map:"
+        />
+      </p>
       <div id="sections-selector">
         <Radio
-          label="Heat health action plans (HHAP)"
+          label={
+            <FormattedMessage
+              id="Heat health action plans (HHAP)"
+              defaultMessage="Heat health action plans (HHAP)"
+            />
+          }
           name="country-map-section"
           value="hhap"
           checked={thematicMapMode === 'hhap'}
@@ -39,19 +50,36 @@ export default function Filter(props) {
         <div className="legend climate-legend">
           <div className="legend-el">
             <span className="country-national-hhap legend-box"></span>
-            <p className="legend-text">National HHAP</p>
+            <p className="legend-text">
+              <FormattedMessage
+                id="National HHAP"
+                defaultMessage="National HHAP"
+              />
+            </p>
           </div>
           <div className="legend-el">
             <span className="country-subnational-hhap legend-box"></span>
-            <p className="legend-text">Subnational or local</p>
+            <p className="legend-text">
+              <FormattedMessage
+                id="Subnational or local"
+                defaultMessage="Subnational or local"
+              />
+            </p>
           </div>
           <div className="legend-el">
             <span className="country-no-hhap legend-box"></span>
-            <p className="legend-text">No HHAP</p>
+            <p className="legend-text">
+              <FormattedMessage id="No HHAP" defaultMessage="No HHAP" />
+            </p>
           </div>
           <div className="legend-el">
             <span className="country-none legend-box"></span>
-            <p className="legend-text">No information</p>
+            <p className="legend-text">
+              <FormattedMessage
+                id="No information"
+                defaultMessage="No information"
+              />
+            </p>
           </div>
         </div>
       )}
@@ -61,12 +89,20 @@ export default function Filter(props) {
           <div className="legend-el">
             <span className="country-national-hhap legend-box"></span>
             <p className="legend-text">
-              HHWS available (click on country for further information)
+              <FormattedMessage
+                id="HHWS available (click on country for further information)"
+                defaultMessage="HHWS available (click on country for further information)"
+              />
             </p>
           </div>
           <div className="legend-el">
             <span className="country-none legend-box"></span>
-            <p className="legend-text">No information</p>
+            <p className="legend-text">
+              <FormattedMessage
+                id="No information"
+                defaultMessage="No information"
+              />
+            </p>
           </div>
         </div>
       )}
