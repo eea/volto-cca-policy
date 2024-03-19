@@ -1,5 +1,5 @@
 import { Plug } from '@plone/volto/components/manage/Pluggable';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl, toPublicURL } from '@plone/volto/helpers';
 
 const button = (id, title, label, destination) => (
   <button
@@ -15,9 +15,9 @@ const button = (id, title, label, destination) => (
 function MigrationButtons(props) {
   const { content, token, pathname } = props;
   const contentId = content?.['@id'] || '';
-  const show = !!token && contentId && contentId.indexOf('europa.eu') === -1;
+  const show = !!token && contentId;
   const base = getBaseUrl(pathname);
-  const buttons = [
+  let buttons = [
     button(
       'migration',
       'Migrate context',
@@ -48,7 +48,24 @@ function MigrationButtons(props) {
       'P',
       `http://localhost:8080/cca/${base}/@@volto-html?half=1`,
     ),
+    button(
+      'sync-translations',
+      'Sync Translations',
+      'RT',
+      toPublicURL(`${base}/@@translate-this-async`),
+    ),
   ];
+
+  if (contentId.indexOf('europa.eu') > -1) {
+    buttons = [
+      button(
+        'sync-translations',
+        'Sync Translations',
+        'T',
+        `/${base}/@@translate-this-async`,
+      ),
+    ];
+  }
 
   if (!show) return null;
 
