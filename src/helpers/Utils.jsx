@@ -419,7 +419,3 @@ export const ItemLogo = (props) => {
     </LogoWrapper>
   );
 };
-
-export const isObservatoryURL = (url) => {
-  return url.indexOf('/observatory/++aq++metadata') > -1;
-};

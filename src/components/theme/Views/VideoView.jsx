@@ -4,11 +4,11 @@ import {
   ReferenceInfo,
   ContentMetadata,
   ExternalLink,
-  ShareInfo,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Image, Grid } from 'semantic-ui-react';
 import {
+  ShareInfoButton,
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
@@ -90,7 +90,7 @@ function VideoView(props) {
               )}
 
               <ReferenceInfo content={content} />
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}

@@ -17,3 +17,20 @@
   opacity: 0.6;
   pointer-events: none;
 }
+
+.language-list {
+  li.item.disabled {
+    color: #a1a1a1 !important;
+
+    &:hover {
+      background: none !important;
+      cursor: auto !important;
+    }
+  }
+
+  li.item.active {
+    background: @dropdownMenuItemBackgroundColorHover !important;
+    color: @dropdownMenuItemColorHover !important;
+    cursor: auto !important;
+  }
+}

@@ -3,12 +3,12 @@ import {
   HTMLField,
   ContentMetadata,
   PublishedModifiedInfo,
-  ShareInfo,
   ItemLogo,
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid } from 'semantic-ui-react';
 import {
+  ShareInfoButton,
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
@@ -93,7 +93,7 @@ function ProjectView(props) {
               <Divider />
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
