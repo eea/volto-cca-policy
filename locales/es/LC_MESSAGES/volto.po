@@ -29,7 +29,7 @@ msgstr "Elementos de adaptación:"
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation sectors"
-msgstr ""
+msgstr "Sectores de adaptación"
 
 #. Default: "Additional Details"
 #: components/theme/Views/AdaptationOptionView
