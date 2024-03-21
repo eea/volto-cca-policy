@@ -1,5 +1,4 @@
 import React from 'react';
-import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
   BannerTitle,
   PortalMessage,
@@ -12,7 +11,6 @@ import { FormattedMessage } from 'react-intl';
 
 function CcaEventView(props) {
   const { content } = props;
-  // cca_files: [content.agenda_file]}
 
   return (
     <div className="cca-event-view">
@@ -35,8 +33,6 @@ function CcaEventView(props) {
                   <h1>{content.title}</h1>
                 </>
               )}
-              <p>{content.description}</p>
-              <HTMLField value={content.text} className="long_description" />
               <RenderBlocks {...props} />
             </Grid.Column>
             <Grid.Column
