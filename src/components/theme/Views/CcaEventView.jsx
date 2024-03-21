@@ -37,7 +37,18 @@ function CcaEventView(props) {
 
   return (
     <div className="cca-event-view">
-      <BannerTitle content={content} />
+      <BannerTitle
+        content={{ ...content, '@type': 'Climate adapt event' }}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: false,
+          hideCreationDate: false,
+          hideModificationDate: false,
+          hidePublishingDate: false,
+          hideDownloadButton: false,
+          hideShareButton: false,
+        }}
+      />
       <TranslationDisclaimer />
 
       <div className="ui container">

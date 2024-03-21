@@ -38,7 +38,19 @@ function VideoView(props) {
 
   return (
     <div className="db-item-view video-view">
-      <BannerTitle content={{ ...content, image: '' }} type="Video" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+          subtitle: 'Video',
+        }}
+      />
       <TranslationDisclaimer />
 
       <div className="ui container">

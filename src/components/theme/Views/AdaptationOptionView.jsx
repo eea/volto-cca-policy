@@ -163,7 +163,16 @@ function AdaptationOptionView(props) {
     <div className="db-item-view adaptation-option-view">
       <BannerTitle
         content={{ ...content, image: '' }}
-        type="Adaptation Option"
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+          subtitle: 'Adaptation Option',
+        }}
       />
       <TranslationDisclaimer />
 

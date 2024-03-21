@@ -85,7 +85,16 @@ const DatabaseItemView = (props) => {
     <div className="db-item-view">
       <BannerTitle
         content={{ ...content, image: '', title: item_title }}
-        type={subtitle}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+          subtitle: subtitle,
+        }}
       />
       <TranslationDisclaimer />
 

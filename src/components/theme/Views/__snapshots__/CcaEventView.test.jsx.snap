@@ -23,7 +23,6 @@ exports[`renders an event view component with all props 1`] = `
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Hello World!</p>",
@@ -34,7 +33,6 @@ exports[`renders an event view component with all props 1`] = `
             Agenda and supporting documents
           </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -75,7 +73,6 @@ exports[`renders an event view component with all props 1`] = `
             Participation
           </h3>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -186,7 +183,6 @@ exports[`renders an event view component with only required props 1`] = `
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -197,7 +193,6 @@ exports[`renders an event view component with only required props 1`] = `
             Agenda and supporting documents
           </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -238,7 +233,6 @@ exports[`renders an event view component with only required props 1`] = `
             Participation
           </h3>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -325,7 +319,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Hello World!</p><p>This is an <a href=\\"http://localhost:8080/Plone/foo/bar\\">internal link</a> and a <a href=\\"http://localhost:8080/Plone/foo/baz\\">second link</a></p>",
@@ -336,7 +329,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
             Agenda and supporting documents
           </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -377,7 +369,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
             Participation
           </h3>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,

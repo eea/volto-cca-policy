@@ -84,28 +84,13 @@ export const LinksList = (props) => {
 };
 
 export const BannerTitle = (props) => {
-  const { content, type } = props;
+  const { content, data } = props;
   const {
     blocks: { blocksConfig },
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
 
-  return (
-    <TitleBlockView
-      {...props}
-      data={{
-        info: [{ description: '' }],
-        hideContentType: true,
-        hideCreationDate: true,
-        hideModificationDate: true,
-        hidePublishingDate: true,
-        hideDownloadButton: false,
-        hideShareButton: false,
-        subtitle: type,
-      }}
-      metadata={content}
-    />
-  );
+  return <TitleBlockView {...props} data={data} metadata={content} />;
 };
 
 export const ReferenceInfo = (props) => {
