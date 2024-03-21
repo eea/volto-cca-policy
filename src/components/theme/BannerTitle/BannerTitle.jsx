@@ -20,10 +20,10 @@ const BannerTitle = (props) => {
           {...props}
           data={{
             info: [{ description: '' }],
-            hideContentType: true,
-            hideCreationDate: true,
-            hideModificationDate: true,
-            hidePublishingDate: true,
+            hideContentType: false,
+            hideCreationDate: false,
+            hideModificationDate: false,
+            hidePublishingDate: false,
             hideDownloadButton: false,
             hideShareButton: false,
           }}

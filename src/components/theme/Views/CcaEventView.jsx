@@ -37,7 +37,18 @@ function CcaEventView(props) {
 
   return (
     <div className="cca-event-view">
-      <BannerTitle content={content} />
+      <BannerTitle
+        content={{ ...content, '@type': 'Climate adapt event' }}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: false,
+          hideCreationDate: false,
+          hideModificationDate: false,
+          hidePublishingDate: false,
+          hideDownloadButton: false,
+          hideShareButton: false,
+        }}
+      />
       <TranslationDisclaimer />
 
       <div className="ui container">
@@ -50,16 +61,11 @@ function CcaEventView(props) {
               computer={9}
               className="col-left"
             >
-              {content?.image === null && (
-                <>
-                  <div className="ui label">Climate adapt event</div>
-                  <h1>{content.title}</h1>
-                </>
-              )}
-              <HTMLField value={content.text} className="long_description" />
+              <HTMLField value={content.text} />
 
               <h2>Agenda and supporting documents</h2>
-              <HTMLField value={content.agenda} className="long_description" />
+              <HTMLField value={content.agenda} />
+
               {content?.agenda_file && <DocumentsList content={agenda_files} />}
               {content?.background_documents && (
                 <DocumentsList content={background_documents} />
@@ -67,10 +73,7 @@ function CcaEventView(props) {
 
               <h2>Practical information</h2>
               <h3>Participation</h3>
-              <HTMLField
-                value={content.participation}
-                className="long_description"
-              />
+              <HTMLField value={content.participation} />
 
               <h2>Contact</h2>
               <p>

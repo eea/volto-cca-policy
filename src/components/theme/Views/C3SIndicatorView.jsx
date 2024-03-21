@@ -155,7 +155,18 @@ function C3SIndicatorView(props) {
 
   return (
     <div className="db-item-view c3sindicator-view">
-      <BannerTitle content={{ ...content, image: '' }} />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+        }}
+      />
       <TranslationDisclaimer />
 
       <div className="ui container">

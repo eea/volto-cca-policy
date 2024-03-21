@@ -34,9 +34,9 @@ function ProjectView(props) {
         data={{
           info: [{ description: '' }],
           hideContentType: true,
-          hideCreationDate: false,
-          hideModificationDate: false,
-          hidePublishingDate: false,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
           hideDownloadButton: false,
           hideShareButton: false,
           subtitle: 'Project',
