@@ -154,7 +154,12 @@ const DatabaseItemView = (props) => {
                     <div className="external-video">
                       <ExternalLink
                         url={embed_url}
-                        text="See video outside Climate-ADAPT"
+                        text={
+                          <FormattedMessage
+                            id="See video outside Climate-ADAPT"
+                            defaultMessage="See video outside Climate-ADAPT"
+                          />
+                        }
                       />
                     </div>
                   )}
@@ -165,7 +170,10 @@ const DatabaseItemView = (props) => {
                 <>
                   <Divider />
                   <h2 className="reference-title">
-                    Related documents and presentations
+                    <FormattedMessage
+                      id="Related documents and presentations"
+                      defaultMessage="Related documents and presentations"
+                    />
                   </h2>
                   <HTMLField value={related_documents_presentations} />
                 </>
@@ -178,7 +186,7 @@ const DatabaseItemView = (props) => {
                       <h3>
                         <FormattedMessage
                           id="Key activities within climate change and health"
-                          defaultMessage=" Key activities within climate change and health"
+                          defaultMessage="Key activities within climate change and health"
                         />
                       </h3>
                       <HTMLField value={organisational_key_activities} />
