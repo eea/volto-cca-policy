@@ -27,12 +27,6 @@ function CcaEventView(props) {
               computer={9}
               className="col-left"
             >
-              {content?.image === null && (
-                <>
-                  <div className="ui label">Climate adapt event</div>
-                  <h1>{content.title}</h1>
-                </>
-              )}
               <RenderBlocks {...props} />
             </Grid.Column>
             <Grid.Column
