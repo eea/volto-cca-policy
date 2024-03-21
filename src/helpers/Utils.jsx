@@ -17,6 +17,7 @@ import {
   ORGANISATION,
   ADAPTATION_OPTION,
   ACE_PROJECT,
+  VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
@@ -378,6 +379,7 @@ export const LogoWrapper = ({ logo, children }) =>
 
 export const ItemLogo = (props) => {
   const { content } = props;
+  const type = content['@type'];
   const { image, logo, title } = content;
 
   let logo_image;
@@ -389,7 +391,7 @@ export const ItemLogo = (props) => {
     logo_image = null;
   }
 
-  return (
+  return type !== VIDEO ? (
     <LogoWrapper logo={logo_image}>
       <h2>
         <FormattedMessage id="Description" defaultMessage="Description" />
@@ -402,5 +404,5 @@ export const ItemLogo = (props) => {
         />
       )}
     </LogoWrapper>
-  );
+  ) : null;
 };

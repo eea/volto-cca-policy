@@ -6,6 +6,7 @@ import {
   INFORMATION_PORTAL,
   PUBICATION_REPORT,
   ORGANISATION,
+  VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import {
   HTMLField,
@@ -15,6 +16,7 @@ import {
   ItemLogo,
   ContentRelatedItems,
   DocumentsList,
+  ExternalLink,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
@@ -22,10 +24,15 @@ import {
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
-import { isObservatoryMetadataURL } from '@eeacms/volto-cca-policy/helpers';
+import {
+  isObservatoryMetadataURL,
+  fixEmbedURL,
+} from '@eeacms/volto-cca-policy/helpers';
 import { Divider, Grid } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+
+const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
 const DatabaseItemView = (props) => {
   const { content } = props;
@@ -35,11 +42,13 @@ const DatabaseItemView = (props) => {
   const {
     title,
     acronym,
+    embed_url,
     map_graphs,
     long_description,
     organisational_websites,
     organisational_key_activities,
     organisational_contact_information,
+    related_documents_presentations,
   } = content;
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
 
@@ -63,6 +72,9 @@ const DatabaseItemView = (props) => {
     case ORGANISATION:
       subtitle = 'Organisation';
       break;
+    case VIDEO:
+      subtitle = 'Video';
+      break;
     default:
       subtitle = '';
   }
@@ -80,6 +92,10 @@ const DatabaseItemView = (props) => {
     }
     return null;
   };
+
+  const is_cmshare_video = share_eea.some((domain) =>
+    content?.embed_url?.includes(domain),
+  );
 
   return (
     <div className="db-item-view">
@@ -109,7 +125,51 @@ const DatabaseItemView = (props) => {
               className="col-left"
             >
               <ItemLogo {...props}></ItemLogo>
+
+              {type === VIDEO && (
+                <>
+                  {is_cmshare_video && (
+                    <div className="video-wrapper">
+                      <center>
+                        <video
+                          controls="controls"
+                          preload="metadata"
+                          width="100%"
+                          height="480"
+                          src={fixEmbedURL(embed_url, is_cmshare_video)}
+                        >
+                          <track default kind="captions" srcLang="en" src="" />
+                        </video>
+                      </center>
+                    </div>
+                  )}
+                </>
+              )}
+
               <HTMLField value={long_description} />
+
+              {type === VIDEO && (
+                <>
+                  {!is_cmshare_video && (
+                    <div className="external-video">
+                      <ExternalLink
+                        url={embed_url}
+                        text="See video outside Climate-ADAPT"
+                      />
+                    </div>
+                  )}
+                </>
+              )}
+
+              {related_documents_presentations && (
+                <>
+                  <Divider />
+                  <h2 className="reference-title">
+                    Related documents and presentations
+                  </h2>
+                  <HTMLField value={related_documents_presentations} />
+                </>
+              )}
 
               {isObservatoryItem && (
                 <>
