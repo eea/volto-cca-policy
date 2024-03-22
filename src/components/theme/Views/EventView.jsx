@@ -21,22 +21,12 @@ function CcaEventView(props) {
       <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
-          <div className="row">
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={9}
-              className="col-left"
-            >
+          <Grid.Row>
+            <Grid.Column mobile={12} tablet={12} computer={9}>
               <RenderBlocks {...props} />
               <SubjectTags {...props} />
             </Grid.Column>
-            <Grid.Column
-              mobile={12}
-              tablet={12}
-              computer={3}
-              className="col-right"
-            >
+            <Grid.Column mobile={12} tablet={12} computer={3}>
               <h3>
                 <FormattedMessage id="When" defaultMessage="When" />
               </h3>
@@ -68,11 +58,7 @@ function CcaEventView(props) {
                     <FormattedMessage id="Web" defaultMessage="Web" />
                   </h3>
                   <p>
-                    <a
-                      href={content.event_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={content.event_url} target="_blank">
                       <FormattedMessage
                         id="Visit external website"
                         defaultMessage="Visit external website"
@@ -82,7 +68,7 @@ function CcaEventView(props) {
                 </>
               )}
             </Grid.Column>
-          </div>
+          </Grid.Row>
         </Grid>
       </Container>
     </div>
