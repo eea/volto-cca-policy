@@ -7,7 +7,6 @@ import EventView from './components/theme/Views/EventView';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
-import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
@@ -268,7 +267,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.guidancedocument': DatabaseItemView,
     'eea.climateadapt.informationportal': DatabaseItemView,
     'eea.climateadapt.publicationreport': DatabaseItemView,
-    'eea.climateadapt.video': VideoView,
+    'eea.climateadapt.video': DatabaseItemView,
     'eea.climateadapt.aceproject': ProjectView,
     'eea.climateadapt.casestudy': CaseStudyView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,

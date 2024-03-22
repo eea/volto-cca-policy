@@ -17,6 +17,7 @@ import {
   ORGANISATION,
   ADAPTATION_OPTION,
   ACE_PROJECT,
+  VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
@@ -84,28 +85,13 @@ export const LinksList = (props) => {
 };
 
 export const BannerTitle = (props) => {
-  const { content, type } = props;
+  const { content, data } = props;
   const {
     blocks: { blocksConfig },
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
 
-  return (
-    <TitleBlockView
-      {...props}
-      data={{
-        info: [{ description: '' }],
-        hideContentType: true,
-        hideCreationDate: false,
-        hideModificationDate: false,
-        hidePublishingDate: false,
-        hideDownloadButton: false,
-        hideShareButton: false,
-        subtitle: type,
-      }}
-      metadata={content}
-    />
-  );
+  return <TitleBlockView {...props} data={data} metadata={content} />;
 };
 
 export const ReferenceInfo = (props) => {
@@ -393,6 +379,7 @@ export const LogoWrapper = ({ logo, children }) =>
 
 export const ItemLogo = (props) => {
   const { content } = props;
+  const type = content['@type'];
   const { image, logo, title } = content;
 
   let logo_image;
@@ -404,7 +391,7 @@ export const ItemLogo = (props) => {
     logo_image = null;
   }
 
-  return (
+  return type !== VIDEO ? (
     <LogoWrapper logo={logo_image}>
       <h2>
         <FormattedMessage id="Description" defaultMessage="Description" />
@@ -417,5 +404,5 @@ export const ItemLogo = (props) => {
         />
       )}
     </LogoWrapper>
-  );
+  ) : null;
 };
