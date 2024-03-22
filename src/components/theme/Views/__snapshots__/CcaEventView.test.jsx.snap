@@ -144,10 +144,6 @@ exports[`renders an event view component with all props 1`] = `
             Volto, Plone
           </p>
           <h3>
-            Language
-          </h3>
-          <p />
-          <h3>
             Info
           </h3>
           <p>
@@ -282,10 +278,6 @@ exports[`renders an event view component with only required props 1`] = `
           </h3>
           <p />
           <h3>
-            Language
-          </h3>
-          <p />
-          <h3>
             Info
           </h3>
           <p />
@@ -415,10 +407,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
           </p>
           <h3>
             Where
-          </h3>
-          <p />
-          <h3>
-            Language
           </h3>
           <p />
           <h3>
