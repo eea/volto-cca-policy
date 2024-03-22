@@ -20,6 +20,7 @@ import {
   ACE_PROJECT,
   VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 export const HTMLField = ({ value, className }) => {
@@ -422,4 +423,38 @@ export const SubjectTags = (props) => {
       ))}
     </div>
   ) : null;
+};
+
+export const EventDetails = (props) => {
+  const { content } = props;
+
+  return (
+    <>
+      <h3>
+        <FormattedMessage id="When" defaultMessage="When" />
+      </h3>
+      <When
+        start={content.start}
+        end={content.end}
+        whole_day={content.whole_day}
+        open_end={content.open_end}
+      />
+      {content?.location !== null && (
+        <>
+          <h3>
+            <FormattedMessage id="Where" defaultMessage="Where" />
+          </h3>
+          <p>{content.location}</p>
+        </>
+      )}
+      {!!content.contact_email && (
+        <>
+          <h3>
+            <FormattedMessage id="Info" defaultMessage="Info" />
+          </h3>
+          <p>{content.contact_email}</p>
+        </>
+      )}
+    </>
+  );
 };
