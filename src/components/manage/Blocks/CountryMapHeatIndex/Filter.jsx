@@ -1,6 +1,17 @@
 import React from 'react';
 import { Radio } from 'semantic-ui-react';
-import { FormattedMessage } from 'react-intl';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  hhap: {
+    id: 'Heat health action plans (HHAP)',
+    defaultMessage: 'Heat health action plans (HHAP)',
+  },
+  hhws: {
+    id: 'Heat health warning systems (HHWS)',
+    defaultMessage: 'Heat health warning systems (HHWS)',
+  },
+});
 
 function hidePopup() {
   const collections = document.getElementsByClassName('map-tooltip');
@@ -11,6 +22,7 @@ function hidePopup() {
 
 export default function Filter(props) {
   const { thematicMapMode, setThematicMapMode } = props;
+  const intl = useIntl();
   return (
     <>
       <p className="title">
@@ -21,14 +33,7 @@ export default function Filter(props) {
       </p>
       <div id="sections-selector">
         <Radio
-          label={
-            <label>
-              <FormattedMessage
-                id="Heat health action plans (HHAP)"
-                defaultMessage="Heat health action plans (HHAP)"
-              />
-            </label>
-          }
+          label={intl.formatMessage(messages.hhap)}
           name="country-map-section"
           value="hhap"
           checked={thematicMapMode === 'hhap'}
@@ -38,14 +43,7 @@ export default function Filter(props) {
           }}
         />
         <Radio
-          label={
-            <label>
-              <FormattedMessage
-                id="Heat health warning systems (HHWS)"
-                defaultMessage="Heat health warning systems (HHWS)"
-              />
-            </label>
-          }
+          label={intl.formatMessage(messages.hhws)}
           name="country-map-section"
           value="hhws"
           checked={thematicMapMode === 'hhws'}
