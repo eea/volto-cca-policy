@@ -100,7 +100,7 @@ export const issued_date = {
     },
   ],
   default: {
-    values: ['Last 5 years'],
+    values: ['All time'],
     type: 'any',
   },
 };
