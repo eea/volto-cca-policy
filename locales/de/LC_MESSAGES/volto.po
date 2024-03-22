@@ -37,6 +37,11 @@ msgstr ""
 msgid "Additional Details"
 msgstr "Zusätzliche Details"
 
+#. Default: "Agenda and supporting documents"
+#: components/theme/Views/CcaEventView
+msgid "Agenda and supporting documents"
+msgstr "Agenda und weiterführende Dokumente"
+
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
@@ -119,6 +124,7 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -234,6 +240,11 @@ msgstr "IPCC -Anpassungsoptionen Kategorien:"
 msgid "IPCC categories"
 msgstr "IPCC -Kategorien"
 
+#. Default: "If you have any further questions you can contact"
+#: components/theme/Views/CcaEventView
+msgid "If you have any further questions you can contact"
+msgstr ""
+
 #. Default: "Implementation Time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -246,7 +257,7 @@ msgid "Importance and Relevance of Adaptation"
 msgstr "Bedeutung und Relevanz der Anpassung"
 
 #. Default: "Info"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Info"
 msgstr ""
 
@@ -279,6 +290,11 @@ msgstr "Schlüsselaktivitäten im Klimawandel und Gesundheit"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Suchbegriffe:"
+
+#. Default: "Language of the conference"
+#: components/theme/Views/CcaEventView
+msgid "Language of the conference"
+msgstr "Konferenzsprache"
 
 #. Default: "Last Modified in Climate-ADAPT"
 #: helpers/Utils
@@ -377,10 +393,20 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Participation"
+#: components/theme/Views/CcaEventView
+msgid "Participation"
+msgstr "Teilnahme"
+
 #. Default: "Partners"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Partner"
+
+#. Default: "Practical information"
+#: components/theme/Views/CcaEventView
+msgid "Practical information"
+msgstr "Praktische Informationen"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -471,7 +497,6 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Teilen Sie Ihre Informationen"
 
@@ -596,12 +621,12 @@ msgid "Websites:"
 msgstr "Webseiten:"
 
 #. Default: "When"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "When"
 msgstr ""
 
 #. Default: "Where"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Where"
 msgstr ""
 
@@ -2637,11 +2662,6 @@ msgid "Advanced search for Climate-Adapt database items <a href="/redirect_to_se
 msgstr "Erweiterte Suche nach Climate-ADAPT Datenbank-Einträgen<a href="/Redirect_to_search_page"> hier </a>"
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
-msgid "Agenda and supporting documents"
-msgstr "Agenda und weiterführende Dokumente"
-
-#. undefined
 #: ../../climateadapt/vocabulary.py:454
 msgid "Air pollution and aero-allergens"
 msgstr "Luftverschmutzung und Aeroallergene"
@@ -3247,11 +3267,6 @@ msgid "Land-use and Food Systems"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:99
-msgid "Language of the conference"
-msgstr "Konferenzsprache"
-
-#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
 msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
 msgstr "Erfahren Sie mehr über verschiedene Anpassungsoptionen für die verschiedenen Auswirkungen des Klimawandels in Wäldern."
@@ -3405,11 +3420,6 @@ msgid "Overview list of all indices"
 msgstr "Übersicht aller Indizes"
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:91
-msgid "Participation"
-msgstr "Teilnahme"
-
-#. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:254
 msgid "Please contact us for any other enquiry on this Case Study or to share a new Case Study (email <a href="mailto: climate.adapt@eea.europa.eu">climate.adapt@eea.europa.eu</a>)"
 msgstr "Bitte kontaktieren Sie uns für eine weitere Fragen zu dieser Fallstudie oder um eine neue Fallstudie zu einzureichen (E -Mail <a href="mailto: Climate.adapt@eea.europa.eu"> Climate.adapt@eea.europa.eu </a >))"
@@ -3433,11 +3443,6 @@ msgstr "Richtlinienübersicht"
 #: ../../climateadapt/browser/pt/item_statistics.pt:23
 msgid "Portal Type"
 msgstr "Art des Informationsportals"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
-msgid "Practical information"
-msgstr "Praktische Informationen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:119

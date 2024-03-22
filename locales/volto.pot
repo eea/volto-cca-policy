@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-22T13:19:03.343Z\n"
+"POT-Creation-Date: 2024-03-22T15:19:28.263Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -37,6 +37,11 @@ msgstr ""
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
+msgstr ""
+
+#. Default: "Agenda and supporting documents"
+#: components/theme/Views/CcaEventView
+msgid "Agenda and supporting documents"
 msgstr ""
 
 #. Default: "Apr"
@@ -121,6 +126,7 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr ""
 
@@ -236,6 +242,11 @@ msgstr ""
 msgid "IPCC categories"
 msgstr ""
 
+#. Default: "If you have any further questions you can contact"
+#: components/theme/Views/CcaEventView
+msgid "If you have any further questions you can contact"
+msgstr ""
+
 #. Default: "Implementation Time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -248,7 +259,7 @@ msgid "Importance and Relevance of Adaptation"
 msgstr ""
 
 #. Default: "Info"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Info"
 msgstr ""
 
@@ -280,6 +291,11 @@ msgstr ""
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
+msgstr ""
+
+#. Default: "Language of the conference"
+#: components/theme/Views/CcaEventView
+msgid "Language of the conference"
 msgstr ""
 
 #. Default: "Last Modified in Climate-ADAPT"
@@ -379,9 +395,19 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Participation"
+#: components/theme/Views/CcaEventView
+msgid "Participation"
+msgstr ""
+
 #. Default: "Partners"
 #: components/theme/Views/ProjectView
 msgid "Partners"
+msgstr ""
+
+#. Default: "Practical information"
+#: components/theme/Views/CcaEventView
+msgid "Practical information"
 msgstr ""
 
 #. Default: "Project information"
@@ -473,7 +499,6 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
 msgid "Share your information"
 msgstr ""
 
@@ -598,11 +623,11 @@ msgid "Websites:"
 msgstr ""
 
 #. Default: "When"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "When"
 msgstr ""
 
 #. Default: "Where"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Where"
 msgstr ""
