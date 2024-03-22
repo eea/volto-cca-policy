@@ -6,8 +6,9 @@ import {
 } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
+import { SubjectTags } from '@eeacms/volto-cca-policy/helpers';
 
 function CcaEventView(props) {
   const { content } = props;
@@ -17,7 +18,7 @@ function CcaEventView(props) {
       <BannerTitle content={content} />
       <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -28,6 +29,7 @@ function CcaEventView(props) {
               className="col-left"
             >
               <RenderBlocks {...props} />
+              <SubjectTags {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
@@ -60,10 +62,29 @@ function CcaEventView(props) {
                   <p>{content.contact_email}</p>
                 </>
               )}
+              {content?.event_url && (
+                <>
+                  <h3>
+                    <FormattedMessage id="Web" defaultMessage="Web" />
+                  </h3>
+                  <p>
+                    <a
+                      href={content.event_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FormattedMessage
+                        id="Visit external website"
+                        defaultMessage="Visit external website"
+                      />
+                    </a>
+                  </p>
+                </>
+              )}
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }

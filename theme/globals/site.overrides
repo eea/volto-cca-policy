@@ -33,6 +33,12 @@ p.has--clear--both:empty {
   color: inherit !important;
 }
 
+.tags {
+  justify-content: left !important;
+  margin-top: 2em;
+  gap: 0 0.7em !important;
+}
+
 // Add icon for external links
 // .content-area #view {
 //   a[data-linktype='internal'] {

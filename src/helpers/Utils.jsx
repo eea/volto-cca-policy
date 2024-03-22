@@ -10,6 +10,7 @@ import {
   List,
   Button,
   Icon,
+  Label,
 } from 'semantic-ui-react';
 import {
   CASE_STUDY,
@@ -404,5 +405,21 @@ export const ItemLogo = (props) => {
         />
       )}
     </LogoWrapper>
+  ) : null;
+};
+
+export const SubjectTags = (props) => {
+  const { content } = props;
+  const tags = content?.subjects;
+
+  return tags?.length > 0 ? (
+    <div className="tags">
+      Filed under:{' '}
+      {tags.map((tag) => (
+        <Label size="small" key={tag}>
+          {tag}
+        </Label>
+      ))}
+    </div>
   ) : null;
 };

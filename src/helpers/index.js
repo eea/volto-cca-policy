@@ -13,6 +13,7 @@ export {
   LogoWrapper,
   ContentRelatedItems,
   ItemLogo,
+  SubjectTags,
 } from './Utils';
 export { default as ContentMetadata } from './ContentMetadata';
 export {

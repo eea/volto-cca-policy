@@ -1,15 +1,15 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import {
   DocumentsList,
   HTMLField,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import {
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 
 function CcaEventView(props) {
   const { content } = props;
@@ -51,7 +51,7 @@ function CcaEventView(props) {
       />
       <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -109,7 +109,7 @@ function CcaEventView(props) {
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }
