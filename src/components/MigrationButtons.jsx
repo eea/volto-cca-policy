@@ -7,6 +7,7 @@ const button = (id, title, label, destination) => (
     id={id}
     onClick={() => window.open(destination, '_blank')}
     title={title}
+    key={id}
   >
     {label}
   </button>
