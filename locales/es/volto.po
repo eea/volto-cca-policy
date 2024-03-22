@@ -122,6 +122,11 @@ msgstr ""
 msgid "Contact"
 msgstr "Contacto"
 
+#. Default: "Contact information for the Observatory"
+#: components/theme/Views/DatabaseItemView
+msgid "Contact information for the Observatory"
+msgstr "Información de contacto del Observatorio"
+
 #. Default: "Contributor:"
 #: helpers/Utils
 msgid "Contributor:"
@@ -212,7 +217,12 @@ msgstr "Impacto en la salud:"
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
-msgstr ""
+msgstr "Planes de acción de salud por calor (HHAP)"
+
+#. Default: "Heat health warning systems (HHWS)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health warning systems (HHWS)"
+msgstr "Sistemas de alerta sanitaria por calor (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
@@ -260,6 +270,11 @@ msgstr ""
 msgid "Key Type Measures:"
 msgstr "Medidas de tipo clave:"
 
+#. Default: "Key activities within climate change and health"
+#: components/theme/Views/DatabaseItemView
+msgid "Key activities within climate change and health"
+msgstr "Actividades principales en cambio climático y salud"
+
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
@@ -286,6 +301,11 @@ msgstr "Aspectos legales"
 #: components/theme/Views/CaseStudyView
 msgid "Life Time"
 msgstr "Tiempo de vida"
+
+#. Default: "Links to further information"
+#: components/theme/Views/DatabaseItemView
+msgid "Links to further information"
+msgstr "Enlaces a más información"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -394,6 +414,11 @@ msgstr ""
 msgid "Related content:"
 msgstr ""
 
+#. Default: "Related documents and presentations"
+#: components/theme/Views/DatabaseItemView
+msgid "Related documents and presentations"
+msgstr "Documentos y presentaciones relacionados"
+
 #. Default: "Relevance"
 #: components/theme/Views/CaseStudyView
 msgid "Relevance"
@@ -429,6 +454,11 @@ msgstr ""
 msgid "See more"
 msgstr "Ver más"
 
+#. Default: "See video outside Climate-ADAPT"
+#: components/theme/Views/DatabaseItemView
+msgid "See video outside Climate-ADAPT"
+msgstr "Ver video fuera de Climate-ADAPT"
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -440,6 +470,7 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
+#: components/theme/ShareInfoButton/ShareInfoButton
 #: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Comparte tu información"
@@ -533,9 +564,19 @@ msgstr ""
 msgid "View all contributions in the resource catalogue"
 msgstr "Ver todas las contribuciones en el catálogo de recursos"
 
+#. Default: "Visit external website"
+#: components/theme/Views/EventView
+msgid "Visit external website"
+msgstr ""
+
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
+msgstr ""
+
+#. Default: "Web"
+#: components/theme/Views/EventView
+msgid "Web"
 msgstr ""
 
 #. Default: "Web site"
@@ -2798,11 +2839,6 @@ msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Definiciones comunes de los términos utilizados con frecuencia en la cámara de compensación."
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:39
-msgid "Contact information for the Observatory"
-msgstr "Información de contacto del Observatorio"
-
-#. undefined
 #: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:30
 #: ../../climateadapt/browser/pt/c3sindicator_view.pt:158
 msgid "Content in the European Climate Data Explorer pages is delivered by the <a href="https://climate.copernicus.eu/">Copernicus Climate Change Service (C3S)</a> implemented by ECMWF. <a href="/knowledge/european-climate-data-explorer/disclaimer">Disclaimer</a>"
@@ -3189,11 +3225,6 @@ msgid "Key Type Measures"
 msgstr "Medidas de tipo clave"
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:22
-msgid "Key activities within climate change and health"
-msgstr "Actividades principales en cambio climático y salud"
-
-#. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
 msgstr ""
@@ -3251,11 +3282,6 @@ msgstr "Enlace al visor de mapas:"
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
 msgid "Link to metadata:"
 msgstr "Enlace a metadatos:"
-
-#. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:34
-msgid "Links to further information"
-msgstr "Enlaces a más información"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:467
@@ -3465,11 +3491,6 @@ msgid "Registration:"
 msgstr "Registro:"
 
 #. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:45
-msgid "Related documents and presentations"
-msgstr "Documentos y presentaciones relacionados"
-
-#. undefined
 #: ../../climateadapt/tiles/pt/filter_acecontent.pt:49
 msgid "Relevant tile"
 msgstr "Ícono relevante"
@@ -3546,11 +3567,6 @@ msgstr "Políticas del sector"
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
 msgid "Sectors"
 msgstr "Sectores"
-
-#. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:39
-msgid "See video outside Climate-ADAPT"
-msgstr "Ver video fuera de Climate-ADAPT"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-list.pt:5
