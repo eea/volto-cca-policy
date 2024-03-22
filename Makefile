@@ -127,8 +127,9 @@ lint-fix:		## Fix ES Lint
 
 .PHONY: i18n
 i18n:			## i18n
-	rm -rf build/messages
-	NODE_ENV=development $(NODE_MODULES)/.bin/i18n --addon
+# rm -rf build/messages
+# NODE_ENV=development $(NODE_MODULES)/.bin/i18n --addon
+	./i18n.cjs -a
 
 .PHONY: help
 help:                   ## Show this help.
