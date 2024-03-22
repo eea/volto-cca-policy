@@ -22,10 +22,12 @@ export default function Filter(props) {
       <div id="sections-selector">
         <Radio
           label={
-            <FormattedMessage
-              id="Heat health action plans (HHAP)"
-              defaultMessage="Heat health action plans (HHAP)"
-            />
+            <label>
+              <FormattedMessage
+                id="Heat health action plans (HHAP)"
+                defaultMessage="Heat health action plans (HHAP)"
+              />
+            </label>
           }
           name="country-map-section"
           value="hhap"
@@ -36,7 +38,14 @@ export default function Filter(props) {
           }}
         />
         <Radio
-          label="Heat health warning systems (HHWS)"
+          label={
+            <label>
+              <FormattedMessage
+                id="Heat health warning systems (HHWS)"
+                defaultMessage="Heat health warning systems (HHWS)"
+              />
+            </label>
+          }
           name="country-map-section"
           value="hhws"
           checked={thematicMapMode === 'hhws'}

@@ -122,6 +122,11 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. Default: "Contact information for the Observatory"
+#: components/theme/Views/DatabaseItemView
+msgid "Contact information for the Observatory"
+msgstr ""
+
 #. Default: "Contributor:"
 #: helpers/Utils
 msgid "Contributor:"
@@ -214,6 +219,11 @@ msgstr ""
 msgid "Heat health action plans (HHAP)"
 msgstr ""
 
+#. Default: "Heat health warning systems (HHWS)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health warning systems (HHWS)"
+msgstr ""
+
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
 msgid "IPCC adaptation options categories:"
@@ -260,6 +270,11 @@ msgstr ""
 msgid "Key Type Measures:"
 msgstr ""
 
+#. Default: "Key activities within climate change and health"
+#: components/theme/Views/DatabaseItemView
+msgid "Key activities within climate change and health"
+msgstr ""
+
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
@@ -285,6 +300,11 @@ msgstr ""
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Life Time"
+msgstr ""
+
+#. Default: "Links to further information"
+#: components/theme/Views/DatabaseItemView
+msgid "Links to further information"
 msgstr ""
 
 #. Default: "Macro-Transnational region:"
@@ -394,6 +414,11 @@ msgstr ""
 msgid "Related content:"
 msgstr ""
 
+#. Default: "Related documents and presentations"
+#: components/theme/Views/DatabaseItemView
+msgid "Related documents and presentations"
+msgstr ""
+
 #. Default: "Relevance"
 #: components/theme/Views/CaseStudyView
 msgid "Relevance"
@@ -429,6 +454,11 @@ msgstr ""
 msgid "See more"
 msgstr ""
 
+#. Default: "See video outside Climate-ADAPT"
+#: components/theme/Views/DatabaseItemView
+msgid "See video outside Climate-ADAPT"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -440,6 +470,7 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
+#: components/theme/ShareInfoButton/ShareInfoButton
 #: helpers/ShareInfo
 msgid "Share your information"
 msgstr ""
@@ -533,9 +564,19 @@ msgstr ""
 msgid "View all contributions in the resource catalogue"
 msgstr ""
 
+#. Default: "Visit external website"
+#: components/theme/Views/EventView
+msgid "Visit external website"
+msgstr ""
+
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
+msgstr ""
+
+#. Default: "Web"
+#: components/theme/Views/EventView
+msgid "Web"
 msgstr ""
 
 #. Default: "Web site"
@@ -2798,11 +2839,6 @@ msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:39
-msgid "Contact information for the Observatory"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:30
 #: ../../climateadapt/browser/pt/c3sindicator_view.pt:158
 msgid "Content in the European Climate Data Explorer pages is delivered by the <a href="https://climate.copernicus.eu/">Copernicus Climate Change Service (C3S)</a> implemented by ECMWF. <a href="/knowledge/european-climate-data-explorer/disclaimer">Disclaimer</a>"
@@ -3189,11 +3225,6 @@ msgid "Key Type Measures"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:22
-msgid "Key activities within climate change and health"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
 msgstr ""
@@ -3250,11 +3281,6 @@ msgstr ""
 #: ../../climateadapt/browser/pt/indicator_view.pt:49
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
 msgid "Link to metadata:"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:34
-msgid "Links to further information"
 msgstr ""
 
 #. undefined
@@ -3465,11 +3491,6 @@ msgid "Registration:"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:45
-msgid "Related documents and presentations"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/tiles/pt/filter_acecontent.pt:49
 msgid "Relevant tile"
 msgstr ""
@@ -3545,11 +3566,6 @@ msgstr ""
 #: ../../climateadapt/browser/pt/indicator_view.pt:98
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
 msgid "Sectors"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:39
-msgid "See video outside Climate-ADAPT"
 msgstr ""
 
 #. undefined
