@@ -122,6 +122,11 @@ msgstr ""
 msgid "Contact"
 msgstr "Kontakt"
 
+#. Default: "Contact information for the Observatory"
+#: components/theme/Views/DatabaseItemView
+msgid "Contact information for the Observatory"
+msgstr "Informacje o kontaktcie do Observatory"
+
 #. Default: "Contributor:"
 #: helpers/Utils
 msgid "Contributor:"
@@ -235,6 +240,11 @@ msgstr "Czas wdrożenia"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Znaczenie i przydatność adaptacji"
 
+#. Default: "Indicators"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Indicators"
+msgstr "Wskaźniki"
+
 #. Default: "Info"
 #: components/theme/Views/EventView
 msgid "Info"
@@ -259,6 +269,11 @@ msgstr ""
 #: helpers/ContentMetadata
 msgid "Key Type Measures:"
 msgstr "Mierzy typu kluczowego:"
+
+#. Default: "Key activities within climate change and health"
+#: components/theme/Views/DatabaseItemView
+msgid "Key activities within climate change and health"
+msgstr "Kluczowe działania w ramach zmian klimatu i zdrowia"
 
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
@@ -286,6 +301,11 @@ msgstr "Aspekty Prawne"
 #: components/theme/Views/CaseStudyView
 msgid "Life Time"
 msgstr "Okres użytkowania"
+
+#. Default: "Links to further information"
+#: components/theme/Views/DatabaseItemView
+msgid "Links to further information"
+msgstr "Linki do dalszych informacji"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -326,6 +346,11 @@ msgstr "Brak informacji"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No options"
 msgstr ""
+
+#. Default: "No results"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+msgid "No results"
+msgstr "Brak wyników"
 
 #. Default: "No value"
 #: components/manage/Widgets/CreatableSelectWidget
@@ -389,6 +414,11 @@ msgstr "Źródło informacji"
 msgid "References"
 msgstr ""
 
+#. Default: "Regions"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Regions"
+msgstr ""
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -440,6 +470,8 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+#: components/theme/ShareInfoButton/ShareInfoButton
 #: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Udostępnij swoje informacje"
@@ -578,11 +610,6 @@ msgstr "Studia przypadków"
 
 msgid "Guidance"
 msgstr "Wytyczne"
-
-#. undefined
-
-msgid "Indicators"
-msgstr "Wskaźniki"
 
 #. undefined
 
@@ -2798,11 +2825,6 @@ msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Wspólne definicje terminów często używanych w izbie rozrachunkowej."
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:39
-msgid "Contact information for the Observatory"
-msgstr "Informacje o kontaktcie do Observatory"
-
-#. undefined
 #: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:30
 #: ../../climateadapt/browser/pt/c3sindicator_view.pt:158
 msgid "Content in the European Climate Data Explorer pages is delivered by the <a href="https://climate.copernicus.eu/">Copernicus Climate Change Service (C3S)</a> implemented by ECMWF. <a href="/knowledge/european-climate-data-explorer/disclaimer">Disclaimer</a>"
@@ -3189,11 +3211,6 @@ msgid "Key Type Measures"
 msgstr "Mieci typu kluczowego"
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:22
-msgid "Key activities within climate change and health"
-msgstr "Kluczowe działania w ramach zmian klimatu i zdrowia"
-
-#. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
 msgstr ""
@@ -3251,11 +3268,6 @@ msgstr "Link do przeglądarki map:"
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
 msgid "Link to metadata:"
 msgstr "Link do metadanych:"
-
-#. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:34
-msgid "Links to further information"
-msgstr "Linki do dalszych informacji"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:467
