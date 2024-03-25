@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-22T15:19:28.263Z\n"
+"POT-Creation-Date: 2024-03-24T19:38:34.695Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -258,6 +258,11 @@ msgstr ""
 msgid "Importance and Relevance of Adaptation"
 msgstr ""
 
+#. Default: "Indicators"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Indicators"
+msgstr ""
+
 #. Default: "Info"
 #: helpers/Utils
 msgid "Info"
@@ -365,6 +370,11 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+#. Default: "No results"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+msgid "No results"
+msgstr ""
+
 #. Default: "No value"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No value"
@@ -437,6 +447,11 @@ msgstr ""
 msgid "References"
 msgstr ""
 
+#. Default: "Regions"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Regions"
+msgstr ""
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -498,7 +513,9 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
 msgstr ""
 

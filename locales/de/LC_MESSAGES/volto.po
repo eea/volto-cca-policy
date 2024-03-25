@@ -256,6 +256,11 @@ msgstr "Umsetzungszeitraum"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Bedeutung und Relevanz der Anpassung"
 
+#. Default: "Indicators"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Indicators"
+msgstr "Indikatoren"
+
 #. Default: "Info"
 #: helpers/Utils
 msgid "Info"
@@ -363,6 +368,11 @@ msgstr "Keine Information"
 msgid "No options"
 msgstr ""
 
+#. Default: "No results"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+msgid "No results"
+msgstr "Keine Ergebnisse"
+
 #. Default: "No value"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No value"
@@ -435,6 +445,11 @@ msgstr "Referenzinformationen"
 msgid "References"
 msgstr ""
 
+#. Default: "Regions"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Regions"
+msgstr ""
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -496,7 +511,9 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Teilen Sie Ihre Informationen"
 
@@ -644,11 +661,6 @@ msgstr "Fallstudien"
 
 msgid "Guidance"
 msgstr "Leitfaden"
-
-#. undefined
-
-msgid "Indicators"
-msgstr "Indikatoren"
 
 #. undefined
 
@@ -1923,107 +1935,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Exposition gefährdeter Gruppen gegenüber Klimarisiken"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "SCHLÜSSELBEREICHE VON EU-MASSNAHMEN"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Gerechte Resilienz"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Naturbasierte Lösungen"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Wirtschaftliche Verluste und Todesfälle"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Strategische Ziele 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Verfügbarkeit von städtischen Grünflächen für gefährdete  Bevölkerungsgruppen"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Länderübergreifend, national, lokal"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroallergene"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Hitze"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Zugänglichkeit von Krankenhäusern in Europa"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ANPASSUNG IN DER FORSTWIRTSCHAFT"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Bodennahes Ozon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Bodennahes Ozonprognose (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Umweltverschmutzung"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Arbeitsschutz und Arbeitsmedizin"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Arbeitsplan des Observatory für 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Bodennahe PM2.5-Prognose (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Bodennahes PM10-Prognose (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Bodennahe NO2-Prognose (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 EUA-Bericht über Klima und Gesundheit"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Europäischer Umwelt- und Gesundheitsatlas"
 

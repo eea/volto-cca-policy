@@ -1,10 +1,12 @@
 import { List, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { useIntl, FormattedMessage } from 'react-intl';
 
 export default function SearchAceContentView(props) {
   const { data } = props;
   const results = data._v_results || [];
+  const intl = useIntl();
 
   return results && results.length > 0 ? (
     <div className="block search-acecontent-block">
@@ -13,7 +15,8 @@ export default function SearchAceContentView(props) {
         {results.map((result, index) => (
           <List.Item key={index}>
             <Link to={flattenToAppURL(result[2])}>
-              {result[0]} ({result[1]})
+              {intl.formatMessage({ id: result[0], defaultMessage: result[0] })}{' '}
+              ({result[1]})
             </Link>
           </List.Item>
         ))}
@@ -23,10 +26,15 @@ export default function SearchAceContentView(props) {
         className="ui button icon left labeled primary"
       >
         <Icon name="ri-share-line" />
-        Share your information
+        <FormattedMessage
+          id="Share your information"
+          defaultMessage="Share your information"
+        />
       </Link>
     </div>
   ) : (
-    <div>No results</div>
+    <div>
+      <FormattedMessage id="No results" defaultMessage="No results" />
+    </div>
   );
 }

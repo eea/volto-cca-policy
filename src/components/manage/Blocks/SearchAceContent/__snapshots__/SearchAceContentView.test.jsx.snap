@@ -18,7 +18,8 @@ exports[`SearchAceContentView should render the component 1`] = `
         onClick={[Function]}
       >
         Publications and reports
-         (
+         
+        (
         154
         )
       </a>
@@ -33,7 +34,8 @@ exports[`SearchAceContentView should render the component 1`] = `
         onClick={[Function]}
       >
         Information portals
-         (
+         
+        (
         57
         )
       </a>
