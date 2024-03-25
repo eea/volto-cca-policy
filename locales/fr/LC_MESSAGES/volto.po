@@ -37,6 +37,11 @@ msgstr "Secteurs d'adaptation"
 msgid "Additional Details"
 msgstr "Détails supplémentaires"
 
+#. Default: "Agenda and supporting documents"
+#: components/theme/Views/CcaEventView
+msgid "Agenda and supporting documents"
+msgstr "Ordre du jour et pièces justificatives"
+
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
@@ -119,8 +124,14 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Contacter"
+
+#. Default: "Contact information for the Observatory"
+#: components/theme/Views/DatabaseItemView
+msgid "Contact information for the Observatory"
+msgstr "Coordonnées de l'observatoire"
 
 #. Default: "Contributor:"
 #: helpers/Utils
@@ -212,7 +223,12 @@ msgstr "Impact sur la santé:"
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
-msgstr ""
+msgstr "Plans d'actions santé chaleur (HHAP)"
+
+#. Default: "Heat health warning systems (HHWS)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health warning systems (HHWS)"
+msgstr "Systèmes d’alerte sanitaire en matière de chaleur (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
@@ -223,6 +239,11 @@ msgstr "Catégories d'options d'adaptation du GIEC:"
 #: components/theme/Views/AdaptationOptionView
 msgid "IPCC categories"
 msgstr "Catégories du GIEC"
+
+#. Default: "If you have any further questions you can contact"
+#: components/theme/Views/CcaEventView
+msgid "If you have any further questions you can contact"
+msgstr ""
 
 #. Default: "Implementation Time"
 #: components/theme/Views/AdaptationOptionView
@@ -236,7 +257,7 @@ msgid "Importance and Relevance of Adaptation"
 msgstr "Importance et pertinence de l'adaptation"
 
 #. Default: "Info"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Info"
 msgstr ""
 
@@ -260,10 +281,20 @@ msgstr ""
 msgid "Key Type Measures:"
 msgstr "Mesures de type clé:"
 
+#. Default: "Key activities within climate change and health"
+#: components/theme/Views/DatabaseItemView
+msgid "Key activities within climate change and health"
+msgstr "Activités clés dans le changement climatique et la santé"
+
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Mots clés:"
+
+#. Default: "Language of the conference"
+#: components/theme/Views/CcaEventView
+msgid "Language of the conference"
+msgstr "Langue de la conférence"
 
 #. Default: "Last Modified in Climate-ADAPT"
 #: helpers/Utils
@@ -286,6 +317,11 @@ msgstr "Aspects légaux"
 #: components/theme/Views/CaseStudyView
 msgid "Life Time"
 msgstr "Durée de vie"
+
+#. Default: "Links to further information"
+#: components/theme/Views/DatabaseItemView
+msgid "Links to further information"
+msgstr "Liens vers de plus amples informations"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -357,10 +393,20 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Participation"
+#: components/theme/Views/CcaEventView
+msgid "Participation"
+msgstr "Participation"
+
 #. Default: "Partners"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Les partenaires"
+
+#. Default: "Practical information"
+#: components/theme/Views/CcaEventView
+msgid "Practical information"
+msgstr "Informations pratiques"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -393,6 +439,11 @@ msgstr ""
 #: helpers/Utils
 msgid "Related content:"
 msgstr ""
+
+#. Default: "Related documents and presentations"
+#: components/theme/Views/DatabaseItemView
+msgid "Related documents and presentations"
+msgstr "Documents et présentations connexes"
 
 #. Default: "Relevance"
 #: components/theme/Views/CaseStudyView
@@ -429,6 +480,11 @@ msgstr ""
 msgid "See more"
 msgstr "Voir plus"
 
+#. Default: "See video outside Climate-ADAPT"
+#: components/theme/Views/DatabaseItemView
+msgid "See video outside Climate-ADAPT"
+msgstr "Voir la vidéo en dehors de Climate-ADAPT"
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -440,7 +496,7 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
-#: helpers/ShareInfo
+#: components/theme/ShareInfoButton/ShareInfoButton
 msgid "Share your information"
 msgstr "Partagez vos informations"
 
@@ -533,9 +589,19 @@ msgstr ""
 msgid "View all contributions in the resource catalogue"
 msgstr "Voir toutes les contributions dans le catalogue des ressources"
 
+#. Default: "Visit external website"
+#: components/theme/Views/EventView
+msgid "Visit external website"
+msgstr ""
+
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
+msgstr ""
+
+#. Default: "Web"
+#: components/theme/Views/EventView
+msgid "Web"
 msgstr ""
 
 #. Default: "Web site"
@@ -555,12 +621,12 @@ msgid "Websites:"
 msgstr "Sites Internet:"
 
 #. Default: "When"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "When"
 msgstr ""
 
 #. Default: "Where"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Where"
 msgstr ""
 
@@ -2596,11 +2662,6 @@ msgid "Advanced search for Climate-Adapt database items <a href="/redirect_to_se
 msgstr "Recherche avancée d'éléments de la base de données Climate-Adapt <a href="/redirect_to_search_page"> ici </a>"
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
-msgid "Agenda and supporting documents"
-msgstr "Ordre du jour et pièces justificatives"
-
-#. undefined
 #: ../../climateadapt/vocabulary.py:454
 msgid "Air pollution and aero-allergens"
 msgstr "Pollution atmosphérique et aéroallergènes"
@@ -2796,11 +2857,6 @@ msgstr "Commentaires:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Définitions communes des termes fréquemment utilisés dans le centre d'échange."
-
-#. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:39
-msgid "Contact information for the Observatory"
-msgstr "Coordonnées de l'observatoire"
 
 #. undefined
 #: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:30
@@ -3189,11 +3245,6 @@ msgid "Key Type Measures"
 msgstr "Mesures de type clé"
 
 #. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:22
-msgid "Key activities within climate change and health"
-msgstr "Activités clés dans le changement climatique et la santé"
-
-#. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
 msgstr ""
@@ -3214,11 +3265,6 @@ msgstr "Mots clés"
 #: ../../climateadapt/vocabulary.py:463
 msgid "Land-use and Food Systems"
 msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:99
-msgid "Language of the conference"
-msgstr "Langue de la conférence"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
@@ -3251,11 +3297,6 @@ msgstr "Lien vers la carte web interactive:"
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
 msgid "Link to metadata:"
 msgstr "Lien vers les métadonnées:"
-
-#. undefined
-#: ../../climateadapt/browser/pt/organisation_view.pt:34
-msgid "Links to further information"
-msgstr "Liens vers de plus amples informations"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:467
@@ -3379,11 +3420,6 @@ msgid "Overview list of all indices"
 msgstr "Présentation de la liste de tous les indices"
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:91
-msgid "Participation"
-msgstr "Participation"
-
-#. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:254
 msgid "Please contact us for any other enquiry on this Case Study or to share a new Case Study (email <a href="mailto: climate.adapt@eea.europa.eu">climate.adapt@eea.europa.eu</a>)"
 msgstr "Veuillez nous contacter pour toute autre enquête sur cette étude de cas ou pour partager une nouvelle étude de cas (email <a href="mailto: climate.adapt@eea.europa.eu"> climat.adapt@eea.europa.eu </ a >)"
@@ -3407,11 +3443,6 @@ msgstr "Aperçu des Politiques"
 #: ../../climateadapt/browser/pt/item_statistics.pt:23
 msgid "Portal Type"
 msgstr "Type de portail"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
-msgid "Practical information"
-msgstr "Informations pratiques"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:119
@@ -3463,11 +3494,6 @@ msgstr "Inscription"
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:124
 msgid "Registration:"
 msgstr "Inscription:"
-
-#. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:45
-msgid "Related documents and presentations"
-msgstr "Documents et présentations connexes"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/filter_acecontent.pt:49
@@ -3546,11 +3572,6 @@ msgstr "Politiques sectorielles"
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
 msgid "Sectors"
 msgstr "Secteurs"
-
-#. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:39
-msgid "See video outside Climate-ADAPT"
-msgstr "Voir la vidéo en dehors de Climate-ADAPT"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-list.pt:5

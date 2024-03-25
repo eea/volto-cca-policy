@@ -10,6 +10,7 @@ import {
   List,
   Button,
   Icon,
+  Label,
 } from 'semantic-ui-react';
 import {
   CASE_STUDY,
@@ -17,7 +18,9 @@ import {
   ORGANISATION,
   ADAPTATION_OPTION,
   ACE_PROJECT,
+  VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 export const HTMLField = ({ value, className }) => {
@@ -84,28 +87,13 @@ export const LinksList = (props) => {
 };
 
 export const BannerTitle = (props) => {
-  const { content, type } = props;
+  const { content, data } = props;
   const {
     blocks: { blocksConfig },
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
 
-  return (
-    <TitleBlockView
-      {...props}
-      data={{
-        info: [{ description: '' }],
-        hideContentType: true,
-        hideCreationDate: false,
-        hideModificationDate: false,
-        hidePublishingDate: false,
-        hideDownloadButton: false,
-        hideShareButton: false,
-        subtitle: type,
-      }}
-      metadata={content}
-    />
-  );
+  return <TitleBlockView {...props} data={data} metadata={content} />;
 };
 
 export const ReferenceInfo = (props) => {
@@ -393,6 +381,7 @@ export const LogoWrapper = ({ logo, children }) =>
 
 export const ItemLogo = (props) => {
   const { content } = props;
+  const type = content['@type'];
   const { image, logo, title } = content;
 
   let logo_image;
@@ -404,7 +393,7 @@ export const ItemLogo = (props) => {
     logo_image = null;
   }
 
-  return (
+  return type !== VIDEO ? (
     <LogoWrapper logo={logo_image}>
       <h2>
         <FormattedMessage id="Description" defaultMessage="Description" />
@@ -417,5 +406,55 @@ export const ItemLogo = (props) => {
         />
       )}
     </LogoWrapper>
+  ) : null;
+};
+
+export const SubjectTags = (props) => {
+  const { content } = props;
+  const tags = content?.subjects;
+
+  return tags?.length > 0 ? (
+    <div className="tags">
+      Filed under:{' '}
+      {tags.map((tag) => (
+        <Label size="small" key={tag}>
+          {tag}
+        </Label>
+      ))}
+    </div>
+  ) : null;
+};
+
+export const EventDetails = (props) => {
+  const { content } = props;
+
+  return (
+    <>
+      <h3>
+        <FormattedMessage id="When" defaultMessage="When" />
+      </h3>
+      <When
+        start={content.start}
+        end={content.end}
+        whole_day={content.whole_day}
+        open_end={content.open_end}
+      />
+      {content?.location !== null && (
+        <>
+          <h3>
+            <FormattedMessage id="Where" defaultMessage="Where" />
+          </h3>
+          <p>{content.location}</p>
+        </>
+      )}
+      {!!content.contact_email && (
+        <>
+          <h3>
+            <FormattedMessage id="Info" defaultMessage="Info" />
+          </h3>
+          <p>{content.contact_email}</p>
+        </>
+      )}
+    </>
   );
 };

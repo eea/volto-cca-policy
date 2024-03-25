@@ -31,3 +31,22 @@ export function getBaseUrl(props) {
   }
   return path;
 }
+
+export const hasTypeOfBlock = (obj, type, name) => {
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (key === type && obj[key] === name) {
+        // console.log(`Key "${type}" with value "${name}" found`);
+        return true;
+      }
+
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        if (hasTypeOfBlock(obj[key], type, name)) {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+};

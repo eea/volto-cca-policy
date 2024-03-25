@@ -1,23 +1,5 @@
 import config from '@plone/volto/registry';
-
-const hasTypeOfBlock = (obj, targetKey, targetValue) => {
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      if (key === targetKey && obj[key] === targetValue) {
-        // console.log(`Key "${targetKey}" with value "${targetValue}" found`);
-        return true;
-      }
-
-      if (typeof obj[key] === 'object' && obj[key] !== null) {
-        if (hasTypeOfBlock(obj[key], targetKey, targetValue)) {
-          return true;
-        }
-      }
-    }
-  }
-
-  return false;
-};
+import { hasTypeOfBlock } from '@eeacms/volto-cca-policy/utils';
 
 const BannerTitle = (props) => {
   const { content } = props;
@@ -38,10 +20,10 @@ const BannerTitle = (props) => {
           {...props}
           data={{
             info: [{ description: '' }],
-            hideContentType: true,
-            hideCreationDate: true,
-            hideModificationDate: true,
-            hidePublishingDate: true,
+            hideContentType: false,
+            hideCreationDate: false,
+            hideModificationDate: false,
+            hidePublishingDate: false,
             hideDownloadButton: false,
             hideShareButton: false,
           }}
