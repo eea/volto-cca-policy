@@ -139,3 +139,6 @@ msgstr ""
 
 msgid "Other"
 msgstr ""
+
+msgid "No results"
+msgstr ""
