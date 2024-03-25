@@ -1,12 +1,13 @@
-// import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import React from 'react';
-import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { Label } from 'semantic-ui-react';
 import {
   BannerTitle,
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
+import { Container } from 'semantic-ui-react';
+import { SubjectTags } from '@eeacms/volto-cca-policy/helpers';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
+// import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 
 // const Date = (props) => {
 //   const date = props.content?.effective;
@@ -17,18 +18,6 @@ import {
 //   ) : null;
 // };
 
-const SubjectTags = (props) => {
-  const tags = props.content?.subjects;
-  return tags?.length > 0 ? (
-    <>
-      Filed under:{' '}
-      {tags.map((tag) => (
-        <Label key={tag}>{tag}</Label>
-      ))}
-    </>
-  ) : null;
-};
-
 function NewsItemView(props) {
   const { content } = props;
 
@@ -37,12 +26,12 @@ function NewsItemView(props) {
       <BannerTitle content={content} />
       <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <RenderBlocks {...props} />
         {/* <Date {...props} /> */}
         <SubjectTags {...props} />
-      </div>
+      </Container>
     </div>
   );
 }
