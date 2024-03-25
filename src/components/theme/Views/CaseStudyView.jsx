@@ -328,7 +328,19 @@ function CaseStudyView(props) {
 
   return (
     <div className="db-item-view case-study-view">
-      <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+          subtitle: 'Case Studies',
+        }}
+      />
       <TranslationDisclaimer />
 
       <div className="ui container">

@@ -37,6 +37,11 @@ msgstr ""
 msgid "Additional Details"
 msgstr ""
 
+#. Default: "Agenda and supporting documents"
+#: components/theme/Views/CcaEventView
+msgid "Agenda and supporting documents"
+msgstr ""
+
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
@@ -119,6 +124,7 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr ""
 
@@ -219,6 +225,11 @@ msgstr ""
 msgid "Heat health action plans (HHAP)"
 msgstr ""
 
+#. Default: "Heat health warning systems (HHWS)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health warning systems (HHWS)"
+msgstr ""
+
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
 msgid "IPCC adaptation options categories:"
@@ -227,6 +238,11 @@ msgstr ""
 #. Default: "IPCC categories"
 #: components/theme/Views/AdaptationOptionView
 msgid "IPCC categories"
+msgstr ""
+
+#. Default: "If you have any further questions you can contact"
+#: components/theme/Views/CcaEventView
+msgid "If you have any further questions you can contact"
 msgstr ""
 
 #. Default: "Implementation Time"
@@ -246,7 +262,7 @@ msgid "Indicators"
 msgstr ""
 
 #. Default: "Info"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Info"
 msgstr ""
 
@@ -278,6 +294,11 @@ msgstr ""
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
+msgstr ""
+
+#. Default: "Language of the conference"
+#: components/theme/Views/CcaEventView
+msgid "Language of the conference"
 msgstr ""
 
 #. Default: "Last Modified in Climate-ADAPT"
@@ -382,9 +403,19 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Participation"
+#: components/theme/Views/CcaEventView
+msgid "Participation"
+msgstr ""
+
 #. Default: "Partners"
 #: components/theme/Views/ProjectView
 msgid "Partners"
+msgstr ""
+
+#. Default: "Practical information"
+#: components/theme/Views/CcaEventView
+msgid "Practical information"
 msgstr ""
 
 #. Default: "Project information"
@@ -424,6 +455,11 @@ msgstr ""
 msgid "Related content:"
 msgstr ""
 
+#. Default: "Related documents and presentations"
+#: components/theme/Views/DatabaseItemView
+msgid "Related documents and presentations"
+msgstr ""
+
 #. Default: "Relevance"
 #: components/theme/Views/CaseStudyView
 msgid "Relevance"
@@ -457,6 +493,11 @@ msgstr ""
 #. Default: "See more"
 #: helpers/Utils
 msgid "See more"
+msgstr ""
+
+#. Default: "See video outside Climate-ADAPT"
+#: components/theme/Views/DatabaseItemView
+msgid "See video outside Climate-ADAPT"
 msgstr ""
 
 #. Default: "Select…"
@@ -565,9 +606,19 @@ msgstr ""
 msgid "View all contributions in the resource catalogue"
 msgstr ""
 
+#. Default: "Visit external website"
+#: components/theme/Views/EventView
+msgid "Visit external website"
+msgstr ""
+
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
+msgstr ""
+
+#. Default: "Web"
+#: components/theme/Views/EventView
+msgid "Web"
 msgstr ""
 
 #. Default: "Web site"
@@ -587,12 +638,12 @@ msgid "Websites:"
 msgstr ""
 
 #. Default: "When"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "When"
 msgstr ""
 
 #. Default: "Where"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Where"
 msgstr ""
 
@@ -1884,107 +1935,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr ""
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr ""
 
@@ -2623,11 +2674,6 @@ msgid "Advanced search for Climate-Adapt database items <a href="/redirect_to_se
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
-msgid "Agenda and supporting documents"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/vocabulary.py:454
 msgid "Air pollution and aero-allergens"
 msgstr ""
@@ -3233,11 +3279,6 @@ msgid "Land-use and Food Systems"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:99
-msgid "Language of the conference"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
 msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
 msgstr ""
@@ -3391,11 +3432,6 @@ msgid "Overview list of all indices"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:91
-msgid "Participation"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:254
 msgid "Please contact us for any other enquiry on this Case Study or to share a new Case Study (email <a href="mailto: climate.adapt@eea.europa.eu">climate.adapt@eea.europa.eu</a>)"
 msgstr ""
@@ -3418,11 +3454,6 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/item_statistics.pt:23
 msgid "Portal Type"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
-msgid "Practical information"
 msgstr ""
 
 #. undefined
@@ -3474,11 +3505,6 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:124
 msgid "Registration:"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:45
-msgid "Related documents and presentations"
 msgstr ""
 
 #. undefined
@@ -3557,11 +3583,6 @@ msgstr ""
 #: ../../climateadapt/browser/pt/indicator_view.pt:98
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
 msgid "Sectors"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/video_view.pt:39
-msgid "See video outside Climate-ADAPT"
 msgstr ""
 
 #. undefined
