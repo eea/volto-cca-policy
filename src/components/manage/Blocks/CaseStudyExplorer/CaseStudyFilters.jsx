@@ -1,7 +1,8 @@
-import { FormattedMessage } from 'react-intl';
+import { useIntl, FormattedMessage } from 'react-intl';
 
 export default function CaseStudyFilters(props) {
   const { filters, activeFilters, setActiveFilters } = props;
+  const intl = useIntl();
   return (
     <>
       <h4>
@@ -12,7 +13,7 @@ export default function CaseStudyFilters(props) {
       </h4>
       {Object.entries(filters?.sectors || {}).map(([value, label], index) => (
         <p key={index}>
-          <span>{label}</span>
+          <span>{intl.formatMessage({ id: label })}</span>
           <input
             value={value}
             type="checkbox"
@@ -40,7 +41,7 @@ export default function CaseStudyFilters(props) {
       </h4>
       {Object.entries(filters?.impacts || {}).map(([value, label], index) => (
         <p key={index}>
-          <span>{label}</span>
+          <span>{intl.formatMessage({ id: label })}</span>
           <input
             value={value}
             type="checkbox"
