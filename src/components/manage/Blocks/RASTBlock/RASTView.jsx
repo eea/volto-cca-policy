@@ -23,6 +23,11 @@ export default function RASTView(props) {
   if (typeof root_path === 'undefined') {
     root_path = '/';
   }
+  let skip_items = data?.skip_items;
+
+  if (typeof skip_items !== 'string') {
+    skip_items = '';
+  }
   let items = useChildren(root_path);
   if (root_path === '/') {
     items = [];
@@ -32,6 +37,7 @@ export default function RASTView(props) {
     <div className="block rast-block">
       <ContextNavigation
         items={items}
+        skip_items={skip_items}
         location={{
           pathname: root_path,
         }}

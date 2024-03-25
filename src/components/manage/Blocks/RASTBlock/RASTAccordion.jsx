@@ -35,11 +35,6 @@ const RASTAccordion = (props) => {
               }}
             >
               <span className="item-title">{item.title}</span>
-              {active ? (
-                <Icon className="ri-arrow-up-s-line" />
-              ) : (
-                <Icon className="ri-arrow-down-s-line" />
-              )}
             </Accordion.Title>
             <Accordion.Content active={active}>
               <RASTAccordionContent

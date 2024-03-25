@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
  * INavigationPortlet
  */
 export function ContextNavigationComponent(props) {
-  const { location, items } = props;
+  const { location, items, skip_items } = props;
   let activeMenu = null;
 
   const curent_location = useLocation();
@@ -28,6 +28,7 @@ export function ContextNavigationComponent(props) {
     <>
       <RASTMap
         items={items}
+        skip_items={skip_items}
         pathname={location.pathname}
         activeMenu={activeMenu}
       />

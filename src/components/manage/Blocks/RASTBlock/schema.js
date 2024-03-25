@@ -1,4 +1,4 @@
-const fields = ['root_path'];
+const fields = ['root_path', 'skip_items'];
 
 export default {
   title: 'RAST',
@@ -18,6 +18,13 @@ export default {
       description:
         'Ex: /en/knowledge-and-data/regional-adaptation-support-tool',
       required: true,
+      noValueOption: false,
+    },
+    skip_items: {
+      title: 'Skip items list',
+      type: 'string',
+      description: 'Ex: to skip first and third "0,2"',
+      required: false,
       noValueOption: false,
     },
   },
