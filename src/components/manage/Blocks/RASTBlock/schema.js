@@ -21,7 +21,7 @@ export default {
       noValueOption: false,
     },
     skip_items: {
-      title: 'Skip items list',
+      title: 'Exclude from image navigator',
       type: 'string',
       description: 'Ex: to skip first and third "0,2"',
       required: false,
