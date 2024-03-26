@@ -26,8 +26,14 @@ msgstr ""
 msgid "Adaptation elements:"
 msgstr ""
 
+#. Default: "Adaptation options"
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
+msgid "Adaptation options"
+msgstr ""
+
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation sectors"
 msgstr ""
 
@@ -87,6 +93,11 @@ msgstr ""
 msgid "Choices"
 msgstr ""
 
+#. Default: "Choose a region"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Choose a region"
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -98,12 +109,14 @@ msgid "City:"
 msgstr ""
 
 #. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr ""
 
 #. Default: "Climate impacts"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Climate impacts"
 msgstr ""
 
@@ -403,6 +416,11 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Other regions"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Other regions"
+msgstr ""
+
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
 msgid "Participation"
@@ -445,6 +463,11 @@ msgstr ""
 msgid "References"
 msgstr ""
 
+#. Default: "Region's countries:"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Region's countries:"
+msgstr ""
+
 #. Default: "Regions"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Regions"
@@ -476,6 +499,7 @@ msgid "Sa"
 msgstr ""
 
 #. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr ""
@@ -645,11 +669,6 @@ msgstr ""
 #. Default: "Where"
 #: helpers/Utils
 msgid "Where"
-msgstr ""
-
-#. undefined
-
-msgid "Adaptation options"
 msgstr ""
 
 #. undefined
@@ -1784,11 +1803,6 @@ msgid "Observatory workplan for 2021-22"
 msgstr ""
 
 #. undefined
-#: site_menu:60
-msgid "Other regions"
-msgstr ""
-
-#. undefined
 #: site_menu:12
 msgid "Outreach & dissemination"
 msgstr ""
@@ -1935,107 +1949,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "KEY EU ACTIONS"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Just resilience"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Nature-based solutions"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Economic losses and fatalities"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Strategic objectives 2030"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Transnational, National, local"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Aero-allergens"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Heat"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Pollution"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Occupational safety and health effects"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr ""
 
 #. undefined
-#:
+#: 
 msgid "European environment and health atlas"
 msgstr ""
 
@@ -2809,13 +2823,6 @@ msgid "Choose a country:"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/regions-section-select.pt:7
-#: ../../climateadapt/browser/pt/transnational_regions.pt:431
-#: ../../climateadapt/tiles/pt/transregional_select.pt:112
-msgid "Choose a region"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/browser/__init__.py:231
 msgid "City"
 msgstr ""
@@ -3490,11 +3497,6 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/adaptationoption_view.pt:113
 msgid "References:"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/tiles/pt/transregional_select.pt:120
-msgid "Region's countries:"
 msgstr ""
 
 #. undefined
