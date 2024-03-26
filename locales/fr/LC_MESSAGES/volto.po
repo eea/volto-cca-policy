@@ -58,10 +58,20 @@ msgstr "Avr"
 msgid "Aug"
 msgstr "Août"
 
+#. Default: "Background information"
+#: components/theme/Views/C3SIndicatorView
+msgid "Background information"
+msgstr "Informations d'arrière-plan"
+
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Régions biogéographiques :"
+
+#. Default: "Case Studies Documents"
+#: helpers/Utils
+msgid "Case Studies Documents"
+msgstr "Documents d'études de cas"
 
 #. Default: "Case Study Description"
 #: components/theme/Views/CaseStudyView
@@ -193,10 +203,30 @@ msgstr "Défaut"
 msgid "Description"
 msgstr "Description"
 
+#. Default: "Disclaimer"
+#: components/theme/Views/C3SIndicatorView
+msgid "Disclaimer"
+msgstr "Clause de non-responsabilité"
+
+#. Default: "Documents"
+#: helpers/Utils
+msgid "Documents"
+msgstr "Documents"
+
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
 msgstr "Durée:"
+
+#. Default: "ECDE homepage"
+#: components/theme/Views/C3SIndicatorView
+msgid "ECDE homepage"
+msgstr "Page d'accueil de l'ECDE"
+
+#. Default: "Explore in detail"
+#: components/theme/Views/C3SIndicatorView
+msgid "Explore in detail"
+msgstr "Explorer en détail"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -217,6 +247,11 @@ msgstr "Programme de financement:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Caractérisation géographique:"
+
+#. Default: "Go back"
+#: components/theme/Views/C3SIndicatorView
+msgid "Go back"
+msgstr "Retourner"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -416,6 +451,11 @@ msgstr "Contributions de l'Observatoire"
 msgid "Oct"
 msgstr "Octobre"
 
+#. Default: "Organisation Documents"
+#: helpers/Utils
+msgid "Organisation Documents"
+msgstr "Documents de l'organisation"
+
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
@@ -440,6 +480,11 @@ msgstr "Informations pratiques"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Renseignements sur le projet"
+
+#. Default: "Publications and Reports Documents"
+#: helpers/Utils
+msgid "Publications and Reports Documents"
+msgstr "Documents de publications et de rapports"
 
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
@@ -3090,11 +3135,6 @@ msgstr "Caractérisation géographique:"
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:50
 msgid "Getting started"
 msgstr "Commencer"
-
-#. undefined
-#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
-msgid "Go back"
-msgstr "Retourner"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300

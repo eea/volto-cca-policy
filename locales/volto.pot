@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-26T05:43:37.748Z\n"
+"POT-Creation-Date: 2024-03-26T06:21:50.402Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -60,9 +60,19 @@ msgstr ""
 msgid "Aug"
 msgstr ""
 
+#. Default: "Background information"
+#: components/theme/Views/C3SIndicatorView
+msgid "Background information"
+msgstr ""
+
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
+msgstr ""
+
+#. Default: "Case Studies Documents"
+#: helpers/Utils
+msgid "Case Studies Documents"
 msgstr ""
 
 #. Default: "Case Study Description"
@@ -195,9 +205,29 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#. Default: "Disclaimer"
+#: components/theme/Views/C3SIndicatorView
+msgid "Disclaimer"
+msgstr ""
+
+#. Default: "Documents"
+#: helpers/Utils
+msgid "Documents"
+msgstr ""
+
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
+msgstr ""
+
+#. Default: "ECDE homepage"
+#: components/theme/Views/C3SIndicatorView
+msgid "ECDE homepage"
+msgstr ""
+
+#. Default: "Explore in detail"
+#: components/theme/Views/C3SIndicatorView
+msgid "Explore in detail"
 msgstr ""
 
 #. Default: "Feb"
@@ -218,6 +248,11 @@ msgstr ""
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
+msgstr ""
+
+#. Default: "Go back"
+#: components/theme/Views/C3SIndicatorView
+msgid "Go back"
 msgstr ""
 
 #. Default: "Governance level:"
@@ -418,6 +453,11 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Organisation Documents"
+#: helpers/Utils
+msgid "Organisation Documents"
+msgstr ""
+
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
@@ -441,6 +481,11 @@ msgstr ""
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
+msgstr ""
+
+#. Default: "Publications and Reports Documents"
+#: helpers/Utils
+msgid "Publications and Reports Documents"
 msgstr ""
 
 #. Default: "Published in Climate-ADAPT"

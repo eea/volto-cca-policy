@@ -58,9 +58,19 @@ msgstr ""
 msgid "Aug"
 msgstr ""
 
+#. Default: "Background information"
+#: components/theme/Views/C3SIndicatorView
+msgid "Background information"
+msgstr ""
+
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
+msgstr ""
+
+#. Default: "Case Studies Documents"
+#: helpers/Utils
+msgid "Case Studies Documents"
 msgstr ""
 
 #. Default: "Case Study Description"
@@ -193,9 +203,29 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#. Default: "Disclaimer"
+#: components/theme/Views/C3SIndicatorView
+msgid "Disclaimer"
+msgstr ""
+
+#. Default: "Documents"
+#: helpers/Utils
+msgid "Documents"
+msgstr ""
+
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
+msgstr ""
+
+#. Default: "ECDE homepage"
+#: components/theme/Views/C3SIndicatorView
+msgid "ECDE homepage"
+msgstr ""
+
+#. Default: "Explore in detail"
+#: components/theme/Views/C3SIndicatorView
+msgid "Explore in detail"
 msgstr ""
 
 #. Default: "Feb"
@@ -216,6 +246,11 @@ msgstr ""
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
+msgstr ""
+
+#. Default: "Go back"
+#: components/theme/Views/C3SIndicatorView
+msgid "Go back"
 msgstr ""
 
 #. Default: "Governance level:"
@@ -416,6 +451,11 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Organisation Documents"
+#: helpers/Utils
+msgid "Organisation Documents"
+msgstr ""
+
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
@@ -439,6 +479,11 @@ msgstr ""
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
+msgstr ""
+
+#. Default: "Publications and Reports Documents"
+#: helpers/Utils
+msgid "Publications and Reports Documents"
 msgstr ""
 
 #. Default: "Published in Climate-ADAPT"
@@ -3089,11 +3134,6 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:50
 msgid "Getting started"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
-msgid "Go back"
 msgstr ""
 
 #. undefined
