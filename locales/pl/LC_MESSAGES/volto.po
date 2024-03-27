@@ -26,8 +26,14 @@ msgstr "Taktyki adaptacyjne wdrożone w tym przypadku"
 msgid "Adaptation elements:"
 msgstr "Elementy adaptacyjne:"
 
+#. Default: "Adaptation options"
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
+msgid "Adaptation options"
+msgstr "Taktyki adaptacyjne"
+
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation sectors"
 msgstr "Sektory adaptacyjne"
 
@@ -45,17 +51,27 @@ msgstr "Agenda i dokumenty uzupełniające"
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
-msgstr ""
+msgstr "kwiecień"
 
 #. Default: "Aug"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Aug"
-msgstr ""
+msgstr "sierpień"
+
+#. Default: "Background information"
+#: components/theme/Views/C3SIndicatorView
+msgid "Background information"
+msgstr "Informacje ogólne"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
-msgstr ""
+msgstr "Regiony biogeograficzne:"
+
+#. Default: "Case Studies Documents"
+#: helpers/Utils
+msgid "Case Studies Documents"
+msgstr "Dokumenty dotyczące studiów przypadku"
 
 #. Default: "Case Study Description"
 #: components/theme/Views/CaseStudyView
@@ -65,7 +81,7 @@ msgstr "Opis studium przypadku"
 #. Default: "Case Study illustrations"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
-msgstr ""
+msgstr "Ilustracje studium przypadku"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -75,7 +91,7 @@ msgstr "Studia przypadków związane z tą opcją:"
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
 msgid "Category"
-msgstr ""
+msgstr "Kategoria"
 
 #. Default: "Challenges"
 #: components/theme/Views/CaseStudyView
@@ -85,7 +101,12 @@ msgstr "Wyzwania"
 #. Default: "Choices"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Choices"
-msgstr ""
+msgstr "Wybory"
+
+#. Default: "Choose a region"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Choose a region"
+msgstr "Wybierz region"
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -95,15 +116,17 @@ msgstr "Wybierz mapę tematyczną:"
 #. Default: "City:"
 #: helpers/ContentMetadata
 msgid "City:"
-msgstr ""
+msgstr "Miasto:"
 
 #. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr "Wpływ na klimat"
 
 #. Default: "Climate impacts"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Climate impacts"
 msgstr "Wpływ klimatu"
 
@@ -115,12 +138,12 @@ msgstr "Wpływ klimatu:"
 #. Default: "Climate-ADAPT page for this event"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
-msgstr ""
+msgstr "Strona Climate-ADAPT poświęcona temu wydarzeniu"
 
 #. Default: "Close"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Close"
-msgstr ""
+msgstr "Zamknąć"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -167,12 +190,12 @@ msgstr "Data wydania:"
 #. Default: "Dec"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Dec"
-msgstr ""
+msgstr "grudzień"
 
 #. Default: "Default"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Default"
-msgstr ""
+msgstr "Domyślny"
 
 #. Default: "Description"
 #: components/manage/Widgets/CreatableSelectWidget
@@ -180,20 +203,40 @@ msgstr ""
 msgid "Description"
 msgstr "Opis"
 
+#. Default: "Disclaimer"
+#: components/theme/Views/C3SIndicatorView
+msgid "Disclaimer"
+msgstr "Zastrzeżenie"
+
+#. Default: "Documents"
+#: helpers/Utils
+msgid "Documents"
+msgstr "Dokumenty"
+
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
 msgstr "Czas trwania:"
 
+#. Default: "ECDE homepage"
+#: components/theme/Views/C3SIndicatorView
+msgid "ECDE homepage"
+msgstr "Strona główna ECDE"
+
+#. Default: "Explore in detail"
+#: components/theme/Views/C3SIndicatorView
+msgid "Explore in detail"
+msgstr "Przeglądaj szczegółowo"
+
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
-msgstr ""
+msgstr "luty"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
-msgstr ""
+msgstr "ks"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -205,6 +248,11 @@ msgstr "Program finansowania:"
 msgid "Geographic characterisation:"
 msgstr "Charakterystyka geograficzna:"
 
+#. Default: "Go back"
+#: components/theme/Views/C3SIndicatorView
+msgid "Go back"
+msgstr "Wróć"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
@@ -213,7 +261,7 @@ msgstr "Poziom zarządzania:"
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
-msgstr ""
+msgstr "Dostępny HHWS (kliknij kraj, aby uzyskać więcej informacji)"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -243,7 +291,7 @@ msgstr "Kategorie IPCC"
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
-msgstr ""
+msgstr "Jeśli masz dalsze pytania, możesz się z nami skontaktować"
 
 #. Default: "Implementation Time"
 #: components/theme/Views/AdaptationOptionView
@@ -264,22 +312,22 @@ msgstr "Wskaźniki"
 #. Default: "Info"
 #: helpers/Utils
 msgid "Info"
-msgstr ""
+msgstr "Informacje"
 
 #. Default: "Jan"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jan"
-msgstr ""
+msgstr "styczeń"
 
 #. Default: "Jul"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jul"
-msgstr ""
+msgstr "lipiec"
 
 #. Default: "Jun"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
-msgstr ""
+msgstr "czerwca"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -331,22 +379,22 @@ msgstr "Linki do dalszych informacji"
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
-msgstr ""
+msgstr "Region makrotransnarodowy:"
 
 #. Default: "Mar"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mar"
-msgstr ""
+msgstr "Zniszczyć"
 
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "May"
-msgstr ""
+msgstr "Móc"
 
 #. Default: "Mo"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mo"
-msgstr ""
+msgstr "Pon"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -366,7 +414,7 @@ msgstr "Brak informacji"
 #. Default: "No options"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No options"
-msgstr ""
+msgstr "Brak opcji"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -376,12 +424,12 @@ msgstr "Brak wyników"
 #. Default: "No value"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No value"
-msgstr ""
+msgstr "Bez wartości"
 
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Nov"
-msgstr ""
+msgstr "listopad"
 
 #. Default: "Objectives"
 #: components/theme/Views/CaseStudyView
@@ -396,12 +444,22 @@ msgstr "Wkład Observatory:"
 #. Default: "Observatory contributions"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
-msgstr ""
+msgstr "Wkłady obserwatoriów"
 
 #. Default: "Ott"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
-msgstr ""
+msgstr "paź"
+
+#. Default: "Organisation Documents"
+#: helpers/Utils
+msgid "Organisation Documents"
+msgstr "Dokumenty organizacyjne"
+
+#. Default: "Other regions"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Other regions"
+msgstr "Inne regiony"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -423,6 +481,11 @@ msgstr "Praktyczne informacje"
 msgid "Project information"
 msgstr "Informacje o projekcie"
 
+#. Default: "Publications and Reports Documents"
+#: helpers/Utils
+msgid "Publications and Reports Documents"
+msgstr "Publikacje i raporty Dokumenty"
+
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
@@ -443,17 +506,22 @@ msgstr "Źródło informacji"
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "References"
-msgstr ""
+msgstr "Bibliografia"
+
+#. Default: "Region's countries:"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Region's countries:"
+msgstr "Kraje regionu:"
 
 #. Default: "Regions"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Regions"
-msgstr ""
+msgstr "Regiony"
 
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
-msgstr ""
+msgstr "Powiązana zawartość:"
 
 #. Default: "Related documents and presentations"
 #: components/theme/Views/DatabaseItemView
@@ -468,14 +536,15 @@ msgstr "Przydatność"
 #. Default: "Required"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Required"
-msgstr ""
+msgstr "Wymagany"
 
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
-msgstr ""
+msgstr "Sa"
 
 #. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr "Sektor"
@@ -488,7 +557,7 @@ msgstr "Sektory:"
 #. Default: "See less"
 #: helpers/Utils
 msgid "See less"
-msgstr ""
+msgstr "Zobacz mniej"
 
 #. Default: "See more"
 #: helpers/Utils
@@ -503,12 +572,12 @@ msgstr "Zobacz film poza Climate-ADAPT"
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
-msgstr ""
+msgstr "Wybierać…"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
-msgstr ""
+msgstr "wrzesień"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -520,7 +589,7 @@ msgstr "Udostępnij swoje informacje"
 #. Default: "Short Name"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Short Name"
-msgstr ""
+msgstr "Krótkie imię"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -548,17 +617,17 @@ msgstr "Udział zainteresowanych stron"
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Su"
-msgstr ""
+msgstr "Su"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
-msgstr ""
+msgstr "Podkrajowcy:"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Subnational or local"
-msgstr ""
+msgstr "Subkrajowy lub lokalny"
 
 #. Default: "Success and Limiting Factors"
 #: components/theme/Views/AdaptationOptionView
@@ -569,7 +638,7 @@ msgstr "Czynniki sukcesu i czynniki ograniczające"
 #. Default: "Th"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Th"
-msgstr ""
+msgstr "Cz"
 
 #. Default: "The date refers to the date of release of the video"
 #: helpers/ContentMetadata
@@ -589,17 +658,17 @@ msgstr "Data odnosi się do momentu, w którym element został przygotowany lub 
 #. Default: "Title"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Title"
-msgstr ""
+msgstr "Tytuł"
 
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
-msgstr ""
+msgstr "Wt"
 
 #. Default: "Used for programmatic access to the fieldset."
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Used for programmatic access to the fieldset."
-msgstr ""
+msgstr "Służy do programowego dostępu do zestawu pól."
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -609,22 +678,22 @@ msgstr "Zobacz wszystkie wkłady w katalogu zasobów"
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
 msgid "Visit external website"
-msgstr ""
+msgstr "Odwiedź zewnętrzną witrynę internetową"
 
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr ""
+msgstr "My"
 
 #. Default: "Web"
 #: components/theme/Views/EventView
 msgid "Web"
-msgstr ""
+msgstr "Sieć"
 
 #. Default: "Web site"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Web site"
-msgstr ""
+msgstr "Strona internetowa"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -640,17 +709,12 @@ msgstr "Strony internetowe:"
 #. Default: "When"
 #: helpers/Utils
 msgid "When"
-msgstr ""
+msgstr "Gdy"
 
 #. Default: "Where"
 #: helpers/Utils
 msgid "Where"
-msgstr ""
-
-#. undefined
-
-msgid "Adaptation options"
-msgstr "Taktyki adaptacyjne"
+msgstr "Gdzie"
 
 #. undefined
 
@@ -770,17 +834,17 @@ msgstr "Ciepło i zimno"
 #. undefined
 
 msgid "Mean air temperature"
-msgstr ""
+msgstr "Średnia temperatura powietrza"
 
 #. undefined
 
 msgid "Extreme heat"
-msgstr ""
+msgstr "Ekstremalne ciepło"
 
 #. undefined
 
 msgid "Cold spells and frost"
-msgstr ""
+msgstr "Zimne okresy i mróz"
 
 #. undefined
 
@@ -790,7 +854,7 @@ msgstr "Mokry i suchy"
 #. undefined
 
 msgid "Mean precipitation"
-msgstr ""
+msgstr "Średnie opady"
 
 #. undefined
 
@@ -800,17 +864,17 @@ msgstr "Ekstremalne opady"
 #. undefined
 
 msgid "River flooding"
-msgstr ""
+msgstr "Wylanie rzeki"
 
 #. undefined
 
 msgid "Aridity"
-msgstr ""
+msgstr "Jałowość"
 
 #. undefined
 
 msgid "Wildfire"
-msgstr ""
+msgstr "Pożar"
 
 #. undefined
 
@@ -820,7 +884,7 @@ msgstr "Śnieg i lód lądowy"
 #. undefined
 
 msgid "Snow and ice"
-msgstr ""
+msgstr "Śnieg i lód"
 
 #. undefined
 
@@ -830,12 +894,12 @@ msgstr "Nadbrzeżny"
 #. undefined
 
 msgid "Relative sea level"
-msgstr ""
+msgstr "Względny poziom morza"
 
 #. undefined
 
 msgid "Coastal flooding"
-msgstr ""
+msgstr "Powódź przybrzeżna"
 
 #. undefined
 
@@ -926,7 +990,7 @@ msgstr "Budynki mogą być podatne na zmiany klimatyczne. W przyszłości może 
 #: ../theme/climateadaptv2/index.html:952
 #: ../theme/climateadaptv2/tab-policies-rule.html:39
 msgid "Business and Industry"
-msgstr "Biznes i Przemysł "
+msgstr "Biznes i Przemysł"
 
 #. undefined
 #: ../theme/climateadaptv2/index.html:1333
@@ -1021,7 +1085,7 @@ msgstr "Ograniczenie ryzyka klęsk żywiołowych"
 #. undefined
 #: ../theme/climateadaptv2/index.html:536
 msgid "EU Mission on Adaptation"
-msgstr ""
+msgstr "Misja UE w sprawie adaptacji"
 
 #. undefined
 #: ../theme/climateadaptv2/index.html:432
@@ -1052,17 +1116,17 @@ msgstr "Europejski Eksplorator Danych Klimatycznych"
 #. undefined
 #: ../theme/climateadaptv2/index.html:566
 msgid "European Climate Risk Assessment"
-msgstr ""
+msgstr "Europejska ocena ryzyka klimatycznego"
 
 #. undefined
 #: ../theme/climateadaptv2/index.html:529
 msgid "European Climate Risk Assessment<br />(EUCRA)"
-msgstr ""
+msgstr "Europejska Ocena Ryzyka Klimatycznego<br />(EUCRA)"
 
 #. undefined
 #: ../theme/climateadaptv2/index.html:543
 msgid "European Climate and Health Observatory"
-msgstr ""
+msgstr "Europejskie Obserwatorium Klimatu i Zdrowia"
 
 #. undefined
 #: ../theme/climateadaptv2/index.html:1637
@@ -1143,7 +1207,7 @@ msgstr "Zdrowie"
 #: ../theme/climateadaptv2/index.html:1015
 #: ../theme/climateadaptv2/tab-policies-rule.html:102
 msgid "ICT"
-msgstr ""
+msgstr "ICT"
 
 #. undefined
 #: ../theme/climateadaptv2/index.html:1462
@@ -1514,7 +1578,7 @@ msgstr "Wydarzenia i seminaria internetowe Climate-ADAPT"
 #. undefined
 #: site_menu:16
 msgid "Climate-ADAPT performance reporting"
-msgstr "Sprawozdania dotyczące wyników Climate-ADAPT "
+msgstr "Sprawozdania dotyczące wyników Climate-ADAPT"
 
 #. undefined
 #: site_menu:83
@@ -1560,7 +1624,7 @@ msgstr "Materiały upowszechniające"
 #. undefined
 #: health_menu:33
 msgid "ECDC Vibrio map viewer"
-msgstr "Przeglądarka map ECDC Vibrio "
+msgstr "Przeglądarka map ECDC Vibrio"
 
 #. undefined
 #: site_menu:21
@@ -1784,11 +1848,6 @@ msgid "Observatory workplan for 2021-22"
 msgstr "Plan pracy Obserwatorium na 2021-22"
 
 #. undefined
-#: site_menu:60
-msgid "Other regions"
-msgstr "Inne regiony"
-
-#. undefined
 #: site_menu:12
 msgid "Outreach & dissemination"
 msgstr "Działania zewnętrzne i upowszechnianie"
@@ -1935,107 +1994,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Narażenie wrażliwych grup na zagrożenia klimatyczne"
 
 #. undefined
-#:
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "KLUCZOWE DZIAŁANIA UE"
 
 #. undefined
-#:
+#: 
 msgid "Just resilience"
 msgstr "Sprawiedliwa odporność"
 
 #. undefined
-#:
+#: 
 msgid "Nature-based solutions"
 msgstr "Rozwiązania oparte na przyrodzie"
 
 #. undefined
-#:
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Straty ekonomiczne i ofiary śmiertelne"
 
 #. undefined
-#:
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Cele strategiczne 2030"
 
 #. undefined
-#:
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Dostępność miejskich terenów zielonych dla grup wrażliwych"
 
 #. undefined
-#:
+#: 
 msgid "Transnational, National, local"
 msgstr "Ponadnarodowy, narodowy, lokalny"
 
 #. undefined
-#:
+#: 
 msgid "Aero-allergens"
 msgstr "Alergeny wziewne"
 
 #. undefined
-#:
+#: 
 msgid "Heat"
 msgstr "Ciepło"
 
 #. undefined
-#:
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostępność szpitali w Europie"
 
 #. undefined
-#:
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADAPTACJA W SEKTORZE LEŚNYM"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone"
 msgstr "Ozonu w warstwie przyziemnej"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognoza ozonu w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Pollution"
 msgstr "Zanieczyszczenie"
 
 #. undefined
-#:
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Bezpieczeństwo i higiena pracy"
 
 #. undefined
-#:
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Plan pracy Obserwatorium na 2023-24"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Prognoza PM2.5 w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Prognoza PM10 w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Prognoza NO2 w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 Raport EOG na temat klimatu i zdrowia"
 
 #. undefined
-#:
+#: 
 msgid "European environment and health atlas"
 msgstr "Europejski atlas środowiska i zdrowia"
 
@@ -2519,12 +2578,12 @@ msgstr "6.5 Monitorowanie i ocena adaptacji: samokontrola"
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:72
 msgid "<!-- <span class="map-type">NAS</span> --> HHWS available (click on country for further information)"
-msgstr ""
+msgstr "<!-- <span class="map-type">NAS</span> --> Dostępny HHWS (kliknij kraj, aby uzyskać więcej informacji)"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:79
 msgid "<!-- <span class="map-type">NAS</span> --> No information"
-msgstr ""
+msgstr "<!-- <span class="map-type">NAS</span> --> Brak informacji"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:429
@@ -2549,32 +2608,32 @@ msgstr "<a href="https://www.uia-initiative.eu/en"> Innowacyjne Działania Miejs
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:292
 msgid "<span>x</span> (${DYNAMIC_CONTENT}) <i class="fa fa-picture-o" aria-hidden="true"></i>"
-msgstr ""
+msgstr "<span>x</span> (${DYNAMIC_CONTENT}) <i class="fa fa-picture-o" aria-hidden="true"></i>"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:142
 msgid "<strong>Language:</strong> <span>${DYNAMIC_CONTENT}</span>"
-msgstr ""
+msgstr "<strong>Język:</strong> <span>${DYNAMIC_CONTENT</span>"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:86
 msgid "A background document for the event is available <a href="${DYNAMIC_CONTENT}">here</a>"
-msgstr ""
+msgstr "Dokument informacyjny dotyczący wydarzenia jest dostępny <a href="${DYNAMIC_CONTENT}">tutaj</a>"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
 msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
-msgstr ""
+msgstr "Wartość określająca jakość obrazów o dwukrotnie większej gęstości pikseli, od 1 (najniższa) do 95 (najwyższa). Wartość 0 będzie oznaczać, że zostanie użyta domyślna wartość plone.scaling, która obecnie wynosi 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
 msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
-msgstr ""
+msgstr "Wartość określająca jakość obrazów o 3x większej gęstości pikseli, od 1 (najniższa) do 95 (najwyższa). Wartość 0 będzie oznaczać, że zostanie użyta domyślna wartość plone.scaling, która obecnie wynosi 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
 msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
-msgstr ""
+msgstr "Wartość jakości skalowanych obrazów od 1 (najniższa) do 95 (najwyższa). Wartość 0 będzie oznaczać, że zostanie użyta domyślna wartość plone.scaling, która obecnie wynosi 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2696,7 +2755,7 @@ msgstr "Wszystkie miary typu kluczowego"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:42
 msgid "Allowed image sizes"
-msgstr ""
+msgstr "Dozwolone rozmiary obrazów"
 
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:419
@@ -2796,7 +2855,7 @@ msgstr "Studia przypadków zebrane na poziomie krajowym w Hiszpanii, dostarczone
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
 msgid "Check-out created"
-msgstr ""
+msgstr "Utworzono wyewidencjonowanie"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:51
@@ -2807,13 +2866,6 @@ msgstr "Wybierz kraj"
 #: ../../climateadapt/tiles/pt/country_select.pt:10
 msgid "Choose a country:"
 msgstr "Wybierz kraj:"
-
-#. undefined
-#: ../../climateadapt/browser/pt/regions-section-select.pt:7
-#: ../../climateadapt/browser/pt/transnational_regions.pt:431
-#: ../../climateadapt/tiles/pt/transregional_select.pt:112
-msgid "Choose a region"
-msgstr "Wybierz region"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:231
@@ -2889,7 +2941,7 @@ msgstr "Stworzone przez:"
 #. undefined
 #: ../../climateadapt/vocabulary.py:461
 msgid "Critical Infrastructure"
-msgstr ""
+msgstr "Infrastruktura krytyczna"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:301
@@ -2982,7 +3034,7 @@ msgstr "Misje UE"
 #. undefined
 #: ../../climateadapt/vocabulary.py:466
 msgid "Ecosystems and Nature Based Solutions"
-msgstr ""
+msgstr "Ekosystemy i rozwiązania oparte na przyrodzie"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:395
@@ -3018,7 +3070,7 @@ msgstr "Źródło zewnętrzne"
 #. undefined
 #: ../../climateadapt/vocabulary.py:476
 msgid "Extreme Precipitation"
-msgstr ""
+msgstr "Ekstremalne opady"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:347
@@ -3085,11 +3137,6 @@ msgid "Getting started"
 msgstr "Jak zacząć"
 
 #. undefined
-#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
-msgid "Go back"
-msgstr "Wróć"
-
-#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:255
 msgid "Go to Case Study Explorer"
@@ -3149,7 +3196,7 @@ msgstr "Strona internetowa HHWS"
 #. undefined
 #: ../../climateadapt/vocabulary.py:462
 msgid "Health and Wellbeing"
-msgstr ""
+msgstr "Zdrowie i dobre samopoczucie"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:105
@@ -3159,7 +3206,7 @@ msgstr "Indeks upału HHWS:"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:79
 msgid "High pixel density mode"
-msgstr ""
+msgstr "Tryb wysokiej gęstości pikseli"
 
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:423
@@ -3189,12 +3236,12 @@ msgstr "Zdjęcie dzięki uprzejmości <a style = "color: #999; font-size: 12px;"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
 msgid "Image quality at 2x"
-msgstr ""
+msgstr "Jakość obrazu przy 2x"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:105
 msgid "Image quality at 3x"
-msgstr ""
+msgstr "Jakość obrazu przy 3x"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:234
@@ -3204,7 +3251,7 @@ msgstr "Wdrażanie adaptacji"
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:75
 msgid "In 2021-2027, the <a href="https://ec.europa.eu/regional_policy/policy/cooperation/european-territorial/next_en"> cross-border cooperation (CBC) between EU Member States and Neighbourhood region </a> is governed by the EU Cohesion policy and the programmes will be fully part of Interreg. In order to highlight the external dimension of Cohesion policy and at the same time to emphasise how close EU and partner countries stand, the new programmes is called “Interreg NEXT”."
-msgstr ""
+msgstr "W latach 2021-2027 prowadzona będzie <a href="https://ec.europa.eu/regional_policy/policy/cooperative/european-territorial/next_en"> współpraca transgraniczna (CBC) pomiędzy państwami członkowskimi UE a regionem sąsiedzkim</ a> podlega polityce spójności UE, a programy będą w pełni częścią Interreg. Aby podkreślić zewnętrzny wymiar polityki spójności i jednocześnie podkreślić bliskość UE i krajów partnerskich, nowe programy nazwano „Interreg NEXT”."
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:120
@@ -3259,12 +3306,12 @@ msgstr "Mieci typu kluczowego"
 #. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
-msgstr ""
+msgstr "Słowo kluczowe pomyślnie usunięte: ${kw_old}."
 
 #. undefined
 #: ../../climateadapt/browser/admin.py:592
 msgid "Keyword succesfully renamed: ${kw_old} to ${kw_new}."
-msgstr ""
+msgstr "Nazwa słowa kluczowego została pomyślnie zmieniona: ${kw_old} na ${kw_new}."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:65
@@ -3276,7 +3323,7 @@ msgstr "Słowa kluczowe"
 #. undefined
 #: ../../climateadapt/vocabulary.py:463
 msgid "Land-use and Food Systems"
-msgstr ""
+msgstr "Systemy użytkowania gruntów i żywności"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
@@ -3313,12 +3360,12 @@ msgstr "Link do metadanych:"
 #. undefined
 #: ../../climateadapt/vocabulary.py:467
 msgid "Local Economic Systems"
-msgstr ""
+msgstr "Lokalne systemy gospodarcze"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:450
 msgid "MCR 2030"
-msgstr ""
+msgstr "MCR 2030"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:180
@@ -3354,12 +3401,12 @@ msgstr "Monitorowanie i ocena adaptacji"
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
 msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
+msgstr "Krajowa polityka adaptacyjna nie została zgłoszona poza obowiązkowym raportowaniem w 2023 r"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
 msgid "National adaptation policy reported in 2023"
-msgstr ""
+msgstr "Krajowa polityka adaptacyjna raportowana w 2023 r"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:80
@@ -3394,7 +3441,7 @@ msgstr "Niespecyficzne"
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:428
 msgid "OPPLA"
-msgstr ""
+msgstr "OPPLA"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:336
@@ -3493,11 +3540,6 @@ msgid "References:"
 msgstr "Bibliografia:"
 
 #. undefined
-#: ../../climateadapt/tiles/pt/transregional_select.pt:120
-msgid "Region's countries:"
-msgstr "Kraje regionu:"
-
-#. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:61
 msgid "Registration"
 msgstr "Rejestracja"
@@ -3535,7 +3577,7 @@ msgstr "Zrecenzowany przez:"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:66
 msgid "Scaled image quality"
-msgstr ""
+msgstr "Skalowana jakość obrazu"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:58
@@ -3603,7 +3645,7 @@ msgstr "Wybierz sektory, dla których chcesz otrzymać wiadomość e -mail z pow
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
 msgid "Share button tile"
-msgstr ""
+msgstr "Udostępnij kafelek przycisku"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:11
@@ -3640,7 +3682,7 @@ msgstr "Źródło:"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
 msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
+msgstr "Określ wszystkie dozwolone maksymalne wymiary obrazu, po jednym w wierszu. Wymagany format to &lt;nazwa&gt; &lt;szerokość&gt;:&lt;wysokość&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3740,7 +3782,7 @@ msgstr "Europejski Eksplorator Danych Klimatycznych zapewnia interaktywny dostę
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
 msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
-msgstr "Europejskie Obserwatorium ds. Susz (EDO) zawiera informacje istotne dla suszy. Dają one przegląd sytuacji w UE na temat zbliżających się suszy. "
+msgstr "Europejskie Obserwatorium ds. Susz (EDO) zawiera informacje istotne dla suszy. Dają one przegląd sytuacji w UE na temat zbliżających się suszy."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3800,7 +3842,7 @@ msgstr "URBACT"
 #. undefined
 #: ../../climateadapt/translation/admin.py:2620
 msgid "Unable to translate ${name} as part of content rule 'translate' action: ${error}"
-msgstr ""
+msgstr "Nie można przetłumaczyć ${name} w ramach akcji „tłumacz” reguły treści: ${error}"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:406
@@ -3835,7 +3877,7 @@ msgstr "Ocena podatności"
 #. undefined
 #: ../../climateadapt/vocabulary.py:464
 msgid "Water Management"
-msgstr ""
+msgstr "Gospodarka wodna"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:352
@@ -3865,12 +3907,12 @@ msgstr "Powrót do wyszukiwania"
 #. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
-msgstr ""
+msgstr "opis_podpisu_obrazu"
 
 #. Default: "Enable image captioning"
 #: ../../climateadapt/image_scales/interfaces.py:210
 msgid "image_captioning_title"
-msgstr ""
+msgstr "tytuł_obrazka_podpisu"
 
 #. Default: "Filter the results."
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:250
