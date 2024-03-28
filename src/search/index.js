@@ -37,6 +37,9 @@ const applyConfig = (config) => {
   );
 
   config.settings.searchlib.searchui.ccaSearch.extraQueryParams = extraQueryParams;
+  config.settings.searchlib.searchui.ccaHealthSearch.extraQueryParams = extraQueryParams;
+  config.settings.searchlib.searchui.missionProjects.extraQueryParams = extraQueryParams;
+  config.settings.searchlib.searchui.missionStoriesSearch.extraQueryParams = extraQueryParams;
 
   return config;
 };
