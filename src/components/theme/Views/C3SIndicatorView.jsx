@@ -11,6 +11,7 @@ import {
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -172,7 +173,12 @@ function C3SIndicatorView(props) {
       <div className="ui container">
         <PortalMessage content={content} />
         <LogoWrapper logo={logo}>
-          <h2>Background information</h2>
+          <h2>
+            <FormattedMessage
+              id="Background information"
+              defaultMessage="Background information"
+            />
+          </h2>
           {logo && (
             <Image
               src={logo?.scales?.mini?.download}
@@ -187,11 +193,23 @@ function C3SIndicatorView(props) {
         <div className="c3s-buttons">
           <a href="#details">
             <Button primary onClick={toggleIframe}>
-              {showDetails ? 'Go back' : 'Explore in detail'}
+              {showDetails ? (
+                <FormattedMessage id="Go back" defaultMessage="Go back" />
+              ) : (
+                <FormattedMessage
+                  id="Explore in detail"
+                  defaultMessage="Explore in detail"
+                />
+              )}
             </Button>
           </a>
           <Link to="/knowledge/european-climate-data-explorer/">
-            <Button primary>ECDE homepage</Button>
+            <Button primary>
+              <FormattedMessage
+                id="ECDE homepage"
+                defaultMessage="ECDE homepage"
+              />
+            </Button>
           </Link>
         </div>
 
@@ -237,7 +255,7 @@ function C3SIndicatorView(props) {
           </p>
           <p>
             <a href="/knowledge/european-climate-data-explorer/disclaimer">
-              Disclaimer
+              <FormattedMessage id="Disclaimer" defaultMessage="Disclaimer" />
             </a>
           </p>
         </Segment>

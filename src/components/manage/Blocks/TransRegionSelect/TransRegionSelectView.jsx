@@ -4,6 +4,18 @@ import { Dropdown } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getQueryStringResults } from '@plone/volto/actions';
 import regionCountries from './countries.json';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+  chooseARegion: {
+    id: 'Choose a region',
+    defaultMessage: 'Choose a region',
+  },
+  otherRegions: {
+    id: 'Other regions',
+    defaultMessage: 'Other regions',
+  },
+});
 
 const getSiblings = (items) => {
   const regionsDropdown = (items || []).map((item) => {
@@ -67,15 +79,26 @@ export default function TransRegionSelectView(props) {
     );
   }, [dispatch, id]);
 
+  const intl = useIntl();
+
   const defaultValue =
-    title === otherRegionsCoverTitle ? 'Other regions' : title;
+    title === otherRegionsCoverTitle
+      ? intl.formatMessage(messages.otherRegions)
+      : title;
+  for (let i = 0; i < regions.length; i++) {
+    // regions[i].text = regions[i].text + 'A';
+    regions[i].text = intl.formatMessage({
+      id: regions[i].text,
+      defineMessages: regions[i].text,
+    });
+  }
 
   return (
     <div className="block">
       {data.title && <h5>{data.title}</h5>}
       <Dropdown
         selection
-        text="Choose a region"
+        text={intl.formatMessage(messages.chooseARegion)}
         options={regions}
         defaultValue={defaultValue}
         icon="angle down"
@@ -83,8 +106,13 @@ export default function TransRegionSelectView(props) {
       <p></p>
       <div className="countries">
         {title === otherRegionsCoverTitle ||
-        title === 'Other regions' ? null : (
-          <h5>Region's countries:</h5>
+        title === intl.formatMessage(messages.otherRegions) ? null : (
+          <h5>
+            <FormattedMessage
+              id="Region's countries:"
+              defaultMessage="Region's countries:"
+            />
+          </h5>
         )}
         {regionCountries.countries
           .filter((item) => item.region === title)

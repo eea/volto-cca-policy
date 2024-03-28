@@ -1,18 +1,20 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container, Segment } from 'semantic-ui-react';
 import {
   DocumentsList,
   HTMLField,
   BannerTitle,
+  EventDetails,
 } from '@eeacms/volto-cca-policy/helpers';
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import {
   PortalMessage,
   TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
+import { FormattedMessage } from 'react-intl';
 
 function CcaEventView(props) {
   const { content } = props;
+  const { event_language } = content;
   // cca_files: [content.agenda_file]}
   if (content.agenda_file) {
     content.agenda_file['url'] = content.agenda_file['download'];
@@ -51,7 +53,7 @@ function CcaEventView(props) {
       />
       <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -63,7 +65,12 @@ function CcaEventView(props) {
             >
               <HTMLField value={content.text} />
 
-              <h2>Agenda and supporting documents</h2>
+              <h2>
+                <FormattedMessage
+                  id="Agenda and supporting documents"
+                  defaultMessage="Agenda and supporting documents"
+                />
+              </h2>
               <HTMLField value={content.agenda} />
 
               {content?.agenda_file && <DocumentsList content={agenda_files} />}
@@ -71,17 +78,44 @@ function CcaEventView(props) {
                 <DocumentsList content={background_documents} />
               )}
 
-              <h2>Practical information</h2>
-              <h3>Participation</h3>
+              <h2>
+                <FormattedMessage
+                  id="Practical information"
+                  defaultMessage="Practical information"
+                />
+              </h2>
+              <h3>
+                <FormattedMessage
+                  id="Participation"
+                  defaultMessage="Participation"
+                />
+              </h3>
               <HTMLField value={content.participation} />
 
-              <h2>Contact</h2>
+              <h2>
+                <FormattedMessage id="Contact" defaultMessage="Contact" />
+              </h2>
               <p>
-                If you have any further questions you can contact{' '}
+                <FormattedMessage
+                  id="If you have any further questions you can contact"
+                  defaultMessage="If you have any further questions you can contact"
+                />{' '}
                 <a href="mailto:{content.contact_email}">
                   {content.contact_email}
                 </a>
               </p>
+
+              {event_language && (
+                <>
+                  <h2>
+                    <FormattedMessage
+                      id="Language of the conference"
+                      defaultMessage="Language of the conference"
+                    />
+                  </h2>
+                  <p>{event_language.title}</p>
+                </>
+              )}
             </Grid.Column>
             <Grid.Column
               mobile={12}
@@ -89,27 +123,13 @@ function CcaEventView(props) {
               computer={3}
               className="col-right"
             >
-              <h3>When</h3>
-              <When
-                start={content.start}
-                end={content.end}
-                whole_day={content.whole_day}
-                open_end={content.open_end}
-              />
-              {content?.location !== null && (
-                <>
-                  <h3>Where</h3>
-                  <p>{content.location}</p>
-                </>
-              )}
-              <h3>Language</h3>
-              <p>{content.language}</p>
-              <h3>Info</h3>
-              <p>{content.contact_email}</p>
+              <Segment>
+                <EventDetails {...props} />
+              </Segment>
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }

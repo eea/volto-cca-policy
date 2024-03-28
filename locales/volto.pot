@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-03-14T19:11:59.972Z\n"
+"POT-Creation-Date: 2024-03-26T06:21:50.402Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -28,8 +28,14 @@ msgstr ""
 msgid "Adaptation elements:"
 msgstr ""
 
+#. Default: "Adaptation options"
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
+msgid "Adaptation options"
+msgstr ""
+
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation sectors"
 msgstr ""
 
@@ -37,6 +43,11 @@ msgstr ""
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
+msgstr ""
+
+#. Default: "Agenda and supporting documents"
+#: components/theme/Views/CcaEventView
+msgid "Agenda and supporting documents"
 msgstr ""
 
 #. Default: "Apr"
@@ -49,9 +60,19 @@ msgstr ""
 msgid "Aug"
 msgstr ""
 
+#. Default: "Background information"
+#: components/theme/Views/C3SIndicatorView
+msgid "Background information"
+msgstr ""
+
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
+msgstr ""
+
+#. Default: "Case Studies Documents"
+#: helpers/Utils
+msgid "Case Studies Documents"
 msgstr ""
 
 #. Default: "Case Study Description"
@@ -84,6 +105,11 @@ msgstr ""
 msgid "Choices"
 msgstr ""
 
+#. Default: "Choose a region"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Choose a region"
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -95,12 +121,14 @@ msgid "City:"
 msgstr ""
 
 #. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr ""
 
 #. Default: "Climate impacts"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Climate impacts"
 msgstr ""
 
@@ -121,7 +149,13 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
+msgstr ""
+
+#. Default: "Contact information for the Observatory"
+#: components/theme/Views/DatabaseItemView
+msgid "Contact information for the Observatory"
 msgstr ""
 
 #. Default: "Contributor:"
@@ -171,9 +205,29 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#. Default: "Disclaimer"
+#: components/theme/Views/C3SIndicatorView
+msgid "Disclaimer"
+msgstr ""
+
+#. Default: "Documents"
+#: helpers/Utils
+msgid "Documents"
+msgstr ""
+
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
+msgstr ""
+
+#. Default: "ECDE homepage"
+#: components/theme/Views/C3SIndicatorView
+msgid "ECDE homepage"
+msgstr ""
+
+#. Default: "Explore in detail"
+#: components/theme/Views/C3SIndicatorView
+msgid "Explore in detail"
 msgstr ""
 
 #. Default: "Feb"
@@ -196,6 +250,11 @@ msgstr ""
 msgid "Geographic characterisation:"
 msgstr ""
 
+#. Default: "Go back"
+#: components/theme/Views/C3SIndicatorView
+msgid "Go back"
+msgstr ""
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
@@ -216,6 +275,11 @@ msgstr ""
 msgid "Heat health action plans (HHAP)"
 msgstr ""
 
+#. Default: "Heat health warning systems (HHWS)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health warning systems (HHWS)"
+msgstr ""
+
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
 msgid "IPCC adaptation options categories:"
@@ -224,6 +288,11 @@ msgstr ""
 #. Default: "IPCC categories"
 #: components/theme/Views/AdaptationOptionView
 msgid "IPCC categories"
+msgstr ""
+
+#. Default: "If you have any further questions you can contact"
+#: components/theme/Views/CcaEventView
+msgid "If you have any further questions you can contact"
 msgstr ""
 
 #. Default: "Implementation Time"
@@ -237,8 +306,13 @@ msgstr ""
 msgid "Importance and Relevance of Adaptation"
 msgstr ""
 
+#. Default: "Indicators"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Indicators"
+msgstr ""
+
 #. Default: "Info"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Info"
 msgstr ""
 
@@ -262,9 +336,19 @@ msgstr ""
 msgid "Key Type Measures:"
 msgstr ""
 
+#. Default: "Key activities within climate change and health"
+#: components/theme/Views/DatabaseItemView
+msgid "Key activities within climate change and health"
+msgstr ""
+
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
+msgstr ""
+
+#. Default: "Language of the conference"
+#: components/theme/Views/CcaEventView
+msgid "Language of the conference"
 msgstr ""
 
 #. Default: "Last Modified in Climate-ADAPT"
@@ -287,6 +371,11 @@ msgstr ""
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Life Time"
+msgstr ""
+
+#. Default: "Links to further information"
+#: components/theme/Views/DatabaseItemView
+msgid "Links to further information"
 msgstr ""
 
 #. Default: "Macro-Transnational region:"
@@ -329,6 +418,11 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+#. Default: "No results"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+msgid "No results"
+msgstr ""
+
 #. Default: "No value"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No value"
@@ -359,14 +453,39 @@ msgstr ""
 msgid "Oct"
 msgstr ""
 
+#. Default: "Organisation Documents"
+#: helpers/Utils
+msgid "Organisation Documents"
+msgstr ""
+
+#. Default: "Other regions"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Other regions"
+msgstr ""
+
+#. Default: "Participation"
+#: components/theme/Views/CcaEventView
+msgid "Participation"
+msgstr ""
+
 #. Default: "Partners"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr ""
 
+#. Default: "Practical information"
+#: components/theme/Views/CcaEventView
+msgid "Practical information"
+msgstr ""
+
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
+msgstr ""
+
+#. Default: "Publications and Reports Documents"
+#: helpers/Utils
+msgid "Publications and Reports Documents"
 msgstr ""
 
 #. Default: "Published in Climate-ADAPT"
@@ -391,9 +510,24 @@ msgstr ""
 msgid "References"
 msgstr ""
 
+#. Default: "Region's countries:"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Region's countries:"
+msgstr ""
+
+#. Default: "Regions"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Regions"
+msgstr ""
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
+msgstr ""
+
+#. Default: "Related documents and presentations"
+#: components/theme/Views/DatabaseItemView
+msgid "Related documents and presentations"
 msgstr ""
 
 #. Default: "Relevance"
@@ -412,6 +546,7 @@ msgid "Sa"
 msgstr ""
 
 #. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr ""
@@ -431,6 +566,11 @@ msgstr ""
 msgid "See more"
 msgstr ""
 
+#. Default: "See video outside Climate-ADAPT"
+#: components/theme/Views/DatabaseItemView
+msgid "See video outside Climate-ADAPT"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -442,6 +582,8 @@ msgid "Sep"
 msgstr ""
 
 #. Default: "Share your information"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+#: components/theme/ShareInfoButton/ShareInfoButton
 #: helpers/ShareInfo
 msgid "Share your information"
 msgstr ""
@@ -535,9 +677,19 @@ msgstr ""
 msgid "View all contributions in the resource catalogue"
 msgstr ""
 
+#. Default: "Visit external website"
+#: components/theme/Views/EventView
+msgid "Visit external website"
+msgstr ""
+
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
+msgstr ""
+
+#. Default: "Web"
+#: components/theme/Views/EventView
+msgid "Web"
 msgstr ""
 
 #. Default: "Web site"
@@ -557,11 +709,11 @@ msgid "Websites:"
 msgstr ""
 
 #. Default: "When"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "When"
 msgstr ""
 
 #. Default: "Where"
-#: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Where"
 msgstr ""

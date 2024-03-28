@@ -4,6 +4,7 @@ import { Dropdown, Grid } from 'semantic-ui-react';
 import { searchContent } from '@plone/volto/actions';
 import ECDEIndicator from './ECDEIndicator';
 import { useDispatch, useSelector } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
 const regions_url =
   'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer/2/query?where=1+%3D+1&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson';
@@ -17,16 +18,19 @@ function useRegions() {
       .set('accept', 'json')
       .then((resp) => {
         const res = JSON.parse(resp.text);
-        const _regions = res.features
-          .map((o) => [
-            // o.attributes.GISCO_ID,
-            // o.attributes.LAU_Name_Excel,
-            o.attributes.NUTS_ID,
-            o.attributes.NUTS_NAME,
-          ])
-          .sort((a, b) => (a[1] > b[1] ? 1 : a[1] === b[1] ? 0 : -1));
-        // console.log('res', _regions); //JSON.parse(resp.text)
-        setRegions(_regions);
+        // console.log(res);
+        if (res?.features) {
+          const _regions = res.features
+            .map((o) => [
+              // o.attributes.GISCO_ID,
+              // o.attributes.LAU_Name_Excel,
+              o.attributes.NUTS_ID,
+              o.attributes.NUTS_NAME,
+            ])
+            .sort((a, b) => (a[1] > b[1] ? 1 : a[1] === b[1] ? 0 : -1));
+          // console.log('res', _regions); //JSON.parse(resp.text)
+          setRegions(_regions);
+        }
       });
   }, []);
 
@@ -69,7 +73,9 @@ export default function ECDEIndicatorsView(props) {
       <Grid columns="12">
         <Grid.Column mobile={12} tablet={12} computer={2} className="col-left">
           <div className="regions-selector">
-            <strong>Regions</strong>
+            <strong>
+              <FormattedMessage id="Regions" defaultMessage="Regions" />
+            </strong>
             <Dropdown
               clearable
               options={regions.map(([key, label]) => ({
@@ -82,7 +88,9 @@ export default function ECDEIndicatorsView(props) {
             />
           </div>
           <div className="indicators-selector">
-            <strong>Indicators</strong>
+            <strong>
+              <FormattedMessage id="Indicators" defaultMessage="Indicators" />
+            </strong>
             <Dropdown
               clearable
               options={indicators.map((indic) => ({

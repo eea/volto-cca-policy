@@ -10,6 +10,7 @@ import {
   List,
   Button,
   Icon,
+  Label,
 } from 'semantic-ui-react';
 import {
   CASE_STUDY,
@@ -19,7 +20,28 @@ import {
   ACE_PROJECT,
   VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
+import { useIntl, defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  documents: {
+    id: 'Documents',
+    defaultMessage: 'Documents',
+  },
+  caseStudiesDocuments: {
+    id: 'Case Studies Documents',
+    defaultMessage: 'Case Studies Documents',
+  },
+  publicationsAndReportsDocuments: {
+    id: 'Publications and Reports Documents',
+    defaultMessage: 'Publications and Reports Documents',
+  },
+  organisationDocuments: {
+    id: 'Organisation Documents',
+    defaultMessage: 'Organisation Documents',
+  },
+});
 
 export const HTMLField = ({ value, className }) => {
   if (value === null) {
@@ -300,6 +322,8 @@ export const DocumentsList = (props) => {
   const { content } = props;
   const type = content['@type'];
   const files = content?.cca_files;
+  const intl = useIntl();
+
   if (!files || files.length === 0) {
     return null;
   }
@@ -307,22 +331,24 @@ export const DocumentsList = (props) => {
     content.show_counter = true;
   }
 
-  let section_title = 'Documents';
+  let section_title = intl.formatMessage(messages.documents);
 
   if (content['section_title']) {
     section_title = content['section_title'];
   }
 
   if (type === CASE_STUDY) {
-    section_title = 'Case Studies Documents';
+    section_title = intl.formatMessage(messages.caseStudiesDocuments);
   }
 
   if (type === PUBICATION_REPORT) {
-    section_title = 'Publications and Reports Documents';
+    section_title = intl.formatMessage(
+      messages.publicationsAndReportsDocuments,
+    );
   }
 
   if (type === ORGANISATION) {
-    section_title = 'Organisation Documents';
+    section_title = intl.formatMessage(messages.organisationDocuments);
   }
 
   return (
@@ -405,4 +431,54 @@ export const ItemLogo = (props) => {
       )}
     </LogoWrapper>
   ) : null;
+};
+
+export const SubjectTags = (props) => {
+  const { content } = props;
+  const tags = content?.subjects;
+
+  return tags?.length > 0 ? (
+    <div className="tags">
+      Filed under:{' '}
+      {tags.map((tag) => (
+        <Label size="small" key={tag}>
+          {tag}
+        </Label>
+      ))}
+    </div>
+  ) : null;
+};
+
+export const EventDetails = (props) => {
+  const { content } = props;
+
+  return (
+    <>
+      <h3>
+        <FormattedMessage id="When" defaultMessage="When" />
+      </h3>
+      <When
+        start={content.start}
+        end={content.end}
+        whole_day={content.whole_day}
+        open_end={content.open_end}
+      />
+      {content?.location !== null && (
+        <>
+          <h3>
+            <FormattedMessage id="Where" defaultMessage="Where" />
+          </h3>
+          <p>{content.location}</p>
+        </>
+      )}
+      {!!content.contact_email && (
+        <>
+          <h3>
+            <FormattedMessage id="Info" defaultMessage="Info" />
+          </h3>
+          <p>{content.contact_email}</p>
+        </>
+      )}
+    </>
+  );
 };
