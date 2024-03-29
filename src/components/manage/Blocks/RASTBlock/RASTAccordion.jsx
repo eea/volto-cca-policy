@@ -12,7 +12,7 @@ const RASTAccordion = (props) => {
     let itemUrl = '/' + item['@id'].split('/').slice(3).join('/');
     history.push(itemUrl);
   };
-  console.log('RASTAccordion Show subfolders:', show_subfolders);
+
   return (
     <>
       {items.map((item, index) => {
