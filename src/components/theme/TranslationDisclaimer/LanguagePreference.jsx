@@ -50,33 +50,35 @@ const LanguagePreference = (props) => {
   return !isSearchPage && showLangPref ? (
     <>
       {open && (
-        <Container>
-          <Message info>
-            <MessageHeader>
-              <h5>Language preference detected</h5>
-              <Button
-                onClick={() => setOpen(!open)}
-                basic
-                icon
-                className="close-button"
-                aria-label="Close"
-              >
-                <Icon className="ri-close-line"></Icon>
-              </Button>
-            </MessageHeader>
-            <Message.Content>
-              <p>
-                Do you want to see the page translated into{' '}
-                <strong>{language_names[selectedLanguage]}</strong>?{' '}
-                <Button basic onClick={() => handlePageReload()}>
-                  <strong>
-                    Yes, reload the page using my language settings.
-                  </strong>
+        <div className="translation-preference">
+          <Container>
+            <Message info>
+              <MessageHeader>
+                <h5>Language preference detected</h5>
+                <Button
+                  onClick={() => setOpen(!open)}
+                  basic
+                  icon
+                  className="close-button"
+                  aria-label="Close"
+                >
+                  <Icon className="ri-close-line"></Icon>
                 </Button>
-              </p>
-            </Message.Content>
-          </Message>
-        </Container>
+              </MessageHeader>
+              <Message.Content>
+                <p>
+                  Do you want to see the page translated into{' '}
+                  <strong>{language_names[selectedLanguage]}</strong>?{' '}
+                  <Button basic onClick={() => handlePageReload()}>
+                    <strong>
+                      Yes, reload the page using my language settings.
+                    </strong>
+                  </Button>
+                </p>
+              </Message.Content>
+            </Message>
+          </Container>
+        </div>
       )}
     </>
   ) : null;
