@@ -1,4 +1,4 @@
-const fields = ['root_path', 'skip_items'];
+const fields = ['root_path', 'skip_items', 'show_subfolders'];
 
 export default {
   title: 'RAST',
@@ -24,6 +24,12 @@ export default {
       title: 'Exclude from image navigator',
       type: 'string',
       description: 'Ex: to skip first and third "0,2"',
+      required: false,
+      noValueOption: false,
+    },
+    show_subfolders: {
+      title: 'Show subfolders',
+      type: 'boolean',
       required: false,
       noValueOption: false,
     },

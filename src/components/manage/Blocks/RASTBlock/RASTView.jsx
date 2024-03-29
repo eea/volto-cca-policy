@@ -24,6 +24,7 @@ export default function RASTView(props) {
     root_path = '/';
   }
   let skip_items = data?.skip_items;
+  const show_subfolders = data?.show_subfolders;
 
   if (typeof skip_items !== 'string') {
     skip_items = '';
@@ -38,6 +39,7 @@ export default function RASTView(props) {
       <ContextNavigation
         items={items}
         skip_items={skip_items}
+        show_subfolders={show_subfolders}
         location={{
           pathname: root_path,
         }}

@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
  * INavigationPortlet
  */
 export function ContextNavigationComponent(props) {
-  const { location, items, skip_items } = props;
+  const { location, items, skip_items, show_subfolders } = props;
   let activeMenu = null;
 
   const curent_location = useLocation();
@@ -35,6 +35,7 @@ export function ContextNavigationComponent(props) {
       {items.length ? (
         <RASTAccordion
           items={items}
+          show_subfolders={show_subfolders}
           curent_location={curent_location}
           activeMenu={activeMenu}
         />
