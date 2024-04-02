@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from 'semantic-ui-react';
+import { Accordion, Icon } from 'semantic-ui-react';
 import RASTAccordionContent from './RASTAccordionContent';
 import { useHistory } from 'react-router-dom';
 
@@ -36,6 +36,13 @@ const RASTAccordion = (props) => {
               }}
             >
               <span className="item-title">{item.title}</span>
+              {show_subfolders ? (
+                active ? (
+                  <Icon className="ri-arrow-up-s-line" />
+                ) : (
+                  <Icon className="ri-arrow-down-s-line" />
+                )
+              ) : null}
             </Accordion.Title>
             {show_subfolders ? (
               <Accordion.Content active={active}>
