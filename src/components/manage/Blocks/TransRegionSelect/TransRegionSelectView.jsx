@@ -34,6 +34,7 @@ const getOptions = (items) => {
 };
 
 export default function TransRegionSelectView(props) {
+  const intl = useIntl();
   const { data, metadata, properties, mode = 'view' } = props;
   const content = metadata || properties;
   if (mode === 'edit') {
@@ -44,8 +45,6 @@ export default function TransRegionSelectView(props) {
     'transnationalregion'
   ];
   const [countries] = countriesAndFlag;
-
-  const intl = useIntl();
 
   const defaultValue = !!countries
     ? title
