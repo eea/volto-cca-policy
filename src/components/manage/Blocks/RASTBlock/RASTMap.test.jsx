@@ -15,6 +15,50 @@ describe('RASTMap', () => {
       pathname: '',
       activeMenu: 1,
       skip_items: '',
+      items: [
+        {
+          id: 'my-item1',
+          title: 'Hello1',
+          '@id': '/my-item1',
+          '@type': 'Folder',
+          url: '/my-item-href1',
+        },
+        {
+          id: 'my-item2',
+          title: 'Hello2',
+          '@id': '/my-item2',
+          '@type': 'Folder',
+          url: '/my-item-href2',
+        },
+        {
+          id: 'my-item3',
+          title: 'Hello3',
+          '@id': '/my-item3',
+          '@type': 'Folder',
+          url: '/my-item-href3',
+        },
+        {
+          id: 'my-item4',
+          title: 'Hello4',
+          '@id': '/my-item4',
+          '@type': 'Folder',
+          url: '/my-item-href4',
+        },
+        {
+          id: 'my-item5',
+          title: 'Hello5',
+          '@id': '/my-item5',
+          '@type': 'Folder',
+          url: '/my-item-href5',
+        },
+        {
+          id: 'my-item6',
+          title: 'Hello6',
+          '@id': '/my-item6',
+          '@type': 'Folder',
+          url: '/my-item-href6',
+        },
+      ],
     };
 
     const store = mockStore({
