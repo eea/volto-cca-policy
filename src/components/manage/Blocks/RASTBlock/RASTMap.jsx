@@ -18,10 +18,16 @@ const LinkWrap = ({ item, pathname, children, isActive }) => {
 // export default function RASTView(props) {
 // const RASTView = (props) => {
 export default function RASTMap(props) {
-  const { path, pathname, activeMenu } = props;
+  const { path, pathname, activeMenu, skip_items } = props;
   const currentPath = path || pathname;
 
   const items = props.items;
+  let data = skip_items.split(',');
+  let activeMenuMinus = 0;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] <= activeMenu) activeMenuMinus++;
+  }
+  let currentMenu = activeMenu - activeMenuMinus;
 
   return (
     <div className="rast-map-block">
@@ -48,7 +54,7 @@ export default function RASTMap(props) {
         <LinkWrap
           item={items[0]}
           pathname={currentPath}
-          isActive={activeMenu === 0 ? true : false}
+          isActive={currentMenu === 0 ? true : false}
         >
           <rect
             className="circle"
@@ -76,7 +82,7 @@ export default function RASTMap(props) {
         <LinkWrap
           item={items[1]}
           pathname={currentPath}
-          isActive={activeMenu === 1 ? true : false}
+          isActive={currentMenu === 1 ? true : false}
         >
           <rect
             className="circle"
@@ -104,7 +110,7 @@ export default function RASTMap(props) {
         <LinkWrap
           item={items[2]}
           pathname={currentPath}
-          isActive={activeMenu === 2 ? true : false}
+          isActive={currentMenu === 2 ? true : false}
         >
           <rect
             className="circle"
@@ -132,7 +138,7 @@ export default function RASTMap(props) {
         <LinkWrap
           item={items[3]}
           pathname={currentPath}
-          isActive={activeMenu === 3 ? true : false}
+          isActive={currentMenu === 3 ? true : false}
         >
           <rect
             className="circle"
@@ -160,7 +166,7 @@ export default function RASTMap(props) {
         <LinkWrap
           item={items[4]}
           pathname={currentPath}
-          isActive={activeMenu === 4 ? true : false}
+          isActive={currentMenu === 4 ? true : false}
         >
           <rect
             className="circle"
@@ -189,7 +195,7 @@ export default function RASTMap(props) {
         <LinkWrap
           item={items[5]}
           pathname={currentPath}
-          isActive={activeMenu === 5 ? true : false}
+          isActive={currentMenu === 5 ? true : false}
         >
           <rect
             className="circle"

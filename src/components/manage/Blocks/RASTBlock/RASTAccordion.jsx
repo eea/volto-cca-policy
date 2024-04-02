@@ -4,7 +4,7 @@ import RASTAccordionContent from './RASTAccordionContent';
 import { useHistory } from 'react-router-dom';
 
 const RASTAccordion = (props) => {
-  const { items = {}, curent_location, activeMenu } = props;
+  const { items = {}, curent_location, activeMenu, show_subfolders } = props;
 
   const history = useHistory();
 
@@ -12,6 +12,7 @@ const RASTAccordion = (props) => {
     let itemUrl = '/' + item['@id'].split('/').slice(3).join('/');
     history.push(itemUrl);
   };
+
   return (
     <>
       {items.map((item, index) => {
@@ -35,23 +36,27 @@ const RASTAccordion = (props) => {
               }}
             >
               <span className="item-title">{item.title}</span>
-              {active ? (
-                <Icon className="ri-arrow-up-s-line" />
-              ) : (
-                <Icon className="ri-arrow-down-s-line" />
-              )}
+              {show_subfolders ? (
+                active ? (
+                  <Icon className="ri-arrow-up-s-line" />
+                ) : (
+                  <Icon className="ri-arrow-down-s-line" />
+                )
+              ) : null}
             </Accordion.Title>
-            <Accordion.Content active={active}>
-              <RASTAccordionContent
-                curent_location={curent_location}
-                key={index}
-                main={{
-                  title: item.title,
-                  href: item['@id'],
-                  url: item.url,
-                }}
-              />
-            </Accordion.Content>
+            {show_subfolders ? (
+              <Accordion.Content active={active}>
+                <RASTAccordionContent
+                  curent_location={curent_location}
+                  key={index}
+                  main={{
+                    title: item.title,
+                    href: item['@id'],
+                    url: item.url,
+                  }}
+                />
+              </Accordion.Content>
+            ) : null}
           </Accordion>
         );
       })}
