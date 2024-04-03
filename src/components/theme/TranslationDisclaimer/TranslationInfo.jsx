@@ -66,11 +66,11 @@ const TranslationInfo = (props) => {
             </>
           )}
           {!isReadMore ? (
-            <Button basic secondary onClick={() => setIsReadMore(true)}>
+            <Button basic onClick={() => setIsReadMore(true)}>
               <strong>Show more</strong>
             </Button>
           ) : (
-            <Button basic secondary onClick={() => setIsReadMore(false)}>
+            <Button basic onClick={() => setIsReadMore(false)}>
               <strong>Show less</strong>
             </Button>
           )}

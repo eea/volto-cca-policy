@@ -26,6 +26,7 @@ import installStore from './store';
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
+import { TranslationDisclaimer } from '@eeacms/volto-cca-policy/components';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
@@ -436,6 +437,10 @@ const applyConfig = (config) => {
     {
       match: '',
       component: MigrationButtons,
+    },
+    {
+      match: '',
+      component: TranslationDisclaimer,
     },
   ];
 

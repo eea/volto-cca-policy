@@ -5,11 +5,15 @@ import {
   BannerTitle,
   LogoWrapper,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Accordion, Icon, Segment, Image, Button } from 'semantic-ui-react';
 import {
-  PortalMessage,
-  TranslationDisclaimer,
-} from '@eeacms/volto-cca-policy/components';
+  Container,
+  Accordion,
+  Icon,
+  Segment,
+  Image,
+  Button,
+} from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
@@ -168,9 +172,8 @@ function C3SIndicatorView(props) {
           hideShareButton: false,
         }}
       />
-      <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <LogoWrapper logo={logo}>
           <h2>
@@ -259,7 +262,7 @@ function C3SIndicatorView(props) {
             </a>
           </p>
         </Segment>
-      </div>
+      </Container>
     </div>
   );
 }

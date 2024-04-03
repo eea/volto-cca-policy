@@ -6,11 +6,10 @@ import {
   ItemLogo,
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Grid } from 'semantic-ui-react';
+import { Container, Divider, Grid } from 'semantic-ui-react';
 import {
   ShareInfoButton,
   PortalMessage,
-  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import { FormattedMessage } from 'react-intl';
 
@@ -47,9 +46,8 @@ function ProjectView(props) {
           title: item_title,
         }}
       />
-      <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -105,7 +103,7 @@ function ProjectView(props) {
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }

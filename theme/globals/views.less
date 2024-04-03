@@ -215,58 +215,63 @@ hr {
   background-color: #f9f9f9;
 }
 
-#page-document {
-  .translation-toast {
-    position: fixed;
-    bottom: -85px;
-    -webkit-transition: bottom 350ms;
-    -moz-transition: bottom 350ms;
-    -o-transition: bottom 350ms;
-    -ms-transition: bottom 350ms;
-    transition: bottom 350ms;
-    width: 100%;
-    max-width: 1120px;
-    user-select: none;
-    z-index: 10;
-    width: 100%;
-    padding: 1em;
+.toast-container {
+  .ui.segment.basic {
+    padding: 0;
+    margin: 0;
+  }
+}
+.translation-toast {
+  position: fixed;
+  bottom: -85px;
+  -webkit-transition: bottom 350ms;
+  -moz-transition: bottom 350ms;
+  -o-transition: bottom 350ms;
+  -ms-transition: bottom 350ms;
+  transition: bottom 350ms;
+  width: 100%;
+  max-width: 1120px;
+  user-select: none;
+  z-index: 10;
+  width: 100%;
+  padding: 1em;
+  font-size: 0.9rem;
+
+  &.warning {
+    background: #f3e2ab;
+  }
+
+  &.info {
+    background: #aee2f2;
+    z-index: 11;
+    height: 85px;
+  }
+
+  .ui.basic.button {
+    color: @secondaryColor !important;
     font-size: 0.9rem;
+  }
 
-    &.warning {
-      background: #f3e2ab;
-    }
-
-    &.info {
-      background: #aee2f2;
-      z-index: 11;
-      height: 85px;
-    }
-
-    .ui.basic.button {
-      color: @secondaryColor !important;
-      font-size: 0.9rem;
-    }
-
-    .close-button {
-      i.icon {
-        color: inherit !important;
-        font-size: 20px !important;
-      }
-    }
-
-    .ui.basic.button.basic {
-      margin: 0 !important;
-    }
-
-    .ui.basic.button:focus,
-    .ui.basic.button:hover {
-      border: none !important ;
-      background: transparent !important;
-      box-shadow: none !important;
-      outline: none !important;
+  .close-button {
+    i.icon {
+      color: inherit !important;
+      font-size: 20px !important;
     }
   }
-  .translation-toast.active {
-    bottom: 0;
+
+  .ui.basic.button.basic {
+    margin: 0 !important;
   }
+
+  .ui.basic.button:focus,
+  .ui.basic.button:hover {
+    border: none !important ;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: @secondaryColor !important;
+  }
+}
+.translation-toast.active {
+  bottom: 0;
 }

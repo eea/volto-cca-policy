@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { useAtom } from 'jotai';
 import { selectedLanguageAtom } from './../../../state';
@@ -14,8 +13,7 @@ const language_names = {
 };
 
 const LanguagePreference = (props) => {
-  const { currentLanguage } = props;
-  const location = useLocation();
+  const { currentLanguage, location } = props;
   const [selectedLanguage] = useAtom(selectedLanguageAtom);
   const search = ['/data-and-downloads', '/advanced-search'];
   const isSearchPage = search.some((el) => location.pathname.includes(el));

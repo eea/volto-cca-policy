@@ -7,12 +7,19 @@ import {
   DocumentsList,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Grid, Icon, Image, ListItem, List } from 'semantic-ui-react';
+import {
+  Container,
+  Divider,
+  Grid,
+  Icon,
+  Image,
+  ListItem,
+  List,
+} from 'semantic-ui-react';
 import {
   ShareInfoButton,
   ImageGallery,
   PortalMessage,
-  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
@@ -341,9 +348,8 @@ function CaseStudyView(props) {
           subtitle: 'Case Studies',
         }}
       />
-      <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -427,7 +433,7 @@ function CaseStudyView(props) {
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }
