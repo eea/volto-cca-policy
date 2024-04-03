@@ -20,6 +20,9 @@ export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
   config.blocks.blocksConfig.layoutSettings.restricted = false;
 
+  // override the noResultsComponent to avoid the "No results" text
+  config.blocks.blocksConfig['listing'].noResultsComponent = () => null;
+
   return compose(
     installRAST,
     installReadMore,
