@@ -221,6 +221,7 @@ hr {
     margin: 0;
   }
 }
+
 .translation-toast {
   position: fixed;
   bottom: -85px;
@@ -272,6 +273,31 @@ hr {
     color: @secondaryColor !important;
   }
 }
+
 .translation-toast.active {
   bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .ui.container.toast-container {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    .ui.segment.basic {
+      .header {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    h5 {
+      font-size: 14px;
+      margin-bottom: 0.3em;
+    }
+
+    .translation-toast,
+    .ui.basic.button {
+      font-size: 12px !important;
+    }
+  }
 }

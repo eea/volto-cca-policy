@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Icon, Button } from 'semantic-ui-react';
 
 const TranslationInfo = (props) => {
   const { defaultLanguage, currentLanguage } = props;
-  const [isReadMore, setIsReadMore] = React.useState(false);
-  const [active, setIsActive] = React.useState('');
+  const [isReadMore, setIsReadMore] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [activeClass, setActiveClass] = useState('');
+  const elementRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentLanguage !== defaultLanguage) {
-      let timeout = setTimeout(() => setIsActive('active'), 1000);
+      let timeout = setTimeout(() => setIsActive(true), 1000);
       return () => clearTimeout(timeout);
     }
   }, [currentLanguage, defaultLanguage]);
 
+  useEffect(() => {
+    isActive ? setActiveClass('active') : setActiveClass('');
+  }, [isActive]);
+
+  const toggleContent = () => {
+    setIsReadMore(!isReadMore);
+  };
+
   return (
     <>
       <div
-        className={`translation-toast warning ${active}`}
+        ref={elementRef}
+        className={`translation-toast warning ${activeClass}`}
         style={{ height: isReadMore ? '' : '85px' }}
       >
         <div className="header">
@@ -65,15 +76,13 @@ const TranslationInfo = (props) => {
               </p>
             </>
           )}
-          {!isReadMore ? (
-            <Button basic onClick={() => setIsReadMore(true)}>
+          <Button basic icon onClick={() => toggleContent()}>
+            {!isReadMore ? (
               <strong>Show more</strong>
-            </Button>
-          ) : (
-            <Button basic onClick={() => setIsReadMore(false)}>
+            ) : (
               <strong>Show less</strong>
-            </Button>
-          )}
+            )}
+          </Button>
         </div>
       </div>
     </>
