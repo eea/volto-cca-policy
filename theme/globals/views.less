@@ -215,22 +215,34 @@ hr {
   background-color: #f9f9f9;
 }
 
-.translation-info {
-  .translation-warning,
-  .translation-preference {
-    margin-top: 1em;
-  }
-
-  .translation-warning {
-    margin-bottom: 1.5em;
-  }
-
-  .ui.message {
-    padding: 0.8em 1em !important;
-    margin-bottom: 0 !important;
+#page-document {
+  .translation-toast {
+    position: fixed;
+    bottom: -85px;
+    -webkit-transition: bottom 350ms;
+    -moz-transition: bottom 350ms;
+    -o-transition: bottom 350ms;
+    -ms-transition: bottom 350ms;
+    transition: bottom 350ms;
+    width: 100%;
+    max-width: 1120px;
+    user-select: none;
+    z-index: 10;
+    width: 100%;
+    padding: 1em;
     font-size: 0.9rem;
 
-    .ui.button {
+    &.warning {
+      background: #f3e2ab;
+    }
+
+    &.info {
+      background: #aee2f2;
+      z-index: 11;
+      height: 85px;
+    }
+
+    .ui.basic.button {
       color: @secondaryColor !important;
       font-size: 0.9rem;
     }
@@ -242,16 +254,19 @@ hr {
       }
     }
 
-    .ui.button.basic {
+    .ui.basic.button.basic {
       margin: 0 !important;
     }
 
-    .ui.button:focus,
-    .ui.button:hover {
+    .ui.basic.button:focus,
+    .ui.basic.button:hover {
       border: none !important ;
       background: transparent !important;
       box-shadow: none !important;
-      outline: none;
+      outline: none !important;
     }
+  }
+  .translation-toast.active {
+    bottom: 0;
   }
 }
