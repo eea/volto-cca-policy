@@ -5,11 +5,18 @@
 }
 
 #csepopup {
+  border-bottom: 6px solid #005c96;
+
   p {
+    padding: 0 10px 0 10px;
     font-size: 13px;
 
     p {
       margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 
@@ -33,9 +40,11 @@
     position: relative;
     padding: 10px;
     border-bottom: 1px solid #d8d8d8;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
-    background-color: #005c96;
-    color: #fff;
+    background-color: #fff;
+    clear: both;
+    color: #005c96;
     cursor: pointer;
     font-size: 14px;
   }
@@ -56,4 +65,12 @@
       float: right;
     }
   }
+
+  button.reset {
+    margin-top: 20px;
+  }
+}
+
+.section-case-study-explorer #popup-overlay {
+  padding: 0;
 }

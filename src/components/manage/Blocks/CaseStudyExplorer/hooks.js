@@ -4,7 +4,7 @@ import superagent from 'superagent';
 const cases_url = '@@case-studies-map.arcgis.json';
 
 export function useCases(url) {
-  const [cases, setCases] = React.useState([]);
+  const [cases, setCases] = React.useState([[], []]);
 
   React.useEffect(() => {
     superagent
@@ -12,7 +12,7 @@ export function useCases(url) {
       .set('accept', 'json')
       .then((resp) => {
         const res = JSON.parse(resp.text);
-        setCases(res.features);
+        setCases({ features: res.features, filters: res.filters });
       });
   }, []);
 
