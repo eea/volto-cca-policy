@@ -15,6 +15,8 @@ import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardIt
 import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
 import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
+
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
 
 import installBlocks from './components/manage/Blocks';
@@ -92,6 +94,12 @@ const applyConfig = (config) => {
       logo: ccaLogo,
       logoWhite: ccaLogoWhite,
     },
+    subsiteHeaderOpts: [
+      {
+        matchpath: '/observatory',
+        logoWhite: observatoryLogoWhite,
+      },
+    ],
     footerOpts: {
       ...(config.settings.eea?.footerOpts || {}),
       description:
