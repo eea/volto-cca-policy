@@ -4,7 +4,6 @@ export default function C3SIndicatorsOverviewBlockView(props) {
   const { metadata, properties, mode = 'view' } = props;
   const content = metadata || properties;
   const { c3s_indicators_overview } = content?.['@components'] || {};
-  console.log(props, c3s_indicators_overview);
 
   if (!c3s_indicators_overview) {
     if (mode === 'edit') {

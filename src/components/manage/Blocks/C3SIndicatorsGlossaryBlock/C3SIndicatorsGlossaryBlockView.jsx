@@ -7,12 +7,16 @@ export default function C3SIndicatorsGlossaryBlockView(props) {
 
   return (
     <div className="block c3sindicators-glossary-block">
-      <div
-        className="glossary-table"
-        dangerouslySetInnerHTML={{
-          __html: c3s_indicators_glossary_table || 'No content',
-        }}
-      />
+      {mode === 'view' ? (
+        <div
+          className="glossary-table"
+          dangerouslySetInnerHTML={{
+            __html: c3s_indicators_glossary_table || 'No content',
+          }}
+        />
+      ) : (
+        <div>C3SIndicatorsGlossaryBlockView</div>
+      )}
     </div>
   );
 }
