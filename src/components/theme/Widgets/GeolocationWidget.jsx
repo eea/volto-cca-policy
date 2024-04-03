@@ -5,8 +5,6 @@ import { Input } from 'semantic-ui-react';
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
 
-import axios from 'axios';
-
 import {
   Controls,
   Interactions,
@@ -64,10 +62,7 @@ const GeolocationWidget = (props) => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    axios
-      .get(
-        `https://nominatim.openstreetmap.org/search?q=${address}&format=json`,
-      )
+    fetch(`https://nominatim.openstreetmap.org/search?q=${address}&format=json`)
       .then((response) => {
         const { lat, lon } = response.data[0];
         onChange(id, { latitude: lat, longitude: lon });
