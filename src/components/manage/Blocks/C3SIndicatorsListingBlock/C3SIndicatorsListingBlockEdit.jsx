@@ -3,7 +3,7 @@ import React from 'react';
 import { SidebarPortal } from '@plone/volto/components';
 import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
 
-import C3SIndicatorsOverviewBlockView from './C3SIndicatorsListingBlockView';
+import C3SIndicatorsListingBlockView from './C3SIndicatorsListingBlockView';
 import schema from './schema';
 
 export default function C3SIndicatorsOverviewBlockEdit(props) {
@@ -11,7 +11,7 @@ export default function C3SIndicatorsOverviewBlockEdit(props) {
 
   return (
     <div>
-      <C3SIndicatorsOverviewBlockView data={data} id={id} mode="edit" />
+      <C3SIndicatorsListingBlockView data={data} id={id} mode="edit" />
       <SidebarPortal selected={selected}>
         <BlockDataForm
           block={block}
