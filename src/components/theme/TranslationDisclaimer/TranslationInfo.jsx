@@ -6,12 +6,13 @@ const TranslationInfo = (props) => {
   const [isReadMore, setIsReadMore] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeClass, setActiveClass] = useState('');
+  const [elementHeight, setElementHeight] = useState(0);
+  const [bottomPosition, setBottomPosition] = useState(0);
   const elementRef = useRef(null);
 
   useEffect(() => {
     if (currentLanguage !== defaultLanguage) {
-      let timeout = setTimeout(() => setIsActive(true), 1000);
-      return () => clearTimeout(timeout);
+      setIsActive(true);
     }
   }, [currentLanguage, defaultLanguage]);
 
@@ -19,21 +20,52 @@ const TranslationInfo = (props) => {
     isActive ? setActiveClass('active') : setActiveClass('');
   }, [isActive]);
 
+  const updateElementHeight = () => {
+    if (elementRef.current) {
+      const height = elementRef.current.clientHeight;
+      setElementHeight(`${height}px`);
+    }
+  };
+
+  useEffect(() => {
+    const updateElementHeight = () => {
+      if (elementRef.current) {
+        const height = elementRef.current.clientHeight;
+        setElementHeight(`${height}px`);
+      }
+    };
+
+    updateElementHeight();
+  }, []);
+
   const toggleContent = () => {
+    setTimeout(() => {
+      updateElementHeight();
+    }, 0);
     setIsReadMore(!isReadMore);
   };
+
+  useEffect(() => {
+    if ((!isReadMore && !isActive) || (isReadMore && !isActive)) {
+      setBottomPosition(`-${elementHeight}`);
+    } else {
+      setBottomPosition(0);
+    }
+  }, [elementHeight, isActive, isReadMore]);
 
   return (
     <>
       <div
         ref={elementRef}
         className={`translation-toast warning ${activeClass}`}
-        style={{ height: isReadMore ? '' : '85px' }}
+        style={{
+          bottom: bottomPosition,
+        }}
       >
         <div className="header">
           <h5>Exclusion of liability</h5>
           <Button
-            onClick={() => setIsActive('')}
+            onClick={() => setIsActive(false)}
             basic
             icon
             className="close-button"
