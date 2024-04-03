@@ -29,7 +29,6 @@ import MigrationButtons from './components/MigrationButtons';
 import { TranslationDisclaimer } from '@eeacms/volto-cca-policy/components';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
-import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
 import { langRedirection } from './store/middleware';
 
 import './slate-styles.less';
@@ -393,12 +392,6 @@ const applyConfig = (config) => {
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
-  config.widgets.widget.creatableselect = CreatableSelectWidget;
-
-  config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
-    schema.properties.body_class.widget = 'creatableselect';
-    return schema;
-  };
 
   config.settings.slate.styleMenu.inlineStyles = [
     ...(config.settings.slate.styleMenu?.inlineStyles || []),
