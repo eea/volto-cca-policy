@@ -1,4 +1,5 @@
 import { compose } from 'redux';
+
 import installMKHMap from './MKHMap';
 import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
@@ -11,6 +12,7 @@ import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
 import installListing from './Listing';
 import installRAST from './RASTBlock';
+import installC3SIndicatorsListingBlock from './C3SIndicatorsListingBlock';
 import installC3SIndicatorsOverviewBlock from './C3SIndicatorsOverviewBlock';
 import installC3SIndicatorsGlossaryBlock from './C3SIndicatorsGlossaryBlock';
 import installReadMore from './ReadMore';
@@ -27,6 +29,7 @@ export default function installBlocks(config) {
     installRAST,
     installReadMore,
     installC3SIndicatorsOverviewBlock,
+    installC3SIndicatorsListingBlock,
     installC3SIndicatorsGlossaryBlock,
     installMKHMap,
     installECDEIndicatorsBlock,

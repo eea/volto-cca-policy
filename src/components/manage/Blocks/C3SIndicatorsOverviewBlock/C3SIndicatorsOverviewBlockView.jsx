@@ -1,10 +1,10 @@
 import React from 'react';
-import { UniversalLink } from '@plone/volto/components';
 
 export default function C3SIndicatorsOverviewBlockView(props) {
   const { metadata, properties, mode = 'view' } = props;
   const content = metadata || properties;
   const { c3s_indicators_overview } = content?.['@components'] || {};
+  console.log(props, c3s_indicators_overview);
 
   if (!c3s_indicators_overview) {
     if (mode === 'edit') {
@@ -14,23 +14,14 @@ export default function C3SIndicatorsOverviewBlockView(props) {
     }
   }
 
-  const { description, items } = c3s_indicators_overview;
-
   return (
     <div className="block c3sindicators-overview-block">
       <div
         className="description"
         dangerouslySetInnerHTML={{
-          __html: description,
+          __html: c3s_indicators_overview,
         }}
       />
-      <ul>
-        {items?.map((item, index) => (
-          <li key={index}>
-            <UniversalLink href={item.url}>{item.title}</UniversalLink>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
