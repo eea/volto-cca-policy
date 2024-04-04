@@ -90,7 +90,7 @@ export default function CollectionStatsView(props) {
   let stats = useStats(getBaseUrl(pathname), id, data);
 
   const groupDefinition =
-    config.blocks.blocksConfig.collectionStats.groups[field] || {};
+    config.blocks.blocksConfig.collectionStats?.groups?.[field] || {};
   const { cleanup, icons = {}, iconComponent: IconComponent } = groupDefinition;
 
   if (cleanup) stats = cleanup(stats);
