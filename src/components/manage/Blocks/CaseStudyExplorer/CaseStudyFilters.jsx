@@ -51,7 +51,7 @@ export default function CaseStudyFilters(props) {
   const intl = useIntl();
   return (
     <>
-      <Accordion exclusive={false}>
+      <Accordion exclusive={false} className="secondary">
         <Accordion.Title
           active={activeIndex.includes(0)}
           index={0}
