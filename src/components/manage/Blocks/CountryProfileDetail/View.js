@@ -21,10 +21,13 @@ const extract_body = (html_string) => {
 };
 
 export default function View(props) {
-  const data = extract_body(
-    props.properties['@components'].countryprofile.html
-      .replaceAll('\n', '')
-      .replaceAll('\\"', '"'),
+  const [data, setData] = React.useState();
+  const html = props.properties['@components'].countryprofile.html;
+
+  React.useEffect(
+    () =>
+      setData(extract_body(html.replaceAll('\n', '').replaceAll('\\"', '"'))),
+    [html],
   );
 
   const panes = [];
@@ -34,7 +37,11 @@ export default function View(props) {
         menuItem: element.name,
         render: () => (
           <TabPane>
-            <div dangerouslySetInnerHTML={{ __html: data.values[index] }}></div>
+            {!!data && (
+              <div
+                dangerouslySetInnerHTML={{ __html: data.values[index] }}
+              ></div>
+            )}
           </TabPane>
         ),
       });
