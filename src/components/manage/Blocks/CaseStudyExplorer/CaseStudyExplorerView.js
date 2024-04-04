@@ -34,13 +34,12 @@ export default function CaseStudyExplorerView(props) {
       const _cases = casesData.features;
 
       setCases(_cases);
-      console.log(casesData);
       setFilters({
         ...filters,
         measures: casesData.filters.measures,
       });
     }
-  }, [casesData]);
+  }, [casesData, filters]);
 
   React.useEffect(() => {
     const _filters = getFilters(cases);
@@ -51,6 +50,7 @@ export default function CaseStudyExplorerView(props) {
     });
   }, [
     cases,
+    filters,
     activeFilters.impacts,
     activeFilters.sectors,
     activeFilters.measures,
