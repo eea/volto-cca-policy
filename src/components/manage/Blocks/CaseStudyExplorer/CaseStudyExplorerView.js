@@ -32,25 +32,21 @@ export default function CaseStudyExplorerView(props) {
   React.useEffect(() => {
     if (casesData.hasOwnProperty('features')) {
       const _cases = casesData.features;
-
+      let _filters = filters;
       setCases(_cases);
-      setFilters({
-        ...filters,
-        measures: casesData.filters.measures,
-      });
+      _filters.measures = casesData.filters.measures;
+      setFilters(_filters);
     }
-  }, [casesData, filters]);
+  }, [casesData]);
 
   React.useEffect(() => {
-    const _filters = getFilters(cases);
-    setFilters({
-      ...filters,
-      sectors: _filters.sectors,
-      impacts: _filters.impacts,
-    });
+    const _filters_data = getFilters(cases);
+    let _filters = filters;
+    _filters.impacts = _filters_data.impacts;
+    _filters.sectors = _filters_data.sectors;
+    setFilters(_filters);
   }, [
     cases,
-    filters,
     activeFilters.impacts,
     activeFilters.sectors,
     activeFilters.measures,

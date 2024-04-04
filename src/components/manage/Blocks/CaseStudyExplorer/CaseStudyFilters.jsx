@@ -126,7 +126,7 @@ export default function CaseStudyFilters(props) {
             ([key, values], index) => (
               <div className="subcategory">
                 <p>
-                  <strong>AA{intl.formatMessage({ id: key })}</strong>
+                  <strong>{intl.formatMessage({ id: key })}</strong>
                 </p>
                 {Object.entries(values).map(([valKey, valData]) => (
                   <p key={valData.key}>
