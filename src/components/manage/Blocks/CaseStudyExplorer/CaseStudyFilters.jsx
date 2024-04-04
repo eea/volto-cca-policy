@@ -1,19 +1,9 @@
+import React from 'react';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { Accordion, Icon } from 'semantic-ui-react';
 
 export default function CaseStudyFilters(props) {
   const { filters, activeFilters, setActiveFilters } = props;
-  const [activeCategories, setActiveCategories] = React.useState({
-    sectors: false,
-    impacts: false,
-    measures: false,
-  });
-
-  const activateMenus = (name) => {
-    let clone = { ...activeCategories };
-    clone[name] = !activeCategories[name];
-    setActiveCategories(clone);
-  };
 
   const resetFilters = () => {
     let clone = { ...activeFilters };
@@ -32,7 +22,6 @@ export default function CaseStudyFilters(props) {
 
   function handleClick(e, titleProps) {
     let index = Object.create(activeIndex);
-    console.log('handleClickIn', titleProps.index, index);
     if (index.includes(titleProps.index)) {
       index = index.filter(function (item) {
         return item !== titleProps.index;
@@ -40,13 +29,8 @@ export default function CaseStudyFilters(props) {
     } else {
       index.push(titleProps.index);
     }
-    console.log('handleClickOut', index, titleProps);
     setActiveIndex(index);
   }
-
-  React.useEffect(() => {
-    console.log('CURRENT FILTER INDEX:', activeIndex);
-  }, [activeIndex]);
 
   const intl = useIntl();
   return (
@@ -140,9 +124,9 @@ export default function CaseStudyFilters(props) {
         <Accordion.Content active={activeIndex.includes(2)}>
           {Object.entries(filters?.measures || {}).map(
             ([key, values], index) => (
-              <div>
+              <div className="subcategory">
                 <p>
-                  <strong>{intl.formatMessage({ id: key })}</strong>
+                  <strong>AA{intl.formatMessage({ id: key })}</strong>
                 </p>
                 {Object.entries(values).map(([valKey, valData]) => (
                   <p key={valData.key}>
