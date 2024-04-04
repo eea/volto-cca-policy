@@ -13,7 +13,7 @@ describe('CaseStudyFilters', () => {
     const data = {
       impacts: [{ DROUGHT: 'Drought' }],
       sectors: [{ HEALTH: 'Health' }],
-      measures: { Measure1: [{ M11: 'm11', M12: m12 }] },
+      measures: { Measure1: [{ M11: 'm11', M12: 'm12' }] },
     };
 
     const store = mockStore({
