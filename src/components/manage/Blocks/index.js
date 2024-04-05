@@ -10,6 +10,7 @@ import installTransRegionSelect from './TransRegionSelect';
 import installCountryMapObservatory from './CountryMapObservatory';
 import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
+import installCountryProfileDetail from './CountryProfileDetail';
 import installListing from './Listing';
 import installRAST from './RASTBlock';
 import installC3SIndicatorsListingBlock from './C3SIndicatorsListingBlock';
@@ -37,6 +38,7 @@ export default function installBlocks(config) {
     installCountryMapObservatory,
     installCountryMapHeatIndex,
     installCountryMapProfile,
+    installCountryProfileDetail,
     installSearchAceContent,
     installRelevantAceContent,
     installFilterAceContent,
