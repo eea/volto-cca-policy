@@ -5,11 +5,18 @@
 }
 
 #csepopup {
+  border-bottom: 6px solid #005c96;
+
   p {
+    padding: 0 10px 0 10px;
     font-size: 13px;
 
     p {
       margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 
@@ -33,16 +40,18 @@
     position: relative;
     padding: 10px;
     border-bottom: 1px solid #d8d8d8;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
-    background-color: #005c96;
-    color: #fff;
+    background-color: #fff;
+    clear: both;
+    color: #005c96;
     cursor: pointer;
     font-size: 14px;
   }
 
   p {
-    padding: 2px;
-    padding-left: 10px;
+    // padding: 2px;
+    padding-bottom: 10px;
     clear: both;
     line-height: 20px;
 
@@ -56,4 +65,32 @@
       float: right;
     }
   }
+
+  div.title {
+    width: 100%;
+  }
+
+  .ui.accordion > .title > .icon {
+    line-height: 1rem;
+  }
+
+  .ui.accordion p {
+    margin: 0;
+  }
+
+  .ui.accordion .subcategory {
+    margin-bottom: 30px;
+  }
+
+  button.reset {
+    margin-top: 20px;
+  }
+
+  .ui.checkbox {
+    width: 100%;
+  }
+}
+
+.section-case-study-explorer #popup-overlay {
+  padding: 0;
 }

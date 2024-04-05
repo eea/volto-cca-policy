@@ -13,20 +13,46 @@ import './styles.less';
 const cases_url = '@@case-studies-map.arcgis.json';
 
 export default function CaseStudyExplorerView(props) {
-  const cases = useCases(addAppURL(cases_url));
+  const casesData = useCases(addAppURL(cases_url));
+  const [cases, setCases] = React.useState([]);
 
   const [activeFilters, setActiveFilters] = React.useState({
     sectors: [],
     impacts: [],
+    measures: [],
   });
 
   const [activeItems, setActiveItems] = React.useState(cases);
-  const [filters, setFilters] = React.useState([]);
+  const [filters, setFilters] = React.useState({
+    impacts: [],
+    sectors: [],
+    measures: {},
+  });
 
   React.useEffect(() => {
-    const _filters = getFilters(cases);
+    if (casesData.hasOwnProperty('features')) {
+      const _cases = casesData.features;
+      let _filters = filters;
+      setCases(_cases);
+      _filters.measures = casesData.filters.measures;
+      setFilters(_filters);
+    }
+  }, [casesData, filters]);
+
+  React.useEffect(() => {
+    const _filters_data = getFilters(cases);
+    let _filters = filters;
+    _filters.impacts = _filters_data.impacts;
+    _filters.sectors = _filters_data.sectors;
     setFilters(_filters);
-  }, [cases, activeFilters.impacts, activeFilters.sectors, activeItems.length]);
+  }, [
+    filters,
+    cases,
+    activeFilters.impacts,
+    activeFilters.sectors,
+    activeFilters.measures,
+    activeItems.length,
+  ]);
 
   React.useEffect(() => {
     const activeItems = filterCases(cases, activeFilters);
@@ -38,7 +64,7 @@ export default function CaseStudyExplorerView(props) {
   return (
     <div>
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column mobile={9} tablet={9} computer={9} className="col-left">
           {cases.length ? (
             <CaseStudyMap items={cases} activeItems={activeItems} />
           ) : null}
@@ -46,7 +72,7 @@ export default function CaseStudyExplorerView(props) {
         <Grid.Column
           mobile={3}
           tablet={3}
-          computer={2}
+          computer={3}
           className="col-left"
           id="cse-filter"
         >
