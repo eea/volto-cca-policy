@@ -170,3 +170,18 @@ body.subsite {
     font-size: 16px !important;
   }
 }
+
+.ui.grid > .row > .column-blocks-wrapper,
+.column-blocks-wrapper {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .country-flag {
+    padding: 0 1.2em;
+  }
+
+  .ui.selection.dropdown.countries-dd i.icon {
+    font-size: 23px;
+  }
+}
