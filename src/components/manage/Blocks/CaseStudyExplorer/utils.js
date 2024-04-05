@@ -65,6 +65,7 @@ export function getFilters(cases) {
 
     let sectorKeys = _case.properties.sectors.split(',');
     let sectorNames = _case.properties.sectors_str.split(',');
+
     for (let i = 0; i < sectorNames.length; i++) {
       if (!_filters.sectors.hasOwnProperty(sectorKeys[i + 1])) {
         _filters.sectors[sectorKeys[i + 1]] = sectorNames[i];
@@ -73,6 +74,7 @@ export function getFilters(cases) {
 
     let impactKeys = _case.properties.impacts.split(',');
     let impactNames = _case.properties.impacts_str.split(',');
+
     for (let i = 0; i < impactNames.length; i++) {
       if (!_filters.impacts.hasOwnProperty(impactKeys[i + 1])) {
         _filters.impacts[impactKeys[i + 1]] = impactNames[i];

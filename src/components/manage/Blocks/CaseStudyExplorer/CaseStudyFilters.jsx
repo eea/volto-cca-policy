@@ -55,7 +55,7 @@ export default function CaseStudyFilters(props) {
           index={0}
           onClick={handleClick}
         >
-          <Icon name="dropdown" />
+          <Icon name="dropdown" size="small" />
           <FormattedMessage
             id="Adaptation sectors"
             defaultMessage="Adaptation sectors"

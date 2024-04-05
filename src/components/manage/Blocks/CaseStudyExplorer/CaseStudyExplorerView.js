@@ -12,9 +12,11 @@ import './styles.less';
 
 const cases_url = '@@case-studies-map.arcgis.json';
 
-export default function CaseStudyExplorerView(props) {
+export default function CaseStudyExplorerView() {
   const casesData = useCases(addAppURL(cases_url));
   const [cases, setCases] = React.useState([]);
+
+  const [activeItems, setActiveItems] = React.useState(cases);
 
   const [activeFilters, setActiveFilters] = React.useState({
     sectors: [],
@@ -22,7 +24,6 @@ export default function CaseStudyExplorerView(props) {
     measures: [],
   });
 
-  const [activeItems, setActiveItems] = React.useState(cases);
   const [filters, setFilters] = React.useState({
     impacts: [],
     sectors: [],
@@ -32,9 +33,11 @@ export default function CaseStudyExplorerView(props) {
   React.useEffect(() => {
     if (casesData.hasOwnProperty('features')) {
       const _cases = casesData.features;
-      let _filters = filters;
-      setCases(_cases);
+
+      const _filters = filters;
       _filters.measures = casesData.filters.measures;
+
+      setCases(_cases);
       setFilters(_filters);
     }
   }, [casesData, filters]);
@@ -59,15 +62,13 @@ export default function CaseStudyExplorerView(props) {
     setActiveItems(activeItems);
   }, [activeFilters, cases]);
 
-  if (__SERVER__) return '';
+  const showMap = cases.length && !__SERVER__;
 
   return (
     <div>
       <Grid columns="12">
         <Grid.Column mobile={9} tablet={9} computer={9} className="col-left">
-          {cases.length ? (
-            <CaseStudyMap items={cases} activeItems={activeItems} />
-          ) : null}
+          {showMap && <CaseStudyMap items={cases} activeItems={activeItems} />}
         </Grid.Column>
         <Grid.Column
           mobile={3}
