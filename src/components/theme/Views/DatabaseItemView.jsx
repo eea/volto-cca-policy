@@ -22,13 +22,12 @@ import {
 import {
   ShareInfoButton,
   PortalMessage,
-  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import {
   isObservatoryMetadataURL,
   fixEmbedURL,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Grid } from 'semantic-ui-react';
+import { Container, Divider, Grid } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
@@ -112,9 +111,8 @@ const DatabaseItemView = (props) => {
           subtitle: subtitle,
         }}
       />
-      <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -255,7 +253,7 @@ const DatabaseItemView = (props) => {
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 };

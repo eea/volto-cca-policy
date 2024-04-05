@@ -2,7 +2,6 @@ import React from 'react';
 import {
   BannerTitle,
   PortalMessage,
-  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import { Container } from 'semantic-ui-react';
 import { SubjectTags } from '@eeacms/volto-cca-policy/helpers';
@@ -24,7 +23,6 @@ function NewsItemView(props) {
   return (
     <div className="cca-newsitem-view">
       <BannerTitle content={content} />
-      <TranslationDisclaimer />
 
       <Container>
         <PortalMessage content={content} />

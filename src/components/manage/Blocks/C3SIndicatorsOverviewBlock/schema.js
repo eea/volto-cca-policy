@@ -1,4 +1,22 @@
-const fields = ['category'];
+// const fields = ['category'];
+//
+//     category: {
+//       title: 'Category',
+//       type: 'string',
+//       factory: 'Choice',
+//       choices: [
+//         ['health', 'Health'],
+//         ['agriculture', 'Agriculture'],
+//         ['forestry', 'Forestry'],
+//         ['energy', 'Energy'],
+//         ['tourism', 'Tourism'],
+//         ['water-and-coastal', 'Water and Coastal'],
+//       ],
+//       default: 'health',
+//       description: 'Choose indicators category to be used as filter.',
+//       required: true,
+//       noValueOption: false,
+//     },
 
 export default {
   title: 'C3S Indicators Overview',
@@ -7,29 +25,11 @@ export default {
     {
       id: 'default',
       title: 'Default',
-      fields,
+      fields: [],
     },
   ],
 
-  properties: {
-    category: {
-      title: 'Category',
-      type: 'string',
-      factory: 'Choice',
-      choices: [
-        ['health', 'Health'],
-        ['agriculture', 'Agriculture'],
-        ['forestry', 'Forestry'],
-        ['energy', 'Energy'],
-        ['tourism', 'Tourism'],
-        ['water-and-coastal', 'Water and Coastal'],
-      ],
-      default: 'health',
-      description: 'Choose indicators category to be used as filter.',
-      required: true,
-      noValueOption: false,
-    },
-  },
+  properties: {},
 
   required: [],
 };

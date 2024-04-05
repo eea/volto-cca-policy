@@ -12,7 +12,7 @@ export default function CaseStudyMap(props) {
   const { items, activeItems } = props;
   const [selectedCase, onSelectedCase] = React.useState();
 
-  const features = getFeatures(items); //console.log('Features list', features);
+  const features = getFeatures(items);
 
   const [tileWMSSources] = React.useState([
     // , setTileWMSSources

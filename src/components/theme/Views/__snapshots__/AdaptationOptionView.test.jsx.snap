@@ -8,9 +8,6 @@ exports[`AdaptationOptionView should render the component 1`] = `
     Title Block Component
   </div>
   <div
-    className="translation-info"
-  />
-  <div
     className="ui container"
   >
     <div

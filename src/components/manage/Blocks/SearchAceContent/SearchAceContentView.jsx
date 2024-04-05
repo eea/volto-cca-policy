@@ -4,7 +4,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { useIntl, FormattedMessage } from 'react-intl';
 
 export default function SearchAceContentView(props) {
-  const { data } = props;
+  const { data, mode } = props;
   const results = data._v_results || [];
   const intl = useIntl();
 
@@ -32,9 +32,9 @@ export default function SearchAceContentView(props) {
         />
       </Link>
     </div>
-  ) : (
+  ) : mode === 'edit' ? (
     <div>
       <FormattedMessage id="No results" defaultMessage="No results" />
     </div>
-  );
+  ) : null;
 }

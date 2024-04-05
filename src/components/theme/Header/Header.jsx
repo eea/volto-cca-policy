@@ -6,7 +6,6 @@
 import React from 'react';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
-
 import { withRouter } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
 import {
@@ -84,6 +83,7 @@ const EEAHeader = (props) => {
 
   const { eea } = config.settings;
   const headerOpts = eea.headerOpts || {};
+  const subsiteHeaderOpts = eea.subsiteHeaderOpts || {};
   const headerSearchBox = eea.headerSearchBox || [];
   const { logo, logoWhite } = headerOpts || {};
   const width = useSelector((state) => state.screen?.width);
@@ -107,6 +107,11 @@ const EEAHeader = (props) => {
       }
     }
   }, [token, dispatch, pathname, previousToken]);
+
+  const subsiteView = subsiteHeaderOpts.filter((v) =>
+    router_pathname.match(v.matchpath),
+  );
+  const subsiteLogoWhite = subsiteView[0]?.logoWhite;
 
   const download = subsite?.subsite_logo?.scales?.preview?.download;
   const subsiteLogo = subsite?.subsite_logo
@@ -188,7 +193,11 @@ const EEAHeader = (props) => {
               <>
                 {subsite.subsite_logo ? (
                   <Logo
-                    src={subsiteLogo}
+                    src={
+                      isHomePageInverse && subsiteLogoWhite
+                        ? subsiteLogoWhite
+                        : subsiteLogo
+                    }
                     title={subsite.title}
                     alt={subsite.title}
                     url={flattenToAppURL(subsite['@id'])}

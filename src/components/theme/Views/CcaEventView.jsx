@@ -6,10 +6,7 @@ import {
   BannerTitle,
   EventDetails,
 } from '@eeacms/volto-cca-policy/helpers';
-import {
-  PortalMessage,
-  TranslationDisclaimer,
-} from '@eeacms/volto-cca-policy/components';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { FormattedMessage } from 'react-intl';
 
 function CcaEventView(props) {
@@ -51,7 +48,6 @@ function CcaEventView(props) {
           hideShareButton: false,
         }}
       />
-      <TranslationDisclaimer />
 
       <Container>
         <PortalMessage content={content} />

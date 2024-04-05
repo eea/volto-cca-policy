@@ -2,7 +2,6 @@ import React from 'react';
 import {
   BannerTitle,
   PortalMessage,
-  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { Grid, Container, Segment } from 'semantic-ui-react';
@@ -15,7 +14,6 @@ function CcaEventView(props) {
   return (
     <div className="cca-event-view">
       <BannerTitle content={content} />
-      <TranslationDisclaimer />
 
       <Container>
         <PortalMessage content={content} />

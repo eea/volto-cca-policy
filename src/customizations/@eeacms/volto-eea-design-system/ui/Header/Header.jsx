@@ -293,7 +293,7 @@ const Main = ({
       ref={node}
     >
       <Container>
-        <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
+        <div className="header-container">
           <div className="header-wrapper">
             {logo}
 

@@ -13,7 +13,10 @@ import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
 import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
+import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
+
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
 
 import installBlocks from './components/manage/Blocks';
@@ -23,10 +26,12 @@ import installStore from './store';
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
+import { TranslationDisclaimer } from '@eeacms/volto-cca-policy/components';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
-import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
 import { langRedirection } from './store/middleware';
+
+import './slate-styles.less';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -87,7 +92,14 @@ const applyConfig = (config) => {
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,
+      logoWhite: ccaLogoWhite,
     },
+    subsiteHeaderOpts: [
+      {
+        matchpath: '/observatory',
+        logoWhite: observatoryLogoWhite,
+      },
+    ],
     footerOpts: {
       ...(config.settings.eea?.footerOpts || {}),
       description:
@@ -380,12 +392,13 @@ const applyConfig = (config) => {
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
-  config.widgets.widget.creatableselect = CreatableSelectWidget;
 
-  config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
-    schema.properties.body_class.widget = 'creatableselect';
-    return schema;
-  };
+  config.settings.slate.styleMenu.inlineStyles = [
+    ...(config.settings.slate.styleMenu?.inlineStyles || []),
+    { cssClass: 'large-text', label: 'Large text' },
+    { cssClass: 'medium-text', label: 'Medium text' },
+    { cssClass: 'small-text', label: 'Small text' },
+  ];
 
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
@@ -417,6 +430,10 @@ const applyConfig = (config) => {
     {
       match: '',
       component: MigrationButtons,
+    },
+    {
+      match: '',
+      component: TranslationDisclaimer,
     },
   ];
 

@@ -7,12 +7,18 @@ import {
   BannerTitle,
   ItemLogo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Segment, Divider, Grid, ListItem, List } from 'semantic-ui-react';
+import {
+  Container,
+  Segment,
+  Divider,
+  Grid,
+  ListItem,
+  List,
+} from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import {
   ShareInfoButton,
   PortalMessage,
-  TranslationDisclaimer,
 } from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
@@ -174,9 +180,8 @@ function AdaptationOptionView(props) {
           subtitle: 'Adaptation Option',
         }}
       />
-      <TranslationDisclaimer />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -272,7 +277,7 @@ function AdaptationOptionView(props) {
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }

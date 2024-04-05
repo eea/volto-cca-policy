@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getQueryStringResults } from '@plone/volto/actions';
-import regionCountries from './countries.json';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 const messages = defineMessages({
   chooseARegion: {
@@ -17,14 +15,14 @@ const messages = defineMessages({
   },
 });
 
-const getSiblings = (items) => {
+const getOptions = (items) => {
   const regionsDropdown = (items || []).map((item) => {
     return {
       key: item.title,
       value: item.title,
       text: item.title,
       as: Link,
-      to: item['@id'],
+      to: flattenToAppURL(item.url),
     };
   });
 
@@ -36,62 +34,21 @@ const getSiblings = (items) => {
 };
 
 export default function TransRegionSelectView(props) {
-  const { id, data } = props;
-  const content = useSelector((state) => state.content.data);
-  const { title } = content;
-  const dispatch = useDispatch();
-  const querystringResults = useSelector(
-    (state) => state.querystringsearch.subrequests,
-  );
-  const currentLang = useSelector((state) => state.intl.locale);
-  const regions = getSiblings(querystringResults[id]?.items);
-  const otherRegionsCoverTitle =
-    'EU outermost regions and the overseas countries and territories';
-
-  React.useEffect(() => {
-    dispatch(
-      getQueryStringResults(
-        '/',
-        {
-          b_start: 0,
-          b_size: 10000,
-          limit: 10000,
-          query: [
-            {
-              i: 'path',
-              o: 'plone.app.querystring.operation.string.relativePath',
-              v: '/en/countries-regions/transnational-regions/::1',
-            },
-            {
-              i: 'object_provides',
-              o: 'plone.app.querystring.operation.selection.any',
-              v: 'eea.climateadapt.interfaces.ITransnationalRegionMarker',
-            },
-            {
-              i: 'review_state',
-              o: 'plone.app.querystring.operation.selection.any',
-              v: 'published',
-            },
-          ],
-        },
-        id,
-      ),
-    );
-  }, [dispatch, id]);
-
   const intl = useIntl();
-
-  const defaultValue =
-    title === otherRegionsCoverTitle
-      ? intl.formatMessage(messages.otherRegions)
-      : title;
-  for (let i = 0; i < regions.length; i++) {
-    // regions[i].text = regions[i].text + 'A';
-    regions[i].text = intl.formatMessage({
-      id: regions[i].text,
-      defineMessages: regions[i].text,
-    });
+  const { data, metadata, properties, mode = 'view' } = props;
+  const content = metadata || properties;
+  if (mode === 'edit') {
+    return <div>TransRegionSelectView</div>;
   }
+  const { title } = content;
+  const { regions, countries: countriesAndFlag } = content['@components'][
+    'transnationalregion'
+  ];
+  const [countries] = countriesAndFlag;
+
+  const defaultValue = !!countries
+    ? title
+    : intl.formatMessage(messages.otherRegions);
 
   return (
     <div className="block">
@@ -99,14 +56,13 @@ export default function TransRegionSelectView(props) {
       <Dropdown
         selection
         text={intl.formatMessage(messages.chooseARegion)}
-        options={regions}
+        options={getOptions(regions)}
         defaultValue={defaultValue}
         icon="angle down"
       />
       <p></p>
       <div className="countries">
-        {title === otherRegionsCoverTitle ||
-        title === intl.formatMessage(messages.otherRegions) ? null : (
+        {!!countries && (
           <h5>
             <FormattedMessage
               id="Region's countries:"
@@ -114,32 +70,25 @@ export default function TransRegionSelectView(props) {
             />
           </h5>
         )}
-        {regionCountries.countries
-          .filter((item) => item.region === title)
-          .map((item, i) => (
-            <div className="countries-listing" key={i}>
-              {item.countries.map((country, i) => {
-                const url = `/${currentLang}${country[1]}`;
-                return (
-                  <React.Fragment key={i}>
-                    {country[1].length > 0 ? (
-                      <Link to={url}>
-                        <span>
-                          {country[0]}
-                          {i < item.countries.length - 1 ? ', ' : ''}
-                        </span>
-                      </Link>
-                    ) : (
-                      <span>
-                        {country[0]}
-                        {i < item.countries.length - 1 ? ', ' : ''}
-                      </span>
-                    )}
-                  </React.Fragment>
-                );
-              })}
-            </div>
-          ))}
+        <div className="countries-listing">
+          {countries?.map(([name, url], i) => {
+            return url ? (
+              <React.Fragment key={i}>
+                <Link to={url}>
+                  <span>
+                    {name}
+                    {i < countries.length - 1 ? ', ' : ''}
+                  </span>
+                </Link>
+              </React.Fragment>
+            ) : (
+              <span>
+                {name}
+                {i < countries.length - 1 ? ', ' : ''}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

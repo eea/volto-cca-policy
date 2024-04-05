@@ -21,10 +21,7 @@ import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import { RenderBlocks } from '@plone/volto/components';
 import ContextNavigation from '@plone/volto/components/theme/Navigation/ContextNavigation';
-import {
-  BannerTitle,
-  TranslationDisclaimer,
-} from '@eeacms/volto-cca-policy/components';
+import { BannerTitle } from '@eeacms/volto-cca-policy/components';
 
 import { isEqual } from 'lodash';
 
@@ -85,7 +82,6 @@ const DefaultView = (props) => {
     hasBlocksData(content) ? (
       currentNavigation ? (
         <Container id="page-document">
-          <TranslationDisclaimer />
           <Grid>
             <Grid.Column width={12 - gridColumns}>
               <BannerTitle {...props} />
@@ -108,7 +104,6 @@ const DefaultView = (props) => {
       ) : (
         <Container id="page-document">
           <BannerTitle {...props} />
-          <TranslationDisclaimer />
           <RenderBlocks {...props} path={path} />
         </Container>
       )
