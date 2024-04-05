@@ -7,7 +7,7 @@ const TranslationInfo = (props) => {
   const [isActive, setIsActive] = useState(false);
   const [activeClass, setActiveClass] = useState('');
   const [elementHeight, setElementHeight] = useState(0);
-  const [bottomPosition, setBottomPosition] = useState(0);
+  const [bottomPosition, setBottomPosition] = useState('-100');
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const TranslationInfo = (props) => {
   const updateElementHeight = () => {
     if (elementRef.current) {
       const height = elementRef.current.clientHeight;
-      setElementHeight(`${height}px`);
+      setElementHeight(`${height}`);
     }
   };
 
@@ -31,7 +31,7 @@ const TranslationInfo = (props) => {
     const updateElementHeight = () => {
       if (elementRef.current) {
         const height = elementRef.current.clientHeight;
-        setElementHeight(`${height}px`);
+        setElementHeight(`${height}`);
       }
     };
 
@@ -59,7 +59,7 @@ const TranslationInfo = (props) => {
         ref={elementRef}
         className={`translation-toast warning ${activeClass}`}
         style={{
-          bottom: bottomPosition,
+          bottom: `${bottomPosition}px`,
         }}
       >
         <div className="header">
