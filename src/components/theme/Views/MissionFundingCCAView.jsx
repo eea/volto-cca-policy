@@ -31,14 +31,14 @@ function MissiongFundingCCAView(props) {
               computer={8}
               className="col-left"
             >
-              {content.objective.length > 0 && (
+              {!!content.objective && content.objective.data.length > 7 && (
                 <>
                   <h3>Objective of the funding programme</h3>
                   <HTMLField value={content.objective} />
                 </>
               )}
 
-              {content.funding_type.length > 0 && (
+              {!!content.funding_type && (
                 <>
                   <h3>Type of funding</h3>
                   <HTMLField value={content.funding_type} />
