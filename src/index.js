@@ -9,6 +9,7 @@ import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
+import MissionFundingCCAView from './components/theme/Views/MissionFundingCCAView';
 
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
@@ -285,6 +286,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
+    mission_funding_cca: MissionFundingCCAView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
