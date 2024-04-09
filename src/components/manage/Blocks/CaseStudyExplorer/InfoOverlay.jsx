@@ -59,7 +59,7 @@ export default function InfoOverlay({
       map.un('click', handler);
       map.removeOverlay(overlay);
     };
-  }, [map, tooltip, onFeatureSelect]); //
+  }, [map, tooltip, onFeatureSelect, hasCusters]);
 
   const [isClient, setIsClient] = React.useState(false);
   React.useEffect(() => setIsClient(true), []);
