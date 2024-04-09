@@ -1,6 +1,6 @@
 import { compose } from 'redux';
 
-import installMKHMap from './MKHMap';
+// import installMKHMap from './MKHMap';
 import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
 import installSearchAceContent from './SearchAceContent';
@@ -32,7 +32,7 @@ export default function installBlocks(config) {
     installC3SIndicatorsOverviewBlock,
     installC3SIndicatorsListingBlock,
     installC3SIndicatorsGlossaryBlock,
-    installMKHMap,
+    // installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
     installCountryMapObservatory,
