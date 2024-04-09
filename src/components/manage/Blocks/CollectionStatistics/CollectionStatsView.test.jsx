@@ -58,7 +58,6 @@ describe('CollectionStatsView', () => {
       userSession: { token: '1234' },
       intl: {
         locale: 'en',
-        messages: {},
       },
       querystats: {
         'id-1': {
