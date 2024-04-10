@@ -24,7 +24,7 @@ export default function RASTMap(props) {
   const items = props.items;
   let data = skip_items.split(',');
   let currentMenu = activeMenu;
-  if (data.includes(activeMenu.toString())) {
+  if (activeMenu !== null && data.includes(activeMenu.toString())) {
     currentMenu = -1;
   } else {
     let activeMenuMinus = 0;
