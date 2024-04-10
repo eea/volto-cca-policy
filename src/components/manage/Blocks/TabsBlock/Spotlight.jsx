@@ -180,7 +180,7 @@ const View = (props) => {
     menuFluid,
     menuInverted,
     menuPointing,
-    menuSecondary,
+    // menuSecondary,
     menuSize,
     menuStackable,
     menuTabular,
