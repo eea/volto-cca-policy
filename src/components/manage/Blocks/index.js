@@ -18,6 +18,7 @@ import installC3SIndicatorsOverviewBlock from './C3SIndicatorsOverviewBlock';
 import installC3SIndicatorsGlossaryBlock from './C3SIndicatorsGlossaryBlock';
 import installReadMore from './ReadMore';
 import installCollectionStats from './CollectionStatistics';
+import installTabsBlock from './TabsBlock';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -44,6 +45,7 @@ export default function installBlocks(config) {
     installFilterAceContent,
     installTransRegionSelect,
     installCollectionStats,
+    installTabsBlock,
     installListing,
   )(config);
 }
