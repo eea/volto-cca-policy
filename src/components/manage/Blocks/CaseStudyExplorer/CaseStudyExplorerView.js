@@ -86,30 +86,3 @@ export default function CaseStudyExplorerView(props) {
     </div>
   );
 }
-
-// import { useDispatch } from 'react-redux'; // , useSelector
-// import { getVocabulary } from '@plone/volto/actions'; // , searchContent
-// const IPCC = 'eea.climateadapt.aceitems_ipcc_category';
-// const dispatch = useDispatch();
-// React.useEffect(() => {
-//   const action = getVocabulary({
-//     vocabNameOrURL: IPCC,
-//   });
-//   dispatch(action);
-// }, [dispatch]);
-// setMapKey(
-//   activeItems.length +
-//     '-' +
-//     activeFilters.sectors +
-//     '-' +
-//     activeFilters.impacts,
-// );
-//console.log('activeFilters filter cases', data);
-// setMapKey(
-//   activeItems.length +
-//     '-' +
-//     activeFilters.sectors +
-//     '-' +
-//     activeFilters.impacts,
-// );
-// const [mapKey, setMapKey] = React.useState('-');

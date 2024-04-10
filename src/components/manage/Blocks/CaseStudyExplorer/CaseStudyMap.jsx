@@ -61,6 +61,7 @@ export default function CaseStudyMap(props) {
           selectedFeature={selectedCase}
           onFeatureSelect={onSelectedCase}
           layerId={tileWMSSources[0]}
+          hasCusters={true}
         />
         <FeatureInteraction onFeatureSelect={onSelectedCase} />
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />

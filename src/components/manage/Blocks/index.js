@@ -1,6 +1,6 @@
 import { compose } from 'redux';
 
-import installMKHMap from './MKHMap';
+// import installMKHMap from './MKHMap';
 import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
 import installSearchAceContent from './SearchAceContent';
@@ -18,6 +18,7 @@ import installC3SIndicatorsOverviewBlock from './C3SIndicatorsOverviewBlock';
 import installC3SIndicatorsGlossaryBlock from './C3SIndicatorsGlossaryBlock';
 import installReadMore from './ReadMore';
 import installCollectionStats from './CollectionStatistics';
+import installTabsBlock from './TabsBlock';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -32,7 +33,7 @@ export default function installBlocks(config) {
     installC3SIndicatorsOverviewBlock,
     installC3SIndicatorsListingBlock,
     installC3SIndicatorsGlossaryBlock,
-    installMKHMap,
+    // installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
     installCountryMapObservatory,
@@ -44,6 +45,7 @@ export default function installBlocks(config) {
     installFilterAceContent,
     installTransRegionSelect,
     installCollectionStats,
+    installTabsBlock,
     installListing,
   )(config);
 }

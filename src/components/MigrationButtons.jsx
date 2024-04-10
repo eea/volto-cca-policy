@@ -35,6 +35,12 @@ function MigrationButtons(props) {
         `http://localhost:8080/cca/${base}/@@volto_migrate`,
       ),
       button(
+        'migrationtree',
+        'Migrate Tree',
+        'MT',
+        `http://localhost:8080/cca/${base}/@@volto_contenttree`,
+      ),
+      button(
         'view',
         'View original',
         'V',

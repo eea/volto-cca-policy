@@ -11,7 +11,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 import * as layers from './layers';
 import FeatureInteraction from './FeatureInteraction';
-import InfoOverlay from './InfoOverlay';
+import InfoOverlay from '@eeacms/volto-cca-policy/components/manage/Blocks/CaseStudyExplorer/InfoOverlay';
 
 import './styles.less';
 
@@ -87,6 +87,7 @@ export default function View(props) {
             <InfoOverlay
               selectedFeature={selectedFeature}
               layerId={sources?.[0]}
+              hasClusters={false}
             />
             <Controls attribution={false} zoom={false} />
             <Interactions

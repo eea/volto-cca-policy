@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-cca-policy",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "@eeacms/volto-cca-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -26,6 +26,7 @@
     "@eeacms/volto-datablocks",
     "@eeacms/volto-eea-design-system",
     "@eeacms/volto-eea-website-theme",
+    "@eeacms/volto-tabs-block",
     "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
@@ -38,6 +39,7 @@
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-searchlib": "*",
     "@eeacms/volto-slate-label": "*",
+    "@eeacms/volto-tabs-block": "*",
     "@eeacms/volto-widget-dataprovenance": "*",
     "@eeacms/volto-widget-geolocation": "*",
     "@eeacms/volto-widget-temporal-coverage": "*",

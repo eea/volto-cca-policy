@@ -12,6 +12,7 @@ export default function InfoOverlay({
   selectedFeature,
   onFeatureSelect,
   layerId,
+  hasCusters = false,
 }) {
   const { map } = useMapContext();
   const [tooltip, setTooltipRef] = React.useState();
@@ -41,7 +42,7 @@ export default function InfoOverlay({
       const { pixel, target } = evt;
       const features = target.getFeaturesAtPixel(pixel);
 
-      if (features.length && !isCluster(features)) {
+      if (features.length && (hasCusters ? !isCluster(features) : true)) {
         overlay.setPosition(coordinate);
         setShowTooltip(true);
       } else {
@@ -58,7 +59,7 @@ export default function InfoOverlay({
       map.un('click', handler);
       map.removeOverlay(overlay);
     };
-  }, [map, tooltip, onFeatureSelect]); //
+  }, [map, tooltip, onFeatureSelect, hasCusters]);
 
   const [isClient, setIsClient] = React.useState(false);
   React.useEffect(() => setIsClient(true), []);

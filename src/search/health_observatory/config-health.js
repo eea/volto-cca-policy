@@ -18,51 +18,46 @@ export const clusters = {
       name: 'Case studies',
       icon: { name: 'file text' },
       values: ['Case study'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Guidance',
       icon: { name: 'compass' },
       values: ['Guidance'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Indicators',
       icon: { name: 'area chart' },
       values: ['Indicator'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Information portals',
       icon: { name: 'info circle' },
       values: ['Information portal'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Publications and reports',
       icon: { name: 'newspaper' },
       values: ['Publication reference'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Research and knowledge projects',
       icon: { name: 'university' },
       values: ['Research and knowledge project'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Tools',
       icon: { name: 'wrench' },
       values: ['Tool'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Videos',
       icon: { name: 'video play' },
       values: ['Video'],
-      defaultResultView: 'horizontalCard',
     },
-  ],
+  ].map((cluster) => ({
+    ...cluster,
+    defaultResultView: 'horizontalCard',
+  })),
 };
 
 export default function installMainSearch(config) {
