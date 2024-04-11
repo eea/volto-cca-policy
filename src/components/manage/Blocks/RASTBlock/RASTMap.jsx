@@ -24,14 +24,16 @@ export default function RASTMap(props) {
   const items = props.items;
   let data = skip_items.split(',');
   let currentMenu = activeMenu;
-  if (activeMenu !== null && data.includes(activeMenu.toString())) {
-    currentMenu = -1;
-  } else {
-    let activeMenuMinus = 0;
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].length && data[i] <= activeMenu) activeMenuMinus++;
+  if (activeMenu !== null) {
+    if (data.includes(activeMenu.toString())) {
+      currentMenu = -1;
+    } else {
+      let activeMenuMinus = 0;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].length && data[i] <= activeMenu) activeMenuMinus++;
+      }
+      currentMenu -= activeMenuMinus;
     }
-    currentMenu -= activeMenuMinus;
   }
 
   return (
