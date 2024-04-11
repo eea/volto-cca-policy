@@ -1,0 +1,45 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.ast-navigation {
+  .ui.accordion {
+    .ui.list .item {
+      font-weight: 400;
+    }
+  }
+
+  .substep {
+    a {
+      color: inherit;
+    }
+
+    &.active a {
+      color: @secondaryColor;
+      font-weight: 500;
+    }
+  }
+}
+
+.ast-logo-map {
+  margin-bottom: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  svg {
+    width: 100%;
+  }
+
+  .step-link:hover,
+  .step-link.active {
+    > path {
+      fill: #ffd554 !important;
+    }
+    g.text > path {
+      fill: #3d5265 !important;
+    }
+  }
+}
