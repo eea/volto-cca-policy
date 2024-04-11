@@ -290,25 +290,6 @@ const applyConfig = (config) => {
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
 
   config.settings.contextNavigationLocations = [
-    // {
-    //   title: 'Regional Adaptation Support Tool',
-    //   columns: 4,
-    //   topLevel: 2,
-    //   bottomLevel: 0,
-    //   rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
-    // },
-    {
-      title: 'UrbanAST',
-      topLevel: 3,
-      bottomLevel: 2,
-      rootPath: 'knowledge/tools/urban-ast',
-    },
-    {
-      title: 'Adaptation Suport Tool',
-      topLevel: 3,
-      bottomLevel: 2,
-      rootPath: 'knowledge/tools/adaptation-support-tool',
-    },
     {
       title: 'Adaptation',
       topLevel: 4,
@@ -327,6 +308,17 @@ const applyConfig = (config) => {
       topLevel: 2,
       bottomLevel: 2,
       rootPath: 'help/share-your-info',
+    },
+  ];
+
+  config.settings.astNavigations = [
+    {
+      title: 'Urban adaptation support tool',
+      root_path: 'knowledge/tools/urban-ast',
+    },
+    {
+      title: 'Adaptation Suport Tool',
+      root_path: 'knowledge/tools/adaptation-support-tool',
     },
   ];
 
