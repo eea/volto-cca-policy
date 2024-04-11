@@ -23,11 +23,16 @@ export default function RASTMap(props) {
 
   const items = props.items;
   let data = skip_items.split(',');
-  let activeMenuMinus = 0;
-  for (let i = 0; i < data.length; i++) {
-    if (data[i] <= activeMenu) activeMenuMinus++;
+  let currentMenu = activeMenu;
+  if (activeMenu !== null && data.includes(activeMenu.toString())) {
+    currentMenu = -1;
+  } else {
+    let activeMenuMinus = 0;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].length && data[i] <= activeMenu) activeMenuMinus++;
+    }
+    currentMenu -= activeMenuMinus;
   }
-  let currentMenu = activeMenu - activeMenuMinus;
 
   return (
     <div className="rast-map-block">
