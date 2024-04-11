@@ -86,7 +86,7 @@ function getStyle(size) {
                 color: '#fff',
               }),
               fill: new ol.style.Fill({
-                color: '#000000',
+                color: '#005c96',
               }),
             }),
           })
@@ -97,7 +97,7 @@ function getStyle(size) {
                 color: '#fff',
               }),
               fill: new ol.style.Fill({
-                color: '#3399CC',
+                color: '#005c96',
               }),
             }),
             text: new ol.style.Text({

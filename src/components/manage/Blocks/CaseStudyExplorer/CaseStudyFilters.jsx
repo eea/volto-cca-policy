@@ -70,6 +70,7 @@ export default function CaseStudyFilters(props) {
                 checked={activeFilters.sectors.includes(value)}
                 name="sectors"
                 onChange={checkboxChangeHandler}
+                key={'sector' + index}
               />
             ),
           )}
@@ -95,6 +96,7 @@ export default function CaseStudyFilters(props) {
                 value={value}
                 name="impacts"
                 onChange={checkboxChangeHandler}
+                key={'impact' + index}
               />
               // </p>
             ),
@@ -114,7 +116,7 @@ export default function CaseStudyFilters(props) {
         <Accordion.Content active={activeIndex.includes(2)}>
           {Object.entries(filters?.measures || {}).map(
             ([key, values], index) => (
-              <div className="subcategory">
+              <div className="subcategory" key={'ktm' + index}>
                 <p>
                   <strong>{intl.formatMessage({ id: key })}</strong>
                 </p>
@@ -125,6 +127,7 @@ export default function CaseStudyFilters(props) {
                     checked={activeFilters.measures.includes(valData.key)}
                     name="measures"
                     onChange={checkboxChangeHandler}
+                    key={'ktm' + index + '_' + valData.key}
                   />
                 ))}
               </div>
@@ -140,6 +143,19 @@ export default function CaseStudyFilters(props) {
           Reset
         </button>
       ) : null}
+      <div className="case-study-legend">
+        <p>
+          <strong>Climate-ADAPT case studies</strong>
+        </p>
+        <p>
+          <span></span>Climate-ADAPT case studies
+        </p>
+        <p>
+          <span className="light-blue"></span>
+          Case studies collected at national level in Spain, provided by
+          AdapteCCA.es
+        </p>
+      </div>
     </>
   );
 }
