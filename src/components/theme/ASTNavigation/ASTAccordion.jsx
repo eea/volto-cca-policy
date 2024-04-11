@@ -104,10 +104,9 @@ const ASTAccordion = (props) => {
         {Object.values(items).map((step, i) => {
           const isActiveStep = pathname === step['@id'];
           const isActiveSubStep = step['items'].some(
-            (item) => item.is_active === true,
+            (item) => item['@id'] === pathname,
           );
           const active = isActiveStep || isActiveSubStep ? true : false;
-
           return (
             <React.Fragment key={i}>
               <Accordion.Title
@@ -127,16 +126,19 @@ const ASTAccordion = (props) => {
               </Accordion.Title>
               <Accordion.Content active={active}>
                 <List>
-                  {step['items'].map((item, i) => (
-                    <List.Item
-                      key={i}
-                      className={cx('substep', {
-                        active: item.is_active,
-                      })}
-                    >
-                      <Link to={item['@id']}>{item.title}</Link>
-                    </List.Item>
-                  ))}
+                  {step['items'].map((item, i) => {
+                    const active = pathname === item['@id'];
+                    return (
+                      <List.Item
+                        key={i}
+                        className={cx('substep', {
+                          active: active,
+                        })}
+                      >
+                        <Link to={item['@id']}>{item.title}</Link>
+                      </List.Item>
+                    );
+                  })}
                 </List>
               </Accordion.Content>
             </React.Fragment>

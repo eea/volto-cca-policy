@@ -12,7 +12,6 @@ import './styles.less';
 const ASTNavigation = (props) => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const pathname = location.pathname;
   const { root_path } = props.astNavigation;
   const currentLanguage = useSelector((state) => state.intl.locale);
   const rootPath = `/${currentLanguage}/${root_path}`;
@@ -58,13 +57,6 @@ const ASTNavigation = (props) => {
     isAdaptationSupportTool,
     isUrbanAdaptationSupportTool,
   ]);
-
-  for (let i = 0; i < items.length; i++) {
-    items[i].is_active = false;
-    if (pathname.includes(items[i]['@id'])) {
-      items[i].is_active = true;
-    }
-  }
 
   return items && items.length > 0 ? (
     <div className="ast-navigation">
