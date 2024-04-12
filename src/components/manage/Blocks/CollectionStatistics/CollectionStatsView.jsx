@@ -40,7 +40,7 @@ export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
 
 export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   const intl = useIntl();
-  const label = intl.formatMessage({ id: name });
+  const label = intl.formatMessage({ id: name, defaultMessage: name });
   return (
     <div className="tab-icon semantic-icon" title={label}>
       <div className="tab-icon-wrapper">
