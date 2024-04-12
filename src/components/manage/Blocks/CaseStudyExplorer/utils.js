@@ -20,6 +20,8 @@ export function getFeatures(cases) {
         adaptation_options_links: c.properties.adaptation_options_links,
         index: index,
         url: c.properties.url,
+        origin_adaptecca: c.properties.origin_adaptecca,
+        color: c.properties.origin_adaptecca === 20 ? '#005c96' : '#00FFFF',
       },
       false,
     );
