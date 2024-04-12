@@ -5,11 +5,9 @@ import { Accordion, Icon } from 'semantic-ui-react';
 import './styles.less';
 
 export default function View(props) {
-  console.log('View:', props);
   const dataJson = JSON.parse(
     props.properties['@components'].countryprofile.html,
   );
-  console.log('DataJson:', dataJson);
   const [activePanes, setActivePanes] = React.useState({});
 
   const panes = [];
@@ -44,11 +42,9 @@ export default function View(props) {
                 tabIndex={0}
                 active={activePanes['_' + index] || false}
                 onClick={(e) => {
-                  // const value =
                   const temp = JSON.parse(JSON.stringify(activePanes));
                   let val = temp['_' + index] || false;
                   temp['_' + index] = !val;
-                  console.log(temp);
                   setActivePanes(temp);
                 }}
               >
@@ -110,11 +106,9 @@ function CountryTabPane(props) {
                   tabIndex={0}
                   active={activePanes[indexKey + '_' + index] || false}
                   onClick={(e) => {
-                    // const value =
                     const temp = JSON.parse(JSON.stringify(activePanes));
                     let val = temp[indexKey + '_' + index] || false;
                     temp[indexKey + '_' + index] = !val;
-                    console.log(temp);
                     setActivePanes(temp);
                   }}
                 >
