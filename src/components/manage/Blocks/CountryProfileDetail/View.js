@@ -7,7 +7,7 @@ import './styles.less';
 
 export default function View(props) {
   const dataJson = JSON.parse(
-    props.properties['@components'].countryprofile.html,
+    props?.properties['@components']?.countryprofile?.html,
   );
   const [activePanes, setActivePanes] = React.useState({});
 
