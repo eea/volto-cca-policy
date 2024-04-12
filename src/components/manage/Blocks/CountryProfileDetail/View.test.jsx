@@ -10,7 +10,8 @@ const mockStore = configureStore();
 
 describe('View', () => {
   it('should render the component', () => {
-    const data = {};
+    const properties = { '@components': { countryprofile: { html: '' } } };
+    const data = { properties: properties };
 
     const store = mockStore({
       userSession: { token: '1234' },
