@@ -73,8 +73,8 @@ export default function CaseStudyMap(props) {
 
 const _cached = {};
 
-function getStyle(size) {
-  let style = _cached[size];
+function getStyle(size, haveAdaptecca) {
+  let style = _cached[size + '_' + haveAdaptecca];
 
   if (!style) {
     style =
@@ -86,7 +86,7 @@ function getStyle(size) {
                 color: '#fff',
               }),
               fill: new ol.style.Fill({
-                color: '#005c96',
+                color: haveAdaptecca ? '#00ffff' : '#005c96',
               }),
             }),
           })
@@ -97,7 +97,7 @@ function getStyle(size) {
                 color: '#fff',
               }),
               fill: new ol.style.Fill({
-                color: '#005c96',
+                color: haveAdaptecca ? '#318CE7' : '#005c96',
               }),
             }),
             text: new ol.style.Text({
@@ -107,14 +107,16 @@ function getStyle(size) {
               }),
             }),
           });
-    _cached[size] = style;
+    _cached[size + '_' + haveAdaptecca] = style;
   }
   return style;
 }
 
 function clusterStyle(feature) {
   const size = feature.get('features').length;
-  //const size = feature.get('casePoints').length;
+  const cases = feature
+    .get('features')
+    .filter((_case) => _case['values_']['origin_adaptecca'] < 20);
 
-  return getStyle(size);
+  return getStyle(size, cases.length > 0 ? 1 : 0);
 }
