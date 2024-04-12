@@ -83,13 +83,13 @@ function CountryTabPane(props) {
     <>
       {contents.map((element, index) => {
         let indexKey = _index + '_' + index;
-        if (element.type == 'h2') {
+        if (element.type === 'h2') {
           return <h2 key={indexKey}>{element.value}</h2>;
         }
-        if (element.type == 'h3') {
+        if (element.type === 'h3') {
           return <h3 key={indexKey}>{element.value}</h3>;
         }
-        if (element.type == 'p') {
+        if (element.type === 'p') {
           return (
             <p
               key={indexKey}
@@ -97,7 +97,7 @@ function CountryTabPane(props) {
             ></p>
           );
         }
-        if (element.type == 'accordeon') {
+        if (element.type === 'accordeon') {
           return element.value.map((accordion, index) => {
             return (
               <Accordion className="secondary">
@@ -123,7 +123,7 @@ function CountryTabPane(props) {
             );
           });
         }
-        if (element.type == 'table') {
+        if (element.type === 'table') {
           let _html_value = '';
           for (let i = 0; i < element.value.length; i++) {
             _html_value += element.value[i];
@@ -133,7 +133,7 @@ function CountryTabPane(props) {
             <table dangerouslySetInnerHTML={{ __html: _html_value }}></table>
           );
         }
-        if (element.type == 'div') {
+        if (element.type === 'div') {
           let _html_value = '';
           for (let i = 0; i < element.value.length; i++) {
             _html_value += element.value[i];
