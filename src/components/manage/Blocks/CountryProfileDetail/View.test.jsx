@@ -10,7 +10,14 @@ const mockStore = configureStore();
 
 describe('View', () => {
   it('should render the component', () => {
-    const properties = { '@components': { countryprofile: { html: '' } } };
+    const properties = {
+      '@components': {
+        countryprofile: {
+          html:
+            '{"menu":[],"content":[],"html":"","updated":"","message_top":"", "top_accordeon":""}',
+        },
+      },
+    };
     const data = { properties: properties };
 
     const store = mockStore({
