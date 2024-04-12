@@ -15,7 +15,7 @@ describe('CountryTabPane', () => {
   it('should render the component', () => {
     const data = {
       _index: 2,
-      contents: [],
+      contents: [[{ type: 'div', value: '<p class="testing>Just a test</p>' }]],
       activePanes: 1,
       setActivePanes: setActivePanes,
     };
@@ -35,6 +35,7 @@ describe('CountryTabPane', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(container).toBeTruthy();
+    expect(container.querySelector('.testing')).toBeInTheDocument();
+    // expect(container).toBeTruthy();
   });
 });
