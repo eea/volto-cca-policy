@@ -15,7 +15,14 @@ describe('CountryTabPane', () => {
   it('should render the component', () => {
     const data = {
       _index: 2,
-      contents: [[{ type: 'div', value: '<p class="testing>Just a test</p>' }]],
+      contents: [
+        [
+          {
+            type: 'div',
+            value: '<div><p class="testing>Just a test</p></div>',
+          },
+        ],
+      ],
       activePanes: 1,
       setActivePanes: setActivePanes,
     };
