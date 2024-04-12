@@ -21,7 +21,7 @@ export function getFeatures(cases) {
         index: index,
         url: c.properties.url,
         origin_adaptecca: c.properties.origin_adaptecca,
-        color: c.properties.origin_adaptecca == 20 ? '#005c96' : '#00FFFF',
+        color: c.properties.origin_adaptecca === 20 ? '#005c96' : '#00FFFF',
       },
       false,
     );
