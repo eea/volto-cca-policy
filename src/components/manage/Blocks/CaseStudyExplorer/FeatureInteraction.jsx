@@ -9,10 +9,10 @@ const useStyles = () => {
         image: new ol.style.Circle({
           radius: 12,
           fill: new ol.style.Fill({
-            color: '#ccc',
+            color: '#005c96',
           }),
           stroke: new ol.style.Stroke({
-            color: 'rgba(255, 0, 0, 0.7)',
+            color: 'rgba(0, 92, 150, 0.9)',
             width: 2,
           }),
         }),
