@@ -73,11 +73,11 @@ const groupItemsByStep = (object, isAST, isUAST, lang, intl) => {
     items[key] = grouped[key];
   });
 
+  const astPath = 'knowledge/tools/adaptation-support-tool';
+
   if (Object.keys(items).length !== 0) {
     if (isAST) {
-      items['step-0'][
-        '@id'
-      ] = `/${lang}/knowledge/tools/adaptation-support-tool`;
+      items['step-0']['@id'] = `/${lang}/${astPath}`;
       items['step-0'].title = intl.formatMessage(messages.ast_start_title);
     }
     if (isUAST) {
