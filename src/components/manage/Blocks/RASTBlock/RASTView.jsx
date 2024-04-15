@@ -11,8 +11,10 @@ function useChildren(location) {
     dispatch(action);
   }, [location, dispatch]);
 
-  const items = useSelector(
-    (state) => state.content.subrequests?.[location]?.data?.items || [],
+  const items = useSelector((state) =>
+    (state.content.subrequests?.[location]?.data?.items || []).filter(
+      (i) => i.review_state === 'published',
+    ),
   );
   return items;
 }
