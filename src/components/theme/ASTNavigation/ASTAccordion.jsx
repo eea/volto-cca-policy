@@ -1,9 +1,21 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Accordion, List } from 'semantic-ui-react';
+import { useIntl, defineMessages } from 'react-intl';
 import ASTLogoMap from './ASTLogoMap';
 import UASTLogoMap from './UASTLogoMap';
 import cx from 'classnames';
+
+const messages = defineMessages({
+  ast_start_title: {
+    id: 'The Adaptation Support Tool - Getting started',
+    defaultMessage: 'The Adaptation Support Tool - Getting started',
+  },
+  uast_start_title: {
+    id: 'Getting started',
+    defaultMessage: 'Getting started',
+  },
+});
 
 const sortItems = (items) => {
   const sortedItems = items.sort((a, b) => {
@@ -19,7 +31,7 @@ const sortItems = (items) => {
   return sortedItems;
 };
 
-const groupItemsByStep = (object, isAST, isUAST, lang) => {
+const groupItemsByStep = (object, isAST, isUAST, lang, intl) => {
   const grouped = {};
   const items = {};
 
@@ -61,15 +73,15 @@ const groupItemsByStep = (object, isAST, isUAST, lang) => {
     items[key] = grouped[key];
   });
 
+  const astPath = 'knowledge/tools/adaptation-support-tool';
+
   if (Object.keys(items).length !== 0) {
     if (isAST) {
-      items['step-0'][
-        '@id'
-      ] = `/${lang}/knowledge/tools/adaptation-support-tool`;
-      items['step-0'].title = 'The Adaptation Support Tool - Getting started';
+      items['step-0']['@id'] = `/${lang}/${astPath}`;
+      items['step-0'].title = intl.formatMessage(messages.ast_start_title);
     }
     if (isUAST) {
-      items['step-0'].title = 'Getting started';
+      items['step-0'].title = intl.formatMessage(messages.uast_start_title);
     }
   }
   return items;
@@ -77,6 +89,7 @@ const groupItemsByStep = (object, isAST, isUAST, lang) => {
 
 const ASTAccordion = (props) => {
   const history = useHistory();
+  const intl = useIntl();
   const {
     astItems,
     location,
@@ -90,6 +103,7 @@ const ASTAccordion = (props) => {
     isAdaptationSupportTool,
     isUrbanAdaptationSupportTool,
     currentLanguage,
+    intl,
   );
 
   return (

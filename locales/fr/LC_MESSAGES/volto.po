@@ -98,11 +98,6 @@ msgstr "Catégorie"
 msgid "Challenges"
 msgstr "Défis"
 
-#. Default: "Choices"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Choices"
-msgstr "Les choix"
-
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
@@ -119,7 +114,6 @@ msgid "City:"
 msgstr "Ville:"
 
 #. Default: "Climate impact"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr "Impact climatique"
@@ -139,11 +133,6 @@ msgstr "Impacts climatiques:"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
 msgstr "Page Climat-ADAPT pour cet événement"
-
-#. Default: "Close"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Close"
-msgstr "Fermer"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -192,13 +181,7 @@ msgstr "Date de sortie:"
 msgid "Dec"
 msgstr "Déc"
 
-#. Default: "Default"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Default"
-msgstr "Défaut"
-
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget
 #: helpers/Utils
 msgid "Description"
 msgstr "Description"
@@ -247,6 +230,11 @@ msgstr "Programme de financement:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Caractérisation géographique:"
+
+#. Default: "Getting started"
+#: components/theme/ASTNavigation/ASTAccordion
+msgid "Getting started"
+msgstr "Commencer"
 
 #. Default: "Go back"
 #: components/theme/Views/C3SIndicatorView
@@ -339,6 +327,11 @@ msgstr "Mesures de type clé:"
 msgid "Key activities within climate change and health"
 msgstr "Activités clés dans le changement climatique et la santé"
 
+#. Default: "Key type measures"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Key type measures"
+msgstr ""
+
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
@@ -411,20 +404,10 @@ msgstr "No HHAP"
 msgid "No information"
 msgstr "Aucune information"
 
-#. Default: "No options"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No options"
-msgstr "Aucune option"
-
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Aucun résultat"
-
-#. Default: "No value"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No value"
-msgstr "Aucune valeur"
 
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -533,18 +516,12 @@ msgstr "Documents et présentations connexes"
 msgid "Relevance"
 msgstr "Pertinence"
 
-#. Default: "Required"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Required"
-msgstr "Requis"
-
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr "Sa"
 
 #. Default: "Sector"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr "Secteur"
@@ -569,11 +546,6 @@ msgstr "Voir plus"
 msgid "See video outside Climate-ADAPT"
 msgstr "Voir la vidéo en dehors de Climate-ADAPT"
 
-#. Default: "Select…"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Select…"
-msgstr "Sélectionner…"
-
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
@@ -582,14 +554,8 @@ msgstr "Sep"
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Partagez vos informations"
-
-#. Default: "Short Name"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Short Name"
-msgstr "Nom court"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -640,6 +606,11 @@ msgstr "Facteurs de réussite et facteurs limitants"
 msgid "Th"
 msgstr "Ème"
 
+#. Default: "The Adaptation Support Tool - Getting started"
+#: components/theme/ASTNavigation/ASTAccordion
+msgid "The Adaptation Support Tool - Getting started"
+msgstr "L'outil d'assistance d'adaptation - Début"
+
 #. Default: "The date refers to the date of release of the video"
 #: helpers/ContentMetadata
 msgid "The date refers to the date of release of the video"
@@ -655,20 +626,10 @@ msgstr "La date fait référence à la dernière date de publication de l'articl
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "La date fait référence au moment où l'article a été préparé ou mis à jour par les experts contributeurs pour être soumis à la publication dans Climate ADAPT."
 
-#. Default: "Title"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Title"
-msgstr "Titre"
-
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "Tu"
-
-#. Default: "Used for programmatic access to the fieldset."
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Used for programmatic access to the fieldset."
-msgstr "Utilisé pour l’accès par programmation à l’ensemble de champs."
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -3132,11 +3093,6 @@ msgid "Geographic characterization:"
 msgstr "Caractérisation géographique:"
 
 #. undefined
-#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:50
-msgid "Getting started"
-msgstr "Commencer"
-
-#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:255
 msgid "Go to Case Study Explorer"
@@ -3748,11 +3704,6 @@ msgstr "Le <a href="https://www.covenantofmayors.eu/support/funding.html">Guide 
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:418
 msgid "The <a href="https://www.fao.org/green-cities-initiative/en/">FAO Green Cities Initiative</a> focuses on improving the urban environment, strengthening urban-rural linkages and the resilience of urban systems, services and populations to external shocks."
 msgstr "L'<a href="https://www.fao.org/green-cities-initiative/en/">Initiative FAO Green Cities</a> se concentre sur l'amélioration de l'environnement urbain, le renforcement des liens urbains-ruraux et la résilience des systèmes, des services et des populations urbains aux chocs externes."
-
-#. undefined
-#: ../../climateadapt/tiles/pt/ast_navigation.pt:106
-msgid "The Adaptation Support Tool - Getting started"
-msgstr "L'outil d'assistance d'adaptation - Début"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:384
