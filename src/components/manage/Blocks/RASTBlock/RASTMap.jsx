@@ -21,8 +21,10 @@ export default function RASTMap(props) {
   const { path, pathname, activeMenu, skip_items } = props;
   const currentPath = path || pathname;
 
-  const items = props.items;
   let data = skip_items.split(',');
+  const items = props.items.filter(
+    (_item, index) => !data.includes(index.toString()),
+  );
   let currentMenu = activeMenu;
 
   if (activeMenu !== null) {
