@@ -1,4 +1,8 @@
-import { HTMLField, BannerTitle } from '@eeacms/volto-cca-policy/helpers';
+import {
+  HTMLField,
+  BannerTitle,
+  MetadataItemList,
+} from '@eeacms/volto-cca-policy/helpers';
 import { Container, Grid, Segment } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
@@ -129,21 +133,13 @@ function MissiongFundingCCAView(props) {
                   content.eligible_entities.length > 0 && (
                     <>
                       <h5>Eligible to receive funding</h5>
-                      <ul>
-                        {content.eligible_entities.map((entity) => (
-                          <li>{entity.title}</li>
-                        ))}
-                      </ul>
+                      <MetadataItemList value={content.eligible_entities} />
                     </>
                   )}
                 {!!content.sectors && content.sectors.length > 0 && (
                   <>
                     <h5>Adaptation Sectors</h5>
-                    <ul>
-                      {content.sectors.map((sector) => (
-                        <li>{sector.title}</li>
-                      ))}
-                    </ul>
+                    <MetadataItemList value={content.sectors} />
                   </>
                 )}
               </Segment>
