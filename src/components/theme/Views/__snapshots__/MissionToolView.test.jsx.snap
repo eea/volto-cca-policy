@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionToolView should render the component 1`] = `
+<div
+  className="mission-item-view"
+>
+  <div>
+    Title Block Component
+  </div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
+        >
+          <h2>
+            Objective(s)
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Short description
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Free keywords
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Readiness for use
+          </h2>
+          <p>
+            Tool tested in several case studies, Tool broadly used
+          </p>
+          <h2>
+            Strengths and weaknesses, comparative added value to other similar tools
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Input(s)
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h3>
+            Output(s)
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Replicability: Cost/effort for (new) usage
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Materials or other support available
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Website and maintenance
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Contact
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+          <h2>
+            Associated project(s)
+          </h2>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p></p>",
+              }
+            }
+          />
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column col-right"
+        >
+          <div
+            className="ui segment metadata"
+          >
+            <h5>
+              RAST step(s) of relevance:
+            </h5>
+            <div
+              className="ui list"
+              role="list"
+            >
+              <div
+                className="item"
+                onClick={[Function]}
+                role="listitem"
+              >
+                Step 1. Preparing the ground for adaptation
+              </div>
+              <div
+                className="item"
+                onClick={[Function]}
+                role="listitem"
+              >
+                Step 4. Assessing and selecting adaptation options
+              </div>
+            </div>
+            <h5>
+              Geographical scale:
+            </h5>
+            <p>
+              Item 1, Item 2
+            </p>
+            <h5>
+              Geographical area:
+            </h5>
+            <div
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<p></p>",
+                }
+              }
+            />
+            <h5>
+              Adaptation sectors:
+            </h5>
+            <p>
+              Biodiversity, Coastal areas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="twelve wide computer twelve wide mobile twelve wide tablet column col-full"
+        >
+          <div
+            className="styled-slate has--style_name--content-box-gray styled"
+          >
+            <div
+              className="disclaimer content-box"
+            >
+              <div
+                className="content-box-inner"
+              >
+                <p>
+                  <strong>
+                    Disclaimer
+                  </strong>
+                  <br />
+                  The contents and links to third-party items on this Mission webpage are developed by the MIP4Adapt team led by Ricardo, under contract CINEA/2022/OP/0013/SI2.884597 funded by the European Union and do not necessarily reflect those of the European Union, CINEA, or those of the European Environment Agency (EEA) as host of the Climate-ADAPT Platform. Neither the European Union nor CINEA nor the EEA accepts responsibility or liability arising out of or in connection with the information on these pages.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
