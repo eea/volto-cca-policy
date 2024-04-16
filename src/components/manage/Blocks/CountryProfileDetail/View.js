@@ -6,10 +6,10 @@ import CountryTabPane from './CountryTabPane';
 import './styles.less';
 
 export default function View(props) {
-  const dataJson = JSON.parse(
-    props?.properties['@components']?.countryprofile?.html,
-  );
-  // const dataJson = props?.properties['@components']?.countryprofile?.html;
+  // const dataJson = JSON.parse(
+  //   props?.properties['@components']?.countryprofile?.html,
+  // );
+  const dataJson = props?.properties['@components']?.countryprofile?.html;
   const [activePanes, setActivePanes] = React.useState({});
 
   const panes = [];
