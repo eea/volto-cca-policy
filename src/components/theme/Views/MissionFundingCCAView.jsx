@@ -136,7 +136,7 @@ function MissiongFundingCCAView(props) {
                       </ul>
                     </>
                   )}
-                {!!content.sectors && content.eligible_entities.length > 0 && (
+                {!!content.sectors && content.sectors.length > 0 && (
                   <>
                     <h5>Adaptation Sectors</h5>
                     <ul>
