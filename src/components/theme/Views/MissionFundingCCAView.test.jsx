@@ -99,8 +99,6 @@ describe('MissiongFundingCCAView', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(
-      container.querySelector('.mission-funding-cca-view'),
-    ).toBeInTheDocument();
+    expect(container.querySelector('.mission-item-view')).toBeInTheDocument();
   });
 });
