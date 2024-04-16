@@ -6,3 +6,4 @@ export ShareInfoButton from './theme/ShareInfoButton/ShareInfoButton';
 export ASTNavigation from './theme/ASTNavigation/ASTNavigation';
 
 export { default as MissionToolView } from './theme/Views/MissionToolView';
+export { default as MissionDisclaimer } from './theme/MissionDisclaimer/MissionDisclaimer';
