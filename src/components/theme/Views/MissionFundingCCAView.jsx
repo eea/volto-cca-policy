@@ -1,13 +1,12 @@
 import { HTMLField, BannerTitle } from '@eeacms/volto-cca-policy/helpers';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container, Grid, Segment } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
-import './styles.less';
 
 function MissiongFundingCCAView(props) {
   const { content } = props;
 
   return (
-    <div className="mission-funding-cca-view">
+    <div className="mission-item-view">
       <BannerTitle
         content={{ ...content, image: '' }}
         data={{
@@ -99,7 +98,7 @@ function MissiongFundingCCAView(props) {
               computer={4}
               className="col-right"
             >
-              <div className="metadata">
+              <Segment className="metadata">
                 {!!content.country && content.country.length > 0 && (
                   <>
                     <h5>Countries where the funding opportunity is offered</h5>
@@ -147,7 +146,7 @@ function MissiongFundingCCAView(props) {
                     </ul>
                   </>
                 )}
-              </div>
+              </Segment>
             </Grid.Column>
           </div>
         </Grid>
