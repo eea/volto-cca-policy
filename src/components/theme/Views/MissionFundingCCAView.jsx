@@ -3,7 +3,7 @@ import {
   BannerTitle,
   MetadataItemList,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Container, Grid, Segment } from 'semantic-ui-react';
+import { Container, Grid, Segment, List } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function MissiongFundingCCAView(props) {
@@ -122,11 +122,11 @@ function MissiongFundingCCAView(props) {
                 {!!content.rast_steps && content.rast_steps.length > 0 && (
                   <>
                     <h5>RAST step(s) of relevance</h5>
-                    <ul>
-                      {content.rast_steps.map((step) => (
-                        <li>{step.title}</li>
+                    <List>
+                      {content.rast_steps.map((step, index) => (
+                        <List.Item key={index}>{step.title}</List.Item>
                       ))}
-                    </ul>
+                    </List>
                   </>
                 )}
                 {!!content.eligible_entities &&
