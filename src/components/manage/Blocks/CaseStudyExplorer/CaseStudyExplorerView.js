@@ -57,7 +57,6 @@ export default function CaseStudyExplorerView(props) {
   React.useEffect(() => {
     const activeItems = filterCases(cases, activeFilters);
     setActiveItems(activeItems);
-    console.log('set active items');
   }, [activeFilters, cases]);
 
   if (__SERVER__) return '';
