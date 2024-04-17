@@ -59,7 +59,15 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         const subfeatures = feature.values_.features;
         if (subfeatures.length === 1) {
           const selectedFeature = subfeatures[0].values_;
+          const extent = selectedFeature.geometry.extent_;
+          console.log(selectedFeature, selectedFeature.geometry);
           onFeatureSelect(selectedFeature);
+          let extentBuffer =
+            (extent[3] - extent[1] + extent[2] - extent[0]) / 0.4;
+          extentBuffer = extentBuffer < 5000 ? 5000 : extentBuffer;
+          const paddedExtent = ol.extent.buffer(extent, extentBuffer);
+
+          map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
         } else {
           // zoom to extent of cluster points
           const extent = getExtentOfFeatures(subfeatures);
@@ -68,8 +76,6 @@ export default function FeatureInteraction({ onFeatureSelect }) {
             (extent[3] - extent[1] + extent[2] - extent[0]) / 4;
           extentBuffer = extentBuffer < 500 ? 500 : extentBuffer;
           const paddedExtent = ol.extent.buffer(extent, extentBuffer);
-
-          // const paddedExtent = ol.extent.buffer(extent, 50000);
           map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
         }
       });

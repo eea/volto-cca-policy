@@ -16,6 +16,7 @@ export default function CaseStudyMap(props) {
 
   const [tileWMSSources] = React.useState([
     new ol.source.TileWMS({
+      // see https://gisco-services.ec.europa.eu/maps/demo/ for more layers
       url: 'https://gisco-services.ec.europa.eu/maps/service',
       params: {
         LAYERS: 'OSMCartoComposite',
