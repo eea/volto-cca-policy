@@ -62,7 +62,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
           const extent = selectedFeature.geometry.extent_;
 
           onFeatureSelect(selectedFeature);
-          const paddedExtent = ol.extent.buffer(extent, 5000);
+          const paddedExtent = ol.extent.buffer(extent, 50000);
 
           map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
         } else {
