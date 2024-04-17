@@ -145,10 +145,11 @@ export default function CaseStudyFilters(props) {
       ) : null}
       <div className="case-study-legend">
         <p>
-          <strong>Climate-ADAPT case studies</strong>
-        </p>
-        <p>
-          <span></span>Climate-ADAPT case studies
+          <span></span>
+          <FormattedMessage
+            id="Climate-ADAPT case studies"
+            defaultMessage="Climate-ADAPT case studies"
+          />
         </p>
         <p>
           <span className="light-blue"></span>
