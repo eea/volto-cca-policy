@@ -60,12 +60,9 @@ export default function FeatureInteraction({ onFeatureSelect }) {
         if (subfeatures.length === 1) {
           const selectedFeature = subfeatures[0].values_;
           const extent = selectedFeature.geometry.extent_;
-          console.log(selectedFeature, selectedFeature.geometry);
+
           onFeatureSelect(selectedFeature);
-          let extentBuffer =
-            (extent[3] - extent[1] + extent[2] - extent[0]) / 0.4;
-          extentBuffer = extentBuffer < 5000 ? 5000 : extentBuffer;
-          const paddedExtent = ol.extent.buffer(extent, extentBuffer);
+          const paddedExtent = ol.extent.buffer(extent, 5000);
 
           map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
         } else {
