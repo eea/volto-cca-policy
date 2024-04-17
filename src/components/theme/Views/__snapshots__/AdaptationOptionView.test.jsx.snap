@@ -211,9 +211,9 @@ exports[`AdaptationOptionView should render the component 1`] = `
               <h5>
                 IPCC adaptation options categories:
               </h5>
-              <span>
+              <p>
                 Structural and physical: Ecosystem-based adaptation options
-              </span>
+              </p>
               <h5>
                 Geographic characterisation:
               </h5>

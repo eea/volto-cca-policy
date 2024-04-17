@@ -15,6 +15,7 @@ export {
   ItemLogo,
   SubjectTags,
   EventDetails,
+  MetadataItemList,
 } from './Utils';
 export { default as ContentMetadata } from './ContentMetadata';
 export {
