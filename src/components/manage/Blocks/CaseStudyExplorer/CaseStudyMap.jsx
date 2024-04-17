@@ -15,11 +15,10 @@ export default function CaseStudyMap(props) {
   const features = getFeatures(items);
 
   const [tileWMSSources] = React.useState([
-    // , setTileWMSSources
     new ol.source.TileWMS({
       url: 'https://gisco-services.ec.europa.eu/maps/service',
       params: {
-        LAYERS: 'OSMBlossomComposite',
+        LAYERS: 'OSMCartoComposite',
         TILED: true,
       },
       serverType: 'geoserver',
