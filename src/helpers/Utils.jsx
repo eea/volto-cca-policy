@@ -482,3 +482,26 @@ export const EventDetails = (props) => {
     </>
   );
 };
+
+export const MetadataItemList = (props) => {
+  const { value, join_type } = props;
+
+  return value && value.length > 0 ? (
+    <>
+      {!join_type ? (
+        <p>{value.map((item) => item.title).join(', ')}</p>
+      ) : (
+        <>
+          {value.map((item, index) => (
+            <React.Fragment key={index}>
+              <span>{item.title}</span>
+              {index !== value.length - 1 && (
+                <span dangerouslySetInnerHTML={{ __html: join_type }} />
+              )}
+            </React.Fragment>
+          ))}
+        </>
+      )}
+    </>
+  ) : null;
+};

@@ -1,3 +1,7 @@
+import { Fragment } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Popup, Segment } from 'semantic-ui-react';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
   ACE_COUNTRIES,
   BIOREGIONS,
@@ -9,11 +13,10 @@ import {
   INDICATOR,
   PUBICATION_REPORT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
-import { Fragment } from 'react';
-import { Popup, Segment } from 'semantic-ui-react';
-import { isObservatoryMetadataURL } from '@eeacms/volto-cca-policy/helpers';
-import { useLocation } from 'react-router-dom';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import {
+  isObservatoryMetadataURL,
+  MetadataItemList,
+} from '@eeacms/volto-cca-policy/helpers';
 
 const messages = defineMessages({
   'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT': {
@@ -312,27 +315,8 @@ function PublicationDateInfo(props) {
   ) : null;
 }
 
-function ItemsList(props) {
-  let { value, join } = props;
-  if (join === undefined) {
-    join = ', ';
-  }
-  if (join === '<br />') {
-    return (
-      <span>
-        {value.map((item, index) => (
-          <Fragment key={index}>
-            <span>{item.title}</span>
-            <br />
-          </Fragment>
-        ))}
-      </span>
-    );
-  }
-  return <span>{value.map((item) => item.title).join(join)}</span>;
-}
-
 function ContentMetadata(props) {
+  const intl = useIntl();
   const { content } = props;
   const {
     sectors,
@@ -352,8 +336,6 @@ function ContentMetadata(props) {
   const location = useLocation();
   const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
-
-  const intl = useIntl();
 
   let date_title;
   if (type === VIDEO) {
@@ -387,7 +369,7 @@ function ContentMetadata(props) {
                     defaultMessage="Health impact:"
                   />
                 </h5>
-                <ItemsList value={health_impacts} />
+                <MetadataItemList value={health_impacts} />
               </>
             )}
           </>
@@ -410,7 +392,7 @@ function ContentMetadata(props) {
                 defaultMessage="Key Type Measures:"
               />
             </h5>
-            <ItemsList value={key_type_measures} />
+            <MetadataItemList value={key_type_measures} />
           </>
         )}
 
@@ -422,7 +404,7 @@ function ContentMetadata(props) {
                 defaultMessage="IPCC adaptation options categories:"
               />
             </h5>
-            <ItemsList value={ipcc_category} />
+            <MetadataItemList value={ipcc_category} />
           </>
         )}
 
@@ -436,7 +418,7 @@ function ContentMetadata(props) {
                     defaultMessage="Climate impacts:"
                   />
                 </h5>
-                <ItemsList value={climate_impacts} />
+                <MetadataItemList value={climate_impacts} />
               </>
             )}
 
@@ -448,7 +430,7 @@ function ContentMetadata(props) {
                     defaultMessage="Adaptation elements:"
                   />
                 </h5>
-                <ItemsList value={elements} />
+                <MetadataItemList value={elements} />
               </>
             )}
 
@@ -457,7 +439,7 @@ function ContentMetadata(props) {
                 <h5>
                   <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
                 </h5>
-                <ItemsList value={sectors} />
+                <MetadataItemList value={sectors} />
               </>
             )}
           </>
@@ -471,7 +453,7 @@ function ContentMetadata(props) {
                 defaultMessage="Governance level:"
               />
             </h5>
-            <ItemsList value={governance_level} join="<br />" />
+            <MetadataItemList value={governance_level} join_type="<br />" />
           </>
         )}
 

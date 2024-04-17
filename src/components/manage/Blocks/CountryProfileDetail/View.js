@@ -6,9 +6,10 @@ import CountryTabPane from './CountryTabPane';
 import './styles.less';
 
 export default function View(props) {
-  const dataJson = JSON.parse(
-    props?.properties['@components']?.countryprofile?.html,
-  );
+  // const dataJson = JSON.parse(
+  //   props?.properties['@components']?.countryprofile?.html,
+  // );
+  const dataJson = props?.properties['@components']?.countryprofile?.html;
   const [activePanes, setActivePanes] = React.useState({});
 
   const panes = [];
@@ -35,8 +36,9 @@ export default function View(props) {
       {dataJson.message_top ? (
         <div class="eea callout">{dataJson.message_top}</div>
       ) : null}
-      {dataJson.top_accordeon
-        ? dataJson.top_accordeon.map((accordion, index) => (
+      {dataJson.top_accordeon ? (
+        <div className="top-accordion">
+          {dataJson.top_accordeon.map((accordion, index) => (
             <Accordion className="secondary">
               <Accordion.Title
                 role="button"
@@ -57,8 +59,9 @@ export default function View(props) {
                 dangerouslySetInnerHTML={{ __html: accordion.value }}
               ></Accordion.Content>
             </Accordion>
-          ))
-        : null}
+          ))}
+        </div>
+      ) : null}
       <Tab
         className="secondary menu"
         panes={panes}
@@ -73,7 +76,9 @@ export default function View(props) {
           tabIndex: 0,
         }}
       />
-      {dataJson.updated ? <p>Last updated:{dataJson.updated}</p> : null}
+      {dataJson.updated ? (
+        <p>Reported updated until: {dataJson.updated}</p>
+      ) : null}
     </>
   );
 }
