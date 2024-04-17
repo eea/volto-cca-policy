@@ -11,8 +11,6 @@ import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 import MissionFundingCCAView from './components/theme/Views/MissionFundingCCAView';
 
-import { MissionToolView } from '@eeacms/volto-cca-policy/components';
-
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
 import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
@@ -289,7 +287,6 @@ const applyConfig = (config) => {
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
     mission_funding_cca: MissionFundingCCAView,
-    mission_tool: MissionToolView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
