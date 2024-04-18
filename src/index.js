@@ -3,8 +3,6 @@ import { compose } from 'redux';
 import {
   TranslationDisclaimer,
   RASTWidgetView,
-  GeocharsWidget,
-  GeolocationWidget,
 } from '@eeacms/volto-cca-policy/components';
 
 import { Sitemap } from '@plone/volto/components';
@@ -30,6 +28,8 @@ import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
+import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';

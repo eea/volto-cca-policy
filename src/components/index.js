@@ -5,6 +5,4 @@ export TranslationDisclaimer from './theme/TranslationDisclaimer/TranslationDisc
 export ShareInfoButton from './theme/ShareInfoButton/ShareInfoButton';
 export ASTNavigation from './theme/ASTNavigation/ASTNavigation';
 
-export { default as GeocharsWidget } from './theme/Widgets/GeocharsWidget';
-export { default as GeolocationWidget } from './theme/Widgets/GeolocationWidget';
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';
