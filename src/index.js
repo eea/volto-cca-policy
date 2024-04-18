@@ -1,11 +1,11 @@
 import { compose } from 'redux';
-
-import {
-  TranslationDisclaimer,
-  RASTWidgetView,
-} from '@eeacms/volto-cca-policy/components';
-
 import { Sitemap } from '@plone/volto/components';
+import {
+  RASTWidgetView,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
@@ -15,25 +15,22 @@ import ProjectView from './components/theme/Views/ProjectView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
+import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
-import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
-import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
-import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
-
-import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
-import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
+import { langRedirection } from './store/middleware';
 
 import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
-import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
-import MigrationButtons from './components/MigrationButtons';
-
-import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
-import { langRedirection } from './store/middleware';
+import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
+import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
+import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
+import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
 import './slate-styles.less';
 
