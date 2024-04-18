@@ -1,5 +1,12 @@
 import { compose } from 'redux';
 
+import {
+  TranslationDisclaimer,
+  RASTWidgetView,
+  GeocharsWidget,
+  GeolocationWidget,
+} from '@eeacms/volto-cca-policy/components';
+
 import { Sitemap } from '@plone/volto/components';
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
@@ -23,10 +30,7 @@ import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
-import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
-import { TranslationDisclaimer } from '@eeacms/volto-cca-policy/components';
 
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 import { langRedirection } from './store/middleware';
@@ -385,6 +389,11 @@ const applyConfig = (config) => {
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
 
+  if (config.widgets.views?.widget) {
+    config.widgets.views.id.rast_steps = RASTWidgetView;
+    config.widgets.views.widget.rast_steps = RASTWidgetView;
+  }
+
   config.settings.slate.styleMenu.inlineStyles = [
     ...(config.settings.slate.styleMenu?.inlineStyles || []),
     { cssClass: 'large-text', label: 'Large text' },
@@ -440,7 +449,6 @@ const applyConfig = (config) => {
   ];
 
   // plug custom redux middleware
-  //
   const storeExtender = (stack) => [langRedirection, ...stack];
   config.settings.storeExtenders = [
     storeExtender,
