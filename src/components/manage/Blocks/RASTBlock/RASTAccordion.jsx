@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Icon } from 'semantic-ui-react';
+import { Accordion } from 'semantic-ui-react';
 import RASTAccordionContent from './RASTAccordionContent';
 import { useHistory } from 'react-router-dom';
 
