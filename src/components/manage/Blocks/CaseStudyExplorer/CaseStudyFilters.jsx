@@ -2,6 +2,15 @@ import React from 'react';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { Accordion, Icon, Checkbox } from 'semantic-ui-react';
 
+const AccordionIcon = ({ active }) => {
+  return (
+    <Icon
+      size="small"
+      className={active ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'}
+    />
+  );
+};
+
 export default function CaseStudyFilters(props) {
   const { filters, activeFilters, setActiveFilters } = props;
 
@@ -55,14 +64,7 @@ export default function CaseStudyFilters(props) {
           index={0}
           onClick={handleClick}
         >
-          <Icon
-            size="small"
-            className={
-              activeIndex.includes(0)
-                ? 'ri-arrow-up-s-line'
-                : 'ri-arrow-down-s-line'
-            }
-          />
+          <AccordionIcon active={activeIndex.includes(0)} />
           <FormattedMessage
             id="Adaptation sectors"
             defaultMessage="Adaptation sectors"
@@ -87,14 +89,7 @@ export default function CaseStudyFilters(props) {
           index={1}
           onClick={handleClick}
         >
-          <Icon
-            size="small"
-            className={
-              activeIndex.includes(1)
-                ? 'ri-arrow-up-s-line'
-                : 'ri-arrow-down-s-line'
-            }
-          />
+          <AccordionIcon active={activeIndex.includes(1)} />
           <FormattedMessage
             id="Climate impacts"
             defaultMessage="Climate impacts"
@@ -119,14 +114,7 @@ export default function CaseStudyFilters(props) {
           index={2}
           onClick={handleClick}
         >
-          <Icon
-            size="small"
-            className={
-              activeIndex.includes(2)
-                ? 'ri-arrow-up-s-line'
-                : 'ri-arrow-down-s-line'
-            }
-          />
+          <AccordionIcon active={activeIndex.includes(2)} />
           <FormattedMessage
             id="Key type measures"
             defaultMessage="Key type measures"
