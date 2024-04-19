@@ -123,7 +123,7 @@ const MenuItem = (props) => {
         aria-selected={tab === activeTab}
         tabIndex={0}
         role={'tab'}
-        onMouseOver={focusTab}
+        // onMouseOver={focusTab}
         onFocus={focusTab}
         onClick={focusTab}
         onKeyDown={(e) => {
