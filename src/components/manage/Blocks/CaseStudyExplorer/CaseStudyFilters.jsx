@@ -55,7 +55,14 @@ export default function CaseStudyFilters(props) {
           index={0}
           onClick={handleClick}
         >
-          <Icon name="dropdown" />
+          <Icon
+            size="small"
+            className={
+              activeIndex.includes(0)
+                ? 'ri-arrow-up-s-line'
+                : 'ri-arrow-down-s-line'
+            }
+          />
           <FormattedMessage
             id="Adaptation sectors"
             defaultMessage="Adaptation sectors"
@@ -80,7 +87,14 @@ export default function CaseStudyFilters(props) {
           index={1}
           onClick={handleClick}
         >
-          <Icon name="dropdown" />
+          <Icon
+            size="small"
+            className={
+              activeIndex.includes(1)
+                ? 'ri-arrow-up-s-line'
+                : 'ri-arrow-down-s-line'
+            }
+          />
           <FormattedMessage
             id="Climate impacts"
             defaultMessage="Climate impacts"
@@ -89,7 +103,6 @@ export default function CaseStudyFilters(props) {
         <Accordion.Content active={activeIndex.includes(1)}>
           {Object.entries(filters?.impacts || {}).map(
             ([value, label], index) => (
-              // <p key={index}>
               <Checkbox
                 label={intl.formatMessage({ id: label })}
                 checked={activeFilters.impacts.includes(value)}
@@ -98,7 +111,6 @@ export default function CaseStudyFilters(props) {
                 onChange={checkboxChangeHandler}
                 key={'impact' + index}
               />
-              // </p>
             ),
           )}
         </Accordion.Content>
@@ -107,7 +119,14 @@ export default function CaseStudyFilters(props) {
           index={2}
           onClick={handleClick}
         >
-          <Icon name="dropdown" />
+          <Icon
+            size="small"
+            className={
+              activeIndex.includes(2)
+                ? 'ri-arrow-up-s-line'
+                : 'ri-arrow-down-s-line'
+            }
+          />
           <FormattedMessage
             id="Key type measures"
             defaultMessage="Key type measures"
