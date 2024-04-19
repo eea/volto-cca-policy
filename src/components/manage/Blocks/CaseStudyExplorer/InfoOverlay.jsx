@@ -20,6 +20,9 @@ export default function InfoOverlay({
 
   const prevLayerId = usePrevious(layerId);
 
+  const [isClient, setIsClient] = React.useState(false);
+  React.useEffect(() => setIsClient(true), []);
+
   React.useEffect(() => {
     if (prevLayerId && layerId !== prevLayerId) {
       setShowTooltip(false);
@@ -32,7 +35,7 @@ export default function InfoOverlay({
     const overlay = new ol.Overlay({
       element: document.getElementById('popup-overlay'),
       positioning: 'bottom-center',
-      offset: [0, -10],
+      offset: [10, -10],
       stopEvent: false,
     });
     map.addOverlay(overlay);
@@ -60,9 +63,6 @@ export default function InfoOverlay({
       map.removeOverlay(overlay);
     };
   }, [map, tooltip, onFeatureSelect, hasCusters]);
-
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => setIsClient(true), []);
 
   return isClient ? (
     <div

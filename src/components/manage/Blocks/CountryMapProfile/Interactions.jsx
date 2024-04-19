@@ -40,21 +40,19 @@ export const Interactions = ({
       ) {
         // if (countries_metadata.length>0) {
         let countryName = feature.get('na');
-        let noDataReportedMsg =
-          'No data reported through the reporting mechanism of the Governance Regulation. Last information is available <a href="' +
-          baseUrl +
-          '/' +
-          countryName.toLowerCase() +
-          '">here</a>';
+        let noDataReportedMsg = `
+No data reported through the reporting mechanism of the Governance Regulation.
+Last information is available
+<a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
+
         if (countryName === 'Türkiye') {
           countryName = 'Turkiye';
-          noDataReportedMsg =
-            'Data reported in 2021 through the reporting mechanism of the Governance Regulation. Information is available <a href="' +
-            baseUrl +
-            '/' +
-            countryName.toLowerCase() +
-            '">here</a>';
+          noDataReportedMsg = `
+Data reported in 2021 through the reporting mechanism of the Governance Regulation.
+Information is available
+<a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
         }
+
         if (!Object.hasOwn(countries_metadata[0], countryName)) {
           return;
         }
@@ -65,7 +63,7 @@ export const Interactions = ({
         let tooltipContent = '';
         if (thematicMapMode === 'National adaption policy') {
           if (metadata[0]?.notreported) {
-            tooltipContent = '<span>' + noDataReportedMsg + '</span>';
+            tooltipContent = `<span>${noDataReportedMsg}</span>`;
           } else {
             tooltipContent =
               metadata[0]?.mixed || '<span>NAS and NAP not reported</span>';
@@ -79,28 +77,19 @@ export const Interactions = ({
         // overlaySource.addFeature(feature);
         map.getTargetElement().style.cursor = 'pointer';
         const node = tooltipRef.current;
-        let tooltipContentDiv =
-          `<div id="country-name">
-            <a href="https://climate-adapt.eea.europa.eu/en/countries-regions/countries/` +
-          countryName.toLowerCase() +
-          `">
-              <h3>` +
-          countryName +
-          `</h3>
-            </a>
-            <img class="tooltip-country-flag" src="` +
-          feature.get('flag').src +
-          // feature.getflag +
-          `" height="33" width="54">
-          </div><div class="tooltip-content">` +
-          tooltipContent +
-          `</div>`;
-        setTooltipVisibility(
-          node,
-          '<div class="country-tooltip">' + tooltipContentDiv + '</div>',
-          domEvt,
-          true,
-        );
+        const flag = feature.get('flag').src;
+        const cn = countryName.toLowerCase();
+        let tooltipContentDiv = `
+<div class="country-tooltip">
+  <div id="country-name">
+    <a href="/en/countries-regions/countries/${cn}"><h3>${countryName}</h3></a>
+    <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
+  </div>
+  <div class="tooltip-content">${tooltipContent}</div>
+</div>
+`;
+
+        setTooltipVisibility(node, tooltipContentDiv, domEvt, true);
       }
 
       // if (feature) {

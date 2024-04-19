@@ -62,7 +62,7 @@ export default function CaseStudyExplorerView(props) {
   if (__SERVER__) return '';
 
   return (
-    <div>
+    <div className="casestudy-explorer-map">
       <Grid columns="12">
         <Grid.Column mobile={9} tablet={9} computer={9} className="col-left">
           {cases.length ? (
