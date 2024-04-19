@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { Accordion, Icon, Checkbox } from 'semantic-ui-react';
 
@@ -32,7 +32,7 @@ export default function CaseStudyFilters(props) {
     setActiveIndex(index);
   }
 
-  const checkboxChangeHandler = (_event: FormEvent<HTMLInputElement>, data) => {
+  const checkboxChangeHandler = (_event, data) => {
     const temp = JSON.parse(JSON.stringify(activeFilters));
 
     if (data.checked) {
@@ -48,7 +48,7 @@ export default function CaseStudyFilters(props) {
 
   const intl = useIntl();
   return (
-    <>
+    <div className="casestudy-filters">
       <Accordion exclusive={false} className="secondary">
         <Accordion.Title
           active={activeIndex.includes(0)}
@@ -89,7 +89,6 @@ export default function CaseStudyFilters(props) {
         <Accordion.Content active={activeIndex.includes(1)}>
           {Object.entries(filters?.impacts || {}).map(
             ([value, label], index) => (
-              // <p key={index}>
               <Checkbox
                 label={intl.formatMessage({ id: label })}
                 checked={activeFilters.impacts.includes(value)}
@@ -98,7 +97,6 @@ export default function CaseStudyFilters(props) {
                 onChange={checkboxChangeHandler}
                 key={'impact' + index}
               />
-              // </p>
             ),
           )}
         </Accordion.Content>
@@ -120,7 +118,7 @@ export default function CaseStudyFilters(props) {
                 <p>
                   <strong>{intl.formatMessage({ id: key })}</strong>
                 </p>
-                {Object.entries(values).map(([valKey, valData]) => (
+                {Object.entries(values).map(([_, valData]) => (
                   <Checkbox
                     label={intl.formatMessage({ id: valData.value })}
                     value={valData.key}
@@ -145,17 +143,20 @@ export default function CaseStudyFilters(props) {
       ) : null}
       <div className="case-study-legend">
         <p>
-          <strong>Climate-ADAPT case studies</strong>
-        </p>
-        <p>
-          <span></span>Climate-ADAPT case studies
+          <span></span>
+          <FormattedMessage
+            id="Climate-ADAPT case studies"
+            defaultMessage="Climate-ADAPT case studies"
+          />
         </p>
         <p>
           <span className="light-blue"></span>
-          Case studies collected at national level in Spain, provided by
-          AdapteCCA.es
+          <FormattedMessage
+            id="Case studies collected at national level in Spain, provided by AdapteCCA.es"
+            defaultMessage="Case studies collected at national level in Spain, provided by AdapteCCA.es"
+          />
         </p>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,6 +1,11 @@
 import { compose } from 'redux';
-
 import { Sitemap } from '@plone/volto/components';
+import {
+  RASTWidgetView,
+  TranslationDisclaimer,
+} from '@eeacms/volto-cca-policy/components';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
@@ -9,30 +14,23 @@ import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
-import MissionFundingCCAView from './components/theme/Views/MissionFundingCCAView';
 
-import { MissionToolView } from '@eeacms/volto-cca-policy/components';
-
+import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 
-import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
-import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
-import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
-
-import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
-import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
+import { langRedirection } from './store/middleware';
 
 import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
-import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
-import MigrationButtons from './components/MigrationButtons';
-import { TranslationDisclaimer } from '@eeacms/volto-cca-policy/components';
-
-import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
-import { langRedirection } from './store/middleware';
+import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
+import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
+import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
+import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
 import './slate-styles.less';
 
@@ -288,8 +286,6 @@ const applyConfig = (config) => {
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
-    mission_funding_cca: MissionFundingCCAView,
-    mission_tool: MissionToolView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
@@ -390,6 +386,11 @@ const applyConfig = (config) => {
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
 
+  if (config.widgets.views?.widget) {
+    config.widgets.views.id.rast_steps = RASTWidgetView;
+    config.widgets.views.widget.rast_steps = RASTWidgetView;
+  }
+
   config.settings.slate.styleMenu.inlineStyles = [
     ...(config.settings.slate.styleMenu?.inlineStyles || []),
     { cssClass: 'large-text', label: 'Large text' },
@@ -445,7 +446,6 @@ const applyConfig = (config) => {
   ];
 
   // plug custom redux middleware
-  //
   const storeExtender = (stack) => [langRedirection, ...stack];
   config.settings.storeExtenders = [
     storeExtender,
