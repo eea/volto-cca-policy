@@ -6,14 +6,35 @@
   // this is the menu
   flex-wrap: wrap;
   border: none;
+  margin: 1em 0 !important;
   box-shadow: none;
-  // background: #cc000033;
+
+  .ui.image.thumb {
+    width: 190px;
+    height: auto;
+  }
 
   .item {
-    flex-grow: 2;
+    padding: 0.5em;
+    border: 1px solid transparent !important;
+    margin: 10px 0;
+
+    &:not(:last-child) {
+      margin-right: 15px !important;
+    }
+
+    &:hover {
+      border: 1px solid #ddd !important;
+      border-radius: 4px;
+    }
+
+    &.active,
+    &.active:hover {
+      border: 1px solid #ddd !important;
+      border-radius: 5px;
+    }
 
     &:before {
-      // border: 0px !important;
       background: none;
     }
   }

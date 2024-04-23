@@ -52,8 +52,7 @@ export const AssetTab = ({ props, tabIndex, tabTitle }) => {
           src={
             isInternalURL(imageObject['@id'])
               ? `${flattenToAppURL(imageObject['@id'])}/${
-                  imageObject?.image_scales?.image?.[0].scales?.[imageSize]
-                    ?.download || imageObject?.image_scales?.image?.[0].download
+                  imageObject?.image_scales?.image?.[0].download
                 }`
               : imageObject['@id']
           }
@@ -123,7 +122,7 @@ const MenuItem = (props) => {
         aria-selected={tab === activeTab}
         tabIndex={0}
         role={'tab'}
-        onMouseOver={focusTab}
+        // onMouseOver={focusTab}
         onFocus={focusTab}
         onClick={focusTab}
         onKeyDown={(e) => {
