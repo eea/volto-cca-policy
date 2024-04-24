@@ -28,13 +28,13 @@ const ItemGrid = ({
   item,
   columns,
   renderMenuItem,
-  hideChildrenFromNavigation,
+  // hideChildrenFromNavigation,
 }) => {
   const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
   return (
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
-      {item.items.length && !hideChildrenFromNavigation ? (
+      {item.items.length ? (
         <List
           aria-labelledby={item_id}
           className={columns && columns > 1 ? `has--${columns}--columns` : ''}
@@ -51,7 +51,7 @@ const Item = ({
   icon = false,
   iconName,
   renderMenuItem,
-  hideChildrenFromNavigation,
+  // hideChildrenFromNavigation,
 }) => {
   const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
   return (
@@ -60,22 +60,21 @@ const Item = ({
         className: 'sub-title',
         id: item_id,
       })}
-      {!hideChildrenFromNavigation && (
-        <List className="menu-list" aria-labelledby={item_id}>
-          {item.items.map((listItem, index) => (
-            <React.Fragment key={index}>
-              {renderMenuItem(
-                listItem,
-                {
-                  className: 'item',
-                  key: index,
-                },
-                { children: icon && <Icon className={iconName} /> },
-              )}
-            </React.Fragment>
-          ))}
-        </List>
-      )}
+
+      <List className="menu-list" aria-labelledby={item_id}>
+        {item.items.map((listItem, index) => (
+          <React.Fragment key={index}>
+            {renderMenuItem(
+              listItem,
+              {
+                className: 'item',
+                key: index,
+              },
+              { children: icon && <Icon className={iconName} /> },
+            )}
+          </React.Fragment>
+        ))}
+      </List>
     </>
   );
 };
