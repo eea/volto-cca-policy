@@ -323,60 +323,6 @@ const applyConfig = (config) => {
     },
   ];
 
-  const hideChildren = {
-    hideChildrenFromNavigation: false,
-  };
-
-  // mega menu layout settings
-  config.settings.menuItemsLayouts = {
-    // '*': {
-    //   hideChildrenFromNavigation: false,
-    // },
-    '/en/eu-policy': hideChildren,
-    '/de/eu-policy': hideChildren,
-    '/fr/eu-policy': hideChildren,
-    '/es/eu-policy': hideChildren,
-    '/it/eu-policy': hideChildren,
-    '/pl/eu-policy': hideChildren,
-    '/en/knowledge-1': hideChildren,
-    '/de/knowledge-1': hideChildren,
-    '/fr/knowledge-1': hideChildren,
-    '/es/knowledge-1': hideChildren,
-    '/it/knowledge-1': hideChildren,
-    '/pl/knowledge-1': hideChildren,
-    // observatory
-    '/en/observatory/about': hideChildren,
-    '/de/observatory/about': hideChildren,
-    '/fr/observatory/about': hideChildren,
-    '/es/observatory/about': hideChildren,
-    '/it/observatory/about': hideChildren,
-    '/pl/observatory/about': hideChildren,
-    '/en/observatory/policy-context-1': hideChildren,
-    '/de/observatory/policy-context-1': hideChildren,
-    '/fr/observatory/policy-context-1': hideChildren,
-    '/es/observatory/policy-context-1': hideChildren,
-    '/it/observatory/policy-context-1': hideChildren,
-    '/pl/observatory/policy-context-1': hideChildren,
-    '/en/observatory/evidence-on-climate-and-health': hideChildren,
-    '/de/observatory/evidence-on-climate-and-health': hideChildren,
-    '/fr/observatory/evidence-on-climate-and-health': hideChildren,
-    '/es/observatory/evidence-on-climate-and-health': hideChildren,
-    '/it/observatory/evidence-on-climate-and-health': hideChildren,
-    '/pl/observatory/evidence-on-climate-and-health': hideChildren,
-    '/en/observatory/resource-catalogue-1': hideChildren,
-    '/de/observatory/resource-catalogue-1': hideChildren,
-    '/fr/observatory/resource-catalogue-1': hideChildren,
-    '/es/observatory/resource-catalogue-1': hideChildren,
-    '/it/observatory/resource-catalogue-1': hideChildren,
-    '/pl/observatory/resource-catalogue-1': hideChildren,
-    '/en/observatory/publications-and-outreach': hideChildren,
-    '/de/observatory/publications-and-outreach': hideChildren,
-    '/fr/observatory/publications-and-outreach': hideChildren,
-    '/es/observatory/publications-and-outreach': hideChildren,
-    '/it/observatory/publications-and-outreach': hideChildren,
-    '/pl/observatory/publications-and-outreach': hideChildren,
-  };
-
   // Custom results
   config.settings.searchlib.resolve.HealthHorizontalCardItem = {
     component: HealthHorizontalCardItem,
