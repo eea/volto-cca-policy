@@ -28,11 +28,16 @@ export const AssetTab = ({ props, tabIndex, tabTitle }) => {
   const imageObject = image?.[0];
   return (
     <div
-      className={cx('asset-position', {
-        'asset-top': assetPosition === 'top',
-        'asset-left': assetPosition === 'left',
-        'asset-right': assetPosition === 'right',
-      })}
+      className={cx(
+        `${imageSize}-image`,
+        `${iconSize}-icon`,
+        'asset-position',
+        {
+          'asset-top': assetPosition === 'top',
+          'asset-left': assetPosition === 'left',
+          'asset-right': assetPosition === 'right',
+        },
+      )}
     >
       {assetType === 'icon' && icon && (
         <Icon
