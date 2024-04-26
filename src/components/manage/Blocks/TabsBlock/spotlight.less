@@ -10,7 +10,9 @@
 .ui.menu.menu-tabs-spotlight-variant {
   // this is the menu
   flex-wrap: wrap;
+  gap: 10px;
   border: none;
+  font-size: 14px;
   margin: 1em 0 !important;
   box-shadow: none;
 
@@ -25,24 +27,37 @@
     object-fit: contain;
   }
 
+  .icon-image,
+  .small-icon {
+    width: 85px;
+    height: 100%;
+
+    @media only screen and (max-width: 480px) {
+      width: 60px;
+    }
+  }
+
   .item {
     padding: 0.5em;
     border: 1px solid transparent !important;
-    margin: 10px 0;
-
-    &:not(:last-child) {
-      margin-right: 15px !important;
-    }
 
     &:hover {
       border: 1px solid #ddd !important;
       border-radius: 4px;
+
+      .menu-item-text {
+        color: #0f6ba5;
+      }
     }
 
     &.active,
     &.active:hover {
       border: 1px solid #ddd !important;
       border-radius: 5px;
+
+      .menu-item-text {
+        color: #0f6ba5;
+      }
     }
 
     &:before {
