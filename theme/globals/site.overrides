@@ -185,3 +185,8 @@ body.subsite {
     font-size: 23px;
   }
 }
+
+
+ol.ui.list, .ui.bulleted.list {
+  margin-left: 0 !important;
+}
