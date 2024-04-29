@@ -1,24 +1,11 @@
 import { multiTermFacet } from '@eeacms/search';
 
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
+import { cca_climate_impacts, cca_adaptation_sectors } from './../common';
 
 const facets = [
-  multiTermFacet({
-    field: 'cca_climate_impacts.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Climate Impacts',
-    iconsFamily: 'Climate Impacts',
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_adaptation_sectors.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Adaptation Sectors',
-    iconsFamily: 'Adaptation Sectors',
-    alwaysVisible: false,
-  }),
+  cca_climate_impacts,
+  cca_adaptation_sectors,
   multiTermFacet({
     field: 'key_system.keyword',
     isFilterable: false,
