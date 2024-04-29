@@ -17,6 +17,14 @@
   @green-2 97.12%
 );
 
+[id='page-document'] > .ui.list,
+.view-wrapper > .ui.list,
+[id='page-document'] > .ui.bulleted.list,
+.view-wrapper > .ui.bulleted.list {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .ui.ordered.list,
 .ui.ordered.list .list,
 ol.ui.list,
@@ -184,9 +192,4 @@ body.subsite {
   .ui.selection.dropdown.countries-dd i.icon {
     font-size: 23px;
   }
-}
-
-
-ol.ui.list, .ui.bulleted.list {
-  margin-left: 0 !important;
 }

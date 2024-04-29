@@ -5,6 +5,8 @@ import {
   language,
   issued_date,
   geographic_countries,
+  cca_climate_impacts,
+  cca_adaptation_sectors,
 } from './../common';
 
 const facets = [
@@ -16,20 +18,8 @@ const facets = [
     iconsFamily: 'Funding Programme',
     alwaysVisible: false,
   }),
-  multiTermFacet({
-    field: 'cca_climate_impacts.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Climate Impacts',
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_adaptation_sectors.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Adaptation Sectors',
-    alwaysVisible: false,
-  }),
+  cca_climate_impacts,
+  cca_adaptation_sectors,
   multiTermFacet({
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,

@@ -12,6 +12,28 @@ export const geographic_countries = {
   isMulti: true,
 };
 
+export const cca_climate_impacts = {
+  field: 'cca_climate_impacts.keyword',
+  factory: 'MultiTermFacet',
+  label: 'Climate Impacts',
+  showInFacetsList: true,
+  filterType: 'any',
+  isFilterable: false,
+  show: 10000,
+  isMulti: true,
+};
+
+export const cca_adaptation_sectors = {
+  field: 'cca_adaptation_sectors.keyword',
+  factory: 'MultiTermFacet',
+  label: 'Adaptation Sectors',
+  showInFacetsList: true,
+  filterType: 'any',
+  isFilterable: false,
+  show: 10000,
+  isMulti: true,
+};
+
 export const include_archived = booleanFacet(() => ({
   field: 'IncludeArchived',
   label: 'Include archived content',
