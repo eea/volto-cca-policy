@@ -43,6 +43,7 @@ const portalTypesToSearchTypes = {
   'eea.climateadapt.c3sindicator': 'Indicator',
   'eea.climateadapt.informationportal': 'Information portal',
   'eea.climateadapt.publicationreport': 'Publication reference',
+  'eea.climateadapt.aceproject': 'Research and knowledge project',
   'eea.climateadapt.researchproject': 'Research and knowledge project',
   'eea.climateadapt.tool': 'Tool',
   'eea.climateadapt.video': 'Video',

@@ -2,6 +2,7 @@ import installMainSearch from './config';
 import installHealthSearch from './health_observatory/config-health';
 import installMissionStoriesSearch from './mission_stories/config-stories';
 import installMissionProjectsSearch from './mission_projects/config-projects';
+import installMissionToolsSearch from './mission_tools/config-tools';
 
 const extraQueryParams = {
   text_fields: [
@@ -36,10 +37,15 @@ const applyConfig = (config) => {
     installMainSearch(config.settings.searchlib),
   );
 
+  config.settings.searchlib = installMissionToolsSearch(
+    installMainSearch(config.settings.searchlib),
+  );
+
   config.settings.searchlib.searchui.ccaSearch.extraQueryParams = extraQueryParams;
   config.settings.searchlib.searchui.ccaHealthSearch.extraQueryParams = extraQueryParams;
   config.settings.searchlib.searchui.missionProjects.extraQueryParams = extraQueryParams;
   config.settings.searchlib.searchui.missionStoriesSearch.extraQueryParams = extraQueryParams;
+  config.settings.searchlib.searchui.missionToolsSearch.extraQueryParams = extraQueryParams;
 
   return config;
 };

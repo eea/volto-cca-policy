@@ -1,6 +1,7 @@
 import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 import { getClientProxyAddress } from './utils';
+import vocabs from './vocabulary';
 
 import facets from './facets';
 
@@ -36,25 +37,8 @@ export default function installMainSearch(config) {
     elastic_index: '_es/globalsearch',
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
-    vocab: {
-      cluster_name: {
-        cca: 'Climate-ADAPT',
-      },
-      'cca_key_type_measure.keyword': {
-        A1: 'A1: Policy Instruments',
-        A2: 'A2: Management and planning',
-        A3: 'A3: Coordination cooperation and networks',
-        B1: 'B1: Financing incentive instruments',
-        B2: 'B2: Insurance and risk sharing instruments',
-        C1: 'C1: Grey options',
-        C2: 'C2: Technological options',
-        D1: 'D1: Green options',
-        D2: 'D2: Blue options',
-        E1: 'E1: Information and awareness raising',
-        E2: 'E2: Capacity building empowering and lifestyle practices',
-      },
-    },
     runtime_mappings: build_runtime_mappings(clusters),
+    ...vocabs,
   };
 
   const { ccaSearch } = config.searchui;
