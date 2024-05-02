@@ -11,7 +11,7 @@ export function RedirectBlockDetails({ data }) {
         Anonymous users will be automatically redirected to this target:
       </div>
 
-      {data.href.length > 0 && (
+      {data?.href?.[0].length > 0 && (
         <UniversalLink item={data.href[0]}>
           {flattenToAppURL(data.href[0]['title'])}
         </UniversalLink>
