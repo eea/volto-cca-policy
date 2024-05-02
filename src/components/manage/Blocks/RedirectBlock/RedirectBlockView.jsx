@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 export function RedirectBlockDetails({ data }) {
-  console.log(data);
   return (
     <div className="redirect-block">
       <h5>Redirection block</h5>
