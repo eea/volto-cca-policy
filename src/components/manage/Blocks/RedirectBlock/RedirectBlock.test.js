@@ -11,7 +11,7 @@ const mockStore = configureStore();
 describe('RedirectBlockDetails', () => {
   it('should render the component', () => {
     const data = {
-      items: [
+      href: [
         {
           id: 'my-item',
           title: 'Hello',
@@ -20,8 +20,6 @@ describe('RedirectBlockDetails', () => {
           href: '/my-item-href',
         },
       ],
-      activeMenu: 1,
-      curent_location: '/my-item-href',
     };
 
     const store = mockStore({
@@ -35,7 +33,7 @@ describe('RedirectBlockDetails', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <RedirectBlockDetails {...data} />
+          <RedirectBlockDetails data={data} />
         </MemoryRouter>
       </Provider>,
     );
