@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 export function RedirectBlockDetails({ data }) {
+  console.log(data);
   return (
     <div className="redirect-block">
       <h5>Redirection block</h5>
@@ -11,7 +12,7 @@ export function RedirectBlockDetails({ data }) {
         Anonymous users will be automatically redirected to this target:
       </div>
 
-      {data?.href?.[0]?.length > 0 && (
+      {data?.href?.length > 0 && (
         <UniversalLink item={data.href[0]}>
           {flattenToAppURL(data.href[0]['title'])}
         </UniversalLink>
