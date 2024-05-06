@@ -1,5 +1,6 @@
 import { mergeConfig } from '@eeacms/search';
-import { getClientProxyAddress, getSearchThumbUrl } from '../utils';
+import { getClientProxyAddress } from '../utils';
+
 import facets from './facets-tools';
 
 const missionToolsConfig = {
@@ -36,22 +37,6 @@ export default function installMissionToolsSearch(config) {
     config.searchui.missionToolsSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
-
-  missionToolsSearch.resultItemModel = {
-    factory: 'ResultModel',
-    urlField: 'about',
-    titleField: 'title',
-    metatypeField: 'objectProvides',
-    descriptionField: 'description',
-    tagsField: 'topic',
-    issuedField: 'issued',
-    getThumbnailUrl: 'getSearchThumbUrl',
-    getIconUrl: 'getGlobalsearchIconUrl',
-    fallbackThumbUrl:
-      'https://react.semantic-ui.com/images/wireframe/white-image.png',
-  };
-
-  config.resolve.getSearchThumbUrl = getSearchThumbUrl();
 
   return config;
 }
