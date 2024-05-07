@@ -257,7 +257,7 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
-    maxNumberOfColumns: 5,
+    maxNumberOfColumns: 7,
   };
 
   config.blocks.blocksConfig.nextCloudVideo = {
