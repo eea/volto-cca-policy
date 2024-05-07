@@ -13,7 +13,7 @@ export default {
 
   properties: {
     root_path: {
-      title: 'Rooth path',
+      title: 'Root path',
       type: 'string',
       description:
         'Ex: /en/knowledge-and-data/regional-adaptation-support-tool',

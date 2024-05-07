@@ -19,6 +19,7 @@ import installC3SIndicatorsGlossaryBlock from './C3SIndicatorsGlossaryBlock';
 import installReadMore from './ReadMore';
 import installCollectionStats from './CollectionStatistics';
 import installTabsBlock from './TabsBlock';
+import installRedirectBlock from './RedirectBlock';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -47,5 +48,6 @@ export default function installBlocks(config) {
     installCollectionStats,
     installTabsBlock,
     installListing,
+    installRedirectBlock,
   )(config);
 }
