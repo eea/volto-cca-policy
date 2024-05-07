@@ -33,7 +33,7 @@ describe('RedirectBlockDetails', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <RedirectBlockDetails data={data} />
+          <RedirectBlockDetails data={data} token="1234" />
         </MemoryRouter>
       </Provider>,
     );
