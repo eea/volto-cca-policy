@@ -1,6 +1,7 @@
 import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 import { getClientProxyAddress } from './../utils';
+import vocabs from './../vocabulary';
 
 import facets from './facets-health';
 import views from './views-health';
@@ -75,11 +76,7 @@ export default function installMainSearch(config) {
     elastic_index: '_es/globalsearch',
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
-    vocab: {
-      cluster_name: {
-        cca: 'Climate-ADAPT',
-      },
-    },
+    ...vocabs,
     runtime_mappings: build_runtime_mappings(clusters),
   };
 
