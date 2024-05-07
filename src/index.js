@@ -1,5 +1,6 @@
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
+import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import {
   RASTWidgetView,
   TranslationDisclaimer,
@@ -289,6 +290,14 @@ const applyConfig = (config) => {
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
+
+  config.views.layoutViews = {
+    ...config.views.layoutViews,
+    document_view: DefaultView,
+    album_view: DefaultView,
+    summary_view: DefaultView,
+    tabular_view: DefaultView,
+  };
 
   config.settings.contextNavigationLocations = [
     {
