@@ -4,7 +4,7 @@ import CollectionStatsView, {
   RemixIcon,
 } from './CollectionStatsView';
 
-import worldSVG from '@plone/volto/icons/world.svg';
+import dotsSVG from '@plone/volto/icons/dots.svg';
 import airPollutionSvg from '@eeacms/volto-cca-policy/icons/air_pollution_and_aero-allergens.svg';
 import heatSvg from '@eeacms/volto-cca-policy/icons/heat.svg';
 import climateSensitiveSvg from '@eeacms/volto-cca-policy/icons/climate-sensitive_diseases.svg';
@@ -57,7 +57,7 @@ export default function installCollectionStatsBlock(config) {
   config.blocks.blocksConfig.collectionStats = {
     id: 'collectionStats',
     title: 'Collection Statistics',
-    icon: worldSVG,
+    icon: dotsSVG,
     group: 'site',
     edit: CollectionStatsEdit,
     view: CollectionStatsView,
