@@ -19,7 +19,7 @@ const RelevantAceContentView = (props) => {
   const results = _v_results || [];
   const isEdit = mode === 'edit' ? true : false;
   const hasAnyFilter = [element_type, sector, search_type, special_tags].some(
-    (list) => list.length > 0,
+    (list) => list?.length > 0,
   );
 
   return (
