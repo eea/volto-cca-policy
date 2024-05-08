@@ -15,7 +15,7 @@ const ShareInfoButton = (props) => {
               id="Share your information"
               defaultMessage="Share your information"
             />
-            <Icon name="right arrow" />
+            <Icon name="ri-share-line" />
           </Button>
         </Link>
       </div>
