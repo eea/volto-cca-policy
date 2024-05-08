@@ -20,6 +20,7 @@ import installReadMore from './ReadMore';
 import installCollectionStats from './CollectionStatistics';
 import installTabsBlock from './TabsBlock';
 import installRedirectBlock from './RedirectBlock';
+import installContentLinks from './ContentLinks';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -49,5 +50,6 @@ export default function installBlocks(config) {
     installTabsBlock,
     installListing,
     installRedirectBlock,
+    installContentLinks,
   )(config);
 }
