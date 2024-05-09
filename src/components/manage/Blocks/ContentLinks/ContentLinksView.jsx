@@ -3,7 +3,6 @@ import { List } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { ShareInfoButton } from '@eeacms/volto-cca-policy/components';
 import cx from 'classnames';
 
 import './style.less';
@@ -11,7 +10,7 @@ import './style.less';
 const ContentLinksView = (props) => {
   const location = useLocation();
   const { data, mode = 'view' } = props;
-  const { title, items = [], show_share_btn, variation } = data;
+  const { title, items = [], variation } = data;
   const isEdit = mode === 'edit';
 
   return items && items.length > 0 ? (
@@ -34,8 +33,6 @@ const ContentLinksView = (props) => {
           );
         })}
       </List>
-
-      {show_share_btn && <ShareInfoButton />}
     </div>
   ) : (
     <>{isEdit && <div>No items</div>}</>

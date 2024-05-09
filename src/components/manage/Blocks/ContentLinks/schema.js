@@ -29,7 +29,7 @@ export default {
     {
       id: 'default',
       title: 'Default',
-      fields: ['title', 'items', 'show_share_btn'],
+      fields: ['title', 'items'],
     },
   ],
   properties: {
@@ -41,10 +41,6 @@ export default {
     },
     title: {
       title: 'Block title',
-    },
-    show_share_btn: {
-      title: 'Show the share button',
-      type: 'boolean',
     },
   },
   required: [],
