@@ -1,0 +1,33 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.content-items {
+  margin-bottom: 1em;
+
+  .item:hover,
+  .item.active {
+    color: @primaryColor;
+  }
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+}
+
+.navigationList-view {
+  .item {
+    padding: 0.75rem 0 0.75rem 0.75rem !important;
+
+    &:hover {
+      color: @primaryColor;
+    }
+
+    &.active {
+      background: @primaryColor;
+      color: @white;
+    }
+  }
+}

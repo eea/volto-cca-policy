@@ -138,7 +138,7 @@ exports[`DatabaseItemView should render the component 1`] = `
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="right arrow icon"
+                  className="ri-share-line icon"
                   onClick={[Function]}
                 />
               </button>

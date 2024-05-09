@@ -1,4 +1,4 @@
-import zoomSVG from '@plone/volto/icons/zoom.svg';
+import contentSVG from '@plone/volto/icons/content.svg';
 import RASTEdit from './RASTEdit';
 import RASTView from './RASTView';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
@@ -9,7 +9,7 @@ export default function installBlock(config) {
   blocksConfig.rastBlock = {
     id: 'rastBlock',
     title: 'RAST',
-    icon: zoomSVG,
+    icon: contentSVG,
     group: 'site',
     view: RASTView,
     edit: RASTEdit,

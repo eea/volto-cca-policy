@@ -313,12 +313,6 @@ const applyConfig = (config) => {
       bottomLevel: 2,
       rootPath: 'countries-regions/transnational-regions/carpathian-mountains',
     },
-    {
-      title: 'Share your info',
-      topLevel: 2,
-      bottomLevel: 2,
-      rootPath: 'help/share-your-info',
-    },
   ];
 
   config.settings.astNavigations = [

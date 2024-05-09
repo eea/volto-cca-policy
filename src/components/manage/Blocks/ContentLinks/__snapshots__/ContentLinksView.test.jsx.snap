@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentLinksView should render the component 1`] = `
+<div
+  className="block content-links default-view"
+>
+  <h4>
+    Navigation
+  </h4>
+  <div
+    className="ui list content-items"
+    role="list"
+  >
+    <div
+      className="item"
+      onClick={[Function]}
+      role="listitem"
+    >
+      <div>
+        Link
+      </div>
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+      role="listitem"
+    >
+      <div>
+        Link
+      </div>
+    </div>
+  </div>
+</div>
+`;
