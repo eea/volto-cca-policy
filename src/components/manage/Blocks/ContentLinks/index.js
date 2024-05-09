@@ -5,7 +5,7 @@ import ContentLinksView from './ContentLinksView';
 export default function installBlock(config) {
   config.blocks.blocksConfig.contentLinks = {
     id: 'contentLinks',
-    title: 'Content links',
+    title: 'Content Links',
     icon: listSVG,
     group: 'site',
     view: ContentLinksView,

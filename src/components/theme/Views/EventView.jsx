@@ -4,12 +4,21 @@ import {
   PortalMessage,
 } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { Grid, Container, Segment } from 'semantic-ui-react';
-import { FormattedMessage } from 'react-intl';
+import { Grid, Container, Segment, Button, Icon } from 'semantic-ui-react';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import { SubjectTags, EventDetails } from '@eeacms/volto-cca-policy/helpers';
+import { expandToBackendURL } from '@plone/volto/helpers';
+
+const messages = defineMessages({
+  downloadEvent: {
+    id: 'Download this event in iCal format',
+    defaultMessage: 'Download this event in iCal format',
+  },
+});
 
 function CcaEventView(props) {
   const { content } = props;
+  const intl = useIntl();
 
   return (
     <div className="cca-event-view">
@@ -41,6 +50,26 @@ function CcaEventView(props) {
                     </p>
                   </>
                 )}
+
+                <div className="download-event">
+                  <a
+                    className="ics-download"
+                    target="_blank"
+                    rel="noreferrer"
+                    href={`${expandToBackendURL(content['@id'])}/ics_view`}
+                  >
+                    <Button
+                      className="icon inverted primary labeled"
+                      title={intl.formatMessage(messages.downloadEvent)}
+                    >
+                      <Icon name="calendar alternate outline" />
+                      <FormattedMessage
+                        id="Download Event"
+                        defaultMessage="Download Event"
+                      />
+                    </Button>
+                  </a>
+                </div>
               </Segment>
             </Grid.Column>
           </Grid.Row>
