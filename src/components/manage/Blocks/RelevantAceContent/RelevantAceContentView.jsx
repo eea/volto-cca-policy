@@ -22,7 +22,7 @@ const RelevantAceContentView = (props) => {
     (list) => list?.length > 0,
   );
 
-  return (
+  return items && items.length > 0 ? (
     <div className="block relevant-acecontent-block">
       {title && <h4>{title}</h4>}
 
@@ -69,9 +69,9 @@ const RelevantAceContentView = (props) => {
           )}
         </>
       )}
-
-      {isEdit && <div>Relevant AceContent Block</div>}
     </div>
+  ) : (
+    <>{isEdit && <div>No items</div>}</>
   );
 };
 
