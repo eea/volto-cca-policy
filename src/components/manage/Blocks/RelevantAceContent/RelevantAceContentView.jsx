@@ -22,7 +22,7 @@ const RelevantAceContentView = (props) => {
     (list) => list?.length > 0,
   );
 
-  return items && items.length > 0 ? (
+  return (items && items.length > 0) || results.length > 0 ? (
     <div className="block relevant-acecontent-block">
       {title && <h4>{title}</h4>}
 
