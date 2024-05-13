@@ -83,6 +83,11 @@ msgstr ""
 msgid "Case Study illustrations"
 msgstr ""
 
+#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr ""
+
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
@@ -96,6 +101,11 @@ msgstr ""
 #. Default: "Challenges"
 #: components/theme/Views/CaseStudyView
 msgid "Challenges"
+msgstr ""
+
+#. Default: "Choices"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Choices"
 msgstr ""
 
 #. Default: "Choose a region"
@@ -114,6 +124,7 @@ msgid "City:"
 msgstr ""
 
 #. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr ""
@@ -129,9 +140,19 @@ msgstr ""
 msgid "Climate impacts:"
 msgstr ""
 
+#. Default: "Climate-ADAPT case studies"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Climate-ADAPT case studies"
+msgstr ""
+
 #. Default: "Climate-ADAPT page for this event"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
+msgstr ""
+
+#. Default: "Close"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Close"
 msgstr ""
 
 #. Default: "Contact"
@@ -181,7 +202,13 @@ msgstr ""
 msgid "Dec"
 msgstr ""
 
+#. Default: "Default"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Default"
+msgstr ""
+
 #. Default: "Description"
+#: components/manage/Widgets/CreatableSelectWidget
 #: helpers/Utils
 msgid "Description"
 msgstr ""
@@ -194,6 +221,16 @@ msgstr ""
 #. Default: "Documents"
 #: helpers/Utils
 msgid "Documents"
+msgstr ""
+
+#. Default: "Download Event"
+#: components/theme/Views/EventView
+msgid "Download Event"
+msgstr ""
+
+#. Default: "Download this event in iCal format"
+#: components/theme/Views/EventView
+msgid "Download this event in iCal format"
 msgstr ""
 
 #. Default: "Duration:"
@@ -404,9 +441,19 @@ msgstr ""
 msgid "No information"
 msgstr ""
 
+#. Default: "No options"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No options"
+msgstr ""
+
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
+msgstr ""
+
+#. Default: "No value"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No value"
 msgstr ""
 
 #. Default: "Nov"
@@ -516,12 +563,18 @@ msgstr ""
 msgid "Relevance"
 msgstr ""
 
+#. Default: "Required"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Required"
+msgstr ""
+
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr ""
 
 #. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr ""
@@ -546,6 +599,11 @@ msgstr ""
 msgid "See video outside Climate-ADAPT"
 msgstr ""
 
+#. Default: "Select…"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Select…"
+msgstr ""
+
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
@@ -554,7 +612,13 @@ msgstr ""
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
+msgstr ""
+
+#. Default: "Short Name"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Short Name"
 msgstr ""
 
 #. Default: "Solutions"
@@ -626,9 +690,19 @@ msgstr ""
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr ""
 
+#. Default: "Title"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Title"
+msgstr ""
+
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
+msgstr ""
+
+#. Default: "Used for programmatic access to the fieldset."
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Used for programmatic access to the fieldset."
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
@@ -868,574 +942,6 @@ msgid "Other"
 msgstr ""
 
 #. undefined
-#: ../theme/climateadaptv2/index.html:92
-#: ../theme/climateadaptv2/page.html:98
-msgid "<i class="fa fa-calendar"></i> Events"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:98
-#: ../theme/climateadaptv2/page.html:104
-msgid "<i class="fa fa-envelope"></i> Newsletter"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:86
-#: ../theme/climateadaptv2/page.html:92
-msgid "<i class="fa fa-newspaper-o"></i> News"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:75
-#: ../theme/climateadaptv2/page.html:81
-msgid "<i class="fa fa-question-circle"></i> Help"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:66
-#: ../theme/climateadaptv2/page.html:72
-msgid "<i class="fa fa-search"></i>"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:450
-msgid "Adaptation <br /> Support Tool"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1548
-msgid "Adaptation support tool"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:928
-#: ../theme/climateadaptv2/tab-policies-rule.html:15
-msgid "Agriculture"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1471
-msgid "Assessing adaptation options"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1453
-msgid "Assessing risks and vulnerability <br /> to climate change"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:936
-#: ../theme/climateadaptv2/tab-policies-rule.html:23
-msgid "Biodiversity"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1103
-#: ../theme/climateadaptv2/tab-policies-rule.html:190
-msgid "Biodiversity plays an important role in regulating the climate, thus making a key contribution to climate change mitigation and adaptation. At the same time, meeting mitigation targets coupled with ecosystem-based approaches is essential to avert biodiversity loss. Therefore it is impossible to address biodiversity loss without addressing climate change, but it is equally impossible to tackle climate change without addressing biodiversity loss."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:944
-#: ../theme/climateadaptv2/tab-policies-rule.html:31
-msgid "Buildings"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1118
-#: ../theme/climateadaptv2/tab-policies-rule.html:205
-msgid "Buildings can be vulnerable to climate change. In the future there may be an increase in the risk of collapse, declining state and significant loss of value as a result of more storms, snow or subsidence damage, water encroachment, deteriorating indoor climate and reduced building lifetime. The European Commission aims to increase the climate resilience of infrastructure, including buildings. New and existing buildings need to be assessed for resilience to current risks and future climate changes, and planned or upgraded accordingly. A key policy used to support the resilience of buildings is the Cohesion Policy (also referred to as Regional Policy)."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:952
-#: ../theme/climateadaptv2/tab-policies-rule.html:39
-msgid "Business and Industry"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1333
-#: ../theme/climateadaptv2/tab-policies-rule.html:420
-msgid "By the end of the century, it is projected that European mountains will have changed physically. Glaciers will have experienced significant mass loss, but changes also impact the lower, mid-hills, and floodplain environments, thereby affecting water availability, agricultural production, tourism, and health sectors. Seasonal snow lines will be found at higher elevations, and snow seasons will become shorter. Tree lines will move up and forest patterns will change in lower elevations."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:444
-msgid "Case <br /> Studies"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1409
-msgid "Case Studies Page"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1423
-msgid "Case studies booklet"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1724
-msgid "Check the <a href="../newsletter">European Climate Adaptation Newsletter</a> and register to receive it in your e-mail:"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1163
-#: ../theme/climateadaptv2/tab-policies-rule.html:250
-msgid "Climate change affects the energy sector in multiple ways, ranging from changes in heating and cooling demand; to impacts on energy supply conditions – for example decreased water availability for hydropower during prolonged droughts and reduced availability of cooling water affecting the efficiency of power plants. Furthermore, energy infrastructure can be more exposed to damages by changing climate conditions. The European Commission in general aims to increase the climate resilience of infrastructure including energy by providing strategical frameworks."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1088
-#: ../theme/climateadaptv2/tab-policies-rule.html:175
-msgid "Climate change has complex effects on the bio-physical processes that underpin agricultural systems, with both negative and positive consequences in different EU regions. Rising atmospheric CO2 concentration, higher temperatures, changes in precipitation patterns and in frequency of extreme events both affect the natural environment as well as the quantity, quality and stability of food production. Climatic variations impact on water resources, soils, pests and diseases, leading to significant changes in agriculture and livestock production."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1221
-#: ../theme/climateadaptv2/tab-policies-rule.html:308
-msgid "Climate change is expected to have severe impacts on the marine environment. Increase in water temperatures will contribute to a restructuring of marine ecosystems with implications for ocean circulation, biogeochemical cycling and marine biodiversity. Ocean acidification will affect the ability of some calcium carbonate-secreting species (as molluscs, planktons and corals) to produce their shells or skeletons. Warmer and more acidic seawater will therefore negatively affect fishery and aquaculture."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1207
-#: ../theme/climateadaptv2/tab-policies-rule.html:294
-msgid "Climate change will generate new health risks and amplify current health problems. Both direct and indirect effects on human, plant and animal health are expected from climate change. Direct effects result from changes in the intensity and frequency of extreme weather events like heatwaves and floods. Indirect effects can be felt through changes in the incidence of diseases transmitted by insects (i.e. vector borne diseases caused by mosquitoes and ticks), rodents, or changes in water, food and air quality. The European Commission's EU strategy on adaptation to climate change is accompanied by a Staff Working Document."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1397
-msgid "Climate-ADAPT case studies showcase initiatives that are already being carried out in Europe to adapt to climate change and increase resilience to extreme weather and slow-onset events."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:140
-#: ../theme/climateadaptv2/page.html:146
-msgid "Climate-ADAPT is undergoing reconstruction until June 2024 to improve its performance. We apologise for any possible disturbance to the content and functionality of the platform."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:960
-#: ../theme/climateadaptv2/tab-policies-rule.html:47
-msgid "Coastal areas"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:438
-msgid "Country <br /> Profiles"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:968
-#: ../theme/climateadaptv2/tab-policies-rule.html:55
-msgid "Cultural Heritage"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:976
-#: ../theme/climateadaptv2/tab-policies-rule.html:63
-msgid "Disaster risk <br /> reduction"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1147
-#: ../theme/climateadaptv2/tab-policies-rule.html:234
-msgid "Disaster risk reduction"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:536
-msgid "EU Mission on Adaptation"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:432
-msgid "EU Sector <br /> Policies"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1359
-msgid "EU Sector Policies"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:983
-#: ../theme/climateadaptv2/tab-policies-rule.html:70
-msgid "Energy"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:567
-msgid "Europe is the fastest warming continent in the world, and climate risks are threatening its energy and food security, ecosystems, infrastructure, water resources, financial stability, and people’s health. According to the first ever European Climate Risk Assessment (EUCRA) published by the EEA, many of these risks have already reached critical levels and can become catastrophic without urgent and decisive action."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:550
-msgid "European Climate Data Explorer"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:566
-msgid "European Climate Risk Assessment"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:529
-msgid "European Climate Risk Assessment<br />(EUCRA)"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:543
-msgid "European Climate and Health Observatory"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1637
-msgid "Events"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1178
-#: ../theme/climateadaptv2/tab-policies-rule.html:265
-msgid "Extreme weather events in recent years have increased the urgency to mainstream climate change adaptation into the different EU policy fields. There are few specific EU activities to mainstream climate change adaptation into policies for financial and insurance sectors. However many European policies related to natural disasters (see Disaster risk reduction) are very relevant to the financial and insurance sector, as they may help to prevent significant losses and financial disasters. The European Commission has also committed itself to increasing financing of climate-related activities by ensuring that at least 20% of the European budget is climate-related expenditure."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:991
-#: ../theme/climateadaptv2/tab-policies-rule.html:78
-msgid "Financial"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1597
-msgid "Find out how to contribute different types of information to Climate-ADAPT"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1277
-#: ../theme/climateadaptv2/tab-policies-rule.html:364
-msgid "Firms face two main types of climate-related risks: direct physical risks and transition risks that arise from society’s response to climate change, mainly mitigation actions. Climate change can have significant impacts on supply chains, distribution, and sales in a number of ways. Heat negatively affects human health and can lead to poorer work performance (reduced productivity) or lower numbers of hours committed to work (labour supply)."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1355
-msgid "For more informations visit:"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1558
-msgid "For urban areas guidance visit:"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:999
-#: ../theme/climateadaptv2/tab-policies-rule.html:86
-msgid "Forestry"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:568
-msgid "Go to the EUCRA"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:587
-msgid "Go to the European Climate Data Explorer"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:606
-msgid "Go to the European Climate and Health Observatory"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:625
-msgid "Go to the Mission Portal"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:801
-msgid "Guidance to search function"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1007
-#: ../theme/climateadaptv2/tab-policies-rule.html:94
-msgid "Health"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1015
-#: ../theme/climateadaptv2/tab-policies-rule.html:102
-msgid "ICT"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1462
-msgid "Identifying adaptation options"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1480
-msgid "Implementation"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1249
-#: ../theme/climateadaptv2/tab-policies-rule.html:336
-msgid "In Europe, nearly 73% of the population live in urban areas and this is projected to increase to over 80% by 2050. Climate change is likely to influence almost all components of cities and towns – their environment, economy and society. This raises new, complex challenges for urban planning and management. Climate change impacts on the hubs of Europe's economic activity, social life, culture and innovation have repercussions far beyond their municipal borders."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1023
-#: ../theme/climateadaptv2/tab-policies-rule.html:110
-msgid "Land use planning"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1319
-#: ../theme/climateadaptv2/tab-policies-rule.html:406
-msgid "Land use planning is identified as one of the most effective processes to facilitate local adaptation to climate change. Existing processes and tools available through the municipal land use planning process in the EU, including official plans, zoning, and/or development permits, assist in minimizing the development risks to a municipality from the predicted impacts of increased floods, wildfires, landslides, and/or other natural hazards due to a changing climate."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1031
-#: ../theme/climateadaptv2/tab-policies-rule.html:118
-msgid "Marine <br /> &amp; fisheries"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1220
-#: ../theme/climateadaptv2/tab-policies-rule.html:307
-msgid "Marine and fisheries"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1489
-msgid "Monitoring &amp; Evaluation (M&amp;E)"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1696
-msgid "More events"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1667
-msgid "More news"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1039
-#: ../theme/climateadaptv2/tab-policies-rule.html:126
-msgid "Mountain areas"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:420
-msgid "New <br /> Features"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1612
-msgid "New EEA product: European Climate Risk Assessment."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1634
-msgid "News"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1710
-msgid "Newsletter"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1148
-#: ../theme/climateadaptv2/tab-policies-rule.html:235
-msgid "Over the past few years, Europe has experienced every type of natural disasters: severe floods, droughts, and forest fires with devastating effects on people's lives, the European economy and the environment. In the past decade, the European Commission adopted several strategies and actions to cope with disaster risk reduction as, for instance, the Floods Directive and its implementation (timetable), the EU Action on Water Scarcity and Drought, the Green Paper on insurance in the context of natural and man-made disasters."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1444
-msgid "Preparing the ground for adaptation"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1713
-msgid "RSS feed"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1624
-msgid "Read more"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1133
-#: ../theme/climateadaptv2/tab-policies-rule.html:220
-msgid "Sea level rise can cause flooding, coastal erosion and the loss of low-lying coastal systems. It will also increase the risk of storm surges and the likelihood of landward intrusion of saltwater and may endanger coastal ecosystems. Expected rises in water temperatures and ocean acidification will contribute to a restructuring of coastal ecosystems; with implications for ocean circulation and biogeochemical cycling."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:61
-#: ../theme/climateadaptv2/page.html:67
-msgid "Search Climate-ADAPT"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:426
-msgid "Search the <br /> Database"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:909
-msgid "See complete database"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1418
-msgid "See how Europe is adapting to climate change:"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1596
-msgid "Share <span>your information</span>"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1726
-msgid "Sign me up!"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1347
-#: ../theme/climateadaptv2/tab-policies-rule.html:434
-msgid "Since weather and climate have a decisive influence on the travel season and the choice of holiday destinations, the tourism industry is highly dependent on them. There is also a strong connection between nature and tourism, as well as between cultural heritage and tourism. Depending on the location and the time of the year tourism can be positively or negatively impacted by climate change."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1743
-msgid "Subscribe"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1741
-msgid "Subscribe to our <strong> RSS feed </strong> <br /> and stay up to date!"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:624
-msgid "The EU Mission on Adaptation to Climate Change portal provides relevant information and resources to European regional and local authorities to prepare and plan for climate resilience."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:586
-msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:605
-msgid "The European Climate and Health Observatory provides access to a wide range of relevant publications, tools, websites and other resources related to climate change and health."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1616
-msgid "The assessment identifies 36 climate risks that pose major threats to Europe. Many of these have already reached critical levels and can become catastrophic without urgent and decisive action."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1305
-#: ../theme/climateadaptv2/tab-policies-rule.html:392
-msgid "The challenges posed by climate change for the ICT fall into two main categories: acute events and chronic stresses. Acute events (also termed critical or crisis events) include floods (pluvial, fluvial, coastal), ice storms, heatwaves, etc. Acute events compromise ICT infrastructures by destroying or disabling the physical assets that they depend on. Chronic stresses result from more gradual changes in climate norms, such as including changes in temperature ranges and humidity levels. While these impacts are less likely to have catastrophic consequences, they will lead to increased asset degradation, more frequent failures and shorter life spans."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:799
-msgid "The database contains quality checked information and is annotated by climate adaptation experts with keywords."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1291
-#: ../theme/climateadaptv2/tab-policies-rule.html:378
-msgid "The impacts of catastrophic events on this heritage are coupled with the slow onset of changes arising from deterioration processes. Continuous increase in temperature and fluctuations in temperature and humidity or fluctuations in freeze–thaw cycles causes degradation and stress in materials, leading to a greater need for restoration and conservation. Biological degradation caused by microorganisms, for example, are more likely to occur."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1235
-#: ../theme/climateadaptv2/tab-policies-rule.html:322
-msgid "The need for adapting the transport system to the impact of climate change has been highlighted since the European Commission's Adaptation White Paper (COM (2009)148). Transport adaptation is addressed through a combination of European transport, climate change and research policies. The European Union promotes best practices, mainstreaming adaptation within its transport infrastructure development programmes, and provides guidance, e.g. by developing adequate standards for construction. Action is focused on transport infrastructure, and particularly on the Trans-European Transport Network (TEN-T)."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1193
-#: ../theme/climateadaptv2/tab-policies-rule.html:280
-msgid "The rapid rate of climate change may overcome the natural ability of forest ecosystems to adapt. It leads to increased risk of disturbances through storms, fire, pests and diseases with implications for forest growth and production. The economic viability of forestry will be affected, mainly in southern areas of Europe, as well as the capacity of forests to provide environmental services, including changes in the carbon sink function. In 2013, the Commission adopted a new EU Forest Strategy, which responds to new challenges facing forests and the forest sector."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1047
-#: ../theme/climateadaptv2/tab-policies-rule.html:134
-msgid "Tourism"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1055
-#: ../theme/climateadaptv2/tab-policies-rule.html:142
-msgid "Transport"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1063
-#: ../theme/climateadaptv2/tab-policies-rule.html:150
-msgid "Urban"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1562
-msgid "Urban Adaptation Support Tool"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1071
-#: ../theme/climateadaptv2/tab-policies-rule.html:158
-msgid "Water <br /> management"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1262
-#: ../theme/climateadaptv2/tab-policies-rule.html:349
-msgid "Water management"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1263
-#: ../theme/climateadaptv2/tab-policies-rule.html:350
-msgid "Water resources are directly impacted by climate change, and the management of these resources affects the vulnerability of ecosystems, socio-economic activities and human health. Water management is also expected to play an increasingly central role in adaptation. Climate change is projected to lead to major changes in water availability across Europe with increasing water scarcity and droughts mainly in Southern Europe and increasing risk of floods throughout most of Europe."
-msgstr ""
-
-#. Default: "Case studies are flagship of the Climate-ADAPT platform. They have a comprehensive structure that covers all the key aspects in the implementation cycle of adaptation measures and are careful and specifically prepared for Climate-ADAPT by the organisation that is involved in the implementation with the support of EEA, following a set of ${case_studies_tab_repository} and also in collaboration with the main stakeholders. See the ${case_studies_tab_pages}."
-#: ../theme/climateadaptv2/index.html:1409
-msgid "case_studies_tab"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:1406
-msgid "criteria"
-msgstr ""
-
-#. Default: "Please check our ${page_url} for more help on how to search the database."
-#: ../theme/climateadaptv2/index.html:801
-msgid "guidance_link"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/index.html:788
-msgid "type here ..."
-msgstr ""
-
-#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr ""
@@ -1472,6 +978,11 @@ msgid "Adriatic-Ionian"
 msgstr ""
 
 #. undefined
+#: site_menu:29
+msgid "Agriculture"
+msgstr ""
+
+#. undefined
 #: health_menu:27
 msgid "Air pollution"
 msgstr ""
@@ -1499,6 +1010,16 @@ msgstr ""
 #. undefined
 #: site_menu:52
 msgid "Baltic Sea"
+msgstr ""
+
+#. undefined
+#: site_menu:30
+msgid "Biodiversity"
+msgstr ""
+
+#. undefined
+#: site_menu:31
+msgid "Buildings"
 msgstr ""
 
 #. undefined
@@ -1547,6 +1068,11 @@ msgid "Climate-ADAPT use cases"
 msgstr ""
 
 #. undefined
+#: site_menu:32
+msgid "Coastal areas"
+msgstr ""
+
+#. undefined
 #: site_menu:44
 msgid "Countries, Transnational regions, Cities"
 msgstr ""
@@ -1578,6 +1104,11 @@ msgid "Danube"
 msgstr ""
 
 #. undefined
+#: site_menu:33
+msgid "Disaster risk reduction"
+msgstr ""
+
+#. undefined
 #: site_menu:13
 msgid "Dissemination materials"
 msgstr ""
@@ -1600,6 +1131,11 @@ msgstr ""
 #. undefined
 #: site_menu:25
 msgid "EU Covenant of Mayors"
+msgstr ""
+
+#. undefined
+#: site_menu:23
+msgid "EU Mission on Adaptation"
 msgstr ""
 
 #. undefined
@@ -1654,8 +1190,18 @@ msgid "Ecosystem-based approaches"
 msgstr ""
 
 #. undefined
+#: site_menu:35
+msgid "Energy"
+msgstr ""
+
+#. undefined
 #: site_menu:67
 msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr ""
+
+#. undefined
+#: health_menu:32
+msgid "European Climate Data Explorer"
 msgstr ""
 
 #. undefined
@@ -1689,13 +1235,33 @@ msgid "FAQ for users"
 msgstr ""
 
 #. undefined
+#: site_menu:36
+msgid "Financial"
+msgstr ""
+
+#. undefined
 #: health_menu:23
 msgid "Flooding"
 msgstr ""
 
 #. undefined
+#: site_menu:37
+msgid "Forestry"
+msgstr ""
+
+#. undefined
 #: site_menu:88
 msgid "Glossary"
+msgstr ""
+
+#. undefined
+#: site_menu:91
+msgid "Guidance to search function"
+msgstr ""
+
+#. undefined
+#: site_menu:38
+msgid "Health"
 msgstr ""
 
 #. undefined
@@ -1746,6 +1312,11 @@ msgstr ""
 #. undefined
 #: site_menu:81
 msgid "LIFE projects"
+msgstr ""
+
+#. undefined
+#: site_menu:39
+msgid "Marine and fisheries"
 msgstr ""
 
 #. undefined
@@ -1874,6 +1445,11 @@ msgid "Transnational regions"
 msgstr ""
 
 #. undefined
+#: site_menu:40
+msgid "Transport"
+msgstr ""
+
+#. undefined
 #: site_menu:92
 msgid "Tutorial Videos"
 msgstr ""
@@ -1899,6 +1475,11 @@ msgid "Uncertainty guidance"
 msgstr ""
 
 #. undefined
+#: site_menu:41
+msgid "Urban"
+msgstr ""
+
+#. undefined
 #: site_menu:76
 msgid "Urban Adaptation Map Viewer"
 msgstr ""
@@ -1906,6 +1487,11 @@ msgstr ""
 #. undefined
 #: health_menu:31
 msgid "Urban Adaptation Map Viewer (health focus)"
+msgstr ""
+
+#. undefined
+#: site_menu:75
+msgid "Urban Adaptation Support Tool"
 msgstr ""
 
 #. undefined
@@ -1921,6 +1507,11 @@ msgstr ""
 #. undefined
 #: health_menu:25
 msgid "Water and food-borne diseases"
+msgstr ""
+
+#. undefined
+#: site_menu:42
+msgid "Water management"
 msgstr ""
 
 #. undefined
@@ -2057,130 +1648,6 @@ msgstr ""
 #. undefined
 #: 
 msgid "European environment and health atlas"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:185
-msgid "AIR POLLUTANT FORECAST VIEWERS"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:406
-#: ../theme/climateadaptv2/health-page.html:241
-msgid "Contribute to the Observatory via Climate-ADAPT"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:240
-msgid "Country profiles"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:175
-msgid "Discover the main topics and tools of the observatory"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:152
-msgid "European Climate <br /> and Health Observatory"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:445
-#: ../theme/climateadaptv2/health-page-full.html:156
-#: ../theme/climateadaptv2/health-page.html:280
-msgid "Home"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:220
-msgid "INDICATORS"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:223
-msgid "Learn more"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:182
-msgid "New"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:316
-#: ../theme/climateadaptv2/health-page.html:151
-msgid "News/Events"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:461
-#: ../theme/climateadaptv2/health-page-full.html:172
-#: ../theme/climateadaptv2/health-page.html:296
-msgid "Privacy and Legal Notice"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:384
-#: ../theme/climateadaptv2/health-page.html:219
-msgid "Register to receive news from the European Climate and Health Observatory"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:457
-#: ../theme/climateadaptv2/health-page-full.html:168
-#: ../theme/climateadaptv2/health-page.html:292
-msgid "SITE MAP"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:261
-msgid "Search and access the Observatory’s database containing case studies, publications, indicators, research projects and other"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:241
-msgid "See how countries are addressing climate change adaptation in public health"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:373
-#: ../theme/climateadaptv2/health-page.html:208
-msgid "Share"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:405
-#: ../theme/climateadaptv2/health-page.html:240
-msgid "Share your<br /> information"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:386
-#: ../theme/climateadaptv2/health-page.html:221
-msgid "Sign me up"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:501
-#: ../theme/climateadaptv2/health-page-full.html:212
-#: ../theme/climateadaptv2/health-page.html:336
-msgid "This <strong>European Climate and Health Observatory</strong> is a partnership between the European Commission, the European Environment Agency and several other organisations."
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:221
-msgid "View climate and health indicators from different trusted information providers"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:186
-msgid "View forecasts of air pollutant concentrations, which could be affected by climatic changes"
-msgstr ""
-
-#. undefined
-#: ../theme/climateadaptv2/health-homepage.html:153
-msgid "We provide easy access to a wide range of relevant publications, tools, websites and other resources related to climate change and human health."
 msgstr ""
 
 #. undefined
@@ -2632,6 +2099,11 @@ msgid "About the Urban Adaptation Support Tool"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:52
+msgid "Adaptation <br /> Support Tool"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/vocabulary.py:338
 msgid "Adaptation Measures and Actions"
 msgstr ""
@@ -2724,6 +2196,11 @@ msgid "Alpine"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:82
+msgid "Assessing adaptation options"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:204
 msgid "Assessing and selecting adaptation options"
 msgstr ""
@@ -2731,6 +2208,11 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
 msgid "Assessing climate change risks and vulnerabilities"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:66
+msgid "Assessing risks and vulnerability <br /> to climate change"
 msgstr ""
 
 #. undefined
@@ -2809,11 +2291,6 @@ msgid "Case studies and Adaptation Options"
 msgstr ""
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-
-#. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
 msgid "Check-out created"
 msgstr ""
@@ -2861,11 +2338,6 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:63
 msgid "Climate-ADAPT Event"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:300
-msgid "Climate-ADAPT case studies"
 msgstr ""
 
 #. undefined
@@ -3013,6 +2485,12 @@ msgid "Event"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:25
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:17
+msgid "Events"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
 msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
 msgstr ""
@@ -3110,6 +2588,11 @@ msgid "Go to the Adaptation Options"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:237
+msgid "Go to the European Climate Data Explorer"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:342
 msgid "Go to the Forest Policy Overview"
 msgstr ""
@@ -3165,13 +2648,29 @@ msgid "High pixel density mode"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:12
+msgid "Home"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:423
 msgid "How to use the map?"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/vocabulary.py:307
+msgid "ICT"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/vocabulary.py:349
 msgid "Ice and Snow"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:74
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:179
+msgid "Identifying adaptation options"
 msgstr ""
 
 #. undefined
@@ -3197,6 +2696,11 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:105
 msgid "Image quality at 3x"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:90
+msgid "Implementation"
 msgstr ""
 
 #. undefined
@@ -3277,6 +2781,11 @@ msgid "Keywords"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/vocabulary.py:308
+msgid "Land use planning"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/vocabulary.py:463
 msgid "Land-use and Food Systems"
 msgstr ""
@@ -3350,8 +2859,18 @@ msgid "Marine and Fisheries"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:98
+msgid "Monitoring &amp; Evaluation (M&amp;E)"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
 msgid "Monitoring and evaluating adaptation"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:310
+msgid "Mountain areas"
 msgstr ""
 
 #. undefined
@@ -3362,6 +2881,12 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
 msgid "National adaptation policy reported in 2023"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:20
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:16
+msgid "News"
 msgstr ""
 
 #. undefined
@@ -3460,9 +2985,20 @@ msgid "Portal Type"
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:58
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:79
+msgid "Preparing the ground for adaptation"
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:119
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:68
 msgid "Principles and success factors"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:21
+msgid "Privacy and Legal Notice"
 msgstr ""
 
 #. undefined
@@ -3528,6 +3064,11 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:112
 msgid "Reviewed by:"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:18
+msgid "SITE MAP"
 msgstr ""
 
 #. undefined
@@ -3726,6 +3267,11 @@ msgid "The European Climate Adaptation Platform Climate-ADAPT is a partnership b
 msgstr ""
 
 #. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:234
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr ""
+
+#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
 msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
 msgstr ""
@@ -3778,6 +3324,11 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/browser/pt/item_statistics.pt:25
 msgid "Total"
+msgstr ""
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:311
+msgid "Tourism"
 msgstr ""
 
 #. undefined
