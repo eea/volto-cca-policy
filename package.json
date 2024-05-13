@@ -34,7 +34,7 @@
     "@eeacms/volto-block-style": "*",
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
-    "@eeacms/volto-eea-website-theme": "*",
+    "@eeacms/volto-eea-website-theme": "^1.33.2",
     "@eeacms/volto-globalsearch": "*",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-searchlib": "*",
