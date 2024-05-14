@@ -25,11 +25,7 @@
     "@eeacms/volto-tabs-block",
     "@eeacms/volto-globalsearch"
   ],
-  "resolutions": {
-    "@elastic/search-ui": "1.21.2"
-  },
   "dependencies": {
-    "@elastic/search-ui": "1.21.2",
     "@eeacms/volto-block-style": "^6.1.0",
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
@@ -39,6 +35,7 @@
     "@eeacms/volto-searchlib": "^0.9.3",
     "@eeacms/volto-slate-label": "^0.6.0",
     "@eeacms/volto-tabs-block": "^7.5.1",
+    "@elastic/search-ui": "1.21.2",
     "d3-array": "^2.12.1",
     "jotai": "^1.6.0",
     "query-string": "7.1.0",
