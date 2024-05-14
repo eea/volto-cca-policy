@@ -139,7 +139,7 @@ const View = (props) => {
   return (
     <div>
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
           {tileWMSSources ? (
             <Map
               view={{
@@ -180,8 +180,8 @@ const View = (props) => {
           ) : null}
         </Grid.Column>
         <Grid.Column
-          mobile={3}
-          tablet={3}
+          mobile={12}
+          tablet={12}
           computer={2}
           className="col-left"
           id="country-map-filter"
