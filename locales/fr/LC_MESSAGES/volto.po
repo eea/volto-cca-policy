@@ -2004,51 +2004,6 @@ msgid "6.5 Monitoring and evaluating adaptation: Self-check"
 msgstr "6.5 Suivi et évaluation de l'adaptation: auto-vérification"
 
 #. undefined
-#: ../../climateadapt/browser/pt/countries-heat-index.pt:72
-msgid "<!-- <span class="map-type">NAS</span> --> HHWS available (click on country for further information)"
-msgstr "<!-- <span class="map-type">NAS</span> --> HHWS disponible (cliquez sur le pays pour plus d'informations)"
-
-#. undefined
-#: ../../climateadapt/browser/pt/countries-heat-index.pt:79
-msgid "<!-- <span class="map-type">NAS</span> --> No information"
-msgstr "<!-- <span class="map-type">NAS</span> --> Aucune information"
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:429
-msgid "<a href="https://oppla.eu/about">Oppla</a> is the EU Repository of Nature-Based Solutions. It provides a knowledge marketplace, where the latest thinking on natural capital, ecosystem services and nature-based solutions is brought together. Its purpose is to simplify how to share, obtain and create knowledge to better manage our environment"
-msgstr "<a href="https://oppla.eu/about">Oppla </a> est le référentiel européen des solutions basées sur la nature. Il fournit un marché des connaissances, où la dernière réflexion sur le capital naturel, les services écosystémiques et les solutions basées sur la nature est réunie. Son objectif est de simplifier comment partager, obtenir et créer des connaissances pour mieux gérer notre environnement"
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:462
-msgid "<a href="https://urbact.eu/">URBACT’s</a> mission is to enable cities to work together and develop integrated solutions to common urban challenges, by networking, learning from one another’s experiences, drawing lessons and identifying good practices to improve urban policies."
-msgstr "La mission <a href="https://urbact.eu/">d'URBACT</a>  est de permettre aux villes de travailler ensemble pour développer des solutions intégrées aux défis urbains communs, en créant des réseaux pour partager et apprendre des expériences des autres, générer des connaissances, et identifier les bonnes pratiques pour améliorer les politiques urbaines."
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:484
-msgid "<a href="https://www.climatealliance.org/home.html">Climate Alliance</a> <br><a href="https://www.ccre.org">Council of European Municipalities and Regions (CEMR)</a> <br><a href="https://www.cdp.net/en">CDP</a> <br><a href="https://www.c40.org">C40</a> <br><a href="https://fedarene.org">European Federation of Agencies and Regions for Energy and Environment (FEDARENE)</a> <br><a href="https://iclei-europe.org">Local Governments for Sustainability (ICLEI) Europe</a>"
-msgstr "<a href="https://www.climatealliance.org/home.html"> Climate Alliance </a> <br> <a href="https://www.ccre.org"> Conseil des Communes et Régions d'Europe (CCRE) </a> <br> <a href="https://www.cdp.net/en"> CDP </a> <br> <a href = "https: //www.c40. org "> C40 </a> <br> <a href="https://fedarene.org"> Fédération européenne des agences et des régions pour l'énergie et l'environnement (FEDARENE) </a> <br> <a href =" https://iclei-europe.org "> Local Governments for Sustainability (ICLEI) Europe </a>"
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:407
-msgid "<a href="https://www.uia-initiative.eu/en">Urban Innovative Actions</a> is an Initiative of the European Union that provides urban areas throughout Europe with resources to test new and unproven solutions to address urban challenge"
-msgstr "<a href="https://www.uia-initiative.eu/en">Urban Innovative Actions</a> est une Initiative de l'Union Européenne qui permet aux aires urbaines en Europe de mettre en œuvre des solutions nouvelles et innovantes afin de faire face aux défis urbains qu’elles rencontrent."
-
-#. undefined
-#: ../../climateadapt/browser/pt/casestudy_view.pt:292
-msgid "<span>x</span> (${DYNAMIC_CONTENT}) <i class="fa fa-picture-o" aria-hidden="true"></i>"
-msgstr "<span>x</span> (${DYNAMIC_CONTENT}) <i class="fa fa-picture-o" aria-hidden="true"></i>"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:142
-msgid "<strong>Language:</strong> <span>${DYNAMIC_CONTENT}</span>"
-msgstr "<strong>Langue :</strong> <span>${DYNAMIC_CONTENT}</span>"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:86
-msgid "A background document for the event is available <a href="${DYNAMIC_CONTENT}">here</a>"
-msgstr "Un document de référence sur l'événement est disponible <a href="${DYNAMIC_CONTENT}">ici</a>"
-
-#. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
 msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
 msgstr "Une valeur pour la qualité des images à densité de pixels 2x élevée, de 1 (la plus basse) à 95 (la plus élevée). Une valeur de 0 signifie que la valeur par défaut de plone.scaling sera utilisée, qui est actuellement 62."
@@ -2136,11 +2091,6 @@ msgid "Adaptation portal or platform reported"
 msgstr "Portail ou plate-forme d'adaptation signalé"
 
 #. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:440
-msgid "Adaptation to Climate Change: The goal of the <a href="https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/adaptation-climate-change-including-societal-transformation_en">EU mission</a> - Adaptation to climate change is to foster the development of innovative solutions to adapt to climate change and encourage regions, cities and communities to lead the societal transformation."
-msgstr "Adaptation au changement climatique: le but de la <a href = "ropa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/adaptation-climate-change-including-societal-transformation_en"> Mission UE </a> - Adaptation au changement climatique est de favoriser le développement de solutions innovantes pour s'adapter au changement climatique, et d'encourager les régions, les villes et les communautés à ouvrir la voie pour une transformation sociétale."
-
-#. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:115
 msgid "Adaptation to climate change"
 msgstr "Adaptation au changement climatique"
@@ -2159,11 +2109,6 @@ msgstr "AdapteCCA"
 #: ../../climateadapt/browser/pt/transnational_regions.pt:420
 msgid "Adriatic and Ionian"
 msgstr "Adriatique et ionien"
-
-#. undefined
-#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:196
-msgid "Advanced search for Climate-Adapt database items <a href="/redirect_to_search_page">here</a>"
-msgstr "Recherche avancée d'éléments de la base de données Climate-Adapt <a href="/redirect_to_search_page"> ici </a>"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:454
@@ -2321,11 +2266,6 @@ msgid "City Networks"
 msgstr "Réseaux de Villes"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:260
-msgid "Climate Impacts"
-msgstr "Impacts climatiques"
-
-#. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:111
 msgid "Climate Impacts in Europe"
 msgstr "Impacts climatiques en Europe"
@@ -2354,12 +2294,6 @@ msgstr "Commentaires:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Définitions communes des termes fréquemment utilisés dans le centre d'échange."
-
-#. undefined
-#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:30
-#: ../../climateadapt/browser/pt/c3sindicator_view.pt:158
-msgid "Content in the European Climate Data Explorer pages is delivered by the <a href="https://climate.copernicus.eu/">Copernicus Climate Change Service (C3S)</a> implemented by ECMWF. <a href="/knowledge/european-climate-data-explorer/disclaimer">Disclaimer</a>"
-msgstr "Le contenu des pages de l'Explorateur européen de données climatiques est fourni par  <a href="https://climate.copernicus.eu/">Copernicus Climate Change Service (C3S)</a> mis en oeuvre par ECMWF. <a href="/knowledge/european-cimate-data-explorer/disclaimer"> avertissement </a>"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:197
@@ -2423,11 +2357,6 @@ msgstr "Description:"
 #: ../../climateadapt/vocabulary.py:302
 msgid "Disaster Risk Reduction"
 msgstr "Réduction des risques de catastrophe"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:82
-msgid "Download the detailed agenda <a href="${DYNAMIC_CONTENT}">here</a>"
-msgstr "Téléchargez l'ordre du jour détaillé <a href="${DYNAMIC_CONTENT}">ici</a>"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:346
@@ -2679,16 +2608,6 @@ msgid "If you are new user the video tutorials can help you get started."
 msgstr "Si vous êtes un nouvel utilisateur, les didacticiels vidéo peuvent vous aider à démarrer."
 
 #. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:96
-msgid "If you have any further questions you can contact <a href="${DYNAMIC_CONTENT}">${DYNAMIC_CONTENT}</a>"
-msgstr "Si vous avez d'autres questions, vous pouvez contacter <a href="${DYNAMIC_CONTENT}">${DYNAMIC_CONTENT}</a>"
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:494
-msgid "Image courtesy of <a style="color: #999;font-size: 12px;" href="https://www.vecteezy.com/free-vector/technology">Technology Vectors by Vecteezy</a>"
-msgstr "Image fournie par <a style="color: #999;font-size: 12px;" href="https://www.vecteezy.com/free-vector/technology">Technology Vectors by Vecteezy</a>"
-
-#. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
 msgid "Image quality at 2x"
 msgstr "Qualité d'image à 2x"
@@ -2709,11 +2628,6 @@ msgid "Implementing adaptation"
 msgstr "Mise en oeuvre de l'adaptation"
 
 #. undefined
-#: ../../climateadapt/browser/pt/regions-section.pt:75
-msgid "In 2021-2027, the <a href="https://ec.europa.eu/regional_policy/policy/cooperation/european-territorial/next_en"> cross-border cooperation (CBC) between EU Member States and Neighbourhood region </a> is governed by the EU Cohesion policy and the programmes will be fully part of Interreg. In order to highlight the external dimension of Cohesion policy and at the same time to emphasise how close EU and partner countries stand, the new programmes is called “Interreg NEXT”."
-msgstr "En 2021-2027, la <a href="https://ec.europa.eu/regional_policy/policy/cooperation/european-territorial/next_en"> coopération transfrontalière (CBC) entre les États membres de l'UE et la région de voisinage </ a> est régi par la politique de cohésion de l’UE et les programmes feront pleinement partie d’Interreg. Afin de souligner la dimension extérieure de la politique de cohésion et en même temps de souligner la proximité entre l'UE et les pays partenaires, le nouveau programme est appelé « Interreg NEXT »."
-
-#. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:120
 msgid "Info:"
 msgstr "Info:"
@@ -2722,11 +2636,6 @@ msgstr "Info:"
 #: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:9
 msgid "Information Portals"
 msgstr "Portails d'information"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:106
-msgid "Information on the protection of personal data is available in the <a href="${DYNAMIC_CONTENT}"><b>privacy statement</b></a>"
-msgstr "Des informations sur la protection des données personnelles sont disponibles dans la <a href="${DYNAMIC_CONTENT}"><b>déclaration de confidentialité</b></a>"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:606
@@ -2836,11 +2745,6 @@ msgstr "MCR 2030"
 #: ../../climateadapt/browser/__init__.py:180
 msgid "Macro-Transnational region"
 msgstr "Région macro-transnationale"
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:451
-msgid "Making Cities Resilient: <a href="https://mcr2030.undrr.org/">Making Cities Resilient 2030</a> is a cross-stakeholder initiative for improving local resilience through advocacy, sharing knowledge and experiences, establishing mutually reinforcing city-to-city learning networks, injecting technical expertise, connecting multiple layers of government and building partnerships."
-msgstr "Making Cities Resilient: <a href="https://mcr2030.undrr.org/">Making Cities Resilient 2030</a> est une initiative multipartite visant à améliorer la résilience locale par la sensibilisation, le partage des connaissances et des expériences, l'établissement de réseaux d'apprentissage de ville à ville, l'apport d'expertise technique, la mise en relation de plusieurs niveaux de gouvernement et l'établissement de partenariats"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:238
@@ -2958,16 +2862,6 @@ msgstr "Couverture hors EEE"
 #: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:15
 msgid "Overview list of all indices"
 msgstr "Présentation de la liste de tous les indices"
-
-#. undefined
-#: ../../climateadapt/browser/pt/casestudy_view.pt:254
-msgid "Please contact us for any other enquiry on this Case Study or to share a new Case Study (email <a href="mailto: climate.adapt@eea.europa.eu">climate.adapt@eea.europa.eu</a>)"
-msgstr "Veuillez nous contacter pour toute autre enquête sur cette étude de cas ou pour partager une nouvelle étude de cas (email <a href="mailto: climate.adapt@eea.europa.eu"> climat.adapt@eea.europa.eu </ a >)"
-
-#. undefined
-#: ../../climateadapt/browser/pt/ccaevent_view.pt:105
-msgid "Please fill in this <a href="${DYNAMIC_CONTENT}">registration form</a>"
-msgstr "Veuillez remplir ce <a href="${DYNAMIC_CONTENT}">formulaire d'inscription</a>"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:189
@@ -3222,31 +3116,6 @@ msgid "Subnational or local HHAP"
 msgstr "HHAP infranational ou local"
 
 #. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:396
-msgid "The <a href="https://ec.europa.eu/clima/eu-action/european-green-deal/european-climate-pact_en">European Climate Pact</a> is an EU-wide initiative inviting people, communities and organisations to participate in climate action and build a greener Europe."
-msgstr "Le <a href="https://ec.europa.eu/clima/eu-action/european-green-deal/european-climate-pact_en">Pacte européen pour le climat</a> est une initiative de l'UE invitant individus, communautés et organisations à participer à l'action climatique pour construire une Europe plus verte."
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:473
-msgid "The <a href="https://resilientcitiesnetwork.org/">Resilient Cities Network</a> consists of cities that are committed to building and investing in urban resilience, located in five geographical regions: Africa, Asia Pacific, Europe and Middle East, Latin America and the Caribbean, and North America."
-msgstr "Le <a href="https://resilientcitiesnetwork.org/">Resilient Cities Network</a> se compose de villes engagées à construire et à investir dans la résilience urbaine, dans cinq régions géographiques: Afrique, Asie-Pacifique, Europe et Moyen-Orient, Amérique latine et Caraïbes, et Amérique du Nord."
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:385
-msgid "The <a href="https://www.covenantofmayors.eu/">EU Covenant of Mayors</a> brings together over 10,000 local governments voluntarily committed to implementing EU climate and energy objectives. Signatory cities commit to increasing resilience and preparing for the adverse impacts of climate change."
-msgstr "La <a href="https://www.covenantofmayors.eu/">Convention des Maires - Europe</a> rassemble plus de 10 000 collectivités locales engagées volontairement pour mettre en œuvre les objectifs climat et énergie de l'UE. Les villes signataires s'engagent à accroître leur résilience et à se préparer aux impacts négatifs du changement climatique."
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:318
-msgid "The <a href="https://www.covenantofmayors.eu/support/funding.html">Covenant of Mayors Interactive Funding Guide</a> provides comprehensive and up-to-date information on various funding initiatives open to cities and managed by the European Commission, Member States and key financial institutions such as the European Investment Bank. In addition, the guide includes information on support services and innovative financing models."
-msgstr "Le <a href="https://www.covenantofmayors.eu/support/funding.html">Guide de financement interactif de la Convention des Maires</a> fournit des informations complètes et à jour sur diverses initiatives de financement ouvertes aux villes et gérées par la Commission européenne, les États membres et les institutions financières clés telles que la Banque européenne d'investissement. De plus, le guide comprend des informations sur les services d'accompagnement et les modèles de financement innovants."
-
-#. undefined
-#: ../../climateadapt/browser/pt/landing_page_urban.pt:418
-msgid "The <a href="https://www.fao.org/green-cities-initiative/en/">FAO Green Cities Initiative</a> focuses on improving the urban environment, strengthening urban-rural linkages and the resilience of urban systems, services and populations to external shocks."
-msgstr "L'<a href="https://www.fao.org/green-cities-initiative/en/">Initiative FAO Green Cities</a> se concentre sur l'amélioration de l'environnement urbain, le renforcement des liens urbains-ruraux et la résilience des systèmes, des services et des populations urbains aux chocs externes."
-
-#. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:384
 msgid "The EU Covenant of Mayors"
 msgstr "Convention des Maires - Europe"
@@ -3260,11 +3129,6 @@ msgstr "L'UE finance l'adaptation au changement climatique en Europe à travers 
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
 msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
 msgstr "L'UE a mis en place plusieurs cadres réglementaires pour accroître la résilience des villes européennes et de leurs habitants – notamment la stratégie de l’UE pour l’adaptation au changement climatique et la stratégie de l'UE en faveur de la biodiversité à l'horizon 2030 – et a développé plusieurs initiatives pour améliorer les connaissances et la disponibilité des données sur la vulnérabilité et la capacité adaptative des villes. L'UE fournit également un soutien financier et technique aux décideurs et praticiens pour rendre les villes plus résilientes et adaptatives."
-
-#. undefined
-#: ../../climateadapt/browser/pt/footer_logos.pt:10
-msgid "The European Climate Adaptation Platform Climate-ADAPT is a partnership between the <a href="https://ec.europa.eu/">European Commission</a> and the <a href="https://www.eea.europa.eu/">European Environment Agency.</a>"
-msgstr "La plateforme européenne d'adaptation au changement climatique Climate-ADAPT est un partenariat entre le <a href="https://ec.europa.eu/"> Commission européenne </a> et <a href="https: //www.eea.Europa.eu/"> Agence européenne de l'environnement. </a>"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
@@ -3307,11 +3171,6 @@ msgid "The climate crisis is severely affecting Europe's forests, making them in
 msgstr "La crise climatique affecte gravement les forêts européennes, ce qui les rend de plus en plus vulnérables aux risques tels que les tempêtes, les feux de forêt, les sécheresses, les insectes ravageurs, les épidémies ou l'élévation du niveau de la mer. Les risques et les impacts croissants affectent la viabilité économique de la sylviculture et réduisent la capacité des forêts à fournir des services écosystémiques essentiels. L'UE répond à ce défi sans précédent en soutenant l'adaptation des forêts au changement climatique grâce à un large éventail de politiques, comme la stratégie forestière de l'UE, la stratégie de l’UE pour l’adaptation au changement climatique, et la stratégie de l'UE en faveur de la biodiversité."
 
 #. undefined
-#: ../../climateadapt/browser/pt/transnational_regions.pt:423
-msgid "There are <a href="http://ec.europa.eu/regional_policy/cooperate/cooperation/transnational/index_en.cfm" target="_blank">x</a> in Europe for transnational co-operation. In addition, specific EU agreed strategies exist for four macro-national regions: <a href="http://ec.europa.eu/regional_policy/cooperate/baltic/index_en.cfm" target="_blank">x</a>, <a href="http://ec.europa.eu/regional_policy/cooperate/danube/index_en.cfm" target="_blank">x</a>, <a href="http://www.europarl.europa.eu/sides/getDoc.do?pubRef=-//EP//TEXT+TA+P7-TA-2013-0229+0+DOC+XML+V0//EN&amp;language=EN" target="_blank">x</a>, and <a href="http://ec.europa.eu/regional_policy/en/policy/cooperation/macro-regional-strategies/adriatic-ionian/" target="_blank">x</a> regions. This section provides information on strategies and actions that have been developed or are currently under development for the EU transnational regions and for other regions and countries.<br /> <br /> <b>x</b><br /> The map shows the transnational regions situated in Europe defined in the co-operation programmes for 2014-2020. You can select transnational regions by clicking on the map. If you select an area that belongs to more than one region, the pop-up window will show all the regions where the area is located. The pop-up window also shows the countries where each region is located.<br /> <br /> To go to one of the regions' pages, choose in the drop-down list, click on the legend, or make use of the link shown in the tooltip."
-msgstr "Il y a <a href="http://ec.europa.eu/regional_policy/coopérate/cooperation/transnational/index_en.cfm" target="_blank"> x </a> En Europe pour la coopération transnationale. En outre, des stratégies spécifiques convenues par l'UE existent pour quatre régions macro-nationales: <a href="http://ec.europa.eu/regional_policy/coopérate/baltic/index_en.cfm" Target="_blank"> x </a>, <a href="http://ec.europa.eu/regional_policy/cooperate/danube/index_en.cfm" target="_blank"> x </a>, <a href="http://www.europarl.europa.eu/sides/getDoc.do?pubRef=-//EP//TEXT+TA+P7-TA-2013-0229+0+DOC+XML+V0//EN&amp;language=EN" target="_blank"> x </a>, et <a href="http://ec.europa.eu/regional_policy/en/policy/coopération/macro-regional- Stratégies/Adriatic-ionian/" Target="_blank"> x </a> Régions. Cette section fournit des informations sur les stratégies et les actions qui ont été développées ou sont en cours de développement pour les régions transnationales de l'UE et pour d'autres régions et pays.  <br /> <br /> <b> x </b> <br /> La carte montre les régions transnationales situées en Europe définies dans les programmes de coopération pour 2014-2020. Vous pouvez sélectionner les régions transnationales en cliquant sur la carte. Si vous sélectionnez une zone qui appartient à plus d'une région, la fenêtre contextuelle montrera toutes les régions où se trouve la zone. La fenêtre contextuelle montre également les pays où se trouve chaque région. <br /> <br /> Pour aller dans l'une des pages des régions, choisir dans la liste déroulante, cliquer sur la légende ou utiliser le lien illustré dans l'info-bulle."
-
-#. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
 msgid "To go to one of the regions please click on the maps."
 msgstr "Pour aller dans l'une des régions, veuillez cliquer sur les cartes."
@@ -3340,11 +3199,6 @@ msgstr "Régions transnationales et autres régions et pays"
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:461
 msgid "URBACT"
 msgstr "URBACT"
-
-#. undefined
-#: ../../climateadapt/translation/admin.py:2620
-msgid "Unable to translate ${name} as part of content rule 'translate' action: ${error}"
-msgstr "Impossible de traduire ${name} dans le cadre de l'action « traduire » de la règle de contenu : ${error}"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:406
