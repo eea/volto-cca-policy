@@ -25,6 +25,9 @@
     "@eeacms/volto-tabs-block",
     "@eeacms/volto-globalsearch"
   ],
+  "resolutions": {
+    "@elastic/search-ui": "1.21.2"
+  },
   "dependencies": {
     "@eeacms/volto-block-style": "^6.1.0",
     "@eeacms/volto-datablocks": "*",
