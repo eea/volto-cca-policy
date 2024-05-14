@@ -29,6 +29,7 @@
     "@elastic/search-ui": "1.21.2"
   },
   "dependencies": {
+    "@elastic/search-ui": "1.21.2",
     "@eeacms/volto-block-style": "^6.1.0",
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
