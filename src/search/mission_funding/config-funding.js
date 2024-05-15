@@ -1,23 +1,23 @@
 import { mergeConfig } from '@eeacms/search';
 import { getClientProxyAddress } from '../utils';
 
-import facets from './facets-tools';
+import facets from './facets-funding';
 
-const missionToolsConfig = {
-  title: 'Mission Tools Search',
+const missionFundingSearchConfig = {
+  title: 'Mission Funding Search',
   ...facets,
 };
 
-export default function installMissionToolsSearch(config) {
+export default function installMissionFundingSearch(config) {
   const envConfig = process.env.RAZZLE_ENV_CONFIG
     ? JSON.parse(process.env.RAZZLE_ENV_CONFIG)
-    : missionToolsConfig;
+    : missionFundingSearchConfig;
 
   const pjson = require('@eeacms/volto-cca-policy/../package.json');
   envConfig.app_name = pjson.name;
   envConfig.app_version = pjson.version;
 
-  config.searchui.missionToolsSearch = {
+  config.searchui.missionFundingSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
     elastic_index: '_es/globalsearch',
     index_name: 'data_searchui',
@@ -29,14 +29,16 @@ export default function installMissionToolsSearch(config) {
     },
   };
 
-  const { missionToolsSearch } = config.searchui;
+  const { missionFundingSearch } = config.searchui;
 
-  missionToolsSearch.facets = facets;
+  missionFundingSearch.facets = facets;
 
   if (typeof window !== 'undefined') {
-    config.searchui.missionToolsSearch.host =
+    config.searchui.missionFundingSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
+
+  // console.log(config.searchui);
 
   return config;
 }
