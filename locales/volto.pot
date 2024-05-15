@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-04-12T14:10:28.025Z\n"
+"POT-Creation-Date: 2024-05-13T12:26:08.591Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -85,6 +85,11 @@ msgstr ""
 msgid "Case Study illustrations"
 msgstr ""
 
+#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr ""
+
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
@@ -98,6 +103,11 @@ msgstr ""
 #. Default: "Challenges"
 #: components/theme/Views/CaseStudyView
 msgid "Challenges"
+msgstr ""
+
+#. Default: "Choices"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Choices"
 msgstr ""
 
 #. Default: "Choose a region"
@@ -116,6 +126,7 @@ msgid "City:"
 msgstr ""
 
 #. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr ""
@@ -131,9 +142,19 @@ msgstr ""
 msgid "Climate impacts:"
 msgstr ""
 
+#. Default: "Climate-ADAPT case studies"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Climate-ADAPT case studies"
+msgstr ""
+
 #. Default: "Climate-ADAPT page for this event"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
+msgstr ""
+
+#. Default: "Close"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Close"
 msgstr ""
 
 #. Default: "Contact"
@@ -183,7 +204,13 @@ msgstr ""
 msgid "Dec"
 msgstr ""
 
+#. Default: "Default"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Default"
+msgstr ""
+
 #. Default: "Description"
+#: components/manage/Widgets/CreatableSelectWidget
 #: helpers/Utils
 msgid "Description"
 msgstr ""
@@ -196,6 +223,16 @@ msgstr ""
 #. Default: "Documents"
 #: helpers/Utils
 msgid "Documents"
+msgstr ""
+
+#. Default: "Download Event"
+#: components/theme/Views/EventView
+msgid "Download Event"
+msgstr ""
+
+#. Default: "Download this event in iCal format"
+#: components/theme/Views/EventView
+msgid "Download this event in iCal format"
 msgstr ""
 
 #. Default: "Duration:"
@@ -406,9 +443,19 @@ msgstr ""
 msgid "No information"
 msgstr ""
 
+#. Default: "No options"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No options"
+msgstr ""
+
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
+msgstr ""
+
+#. Default: "No value"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No value"
 msgstr ""
 
 #. Default: "Nov"
@@ -518,12 +565,18 @@ msgstr ""
 msgid "Relevance"
 msgstr ""
 
+#. Default: "Required"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Required"
+msgstr ""
+
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr ""
 
 #. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr ""
@@ -548,6 +601,11 @@ msgstr ""
 msgid "See video outside Climate-ADAPT"
 msgstr ""
 
+#. Default: "Select…"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Select…"
+msgstr ""
+
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
@@ -556,7 +614,13 @@ msgstr ""
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
+msgstr ""
+
+#. Default: "Short Name"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Short Name"
 msgstr ""
 
 #. Default: "Solutions"
@@ -628,9 +692,19 @@ msgstr ""
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr ""
 
+#. Default: "Title"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Title"
+msgstr ""
+
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
+msgstr ""
+
+#. Default: "Used for programmatic access to the fieldset."
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Used for programmatic access to the fieldset."
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"

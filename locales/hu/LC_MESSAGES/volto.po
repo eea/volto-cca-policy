@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -5,8 +6,8 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language: \n"
 "Language-Team: \n"
+"Language: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
@@ -14,335 +15,337 @@ msgstr ""
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Details"
-msgstr "Detalles de adaptación"
+msgstr "Az alkalmazkodás részletei"
 
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
-msgstr "Opciones de adaptación implementadas en este caso"
+msgstr "Az ebben az esetben alkalmazott adaptációs lehetőségek"
 
 #. Default: "Adaptation elements:"
 #: helpers/ContentMetadata
 msgid "Adaptation elements:"
-msgstr "Elementos de adaptación:"
+msgstr "Alkalmazkodási elemek:"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
-msgstr "Opciones de adaptación"
+msgstr "Alkalmazkodási lehetőségek"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation sectors"
-msgstr "Sectores de adaptación"
+msgstr "Alkalmazkodási ágazatok"
 
 #. Default: "Additional Details"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
-msgstr "Información adicional"
+msgstr "További részletek"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
 msgid "Agenda and supporting documents"
-msgstr "Orden del día y documentos de apoyo"
+msgstr "Napirend és igazoló dokumentumok"
 
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
-msgstr "Abr"
+msgstr "Apr"
 
 #. Default: "Aug"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Aug"
-msgstr "Ago"
+msgstr "Aug"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
-msgstr "Información de contexto"
+msgstr "Háttér-információk"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
-msgstr "Regiones biogeográficas:"
+msgstr "Biogeográfiai régiók:"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
 msgid "Case Studies Documents"
-msgstr "Documentos de estudios de caso"
+msgstr "Esettanulmányok Dokumentumok"
 
 #. Default: "Case Study Description"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study Description"
-msgstr "Descripción de casos de estudio"
+msgstr "Esettanulmány leírása"
 
 #. Default: "Case Study illustrations"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
-msgstr "Ilustraciones de estudios de caso"
+msgstr "Esettanulmány illusztrációk"
 
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+#. Default: "Case studies collected at national level in Spain, provided by
+#. AdapteCCA.es"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Casos de estudio recolectados a nivel nacional en España, proporcionados por AdapteCCA.es"
+msgid ""
+"Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr ""
+"Az AdapteCCA.es által Spanyolországban nemzeti szinten gyűjtött "
+"esettanulmányok"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
-msgstr "Casos de estudio relacionados con esta opción:"
+msgstr "Az e lehetőséghez kapcsolódó esettanulmányok:"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
 msgid "Category"
-msgstr "Categoría"
+msgstr "Kategória"
 
 #. Default: "Challenges"
 #: components/theme/Views/CaseStudyView
 msgid "Challenges"
-msgstr "Desafíos"
+msgstr "Kihívások"
 
 #. Default: "Choices"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Choices"
-msgstr ""
+msgstr "Választási lehetőségek"
 
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
-msgstr "Elija una región"
+msgstr "Válasszon régiót"
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
-msgstr "Elija el mapa temático:"
+msgstr "Tematikus térkép kiválasztása:"
 
 #. Default: "City:"
 #: helpers/ContentMetadata
 msgid "City:"
-msgstr "Ciudad:"
+msgstr "Város:"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
-msgstr "Impacto climático"
+msgstr "Éghajlati hatás"
 
 #. Default: "Climate impacts"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Climate impacts"
-msgstr "Impactos climáticos"
+msgstr "Éghajlati hatások"
 
 #. Default: "Climate impacts:"
 #: helpers/ContentMetadata
 msgid "Climate impacts:"
-msgstr "Impactos climáticos:"
+msgstr "Éghajlati hatások:"
 
 #. Default: "Climate-ADAPT case studies"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Climate-ADAPT case studies"
-msgstr "Casis de estudio de Climate-ADAPT"
+msgstr "Climate-ADAPT esettanulmányok"
 
 #. Default: "Climate-ADAPT page for this event"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
-msgstr "Página Climate-ADAPT para este evento"
+msgstr "Climate-ADAPT oldal ehhez az eseményhez"
 
 #. Default: "Close"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView
-#: components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
 msgid "Contact"
-msgstr "Contacto"
+msgstr "Kapcsolattartó"
 
 #. Default: "Contact information for the Observatory"
 #: components/theme/Views/DatabaseItemView
 msgid "Contact information for the Observatory"
-msgstr "Información de contacto del Observatorio"
+msgstr "A Megfigyelőközpont elérhetőségei"
 
 #. Default: "Contributor:"
 #: helpers/Utils
 msgid "Contributor:"
-msgstr "Contribuyente:"
+msgstr "Közreműködő:"
 
 #. Default: "Costs and Benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Costs and Benefits"
-msgstr "Costes y beneficios"
+msgstr "Költségek és előnyök"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
 msgid "Countries:"
-msgstr "Países:"
+msgstr "Országok:"
 
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
 msgid "Date of creation:"
-msgstr "Fecha de creación:"
+msgstr "Létrehozás dátuma:"
 
 #. Default: "Date of publication:"
 #: helpers/ContentMetadata
 msgid "Date of publication:"
-msgstr "Fecha de publicación:"
+msgstr "Közzététel időpontja:"
 
 #. Default: "Date of release:"
 #: helpers/ContentMetadata
 msgid "Date of release:"
-msgstr "Fecha de lanzamiento:"
+msgstr "A kiadás dátuma:"
 
 #. Default: "Dec"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Dec"
-msgstr "Dic"
+msgstr "DEC"
 
 #. Default: "Default"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Default"
-msgstr ""
+msgstr "Alapértelmezett"
 
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget
-#: helpers/Utils
+#: components/manage/Widgets/CreatableSelectWidget helpers/Utils
 msgid "Description"
-msgstr "Descripción"
+msgstr "Leírás"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
 msgid "Disclaimer"
-msgstr "Descargo de responsabilidad"
+msgstr "nyilatkozat"
 
 #. Default: "Documents"
 #: helpers/Utils
 msgid "Documents"
-msgstr "Documentos"
+msgstr "Dokumentumok"
 
 #. Default: "Download Event"
 #: components/theme/Views/EventView
 msgid "Download Event"
-msgstr ""
+msgstr "Esemény letöltése"
 
 #. Default: "Download this event in iCal format"
 #: components/theme/Views/EventView
 msgid "Download this event in iCal format"
-msgstr ""
+msgstr "Az esemény letöltése iCal formátumban"
 
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
-msgstr "Duración:"
+msgstr "Időtartam:"
 
 #. Default: "ECDE homepage"
 #: components/theme/Views/C3SIndicatorView
 msgid "ECDE homepage"
-msgstr "Página de inicio del ECDE"
+msgstr "Az ECDE honlapja"
 
 #. Default: "Explore in detail"
 #: components/theme/Views/C3SIndicatorView
 msgid "Explore in detail"
-msgstr "Explora en detalle"
+msgstr "Fedezze fel részletesen"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
-msgstr "Feb"
+msgstr "február"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
-msgstr "fr"
+msgstr "Fr"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
-msgstr "Programa de financiación:"
+msgstr "Finanszírozási program:"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
-msgstr "Caracterización geográfica:"
+msgstr "Földrajzi jellemzés:"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
-msgstr "Empezar"
+msgstr "Első lépések"
 
 #. Default: "Go back"
 #: components/theme/Views/C3SIndicatorView
 msgid "Go back"
-msgstr "Regresar"
+msgstr "Menj vissza"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
-msgstr "Niveles de gobierno:"
+msgstr "Irányítási szint:"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
-msgstr "HHWS disponible (haga clic en el país para obtener más información)"
+msgstr "HHWS elérhető (további információkért kattintson az országra)"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
-msgstr "Impacto en la salud:"
+msgstr "Egészségügyi hatás:"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
-msgstr "Planes de acción de salud por calor (HHAP)"
+msgstr "Hő-egészségügyi cselekvési tervek (HHAP)"
 
 #. Default: "Heat health warning systems (HHWS)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
-msgstr "Sistemas de alerta sanitaria por calor (HHWS)"
+msgstr "Hőre figyelmeztető rendszerek (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
 msgid "IPCC adaptation options categories:"
-msgstr "Categorías de opciones de adaptación de IPCC:"
+msgstr "Az IPCC alkalmazkodási lehetőségeinek kategóriái:"
 
 #. Default: "IPCC categories"
 #: components/theme/Views/AdaptationOptionView
 msgid "IPCC categories"
-msgstr "Categorías del IPCC"
+msgstr "IPCC-kategóriák"
 
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
-msgstr "Si tienes más dudas puedes contactar"
+msgstr "Ha további kérdései vannak, vegye fel a kapcsolatot"
 
 #. Default: "Implementation Time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Implementation Time"
-msgstr "Tiempo de implementación"
+msgstr "Végrehajtási idő"
 
 #. Default: "Importance and Relevance of Adaptation"
 #: components/theme/Views/CaseStudyView
 msgid "Importance and Relevance of Adaptation"
-msgstr "Importancia y relevancia de la adaptación"
+msgstr "Az alkalmazkodás fontossága és relevanciája"
 
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
-msgstr "Indicadores"
+msgstr "Mutatók"
 
 #. Default: "Info"
 #: helpers/Utils
 msgid "Info"
-msgstr "Información"
+msgstr "Információk"
 
 #. Default: "Jan"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jan"
-msgstr "Ene"
+msgstr "Jan"
 
 #. Default: "Jul"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -357,59 +360,61 @@ msgstr "Jun"
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
 msgid "Key Type Measures:"
-msgstr "Medidas de tipo clave:"
+msgstr "Kulcsfontosságú típusintézkedések:"
 
 #. Default: "Key activities within climate change and health"
 #: components/theme/Views/DatabaseItemView
 msgid "Key activities within climate change and health"
-msgstr "Actividades principales en cambio climático y salud"
+msgstr ""
+"Kulcsfontosságú tevékenységek az éghajlatváltozás és az egészségügy "
+"területén"
 
 #. Default: "Key type measures"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Key type measures"
-msgstr ""
+msgstr "Kulcsfontosságú intézkedések"
 
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
-msgstr "Palabras clave:"
+msgstr "Kulcsszavak:"
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
-msgstr "Idioma de la conferencia"
+msgstr "A konferencia nyelve"
 
 #. Default: "Last Modified in Climate-ADAPT"
 #: helpers/Utils
 msgid "Last Modified in Climate-ADAPT"
-msgstr "Última modificación en Climate-ADAPT"
+msgstr "Utoljára módosítva itt: Climate-ADAPT"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
 msgid "Lead"
-msgstr "Liderado por"
+msgstr "Ólom"
 
 #. Default: "Legal Aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Legal Aspects"
-msgstr "Aspectos legales"
+msgstr "Jogi szempontok"
 
 #. Default: "Life Time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Life Time"
-msgstr "Tiempo de vida"
+msgstr "Élettartam"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
-msgstr "Enlaces a más información"
+msgstr "További információkra mutató linkek"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
-msgstr "Región Macro-Transnacional:"
+msgstr "Makro-transznacionális régió:"
 
 #. Default: "Mar"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -419,42 +424,42 @@ msgstr "Mar"
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "May"
-msgstr "Puede"
+msgstr "május"
 
 #. Default: "Mo"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mo"
-msgstr "Mes"
+msgstr "Mo"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
-msgstr "HHAP Nacional"
+msgstr "Nemzeti HHAP"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
-msgstr "No HHAP"
+msgstr "Nincs HHAP"
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No information"
-msgstr "Sin información"
+msgstr "Nincs adat"
 
 #. Default: "No options"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No options"
-msgstr ""
+msgstr "Nincs lehetőség"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
-msgstr "No hay resultados"
+msgstr "Nincs eredmény"
 
 #. Default: "No value"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "No value"
-msgstr ""
+msgstr "Nincs érték"
 
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -464,99 +469,97 @@ msgstr "Nov"
 #. Default: "Objectives"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives"
-msgstr "Objetivos"
+msgstr "Célkitűzések"
 
 #. Default: "Observatory Contributions:"
 #: helpers/Utils
 msgid "Observatory Contributions:"
-msgstr "Contribuciones al Observatorio:"
+msgstr "A megfigyelőközpont hozzájárulásai:"
 
 #. Default: "Observatory contributions"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
-msgstr "Contribuciones del observatorio"
+msgstr "A megfigyelőközpont hozzájárulásai"
 
 #. Default: "Ott"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
-msgstr "Oct"
+msgstr "okt."
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
-msgstr "Documentos de organización"
+msgstr "Szervezeti dokumentumok"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
-msgstr "Otras regiones"
+msgstr "Egyéb régiók"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
 msgid "Participation"
-msgstr "Participación"
+msgstr "Részvétel"
 
 #. Default: "Partners"
 #: components/theme/Views/ProjectView
 msgid "Partners"
-msgstr "Socios"
+msgstr "Partnerek"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
-msgstr "Información práctica"
+msgstr "Gyakorlati tudnivalók"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
-msgstr "Información del proyecto"
+msgstr "A projekttel kapcsolatos információk"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
-msgstr "Publicaciones e Informes Documentos"
+msgstr "Kiadványok és jelentések Dokumentumok"
 
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
-msgstr "Publicado en Climate-ADAPT"
+msgstr "Forrás: Climate-ADAPT"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
-msgstr "Informacion de referencia"
+msgstr "Referencia-információk"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
+#: components/theme/Views/AdaptationOptionView helpers/Utils
 msgid "Reference information"
-msgstr "Informacion de referencia"
+msgstr "Referencia-információk"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView
-#: helpers/Utils
+#: components/theme/Views/CaseStudyView helpers/Utils
 msgid "References"
-msgstr "Referencias"
+msgstr "Hivatkozások"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Region's countries:"
-msgstr "Países de la región:"
+msgstr "A régió országai:"
 
 #. Default: "Regions"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Regions"
-msgstr "Regiones"
+msgstr "Régiók"
 
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
-msgstr "Contenido relacionado:"
+msgstr "Kapcsolódó tartalmak:"
 
 #. Default: "Related documents and presentations"
 #: components/theme/Views/DatabaseItemView
 msgid "Related documents and presentations"
-msgstr "Documentos y presentaciones relacionados"
+msgstr "Kapcsolódó dokumentumok és előadások"
 
 #. Default: "Relevance"
 #: components/theme/Views/CaseStudyView
@@ -566,43 +569,43 @@ msgstr "Relevancia"
 #. Default: "Required"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Required"
-msgstr ""
+msgstr "Kötelező"
 
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
-msgstr "sa"
+msgstr "Sa"
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
-msgstr "Sector"
+msgstr "Ágazat"
 
 #. Default: "Sectors:"
 #: helpers/ContentMetadata
 msgid "Sectors:"
-msgstr "Sectores:"
+msgstr "Ágazatok:"
 
 #. Default: "See less"
 #: helpers/Utils
 msgid "See less"
-msgstr "Ver menos"
+msgstr "Kevesebbet látni"
 
 #. Default: "See more"
 #: helpers/Utils
 msgid "See more"
-msgstr "Ver más"
+msgstr "Tudjon meg többet"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
 msgid "See video outside Climate-ADAPT"
-msgstr "Ver video fuera de Climate-ADAPT"
+msgstr "Lásd a Climate-ADAPT-on kívüli videót"
 
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
-msgstr ""
+msgstr "Válassza ki..."
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -611,38 +614,36 @@ msgstr "Sep"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
+#: components/theme/ShareInfoButton/ShareInfoButton helpers/ShareInfo
 msgid "Share your information"
-msgstr "Comparte tu información"
+msgstr "Oszd meg az adataidat"
 
 #. Default: "Short Name"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Short Name"
-msgstr ""
+msgstr "Rövid név"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
-msgstr "Soluciones"
+msgstr "Megoldások"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView
-#: helpers/Utils
+#: components/theme/Views/CaseStudyView helpers/Utils
 msgid "Source"
-msgstr "Fuente"
+msgstr "Forrás"
 
 #. Default: "Source of funding"
 #: components/theme/Views/ProjectView
 msgid "Source of funding"
-msgstr "Fuente de financiación"
+msgstr "Finanszírozási forrás"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Stakeholder participation"
-msgstr "Participación de partes interesadas"
+msgstr "Az érdekelt felek részvétele"
 
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -652,18 +653,18 @@ msgstr "Su"
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
-msgstr "Subnacionales:"
+msgstr "Alállampolgárok:"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Subnational or local"
-msgstr "Subnacional o local"
+msgstr "Szubnacionális vagy helyi"
 
 #. Default: "Success and Limiting Factors"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Success and Limiting Factors"
-msgstr "Factores de éxito y limitantes"
+msgstr "Siker és korlátozó tényezők"
 
 #. Default: "Th"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -673,27 +674,35 @@ msgstr "Th"
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
-msgstr "La Herramienta de Sporte para la Adaptación: comenzar"
+msgstr "Az alkalmazkodást támogató eszköz - Első lépések"
 
 #. Default: "The date refers to the date of release of the video"
 #: helpers/ContentMetadata
 msgid "The date refers to the date of release of the video"
-msgstr "La fecha se refiere a la fecha de lanzamiento del video"
+msgstr "A dátum a videó megjelenésének dátumára vonatkozik"
 
 #. Default: "The date refers to the latest date of publication of the item"
 #: helpers/ContentMetadata
 msgid "The date refers to the latest date of publication of the item"
-msgstr "La fecha se refiere a la última fecha de publicación del artículo."
+msgstr "A dátum a tétel közzétételének legkésőbbi időpontjára vonatkozik."
 
-#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared
+#. or updated by contributing experts to be submitted for the publication in
+#. Climate ADAPT"
 #: helpers/ContentMetadata
-msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-msgstr "La fecha se refiere al momento en que el artículo ha sido preparado o actualizado por los expertos contribuyentes para ser publicado por Climate-ADAPT"
+msgid ""
+"The date refers to the moment in which the item has been prepared or updated"
+" by contributing experts to be submitted for the publication in Climate "
+"ADAPT"
+msgstr ""
+"A dátum arra az időpontra utal, amikor a közreműködő szakértők elkészítették"
+" vagy frissítették a napirendi pontot, amelyet a Climate ADAPT-ban való "
+"közzététel céljából be kell nyújtani."
 
 #. Default: "Title"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Title"
-msgstr ""
+msgstr "Cím"
 
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -703,22 +712,22 @@ msgstr "Tu"
 #. Default: "Used for programmatic access to the fieldset."
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Used for programmatic access to the fieldset."
-msgstr ""
+msgstr "A mezőkészlethez való programozott hozzáféréshez használják."
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
-msgstr "Ver todas las contribuciones en el catálogo de recursos"
+msgstr "Az összes hozzászólás megtekintése az erőforrás-katalógusban"
 
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
 msgid "Visit external website"
-msgstr "Visitar sitio web externo"
+msgstr "Látogasson el a külső weboldalra"
 
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr "Nosotros"
+msgstr "Mi"
 
 #. Default: "Web"
 #: components/theme/Views/EventView
@@ -728,1377 +737,1393 @@ msgstr "Web"
 #. Default: "Web site"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Web site"
-msgstr "Sitio web"
+msgstr "Weboldal"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
-msgstr "Sitios web"
+msgstr "Weboldalak"
 
 #. Default: "Websites:"
 #: helpers/Utils
 msgid "Websites:"
-msgstr "Sitios web:"
+msgstr "Weboldalak:"
 
 #. Default: "When"
 #: helpers/Utils
 msgid "When"
-msgstr "Cuando"
+msgstr "Mikor"
 
 #. Default: "Where"
 #: helpers/Utils
 msgid "Where"
-msgstr "Dónde"
+msgstr "Hol"
 
 #. undefined
-
 msgid "Case studies"
-msgstr "Casos de estudio"
+msgstr "Esettanulmányok"
 
 #. undefined
-
 msgid "Guidance"
-msgstr "Guía"
+msgstr "Iránymutatás"
 
 #. undefined
-
 msgid "Information portals"
-msgstr "Portales de información"
+msgstr "Információs portálok"
 
 #. undefined
-
 msgid "Videos"
-msgstr "Videos"
+msgstr "Videók"
 
 #. undefined
-
 msgid "Organisations"
-msgstr "Organizaciones"
+msgstr "Szervezetek"
 
 #. undefined
-
 msgid "Publication and reports"
-msgstr "Publicaciones e informes"
+msgstr "Közzététel és jelentések"
 
 #. undefined
-
 msgid "Publications and reports"
-msgstr "Publicaciones e informes"
+msgstr "Kiadványok és jelentések"
 
 #. undefined
-
 msgid "Research and knowledge projects"
-msgstr "Proyectos de investigación y conocimiento"
+msgstr "Kutatási és tudásprojektek"
 
 #. undefined
-
 msgid "Tools"
-msgstr "Herramientas"
+msgstr "Eszközök"
 
 #. undefined
-
 msgid "Based on your preferences, you can view this page in english"
-msgstr "Según sus preferencias, puede ver esta página en español"
+msgstr "Az Ön preferenciái alapján megtekintheti ezt az oldalt angol nyelven"
 
 #. undefined
-
 msgid "here"
-msgstr "aquí"
+msgstr "itt"
 
 #. undefined
-
 msgid "Latest <br/> News & Events"
-msgstr "Últimas <br/> noticias y eventos"
+msgstr "Legfrissebb hírek & Események"
 
 #. undefined
-
 msgid "Most recent <br/> Case Study"
-msgstr "Caso de estudio <br/> más reciente"
+msgstr "Legfrissebb esettanulmány"
 
 #. undefined
-
 msgid "Most recent <br/> Publication or Report"
-msgstr "Publicación o informe <br/> más reciente"
+msgstr "Legfrissebb közzététel vagy jelentés"
 
 #. undefined
-
 msgid "National adaption policy"
-msgstr "Política de adaptación nacional"
+msgstr "Nemzeti alkalmazkodási politika"
 
 #. undefined
-
 msgid "Climate change impact and vulnerability assessments"
-msgstr "Evaluaciones de vulnerabilidad e impacto del cambio climático"
+msgstr "Éghajlatváltozási hatásvizsgálatok és sebezhetőségi értékelések"
 
 #. undefined
-
 msgid "Adaptation portals and platforms"
-msgstr "Portales de adaptación y plataformas"
+msgstr "Alkalmazkodási portálok és platformok"
 
 #. undefined
-
 msgid "Hazard category"
-msgstr "Categoría de peligro"
+msgstr "Veszélyességi kategória"
 
 #. undefined
-
 msgid "Hazard type"
-msgstr "Tipo de peligro"
+msgstr "Veszély típusa"
 
 #. undefined
-
 msgid "Indicator"
-msgstr "Indicador"
+msgstr "Mutató"
 
 #. undefined
-
 msgid "Zip download"
-msgstr "Descarga zip"
+msgstr "Zip letöltés"
 
 #. undefined
-
 msgid "Download"
-msgstr "Descargar"
+msgstr "Letöltés"
 
 #. undefined
-
 msgid "Heat and cold"
-msgstr "Calor y frio"
+msgstr "Hő és hideg"
 
 #. undefined
-
 msgid "Mean air temperature"
-msgstr "Temperatura media del aire"
+msgstr "A levegő átlagos hőmérséklete"
 
 #. undefined
-
 msgid "Extreme heat"
-msgstr "Calor extremo"
+msgstr "Extrém hőség"
 
 #. undefined
-
 msgid "Cold spells and frost"
-msgstr "Olas de frío y heladas"
+msgstr "Hideg varázslatok és fagy"
 
 #. undefined
-
 msgid "Wet and dry"
-msgstr "Húmedo y seco"
+msgstr "Nedves és száraz"
 
 #. undefined
-
 msgid "Mean precipitation"
-msgstr "Precipitación media"
+msgstr "Átlagos csapadék"
 
 #. undefined
-
 msgid "Extreme precipitation"
-msgstr "Precipitación extrema"
+msgstr "Szélsőséges csapadék"
 
 #. undefined
-
 msgid "River flooding"
-msgstr "Inundación del río"
+msgstr "Folyami áradások"
 
 #. undefined
-
 msgid "Aridity"
-msgstr "Aridez"
+msgstr "Szárazság"
 
 #. undefined
-
 msgid "Wildfire"
-msgstr "Incendio forestal"
+msgstr "Erdőtűz"
 
 #. undefined
-
 msgid "Snow and land ice"
-msgstr "Nieve y hielo terrestre"
+msgstr "Hó és szárazföldi jég"
 
 #. undefined
-
 msgid "Snow and ice"
-msgstr "Nieve y hielo"
+msgstr "Hó és jég"
 
 #. undefined
-
 msgid "Coastal"
-msgstr "Costero"
+msgstr "Part menti"
 
 #. undefined
-
 msgid "Relative sea level"
-msgstr "nivel relativo del mar"
+msgstr "Relatív tengerszint"
 
 #. undefined
-
 msgid "Coastal flooding"
-msgstr "Inundación costera"
+msgstr "Part menti áradások"
 
 #. undefined
-
 msgid "Other"
-msgstr "Otro"
+msgstr "Egyéb"
 
 #. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
-msgstr "2021 Lancet Countdown-AEMA informe"
+msgstr "2021. évi Lancet Countdown-EEA tájékoztató"
 
 #. undefined
 #: site_menu:28
 msgid "ADAPTATION IN EU POLICY SECTORS"
-msgstr "Adaptación en los sectores de políticas de la UE"
+msgstr "KIIGAZÍTÁS AZ UNIÓS SZAKPOLITIKAI ÁGAZATOKBAN"
 
 #. undefined
-#: health_menu:9
-#: site_menu:10
+#: health_menu:9 site_menu:10
 msgid "About"
-msgstr "Acerca de"
+msgstr "Rólunk"
 
 #. undefined
 #: site_menu:11
 msgid "About Climate-ADAPT"
-msgstr "Acerca de Climate-ADAPT"
+msgstr "A Climate-ADAPT-ról"
 
 #. undefined
 #: health_menu:10
 msgid "About the Observatory"
-msgstr "Sobre el observatorio"
+msgstr "Az Obszervatóriumról"
 
 #. undefined
 #: site_menu:74
 msgid "Adaptation Support Tool"
-msgstr "Herramienta de soporte para la adaptación"
+msgstr "Adaptációtámogató eszköz"
 
 #. undefined
 #: site_menu:48
 msgid "Adriatic-Ionian"
-msgstr "Adriático-Jónico"
+msgstr "Adriai- és jón-tengeri"
 
 #. undefined
 #: site_menu:29
 msgid "Agriculture"
-msgstr "Agricultura"
+msgstr "Mezőgazdaság"
 
 #. undefined
 #: health_menu:27
 msgid "Air pollution"
-msgstr "Contaminación atmosférica"
+msgstr "Légszennyezés"
 
 #. undefined
 #: site_menu:49
 msgid "Alpine Space"
-msgstr "Espacio alpino"
+msgstr "Alpesi térség"
 
 #. undefined
 #: health_menu:44
 msgid "Annual reports"
-msgstr "Informes anuales"
+msgstr "Éves jelentések"
 
 #. undefined
 #: site_menu:50
 msgid "Atlantic Area"
-msgstr "Región atlántica"
+msgstr "Atlanti terület"
 
 #. undefined
 #: site_menu:51
 msgid "Balkan-Mediterranean"
-msgstr "Balcanes-Mediterráneo"
+msgstr "Balkán–mediterrán térség"
 
 #. undefined
 #: site_menu:52
 msgid "Baltic Sea"
-msgstr "Mar Báltico"
+msgstr "Balti-tenger"
 
 #. undefined
 #: site_menu:30
 msgid "Biodiversity"
-msgstr "Biodiversidad"
+msgstr "Biodiverzitás"
 
 #. undefined
 #: site_menu:31
 msgid "Buildings"
-msgstr "Edificios"
+msgstr "Épületek"
 
 #. undefined
 #: health_menu:34
 msgid "C3S European health service (under development)"
-msgstr "C3S Servicio Europeo de salud (en desarrollo)"
+msgstr "C3S Európai Egészségügyi Szolgálat (fejlesztés alatt)"
 
 #. undefined
 #: health_menu:45
 msgid "Capacity building"
-msgstr "Desarrollo de capacidades"
+msgstr "Kapacitásépítés"
 
 #. undefined
 #: site_menu:79
 msgid "Case study explorer"
-msgstr "Explorador de casos de estudio"
+msgstr "Esettanulmány-felfedező"
 
 #. undefined
 #: site_menu:53
 msgid "Central Europe"
-msgstr "Europa Central"
+msgstr "Közép-Európa"
 
 #. undefined
 #: site_menu:46
 msgid "Cities and towns"
-msgstr "Ciudades y pueblos"
+msgstr "Városok és községek"
 
 #. undefined
 #: site_menu:69
 msgid "Climate Services"
-msgstr "Servicios climáticos"
+msgstr "Klímaszolgáltatások"
 
 #. undefined
 #: site_menu:17
 msgid "Climate-ADAPT events and webinars"
-msgstr "Eventos y seminarios web Climate-ADAPT"
+msgstr "Climate-ADAPT rendezvények és webináriumok"
 
 #. undefined
 #: site_menu:16
 msgid "Climate-ADAPT performance reporting"
-msgstr "Informes de rendimiento de Climate-ADAPT"
+msgstr "Climate-ADAPT teljesítményjelentés"
 
 #. undefined
 #: site_menu:83
 msgid "Climate-ADAPT use cases"
-msgstr "Casos de uso Climate-ADAPT"
+msgstr "Climate-ADAPT felhasználási esetek"
 
 #. undefined
 #: site_menu:32
 msgid "Coastal areas"
-msgstr "Areas costeras"
+msgstr "Part menti területek"
 
 #. undefined
 #: site_menu:44
 msgid "Countries, Transnational regions, Cities"
-msgstr "Países, regiones transnacionales, ciudades"
+msgstr "Országok, transznacionális régiók, városok"
 
 #. undefined
 #: site_menu:44
 msgid "Countries, Transnational regions"
-msgstr "Países, regiones transnacionales"
+msgstr "Országok, transznacionális régiók"
 
 #. undefined
-#: health_menu:18
-#: site_menu:45
+#: health_menu:18 site_menu:45
 msgid "Country Profiles"
-msgstr "Perfiles de los países"
+msgstr "Országprofilok"
 
 #. undefined
 #: site_menu:18
 msgid "Country specific promotions"
-msgstr "Soluciones específicas de cada país"
+msgstr "Országspecifikus promóciók"
 
 #. undefined
 #: site_menu:68
 msgid "DATA AND INDICATORS"
-msgstr "Datos e indicadores"
+msgstr "ADATOK ÉS MUTATÓK"
 
 #. undefined
 #: site_menu:54
 msgid "Danube"
-msgstr "Danubio"
+msgstr "Duna"
 
 #. undefined
 #: site_menu:33
 msgid "Disaster risk reduction"
-msgstr "Reducción del riesgo de desastre"
+msgstr "Katasztrófakockázat-csökkentés"
 
 #. undefined
 #: site_menu:13
 msgid "Dissemination materials"
-msgstr "Materiales de diseminación"
+msgstr "Terjesztési anyagok"
 
 #. undefined
 #: health_menu:33
 msgid "ECDC Vibrio map viewer"
-msgstr "ECDC visor de mapas de Vibrio"
+msgstr "ECDC Vibrio térképmegjelenítő"
 
 #. undefined
 #: site_menu:21
 msgid "EU ADAPTATION POLICY"
-msgstr "Política de adaptación de la UE"
+msgstr "AZ EU ALKALMAZKODÁSI SZAKPOLITIKÁJA"
 
 #. undefined
 #: site_menu:22
 msgid "EU Adaptation Strategy"
-msgstr "Estrategia de adaptación de la UE"
+msgstr "Az EU alkalmazkodási stratégiája"
 
 #. undefined
 #: site_menu:25
 msgid "EU Covenant of Mayors"
-msgstr "Pacto de los alcaldes de la UE"
+msgstr "Polgármesterek Szövetsége"
 
 #. undefined
 #: site_menu:23
 msgid "EU Mission on Adaptation"
-msgstr "Misión de la UE sobre adaptación"
+msgstr "Az Európai Unió alkalmazkodási missziója"
 
 #. undefined
 #: site_menu:23
 msgid "Mission Portal"
-msgstr "Portal de la misión"
+msgstr "Kiküldetési portál"
 
 #. undefined
-#: site_menu:43
-#: site_menu:43
+#: site_menu:43 site_menu:43
 msgid "EU REGIONAL POLICY"
-msgstr "Política regional de la UE"
+msgstr "AZ EU REGIONÁLIS SZAKPOLITIKÁJA"
 
 #. undefined
 #: site_menu:24
 msgid "EU Reporting on Adaptation"
-msgstr "Informes de la UE sobre la adaptación"
+msgstr "Az éghajlatváltozáshoz való alkalmazkodásról szóló uniós jelentés"
 
 #. undefined
 #: site_menu:26
 msgid "EU Sustainable Finance Strategy"
-msgstr "Estrategia de finanzas sostenibles de la UE"
+msgstr "Az EU fenntartható finanszírozási stratégiája"
 
 #. undefined
 #: site_menu:27
 msgid "EU funding of adaptation"
-msgstr "Financiación de la UE para la adaptación"
+msgstr "Az alkalmazkodás uniós finanszírozása"
 
 #. undefined
 #: site_menu:20
 msgid "EU policy"
-msgstr "Política de la UE"
+msgstr "Az EU politikája"
 
 #. undefined
 #: site_menu:72
 msgid "EUROPEAN CLIMATE DATA EXPLORER"
-msgstr "Explorador de datos climáticos europeos"
+msgstr "EURÓPAI ÉGHAJLATVÁLTOZÁSI ADATFELDOLGOZÓ"
 
 #. undefined
 #: site_menu:85
 msgid "EUROPEAN Climate and Health Observatory"
-msgstr "EUROPEAN Climate and Health Observatory"
+msgstr "EURÓPAI Éghajlat- és Egészségpolitikai Megfigyelőközpont"
 
 #. undefined
 #: site_menu:77
 msgid "Economic tools"
-msgstr "Herramientas económicas"
+msgstr "Gazdasági eszközök"
 
 #. undefined
 #: site_menu:34
 msgid "Ecosystem-based approaches"
-msgstr "Enfoques basados en los ecosistemas"
+msgstr "Ökoszisztéma-alapú megközelítések"
 
 #. undefined
 #: site_menu:35
 msgid "Energy"
-msgstr "Energía"
+msgstr "Energia"
 
 #. undefined
 #: site_menu:67
-msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr "Vulnerabilidad europea a los impactos del cambio climático ocurridos fuera de Europa"
+msgid ""
+"Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr ""
+"Európa kiszolgáltatottsága az éghajlatváltozás Európán kívüli hatásaival "
+"szemben"
 
 #. undefined
 #: health_menu:32
 msgid "European Climate Data Explorer"
-msgstr "Explorador de datos climáticos europeos"
+msgstr "Európai éghajlati adatfelfedező (European Climate Data Explorer)"
 
 #. undefined
 #: health_menu:13
 msgid "European Policy Framework"
-msgstr "Marco de políticas europeas"
+msgstr "Európai szakpolitikai keret"
 
 #. undefined
 #: health_menu:37
 msgid "European early warning systems"
-msgstr "Sistemas de alerta temprana europeos"
+msgstr "Európai korai előrejelző rendszerek"
 
 #. undefined
 #: health_menu:14
 msgid "European policies on climate adaptation and health"
-msgstr "Políticas europeas sobre adaptación climática y salud"
+msgstr ""
+"Az éghajlatváltozáshoz való alkalmazkodásra és az egészségügyre vonatkozó "
+"európai szakpolitikák"
 
 #. undefined
 #: health_menu:19
 msgid "Evidence on climate and health"
-msgstr "Evidencia sobre clima y salud"
+msgstr "Bizonyítékok az éghajlatról és az egészségről"
 
 #. undefined
 #: site_menu:90
 msgid "FAQ for providers"
-msgstr "Preguntas frecuentes para proveedores"
+msgstr "GYIK szolgáltatóknak"
 
 #. undefined
 #: site_menu:89
 msgid "FAQ for users"
-msgstr "Preguntas frecuentes para los usuarios"
+msgstr "GYIK felhasználók számára"
 
 #. undefined
 #: site_menu:36
 msgid "Financial"
-msgstr "Finanzas"
+msgstr "Pénzügyi"
 
 #. undefined
 #: health_menu:23
 msgid "Flooding"
-msgstr "Inundación"
+msgstr "Árvíz"
 
 #. undefined
 #: site_menu:37
 msgid "Forestry"
-msgstr "Silvicultura"
+msgstr "Erdészet"
 
 #. undefined
 #: site_menu:88
 msgid "Glossary"
-msgstr "Glosario"
+msgstr "szószedet"
 
 #. undefined
 #: site_menu:91
 msgid "Guidance to search function"
-msgstr "Guía para la función de búsqueda"
+msgstr "Útmutató a keresési funkcióhoz"
 
 #. undefined
 #: site_menu:38
 msgid "Health"
-msgstr "Salud"
+msgstr "Egészségügy"
 
 #. undefined
 #: health_menu:20
 msgid "Health effects"
-msgstr "Efectos en la salud"
+msgstr "Egészségügyi hatások"
 
 #. undefined
 #: health_menu:36
 msgid "Health warning systems"
-msgstr "Sistemas de alerta para salud"
+msgstr "Egészségügyi figyelmeztető rendszerek"
 
 #. undefined
 #: health_menu:21
 msgid "Heat and health"
-msgstr "Calor y salud"
+msgstr "Hő és egészség"
 
 #. undefined
 #: site_menu:87
 msgid "Help"
-msgstr "Ayuda"
+msgstr "Súgó"
 
 #. undefined
 #: site_menu:82
 msgid "INTERREG projects"
-msgstr "Proyectos INTERREG"
+msgstr "INTERREG projektek"
 
 #. undefined
 #: site_menu:63
 msgid "Impacts, risks and vulnerabilities"
-msgstr "Impactos, riesgos y vulnerabilidades"
+msgstr "Hatások, kockázatok és sebezhetőségek"
 
 #. undefined
 #: site_menu:70
 msgid "Indicators in Climate-ADAPT"
-msgstr "Indicadores en Climate-ADAPT"
+msgstr "A Climate-ADAPT mutatói"
 
 #. undefined
 #: site_menu:15
 msgid "Inspiring Climate-ADAPT use cases"
-msgstr "Casos de uso inspiradores de Climate-ADAPT"
+msgstr "Inspiráló Climate-ADAPT felhasználási esetek"
 
 #. undefined
 #: site_menu:61
 msgid "Knowledge"
-msgstr "Conocimiento"
+msgstr "Tudás"
 
 #. undefined
 #: site_menu:81
 msgid "LIFE projects"
-msgstr "Proyectos LIFE"
+msgstr "LIFE projektek"
 
 #. undefined
 #: site_menu:39
 msgid "Marine and fisheries"
-msgstr "Marítimo-Pesquero"
+msgstr "Tenger és halászat"
 
 #. undefined
 #: site_menu:55
 msgid "Mediterranean"
-msgstr "Mediterráneo"
+msgstr "mediterrán"
 
 #. undefined
 #: health_menu:28
 msgid "Mental health effects"
-msgstr "Efectos en la salud mental"
+msgstr "Mentális egészségügyi hatások"
 
 #. undefined
 #: site_menu:66
 msgid "Monitoring, Reporting and Evaluation"
-msgstr "Monitoreo, informes y evaluación"
+msgstr "Nyomon követés, jelentéstétel és értékelés"
 
 #. undefined
 #: health_menu:16
 msgid "National Policies"
-msgstr "Políticas nacionales"
+msgstr "Nemzeti politikák"
 
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr "Sistemas nacionales de alerta sanitaria por ola de calor y planes de acción"
+msgstr "Nemzeti hő-egészségügyi figyelmeztető rendszerek és cselekvési tervek"
 
 #. undefined
 #: health_menu:17
 msgid "National policy analysis 2022"
-msgstr "Análisis de políticas nacionales 2022"
+msgstr "2022. évi nemzeti szakpolitikai elemzés"
 
 #. undefined
 #: site_menu:86
 msgid "Networks"
-msgstr "Redes"
+msgstr "Hálózatok"
 
 #. undefined
 #: site_menu:56
 msgid "North Sea"
-msgstr "Mar del Norte"
+msgstr "Északi-tenger"
 
 #. undefined
 #: site_menu:57
 msgid "North West Europe"
-msgstr "Noroeste de Europa"
+msgstr "Északnyugat-Európa"
 
 #. undefined
 #: site_menu:58
 msgid "Northern Periphery and Arctic"
-msgstr "Regiones septentrionales y Ártico"
+msgstr "Északi periféria és Északi-sarkvidék"
 
 #. undefined
 #: health_menu:42
 msgid "Observatory publications"
-msgstr "Publicaciones del Observatorio"
+msgstr "A megfigyelőközpont kiadványai"
 
 #. undefined
 #: health_menu:11
 msgid "Observatory workplan for 2021-22"
-msgstr "Plan de trabajo del Observatorio para 2021-22"
+msgstr "A megfigyelőközpont 2021–2022-es munkaterve"
 
 #. undefined
 #: site_menu:12
 msgid "Outreach & dissemination"
-msgstr "Divulgación y diseminación"
+msgstr "Tájékoztatás és erősítés; terjesztés"
 
 #. undefined
 #: site_menu:78
 msgid "PRACTICE"
-msgstr "PRÁCTICA"
+msgstr "GYAKORLAT"
 
 #. undefined
 #: health_menu:12
 msgid "Policy context"
-msgstr "Contexto político"
+msgstr "Szakpolitikai háttér"
 
 #. undefined
 #: health_menu:30
 msgid "Projections and tools"
-msgstr "Proyecciones y herramientas"
+msgstr "Előrejelzések és eszközök"
 
 #. undefined
 #: health_menu:41
 msgid "Publications and outreach"
-msgstr "Publicaciones y divulgación"
+msgstr "Kiadványok és tájékoztatás"
 
 #. undefined
 #: site_menu:71
 msgid "RESEARCH AND INNOVATION PROJECTS"
-msgstr "Proyectos de investigación e innovación"
+msgstr "KUTATÁSI ÉS INNOVÁCIÓS PROJEKTEK"
 
 #. undefined
 #: health_menu:39
 msgid "Resource catalogue"
-msgstr "Catálogo de recursos"
+msgstr "Erőforrás-katalógus"
 
 #. undefined
 #: health_menu:40
 msgid "Search for Resources"
-msgstr "Búsqueda de recursos"
+msgstr "Források keresése"
 
 #. undefined
 #: site_menu:19
 msgid "Site map"
-msgstr "Mapa del sitio web"
+msgstr "Oldaltérkép"
 
 #. undefined
 #: site_menu:59
 msgid "South West Europe"
-msgstr "Suroeste de Europa"
+msgstr "Délnyugat-Európa"
 
 #. undefined
 #: site_menu:73
 msgid "TOOLS"
-msgstr "Herramientas económicas"
+msgstr "ESZKÖZÖK"
 
 #. undefined
 #: site_menu:62
 msgid "TOPICS"
-msgstr "Temas"
+msgstr "TÉMAKÖRÖK"
 
 #. undefined
 #: site_menu:47
 msgid "Transnational regions"
-msgstr "Regiones transnacionales"
+msgstr "Transznacionális régiók"
 
 #. undefined
 #: site_menu:40
 msgid "Transport"
-msgstr "Transporte"
+msgstr "Közlekedés"
 
 #. undefined
 #: site_menu:92
 msgid "Tutorial Videos"
-msgstr "Videos tutoriales"
+msgstr "Oktatóvideók"
 
 #. undefined
 #: site_menu:14
 msgid "Tutorial videos"
-msgstr "Vídeos tutoriales"
+msgstr "Oktatóvideók"
 
 #. undefined
 #: health_menu:35
 msgid "UV Index forecast (CAMS)"
-msgstr "Pronóstico del índice UV (CAMS)"
+msgstr "UV Index előrejelzés (CAMS)"
 
 #. undefined
 #: health_menu:26
 msgid "UV radiation"
-msgstr "Radiación UV"
+msgstr "UV sugárzás"
 
 #. undefined
 #: site_menu:65
 msgid "Uncertainty guidance"
-msgstr "Guía de incertidumbre"
+msgstr "Bizonytalanságra vonatkozó iránymutatás"
 
 #. undefined
 #: site_menu:41
 msgid "Urban"
-msgstr "Urbano"
+msgstr "Városi"
 
 #. undefined
 #: site_menu:76
 msgid "Urban Adaptation Map Viewer"
-msgstr "Visor de mapas de adaptación urbana"
+msgstr "Városi adaptációs térképnézegető"
 
 #. undefined
 #: health_menu:31
 msgid "Urban Adaptation Map Viewer (health focus)"
-msgstr "Visor de mapas de adaptación urbana (enfoque en salud)"
+msgstr "Városi adaptációs térképnézegető (egészségközpontú)"
 
 #. undefined
 #: site_menu:75
 msgid "Urban Adaptation Support Tool"
-msgstr "Herramienta de soporte para la adaptación urbana"
+msgstr "Urban Adaptation Support Tool (Városi alkalmazkodást támogató eszköz)"
 
 #. undefined
 #: health_menu:24
 msgid "Vector-borne diseases"
-msgstr "Enfermedades de transmisión vectorial"
+msgstr "Vektorok által terjesztett betegségek"
 
 #. undefined
 #: health_menu:15
 msgid "WHO Europe activities on climate change and health"
-msgstr "OMS actividades Europeas sobre cambio climático y salud"
+msgstr ""
+"A WHO európai tevékenységei az éghajlatváltozás és az egészségügy terén"
 
 #. undefined
 #: health_menu:25
 msgid "Water and food-borne diseases"
-msgstr "Enfermedades de transmisión por agua y alimentos"
+msgstr "Vízzel és élelmiszerrel terjedő betegségek"
 
 #. undefined
 #: site_menu:42
 msgid "Water management"
-msgstr "Gestión del Agua"
+msgstr "Vízgazdálkodás"
 
 #. undefined
-#: health_menu:46
-#: site_menu:93
+#: health_menu:46 site_menu:93
 msgid "Webinars"
-msgstr "Seminarios web"
+msgstr "Webináriumok"
 
 #. undefined
 #: health_menu:22
 msgid "Wildfires"
-msgstr "Incendios forestales"
+msgstr "Erdőtüzek"
 
 #. undefined
 #: site_menu:84
 msgid "Search the database"
-msgstr "Buscar en la base de datos"
+msgstr "Keresés az adatbázisban"
 
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr "Servicios climáticos"
+msgstr ""
 
 #. undefined
 #: health_menu:222
 msgid "Outreach"
-msgstr "Superar a"
+msgstr "Tájékoztatás"
 
 #. undefined
 #: health_menu:222
 msgid "Exposure of vulnerable groups to climate risks"
-msgstr "Exposición de los grupos vulnerables a los riesgos climáticos"
+msgstr "A veszélyeztetett csoportok éghajlati kockázatoknak való kitettsége"
 
 #. undefined
-#: 
 msgid "KEY EU ACTIONS"
-msgstr "ACCIONES CLAVE DE LA UE"
+msgstr "FŐ UNIÓS INTÉZKEDÉSEK"
 
 #. undefined
-#: 
 msgid "Just resilience"
-msgstr "Resiliencia justa"
+msgstr "Méltányos reziliencia"
 
 #. undefined
-#: 
 msgid "Nature-based solutions"
-msgstr "Soluciones basadas en la naturaleza"
+msgstr "Természetalapú megoldások"
 
 #. undefined
-#: 
 msgid "Economic losses and fatalities"
-msgstr "Pérdidas económicas y muertes"
+msgstr "Gazdasági veszteségek és halálesetek"
 
 #. undefined
-#: 
 msgid "Strategic objectives 2030"
-msgstr "Objetivos estratégicos 2030"
+msgstr "Stratégiai célkitűzések 2030-ig"
 
 #. undefined
-#: 
 msgid "Availability of urban green spaces to vulnerable groups"
-msgstr "Disponibilidad de espacios verdes urbanos para grupos vulnerables"
+msgstr ""
+"A városi zöldterületek elérhetősége a veszélyeztetett csoportok számára"
 
 #. undefined
-#: 
 msgid "Transnational, National, local"
-msgstr "Transnacional, Nacional, Local"
+msgstr "Transznacionális, nemzeti, helyi"
 
 #. undefined
-#: 
 msgid "Aero-allergens"
-msgstr "Aeroalérgenos"
+msgstr "Aeroallergén anyagok"
 
 #. undefined
-#: 
 msgid "Heat"
-msgstr "Calor"
+msgstr "Hő"
 
 #. undefined
-#: 
 msgid "Accessibility of hospitals in Europe"
-msgstr "Accesibilidad de los hospitales en Europa"
+msgstr "A kórházak hozzáférhetősége Európában"
 
 #. undefined
-#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
-msgstr "ADAPTACIÓN EN EL SECTOR FORESTAL"
+msgstr "KIIGAZÍTÁS AZ ERDÉSZETI ÁGAZATBAN"
 
 #. undefined
-#: 
 msgid "Ground-level ozone"
-msgstr "Ozono en el suelo"
+msgstr "Talajközeli ózon"
 
 #. undefined
-#: 
 msgid "Ground-level ozone forecast (CAMS)"
-msgstr "Pronóstico de ozono a nivel del suelo (CAMS)"
+msgstr "Földközeli ózonelőrejelzés (CAMS)"
 
 #. undefined
-#: 
 msgid "Pollution"
-msgstr "Contaminación"
+msgstr "Szennyezés"
 
 #. undefined
-#: 
 msgid "Occupational safety and health effects"
-msgstr "Seguridad y salud en el trabajo"
+msgstr "Munkahelyi biztonsági és egészségvédelmi hatások"
 
 #. undefined
-#: 
 msgid "Observatory workplan for 2023-24"
-msgstr "Plan de trabajo del Observatorio para 2023-24"
+msgstr "A megfigyelőközpont 2023–2024-es munkaterve"
 
 #. undefined
-#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
-msgstr "Pronóstico de PM2.5 a nivel del suelo (CAMS)"
+msgstr "Földszinti PM2,5-előrejelzés (CAMS)"
 
 #. undefined
-#: 
 msgid "Ground-level PM10 forecast (CAMS)"
-msgstr "Pronóstico de PM10 a nivel del suelo (CAMS)"
+msgstr "Földi PM10-előrejelzés (CAMS)"
 
 #. undefined
-#: 
 msgid "Ground-level NO2 forecast (CAMS)"
-msgstr "Pronóstico de NO2 a nivel del suelo (CAMS)"
+msgstr "Földszinti NO2-előrejelzés (CAMS)"
 
 #. undefined
-#: 
 msgid "2022 EEA Report on Climate & Health"
-msgstr "2022 AEMA informe sobre clima y salud"
+msgstr ""
+"Az EEA 2022. évi jelentése az éghajlatváltozásról és az egészségügyről"
 
 #. undefined
-#: 
 msgid "European environment and health atlas"
-msgstr "Atlas europeo de medio ambiente y salud"
+msgstr "Európai környezetvédelmi és egészségügyi atlasz"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:80
 #: ../../climateadapt/vocabulary.py:456
 msgid "-NONSPECIFIC-"
-msgstr "-INESPECIFICO-"
+msgstr "-NONSPECIFIKUS-"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:130
 msgid "1. Preparing the ground for adaptation"
-msgstr "1. Preparar el terreno para la adaptación"
+msgstr "1. Az alkalmazkodás alapjainak előkészítése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:136
 msgid "1.1 Obtaining high-level political support for adaptation"
-msgstr "1.1 Obtención de apoyo político de alto nivel para la adaptación"
+msgstr "1.1 Magas szintű politikai támogatás szerzése az alkalmazkodáshoz"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:83
 msgid "1.1 Obtaining political support for adaptation"
-msgstr "1.1 Obtención de apoyo político para la adaptación"
+msgstr "1.1 Politikai támogatás szerzése az alkalmazkodáshoz"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:88
 msgid "1.2 Collecting initial information"
-msgstr "1.2 Recopilación de información inicial"
+msgstr "1.2 Kezdeti információk gyűjtése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:140
 msgid "1.2 Setting up the process in a structured way"
-msgstr "1.2 Configuración del proceso de manera estructurada"
+msgstr "1.2 A folyamat strukturált módon történő felállítása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
-msgstr "1.3 Estimación de los recursos humanos y financieros necesarios e identificación de posibles fuentes de financiamiento a largo plazo"
+msgid ""
+"1.3 Estimating human and financial resources needed and identifying "
+"potential sources of long-term funding"
+msgstr ""
+"1.3 A szükséges emberi és pénzügyi erőforrások becslése és a hosszú távú "
+"finanszírozás lehetséges forrásainak azonosítása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
 msgid "1.3 Setting up adaptation processes within and beyond the municipality"
-msgstr "1.3 Configuración de procesos de adaptación dentro y fuera del municipio"
+msgstr ""
+"1.3 Alkalmazkodási folyamatok kialakítása a településen belül és kívül"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:148
 msgid "1.4 Collecting information"
-msgstr "1.4 Recopilación de información"
+msgstr "1.4 Információgyűjtés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:98
 msgid "1.4 Identifying and obtaining human and technical resources"
-msgstr "1.4 Identificación y obtención de recursos humanos y técnicos"
+msgstr "1.4 Az emberi és technikai erőforrások azonosítása és megszerzése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:152
 msgid "1.5 Communicating adaptation and raising awareness"
-msgstr "1.5 Comunicación y creación de conciencia social para la adaptación"
+msgstr "1.5 Kommunikáció az alkalmazkodásról és figyelemfelkeltés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:103
 msgid "1.5 Identifying and obtaining financing and funding"
-msgstr "1.5 Identificación y obtención de financiamiento y otros fondos"
+msgstr "1.5 A finanszírozás és a finanszírozás azonosítása és megszerzése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:108
 msgid "1.6 Identifying and engaging stakeholders"
-msgstr "1.6 Identificación y participación de las partes interesadas"
+msgstr "1.6 Az érdekelt felek azonosítása és bevonása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:156
 msgid "1.6 Preparing the ground for adaptation: Self-check"
-msgstr "1.6 Preparar el terreno para la adaptación: autoanálisis"
+msgstr "1.6 Az alkalmazkodás alapjainak előkészítése: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:113
 msgid "1.7 Communicating adaptation to different target audiences"
-msgstr "1.7 Comunición de la adaptación a los diferentes canales"
+msgstr "1.7 A különböző célközönségekhez való alkalmazkodás kommunikálása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:118
 msgid "1.8 Finding additional support"
-msgstr "1.8 Búsqueda de apoyo adicional"
+msgstr "1.8 További támogatás keresése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:123
 msgid "1.9 Preparing the ground for adaptation: Self check"
-msgstr "1.9 Preparar el terreno para la adaptación: autoanálisis"
+msgstr "1.9 Az alkalmazkodás alapjainak előkészítése: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:415
 msgid "12 regions"
-msgstr "12 regiones"
+msgstr "12 régió"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr "2. Evaluación de riesgos y vulnerabilidad al cambio climático"
+msgstr ""
+"2. Az éghajlatváltozással kapcsolatos kockázatok és sebezhetőségek "
+"értékelése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
 msgid "2.1 Recognizing past and present climate impacts"
-msgstr "2.1 Reconocimiento de impactos climáticos anteriores y presentes"
+msgstr "2.1 A múltbeli és jelenlegi éghajlati hatások felismerése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:168
 msgid "2.1 Understanding climate risks"
-msgstr "2.1 Comprensión de los riesgos climáticos"
+msgstr "2.1 Az éghajlati kockázatok megértése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr "2.2 Marcos para la evaluación de impactos climáticos, vulnerabilidad y riesgos"
+msgid ""
+"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr ""
+"2.2 Az éghajlati hatások, sebezhetőségek és kockázatok értékelésére szolgáló"
+" keretek"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
 msgid "2.2 Understanding climate projections and future impacts"
-msgstr "2.2 Comprensión de las proyecciones climáticas e impactos futuros"
+msgstr ""
+"2.2 Az éghajlatváltozásra vonatkozó előrejelzések és a jövőbeli hatások "
+"megértése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
-msgstr "2.3 Secuencia general para impactos climáticos, vulnerabilidad y evaluaciones de riesgos"
+msgid ""
+"2.3 General sequence for climate impacts, vulnerabilities and risk "
+"assessments"
+msgstr ""
+"2.3 Az éghajlati hatások, sebezhetőségek és kockázatértékelések általános "
+"sorrendje"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
 msgid "2.3 Identifying vulnerable urban sectors"
-msgstr "2.3 Identificación de sectores urbanos vulnerables"
+msgstr "2.3 A veszélyeztetett városi ágazatok azonosítása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:153
 msgid "2.4 Conducting risk and vulnerability assessments"
-msgstr "2.4 Realización de evaluaciones de riesgo y vulnerabilidad"
+msgstr "2.4 Kockázat- és sebezhetőségi értékelések készítése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:180
 msgid "2.4 Taking trans-boundary issues into account"
-msgstr "2.4 Consideración de los aspectos transfronterizos"
+msgstr "2.4 A határokon átnyúló kérdések figyelembevétele"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:184
 msgid "2.5 Addressing knowledge gaps and dealing with uncertainties"
-msgstr "2.5 Abordar las brechas de conocimiento y hacer frente a las incertidumbres"
+msgstr "2.5 A tudásbeli hiányosságok és a bizonytalanságok kezelése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:158
 msgid "2.5 Understanding the role of surrounding areas in adaptation"
-msgstr "2.5 Comprender el papel de las áreas circundantes en la adaptación"
+msgstr ""
+"2.5 A környező területek alkalmazkodásban betöltött szerepének megértése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr "2.6 Identifición de los principales problemas de adaptación y definición de objetivos"
+msgstr ""
+"2.6 Az alkalmazkodással kapcsolatos főbb aggályok azonosítása és a "
+"célkitűzések meghatározása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr "2.6 Identifición de los principales problemas de adaptación y establecimiento de una dirección estratégica"
+msgid ""
+"2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr ""
+"2.6 Az alkalmazkodással kapcsolatos főbb aggályok azonosítása és stratégiai "
+"irányvonal meghatározása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr "2.7 Evaluación de riesgos y vulnerabilidad dal cambio climático: autoanálisis"
+msgstr ""
+"2.7 Az éghajlatváltozással kapcsolatos kockázatok és sebezhetőségek "
+"értékelése: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr "2.7 Evaluación de riesgos y vulnerabilidad dal cambio climático: autoanálisis"
+msgstr ""
+"2.7 Az éghajlatváltozással kapcsolatos kockázatok és sebezhetőségek "
+"értékelése: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
 msgid "3. Identifying adaptation options"
-msgstr "3. Identifición de opciones de adaptación"
+msgstr "3. Az alkalmazkodási lehetőségek azonosítása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:204
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:183
 msgid "3.1 Creating a catalogue of relevant adaptation options"
-msgstr "3.1 Creación de un catálogo de opciones de adaptación relevantes"
+msgstr "3.1 A releváns alkalmazkodási lehetőségek katalógusának létrehozása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:208
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:188
 msgid "3.2 Finding examples of good adaptation practices"
-msgstr "3.2 Búsqueda de ejemplos de buenas prácticas de adaptación"
+msgstr "3.2 Példák a helyes alkalmazkodási gyakorlatokra"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:212
 msgid "3.3 Describing adaptation options in detail"
-msgstr "3.3 Descripción de las opciones de adaptación a detalle"
+msgstr "3.3 Az alkalmazkodási lehetőségek részletes leírása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:193
 msgid "3.3 Identifying adaptation options: Self check"
-msgstr "3.3 Identificación de opciones de adaptación: autoanálisis"
+msgstr "3.3 Alkalmazkodási lehetőségek azonosítása: Önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:216
 msgid "3.4 Identifying adaptation options: Self-check"
-msgstr "3.4 Identificación de opciones de adaptación: autoanálisis"
+msgstr "3.4 Az alkalmazkodási lehetőségek azonosítása: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:223
 msgid "4. Assessing adaptation options"
-msgstr "4. Evaluación de las opciones de adaptación"
+msgstr "4. Az alkalmazkodási lehetőségek értékelése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
-msgstr "4.1 Evaluación de posibles opciones de adaptación en términos de efectos, tiempo, costos, beneficios y esfuerzos"
+msgid ""
+"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
+"benefits and efforts"
+msgstr ""
+"4.1 A lehetséges alkalmazkodási lehetőségek értékelése a hatások, az idő, a "
+"költségek, az előnyök és az erőfeszítések szempontjából"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
 msgid "4.1 Choosing an assessment framework for adaptation options"
-msgstr "4.1 Elección de un marco de evaluación para las opciones de adaptación"
+msgstr "4.1 Az alkalmazkodási lehetőségek értékelési keretének kiválasztása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:213
 msgid "4.2 Conducting a cost-benefit analysis of adaptation measures"
-msgstr "4.2 Realización de un análisis de costo-beneficio de las medidas de adaptación"
+msgstr ""
+"4.2 Az alkalmazkodási intézkedések költség-haszon elemzésének elvégzése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr "4.2 Priorización de opciones de adaptación y selección de opciones preferidas"
+msgstr ""
+"4.2 Az alkalmazkodási lehetőségek rangsorolása és az előnyben részesített "
+"lehetőségek kiválasztása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
 msgid "4.3 Preparing a strategy document and getting political approval"
-msgstr "4.3 Preparación de una estrategia documentada y obtención de aprobación política"
+msgstr ""
+"4.3 Stratégiai dokumentum készítése és politikai jóváhagyás megszerzése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
 msgid "4.3 Prioritising adaptation options"
-msgstr "4.3 Priorización de opciones de adaptación"
+msgstr "4.3 Az alkalmazkodási lehetőségek előtérbe helyezése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:223
 msgid "4.4 Assessing and selecting adaptation options: Self check"
-msgstr "4.4 Evaluación y selección de opciones de adaptación: autoanálisis"
+msgstr ""
+"4.4 Az adaptációs lehetőségek értékelése és kiválasztása: Önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:241
 msgid "4.4 Assessing and selecting adaptation options: Self-check"
-msgstr "4.4 Evaluación y selección de opciones de adaptación: autoanálisis"
+msgstr ""
+"4.4 Az adaptációs lehetőségek értékelése és kiválasztása: Önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:251
 msgid "5. Implementing Adaptation"
-msgstr "5. Implementación de la adaptación"
+msgstr "5. Az alkalmazkodás végrehajtása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:238
 msgid "5.1 Designing an effective adaptation action plan"
-msgstr "5.1 Diseño de un plan de acción para la adaptación"
+msgstr "5.1 Hatékony alkalmazkodási cselekvési terv kidolgozása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:257
 msgid "5.1 Developing an adaptation action plan"
-msgstr "5.1 Desarrollo de un plan de acción para la adaptación"
+msgstr "5.1 Alkalmazkodási cselekvési terv kidolgozása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:243
 msgid "5.2 Finding examples of adaptation action plans"
-msgstr "5.2 Búsqueda de ejemplos de planes de acción para la adaptación"
+msgstr "5.2 Példák az alkalmazkodási cselekvési tervekre"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr "5.2 Organización de la gobernanza para la implementación en todos los sectores y niveles"
+msgstr ""
+"5.2 A végrehajtás irányításának megszervezése ágazatokon és szinteken "
+"átívelően"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
 msgid "5.3 Mainstreaming adaptation in urban policies and plans"
-msgstr "5.3 Integración de la adaptación en las políticas y planes urbanos"
+msgstr ""
+"5.3 Az alkalmazkodás általános érvényesítése a városfejlesztési politikákban"
+" és tervekben"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
-msgstr "5.3 Integración: Incorporación de la adaptación en los instrumentos y las políticas sectoriales"
+msgid ""
+"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
+"policies"
+msgstr ""
+"5.3 Általános érvényesítés: Az alkalmazkodás integrálása az eszközökbe és az"
+" ágazati politikákba"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
 msgid "5.4 Addressing climate change through adaptation and mitigation"
-msgstr "5.4 Abordar el cambio climático mediante la adaptación y la mitigación"
+msgstr ""
+"5.4 Az éghajlatváltozás kezelése az éghajlatváltozáshoz való alkalmazkodás "
+"és az éghajlatváltozás mérséklése révén"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:269
 msgid "5.4 Multilevel coordination and supportive governance framework"
-msgstr "5.4 Marco de coordinación multinivel y gobernanza de apoyo"
+msgstr "5.4 Többszintű koordináció és támogató irányítási keret"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:273
 msgid "5.5 Implementing Adaptation: Self-check"
-msgstr "5.5 Implementación de la adaptación: autoanálisis"
+msgstr "5.5 Alkalmazkodás végrehajtása: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:258
 msgid "5.5 Implementing adaptation: Self check"
-msgstr "5.5 Implementación de la adaptación: autoanálisis"
+msgstr "5.5 Végrehajtási adaptáció: Önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:280
 msgid "6. Monitoring and Evaluating Adaptation"
-msgstr "6. Monitoreo y evaluación de la adaptación"
+msgstr "6. Az alkalmazkodás nyomon követése és értékelése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:273
 msgid "6.1 Developing the monitoring and evaluation approach"
-msgstr "6.1 Desarrollo del enfoque de monitoreo y evaluación"
+msgstr "6.1 A nyomon követési és értékelési megközelítés kidolgozása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:287
 msgid "6.1 Understanding drivers and purposes"
-msgstr "6.1 Comprensión de los motivos y propósitos"
+msgstr "6.1 A járművezetők és a célok megértése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:291
 msgid "6.2 Deciding who to involve in the process"
-msgstr "6.2 Decidir a quién involucrar en el proceso"
+msgstr "6.2 Annak eldöntése, hogy kit kell bevonni a folyamatba"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:278
 msgid "6.2 Defining monitoring indicators"
-msgstr "6.2 Definición de indicadores de monitoreo"
+msgstr "6.2 Nyomonkövetési mutatók meghatározása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:295
 msgid "6.3 Defining MRE indicators and mixed-methods approach"
-msgstr "6.3 Definición de indicadores de monitoreo, informe y evaluación y enfoque de métodos mixtos"
+msgstr ""
+"6.3 Az MRE-mutatók és a vegyes módszereken alapuló megközelítés "
+"meghatározása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
 msgid "6.3 Finding examples of adaptation monitoring indicators"
-msgstr "6.3 Búsqueda de ejemplos de indicadores de monitoreo para la adaptación"
+msgstr "6.3 Példák az alkalmazkodás nyomon követésére szolgáló mutatókra"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:299
 msgid "6.4 Communicating results to inform policy and practice"
-msgstr "6.4 Comunición de resultados para informar sobre la política y la práctica"
+msgstr ""
+"6.4 Az eredmények kommunikálása a politika és a gyakorlat megalapozása "
+"érdekében"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr "6.4 Uso de resultados de monitoreo para mejorar el proceso de adaptación"
+msgstr ""
+"6.4 A nyomon követés eredményeinek felhasználása az alkalmazkodás "
+"folyamatának javítására"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
 msgid "6.5 Monitoring and evaluating adaptation: Self check"
-msgstr "6.5 Monitoreo y evaluación de la adaptación: autoanálisis"
+msgstr "6.5 Az alkalmazkodás figyelemmel kísérése és értékelése: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:303
 msgid "6.5 Monitoring and evaluating adaptation: Self-check"
-msgstr "6.5 Monitoreo y evaluación de la adaptación: autoanálisis"
+msgstr "6.5 Az alkalmazkodás nyomon követése és értékelése: önellenőrzés"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
-msgstr "Un valor para la calidad de imágenes de alta densidad de píxeles 2x, de 1 (más bajo) a 95 (más alto). Un valor de 0 significará que se utilizará el valor predeterminado de plone.scaling, que actualmente es 62."
+msgid ""
+"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 62."
+msgstr ""
+"A 2x nagy pixelsűrűségű képek minőségének értéke 1-től (legalacsonyabb) "
+"95-ig (legmagasabb). A 0 érték a plone.scaling alapértelmezett értékét "
+"jelenti, ami jelenleg 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
-msgstr "Un valor para la calidad de imágenes de alta densidad de píxeles 3x, de 1 (más bajo) a 95 (más alto). Un valor de 0 significará que se utilizará el valor predeterminado de plone.scaling, que actualmente es 51."
+msgid ""
+"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 51."
+msgstr ""
+"A 3x nagy pixelsűrűségű képek minőségének értéke 1-től (legalacsonyabb) "
+"95-ig (legmagasabb). A 0 érték a plone.scaling alapértelmezett értékét "
+"jelenti, amely jelenleg 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
-msgstr "Un valor para la calidad de las imágenes escaladas, de 1 (más bajo) a 95 (más alto). Un valor de 0 significará que se utilizará el valor predeterminado de plone.scaling, que actualmente es 88."
+msgid ""
+"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
+" value of 0 will mean plone.scaling's default will be used, which is "
+"currently 88."
+msgstr ""
+"A méretezett képek minőségének értéke 1-től (legalacsonyabb) 95-ig "
+"(legmagasabb). A 0 érték a plone.scaling alapértelmezett értékét jelenti, "
+"amely jelenleg 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
 msgid "A1: Governance and Institutional: Policy Instruments"
-msgstr "A1: Gobierno e institucional: instrumentos de política"
+msgstr "A1: Kormányzás és intézményi: politikai eszközök"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:583
 msgid "A1: Policy Instruments"
-msgstr "A1: instrumentos de política"
+msgstr "A1: Szakpolitikai eszközök"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:568
 msgid "A2: Governance and Institutional: Management and planning"
-msgstr "A2: Gobierno e institucional: gestión y planificación"
+msgstr "A2: Irányítás és intézményi: Menedzsment és tervezés"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:584
 msgid "A2: Management and planning"
-msgstr "A2: gestión y planificación"
+msgstr "A2: Menedzsment és tervezés"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:585
 msgid "A3: Coordination cooperation and networks"
-msgstr "A3: Cooperación y redes de coordinación"
+msgstr "A3: Koordinációs együttműködés és hálózatok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid "A3: Governance and Institutional: Coordination cooperation and networks"
-msgstr "A3: Gobierno e institucional: cooperación y redes de coordinación"
+msgid ""
+"A3: Governance and Institutional: Coordination cooperation and networks"
+msgstr "A3: Kormányzás és intézményi: Koordinációs együttműködés és hálózatok"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:54
 msgid "About the Urban Adaptation Support Tool"
-msgstr "Acerca de la Herramienta de Soporte para la Adaptación Urbana"
+msgstr "A városi alkalmazkodást támogató eszközről"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:52
 msgid "Adaptation <br /> Support Tool"
-msgstr "Herramienta <br /> de Soporte para la Adaptación"
+msgstr "Adaptációtámogató eszköz"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:338
 msgid "Adaptation Measures and Actions"
-msgstr "Medidas y acciones de adaptación"
+msgstr "Alkalmazkodási intézkedések és fellépések"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:198
 msgid "Adaptation Options and Case Studies"
-msgstr "Opciones de adaptación y estudios de casos"
+msgstr "Alkalmazkodási lehetőségek és esettanulmányok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:339
 msgid "Adaptation Plans and Strategies"
-msgstr "Planes y estrategias de adaptación"
+msgstr "Alkalmazkodási tervek és stratégiák"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
 msgid "Adaptation Sectors"
-msgstr "Sectores de adaptación"
+msgstr "Alkalmazkodási ágazatok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
 msgid "Adaptation elements"
-msgstr "Elementos de adaptación"
+msgstr "Alkalmazkodási elemek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:95
 msgid "Adaptation portal or platform reported"
-msgstr "Portal de adaptación o plataforma reportada"
+msgstr "Bejelentett alkalmazkodási portál vagy platform"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:115
 msgid "Adaptation to climate change"
-msgstr "Adaptación al cambio climático"
+msgstr "Alkalmazkodás az éghajlatváltozáshoz"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:63
 msgid "Adaptation to climate change in urban areas"
-msgstr "Adaptación al cambio climático en las zonas urbanas"
+msgstr "Alkalmazkodás az éghajlatváltozáshoz a városi területeken"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:371
@@ -2108,232 +2133,251 @@ msgstr "AdapteCCA"
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:420
 msgid "Adriatic and Ionian"
-msgstr "Adriático y Jónico"
+msgstr "Adriai- és jón-tengeri"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:454
 msgid "Air pollution and aero-allergens"
-msgstr "Contaminación del aire y aeroalérgenos"
+msgstr "Légszennyezés és aeroallergén anyagok"
 
 #. undefined
 #: ../../climateadapt/tiles/search_acecontent.py:885
 msgid "All adaptation sectors"
-msgstr "Todos los sectores de adaptación"
+msgstr "Valamennyi alkalmazkodási ágazat"
 
 #. undefined
 #: ../../climateadapt/tiles/search_acecontent.py:882
 msgid "All climate impacts"
-msgstr "Todos los impactos climáticos"
+msgstr "Az összes éghajlati hatás"
 
 #. undefined
 #: ../../climateadapt/tiles/search_acecontent.py:888
 msgid "All key type measures"
-msgstr "Todas las medidas de tipo clave"
+msgstr "Valamennyi kulcsfontosságú intézkedéstípus"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:42
 msgid "Allowed image sizes"
-msgstr "Tamaños de imagen permitidos"
+msgstr "Megengedett képméretek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:419
 msgid "Alpine"
-msgstr "Alpino"
+msgstr "alpesi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:82
 msgid "Assessing adaptation options"
-msgstr "Evaluación de las opciones de adaptación"
+msgstr "Az alkalmazkodási lehetőségek értékelése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:204
 msgid "Assessing and selecting adaptation options"
-msgstr "Evaluación y selección de opciones de adaptación"
+msgstr "Az alkalmazkodási lehetőségek értékelése és kiválasztása"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
 msgid "Assessing climate change risks and vulnerabilities"
-msgstr "Evaluación de riesgos y vulnerabilidad al cambio climático"
+msgstr ""
+"Az éghajlatváltozással kapcsolatos kockázatok és sebezhetőségek értékelése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:66
 msgid "Assessing risks and vulnerability <br /> to climate change"
-msgstr "Evaluación de riesgos y vulnerabilidad <br /> al cambio climático"
+msgstr ""
+"Az éghajlatváltozással kapcsolatos kockázatok és sebezhetőség értékelése"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:570
 msgid "B1: Economic and Finance: Financing incentive instruments"
-msgstr "B1: Económica y finanzas: financiamiento de instrumentos de incentivos"
+msgstr "B1: Gazdasági és pénzügyek: Finanszírozási ösztönző eszközök"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:586
 msgid "B1: Financing incentive instruments"
-msgstr "B1: Financiamiento de instrumentos de incentivos"
+msgstr "B1: Finanszírozási ösztönző eszközök"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr "B2: Económico y finanzas: instrumentos de seguros y riesgos para compartir"
+msgstr "B2: Gazdasági és pénzügyek: Biztosítási és kockázatmegosztó eszközök"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
 msgid "B2: Insurance and risk sharing instruments"
-msgstr "B2: Instrumentos para compartir riesgos y seguros"
+msgstr "B2: Biztosítási és kockázatmegosztó eszközök"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:189
 msgid "Biogeographical regions"
-msgstr "Regiones biogeográficas"
+msgstr "Biogeográfiai régiók"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:299
 msgid "Business and industry"
-msgstr "Negocio e industria"
+msgstr "Üzlet és ipar"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:588
 msgid "C1: Grey options"
-msgstr "C1: Opciones grises"
+msgstr "C1: Szürke opciók"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:572
 msgid "C1: Physical and technological: Grey options"
-msgstr "C1: Física y tecnológica: Opciones grises"
+msgstr "C1: Fizikai és technológiai: szürke opciók"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:573
 msgid "C2: Physical and technological: Technological options"
-msgstr "C2: Física y tecnológica: opciones tecnológicas"
+msgstr "C2: Fizikai és technológiai: Technológiai lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:589
 msgid "C2: Technological options"
-msgstr "C2: Opciones tecnológicas"
+msgstr "C2: Technológiai lehetőségek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:292
 msgid "Case Study Illustrations"
-msgstr "Ilustraciones de casos de estudio"
+msgstr "Esettanulmány illusztrációk"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
-msgstr "Caso desarrollado, implementado y parcialmente financiado como medida de Adaptación al Cambio Climático."
+msgid ""
+"Case developed and implemented and partially funded as a Climate Change "
+"Adaptation measure."
+msgstr ""
+"Az ügyet az éghajlatváltozáshoz való alkalmazkodást célzó intézkedésként "
+"dolgozták ki, hajtották végre és részben finanszírozták."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr "Caso desarrollado e implementado como Medida de Adaptación al Cambio Climático."
+msgstr ""
+"Az ügyet az éghajlatváltozáshoz való alkalmazkodást célzó intézkedésként "
+"dolgozták ki és hajtották végre."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
-msgstr "Caso desarrollado e implementado principalmente debido a otros objetivos de política, pero con una consideración significativa de los aspectos de adaptación al cambio climático."
+msgid ""
+"Case mainly developed and implemented because of other policy objectives, "
+"but with significant consideration of Climate Change Adaptation aspects"
+msgstr ""
+"Az ügyet főként más szakpolitikai célkitűzések miatt dolgozták ki és "
+"hajtották végre, de jelentős mértékben figyelembe vették az "
+"éghajlatváltozáshoz való alkalmazkodás szempontjait"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
-msgstr "Estudios de casos y opciones de adaptación"
+msgstr "Esettanulmányok és adaptációs lehetőségek"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
 msgid "Check-out created"
-msgstr "Caja creada"
+msgstr "Kijelentkezés létrehozva"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:51
 msgid "Choose a country"
-msgstr "Elige un país"
+msgstr "Válasszon országot"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/country_select.pt:10
 msgid "Choose a country:"
-msgstr "Elejir un país:"
+msgstr "Válasszon országot:"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:231
 msgid "City"
-msgstr "Ciudad"
+msgstr "Város"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:201
 msgid "City Initiatives"
-msgstr "Iniciativas de la ciudad"
+msgstr "Városi kezdeményezések"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:483
 msgid "City Networks"
-msgstr "Redes de la ciudad"
+msgstr "Városi hálózatok"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:111
 msgid "Climate Impacts in Europe"
-msgstr "Impactos climáticos en Europa"
+msgstr "Éghajlati hatások Európában"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:58
 msgid "Climate change impacts on European cities"
-msgstr "Impactos del cambio climático en las ciudades europeas"
+msgstr "Az éghajlatváltozás hatása az európai városokra"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:63
 msgid "Climate-ADAPT Event"
-msgstr "Evento Clima-ADAPT"
+msgstr "Climate-ADAPT rendezvény"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:452
 msgid "Climate-sensitive diseases"
-msgstr "Enfermedades sensibles al clima"
+msgstr "Klímaérzékeny betegségek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:218
 msgid "Comments:"
-msgstr "Comentarios:"
+msgstr "Megjegyzések:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr "Definiciones comunes de los términos utilizados con frecuencia en la cámara de compensación."
+msgstr "Az elszámolóházban gyakran használt kifejezések közös meghatározása."
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:197
 msgid "Countries"
-msgstr "Países"
+msgstr "Országok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
 msgid "Created by:"
-msgstr "Creado por:"
+msgstr "Létrehozta:"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:461
 msgid "Critical Infrastructure"
-msgstr "Infraestructura crítica"
+msgstr "Kritikus infrastruktúra"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:301
 msgid "Cultural heritage"
-msgstr "Patrimonio cultural"
+msgstr "Kulturális örökség"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:590
 msgid "D1: Green options"
-msgstr "D1: Opciones verdes"
+msgstr "D1: Zöld lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr "D1: Soluciones basadas en la naturaleza y enfoques basados ​​en ecosistemas: opciones verdes"
+msgid ""
+"D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr ""
+"D1: Természetalapú megoldások és ökoszisztéma-alapú megközelítések: zöld "
+"lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
 msgid "D2: Blue options"
-msgstr "D2: opciones azules"
+msgstr "D2: Kék opciók"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr "D2: Soluciones basadas en la naturaleza y enfoques basados ​​en ecosistemas: opciones azules"
+msgid ""
+"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr ""
+"D2: Természetalapú megoldások és ökoszisztéma-alapú megközelítések: kék "
+"lehetőségek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2343,485 +2387,536 @@ msgstr "DRMKC"
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:171
 msgid "Data and Tools"
-msgstr "Datos y herramientas"
+msgstr "Adatok és eszközök"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:159
 #: ../../climateadapt/browser/pt/guidancedocument_view.pt:21
 #: ../../climateadapt/browser/pt/organisation_view.pt:18
 msgid "Description:"
-msgstr "Descripción:"
+msgstr "Leírás:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:42
 #: ../../climateadapt/vocabulary.py:302
 msgid "Disaster Risk Reduction"
-msgstr "Reducción del riesgo de desastres"
+msgstr "Katasztrófakockázat-csökkentés"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:346
 msgid "Droughts"
-msgstr "Sequías"
+msgstr "Aszályok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:451
 msgid "Droughts and floods"
-msgstr "Sequías e inundaciones"
+msgstr "Aszályok és árvizek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:592
 msgid "E1: Information and awareness raising"
-msgstr "E1: Información y sensibilización"
+msgstr "E1: Tájékoztatás és figyelemfelkeltés"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid "E1: Knowledge and behavioural change: Information and awareness raising"
-msgstr "E1: Conocimiento y cambio de comportamiento: información y conciencia de conciencia"
+msgid ""
+"E1: Knowledge and behavioural change: Information and awareness raising"
+msgstr ""
+"E1: Tudás- és magatartásbeli változás: tájékoztatás és figyelemfelkeltés"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:593
 msgid "E2: Capacity building empowering and lifestyle practices"
-msgstr "E2: Prácticas de empoderamiento y estilo de vida de desarrollo de capacidades"
+msgstr "E2: Kapacitásépítés és életmódbeli gyakorlatok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
-msgstr "E2: Conocimiento y cambio de comportamiento: prácticas de empoderamiento y estilo de vida de desarrollo de capacidades"
+msgid ""
+"E2: Knowledge and behavioural change: Capacity building empowering and "
+"lifestyle practices"
+msgstr ""
+"E2: Tudás- és magatartásbeli változás: kapacitásépítés és életmódbeli "
+"gyakorlatok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
 msgid "EU Missions"
-msgstr "Misiones de la UE"
+msgstr "Uniós küldetések"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:466
 msgid "Ecosystems and Nature Based Solutions"
-msgstr "Ecosistemas y soluciones basadas en la naturaleza"
+msgstr "Ökoszisztémák és természetalapú megoldások"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:395
 msgid "European Climate Pact"
-msgstr "Pacto climático europeo"
+msgstr "Európai éghajlati paktum"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:260
 msgid "European Drought Observatory"
-msgstr "Observatorio de sequía europeo"
+msgstr "Európai aszálymegfigyelő központ"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:61
 msgid "Event"
-msgstr "Evento"
+msgstr "Esemény"
 
 #. undefined
 #: ../../climateadapt/browser/pt/health_homepage.pt:25
 #: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:17
 msgid "Events"
-msgstr "Eventos"
+msgstr "Rendezvények"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
-msgstr "Explore los estudios de casos de adaptación forestal en términos de ubicación geográfica, cobertura temática y enlace a las opciones de adaptación a través del Explorador de estudio de caso basado en mapas."
+msgid ""
+"Explore Forest adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Fedezze fel az erdők alkalmazkodási esettanulmányait a földrajzi "
+"elhelyezkedés, a tematikus lefedettség és az alkalmazkodási lehetőségekhez "
+"való kapcsolódás szempontjából a térképalapú esettanulmány-felfedezőn "
+"keresztül."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
-msgstr "Explore los estudios de casos de adaptación urbana en términos de ubicación geográfica, cobertura temática y enlace a las opciones de adaptación a través del Explorador de estudio de caso basado en mapas."
+msgid ""
+"Explore Urban adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Fedezze fel a városi alkalmazkodási esettanulmányokat a földrajzi "
+"elhelyezkedés, a tematikus lefedettség és az alkalmazkodási lehetőségekhez "
+"való kapcsolódás szempontjából a térképalapú esettanulmány-felfedezőn "
+"keresztül."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
 #: ../../climateadapt/browser/pt/casestudy_view.pt:369
 msgid "External source"
-msgstr "Fuente externa"
+msgstr "Külső forrás"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:476
 msgid "Extreme Precipitation"
-msgstr "Precipitación extrema"
+msgstr "Extrém csapadék"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:347
 msgid "Extreme Temperatures"
-msgstr "Temperaturas extremas"
+msgstr "Extrém hőmérsékletek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:417
 msgid "FAO Green Cities"
-msgstr "Fao Ciudades verdes"
+msgstr "FAO Zöld Városok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
-msgstr "Fise Web Portal nos ayudará a mejorar la salud y la resiliencia de nuestros bosques, que juegan un papel vital en la protección de nuestra biodiversidad y en mitigar el cambio climático."
+msgid ""
+"FISE web portal will help us to improve the health and resilience of our "
+"forests, which play a vital role in protecting our biodiversity and in "
+"mitigating climate change."
+msgstr ""
+"A FISE internetes portál segíteni fog abban, hogy javítsuk erdőink "
+"egészségét és ellenálló képességét, amelyek létfontosságú szerepet játszanak"
+" biológiai sokféleségünk védelmében és az éghajlatváltozás mérséklésében."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid "Find out how to contribute different types of information to Climate-ADAPT."
-msgstr "Descubra cómo aportar diferentes tipos de información a Climate-ADAPT."
+msgid ""
+"Find out how to contribute different types of information to Climate-ADAPT."
+msgstr ""
+"Tudja meg, hogyan járulhat hozzá a különböző típusú információkhoz a "
+"Climate-ADAPT-hoz."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
 msgid "Forestry Information System for Europe"
-msgstr "Sistema de información forestal para Europa"
+msgstr "Európai Erdészeti Információs Rendszer"
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:31
 msgid "Frequently asked questions in one place."
-msgstr "Preguntas frecuentes en un solo lugar."
+msgstr "Gyakori kérdések egy helyen."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:216
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:195
 msgid "Funding and Financing"
-msgstr "Financiación y financiamiento"
+msgstr "Finanszírozás és finanszírozás"
 
 #. undefined
 #: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:7
 msgid "General"
-msgstr "General"
+msgstr "Általános"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:60
 msgid "Geographic characterisation"
-msgstr "Caracterización geográfica"
+msgstr "Földrajzi jellemzés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:78
 #: ../../climateadapt/browser/pt/video_view.pt:123
 msgid "Geographic characterization"
-msgstr "Caracterización geográfica"
+msgstr "Földrajzi jellemzés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:117
 #: ../../climateadapt/browser/pt/casestudy_view.pt:364
 #: ../../climateadapt/browser/pt/indicator_view.pt:103
 msgid "Geographic characterization:"
-msgstr "Caracterización geográfica:"
+msgstr "Földrajzi jellemzés:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:255
 msgid "Go to Case Study Explorer"
-msgstr "Ir al explorador de estudio de caso"
+msgstr "Ugrás az Esettanulmány-felfedező oldalra"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:352
 msgid "Go to EU funding of adaptation"
-msgstr "Vaya a la financiación de la adaptación de la UE"
+msgstr "Ugrás az alkalmazkodás uniós finanszírozásához"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:287
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:269
 msgid "Go to the Adaptation Options"
-msgstr "Ir a las opciones de adaptación"
+msgstr "Ugrás az adaptációs lehetőségekre"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:237
 msgid "Go to the European Climate Data Explorer"
-msgstr "Vaya al Explorador de datos climáticos europeos"
+msgstr "Ugrás az európai klímaadat-felfedezőre"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:342
 msgid "Go to the Forest Policy Overview"
-msgstr "Vaya a la descripción general de la política forestal"
+msgstr "Ugrás az erdészeti politika áttekintésére"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:228
 msgid "Go to the Urban Adaptation Map Viewer"
-msgstr "Vaya al visor de mapas de adaptación urbana"
+msgstr "Ugrás az Urban Adaptation Map Viewer-re"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:218
 msgid "Go to the Urban Adaptation Support Tool"
-msgstr "Vaya a la herramienta de soporte de adaptación urbana"
+msgstr "Ugrás a városi alkalmazkodást támogató eszközre"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:311
 msgid "Go to the Urban Policy Overview"
-msgstr "Vaya a la descripción general de la política urbana"
+msgstr "Ugrás a várospolitikai áttekintésre"
 
 #. undefined
 #: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:10
 msgid "Guidance documents"
-msgstr "Documentos de orientación"
+msgstr "Útmutató dokumentumok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:17
 msgid "Guidance on the Climate-ADAPT Database Search function."
-msgstr "Orientación sobre la función de búsqueda de la base de datos de Climate-ADAPT."
+msgstr "Útmutató a Climate-ADAPT adatbáziskereső funkcióhoz."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:15
 msgid "Guidance to <br /> search function"
-msgstr "Orientación a la  <br />función de búsqueda"
+msgstr "Útmutató a keresési funkcióhoz"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:111
 msgid "HHWS website"
-msgstr "Sitio web de HHWS"
+msgstr "A HHWS honlapja"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:462
 msgid "Health and Wellbeing"
-msgstr "Salud y Bienestar"
+msgstr "Egészség és jóllét"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:105
 msgid "Heat index of HHWS:"
-msgstr "Índice de calor de HHWS:"
+msgstr "A HHWS hőindexe:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:79
 msgid "High pixel density mode"
-msgstr "Modo de alta densidad de píxeles"
+msgstr "Nagy pixelsűrűségű üzemmód"
 
 #. undefined
 #: ../../climateadapt/browser/pt/navbar_footer.pt:12
 msgid "Home"
-msgstr "Página principal"
+msgstr "Főoldal"
 
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:423
 msgid "How to use the map?"
-msgstr "¿Cómo usar el mapa?"
+msgstr "Hogyan kell használni a térképet?"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:307
 msgid "ICT"
-msgstr "TIC"
+msgstr "IKT"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:349
 msgid "Ice and Snow"
-msgstr "Hielo y nieve"
+msgstr "Jég és hó"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:74
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:179
 msgid "Identifying adaptation options"
-msgstr "Identificación de opciones de adaptación"
+msgstr "Az alkalmazkodási lehetőségek azonosítása"
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:38
 msgid "If you are new user the video tutorials can help you get started."
-msgstr "Si es un usuario nuevo, los tutoriales en video pueden ayudarle a comenzar."
+msgstr ""
+"Ha új felhasználó vagy, a videó oktatóanyagok segíthetnek az indulásban."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
 msgid "Image quality at 2x"
-msgstr "Calidad de imagen a 2x"
+msgstr "Képminőség 2x-nél"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:105
 msgid "Image quality at 3x"
-msgstr "Calidad de imagen a 3x"
+msgstr "Képminőség 3x"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:90
 msgid "Implementation"
-msgstr "Implementación"
+msgstr "Végrehajtás"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:234
 msgid "Implementing adaptation"
-msgstr "Implementación de la adaptación"
+msgstr "A kiigazítás végrehajtása"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:120
 msgid "Info:"
-msgstr "Información:"
+msgstr "Információ:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:9
 msgid "Information Portals"
-msgstr "Portales de Información"
+msgstr "Információs portálok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:606
 msgid "Institutional: Economic options"
-msgstr "Institucional: Opciones económicas"
+msgstr "Intézményi: Gazdasági lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:608
 msgid "Institutional: Government policies and programmes"
-msgstr "Institucional: Políticas públicas y programas gubernamentales"
+msgstr "Intézményi: Kormányzati politikák és programok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:607
 msgid "Institutional: Law and regulations"
-msgstr "Institucional: Legislación y Regulaciones"
+msgstr "Intézményi: Törvények és rendeletek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:56
 msgid "Item Documents"
-msgstr "Documentos del artículo"
+msgstr "Tétel Dokumentumok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/adaptationoption_view.pt:129
 msgid "Item’s creation:"
-msgstr "Creación del artículo:"
+msgstr "A tétel létrehozása:"
 
 #. undefined
 #: ../../climateadapt/tiles/search_acecontent.py:850
 msgid "Key Type Measure"
-msgstr "Medida de tipo clave"
+msgstr "Kulcstípus-mérték"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267
 msgid "Key Type Measures"
-msgstr "Medidas de tipo clave"
+msgstr "Kulcsfontosságú típusintézkedések"
 
 #. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
-msgstr "Palabra clave eliminada correctamente: ${kw_old}."
+msgstr "Kulcsszó sikeresen törölve: ${kw_old}."
 
 #. undefined
 #: ../../climateadapt/browser/admin.py:592
 msgid "Keyword succesfully renamed: ${kw_old} to ${kw_new}."
-msgstr "Palabra clave renombrada con éxito: ${kw_old} a ${kw_new}."
+msgstr "A kulcsszót sikeresen átnevezték: ${kw_old} -ról ${kw_new} -ra."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:65
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:48
 #: ../../climateadapt/browser/pt/video_view.pt:103
 msgid "Keywords"
-msgstr "Palabras clave"
+msgstr "Kulcsszavak"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:308
 msgid "Land use planning"
-msgstr "La planificación del uso del suelo"
+msgstr "Földhasználat-tervezés"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:463
 msgid "Land-use and Food Systems"
-msgstr "Uso de la tierra y sistemas alimentarios"
+msgstr "Földhasználati és élelmiszerrendszerek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
-msgstr "Obtenga más información sobre diferentes opciones de adaptación a los diversos impactos del cambio climático en los bosques."
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in forests."
+msgstr ""
+"Tudjon meg többet az éghajlatváltozás erdőkre gyakorolt különböző hatásaihoz"
+" való alkalmazkodás különböző lehetőségeiről."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
-msgstr "Obtenga más información sobre las diferentes opciones de adaptación a los diversos impactos del cambio climático en las áreas urbanas."
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in urban areas."
+msgstr ""
+"Tudjon meg többet az éghajlatváltozás városi területekre gyakorolt különböző"
+" hatásaihoz való alkalmazkodás különböző lehetőségeiről."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
-msgstr "Obtenga más información sobre cómo las ciudades pueden adaptarse al cambio climático para convertirse en ciudades a prueba de futuro y resistentes al clima"
+msgid ""
+"Learn more about how cities can adapt to climate change to become future-"
+"proof, climate-resilient cities"
+msgstr ""
+"Tudjon meg többet arról, hogy a városok hogyan tudnak alkalmazkodni az "
+"éghajlatváltozáshoz, hogy időtálló, az éghajlatváltozás hatásaival szemben "
+"reziliens városokká váljanak"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
-msgstr "Obtenga más información sobre cómo los bosques pueden adaptarse al cambio climático para mantenerse saludables, diversos, resistentes y productivos"
+msgid ""
+"Learn more about how forests can adapt to climate change to stay healthy, "
+"diverse, resilient and productive"
+msgstr ""
+"Tudjon meg többet arról, hogy az erdők hogyan tudnak alkalmazkodni az "
+"éghajlatváltozáshoz annak érdekében, hogy egészségesek, változatosak, "
+"reziliensek és termelékenyek maradjanak"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
 msgid "Link to Map Viewer:"
-msgstr "Enlace al visor de mapas:"
+msgstr "Link a térképnézegetőhöz:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:44
 #: ../../climateadapt/browser/pt/indicator_view.pt:49
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
 msgid "Link to metadata:"
-msgstr "Enlace a metadatos:"
+msgstr "Hivatkozás a metaadatokra:"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:467
 msgid "Local Economic Systems"
-msgstr "Sistemas económicos locales"
+msgstr "Helyi gazdasági rendszerek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:450
 msgid "MCR 2030"
-msgstr "RCM 2030"
+msgstr "MCR 2030"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:180
 msgid "Macro-Transnational region"
-msgstr "Región macro-transnacional"
+msgstr "Makro-transznacionális régió"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:238
 msgid "Map"
-msgstr "Mapa"
+msgstr "Térkép"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:263
 msgid "Maps, graphs and datasets"
-msgstr "Mapas, gráficos y bases de datos"
+msgstr "Térképek, grafikonok és adatkészletek"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:46
 #: ../../climateadapt/vocabulary.py:309
 msgid "Marine and Fisheries"
-msgstr "Marítimo-Pesquero"
+msgstr "Tenger és halászat"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:98
 msgid "Monitoring &amp; Evaluation (M&amp;E)"
-msgstr "Monitoreo &amp; Evaluación (M &amp; E)"
+msgstr "Monitoring &amp; Értékelés (M&amp;E)"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
 msgid "Monitoring and evaluating adaptation"
-msgstr "Monitoreo y evaluación de la adaptación"
+msgstr "Az alkalmazkodás nyomon követése és értékelése"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:310
 msgid "Mountain areas"
-msgstr "Áreas de montaña"
+msgstr "Hegyvidéki területek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr "La política nacional de adaptación no se informa más allá de los informes obligatorios en 2023"
+msgid ""
+"National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr ""
+"A 2023. évi kötelező jelentéstételen túl nem jelentették be a nemzeti "
+"alkalmazkodási politikát"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
 msgid "National adaptation policy reported in 2023"
-msgstr "Política nacional de adaptación reportada en 2023"
+msgstr "A 2023-ban bejelentett nemzeti alkalmazkodási politika"
 
 #. undefined
 #: ../../climateadapt/browser/pt/health_homepage.pt:20
 #: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:16
 msgid "News"
-msgstr "Noticias"
+msgstr "Hírek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:80
 msgid "No assessments reported"
-msgstr "Evaluaciones no disponibles"
+msgstr "Nem jelentettek értékelést"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:88
 msgid "No data reported in 2021"
-msgstr "Información no reportada en 2021"
+msgstr "2021-ben nem jelentettek adatokat"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:104
 msgid "No data reported in 2023"
-msgstr "No se informan datos en 2023"
+msgstr "2023-ban nem jelentettek adatokat"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:99
 msgid "No portal or platform reported"
-msgstr "Portal o Plataforma no disponible"
+msgstr "Nem jelentettek portált vagy platformot"
 
 #. undefined
 #: ../../climateadapt/browser/pt/health_homepage.pt:65
 msgid "No upcoming events."
-msgstr "Sin próximos eventos."
+msgstr "Nincsenek közelgő események."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:315
 msgid "Non specific"
-msgstr "No específico"
+msgstr "Nem specifikus"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:428
@@ -2831,456 +2926,547 @@ msgstr "OPPLA"
 #. undefined
 #: ../../climateadapt/vocabulary.py:336
 msgid "Observations and Scenarios"
-msgstr "Observaciones y escenarios"
+msgstr "Észrevételek és forgatókönyvek"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:76
 msgid "One or more assessments reported"
-msgstr "Una o más evaluaciones reportadas"
+msgstr "Egy vagy több bejelentett értékelés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:125
 msgid "Online registration"
-msgstr "Registro en línea"
+msgstr "Online regisztráció"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:18
 msgid "Original aceitem"
-msgstr "Ícono original"
+msgstr "Eredeti aceitem"
 
 #. undefined
 #: ../../climateadapt/browser/pt/footer_logos.pt:35
 msgid "Other European Information Systems:<br />&nbsp;"
-msgstr "Otros sistemas de información europeos: <br /> &nbsp;"
+msgstr "Egyéb európai információs rendszerek:&nbsp;"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:140
 msgid "Outside EEA coverage"
-msgstr "Cobertura fuera del EEE"
+msgstr "EGT-n kívüli lefedettség"
 
 #. undefined
 #: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:15
 msgid "Overview list of all indices"
-msgstr "Lista resumen de todos los índices"
+msgstr "Az összes index áttekintő listája"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:189
 msgid "Policy Overview"
-msgstr "Descripción general de la política"
+msgstr "Szakpolitikai áttekintés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:210
 msgid "Policy overview"
-msgstr "Descripción general de la política"
+msgstr "Szakpolitikai áttekintés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/item_statistics.pt:23
 msgid "Portal Type"
-msgstr "Tipo de portal"
+msgstr "Portál típusa"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:58
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:79
 msgid "Preparing the ground for adaptation"
-msgstr "Preparando el terreno para la adaptación"
+msgstr "Az alkalmazkodás alapjainak előkészítése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:119
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:68
 msgid "Principles and success factors"
-msgstr "Principios y factores de éxito"
+msgstr "Alapelvek és sikertényezők"
 
 #. undefined
 #: ../../climateadapt/browser/pt/navbar_footer.pt:21
 msgid "Privacy and Legal Notice"
-msgstr "Privacidad y aviso legal"
+msgstr "Adatvédelmi és jogi nyilatkozat"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:59
 msgid "Professional thematic domain"
-msgstr "Dominio temático profesional"
+msgstr "Professzionális tematikus terület"
 
 #. undefined
 #: ../../climateadapt/browser/pt/publicationreport_view.pt:50
 msgid "Project Documents"
-msgstr "Documentos del proyecto"
+msgstr "Projektdokumentumok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/item_statistics.pt:24
 msgid "Published"
-msgstr "Publicado"
+msgstr "Közzétéve"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:237
 msgid "Reference"
-msgstr "Referencia"
+msgstr "Hivatkozás"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:40
 msgid "Reference:"
-msgstr "Referencia:"
+msgstr "Hivatkozás:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/adaptationoption_view.pt:113
 msgid "References:"
-msgstr "Referencias:"
+msgstr "Hivatkozások:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:61
 msgid "Registration"
-msgstr "Registro"
+msgstr "Regisztráció"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:124
 msgid "Registration:"
-msgstr "Registro:"
+msgstr "Nyilvántartásba vétel:"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/filter_acecontent.pt:49
 msgid "Relevant tile"
-msgstr "Ícono relevante"
+msgstr "Releváns csempe"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:277
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Visszaállítás"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:472
 msgid "Resilient Cities Network"
-msgstr "Red de ciudades resistentes"
+msgstr "Reziliens városok hálózata"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:183
 msgid "Resource Catalogue"
-msgstr "Catálogo de recursos"
+msgstr "Erőforrás-katalógus"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:112
 msgid "Reviewed by:"
-msgstr "Revisado por:"
+msgstr "Értékelte:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/navbar_footer.pt:18
 msgid "SITE MAP"
-msgstr "Mapa del sitio web"
+msgstr "SITE MAP (webhelytérkép)"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:66
 msgid "Scaled image quality"
-msgstr "Calidad de imagen escalada"
+msgstr "Méretezett képminőség"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:58
 msgid "Scroll to top"
-msgstr "Vuelve al comienzo"
+msgstr "Görgessen a lap tetejére"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:350
 msgid "Sea Level Rise"
-msgstr "Aumento del nivel del mar"
+msgstr "Tengerszint emelkedés"
 
 #. undefined
 #: ../../climateadapt/browser/pt/observatory_indicators_search.pt:101
 msgid "Search"
-msgstr "Búsqueda"
+msgstr "Keresés"
 
 #. undefined
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:203
 msgid "Search results"
-msgstr "Resultados de la búsqueda"
+msgstr "Keresési eredmények"
 
 #. undefined
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:212
 msgid "Search results for: ${term}"
-msgstr "Resultados de búsqueda para: ${term}"
+msgstr "Keresési eredmények: ${term}"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:319
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:288
 msgid "Search the Climate Adapt Database:"
-msgstr "Busque en la base de datos de clima adaptante:"
+msgstr "Keresés az éghajlatváltozáshoz való alkalmazkodás adatbázisában:"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/search_acecontent.pt:66
 msgid "Search tile"
-msgstr "Ícono de búsqueda"
+msgstr "Keresés csempe"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:340
 msgid "Sector Policies"
-msgstr "Políticas del sector"
+msgstr "Ágazati politikák"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:76
 #: ../../climateadapt/browser/pt/indicator_view.pt:98
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
 msgid "Sectors"
-msgstr "Sectores"
+msgstr "Ágazatok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-list.pt:5
 msgid "Select a country"
-msgstr "Seleccione un país"
+msgstr "Válasszon országot"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:49
 msgid "Select a country to go directly to the country's page:"
-msgstr "Seleccione un país para ir directamente a la página del país:"
+msgstr "Válassza ki az országot, hogy közvetlenül az ország oldalára lépjen:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid "Select the sectors for which you want to receive a notification email when an item is modified."
-msgstr "Seleccione los sectores para los que desea recibir un correo electrónico de notificación cuando se modifique un contenido."
+msgid ""
+"Select the sectors for which you want to receive a notification email when "
+"an item is modified."
+msgstr ""
+"Jelölje ki azokat a szektorokat, amelyekről értesítést szeretne kapni egy "
+"elem módosításakor."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
 msgid "Share button tile"
-msgstr "Mosaico del botón Compartir"
+msgstr "Megosztás gomb csempe"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:11
 msgid "Share type:"
-msgstr "Tipo de compartir:"
+msgstr "Részvény típusa:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/observatory_indicators_search.pt:108
 msgid "Show all sources"
-msgstr "Mostrar todas las fuentes"
+msgstr "Összes forrás megjelenítése"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:605
 msgid "Social: Behavioural"
-msgstr "Social: Conductual"
+msgstr "Szociális: Viselkedési"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:603
 msgid "Social: Educational options"
-msgstr "Social: Opciones educativas"
+msgstr "Szociális: Oktatási lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
-msgstr "Social: Informativo"
+msgstr "Szociális: Információs"
 
 #. undefined
 #: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
 #: ../../climateadapt/browser/pt/indicator_view.pt:44
 #: ../../climateadapt/browser/pt/informationportal_view.pt:32
 msgid "Source:"
-msgstr "Fuente:"
+msgstr "Forrás:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr "Especifique todas las dimensiones máximas permitidas de la imagen, una por línea. El formato requerido es &lt;nombre&gt; &lt;ancho&gt;:&lt;alto&gt;."
+msgid ""
+"Specify all allowed maximum image dimensions, one per line. The required "
+"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr ""
+"Adja meg az összes megengedett maximális képméretet, soronként egyet. A "
+"szükséges formátum: &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
 msgid "Stakeholder Participation"
-msgstr "Participación de partes interesadas"
+msgstr "Az érdekelt felek részvétele"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:351
 msgid "Storms"
-msgstr "Tormentas"
+msgstr "Viharok"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:601
 msgid "Structural and physical: Ecosystem-based adaptation options"
-msgstr "Estructural y físico: Opciones de adaptación basada en ecosistemas"
+msgstr ""
+"Strukturális és fizikai: Ökoszisztéma-alapú alkalmazkodási lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:599
 msgid "Structural and physical: Engineering and built environment options"
-msgstr "Estructural y físico: Opciones de ingeniería y entorno construido"
+msgstr "Szerkezeti és fizikai: mérnöki és épített környezeti lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:602
 msgid "Structural and physical: Service options"
-msgstr "Estructural y físico: Opciones de servicio"
+msgstr "Szerkezeti és fizikai: Szolgáltatási lehetőségek"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:600
 msgid "Structural and physical: Technological options"
-msgstr "Estructural y físico: Opciones tecnológicas"
+msgstr "Szerkezeti és fizikai: Technológiai lehetőségek"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:202
 msgid "Sub Nationals"
-msgstr "Subnacional"
+msgstr "Alállampolgárok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:57
 msgid "Subnational or local HHAP"
-msgstr "HHAP subnacional o local"
+msgstr "Szubnacionális vagy helyi HHAP"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:384
 msgid "The EU Covenant of Mayors"
-msgstr "El pacto de la UE de los alcaldes"
+msgstr "Az EU Polgármesterek Szövetsége"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
-msgstr "La UE financia la adaptación al cambio climático en Europa a través de una amplia gama de instrumentos. El Marco Financiero Multianual 2021-2027 garantiza que al menos el 25% del presupuesto europeo sea el gasto relacionado con el clima. Por lo tanto, las acciones de adaptación climática deben integrarse en todos los principales programas de gasto de la UE, y se establece un sistema de seguimiento para garantizar que estos objetivos se cumplan."
+msgid ""
+"The EU finances adaptation to climate change in Europe through a wide range "
+"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
+"at least 25% of the European budget is climate-related expenditure. "
+"Therefore, Climate adaptation actions have to be integrated into all the "
+"major EU spending programmes, and a tracking system is put in place to "
+"guarantee these objectives are met."
+msgstr ""
+"Az EU számos eszköz révén finanszírozza az éghajlatváltozáshoz való "
+"alkalmazkodást Európában. A 2021–2027-es időszakra vonatkozó többéves "
+"pénzügyi keret biztosítja, hogy az európai költségvetés legalább 25%-a "
+"éghajlatváltozással kapcsolatos kiadás legyen. Ezért az éghajlatváltozáshoz "
+"való alkalmazkodást célzó intézkedéseket be kell építeni az összes főbb "
+"uniós kiadási programba, és nyomonkövetési rendszert kell bevezetni e "
+"célkitűzések elérésének biztosítása érdekében."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
-msgstr "La UE tiene varios marcos de políticas para aumentar la resiliencia de las ciudades europeas y sus habitantes, incluida la estrategia de adaptación de la UE y la Estrategia de Biodiversidad de la UE 2030, y ha desarrollado varias iniciativas para mejorar el conocimiento y la disponibilidad de datos en la vulnerabilidad urbana y la capacidad de adaptación. También brinda apoyo financiero y técnico a los responsables políticos y profesionales para que las ciudades sean más resistentes y adaptativas."
+msgid ""
+"The EU has several policy frameworks in place to increase the resilience of "
+"European cities and their inhabitants, including the EU Adaptation Strategy "
+"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
+" to improve knowledge and data availability on urban vulnerability and "
+"adaptive capacity. It also provides financial and technical support to "
+"policy makers and practitioners to make cities more resilient and adaptive."
+msgstr ""
+"Az EU számos szakpolitikai kerettel rendelkezik az európai városok és "
+"lakosaik rezilienciájának növelése érdekében, többek között az uniós "
+"alkalmazkodási stratégiával és a 2030-ig tartó időszakra szóló uniós "
+"biodiverzitási stratégiával, és számos kezdeményezést dolgozott ki a városi "
+"sebezhetőséggel és alkalmazkodóképességgel kapcsolatos ismeretek és adatok "
+"rendelkezésre állásának javítása érdekében. Emellett pénzügyi és technikai "
+"támogatást nyújt a politikai döntéshozóknak és a gyakorló szakembereknek a "
+"városok reziliensebbé és alkalmazkodóképesebbé tétele érdekében."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
-msgstr "El Explorador de datos climáticos europeos proporciona acceso interactivo a muchos índices climáticos del Servicio de Cambio Climático de Copérnico en apoyo de la adaptación al cambio climático."
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices from the Copernicus Climate Change Service in support of "
+"climate change adaptation."
+msgstr ""
+"Az európai éghajlati adatfelfedező interaktív hozzáférést biztosít a "
+"Kopernikusz éghajlat-változási szolgáltatásának számos éghajlati indexéhez "
+"az éghajlatváltozáshoz való alkalmazkodás támogatása érdekében."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
-msgstr "El Explorador de datos climáticos europeos proporciona acceso interactivo a muchos índices climáticos como índices climáticos contra incendios en apoyo de la adaptación al cambio climático en los bosques."
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices like fire weather indices in support of climate change "
+"adaptation in forests."
+msgstr ""
+"Az európai éghajlati adatfelfedező interaktív hozzáférést biztosít számos "
+"éghajlati indexhez, például a tűzidőjárási indexekhez, amelyek támogatják az"
+" éghajlatváltozáshoz való alkalmazkodást az erdőkben."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
-msgstr "El Observatorio Europeo de Sequía (EDO) contiene información relevante para la sequía. Estos dan una visión general de la situación en la UE sobre las sequías inminentes."
+msgid ""
+"The European Drought Observatory (EDO) contains drought-relevant "
+"information. These give an overview of the situation in the EU about "
+"imminent droughts."
+msgstr ""
+"Az Európai Aszálymegfigyelő Központ (EDO) az aszály szempontjából releváns "
+"információkat tartalmaz, amelyek áttekintést nyújtanak a küszöbön álló "
+"aszályokkal kapcsolatos uniós helyzetről."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
 msgid "The European Forest Fire Information System"
-msgstr "El sistema europeo de información sobre incendios forestales"
+msgstr "Az európai erdőtűz-információs rendszer"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
-msgstr "El Sistema Europeo de Información de Incendios Forestales (EFFIS) apoya la protección de los bosques contra incendios y proporciona a la UE información armonizada sobre incendios forestales"
+msgid ""
+"The European Forest Fire Information System (EFFIS) supports the protection "
+"of forests against fires and provides the EU with harmonized information on "
+"forest fires"
+msgstr ""
+"Az európai erdőtűz-információs rendszer (EFFIS) támogatja az erdők tűz "
+"elleni védelmét, és harmonizált információkkal látja el az EU-t az "
+"erdőtüzekről"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
-msgstr "El visor de mapas de adaptación urbana proporciona una visión general de los riesgos climáticos actuales y futuros, la vulnerabilidad de las ciudades a estos peligros y su capacidad de adaptación."
+msgid ""
+"The Urban Adaptation Map Viewer provides an overview of the current and "
+"future climate hazards, the vulnerability of the cities to these hazards and"
+" their adaptive capacity."
+msgstr ""
+"Az Urban Adaptation Map Viewer áttekintést nyújt a jelenlegi és jövőbeli "
+"éghajlati veszélyekről, a városok e veszélyekkel szembeni sebezhetőségéről "
+"és alkalmazkodóképességéről."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
-msgstr "La herramienta de soporte de adaptación urbana ayuda a ciudades, ciudades y autoridades locales a desarrollar, implementar y monitorear los planes de adaptación al cambio climático."
+msgid ""
+"The Urban Adaptation Support Tool assists cities, towns and local "
+"authorities in developing, implementing and monitoring climate change "
+"adaptation plans."
+msgstr ""
+"A városi alkalmazkodást támogató eszköz segíti a városokat és a helyi "
+"hatóságokat az éghajlatváltozáshoz való alkalmazkodásra vonatkozó tervek "
+"kidolgozásában, végrehajtásában és nyomon követésében."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr "La crisis climática está afectando severamente los bosques de Europa, lo que los hace cada vez más vulnerables a peligros como tormentas, incendios forestales, sequías, brotes de insectos y enfermedades, o el aumento del nivel del mar. Los crecientes riesgos e impactos están afectando la viabilidad económica de la silvicultura y reducen la capacidad de los bosques para proporcionar servicios de ecosistemas esenciales. La UE responde a este desafío sin precedentes al apoyar la adaptación de los bosques al cambio climático a través de una amplia gama de políticas, como la estrategia forestal de la UE, la estrategia de la UE sobre la adaptación al cambio climático y la estrategia de biodiversidad de la UE."
+msgid ""
+"The climate crisis is severely affecting Europe's forests, making them "
+"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
+"and disease outbreaks, or sea level rise. The growing risks and impacts are "
+"affecting the economic viability of forestry and they reduce the capacity of"
+" forests to provide essential ecosystem services. The EU responds to this "
+"unprecedented challenge by supporting the adaptation of forests to climate "
+"change through a wide range of policies, like the EU Forest Strategy, EU "
+"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr ""
+"Az éghajlati válság súlyosan érinti az európai erdőket, és egyre "
+"sebezhetőbbé teszi őket az olyan veszélyekkel szemben, mint a viharok, az "
+"erdőtüzek, az aszályok, a rovar- és betegségkitörések vagy a tengerszint "
+"emelkedése. A növekvő kockázatok és hatások hatással vannak az "
+"erdőgazdálkodás gazdasági életképességére, és csökkentik az erdők alapvető "
+"ökoszisztéma-szolgáltatások nyújtására való képességét. Az EU erre a példa "
+"nélküli kihívásra úgy reagál, hogy számos szakpolitika – például az uniós "
+"erdőstratégia, az éghajlatváltozáshoz való alkalmazkodásra vonatkozó uniós "
+"stratégia és a biológiai sokféleséggel kapcsolatos uniós stratégia – révén "
+"támogatja az erdők éghajlatváltozáshoz való alkalmazkodását."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
 msgid "To go to one of the regions please click on the maps."
-msgstr "Para ir a una de las regiones, haga clic en los mapas."
+msgstr "Ha valamelyik régióba szeretne eljutni, kattintson a térképekre."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:192
 msgid "Tools and data"
-msgstr "Herramientas y datos"
+msgstr "Eszközök és adatok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/item_statistics.pt:25
 msgid "Total"
-msgstr "Total"
+msgstr "Összesen"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:311
 msgid "Tourism"
-msgstr "Turismo"
+msgstr "Idegenforgalom"
 
 #. undefined
 #: ../../climateadapt/browser/pt/transnational_regions.pt:410
 msgid "Transnational regions and other regions and countries"
-msgstr "Regiones transnacionales y otras regiones y países"
+msgstr "Transznacionális régiók és egyéb régiók és országok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:461
 msgid "URBACT"
-msgstr "Urbacto"
+msgstr "URBACT"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:406
 msgid "Urban Innovative Actions"
-msgstr "Acciones innovadoras urbanas"
+msgstr "Innovatív városfejlesztési tevékenységek"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:123
 msgid "Using the Adaptation Support Tool"
-msgstr "Uso de la Herramienta de Soporte para la Adaptación"
+msgstr "Az alkalmazkodást támogató eszköz használata"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/filter_acecontent.pt:61
 msgid "View all"
-msgstr "Ver todo"
+msgstr "Az összes megtekintése"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/relevant_acecontent.pt:119
 msgid "View more"
-msgstr "Ver más"
+msgstr "Továbbiak megtekintése"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:18
 msgid "View on DRMKC"
-msgstr "Ver en DRMKC"
+msgstr "Megtekintés a DRMKC-n"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:337
 msgid "Vulnerability Assessment"
-msgstr "Evaluación de vulnerabilidad"
+msgstr "A sebezhetőség értékelése"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:464
 msgid "Water Management"
-msgstr "Administracion del Agua"
+msgstr "Vízgazdálkodás"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:352
 msgid "Water Scarcity"
-msgstr "Escasez de agua"
+msgstr "Vízhiány"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:112
 msgid "When:"
-msgstr "Cuando:"
+msgstr "Mikor:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ccaevent_view.pt:116
 msgid "Where:"
-msgstr "Dónde:"
+msgstr "Ahol:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/item_statistics.pt:19
 msgid "Year:"
-msgstr "Año:"
+msgstr "Év:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:33
 msgid "back to search"
-msgstr "Volver a la búsqueda"
+msgstr "Vissza a kereséshez"
 
-#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the
+#. richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
-msgstr "descripción_captioning_imagen"
+msgstr "image_captioning_description (képaláírás)"
 
 #. Default: "Enable image captioning"
 #: ../../climateadapt/image_scales/interfaces.py:210
 msgid "image_captioning_title"
-msgstr "título_captioning_imagen"
+msgstr "image_captioning_title (képaláírás)"
 
 #. Default: "Filter the results."
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:250
 msgid "narrow_search_options"
-msgstr "Filtrar los resultados."
+msgstr "keskeny_keresési_opciók"
 
 #. Default: "Sort by"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:451
 msgid "sort_by"
-msgstr "Ordenar por"
+msgstr "sort_by"
 
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr "ubicación_del_artículo_búsqueda_texto"
+msgstr ""
