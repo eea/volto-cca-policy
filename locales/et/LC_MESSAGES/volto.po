@@ -1,0 +1,3421 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Adaptation Details"
+#: components/theme/Views/AdaptationOptionView
+msgid "Adaptation Details"
+msgstr "Kohandamise üksikasjad"
+
+#. Default: "Adaptation Options Implemented In This Case"
+#: components/theme/Views/CaseStudyView
+msgid "Adaptation Options Implemented In This Case"
+msgstr "Kohanemisvõimalused, mida antud juhul rakendatakse"
+
+#. Default: "Adaptation elements:"
+#: helpers/ContentMetadata
+msgid "Adaptation elements:"
+msgstr "Kohandamiselemendid:"
+
+#. Default: "Adaptation options"
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
+msgid "Adaptation options"
+msgstr "Kohanemisvõimalused"
+
+#. Default: "Adaptation sectors"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
+msgid "Adaptation sectors"
+msgstr "Kohanemissektorid"
+
+#. Default: "Additional Details"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Additional Details"
+msgstr "Täiendavad üksikasjad"
+
+#. Default: "Agenda and supporting documents"
+#: components/theme/Views/CcaEventView
+msgid "Agenda and supporting documents"
+msgstr "Päevakord ja tõendavad dokumendid"
+
+#. Default: "Apr"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Apr"
+msgstr "apr"
+
+#. Default: "Aug"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Aug"
+msgstr "aug"
+
+#. Default: "Background information"
+#: components/theme/Views/C3SIndicatorView
+msgid "Background information"
+msgstr "Taustteave"
+
+#. Default: "Biogeographical regions:"
+#: helpers/ContentMetadata
+msgid "Biogeographical regions:"
+msgstr "Biogeograafilised piirkonnad:"
+
+#. Default: "Case Studies Documents"
+#: helpers/Utils
+msgid "Case Studies Documents"
+msgstr "Juhtumiuuringute dokumendid"
+
+#. Default: "Case Study Description"
+#: components/theme/Views/CaseStudyView
+msgid "Case Study Description"
+msgstr "Juhtumiuuringu kirjeldus"
+
+#. Default: "Case Study illustrations"
+#: components/theme/Views/CaseStudyView
+msgid "Case Study illustrations"
+msgstr "Juhtumiuuringu illustratsioonid"
+
+#. Default: "Case studies collected at national level in Spain, provided by
+#. AdapteCCA.es"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid ""
+"Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr ""
+"Hispaanias riigi tasandil kogutud juhtumiuuringud, mille on esitanud "
+"AdapteCCA.es"
+
+#. Default: "Case studies related to this option:"
+#: components/theme/Views/AdaptationOptionView
+msgid "Case studies related to this option:"
+msgstr "Selle võimalusega seotud juhtumiuuringud:"
+
+#. Default: "Category"
+#: components/theme/Views/AdaptationOptionView
+msgid "Category"
+msgstr "Kategooria"
+
+#. Default: "Challenges"
+#: components/theme/Views/CaseStudyView
+msgid "Challenges"
+msgstr "Väljakutsed"
+
+#. Default: "Choices"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Choices"
+msgstr "Valikud"
+
+#. Default: "Choose a region"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Choose a region"
+msgstr "Vali piirkond"
+
+#. Default: "Choose thematic map:"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Choose thematic map:"
+msgstr "Valige temaatiline kaart:"
+
+#. Default: "City:"
+#: helpers/ContentMetadata
+msgid "City:"
+msgstr "Linn:"
+
+#. Default: "Climate impact"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Climate impact"
+msgstr "Kliimamõju"
+
+#. Default: "Climate impacts"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
+msgid "Climate impacts"
+msgstr "Kliimamõju"
+
+#. Default: "Climate impacts:"
+#: helpers/ContentMetadata
+msgid "Climate impacts:"
+msgstr "Kliimamõju:"
+
+#. Default: "Climate-ADAPT case studies"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Climate-ADAPT case studies"
+msgstr "Climate-ADAPTi juhtumiuuringud"
+
+#. Default: "Climate-ADAPT page for this event"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Climate-ADAPT page for this event"
+msgstr "Ürituse „Climate-ADAPT“ lehekülg"
+
+#. Default: "Close"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Close"
+msgstr "Sulge"
+
+#. Default: "Contact"
+#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+msgid "Contact"
+msgstr "Võta ühendust"
+
+#. Default: "Contact information for the Observatory"
+#: components/theme/Views/DatabaseItemView
+msgid "Contact information for the Observatory"
+msgstr "Vaatluskeskuse kontaktandmed"
+
+#. Default: "Contributor:"
+#: helpers/Utils
+msgid "Contributor:"
+msgstr "Osaleja:"
+
+#. Default: "Costs and Benefits"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Costs and Benefits"
+msgstr "Kulud ja kasu"
+
+#. Default: "Countries:"
+#: helpers/ContentMetadata
+msgid "Countries:"
+msgstr "Riigid:"
+
+#. Default: "Date of creation:"
+#: helpers/ContentMetadata
+msgid "Date of creation:"
+msgstr "Loomise kuupäev:"
+
+#. Default: "Date of publication:"
+#: helpers/ContentMetadata
+msgid "Date of publication:"
+msgstr "Avaldamise kuupäev:"
+
+#. Default: "Date of release:"
+#: helpers/ContentMetadata
+msgid "Date of release:"
+msgstr "Vabastamise kuupäev:"
+
+#. Default: "Dec"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Dec"
+msgstr "Detsember"
+
+#. Default: "Default"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Default"
+msgstr "Vaikimisi"
+
+#. Default: "Description"
+#: components/manage/Widgets/CreatableSelectWidget helpers/Utils
+msgid "Description"
+msgstr "Kirjeldus"
+
+#. Default: "Disclaimer"
+#: components/theme/Views/C3SIndicatorView
+msgid "Disclaimer"
+msgstr "Vastutuse välistamine"
+
+#. Default: "Documents"
+#: helpers/Utils
+msgid "Documents"
+msgstr "Dokumendid"
+
+#. Default: "Download Event"
+#: components/theme/Views/EventView
+msgid "Download Event"
+msgstr "Ürituse allalaadimine"
+
+#. Default: "Download this event in iCal format"
+#: components/theme/Views/EventView
+msgid "Download this event in iCal format"
+msgstr "Laadige see sündmus alla iCal-vormingus"
+
+#. Default: "Duration:"
+#: helpers/ContentMetadata
+msgid "Duration:"
+msgstr "Kestus:"
+
+#. Default: "ECDE homepage"
+#: components/theme/Views/C3SIndicatorView
+msgid "ECDE homepage"
+msgstr "ECDE koduleht"
+
+#. Default: "Explore in detail"
+#: components/theme/Views/C3SIndicatorView
+msgid "Explore in detail"
+msgstr "Uurige üksikasjalikult"
+
+#. Default: "Feb"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Feb"
+msgstr "Veebruar"
+
+#. Default: "Fr"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Fr"
+msgstr "Fr"
+
+#. Default: "Funding Programme:"
+#: helpers/ContentMetadata
+msgid "Funding Programme:"
+msgstr "Rahastamisprogramm:"
+
+#. Default: "Geographic characterisation:"
+#: helpers/ContentMetadata
+msgid "Geographic characterisation:"
+msgstr "Geograafiline iseloomustus:"
+
+#. Default: "Getting started"
+#: components/theme/ASTNavigation/ASTAccordion
+msgid "Getting started"
+msgstr "Alustamine"
+
+#. Default: "Go back"
+#: components/theme/Views/C3SIndicatorView
+msgid "Go back"
+msgstr "Mine tagasi"
+
+#. Default: "Governance level:"
+#: helpers/ContentMetadata
+msgid "Governance level:"
+msgstr "Juhtimistasand:"
+
+#. Default: "HHWS available (click on country for further information)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "HHWS available (click on country for further information)"
+msgstr "HHWS on kättesaadav (lisateabe saamiseks klõpsake riigil)"
+
+#. Default: "Health impact:"
+#: helpers/ContentMetadata
+msgid "Health impact:"
+msgstr "Mõju tervisele:"
+
+#. Default: "Heat health action plans (HHAP)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health action plans (HHAP)"
+msgstr "Soojustervise tegevuskavad (HHAP)"
+
+#. Default: "Heat health warning systems (HHWS)"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Heat health warning systems (HHWS)"
+msgstr "Terviseohu hoiatussüsteemid (HHWS)"
+
+#. Default: "IPCC adaptation options categories:"
+#: helpers/ContentMetadata
+msgid "IPCC adaptation options categories:"
+msgstr "IPCC kohanemisvõimaluste kategooriad:"
+
+#. Default: "IPCC categories"
+#: components/theme/Views/AdaptationOptionView
+msgid "IPCC categories"
+msgstr "IPCC kategooriad"
+
+#. Default: "If you have any further questions you can contact"
+#: components/theme/Views/CcaEventView
+msgid "If you have any further questions you can contact"
+msgstr "Kui teil on lisaküsimusi, võtke ühendust"
+
+#. Default: "Implementation Time"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Implementation Time"
+msgstr "Rakendamise aeg"
+
+#. Default: "Importance and Relevance of Adaptation"
+#: components/theme/Views/CaseStudyView
+msgid "Importance and Relevance of Adaptation"
+msgstr "Kohanemise tähtsus ja olulisus"
+
+#. Default: "Indicators"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Indicators"
+msgstr "Näitajad"
+
+#. Default: "Info"
+#: helpers/Utils
+msgid "Info"
+msgstr "Teave"
+
+#. Default: "Jan"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Jan"
+msgstr "Jan"
+
+#. Default: "Jul"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Jul"
+msgstr "juuli"
+
+#. Default: "Jun"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Jun"
+msgstr "juuni"
+
+#. Default: "Key Type Measures:"
+#: helpers/ContentMetadata
+msgid "Key Type Measures:"
+msgstr "Peamised meetmeliigid:"
+
+#. Default: "Key activities within climate change and health"
+#: components/theme/Views/DatabaseItemView
+msgid "Key activities within climate change and health"
+msgstr "Kliimamuutuste ja tervise valdkonna põhitegevused"
+
+#. Default: "Key type measures"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Key type measures"
+msgstr "Põhimeetmed"
+
+#. Default: "Keywords:"
+#: helpers/ContentMetadata
+msgid "Keywords:"
+msgstr "Märksõnad:"
+
+#. Default: "Language of the conference"
+#: components/theme/Views/CcaEventView
+msgid "Language of the conference"
+msgstr "Konverentsi keel"
+
+#. Default: "Last Modified in Climate-ADAPT"
+#: helpers/Utils
+msgid "Last Modified in Climate-ADAPT"
+msgstr "Viimati muudetud rakenduses Climate-ADAPT"
+
+#. Default: "Lead"
+#: components/theme/Views/ProjectView
+msgid "Lead"
+msgstr "Plii"
+
+#. Default: "Legal Aspects"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Legal Aspects"
+msgstr "Õiguslikud aspektid"
+
+#. Default: "Life Time"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Life Time"
+msgstr "Eluaeg"
+
+#. Default: "Links to further information"
+#: components/theme/Views/DatabaseItemView
+msgid "Links to further information"
+msgstr "Lingid lisateabe juurde"
+
+#. Default: "Macro-Transnational region:"
+#: helpers/ContentMetadata
+msgid "Macro-Transnational region:"
+msgstr "Riikidevaheline makropiirkond:"
+
+#. Default: "Mar"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Mar"
+msgstr "märts"
+
+#. Default: "May"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "May"
+msgstr "mai"
+
+#. Default: "Mo"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Mo"
+msgstr "Mo"
+
+#. Default: "National HHAP"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "National HHAP"
+msgstr "Riiklik HHAP"
+
+#. Default: "No HHAP"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "No HHAP"
+msgstr "HHAP puudub"
+
+#. Default: "No information"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "No information"
+msgstr "Teave puudub"
+
+#. Default: "No options"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No options"
+msgstr "Valikud puuduvad"
+
+#. Default: "No results"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+msgid "No results"
+msgstr "Tulemused puuduvad"
+
+#. Default: "No value"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "No value"
+msgstr "Väärtus puudub"
+
+#. Default: "Nov"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Nov"
+msgstr "nov"
+
+#. Default: "Objectives"
+#: components/theme/Views/CaseStudyView
+msgid "Objectives"
+msgstr "Eesmärgid"
+
+#. Default: "Observatory Contributions:"
+#: helpers/Utils
+msgid "Observatory Contributions:"
+msgstr "Vaatluskeskuse panused:"
+
+#. Default: "Observatory contributions"
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+msgid "Observatory contributions"
+msgstr "Vaatluskeskuse panus"
+
+#. Default: "Ott"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Oct"
+msgstr "okt"
+
+#. Default: "Organisation Documents"
+#: helpers/Utils
+msgid "Organisation Documents"
+msgstr "Organisatsiooni dokumendid"
+
+#. Default: "Other regions"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Other regions"
+msgstr "Muud piirkonnad"
+
+#. Default: "Participation"
+#: components/theme/Views/CcaEventView
+msgid "Participation"
+msgstr "Osalemine"
+
+#. Default: "Partners"
+#: components/theme/Views/ProjectView
+msgid "Partners"
+msgstr "Partnerid"
+
+#. Default: "Practical information"
+#: components/theme/Views/CcaEventView
+msgid "Practical information"
+msgstr "Praktiline teave"
+
+#. Default: "Project information"
+#: components/theme/Views/ProjectView
+msgid "Project information"
+msgstr "Teave projekti kohta"
+
+#. Default: "Publications and Reports Documents"
+#: helpers/Utils
+msgid "Publications and Reports Documents"
+msgstr "Väljaanded ja aruanded Dokumendid"
+
+#. Default: "Published in Climate-ADAPT"
+#: helpers/Utils
+msgid "Published in Climate-ADAPT"
+msgstr "Avaldatud väljaandes Climate-ADAPT"
+
+#. Default: "Reference Information"
+#: components/theme/Views/CaseStudyView
+msgid "Reference Information"
+msgstr "Viiteandmed"
+
+#. Default: "Reference information"
+#: components/theme/Views/AdaptationOptionView helpers/Utils
+msgid "Reference information"
+msgstr "Viiteandmed"
+
+#. Default: "References"
+#: components/theme/Views/CaseStudyView helpers/Utils
+msgid "References"
+msgstr "Viited"
+
+#. Default: "Region's countries:"
+#: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
+msgid "Region's countries:"
+msgstr "Piirkonna riigid:"
+
+#. Default: "Regions"
+#: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
+msgid "Regions"
+msgstr "Piirkonnad"
+
+#. Default: "Related content:"
+#: helpers/Utils
+msgid "Related content:"
+msgstr "Seotud sisu:"
+
+#. Default: "Related documents and presentations"
+#: components/theme/Views/DatabaseItemView
+msgid "Related documents and presentations"
+msgstr "Seotud dokumendid ja esitlused"
+
+#. Default: "Relevance"
+#: components/theme/Views/CaseStudyView
+msgid "Relevance"
+msgstr "Asjakohasus"
+
+#. Default: "Required"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Required"
+msgstr "Nõutav"
+
+#. Default: "Sa"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Sa"
+msgstr "Sa"
+
+#. Default: "Sector"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Sector"
+msgstr "Valdkond"
+
+#. Default: "Sectors:"
+#: helpers/ContentMetadata
+msgid "Sectors:"
+msgstr "Sektorid:"
+
+#. Default: "See less"
+#: helpers/Utils
+msgid "See less"
+msgstr "Vaata vähem"
+
+#. Default: "See more"
+#: helpers/Utils
+msgid "See more"
+msgstr "Vaata lähemalt"
+
+#. Default: "See video outside Climate-ADAPT"
+#: components/theme/Views/DatabaseItemView
+msgid "See video outside Climate-ADAPT"
+msgstr "Vaata videot väljaspool veebisaiti Climate-ADAPT"
+
+#. Default: "Select…"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Select…"
+msgstr "Valige..."
+
+#. Default: "Sep"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Sep"
+msgstr "SEP"
+
+#. Default: "Share your information"
+#: components/manage/Blocks/SearchAceContent/SearchAceContentView
+#: components/theme/ShareInfoButton/ShareInfoButton helpers/ShareInfo
+msgid "Share your information"
+msgstr "Jagage oma teavet"
+
+#. Default: "Short Name"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Short Name"
+msgstr "Lühinimi"
+
+#. Default: "Solutions"
+#: components/theme/Views/CaseStudyView
+msgid "Solutions"
+msgstr "Lahendused"
+
+#. Default: "Source"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView helpers/Utils
+msgid "Source"
+msgstr "Allikas"
+
+#. Default: "Source of funding"
+#: components/theme/Views/ProjectView
+msgid "Source of funding"
+msgstr "Rahastamisallikas"
+
+#. Default: "Stakeholder participation"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Stakeholder participation"
+msgstr "Sidusrühmade osalemine"
+
+#. Default: "Su"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Su"
+msgstr "Su"
+
+#. Default: "Sub Nationals:"
+#: helpers/ContentMetadata
+msgid "Sub Nationals:"
+msgstr "Allkodanikud:"
+
+#. Default: "Subnational or local"
+#: components/manage/Blocks/CountryMapHeatIndex/Filter
+msgid "Subnational or local"
+msgstr "Riigi tasandist madalama tasandi või kohalik tasand"
+
+#. Default: "Success and Limiting Factors"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Success and Limiting Factors"
+msgstr "Edu ja piiravad tegurid"
+
+#. Default: "Th"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Th"
+msgstr "Th"
+
+#. Default: "The Adaptation Support Tool - Getting started"
+#: components/theme/ASTNavigation/ASTAccordion
+msgid "The Adaptation Support Tool - Getting started"
+msgstr "Kohandamise tugivahend - alustamine"
+
+#. Default: "The date refers to the date of release of the video"
+#: helpers/ContentMetadata
+msgid "The date refers to the date of release of the video"
+msgstr "Kuupäev viitab video avaldamise kuupäevale"
+
+#. Default: "The date refers to the latest date of publication of the item"
+#: helpers/ContentMetadata
+msgid "The date refers to the latest date of publication of the item"
+msgstr "Kuupäev viitab artikli viimasele avaldamiskuupäevale."
+
+#. Default: "The date refers to the moment in which the item has been prepared
+#. or updated by contributing experts to be submitted for the publication in
+#. Climate ADAPT"
+#: helpers/ContentMetadata
+msgid ""
+"The date refers to the moment in which the item has been prepared or updated"
+" by contributing experts to be submitted for the publication in Climate "
+"ADAPT"
+msgstr ""
+"Kuupäev viitab hetkele, mil osalevad eksperdid on punkti ette valmistanud "
+"või seda ajakohastanud, et esitada see kliimaalases ADAPTis avaldamiseks."
+
+#. Default: "Title"
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Title"
+msgstr "Pealkiri"
+
+#. Default: "Tu"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Tu"
+msgstr "Tu"
+
+#. Default: "Used for programmatic access to the fieldset."
+#: components/manage/Widgets/CreatableSelectWidget
+msgid "Used for programmatic access to the fieldset."
+msgstr "Kasutatakse programmiliseks juurdepääsuks väljakomplektile."
+
+#. Default: "View all contributions in the resource catalogue"
+#: helpers/Utils
+msgid "View all contributions in the resource catalogue"
+msgstr "Vaata kõiki postitusi ressursikataloogis"
+
+#. Default: "Visit external website"
+#: components/theme/Views/EventView
+msgid "Visit external website"
+msgstr "Külastage välist veebisaiti"
+
+#. Default: "We"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "We"
+msgstr "Meie"
+
+#. Default: "Web"
+#: components/theme/Views/EventView
+msgid "Web"
+msgstr "Veebileht"
+
+#. Default: "Web site"
+#: components/manage/Blocks/Listing/OrganisationCardsListingView
+msgid "Web site"
+msgstr "Veebisait"
+
+#. Default: "Websites"
+#: components/theme/Views/AdaptationOptionView
+#: components/theme/Views/CaseStudyView
+msgid "Websites"
+msgstr "Veebilehed"
+
+#. Default: "Websites:"
+#: helpers/Utils
+msgid "Websites:"
+msgstr "Veebisaidid:"
+
+#. Default: "When"
+#: helpers/Utils
+msgid "When"
+msgstr "Millal"
+
+#. Default: "Where"
+#: helpers/Utils
+msgid "Where"
+msgstr "Kus"
+
+#. undefined
+msgid "Case studies"
+msgstr "Juhtumiuuringud"
+
+#. undefined
+msgid "Guidance"
+msgstr "Suunised"
+
+#. undefined
+msgid "Information portals"
+msgstr "Teabeportaalid"
+
+#. undefined
+msgid "Videos"
+msgstr "Videod"
+
+#. undefined
+msgid "Organisations"
+msgstr "Organisatsioonid"
+
+#. undefined
+msgid "Publication and reports"
+msgstr "Avaldamine ja aruanded"
+
+#. undefined
+msgid "Publications and reports"
+msgstr "Väljaanded ja aruanded"
+
+#. undefined
+msgid "Research and knowledge projects"
+msgstr "Teadus- ja teadmusprojektid"
+
+#. undefined
+msgid "Tools"
+msgstr "Tööriistad"
+
+#. undefined
+msgid "Based on your preferences, you can view this page in english"
+msgstr "Teie eelistuste põhjal saate seda lehte vaadata inglise keeles"
+
+#. undefined
+msgid "here"
+msgstr "siin"
+
+#. undefined
+msgid "Latest <br/> News & Events"
+msgstr "Viimased uudised & sündmused"
+
+#. undefined
+msgid "Most recent <br/> Case Study"
+msgstr "Viimane juhtumiuuring"
+
+#. undefined
+msgid "Most recent <br/> Publication or Report"
+msgstr "Viimane väljaanne või aruanne"
+
+#. undefined
+msgid "National adaption policy"
+msgstr "Riiklik kohanemispoliitika"
+
+#. undefined
+msgid "Climate change impact and vulnerability assessments"
+msgstr "Kliimamuutuste mõju ja haavatavuse hindamine"
+
+#. undefined
+msgid "Adaptation portals and platforms"
+msgstr "Kohanemisportaalid ja -platvormid"
+
+#. undefined
+msgid "Hazard category"
+msgstr "Ohukategooria"
+
+#. undefined
+msgid "Hazard type"
+msgstr "Ohu liik"
+
+#. undefined
+msgid "Indicator"
+msgstr "Näitaja"
+
+#. undefined
+msgid "Zip download"
+msgstr "Zip allalaadimine"
+
+#. undefined
+msgid "Download"
+msgstr "Allalaadimine"
+
+#. undefined
+msgid "Heat and cold"
+msgstr "Soojus ja külm"
+
+#. undefined
+msgid "Mean air temperature"
+msgstr "Keskmine õhutemperatuur"
+
+#. undefined
+msgid "Extreme heat"
+msgstr "Äärmuslik kuumus"
+
+#. undefined
+msgid "Cold spells and frost"
+msgstr "Külmad loitsud ja külm"
+
+#. undefined
+msgid "Wet and dry"
+msgstr "Märg ja kuiv"
+
+#. undefined
+msgid "Mean precipitation"
+msgstr "Keskmine sademete hulk"
+
+#. undefined
+msgid "Extreme precipitation"
+msgstr "Äärmuslikud sademed"
+
+#. undefined
+msgid "River flooding"
+msgstr "Jõgede üleujutamine"
+
+#. undefined
+msgid "Aridity"
+msgstr "Aridity"
+
+#. undefined
+msgid "Wildfire"
+msgstr "Metsa- või maastikupõleng"
+
+#. undefined
+msgid "Snow and land ice"
+msgstr "Lumi ja maa jää"
+
+#. undefined
+msgid "Snow and ice"
+msgstr "Lumi ja jää"
+
+#. undefined
+msgid "Coastal"
+msgstr "Rannikupiirkond"
+
+#. undefined
+msgid "Relative sea level"
+msgstr "Suhteline merevee tase"
+
+#. undefined
+msgid "Coastal flooding"
+msgstr "Rannikualade üleujutused"
+
+#. undefined
+msgid "Other"
+msgstr "Muud"
+
+#. undefined
+#: health_menu:43
+msgid "2021 Lancet Countdown-EEA Briefing"
+msgstr "2021. aasta ülevaade Lancetist – Euroopa Keskkonnaameti ülevaade"
+
+#. undefined
+#: site_menu:28
+msgid "ADAPTATION IN EU POLICY SECTORS"
+msgstr "KOHANDAMINE ELi poliitikasektorites"
+
+#. undefined
+#: health_menu:9 site_menu:10
+msgid "About"
+msgstr "Teave"
+
+#. undefined
+#: site_menu:11
+msgid "About Climate-ADAPT"
+msgstr "Teave Climate-ADAPTi kohta"
+
+#. undefined
+#: health_menu:10
+msgid "About the Observatory"
+msgstr "Vaatluskeskusest"
+
+#. undefined
+#: site_menu:74
+msgid "Adaptation Support Tool"
+msgstr "Kohandamise tugivahend"
+
+#. undefined
+#: site_menu:48
+msgid "Adriatic-Ionian"
+msgstr "Aadria ja Joonia meri"
+
+#. undefined
+#: site_menu:29
+msgid "Agriculture"
+msgstr "Põllumajandus"
+
+#. undefined
+#: health_menu:27
+msgid "Air pollution"
+msgstr "Õhusaaste"
+
+#. undefined
+#: site_menu:49
+msgid "Alpine Space"
+msgstr "Alpide piirkond"
+
+#. undefined
+#: health_menu:44
+msgid "Annual reports"
+msgstr "Aastaaruanded"
+
+#. undefined
+#: site_menu:50
+msgid "Atlantic Area"
+msgstr "Atlandi ookeani piirkond"
+
+#. undefined
+#: site_menu:51
+msgid "Balkan-Mediterranean"
+msgstr "Balkani-Vahemere piirkond"
+
+#. undefined
+#: site_menu:52
+msgid "Baltic Sea"
+msgstr "Läänemeri"
+
+#. undefined
+#: site_menu:30
+msgid "Biodiversity"
+msgstr "Bioloogiline mitmekesisus"
+
+#. undefined
+#: site_menu:31
+msgid "Buildings"
+msgstr "Hooned"
+
+#. undefined
+#: health_menu:34
+msgid "C3S European health service (under development)"
+msgstr "C3S Euroopa tervishoiuteenus (väljatöötamisel)"
+
+#. undefined
+#: health_menu:45
+msgid "Capacity building"
+msgstr "Suutlikkuse suurendamine"
+
+#. undefined
+#: site_menu:79
+msgid "Case study explorer"
+msgstr "Juhtumiuuringu uurija"
+
+#. undefined
+#: site_menu:53
+msgid "Central Europe"
+msgstr "Kesk-Euroopa"
+
+#. undefined
+#: site_menu:46
+msgid "Cities and towns"
+msgstr "Linnad ja asulad"
+
+#. undefined
+#: site_menu:69
+msgid "Climate Services"
+msgstr "Kliimateenused"
+
+#. undefined
+#: site_menu:17
+msgid "Climate-ADAPT events and webinars"
+msgstr "Climate-ADAPTi üritused ja veebiseminarid"
+
+#. undefined
+#: site_menu:16
+msgid "Climate-ADAPT performance reporting"
+msgstr "Climate-ADAPTi tulemusaruandlus"
+
+#. undefined
+#: site_menu:83
+msgid "Climate-ADAPT use cases"
+msgstr "Climate-ADAPTi kasutusjuhtumid"
+
+#. undefined
+#: site_menu:32
+msgid "Coastal areas"
+msgstr "Rannikualad"
+
+#. undefined
+#: site_menu:44
+msgid "Countries, Transnational regions, Cities"
+msgstr "Riigid, riikidevahelised piirkonnad, linnad"
+
+#. undefined
+#: site_menu:44
+msgid "Countries, Transnational regions"
+msgstr "Riigid, riikidevahelised piirkonnad"
+
+#. undefined
+#: health_menu:18 site_menu:45
+msgid "Country Profiles"
+msgstr "Riikide profiilid"
+
+#. undefined
+#: site_menu:18
+msgid "Country specific promotions"
+msgstr "Riigipõhised müügiedenduskampaaniad"
+
+#. undefined
+#: site_menu:68
+msgid "DATA AND INDICATORS"
+msgstr "Andmed ja näidikud"
+
+#. undefined
+#: site_menu:54
+msgid "Danube"
+msgstr "Doonau"
+
+#. undefined
+#: site_menu:33
+msgid "Disaster risk reduction"
+msgstr "Katastroofiohu vähendamine"
+
+#. undefined
+#: site_menu:13
+msgid "Dissemination materials"
+msgstr "Levitamismaterjalid"
+
+#. undefined
+#: health_menu:33
+msgid "ECDC Vibrio map viewer"
+msgstr "ECDC Vibrio kaardivaatur"
+
+#. undefined
+#: site_menu:21
+msgid "EU ADAPTATION POLICY"
+msgstr "ELi kohanemispoliitika"
+
+#. undefined
+#: site_menu:22
+msgid "EU Adaptation Strategy"
+msgstr "ELi kohanemisstrateegia"
+
+#. undefined
+#: site_menu:25
+msgid "EU Covenant of Mayors"
+msgstr "ELi linnapeade pakt"
+
+#. undefined
+#: site_menu:23
+msgid "EU Mission on Adaptation"
+msgstr "ELi kliimamuutustega kohanemise missioon"
+
+#. undefined
+#: site_menu:23
+msgid "Mission Portal"
+msgstr "Missiooniportaal"
+
+#. undefined
+#: site_menu:43 site_menu:43
+msgid "EU REGIONAL POLICY"
+msgstr "ELi regionaalpoliitika"
+
+#. undefined
+#: site_menu:24
+msgid "EU Reporting on Adaptation"
+msgstr "ELi aruandlus kliimamuutustega kohanemise kohta"
+
+#. undefined
+#: site_menu:26
+msgid "EU Sustainable Finance Strategy"
+msgstr "ELi kestliku rahanduse strateegia"
+
+#. undefined
+#: site_menu:27
+msgid "EU funding of adaptation"
+msgstr "Kliimamuutustega kohanemise rahastamine ELi poolt"
+
+#. undefined
+#: site_menu:20
+msgid "EU policy"
+msgstr "ELi poliitika"
+
+#. undefined
+#: site_menu:72
+msgid "EUROPEAN CLIMATE DATA EXPLORER"
+msgstr "Euroopa kliimaandmete analüütik"
+
+#. undefined
+#: site_menu:85
+msgid "EUROPEAN Climate and Health Observatory"
+msgstr "Euroopa kliima- ja tervisevaatluskeskus"
+
+#. undefined
+#: site_menu:77
+msgid "Economic tools"
+msgstr "Majanduslikud vahendid"
+
+#. undefined
+#: site_menu:34
+msgid "Ecosystem-based approaches"
+msgstr "Ökosüsteemipõhised lähenemisviisid"
+
+#. undefined
+#: site_menu:35
+msgid "Energy"
+msgstr "Energia"
+
+#. undefined
+#: site_menu:67
+msgid ""
+"Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr ""
+"Euroopa haavatavus väljaspool Euroopat toimuvate kliimamuutuste mõjude "
+"suhtes"
+
+#. undefined
+#: health_menu:32
+msgid "European Climate Data Explorer"
+msgstr "Euroopa kliimaandmete uurija (European Climate Data Explorer)"
+
+#. undefined
+#: health_menu:13
+msgid "European Policy Framework"
+msgstr "Euroopa poliitikaraamistik"
+
+#. undefined
+#: health_menu:37
+msgid "European early warning systems"
+msgstr "Euroopa varajase hoiatamise süsteemid"
+
+#. undefined
+#: health_menu:14
+msgid "European policies on climate adaptation and health"
+msgstr "Kliimamuutustega kohanemist ja tervishoidu käsitlev Euroopa poliitika"
+
+#. undefined
+#: health_menu:19
+msgid "Evidence on climate and health"
+msgstr "Tõendid kliima ja tervise kohta"
+
+#. undefined
+#: site_menu:90
+msgid "FAQ for providers"
+msgstr "Korduma kippuvad küsimused teenuseosutajatele"
+
+#. undefined
+#: site_menu:89
+msgid "FAQ for users"
+msgstr "KKK kasutajatele"
+
+#. undefined
+#: site_menu:36
+msgid "Financial"
+msgstr "Finantsküsimused"
+
+#. undefined
+#: health_menu:23
+msgid "Flooding"
+msgstr "Üleujutus"
+
+#. undefined
+#: site_menu:37
+msgid "Forestry"
+msgstr "Metsandus"
+
+#. undefined
+#: site_menu:88
+msgid "Glossary"
+msgstr "sõnastik"
+
+#. undefined
+#: site_menu:91
+msgid "Guidance to search function"
+msgstr "Otsingufunktsiooni juhised"
+
+#. undefined
+#: site_menu:38
+msgid "Health"
+msgstr "Tervishoid"
+
+#. undefined
+#: health_menu:20
+msgid "Health effects"
+msgstr "Tervisemõjud"
+
+#. undefined
+#: health_menu:36
+msgid "Health warning systems"
+msgstr "Terviseohu hoiatussüsteemid"
+
+#. undefined
+#: health_menu:21
+msgid "Heat and health"
+msgstr "Kuumus ja tervis"
+
+#. undefined
+#: site_menu:87
+msgid "Help"
+msgstr "Abi"
+
+#. undefined
+#: site_menu:82
+msgid "INTERREG projects"
+msgstr "INTERREGi projektid"
+
+#. undefined
+#: site_menu:63
+msgid "Impacts, risks and vulnerabilities"
+msgstr "Mõjud, riskid ja nõrgad kohad"
+
+#. undefined
+#: site_menu:70
+msgid "Indicators in Climate-ADAPT"
+msgstr "Climate-ADAPTi näitajad"
+
+#. undefined
+#: site_menu:15
+msgid "Inspiring Climate-ADAPT use cases"
+msgstr "Inspireerivad Climate-ADAPTi kasutusjuhtumid"
+
+#. undefined
+#: site_menu:61
+msgid "Knowledge"
+msgstr "Teadmised"
+
+#. undefined
+#: site_menu:81
+msgid "LIFE projects"
+msgstr "Programmi LIFE projektid"
+
+#. undefined
+#: site_menu:39
+msgid "Marine and fisheries"
+msgstr "Mere- ja kalandusasjad"
+
+#. undefined
+#: site_menu:55
+msgid "Mediterranean"
+msgstr "Vahemeri"
+
+#. undefined
+#: health_menu:28
+msgid "Mental health effects"
+msgstr "Vaimse tervise mõju"
+
+#. undefined
+#: site_menu:66
+msgid "Monitoring, Reporting and Evaluation"
+msgstr "Seire, aruandlus ja hindamine"
+
+#. undefined
+#: health_menu:16
+msgid "National Policies"
+msgstr "Riiklik poliitika"
+
+#. undefined
+#: health_menu:38
+msgid "National heat-health warning systems and action plans"
+msgstr "Riiklikud soojustervise hoiatussüsteemid ja tegevuskavad"
+
+#. undefined
+#: health_menu:17
+msgid "National policy analysis 2022"
+msgstr "2022. aasta riiklik poliitikaanalüüs"
+
+#. undefined
+#: site_menu:86
+msgid "Networks"
+msgstr "Võrgustikud"
+
+#. undefined
+#: site_menu:56
+msgid "North Sea"
+msgstr "Põhjameri"
+
+#. undefined
+#: site_menu:57
+msgid "North West Europe"
+msgstr "Loode-Euroopa"
+
+#. undefined
+#: site_menu:58
+msgid "Northern Periphery and Arctic"
+msgstr "Põhjapoolsed äärealad ja Arktika"
+
+#. undefined
+#: health_menu:42
+msgid "Observatory publications"
+msgstr "Vaatluskeskuse väljaanded"
+
+#. undefined
+#: health_menu:11
+msgid "Observatory workplan for 2021-22"
+msgstr "Vaatluskeskuse töökava aastateks 2021–2022"
+
+#. undefined
+#: site_menu:12
+msgid "Outreach & dissemination"
+msgstr "Teavitustegevus ja amplituudide levitamine"
+
+#. undefined
+#: site_menu:78
+msgid "PRACTICE"
+msgstr "TEGEVUS"
+
+#. undefined
+#: health_menu:12
+msgid "Policy context"
+msgstr "Poliitiline taust"
+
+#. undefined
+#: health_menu:30
+msgid "Projections and tools"
+msgstr "Projektsioonid ja tööriistad"
+
+#. undefined
+#: health_menu:41
+msgid "Publications and outreach"
+msgstr "Väljaanded ja teavitustegevus"
+
+#. undefined
+#: site_menu:71
+msgid "RESEARCH AND INNOVATION PROJECTS"
+msgstr "Teadus- ja innovatsiooniprojektid"
+
+#. undefined
+#: health_menu:39
+msgid "Resource catalogue"
+msgstr "Ressursside kataloog"
+
+#. undefined
+#: health_menu:40
+msgid "Search for Resources"
+msgstr "Ressursside otsing"
+
+#. undefined
+#: site_menu:19
+msgid "Site map"
+msgstr "Objekti kaart"
+
+#. undefined
+#: site_menu:59
+msgid "South West Europe"
+msgstr "Edela-Euroopa"
+
+#. undefined
+#: site_menu:73
+msgid "TOOLS"
+msgstr "Tööriistad"
+
+#. undefined
+#: site_menu:62
+msgid "TOPICS"
+msgstr "TOPICS"
+
+#. undefined
+#: site_menu:47
+msgid "Transnational regions"
+msgstr "Riikidevahelised piirkonnad"
+
+#. undefined
+#: site_menu:40
+msgid "Transport"
+msgstr "Transport"
+
+#. undefined
+#: site_menu:92
+msgid "Tutorial Videos"
+msgstr "Õppevideod"
+
+#. undefined
+#: site_menu:14
+msgid "Tutorial videos"
+msgstr "Õppevideod"
+
+#. undefined
+#: health_menu:35
+msgid "UV Index forecast (CAMS)"
+msgstr "UV-indeksi prognoos (CAMS)"
+
+#. undefined
+#: health_menu:26
+msgid "UV radiation"
+msgstr "UV-kiirgus"
+
+#. undefined
+#: site_menu:65
+msgid "Uncertainty guidance"
+msgstr "Ebakindlust käsitlevad suunised"
+
+#. undefined
+#: site_menu:41
+msgid "Urban"
+msgstr "Linnapiirkond"
+
+#. undefined
+#: site_menu:76
+msgid "Urban Adaptation Map Viewer"
+msgstr "Linnade kohanemise kaardivaatur"
+
+#. undefined
+#: health_menu:31
+msgid "Urban Adaptation Map Viewer (health focus)"
+msgstr "Urban Adaptation Map Viewer (tervisefookus)"
+
+#. undefined
+#: site_menu:75
+msgid "Urban Adaptation Support Tool"
+msgstr "Linnapiirkondade kohanemist toetav vahend"
+
+#. undefined
+#: health_menu:24
+msgid "Vector-borne diseases"
+msgstr "Vektorite kaudu levivad haigused"
+
+#. undefined
+#: health_menu:15
+msgid "WHO Europe activities on climate change and health"
+msgstr "WHO Euroopa tegevus kliimamuutuste ja tervise valdkonnas"
+
+#. undefined
+#: health_menu:25
+msgid "Water and food-borne diseases"
+msgstr "Vee ja toiduga levivad haigused"
+
+#. undefined
+#: site_menu:42
+msgid "Water management"
+msgstr "Veemajandus"
+
+#. undefined
+#: health_menu:46 site_menu:93
+msgid "Webinars"
+msgstr "Veebiseminarid"
+
+#. undefined
+#: health_menu:22
+msgid "Wildfires"
+msgstr "Metsa- ja maastikupõlengud"
+
+#. undefined
+#: site_menu:84
+msgid "Search the database"
+msgstr "Otsi andmebaasist"
+
+#. undefined
+#: health_menu:2201
+msgid "Climate  Services"
+msgstr ""
+
+#. undefined
+#: health_menu:222
+msgid "Outreach"
+msgstr "Teavitustegevus"
+
+#. undefined
+#: health_menu:222
+msgid "Exposure of vulnerable groups to climate risks"
+msgstr "Haavatavate rühmade kokkupuude kliimariskidega"
+
+#. undefined
+msgid "KEY EU ACTIONS"
+msgstr "Peamised ELi meetmed"
+
+#. undefined
+msgid "Just resilience"
+msgstr "Õiglane vastupanuvõime"
+
+#. undefined
+msgid "Nature-based solutions"
+msgstr "Looduspõhised lahendused"
+
+#. undefined
+msgid "Economic losses and fatalities"
+msgstr "Majanduslik kahju ja surmajuhtumid"
+
+#. undefined
+msgid "Strategic objectives 2030"
+msgstr "Strateegilised eesmärgid 2030"
+
+#. undefined
+msgid "Availability of urban green spaces to vulnerable groups"
+msgstr "Linna rohealade kättesaadavus haavatavatele rühmadele"
+
+#. undefined
+msgid "Transnational, National, local"
+msgstr "Riikidevaheline, riiklik, kohalik"
+
+#. undefined
+msgid "Aero-allergens"
+msgstr "Aeroallergeenid"
+
+#. undefined
+msgid "Heat"
+msgstr "Soojus"
+
+#. undefined
+msgid "Accessibility of hospitals in Europe"
+msgstr "Haiglate juurdepääsetavus Euroopas"
+
+#. undefined
+msgid "ADAPTATION IN THE FORESTRY SECTOR"
+msgstr "Kohanemine metsandussektoris"
+
+#. undefined
+msgid "Ground-level ozone"
+msgstr "Troposfääriosoon"
+
+#. undefined
+msgid "Ground-level ozone forecast (CAMS)"
+msgstr "Troposfääriosooni prognoos (CAMS)"
+
+#. undefined
+msgid "Pollution"
+msgstr "Saaste"
+
+#. undefined
+msgid "Occupational safety and health effects"
+msgstr "Mõju tööohutusele ja töötervishoiule"
+
+#. undefined
+msgid "Observatory workplan for 2023-24"
+msgstr "Vaatluskeskuse töökava aastateks 2023–2024"
+
+#. undefined
+msgid "Ground-level PM2.5 forecast (CAMS)"
+msgstr "PM2,5-osakeste prognoos maapinna tasandil (CAMS)"
+
+#. undefined
+msgid "Ground-level PM10 forecast (CAMS)"
+msgstr "PM10-osakeste prognoos maapinna tasandil (CAMS)"
+
+#. undefined
+msgid "Ground-level NO2 forecast (CAMS)"
+msgstr "Maapealne NO2 prognoos (CAMS)"
+
+#. undefined
+msgid "2022 EEA Report on Climate & Health"
+msgstr "Euroopa Keskkonnaameti 2022. aasta aruanne „Climate & Health“"
+
+#. undefined
+msgid "European environment and health atlas"
+msgstr "Euroopa keskkonna- ja terviseatlas"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:80
+#: ../../climateadapt/vocabulary.py:456
+msgid "-NONSPECIFIC-"
+msgstr "-NONSPECIFIC-"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:130
+msgid "1. Preparing the ground for adaptation"
+msgstr "1. Maa ettevalmistamine kohanemiseks"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:136
+msgid "1.1 Obtaining high-level political support for adaptation"
+msgstr "1.1 Kõrgetasemelise poliitilise toetuse saamine kohanemisele"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:83
+msgid "1.1 Obtaining political support for adaptation"
+msgstr "1.1 Poliitilise toetuse saamine kohanemiseks"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:88
+msgid "1.2 Collecting initial information"
+msgstr "1.2 Esialgse informatsiooni kogumine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:140
+msgid "1.2 Setting up the process in a structured way"
+msgstr "1.2 Protsessi struktureerimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:144
+msgid ""
+"1.3 Estimating human and financial resources needed and identifying "
+"potential sources of long-term funding"
+msgstr ""
+"1.3 Vajalike inim- ja rahaliste ressursside hindamine ning pikaajalise "
+"rahastamise võimalike allikate kindlakstegemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
+msgid "1.3 Setting up adaptation processes within and beyond the municipality"
+msgstr ""
+"1.3 Kohanemisprotsesside loomine kohalikus omavalitsuses ja väljaspool seda"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:148
+msgid "1.4 Collecting information"
+msgstr "1.4 Teabe kogumine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:98
+msgid "1.4 Identifying and obtaining human and technical resources"
+msgstr "1.4 Inim- ja tehniliste ressursside kindlakstegemine ja hankimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:152
+msgid "1.5 Communicating adaptation and raising awareness"
+msgstr "1.5 Kohanemisest teavitamine ja teadlikkuse suurendamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:103
+msgid "1.5 Identifying and obtaining financing and funding"
+msgstr "1.5 Rahastamise ja rahastamise kindlakstegemine ja saamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:108
+msgid "1.6 Identifying and engaging stakeholders"
+msgstr "1.6 Sidusrühmade kindlakstegemine ja kaasamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:156
+msgid "1.6 Preparing the ground for adaptation: Self-check"
+msgstr "1.6 Maapinna ettevalmistamine kohanemiseks: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:113
+msgid "1.7 Communicating adaptation to different target audiences"
+msgstr "1.7 Kohanemisalase teabe edastamine erinevatele sihtrühmadele"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:118
+msgid "1.8 Finding additional support"
+msgstr "1.8 Täiendava toetuse leidmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:123
+msgid "1.9 Preparing the ground for adaptation: Self check"
+msgstr "1.9 Maa ettevalmistamine kohanemiseks: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:415
+msgid "12 regions"
+msgstr "12 piirkonda"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:163
+msgid "2. Assessing climate change risks and vulnerabilities"
+msgstr "2. Kliimamuutustega seotud riskide ja haavatavuse hindamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
+msgid "2.1 Recognizing past and present climate impacts"
+msgstr "2.1 Varasemate ja praeguste kliimamõjude tunnistamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:168
+msgid "2.1 Understanding climate risks"
+msgstr "2.1 Kliimariskide mõistmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:172
+msgid ""
+"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Kliimamõjude, haavatavuse ja riskide hindamise raamistikud"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
+msgid "2.2 Understanding climate projections and future impacts"
+msgstr "2.2 Kliimaprognooside ja tulevaste mõjude mõistmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:176
+msgid ""
+"2.3 General sequence for climate impacts, vulnerabilities and risk "
+"assessments"
+msgstr "2.3 Kliimamõjude, haavatavuste ja riskihindamiste üldine järjestus"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
+msgid "2.3 Identifying vulnerable urban sectors"
+msgstr "2.3 Haavatavate linnasektorite kindlakstegemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:153
+msgid "2.4 Conducting risk and vulnerability assessments"
+msgstr "2.4 Riski- ja haavatavuse hindamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:180
+msgid "2.4 Taking trans-boundary issues into account"
+msgstr "2.4 Piiriüleste küsimuste arvessevõtmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:184
+msgid "2.5 Addressing knowledge gaps and dealing with uncertainties"
+msgstr "2.5 Teadmistes esinevate lünkade täitmine ja ebakindlusega tegelemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:158
+msgid "2.5 Understanding the role of surrounding areas in adaptation"
+msgstr "2.5 Ümbritsevate alade rolli mõistmine kohanemisel"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
+msgid "2.6 Identifying main adaptation concerns and defining objectives"
+msgstr ""
+"2.6 Peamiste kohanemisprobleemide kindlakstegemine ja eesmärkide "
+"määratlemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:188
+msgid ""
+"2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr ""
+"2.6 Peamiste kohanemisprobleemide kindlakstegemine ja strateegilise suuna "
+"määramine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
+msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
+msgstr ""
+"2.7 Kliimamuutustega seotud riskide ja haavatavuste hindamine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:192
+msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
+msgstr ""
+"2.7 Kliimamuutustega seotud riskide ja haavatavuse hindamine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:199
+msgid "3. Identifying adaptation options"
+msgstr "3. Kohanemisvõimaluste kindlakstegemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:204
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:183
+msgid "3.1 Creating a catalogue of relevant adaptation options"
+msgstr "3.1 Asjakohaste kohanemisvõimaluste kataloogi loomine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:208
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:188
+msgid "3.2 Finding examples of good adaptation practices"
+msgstr "3.2 Heade kohanemistavade näidete leidmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:212
+msgid "3.3 Describing adaptation options in detail"
+msgstr "3.3 Kohanemisvõimaluste üksikasjalik kirjeldamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:193
+msgid "3.3 Identifying adaptation options: Self check"
+msgstr "3.3 Kohanemisvõimaluste kindlakstegemine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:216
+msgid "3.4 Identifying adaptation options: Self-check"
+msgstr "3.4 Kohanemisvõimaluste kindlakstegemine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:223
+msgid "4. Assessing adaptation options"
+msgstr "4. Kohanemisvõimaluste hindamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:229
+msgid ""
+"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
+"benefits and efforts"
+msgstr ""
+"4.1 Võimalike kohanemisvõimaluste hindamine mõju, aja, kulude, tulude ja "
+"jõupingutuste seisukohast"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
+msgid "4.1 Choosing an assessment framework for adaptation options"
+msgstr "4.1 Kohanemisvõimaluste hindamisraamistiku valimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:213
+msgid "4.2 Conducting a cost-benefit analysis of adaptation measures"
+msgstr "4.2 Kohanemismeetmete kulude-tulude analüüsi läbiviimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:233
+msgid "4.2 Prioritising adaptation options and selecting preferred ones"
+msgstr ""
+"4.2 Kohanemisvõimaluste prioriseerimine ja eelistatud variantide valimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:237
+msgid "4.3 Preparing a strategy document and getting political approval"
+msgstr "4.3 Strateegiadokumendi koostamine ja poliitilise heakskiidu saamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
+msgid "4.3 Prioritising adaptation options"
+msgstr "4.3 Kohanemisvõimaluste prioriseerimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:223
+msgid "4.4 Assessing and selecting adaptation options: Self check"
+msgstr "4.4 Kohanemisvõimaluste hindamine ja valimine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:241
+msgid "4.4 Assessing and selecting adaptation options: Self-check"
+msgstr "4.4 Kohanemisvõimaluste hindamine ja valimine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:251
+msgid "5. Implementing Adaptation"
+msgstr "5. Kohandamise rakendamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:238
+msgid "5.1 Designing an effective adaptation action plan"
+msgstr "5.1 Tõhusa kohanemiskava koostamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:257
+msgid "5.1 Developing an adaptation action plan"
+msgstr "5.1 Kohanemiskava väljatöötamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:243
+msgid "5.2 Finding examples of adaptation action plans"
+msgstr "5.2 Kohanemiskavade näidete leidmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:261
+msgid "5.2 Organising governance of implementation across sectors and levels"
+msgstr "5.2 Rakendamise juhtimise korraldamine sektorite ja tasandite lõikes"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
+msgid "5.3 Mainstreaming adaptation in urban policies and plans"
+msgstr "5.3 Kohanemise integreerimine linnapoliitikasse ja -kavadesse"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:265
+msgid ""
+"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
+"policies"
+msgstr ""
+"5.3 Süvalaiendamine: kohanemise integreerimine vahenditesse ja "
+"valdkondlikesse poliitikatesse"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
+msgid "5.4 Addressing climate change through adaptation and mitigation"
+msgstr "5.4 Kliimamuutustega kohanemine ja nende leevendamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:269
+msgid "5.4 Multilevel coordination and supportive governance framework"
+msgstr "5.4 Mitmetasandiline koordineerimine ja toetav juhtimisraamistik"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:273
+msgid "5.5 Implementing Adaptation: Self-check"
+msgstr "5.5 Kohandamise rakendamine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:258
+msgid "5.5 Implementing adaptation: Self check"
+msgstr "5.5 Kohandamise rakendamine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:280
+msgid "6. Monitoring and Evaluating Adaptation"
+msgstr "6. Kohanemise jälgimine ja hindamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:273
+msgid "6.1 Developing the monitoring and evaluation approach"
+msgstr "6.1 Järelevalvel ja hindamisel põhineva lähenemisviisi arendamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:287
+msgid "6.1 Understanding drivers and purposes"
+msgstr "6.1 Juhtide ja eesmärkide mõistmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:291
+msgid "6.2 Deciding who to involve in the process"
+msgstr "6.2 Otsustamine, keda protsessi kaasata"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:278
+msgid "6.2 Defining monitoring indicators"
+msgstr "6.2 Seirenäitajate määratlemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:295
+msgid "6.3 Defining MRE indicators and mixed-methods approach"
+msgstr ""
+"6.3 MRE näitajate ja segameetodil põhineva lähenemisviisi määratlemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
+msgid "6.3 Finding examples of adaptation monitoring indicators"
+msgstr "6.3 Kliimamuutustega kohanemise seirenäitajate näidete leidmine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:299
+msgid "6.4 Communicating results to inform policy and practice"
+msgstr "6.4 Tulemustest teavitamine, et anda teavet poliitika ja tavade kohta"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
+msgid "6.4 Using monitoring results to enhance the process of adaptation"
+msgstr "6.4 Seiretulemuste kasutamine kohanemisprotsessi tõhustamiseks"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
+msgid "6.5 Monitoring and evaluating adaptation: Self check"
+msgstr "6.5 Kohanemise jälgimine ja hindamine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:303
+msgid "6.5 Monitoring and evaluating adaptation: Self-check"
+msgstr "6.5 Kohanemise jälgimine ja hindamine: enesekontroll"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:93
+msgid ""
+"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 62."
+msgstr ""
+"Väärtus kvaliteedi 2x kõrge pikslitihedusega pilte, alates 1 (madalaim) kuni"
+" 95 (kõrgeim). Väärtus 0 tähendab plone.scaling vaikimisi kasutatakse, mis "
+"on praegu 62."
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:106
+msgid ""
+"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 51."
+msgstr ""
+"Väärtus kvaliteedi 3x kõrge pikslitihedusega pilte, 1 (madalaim) kuni 95 "
+"(kõrgeim). Väärtus 0 tähendab plone.scaling vaikimisi kasutatakse, mis on "
+"praegu 51."
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:67
+msgid ""
+"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
+" value of 0 will mean plone.scaling's default will be used, which is "
+"currently 88."
+msgstr ""
+"Väärtus kvaliteedi skaleeritud pilte, alates 1 (madalaim) kuni 95 (kõrgeim)."
+" Väärtus 0 tähendab plone.scaling vaikimisi kasutatakse, mis on praegu 88."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:567
+msgid "A1: Governance and Institutional: Policy Instruments"
+msgstr "A1: Juhtimine ja institutsionaalne: poliitikavahendid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:583
+msgid "A1: Policy Instruments"
+msgstr "A1: Poliitikavahendid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:568
+msgid "A2: Governance and Institutional: Management and planning"
+msgstr "A2: Juhtimine ja institutsionaalne: juhtimine ja planeerimine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:584
+msgid "A2: Management and planning"
+msgstr "A2: juhtimine ja planeerimine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:585
+msgid "A3: Coordination cooperation and networks"
+msgstr "A3: Koordineerimiskoostöö ja võrgustikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:569
+msgid ""
+"A3: Governance and Institutional: Coordination cooperation and networks"
+msgstr ""
+"A3: Juhtimine ja institutsionaalne: koordineerimine, koostöö ja võrgustikud"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:54
+msgid "About the Urban Adaptation Support Tool"
+msgstr "Linnapiirkondade kohanemise toetusvahend"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:52
+msgid "Adaptation <br /> Support Tool"
+msgstr "Kohandamise tugivahend"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:338
+msgid "Adaptation Measures and Actions"
+msgstr "Kohanemismeetmed ja -meetmed"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:198
+msgid "Adaptation Options and Case Studies"
+msgstr "Kohanemisvõimalused ja juhtumiuuringud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:339
+msgid "Adaptation Plans and Strategies"
+msgstr "Kohanemiskavad ja -strateegiad"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
+msgid "Adaptation Sectors"
+msgstr "Kohanemissektorid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:73
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
+#: ../../climateadapt/browser/pt/video_view.pt:113
+msgid "Adaptation elements"
+msgstr "Kohandamiselemendid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:95
+msgid "Adaptation portal or platform reported"
+msgstr "Teatatud kohanemisportaal või -platvorm"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:115
+msgid "Adaptation to climate change"
+msgstr "Kliimamuutustega kohanemine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:63
+msgid "Adaptation to climate change in urban areas"
+msgstr "Kliimamuutustega kohanemine linnapiirkondades"
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:371
+msgid "AdapteCCA"
+msgstr "AdapteCCA"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:420
+msgid "Adriatic and Ionian"
+msgstr "Aadria ja Joonia meri"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:454
+msgid "Air pollution and aero-allergens"
+msgstr "Õhusaaste ja aeroallergeenid"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:885
+msgid "All adaptation sectors"
+msgstr "Kõik kohanemisvaldkonnad"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:882
+msgid "All climate impacts"
+msgstr "Kõik kliimamõjud"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:888
+msgid "All key type measures"
+msgstr "Kõik peamised meetmed"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:42
+msgid "Allowed image sizes"
+msgstr "Lubatud pildisuurused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:419
+msgid "Alpine"
+msgstr "Alpi"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:82
+msgid "Assessing adaptation options"
+msgstr "Kohanemisvõimaluste hindamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:204
+msgid "Assessing and selecting adaptation options"
+msgstr "Kohanemisvõimaluste hindamine ja valimine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
+msgid "Assessing climate change risks and vulnerabilities"
+msgstr "Kliimamuutustega seotud riskide ja haavatavuse hindamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:66
+msgid "Assessing risks and vulnerability <br /> to climate change"
+msgstr "Kliimamuutustega seotud riskide ja haavatavuse hindamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:570
+msgid "B1: Economic and Finance: Financing incentive instruments"
+msgstr ""
+"B1: Majandus ja rahandus: stimuleerivate rahastamisvahendite rahastamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:586
+msgid "B1: Financing incentive instruments"
+msgstr "B1: Stiimulite rahastamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:571
+msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
+msgstr "B2: Majandus ja rahandus: kindlustus- ja riskijagamisinstrumendid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:587
+msgid "B2: Insurance and risk sharing instruments"
+msgstr "B2: Kindlustus- ja riskijagamisinstrumendid"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:189
+msgid "Biogeographical regions"
+msgstr "Biogeograafilised piirkonnad"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:299
+msgid "Business and industry"
+msgstr "Äri ja tööstus"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:588
+msgid "C1: Grey options"
+msgstr "C1: hallid valikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:572
+msgid "C1: Physical and technological: Grey options"
+msgstr "C1: Füüsiline ja tehnoloogiline: hallid valikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:573
+msgid "C2: Physical and technological: Technological options"
+msgstr "C2: Füüsikaline ja tehnoloogiline: tehnoloogilised võimalused"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:589
+msgid "C2: Technological options"
+msgstr "C2: Tehnoloogilised võimalused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:292
+msgid "Case Study Illustrations"
+msgstr "Juhtumiuuringu illustratsioonid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:368
+msgid ""
+"Case developed and implemented and partially funded as a Climate Change "
+"Adaptation measure."
+msgstr ""
+"Juhtum töötati välja ja rakendati ning seda rahastati osaliselt "
+"kliimamuutustega kohanemise meetmena."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:366
+msgid "Case developed and implemented as a Climate Change Adaptation Measure."
+msgstr ""
+"Juhtum on välja töötatud ja rakendatud kliimamuutustega kohanemise meetmena."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:369
+msgid ""
+"Case mainly developed and implemented because of other policy objectives, "
+"but with significant consideration of Climate Change Adaptation aspects"
+msgstr ""
+"Juhtum töötati välja ja seda rakendati peamiselt muude poliitikaeesmärkide "
+"tõttu, kuid võttes märkimisväärselt arvesse kliimamuutustega kohanemise "
+"aspekte"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:177
+msgid "Case studies and Adaptation Options"
+msgstr "Juhtumiuuringud ja kohanemisvõimalused"
+
+#. undefined
+#: ../../climateadapt/mayorsadapt/views.py:78
+msgid "Check-out created"
+msgstr "Check-out loodud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:51
+msgid "Choose a country"
+msgstr "Valige riik"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/country_select.pt:10
+msgid "Choose a country:"
+msgstr "Valige riik:"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:231
+msgid "City"
+msgstr "Linn"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:201
+msgid "City Initiatives"
+msgstr "Linnade algatused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:483
+msgid "City Networks"
+msgstr "Linnade võrgustikud"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:111
+msgid "Climate Impacts in Europe"
+msgstr "Kliimamuutuste mõju Euroopas"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:58
+msgid "Climate change impacts on European cities"
+msgstr "Kliimamuutuste mõju Euroopa linnadele"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:63
+msgid "Climate-ADAPT Event"
+msgstr "Climate-ADAPT üritus"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:452
+msgid "Climate-sensitive diseases"
+msgstr "Kliimatundlikud haigused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:218
+msgid "Comments:"
+msgstr "Märkused:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:10
+msgid "Common definitions of the terms used frequently in the clearinghouse."
+msgstr "Kliiringukojas sageli kasutatavate mõistete ühised määratlused."
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:197
+msgid "Countries"
+msgstr "Riigid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:104
+msgid "Created by:"
+msgstr "Loodud:"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:461
+msgid "Critical Infrastructure"
+msgstr "Elutähtis infrastruktuur"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:301
+msgid "Cultural heritage"
+msgstr "Kultuuripärand"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:590
+msgid "D1: Green options"
+msgstr "D1: rohelised valikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:574
+msgid ""
+"D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr ""
+"D1: Looduspõhised lahendused ja ökosüsteemipõhised lähenemisviisid: "
+"rohelised valikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:591
+msgid "D2: Blue options"
+msgstr "D2: Sinised valikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:575
+msgid ""
+"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr ""
+"D2: Looduspõhised lahendused ja ökosüsteemipõhised lähenemisviisid: sinised "
+"valikud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:141
+msgid "DRMKC"
+msgstr "DRMKC"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:171
+msgid "Data and Tools"
+msgstr "Andmed ja tööriistad"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:159
+#: ../../climateadapt/browser/pt/guidancedocument_view.pt:21
+#: ../../climateadapt/browser/pt/organisation_view.pt:18
+msgid "Description:"
+msgstr "Kirjeldus:"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:42
+#: ../../climateadapt/vocabulary.py:302
+msgid "Disaster Risk Reduction"
+msgstr "Katastroofiohu vähendamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:346
+msgid "Droughts"
+msgstr "Põuad"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:451
+msgid "Droughts and floods"
+msgstr "Põuad ja üleujutused"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:592
+msgid "E1: Information and awareness raising"
+msgstr "E1: Teavitamine ja teadlikkuse suurendamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:576
+msgid ""
+"E1: Knowledge and behavioural change: Information and awareness raising"
+msgstr ""
+"E1: Teadmiste ja käitumise muutmine: teave ja teadlikkuse suurendamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:593
+msgid "E2: Capacity building empowering and lifestyle practices"
+msgstr "E2: Suutlikkuse suurendamine ja elustiili tavad"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:577
+msgid ""
+"E2: Knowledge and behavioural change: Capacity building empowering and "
+"lifestyle practices"
+msgstr ""
+"E2: Teadmiste ja käitumise muutmine: suutlikkuse suurendamine ja elustiili "
+"tavad"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:439
+msgid "EU Missions"
+msgstr "ELi missioonid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:466
+msgid "Ecosystems and Nature Based Solutions"
+msgstr "Ökosüsteemid ja looduspõhised lahendused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:395
+msgid "European Climate Pact"
+msgstr "Euroopa kliimapakt"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:260
+msgid "European Drought Observatory"
+msgstr "Euroopa põuavaatluskeskus"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
+msgid "Event"
+msgstr "Üritus"
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:25
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:17
+msgid "Events"
+msgstr "Üritused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:298
+msgid ""
+"Explore Forest adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Uurige metsa kohanemise juhtumiuuringuid geograafilise asukoha, temaatilise "
+"katvuse ja kohanemisvõimalustega seotud seoste osas kaardipõhise "
+"juhtumiuuringu uurija kaudu."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:253
+msgid ""
+"Explore Urban adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Uurige linnapiirkondade kohanemise juhtumiuuringuid geograafilise asukoha, "
+"temaatilise katvuse ja kohanemisvõimaluste lingi kohta kaardipõhise "
+"juhtumiuuringu uurija kaudu."
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:139
+#: ../../climateadapt/browser/pt/casestudy_view.pt:369
+msgid "External source"
+msgstr "Välisallikas"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:476
+msgid "Extreme Precipitation"
+msgstr "Äärmuslikud sademed"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:347
+msgid "Extreme Temperatures"
+msgstr "Äärmuslikud temperatuurid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:417
+msgid "FAO Green Cities"
+msgstr "FAO rohelised linnad"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:248
+msgid ""
+"FISE web portal will help us to improve the health and resilience of our "
+"forests, which play a vital role in protecting our biodiversity and in "
+"mitigating climate change."
+msgstr ""
+"FISE veebiportaal aitab meil parandada meie metsade tervist ja "
+"vastupanuvõimet, millel on oluline roll meie bioloogilise mitmekesisuse "
+"kaitsmisel ja kliimamuutuste leevendamisel."
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:24
+msgid ""
+"Find out how to contribute different types of information to Climate-ADAPT."
+msgstr "Siit saate teada, kuidas anda Climate-ADAPTile eri liiki teavet."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:251
+msgid "Forestry Information System for Europe"
+msgstr "Euroopa metsanduse infosüsteem"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:31
+msgid "Frequently asked questions in one place."
+msgstr "Korduma kippuvad küsimused ühes kohas."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:216
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:195
+msgid "Funding and Financing"
+msgstr "Rahastamine ja finantseerimine"
+
+#. undefined
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:7
+msgid "General"
+msgstr "Üldnõuded"
+
+#. undefined
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:60
+msgid "Geographic characterisation"
+msgstr "Geograafiline iseloomustus"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:78
+#: ../../climateadapt/browser/pt/video_view.pt:123
+msgid "Geographic characterization"
+msgstr "Geograafiline iseloomustus"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:117
+#: ../../climateadapt/browser/pt/casestudy_view.pt:364
+#: ../../climateadapt/browser/pt/indicator_view.pt:103
+msgid "Geographic characterization:"
+msgstr "Geograafiline iseloomustus:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:300
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:255
+msgid "Go to Case Study Explorer"
+msgstr "Avage juhtumiuuringu Explorer"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:352
+msgid "Go to EU funding of adaptation"
+msgstr "Minge kliimamuutustega kohanemise ELi-poolse rahastamise juurde"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:287
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:269
+msgid "Go to the Adaptation Options"
+msgstr "Avage kohandamisvalikud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:237
+msgid "Go to the European Climate Data Explorer"
+msgstr ""
+"Külastage Euroopa kliimaandmete uurijat (European Climate Data Explorer)"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:342
+msgid "Go to the Forest Policy Overview"
+msgstr "Mine metsapoliitika ülevaate juurde"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:228
+msgid "Go to the Urban Adaptation Map Viewer"
+msgstr "Avage Urban Adaptation Map Viewer (linnade kohanemise kaardivaatur)"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:218
+msgid "Go to the Urban Adaptation Support Tool"
+msgstr "Avage linnapiirkondade kohanemist toetav vahend"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:311
+msgid "Go to the Urban Policy Overview"
+msgstr "Linnapoliitika ülevaade"
+
+#. undefined
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:10
+msgid "Guidance documents"
+msgstr "Juhenddokumendid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:17
+msgid "Guidance on the Climate-ADAPT Database Search function."
+msgstr "Suunised andmebaasi Climate-ADAPT otsingufunktsiooni kohta."
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:15
+msgid "Guidance to <br /> search function"
+msgstr "Otsingufunktsiooni juhised"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-heat-index.pt:111
+msgid "HHWS website"
+msgstr "HHWSi veebisait"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:462
+msgid "Health and Wellbeing"
+msgstr "Tervis ja heaolu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-heat-index.pt:105
+msgid "Heat index of HHWS:"
+msgstr "HHWS soojusindeks:"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:79
+msgid "High pixel density mode"
+msgstr "Kõrge pikslitiheduse režiim"
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:12
+msgid "Home"
+msgstr "Kodu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:423
+msgid "How to use the map?"
+msgstr "Kuidas kaarti kasutada?"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:307
+msgid "ICT"
+msgstr "IKT"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:349
+msgid "Ice and Snow"
+msgstr "Jää ja lumi"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:74
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:179
+msgid "Identifying adaptation options"
+msgstr "Kohanemisvõimaluste kindlakstegemine"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:38
+msgid "If you are new user the video tutorials can help you get started."
+msgstr "Kui olete uus kasutaja, võivad videoõpetused aidata teil alustada."
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:92
+msgid "Image quality at 2x"
+msgstr "Pildi kvaliteet 2x"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:105
+msgid "Image quality at 3x"
+msgstr "Pildi kvaliteet 3x"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:90
+msgid "Implementation"
+msgstr "Rakendamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:234
+msgid "Implementing adaptation"
+msgstr "Kohanduse rakendamine"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:120
+msgid "Info:"
+msgstr "Teave:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:9
+msgid "Information Portals"
+msgstr "Teabeportaalid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:606
+msgid "Institutional: Economic options"
+msgstr "Institutsionaalne: majanduslikud võimalused"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:608
+msgid "Institutional: Government policies and programmes"
+msgstr "Institutsionaalne: valitsuse poliitika ja programmid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:607
+msgid "Institutional: Law and regulations"
+msgstr "Institutsionaalne: seadused ja määrused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:56
+msgid "Item Documents"
+msgstr "Kaubaartikli dokumendid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:129
+msgid "Item’s creation:"
+msgstr "Eseme loomine:"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:850
+msgid "Key Type Measure"
+msgstr "Võtmetüüp Meede"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267
+msgid "Key Type Measures"
+msgstr "Peamised meetmeliigid"
+
+#. undefined
+#: ../../climateadapt/browser/admin.py:562
+msgid "Keyword succesfully deleted: ${kw_old}."
+msgstr "Märksõna edukalt kustutatud: ${kw_old}."
+
+#. undefined
+#: ../../climateadapt/browser/admin.py:592
+msgid "Keyword succesfully renamed: ${kw_old} to ${kw_new}."
+msgstr "Märksõna on edukalt ümber nimetatud: ${kw_old} kuni ${kw_new}."
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:65
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:48
+#: ../../climateadapt/browser/pt/video_view.pt:103
+msgid "Keywords"
+msgstr "Märksõnad"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:308
+msgid "Land use planning"
+msgstr "Maakasutuse planeerimine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:463
+msgid "Land-use and Food Systems"
+msgstr "Maakasutus- ja toidusüsteemid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:285
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in forests."
+msgstr ""
+"Lisateave erinevate kohanemisvõimaluste kohta seoses kliimamuutuste "
+"erinevate mõjudega metsades."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:267
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in urban areas."
+msgstr ""
+"Lisateave erinevate kohanemisvõimaluste kohta seoses kliimamuutuste "
+"erinevate mõjudega linnapiirkondades."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:155
+msgid ""
+"Learn more about how cities can adapt to climate change to become future-"
+"proof, climate-resilient cities"
+msgstr ""
+"Lisateave selle kohta, kuidas linnad saavad kliimamuutustega kohaneda, et "
+"saada tulevikukindlateks ja kliimamuutustele vastupanuvõimelisteks linnadeks"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:177
+msgid ""
+"Learn more about how forests can adapt to climate change to stay healthy, "
+"diverse, resilient and productive"
+msgstr ""
+"Lisateave selle kohta, kuidas metsad saavad kliimamuutustega kohaneda, et "
+"jääda terveks, mitmekesiseks, vastupidavaks ja tootlikuks"
+
+#. undefined
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
+msgid "Link to Map Viewer:"
+msgstr "Link kaardivaaturile:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:44
+#: ../../climateadapt/browser/pt/indicator_view.pt:49
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
+msgid "Link to metadata:"
+msgstr "Link metaandmetele:"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:467
+msgid "Local Economic Systems"
+msgstr "Kohalikud majandussüsteemid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:450
+msgid "MCR 2030"
+msgstr "Miinimumkapitalinõue 2030"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:180
+msgid "Macro-Transnational region"
+msgstr "Makropiirkond – riikidevaheline piirkond"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:238
+msgid "Map"
+msgstr "Kaart"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:263
+msgid "Maps, graphs and datasets"
+msgstr "Kaardid, graafikud ja andmekogumid"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:46
+#: ../../climateadapt/vocabulary.py:309
+msgid "Marine and Fisheries"
+msgstr "Mere- ja kalandusasjad"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:98
+msgid "Monitoring &amp; Evaluation (M&amp;E)"
+msgstr "Järelevalve &amp; hindamine (M&amp;E)"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
+msgid "Monitoring and evaluating adaptation"
+msgstr "Kohanemise seire ja hindamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:310
+msgid "Mountain areas"
+msgstr "Mägipiirkonnad"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:119
+msgid ""
+"National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr ""
+"Riiklik kohanemispoliitika, millest ei ole teatatud pärast kohustuslikku "
+"aruandlust 2023. aastal"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:115
+msgid "National adaptation policy reported in 2023"
+msgstr "2023. aastal teatatud riiklik kohanemispoliitika"
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:20
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:16
+msgid "News"
+msgstr "Uudised"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:80
+msgid "No assessments reported"
+msgstr "Hindamistest ei ole teatatud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:88
+msgid "No data reported in 2021"
+msgstr "2021. aastal andmeid ei esitatud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:104
+msgid "No data reported in 2023"
+msgstr "2023. aastal andmeid ei esitatud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:99
+msgid "No portal or platform reported"
+msgstr "Portaalist või platvormist ei ole teatatud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:65
+msgid "No upcoming events."
+msgstr "Tulevasi sündmusi ei ole."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:315
+msgid "Non specific"
+msgstr "Mittespetsiifiline"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:428
+msgid "OPPLA"
+msgstr "OPPLA"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:336
+msgid "Observations and Scenarios"
+msgstr "Tähelepanekud ja stsenaariumid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:76
+msgid "One or more assessments reported"
+msgstr "Teatatud on ühest või mitmest hinnangust"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:125
+msgid "Online registration"
+msgstr "Veebipõhine registreerimine"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:18
+msgid "Original aceitem"
+msgstr "Algne atseeteem"
+
+#. undefined
+#: ../../climateadapt/browser/pt/footer_logos.pt:35
+msgid "Other European Information Systems:<br />&nbsp;"
+msgstr "Muud Euroopa infosüsteemid:&nbsp;"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:140
+msgid "Outside EEA coverage"
+msgstr "Väljaspool EMPd"
+
+#. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:15
+msgid "Overview list of all indices"
+msgstr "Kõigi indeksite ülevaatlik nimekiri"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:189
+msgid "Policy Overview"
+msgstr "Poliitika ülevaade"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:210
+msgid "Policy overview"
+msgstr "Poliitika ülevaade"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:23
+msgid "Portal Type"
+msgstr "Portaali liik"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:58
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:79
+msgid "Preparing the ground for adaptation"
+msgstr "Maa ettevalmistamine kohanemiseks"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:119
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:68
+msgid "Principles and success factors"
+msgstr "Põhimõtted ja edutegurid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:21
+msgid "Privacy and Legal Notice"
+msgstr "Privaatsus ja õigusteave"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:59
+msgid "Professional thematic domain"
+msgstr "Professionaalne temaatiline valdkond"
+
+#. undefined
+#: ../../climateadapt/browser/pt/publicationreport_view.pt:50
+msgid "Project Documents"
+msgstr "Projekti dokumendid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:24
+msgid "Published"
+msgstr "Avaldatud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:237
+msgid "Reference"
+msgstr "Viide"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:40
+msgid "Reference:"
+msgstr "Viide:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:113
+msgid "References:"
+msgstr "Viited:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
+msgid "Registration"
+msgstr "Registreerimine"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:124
+msgid "Registration:"
+msgstr "Registreerimine:"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/filter_acecontent.pt:49
+msgid "Relevant tile"
+msgstr "Asjaomane plaat"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:277
+msgid "Reset"
+msgstr "Lähtesta"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:472
+msgid "Resilient Cities Network"
+msgstr "Vastupidavate linnade võrgustik"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:183
+msgid "Resource Catalogue"
+msgstr "Ressursside kataloog"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:112
+msgid "Reviewed by:"
+msgstr "Läbi vaadanud:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:18
+msgid "SITE MAP"
+msgstr "Saidi kaart"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:66
+msgid "Scaled image quality"
+msgstr "Skaleeritud pildikvaliteet"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:58
+msgid "Scroll to top"
+msgstr "Kerige üles"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:350
+msgid "Sea Level Rise"
+msgstr "Merepinna tõus"
+
+#. undefined
+#: ../../climateadapt/browser/pt/observatory_indicators_search.pt:101
+msgid "Search"
+msgstr "Otsi"
+
+#. undefined
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:203
+msgid "Search results"
+msgstr "Otsingutulemused"
+
+#. undefined
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:212
+msgid "Search results for: ${term}"
+msgstr "Otsingu tulemused: ${term}"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:319
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:288
+msgid "Search the Climate Adapt Database:"
+msgstr "Otsige andmebaasist Climate Adapt:"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/search_acecontent.pt:66
+msgid "Search tile"
+msgstr "Otsi plaati"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:340
+msgid "Sector Policies"
+msgstr "Valdkondlik poliitika"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:76
+#: ../../climateadapt/browser/pt/indicator_view.pt:98
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
+msgid "Sectors"
+msgstr "Sektorid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-list.pt:5
+msgid "Select a country"
+msgstr "Valige riik"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:49
+msgid "Select a country to go directly to the country's page:"
+msgstr "Valige riik, et minna otse riigi lehele:"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:60
+msgid ""
+"Select the sectors for which you want to receive a notification email when "
+"an item is modified."
+msgstr ""
+"Valige sektorid, mille kohta soovite üksuse muutmisel teavitusmeili saada."
+
+#. undefined
+#: ../../climateadapt/tiles/pt/shareinfo.pt:8
+msgid "Share button tile"
+msgstr "Jaga nuppu plaat"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/shareinfo.pt:11
+msgid "Share type:"
+msgstr "Aktsia liik:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/observatory_indicators_search.pt:108
+msgid "Show all sources"
+msgstr "Näita kõiki allikaid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:605
+msgid "Social: Behavioural"
+msgstr "Sotsiaalne: käitumuslik"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:603
+msgid "Social: Educational options"
+msgstr "Sotsiaalne: haridusvõimalused"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:604
+msgid "Social: Informational"
+msgstr "Sotsiaalne: informatiivne"
+
+#. undefined
+#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
+#: ../../climateadapt/browser/pt/indicator_view.pt:44
+#: ../../climateadapt/browser/pt/informationportal_view.pt:32
+msgid "Source:"
+msgstr "Allikas:"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:43
+msgid ""
+"Specify all allowed maximum image dimensions, one per line. The required "
+"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr ""
+"Määra kõik lubatud maksimaalsed pildimõõtmed, üks rea kohta. Nõutav vorming "
+"on &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:76
+msgid "Stakeholder Participation"
+msgstr "Sidusrühmade osalemine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:351
+msgid "Storms"
+msgstr "Tormid"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:601
+msgid "Structural and physical: Ecosystem-based adaptation options"
+msgstr "Struktuursed ja füüsilised: ökosüsteemipõhised kohanemisvõimalused"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:599
+msgid "Structural and physical: Engineering and built environment options"
+msgstr "Struktuursed ja füüsilised: inseneri- ja ehitatud keskkonna valikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:602
+msgid "Structural and physical: Service options"
+msgstr "Struktuurne ja füüsiline: teenusevalikud"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:600
+msgid "Structural and physical: Technological options"
+msgstr "Struktuursed ja füüsilised: tehnoloogilised võimalused"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:202
+msgid "Sub Nationals"
+msgstr "Allkodanikud"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-heat-index.pt:57
+msgid "Subnational or local HHAP"
+msgstr "Piirkondlik või kohalik HHAP"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:384
+msgid "The EU Covenant of Mayors"
+msgstr "ELi linnapeade pakt"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:350
+msgid ""
+"The EU finances adaptation to climate change in Europe through a wide range "
+"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
+"at least 25% of the European budget is climate-related expenditure. "
+"Therefore, Climate adaptation actions have to be integrated into all the "
+"major EU spending programmes, and a tracking system is put in place to "
+"guarantee these objectives are met."
+msgstr ""
+"EL rahastab kliimamuutustega kohanemist Euroopas mitmesuguste vahendite "
+"kaudu. Mitmeaastase finantsraamistikuga 2021–2027 tagatakse, et vähemalt 25 "
+"% Euroopa eelarvest moodustavad kliimaga seotud kulud. Seetõttu tuleb "
+"kliimamuutustega kohanemise meetmed integreerida kõigisse peamistesse ELi "
+"rahastamisprogrammidesse ning nende eesmärkide saavutamise tagamiseks on "
+"kehtestatud jälgimissüsteem."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:309
+msgid ""
+"The EU has several policy frameworks in place to increase the resilience of "
+"European cities and their inhabitants, including the EU Adaptation Strategy "
+"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
+" to improve knowledge and data availability on urban vulnerability and "
+"adaptive capacity. It also provides financial and technical support to "
+"policy makers and practitioners to make cities more resilient and adaptive."
+msgstr ""
+"EL on kehtestanud mitu poliitikaraamistikku Euroopa linnade ja nende elanike"
+" vastupanuvõime suurendamiseks, sealhulgas ELi kohanemisstrateegia ja ELi "
+"elurikkuse strateegia aastani 2030, ning on välja töötanud mitu algatust, et"
+" parandada teadmisi ja andmete kättesaadavust linnade haavatavuse ja "
+"kohanemisvõime kohta. Samuti pakub EL poliitikakujundajatele ja praktikutele"
+" rahalist ja tehnilist tuge, et muuta linnad vastupanuvõimelisemaks ja "
+"kohanemisvõimelisemaks."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:234
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices from the Copernicus Climate Change Service in support of "
+"climate change adaptation."
+msgstr ""
+"European Climate Data Explorer pakub interaktiivset juurdepääsu paljudele "
+"Copernicuse kliimamuutuste teenuse kliimaindeksitele, et toetada "
+"kliimamuutustega kohanemist."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:239
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices like fire weather indices in support of climate change "
+"adaptation in forests."
+msgstr ""
+"European Climate Data Explorer pakub interaktiivset juurdepääsu paljudele "
+"kliimaindeksitele, näiteks tuleilmaindeksitele, et toetada kliimamuutustega "
+"kohanemist metsades."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:257
+msgid ""
+"The European Drought Observatory (EDO) contains drought-relevant "
+"information. These give an overview of the situation in the EU about "
+"imminent droughts."
+msgstr ""
+"Euroopa põuavaatluskeskus (EDO) sisaldab põuaga seotud teavet, mis annab "
+"ülevaate olukorrast ELis seoses eelseisvate põudadega."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:269
+msgid "The European Forest Fire Information System"
+msgstr "Euroopa metsatulekahjude teabesüsteem"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:266
+msgid ""
+"The European Forest Fire Information System (EFFIS) supports the protection "
+"of forests against fires and provides the EU with harmonized information on "
+"forest fires"
+msgstr ""
+"Euroopa metsatulekahjude teabesüsteem (EFFIS) toetab metsade kaitset "
+"tulekahjude eest ja annab ELile ühtlustatud teavet metsatulekahjude kohta"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:225
+msgid ""
+"The Urban Adaptation Map Viewer provides an overview of the current and "
+"future climate hazards, the vulnerability of the cities to these hazards and"
+" their adaptive capacity."
+msgstr ""
+"Linnade kohanemiskaartide näitaja annab ülevaate praegustest ja tulevastest "
+"kliimaohtudest, linnade haavatavusest nende ohtude suhtes ja nende "
+"kohanemisvõimest."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:216
+msgid ""
+"The Urban Adaptation Support Tool assists cities, towns and local "
+"authorities in developing, implementing and monitoring climate change "
+"adaptation plans."
+msgstr ""
+"Linnade kohanemise toetusvahend aitab linnadel ja kohalikel omavalitsustel "
+"töötada välja, rakendada ja jälgida kliimamuutustega kohanemise kavasid."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:340
+msgid ""
+"The climate crisis is severely affecting Europe's forests, making them "
+"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
+"and disease outbreaks, or sea level rise. The growing risks and impacts are "
+"affecting the economic viability of forestry and they reduce the capacity of"
+" forests to provide essential ecosystem services. The EU responds to this "
+"unprecedented challenge by supporting the adaptation of forests to climate "
+"change through a wide range of policies, like the EU Forest Strategy, EU "
+"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr ""
+"Kliimakriis mõjutab tõsiselt Euroopa metsi, muutes need üha haavatavamaks "
+"selliste ohtude suhtes nagu tormid, metsa- ja maastikupõlengud, põuad, "
+"putukate ja haiguste puhangud või meretaseme tõus. Kasvavad riskid ja mõju "
+"mõjutavad metsanduse majanduslikku elujõulisust ning vähendavad metsade "
+"suutlikkust pakkuda olulisi ökosüsteemiteenuseid. EL reageerib sellele "
+"enneolematule väljakutsele, toetades metsade kohanemist kliimamuutustega "
+"mitmesuguste poliitikameetmete abil, nagu ELi metsastrateegia, ELi "
+"kliimamuutustega kohanemise strateegia ja ELi bioloogilise mitmekesisuse "
+"strateegia."
+
+#. undefined
+#: ../../climateadapt/browser/pt/regions-section.pt:83
+msgid "To go to one of the regions please click on the maps."
+msgstr "Et minna ühte piirkondadest palun kliki kaardid."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:192
+msgid "Tools and data"
+msgstr "Vahendid ja andmed"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:25
+msgid "Total"
+msgstr "Kokku"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:311
+msgid "Tourism"
+msgstr "Turism"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:410
+msgid "Transnational regions and other regions and countries"
+msgstr "Riikidevahelised piirkonnad ning muud piirkonnad ja riigid"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:461
+msgid "URBACT"
+msgstr "URBACT"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:406
+msgid "Urban Innovative Actions"
+msgstr "Linnadega seotud uuenduslikud meetmed"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:123
+msgid "Using the Adaptation Support Tool"
+msgstr "Kohandamise tugivahendi kasutamine"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/filter_acecontent.pt:61
+msgid "View all"
+msgstr "Vaata kõiki"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/relevant_acecontent.pt:119
+msgid "View more"
+msgstr "Vaata lähemalt"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:18
+msgid "View on DRMKC"
+msgstr "Vaade DRMKC-le"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:337
+msgid "Vulnerability Assessment"
+msgstr "Haavatavuse hindamine"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:464
+msgid "Water Management"
+msgstr "Veemajandus"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:352
+msgid "Water Scarcity"
+msgstr "Veepuudus"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:112
+msgid "When:"
+msgstr "Kui:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:116
+msgid "Where:"
+msgstr "kus:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:19
+msgid "Year:"
+msgstr "Aasta:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:33
+msgid "back to search"
+msgstr "Tagasi otsingusse"
+
+#. Default: "Enable automatic image captioning for images set in the
+#. richtexteditor based on the description of images."
+#: ../../climateadapt/image_scales/interfaces.py:211
+msgid "image_captioning_description"
+msgstr "image_captioning_description (pildi_pealdise_kirjeldus)"
+
+#. Default: "Enable image captioning"
+#: ../../climateadapt/image_scales/interfaces.py:210
+msgid "image_captioning_title"
+msgstr "image_captioning_title (pildi_pealdise_pealkiri)"
+
+#. Default: "Filter the results."
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:250
+msgid "narrow_search_options"
+msgstr "narrow_search_options (kitsas otsing)"
+
+#. Default: "Sort by"
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:451
+msgid "sort_by"
+msgstr "sort_by"
+
+#. Default: "Located in"
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
+msgid "text_searchitem_location"
+msgstr ""

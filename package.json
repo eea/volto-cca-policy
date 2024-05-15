@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-cca-policy",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "description": "@eeacms/volto-cca-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -26,7 +26,7 @@
     "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
-    "@eeacms/volto-block-style": "^6.1.0",
+    "@eeacms/volto-block-style": "github:eea/volto-block-style#6.x.x",
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "^1.33.2",

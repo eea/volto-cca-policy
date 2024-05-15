@@ -1,6 +1,7 @@
 import listSVG from '@plone/volto/icons/list-bullet.svg';
 import ContentLinksEdit from './ContentLinksEdit';
 import ContentLinksView from './ContentLinksView';
+import DropdownListView from './DropdownListView';
 
 export default function installBlock(config) {
   config.blocks.blocksConfig.contentLinks = {
@@ -26,6 +27,19 @@ export default function installBlock(config) {
         title: 'Navigation list',
         isDefault: false,
         fullobjects: true,
+      },
+      {
+        id: 'dropdown',
+        title: 'Dropdown',
+        view: DropdownListView,
+        isDefault: false,
+        schemaEnhancer: ({ schema }) => {
+          schema.properties.placeholder_text = {
+            title: 'Placeholder text',
+          };
+          schema.fieldsets[0].fields.push('placeholder_text');
+          return schema;
+        },
       },
     ],
     restricted: false,
