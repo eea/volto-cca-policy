@@ -27,7 +27,7 @@ const getDropdownOptions = (items) => {
 
 const DropdownListView = (props) => {
   const intl = useIntl();
-  const { title, items = [], variation } = props;
+  const { title, items = [], variation, placeholder_text } = props;
   const options = getDropdownOptions(items);
 
   return (
@@ -37,7 +37,7 @@ const DropdownListView = (props) => {
         {title && <h4>{title}</h4>}
         <Dropdown
           selection
-          placeholder={intl.formatMessage(messages.select)}
+          placeholder={placeholder_text || intl.formatMessage(messages.select)}
           options={options}
         />
       </div>

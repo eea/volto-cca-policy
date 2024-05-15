@@ -33,6 +33,13 @@ export default function installBlock(config) {
         title: 'Dropdown',
         view: DropdownListView,
         isDefault: false,
+        schemaEnhancer: ({ schema }) => {
+          schema.properties.placeholder_text = {
+            title: 'Placeholder text',
+          };
+          schema.fieldsets[0].fields.push('placeholder_text');
+          return schema;
+        },
       },
     ],
     restricted: false,

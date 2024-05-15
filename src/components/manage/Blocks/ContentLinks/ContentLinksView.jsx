@@ -36,7 +36,7 @@ const DefaultBody = (props) => {
 
 const ContentLinksView = (props) => {
   const { data, mode = 'view' } = props;
-  const { title, items = [], variation } = data;
+  const { title, items = [], variation, placeholder_text } = data;
   const isEdit = mode === 'edit';
   const activeTemplate = config.blocks.blocksConfig[
     'contentLinks'
@@ -45,7 +45,12 @@ const ContentLinksView = (props) => {
   const BodyComponent = activeTemplate?.[0]?.view || DefaultBody;
 
   return items && items.length > 0 ? (
-    <BodyComponent title={title} variation={variation} items={items} />
+    <BodyComponent
+      title={title}
+      variation={variation}
+      items={items}
+      placeholder_text={placeholder_text}
+    />
   ) : (
     <>{isEdit && <div>No items</div>}</>
   );
