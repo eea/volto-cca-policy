@@ -26,7 +26,7 @@
     "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
-    "@eeacms/volto-block-style": "^6.1.0",
+    "@eeacms/volto-block-style": "github:eea/volto-block-style#6.x.x",
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "^1.33.2",
