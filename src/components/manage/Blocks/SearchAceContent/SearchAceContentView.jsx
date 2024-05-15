@@ -25,7 +25,7 @@ export default function SearchAceContentView(props) {
         to="/en/help/share-your-info"
         className="ui button icon left labeled primary"
       >
-        <Icon name="ri-share-line" />
+        <Icon className="ri-share-line" />
         <FormattedMessage
           id="Share your information"
           defaultMessage="Share your information"
