@@ -17,6 +17,24 @@
   }
 }
 
+.dropdown-view {
+  .ui.selection.dropdown:not(.multiple) {
+    display: inline-flex;
+    width: auto;
+    min-width: 180px;
+    align-items: center;
+    justify-content: space-between;
+
+    > .dropdown.icon {
+      position: relative;
+      top: 0;
+      right: -15px;
+      padding: 0;
+      font-size: 1rem;
+    }
+  }
+}
+
 .navigationList-view {
   .item {
     padding: 0.75rem 0 0.75rem 0.75rem !important;
