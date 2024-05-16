@@ -20,6 +20,7 @@ const facets = [
     label: 'Eligible to receive funding',
     alwaysVisible: false,
   }),
+  cca_adaptation_sectors,
   multiTermFacet({
     field: 'spatial',
     isFilterable: true,
@@ -31,7 +32,6 @@ const facets = [
     enableExact: true,
     alwaysVisible: false,
   }),
-  cca_adaptation_sectors,
 
   ...globalSearchBaseConfig.facets.filter((f) => !blacklist.includes(f.field)),
 ];
