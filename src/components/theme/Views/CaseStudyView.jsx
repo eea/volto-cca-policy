@@ -227,7 +227,7 @@ const PhotoGallery = (props) => {
               />
             </span>
             <span> ({cca_gallery.length}) </span>
-            <Icon name="ri-image-fill" />
+            <Icon className="ri-image-fill" />
           </div>
           <ImageGallery items={cca_gallery} />
         </div>

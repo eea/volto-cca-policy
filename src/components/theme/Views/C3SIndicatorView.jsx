@@ -226,9 +226,9 @@ function C3SIndicatorView(props) {
             >
               <span>Visualisation and Navigation</span>
               {activeAccIndex === 0 ? (
-                <Icon name="ri-arrow-up-s-line" size="24px" />
+                <Icon className="ri-arrow-up-s-line" />
               ) : (
-                <Icon name="ri-arrow-down-s-line" size="24px" />
+                <Icon className="ri-arrow-down-s-line" />
               )}
             </Accordion.Title>
             <Accordion.Content active={activeAccIndex === 0}>
