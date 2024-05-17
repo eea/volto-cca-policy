@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { List, ListItem, ListContent, ListIcon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
@@ -24,14 +24,20 @@ const RelevantAceContentView = (props) => {
   const showBlock = (items && items.length > 0) || results.length > 0;
 
   const itemList = (items || []).map((item, index) => (
-    <List.Item key={index}>
-      <Link to={flattenToAppURL(item.link)}>{item.item_title}</Link>
-    </List.Item>
+    <ListItem key={index}>
+      <ListIcon name="angle right" />
+      <ListContent>
+        <Link to={flattenToAppURL(item.link)}>{item.item_title}</Link>
+      </ListContent>
+    </ListItem>
   ));
   const resultsList = results.map((result, index) => (
-    <List.Item key={index} title={result[1]}>
-      <Link to={flattenToAppURL(result[4])}>{result[0]}</Link>
-    </List.Item>
+    <ListItem key={index} title={result[1]}>
+      <ListIcon name="angle right" />
+      <ListContent>
+        <Link to={flattenToAppURL(result[4])}>{result[0]}</Link>
+      </ListContent>
+    </ListItem>
   ));
   const showResults = hasAnyFilter || search_text != null;
 
@@ -40,14 +46,14 @@ const RelevantAceContentView = (props) => {
       {title && <h4>{title}</h4>}
 
       {combine_results ? (
-        <>
+        <List>
           {itemList}
           {!isEdit && showResults && resultsList}
-        </>
+        </List>
       ) : items && items.length > 0 ? (
-        itemList
+        <List>{itemList}</List>
       ) : (
-        !isEdit && showResults && resultsList
+        <List>{!isEdit && showResults && resultsList}</List>
       )}
     </div>
   ) : (

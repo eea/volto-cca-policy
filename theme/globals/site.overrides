@@ -5,6 +5,7 @@
 @import './observatory.less';
 @import './views.less';
 @import './search.less';
+@import './blocks.less';
 
 // [class~='view-defaultview'] [id='page-document'] > *,
 // [class~='view-viewview'] [id='page-document'] > * {

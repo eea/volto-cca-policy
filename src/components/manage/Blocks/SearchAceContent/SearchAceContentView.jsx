@@ -1,4 +1,4 @@
-import { List, Icon } from 'semantic-ui-react';
+import { List, Icon, ListItem, ListContent, ListIcon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { useIntl, FormattedMessage } from 'react-intl';
@@ -13,12 +13,18 @@ export default function SearchAceContentView(props) {
       {data.title && <h4>{data.title}</h4>}
       <List>
         {results.map((result, index) => (
-          <List.Item key={index}>
-            <Link to={flattenToAppURL(result[2])}>
-              {intl.formatMessage({ id: result[0], defaultMessage: result[0] })}{' '}
-              ({result[1]})
-            </Link>
-          </List.Item>
+          <ListItem key={index}>
+            <ListIcon name="angle right" />
+            <ListContent>
+              <Link to={flattenToAppURL(result[2])}>
+                {intl.formatMessage({
+                  id: result[0],
+                  defaultMessage: result[0],
+                })}{' '}
+                ({result[1]})
+              </Link>
+            </ListContent>
+          </ListItem>
         ))}
       </List>
       <Link

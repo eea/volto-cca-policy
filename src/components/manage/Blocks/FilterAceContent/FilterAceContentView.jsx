@@ -102,7 +102,7 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
     block: id,
     limit: data.nr_items,
     query: defaultQuery,
-    sort_on: data.sortBy,
+    sort_on: data.sortBy || 'effective',
     sort_order: 'descending',
     template: 'summary',
     itemModel: { '@type': 'simpleItem' },
@@ -151,7 +151,7 @@ const FilterAceContentView = (props) => {
 
   return (
     <div className="block filter-acecontent-block">
-      {data.title && <h3>{data.title}</h3>}
+      {data.title && <h4>{data.title}</h4>}
       <h5>
         <FormattedMessage id="Climate impact" defaultMessage="Climate impact" />
       </h5>
