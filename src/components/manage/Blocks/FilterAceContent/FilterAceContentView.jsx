@@ -102,7 +102,7 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
     block: id,
     limit: data.nr_items,
     query: defaultQuery,
-    sort_on: data.sortBy,
+    sort_on: data.sortBy || 'effective',
     sort_order: 'descending',
     template: 'summary',
     itemModel: { '@type': 'simpleItem' },
