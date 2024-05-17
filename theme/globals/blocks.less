@@ -1,0 +1,78 @@
+.relevant-acecontent-block,
+.search-acecontent-block {
+  .ui.list > .item a,
+  .ui.list .list > .item a {
+    color: @linkColor;
+
+    &:hover {
+      color: @linkHoverColor;
+    }
+  }
+  .content {
+    padding-left: 6px !important;
+  }
+  .ui.list > .item > i.icon {
+    top: 5px;
+    position: relative;
+    padding: 0;
+    color: @linkColor;
+    font-size: 14px;
+  }
+}
+
+.filter-acecontent-block {
+  .react-select-container {
+    width: 230px;
+    border: 1px solid #bcbec0;
+
+    .react-select__control {
+      min-height: auto;
+      border: none;
+    }
+
+    .react-select__value-container {
+      padding: 5px !important;
+    }
+
+    .react-select__menu {
+      border: 1px solid #bcbec0;
+      width: 230px;
+      margin-left: -1px;
+      border-top: none;
+      margin-top: -1px;
+    }
+
+    .react-select__indicator {
+      top: 4px;
+      right: 6px;
+      position: relative;
+    }
+  }
+  .listing-body {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      font-family: 'Icons';
+      content: '\f105';
+      color: @linkColor;
+      font-size: 14px;
+    }
+  }
+
+  .listing-header {
+    display: inline-block !important;
+    padding-left: 13px;
+  }
+
+  .u-item.listing-item {
+    p {
+      color: @linkColor;
+    }
+
+    a:hover p {
+      color: @linkHoverColor;
+    }
+  }
+}
