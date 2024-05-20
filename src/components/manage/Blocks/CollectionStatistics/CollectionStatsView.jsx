@@ -69,7 +69,15 @@ const makeSearchBlockQuery = ({ base, query, field, value }) => {
 const makeEEASearchQuery = ({ base, field, value }) => {
   // TODO: don't hardcode the language
   const rest =
-    'filters[1][field]=issued.date&filters[1][values][0]=Last 5 years&filters[1][type]=any&filters[2][field]=language&filters[2][values][0]=en&filters[2][type]=any&sort-field=issued.date&sort-direction=desc';
+    'filters[1][field]=issued.date' +
+    '&filters[1][values][0]=Last 5 years' +
+    '&filters[1][type]=any' +
+    '&filters[2][field]=language' +
+    '&filters[2][values][0]=en' +
+    '&filters[2][type]=any' +
+    '&sort-field=issued.date' +
+    '&sort-direction=desc';
+
   const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${value}`;
 
   return `${base}?size=n_10_n&${filter}&${rest}`;
