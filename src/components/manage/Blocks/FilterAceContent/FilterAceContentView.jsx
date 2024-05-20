@@ -95,15 +95,22 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
     v: currentLang,
   });
 
+  defaultQuery.push({
+    i: 'review_state',
+    o: 'plone.app.querystring.operation.selection.any',
+    v: 'published',
+  });
+
   if (impacts) defaultQuery.push(impacts);
   if (sectors) defaultQuery.push(sectors);
 
+  const sort_on = data.sortBy || 'effective';
   return {
     block: id,
     limit: data.nr_items,
     query: defaultQuery,
-    sort_on: data.sortBy || 'effective',
-    sort_order: 'descending',
+    sort_on,
+    sort_order: sort_on === 'getId' ? 'ascending' : 'descending',
     template: 'summary',
     itemModel: { '@type': 'simpleItem' },
   };
