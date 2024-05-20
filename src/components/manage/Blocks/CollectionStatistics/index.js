@@ -20,19 +20,19 @@ const healthImpactIcons = {
 };
 
 const portalTypeIcons = {
+  'Adaptation option': 'cogs',
   'Case study': 'file text',
   Guidance: 'compass',
   Indicator: 'area chart',
   'Information portal': 'info circle',
+  Organisation: 'sitemap',
   'Publications and reports': 'newspaper',
   'Research and knowledge project': 'university',
   Tool: 'wrench',
   'Videos and podcasts': 'video play',
   // 'eea.climateadapt.aceproject': '',
-  // 'eea.climateadapt.adaptationoption': '',
   // 'eea.climateadapt.c3sindicator': '',
   // 'eea.climateadapt.mapgraphdataset': '',
-  // 'eea.climateadapt.organisation': '',
 };
 
 const portalTypesToSearchTypes = {
@@ -42,6 +42,7 @@ const portalTypesToSearchTypes = {
   'eea.climateadapt.indicator': 'Indicator',
   'eea.climateadapt.c3sindicator': 'Indicator',
   'eea.climateadapt.informationportal': 'Information portal',
+  'eea.climateadapt.organisation': 'Organisation',
   'eea.climateadapt.publicationreport': 'Publications and reports',
   'eea.climateadapt.aceproject': 'Research and knowledge project',
   'eea.climateadapt.researchproject': 'Research and knowledge project',
@@ -50,7 +51,6 @@ const portalTypesToSearchTypes = {
   // TODO: what about these?
   // 'eea.climateadapt.aceproject': '',
   // 'eea.climateadapt.mapgraphdataset': '',
-  // 'eea.climateadapt.organisation': '',
 };
 
 export default function installCollectionStatsBlock(config) {
