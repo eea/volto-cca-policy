@@ -1,5 +1,7 @@
 .relevant-acecontent-block,
 .search-acecontent-block {
+  margin: 1.7em 0 !important;
+
   .ui.list > .item a,
   .ui.list .list > .item a {
     color: @linkColor;
@@ -18,9 +20,19 @@
     color: @linkColor;
     font-size: 14px;
   }
+
+  &:first-child {
+    margin-top: 0 !important;
+  }
 }
 
 .filter-acecontent-block {
+  margin: 1.5em 0;
+
+  h5 {
+    margin-bottom: 0.3em;
+    margin-top: 1em;
+  }
   .react-select-container {
     width: 230px;
     border: 1px solid #bcbec0;

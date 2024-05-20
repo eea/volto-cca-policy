@@ -19,6 +19,7 @@ const Select = loadable(() => import('react-select'));
 
 const IMPACTS = 'eea.climateadapt.aceitems_climateimpacts';
 const SECTORS = 'eea.climateadapt.aceitems_sectors';
+const KEY_TYPE = 'eea.climateadapt.aceitems_key_type_measures_short';
 
 const FIELDS = [
   'bio_regions',
@@ -68,7 +69,14 @@ const sectors_no_value = [
   },
 ];
 
-const applyQuery = (id, data, currentLang, impacts, sectors) => {
+const measures_no_value = [
+  {
+    label: 'All key type measures',
+    value: '',
+  },
+];
+
+const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
   const defaultQuery = Object.entries(data)
     .filter(
       ([field, value]) => FIELDS.includes(field) && value && value.length > 0,
@@ -103,6 +111,7 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
 
   if (impacts) defaultQuery.push(impacts);
   if (sectors) defaultQuery.push(sectors);
+  if (measures) defaultQuery.push(measures);
 
   const sort_on = data.sortBy || 'effective';
   return {
@@ -130,9 +139,15 @@ const FilterAceContentView = (props) => {
       ? state.vocabularies[SECTORS].items
       : [],
   );
+  const measuresVocabItems = useSelector((state) =>
+    state.vocabularies[KEY_TYPE]?.loaded
+      ? state.vocabularies[KEY_TYPE].items
+      : [],
+  );
 
   const [impactsQuery, setImpactsQueryQuery] = React.useState();
   const [sectorsQuery, setSectorsQuery] = React.useState();
+  const [measuresQuery, setMeasuresQuery] = React.useState();
 
   React.useEffect(() => {
     const action = getVocabulary({
@@ -148,47 +163,57 @@ const FilterAceContentView = (props) => {
     dispatch(action);
   }, [dispatch]);
 
+  React.useEffect(() => {
+    const action = getVocabulary({
+      vocabNameOrURL: KEY_TYPE,
+    });
+    dispatch(action);
+  }, [dispatch]);
+
   const listingBodyData = applyQuery(
     id,
     data,
     currentLang,
     impactsQuery,
     sectorsQuery,
+    measuresQuery,
   );
 
   return (
     <div className="block filter-acecontent-block">
       {data.title && <h4>{data.title}</h4>}
-      <h5>
+      <span className="filter-title">
         <FormattedMessage id="Climate impact" defaultMessage="Climate impact" />
-      </h5>
-      <Select
-        id="field-impacts"
-        name="impacts"
-        disabled={false}
-        className="react-select-container"
-        classNamePrefix="react-select"
-        options={[impacts_no_value[0], ...(impactsVocabItems || [])]}
-        styles={customSelectStyles}
-        theme={selectTheme}
-        components={{ DropdownIndicator, Option }}
-        defaultValue={impacts_no_value}
-        onChange={({ value }) => {
-          if (value) {
-            setImpactsQueryQuery({
-              i: 'climate_impacts',
-              o: 'plone.app.querystring.operation.selection.any',
-              v: value,
-            });
-          } else {
-            setImpactsQueryQuery(null);
-          }
-        }}
-      />
+      </span>
+      <div>
+        <Select
+          id="field-impacts"
+          name="impacts"
+          disabled={false}
+          className="react-select-container"
+          classNamePrefix="react-select"
+          options={[impacts_no_value[0], ...(impactsVocabItems || [])]}
+          styles={customSelectStyles}
+          theme={selectTheme}
+          components={{ DropdownIndicator, Option }}
+          defaultValue={impacts_no_value}
+          onChange={({ value }) => {
+            if (value) {
+              setImpactsQueryQuery({
+                i: 'climate_impacts',
+                o: 'plone.app.querystring.operation.selection.any',
+                v: value,
+              });
+            } else {
+              setImpactsQueryQuery(null);
+            }
+          }}
+        />
+      </div>
 
-      <h5>
+      <span className="filter-title">
         <FormattedMessage id="Sector" defaultMessage="Sector" />
-      </h5>
+      </span>
       <Select
         id="field-sectors"
         name="sectors"
@@ -205,13 +230,45 @@ const FilterAceContentView = (props) => {
             setSectorsQuery({
               i: 'sectors',
               o: 'plone.app.querystring.operation.selection.any',
-              v: value,
+              v: value.toUpperCase(),
             });
           } else {
             setSectorsQuery(null);
           }
         }}
       />
+
+      <div id="key-type-measure">
+        <span className="filter-title">
+          <FormattedMessage
+            id="Key Type Measure"
+            defaultMessage="Key Type Measure"
+          />
+        </span>
+        <Select
+          id="field-measure"
+          name="measure"
+          disabled={false}
+          className="react-select-container"
+          classNamePrefix="react-select"
+          options={[measures_no_value[0], ...(measuresVocabItems || [])]}
+          styles={customSelectStyles}
+          theme={selectTheme}
+          components={{ DropdownIndicator, Option }}
+          defaultValue={measures_no_value}
+          onChange={({ value }) => {
+            if (value) {
+              setMeasuresQuery({
+                i: 'key_type_measures',
+                o: 'plone.app.querystring.operation.selection.any',
+                v: value,
+              });
+            } else {
+              setMeasuresQuery(null);
+            }
+          }}
+        />
+      </div>
       <div className="listing-wrapper">
         <ListingBody
           id={id}
