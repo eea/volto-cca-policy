@@ -1,4 +1,12 @@
+@height: 600px;
+
 .countryMapProfile {
+  height: @height;
+  min-height: @height;
+
+  .ol-map {
+    height: @height;
+  }
   &.sized-wrapper {
     width: 100%;
     height: 100%;

@@ -142,7 +142,7 @@ const View = (props) => {
   // console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
 
   return (
-    <div>
+    <div className="ol-country-map">
       <Grid columns="12">
         <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
           {tileWMSSources ? (
