@@ -4,6 +4,7 @@ import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBo
 import { useSelector, useDispatch } from 'react-redux';
 import { getVocabulary } from '@plone/volto/actions';
 import { OTHER_REGIONS } from '@eeacms/volto-cca-policy/helpers';
+import { Link } from 'react-router-dom';
 import {
   Option,
   DropdownIndicator,
@@ -103,20 +104,72 @@ const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
     v: currentLang,
   });
 
+  defaultQuery.push({
+    i: 'review_state',
+    o: 'plone.app.querystring.operation.selection.any',
+    v: 'published',
+  });
+
   if (impacts) defaultQuery.push(impacts);
   if (sectors) defaultQuery.push(sectors);
   if (measures) defaultQuery.push(measures);
 
+  const sort_on = data.sortBy || 'effective';
   return {
     block: id,
     limit: data.nr_items,
     query: defaultQuery,
-    sort_on: data.sortBy || 'effective',
-    sort_order: 'descending',
+    sort_on,
+    sort_order: sort_on === 'getId' ? 'ascending' : 'descending',
     template: 'summary',
     itemModel: { '@type': 'simpleItem' },
   };
 };
+
+const eeaSearchFieldMap = {
+  impacts: 'cca_climate_impacts.keyword',
+  sectors: 'cca_adaptation_sectors.keyword',
+  measures: 'cca_key_type_measure.keyword',
+};
+
+function toLabel(value, key, vocab) {
+  if (key === 'measures') {
+    return value;
+  }
+  return vocab.find(({ value: v }) => value === v).label;
+}
+
+function buildQueryUrl({ vocabs, ...data }) {
+  let filters = Object.keys(data).reduce((acc, key) => {
+    const name = eeaSearchFieldMap[key];
+    const ploneFilter = data[key];
+    if (ploneFilter) {
+      const value = toLabel(ploneFilter.v, key, vocabs[key]);
+      const filter = [
+        `filters[$index][field]=${name}`,
+        `filters[$index][type]=any`,
+        `filters[$index][values][]=${encodeURIComponent(value)}`,
+      ].join('&');
+      acc.push(filter);
+    }
+    return acc;
+  }, []);
+  filters = filters
+    .map((line, index) => line.replaceAll('$index', index))
+    .join('&');
+
+  return `/en/data-and-downloads?size=n_10&${filters}`;
+}
+
+const vocabImpactsAction = getVocabulary({
+  vocabNameOrURL: IMPACTS,
+});
+const vocabSectorsAction = getVocabulary({
+  vocabNameOrURL: SECTORS,
+});
+const vocabMeasuresAction = getVocabulary({
+  vocabNameOrURL: KEY_TYPE,
+});
 
 const FilterAceContentView = (props) => {
   const { data, id, mode = 'view' } = props;
@@ -143,24 +196,9 @@ const FilterAceContentView = (props) => {
   const [measuresQuery, setMeasuresQuery] = React.useState();
 
   React.useEffect(() => {
-    const action = getVocabulary({
-      vocabNameOrURL: IMPACTS,
-    });
-    dispatch(action);
-  }, [dispatch]);
-
-  React.useEffect(() => {
-    const action = getVocabulary({
-      vocabNameOrURL: SECTORS,
-    });
-    dispatch(action);
-  }, [dispatch]);
-
-  React.useEffect(() => {
-    const action = getVocabulary({
-      vocabNameOrURL: KEY_TYPE,
-    });
-    dispatch(action);
+    dispatch(vocabImpactsAction);
+    dispatch(vocabSectorsAction);
+    dispatch(vocabMeasuresAction);
   }, [dispatch]);
 
   const listingBodyData = applyQuery(
@@ -171,6 +209,16 @@ const FilterAceContentView = (props) => {
     sectorsQuery,
     measuresQuery,
   );
+  const viewAllUrl = buildQueryUrl({
+    impacts: impactsQuery,
+    sectors: sectorsQuery,
+    measures: measuresQuery,
+    vocabs: {
+      sectors: sectorsVocabItems,
+      measures: measuresVocabItems,
+      impacts: impactsVocabItems,
+    },
+  });
 
   return (
     <div className="block filter-acecontent-block">
@@ -270,6 +318,9 @@ const FilterAceContentView = (props) => {
           isEditMode={mode === 'edit'}
         />
       </div>
+      <Link className="ui button secondary inverted" to={viewAllUrl}>
+        View all
+      </Link>
     </div>
   );
 };
