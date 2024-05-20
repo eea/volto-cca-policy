@@ -4,6 +4,7 @@ import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBo
 import { useSelector, useDispatch } from 'react-redux';
 import { getVocabulary } from '@plone/volto/actions';
 import { OTHER_REGIONS } from '@eeacms/volto-cca-policy/helpers';
+import { Link } from 'react-router-dom';
 import {
   Option,
   DropdownIndicator,
@@ -19,6 +20,7 @@ const Select = loadable(() => import('react-select'));
 
 const IMPACTS = 'eea.climateadapt.aceitems_climateimpacts';
 const SECTORS = 'eea.climateadapt.aceitems_sectors';
+const KEY_TYPE = 'eea.climateadapt.aceitems_key_type_measures_short';
 
 const FIELDS = [
   'bio_regions',
@@ -68,7 +70,14 @@ const sectors_no_value = [
   },
 ];
 
-const applyQuery = (id, data, currentLang, impacts, sectors) => {
+const measures_no_value = [
+  {
+    label: 'All key type measures',
+    value: '',
+  },
+];
+
+const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
   const defaultQuery = Object.entries(data)
     .filter(
       ([field, value]) => FIELDS.includes(field) && value && value.length > 0,
@@ -95,19 +104,72 @@ const applyQuery = (id, data, currentLang, impacts, sectors) => {
     v: currentLang,
   });
 
+  defaultQuery.push({
+    i: 'review_state',
+    o: 'plone.app.querystring.operation.selection.any',
+    v: 'published',
+  });
+
   if (impacts) defaultQuery.push(impacts);
   if (sectors) defaultQuery.push(sectors);
+  if (measures) defaultQuery.push(measures);
 
+  const sort_on = data.sortBy || 'effective';
   return {
     block: id,
     limit: data.nr_items,
     query: defaultQuery,
-    sort_on: data.sortBy || 'effective',
-    sort_order: 'descending',
+    sort_on,
+    sort_order: sort_on === 'getId' ? 'ascending' : 'descending',
     template: 'summary',
     itemModel: { '@type': 'simpleItem' },
   };
 };
+
+const eeaSearchFieldMap = {
+  impacts: 'cca_climate_impacts.keyword',
+  sectors: 'cca_adaptation_sectors.keyword',
+  measures: 'cca_key_type_measure.keyword',
+};
+
+function toLabel(value, key, vocab) {
+  if (key === 'measures') {
+    return value;
+  }
+  return vocab.find(({ value: v }) => value === v).label;
+}
+
+function buildQueryUrl({ vocabs, ...data }) {
+  let filters = Object.keys(data).reduce((acc, key) => {
+    const name = eeaSearchFieldMap[key];
+    const ploneFilter = data[key];
+    if (ploneFilter) {
+      const value = toLabel(ploneFilter.v, key, vocabs[key]);
+      const filter = [
+        `filters[$index][field]=${name}`,
+        `filters[$index][type]=any`,
+        `filters[$index][values][]=${encodeURIComponent(value)}`,
+      ].join('&');
+      acc.push(filter);
+    }
+    return acc;
+  }, []);
+  filters = filters
+    .map((line, index) => line.replaceAll('$index', index))
+    .join('&');
+
+  return `/en/data-and-downloads?size=n_10&${filters}`;
+}
+
+const vocabImpactsAction = getVocabulary({
+  vocabNameOrURL: IMPACTS,
+});
+const vocabSectorsAction = getVocabulary({
+  vocabNameOrURL: SECTORS,
+});
+const vocabMeasuresAction = getVocabulary({
+  vocabNameOrURL: KEY_TYPE,
+});
 
 const FilterAceContentView = (props) => {
   const { data, id, mode = 'view' } = props;
@@ -123,22 +185,20 @@ const FilterAceContentView = (props) => {
       ? state.vocabularies[SECTORS].items
       : [],
   );
+  const measuresVocabItems = useSelector((state) =>
+    state.vocabularies[KEY_TYPE]?.loaded
+      ? state.vocabularies[KEY_TYPE].items
+      : [],
+  );
 
   const [impactsQuery, setImpactsQueryQuery] = React.useState();
   const [sectorsQuery, setSectorsQuery] = React.useState();
+  const [measuresQuery, setMeasuresQuery] = React.useState();
 
   React.useEffect(() => {
-    const action = getVocabulary({
-      vocabNameOrURL: IMPACTS,
-    });
-    dispatch(action);
-  }, [dispatch]);
-
-  React.useEffect(() => {
-    const action = getVocabulary({
-      vocabNameOrURL: SECTORS,
-    });
-    dispatch(action);
+    dispatch(vocabImpactsAction);
+    dispatch(vocabSectorsAction);
+    dispatch(vocabMeasuresAction);
   }, [dispatch]);
 
   const listingBodyData = applyQuery(
@@ -147,41 +207,54 @@ const FilterAceContentView = (props) => {
     currentLang,
     impactsQuery,
     sectorsQuery,
+    measuresQuery,
   );
+  const viewAllUrl = buildQueryUrl({
+    impacts: impactsQuery,
+    sectors: sectorsQuery,
+    measures: measuresQuery,
+    vocabs: {
+      sectors: sectorsVocabItems,
+      measures: measuresVocabItems,
+      impacts: impactsVocabItems,
+    },
+  });
 
   return (
     <div className="block filter-acecontent-block">
       {data.title && <h4>{data.title}</h4>}
-      <h5>
+      <span className="filter-title">
         <FormattedMessage id="Climate impact" defaultMessage="Climate impact" />
-      </h5>
-      <Select
-        id="field-impacts"
-        name="impacts"
-        disabled={false}
-        className="react-select-container"
-        classNamePrefix="react-select"
-        options={[impacts_no_value[0], ...(impactsVocabItems || [])]}
-        styles={customSelectStyles}
-        theme={selectTheme}
-        components={{ DropdownIndicator, Option }}
-        defaultValue={impacts_no_value}
-        onChange={({ value }) => {
-          if (value) {
-            setImpactsQueryQuery({
-              i: 'climate_impacts',
-              o: 'plone.app.querystring.operation.selection.any',
-              v: value,
-            });
-          } else {
-            setImpactsQueryQuery(null);
-          }
-        }}
-      />
+      </span>
+      <div>
+        <Select
+          id="field-impacts"
+          name="impacts"
+          disabled={false}
+          className="react-select-container"
+          classNamePrefix="react-select"
+          options={[impacts_no_value[0], ...(impactsVocabItems || [])]}
+          styles={customSelectStyles}
+          theme={selectTheme}
+          components={{ DropdownIndicator, Option }}
+          defaultValue={impacts_no_value}
+          onChange={({ value }) => {
+            if (value) {
+              setImpactsQueryQuery({
+                i: 'climate_impacts',
+                o: 'plone.app.querystring.operation.selection.any',
+                v: value,
+              });
+            } else {
+              setImpactsQueryQuery(null);
+            }
+          }}
+        />
+      </div>
 
-      <h5>
+      <span className="filter-title">
         <FormattedMessage id="Sector" defaultMessage="Sector" />
-      </h5>
+      </span>
       <Select
         id="field-sectors"
         name="sectors"
@@ -198,13 +271,45 @@ const FilterAceContentView = (props) => {
             setSectorsQuery({
               i: 'sectors',
               o: 'plone.app.querystring.operation.selection.any',
-              v: value,
+              v: value.toUpperCase(),
             });
           } else {
             setSectorsQuery(null);
           }
         }}
       />
+
+      <div id="key-type-measure">
+        <span className="filter-title">
+          <FormattedMessage
+            id="Key Type Measure"
+            defaultMessage="Key Type Measure"
+          />
+        </span>
+        <Select
+          id="field-measure"
+          name="measure"
+          disabled={false}
+          className="react-select-container"
+          classNamePrefix="react-select"
+          options={[measures_no_value[0], ...(measuresVocabItems || [])]}
+          styles={customSelectStyles}
+          theme={selectTheme}
+          components={{ DropdownIndicator, Option }}
+          defaultValue={measures_no_value}
+          onChange={({ value }) => {
+            if (value) {
+              setMeasuresQuery({
+                i: 'key_type_measures',
+                o: 'plone.app.querystring.operation.selection.any',
+                v: value,
+              });
+            } else {
+              setMeasuresQuery(null);
+            }
+          }}
+        />
+      </div>
       <div className="listing-wrapper">
         <ListingBody
           id={id}
@@ -213,6 +318,9 @@ const FilterAceContentView = (props) => {
           isEditMode={mode === 'edit'}
         />
       </div>
+      <Link className="ui button secondary inverted" to={viewAllUrl}>
+        View all
+      </Link>
     </div>
   );
 };

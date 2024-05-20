@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownListingView should render the component 1`] = `
+<div
+  aria-expanded={false}
+  className="ui selection dropdown"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="listbox"
+  tabIndex={0}
+>
+  <div
+    aria-atomic={true}
+    aria-live="polite"
+    className="divider default text"
+    role="alert"
+  >
+    Select
+  </div>
+  <i
+    aria-hidden="true"
+    className="dropdown icon"
+    onClick={[Function]}
+  />
+  <div
+    className="menu transition"
+  >
+    <a
+      aria-checked={false}
+      aria-selected={true}
+      className="selected item"
+      href="/item-1"
+      onClick={[Function]}
+      role="option"
+      style={
+        Object {
+          "pointerEvents": "all",
+        }
+      }
+    >
+      <span
+        className="text"
+      >
+        Item 1
+      </span>
+    </a>
+    <a
+      aria-checked={false}
+      aria-selected={false}
+      className="item"
+      href="/item-2"
+      onClick={[Function]}
+      role="option"
+      style={
+        Object {
+          "pointerEvents": "all",
+        }
+      }
+    >
+      <span
+        className="text"
+      >
+        Item 2
+      </span>
+    </a>
+  </div>
+</div>
+`;

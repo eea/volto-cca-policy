@@ -5,6 +5,7 @@ import {
   setTooltipVisibility,
   getClosestFeatureToCoordinate,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
 export const Interactions = ({
@@ -30,7 +31,12 @@ export const Interactions = ({
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
+        ol,
       );
+      if (!feature) {
+        const node = tooltipRef.current;
+        node.style.visibility = 'hidden';
+      }
       const domEvt = evt.originalEvent;
 
       if (
@@ -105,6 +111,7 @@ Information is available
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
+        ol,
       );
 
       highlight.current = feature && feature.get('na');
