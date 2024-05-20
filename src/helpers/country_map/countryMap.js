@@ -119,26 +119,30 @@ export function setTooltipVisibility(node, label, event, visible) {
   }
 }
 
-export const getClosestFeatureToCoordinate = (coordinate, features) => {
+export const getClosestFeatureToCoordinate = (coordinate, features, ol) => {
   if (!features.length) return null;
   const x = coordinate[0];
   const y = coordinate[1];
   let closestFeature = null;
-  const closestPoint = [NaN, NaN];
-  let minSquaredDistance = Infinity;
 
   features.forEach((feature) => {
     const geometry = feature.getGeometry();
-    const previousMinSquaredDistance = minSquaredDistance;
-    minSquaredDistance = geometry.closestPointXY(
-      x,
-      y,
-      closestPoint,
-      minSquaredDistance,
-    );
-    if (minSquaredDistance < previousMinSquaredDistance) {
-      closestFeature = feature;
+    const type = geometry.getType();
+
+    if (type === 'MultiPolygon') {
+      const polygons = geometry.getPolygons();
+      for (let i = 0; i < polygons.length; i++) {
+        if (polygons[i].containsXY(x, y)) {
+          closestFeature = feature;
+          break;
+        }
+      }
+    } else if (type === 'Polygon') {
+      if (geometry.containsXY(x, y)) {
+        closestFeature = feature;
+      }
     }
+    // const id = feature.values_.id;
   });
 
   return closestFeature;

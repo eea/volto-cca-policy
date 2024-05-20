@@ -114,7 +114,10 @@ const View = (props) => {
         url: 'https://gisco-services.ec.europa.eu/maps/service',
         params: {
           // LAYERS: 'OSMBlossomComposite', OSMCartoComposite, OSMPositronComposite
-          LAYERS: 'OSMBrightBackground',
+          // LAYERS: 'OSMBrightBackground',
+          // LAYERS: 'GreyEarth',
+          // LAYERS: 'Hypsometric',
+          LAYERS: 'OSMCarto',
           TILED: true,
         },
         serverType: 'geoserver',
