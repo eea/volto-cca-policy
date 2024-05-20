@@ -33,7 +33,7 @@ export const makeStyles = (highlight) => {
   const fill = new ol.style.Fill({ color: 'rgb(251,250,230, 0.8)' });
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',
-    color: '#d1d1d1',
+    color: '#333333',
     width: 1,
   });
 
@@ -43,13 +43,13 @@ export const makeStyles = (highlight) => {
 
   const getFillColor = (feature) => {
     if (feature.get('fillBlue') === 'blue1') {
-      return new ol.style.Fill({ color: 'rgb(0, 75, 127, 0.8)' });
+      return new ol.style.Fill({ color: 'rgb(0, 75, 127, 1)' });
     }
     if (feature.get('fillBlue') === 'blue2') {
-      return new ol.style.Fill({ color: 'rgb(10, 153, 255, 0.8)' });
+      return new ol.style.Fill({ color: 'rgb(10, 153, 255, 1)' });
     }
     if (feature.get('fillBlue') === 'blue3') {
-      return new ol.style.Fill({ color: 'rgb(120, 217, 252, 0.8)' });
+      return new ol.style.Fill({ color: 'rgb(120, 217, 252, 1)' });
     }
     // console.log(feature.get('fillBlue'));
     return fill;
