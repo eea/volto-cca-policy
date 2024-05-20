@@ -33,6 +33,10 @@ export const Interactions = ({
         euCountryFeatures.current,
         ol,
       );
+      if (!feature) {
+        const node = tooltipRef.current;
+        node.style.visibility = 'hidden';
+      }
       const domEvt = evt.originalEvent;
 
       if (

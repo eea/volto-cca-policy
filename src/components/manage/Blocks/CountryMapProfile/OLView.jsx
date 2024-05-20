@@ -113,11 +113,13 @@ const View = (props) => {
       new ol.source.TileWMS({
         url: 'https://gisco-services.ec.europa.eu/maps/service',
         params: {
-          // LAYERS: 'OSMBlossomComposite', OSMCartoComposite, OSMPositronComposite
-          // LAYERS: 'OSMBrightBackground',
+          // LAYERS: 'OSMBlossomComposite',
+          // LAYERS: 'OSMCartoComposite',
+          // LAYERS: 'OSMPositronComposite',
           // LAYERS: 'GreyEarth',
-          // LAYERS: 'Hypsometric',
-          LAYERS: 'OSMCarto',
+          // LAYERS: 'OSMCarto',
+          // LAYERS: 'NaturalEarth',
+          LAYERS: 'OSMBrightBackground',
           TILED: true,
         },
         serverType: 'geoserver',

@@ -142,7 +142,6 @@ export const getClosestFeatureToCoordinate = (coordinate, features, ol) => {
         closestFeature = feature;
       }
     }
-    // const id = feature.values_.id;
   });
 
   return closestFeature;
