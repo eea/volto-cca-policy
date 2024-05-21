@@ -13,7 +13,7 @@ pipeline {
     DEPENDENCIES = ""
     BACKEND_PROFILES = "eea.kitkat:testing plone.app.multilingual:default"
     BACKEND_ADDONS = "plone.app.multilingual"
-    VOLTO = "16.22.2"
+    VOLTO = "16"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 
