@@ -77,6 +77,20 @@ const measures_no_value = [
   },
 ];
 
+const _datatypes = {
+  DOCUMENT: 'Publications and reports',
+  INFORMATIONSOURCE: 'Information portal',
+  MAPGRAPHDATASET: 'Maps, graphs and datasets',
+  INDICATOR: 'Indicator',
+  GUIDANCE: 'Guidance',
+  TOOL: 'Tool',
+  RESEARCHPROJECT: 'Research and knowledge project',
+  MEASURE: 'Adaptation option',
+  ACTION: 'Case study',
+  ORGANISATION: 'Organisation',
+  VIDEOS: 'Videos',
+};
+
 const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
   const defaultQuery = Object.entries(data)
     .filter(
@@ -126,17 +140,23 @@ const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
   };
 };
 
+// mapping of "internal data stored fieldname" to name of EEA Search facet field
+// TODO: this needs to be completed. As of today (21-05-2024), all the fields that are used in production blocks are present, but not all possible of them are properly declared here
 const eeaSearchFieldMap = {
   impacts: 'cca_climate_impacts.keyword',
   sectors: 'cca_adaptation_sectors.keyword',
   measures: 'cca_key_type_measure.keyword',
+  funding_programme: 'cca_funding_programme.keyword',
+  search_type: 'objectProvides',
+  language: 'language',
 };
 
 function toLabel(value, key, vocab) {
-  if (key === 'measures') {
-    return value;
-  }
-  return vocab.find(({ value: v }) => value === v).label;
+  if (key === 'search_type') return _datatypes[value];
+  if (key === 'measures') return value;
+  if (!vocab) return value;
+
+  return vocab.find(({ value: v }) => value === v)?.label || value;
 }
 
 function buildQueryUrl({ vocabs, ...data }) {
@@ -144,21 +164,33 @@ function buildQueryUrl({ vocabs, ...data }) {
     const name = eeaSearchFieldMap[key];
     const ploneFilter = data[key];
     if (ploneFilter) {
-      const value = toLabel(ploneFilter.v, key, vocabs[key]);
-      const filter = [
+      const realValue = ploneFilter?.v || ploneFilter;
+      let filter = [
         `filters[$index][field]=${name}`,
         `filters[$index][type]=any`,
-        `filters[$index][values][]=${encodeURIComponent(value)}`,
-      ].join('&');
+      ];
+      if (Array.isArray(realValue)) {
+        const mv = realValue.map((rv) => toLabel(rv, key, vocabs[key]));
+        mv.forEach((v, i) => {
+          filter.push(`filters[$index][values][${i}]=${encodeURIComponent(v)}`);
+        });
+      } else {
+        const rv = toLabel(realValue, key, vocabs[key]);
+        filter.push(`filters[$index][values][0]=${encodeURIComponent(rv)}`);
+      }
+
+      filter = filter.join('&');
       acc.push(filter);
     }
     return acc;
   }, []);
+
   filters = filters
     .map((line, index) => line.replaceAll('$index', index))
     .join('&');
+  const url = `/en/data-and-downloads?size=n_10&${filters}`;
 
-  return `/en/data-and-downloads?size=n_10&${filters}`;
+  return url;
 }
 
 const vocabImpactsAction = getVocabulary({
@@ -210,15 +242,21 @@ const FilterAceContentView = (props) => {
     measuresQuery,
   );
   const viewAllUrl = buildQueryUrl({
+    // ...data,
     impacts: impactsQuery,
     sectors: sectorsQuery,
     measures: measuresQuery,
+    search_type: data.search_type,
+    funding_programme: data.funding_programme,
+    language: currentLang,
     vocabs: {
       sectors: sectorsVocabItems,
       measures: measuresVocabItems,
       impacts: impactsVocabItems,
     },
   });
+
+  // console.log({ allData: data, viewAllUrl });
 
   return (
     <div className="block filter-acecontent-block">
