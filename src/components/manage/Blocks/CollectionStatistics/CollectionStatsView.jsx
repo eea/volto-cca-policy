@@ -10,6 +10,7 @@ import { useIntl } from 'react-intl';
 
 import qs from 'query-string';
 import './styles.less';
+import { getVocabulary } from '@plone/volto/actions';
 
 const useStats = (path, id, data) => {
   const dispatch = useDispatch();
@@ -90,8 +91,27 @@ const urlBuilders = {
 
 const nop = () => '';
 
+const SECTORS = 'eea.climateadapt.aceitems_sectors';
+const vocabSectorsAction = getVocabulary({
+  vocabNameOrURL: SECTORS,
+});
+
+const useVocabs = () => {
+  const dispatch = useDispatch();
+  const sectorsVocabItems = useSelector((state) =>
+    state.vocabularies[SECTORS]?.loaded
+      ? state.vocabularies[SECTORS].items
+      : [],
+  );
+  React.useEffect(() => {
+    dispatch(vocabSectorsAction);
+  }, [dispatch]);
+  return { sectorsVocabItems };
+};
+
 export default function CollectionStatsView(props) {
   const { id, data = {}, pathname = props.path } = props;
+  const { sectorsVocabItems } = useVocabs();
   const field = data.aggregateField?.value;
   const { queryParameterStyle = 'SearchBlock', query = {}, showLabel } = data;
   const base = getBase(props);

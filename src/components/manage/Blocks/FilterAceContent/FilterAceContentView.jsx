@@ -203,10 +203,13 @@ const vocabMeasuresAction = getVocabulary({
   vocabNameOrURL: KEY_TYPE,
 });
 
-const FilterAceContentView = (props) => {
-  const { data, id, mode = 'view' } = props;
+const useVocabs = () => {
   const dispatch = useDispatch();
-  const currentLang = useSelector((state) => state.intl.locale);
+  React.useEffect(() => {
+    dispatch(vocabImpactsAction);
+    dispatch(vocabSectorsAction);
+    dispatch(vocabMeasuresAction);
+  }, [dispatch]);
   const impactsVocabItems = useSelector((state) =>
     state.vocabularies[IMPACTS]?.loaded
       ? state.vocabularies[IMPACTS].items
@@ -222,16 +225,22 @@ const FilterAceContentView = (props) => {
       ? state.vocabularies[KEY_TYPE].items
       : [],
   );
+  return { impactsVocabItems, sectorsVocabItems, measuresVocabItems };
+};
+
+const FilterAceContentView = (props) => {
+  const { data, id, mode = 'view' } = props;
+  const currentLang = useSelector((state) => state.intl.locale);
+
+  const {
+    impactsVocabItems,
+    sectorsVocabItems,
+    measuresVocabItems,
+  } = useVocabs();
 
   const [impactsQuery, setImpactsQueryQuery] = React.useState();
   const [sectorsQuery, setSectorsQuery] = React.useState();
   const [measuresQuery, setMeasuresQuery] = React.useState();
-
-  React.useEffect(() => {
-    dispatch(vocabImpactsAction);
-    dispatch(vocabSectorsAction);
-    dispatch(vocabMeasuresAction);
-  }, [dispatch]);
 
   const listingBodyData = applyQuery(
     id,

@@ -17,8 +17,20 @@ const Schema = () => {
         title: 'Query',
         fields: ['query'],
       },
+      {
+        id: 'prefilters',
+        title: 'Pre-applied filters',
+        fields: ['sector'],
+      },
     ],
     properties: {
+      sector: {
+        title: 'Sector',
+        widget: 'array',
+        vocabulary: {
+          '@id': 'eea.climateadapt.aceitems_sectors',
+        },
+      },
       query: {
         title: 'Query',
         widget: 'query',
