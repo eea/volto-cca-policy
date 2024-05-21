@@ -4,7 +4,7 @@ import './styles.less';
 
 const LinkWrap = ({ item, pathname, children, isActive }) => {
   return item ? (
-    <UniversalLink item={item}>
+    <UniversalLink item={item} className="step-link">
       <g className={isActive ? 'link-active' : ''}>
         <title>{item.title}</title>
         {children}
@@ -338,6 +338,7 @@ export default function RASTMap(props) {
             <path
               d="M210.5 76C198.09 76 188 65.91 188 53.5C188 41.09 198.09 31 210.5 31C222.91 31 233 41.09 233 53.5C233 65.91 222.91 76 210.5 76ZM210.5 33C199.2 33 190 42.2 190 53.5C190 64.8 199.2 74 210.5 74C221.8 74 231 64.8 231 53.5C231 42.2 221.8 33 210.5 33Z"
               fill="white"
+              className="circle-border"
             />
           </LinkWrap>
           <LinkWrap
@@ -356,6 +357,7 @@ export default function RASTMap(props) {
             <path
               d="M260.5 172C248.09 172 238 161.91 238 149.5C238 137.09 248.09 127 260.5 127C272.91 127 283 137.09 283 149.5C283 161.91 272.91 172 260.5 172ZM260.5 129C249.2 129 240 138.2 240 149.5C240 160.8 249.2 170 260.5 170C271.8 170 281 160.8 281 149.5C281 138.2 271.8 129 260.5 129Z"
               fill="white"
+              className="circle-border"
             />
           </LinkWrap>
           <LinkWrap
@@ -374,6 +376,7 @@ export default function RASTMap(props) {
             <path
               d="M210.5 272C198.09 272 188 261.91 188 249.5C188 237.09 198.09 227 210.5 227C222.91 227 233 237.09 233 249.5C233 261.91 222.91 272 210.5 272ZM210.5 229C199.2 229 190 238.2 190 249.5C190 260.8 199.2 270 210.5 270C221.8 270 231 260.8 231 249.5C231 238.2 221.8 229 210.5 229Z"
               fill="white"
+              className="circle-border"
             />
           </LinkWrap>
           <LinkWrap
@@ -392,6 +395,7 @@ export default function RASTMap(props) {
             <path
               d="M82.5 272C70.09 272 60 261.91 60 249.5C60 237.09 70.09 227 82.5 227C94.91 227 105 237.09 105 249.5C105 261.91 94.91 272 82.5 272ZM82.5 229C71.2 229 62 238.2 62 249.5C62 260.8 71.2 270 82.5 270C93.8 270 103 260.8 103 249.5C103 238.2 93.8 229 82.5 229Z"
               fill="white"
+              className="circle-border"
             />
           </LinkWrap>
           <LinkWrap
@@ -410,6 +414,7 @@ export default function RASTMap(props) {
             <path
               d="M29.5 172C17.09 172 7 161.91 7 149.5C7 137.09 17.09 127 29.5 127C41.91 127 52 137.09 52 149.5C52 161.91 41.91 172 29.5 172ZM29.5 129C18.2 129 9 138.2 9 149.5C9 160.8 18.2 170 29.5 170C40.8 170 50 160.8 50 149.5C50 138.2 40.8 129 29.5 129Z"
               fill="white"
+              className="circle-border"
             />
           </LinkWrap>
           <LinkWrap
@@ -428,6 +433,7 @@ export default function RASTMap(props) {
             <path
               d="M82.5 76C70.09 76 60 65.91 60 53.5C60 41.09 70.09 31 82.5 31C94.91 31 105 41.09 105 53.5C105 65.91 94.91 76 82.5 76ZM82.5 33C71.2 33 62 42.2 62 53.5C62 64.8 71.2 74 82.5 74C93.8 74 103 64.8 103 53.5C103 42.2 93.8 33 82.5 33Z"
               fill="white"
+              className="circle-border"
             />
           </LinkWrap>
           <LinkWrap
