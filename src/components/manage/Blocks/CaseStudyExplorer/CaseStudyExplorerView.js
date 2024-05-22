@@ -10,9 +10,9 @@ import { useCases } from './hooks';
 
 import './styles.less';
 
-const cases_url = '@@case-studies-map.arcgis.json';
-
 import { useLocation } from 'react-router-dom';
+
+const cases_url = '@@case-studies-map.arcgis.json';
 
 export default function CaseStudyExplorerView(props) {
   const location = useLocation();
