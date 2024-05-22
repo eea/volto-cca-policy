@@ -21,6 +21,7 @@ import installCollectionStats from './CollectionStatistics';
 import installTabsBlock from './TabsBlock';
 import installRedirectBlock from './RedirectBlock';
 import installContentLinks from './ContentLinks';
+import installASTNavigation from './ASTNavigation';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -51,5 +52,6 @@ export default function installBlocks(config) {
     installListing,
     installRedirectBlock,
     installContentLinks,
+    installASTNavigation,
   )(config);
 }
