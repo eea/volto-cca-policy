@@ -17,15 +17,16 @@
   //   pointer-events: none;
   // }
 
-  .link-active {
-    .circle,
-    .circle:hover {
+  .step-link:hover {
+    .circle {
       filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
     }
   }
 
-  .circle:hover {
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
+  .link-active {
+    .circle {
+      filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
+    }
   }
 
   .item.active a {
@@ -43,11 +44,11 @@
   .substep:not(:last-child) {
     padding-bottom: 0.8em;
   }
-}
 
-.rast-map-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2em;
+  .rast-map-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
 }
