@@ -4,9 +4,8 @@ import RASTAccordionContent from './RASTAccordionContent';
 import { useHistory } from 'react-router-dom';
 
 const RASTAccordion = (props) => {
-  const { items = {}, curent_location, activeMenu, show_subfolders } = props;
-
   const history = useHistory();
+  const { items = {}, curent_location, activeMenu, show_subfolders } = props;
 
   const handleClick = (e, item) => {
     let itemUrl = '/' + item['@id'].split('/').slice(3).join('/');

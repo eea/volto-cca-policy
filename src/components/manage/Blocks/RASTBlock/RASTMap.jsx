@@ -363,7 +363,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[2]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 2 ? true : false}
           >
             <path
               d="M210.5 228C222.4 228 232 237.6 232 249.5C232 261.4 222.4 271 210.5 271C198.6 271 189 261.4 189 249.5C189 237.6 198.6 228 210.5 228Z"
@@ -382,7 +382,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[3]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 3 ? true : false}
           >
             <path
               d="M82.5 228C94.4 228 104 237.6 104 249.5C104 261.4 94.4 271 82.5 271C70.6 271 61 261.4 61 249.5C61 237.6 70.6 228 82.5 228Z"
@@ -401,7 +401,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[4]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 4 ? true : false}
           >
             <path
               d="M29.5 128C41.4 128 51 137.6 51 149.5C51 161.4 41.4 171 29.5 171C17.6 171 8 161.4 8 149.5C8 137.6 17.6 128 29.5 128Z"
@@ -420,7 +420,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[5]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 5 ? true : false}
           >
             <path
               d="M82.5 32C94.4 32 104 41.6 104 53.5C104 65.4 94.4 75 82.5 75C70.6 75 61 65.4 61 53.5C61 41.6 70.6 32 82.5 32Z"
@@ -433,25 +433,6 @@ export default function RASTMap(props) {
             />
             <path
               d="M82.5 76C70.09 76 60 65.91 60 53.5C60 41.09 70.09 31 82.5 31C94.91 31 105 41.09 105 53.5C105 65.91 94.91 76 82.5 76ZM82.5 33C71.2 33 62 42.2 62 53.5C62 64.8 71.2 74 82.5 74C93.8 74 103 64.8 103 53.5C103 42.2 93.8 33 82.5 33Z"
-              fill="white"
-            />
-          </LinkWrap>
-          <LinkWrap
-            item={items[6]}
-            pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
-          >
-            <path
-              d="M33.5001 183.1C33.6001 183.1 33.8001 183.1 33.8001 182.9L34.8001 179.2L37.7001 181.7H38.1001V181.3L34.9001 178.6H34.7001C34.7001 178.6 34.6001 178.6 34.5001 178.8L33.4001 182.9V183C33.4001 183 33.4001 183.1 33.6001 183.2L33.5001 183.1Z"
-              fill="white"
-              className="circle"
-            />
-            <path
-              d="M33.4001 120.45C33.4001 120.45 33.3601 120.45 33.3401 120.45C33.2101 120.42 33.1201 120.28 33.1501 120.15C37.4601 101.73 46.4001 84.4701 59.0101 70.2401C59.1001 70.1401 59.2601 70.1301 59.3601 70.2201C59.4601 70.3101 59.4701 70.4701 59.3801 70.5701C46.8301 84.7401 37.9301 101.92 33.6401 120.26C33.6101 120.38 33.5101 120.45 33.4001 120.45Z"
-              fill="white"
-            />
-            <path
-              d="M55.2002 71.5001C55.2002 71.6001 55.4002 71.7001 55.5002 71.7001L59.1002 70.6001L58.6002 74.4001C58.6002 74.5001 58.6002 74.7001 58.8002 74.7001C58.9002 74.7001 59.1002 74.7001 59.1002 74.5001L59.7002 70.3001V70.1001H59.5002L55.5002 71.4001H55.4002V71.6001L55.2002 71.5001Z"
               fill="white"
             />
           </LinkWrap>
