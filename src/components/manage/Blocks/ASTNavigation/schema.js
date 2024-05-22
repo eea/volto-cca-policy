@@ -30,10 +30,16 @@ export default {
     {
       id: 'default',
       title: 'Default',
-      fields: ['title', 'image_type', 'items'],
+      fields: ['href', 'image_type', 'items'],
     },
   ],
   properties: {
+    href: {
+      widget: 'object_browser',
+      mode: 'link',
+      title: 'Main page',
+      description: 'Choose the main entry page to AST/UAST',
+    },
     items: {
       widget: 'object_list',
       title: 'Items',
