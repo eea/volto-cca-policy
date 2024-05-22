@@ -6,6 +6,7 @@
 @import './views.less';
 @import './search.less';
 @import './blocks.less';
+@import './print.less';
 
 // [class~='view-defaultview'] [id='page-document'] > *,
 // [class~='view-viewview'] [id='page-document'] > * {
@@ -104,7 +105,7 @@ body.subsite {
   .eea.header {
     .logo-wrapper {
       .eea-logo {
-        max-width: 252px;
+        max-width: 254px;
       }
     }
 
