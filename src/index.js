@@ -27,9 +27,9 @@ import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
-import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
-import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
-import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
+import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_ADAPT_logo.svg';
+import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_ADAPT_logo_white.svg';
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_and_health_logo_white.svg';
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 

@@ -104,7 +104,7 @@ body.subsite {
   .eea.header {
     .logo-wrapper {
       .eea-logo {
-        max-width: 252px;
+        max-width: 254px;
       }
     }
 
