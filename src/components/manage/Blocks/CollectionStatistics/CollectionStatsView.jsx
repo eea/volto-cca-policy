@@ -90,6 +90,17 @@ const urlBuilders = {
 
 const nop = () => '';
 
+function remapItemTypeValue(val) {
+  const list = {
+    'Publication and report': 'Publication reference',
+    'Video and podcast': 'Video',
+  };
+  if (val in list) {
+    return list[val];
+  }
+  return val;
+}
+
 export default function CollectionStatsView(props) {
   const { id, data = {}, pathname = props.path } = props;
   const field = data.aggregateField?.value;
@@ -111,26 +122,29 @@ export default function CollectionStatsView(props) {
       <div className="collection-stats">
         {keys
           .sort((a, b) => a.localeCompare(b))
-          .map((k) => (
-            <UniversalLink
-              className="tab-item-link"
-              key={k}
-              href={urlHandler({
-                base,
-                query: query.query,
-                field: groupDefinition.searchFieldName || field,
-                value: k,
-              })}
-            >
-              <IconComponent
-                name={k}
-                value={stats[k]}
-                field={field}
-                source={icons[k]}
-                showLabel={showLabel}
-              />
-            </UniversalLink>
-          ))}
+          .map((k) => {
+            let kV = remapItemTypeValue(k);
+            return (
+              <UniversalLink
+                className="tab-item-link"
+                key={k}
+                href={urlHandler({
+                  base,
+                  query: query.query,
+                  field: groupDefinition.searchFieldName || field,
+                  value: kV,
+                })}
+              >
+                <IconComponent
+                  name={k}
+                  value={stats[k]}
+                  field={field}
+                  source={icons[k]}
+                  showLabel={showLabel}
+                />
+              </UniversalLink>
+            );
+          })}
       </div>
     )) ||
     'no results'
