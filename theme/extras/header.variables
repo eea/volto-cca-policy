@@ -5,3 +5,4 @@
 /* Search box */
 // @searchBoxBackgroundGradient  : linear-gradient(45deg, @primaryColor 12%, @secondaryColor 80%);
 @megaMenuBackgroundColor      : linear-gradient(13.69deg, @blue-5 1.17%, @secondaryColor 80%);
+@mobileLogoMaxWidth: 200px;
