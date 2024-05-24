@@ -6,7 +6,7 @@ import { HTMLField, SubjectTags } from '@eeacms/volto-cca-policy/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 
-const Date = (props) => {
+const PublicationDate = (props) => {
   const date = props.content?.effective;
   return date ? (
     <div className="news-date-info">
@@ -45,7 +45,7 @@ function NewsItemView(props) {
           }}
         />
 
-        <Date {...props} />
+        <PublicationDate {...props} />
         <SubjectTags {...props} />
       </Container>
     </div>
