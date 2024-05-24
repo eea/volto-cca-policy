@@ -95,9 +95,9 @@ exports[`renders an event view component with all props 1`] = `
           <div
             className="ui segment"
           >
-            <h3>
+            <h4>
               When
-            </h3>
+            </h4>
             <p
               className="event-when"
             >
@@ -137,15 +137,15 @@ exports[`renders an event view component with all props 1`] = `
                 </span>
               </span>
             </p>
-            <h3>
+            <h4>
               Where
-            </h3>
+            </h4>
             <p>
               Volto, Plone
             </p>
-            <h3>
+            <h4>
               Info
-            </h3>
+            </h4>
             <p>
               test@example.com
             </p>
@@ -250,9 +250,9 @@ exports[`renders an event view component with only required props 1`] = `
           <div
             className="ui segment"
           >
-            <h3>
+            <h4>
               When
-            </h3>
+            </h4>
             <p
               className="event-when same-day"
             >
@@ -274,9 +274,9 @@ exports[`renders an event view component with only required props 1`] = `
                 4:20 PM
               </span>
             </p>
-            <h3>
+            <h4>
               Where
-            </h3>
+            </h4>
             <p />
           </div>
         </div>
@@ -379,9 +379,9 @@ exports[`renders an event view component without links to api in the text 1`] = 
           <div
             className="ui segment"
           >
-            <h3>
+            <h4>
               When
-            </h3>
+            </h4>
             <p
               className="event-when same-day"
             >
@@ -403,9 +403,9 @@ exports[`renders an event view component without links to api in the text 1`] = 
                 4:20 PM
               </span>
             </p>
-            <h3>
+            <h4>
               Where
-            </h3>
+            </h4>
             <p />
           </div>
         </div>
