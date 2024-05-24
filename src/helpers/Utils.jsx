@@ -454,9 +454,9 @@ export const EventDetails = (props) => {
 
   return (
     <>
-      <h3>
+      <h4>
         <FormattedMessage id="When" defaultMessage="When" />
-      </h3>
+      </h4>
       <When
         start={content.start}
         end={content.end}
@@ -465,17 +465,17 @@ export const EventDetails = (props) => {
       />
       {content?.location !== null && (
         <>
-          <h3>
+          <h4>
             <FormattedMessage id="Where" defaultMessage="Where" />
-          </h3>
+          </h4>
           <p>{content.location}</p>
         </>
       )}
       {!!content.contact_email && (
         <>
-          <h3>
+          <h4>
             <FormattedMessage id="Info" defaultMessage="Info" />
-          </h3>
+          </h4>
           <p>{content.contact_email}</p>
         </>
       )}
