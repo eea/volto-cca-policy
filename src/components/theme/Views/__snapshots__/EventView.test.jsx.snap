@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an event view component with all props 1`] = `
+<div
+  className="cca-event-view"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="eight wide computer twelve wide mobile twelve wide tablet column"
+        >
+          <div>
+            Title Block Component
+          </div>
+          <div
+            className="tags"
+          >
+            Filed under:
+             
+            <div
+              className="ui small label"
+              onClick={[Function]}
+            >
+              Volto
+            </div>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column"
+        >
+          <div
+            className="ui segment"
+          >
+            <h4>
+              When
+            </h4>
+            <p
+              className="event-when"
+            >
+              <span
+                className="start"
+              >
+                <span
+                  className="start-date"
+                >
+                  Jun 23, 2019
+                </span>
+                <span>
+                   
+                </span>
+                <span
+                  className="start-time"
+                >
+                  3:20 PM
+                </span>
+              </span>
+               to 
+              <span
+                className="end"
+              >
+                <span
+                  className="end-date"
+                >
+                  Jun 24, 2019
+                </span>
+                <span>
+                   
+                </span>
+                <span
+                  className="end-time"
+                >
+                  3:20 PM
+                </span>
+              </span>
+            </p>
+            <h4>
+              Where
+            </h4>
+            <p>
+              Volto, Plone
+            </p>
+            <h4>
+              Info
+            </h4>
+            <p>
+              test@example.com
+            </p>
+            <h4>
+              Web
+            </h4>
+            <p>
+              <a
+                href="https://www.example.com"
+                target="_blank"
+              >
+                Visit external website
+              </a>
+            </p>
+            <div
+              className="download-event"
+            >
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders an event view component with only required props 1`] = `
+<div
+  className="cca-event-view"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="eight wide computer twelve wide mobile twelve wide tablet column"
+        >
+          <div>
+            Title Block Component
+          </div>
+          <div
+            className="tags"
+          >
+            Filed under:
+             
+            <div
+              className="ui small label"
+              onClick={[Function]}
+            >
+              Volto
+            </div>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column"
+        >
+          <div
+            className="ui segment"
+          >
+            <h4>
+              When
+            </h4>
+            <p
+              className="event-when same-day"
+            >
+              <span
+                className="start-date"
+              >
+                Jun 23, 2019
+              </span>
+               from 
+              <span
+                className="start-time"
+              >
+                3:20 PM
+              </span>
+               to 
+              <span
+                className="end-time"
+              >
+                4:20 PM
+              </span>
+            </p>
+            <h4>
+              Where
+            </h4>
+            <p />
+            <div
+              className="download-event"
+            >
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders an event view component without links to api in the text 1`] = `
+<div
+  className="cca-event-view"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui twelve column grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="eight wide computer twelve wide mobile twelve wide tablet column"
+        >
+          <div>
+            Title Block Component
+          </div>
+          <div
+            className="tags"
+          >
+            Filed under:
+             
+            <div
+              className="ui small label"
+              onClick={[Function]}
+            >
+              Volto
+            </div>
+          </div>
+        </div>
+        <div
+          className="four wide computer twelve wide mobile twelve wide tablet column"
+        >
+          <div
+            className="ui segment"
+          >
+            <h4>
+              When
+            </h4>
+            <p
+              className="event-when same-day"
+            >
+              <span
+                className="start-date"
+              >
+                Jun 23, 2019
+              </span>
+               from 
+              <span
+                className="start-time"
+              >
+                3:20 PM
+              </span>
+               to 
+              <span
+                className="end-time"
+              >
+                4:20 PM
+              </span>
+            </p>
+            <h4>
+              Where
+            </h4>
+            <p />
+            <div
+              className="download-event"
+            >
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

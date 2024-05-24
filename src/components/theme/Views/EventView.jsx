@@ -1,13 +1,15 @@
 import React from 'react';
-import {
-  BannerTitle,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
-import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { Grid, Container, Segment, Button, Icon } from 'semantic-ui-react';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
-import { SubjectTags, EventDetails } from '@eeacms/volto-cca-policy/helpers';
 import { expandToBackendURL } from '@plone/volto/helpers';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { Grid, Container, Segment, Button, Icon } from 'semantic-ui-react';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
+import {
+  SubjectTags,
+  EventDetails,
+  HTMLField,
+} from '@eeacms/volto-cca-policy/helpers';
+import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 const messages = defineMessages({
   downloadEvent: {
@@ -16,20 +18,39 @@ const messages = defineMessages({
   },
 });
 
-function CcaEventView(props) {
-  const { content } = props;
+function EventView(props) {
   const intl = useIntl();
+  const { content } = props;
+  const {
+    blocks: filtered_blocks,
+    blocks_layout: filtered_blocks_layout,
+    hasBlockType,
+  } = filterBlocks(content, 'tabs_block');
 
   return (
     <div className="cca-event-view">
-      <BannerTitle content={content} />
+      <PortalMessage content={content} />
 
       <Container>
-        <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column mobile={12} tablet={12} computer={8}>
-              <RenderBlocks {...props} />
+              {hasBlockType && (
+                <>
+                  <p className="documentDescription">{content.description}</p>
+                  <HTMLField value={content.text} className="content-text" />
+                </>
+              )}
+
+              <RenderBlocks
+                {...props}
+                content={{
+                  ...content,
+                  blocks: filtered_blocks,
+                  blocks_layout: filtered_blocks_layout,
+                }}
+              />
+
               <SubjectTags {...props} />
             </Grid.Column>
             <Grid.Column mobile={12} tablet={12} computer={4}>
@@ -37,9 +58,9 @@ function CcaEventView(props) {
                 <EventDetails {...props} />
                 {content?.event_url && (
                   <>
-                    <h3>
+                    <h4>
                       <FormattedMessage id="Web" defaultMessage="Web" />
-                    </h3>
+                    </h4>
                     <p>
                       <a href={content.event_url} target="_blank">
                         <FormattedMessage
@@ -79,4 +100,4 @@ function CcaEventView(props) {
   );
 }
 
-export default CcaEventView;
+export default EventView;
