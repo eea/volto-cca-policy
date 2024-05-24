@@ -25,7 +25,7 @@ const messages = defineMessages({
   jul: { id: 'Jul', defaultMessage: 'Jul' },
   aug: { id: 'Aug', defaultMessage: 'Aug' },
   sep: { id: 'Sep', defaultMessage: 'Sep' },
-  oct: { id: 'Oct', defaultMessage: 'Ott' },
+  oct: { id: 'Oct', defaultMessage: 'Oct' },
   nov: { id: 'Nov', defaultMessage: 'Nov' },
   dec: { id: 'Dec', defaultMessage: 'Dec' },
 
