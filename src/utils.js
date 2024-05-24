@@ -55,11 +55,11 @@ export const filterBlocks = (content, block_type) => {
   const filteredBlocks = { ...content.blocks };
   const filteredBlocksLayout = { ...content.blocks_layout };
 
-  const filteredBlockUID = Object.keys(filteredBlocks).filter(
+  const filteredBlockUID = Object.keys(filteredBlocks)?.filter(
     (key) => filteredBlocks[key]['@type'] === block_type,
   );
   filteredBlockUID.forEach((key) => delete filteredBlocks[key]);
-  filteredBlocksLayout.items = filteredBlocksLayout.items.filter(
+  filteredBlocksLayout.items = filteredBlocksLayout?.items?.filter(
     (item) => !filteredBlockUID.includes(item),
   );
   const hasBlockType = filteredBlockUID.length > 0;
