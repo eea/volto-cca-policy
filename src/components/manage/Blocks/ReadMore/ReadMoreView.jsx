@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Button, Icon } from 'semantic-ui-react';
 import { BodyClass } from '@plone/volto/helpers';
 import cx from 'classnames';
@@ -10,64 +10,76 @@ const ReadMoreView = (props) => {
   const isEditMode = mode === 'edit';
   const { label_opened, label_closed, label_position, height } = data;
 
-  const [isReadMore, setIsReadMore] = React.useState(true);
-  const [wrapperHeight, setWrapperHeight] = React.useState(height);
-  const [mounted, setMounted] = React.useState(false);
-  const readMoreRef = React.createRef();
+  const [isReadMore, setIsReadMore] = useState(true);
+  const [wrapperHeight, setWrapperHeight] = useState(height);
+  const [mounted, setMounted] = useState(false);
+  const readMoreRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
 
-  React.useEffect(() => {
+  // Wrap previous siblings (before "Read more" button) in a div
+  useEffect(() => {
     if (isEditMode || !mounted) return;
 
     const button = readMoreRef.current;
     const wrapper = document.createElement('div');
     wrapper.className = 'panel-wrapper';
-
     const nodes = [];
-    let prev_elem = button.previousSibling;
-    while (prev_elem) {
-      nodes.push(prev_elem);
-      prev_elem = prev_elem.previousSibling;
+    let prevElem = button.previousSibling;
+
+    while (prevElem) {
+      nodes.push(prevElem);
+      prevElem = prevElem.previousSibling;
     }
+
     const section = document.getElementsByClassName('panel-wrapper');
     if (section.length > 0) return;
 
-    Array.from(nodes).forEach((e) => {
+    nodes.reverse().forEach((e) => {
       wrapper.appendChild(e);
     });
 
     button.parentNode.insertBefore(wrapper, button);
-    wrapper.append(...Array.from(wrapper.childNodes).reverse());
   }, [mounted, readMoreRef, isEditMode]);
 
-  React.useEffect(() => {
+  // Set the wrapper height
+  useEffect(() => {
     if (isEditMode || !mounted) return;
-
-    const wrapper = document.getElementsByClassName('panel-wrapper')[0];
-
+    const wrapper = document.querySelector('.panel-wrapper');
     if (wrapper) {
       wrapper.style.height = wrapperHeight;
     }
   }, [mounted, wrapperHeight, isEditMode]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     isReadMore ? setWrapperHeight(height) : setWrapperHeight('auto');
   }, [height, isReadMore]);
+
+  const toggleReadMore = () => {
+    if (!isReadMore) {
+      setTimeout(() => {
+        const wrapper = document.querySelector('.panel-wrapper');
+        if (wrapper) {
+          wrapper.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    setIsReadMore(!isReadMore);
+  };
 
   return (
     <div
       ref={readMoreRef}
       id="read-more-button"
-      className={cx('styled-readMoreBlock', {
+      className={cx('read-more-block', {
         left: label_position === 'left',
         right: label_position === 'right',
       })}
     >
       <BodyClass className={`${isReadMore ? 'closed' : 'opened'}`} />
-      <Button basic icon primary onClick={() => setIsReadMore(!isReadMore)}>
+      <Button basic icon primary onClick={toggleReadMore}>
         {isReadMore ? (
           <>
             <strong>{label_closed || 'Read more'}</strong>
@@ -83,4 +95,5 @@ const ReadMoreView = (props) => {
     </div>
   );
 };
+
 export default ReadMoreView;
