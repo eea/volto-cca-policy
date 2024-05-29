@@ -200,7 +200,7 @@ function C3SIndicatorView(props) {
         <Accordion id="visualisation" key="visualisation" className="secondary">
           <Accordion.Title
             role="button"
-            tabIndex={-1}
+            tabIndex={0}
             active={activeAccordion[1]}
             aria-expanded={activeAccordion[1]}
             index={1}
