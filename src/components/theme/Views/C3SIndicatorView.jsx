@@ -25,6 +25,81 @@ if (!__SERVER__) {
 
 const createIframe = (div_id, details_url, details_params, spinner_url) => {
   return `
+<script type="text/javascript">
+  window._define = window.define;
+  window.define = undefined;  
+</script>
+<script type="text/javascript">
+              window.cds_toolbox = {
+                  cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/'
+              };
+              const pageURL = window.location.origin + window.location.pathname;
+          </script><script type="text/javascript" src="https://cds.climate.copernicus.eu/toolbox/toolbox-latest.js"></script><script type="text/javascript">
+            const WORKFLOW = 'https://cds.climate.copernicus.eu/workflows/c3s/ecde-app-mean-temperature/master/configuration.json';
+            const WORKFLOWPARAMS = {};
+            (function () {
+                document.addEventListener('DOMContentLoaded', function () {
+                    window.cds_toolbox.runApp(
+                        'toolbox-app',
+                        WORKFLOW,
+                        {
+                            workflowParams: WORKFLOWPARAMS,
+                        }
+                    );
+                }, false);
+            })();
+            </script>
+<script type="text/javascript">
+  window.define = window._define;
+</script>`;
+};
+
+const createIframe111 = (div_id, details_url, details_params, spinner_url) => {
+  return `
+  <div class="chart-display">
+  <div class="t-ct">
+  <div id="toolbox-app">
+      <div class="pre-app-loading">
+          <img src="https://cds.climate.copernicus.eu/toolbox/assets/spinner.svg"
+              alt="Loading">
+          <div>
+              Loading index...
+          </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.cds_toolbox = {
+      cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/'
+  };
+  const pageURL = window.location.origin + window.location.pathname;
+</script>
+
+<script type="text/javascript"
+  src="https://cds.climate.copernicus.eu/toolbox/toolbox-latest.js"></script>
+
+<script type="text/javascript" tal:content="structure view/c3sjs_overview">
+  const WORKFLOW = 'https://cds.climate.copernicus.eu/workflows/c3s/LINK_NAME/master/configuration.json';
+  const WORKFLOWPARAMS = {};
+
+  (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+          window.cds_toolbox.runApp(
+              'toolbox-app',
+              WORKFLOW,
+              {
+                  workflowParams: WORKFLOWPARAMS,
+              }
+          );
+      }, false);
+  })();
+</script>
+</div>`;
+};
+
+const createIframeOld = (div_id, details_url, details_params, spinner_url) => {
+  return `
   <iframe width="100%" height="800px" srcdoc="<html><head>
     <title>CDS integration test</title>
     <meta charset='utf-8' />
@@ -126,18 +201,27 @@ function C3SIndicatorView(props) {
     indicator_title,
     title,
     logo,
+    c3sjs_overview,
   } = content;
+  console.log('c3sjs_overview', c3sjs_overview, props);
   const [showDetails, setShowDetails] = useState(false);
   const hasIndicatorTitle =
     indicator_title && indicator_title !== '_' && indicator_title !== '-';
 
-  const [activeAccIndex, setActiveAccIndex] = React.useState(null);
+  const [activeAccordion, setActiveAccordion] = React.useState([true, false]);
 
-  function handleAccClick(e, titleProps) {
-    const { index } = titleProps;
-    const newIndex = activeAccIndex === index ? -1 : index;
+  function handleAccordionClick(e, index) {
+    const _activeAccordion = JSON.parse(JSON.stringify(activeAccordion));
+    _activeAccordion[index] = !_activeAccordion[index];
 
-    setActiveAccIndex(newIndex);
+    setActiveAccordion(_activeAccordion);
+  }
+
+  const [showMode, setShowMode] = React.useState('normal');
+
+  function handleShowModeClick(e, mode) {
+    setShowMode(mode);
+    setActiveAccordion(mode === 'full' ? [false, false] : [true, false]);
   }
 
   const toggleIframe = () => {
@@ -173,7 +257,7 @@ function C3SIndicatorView(props) {
         }}
       />
 
-      <Container>
+      <Container className="">
         <PortalMessage content={content} />
         <LogoWrapper logo={logo}>
           <h2>
@@ -191,62 +275,94 @@ function C3SIndicatorView(props) {
           )}
         </LogoWrapper>
 
-        <HTMLField value={long_description} />
+        <Accordion id="background" key="background" className="secondary">
+          <Accordion.Title
+            role="button"
+            tabIndex={0}
+            active={activeAccordion[0]}
+            aria-expanded={activeAccordion[0]}
+            index={1}
+            onClick={(e) => handleAccordionClick(e, 0)}
+            onKeyDown={(e) => {
+              if (e.keyCode === 13 || e.keyCode === 32) {
+                e.preventDefault();
+                handleAccordionClick(e, 0);
+              }
+            }}
+          >
+            <span className="item-title">Background Information</span>
+            {activeAccordion[0] ? (
+              <Icon className="ri-arrow-up-s-line" />
+            ) : (
+              <Icon className="ri-arrow-down-s-line" />
+            )}
+          </Accordion.Title>
+          <Accordion.Content active={activeAccordion[0]}>
+            <HTMLField value={long_description} />
+          </Accordion.Content>
+        </Accordion>
+        <Accordion id="visualisation" key="visualisation" className="secondary">
+          <Accordion.Title
+            role="button"
+            tabIndex={1}
+            active={activeAccordion[1]}
+            aria-expanded={activeAccordion[1]}
+            index={1}
+            onClick={(e) => handleAccordionClick(e, 1)}
+            onKeyDown={(e) => {
+              if (e.keyCode === 13 || e.keyCode === 32) {
+                e.preventDefault();
+                handleAccordionClick(e, 1);
+              }
+            }}
+          >
+            <span className="item-title">Visualisation and Navigation</span>
+            {activeAccordion[1] ? (
+              <Icon className="ri-arrow-up-s-line" />
+            ) : (
+              <Icon className="ri-arrow-down-s-line" />
+            )}
+          </Accordion.Title>
+          <Accordion.Content active={activeAccordion[1]}>
+            <HTMLField value={definition_app} />
+          </Accordion.Content>
+        </Accordion>
 
         <div className="c3s-buttons">
-          <a href="#details">
-            <Button primary onClick={toggleIframe}>
-              {showDetails ? (
-                <FormattedMessage id="Go back" defaultMessage="Go back" />
-              ) : (
+          {showMode === 'normal' ? (
+            <a href="#details">
+              <Button primary onClick={(_e) => handleShowModeClick(_e, 'full')}>
+                <FormattedMessage id="Fullscreen" defaultMessage="Fullscreen" />
+              </Button>
+            </a>
+          ) : (
+            <Link to={window.location.pathname}>
+              <Button
+                primary
+                onClick={(_e) => handleShowModeClick(_e, 'normal')}
+              >
                 <FormattedMessage
-                  id="Explore in detail"
-                  defaultMessage="Explore in detail"
+                  id="Exit fullscreen"
+                  defaultMessage="Exit fullscreen"
                 />
-              )}
-            </Button>
-          </a>
-          <Link to="/knowledge/european-climate-data-explorer/">
-            <Button primary>
-              <FormattedMessage
-                id="ECDE homepage"
-                defaultMessage="ECDE homepage"
-              />
-            </Button>
-          </Link>
+              </Button>
+            </Link>
+          )}
         </div>
+      </Container>
 
-        {definition_app && !hasIndicatorTitle && (
-          <Accordion>
-            <Accordion.Title
-              className="accordion-title "
-              active={activeAccIndex === 0}
-              index={0}
-              onClick={handleAccClick}
-            >
-              <span>Visualisation and Navigation</span>
-              {activeAccIndex === 0 ? (
-                <Icon className="ri-arrow-up-s-line" />
-              ) : (
-                <Icon className="ri-arrow-down-s-line" />
-              )}
-            </Accordion.Title>
-            <Accordion.Content active={activeAccIndex === 0}>
-              <HTMLField value={definition_app} />
-            </Accordion.Content>
-          </Accordion>
-        )}
-
-        <h2>
-          {hasIndicatorTitle && <>{indicator_title}</>}
-          {showDetails && ' - Explore index'}
-        </h2>
-
-        <div>
-          {!__SERVER__ && !showDetails && <Overview {...props} />}
-          {!__SERVER__ && showDetails && <Details {...props} />}
+      <div class={showMode === 'full' ? 'page-document' : 'ui container'}>
+        <div class="full">
+          <div
+            className="div-chart-container full-width"
+            dangerouslySetInnerHTML={{
+              __html: createIframe('toolbox-app-details', '', '', ''),
+            }}
+          />
+          <h1> a message here</h1>
         </div>
-
+      </div>
+      <Container>
         <Segment>
           <p>
             Content in the European Climate Data Explorer pages is delivered by
