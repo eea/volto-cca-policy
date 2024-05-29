@@ -195,3 +195,7 @@ body.subsite {
     font-size: 23px;
   }
 }
+
+iframe {
+  border: none;
+}
