@@ -1,4 +1,16 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { useLocation } from 'react-router-dom';
+import { PrivacyProtection } from '@eeacms/volto-embed';
+import { Container, Divider, Grid } from 'semantic-ui-react';
+import {
+  ShareInfoButton,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
+import {
+  isObservatoryMetadataURL,
+  fixEmbedURL,
+} from '@eeacms/volto-cca-policy/helpers';
 import {
   TOOL,
   GUIDANCE,
@@ -19,19 +31,27 @@ import {
   ExternalLink,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import {
-  ShareInfoButton,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
-import {
-  isObservatoryMetadataURL,
-  fixEmbedURL,
-} from '@eeacms/volto-cca-policy/helpers';
-import { Container, Divider, Grid } from 'semantic-ui-react';
-import { useLocation } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
 
 const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
+
+const dataprotection = {
+  enabled: true,
+  privacy_cookie_key: 'flourish',
+  privacy_statement: [
+    {
+      children: [
+        {
+          text:
+            'This map is hosted by a third party [Flourish]. ' +
+            'By showing the external content you accept the terms ' +
+            'and conditions of www.flourish.studio. This includes ' +
+            'their cookie policies, which we have no control over.',
+        },
+      ],
+      type: 'p',
+    },
+  ],
+};
 
 const DatabaseItemView = (props) => {
   const { content } = props;
@@ -193,18 +213,23 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              {!!data_src(map_graphs) && (
-                <iframe
-                  height="980"
-                  width="100%"
-                  src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
-                  title="Interactive or visual content"
-                  className="flourish-embed-iframe"
-                  frameBorder="0"
-                  scrolling="no"
-                  sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
-                ></iframe>
-              )}
+              <PrivacyProtection
+                data={{
+                  dataprotection,
+                }}
+              >
+                {!!data_src(map_graphs) && (
+                  <iframe
+                    height="980"
+                    width="100%"
+                    src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
+                    title="Interactive or visual content"
+                    className="flourish-embed-iframe"
+                    sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+                  ></iframe>
+                )}
+              </PrivacyProtection>
+
               <Divider />
 
               <ReferenceInfo content={content} />
