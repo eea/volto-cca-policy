@@ -25,81 +25,6 @@ if (!__SERVER__) {
 
 const createIframe = (div_id, details_url, details_params, spinner_url) => {
   return `
-<script type="text/javascript">
-  window._define = window.define;
-  window.define = undefined;  
-</script>
-<script type="text/javascript">
-              window.cds_toolbox = {
-                  cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/'
-              };
-              const pageURL = window.location.origin + window.location.pathname;
-          </script><script type="text/javascript" src="https://cds.climate.copernicus.eu/toolbox/toolbox-latest.js"></script><script type="text/javascript">
-            const WORKFLOW = 'https://cds.climate.copernicus.eu/workflows/c3s/ecde-app-mean-temperature/master/configuration.json';
-            const WORKFLOWPARAMS = {};
-            (function () {
-                document.addEventListener('DOMContentLoaded', function () {
-                    window.cds_toolbox.runApp(
-                        'toolbox-app',
-                        WORKFLOW,
-                        {
-                            workflowParams: WORKFLOWPARAMS,
-                        }
-                    );
-                }, false);
-            })();
-            </script>
-<script type="text/javascript">
-  window.define = window._define;
-</script>`;
-};
-
-const createIframe111 = (div_id, details_url, details_params, spinner_url) => {
-  return `
-  <div class="chart-display">
-  <div class="t-ct">
-  <div id="toolbox-app">
-      <div class="pre-app-loading">
-          <img src="https://cds.climate.copernicus.eu/toolbox/assets/spinner.svg"
-              alt="Loading">
-          <div>
-              Loading index...
-          </div>
-      </div>
-  </div>
-</div>
-
-<script type="text/javascript">
-  window.cds_toolbox = {
-      cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/'
-  };
-  const pageURL = window.location.origin + window.location.pathname;
-</script>
-
-<script type="text/javascript"
-  src="https://cds.climate.copernicus.eu/toolbox/toolbox-latest.js"></script>
-
-<script type="text/javascript" tal:content="structure view/c3sjs_overview">
-  const WORKFLOW = 'https://cds.climate.copernicus.eu/workflows/c3s/LINK_NAME/master/configuration.json';
-  const WORKFLOWPARAMS = {};
-
-  (function () {
-      document.addEventListener('DOMContentLoaded', function () {
-          window.cds_toolbox.runApp(
-              'toolbox-app',
-              WORKFLOW,
-              {
-                  workflowParams: WORKFLOWPARAMS,
-              }
-          );
-      }, false);
-  })();
-</script>
-</div>`;
-};
-
-const createIframeOld = (div_id, details_url, details_params, spinner_url) => {
-  return `
   <iframe width="100%" height="800px" srcdoc="<html><head>
     <title>CDS integration test</title>
     <meta charset='utf-8' />
@@ -134,36 +59,6 @@ const createIframeOld = (div_id, details_url, details_params, spinner_url) => {
   />`;
 };
 
-const Details = (props) => {
-  const { content } = props;
-  const { details_app_toolbox_url, details_app_parameters } = content;
-
-  const c3s_details_url = details_app_toolbox_url;
-  const c3s_details_params = JSON.stringify(details_app_parameters).replace(
-    /"/g,
-    "'",
-  ); // we avoid double quotes in iframe text
-  const [spinnerUrl, setSpinnerUrl] = useState(null);
-
-  React.useEffect(() => {
-    setSpinnerUrl(spinner);
-  }, []);
-
-  return (
-    <div
-      className="iframe-container"
-      dangerouslySetInnerHTML={{
-        __html: createIframe(
-          'toolbox-app-details',
-          c3s_details_url,
-          c3s_details_params,
-          spinnerUrl,
-        ),
-      }}
-    />
-  );
-};
-
 const Overview = (props) => {
   const { content } = props;
   const { overview_app_toolbox_url, overview_app_parameters } = content;
@@ -180,7 +75,7 @@ const Overview = (props) => {
 
   return (
     <div
-      className="iframe-container"
+      className="iframe-container div-chart-container"
       dangerouslySetInnerHTML={{
         __html: createIframe(
           'toolbox-app-overview',
@@ -198,15 +93,15 @@ function C3SIndicatorView(props) {
   const {
     definition_app,
     long_description,
-    indicator_title,
+    // indicator_title,
     title,
     logo,
-    c3sjs_overview,
+    // c3sjs_overview,
   } = content;
-  console.log('c3sjs_overview', c3sjs_overview, props);
+  // console.log('c3sjs_overview', c3sjs_overview, props);
   const [showDetails, setShowDetails] = useState(false);
-  const hasIndicatorTitle =
-    indicator_title && indicator_title !== '_' && indicator_title !== '-';
+  // const hasIndicatorTitle =
+  //   indicator_title && indicator_title !== '_' && indicator_title !== '-';
 
   const [activeAccordion, setActiveAccordion] = React.useState([true, false]);
 
@@ -222,11 +117,12 @@ function C3SIndicatorView(props) {
   function handleShowModeClick(e, mode) {
     setShowMode(mode);
     setActiveAccordion(mode === 'full' ? [false, false] : [true, false]);
+    e.preventDefault();
   }
 
-  const toggleIframe = () => {
-    setShowDetails(!showDetails);
-  };
+  // const toggleIframe = () => {
+  //   setShowDetails(!showDetails);
+  // };
 
   useEffect(() => {
     if (window.location.hash === '#details') {
@@ -304,7 +200,7 @@ function C3SIndicatorView(props) {
         <Accordion id="visualisation" key="visualisation" className="secondary">
           <Accordion.Title
             role="button"
-            tabIndex={1}
+            tabIndex={-1}
             active={activeAccordion[1]}
             aria-expanded={activeAccordion[1]}
             index={1}
@@ -351,16 +247,8 @@ function C3SIndicatorView(props) {
         </div>
       </Container>
 
-      <div class={showMode === 'full' ? 'page-document' : 'ui container'}>
-        <div class="full">
-          <div
-            className="div-chart-container full-width"
-            dangerouslySetInnerHTML={{
-              __html: createIframe('toolbox-app-details', '', '', ''),
-            }}
-          />
-          <h1> a message here</h1>
-        </div>
+      <div className={showMode === 'full' ? 'page-document' : 'ui container'}>
+        <div className="full">{!__SERVER__ && <Overview {...props} />}</div>
       </div>
       <Container>
         <Segment>
