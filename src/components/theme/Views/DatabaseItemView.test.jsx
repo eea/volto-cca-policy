@@ -21,6 +21,12 @@ jest.mock('semantic-ui-react', () => ({
   ...jest.requireActual('semantic-ui-react'),
 }));
 
+jest.mock('@eeacms/volto-embed', () => {
+  return {
+    PrivacyProtection: jest.fn(({ children }) => <div>{children}</div>),
+  };
+});
+
 describe('DatabaseItemView', () => {
   it('should render the component', () => {
     const content = {
