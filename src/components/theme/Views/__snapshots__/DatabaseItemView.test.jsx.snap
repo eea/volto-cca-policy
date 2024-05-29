@@ -29,6 +29,7 @@ exports[`DatabaseItemView should render the component 1`] = `
               }
             }
           />
+          <div />
           <div
             className="ui divider"
           />
