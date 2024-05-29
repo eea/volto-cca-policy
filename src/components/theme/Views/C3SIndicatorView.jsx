@@ -261,7 +261,7 @@ function C3SIndicatorView(props) {
             implemented by ECMWF.
           </p>
           <p>
-            <a href="/knowledge/european-climate-data-explorer/disclaimer">
+            <a href="/en/knowledge/european-climate-data-explorer/disclaimer">
               <FormattedMessage id="Disclaimer" defaultMessage="Disclaimer" />
             </a>
           </p>
