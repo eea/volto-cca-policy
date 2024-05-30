@@ -19,30 +19,34 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 
 const messages = defineMessages({
-  'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT': {
+  default_info_tooltip: {
     id:
-      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT',
+      'The date refers to the moment in which the item has been prepared ' +
+      'or updated by contributing experts to be submitted for the publication ' +
+      'in Climate ADAPT',
     defaultMessage:
-      'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT',
+      'The date refers to the moment in which the item has been prepared ' +
+      'or updated by contributing experts to be submitted for the publication ' +
+      'in Climate ADAPT',
   },
-  'The date refers to the date of release of the video': {
+  release_info_tooltip: {
     id: 'The date refers to the date of release of the video',
     defaultMessage: 'The date refers to the date of release of the video',
   },
-  'The date refers to the latest date of publication of the item': {
+  publication_info_tooltip: {
     id: 'The date refers to the latest date of publication of the item',
     defaultMessage:
       'The date refers to the latest date of publication of the item',
   },
-  'Date of release:': {
+  release_date: {
     id: 'Date of release:',
     defaultMessage: 'Date of release:',
   },
-  'Date of publication:': {
+  publication_date: {
     id: 'Date of publication:',
     defaultMessage: 'Date of publication:',
   },
-  'Date of creation:': {
+  creation_date: {
     id: 'Date of creation:',
     defaultMessage: 'Date of creation:',
   },
@@ -266,13 +270,7 @@ function GeoChar(props) {
           section.value && (
             <Fragment key={index}>
               {section.title && (
-                <h5>
-                  {intl.formatMessage(messages[section.title])}
-                  {/* <FormattedMessage
-                    id="{section.title}"
-                    defaultMessage="Countries2344:"
-                  /> */}
-                </h5>
+                <h5>{intl.formatMessage(messages[section.title])}</h5>
               )}
               <p>{section.value.join(', ')}</p>
             </Fragment>
@@ -282,37 +280,34 @@ function GeoChar(props) {
   );
 }
 
-function PublicationDateInfo(props) {
-  const { value, portaltype, title } = props;
-  let tooltipText =
-    'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
-
-  if (portaltype === VIDEO) {
-    tooltipText = 'The date refers to the date of release of the video';
-  }
-  if (
-    portaltype === GUIDANCE ||
-    portaltype === INDICATOR ||
-    portaltype === PUBLICATION_REPORT
-  ) {
-    tooltipText =
-      'The date refers to the latest date of publication of the item';
-  }
-
-  const publicationYear = new Date(value).getFullYear();
+function PublicationDateInfo({ value, portaltype, title }) {
   const intl = useIntl();
-  return publicationYear > 1970 ? (
+  const publicationYear = new Date(value).getFullYear();
+
+  const tooltipMessages = {
+    [VIDEO]: intl.formatMessage(messages.release_info_tooltip),
+    [GUIDANCE]: intl.formatMessage(messages.publication_info_tooltip),
+    [INDICATOR]: intl.formatMessage(messages.publication_info_tooltip),
+    [PUBLICATION_REPORT]: intl.formatMessage(messages.publication_info_tooltip),
+    default: intl.formatMessage(messages.default_info_tooltip),
+  };
+
+  const tooltipText = tooltipMessages[portaltype] || tooltipMessages.default;
+
+  if (publicationYear <= 1970) return null;
+
+  return (
     <>
       <h5>{title}</h5>
       <p>
         {publicationYear}
         <Popup
-          content={intl.formatMessage(messages[tooltipText])}
+          content={tooltipText}
           trigger={<i className="ri-question-fill"></i>}
         />
       </p>
     </>
-  ) : null;
+  );
 }
 
 function ContentMetadata(props) {
@@ -337,26 +332,23 @@ function ContentMetadata(props) {
   const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
-  let date_title;
-  if (type === VIDEO) {
-    date_title = intl.formatMessage(messages['Date of release:']);
-  } else if (
-    type === PUBLICATION_REPORT ||
-    type === INDICATOR ||
-    type === GUIDANCE
-  ) {
-    date_title = intl.formatMessage(messages['Date of publication:']);
-  } else {
-    date_title = intl.formatMessage(messages['Date of creation:']);
-  }
+  const dateTitles = {
+    [VIDEO]: intl.formatMessage(messages.release_date),
+    [PUBLICATION_REPORT]: intl.formatMessage(messages.publication_date),
+    [INDICATOR]: intl.formatMessage(messages.publication_date),
+    [GUIDANCE]: intl.formatMessage(messages.publication_date),
+    default: intl.formatMessage(messages.creation_date),
+  };
+
+  const dateTitle = dateTitles[type] || dateTitles.default;
 
   return (
     <Segment>
       <div className="content-metadata">
         <PublicationDateInfo
-          title={date_title}
+          title={dateTitle}
           value={content?.publication_date}
-          portaltype={content?.portal_type}
+          portaltype={type}
         />
 
         {isObservatoryItem && (
