@@ -16,6 +16,7 @@ import {
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import { useSelector } from 'react-redux';
 
 if (!__SERVER__) {
   window.cds_toolbox = {
@@ -98,12 +99,10 @@ function C3SIndicatorView(props) {
     logo,
     // c3sjs_overview,
   } = content;
-  // console.log('c3sjs_overview', c3sjs_overview, props);
   const [showDetails, setShowDetails] = useState(false);
-  // const hasIndicatorTitle =
-  //   indicator_title && indicator_title !== '_' && indicator_title !== '-';
 
   const [activeAccordion, setActiveAccordion] = React.useState([true, false]);
+  const currentLanguage = useSelector((state) => state.intl.locale);
 
   function handleAccordionClick(e, index) {
     const _activeAccordion = JSON.parse(JSON.stringify(activeAccordion));
@@ -261,7 +260,13 @@ function C3SIndicatorView(props) {
             implemented by ECMWF.
           </p>
           <p>
-            <a href="/knowledge/european-climate-data-explorer/disclaimer">
+            <a
+              href={
+                '/' +
+                currentLanguage +
+                '/knowledge/european-climate-data-explorer/disclaimer'
+              }
+            >
               <FormattedMessage id="Disclaimer" defaultMessage="Disclaimer" />
             </a>
           </p>
