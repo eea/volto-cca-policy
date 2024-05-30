@@ -217,13 +217,13 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              <PrivacyProtection
-                data={{
-                  url: flourishUrl,
-                  dataprotection: dataprotection(flourishUrl),
-                }}
-              >
-                {!!flourishPath && (
+              {!!flourishPath && (
+                <PrivacyProtection
+                  data={{
+                    url: flourishUrl,
+                    dataprotection: dataprotection,
+                  }}
+                >
                   <iframe
                     height="980"
                     width="100%"
@@ -232,8 +232,8 @@ const DatabaseItemView = (props) => {
                     className="flourish-embed-iframe"
                     sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
                   ></iframe>
-                )}
-              </PrivacyProtection>
+                </PrivacyProtection>
+              )}
 
               <Divider />
 
