@@ -11,7 +11,7 @@ import {
   VIDEO,
   GUIDANCE,
   INDICATOR,
-  PUBICATION_REPORT,
+  PUBLICATION_REPORT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import {
   isObservatoryMetadataURL,
@@ -293,7 +293,7 @@ function PublicationDateInfo(props) {
   if (
     portaltype === GUIDANCE ||
     portaltype === INDICATOR ||
-    portaltype === PUBICATION_REPORT
+    portaltype === PUBLICATION_REPORT
   ) {
     tooltipText =
       'The date refers to the latest date of publication of the item';
@@ -341,7 +341,7 @@ function ContentMetadata(props) {
   if (type === VIDEO) {
     date_title = intl.formatMessage(messages['Date of release:']);
   } else if (
-    type === PUBICATION_REPORT ||
+    type === PUBLICATION_REPORT ||
     type === INDICATOR ||
     type === GUIDANCE
   ) {

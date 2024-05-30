@@ -16,7 +16,7 @@ import {
   GUIDANCE,
   INDICATOR,
   INFORMATION_PORTAL,
-  PUBICATION_REPORT,
+  PUBLICATION_REPORT,
   ORGANISATION,
   VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
@@ -76,7 +76,7 @@ const DatabaseItemView = (props) => {
     case TOOL:
       subtitle = 'Tools';
       break;
-    case PUBICATION_REPORT:
+    case PUBLICATION_REPORT:
       subtitle = 'Publications and Report';
       break;
     case GUIDANCE:
