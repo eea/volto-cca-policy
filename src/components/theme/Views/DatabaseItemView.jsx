@@ -111,6 +111,10 @@ const DatabaseItemView = (props) => {
     }
     return null;
   };
+  const flourishPath = data_src(map_graphs);
+  const flourishUrl = map_graphs
+    ? `https://flo.uri.sh/${flourishPath}/embed`
+    : null;
 
   const is_cmshare_video = share_eea.some((domain) =>
     content?.embed_url?.includes(domain),
@@ -213,22 +217,23 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              <PrivacyProtection
-                data={{
-                  dataprotection,
-                }}
-              >
-                {!!data_src(map_graphs) && (
+              {!!flourishPath && (
+                <PrivacyProtection
+                  data={{
+                    url: flourishUrl,
+                    dataprotection: dataprotection,
+                  }}
+                >
                   <iframe
                     height="980"
                     width="100%"
-                    src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
+                    src={flourishUrl}
                     title="Interactive or visual content"
                     className="flourish-embed-iframe"
                     sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
                   ></iframe>
-                )}
-              </PrivacyProtection>
+                </PrivacyProtection>
+              )}
 
               <Divider />
 
