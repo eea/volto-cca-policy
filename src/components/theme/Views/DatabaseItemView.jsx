@@ -114,7 +114,7 @@ const DatabaseItemView = (props) => {
   };
   const flourishPath = data_src(map_graphs);
   const flourishUrl = map_graphs
-    ? `https://flo.uri.sh/${baseFlourish}/embed`
+    ? `https://flo.uri.sh/${flourishPath}/embed`
     : null;
 
   const is_cmshare_video = share_eea.some((domain) =>
