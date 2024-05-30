@@ -95,6 +95,7 @@ export const BIOREGIONS = {
   COUNTRIES: 'Countries',
   SUBNATIONAL: 'Subnational Regions',
   CITY: 'Municipality Name',
+  TRANS_MACRO_OUTERMOST: 'Outermost Regions',
   TRANS_MACRO_NORTHPERI: 'Northern Periphery and Arctic',
   TRANS_MACRO_BACLITC: 'Baltic Sea',
   TRANS_MACRO_NW_EUROPE: 'North West Europe',
