@@ -34,7 +34,8 @@ import {
 
 const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
-const dataprotection = {
+const dataprotection = (url) => ({
+  url,
   enabled: true,
   privacy_cookie_key: 'flourish',
   privacy_statement: [
@@ -51,7 +52,7 @@ const dataprotection = {
       type: 'p',
     },
   ],
-};
+});
 
 const DatabaseItemView = (props) => {
   const { content } = props;
@@ -111,6 +112,10 @@ const DatabaseItemView = (props) => {
     }
     return null;
   };
+  const flourishPath = data_src(map_graphs);
+  const flourishUrl = map_graphs
+    ? `https://flo.uri.sh/${baseFlourish}/embed`
+    : null;
 
   const is_cmshare_video = share_eea.some((domain) =>
     content?.embed_url?.includes(domain),
@@ -215,14 +220,14 @@ const DatabaseItemView = (props) => {
 
               <PrivacyProtection
                 data={{
-                  dataprotection,
+                  dataprotection: dataprotection(flourishUrl),
                 }}
               >
-                {!!data_src(map_graphs) && (
+                {!!flourishPath && (
                   <iframe
                     height="980"
                     width="100%"
-                    src={`https://flo.uri.sh/${data_src(map_graphs)}/embed`}
+                    src={flourishUrl}
                     title="Interactive or visual content"
                     className="flourish-embed-iframe"
                     sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
