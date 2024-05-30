@@ -34,8 +34,7 @@ import {
 
 const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
-const dataprotection = (url) => ({
-  url,
+const dataprotection = {
   enabled: true,
   privacy_cookie_key: 'flourish',
   privacy_statement: [
@@ -52,7 +51,7 @@ const dataprotection = (url) => ({
       type: 'p',
     },
   ],
-});
+};
 
 const DatabaseItemView = (props) => {
   const { content } = props;
@@ -220,6 +219,7 @@ const DatabaseItemView = (props) => {
 
               <PrivacyProtection
                 data={{
+                  url: flourishUrl,
                   dataprotection: dataprotection(flourishUrl),
                 }}
               >
