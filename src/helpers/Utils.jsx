@@ -14,7 +14,7 @@ import {
 } from 'semantic-ui-react';
 import {
   CASE_STUDY,
-  PUBICATION_REPORT,
+  PUBLICATION_REPORT,
   ORGANISATION,
   ADAPTATION_OPTION,
   ACE_PROJECT,
@@ -341,7 +341,7 @@ export const DocumentsList = (props) => {
     section_title = intl.formatMessage(messages.caseStudiesDocuments);
   }
 
-  if (type === PUBICATION_REPORT) {
+  if (type === PUBLICATION_REPORT) {
     section_title = intl.formatMessage(
       messages.publicationsAndReportsDocuments,
     );

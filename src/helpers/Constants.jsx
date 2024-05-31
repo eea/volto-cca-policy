@@ -5,7 +5,7 @@ export const INDICATOR = 'eea.climateadapt.indicator';
 export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
 export const ORGANISATION = 'eea.climateadapt.organisation';
 export const ACE_PROJECT = 'eea.climateadapt.aceproject';
-export const PUBICATION_REPORT = 'eea.climateadapt.publicationreport';
+export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
 export const TOOL = 'eea.climateadapt.tool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
@@ -95,6 +95,7 @@ export const BIOREGIONS = {
   COUNTRIES: 'Countries',
   SUBNATIONAL: 'Subnational Regions',
   CITY: 'Municipality Name',
+  TRANS_MACRO_OUTERMOST: 'Outermost Regions',
   TRANS_MACRO_NORTHPERI: 'Northern Periphery and Arctic',
   TRANS_MACRO_BACLITC: 'Baltic Sea',
   TRANS_MACRO_NW_EUROPE: 'North West Europe',
