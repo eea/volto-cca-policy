@@ -4,6 +4,7 @@ import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import {
   RASTWidgetView,
   TranslationDisclaimer,
+  RedirectToLogin,
 } from '@eeacms/volto-cca-policy/components';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
@@ -381,6 +382,12 @@ const applyConfig = (config) => {
     {
       match: '',
       component: TranslationDisclaimer,
+    },
+    {
+      match: {
+        path: /(.*)\/add/,
+      },
+      component: RedirectToLogin,
     },
   ];
 
