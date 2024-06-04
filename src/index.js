@@ -392,6 +392,12 @@ const applyConfig = (config) => {
       },
       GET_CONTENT: ['siblings'],
     },
+
+    {
+      match: '',
+      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],
+      querystring: { 'expand.navigation.depth': '3' },
+    },
   ];
 
   // plug custom redux middleware
