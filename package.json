@@ -31,7 +31,7 @@
     "@eeacms/volto-datablocks": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "^1.33.2",
-    "@eeacms/volto-embed": "10.0.1",
+    "@eeacms/volto-embed": "10.0.2",
     "@eeacms/volto-globalsearch": "^1.1.0",
     "@eeacms/volto-openlayers-map": "*",
     "@eeacms/volto-searchlib": "^0.9.3",
