@@ -12,17 +12,18 @@ const messages = defineMessages({
 });
 
 const getDropdownOptions = (items) => {
-  const options = items?.map((item) => {
-    const source = item?.source?.[0];
-    return {
-      key: source?.id,
-      value: source?.id,
-      text: item.item_title,
-      as: Link,
-      to: flattenToAppURL(source?.['@id']),
-    };
-  });
-  return options;
+  return (
+    items?.map((item, index) => {
+      const source = item?.source?.[0];
+      return {
+        key: source?.id || index,
+        value: source?.id,
+        text: item.item_title,
+        as: Link,
+        to: flattenToAppURL(source?.['@id']),
+      };
+    }) || []
+  );
 };
 
 const DropdownListView = (props) => {

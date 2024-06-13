@@ -35,6 +35,7 @@ export function filterCases(cases, activeFilters) {
     if (
       activeFilters.sectors.length === 0 &&
       activeFilters.measures.length === 0 &&
+      activeFilters.elements.length === 0 &&
       activeFilters.impacts.length === 0
     )
       return _case;
@@ -43,6 +44,10 @@ export function filterCases(cases, activeFilters) {
 
     activeFilters.sectors.forEach((filter) => {
       if (_case.properties.sectors.includes(',' + filter + ',')) flag = true;
+    });
+
+    activeFilters.elements.forEach((filter) => {
+      if (_case.properties.elements.includes(',' + filter + ',')) flag = true;
     });
 
     activeFilters.impacts.forEach((filter) => {
@@ -60,7 +65,7 @@ export function filterCases(cases, activeFilters) {
 }
 
 export function getFilters(cases) {
-  let _filters = { sectors: {}, impacts: {}, measures: {} };
+  let _filters = { sectors: {}, impacts: {}, elements: {}, measures: {} };
 
   for (let key of Object.keys(cases)) {
     const _case = cases[key];
@@ -78,6 +83,17 @@ export function getFilters(cases) {
     for (let i = 0; i < impactNames.length; i++) {
       if (!_filters.impacts.hasOwnProperty(impactKeys[i + 1])) {
         _filters.impacts[impactKeys[i + 1]] = impactNames[i];
+      }
+    }
+
+    let elementKeys = _case.properties?.elements?.split(',');
+    let elementNames = _case.properties?.elements_str?.split(',') || [];
+    for (let i = 0; i < elementNames.length; i++) {
+      if (
+        !_filters.elements.hasOwnProperty(elementKeys[i + 1]) &&
+        elementKeys[i + 1].length
+      ) {
+        _filters.elements[elementKeys[i + 1]] = elementNames[i];
       }
     }
 
