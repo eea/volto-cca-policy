@@ -114,13 +114,18 @@ function CcaEventView(props) {
               <h2>
                 <FormattedMessage id="Contact" defaultMessage="Contact" />
               </h2>
-              <p>
-                <FormattedMessage
-                  id="If you have any further questions you can contact"
-                  defaultMessage="If you have any further questions you can contact"
-                />{' '}
-                <a href="mailto:{content.contact_email}">{contact_email}</a>
-              </p>
+
+              {contact_email && (
+                <>
+                  <p>
+                    <FormattedMessage
+                      id="If you have any further questions you can contact"
+                      defaultMessage="If you have any further questions you can contact"
+                    />{' '}
+                    <a href={`mailto:${contact_email}`}>{contact_email}</a>
+                  </p>
+                </>
+              )}
 
               {event_language && (
                 <>
