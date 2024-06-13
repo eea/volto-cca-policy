@@ -1,17 +1,23 @@
 import React from 'react';
-import { Grid, Container, Segment } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
 import {
   DocumentsList,
   HTMLField,
-  BannerTitle,
   EventDetails,
 } from '@eeacms/volto-cca-policy/helpers';
+import { Grid, Container, Segment } from 'semantic-ui-react';
+import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
-import { FormattedMessage } from 'react-intl';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 function CcaEventView(props) {
   const { content } = props;
   const { event_language } = content;
+  const {
+    blocks: filtered_blocks,
+    blocks_layout: filtered_blocks_layout,
+  } = filterBlocks(content, 'tabs_block');
+
   // cca_files: [content.agenda_file]}
   if (content.agenda_file) {
     content.agenda_file['url'] = content.agenda_file['download'];
@@ -36,16 +42,13 @@ function CcaEventView(props) {
 
   return (
     <div className="cca-event-view">
-      <BannerTitle
-        content={{ ...content, '@type': 'Climate adapt event' }}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: false,
-          hideCreationDate: false,
-          hideModificationDate: false,
-          hidePublishingDate: false,
-          hideDownloadButton: false,
-          hideShareButton: false,
+      <RenderBlocks
+        {...props}
+        content={{
+          ...content,
+          '@type': 'climate-adapt-event',
+          blocks: filtered_blocks,
+          blocks_layout: filtered_blocks_layout,
         }}
       />
 
