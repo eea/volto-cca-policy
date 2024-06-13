@@ -4,9 +4,6 @@ exports[`renders an event view component with all props 1`] = `
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -40,7 +37,7 @@ exports[`renders an event view component with all props 1`] = `
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
+              A background document for the event is available
                
             </h5>
             <div
@@ -83,7 +80,7 @@ exports[`renders an event view component with all props 1`] = `
             If you have any further questions you can contact
              
             <a
-              href="mailto:{content.contact_email}"
+              href="mailto:test@example.com"
             >
               test@example.com
             </a>
@@ -161,9 +158,6 @@ exports[`renders an event view component with only required props 1`] = `
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -197,7 +191,7 @@ exports[`renders an event view component with only required props 1`] = `
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
+              A background document for the event is available
                
             </h5>
             <div
@@ -236,13 +230,6 @@ exports[`renders an event view component with only required props 1`] = `
           <h2>
             Contact
           </h2>
-          <p>
-            If you have any further questions you can contact
-             
-            <a
-              href="mailto:{content.contact_email}"
-            />
-          </p>
         </div>
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
@@ -290,9 +277,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -326,7 +310,7 @@ exports[`renders an event view component without links to api in the text 1`] = 
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
+              A background document for the event is available
                
             </h5>
             <div
@@ -365,13 +349,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
           <h2>
             Contact
           </h2>
-          <p>
-            If you have any further questions you can contact
-             
-            <a
-              href="mailto:{content.contact_email}"
-            />
-          </p>
         </div>
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
