@@ -1,13 +1,13 @@
 import React from 'react';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { Grid, Container, Segment } from 'semantic-ui-react';
 import {
   HTMLField,
   EventDetails,
   DocumentsList,
 } from '@eeacms/volto-cca-policy/helpers';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
-import { Grid, Container, Segment } from 'semantic-ui-react';
-import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 const messages = defineMessages({
@@ -28,8 +28,8 @@ const DocumentSection = ({ title, file }) => (
       section_title: title,
       cca_files: [
         {
-          url: file?.['download'],
-          title: file?.['filename'],
+          url: file?.download,
+          title: file?.filename,
         },
       ],
     }}
@@ -46,6 +46,7 @@ function CcaEventView(props) {
     participation,
     contact_email,
   } = content;
+
   const {
     blocks: filtered_blocks,
     blocks_layout: filtered_blocks_layout,
@@ -66,7 +67,7 @@ function CcaEventView(props) {
       <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
-          <div className="row">
+          <Grid.Row>
             <Grid.Column
               mobile={12}
               tablet={12}
@@ -116,15 +117,13 @@ function CcaEventView(props) {
               </h2>
 
               {contact_email && (
-                <>
-                  <p>
-                    <FormattedMessage
-                      id="If you have any further questions you can contact"
-                      defaultMessage="If you have any further questions you can contact"
-                    />{' '}
-                    <a href={`mailto:${contact_email}`}>{contact_email}</a>
-                  </p>
-                </>
+                <p>
+                  <FormattedMessage
+                    id="If you have any further questions you can contact"
+                    defaultMessage="If you have any further questions you can contact"
+                  />{' '}
+                  <a href={`mailto:${contact_email}`}>{contact_email}</a>
+                </p>
               )}
 
               {event_language && (
@@ -149,7 +148,7 @@ function CcaEventView(props) {
                 <EventDetails {...props} />
               </Segment>
             </Grid.Column>
-          </div>
+          </Grid.Row>
         </Grid>
       </Container>
     </div>
