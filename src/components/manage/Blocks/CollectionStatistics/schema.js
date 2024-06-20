@@ -3,14 +3,36 @@ import {
   hasDateOperation,
 } from '@plone/volto/components/manage/Blocks/Search/utils';
 
-const Schema = () => {
+const ExtraFilter = () => ({
+  title: 'Extra Filters',
+  fieldsets: [{ id: 'default', fields: ['id', 'value'], title: 'Default' }],
+  properties: {
+    id: {
+      title: 'Field ID',
+    },
+    value: {
+      title: 'Filter value',
+    },
+  },
+  required: [],
+});
+
+const Schema = (formData) => {
+  const isEEASearch = formData?.queryParameterStyle === 'EEASemanticSearch';
+
   return {
     title: 'Collection Statistics',
     fieldsets: [
       {
         id: 'default',
         title: 'Default',
-        fields: ['aggregateField', 'queryParameterStyle', 'href', 'showLabel'],
+        fields: [
+          'aggregateField',
+          'queryParameterStyle',
+          'href',
+          'showLabel',
+          ...(isEEASearch ? ['extraFilters'] : []),
+        ],
       },
       {
         id: 'query',
@@ -67,6 +89,12 @@ const Schema = () => {
         mode: 'link',
         selectedItemAttrs: [],
         allowExternals: true,
+      },
+      extraFilters: {
+        title: 'Extra filters',
+        widget: 'object_list',
+        schema: ExtraFilter({ formData }),
+        // schemaExtender: (schema) => schema,
       },
     },
     required: [],
