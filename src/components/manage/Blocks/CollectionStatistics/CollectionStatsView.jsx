@@ -72,7 +72,7 @@ const makeEEASearchQuery = ({ base, field, value, extraFilters }) => {
     ['issued.date', 'Last 5 years'],
     ['language', 'en'],
     [field, value],
-    ...extraFilters?.map(({ id, value }) => [id, value]),
+    ...(extraFilters?.map(({ id, value }) => [id, value]) || []),
   ];
 
   const rest = '&sort-field=issued.date&sort-direction=desc';

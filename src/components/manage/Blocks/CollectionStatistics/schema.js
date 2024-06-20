@@ -3,7 +3,7 @@ import {
   hasDateOperation,
 } from '@plone/volto/components/manage/Blocks/Search/utils';
 
-const ExtraFilter = () => ({
+const ExtraFilter = (_) => ({
   title: 'Extra Filters',
   fieldsets: [{ id: 'default', fields: ['id', 'value'], title: 'Default' }],
   properties: {
