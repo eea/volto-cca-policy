@@ -66,21 +66,29 @@ const makeSearchBlockQuery = ({ base, query, field, value }) => {
   return `${base}?${params}`;
 };
 
-const makeEEASearchQuery = ({ base, field, value }) => {
+const makeEEASearchQuery = ({ base, field, value, extraFilters }) => {
   // TODO: don't hardcode the language
-  const rest =
-    'filters[1][field]=issued.date' +
-    '&filters[1][values][0]=Last 5 years' +
-    '&filters[1][type]=any' +
-    '&filters[2][field]=language' +
-    '&filters[2][values][0]=en' +
-    '&filters[2][type]=any' +
-    '&sort-field=issued.date' +
-    '&sort-direction=desc';
+  const allFields = [
+    ['issued.date', 'Last 5 years'],
+    ['language', 'en'],
+    [field, value],
+    ...(extraFilters?.map(({ id, value }) => [id, value]) || []),
+  ];
 
-  const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${value}`;
+  const rest = '&sort-field=issued.date&sort-direction=desc';
 
-  return `${base}?size=n_10_n&${filter}&${rest}`;
+  // See FilterAceContentView
+  const filters = allFields
+    .map(([name, anyValue], index) =>
+      [
+        `filters[${index}][field]=${name}`,
+        `filters[${index}][type]=any`,
+        `filters[${index}][values][0]=${anyValue}`,
+      ].join('&'),
+    )
+    .join('&');
+
+  return `${base}?size=n_10_n&${filters}&${rest}`;
 };
 
 const urlBuilders = {
@@ -116,6 +124,7 @@ export default function CollectionStatsView(props) {
 
   const keys = Object.keys(stats);
   const urlHandler = urlBuilders[queryParameterStyle] || nop;
+  const extraFilters = data?.extraFilters || [];
 
   return (
     (field && keys.length > 0 && (
@@ -133,6 +142,7 @@ export default function CollectionStatsView(props) {
                   query: query.query,
                   field: groupDefinition.searchFieldName || field,
                   value: kV,
+                  extraFilters,
                 })}
               >
                 <IconComponent

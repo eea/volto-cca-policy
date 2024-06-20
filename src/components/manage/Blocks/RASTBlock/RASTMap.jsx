@@ -1,11 +1,17 @@
 import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
+import cx from 'classnames';
 import './styles.less';
 
-const LinkWrap = ({ item, pathname, children, isActive }) => {
+const LinkWrap = ({ item, children, isActive, className }) => {
   return item ? (
-    <UniversalLink item={item} className="step-link">
-      <g className={isActive ? 'link-active' : ''}>
+    <UniversalLink
+      item={item}
+      className={cx('step-link', className, {
+        active: isActive,
+      })}
+    >
+      <g>
         <title>{item.title}</title>
         {children}
       </g>
@@ -15,8 +21,6 @@ const LinkWrap = ({ item, pathname, children, isActive }) => {
   );
 };
 
-// export default function RASTView(props) {
-// const RASTView = (props) => {
 export default function RASTMap(props) {
   const { path, pathname, activeMenu, skip_items } = props;
   const currentPath = path || pathname;
@@ -29,7 +33,7 @@ export default function RASTMap(props) {
 
   if (activeMenu !== null) {
     if (data.includes(activeMenu.toString())) {
-      currentMenu = -1;
+      currentMenu = null;
     } else {
       let activeMenuMinus = 0;
       for (let i = 0; i < data.length; i++) {
@@ -40,7 +44,11 @@ export default function RASTMap(props) {
   }
 
   return (
-    <div className="rast-map-block">
+    <div
+      className={cx('rast-map-block', {
+        landing: currentMenu === null,
+      })}
+    >
       <svg
         width="290"
         height="280"
@@ -337,6 +345,7 @@ export default function RASTMap(props) {
             item={items[0]}
             pathname={currentPath}
             isActive={currentMenu === 0 ? true : false}
+            className="step-0"
           >
             <path
               d="M210.5 32C222.4 32 232 41.6 232 53.5C232 65.4 222.4 75 210.5 75C198.6 75 189 65.4 189 53.5C189 41.6 198.6 32 210.5 32Z"
@@ -356,6 +365,7 @@ export default function RASTMap(props) {
             item={items[1]}
             pathname={currentPath}
             isActive={currentMenu === 1 ? true : false}
+            className="step-1"
           >
             <path
               d="M260.5 128C272.4 128 282 137.6 282 149.5C282 161.4 272.4 171 260.5 171C248.6 171 239 161.4 239 149.5C239 137.6 248.6 128 260.5 128Z"
@@ -375,6 +385,7 @@ export default function RASTMap(props) {
             item={items[2]}
             pathname={currentPath}
             isActive={currentMenu === 2 ? true : false}
+            className="step-2"
           >
             <path
               d="M210.5 228C222.4 228 232 237.6 232 249.5C232 261.4 222.4 271 210.5 271C198.6 271 189 261.4 189 249.5C189 237.6 198.6 228 210.5 228Z"
@@ -394,6 +405,7 @@ export default function RASTMap(props) {
             item={items[3]}
             pathname={currentPath}
             isActive={currentMenu === 3 ? true : false}
+            className="step-3"
           >
             <path
               d="M82.5 228C94.4 228 104 237.6 104 249.5C104 261.4 94.4 271 82.5 271C70.6 271 61 261.4 61 249.5C61 237.6 70.6 228 82.5 228Z"
@@ -413,6 +425,7 @@ export default function RASTMap(props) {
             item={items[4]}
             pathname={currentPath}
             isActive={currentMenu === 4 ? true : false}
+            className="step-4"
           >
             <path
               d="M29.5 128C41.4 128 51 137.6 51 149.5C51 161.4 41.4 171 29.5 171C17.6 171 8 161.4 8 149.5C8 137.6 17.6 128 29.5 128Z"
@@ -432,6 +445,7 @@ export default function RASTMap(props) {
             item={items[5]}
             pathname={currentPath}
             isActive={currentMenu === 5 ? true : false}
+            className="step-5"
           >
             <path
               d="M82.5 32C94.4 32 104 41.6 104 53.5C104 65.4 94.4 75 82.5 75C70.6 75 61 65.4 61 53.5C61 41.6 70.6 32 82.5 32Z"

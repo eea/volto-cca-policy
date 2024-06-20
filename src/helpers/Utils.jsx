@@ -1,17 +1,18 @@
 import React, { Fragment } from 'react';
+import { expandToBackendURL } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-import { UniversalLink } from '@plone/volto/components';
-import config from '@plone/volto/registry';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
   Segment,
   Image,
   ListItem,
   List,
-  Button,
   Icon,
   Label,
+  Button,
 } from 'semantic-ui-react';
+import { UniversalLink } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 import {
   CASE_STUDY,
   PUBLICATION_REPORT,
@@ -22,9 +23,12 @@ import {
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
-import { useIntl, defineMessages } from 'react-intl';
 
 const messages = defineMessages({
+  downloadEvent: {
+    id: 'Download this event in iCal format',
+    defaultMessage: 'Download this event in iCal format',
+  },
   documents: {
     id: 'Documents',
     defaultMessage: 'Documents',
@@ -449,8 +453,29 @@ export const SubjectTags = (props) => {
   ) : null;
 };
 
+export const WebDetails = (props) => {
+  const { content } = props;
+  const eventUrl = content?.event_url;
+  return eventUrl ? (
+    <>
+      <h4>
+        <FormattedMessage id="Web" defaultMessage="Web" />
+      </h4>
+      <p>
+        <a href={eventUrl} target="_blank">
+          <FormattedMessage
+            id="Visit external website"
+            defaultMessage="Visit external website"
+          />
+        </a>
+      </p>
+    </>
+  ) : null;
+};
+
 export const EventDetails = (props) => {
   const { content } = props;
+  const intl = useIntl();
 
   return (
     <>
@@ -479,6 +504,28 @@ export const EventDetails = (props) => {
           <p>{content.contact_email}</p>
         </>
       )}
+
+      <WebDetails {...props} />
+
+      <div className="download-event">
+        <a
+          className="ics-download"
+          target="_blank"
+          rel="noreferrer"
+          href={`${expandToBackendURL(content['@id'])}/ics_view`}
+        >
+          <Button
+            className="icon inverted primary labeled"
+            title={intl.formatMessage(messages.downloadEvent)}
+          >
+            <Icon name="calendar alternate outline" />
+            <FormattedMessage
+              id="Download Event"
+              defaultMessage="Download Event"
+            />
+          </Button>
+        </a>
+      </div>
     </>
   );
 };
