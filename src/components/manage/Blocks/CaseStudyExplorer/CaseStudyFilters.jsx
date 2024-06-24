@@ -85,31 +85,6 @@ export default function CaseStudyFilters(props) {
           )}
         </Accordion.Content>
         <Accordion.Title
-          active={activeIndex.includes(3)}
-          index={3}
-          onClick={handleClick}
-        >
-          <AccordionIcon active={activeIndex.includes(3)} />
-          <FormattedMessage
-            id="Adaptation elements"
-            defaultMessage="Adaptation elements"
-          />
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex.includes(3)}>
-          {Object.entries(filters?.elements || {}).map(
-            ([value, label], index) => (
-              <Checkbox
-                label={intl.formatMessage({ id: label })}
-                value={value}
-                checked={activeFilters.elements.includes(value)}
-                name="elements"
-                onChange={checkboxChangeHandler}
-                key={'element' + index}
-              />
-            ),
-          )}
-        </Accordion.Content>
-        <Accordion.Title
           active={activeIndex.includes(1)}
           index={1}
           onClick={handleClick}
@@ -163,6 +138,31 @@ export default function CaseStudyFilters(props) {
                   />
                 ))}
               </div>
+            ),
+          )}
+        </Accordion.Content>
+        <Accordion.Title
+          active={activeIndex.includes(3)}
+          index={3}
+          onClick={handleClick}
+        >
+          <AccordionIcon active={activeIndex.includes(3)} />
+          <FormattedMessage
+            id="Adaptation elements"
+            defaultMessage="Adaptation elements"
+          />
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex.includes(3)}>
+          {Object.entries(filters?.elements || {}).map(
+            ([value, label], index) => (
+              <Checkbox
+                label={intl.formatMessage({ id: label })}
+                value={value}
+                checked={activeFilters.elements.includes(value)}
+                name="elements"
+                onChange={checkboxChangeHandler}
+                key={'element' + index}
+              />
             ),
           )}
         </Accordion.Content>
