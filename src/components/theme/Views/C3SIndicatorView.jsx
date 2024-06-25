@@ -24,7 +24,19 @@ if (!__SERVER__) {
   };
 }
 
-const createIframe = (div_id, details_url, details_params, spinner_url) => {
+const createIframe = (
+  div_id,
+  details_url,
+  details_params,
+  ecde_identifier,
+  spinner_url,
+) => {
+  // return '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=18_consecutive_dry_days" style="width: 100%; border: 0; height: min(800px, 80vh);"/>';
+  return (
+    '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=' +
+    ecde_identifier +
+    '" style="width: 100%; border: 0; height: min(800px, 80vh);"/>'
+  );
   return `
   <iframe width="100%" height="800px" srcdoc="<html><head>
     <title>CDS integration test</title>
@@ -62,8 +74,13 @@ const createIframe = (div_id, details_url, details_params, spinner_url) => {
 
 const Overview = (props) => {
   const { content } = props;
-  const { overview_app_toolbox_url, overview_app_parameters } = content;
+  const {
+    overview_app_toolbox_url,
+    overview_app_parameters,
+    overview_app_ecde_identifier,
+  } = content;
   const c3s_overview_url = overview_app_toolbox_url;
+  const c3s_ecde_identifier = overview_app_ecde_identifier;
   const c3s_overview_params = JSON.stringify(overview_app_parameters).replace(
     /"/g,
     "'",
@@ -82,6 +99,7 @@ const Overview = (props) => {
           'toolbox-app-overview',
           c3s_overview_url,
           c3s_overview_params,
+          c3s_ecde_identifier,
           spinnerUrl,
         ),
       }}
