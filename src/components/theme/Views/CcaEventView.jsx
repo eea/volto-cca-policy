@@ -51,6 +51,12 @@ function CcaEventView(props) {
     blocks: filtered_blocks,
     blocks_layout: filtered_blocks_layout,
   } = filterBlocks(content, 'tabs_block');
+  const titleBlock = Object.values(filtered_blocks).find(
+    (block) => block['@type'] === 'title',
+  );
+  if (titleBlock && !titleBlock.subtitle && content.subtitle) {
+    titleBlock.subtitle = content.subtitle;
+  }
 
   return (
     <div className="cca-event-view">
