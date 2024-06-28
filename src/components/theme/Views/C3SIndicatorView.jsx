@@ -32,11 +32,13 @@ const createIframe = (
   spinner_url,
 ) => {
   // return '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=18_consecutive_dry_days" style="width: 100%; border: 0; height: min(800px, 80vh);"/>';
-  return (
-    '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=' +
-    ecde_identifier +
-    '" style="width: 100%; border: 0; height: min(800px, 80vh);"/>'
-  );
+  if (typeof ecde_identifier !== 'undefined' && ecde_identifier) {
+    return (
+      '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=' +
+      ecde_identifier +
+      '" style="width: 100%; border: 0; height: min(800px, 80vh);"/>'
+    );
+  }
   return `
   <iframe width="100%" height="800px" srcdoc="<html><head>
     <title>CDS integration test</title>
