@@ -5,45 +5,7 @@ import config from '@plone/volto/registry';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
-
-import {
-  Controls,
-  Interactions,
-  Layer,
-  Map,
-  Layers,
-} from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-
-const MapContainer = (props) => {
-  const { longitude, latitude, source } = props;
-  return (
-    <Map
-      view={{
-        center: ol.proj.fromLonLat([longitude, latitude]),
-        showFullExtent: true,
-        zoom: 15,
-      }}
-      pixelRatio={1}
-      controls={ol.control.defaults({ attribution: false })}
-    >
-      <Layers>
-        <Controls attribution={false} zoom={false} />
-        <Interactions
-          doubleClickZoom={true}
-          dragAndDrop={false}
-          dragPan={true}
-          keyboardPan={true}
-          keyboardZoom={true}
-          mouseWheelZoom={true}
-          pointer={true}
-          select={false}
-        />
-        <Layer.Tile source={source} zIndex={0} />
-      </Layers>
-    </Map>
-  );
-};
+import MapContainer from '@eeacms/volto-cca-policy/components/theme/Widgets/GeolocationWidgetMapContainer';
 
 const defaultValue = {
   latitude: 55.6761,
@@ -53,7 +15,6 @@ const defaultValue = {
 const GeolocationWidget = (props) => {
   const { id, value, onChange } = props;
 
-  const [tileWMSSources, setTileWMSSources] = useState([]);
   const [address, setAddress] = useState('');
 
   const handleAddressChange = (event) => {
@@ -87,20 +48,6 @@ const GeolocationWidget = (props) => {
     }
   };
 
-  React.useEffect(() => {
-    setTileWMSSources([
-      new ol.source.TileWMS({
-        url: 'https://gisco-services.ec.europa.eu/maps/service',
-        params: {
-          LAYERS: 'OSMBlossomComposite',
-          TILED: true,
-        },
-        serverType: 'geoserver',
-        transition: 0,
-      }),
-    ]);
-  }, []); // ol.source.TileWMS, ol.source.Vector
-
   if (__SERVER__) return '';
 
   const lat = value?.latitude ?? defaultValue.latitude;
@@ -123,7 +70,6 @@ const GeolocationWidget = (props) => {
         key={mapKey}
         longitude={value?.longitude || defaultValue.longitude}
         latitude={value?.latitude || defaultValue.latitude}
-        source={tileWMSSources[0]}
       />
       <div className="ui form">
         <div className="inline fields">
