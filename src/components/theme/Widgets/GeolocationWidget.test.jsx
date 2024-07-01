@@ -15,6 +15,8 @@ const mockStore = configureStore();
 describe('GeolocationWidget', () => {
   it('should render the component', () => {
     const data = {
+      id: 'location',
+      title: 'Location',
       value: {
         latitude: 10,
         longitude: 50,
