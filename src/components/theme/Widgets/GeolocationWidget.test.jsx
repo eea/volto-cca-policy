@@ -7,6 +7,8 @@ import { Provider } from 'react-intl-redux';
 
 import GeolocationWidget from './GeolocationWidget';
 
+global.__SERVER__ = false;
+
 jest.mock(
   '@eeacms/volto-cca-policy/components/theme/Widgets/GeolocationWidgetMapContainer',
 );
