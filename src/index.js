@@ -70,6 +70,11 @@ const applyConfig = (config) => {
     ];
   }
 
+  config.settings.allowed_cors_destinations = [
+    ...(config.settings.allowed_cors_destinations || []),
+    'nominatim.openstreetmap.org',
+  ];
+
   // if (!config.settings.loadables.d3)
   //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
   // if (!config.settings.loadables.d3Geo)
