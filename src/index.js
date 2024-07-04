@@ -170,11 +170,12 @@ const applyConfig = (config) => {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/mission',
-        path: '/en/mission/knowledge-and-data/search-the-database',
-        placeholder: 'Search the Climate-ADAPT database',
+        path: '/en/mission/website-search',
+        placeholder: 'EU Mission on Adaptation',
         description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        buttonTitle: 'Explore more',
+        buttonUrl:
+          'https://climate-adapt.eea.europa.eu/en/mission/website-search/',
       },
       {
         isDefault: false,
