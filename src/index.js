@@ -171,7 +171,7 @@ const applyConfig = (config) => {
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/mission',
         path: '/en/mission/website-search',
-        placeholder: 'EU Mission on Adaptation',
+        placeholder: 'Search the EU Mission on Adaptation',
         description: 'Looking for more information?',
         buttonTitle: 'Explore more',
         buttonUrl:
