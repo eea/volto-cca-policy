@@ -16,7 +16,7 @@ const facets = [
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Adaptation Elements',
+    label: 'Adaptation Approaches',
     alwaysVisible: false,
   }),
   geographic_countries,
