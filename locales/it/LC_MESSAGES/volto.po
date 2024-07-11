@@ -11,6 +11,21 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "A background document for the event is available"
+#: components/theme/Views/CcaEventView
+msgid "A background document for the event is available"
+msgstr ""
+
+#. Default: "Adaptation Approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation Approaches"
+msgstr "Approcci di adattamento"
+
+#. Default: "Adaptation Approaches:"
+#: helpers/ContentMetadata
+msgid "Adaptation Approaches:"
+msgstr "Approcci di adattamento:"
+
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Details"
@@ -20,11 +35,6 @@ msgstr "Dettagli sull'adattamento"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Opzioni di adattamento implementate in questo caso"
-
-#. Default: "Adaptation elements:"
-#: helpers/ContentMetadata
-msgid "Adaptation elements:"
-msgstr "Elementi di adattamento:"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -225,11 +235,18 @@ msgstr "Documenti"
 
 #. Default: "Download Event"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download Event"
+msgstr ""
+
+#. Default: "Download the detailed agenda"
+#: components/theme/Views/CcaEventView
+msgid "Download the detailed agenda"
 msgstr ""
 
 #. Default: "Download this event in iCal format"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr ""
 
@@ -238,15 +255,10 @@ msgstr ""
 msgid "Duration:"
 msgstr "Durata:"
 
-#. Default: "ECDE homepage"
+#. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
-msgid "ECDE homepage"
-msgstr "Home page dell'ECDE"
-
-#. Default: "Explore in detail"
-#: components/theme/Views/C3SIndicatorView
-msgid "Explore in detail"
-msgstr "Esplora in dettaglio"
+msgid "Exit fullscreen"
+msgstr ""
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -257,6 +269,11 @@ msgstr "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
 msgstr "Fr"
+
+#. Default: "Fullscreen"
+#: components/theme/Views/C3SIndicatorView
+msgid "Fullscreen"
+msgstr ""
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -272,11 +289,6 @@ msgstr "Caratterizzazione geografica:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Iniziare"
-
-#. Default: "Go back"
-#: components/theme/Views/C3SIndicatorView
-msgid "Go back"
-msgstr "Torna indietro"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -353,6 +365,11 @@ msgstr "Lug"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
 msgstr "giugno"
+
+#. Default: "Key Type Measure"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Key Type Measure"
+msgstr "Misura del tipo chiave"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -476,7 +493,7 @@ msgstr "Contributi dell'Osservatorio:"
 msgid "Observatory contributions"
 msgstr "Contributi dell'Osservatorio"
 
-#. Default: "Ott"
+#. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
 msgstr "ottobre"
@@ -599,6 +616,12 @@ msgstr "Vedi altro"
 msgid "See video outside Climate-ADAPT"
 msgstr "Guarda il video fuori da Climate-ADAPT"
 
+#. Default: "Select"
+#: components/manage/Blocks/ContentLinks/DropdownListView
+#: components/manage/Blocks/Listing/DropdownListingView
+msgid "Select"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -712,6 +735,7 @@ msgstr "Visualizza tutti i contributi nel catalogo delle risorse"
 
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Visit external website"
 msgstr "Visita il sito web esterno"
 
@@ -722,6 +746,7 @@ msgstr "Noi"
 
 #. Default: "Web"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Web"
 msgstr "ragnatela"
 
@@ -2086,6 +2111,13 @@ msgid "Adaptation elements"
 msgstr "Elementi di adattamento"
 
 #. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:107
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:158
+#: ../../climateadapt/browser/pt/casestudy_view.pt:340
+msgid "Adaptation elements:"
+msgstr "Elementi di adattamento:"
+
+#. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:95
 msgid "Adaptation portal or platform reported"
 msgstr "Portale di adattamento o piattaforma trovate"
@@ -2500,6 +2532,11 @@ msgid "Geographic characterization:"
 msgstr "Caratterizzazione geografica:"
 
 #. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
+msgid "Go back"
+msgstr "Torna indietro"
+
+#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:255
 msgid "Go to Case Study Explorer"
@@ -2661,11 +2698,6 @@ msgstr "Documenti"
 #: ../../climateadapt/browser/pt/adaptationoption_view.pt:129
 msgid "Item’s creation:"
 msgstr "Creazione della scheda:"
-
-#. undefined
-#: ../../climateadapt/tiles/search_acecontent.py:850
-msgid "Key Type Measure"
-msgstr "Misura del tipo chiave"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267

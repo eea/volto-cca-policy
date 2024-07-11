@@ -1,4 +1,4 @@
-#
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -6,11 +6,26 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: \n"
+"Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. Default: "A background document for the event is available"
+#: components/theme/Views/CcaEventView
+msgid "A background document for the event is available"
+msgstr ""
+
+#. Default: "Adaptation Approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation Approaches"
+msgstr ""
+
+#. Default: "Adaptation Approaches:"
+#: helpers/ContentMetadata
+msgid "Adaptation Approaches:"
+msgstr ""
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -21,11 +36,6 @@ msgstr "Detalii privind adaptarea"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Opțiuni de adaptare puse în aplicare în acest caz"
-
-#. Default: "Adaptation elements:"
-#: helpers/ContentMetadata
-msgid "Adaptation elements:"
-msgstr "Elemente de adaptare:"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -84,14 +94,10 @@ msgstr "Descrierea studiului de caz"
 msgid "Case Study illustrations"
 msgstr "Ilustrații pentru studii de caz"
 
-#. Default: "Case studies collected at national level in Spain, provided by
-#. AdapteCCA.es"
+#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid ""
-"Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-"Studii de caz colectate la nivel național în Spania, furnizate de "
-"AdapteCCA.es"
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Studii de caz colectate la nivel național în Spania, furnizate de AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -161,7 +167,8 @@ msgid "Close"
 msgstr "Închide"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Contact"
 
@@ -212,7 +219,8 @@ msgid "Default"
 msgstr "Implicită"
 
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget helpers/Utils
+#: components/manage/Widgets/CreatableSelectWidget
+#: helpers/Utils
 msgid "Description"
 msgstr "Descriere"
 
@@ -228,11 +236,18 @@ msgstr "Documente"
 
 #. Default: "Download Event"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download Event"
 msgstr "Descarcă Evenimentul"
 
+#. Default: "Download the detailed agenda"
+#: components/theme/Views/CcaEventView
+msgid "Download the detailed agenda"
+msgstr ""
+
 #. Default: "Download this event in iCal format"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Descărcați acest eveniment în format iCal"
 
@@ -241,15 +256,10 @@ msgstr "Descărcați acest eveniment în format iCal"
 msgid "Duration:"
 msgstr "Durată:"
 
-#. Default: "ECDE homepage"
+#. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
-msgid "ECDE homepage"
-msgstr "Pagina de pornire a ECDE"
-
-#. Default: "Explore in detail"
-#: components/theme/Views/C3SIndicatorView
-msgid "Explore in detail"
-msgstr "Explorați în detaliu"
+msgid "Exit fullscreen"
+msgstr ""
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -260,6 +270,11 @@ msgstr "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
 msgstr "FR"
+
+#. Default: "Fullscreen"
+#: components/theme/Views/C3SIndicatorView
+msgid "Fullscreen"
+msgstr ""
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -275,11 +290,6 @@ msgstr "Caracterizarea geografică:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Noțiuni de bază"
-
-#. Default: "Go back"
-#: components/theme/Views/C3SIndicatorView
-msgid "Go back"
-msgstr "Du-te înapoi"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -356,6 +366,11 @@ msgstr "Iul"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
 msgstr "Jun"
+
+#. Default: "Key Type Measure"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Key Type Measure"
+msgstr "Măsură de tip cheie"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -479,7 +494,7 @@ msgstr "Contribuții ale Observatorului:"
 msgid "Observatory contributions"
 msgstr "Contribuțiile Observatorului"
 
-#. Default: "Ott"
+#. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
 msgstr "Oct"
@@ -530,12 +545,14 @@ msgid "Reference Information"
 msgstr "Informații de referință"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView helpers/Utils
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
 msgid "Reference information"
 msgstr "Informații de referință"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "References"
 msgstr "Referințe"
 
@@ -600,6 +617,12 @@ msgstr "Vezi mai multe"
 msgid "See video outside Climate-ADAPT"
 msgstr "A se vedea videoclipul din afara Climate-ADAPT"
 
+#. Default: "Select"
+#: components/manage/Blocks/ContentLinks/DropdownListView
+#: components/manage/Blocks/Listing/DropdownListingView
+msgid "Select"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -612,7 +635,8 @@ msgstr "Sep"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton helpers/ShareInfo
+#: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Partajați informațiile dvs."
 
@@ -628,7 +652,8 @@ msgstr "Soluții"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "Source"
 msgstr "Sursă"
 
@@ -684,18 +709,10 @@ msgstr "Data se referă la data lansării videoclipului"
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Data se referă la ultima dată de publicare a articolului"
 
-#. Default: "The date refers to the moment in which the item has been prepared
-#. or updated by contributing experts to be submitted for the publication in
-#. Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 #: helpers/ContentMetadata
-msgid ""
-"The date refers to the moment in which the item has been prepared or updated"
-" by contributing experts to be submitted for the publication in Climate "
-"ADAPT"
-msgstr ""
-"Data se referă la momentul în care elementul a fost pregătit sau actualizat "
-"de către experții contribuitori, care urmează să fie prezentat spre "
-"publicare în ADAPT pentru climă."
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "Data se referă la momentul în care elementul a fost pregătit sau actualizat de către experții contribuitori, care urmează să fie prezentat spre publicare în ADAPT pentru climă."
 
 #. Default: "Title"
 #: components/manage/Widgets/CreatableSelectWidget
@@ -719,6 +736,7 @@ msgstr "Vizualizați toate contribuțiile din catalogul de resurse"
 
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Visit external website"
 msgstr "Vizitați site-ul extern"
 
@@ -729,6 +747,7 @@ msgstr "Noi"
 
 #. Default: "Web"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Web"
 msgstr "Web"
 
@@ -759,156 +778,192 @@ msgid "Where"
 msgstr "Unde"
 
 #. undefined
+
 msgid "Case studies"
 msgstr "Studii de caz"
 
 #. undefined
+
 msgid "Guidance"
 msgstr "Îndrumare"
 
 #. undefined
+
 msgid "Information portals"
 msgstr "Portaluri de informare"
 
 #. undefined
+
 msgid "Videos"
 msgstr "Videoclipuri"
 
 #. undefined
+
 msgid "Organisations"
 msgstr "Organizații"
 
 #. undefined
+
 msgid "Publication and reports"
 msgstr "Publicații și rapoarte"
 
 #. undefined
+
 msgid "Publications and reports"
 msgstr "Publicații și rapoarte"
 
 #. undefined
+
 msgid "Research and knowledge projects"
 msgstr "Proiecte de cercetare și cunoaștere"
 
 #. undefined
+
 msgid "Tools"
 msgstr "Instrumente"
 
 #. undefined
+
 msgid "Based on your preferences, you can view this page in english"
-msgstr ""
-"Pe baza preferințelor dvs., puteți vizualiza această pagină în limba engleză"
+msgstr "Pe baza preferințelor dvs., puteți vizualiza această pagină în limba engleză"
 
 #. undefined
+
 msgid "here"
 msgstr "aici"
 
 #. undefined
+
 msgid "Latest <br/> News & Events"
 msgstr "Ultimele știri și evenimente"
 
 #. undefined
+
 msgid "Most recent <br/> Case Study"
 msgstr "Cel mai recent studiu de caz"
 
 #. undefined
+
 msgid "Most recent <br/> Publication or Report"
 msgstr "Cea mai recentă publicație sau raport"
 
 #. undefined
+
 msgid "National adaption policy"
 msgstr "Politica națională de adaptare"
 
 #. undefined
+
 msgid "Climate change impact and vulnerability assessments"
-msgstr ""
-"Evaluări ale impactului schimbărilor climatice și ale vulnerabilității"
+msgstr "Evaluări ale impactului schimbărilor climatice și ale vulnerabilității"
 
 #. undefined
+
 msgid "Adaptation portals and platforms"
 msgstr "Portaluri și platforme de adaptare"
 
 #. undefined
+
 msgid "Hazard category"
 msgstr "Categorie de pericol"
 
 #. undefined
+
 msgid "Hazard type"
 msgstr "Tipul de pericol"
 
 #. undefined
+
 msgid "Indicator"
 msgstr "Indicator"
 
 #. undefined
+
 msgid "Zip download"
 msgstr "Descărcare cu fermoar"
 
 #. undefined
+
 msgid "Download"
 msgstr "Descarcă"
 
 #. undefined
+
 msgid "Heat and cold"
 msgstr "Căldură și frig"
 
 #. undefined
+
 msgid "Mean air temperature"
 msgstr "Temperatura medie a aerului"
 
 #. undefined
+
 msgid "Extreme heat"
 msgstr "Căldură extremă"
 
 #. undefined
+
 msgid "Cold spells and frost"
 msgstr "Vrăji reci și îngheț"
 
 #. undefined
+
 msgid "Wet and dry"
 msgstr "Umed și uscat"
 
 #. undefined
+
 msgid "Mean precipitation"
 msgstr "Precipitații medii"
 
 #. undefined
+
 msgid "Extreme precipitation"
 msgstr "Precipitații extreme"
 
 #. undefined
+
 msgid "River flooding"
 msgstr "Inundații fluviale"
 
 #. undefined
+
 msgid "Aridity"
 msgstr "Ariditate"
 
 #. undefined
+
 msgid "Wildfire"
 msgstr "Foc de vegetație"
 
 #. undefined
+
 msgid "Snow and land ice"
 msgstr "Zăpadă și gheață"
 
 #. undefined
+
 msgid "Snow and ice"
 msgstr "Zăpadă și gheață"
 
 #. undefined
+
 msgid "Coastal"
 msgstr "Coastă"
 
 #. undefined
+
 msgid "Relative sea level"
 msgstr "Nivelul relativ al mării"
 
 #. undefined
+
 msgid "Coastal flooding"
 msgstr "Inundații costiere"
 
 #. undefined
+
 msgid "Other"
 msgstr "Alte"
 
@@ -923,7 +978,8 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "ADAPTAREA ÎN SECTOARELE DE POLITICĂ ALE UE"
 
 #. undefined
-#: health_menu:9 site_menu:10
+#: health_menu:9
+#: site_menu:10
 msgid "About"
 msgstr "Despre"
 
@@ -1053,7 +1109,8 @@ msgid "Countries, Transnational regions"
 msgstr "Țări, regiuni transnaționale"
 
 #. undefined
-#: health_menu:18 site_menu:45
+#: health_menu:18
+#: site_menu:45
 msgid "Country Profiles"
 msgstr "Profiluri de țară"
 
@@ -1113,7 +1170,8 @@ msgid "Mission Portal"
 msgstr "Portalul misiunii"
 
 #. undefined
-#: site_menu:43 site_menu:43
+#: site_menu:43
+#: site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "POLITICA REGIONALĂ A UE"
 
@@ -1164,11 +1222,8 @@ msgstr "Energie"
 
 #. undefined
 #: site_menu:67
-msgid ""
-"Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr ""
-"Vulnerabilitatea Europei la efectele schimbărilor climatice care apar în "
-"afara Europei"
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Vulnerabilitatea Europei la efectele schimbărilor climatice care apar în afara Europei"
 
 #. undefined
 #: health_menu:32
@@ -1188,8 +1243,7 @@ msgstr "Sistemele europene de alertă timpurie"
 #. undefined
 #: health_menu:14
 msgid "European policies on climate adaptation and health"
-msgstr ""
-"Politicile europene privind adaptarea la schimbările climatice și sănătatea"
+msgstr "Politicile europene privind adaptarea la schimbările climatice și sănătatea"
 
 #. undefined
 #: health_menu:19
@@ -1314,9 +1368,7 @@ msgstr "Politici naționale"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr ""
-"Sisteme naționale de avertizare privind sănătatea termică și planuri de "
-"acțiune"
+msgstr "Sisteme naționale de avertizare privind sănătatea termică și planuri de acțiune"
 
 #. undefined
 #: health_menu:17
@@ -1476,8 +1528,7 @@ msgstr "Boli transmise prin vectori"
 #. undefined
 #: health_menu:15
 msgid "WHO Europe activities on climate change and health"
-msgstr ""
-"Activitățile OMS din Europa privind schimbările climatice și sănătatea"
+msgstr "Activitățile OMS din Europa privind schimbările climatice și sănătatea"
 
 #. undefined
 #: health_menu:25
@@ -1490,7 +1541,8 @@ msgid "Water management"
 msgstr "Gestionarea apei"
 
 #. undefined
-#: health_menu:46 site_menu:93
+#: health_menu:46
+#: site_menu:93
 msgid "Webinars"
 msgstr "Webinarii"
 
@@ -1520,86 +1572,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Expunerea grupurilor vulnerabile la riscurile climatice"
 
 #. undefined
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "ACȚIUNI-CHEIE ALE UE"
 
 #. undefined
+#: 
 msgid "Just resilience"
 msgstr "Doar reziliență"
 
 #. undefined
+#: 
 msgid "Nature-based solutions"
 msgstr "Soluții bazate pe natură"
 
 #. undefined
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Pierderi economice și decese"
 
 #. undefined
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Obiective strategice pentru 2030"
 
 #. undefined
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Disponibilitatea spațiilor verzi urbane pentru grupurile vulnerabile"
 
 #. undefined
+#: 
 msgid "Transnational, National, local"
 msgstr "Transnațional, național, local"
 
 #. undefined
+#: 
 msgid "Aero-allergens"
 msgstr "Alergeni aeronautici"
 
 #. undefined
+#: 
 msgid "Heat"
 msgstr "Căldură"
 
 #. undefined
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Accesibilitatea spitalelor din Europa"
 
 #. undefined
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADAPTAREA ÎN SECTORUL FORESTIER"
 
 #. undefined
+#: 
 msgid "Ground-level ozone"
 msgstr "Ozonul de la nivelul solului"
 
 #. undefined
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognoza privind ozonul de la nivelul solului (CAMS)"
 
 #. undefined
+#: 
 msgid "Pollution"
 msgstr "Poluare"
 
 #. undefined
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Efectele asupra securității și sănătății în muncă"
 
 #. undefined
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Planul de lucru al Observatorului pentru perioada 2023-24"
 
 #. undefined
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Prognoza privind PM2,5 de la nivelul solului (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Prognoza pentru PM10 de la nivelul solului (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Previziunea de la nivelul solului privind NO2 (CAMS)"
 
 #. undefined
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Raportul AEM 2022 privind clima și sănătatea"
 
 #. undefined
+#: 
 msgid "European environment and health atlas"
 msgstr "Atlasul european pentru mediu și sănătate"
 
@@ -1636,19 +1709,13 @@ msgstr "1.2 Configurarea procesului într-un mod structurat"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid ""
-"1.3 Estimating human and financial resources needed and identifying "
-"potential sources of long-term funding"
-msgstr ""
-"1.3 Estimarea resurselor umane și financiare necesare și identificarea "
-"surselor potențiale de finanțare pe termen lung"
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 Estimarea resurselor umane și financiare necesare și identificarea surselor potențiale de finanțare pe termen lung"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
 msgid "1.3 Setting up adaptation processes within and beyond the municipality"
-msgstr ""
-"1.3 Instalarea unor procese de adaptare în interiorul și în afara "
-"municipalității"
+msgstr "1.3 Instalarea unor procese de adaptare în interiorul și în afara municipalității"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:148
@@ -1703,9 +1770,7 @@ msgstr "12 regiuni"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr ""
-"2. Evaluarea riscurilor și vulnerabilităților legate de schimbările "
-"climatice"
+msgstr "2. Evaluarea riscurilor și vulnerabilităților legate de schimbările climatice"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
@@ -1719,11 +1784,8 @@ msgstr "2.1 Înțelegerea riscurilor climatice"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid ""
-"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr ""
-"2.2 Cadre de evaluare a impactului, vulnerabilităților și riscurilor "
-"climatice"
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Cadre de evaluare a impactului, vulnerabilităților și riscurilor climatice"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -1732,12 +1794,8 @@ msgstr "2.2 Înțelegerea proiecțiilor climatice și a efectelor viitoare"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid ""
-"2.3 General sequence for climate impacts, vulnerabilities and risk "
-"assessments"
-msgstr ""
-"2.3 Secvența generală pentru impacturile climatice, vulnerabilitățile și "
-"evaluările riscurilor"
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
+msgstr "2.3 Secvența generală pentru impacturile climatice, vulnerabilitățile și evaluările riscurilor"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -1757,9 +1815,7 @@ msgstr "2.4 Luarea în considerare a aspectelor transfrontaliere"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:184
 msgid "2.5 Addressing knowledge gaps and dealing with uncertainties"
-msgstr ""
-"2.5 Abordarea lacunelor în materie de cunoștințe și abordarea "
-"incertitudinilor"
+msgstr "2.5 Abordarea lacunelor în materie de cunoștințe și abordarea incertitudinilor"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:158
@@ -1769,31 +1825,22 @@ msgstr "2.5 Înțelegerea rolului zonelor înconjurătoare în adaptare"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr ""
-"2.6 Identificarea principalelor preocupări legate de adaptare și definirea "
-"obiectivelor"
+msgstr "2.6 Identificarea principalelor preocupări legate de adaptare și definirea obiectivelor"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid ""
-"2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr ""
-"2.6 Identificarea principalelor preocupări în materie de adaptare și "
-"stabilirea unei direcții strategice"
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 Identificarea principalelor preocupări în materie de adaptare și stabilirea unei direcții strategice"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr ""
-"2.7 Evaluarea riscurilor și vulnerabilităților legate de schimbările "
-"climatice: autoverificare"
+msgstr "2.7 Evaluarea riscurilor și vulnerabilităților legate de schimbările climatice: autoverificare"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr ""
-"2.7 Evaluarea riscurilor și vulnerabilităților legate de schimbările "
-"climatice: autoverificare"
+msgstr "2.7 Evaluarea riscurilor și vulnerabilităților legate de schimbările climatice: autoverificare"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -1834,12 +1881,8 @@ msgstr "4. Evaluarea opțiunilor de adaptare"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid ""
-"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
-"benefits and efforts"
-msgstr ""
-"4.1 Evaluarea posibilelor opțiuni de adaptare în ceea ce privește efectele, "
-"timpul, costurile, beneficiile și eforturile"
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Evaluarea posibilelor opțiuni de adaptare în ceea ce privește efectele, timpul, costurile, beneficiile și eforturile"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -1859,8 +1902,7 @@ msgstr "4.2 Priorizarea opțiunilor de adaptare și selectarea celor preferate"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
 msgid "4.3 Preparing a strategy document and getting political approval"
-msgstr ""
-"4.3 Pregătirea unui document de strategie și obținerea aprobării politice"
+msgstr "4.3 Pregătirea unui document de strategie și obținerea aprobării politice"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
@@ -1900,8 +1942,7 @@ msgstr "5.2 Găsirea unor exemple de planuri de acțiune pentru adaptare"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr ""
-"5.2 Organizarea guvernanței punerii în aplicare între sectoare și niveluri"
+msgstr "5.2 Organizarea guvernanței punerii în aplicare între sectoare și niveluri"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
@@ -1910,12 +1951,8 @@ msgstr "5.3 Integrarea adaptării în politicile și planurile urbane"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid ""
-"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
-"policies"
-msgstr ""
-"5.3 Integrarea integrării adaptării în instrumente și în politicile "
-"sectoriale"
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Integrarea integrării adaptării în instrumente și în politicile sectoriale"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
@@ -1925,8 +1962,7 @@ msgstr "5.4 Abordarea schimbărilor climatice prin adaptare și atenuare"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:269
 msgid "5.4 Multilevel coordination and supportive governance framework"
-msgstr ""
-"5.4 Coordonarea pe mai multe niveluri și cadrul de guvernanță de susținere"
+msgstr "5.4 Coordonarea pe mai multe niveluri și cadrul de guvernanță de susținere"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:273
@@ -1976,16 +2012,12 @@ msgstr "6.3 Găsirea unor exemple de indicatori de monitorizare a adaptării"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:299
 msgid "6.4 Communicating results to inform policy and practice"
-msgstr ""
-"6.4 Comunicarea rezultatelor în vederea informării politicilor și "
-"practicilor"
+msgstr "6.4 Comunicarea rezultatelor în vederea informării politicilor și practicilor"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr ""
-"6.4 Utilizarea rezultatelor monitorizării pentru a îmbunătăți procesul de "
-"adaptare"
+msgstr "6.4 Utilizarea rezultatelor monitorizării pentru a îmbunătăți procesul de adaptare"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
@@ -1999,36 +2031,18 @@ msgstr "6.5 Monitorizarea și evaluarea adaptării: autocontrol"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid ""
-"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 62."
-msgstr ""
-"O valoare pentru calitatea imaginilor de 2x cu densitate mare de pixeli, de "
-"la 1 (cel mai mic) la 95 (cel mai mare). O valoare de 0 va însemna implicit "
-"plone.scaling lui, care este în prezent 62."
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "O valoare pentru calitatea imaginilor de 2x cu densitate mare de pixeli, de la 1 (cel mai mic) la 95 (cel mai mare). O valoare de 0 va însemna implicit plone.scaling lui, care este în prezent 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid ""
-"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 51."
-msgstr ""
-"O valoare pentru calitatea imaginilor de 3x cu densitate mare de pixeli, de "
-"la 1 (cel mai mic) la 95 (cel mai mare). O valoare de 0 va însemna implicit "
-"plone.scaling lui, care este în prezent 51."
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "O valoare pentru calitatea imaginilor de 3x cu densitate mare de pixeli, de la 1 (cel mai mic) la 95 (cel mai mare). O valoare de 0 va însemna implicit plone.scaling lui, care este în prezent 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid ""
-"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
-" value of 0 will mean plone.scaling's default will be used, which is "
-"currently 88."
-msgstr ""
-"O valoare pentru calitatea imaginilor scalate, de la 1 (cel mai mic) la 95 "
-"(cel mai mare). O valoare de 0 va însemna implicit plone.scaling lui, care "
-"este în prezent 88."
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "O valoare pentru calitatea imaginilor scalate, de la 1 (cel mai mic) la 95 (cel mai mare). O valoare de 0 va însemna implicit plone.scaling lui, care este în prezent 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2057,8 +2071,7 @@ msgstr "A3: Coordonarea cooperării și a rețelelor"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid ""
-"A3: Governance and Institutional: Coordination cooperation and networks"
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
 msgstr "A3: Guvernanță și Instituție: Cooperare și rețele de coordonare"
 
 #. undefined
@@ -2097,6 +2110,13 @@ msgstr "Sectoare de adaptare"
 #: ../../climateadapt/browser/pt/video_view.pt:113
 msgid "Adaptation elements"
 msgstr "Elemente de adaptare"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:107
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:158
+#: ../../climateadapt/browser/pt/casestudy_view.pt:340
+msgid "Adaptation elements:"
+msgstr "Elemente de adaptare:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:95
@@ -2166,8 +2186,7 @@ msgstr "Evaluarea și selectarea opțiunilor de adaptare"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
 msgid "Assessing climate change risks and vulnerabilities"
-msgstr ""
-"Evaluarea riscurilor și vulnerabilităților legate de schimbările climatice"
+msgstr "Evaluarea riscurilor și vulnerabilităților legate de schimbările climatice"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:66
@@ -2187,9 +2206,7 @@ msgstr "B1: Finanțarea instrumentelor de stimulare"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr ""
-"B2: Economie și finanțe: Instrumente de asigurare și de partajare a "
-"riscurilor"
+msgstr "B2: Economie și finanțe: Instrumente de asigurare și de partajare a riscurilor"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2233,29 +2250,18 @@ msgstr "Ilustrații de studiu de caz"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid ""
-"Case developed and implemented and partially funded as a Climate Change "
-"Adaptation measure."
-msgstr ""
-"Cazul a fost dezvoltat și pus în aplicare și finanțat parțial ca măsură de "
-"adaptare la schimbările climatice."
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Cazul a fost dezvoltat și pus în aplicare și finanțat parțial ca măsură de adaptare la schimbările climatice."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr ""
-"Cazul a fost dezvoltat și pus în aplicare ca măsură de adaptare la "
-"schimbările climatice."
+msgstr "Cazul a fost dezvoltat și pus în aplicare ca măsură de adaptare la schimbările climatice."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid ""
-"Case mainly developed and implemented because of other policy objectives, "
-"but with significant consideration of Climate Change Adaptation aspects"
-msgstr ""
-"Caz dezvoltat și pus în aplicare în principal din cauza altor obiective de "
-"politică, dar luând în considerare în mod semnificativ aspectele legate de "
-"adaptarea la schimbările climatice"
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Caz dezvoltat și pus în aplicare în principal din cauza altor obiective de politică, dar luând în considerare în mod semnificativ aspectele legate de adaptarea la schimbările climatice"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2320,8 +2326,7 @@ msgstr "Observații:"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr ""
-"Definiții comune ale termenilor utilizați frecvent în casa de compensare."
+msgstr "Definiții comune ale termenilor utilizați frecvent în casa de compensare."
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:197
@@ -2350,11 +2355,8 @@ msgstr "D1: Opțiuni verzi"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid ""
-"D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr ""
-"D1: Soluții bazate pe natură și abordări bazate pe ecosistem: Opțiuni "
-"ecologice"
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr "D1: Soluții bazate pe natură și abordări bazate pe ecosistem: Opțiuni ecologice"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2363,11 +2365,8 @@ msgstr "D2: Opțiuni albastre"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid ""
-"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr ""
-"D2: Soluții bazate pe natură și abordări bazate pe ecosistem: opțiuni "
-"albastre"
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr "D2: Soluții bazate pe natură și abordări bazate pe ecosistem: opțiuni albastre"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2409,10 +2408,8 @@ msgstr "E1: Informare și sensibilizare"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid ""
-"E1: Knowledge and behavioural change: Information and awareness raising"
-msgstr ""
-"E1: Cunoștințe și schimbări comportamentale: informare și sensibilizare"
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
+msgstr "E1: Cunoștințe și schimbări comportamentale: informare și sensibilizare"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:593
@@ -2421,12 +2418,8 @@ msgstr "E2: Consolidarea capacităților și practici privind stilul de viață"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid ""
-"E2: Knowledge and behavioural change: Capacity building empowering and "
-"lifestyle practices"
-msgstr ""
-"E2: Schimbarea cunoștințelor și a comportamentului: consolidarea "
-"capacităților și practici privind stilul de viață"
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "E2: Schimbarea cunoștințelor și a comportamentului: consolidarea capacităților și practici privind stilul de viață"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2461,25 +2454,13 @@ msgstr "Evenimente"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid ""
-"Explore Forest adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Explorați studiile de caz privind adaptarea pădurilor în ceea ce privește "
-"localizarea geografică, acoperirea tematică și legătura cu opțiunile de "
-"adaptare prin intermediul exploratorului de studiu de caz bazat pe hartă."
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Explorați studiile de caz privind adaptarea pădurilor în ceea ce privește localizarea geografică, acoperirea tematică și legătura cu opțiunile de adaptare prin intermediul exploratorului de studiu de caz bazat pe hartă."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid ""
-"Explore Urban adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Explorați studiile de caz privind adaptarea urbană în ceea ce privește "
-"localizarea geografică, acoperirea tematică și legătura cu opțiunile de "
-"adaptare prin intermediul exploratorului de studiu de caz bazat pe hartă."
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Explorați studiile de caz privind adaptarea urbană în ceea ce privește localizarea geografică, acoperirea tematică și legătura cu opțiunile de adaptare prin intermediul exploratorului de studiu de caz bazat pe hartă."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2504,21 +2485,13 @@ msgstr "FAO Orașe verzi"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid ""
-"FISE web portal will help us to improve the health and resilience of our "
-"forests, which play a vital role in protecting our biodiversity and in "
-"mitigating climate change."
-msgstr ""
-"Portalul web FISE ne va ajuta să îmbunătățim sănătatea și reziliența "
-"pădurilor noastre, care joacă un rol vital în protejarea biodiversității "
-"noastre și în atenuarea schimbărilor climatice."
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "Portalul web FISE ne va ajuta să îmbunătățim sănătatea și reziliența pădurilor noastre, care joacă un rol vital în protejarea biodiversității noastre și în atenuarea schimbărilor climatice."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid ""
-"Find out how to contribute different types of information to Climate-ADAPT."
-msgstr ""
-"Aflați cum să contribuiți cu diferite tipuri de informații la Climate-ADAPT."
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
+msgstr "Aflați cum să contribuiți cu diferite tipuri de informații la Climate-ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
@@ -2558,6 +2531,11 @@ msgstr "Caracterizarea geografică"
 #: ../../climateadapt/browser/pt/indicator_view.pt:103
 msgid "Geographic characterization:"
 msgstr "Caracterizarea geografică:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
+msgid "Go back"
+msgstr "Du-te înapoi"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
@@ -2665,8 +2643,7 @@ msgstr "Identificarea opțiunilor de adaptare"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:38
 msgid "If you are new user the video tutorials can help you get started."
-msgstr ""
-"Dacă sunteți utilizator nou, tutorialele video vă pot ajuta să începeți."
+msgstr "Dacă sunteți utilizator nou, tutorialele video vă pot ajuta să începeți."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
@@ -2724,11 +2701,6 @@ msgid "Item’s creation:"
 msgstr "Crearea elementului:"
 
 #. undefined
-#: ../../climateadapt/tiles/search_acecontent.py:850
-msgid "Key Type Measure"
-msgstr "Măsură de tip cheie"
-
-#. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267
 msgid "Key Type Measures"
 msgstr "Măsuri de tip cheie"
@@ -2762,40 +2734,23 @@ msgstr "Utilizarea terenurilor și sistemele alimentare"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in forests."
-msgstr ""
-"Aflați mai multe despre diferitele opțiuni de adaptare la diferitele efecte "
-"ale schimbărilor climatice asupra pădurilor."
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Aflați mai multe despre diferitele opțiuni de adaptare la diferitele efecte ale schimbărilor climatice asupra pădurilor."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in urban areas."
-msgstr ""
-"Aflați mai multe despre diferitele opțiuni de adaptare la diferitele efecte "
-"ale schimbărilor climatice în zonele urbane."
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Aflați mai multe despre diferitele opțiuni de adaptare la diferitele efecte ale schimbărilor climatice în zonele urbane."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid ""
-"Learn more about how cities can adapt to climate change to become future-"
-"proof, climate-resilient cities"
-msgstr ""
-"Aflați mai multe despre modul în care orașele se pot adapta la schimbările "
-"climatice pentru a deveni orașe rezistente la schimbările climatice, "
-"adaptate exigențelor viitorului"
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Aflați mai multe despre modul în care orașele se pot adapta la schimbările climatice pentru a deveni orașe rezistente la schimbările climatice, adaptate exigențelor viitorului"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid ""
-"Learn more about how forests can adapt to climate change to stay healthy, "
-"diverse, resilient and productive"
-msgstr ""
-"Aflați mai multe despre modul în care pădurile se pot adapta la schimbările "
-"climatice pentru a rămâne sănătoase, diverse, reziliente și productive"
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Aflați mai multe despre modul în care pădurile se pot adapta la schimbările climatice pentru a rămâne sănătoase, diverse, reziliente și productive"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -2857,11 +2812,8 @@ msgstr "Zonele montane"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid ""
-"National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
-"Politica națională de adaptare nu a fost raportată dincolo de raportarea "
-"obligatorie în 2023"
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "Politica națională de adaptare nu a fost raportată dincolo de raportarea obligatorie în 2023"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3111,12 +3063,8 @@ msgstr "Selectați o țară pentru a merge direct la pagina țării:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid ""
-"Select the sectors for which you want to receive a notification email when "
-"an item is modified."
-msgstr ""
-"Selectați sectoarele pentru care doriți să primiți un e-mail de notificare "
-"atunci când un element este modificat."
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Selectați sectoarele pentru care doriți să primiți un e-mail de notificare atunci când un element este modificat."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3157,12 +3105,8 @@ msgstr "Sursă:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid ""
-"Specify all allowed maximum image dimensions, one per line. The required "
-"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
-"Specificați toate dimensiunile maxime permise ale imaginii, una pe linie. "
-"Formatul necesar este &lt;name &gt; &lt; lățime &gt;: &lt; înălțime &gt;."
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Specificați toate dimensiunile maxime permise ale imaginii, una pe linie. Formatul necesar este &lt;name &gt; &lt; lățime &gt;: &lt; înălțime &gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3211,71 +3155,28 @@ msgstr "Convenția primarilor din UE"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid ""
-"The EU finances adaptation to climate change in Europe through a wide range "
-"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
-"at least 25% of the European budget is climate-related expenditure. "
-"Therefore, Climate adaptation actions have to be integrated into all the "
-"major EU spending programmes, and a tracking system is put in place to "
-"guarantee these objectives are met."
-msgstr ""
-"UE finanțează adaptarea la schimbările climatice în Europa printr-o gamă "
-"largă de instrumente. Cadrul financiar multianual 2021-2027 asigură faptul "
-"că cel puțin 25 % din bugetul european sunt cheltuieli legate de climă. Prin"
-" urmare, acțiunile de adaptare la schimbările climatice trebuie integrate în"
-" toate programele majore de cheltuieli ale UE și este instituit un sistem de"
-" urmărire pentru a garanta îndeplinirea acestor obiective."
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "UE finanțează adaptarea la schimbările climatice în Europa printr-o gamă largă de instrumente. Cadrul financiar multianual 2021-2027 asigură faptul că cel puțin 25 % din bugetul european sunt cheltuieli legate de climă. Prin urmare, acțiunile de adaptare la schimbările climatice trebuie integrate în toate programele majore de cheltuieli ale UE și este instituit un sistem de urmărire pentru a garanta îndeplinirea acestor obiective."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid ""
-"The EU has several policy frameworks in place to increase the resilience of "
-"European cities and their inhabitants, including the EU Adaptation Strategy "
-"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
-" to improve knowledge and data availability on urban vulnerability and "
-"adaptive capacity. It also provides financial and technical support to "
-"policy makers and practitioners to make cities more resilient and adaptive."
-msgstr ""
-"UE dispune de mai multe cadre de politică pentru a spori reziliența orașelor"
-" europene și a locuitorilor acestora, inclusiv Strategia UE privind "
-"adaptarea și Strategia UE privind biodiversitatea 2030, și a elaborat mai "
-"multe inițiative pentru a îmbunătăți disponibilitatea cunoștințelor și a "
-"datelor privind vulnerabilitatea urbană și capacitatea de adaptare. De "
-"asemenea, UE oferă sprijin financiar și tehnic factorilor de decizie și "
-"practicienilor pentru a face orașele mai reziliente și mai adaptabile."
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "UE dispune de mai multe cadre de politică pentru a spori reziliența orașelor europene și a locuitorilor acestora, inclusiv Strategia UE privind adaptarea și Strategia UE privind biodiversitatea 2030, și a elaborat mai multe inițiative pentru a îmbunătăți disponibilitatea cunoștințelor și a datelor privind vulnerabilitatea urbană și capacitatea de adaptare. De asemenea, UE oferă sprijin financiar și tehnic factorilor de decizie și practicienilor pentru a face orașele mai reziliente și mai adaptabile."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices from the Copernicus Climate Change Service in support of "
-"climate change adaptation."
-msgstr ""
-"Instrumentul european de date privind clima oferă acces interactiv la "
-"numeroși indici climatici din cadrul Serviciului Copernicus privind "
-"schimbările climatice, în sprijinul adaptării la schimbările climatice."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "Instrumentul european de date privind clima oferă acces interactiv la numeroși indici climatici din cadrul Serviciului Copernicus privind schimbările climatice, în sprijinul adaptării la schimbările climatice."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices like fire weather indices in support of climate change "
-"adaptation in forests."
-msgstr ""
-"European Climate Data Explorer oferă acces interactiv la mai mulți indici "
-"climatici, cum ar fi indicii meteo de incendiu, în sprijinul adaptării la "
-"schimbările climatice în păduri."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "European Climate Data Explorer oferă acces interactiv la mai mulți indici climatici, cum ar fi indicii meteo de incendiu, în sprijinul adaptării la schimbările climatice în păduri."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid ""
-"The European Drought Observatory (EDO) contains drought-relevant "
-"information. These give an overview of the situation in the EU about "
-"imminent droughts."
-msgstr ""
-"Observatorul European al Secetei (EDO) conține informații relevante pentru "
-"secetă, care oferă o imagine de ansamblu asupra situației din UE în ceea ce "
-"privește secetele iminente."
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "Observatorul European al Secetei (EDO) conține informații relevante pentru secetă, care oferă o imagine de ansamblu asupra situației din UE în ceea ce privește secetele iminente."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3284,64 +3185,28 @@ msgstr "Sistemul european de informații privind incendiile forestiere"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid ""
-"The European Forest Fire Information System (EFFIS) supports the protection "
-"of forests against fires and provides the EU with harmonized information on "
-"forest fires"
-msgstr ""
-"Sistemul european de informare privind incendiile forestiere (EFFIS) "
-"sprijină protecția pădurilor împotriva incendiilor și furnizează UE "
-"informații armonizate privind incendiile forestiere"
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Sistemul european de informare privind incendiile forestiere (EFFIS) sprijină protecția pădurilor împotriva incendiilor și furnizează UE informații armonizate privind incendiile forestiere"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid ""
-"The Urban Adaptation Map Viewer provides an overview of the current and "
-"future climate hazards, the vulnerability of the cities to these hazards and"
-" their adaptive capacity."
-msgstr ""
-"Urban Adaptation Map Viewer oferă o imagine de ansamblu a pericolelor "
-"climatice actuale și viitoare, a vulnerabilității orașelor la aceste "
-"pericole și a capacității lor de adaptare."
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "Urban Adaptation Map Viewer oferă o imagine de ansamblu a pericolelor climatice actuale și viitoare, a vulnerabilității orașelor la aceste pericole și a capacității lor de adaptare."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid ""
-"The Urban Adaptation Support Tool assists cities, towns and local "
-"authorities in developing, implementing and monitoring climate change "
-"adaptation plans."
-msgstr ""
-"Instrumentul de sprijin pentru adaptarea urbană sprijină orașele, orașele și"
-" autoritățile locale în elaborarea, punerea în aplicare și monitorizarea "
-"planurilor de adaptare la schimbările climatice."
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "Instrumentul de sprijin pentru adaptarea urbană sprijină orașele, orașele și autoritățile locale în elaborarea, punerea în aplicare și monitorizarea planurilor de adaptare la schimbările climatice."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid ""
-"The climate crisis is severely affecting Europe's forests, making them "
-"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
-"and disease outbreaks, or sea level rise. The growing risks and impacts are "
-"affecting the economic viability of forestry and they reduce the capacity of"
-" forests to provide essential ecosystem services. The EU responds to this "
-"unprecedented challenge by supporting the adaptation of forests to climate "
-"change through a wide range of policies, like the EU Forest Strategy, EU "
-"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr ""
-"Criza climatică afectează grav pădurile din Europa, făcându-le din ce în ce "
-"mai vulnerabile la pericole precum furtunile, incendiile forestiere, "
-"secetele, focarele de insecte și boli sau creșterea nivelului mării. "
-"Riscurile și efectele tot mai mari afectează viabilitatea economică a "
-"silviculturii și reduc capacitatea pădurilor de a furniza servicii "
-"ecosistemice esențiale. UE răspunde acestei provocări fără precedent prin "
-"sprijinirea adaptării pădurilor la schimbările climatice printr-o gamă largă"
-" de politici, cum ar fi Strategia UE pentru păduri, Strategia UE privind "
-"adaptarea la schimbările climatice și Strategia UE privind biodiversitatea."
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Criza climatică afectează grav pădurile din Europa, făcându-le din ce în ce mai vulnerabile la pericole precum furtunile, incendiile forestiere, secetele, focarele de insecte și boli sau creșterea nivelului mării. Riscurile și efectele tot mai mari afectează viabilitatea economică a silviculturii și reduc capacitatea pădurilor de a furniza servicii ecosistemice esențiale. UE răspunde acestei provocări fără precedent prin sprijinirea adaptării pădurilor la schimbările climatice printr-o gamă largă de politici, cum ar fi Strategia UE pentru păduri, Strategia UE privind adaptarea la schimbările climatice și Strategia UE privind biodiversitatea."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
 msgid "To go to one of the regions please click on the maps."
-msgstr ""
-"Pentru a merge la una dintre regiuni, vă rugăm să faceți clic pe hărți."
+msgstr "Pentru a merge la una dintre regiuni, vă rugăm să faceți clic pe hărți."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:192
@@ -3428,8 +3293,7 @@ msgstr "Anul:"
 msgid "back to search"
 msgstr "înapoi la căutare"
 
-#. Default: "Enable automatic image captioning for images set in the
-#. richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "imagine_captioning_descriere"
