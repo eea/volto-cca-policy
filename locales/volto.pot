@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-05-13T12:26:08.591Z\n"
+"POT-Creation-Date: 2024-07-11T09:19:12.102Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,6 +13,21 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "A background document for the event is available"
+#: components/theme/Views/CcaEventView
+msgid "A background document for the event is available"
+msgstr ""
+
+#. Default: "Adaptation Approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation Approaches"
+msgstr ""
+
+#. Default: "Adaptation Approaches:"
+#: helpers/ContentMetadata
+msgid "Adaptation Approaches:"
+msgstr ""
+
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Details"
@@ -21,11 +36,6 @@ msgstr ""
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
-msgstr ""
-
-#. Default: "Adaptation elements:"
-#: helpers/ContentMetadata
-msgid "Adaptation elements:"
 msgstr ""
 
 #. Default: "Adaptation options"
@@ -227,11 +237,18 @@ msgstr ""
 
 #. Default: "Download Event"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download Event"
+msgstr ""
+
+#. Default: "Download the detailed agenda"
+#: components/theme/Views/CcaEventView
+msgid "Download the detailed agenda"
 msgstr ""
 
 #. Default: "Download this event in iCal format"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr ""
 
@@ -240,14 +257,9 @@ msgstr ""
 msgid "Duration:"
 msgstr ""
 
-#. Default: "ECDE homepage"
+#. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
-msgid "ECDE homepage"
-msgstr ""
-
-#. Default: "Explore in detail"
-#: components/theme/Views/C3SIndicatorView
-msgid "Explore in detail"
+msgid "Exit fullscreen"
 msgstr ""
 
 #. Default: "Feb"
@@ -258,6 +270,11 @@ msgstr ""
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
+msgstr ""
+
+#. Default: "Fullscreen"
+#: components/theme/Views/C3SIndicatorView
+msgid "Fullscreen"
 msgstr ""
 
 #. Default: "Funding Programme:"
@@ -273,11 +290,6 @@ msgstr ""
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
-msgstr ""
-
-#. Default: "Go back"
-#: components/theme/Views/C3SIndicatorView
-msgid "Go back"
 msgstr ""
 
 #. Default: "Governance level:"
@@ -354,6 +366,11 @@ msgstr ""
 #. Default: "Jun"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
+msgstr ""
+
+#. Default: "Key Type Measure"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Key Type Measure"
 msgstr ""
 
 #. Default: "Key Type Measures:"
@@ -478,7 +495,7 @@ msgstr ""
 msgid "Observatory contributions"
 msgstr ""
 
-#. Default: "Ott"
+#. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
 msgstr ""
@@ -601,6 +618,12 @@ msgstr ""
 msgid "See video outside Climate-ADAPT"
 msgstr ""
 
+#. Default: "Select"
+#: components/manage/Blocks/ContentLinks/DropdownListView
+#: components/manage/Blocks/Listing/DropdownListingView
+msgid "Select"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -714,6 +737,7 @@ msgstr ""
 
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Visit external website"
 msgstr ""
 
@@ -724,6 +748,7 @@ msgstr ""
 
 #. Default: "Web"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Web"
 msgstr ""
 
