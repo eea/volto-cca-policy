@@ -167,8 +167,8 @@ export default function CaseStudyFilters(props) {
         >
           <AccordionIcon active={activeIndex.includes(3)} />
           <FormattedMessage
-            id="Adaptation elements"
-            defaultMessage="Adaptation elements"
+            id="Adaptation approaches"
+            defaultMessage="Adaptation approaches"
           />
         </Accordion.Title>
         <Accordion.Content active={activeIndex.includes(3)}>
