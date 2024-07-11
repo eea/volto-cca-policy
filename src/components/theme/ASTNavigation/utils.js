@@ -9,7 +9,7 @@ export const isUrbanAdaptationSupportToolURL = (url) => {
   return url.indexOf('/knowledge/tools/urban-ast') > -1;
 };
 
-export const LinkWrap = ({ item, pathname, children }) => {
+export const LinkWrap = ({ item, pathname, children, className }) => {
   const substeps = item?.items || [];
   const activeSubstep = substeps.some((obj) => obj['@id'] === pathname);
   const activeStep = item ? pathname === item?.['@id'] : null;
@@ -17,7 +17,7 @@ export const LinkWrap = ({ item, pathname, children }) => {
   return item ? (
     <UniversalLink item={item}>
       <g
-        className={cx('step-link', {
+        className={cx('step-link', className, {
           active: isActive,
         })}
       >

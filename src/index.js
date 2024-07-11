@@ -4,6 +4,7 @@ import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import {
   RASTWidgetView,
   TranslationDisclaimer,
+  RedirectToLogin,
 } from '@eeacms/volto-cca-policy/components';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
@@ -27,9 +28,9 @@ import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
-import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
-import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo-white.svg';
-import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/observatory-white-logo.svg';
+import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_ADAPT_logo.svg';
+import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_ADAPT_logo_white.svg';
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_and_health_logo_white.svg';
 import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
@@ -68,6 +69,11 @@ const applyConfig = (config) => {
       },
     ];
   }
+
+  config.settings.allowed_cors_destinations = [
+    ...(config.settings.allowed_cors_destinations || []),
+    'nominatim.openstreetmap.org',
+  ];
 
   // if (!config.settings.loadables.d3)
   //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
@@ -164,11 +170,12 @@ const applyConfig = (config) => {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/mission',
-        path: '/en/mission/knowledge-and-data/search-the-database',
-        placeholder: 'Search the Climate-ADAPT database',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        path: '/en/mission/advanced-search',
+        placeholder: 'Search the EU Mission on Adaptation',
+        description: 'For more search options',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl:
+          'https://climate-adapt.eea.europa.eu/en/mission/advanced-search/',
       },
       {
         isDefault: false,
@@ -382,6 +389,12 @@ const applyConfig = (config) => {
       match: '',
       component: TranslationDisclaimer,
     },
+    {
+      match: {
+        path: /(.*)\/add/,
+      },
+      component: RedirectToLogin,
+    },
   ];
 
   config.settings.apiExpanders = [
@@ -391,6 +404,12 @@ const applyConfig = (config) => {
         path: /(.*)\/policy-context\/country-profiles\/(.*)/,
       },
       GET_CONTENT: ['siblings'],
+    },
+
+    {
+      match: '',
+      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],
+      querystring: { 'expand.navigation.depth': '3' },
     },
   ];
 

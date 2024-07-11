@@ -50,3 +50,23 @@ export const hasTypeOfBlock = (obj, type, name) => {
 
   return false;
 };
+
+export const filterBlocks = (content, block_type) => {
+  const filteredBlocks = { ...content.blocks };
+  const filteredBlocksLayout = { ...content.blocks_layout };
+
+  const filteredBlockUID = Object.keys(filteredBlocks)?.filter(
+    (key) => filteredBlocks[key]['@type'] === block_type,
+  );
+  filteredBlockUID.forEach((key) => delete filteredBlocks[key]);
+  filteredBlocksLayout.items = filteredBlocksLayout?.items?.filter(
+    (item) => !filteredBlockUID.includes(item),
+  );
+  const hasBlockType = filteredBlockUID.length > 0;
+
+  return {
+    blocks: filteredBlocks,
+    blocks_layout: filteredBlocksLayout,
+    hasBlockType,
+  };
+};

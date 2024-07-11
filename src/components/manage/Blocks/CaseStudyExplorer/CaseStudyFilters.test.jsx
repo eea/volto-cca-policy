@@ -16,6 +16,7 @@ describe('CaseStudyFilters', () => {
         // impacts: [{ DROUGHT: 'Drought' }],
         sectors: [],
         impacts: [],
+        elements: [],
         measures: {
           //   Measure1: [
           //     { key: 'M11', value: 'm11' },
@@ -26,6 +27,7 @@ describe('CaseStudyFilters', () => {
       activeFilters: {
         sectors: [],
         impacts: [],
+        elements: [],
         measures: [],
       },
     };

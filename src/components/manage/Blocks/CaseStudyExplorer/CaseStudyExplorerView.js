@@ -28,12 +28,14 @@ export default function CaseStudyExplorerView(props) {
   const [activeFilters, setActiveFilters] = React.useState({
     sectors: querySectorValue,
     impacts: [],
+    elements: [],
     measures: [],
   });
 
   const [activeItems, setActiveItems] = React.useState(cases);
   const [filters, setFilters] = React.useState({
     impacts: [],
+    elements: [],
     sectors: [],
     measures: {},
   });
@@ -53,12 +55,14 @@ export default function CaseStudyExplorerView(props) {
     let _filters = filters;
     _filters.impacts = _filters_data.impacts;
     _filters.sectors = _filters_data.sectors;
+    _filters.elements = _filters_data.elements;
     setFilters(_filters);
   }, [
     filters,
     cases,
     activeFilters.impacts,
     activeFilters.sectors,
+    activeFilters.elements,
     activeFilters.measures,
     activeItems.length,
   ]);

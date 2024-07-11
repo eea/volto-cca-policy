@@ -5,7 +5,7 @@ export const INDICATOR = 'eea.climateadapt.indicator';
 export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
 export const ORGANISATION = 'eea.climateadapt.organisation';
 export const ACE_PROJECT = 'eea.climateadapt.aceproject';
-export const PUBICATION_REPORT = 'eea.climateadapt.publicationreport';
+export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
 export const TOOL = 'eea.climateadapt.tool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
@@ -95,7 +95,8 @@ export const BIOREGIONS = {
   COUNTRIES: 'Countries',
   SUBNATIONAL: 'Subnational Regions',
   CITY: 'Municipality Name',
-  TRANS_MACRO_NORTHPERI: 'Northern Periphery',
+  TRANS_MACRO_OUTERMOST: 'Outermost Regions',
+  TRANS_MACRO_NORTHPERI: 'Northern Periphery and Arctic',
   TRANS_MACRO_BACLITC: 'Baltic Sea',
   TRANS_MACRO_NW_EUROPE: 'North West Europe',
   TRANS_MACRO_N_SEA: 'North Sea',
@@ -103,20 +104,20 @@ export const BIOREGIONS = {
   TRANS_MACRO_ALP_SPACE: 'Alpine Space',
   TRANS_MACRO_CEN_EUR: 'Central Europe',
   TRANS_MACRO_SW_EUR: 'South West Europe',
-  TRANS_MACRO_MED: 'Mediterranean',
-  TRANS_MACRO_DANUBE: 'Danube',
+  TRANS_MACRO_MED: 'Mediterranean (Euro-Med)',
+  TRANS_MACRO_DANUBE: 'Danube Area',
   TRANS_MACRO_ADR_IONIAN: 'Adriatic-Ionian',
   TRANS_MACRO_BALKAN_MED: 'Balkan-Mediterranean',
   TRANS_MACRO_CAR_AREA: 'Caribbean Area',
   TRANS_MACRO_AMAZONIA: 'Amazonia',
   TRANS_MACRO_IND_OCEAN_AREA: 'Indian Ocean Area',
   TRANS_MACRO_SE_EUR: 'South East Europe',
-  TRANS_MACRO_MED_BASIN: 'Mediterranean Sea Basin',
+  TRANS_MACRO_MED_BASIN: 'Mediterranean Sea Basin (NEXT)',
   TRANS_MACRO_MID_ATLANTIC: 'Mid-Atlantic',
   TRANS_MACRO_ARCTIC: 'Arctic',
   TRANS_MACRO_BLACKSEA: 'Black Sea',
   TRANS_MACRO_ATLANTIC: 'Atlantic',
-  TRANS_MACRO_BLACKSEA_BASIN: 'Black Sea Basin',
+  TRANS_MACRO_BLACKSEA_BASIN: 'Black Sea Basin (NEXT)',
   TRANS_BIO_ALPINE: 'Alpine',
   TRANS_BIO_ANATOLIAN: 'Anatolian',
   TRANS_BIO_ARCTIC: 'Arctic',

@@ -1,58 +1,79 @@
 import React from 'react';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import { Grid, Container, Segment } from 'semantic-ui-react';
 import {
-  DocumentsList,
   HTMLField,
-  BannerTitle,
   EventDetails,
+  DocumentsList,
 } from '@eeacms/volto-cca-policy/helpers';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
-import { FormattedMessage } from 'react-intl';
+import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
+
+const messages = defineMessages({
+  download_agenda: {
+    id: 'Download the detailed agenda',
+    defaultMessage: 'Download the detailed agenda',
+  },
+  download_documents: {
+    id: 'A background document for the event is available',
+    defaultMessage: 'A background document for the event is available',
+  },
+});
+
+const DocumentSection = ({ title, file }) => (
+  <DocumentsList
+    content={{
+      show_counter: false,
+      section_title: title,
+      cca_files: [
+        {
+          url: file?.download,
+          title: file?.filename,
+        },
+      ],
+    }}
+  />
+);
 
 function CcaEventView(props) {
+  const intl = useIntl();
   const { content } = props;
-  const { event_language } = content;
-  // cca_files: [content.agenda_file]}
-  if (content.agenda_file) {
-    content.agenda_file['url'] = content.agenda_file['download'];
-    content.agenda_file['title'] = content.agenda_file['filename'];
+  const {
+    event_language,
+    agenda_file,
+    background_documents,
+    participation,
+    contact_email,
+  } = content;
+
+  const {
+    blocks: filtered_blocks,
+    blocks_layout: filtered_blocks_layout,
+  } = filterBlocks(content, 'tabs_block');
+  const titleBlock = Object.values(filtered_blocks).find(
+    (block) => block['@type'] === 'title',
+  );
+  if (titleBlock && !titleBlock.subtitle && content.subtitle) {
+    titleBlock.subtitle = content.subtitle;
   }
-  if (content.background_documents) {
-    content.background_documents['url'] =
-      content.background_documents['download'];
-    content.background_documents['title'] =
-      content.background_documents['filename'];
-  }
-  const agenda_files = {
-    section_title: 'Download the detailed agenda',
-    cca_files: [content.agenda_file],
-    show_counter: false,
-  };
-  const background_documents = {
-    section_title: 'A background document for the event is available ',
-    cca_files: [content.background_documents],
-    show_counter: false,
-  };
 
   return (
     <div className="cca-event-view">
-      <BannerTitle
-        content={{ ...content, '@type': 'Climate adapt event' }}
-        data={{
-          info: [{ description: '' }],
-          hideContentType: false,
-          hideCreationDate: false,
-          hideModificationDate: false,
-          hidePublishingDate: false,
-          hideDownloadButton: false,
-          hideShareButton: false,
+      <RenderBlocks
+        {...props}
+        content={{
+          ...content,
+          '@type': 'climate-adapt-event',
+          blocks: filtered_blocks,
+          blocks_layout: filtered_blocks_layout,
         }}
       />
 
       <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
-          <div className="row">
+          <Grid.Row>
             <Grid.Column
               mobile={12}
               tablet={12}
@@ -69,9 +90,18 @@ function CcaEventView(props) {
               </h2>
               <HTMLField value={content.agenda} />
 
-              {content?.agenda_file && <DocumentsList content={agenda_files} />}
-              {content?.background_documents && (
-                <DocumentsList content={background_documents} />
+              {agenda_file && (
+                <DocumentSection
+                  title={intl.formatMessage(messages.download_agenda)}
+                  file={agenda_file}
+                />
+              )}
+
+              {background_documents && (
+                <DocumentSection
+                  title={intl.formatMessage(messages.download_documents)}
+                  file={background_documents}
+                />
               )}
 
               <h2>
@@ -86,20 +116,21 @@ function CcaEventView(props) {
                   defaultMessage="Participation"
                 />
               </h3>
-              <HTMLField value={content.participation} />
+              <HTMLField value={participation} />
 
               <h2>
                 <FormattedMessage id="Contact" defaultMessage="Contact" />
               </h2>
-              <p>
-                <FormattedMessage
-                  id="If you have any further questions you can contact"
-                  defaultMessage="If you have any further questions you can contact"
-                />{' '}
-                <a href="mailto:{content.contact_email}">
-                  {content.contact_email}
-                </a>
-              </p>
+
+              {contact_email && (
+                <p>
+                  <FormattedMessage
+                    id="If you have any further questions you can contact"
+                    defaultMessage="If you have any further questions you can contact"
+                  />{' '}
+                  <a href={`mailto:${contact_email}`}>{contact_email}</a>
+                </p>
+              )}
 
               {event_language && (
                 <>
@@ -123,7 +154,7 @@ function CcaEventView(props) {
                 <EventDetails {...props} />
               </Segment>
             </Grid.Column>
-          </div>
+          </Grid.Row>
         </Grid>
       </Container>
     </div>

@@ -1,75 +1,51 @@
 import React from 'react';
-import {
-  BannerTitle,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
+import { Grid, Container, Segment } from 'semantic-ui-react';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { Grid, Container, Segment, Button, Icon } from 'semantic-ui-react';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
-import { SubjectTags, EventDetails } from '@eeacms/volto-cca-policy/helpers';
-import { expandToBackendURL } from '@plone/volto/helpers';
+import {
+  SubjectTags,
+  EventDetails,
+  HTMLField,
+} from '@eeacms/volto-cca-policy/helpers';
+import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
-const messages = defineMessages({
-  downloadEvent: {
-    id: 'Download this event in iCal format',
-    defaultMessage: 'Download this event in iCal format',
-  },
-});
-
-function CcaEventView(props) {
+function EventView(props) {
   const { content } = props;
-  const intl = useIntl();
+  const {
+    blocks: filtered_blocks,
+    blocks_layout: filtered_blocks_layout,
+    hasBlockType,
+  } = filterBlocks(content, 'tabs_block');
 
   return (
     <div className="cca-event-view">
-      <BannerTitle content={content} />
+      <PortalMessage content={content} />
 
       <Container>
-        <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column mobile={12} tablet={12} computer={8}>
-              <RenderBlocks {...props} />
+              {hasBlockType && (
+                <>
+                  <p className="documentDescription">{content.description}</p>
+                  <HTMLField value={content.text} className="content-text" />
+                </>
+              )}
+
+              <RenderBlocks
+                {...props}
+                content={{
+                  ...content,
+                  blocks: filtered_blocks,
+                  blocks_layout: filtered_blocks_layout,
+                }}
+              />
+
               <SubjectTags {...props} />
             </Grid.Column>
             <Grid.Column mobile={12} tablet={12} computer={4}>
               <Segment>
                 <EventDetails {...props} />
-                {content?.event_url && (
-                  <>
-                    <h3>
-                      <FormattedMessage id="Web" defaultMessage="Web" />
-                    </h3>
-                    <p>
-                      <a href={content.event_url} target="_blank">
-                        <FormattedMessage
-                          id="Visit external website"
-                          defaultMessage="Visit external website"
-                        />
-                      </a>
-                    </p>
-                  </>
-                )}
-
-                <div className="download-event">
-                  <a
-                    className="ics-download"
-                    target="_blank"
-                    rel="noreferrer"
-                    href={`${expandToBackendURL(content['@id'])}/ics_view`}
-                  >
-                    <Button
-                      className="icon inverted primary labeled"
-                      title={intl.formatMessage(messages.downloadEvent)}
-                    >
-                      <Icon name="calendar alternate outline" />
-                      <FormattedMessage
-                        id="Download Event"
-                        defaultMessage="Download Event"
-                      />
-                    </Button>
-                  </a>
-                </div>
               </Segment>
             </Grid.Column>
           </Grid.Row>
@@ -79,4 +55,4 @@ function CcaEventView(props) {
   );
 }
 
-export default CcaEventView;
+export default EventView;

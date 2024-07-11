@@ -43,7 +43,6 @@ export default function FeatureDisplay({ feature }) {
         <span
           dangerouslySetInnerHTML={{
             __html: feature.adaptation_options_links.replaceAll('<>', '; '),
-            // __html: feature.adaptation_options_links,
           }}
         ></span>
       </p>

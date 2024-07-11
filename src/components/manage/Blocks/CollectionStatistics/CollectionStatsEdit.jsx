@@ -6,7 +6,7 @@ import View from './CollectionStatsView';
 import TransparentOverlay from '../../TransparentOverlay';
 
 const Edit = (props) => {
-  const schema = Schema();
+  const schema = Schema(props.data);
   return (
     <>
       <TransparentOverlay>

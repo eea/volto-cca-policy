@@ -4,6 +4,7 @@ export { default as PortalMessage } from './theme/PortalMessage/PortalMessage';
 export { default as TranslationDisclaimer } from './theme/TranslationDisclaimer/TranslationDisclaimer';
 export { default as ShareInfoButton } from './theme/ShareInfoButton/ShareInfoButton';
 export { default as ASTNavigation } from './theme/ASTNavigation/ASTNavigation';
+export { default as RedirectToLogin } from './theme/RedirectToLogin/RedirectToLogin';
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';

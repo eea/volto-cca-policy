@@ -1,11 +1,17 @@
 import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
+import cx from 'classnames';
 import './styles.less';
 
-const LinkWrap = ({ item, pathname, children, isActive }) => {
+const LinkWrap = ({ item, children, isActive, className }) => {
   return item ? (
-    <UniversalLink item={item} className="step-link">
-      <g className={isActive ? 'link-active' : ''}>
+    <UniversalLink
+      item={item}
+      className={cx('step-link', className, {
+        active: isActive,
+      })}
+    >
+      <g>
         <title>{item.title}</title>
         {children}
       </g>
@@ -15,8 +21,6 @@ const LinkWrap = ({ item, pathname, children, isActive }) => {
   );
 };
 
-// export default function RASTView(props) {
-// const RASTView = (props) => {
 export default function RASTMap(props) {
   const { path, pathname, activeMenu, skip_items } = props;
   const currentPath = path || pathname;
@@ -29,7 +33,7 @@ export default function RASTMap(props) {
 
   if (activeMenu !== null) {
     if (data.includes(activeMenu.toString())) {
-      currentMenu = -1;
+      currentMenu = null;
     } else {
       let activeMenuMinus = 0;
       for (let i = 0; i < data.length; i++) {
@@ -40,7 +44,11 @@ export default function RASTMap(props) {
   }
 
   return (
-    <div className="rast-map-block">
+    <div
+      className={cx('rast-map-block', {
+        landing: currentMenu === null,
+      })}
+    >
       <svg
         width="290"
         height="280"
@@ -48,7 +56,7 @@ export default function RASTMap(props) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_18_2)">
+        <g clipPath="url(#clip0_18_2)">
           <path d="M290 0H0V280H290V0Z" fill="white" />
           <path
             d="M192.8 31.5C178.3 25.5 162.7 22.3 147 22H145C129.3 22.3 113.7 25.5 99.2001 31.5C84.0001 37.8 70.3001 47 58.6001 58.6L72.7001 72.7C82.5001 62.9 94.0001 55.2 106.8 49.9C119.2 44.8 132.5 42 146 41.9C159.4 42 172.8 44.7 185.2 49.9C197.9 55.2 209.5 62.9 219.3 72.7L233.4 58.6C221.8 47 208 37.8 192.8 31.5Z"
@@ -321,11 +329,23 @@ export default function RASTMap(props) {
             d="M63.4002 228.25C63.3402 228.25 63.2702 228.23 63.2202 228.18C49.7902 214.55 39.8802 197.6 34.5602 179.17C34.5202 179.04 34.6002 178.9 34.7302 178.86C34.8602 178.82 35.0002 178.9 35.0402 179.03C40.3402 197.38 50.2102 214.25 63.5802 227.82C63.6802 227.92 63.6802 228.08 63.5802 228.17C63.5302 228.22 63.4702 228.24 63.4002 228.24V228.25Z"
             fill="white"
           />
-
+          <path
+            d="M33.5001 183.1C33.6001 183.1 33.8001 183.1 33.8001 182.9L34.8001 179.2L37.7001 181.7H38.1001V181.3L34.9001 178.6H34.7001C34.7001 178.6 34.6001 178.6 34.5001 178.8L33.4001 182.9V183C33.4001 183 33.4001 183.1 33.6001 183.2L33.5001 183.1Z"
+            fill="white"
+          />
+          <path
+            d="M33.4001 120.45C33.4001 120.45 33.3601 120.45 33.3401 120.45C33.2101 120.42 33.1201 120.28 33.1501 120.15C37.4601 101.73 46.4001 84.4701 59.0101 70.2401C59.1001 70.1401 59.2601 70.1301 59.3601 70.2201C59.4601 70.3101 59.4701 70.4701 59.3801 70.5701C46.8301 84.7401 37.9301 101.92 33.6401 120.26C33.6101 120.38 33.5101 120.45 33.4001 120.45Z"
+            fill="white"
+          />
+          <path
+            d="M55.2002 71.5001C55.2002 71.6001 55.4002 71.7001 55.5002 71.7001L59.1002 70.6001L58.6002 74.4001C58.6002 74.5001 58.6002 74.7001 58.8002 74.7001C58.9002 74.7001 59.1002 74.7001 59.1002 74.5001L59.7002 70.3001V70.1001H59.5002L55.5002 71.4001H55.4002V71.6001L55.2002 71.5001Z"
+            fill="white"
+          />
           <LinkWrap
             item={items[0]}
             pathname={currentPath}
             isActive={currentMenu === 0 ? true : false}
+            className="step-0"
           >
             <path
               d="M210.5 32C222.4 32 232 41.6 232 53.5C232 65.4 222.4 75 210.5 75C198.6 75 189 65.4 189 53.5C189 41.6 198.6 32 210.5 32Z"
@@ -345,6 +365,7 @@ export default function RASTMap(props) {
             item={items[1]}
             pathname={currentPath}
             isActive={currentMenu === 1 ? true : false}
+            className="step-1"
           >
             <path
               d="M260.5 128C272.4 128 282 137.6 282 149.5C282 161.4 272.4 171 260.5 171C248.6 171 239 161.4 239 149.5C239 137.6 248.6 128 260.5 128Z"
@@ -363,7 +384,8 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[2]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 2 ? true : false}
+            className="step-2"
           >
             <path
               d="M210.5 228C222.4 228 232 237.6 232 249.5C232 261.4 222.4 271 210.5 271C198.6 271 189 261.4 189 249.5C189 237.6 198.6 228 210.5 228Z"
@@ -382,7 +404,8 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[3]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 3 ? true : false}
+            className="step-3"
           >
             <path
               d="M82.5 228C94.4 228 104 237.6 104 249.5C104 261.4 94.4 271 82.5 271C70.6 271 61 261.4 61 249.5C61 237.6 70.6 228 82.5 228Z"
@@ -401,7 +424,8 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[4]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 4 ? true : false}
+            className="step-4"
           >
             <path
               d="M29.5 128C41.4 128 51 137.6 51 149.5C51 161.4 41.4 171 29.5 171C17.6 171 8 161.4 8 149.5C8 137.6 17.6 128 29.5 128Z"
@@ -420,7 +444,8 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[5]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 5 ? true : false}
+            className="step-5"
           >
             <path
               d="M82.5 32C94.4 32 104 41.6 104 53.5C104 65.4 94.4 75 82.5 75C70.6 75 61 65.4 61 53.5C61 41.6 70.6 32 82.5 32Z"
@@ -433,25 +458,6 @@ export default function RASTMap(props) {
             />
             <path
               d="M82.5 76C70.09 76 60 65.91 60 53.5C60 41.09 70.09 31 82.5 31C94.91 31 105 41.09 105 53.5C105 65.91 94.91 76 82.5 76ZM82.5 33C71.2 33 62 42.2 62 53.5C62 64.8 71.2 74 82.5 74C93.8 74 103 64.8 103 53.5C103 42.2 93.8 33 82.5 33Z"
-              fill="white"
-            />
-          </LinkWrap>
-          <LinkWrap
-            item={items[6]}
-            pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
-          >
-            <path
-              d="M33.5001 183.1C33.6001 183.1 33.8001 183.1 33.8001 182.9L34.8001 179.2L37.7001 181.7H38.1001V181.3L34.9001 178.6H34.7001C34.7001 178.6 34.6001 178.6 34.5001 178.8L33.4001 182.9V183C33.4001 183 33.4001 183.1 33.6001 183.2L33.5001 183.1Z"
-              fill="white"
-              className="circle"
-            />
-            <path
-              d="M33.4001 120.45C33.4001 120.45 33.3601 120.45 33.3401 120.45C33.2101 120.42 33.1201 120.28 33.1501 120.15C37.4601 101.73 46.4001 84.4701 59.0101 70.2401C59.1001 70.1401 59.2601 70.1301 59.3601 70.2201C59.4601 70.3101 59.4701 70.4701 59.3801 70.5701C46.8301 84.7401 37.9301 101.92 33.6401 120.26C33.6101 120.38 33.5101 120.45 33.4001 120.45Z"
-              fill="white"
-            />
-            <path
-              d="M55.2002 71.5001C55.2002 71.6001 55.4002 71.7001 55.5002 71.7001L59.1002 70.6001L58.6002 74.4001C58.6002 74.5001 58.6002 74.7001 58.8002 74.7001C58.9002 74.7001 59.1002 74.7001 59.1002 74.5001L59.7002 70.3001V70.1001H59.5002L55.5002 71.4001H55.4002V71.6001L55.2002 71.5001Z"
               fill="white"
             />
           </LinkWrap>

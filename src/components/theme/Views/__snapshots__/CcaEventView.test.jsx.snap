@@ -4,9 +4,6 @@ exports[`renders an event view component with all props 1`] = `
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -40,7 +37,7 @@ exports[`renders an event view component with all props 1`] = `
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
+              A background document for the event is available
                
             </h5>
             <div
@@ -83,7 +80,7 @@ exports[`renders an event view component with all props 1`] = `
             If you have any further questions you can contact
              
             <a
-              href="mailto:{content.contact_email}"
+              href="mailto:test@example.com"
             >
               test@example.com
             </a>
@@ -95,9 +92,9 @@ exports[`renders an event view component with all props 1`] = `
           <div
             className="ui segment"
           >
-            <h3>
+            <h4>
               When
-            </h3>
+            </h4>
             <p
               className="event-when"
             >
@@ -137,18 +134,52 @@ exports[`renders an event view component with all props 1`] = `
                 </span>
               </span>
             </p>
-            <h3>
+            <h4>
               Where
-            </h3>
+            </h4>
             <p>
               Volto, Plone
             </p>
-            <h3>
+            <h4>
               Info
-            </h3>
+            </h4>
             <p>
               test@example.com
             </p>
+            <h4>
+              Web
+            </h4>
+            <p>
+              <a
+                href="https://www.example.com"
+                target="_blank"
+              >
+                Visit external website
+              </a>
+            </p>
+            <div
+              className="download-event"
+            >
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -161,9 +192,6 @@ exports[`renders an event view component with only required props 1`] = `
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -197,7 +225,7 @@ exports[`renders an event view component with only required props 1`] = `
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
+              A background document for the event is available
                
             </h5>
             <div
@@ -236,13 +264,6 @@ exports[`renders an event view component with only required props 1`] = `
           <h2>
             Contact
           </h2>
-          <p>
-            If you have any further questions you can contact
-             
-            <a
-              href="mailto:{content.contact_email}"
-            />
-          </p>
         </div>
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
@@ -250,9 +271,9 @@ exports[`renders an event view component with only required props 1`] = `
           <div
             className="ui segment"
           >
-            <h3>
+            <h4>
               When
-            </h3>
+            </h4>
             <p
               className="event-when same-day"
             >
@@ -274,10 +295,33 @@ exports[`renders an event view component with only required props 1`] = `
                 4:20 PM
               </span>
             </p>
-            <h3>
+            <h4>
               Where
-            </h3>
+            </h4>
             <p />
+            <div
+              className="download-event"
+            >
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -290,9 +334,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -326,7 +367,7 @@ exports[`renders an event view component without links to api in the text 1`] = 
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
+              A background document for the event is available
                
             </h5>
             <div
@@ -365,13 +406,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
           <h2>
             Contact
           </h2>
-          <p>
-            If you have any further questions you can contact
-             
-            <a
-              href="mailto:{content.contact_email}"
-            />
-          </p>
         </div>
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
@@ -379,9 +413,9 @@ exports[`renders an event view component without links to api in the text 1`] = 
           <div
             className="ui segment"
           >
-            <h3>
+            <h4>
               When
-            </h3>
+            </h4>
             <p
               className="event-when same-day"
             >
@@ -403,10 +437,33 @@ exports[`renders an event view component without links to api in the text 1`] = 
                 4:20 PM
               </span>
             </p>
-            <h3>
+            <h4>
               Where
-            </h3>
+            </h4>
             <p />
+            <div
+              className="download-event"
+            >
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

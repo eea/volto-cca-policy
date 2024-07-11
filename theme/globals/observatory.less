@@ -8,6 +8,13 @@
 }
 
 .subsite-observatory {
+  .eea.header .logo-wrapper {
+    > .logo:first-child .eea-logo {
+      max-width: 100% !important;
+      height: 75px !important;
+    }
+  }
+
   #page-header .eea.banner .gradient .content .metadata {
     margin-top: 1rem;
   }
@@ -119,4 +126,42 @@
 .column-blocks-wrapper .column-blocks-wrapper {
   padding-bottom: 0rem !important;
   margin-bottom: 0rem !important;
+}
+
+@media screen and (max-width: 1020px) {
+  .subsite-observatory {
+    .eea.header .logo-wrapper {
+      > .logo:first-child .eea-logo {
+        height: 60px !important;
+      }
+    }
+
+    .subsite-logo {
+      width: 250px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .subsite-observatory {
+    .eea.header .logo-wrapper {
+      > .logo:first-child .eea-logo {
+        height: 45px !important;
+      }
+    }
+
+    .subsite-logo {
+      width: 150px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .subsite-observatory {
+    .eea.header .logo-wrapper {
+      > .logo:first-child .eea-logo {
+        height: auto !important;
+      }
+    }
+  }
 }

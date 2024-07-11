@@ -131,6 +131,20 @@ exports[`CaseStudyView should render the component 1`] = `
               className="content-metadata"
             >
               <h5>
+                Date of creation:
+              </h5>
+              <p>
+                NaN
+                <i
+                  className="ri-question-fill"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+              </p>
+              <h5>
                 Geographic characterisation:
               </h5>
               <div
