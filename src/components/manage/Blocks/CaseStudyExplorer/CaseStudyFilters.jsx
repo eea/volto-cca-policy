@@ -12,7 +12,13 @@ const AccordionIcon = ({ active }) => {
 };
 
 export default function CaseStudyFilters(props) {
-  const { filters, activeFilters, setActiveFilters } = props;
+  const {
+    filters,
+    activeFilters,
+    setActiveFilters,
+    querySectors,
+    setQuerySectors,
+  } = props;
 
   const resetFilters = () => {
     let clone = { ...activeFilters };
@@ -27,7 +33,9 @@ export default function CaseStudyFilters(props) {
     nrActiveFilters += element.length;
   });
 
-  const [activeIndex, setActiveIndex] = React.useState([]);
+  const [activeIndex, setActiveIndex] = React.useState(
+    querySectors.length ? [0] : [],
+  );
 
   function handleClick(e, titleProps) {
     let index = Object.create(activeIndex);
@@ -52,7 +60,18 @@ export default function CaseStudyFilters(props) {
         return null;
       });
     }
+
+    let tempSectors = JSON.parse(JSON.stringify(querySectors));
+
+    if (!data.checked) {
+      tempSectors = tempSectors.filter((value) => {
+        if (value !== data.value) return value;
+        return null;
+      });
+    }
+
     setActiveFilters(temp);
+    setQuerySectors(tempSectors);
   };
 
   const intl = useIntl();
