@@ -34,7 +34,7 @@ export default function CaseStudyFilters(props) {
   });
 
   const [activeIndex, setActiveIndex] = React.useState(
-    querySectors.length ? [0] : [],
+    querySectors instanceof Array && querySectors.length ? [0] : [],
   );
 
   function handleClick(e, titleProps) {
