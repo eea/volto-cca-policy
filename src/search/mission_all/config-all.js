@@ -57,17 +57,17 @@ export default function installMainSearch(config) {
       cluster_name: 'cca',
     },
   });
-  missionAll.permanentFilters.push({
-    bool: {
-      must_not: [
-        {
-          prefix: {
-            'id.keyword': 'https://climate-adapt.eea.europa.eu/en/more-events',
-          },
-        },
-      ],
-    },
-  });
+  // missionAll.permanentFilters.push({
+  //   bool: {
+  //     must_not: [
+  //       {
+  //         prefix: {
+  //           'id.keyword': 'https://climate-adapt.eea.europa.eu/en/more-events',
+  //         },
+  //       },
+  //     ],
+  //   },
+  // });
   // missionAll.permanentFilters.push({
   //   prefix: {
   //     'id.keyword': 'https://climate-adapt.eea.europa.eu/en/mission',
