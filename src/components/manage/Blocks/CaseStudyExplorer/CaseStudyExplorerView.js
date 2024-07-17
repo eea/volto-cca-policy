@@ -10,14 +10,23 @@ import { useCases } from './hooks';
 
 import './styles.less';
 
+import { useLocation } from 'react-router-dom';
+
 const cases_url = '@@case-studies-map.arcgis.json';
 
 export default function CaseStudyExplorerView(props) {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const querySectorValue = searchParams.get('sectors')
+    ? searchParams.get('sectors').split(',')
+    : [];
+
   const casesData = useCases(addAppURL(cases_url));
   const [cases, setCases] = React.useState([]);
 
+  const [querySectors, setQuerySectors] = React.useState(querySectorValue);
   const [activeFilters, setActiveFilters] = React.useState({
-    sectors: [],
+    sectors: querySectorValue,
     impacts: [],
     elements: [],
     measures: [],
@@ -82,6 +91,8 @@ export default function CaseStudyExplorerView(props) {
         >
           <CaseStudyFilters
             filters={filters}
+            querySectors={querySectors}
+            setQuerySectors={setQuerySectors}
             activeFilters={activeFilters}
             setActiveFilters={setActiveFilters}
           />

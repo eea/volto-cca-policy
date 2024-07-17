@@ -1,4 +1,4 @@
-#
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -6,11 +6,26 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: \n"
+"Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. Default: "A background document for the event is available"
+#: components/theme/Views/CcaEventView
+msgid "A background document for the event is available"
+msgstr ""
+
+#. Default: "Adaptation Approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation Approaches"
+msgstr ""
+
+#. Default: "Adaptation Approaches:"
+#: helpers/ContentMetadata
+msgid "Adaptation Approaches:"
+msgstr ""
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -21,11 +36,6 @@ msgstr "Podrobnosti o prilagoditvi"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Možnosti prilagajanja, ki se izvajajo v tem primeru"
-
-#. Default: "Adaptation elements:"
-#: helpers/ContentMetadata
-msgid "Adaptation elements:"
-msgstr "Elementi prilagoditve:"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -84,14 +94,10 @@ msgstr "Opis študije primera"
 msgid "Case Study illustrations"
 msgstr "Ilustracije študije primera"
 
-#. Default: "Case studies collected at national level in Spain, provided by
-#. AdapteCCA.es"
+#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid ""
-"Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-"Študije primerov, zbrane na nacionalni ravni v Španiji, ki jih zagotavlja "
-"AdapteCCA.es"
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Študije primerov, zbrane na nacionalni ravni v Španiji, ki jih zagotavlja AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -161,7 +167,8 @@ msgid "Close"
 msgstr "Zapri"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Kontaktni podatki"
 
@@ -212,7 +219,8 @@ msgid "Default"
 msgstr "Privzeto"
 
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget helpers/Utils
+#: components/manage/Widgets/CreatableSelectWidget
+#: helpers/Utils
 msgid "Description"
 msgstr "Opis"
 
@@ -228,11 +236,18 @@ msgstr "Dokumenti"
 
 #. Default: "Download Event"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download Event"
 msgstr "Prenos dogodka"
 
+#. Default: "Download the detailed agenda"
+#: components/theme/Views/CcaEventView
+msgid "Download the detailed agenda"
+msgstr ""
+
 #. Default: "Download this event in iCal format"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Prenesite ta dogodek v obliki iCal"
 
@@ -241,15 +256,10 @@ msgstr "Prenesite ta dogodek v obliki iCal"
 msgid "Duration:"
 msgstr "Trajanje:"
 
-#. Default: "ECDE homepage"
+#. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
-msgid "ECDE homepage"
-msgstr "Domača stran ECDE"
-
-#. Default: "Explore in detail"
-#: components/theme/Views/C3SIndicatorView
-msgid "Explore in detail"
-msgstr "Podrobno raziščite"
+msgid "Exit fullscreen"
+msgstr ""
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -260,6 +270,11 @@ msgstr "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
 msgstr "Fr"
+
+#. Default: "Fullscreen"
+#: components/theme/Views/C3SIndicatorView
+msgid "Fullscreen"
+msgstr ""
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -275,11 +290,6 @@ msgstr "Geografska opredelitev:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Začetek"
-
-#. Default: "Go back"
-#: components/theme/Views/C3SIndicatorView
-msgid "Go back"
-msgstr "Vrni se"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -356,6 +366,11 @@ msgstr "julij"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
 msgstr "Jun"
+
+#. Default: "Key Type Measure"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Key Type Measure"
+msgstr "Mera vrste ključa"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -479,7 +494,7 @@ msgstr "Prispevki opazovalnice:"
 msgid "Observatory contributions"
 msgstr "Prispevki opazovalne skupine"
 
-#. Default: "Ott"
+#. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
 msgstr "Oktober"
@@ -530,12 +545,14 @@ msgid "Reference Information"
 msgstr "Referenčni podatki"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView helpers/Utils
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
 msgid "Reference information"
 msgstr "Referenčni podatki"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "References"
 msgstr "Referenčni dokumenti"
 
@@ -600,6 +617,12 @@ msgstr "Oglejte si več"
 msgid "See video outside Climate-ADAPT"
 msgstr "Oglejte si video zunaj Climate-ADAPT"
 
+#. Default: "Select"
+#: components/manage/Blocks/ContentLinks/DropdownListView
+#: components/manage/Blocks/Listing/DropdownListingView
+msgid "Select"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -612,7 +635,8 @@ msgstr "september"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton helpers/ShareInfo
+#: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Delite svoje podatke"
 
@@ -628,7 +652,8 @@ msgstr "Rešitve"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "Source"
 msgstr "Vir:"
 
@@ -684,17 +709,10 @@ msgstr "Datum se nanaša na datum objave videoposnetka."
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Datum se nanaša na zadnji datum objave postavke."
 
-#. Default: "The date refers to the moment in which the item has been prepared
-#. or updated by contributing experts to be submitted for the publication in
-#. Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 #: helpers/ContentMetadata
-msgid ""
-"The date refers to the moment in which the item has been prepared or updated"
-" by contributing experts to be submitted for the publication in Climate "
-"ADAPT"
-msgstr ""
-"Datum se nanaša na trenutek, ko so sodelujoči strokovnjaki pripravili ali "
-"posodobili točko, ki jo je treba predložiti za objavo v Climate ADAPT."
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "Datum se nanaša na trenutek, ko so sodelujoči strokovnjaki pripravili ali posodobili točko, ki jo je treba predložiti za objavo v Climate ADAPT."
 
 #. Default: "Title"
 #: components/manage/Widgets/CreatableSelectWidget
@@ -718,6 +736,7 @@ msgstr "Oglejte si vse prispevke v katalogu virov"
 
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Visit external website"
 msgstr "Obiščite zunanjo spletno stran"
 
@@ -728,6 +747,7 @@ msgstr "Mi"
 
 #. Default: "Web"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Web"
 msgstr "Spletna stran"
 
@@ -758,162 +778,199 @@ msgid "Where"
 msgstr "Kje"
 
 #. undefined
+
 msgid "Case studies"
 msgstr "Študije primerov"
 
 #. undefined
+
 msgid "Guidance"
 msgstr "Smernice"
 
 #. undefined
+
 msgid "Information portals"
 msgstr "Informacijski portali"
 
 #. undefined
+
 msgid "Videos"
 msgstr "Video posnetki"
 
 #. undefined
+
 msgid "Organisations"
 msgstr "Organizacije"
 
 #. undefined
+
 msgid "Publication and reports"
 msgstr "Objava in poročila"
 
 #. undefined
+
 msgid "Publications and reports"
 msgstr "Publikacije in poročila"
 
 #. undefined
+
 msgid "Research and knowledge projects"
 msgstr "Raziskovalni projekti in projekti znanja"
 
 #. undefined
+
 msgid "Tools"
 msgstr "Orodja"
 
 #. undefined
+
 msgid "Based on your preferences, you can view this page in english"
 msgstr "Glede na vaše želje, si lahko ogledate to stran v angleščini"
 
 #. undefined
+
 msgid "here"
 msgstr "tukaj"
 
 #. undefined
+
 msgid "Latest <br/> News & Events"
 msgstr "Najnovejše novice & Dogodki"
 
 #. undefined
+
 msgid "Most recent <br/> Case Study"
 msgstr "Najnovejša študija primera"
 
 #. undefined
+
 msgid "Most recent <br/> Publication or Report"
 msgstr "Najnovejša objava ali poročilo"
 
 #. undefined
+
 msgid "National adaption policy"
 msgstr "Nacionalna politika prilagajanja"
 
 #. undefined
+
 msgid "Climate change impact and vulnerability assessments"
 msgstr "Ocene učinka podnebnih sprememb in ranljivosti"
 
 #. undefined
+
 msgid "Adaptation portals and platforms"
 msgstr "Portali in platforme za prilagajanje"
 
 #. undefined
+
 msgid "Hazard category"
 msgstr "Kategorija nevarnosti"
 
 #. undefined
+
 msgid "Hazard type"
 msgstr "Vrsta nevarnosti"
 
 #. undefined
+
 msgid "Indicator"
 msgstr "Kazalnik"
 
 #. undefined
+
 msgid "Zip download"
 msgstr "Zip prenos"
 
 #. undefined
+
 msgid "Download"
 msgstr "Prenesi"
 
 #. undefined
+
 msgid "Heat and cold"
 msgstr "Vročina in mraz"
 
 #. undefined
+
 msgid "Mean air temperature"
 msgstr "Povprečna temperatura zraka"
 
 #. undefined
+
 msgid "Extreme heat"
 msgstr "Ekstremna vročina"
 
 #. undefined
+
 msgid "Cold spells and frost"
 msgstr "Hladni uroki in zmrzal"
 
 #. undefined
+
 msgid "Wet and dry"
 msgstr "Mokro in suho"
 
 #. undefined
+
 msgid "Mean precipitation"
 msgstr "Povprečna količina padavin"
 
 #. undefined
+
 msgid "Extreme precipitation"
 msgstr "Ekstremne padavine"
 
 #. undefined
+
 msgid "River flooding"
 msgstr "Poplave rek"
 
 #. undefined
+
 msgid "Aridity"
 msgstr "Aridnost"
 
 #. undefined
+
 msgid "Wildfire"
 msgstr "Požar v naravi"
 
 #. undefined
+
 msgid "Snow and land ice"
 msgstr "Sneg in kopenski led"
 
 #. undefined
+
 msgid "Snow and ice"
 msgstr "Sneg in led"
 
 #. undefined
+
 msgid "Coastal"
 msgstr "Obalno morje"
 
 #. undefined
+
 msgid "Relative sea level"
 msgstr "Relativna morska gladina"
 
 #. undefined
+
 msgid "Coastal flooding"
 msgstr "Obalne poplave"
 
 #. undefined
+
 msgid "Other"
 msgstr "Drugo"
 
 #. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
-msgstr ""
-"2021 Lancet Countdown-EEA Briefing (Poročilo EEA o odštevanju do leta 2021)"
+msgstr "2021 Lancet Countdown-EEA Briefing (Poročilo EEA o odštevanju do leta 2021)"
 
 #. undefined
 #: site_menu:28
@@ -921,7 +978,8 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "PRILAGODITEV V SEKTORJIH POLITIKE EU"
 
 #. undefined
-#: health_menu:9 site_menu:10
+#: health_menu:9
+#: site_menu:10
 msgid "About"
 msgstr "O podjetju"
 
@@ -1051,7 +1109,8 @@ msgid "Countries, Transnational regions"
 msgstr "Države, nadnacionalne regije"
 
 #. undefined
-#: health_menu:18 site_menu:45
+#: health_menu:18
+#: site_menu:45
 msgid "Country Profiles"
 msgstr "Profili držav"
 
@@ -1111,7 +1170,8 @@ msgid "Mission Portal"
 msgstr "Portal službenih potovanj"
 
 #. undefined
-#: site_menu:43 site_menu:43
+#: site_menu:43
+#: site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "REGIONALNA POLITIKA EU"
 
@@ -1162,11 +1222,8 @@ msgstr "Energija"
 
 #. undefined
 #: site_menu:67
-msgid ""
-"Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr ""
-"Dovzetnost Evrope za vplive podnebnih sprememb, ki se pojavljajo zunaj "
-"Evrope"
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Dovzetnost Evrope za vplive podnebnih sprememb, ki se pojavljajo zunaj Evrope"
 
 #. undefined
 #: health_menu:32
@@ -1186,8 +1243,7 @@ msgstr "Evropski sistemi zgodnjega opozarjanja"
 #. undefined
 #: health_menu:14
 msgid "European policies on climate adaptation and health"
-msgstr ""
-"Evropske politike na področju prilagajanja podnebnim spremembam in zdravja"
+msgstr "Evropske politike na področju prilagajanja podnebnim spremembam in zdravja"
 
 #. undefined
 #: health_menu:19
@@ -1312,9 +1368,7 @@ msgstr "Nacionalne politike"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr ""
-"Nacionalni sistemi za opozarjanje na toploto in zdravstveno varstvo ter "
-"akcijski načrti"
+msgstr "Nacionalni sistemi za opozarjanje na toploto in zdravstveno varstvo ter akcijski načrti"
 
 #. undefined
 #: health_menu:17
@@ -1459,8 +1513,7 @@ msgstr "Pregledovalnik zemljevidov za prilagajanje mest"
 #. undefined
 #: health_menu:31
 msgid "Urban Adaptation Map Viewer (health focus)"
-msgstr ""
-"Pregledovalnik zemljevidov za prilagajanje mest (osredotočenost na zdravje)"
+msgstr "Pregledovalnik zemljevidov za prilagajanje mest (osredotočenost na zdravje)"
 
 #. undefined
 #: site_menu:75
@@ -1488,7 +1541,8 @@ msgid "Water management"
 msgstr "Gospodarjenje z vodo"
 
 #. undefined
-#: health_menu:46 site_menu:93
+#: health_menu:46
+#: site_menu:93
 msgid "Webinars"
 msgstr "Spletni seminarji"
 
@@ -1518,87 +1572,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Izpostavljenost ranljivih skupin podnebnim tveganjem"
 
 #. undefined
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "KLJUČNI UKREPI EU"
 
 #. undefined
+#: 
 msgid "Just resilience"
 msgstr "Pravična odpornost"
 
 #. undefined
+#: 
 msgid "Nature-based solutions"
 msgstr "Sonaravne rešitve"
 
 #. undefined
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Gospodarske izgube in smrtne žrtve"
 
 #. undefined
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Strateški cilji za leto 2030"
 
 #. undefined
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Razpoložljivost mestnih zelenih površin za ranljive skupine"
 
 #. undefined
+#: 
 msgid "Transnational, National, local"
 msgstr "Nadnacionalni, nacionalni, lokalni"
 
 #. undefined
+#: 
 msgid "Aero-allergens"
 msgstr "Aeroalergeni"
 
 #. undefined
+#: 
 msgid "Heat"
 msgstr "Vročina"
 
 #. undefined
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostopnost bolnišnic v Evropi"
 
 #. undefined
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "PRILAGODITEV V GOZDARSKEM SEKTORJU"
 
 #. undefined
+#: 
 msgid "Ground-level ozone"
 msgstr "prizemni ozon"
 
 #. undefined
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Napoved prizemnega ozona (CAMS)"
 
 #. undefined
+#: 
 msgid "Pollution"
 msgstr "Onesnaževanje"
 
 #. undefined
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Učinki na varnost in zdravje pri delu"
 
 #. undefined
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Delovni načrt opazovalne skupine za obdobje 2023–2024"
 
 #. undefined
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Napoved PM2,5 na zemeljski ravni (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Napoved PM10 na zemeljski ravni (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Napoved NO2 na zemeljski ravni (CAMS)"
 
 #. undefined
+#: 
 msgid "2022 EEA Report on Climate & Health"
-msgstr ""
-"Poročilo Evropske agencije za okolje o podnebju in amp; zdravje za leto 2022"
+msgstr "Poročilo Evropske agencije za okolje o podnebju in amp; zdravje za leto 2022"
 
 #. undefined
+#: 
 msgid "European environment and health atlas"
 msgstr "Evropski atlas okolja in zdravja"
 
@@ -1635,12 +1709,8 @@ msgstr "1.2 Oblikovanje procesa na strukturiran način"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid ""
-"1.3 Estimating human and financial resources needed and identifying "
-"potential sources of long-term funding"
-msgstr ""
-"1.3 Ocena potrebnih človeških in finančnih virov ter opredelitev možnih "
-"virov dolgoročnega financiranja"
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 Ocena potrebnih človeških in finančnih virov ter opredelitev možnih virov dolgoročnega financiranja"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
@@ -1700,8 +1770,7 @@ msgstr "12 regij"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr ""
-"2. Ocenjevanje tveganj in ranljivosti v zvezi s podnebnimi spremembami"
+msgstr "2. Ocenjevanje tveganj in ranljivosti v zvezi s podnebnimi spremembami"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
@@ -1715,8 +1784,7 @@ msgstr "2.1 Razumevanje podnebnih tveganj"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid ""
-"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
 msgstr "2.2 Okviri za ocenjevanje podnebnih vplivov, ranljivosti in tveganj"
 
 #. undefined
@@ -1726,9 +1794,7 @@ msgstr "2.2 Razumevanje podnebnih napovedi in prihodnjih učinkov"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid ""
-"2.3 General sequence for climate impacts, vulnerabilities and risk "
-"assessments"
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
 msgstr "2.3 Splošno zaporedje podnebnih vplivov, ranljivosti in ocen tveganja"
 
 #. undefined
@@ -1759,31 +1825,22 @@ msgstr "2.5 Razumevanje vloge okoliških območij pri prilagajanju"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr ""
-"2.6 Opredelitev glavnih vprašanj v zvezi s prilagajanjem in opredelitev "
-"ciljev"
+msgstr "2.6 Opredelitev glavnih vprašanj v zvezi s prilagajanjem in opredelitev ciljev"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid ""
-"2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr ""
-"2.6 Opredelitev glavnih vprašanj v zvezi s prilagajanjem in določitev "
-"strateške usmeritve"
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 Opredelitev glavnih vprašanj v zvezi s prilagajanjem in določitev strateške usmeritve"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr ""
-"2.7 Ocenjevanje tveganj in ranljivosti v zvezi s podnebnimi spremembami: "
-"samopreverjanje"
+msgstr "2.7 Ocenjevanje tveganj in ranljivosti v zvezi s podnebnimi spremembami: samopreverjanje"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr ""
-"2.7 Ocenjevanje tveganj in ranljivosti zaradi podnebnih sprememb: "
-"samopreverjanje"
+msgstr "2.7 Ocenjevanje tveganj in ranljivosti zaradi podnebnih sprememb: samopreverjanje"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -1824,12 +1881,8 @@ msgstr "4. Ocenjevanje možnosti prilagajanja"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid ""
-"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
-"benefits and efforts"
-msgstr ""
-"4.1 Ocena možnih možnosti prilagajanja z vidika učinkov, časa, stroškov, "
-"koristi in prizadevanj"
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Ocena možnih možnosti prilagajanja z vidika učinkov, časa, stroškov, koristi in prizadevanj"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -1844,9 +1897,7 @@ msgstr "4.2 Izvedba analize stroškov in koristi prilagoditvenih ukrepov"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr ""
-"4.2 Prednostno obravnavanje prilagoditvenih možnosti in izbira "
-"najprimernejših"
+msgstr "4.2 Prednostno obravnavanje prilagoditvenih možnosti in izbira najprimernejših"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
@@ -1900,19 +1951,13 @@ msgstr "5.3 Vključevanje prilagajanja v mestne politike in načrte"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid ""
-"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
-"policies"
-msgstr ""
-"5.3 Vključevanje: vključevanje prilagajanja v instrumente in sektorske "
-"politike"
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Vključevanje: vključevanje prilagajanja v instrumente in sektorske politike"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
 msgid "5.4 Addressing climate change through adaptation and mitigation"
-msgstr ""
-"5.4 Obravnavanje podnebnih sprememb s prilagajanjem nanje in blažitvijo "
-"njihovih posledic"
+msgstr "5.4 Obravnavanje podnebnih sprememb s prilagajanjem nanje in blažitvijo njihovih posledic"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:269
@@ -1957,9 +2002,7 @@ msgstr "6.2 Opredelitev kazalnikov spremljanja"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:295
 msgid "6.3 Defining MRE indicators and mixed-methods approach"
-msgstr ""
-"6.3 Opredelitev kazalnikov iz direktive o hipotekarnih kreditih in pristopa "
-"mešanih metod"
+msgstr "6.3 Opredelitev kazalnikov iz direktive o hipotekarnih kreditih in pristopa mešanih metod"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
@@ -1974,8 +2017,7 @@ msgstr "6.4 Sporočanje rezultatov za oblikovanje politike in prakse"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr ""
-"6.4 Uporaba rezultatov spremljanja za izboljšanje procesa prilagajanja"
+msgstr "6.4 Uporaba rezultatov spremljanja za izboljšanje procesa prilagajanja"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
@@ -1989,35 +2031,18 @@ msgstr "6.5 Spremljanje in ocenjevanje prilagajanja: samopreverjanje"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid ""
-"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 62."
-msgstr ""
-"Vrednost za kakovost 2x slik z visoko gostoto slikovnih pik, od 1 (najnižja)"
-" do 95 (najvišja). Vrednost 0 bo pomenila privzeto plone.scaling, kar je "
-"trenutno 62."
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "Vrednost za kakovost 2x slik z visoko gostoto slikovnih pik, od 1 (najnižja) do 95 (najvišja). Vrednost 0 bo pomenila privzeto plone.scaling, kar je trenutno 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid ""
-"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 51."
-msgstr ""
-"Vrednost za kakovost 3x slik z visoko gostoto slikovnih pik, od 1 (najnižja)"
-" do 95 (najvišja). Vrednost 0 bo pomenila privzeto plone.scaling, ki je "
-"trenutno 51."
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "Vrednost za kakovost 3x slik z visoko gostoto slikovnih pik, od 1 (najnižja) do 95 (najvišja). Vrednost 0 bo pomenila privzeto plone.scaling, ki je trenutno 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid ""
-"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
-" value of 0 will mean plone.scaling's default will be used, which is "
-"currently 88."
-msgstr ""
-"Vrednost za kakovost pomanjšanih slik, od 1 (najnižja) do 95 (najvišja). "
-"Vrednost 0 bo pomenila privzeto plone.scaling, ki je trenutno 88."
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "Vrednost za kakovost pomanjšanih slik, od 1 (najnižja) do 95 (najvišja). Vrednost 0 bo pomenila privzeto plone.scaling, ki je trenutno 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2046,11 +2071,8 @@ msgstr "A3: Koordinacijsko sodelovanje in mreže"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid ""
-"A3: Governance and Institutional: Coordination cooperation and networks"
-msgstr ""
-"A3: Upravljanje in institucionalna razsežnost: Koordinacijsko sodelovanje in"
-" mreže"
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
+msgstr "A3: Upravljanje in institucionalna razsežnost: Koordinacijsko sodelovanje in mreže"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:54
@@ -2088,6 +2110,13 @@ msgstr "Sektorji za prilagajanje"
 #: ../../climateadapt/browser/pt/video_view.pt:113
 msgid "Adaptation elements"
 msgstr "Elementi prilagoditve"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:107
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:158
+#: ../../climateadapt/browser/pt/casestudy_view.pt:340
+msgid "Adaptation elements:"
+msgstr "Elementi prilagoditve:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:95
@@ -2177,8 +2206,7 @@ msgstr "B1: Instrumenti za spodbujanje financiranja"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr ""
-"B2: Gospodarstvo in finance: instrumenti zavarovanja in delitve tveganja"
+msgstr "B2: Gospodarstvo in finance: instrumenti zavarovanja in delitve tveganja"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2222,28 +2250,18 @@ msgstr "Ilustracije študij primerov"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid ""
-"Case developed and implemented and partially funded as a Climate Change "
-"Adaptation measure."
-msgstr ""
-"Primer je bil razvit in izveden ter delno financiran kot ukrep za "
-"prilagajanje podnebnim spremembam."
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Primer je bil razvit in izveden ter delno financiran kot ukrep za prilagajanje podnebnim spremembam."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr ""
-"Primer je bil razvit in se izvaja kot ukrep za prilagajanje podnebnim "
-"spremembam."
+msgstr "Primer je bil razvit in se izvaja kot ukrep za prilagajanje podnebnim spremembam."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid ""
-"Case mainly developed and implemented because of other policy objectives, "
-"but with significant consideration of Climate Change Adaptation aspects"
-msgstr ""
-"Primer je bil razvit in izveden predvsem zaradi drugih ciljev politike, "
-"vendar ob pomembnem upoštevanju vidikov prilagajanja podnebnim spremembam"
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Primer je bil razvit in izveden predvsem zaradi drugih ciljev politike, vendar ob pomembnem upoštevanju vidikov prilagajanja podnebnim spremembam"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2308,8 +2326,7 @@ msgstr "Pripombe:"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr ""
-"Skupne opredelitve izrazov, ki se pogosto uporabljajo v klirinški hiši."
+msgstr "Skupne opredelitve izrazov, ki se pogosto uporabljajo v klirinški hiši."
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:197
@@ -2338,11 +2355,8 @@ msgstr "D1: Zelene možnosti"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid ""
-"D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr ""
-"D1: Rešitve, ki temeljijo na naravi, in ekosistemski pristopi: zelene "
-"možnosti"
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr "D1: Rešitve, ki temeljijo na naravi, in ekosistemski pristopi: zelene možnosti"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2351,11 +2365,8 @@ msgstr "D2: Modre možnosti"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid ""
-"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr ""
-"D2: Rešitve, ki temeljijo na naravi, in ekosistemski pristopi: modre "
-"možnosti"
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr "D2: Rešitve, ki temeljijo na naravi, in ekosistemski pristopi: modre možnosti"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2397,8 +2408,7 @@ msgstr "E1: Obveščanje in ozaveščanje"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid ""
-"E1: Knowledge and behavioural change: Information and awareness raising"
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
 msgstr "E1: Znanje in sprememba vedenja: obveščanje in ozaveščanje"
 
 #. undefined
@@ -2408,12 +2418,8 @@ msgstr "E2: Krepitev zmogljivosti in prakse v zvezi z življenjskim slogom"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid ""
-"E2: Knowledge and behavioural change: Capacity building empowering and "
-"lifestyle practices"
-msgstr ""
-"E2: Spreminjanje znanja in vedenja: krepitev zmogljivosti, prakse "
-"opolnomočenja in življenjskega sloga"
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "E2: Spreminjanje znanja in vedenja: krepitev zmogljivosti, prakse opolnomočenja in življenjskega sloga"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2448,25 +2454,13 @@ msgstr "Dogodki"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid ""
-"Explore Forest adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Raziščite študije primerov prilagajanja gozdov v smislu geografske lokacije,"
-" tematske pokritosti in povezave z možnostmi prilagajanja prek raziskovalca "
-"študije primera, ki temelji na zemljevidu."
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Raziščite študije primerov prilagajanja gozdov v smislu geografske lokacije, tematske pokritosti in povezave z možnostmi prilagajanja prek raziskovalca študije primera, ki temelji na zemljevidu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid ""
-"Explore Urban adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Raziščite študije primerov prilagajanja mest v smislu geografske lokacije, "
-"tematske pokritosti in povezave z možnostmi prilagajanja prek raziskovalca "
-"študije primera, ki temelji na zemljevidu."
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Raziščite študije primerov prilagajanja mest v smislu geografske lokacije, tematske pokritosti in povezave z možnostmi prilagajanja prek raziskovalca študije primera, ki temelji na zemljevidu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2491,21 +2485,13 @@ msgstr "FAO Zelena mesta"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid ""
-"FISE web portal will help us to improve the health and resilience of our "
-"forests, which play a vital role in protecting our biodiversity and in "
-"mitigating climate change."
-msgstr ""
-"Spletni portal FISE nam bo pomagal izboljšati zdravje in odpornost naših "
-"gozdov, ki imajo ključno vlogo pri varovanju naše biotske raznovrstnosti in "
-"blažitvi podnebnih sprememb."
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "Spletni portal FISE nam bo pomagal izboljšati zdravje in odpornost naših gozdov, ki imajo ključno vlogo pri varovanju naše biotske raznovrstnosti in blažitvi podnebnih sprememb."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid ""
-"Find out how to contribute different types of information to Climate-ADAPT."
-msgstr ""
-"Ugotovite, kako lahko v Climate-ADAPT prispevate različne vrste informacij."
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
+msgstr "Ugotovite, kako lahko v Climate-ADAPT prispevate različne vrste informacij."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
@@ -2547,6 +2533,11 @@ msgid "Geographic characterization:"
 msgstr "Geografska karakterizacija:"
 
 #. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
+msgid "Go back"
+msgstr "Vrni se"
+
+#. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:255
 msgid "Go to Case Study Explorer"
@@ -2566,8 +2557,7 @@ msgstr "Pojdite na možnosti prilagajanja"
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:237
 msgid "Go to the European Climate Data Explorer"
-msgstr ""
-"Evropski raziskovalec podnebnih podatkov (European Climate Data Explorer)"
+msgstr "Evropski raziskovalec podnebnih podatkov (European Climate Data Explorer)"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:342
@@ -2711,11 +2701,6 @@ msgid "Item’s creation:"
 msgstr "Oblikovanje predmeta:"
 
 #. undefined
-#: ../../climateadapt/tiles/search_acecontent.py:850
-msgid "Key Type Measure"
-msgstr "Mera vrste ključa"
-
-#. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267
 msgid "Key Type Measures"
 msgstr "Ključni ukrepi glede vrste"
@@ -2749,39 +2734,23 @@ msgstr "Raba zemljišč in prehranski sistemi"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in forests."
-msgstr ""
-"Preberite več o različnih možnostih prilagajanja različnim vplivom podnebnih"
-" sprememb v gozdovih."
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Preberite več o različnih možnostih prilagajanja različnim vplivom podnebnih sprememb v gozdovih."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in urban areas."
-msgstr ""
-"Preberite več o različnih možnostih prilagajanja različnim vplivom podnebnih"
-" sprememb v mestnih območjih."
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Preberite več o različnih možnostih prilagajanja različnim vplivom podnebnih sprememb v mestnih območjih."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid ""
-"Learn more about how cities can adapt to climate change to become future-"
-"proof, climate-resilient cities"
-msgstr ""
-"Preberite več o tem, kako se lahko mesta prilagodijo podnebnim spremembam, "
-"da bodo kos izzivom prihodnosti in odporna na podnebne spremembe."
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Preberite več o tem, kako se lahko mesta prilagodijo podnebnim spremembam, da bodo kos izzivom prihodnosti in odporna na podnebne spremembe."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid ""
-"Learn more about how forests can adapt to climate change to stay healthy, "
-"diverse, resilient and productive"
-msgstr ""
-"Več o tem, kako se lahko gozdovi prilagodijo podnebnim spremembam, da "
-"ostanejo zdravi, raznoliki, odporni in produktivni"
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Več o tem, kako se lahko gozdovi prilagodijo podnebnim spremembam, da ostanejo zdravi, raznoliki, odporni in produktivni"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -2843,11 +2812,8 @@ msgstr "Gorska območja"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid ""
-"National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
-"O nacionalni politiki prilagajanja se v letu 2023 ni poročalo več kot le v "
-"okviru obveznega poročanja."
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "O nacionalni politiki prilagajanja se v letu 2023 ni poročalo več kot le v okviru obveznega poročanja."
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3097,12 +3063,8 @@ msgstr "Izberite državo in pojdite neposredno na stran države:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid ""
-"Select the sectors for which you want to receive a notification email when "
-"an item is modified."
-msgstr ""
-"Izberite sektorje, za katere želite prejeti e-poštno obvestilo, ko je "
-"element spremenjen."
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Izberite sektorje, za katere želite prejeti e-poštno obvestilo, ko je element spremenjen."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3143,12 +3105,8 @@ msgstr "Vir:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid ""
-"Specify all allowed maximum image dimensions, one per line. The required "
-"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
-"Določite vse dovoljene največje dimenzije slike, eno na vrstico. Zahtevana "
-"oblika je &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Določite vse dovoljene največje dimenzije slike, eno na vrstico. Zahtevana oblika je &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3163,8 +3121,7 @@ msgstr "Nevihte"
 #. undefined
 #: ../../climateadapt/vocabulary.py:601
 msgid "Structural and physical: Ecosystem-based adaptation options"
-msgstr ""
-"Strukturne in fizične: možnosti prilagajanja, ki temeljijo na ekosistemu"
+msgstr "Strukturne in fizične: možnosti prilagajanja, ki temeljijo na ekosistemu"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:599
@@ -3198,70 +3155,28 @@ msgstr "Konvencija županov EU"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid ""
-"The EU finances adaptation to climate change in Europe through a wide range "
-"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
-"at least 25% of the European budget is climate-related expenditure. "
-"Therefore, Climate adaptation actions have to be integrated into all the "
-"major EU spending programmes, and a tracking system is put in place to "
-"guarantee these objectives are met."
-msgstr ""
-"EU financira prilagajanje podnebnim spremembam v Evropi s širokim naborom "
-"instrumentov. Večletni finančni okvir za obdobje 2021–2027 zagotavlja, da "
-"vsaj 25 % evropskega proračuna predstavljajo odhodki, povezani s podnebjem. "
-"Zato je treba ukrepe za prilagajanje podnebnim spremembam vključiti v vse "
-"glavne programe porabe EU, vzpostavljen pa je tudi sistem spremljanja, da se"
-" zagotovi doseganje teh ciljev."
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "EU financira prilagajanje podnebnim spremembam v Evropi s širokim naborom instrumentov. Večletni finančni okvir za obdobje 2021–2027 zagotavlja, da vsaj 25 % evropskega proračuna predstavljajo odhodki, povezani s podnebjem. Zato je treba ukrepe za prilagajanje podnebnim spremembam vključiti v vse glavne programe porabe EU, vzpostavljen pa je tudi sistem spremljanja, da se zagotovi doseganje teh ciljev."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid ""
-"The EU has several policy frameworks in place to increase the resilience of "
-"European cities and their inhabitants, including the EU Adaptation Strategy "
-"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
-" to improve knowledge and data availability on urban vulnerability and "
-"adaptive capacity. It also provides financial and technical support to "
-"policy makers and practitioners to make cities more resilient and adaptive."
-msgstr ""
-"EU ima vzpostavljenih več okvirov politike za povečanje odpornosti evropskih"
-" mest in njihovih prebivalcev, vključno s strategijo EU za prilagajanje in "
-"strategijo EU za biotsko raznovrstnost do leta 2030, ter je razvila več "
-"pobud za izboljšanje znanja in razpoložljivosti podatkov o ranljivosti mest "
-"in sposobnosti prilagajanja. Oblikovalcem politik in strokovnim delavcem "
-"zagotavlja tudi finančno in tehnično podporo, da bi mesta postala odpornejša"
-" in bolj prilagodljiva."
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "EU ima vzpostavljenih več okvirov politike za povečanje odpornosti evropskih mest in njihovih prebivalcev, vključno s strategijo EU za prilagajanje in strategijo EU za biotsko raznovrstnost do leta 2030, ter je razvila več pobud za izboljšanje znanja in razpoložljivosti podatkov o ranljivosti mest in sposobnosti prilagajanja. Oblikovalcem politik in strokovnim delavcem zagotavlja tudi finančno in tehnično podporo, da bi mesta postala odpornejša in bolj prilagodljiva."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices from the Copernicus Climate Change Service in support of "
-"climate change adaptation."
-msgstr ""
-"Evropski raziskovalec podnebnih podatkov zagotavlja interaktivni dostop do "
-"številnih podnebnih indeksov iz Copernicusove storitve za spremljanje "
-"podnebnih sprememb v podporo prilagajanju podnebnim spremembam."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "Evropski raziskovalec podnebnih podatkov zagotavlja interaktivni dostop do številnih podnebnih indeksov iz Copernicusove storitve za spremljanje podnebnih sprememb v podporo prilagajanju podnebnim spremembam."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices like fire weather indices in support of climate change "
-"adaptation in forests."
-msgstr ""
-"Evropski raziskovalec podnebnih podatkov zagotavlja interaktivni dostop do "
-"številnih podnebnih indeksov, kot so indeksi požarnega vremena, v podporo "
-"prilagajanju podnebnim spremembam v gozdovih."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "Evropski raziskovalec podnebnih podatkov zagotavlja interaktivni dostop do številnih podnebnih indeksov, kot so indeksi požarnega vremena, v podporo prilagajanju podnebnim spremembam v gozdovih."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid ""
-"The European Drought Observatory (EDO) contains drought-relevant "
-"information. These give an overview of the situation in the EU about "
-"imminent droughts."
-msgstr ""
-"Evropski observatorij za sušo (EDO) vsebuje informacije, pomembne za sušo, "
-"ki zagotavljajo pregled razmer v EU v zvezi z neposredno sušo."
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "Evropski observatorij za sušo (EDO) vsebuje informacije, pomembne za sušo, ki zagotavljajo pregled razmer v EU v zvezi z neposredno sušo."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3270,56 +3185,23 @@ msgstr "Evropski informacijski sistem za gozdne požare"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid ""
-"The European Forest Fire Information System (EFFIS) supports the protection "
-"of forests against fires and provides the EU with harmonized information on "
-"forest fires"
-msgstr ""
-"Evropski informacijski sistem za gozdne požare (EFFIS) podpira varstvo "
-"gozdov pred požari in EU zagotavlja usklajene informacije o gozdnih požarih."
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Evropski informacijski sistem za gozdne požare (EFFIS) podpira varstvo gozdov pred požari in EU zagotavlja usklajene informacije o gozdnih požarih."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid ""
-"The Urban Adaptation Map Viewer provides an overview of the current and "
-"future climate hazards, the vulnerability of the cities to these hazards and"
-" their adaptive capacity."
-msgstr ""
-"Pregledovalnik zemljevidov za prilagajanje mest zagotavlja pregled sedanjih "
-"in prihodnjih podnebnih nevarnosti, ranljivosti mest na te nevarnosti in "
-"njihove sposobnosti prilagajanja."
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "Pregledovalnik zemljevidov za prilagajanje mest zagotavlja pregled sedanjih in prihodnjih podnebnih nevarnosti, ranljivosti mest na te nevarnosti in njihove sposobnosti prilagajanja."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid ""
-"The Urban Adaptation Support Tool assists cities, towns and local "
-"authorities in developing, implementing and monitoring climate change "
-"adaptation plans."
-msgstr ""
-"Orodje za podporo prilagajanju mest pomaga mestom in lokalnim organom pri "
-"razvoju, izvajanju in spremljanju načrtov za prilagajanje podnebnim "
-"spremembam."
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "Orodje za podporo prilagajanju mest pomaga mestom in lokalnim organom pri razvoju, izvajanju in spremljanju načrtov za prilagajanje podnebnim spremembam."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid ""
-"The climate crisis is severely affecting Europe's forests, making them "
-"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
-"and disease outbreaks, or sea level rise. The growing risks and impacts are "
-"affecting the economic viability of forestry and they reduce the capacity of"
-" forests to provide essential ecosystem services. The EU responds to this "
-"unprecedented challenge by supporting the adaptation of forests to climate "
-"change through a wide range of policies, like the EU Forest Strategy, EU "
-"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr ""
-"Podnebna kriza močno vpliva na evropske gozdove, zaradi česar so vse bolj "
-"izpostavljeni nevarnostim, kot so nevihte, požari v naravi, suše, izbruhi "
-"žuželk in bolezni ali dvig morske gladine. Vse večja tveganja in učinki "
-"vplivajo na ekonomsko vzdržnost gozdarstva in zmanjšujejo zmogljivost gozdov"
-" za zagotavljanje bistvenih ekosistemskih storitev. EU se na ta izziv brez "
-"primere odziva s podpiranjem prilagajanja gozdov podnebnim spremembam s "
-"številnimi politikami, kot so strategija EU za gozdove, strategija EU za "
-"prilagajanje podnebnim spremembam in strategija EU za biotsko raznovrstnost."
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Podnebna kriza močno vpliva na evropske gozdove, zaradi česar so vse bolj izpostavljeni nevarnostim, kot so nevihte, požari v naravi, suše, izbruhi žuželk in bolezni ali dvig morske gladine. Vse večja tveganja in učinki vplivajo na ekonomsko vzdržnost gozdarstva in zmanjšujejo zmogljivost gozdov za zagotavljanje bistvenih ekosistemskih storitev. EU se na ta izziv brez primere odziva s podpiranjem prilagajanja gozdov podnebnim spremembam s številnimi politikami, kot so strategija EU za gozdove, strategija EU za prilagajanje podnebnim spremembam in strategija EU za biotsko raznovrstnost."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3411,8 +3293,7 @@ msgstr "Leto:"
 msgid "back to search"
 msgstr "Nazaj na iskanje"
 
-#. Default: "Enable automatic image captioning for images set in the
-#. richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "image_captioning_description (v angleščini)"

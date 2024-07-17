@@ -1,37 +1,27 @@
+import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
 import { multiTermFacet } from '@eeacms/search';
 import {
-  include_archived,
-  objectProvides,
-  language,
-  issued_date,
+  // objectProvides,
+  // language,
   geographic_countries,
   cca_climate_impacts,
   cca_adaptation_sectors,
 } from '../common';
 
 const facets = [
-  multiTermFacet({
-    field: 'cca_funding_programme.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Funding Programme',
-    iconsFamily: 'Funding Programme',
-    alwaysVisible: false,
-  }),
+  ...globalSearchBaseConfig.facets,
   cca_climate_impacts,
   cca_adaptation_sectors,
   multiTermFacet({
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Adaptation Elements',
+    label: 'Adaptation Approaches',
     alwaysVisible: false,
   }),
   geographic_countries,
-  include_archived,
-  issued_date,
-  language,
-  objectProvides,
+  // language,
+  // objectProvides,
 ];
 
 export default facets;

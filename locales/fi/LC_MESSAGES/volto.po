@@ -1,4 +1,4 @@
-#
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -6,11 +6,26 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: \n"
+"Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. Default: "A background document for the event is available"
+#: components/theme/Views/CcaEventView
+msgid "A background document for the event is available"
+msgstr ""
+
+#. Default: "Adaptation Approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation Approaches"
+msgstr ""
+
+#. Default: "Adaptation Approaches:"
+#: helpers/ContentMetadata
+msgid "Adaptation Approaches:"
+msgstr ""
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -21,11 +36,6 @@ msgstr "Sopeutumista koskevat tiedot"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Tässä tapauksessa toteutetut sopeutumisvaihtoehdot"
-
-#. Default: "Adaptation elements:"
-#: helpers/ContentMetadata
-msgid "Adaptation elements:"
-msgstr "Sopeutumistekijät:"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -84,14 +94,10 @@ msgstr "Tapaustutkimuksen kuvaus"
 msgid "Case Study illustrations"
 msgstr "Tapaustutkimuksen havainnollistaminen"
 
-#. Default: "Case studies collected at national level in Spain, provided by
-#. AdapteCCA.es"
+#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid ""
-"Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-"Espanjassa kansallisella tasolla kerätyt tapaustutkimukset, jotka toimittaa "
-"AdapteCCA.es"
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Espanjassa kansallisella tasolla kerätyt tapaustutkimukset, jotka toimittaa AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -161,7 +167,8 @@ msgid "Close"
 msgstr "Sulje"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Yhteydenotto"
 
@@ -212,7 +219,8 @@ msgid "Default"
 msgstr "Oletusarvo"
 
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget helpers/Utils
+#: components/manage/Widgets/CreatableSelectWidget
+#: helpers/Utils
 msgid "Description"
 msgstr "Kuvaus"
 
@@ -228,11 +236,18 @@ msgstr "Asiakirjat"
 
 #. Default: "Download Event"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download Event"
 msgstr "Lataa tapahtuma"
 
+#. Default: "Download the detailed agenda"
+#: components/theme/Views/CcaEventView
+msgid "Download the detailed agenda"
+msgstr ""
+
 #. Default: "Download this event in iCal format"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Lataa tämä tapahtuma iCal-muodossa"
 
@@ -241,15 +256,10 @@ msgstr "Lataa tämä tapahtuma iCal-muodossa"
 msgid "Duration:"
 msgstr "Kesto:"
 
-#. Default: "ECDE homepage"
+#. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
-msgid "ECDE homepage"
-msgstr "ECDE:n kotisivu"
-
-#. Default: "Explore in detail"
-#: components/theme/Views/C3SIndicatorView
-msgid "Explore in detail"
-msgstr "Tutustu yksityiskohtaisesti"
+msgid "Exit fullscreen"
+msgstr ""
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -260,6 +270,11 @@ msgstr "helmikuu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
 msgstr "Fr"
+
+#. Default: "Fullscreen"
+#: components/theme/Views/C3SIndicatorView
+msgid "Fullscreen"
+msgstr ""
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -275,11 +290,6 @@ msgstr "Maantieteellinen karakterisointi:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Aloittaminen"
-
-#. Default: "Go back"
-#: components/theme/Views/C3SIndicatorView
-msgid "Go back"
-msgstr "Palaa takaisin"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -356,6 +366,11 @@ msgstr "heinä"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
 msgstr "Jun"
+
+#. Default: "Key Type Measure"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+msgid "Key Type Measure"
+msgstr "Keskeisen tyyppinen toimenpide"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -479,7 +494,7 @@ msgstr "Seurantakeskuksen panokset:"
 msgid "Observatory contributions"
 msgstr "Seurantakeskuksen panos"
 
-#. Default: "Ott"
+#. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
 msgstr "lokakuu"
@@ -530,12 +545,14 @@ msgid "Reference Information"
 msgstr "Viitetiedot"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView helpers/Utils
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
 msgid "Reference information"
 msgstr "Viitetiedot"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "References"
 msgstr "Referenssit"
 
@@ -600,6 +617,12 @@ msgstr "Katso lisää"
 msgid "See video outside Climate-ADAPT"
 msgstr "Katso video Climate-ADAPT:n ulkopuolelta"
 
+#. Default: "Select"
+#: components/manage/Blocks/ContentLinks/DropdownListView
+#: components/manage/Blocks/Listing/DropdownListingView
+msgid "Select"
+msgstr ""
+
 #. Default: "Select…"
 #: components/manage/Widgets/CreatableSelectWidget
 msgid "Select…"
@@ -612,7 +635,8 @@ msgstr "Sep"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton helpers/ShareInfo
+#: components/theme/ShareInfoButton/ShareInfoButton
+#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Jaa tietosi"
 
@@ -628,7 +652,8 @@ msgstr "Ratkaisut"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "Source"
 msgstr "Lähde"
 
@@ -684,18 +709,10 @@ msgstr "Päivämäärä viittaa videon julkaisupäivään."
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Päivämäärä viittaa viimeisimpään julkaisupäivään."
 
-#. Default: "The date refers to the moment in which the item has been prepared
-#. or updated by contributing experts to be submitted for the publication in
-#. Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 #: helpers/ContentMetadata
-msgid ""
-"The date refers to the moment in which the item has been prepared or updated"
-" by contributing experts to be submitted for the publication in Climate "
-"ADAPT"
-msgstr ""
-"Päivämäärällä tarkoitetaan hetkeä, jona osallistuvat asiantuntijat ovat "
-"laatineet tai päivittäneet kohdan julkaistavaksi Climate ADAPT "
-"-sovelluksessa."
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "Päivämäärällä tarkoitetaan hetkeä, jona osallistuvat asiantuntijat ovat laatineet tai päivittäneet kohdan julkaistavaksi Climate ADAPT -sovelluksessa."
 
 #. Default: "Title"
 #: components/manage/Widgets/CreatableSelectWidget
@@ -719,6 +736,7 @@ msgstr "Näytä kaikki kannanotot resurssiluettelossa"
 
 #. Default: "Visit external website"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Visit external website"
 msgstr "Vieraile ulkoisella verkkosivustolla"
 
@@ -729,6 +747,7 @@ msgstr "Me"
 
 #. Default: "Web"
 #: components/theme/Views/EventView
+#: helpers/Utils
 msgid "Web"
 msgstr "Verkkosivut"
 
@@ -759,154 +778,192 @@ msgid "Where"
 msgstr "Missä"
 
 #. undefined
+
 msgid "Case studies"
 msgstr "Tapaustutkimukset"
 
 #. undefined
+
 msgid "Guidance"
 msgstr "Ohjeet"
 
 #. undefined
+
 msgid "Information portals"
 msgstr "Tietoportaalit"
 
 #. undefined
+
 msgid "Videos"
 msgstr "Videot"
 
 #. undefined
+
 msgid "Organisations"
 msgstr "Organisaatiot"
 
 #. undefined
+
 msgid "Publication and reports"
 msgstr "Julkaiseminen ja kertomukset"
 
 #. undefined
+
 msgid "Publications and reports"
 msgstr "Julkaisut ja raportit"
 
 #. undefined
+
 msgid "Research and knowledge projects"
 msgstr "Tutkimus- ja osaamishankkeet"
 
 #. undefined
+
 msgid "Tools"
 msgstr "Työkalut"
 
 #. undefined
+
 msgid "Based on your preferences, you can view this page in english"
 msgstr "Voit tarkastella tätä sivua mieltymystesi mukaan englanniksi."
 
 #. undefined
+
 msgid "here"
 msgstr "tässä"
 
 #. undefined
+
 msgid "Latest <br/> News & Events"
 msgstr "Viimeisimmät uutiset & Tapahtumat"
 
 #. undefined
+
 msgid "Most recent <br/> Case Study"
 msgstr "Viimeisin tapaustutkimus"
 
 #. undefined
+
 msgid "Most recent <br/> Publication or Report"
 msgstr "Viimeisin julkaisu tai raportti"
 
 #. undefined
+
 msgid "National adaption policy"
 msgstr "Kansallinen sopeutumispolitiikka"
 
 #. undefined
+
 msgid "Climate change impact and vulnerability assessments"
 msgstr "Ilmastonmuutoksen vaikutusten ja haavoittuvuuden arvioinnit"
 
 #. undefined
+
 msgid "Adaptation portals and platforms"
 msgstr "Sopeutumisportaalit ja -alustat"
 
 #. undefined
+
 msgid "Hazard category"
 msgstr "Vaaraluokka"
 
 #. undefined
+
 msgid "Hazard type"
 msgstr "Vaaratyyppi"
 
 #. undefined
+
 msgid "Indicator"
 msgstr "Indikaattori"
 
 #. undefined
+
 msgid "Zip download"
 msgstr "Zip-lataus"
 
 #. undefined
+
 msgid "Download"
 msgstr "Lataa"
 
 #. undefined
+
 msgid "Heat and cold"
 msgstr "Lämpöä ja kylmää"
 
 #. undefined
+
 msgid "Mean air temperature"
 msgstr "Ilman keskilämpötila"
 
 #. undefined
+
 msgid "Extreme heat"
 msgstr "Äärimmäinen lämpö"
 
 #. undefined
+
 msgid "Cold spells and frost"
 msgstr "Kylmät loitsut ja pakkanen"
 
 #. undefined
+
 msgid "Wet and dry"
 msgstr "Märkä ja kuiva"
 
 #. undefined
+
 msgid "Mean precipitation"
 msgstr "Keskimääräinen sademäärä"
 
 #. undefined
+
 msgid "Extreme precipitation"
 msgstr "Äärimmäinen sademäärä"
 
 #. undefined
+
 msgid "River flooding"
 msgstr "Jokitulvat"
 
 #. undefined
+
 msgid "Aridity"
 msgstr "Kuivuus"
 
 #. undefined
+
 msgid "Wildfire"
 msgstr "Metsäpalo"
 
 #. undefined
+
 msgid "Snow and land ice"
 msgstr "Lumi ja maajää"
 
 #. undefined
+
 msgid "Snow and ice"
 msgstr "Lunta ja jäätä"
 
 #. undefined
+
 msgid "Coastal"
 msgstr "Rannikkoalueet"
 
 #. undefined
+
 msgid "Relative sea level"
 msgstr "Suhteellinen merenpinta"
 
 #. undefined
+
 msgid "Coastal flooding"
 msgstr "Rannikkotulvat"
 
 #. undefined
+
 msgid "Other"
 msgstr "Muuta"
 
@@ -921,7 +978,8 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "Sopeutuminen EU:n politiikanaloille"
 
 #. undefined
-#: health_menu:9 site_menu:10
+#: health_menu:9
+#: site_menu:10
 msgid "About"
 msgstr "Tietoa kohteesta"
 
@@ -1051,7 +1109,8 @@ msgid "Countries, Transnational regions"
 msgstr "Maat, valtioiden rajat ylittävät alueet"
 
 #. undefined
-#: health_menu:18 site_menu:45
+#: health_menu:18
+#: site_menu:45
 msgid "Country Profiles"
 msgstr "Maaprofiilit"
 
@@ -1111,7 +1170,8 @@ msgid "Mission Portal"
 msgstr "Missioportaali"
 
 #. undefined
-#: site_menu:43 site_menu:43
+#: site_menu:43
+#: site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "EU:n ALUEPOLITIIKKA"
 
@@ -1162,11 +1222,8 @@ msgstr "Energia"
 
 #. undefined
 #: site_menu:67
-msgid ""
-"Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr ""
-"Euroopan haavoittuvuus Euroopan ulkopuolella tapahtuville ilmastonmuutoksen "
-"vaikutuksille"
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Euroopan haavoittuvuus Euroopan ulkopuolella tapahtuville ilmastonmuutoksen vaikutuksille"
 
 #. undefined
 #: health_menu:32
@@ -1311,9 +1368,7 @@ msgstr "Kansalliset politiikat"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr ""
-"Kansalliset lämpöterveyteen liittyvät varoitusjärjestelmät ja "
-"toimintasuunnitelmat"
+msgstr "Kansalliset lämpöterveyteen liittyvät varoitusjärjestelmät ja toimintasuunnitelmat"
 
 #. undefined
 #: health_menu:17
@@ -1473,8 +1528,7 @@ msgstr "Vektorivälitteiset taudit"
 #. undefined
 #: health_menu:15
 msgid "WHO Europe activities on climate change and health"
-msgstr ""
-"WHO:n Euroopan aluetoimiston toimet ilmastonmuutoksen ja terveyden alalla"
+msgstr "WHO:n Euroopan aluetoimiston toimet ilmastonmuutoksen ja terveyden alalla"
 
 #. undefined
 #: health_menu:25
@@ -1487,7 +1541,8 @@ msgid "Water management"
 msgstr "Vesihuolto"
 
 #. undefined
-#: health_menu:46 site_menu:93
+#: health_menu:46
+#: site_menu:93
 msgid "Webinars"
 msgstr "Webinaarit"
 
@@ -1517,87 +1572,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Haavoittuvassa asemassa olevien ryhmien altistuminen ilmastoriskeille"
 
 #. undefined
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "EU:n keskeiset toimet"
 
 #. undefined
+#: 
 msgid "Just resilience"
 msgstr "Oikeudenmukainen häiriönsietokyky"
 
 #. undefined
+#: 
 msgid "Nature-based solutions"
 msgstr "Luontoon perustuvat ratkaisut"
 
 #. undefined
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Taloudelliset menetykset ja kuolemantapaukset"
 
 #. undefined
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Strategiset tavoitteet 2030"
 
 #. undefined
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
-msgstr ""
-"Kaupunkien viheralueiden saatavuus heikossa asemassa oleville ryhmille"
+msgstr "Kaupunkien viheralueiden saatavuus heikossa asemassa oleville ryhmille"
 
 #. undefined
+#: 
 msgid "Transnational, National, local"
 msgstr "Ylikansallinen, kansallinen, paikallinen"
 
 #. undefined
+#: 
 msgid "Aero-allergens"
 msgstr "Aeroallergeenit"
 
 #. undefined
+#: 
 msgid "Heat"
 msgstr "Lämpö"
 
 #. undefined
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Sairaaloiden saavutettavuus Euroopassa"
 
 #. undefined
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Sopeutuminen metsäsektorilla"
 
 #. undefined
+#: 
 msgid "Ground-level ozone"
 msgstr "Alailmakehän otsoni"
 
 #. undefined
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Alailmakehän otsoniennuste (CAMS)"
 
 #. undefined
+#: 
 msgid "Pollution"
 msgstr "Saasteet"
 
 #. undefined
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Työterveys- ja työturvallisuusvaikutukset"
 
 #. undefined
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Seurantakeskuksen työsuunnitelma vuosiksi 2023–2024"
 
 #. undefined
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Maatason PM2.5-ennuste (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Maatason PM10-ennuste (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Pohjatason NO2-ennuste (CAMS)"
 
 #. undefined
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Euroopan ympäristökeskuksen raportti 2022 Climate & Health"
 
 #. undefined
+#: 
 msgid "European environment and health atlas"
 msgstr "Euroopan ympäristöterveyskartasto"
 
@@ -1634,12 +1709,8 @@ msgstr "1.2 Prosessin organisointi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid ""
-"1.3 Estimating human and financial resources needed and identifying "
-"potential sources of long-term funding"
-msgstr ""
-"1.3 Tarvittavien henkilö- ja taloudellisten resurssien arviointi ja "
-"mahdollisten pitkäaikaisten rahoituslähteiden kartoittaminen"
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 Tarvittavien henkilö- ja taloudellisten resurssien arviointi ja mahdollisten pitkäaikaisten rahoituslähteiden kartoittaminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
@@ -1654,8 +1725,7 @@ msgstr "1.4 Tietojen kerääminen"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:98
 msgid "1.4 Identifying and obtaining human and technical resources"
-msgstr ""
-"1.4 Henkilöresurssien ja teknisten resurssien tunnistaminen ja hankkiminen"
+msgstr "1.4 Henkilöresurssien ja teknisten resurssien tunnistaminen ja hankkiminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:152
@@ -1714,10 +1784,8 @@ msgstr "2.1 Ilmastoriskien ymmärtäminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid ""
-"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr ""
-"2.2 Kehykset ilmastovaikutusten, haavoittuvuuksien ja riskien arvioimiseksi"
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Kehykset ilmastovaikutusten, haavoittuvuuksien ja riskien arvioimiseksi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -1726,12 +1794,8 @@ msgstr "2.2 Ilmastoennusteiden ja tulevien vaikutusten ymmärtäminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid ""
-"2.3 General sequence for climate impacts, vulnerabilities and risk "
-"assessments"
-msgstr ""
-"2.3 Ilmastovaikutusten, haavoittuvuuksien ja riskinarviointien yleinen "
-"järjestys"
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
+msgstr "2.3 Ilmastovaikutusten, haavoittuvuuksien ja riskinarviointien yleinen järjestys"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -1751,8 +1815,7 @@ msgstr "2.4 Rajatylittävien kysymysten huomioon ottaminen"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:184
 msgid "2.5 Addressing knowledge gaps and dealing with uncertainties"
-msgstr ""
-"2.5 Tietämyksen puutteiden korjaaminen ja epävarmuustekijöiden poistaminen"
+msgstr "2.5 Tietämyksen puutteiden korjaaminen ja epävarmuustekijöiden poistaminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:158
@@ -1762,30 +1825,22 @@ msgstr "2.5 Ympäröivien alueiden roolin ymmärtäminen sopeutumisessa"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr ""
-"2.6 Keskeisten sopeutumiskysymysten tunnistaminen ja tavoitteiden määrittely"
+msgstr "2.6 Keskeisten sopeutumiskysymysten tunnistaminen ja tavoitteiden määrittely"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid ""
-"2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr ""
-"2.6 Keskeisten sopeutumiskysymysten tunnistaminen ja strategisen suunnan "
-"määrittäminen"
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 Keskeisten sopeutumiskysymysten tunnistaminen ja strategisen suunnan määrittäminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr ""
-"2.7 Ilmastonmuutokseen liittyvien riskien ja haavoittuvuuksien arviointi: "
-"omavalvonta"
+msgstr "2.7 Ilmastonmuutokseen liittyvien riskien ja haavoittuvuuksien arviointi: omavalvonta"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr ""
-"2.7 Ilmastonmuutokseen liittyvien riskien ja haavoittuvuuksien arviointi: "
-"omavalvonta"
+msgstr "2.7 Ilmastonmuutokseen liittyvien riskien ja haavoittuvuuksien arviointi: omavalvonta"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -1826,12 +1881,8 @@ msgstr "4. Sopeutumisvaihtoehtojen arviointi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid ""
-"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
-"benefits and efforts"
-msgstr ""
-"4.1 Mahdollisten sopeutumisvaihtoehtojen arviointi vaikutusten, ajan, "
-"kustannusten, hyötyjen ja ponnistelujen kannalta"
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Mahdollisten sopeutumisvaihtoehtojen arviointi vaikutusten, ajan, kustannusten, hyötyjen ja ponnistelujen kannalta"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -1846,15 +1897,12 @@ msgstr "4.2 Sopeutumistoimenpiteiden kustannus-hyötyanalyysin tekeminen"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr ""
-"4.2 Sopeutumisvaihtoehtojen priorisointi ja ensisijaisten vaihtoehtojen "
-"valinta"
+msgstr "4.2 Sopeutumisvaihtoehtojen priorisointi ja ensisijaisten vaihtoehtojen valinta"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
 msgid "4.3 Preparing a strategy document and getting political approval"
-msgstr ""
-"4.3 Strategia-asiakirjan laatiminen ja poliittisen hyväksynnän saaminen"
+msgstr "4.3 Strategia-asiakirjan laatiminen ja poliittisen hyväksynnän saaminen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
@@ -1894,24 +1942,17 @@ msgstr "5.2 Esimerkkejä sopeutumista koskevista toimintasuunnitelmista"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr ""
-"5.2 Täytäntöönpanon hallinnoinnin organisointi eri aloilla ja tasoilla"
+msgstr "5.2 Täytäntöönpanon hallinnoinnin organisointi eri aloilla ja tasoilla"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
 msgid "5.3 Mainstreaming adaptation in urban policies and plans"
-msgstr ""
-"5.3 Sopeutumisen valtavirtaistaminen kaupunkipolitiikoissa ja "
-"-suunnitelmissa"
+msgstr "5.3 Sopeutumisen valtavirtaistaminen kaupunkipolitiikoissa ja -suunnitelmissa"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid ""
-"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
-"policies"
-msgstr ""
-"5.3 Valtavirtaistaminen: sopeutumisen sisällyttäminen välineisiin ja "
-"alakohtaisiin politiikkoihin"
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Valtavirtaistaminen: sopeutumisen sisällyttäminen välineisiin ja alakohtaisiin politiikkoihin"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
@@ -1961,9 +2002,7 @@ msgstr "6.2 Seurantaindikaattorien määrittely"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:295
 msgid "6.3 Defining MRE indicators and mixed-methods approach"
-msgstr ""
-"6.3 MRE-indikaattorien ja sekamenetelmiin perustuvan lähestymistavan "
-"määrittely"
+msgstr "6.3 MRE-indikaattorien ja sekamenetelmiin perustuvan lähestymistavan määrittely"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
@@ -1992,33 +2031,18 @@ msgstr "6.5 Sopeutumisen seuranta ja arviointi: omavalvonta"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid ""
-"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 62."
-msgstr ""
-"Arvo 2x korkean pikselitiheyden kuvien laadulle, 1 (alin) - 95 (korkein). "
-"Arvo 0 tarkoittaa plone.scalingin oletusarvoa, joka on tällä hetkellä 62."
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "Arvo 2x korkean pikselitiheyden kuvien laadulle, 1 (alin) - 95 (korkein). Arvo 0 tarkoittaa plone.scalingin oletusarvoa, joka on tällä hetkellä 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid ""
-"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 51."
-msgstr ""
-"Arvo 3x korkean pikselitiheyden kuvien laadulle, 1 (alin) - 95 (korkein). "
-"Arvo 0 tarkoittaa plone.scalingin oletusarvoa, joka on tällä hetkellä 51."
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "Arvo 3x korkean pikselitiheyden kuvien laadulle, 1 (alin) - 95 (korkein). Arvo 0 tarkoittaa plone.scalingin oletusarvoa, joka on tällä hetkellä 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid ""
-"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
-" value of 0 will mean plone.scaling's default will be used, which is "
-"currently 88."
-msgstr ""
-"Skaalattujen kuvien laadun arvo, 1 (alin) - 95 (korkein). Arvo 0 tarkoittaa "
-"plone.scalingin oletusarvoa, joka on tällä hetkellä 88."
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "Skaalattujen kuvien laadun arvo, 1 (alin) - 95 (korkein). Arvo 0 tarkoittaa plone.scalingin oletusarvoa, joka on tällä hetkellä 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2047,8 +2071,7 @@ msgstr "A3: Koordinointiyhteistyö ja verkostot"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid ""
-"A3: Governance and Institutional: Coordination cooperation and networks"
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
 msgstr "A3: Hallinto ja instituutiot: Koordinointiyhteistyö ja -verkostot"
 
 #. undefined
@@ -2087,6 +2110,13 @@ msgstr "Sopeutumisalat"
 #: ../../climateadapt/browser/pt/video_view.pt:113
 msgid "Adaptation elements"
 msgstr "Sopeutumistekijät"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:107
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:158
+#: ../../climateadapt/browser/pt/casestudy_view.pt:340
+msgid "Adaptation elements:"
+msgstr "Sopeutumistekijät:"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:95
@@ -2220,29 +2250,18 @@ msgstr "Tapaustutkimus Kuvitukset"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid ""
-"Case developed and implemented and partially funded as a Climate Change "
-"Adaptation measure."
-msgstr ""
-"Tapaus on kehitetty ja pantu täytäntöön ja osittain rahoitettu "
-"ilmastonmuutokseen sopeutumisen toimenpiteenä."
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Tapaus on kehitetty ja pantu täytäntöön ja osittain rahoitettu ilmastonmuutokseen sopeutumisen toimenpiteenä."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr ""
-"Tapaus on kehitetty ja toteutettu ilmastonmuutokseen sopeutumisen "
-"toimenpiteenä."
+msgstr "Tapaus on kehitetty ja toteutettu ilmastonmuutokseen sopeutumisen toimenpiteenä."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid ""
-"Case mainly developed and implemented because of other policy objectives, "
-"but with significant consideration of Climate Change Adaptation aspects"
-msgstr ""
-"Tapaus on kehitetty ja pantu täytäntöön pääasiassa muiden poliittisten "
-"tavoitteiden vuoksi, mutta ilmastonmuutokseen sopeutumiseen liittyvät "
-"näkökohdat on otettu merkittävällä tavalla huomioon."
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Tapaus on kehitetty ja pantu täytäntöön pääasiassa muiden poliittisten tavoitteiden vuoksi, mutta ilmastonmuutokseen sopeutumiseen liittyvät näkökohdat on otettu merkittävällä tavalla huomioon."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2336,11 +2355,8 @@ msgstr "D1: Vihreät vaihtoehdot"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid ""
-"D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr ""
-"D1: Luontoon perustuvat ratkaisut ja ekosysteemiin perustuvat "
-"lähestymistavat: vihreät vaihtoehdot"
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr "D1: Luontoon perustuvat ratkaisut ja ekosysteemiin perustuvat lähestymistavat: vihreät vaihtoehdot"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2349,11 +2365,8 @@ msgstr "D2: Siniset vaihtoehdot"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid ""
-"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr ""
-"D2: Luontoon perustuvat ratkaisut ja ekosysteemiin perustuvat "
-"lähestymistavat: siniset vaihtoehdot"
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr "D2: Luontoon perustuvat ratkaisut ja ekosysteemiin perustuvat lähestymistavat: siniset vaihtoehdot"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2395,11 +2408,8 @@ msgstr "E1: Tiedotus ja tietoisuuden lisääminen"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid ""
-"E1: Knowledge and behavioural change: Information and awareness raising"
-msgstr ""
-"E1: Tietämyksen ja käyttäytymisen muutos: tiedottaminen ja tietoisuuden "
-"lisääminen"
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
+msgstr "E1: Tietämyksen ja käyttäytymisen muutos: tiedottaminen ja tietoisuuden lisääminen"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:593
@@ -2408,12 +2418,8 @@ msgstr "E2: Valmiuksien kehittäminen ja elämäntapakäytännöt"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid ""
-"E2: Knowledge and behavioural change: Capacity building empowering and "
-"lifestyle practices"
-msgstr ""
-"E2: Tietämyksen ja käyttäytymisen muutos: valmiuksien kehittäminen, "
-"voimaannuttaminen ja elämäntapakäytännöt"
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "E2: Tietämyksen ja käyttäytymisen muutos: valmiuksien kehittäminen, voimaannuttaminen ja elämäntapakäytännöt"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2448,26 +2454,13 @@ msgstr "Tapahtumat"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid ""
-"Explore Forest adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Tutustu metsien sopeutumista koskeviin tapaustutkimuksiin maantieteellisen "
-"sijainnin, temaattisen kattavuuden ja sopeutumisvaihtoehtojen linkin osalta "
-"karttapohjaisen tapaustutkimuksen avulla."
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Tutustu metsien sopeutumista koskeviin tapaustutkimuksiin maantieteellisen sijainnin, temaattisen kattavuuden ja sopeutumisvaihtoehtojen linkin osalta karttapohjaisen tapaustutkimuksen avulla."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid ""
-"Explore Urban adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Tutustu kaupunkien sopeutumista koskeviin tapaustutkimuksiin "
-"maantieteellisen sijainnin, temaattisen kattavuuden ja "
-"sopeutumisvaihtoehtojen linkin osalta karttapohjaisen tapaustutkimuksen "
-"avulla."
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Tutustu kaupunkien sopeutumista koskeviin tapaustutkimuksiin maantieteellisen sijainnin, temaattisen kattavuuden ja sopeutumisvaihtoehtojen linkin osalta karttapohjaisen tapaustutkimuksen avulla."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2492,19 +2485,12 @@ msgstr "FAO:n vihreät kaupungit"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid ""
-"FISE web portal will help us to improve the health and resilience of our "
-"forests, which play a vital role in protecting our biodiversity and in "
-"mitigating climate change."
-msgstr ""
-"FISE-verkkoportaali auttaa parantamaan metsien terveyttä ja "
-"selviytymiskykyä. Metsillä on keskeinen rooli luonnon monimuotoisuuden "
-"suojelemisessa ja ilmastonmuutoksen hillitsemisessä."
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "FISE-verkkoportaali auttaa parantamaan metsien terveyttä ja selviytymiskykyä. Metsillä on keskeinen rooli luonnon monimuotoisuuden suojelemisessa ja ilmastonmuutoksen hillitsemisessä."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid ""
-"Find out how to contribute different types of information to Climate-ADAPT."
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
 msgstr "Lue, miten voit lisätä erityyppisiä tietoja Climate-ADAPT-portaaliin."
 
 #. undefined
@@ -2545,6 +2531,11 @@ msgstr "Maantieteellinen karakterisointi"
 #: ../../climateadapt/browser/pt/indicator_view.pt:103
 msgid "Geographic characterization:"
 msgstr "Maantieteellinen luonnehdinta:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
+msgid "Go back"
+msgstr "Palaa takaisin"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:300
@@ -2652,9 +2643,7 @@ msgstr "Sopeutumisvaihtoehtojen tunnistaminen"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:38
 msgid "If you are new user the video tutorials can help you get started."
-msgstr ""
-"Jos olet uusi käyttäjä, video-opetusohjelmat voivat auttaa sinua pääsemään "
-"alkuun."
+msgstr "Jos olet uusi käyttäjä, video-opetusohjelmat voivat auttaa sinua pääsemään alkuun."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
@@ -2712,11 +2701,6 @@ msgid "Item’s creation:"
 msgstr "Esineen luominen:"
 
 #. undefined
-#: ../../climateadapt/tiles/search_acecontent.py:850
-msgid "Key Type Measure"
-msgstr "Keskeisen tyyppinen toimenpide"
-
-#. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267
 msgid "Key Type Measures"
 msgstr "Keskeiset toimenpiteet"
@@ -2729,8 +2713,7 @@ msgstr "Avainsana poistettu onnistuneesti: ${kw_old}."
 #. undefined
 #: ../../climateadapt/browser/admin.py:592
 msgid "Keyword succesfully renamed: ${kw_old} to ${kw_new}."
-msgstr ""
-"Avainsana on onnistuneesti nimetty uudelleen: ${kw_old} arvoon ${kw_new}."
+msgstr "Avainsana on onnistuneesti nimetty uudelleen: ${kw_old} arvoon ${kw_new}."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:65
@@ -2751,40 +2734,23 @@ msgstr "Maankäyttö- ja elintarvikejärjestelmät"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in forests."
-msgstr ""
-"Lue lisää erilaisista sopeutumisvaihtoehdoista ilmastonmuutoksen erilaisiin "
-"vaikutuksiin metsissä."
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Lue lisää erilaisista sopeutumisvaihtoehdoista ilmastonmuutoksen erilaisiin vaikutuksiin metsissä."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in urban areas."
-msgstr ""
-"Lue lisää erilaisista sopeutumisvaihtoehdoista ilmastonmuutoksen eri "
-"vaikutuksiin kaupunkialueilla."
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Lue lisää erilaisista sopeutumisvaihtoehdoista ilmastonmuutoksen eri vaikutuksiin kaupunkialueilla."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid ""
-"Learn more about how cities can adapt to climate change to become future-"
-"proof, climate-resilient cities"
-msgstr ""
-"Lue lisää siitä, miten kaupungit voivat sopeutua ilmastonmuutokseen ja tulla"
-" tulevaisuuden vaatimukset täyttäviksi ja ilmastonmuutoksen kestäviksi "
-"kaupungeiksi"
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Lue lisää siitä, miten kaupungit voivat sopeutua ilmastonmuutokseen ja tulla tulevaisuuden vaatimukset täyttäviksi ja ilmastonmuutoksen kestäviksi kaupungeiksi"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid ""
-"Learn more about how forests can adapt to climate change to stay healthy, "
-"diverse, resilient and productive"
-msgstr ""
-"Lue lisää siitä, miten metsät voivat sopeutua ilmastonmuutokseen pysyäkseen "
-"terveinä, monimuotoisina, selviytymiskykyisinä ja tuottavina"
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Lue lisää siitä, miten metsät voivat sopeutua ilmastonmuutokseen pysyäkseen terveinä, monimuotoisina, selviytymiskykyisinä ja tuottavina"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -2846,11 +2812,8 @@ msgstr "Vuoristoalueet"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid ""
-"National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
-"Kansallinen sopeutumispolitiikka, jota ei raportoitu pakollisen raportoinnin"
-" jälkeen vuonna 2023"
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "Kansallinen sopeutumispolitiikka, jota ei raportoitu pakollisen raportoinnin jälkeen vuonna 2023"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3100,12 +3063,8 @@ msgstr "Valitse maa siirtyäksesi suoraan maan sivulle:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid ""
-"Select the sectors for which you want to receive a notification email when "
-"an item is modified."
-msgstr ""
-"Valitse sektorit, joille haluat saada ilmoituksen sähköpostitse, kun "
-"kohdetta muutetaan."
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Valitse sektorit, joille haluat saada ilmoituksen sähköpostitse, kun kohdetta muutetaan."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3146,12 +3105,8 @@ msgstr "Lähde:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid ""
-"Specify all allowed maximum image dimensions, one per line. The required "
-"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
-"Määritä kaikki sallitut enimmäismitat, yksi riviä kohti. Vaadittu muoto on "
-"&lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Määritä kaikki sallitut enimmäismitat, yksi riviä kohti. Vaadittu muoto on &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3166,14 +3121,12 @@ msgstr "Myrskyt"
 #. undefined
 #: ../../climateadapt/vocabulary.py:601
 msgid "Structural and physical: Ecosystem-based adaptation options"
-msgstr ""
-"Rakenteelliset ja fyysiset: Ekosysteemiin perustuvat sopeutumisvaihtoehdot"
+msgstr "Rakenteelliset ja fyysiset: Ekosysteemiin perustuvat sopeutumisvaihtoehdot"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:599
 msgid "Structural and physical: Engineering and built environment options"
-msgstr ""
-"Rakenteellinen ja fyysinen: Suunnittelu ja rakennetun ympäristön vaihtoehdot"
+msgstr "Rakenteellinen ja fyysinen: Suunnittelu ja rakennetun ympäristön vaihtoehdot"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:602
@@ -3202,72 +3155,28 @@ msgstr "EU:n kaupunginjohtajien energia- ja ilmastosopimus"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid ""
-"The EU finances adaptation to climate change in Europe through a wide range "
-"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
-"at least 25% of the European budget is climate-related expenditure. "
-"Therefore, Climate adaptation actions have to be integrated into all the "
-"major EU spending programmes, and a tracking system is put in place to "
-"guarantee these objectives are met."
-msgstr ""
-"EU rahoittaa ilmastonmuutokseen sopeutumista Euroopassa useilla eri "
-"välineillä. Vuosien 2021–2027 monivuotisessa rahoituskehyksessä "
-"varmistetaan, että vähintään 25 prosenttia EU:n talousarviosta käytetään "
-"ilmastoon liittyviin menoihin. Sen vuoksi ilmastonmuutokseen sopeutumista "
-"koskevat toimet on sisällytettävä kaikkiin EU:n tärkeimpiin meno-ohjelmiin, "
-"ja näiden tavoitteiden saavuttamisen varmistamiseksi otetaan käyttöön "
-"seurantajärjestelmä."
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "EU rahoittaa ilmastonmuutokseen sopeutumista Euroopassa useilla eri välineillä. Vuosien 2021–2027 monivuotisessa rahoituskehyksessä varmistetaan, että vähintään 25 prosenttia EU:n talousarviosta käytetään ilmastoon liittyviin menoihin. Sen vuoksi ilmastonmuutokseen sopeutumista koskevat toimet on sisällytettävä kaikkiin EU:n tärkeimpiin meno-ohjelmiin, ja näiden tavoitteiden saavuttamisen varmistamiseksi otetaan käyttöön seurantajärjestelmä."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid ""
-"The EU has several policy frameworks in place to increase the resilience of "
-"European cities and their inhabitants, including the EU Adaptation Strategy "
-"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
-" to improve knowledge and data availability on urban vulnerability and "
-"adaptive capacity. It also provides financial and technical support to "
-"policy makers and practitioners to make cities more resilient and adaptive."
-msgstr ""
-"EU:lla on useita toimintapoliittisia kehyksiä Euroopan kaupunkien ja niiden "
-"asukkaiden selviytymiskyvyn parantamiseksi, mukaan lukien EU:n "
-"sopeutumisstrategia ja vuoteen 2030 ulottuva EU:n biodiversiteettistrategia,"
-" ja se on kehittänyt useita aloitteita kaupunkien haavoittuvuutta ja "
-"sopeutumiskykyä koskevan tietämyksen ja datan saatavuuden parantamiseksi. Se"
-" tarjoaa myös taloudellista ja teknistä tukea poliittisille päättäjille ja "
-"toimijoille kaupunkien selviytymiskyvyn ja sopeutumiskyvyn parantamiseksi."
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "EU:lla on useita toimintapoliittisia kehyksiä Euroopan kaupunkien ja niiden asukkaiden selviytymiskyvyn parantamiseksi, mukaan lukien EU:n sopeutumisstrategia ja vuoteen 2030 ulottuva EU:n biodiversiteettistrategia, ja se on kehittänyt useita aloitteita kaupunkien haavoittuvuutta ja sopeutumiskykyä koskevan tietämyksen ja datan saatavuuden parantamiseksi. Se tarjoaa myös taloudellista ja teknistä tukea poliittisille päättäjille ja toimijoille kaupunkien selviytymiskyvyn ja sopeutumiskyvyn parantamiseksi."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices from the Copernicus Climate Change Service in support of "
-"climate change adaptation."
-msgstr ""
-"European Climate Data Explorer tarjoaa interaktiivisen pääsyn moniin "
-"Copernicuksen ilmastonmuutospalvelun ilmastoindekseihin, joilla tuetaan "
-"ilmastonmuutokseen sopeutumista."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "European Climate Data Explorer tarjoaa interaktiivisen pääsyn moniin Copernicuksen ilmastonmuutospalvelun ilmastoindekseihin, joilla tuetaan ilmastonmuutokseen sopeutumista."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices like fire weather indices in support of climate change "
-"adaptation in forests."
-msgstr ""
-"European Climate Data Explorer tarjoaa interaktiivisen pääsyn moniin "
-"ilmastoindekseihin, kuten palosääindekseihin, jotka tukevat "
-"ilmastonmuutokseen sopeutumista metsissä."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "European Climate Data Explorer tarjoaa interaktiivisen pääsyn moniin ilmastoindekseihin, kuten palosääindekseihin, jotka tukevat ilmastonmuutokseen sopeutumista metsissä."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid ""
-"The European Drought Observatory (EDO) contains drought-relevant "
-"information. These give an overview of the situation in the EU about "
-"imminent droughts."
-msgstr ""
-"Euroopan kuivuudenseurantakeskus (EDO) sisältää kuivuuden kannalta "
-"merkityksellisiä tietoja, jotka antavat yleiskuvan EU:n tilanteesta "
-"uhkaavien kuivuuksien osalta."
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "Euroopan kuivuudenseurantakeskus (EDO) sisältää kuivuuden kannalta merkityksellisiä tietoja, jotka antavat yleiskuvan EU:n tilanteesta uhkaavien kuivuuksien osalta."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3276,57 +3185,23 @@ msgstr "Euroopan metsäpalotietojärjestelmä"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid ""
-"The European Forest Fire Information System (EFFIS) supports the protection "
-"of forests against fires and provides the EU with harmonized information on "
-"forest fires"
-msgstr ""
-"Euroopan metsäpalotietojärjestelmä (EFFIS) tukee metsien suojelua "
-"metsäpaloilta ja tarjoaa EU:lle yhdenmukaistettua tietoa metsäpaloista"
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Euroopan metsäpalotietojärjestelmä (EFFIS) tukee metsien suojelua metsäpaloilta ja tarjoaa EU:lle yhdenmukaistettua tietoa metsäpaloista"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid ""
-"The Urban Adaptation Map Viewer provides an overview of the current and "
-"future climate hazards, the vulnerability of the cities to these hazards and"
-" their adaptive capacity."
-msgstr ""
-"Urban Adaptation Map Viewer tarjoaa yleiskatsauksen nykyisistä ja tulevista "
-"ilmastoriskeistä, kaupunkien haavoittuvuudesta näille vaaroille ja niiden "
-"sopeutumiskyvystä."
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "Urban Adaptation Map Viewer tarjoaa yleiskatsauksen nykyisistä ja tulevista ilmastoriskeistä, kaupunkien haavoittuvuudesta näille vaaroille ja niiden sopeutumiskyvystä."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid ""
-"The Urban Adaptation Support Tool assists cities, towns and local "
-"authorities in developing, implementing and monitoring climate change "
-"adaptation plans."
-msgstr ""
-"Kaupunkialueiden sopeutumisen tukiväline auttaa kaupunkeja ja "
-"paikallisviranomaisia ilmastonmuutokseen sopeutumista koskevien "
-"suunnitelmien kehittämisessä, täytäntöönpanossa ja seurannassa."
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "Kaupunkialueiden sopeutumisen tukiväline auttaa kaupunkeja ja paikallisviranomaisia ilmastonmuutokseen sopeutumista koskevien suunnitelmien kehittämisessä, täytäntöönpanossa ja seurannassa."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid ""
-"The climate crisis is severely affecting Europe's forests, making them "
-"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
-"and disease outbreaks, or sea level rise. The growing risks and impacts are "
-"affecting the economic viability of forestry and they reduce the capacity of"
-" forests to provide essential ecosystem services. The EU responds to this "
-"unprecedented challenge by supporting the adaptation of forests to climate "
-"change through a wide range of policies, like the EU Forest Strategy, EU "
-"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr ""
-"Ilmastokriisi vaikuttaa vakavasti Euroopan metsiin ja tekee niistä entistä "
-"alttiimpia myrskyjen, maastopalojen, kuivuuden, hyönteis- ja "
-"tautiepidemioiden tai merenpinnan nousun kaltaisille vaaroille. Kasvavat "
-"riskit ja vaikutukset vaikuttavat metsätalouden taloudelliseen "
-"elinkelpoisuuteen ja heikentävät metsien kykyä tarjota olennaisia "
-"ekosysteemipalveluja. EU vastaa tähän ennennäkemättömään haasteeseen "
-"tukemalla metsien sopeutumista ilmastonmuutokseen monenlaisilla "
-"politiikoilla, kuten EU:n metsästrategialla, EU:n strategialla "
-"ilmastonmuutokseen sopeutumiseksi ja EU:n biodiversiteettistrategialla."
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Ilmastokriisi vaikuttaa vakavasti Euroopan metsiin ja tekee niistä entistä alttiimpia myrskyjen, maastopalojen, kuivuuden, hyönteis- ja tautiepidemioiden tai merenpinnan nousun kaltaisille vaaroille. Kasvavat riskit ja vaikutukset vaikuttavat metsätalouden taloudelliseen elinkelpoisuuteen ja heikentävät metsien kykyä tarjota olennaisia ekosysteemipalveluja. EU vastaa tähän ennennäkemättömään haasteeseen tukemalla metsien sopeutumista ilmastonmuutokseen monenlaisilla politiikoilla, kuten EU:n metsästrategialla, EU:n strategialla ilmastonmuutokseen sopeutumiseksi ja EU:n biodiversiteettistrategialla."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3418,8 +3293,7 @@ msgstr "Vuosi:"
 msgid "back to search"
 msgstr "Takaisin hakuun"
 
-#. Default: "Enable automatic image captioning for images set in the
-#. richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "image_captioning_description (englanniksi)"
