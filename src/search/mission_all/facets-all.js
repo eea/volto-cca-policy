@@ -10,10 +10,10 @@ import {
 
 let globalFacets = globalSearchBaseConfig.facets;
 for (let i = 0; i < globalFacets.length; i++) {
-  if (globalFacets[i]['field'] == 'IncludeArchived') {
+  if (globalFacets[i]['field'] === 'IncludeArchived') {
     globalFacets[i]['showInSecondaryFacetsList'] = false;
   }
-  if (globalFacets[i]['field'] == 'issued.date') {
+  if (globalFacets[i]['field'] === 'issued.date') {
     globalFacets[i]['showInSecondaryFacetsList'] = false;
   }
 }
