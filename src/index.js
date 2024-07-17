@@ -35,6 +35,7 @@ import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/imag
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
 import './slate-styles.less';
+import BrokenLinks from './components/theme/Views/BrokenLinks';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -59,8 +60,8 @@ const applyConfig = (config) => {
       ...(config.settings.externalRoutes || []),
       {
         match: {
-          path: new RegExp(voltoLocationsRegex),
           exact: false,
+          path: new RegExp(voltoLocationsRegex),
           strict: false,
         },
         url(payload) {
@@ -376,7 +377,17 @@ const applyConfig = (config) => {
       component: Sitemap,
     },
 
+    {
+      path: `/broken-links`,
+      component: BrokenLinks,
+    },
+
     ...(config.addonRoutes || []),
+  ];
+
+  config.settings.nonContentRoutes = [
+    ...config.settings.nonContentRoutes,
+    '/broken-links',
   ];
 
   config.settings.appExtras = [
