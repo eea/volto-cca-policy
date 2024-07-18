@@ -40,25 +40,39 @@ export function filterCases(cases, activeFilters) {
     )
       return _case;
 
-    let flag = false;
+    let flag = {
+      sectors: false,
+      elements: false,
+      measures: false,
+      impacts: false,
+    };
 
     activeFilters.sectors.forEach((filter) => {
-      if (_case.properties.sectors.includes(',' + filter + ',')) flag = true;
+      if (_case.properties.sectors.includes(',' + filter + ','))
+        flag.sectors = true;
     });
 
     activeFilters.elements.forEach((filter) => {
-      if (_case.properties.elements.includes(',' + filter + ',')) flag = true;
+      if (_case.properties.elements.includes(',' + filter + ','))
+        flag.elements = true;
     });
 
     activeFilters.impacts.forEach((filter) => {
-      if (_case.properties.impacts.includes(',' + filter + ',')) flag = true;
+      if (_case.properties.impacts.includes(',' + filter + ','))
+        flag.impacts = true;
     });
 
     activeFilters.measures.forEach((filter) => {
-      if (_case.properties.ktms.includes(',' + filter + ',')) flag = true;
+      if (_case.properties.ktms.includes(',' + filter + ','))
+        flag.measures = true;
     });
 
-    return flag ? _case : false;
+    return (activeFilters.sectors.length ? flag.sectors : true) &&
+      (activeFilters.elements.length ? flag.elements : true) &&
+      (activeFilters.impacts.length ? flag.impacts : true) &&
+      (activeFilters.measures.length ? flag.measures : true)
+      ? _case
+      : false;
   });
 
   return data;
