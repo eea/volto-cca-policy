@@ -1,4 +1,8 @@
 const path = require('path');
+
+const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
+const babelLoaderFinder = makeLoaderFinder('babel-loader');
+
 const plugins = (defaultPlugins) => {
   return defaultPlugins;
 };
@@ -19,6 +23,16 @@ const modify = (config, { target, dev }, webpack) => {
   config.resolve.alias['eea-volto-theme-folder'] = hasDesignSystemInstalled
     ? themeLessPath
     : semanticLessPath;
+
+  const babelLoader = config.module.rules.find(babelLoaderFinder);
+  const sanitizePath = path.join(
+    path.dirname(require.resolve('sanitize-html')),
+  );
+  const { include } = babelLoader;
+  const htmlParserPath = `${sanitizePath}/node_modules/htmlparser2/lib/esm/`;
+
+  include.push(sanitizePath);
+  include.push(htmlParserPath);
 
   return config;
 };
