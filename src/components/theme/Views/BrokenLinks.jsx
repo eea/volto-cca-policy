@@ -107,10 +107,11 @@ function DebouncedInput({
   );
 }
 
-function BrokenLinks({ reactTable }) {
+export function BrokenLinksComponent({ reactTable }) {
   const { createColumnHelper } = reactTable;
 
   const [results, setResults] = React.useState({});
+
   React.useEffect(() => {
     const url = expandToBackendURL('/@broken_links');
     let isMounted = true;
@@ -280,4 +281,4 @@ function FilteredTable({ reactTable, data, columns }) {
   );
 }
 
-export default injectLazyLibs(['reactTable'])(BrokenLinks);
+export default injectLazyLibs(['reactTable'])(BrokenLinksComponent);
