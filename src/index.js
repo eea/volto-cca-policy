@@ -1,3 +1,4 @@
+import loadable from '@loadable/component';
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
@@ -76,10 +77,10 @@ const applyConfig = (config) => {
     'nominatim.openstreetmap.org',
   ];
 
-  // if (!config.settings.loadables.d3)
-  //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
-  // if (!config.settings.loadables.d3Geo)
-  //   config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
+  if (!config.settings.loadables.reactTable)
+    config.settings.loadables.reactTable = loadable.lib(() =>
+      import('@tanstack/react-table'),
+    );
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
