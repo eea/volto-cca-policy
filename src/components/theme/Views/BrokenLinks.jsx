@@ -16,6 +16,21 @@ import './brokenlinks.less';
 function Filter({ column }) {
   const columnFilterValue = column.getFilterValue();
   const { filterVariant } = column.columnDef.meta ?? {};
+  const handleRangeNumberChangeMin = React.useCallback(
+    (value) => {
+      column.setFilterValue((old) => [value, old?.[1]]);
+    },
+    [column],
+  );
+  const handleRangeNumberChangeMax = React.useCallback(
+    (value) => column.setFilterValue((old) => [old?.[0], value]),
+    [column],
+  );
+
+  const handleTextChange = React.useCallback(
+    (value) => column.setFilterValue(value),
+    [column],
+  );
 
   return filterVariant === 'range' ? (
     <div>
@@ -24,18 +39,14 @@ function Filter({ column }) {
         <DebouncedInput
           type="number"
           value={columnFilterValue?.[0] ?? ''}
-          onChange={(value) =>
-            column.setFilterValue((old) => [value, old?.[1]])
-          }
+          onChange={handleRangeNumberChangeMin}
           placeholder={`Min`}
           className="w-24 border shadow rounded"
         />
         <DebouncedInput
           type="number"
           value={columnFilterValue?.[1] ?? ''}
-          onChange={(value) =>
-            column.setFilterValue((old) => [old?.[0], value])
-          }
+          onChange={handleRangeNumberChangeMax}
           placeholder={`Max`}
           className="w-24 border shadow rounded"
         />
@@ -44,6 +55,7 @@ function Filter({ column }) {
     </div>
   ) : filterVariant === 'select' ? (
     <select
+      onBlur={(e) => column.setFilterValue(e.target.value)}
       onChange={(e) => column.setFilterValue(e.target.value)}
       value={columnFilterValue?.toString()}
     >
@@ -56,7 +68,7 @@ function Filter({ column }) {
   ) : (
     <DebouncedInput
       className="w-36 border shadow rounded"
-      onChange={(value) => column.setFilterValue(value)}
+      onChange={handleTextChange}
       placeholder={`Search...`}
       type="text"
       value={columnFilterValue ?? ''}
@@ -80,6 +92,7 @@ function DebouncedInput({
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
+      console.log('on change', value);
       onChange(value);
     }, debounce);
 
@@ -96,17 +109,9 @@ function DebouncedInput({
 }
 
 function BrokenLinks({ reactTable }) {
-  const [results, setResults] = React.useState({});
-  const {
-    createColumnHelper,
-    useReactTable,
-    getPaginationRowModel,
-    getCoreRowModel,
-    flexRender,
-    getFilteredRowModel,
-    getSortedRowModel,
-  } = reactTable;
+  const { createColumnHelper } = reactTable;
 
+  const [results, setResults] = React.useState({});
   React.useEffect(() => {
     const url = expandToBackendURL('/@broken_links');
     let isMounted = true;
@@ -115,6 +120,7 @@ function BrokenLinks({ reactTable }) {
         const response = await fetch(url);
         const results = await response.json();
         const data = Array.from(Object.values(results.broken_links));
+        console.log('set data');
         if (isMounted) setResults(data);
       } catch {
         // eslint-disable-next-line no-console
@@ -151,8 +157,23 @@ function BrokenLinks({ reactTable }) {
     [columnHelper],
   );
 
+  return (
+    <FilteredTable data={results} columns={columns} reactTable={reactTable} />
+  );
+}
+
+function FilteredTable({ reactTable, data, columns }) {
+  const {
+    useReactTable,
+    getPaginationRowModel,
+    getCoreRowModel,
+    flexRender,
+    getFilteredRowModel,
+    getSortedRowModel,
+  } = reactTable;
+
   const table = useReactTable({
-    data: results,
+    data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -167,7 +188,7 @@ function BrokenLinks({ reactTable }) {
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <TableHeaderCell key={header.id}>
+                <TableHeaderCell key={header.id} className={header.id}>
                   {header.isPlaceholder ? null : (
                     <>
                       <div
