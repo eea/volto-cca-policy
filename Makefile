@@ -75,6 +75,11 @@ start:			## Start development environment
 	echo "Running:	${DOCKER_COMPOSE} up"
 	${DOCKER_COMPOSE} up
 
+.PHONY: start-backend
+start-backend:			## Start development environment
+	echo "Running:	${DOCKER_COMPOSE} up"
+	${DOCKER_COMPOSE} up backend
+
 .PHONY: shell
 shell:			## Start a shell in the frontend container
 	echo "Running:	${DOCKER_COMPOSE} run frontend bash"
