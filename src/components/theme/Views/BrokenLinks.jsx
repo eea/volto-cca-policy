@@ -1,17 +1,99 @@
-import React from 'react';
-import {
-  TableRow,
-  TableHeaderCell,
-  TableHeader,
-  TableCell,
-  TableBody,
-  Table,
-  Button,
-} from 'semantic-ui-react';
 import { expandToBackendURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable';
+import React from 'react';
+import {
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+} from 'semantic-ui-react';
 
 import './brokenlinks.less';
+
+function Filter({ column }) {
+  const columnFilterValue = column.getFilterValue();
+  const { filterVariant } = column.columnDef.meta ?? {};
+
+  return filterVariant === 'range' ? (
+    <div>
+      <div className="flex space-x-2">
+        {/* See faceted column filters example for min max values functionality */}
+        <DebouncedInput
+          type="number"
+          value={columnFilterValue?.[0] ?? ''}
+          onChange={(value) =>
+            column.setFilterValue((old) => [value, old?.[1]])
+          }
+          placeholder={`Min`}
+          className="w-24 border shadow rounded"
+        />
+        <DebouncedInput
+          type="number"
+          value={columnFilterValue?.[1] ?? ''}
+          onChange={(value) =>
+            column.setFilterValue((old) => [old?.[0], value])
+          }
+          placeholder={`Max`}
+          className="w-24 border shadow rounded"
+        />
+      </div>
+      <div className="h-1" />
+    </div>
+  ) : filterVariant === 'select' ? (
+    <select
+      onChange={(e) => column.setFilterValue(e.target.value)}
+      value={columnFilterValue?.toString()}
+    >
+      {/* See faceted column filters example for dynamic select options */}
+      <option value="">All</option>
+      <option value="complicated">complicated</option>
+      <option value="relationship">relationship</option>
+      <option value="single">single</option>
+    </select>
+  ) : (
+    <DebouncedInput
+      className="w-36 border shadow rounded"
+      onChange={(value) => column.setFilterValue(value)}
+      placeholder={`Search...`}
+      type="text"
+      value={columnFilterValue ?? ''}
+    />
+    // See faceted column filters example for datalist search suggestions
+  );
+}
+
+// A typical debounced input react component
+function DebouncedInput({
+  value: initialValue,
+  onChange,
+  debounce = 500,
+  ...props
+}) {
+  const [value, setValue] = React.useState(initialValue);
+
+  React.useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      onChange(value);
+    }, debounce);
+
+    return () => clearTimeout(timeout);
+  }, [value, debounce, onChange]);
+
+  return (
+    <input
+      {...props}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
+  );
+}
 
 function BrokenLinks({ reactTable }) {
   const [results, setResults] = React.useState({});
@@ -21,6 +103,8 @@ function BrokenLinks({ reactTable }) {
     getPaginationRowModel,
     getCoreRowModel,
     flexRender,
+    getFilteredRowModel,
+    getSortedRowModel,
   } = reactTable;
 
   React.useEffect(() => {
@@ -46,22 +130,22 @@ function BrokenLinks({ reactTable }) {
     () => [
       columnHelper.accessor('url', {
         header: () => 'URL',
-        cell: (info) => (
-          <a href={info.getValue()}>{info.getValue().slice(0, 20)}</a>
-        ),
+        cell: (info) => <a href={info.getValue()}>{info.getValue()}</a>,
+        filterFn: 'includesString',
       }),
       columnHelper.accessor('status', {
         header: () => 'Status',
+        filterFn: 'includesString',
       }),
       columnHelper.accessor('date', {
         header: () => 'Last checked',
+        filterFn: 'includesString',
       }),
 
       columnHelper.accessor('object_url', {
         header: () => 'Reference from',
-        cell: (info) => (
-          <a href={info.getValue()}>{info.getValue().slice(0, 20)}</a>
-        ),
+        cell: (info) => <a href={info.getValue()}>{info.getValue()}</a>,
+        filterFn: 'includesString',
       }),
     ],
     [columnHelper],
@@ -72,6 +156,8 @@ function BrokenLinks({ reactTable }) {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -82,12 +168,35 @@ function BrokenLinks({ reactTable }) {
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <TableHeaderCell key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  {header.isPlaceholder ? null : (
+                    <>
+                      <div
+                        tabIndex="-1"
+                        role="button"
+                        onKeyDown={header.column.getToggleSortingHandler()}
+                        {...{
+                          className: header.column.getCanSort()
+                            ? 'cursor-pointer select-none'
+                            : '',
+                          onClick: header.column.getToggleSortingHandler(),
+                        }}
+                      >
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                        {{
+                          asc: ' 🔼',
+                          desc: ' 🔽',
+                        }[header.column.getIsSorted()] ?? null}
+                      </div>
+                      {header.column.getCanFilter() ? (
+                        <div>
+                          <Filter column={header.column} />
+                        </div>
+                      ) : null}
+                    </>
+                  )}
                 </TableHeaderCell>
               ))}
             </TableRow>
@@ -121,10 +230,7 @@ function BrokenLinks({ reactTable }) {
           {'<'}
         </Button>
         <Button
-          onClick={() => {
-            console.log('nextPage');
-            table.nextPage();
-          }}
+          onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
           {'>'}
