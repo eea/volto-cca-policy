@@ -40,17 +40,14 @@ export default function installMainSearch(config) {
       cluster_name: {
         cca: 'Mission Portal',
       },
+      objectProvides: {
+        'Funding oportunity': 'Funding opportunity',
+      },
     },
     runtime_mappings: build_runtime_mappings(clusters),
   };
 
   const { missionAll } = config.searchui;
-
-  // missionAll.permanentFilters.push({
-  //   term: {
-  //     cca_include_in_mission: 'true',
-  //   },
-  // });
 
   missionAll.permanentFilters.push({
     term: {
@@ -68,38 +65,10 @@ export default function installMainSearch(config) {
   //     ],
   //   },
   // });
-  // missionAll.permanentFilters.push({
-  //   prefix: {
-  //     'id.keyword': 'https://climate-adapt.eea.europa.eu/en/mission',
-  //   },
-  // });
 
   missionAll.permanentFilters.push({
     bool: {
       should: [
-        // {
-        //   terms: {
-        //     objectProvides: [
-        //       'Funding oportunity',
-        //       'Mission tool',
-        //       'Mission story',
-        //       'News',
-        //       'Events',
-        //       'Webpage',
-        //       // '',
-        //       // 'Adaptation option',
-        //       // 'Case study',
-        //       // 'Guidance',
-        //       // 'Video',
-        //       // 'Indicator',
-        //       // 'Information portal',
-        //       // 'Organisation',
-        //       // 'Publication reference',
-        //       // 'Research and knowledge project',
-        //       // 'Tool',
-        //     ],
-        //   },
-        // },
         {
           term: {
             cca_include_in_mission: 'true',
@@ -114,30 +83,6 @@ export default function installMainSearch(config) {
       minimum_should_match: 1,
     },
   });
-
-  // missionAll.permanentFilters.push({
-  //   terms: {
-  //     objectProvides: [
-  //       'Funding oportunity',
-  //       'Mission tool',
-  //       'Mission story',
-  //       'News',
-  //       'Events',
-  //       'Webpage',
-  //       // '',
-  //       'Adaptation option',
-  //       'Case study',
-  //       'Guidance',
-  //       'Video',
-  //       'Indicator',
-  //       'Information portal',
-  //       'Organisation',
-  //       'Publication reference',
-  //       'Research and knowledge project',
-  //       'Tool',
-  //     ],
-  //   },
-  // });
 
   missionAll.facets = facets;
 
