@@ -92,7 +92,6 @@ function DebouncedInput({
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log('on change', value);
       onChange(value);
     }, debounce);
 
@@ -120,7 +119,6 @@ function BrokenLinks({ reactTable }) {
         const response = await fetch(url);
         const results = await response.json();
         const data = Array.from(Object.values(results.broken_links));
-        console.log('set data');
         if (isMounted) setResults(data);
       } catch {
         // eslint-disable-next-line no-console
