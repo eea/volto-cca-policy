@@ -19,10 +19,10 @@ for (let i = 0; i < globalFacets.length; i++) {
   }
 }
 
-const facets = [
-  ...globalFacets,
+globalFacets = globalFacets.concat(
   cca_climate_impacts,
   cca_adaptation_sectors,
+  geographic_countries,
   multiTermFacet({
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
@@ -30,7 +30,39 @@ const facets = [
     label: 'Adaptation Approaches',
     alwaysVisible: false,
   }),
-  geographic_countries,
+);
+
+let facetsOrderList = [
+  'objectProvides',
+  'cca_adaptation_sectors.keyword',
+  'cca_climate_impacts.keyword',
+  'cca_adaptation_elements.keyword',
+  'spatial',
+  'language',
+];
+let facetsOrder = [];
+facetsOrderList.forEach((element) => {
+  const _facet = globalFacets.filter((f) => f.field === element);
+  if (_facet.length) {
+    facetsOrder.push(_facet[0]);
+  }
+});
+facetsOrder = facetsOrder.concat(
+  globalFacets.filter((f) => !facetsOrderList.includes(f.field)),
+);
+
+const facets = [
+  ...facetsOrder,
+  // cca_climate_impacts,
+  // cca_adaptation_sectors,
+  // multiTermFacet({
+  //   field: 'cca_adaptation_elements.keyword',
+  //   isFilterable: false,
+  //   isMulti: true,
+  //   label: 'Adaptation Approaches',
+  //   alwaysVisible: false,
+  // }),
+  // geographic_countries,
   // language,
   // objectProvides,
 ];
