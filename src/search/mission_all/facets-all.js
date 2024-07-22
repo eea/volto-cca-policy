@@ -8,13 +8,14 @@ import {
   cca_adaptation_sectors,
 } from '../common';
 
-let globalFacets = globalSearchBaseConfig.facets;
+const blacklist = ['IncludeArchived', 'issued.date'];
+let globalFacets = globalSearchBaseConfig.facets.filter(
+  (f) => !blacklist.includes(f.field),
+);
+
 for (let i = 0; i < globalFacets.length; i++) {
-  if (globalFacets[i]['field'] === 'IncludeArchived') {
-    globalFacets[i]['showInSecondaryFacetsList'] = false;
-  }
-  if (globalFacets[i]['field'] === 'issued.date') {
-    globalFacets[i]['showInSecondaryFacetsList'] = false;
+  if (globalFacets[i]['field'] === 'objectProvides') {
+    globalFacets[i]['label'] = 'Type of item';
   }
 }
 
