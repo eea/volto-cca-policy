@@ -62,7 +62,6 @@ function PinInteraction({ longitude, latitude, onChange }) {
       const lonLat = ol.proj.toLonLat(coordinates);
       const [longitude, latitude] = lonLat;
       onChange({ latitude, longitude });
-      console.log('New coordinates:', lonLat);
     });
   }, [addInteraction, addLayer, map, onChange, latitude, longitude]);
 
