@@ -181,7 +181,7 @@ function FilteredTable({ reactTable, data, columns }) {
   });
 
   return (
-    <div className="broken-links-table">
+    <div className="broken-links-table ui container">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
