@@ -1,3 +1,4 @@
-ol.ui.list, .ui.bulleted.list {
+ol.ui.list,
+.ui.bulleted.list {
   margin-left: 0;
 }
