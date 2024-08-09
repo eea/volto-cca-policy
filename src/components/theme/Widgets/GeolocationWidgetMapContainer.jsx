@@ -1,12 +1,72 @@
-import React, { useState } from 'react';
+import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import {
   Controls,
   Interactions,
   Layer,
-  Map,
   Layers,
+  Map,
 } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import React, { useState } from 'react';
+import { useMapContext } from '@eeacms/volto-openlayers-map/hocs';
+
+function PinInteraction({ longitude, latitude, onChange }) {
+  const mapContext = useMapContext();
+  const { addLayer, addInteraction, map } = mapContext;
+
+  React.useEffect(() => {
+    if (
+      !map ||
+      typeof latitude === 'undefined' ||
+      typeof longitude === 'undefined'
+    )
+      return;
+
+    // Create a feature (the pin) and set it to be draggable
+    const pin = new ol.ol.Feature({
+      geometry: new ol.geom.Point(ol.proj.fromLonLat([longitude, latitude])), // Initial location
+    });
+
+    // Style for the pin
+    pin.setStyle(
+      new ol.style.Style({
+        image: new ol.style.Icon({
+          anchor: [0.5, 1],
+          src: 'https://openlayers.org/en/latest/examples/data/icon.png',
+        }),
+      }),
+    );
+
+    // Create a vector layer to hold the pin
+    const vectorSource = new ol.source.Vector({
+      features: [pin],
+    });
+
+    const vectorLayer = new ol.layer.Vector({
+      source: vectorSource,
+    });
+
+    map.addLayer(vectorLayer);
+
+    // Add drag interaction
+    const dragInteraction = new ol.interaction.Modify({
+      source: vectorSource,
+      pixelTolerance: 20,
+    });
+
+    map.addInteraction(dragInteraction);
+
+    // Log the new position when the pin is dragged
+    dragInteraction.on('modifyend', function (event) {
+      const feature = event.features.getArray()[0];
+      const coordinates = feature.getGeometry().getCoordinates();
+      const lonLat = ol.proj.toLonLat(coordinates);
+      const [longitude, latitude] = lonLat;
+      onChange({ latitude, longitude });
+    });
+  }, [addInteraction, addLayer, map, onChange, latitude, longitude]);
+
+  return null;
+}
 
 const TileSetLoader = (props) => {
   const [tileWMSSources, setTileWMSSources] = useState([]);
@@ -31,7 +91,7 @@ const TileSetLoader = (props) => {
 };
 
 const MapContainer = (props) => {
-  const { longitude, latitude, source } = props;
+  const { longitude, latitude, source, onChange } = props;
   return (
     <Map
       view={{
@@ -44,15 +104,20 @@ const MapContainer = (props) => {
     >
       <Layers>
         <Controls attribution={false} zoom={false} />
+        <PinInteraction
+          latitude={latitude}
+          longitude={longitude}
+          onChange={onChange}
+        />
         <Interactions
           doubleClickZoom={true}
-          dragAndDrop={false}
+          dragAndDrop={true}
           dragPan={true}
           keyboardPan={true}
           keyboardZoom={true}
           mouseWheelZoom={true}
           pointer={true}
-          select={false}
+          select={true}
         />
         <Layer.Tile source={source} zIndex={0} />
       </Layers>
