@@ -70,10 +70,20 @@ install:		## Build and install development environment
 	${DOCKER_COMPOSE} pull
 	${DOCKER_COMPOSE} build
 
+.PHONY: build-frontend
+build-frontend:		## Build and install development environment
+	echo "Running:	${DOCKER_COMPOSE} build frontend"
+	${DOCKER_COMPOSE} build frontend
+
 .PHONY: start
 start:			## Start development environment
 	echo "Running:	${DOCKER_COMPOSE} up"
 	${DOCKER_COMPOSE} up
+
+.PHONY: start-backend
+start-backend:			## Start development environment
+	echo "Running:	${DOCKER_COMPOSE} up"
+	${DOCKER_COMPOSE} up backend
 
 .PHONY: shell
 shell:			## Start a shell in the frontend container

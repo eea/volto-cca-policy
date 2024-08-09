@@ -23,8 +23,8 @@
 .view-wrapper > .ui.list,
 [id='page-document'] > .ui.bulleted.list,
 .view-wrapper > .ui.bulleted.list {
-  margin-left: auto !important;
   margin-right: auto !important;
+  margin-left: auto !important;
 }
 
 .ui.ordered.list,

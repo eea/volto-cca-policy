@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'semantic-ui-react';
+import { Input, Label } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
-import MapContainer from '@eeacms/volto-cca-policy/components/theme/Widgets/GeolocationWidgetMapContainer';
+import MapContainer from './GeolocationWidgetMapContainer';
+
+import './geolocation.css';
 
 const defaultValue = {
   latitude: 55.6761,
@@ -16,6 +18,7 @@ const GeolocationWidget = (props) => {
   const { id, value, onChange } = props;
 
   const [address, setAddress] = useState('');
+  const [isFetching, setIsFetching] = useState();
 
   const handleAddressChange = (event) => {
     setAddress(event.target.value);
@@ -34,9 +37,11 @@ const GeolocationWidget = (props) => {
     const path = `${base}${corsProxyPath}/${url}`;
 
     let locations;
+    setIsFetching(true);
     try {
       const response = await fetch(path);
       locations = await response.json();
+      setIsFetching(false);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log('error in fetching location', e);
@@ -59,10 +64,19 @@ const GeolocationWidget = (props) => {
       <div className="ui form">
         <div className="inline fields">
           <div className="field">
-            <Input type="text" value={address} onChange={handleAddressChange} />
+            <Input
+              type="text"
+              value={address}
+              onChange={handleAddressChange}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleSearch(e);
+              }}
+            />
           </div>
           <div className="field">
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}>
+              {isFetching ? 'Loading' : 'Search'}
+            </button>
           </div>
         </div>
       </div>
@@ -70,10 +84,14 @@ const GeolocationWidget = (props) => {
         key={mapKey}
         longitude={value?.longitude || defaultValue.longitude}
         latitude={value?.latitude || defaultValue.latitude}
+        onChange={({ latitude, longitude }) =>
+          onChange(id, { ...value, longitude, latitude })
+        }
       />
       <div className="ui form">
         <div className="inline fields">
           <div className="field">
+            <Label>Latitude</Label>
             <Input
               type="number"
               placeholder="latitude"
@@ -84,6 +102,7 @@ const GeolocationWidget = (props) => {
             />
           </div>
           <div className="field">
+            <Label>Longitude</Label>
             <Input
               type="number"
               placeholder="longitude"
