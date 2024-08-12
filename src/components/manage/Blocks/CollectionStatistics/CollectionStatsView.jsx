@@ -69,7 +69,7 @@ const makeSearchBlockQuery = ({ base, query, field, value }) => {
 const makeEEASearchQuery = ({ base, field, value, extraFilters }) => {
   // TODO: don't hardcode the language
   const allFields = [
-    ['issued.date', 'Last 5 years'],
+    // ['issued.date', 'Last 5 years'],
     ['language', 'en'],
     [field, value],
     ...(extraFilters?.map(({ id, value }) => [id, value]) || []),
