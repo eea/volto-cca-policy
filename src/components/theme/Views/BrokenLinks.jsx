@@ -117,7 +117,12 @@ export function BrokenLinksComponent({ reactTable }) {
     let isMounted = true;
     async function handler() {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+          },
+        });
         const results = await response.json();
         const data = Array.from(Object.values(results.broken_links));
         if (isMounted) setResults(data);
