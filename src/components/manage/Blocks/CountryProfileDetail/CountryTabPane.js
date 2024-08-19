@@ -57,7 +57,7 @@ export default function CountryTabPane(props) {
             <table dangerouslySetInnerHTML={{ __html: _html_value }}>
               <thead>
                 <tr>
-                  <td>fake row to satisfy sonarqube</td>
+                  <th>fake row to satisfy sonarqube</th>
                 </tr>
               </thead>
               <tbody>
