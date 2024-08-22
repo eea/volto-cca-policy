@@ -48,26 +48,11 @@ export default function CountryTabPane(props) {
           });
         }
         if (element.type === 'table') {
-          let _html_value = '';
-          for (let i = 0; i < element.value.length; i++) {
-            _html_value += element.value[i];
-          }
-          // return <table>{_html_value}</table>;
           return (
-            <table dangerouslySetInnerHTML={{ __html: _html_value }}>
-              <thead>
-                <tr>
-                  <th>fake row to satisfy sonarqube</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>fake row to satisfy sonarqube</td>
-                </tr>
-              </tbody>
-            </table>
+            <div dangerouslySetInnerHTML={{ __html: element.value }}></div>
           );
         }
+
         if (element.type === 'div') {
           let _html_value = '';
           for (let i = 0; i < element.value.length; i++) {
