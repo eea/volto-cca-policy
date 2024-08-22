@@ -3,7 +3,6 @@ import { Accordion, Icon } from 'semantic-ui-react';
 
 export default function CountryTabPane(props) {
   const { contents, _index, activePanes, setActivePanes } = props;
-  console.log('contnets', contents);
   return (
     <>
       {contents.map((element, index) => {
