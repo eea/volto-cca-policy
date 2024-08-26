@@ -417,7 +417,12 @@ const applyConfig = (config) => {
       },
       GET_CONTENT: ['siblings'],
     },
-
+    {
+      match: {
+        path: /(.*)\/countries-regions\/countries\/(.*)/,
+      },
+      GET_CONTENT: ['siblings'],
+    },
     {
       match: '',
       GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],
