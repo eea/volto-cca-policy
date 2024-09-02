@@ -40,6 +40,8 @@ const ImageGallery = (props) => {
     }
   };
 
+  const image = items[slideIndex];
+
   return (
     <div className="image-gallery">
       <div
@@ -63,8 +65,17 @@ const ImageGallery = (props) => {
         onOpen={() => setOpen(true)}
       >
         <Modal.Content>
-          <h3>{items[slideIndex]?.title}</h3>
-          <p>{items[slideIndex]?.description}</p>
+          <h3>{image?.title}</h3>
+          <p>
+            {image?.description}
+
+            {image?.rights && (
+              <>
+                <br />
+                Image rights: {image.rights}
+              </>
+            )}
+          </p>
           <Slider {...carouselSettings} ref={sliderRef}>
             {items.map((item, i) => {
               return <Image key={i} src={item.url} alt={item?.title} />;
