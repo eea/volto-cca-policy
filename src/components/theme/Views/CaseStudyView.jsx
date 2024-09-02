@@ -1,28 +1,28 @@
-import React, { Fragment } from 'react';
 import {
-  HTMLField,
+  ImageGallery,
+  PortalMessage,
+  ShareInfoButton,
+} from '@eeacms/volto-cca-policy/components';
+import {
+  BannerTitle,
   ContentMetadata,
+  DocumentsList,
+  HTMLField,
   LinksList,
   PublishedModifiedInfo,
-  DocumentsList,
-  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
+import React, { Fragment } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import {
   Container,
   Divider,
   Grid,
   Icon,
   Image,
-  ListItem,
   List,
+  ListItem,
 } from 'semantic-ui-react';
-import {
-  ShareInfoButton,
-  ImageGallery,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   References: { id: 'References', defaultMessage: 'References' },
