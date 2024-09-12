@@ -5,7 +5,11 @@ export default function FeatureDisplay({ feature }) {
   return feature ? (
     <div id="csepopup">
       <p>
-        <strong>{feature.title}</strong> <a href={feature.url}>open DB</a>
+        <strong>
+          <a className="dbitem" href={feature.url}>
+            {feature.title}
+          </a>
+        </strong>
       </p>
       <span className="img">
         <center>
