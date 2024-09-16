@@ -23,9 +23,7 @@ export const clusters = {
 };
 
 export default function installMainSearch(config) {
-  const envConfig = process.env.RAZZLE_ENV_CONFIG
-    ? JSON.parse(process.env.RAZZLE_ENV_CONFIG)
-    : ccaConfig;
+  const envConfig = ccaConfig;
 
   const pjson = require('@eeacms/volto-cca-policy/../package.json');
 
@@ -48,11 +46,6 @@ export default function installMainSearch(config) {
       cluster_name: 'cca',
     },
   });
-  // ccaSearch.permanentFilters.push({
-  //   term: {
-  //     cca_include_in_search: 'true',
-  //   },
-  // });
 
   ccaSearch.permanentFilters.push({
     terms: {
