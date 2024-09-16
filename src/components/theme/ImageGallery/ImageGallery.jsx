@@ -5,6 +5,8 @@ import { Modal, Image } from 'semantic-ui-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import './styles.less';
+
 const Slider = loadable(() => import('react-slick'));
 
 const ImageGallery = (props) => {
@@ -66,19 +68,19 @@ const ImageGallery = (props) => {
       >
         <Modal.Content>
           <h3>{image?.title}</h3>
-          <p>
-            {image?.description}
-
-            {image?.rights && (
-              <>
-                <br />
-                Image rights: {image.rights}
-              </>
-            )}
-          </p>
+          <p>{image?.description}</p>
           <Slider {...carouselSettings} ref={sliderRef}>
             {items.map((item, i) => {
-              return <Image key={i} src={item.url} alt={item?.title} />;
+              return image.rights ? (
+                <div>
+                  <div className="image-slide">
+                    <div className="image-rights">{image.rights}</div>
+                    <Image key={i} src={item.url} alt={item?.title} />
+                  </div>
+                </div>
+              ) : (
+                <Image key={i} src={item.url} alt={item?.title} />
+              );
             })}
           </Slider>
           <div className="slide-image-count">

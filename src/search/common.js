@@ -37,7 +37,7 @@ export const cca_adaptation_sectors = {
 export const include_archived = booleanFacet(() => ({
   field: 'IncludeArchived',
   label: 'Include archived content',
-  id: 'archived-facet',
+  id: 'IncludeArchived',
   showInFacetsList: false,
   showInSecondaryFacetsList: true,
   isFilter: true, // filters don't need facet options to show up
