@@ -56,6 +56,7 @@ export default function CaseStudyMap(props) {
       pixelRatio={1}
       controls={ol.control.defaults({ attribution: false })}
     >
+      <FeatureInteraction onFeatureSelect={onSelectedCase} />
       <Layers>
         <InfoOverlay
           selectedFeature={selectedCase}
@@ -63,7 +64,6 @@ export default function CaseStudyMap(props) {
           layerId={tileWMSSources[0]}
           hasCusters={true}
         />
-        <FeatureInteraction onFeatureSelect={onSelectedCase} />
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
         <Layer.Vector style={clusterStyle} source={clusterSource} zIndex={1} />
       </Layers>
