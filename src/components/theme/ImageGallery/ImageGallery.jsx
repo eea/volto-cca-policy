@@ -74,7 +74,7 @@ const ImageGallery = (props) => {
               return image.rights ? (
                 <div>
                   <div className="image-slide">
-                    <div className="image-rights">{image.rights}</div>
+                    <div className="image-rights">@ {image.rights}</div>
                     <Image key={i} src={item.url} alt={item?.title} />
                   </div>
                 </div>
