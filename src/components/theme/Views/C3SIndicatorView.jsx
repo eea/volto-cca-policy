@@ -131,7 +131,7 @@ const Overview = (props) => {
     setSpinnerUrl(spinner);
   }, []);
 
-  if(overview_app_ecde_identifier) {
+  if (overview_app_ecde_identifier) {
     return (
       <div
         className="iframe-container div-chart-container"
