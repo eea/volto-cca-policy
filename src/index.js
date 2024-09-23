@@ -1,3 +1,4 @@
+import loadable from '@loadable/component';
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
@@ -35,6 +36,7 @@ import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/imag
 import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
 import './slate-styles.less';
+import BrokenLinks from './components/theme/Views/BrokenLinks';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -59,8 +61,8 @@ const applyConfig = (config) => {
       ...(config.settings.externalRoutes || []),
       {
         match: {
-          path: new RegExp(voltoLocationsRegex),
           exact: false,
+          path: new RegExp(voltoLocationsRegex),
           strict: false,
         },
         url(payload) {
@@ -70,10 +72,15 @@ const applyConfig = (config) => {
     ];
   }
 
-  // if (!config.settings.loadables.d3)
-  //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
-  // if (!config.settings.loadables.d3Geo)
-  //   config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
+  config.settings.allowed_cors_destinations = [
+    ...(config.settings.allowed_cors_destinations || []),
+    'nominatim.openstreetmap.org',
+  ];
+
+  if (!config.settings.loadables.reactTable)
+    config.settings.loadables.reactTable = loadable.lib(() =>
+      import('@tanstack/react-table'),
+    );
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
@@ -165,11 +172,12 @@ const applyConfig = (config) => {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/en/mission',
-        path: '/en/mission/knowledge-and-data/search-the-database',
-        placeholder: 'Search the Climate-ADAPT database',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        path: '/en/mission/advanced-search',
+        placeholder: 'Search the EU Mission on Adaptation',
+        description: 'For more search options',
+        buttonTitle: 'Go to advanced search',
+        buttonUrl:
+          'https://climate-adapt.eea.europa.eu/en/mission/advanced-search/',
       },
       {
         isDefault: false,
@@ -370,7 +378,17 @@ const applyConfig = (config) => {
       component: Sitemap,
     },
 
+    {
+      path: `/broken-links`,
+      component: BrokenLinks,
+    },
+
     ...(config.addonRoutes || []),
+  ];
+
+  config.settings.nonContentRoutes = [
+    ...config.settings.nonContentRoutes,
+    '/broken-links',
   ];
 
   config.settings.appExtras = [
@@ -399,7 +417,12 @@ const applyConfig = (config) => {
       },
       GET_CONTENT: ['siblings'],
     },
-
+    {
+      match: {
+        path: /(.*)\/countries-regions\/countries\/(.*)/,
+      },
+      GET_CONTENT: ['siblings'],
+    },
     {
       match: '',
       GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],

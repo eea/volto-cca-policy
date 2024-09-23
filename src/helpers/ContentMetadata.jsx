@@ -418,8 +418,8 @@ function ContentMetadata(props) {
               <>
                 <h5>
                   <FormattedMessage
-                    id="Adaptation elements:"
-                    defaultMessage="Adaptation elements:"
+                    id="Adaptation Approaches:"
+                    defaultMessage="Adaptation Approaches:"
                   />
                 </h5>
                 <MetadataItemList value={elements} />

@@ -4,6 +4,7 @@ import installMissionStoriesSearch from './mission_stories/config-stories';
 import installMissionToolsSearch from './mission_tools/config-tools';
 import installMissionProjectsSearch from './mission_projects/config-projects';
 import installMissionFundingSearch from './mission_funding/config-funding';
+import installMissionAllSearch from './mission_all/config-all';
 
 const extraQueryParams = {
   text_fields: [
@@ -33,6 +34,7 @@ const applyConfig = (config) => {
     installMissionProjectsSearch,
     installMissionToolsSearch,
     installMissionFundingSearch,
+    installMissionAllSearch,
   ].reduce((acc, cur) => cur(acc), config.settings.searchlib);
 
   config.settings.searchlib.searchui.ccaSearch.extraQueryParams = extraQueryParams;
@@ -40,6 +42,7 @@ const applyConfig = (config) => {
   config.settings.searchlib.searchui.missionProjects.extraQueryParams = extraQueryParams;
   config.settings.searchlib.searchui.missionStoriesSearch.extraQueryParams = extraQueryParams;
   config.settings.searchlib.searchui.missionToolsSearch.extraQueryParams = extraQueryParams;
+  config.settings.searchlib.searchui.missionAll.extraQueryParams = extraQueryParams;
 
   // console.log(config.settings.searchlib);
 

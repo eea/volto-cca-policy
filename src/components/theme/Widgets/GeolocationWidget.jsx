@@ -1,127 +1,115 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'semantic-ui-react';
+import { Input, Label } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 import { injectIntl } from 'react-intl';
 import { FormFieldWrapper } from '@plone/volto/components';
+import MapContainer from './GeolocationWidgetMapContainer';
 
-import {
-  Controls,
-  Interactions,
-  Layer,
-  Map,
-  Layers,
-} from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import './geolocation.css';
 
-const MapContainer = (props) => {
-  const { longitude, latitude, source } = props;
-  return (
-    <Map
-      view={{
-        center: ol.proj.fromLonLat([longitude, latitude]),
-        showFullExtent: true,
-        zoom: 15,
-      }}
-      pixelRatio={1}
-      controls={ol.control.defaults({ attribution: false })}
-    >
-      <Layers>
-        <Controls attribution={false} zoom={false} />
-        <Interactions
-          doubleClickZoom={true}
-          dragAndDrop={false}
-          dragPan={true}
-          keyboardPan={true}
-          keyboardZoom={true}
-          mouseWheelZoom={true}
-          pointer={true}
-          select={false}
-        />
-        <Layer.Tile source={source} zIndex={0} />
-      </Layers>
-    </Map>
-  );
+const defaultValue = {
+  latitude: 55.6761,
+  longitude: 12.5683,
 };
 
 const GeolocationWidget = (props) => {
   const { id, value, onChange } = props;
 
-  const [tileWMSSources, setTileWMSSources] = useState([]);
   const [address, setAddress] = useState('');
+  const [isFetching, setIsFetching] = useState();
 
   const handleAddressChange = (event) => {
     setAddress(event.target.value);
   };
 
-  const defaultValue = {
-    latitude: 55.6761,
-    longitude: 12.5683,
-  };
-
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
 
-    fetch(`https://nominatim.openstreetmap.org/search?q=${address}&format=json`)
-      .then((response) => {
-        const { lat, lon } = response.data[0];
-        onChange(id, { latitude: lat, longitude: lon });
-      })
-      .catch((error) => {
-        // console.error(error);
-      });
+    const url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`;
+
+    const { corsProxyPath = '/cors-proxy', host, port } = config.settings;
+    const base = __SERVER__
+      ? `http://${host}:${port}`
+      : `${window.location.protocol}//${window.location.host}`;
+
+    const path = `${base}${corsProxyPath}/${url}`;
+
+    let locations;
+    setIsFetching(true);
+    try {
+      const response = await fetch(path);
+      locations = await response.json();
+      setIsFetching(false);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log('error in fetching location', e);
+    }
+
+    if (locations?.length) {
+      const { lat, lon } = locations[0];
+      onChange(id, { latitude: lat, longitude: lon });
+    }
   };
 
-  React.useEffect(() => {
-    setTileWMSSources([
-      new ol.source.TileWMS({
-        url: 'https://gisco-services.ec.europa.eu/maps/service',
-        params: {
-          LAYERS: 'OSMBlossomComposite',
-          TILED: true,
-        },
-        serverType: 'geoserver',
-        transition: 0,
-      }),
-    ]);
-  }, []); // ol.source.TileWMS, ol.source.Vector
-
   if (__SERVER__) return '';
+
+  const lat = value?.latitude ?? defaultValue.latitude;
+  const long = value?.longitude ?? defaultValue.longitude;
+  const mapKey = `${lat}_${long}`;
 
   return (
     <FormFieldWrapper {...props} className="geolocation-field">
       <div className="ui form">
         <div className="inline fields">
           <div className="field">
-            <Input type="text" value={address} onChange={handleAddressChange} />
+            <Input
+              type="text"
+              value={address}
+              onChange={handleAddressChange}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleSearch(e);
+              }}
+            />
           </div>
           <div className="field">
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}>
+              {isFetching ? 'Loading' : 'Search'}
+            </button>
           </div>
         </div>
       </div>
       <MapContainer
-        key={`${value?.latitude || defaultValue.latitude}_${
-          value?.longitude || defaultValue.longitude
-        }`}
+        key={mapKey}
         longitude={value?.longitude || defaultValue.longitude}
         latitude={value?.latitude || defaultValue.latitude}
-        source={tileWMSSources[0]}
+        onChange={({ latitude, longitude }) =>
+          onChange(id, { ...value, longitude, latitude })
+        }
       />
       <div className="ui form">
         <div className="inline fields">
           <div className="field">
+            <Label>Latitude</Label>
             <Input
               type="number"
               placeholder="latitude"
               value={value?.latitude || defaultValue.latitude}
+              onChange={(e) =>
+                onChange(id, { ...value, latitude: e.target.value })
+              }
             />
           </div>
           <div className="field">
+            <Label>Longitude</Label>
             <Input
               type="number"
               placeholder="longitude"
               value={value?.longitude || defaultValue.longitude}
+              onChange={(e) =>
+                onChange(id, { ...value, longitude: e.target.value })
+              }
             />
           </div>
         </div>

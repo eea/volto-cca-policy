@@ -1,5 +1,4 @@
 import {
-  include_archived,
   objectProvides,
   language,
   issued_date,
@@ -62,7 +61,7 @@ const transnational_regions = {
 const adaptation_elements = {
   field: 'cca_adaptation_elements.keyword',
   factory: 'MultiTermFacet',
-  label: 'Adaptation Elements',
+  label: 'Adaptation Approaches',
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -113,7 +112,6 @@ const origin_websites = {
 
 const facets = [
   adaptation_sectors,
-  include_archived,
   // clusters,
   objectProvides,
   issued_date,
