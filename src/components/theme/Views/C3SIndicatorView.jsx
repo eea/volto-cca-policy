@@ -24,6 +24,42 @@ if (!__SERVER__) {
   };
 }
 
+const createIframeOld = (div_id, details_url, details_params, spinner_url) => {
+  return `
+  <iframe width="100%" height="800px" srcdoc="<html><head>
+    <title>CDS integration test</title>
+    <meta charset='utf-8' />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <script>
+        window.cds_toolbox = { cds_public_path: 'https://cds.climate.copernicus.eu/toolbox/' };
+    </script>
+    <script type='text/javascript' src='https://cds.climate.copernicus.eu/toolbox/toolbox-latest.js'></script>
+    </head>
+    <body>
+      <div class='t-ct'>
+        <div id='${div_id}'>
+          <div class='pre-app-loading'>
+            <img src='${spinner_url}' alt='Loading'>
+            <div>
+              ...loading configuration...
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type='text/javascript'>
+      document.addEventListener('DOMContentLoaded',
+        function () {
+          window.cds_toolbox.runApp(
+            '${div_id}',
+            '${details_url}',
+            ${details_params}
+          );
+        }, false);
+      </script>
+    </body></html>"
+  />`;
+};
+
 const createIframe = (
   div_id,
   details_url,
@@ -34,7 +70,8 @@ const createIframe = (
   // return '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=18_consecutive_dry_days" style="width: 100%; border: 0; height: min(800px, 80vh);"/>';
   if (typeof ecde_identifier !== 'undefined' && ecde_identifier) {
     return (
-      '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=' +
+      // '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=' +
+      '<iframe src="https://apps.copernicus-climate.eu/ecde/?disabled=true&theme=eea&indicator=' +
       ecde_identifier +
       '" style="width: 100%; border: 0; height: min(800px, 80vh);"/>'
     );
@@ -78,6 +115,7 @@ const Overview = (props) => {
   const { content } = props;
   const {
     overview_app_toolbox_url,
+    overview_app_toolbox_url_v2,
     overview_app_parameters,
     overview_app_ecde_identifier,
   } = content;
@@ -93,15 +131,31 @@ const Overview = (props) => {
     setSpinnerUrl(spinner);
   }, []);
 
+  if(overview_app_ecde_identifier) {
+    return (
+      <div
+        className="iframe-container div-chart-container"
+        dangerouslySetInnerHTML={{
+          __html: createIframe(
+            'toolbox-app-overview',
+            overview_app_toolbox_url_v2,
+            c3s_overview_params,
+            c3s_ecde_identifier,
+            spinnerUrl,
+          ),
+        }}
+      />
+    );
+  }
+
   return (
     <div
       className="iframe-container div-chart-container"
       dangerouslySetInnerHTML={{
-        __html: createIframe(
+        __html: createIframeOld(
           'toolbox-app-overview',
           c3s_overview_url,
           c3s_overview_params,
-          c3s_ecde_identifier,
           spinnerUrl,
         ),
       }}
