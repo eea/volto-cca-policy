@@ -1,5 +1,4 @@
 import {
-  include_archived,
   objectProvides,
   language,
   issued_date,
@@ -113,7 +112,6 @@ const origin_websites = {
 
 const facets = [
   adaptation_sectors,
-  include_archived,
   // clusters,
   objectProvides,
   issued_date,
