@@ -31,6 +31,10 @@ const messages = defineMessages({
     id: 'Objectives of the adaptation measure',
     defaultMessage: 'Objectives of the adaptation measure',
   },
+  'Policy and legal background': {
+    id: 'Policy and legal background',
+    defaultMessage: 'Policy and legal background',
+  },
   'Adaptation Options Implemented In This Case': {
     id: 'Adaptation Options Implemented In This Case',
     defaultMessage: 'Adaptation Options Implemented In This Case',
@@ -77,8 +81,7 @@ const messages = defineMessages({
   },
 });
 
-const PrimaryPhoto = (props) => {
-  const { content } = props;
+const PrimaryPhoto = ({ content }) => {
   const { primary_photo, primary_photo_copyright, title } = content;
 
   return primary_photo !== null ? (
@@ -95,6 +98,13 @@ const dataDisplay = [
     field: 'challenges',
     section: 'challenges_anchor',
     title: 'Challenges',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'policy_legal_background',
+    section: 'policy_anchor',
+    title: 'Policy and legal background',
     group: 1,
   },
   {
@@ -214,14 +224,13 @@ const sectionID = (title) => {
   return found.section;
 };
 
-const PhotoGallery = (props) => {
-  const { content } = props;
+const PhotoGallery = ({ content }) => {
   const { cca_gallery } = content;
 
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
-        <div className="casetstudy-gallery">
+        <div className="case-study-gallery">
           <div className="gallery-title">
             <span>
               <FormattedMessage
@@ -239,8 +248,8 @@ const PhotoGallery = (props) => {
   );
 };
 
-const SectionsMenu = (props) => {
-  const { sections, title } = props;
+// Sections Menu Component
+const SectionsMenu = ({ sections, title }) => {
   const intl = useIntl();
 
   return (
@@ -251,7 +260,7 @@ const SectionsMenu = (props) => {
           <List bulleted>
             {sections.map((data, index) => (
               <ListItem key={index}>
-                <AnchorLink href={'#' + sectionID(data.title)}>
+                <AnchorLink href={`#${sectionID(data.title)}`}>
                   {intl.formatMessage(messages[data.title])}
                 </AnchorLink>
               </ListItem>
@@ -263,8 +272,7 @@ const SectionsMenu = (props) => {
   );
 };
 
-const SectionContent = (props) => {
-  const { sectionData, content } = props;
+const SectionContent = ({ sectionData, content }) => {
   const intl = useIntl();
 
   const adaptationOptionsLinks = () => {
@@ -291,7 +299,6 @@ const SectionContent = (props) => {
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
         {intl.formatMessage(messages[sectionDataTitle])}
-        {/* {sectionDataTitle} */}
       </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
@@ -429,9 +436,7 @@ function CaseStudyView(props) {
               className="col-right"
             >
               <PhotoGallery {...props} />
-
               <ContentMetadata {...props} />
-
               <DocumentsList {...props} />
             </Grid.Column>
           </div>
