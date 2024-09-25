@@ -16,11 +16,6 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr ""
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Adaptation Approaches"
-msgstr "Anpassungsansätze"
-
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -35,6 +30,11 @@ msgstr "Details zur Anpassung"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "In diesem Fall umgesetzte Anpassungsoptionen"
+
+#. Default: "Adaptation approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation approaches"
+msgstr "Anpassungsansätze"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -113,11 +113,6 @@ msgstr "Kategorie"
 msgid "Challenges"
 msgstr "Herausforderungen"
 
-#. Default: "Choices"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Choices"
-msgstr ""
-
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
@@ -134,7 +129,6 @@ msgid "City:"
 msgstr "Stadt:"
 
 #. Default: "Climate impact"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr "Auswirkungen auf das Klima"
@@ -160,11 +154,6 @@ msgstr "Climate-ADAPT-Fallstudien"
 msgid "Climate-ADAPT page for this event"
 msgstr "Climate-ADAPT-Seite für diese Veranstaltung"
 
-#. Default: "Close"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Close"
-msgstr ""
-
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
@@ -181,10 +170,10 @@ msgstr "Kontaktinformation für das Observatorium"
 msgid "Contributor:"
 msgstr "Unterstütyer:"
 
-#. Default: "Costs and Benefits"
+#. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Costs and Benefits"
+msgid "Costs and benefits"
 msgstr "Kosten und Nutzen"
 
 #. Default: "Countries:"
@@ -212,13 +201,7 @@ msgstr "Erscheinungsdatum:"
 msgid "Dec"
 msgstr "Dez"
 
-#. Default: "Default"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Default"
-msgstr ""
-
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget
 #: helpers/Utils
 msgid "Description"
 msgstr "Beschreibung"
@@ -234,7 +217,6 @@ msgid "Documents"
 msgstr "Unterlagen"
 
 #. Default: "Download Event"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Download Event"
 msgstr ""
@@ -245,7 +227,6 @@ msgid "Download the detailed agenda"
 msgstr ""
 
 #. Default: "Download this event in iCal format"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr ""
@@ -330,10 +311,10 @@ msgstr "IPCC -Kategorien"
 msgid "If you have any further questions you can contact"
 msgstr "Wenn Sie weitere Fragen haben, können Sie sich an uns wenden"
 
-#. Default: "Implementation Time"
+#. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Implementation Time"
+msgid "Implementation time"
 msgstr "Umsetzungszeitraum"
 
 #. Default: "Importance and Relevance of Adaptation"
@@ -406,16 +387,16 @@ msgstr "Zuletzt aktualisiert in Climate-ADAPT"
 msgid "Lead"
 msgstr "Leitung"
 
-#. Default: "Legal Aspects"
+#. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Legal Aspects"
+msgid "Legal aspects"
 msgstr "Rechtliche Aspekte"
 
-#. Default: "Life Time"
+#. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Life Time"
+msgid "Lifetime"
 msgstr "Lebensdauer"
 
 #. Default: "Links to further information"
@@ -458,30 +439,20 @@ msgstr "Kein HHAP"
 msgid "No information"
 msgstr "Keine Information"
 
-#. Default: "No options"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No options"
-msgstr ""
-
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Keine Ergebnisse"
-
-#. Default: "No value"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No value"
-msgstr ""
 
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Nov"
 msgstr "Nov"
 
-#. Default: "Objectives"
+#. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
-msgid "Objectives"
-msgstr "Ziele"
+msgid "Objectives of the adaptation measure"
+msgstr "Ziele der Anpassungsmaßnahme"
 
 #. Default: "Observatory Contributions:"
 #: helpers/Utils
@@ -580,18 +551,12 @@ msgstr "Verwandte Dokumente und Präsentationen"
 msgid "Relevance"
 msgstr "Relevanz"
 
-#. Default: "Required"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Required"
-msgstr ""
-
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr "Sa"
 
 #. Default: "Sector"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr "Sektor"
@@ -622,11 +587,6 @@ msgstr "Schau das Video außerhalb von Climate-ADAPT an"
 msgid "Select"
 msgstr ""
 
-#. Default: "Select…"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Select…"
-msgstr ""
-
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
@@ -635,14 +595,8 @@ msgstr "Sept"
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Teilen Sie Ihre Informationen"
-
-#. Default: "Short Name"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Short Name"
-msgstr ""
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -682,10 +636,10 @@ msgstr "Unterstaatsangehörige:"
 msgid "Subnational or local"
 msgstr "Subnational oder lokal"
 
-#. Default: "Success and Limiting Factors"
+#. Default: "Success and limiting factors"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Success and Limiting Factors"
+msgid "Success and limiting factors"
 msgstr "Erfolgsfaktoren und Hemmnisse"
 
 #. Default: "Th"
@@ -713,20 +667,10 @@ msgstr "Das Datum bezieht sich auf das letzte Veröffentlichungsdatum des Eintra
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Das Datum bezieht sich auf den Zeitpunkt, zu dem der Artikel von den  Redakteuren aufbereitet oder aktualisiert wurde, um für die Veröffentlichung in Climate ADAPT angenommen zu werden."
 
-#. Default: "Title"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Title"
-msgstr ""
-
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "Di"
-
-#. Default: "Used for programmatic access to the fieldset."
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Used for programmatic access to the fieldset."
-msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -734,7 +678,6 @@ msgid "View all contributions in the resource catalogue"
 msgstr "Sehen Sie sich alle Beiträge im Ressourcenkatalog an"
 
 #. Default: "Visit external website"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Besuchen Sie eine externe Website"
@@ -745,7 +688,6 @@ msgid "We"
 msgstr "Wir"
 
 #. Default: "Web"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Web"
 msgstr "Netz"

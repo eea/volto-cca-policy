@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -17,11 +16,6 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr ""
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Adaptation Approaches"
-msgstr ""
-
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -36,6 +30,11 @@ msgstr "Podrobnosti o přizpůsobení"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Možnosti přizpůsobení realizované v tomto případě"
+
+#. Default: "Adaptation approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation approaches"
+msgstr ""
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -114,11 +113,6 @@ msgstr "Kategorie"
 msgid "Challenges"
 msgstr "Výzvy"
 
-#. Default: "Choices"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Choices"
-msgstr "Volby"
-
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
@@ -135,7 +129,6 @@ msgid "City:"
 msgstr "Město:"
 
 #. Default: "Climate impact"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr "Dopad na klima"
@@ -161,11 +154,6 @@ msgstr "Případové studie Climate-ADAPT"
 msgid "Climate-ADAPT page for this event"
 msgstr "Climate-ADAPT stránka pro tuto událost"
 
-#. Default: "Close"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Close"
-msgstr "Zavřít"
-
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
@@ -182,10 +170,10 @@ msgstr "Kontaktní údaje observatoře"
 msgid "Contributor:"
 msgstr "Přispěvatel:"
 
-#. Default: "Costs and Benefits"
+#. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Costs and Benefits"
+msgid "Costs and benefits"
 msgstr "Náklady a přínosy"
 
 #. Default: "Countries:"
@@ -213,13 +201,7 @@ msgstr "Datum vydání:"
 msgid "Dec"
 msgstr "DEC"
 
-#. Default: "Default"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Default"
-msgstr "Výchozí hodnota"
-
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget
 #: helpers/Utils
 msgid "Description"
 msgstr "Popis"
@@ -235,7 +217,6 @@ msgid "Documents"
 msgstr "Dokumenty"
 
 #. Default: "Download Event"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Download Event"
 msgstr "Událost ke stažení"
@@ -246,7 +227,6 @@ msgid "Download the detailed agenda"
 msgstr ""
 
 #. Default: "Download this event in iCal format"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Stáhněte si tuto událost ve formátu iCal"
@@ -331,10 +311,10 @@ msgstr "Kategorie IPCC"
 msgid "If you have any further questions you can contact"
 msgstr "Máte-li jakékoli další dotazy, můžete se obrátit na"
 
-#. Default: "Implementation Time"
+#. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Implementation Time"
+msgid "Implementation time"
 msgstr "Doba realizace"
 
 #. Default: "Importance and Relevance of Adaptation"
@@ -407,16 +387,16 @@ msgstr "Naposledy upraveno v Climate-ADAPT"
 msgid "Lead"
 msgstr "Olovo"
 
-#. Default: "Legal Aspects"
+#. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Legal Aspects"
+msgid "Legal aspects"
 msgstr "Právní aspekty"
 
-#. Default: "Life Time"
+#. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Life Time"
+msgid "Lifetime"
 msgstr "Životní doba"
 
 #. Default: "Links to further information"
@@ -459,29 +439,19 @@ msgstr "Žádný HHAP"
 msgid "No information"
 msgstr "Žádné informace"
 
-#. Default: "No options"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No options"
-msgstr "Žádné možnosti"
-
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Žádné výsledky"
-
-#. Default: "No value"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No value"
-msgstr "Žádná hodnota"
 
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Nov"
 msgstr "listopad"
 
-#. Default: "Objectives"
+#. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
-msgid "Objectives"
+msgid "Objectives of the adaptation measure"
 msgstr "Cíle"
 
 #. Default: "Observatory Contributions:"
@@ -581,18 +551,12 @@ msgstr "Související dokumenty a prezentace"
 msgid "Relevance"
 msgstr "Relevantnost"
 
-#. Default: "Required"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Required"
-msgstr "Požadováno"
-
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr "Sa"
 
 #. Default: "Sector"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr "Odvětví"
@@ -623,11 +587,6 @@ msgstr "Viz video mimo Climate-ADAPT"
 msgid "Select"
 msgstr ""
 
-#. Default: "Select…"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Select…"
-msgstr "Vyberte..."
-
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
@@ -636,14 +595,8 @@ msgstr "SEP"
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Podělte se o své informace"
-
-#. Default: "Short Name"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Short Name"
-msgstr "Zkrácený název"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -683,10 +636,10 @@ msgstr "Státní příslušníci na nižší než celostátní úrovni:"
 msgid "Subnational or local"
 msgstr "Na nižší než celostátní úrovni nebo na místní úrovni"
 
-#. Default: "Success and Limiting Factors"
+#. Default: "Success and limiting factors"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Success and Limiting Factors"
+msgid "Success and limiting factors"
 msgstr "Úspěch a limitující faktory"
 
 #. Default: "Th"
@@ -714,20 +667,10 @@ msgstr "Datum se vztahuje k nejzazšímu datu zveřejnění daného bodu."
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datum se vztahuje k okamžiku, kdy přispívající odborníci připravili nebo aktualizovali položku, která má být předložena ke zveřejnění v dokumentu Climate ADAPT."
 
-#. Default: "Title"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Title"
-msgstr "Název"
-
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "Tu"
-
-#. Default: "Used for programmatic access to the fieldset."
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Used for programmatic access to the fieldset."
-msgstr "Používá se pro programový přístup k sadě polí."
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -735,7 +678,6 @@ msgid "View all contributions in the resource catalogue"
 msgstr "Zobrazit všechny příspěvky v katalogu zdrojů"
 
 #. Default: "Visit external website"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Navštivte externí webové stránky"
@@ -746,7 +688,6 @@ msgid "We"
 msgstr "My"
 
 #. Default: "Web"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Web"
 msgstr "Webové stránky"

@@ -27,7 +27,10 @@ import {
 const messages = defineMessages({
   References: { id: 'References', defaultMessage: 'References' },
   Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
-  Objectives: { id: 'Objectives', defaultMessage: 'Objectives' },
+  Objectives: {
+    id: 'Objectives of the adaptation measure',
+    defaultMessage: 'Objectives of the adaptation measure',
+  },
   'Adaptation Options Implemented In This Case': {
     id: 'Adaptation Options Implemented In This Case',
     defaultMessage: 'Adaptation Options Implemented In This Case',
@@ -42,20 +45,20 @@ const messages = defineMessages({
     defaultMessage: 'Stakeholder participation',
   },
   'Success and Limiting Factors': {
-    id: 'Success and Limiting Factors',
-    defaultMessage: 'Success and Limiting Factors',
+    id: 'Success and limiting factors',
+    defaultMessage: 'Success and limiting factors',
   },
   'Costs and Benefits': {
-    id: 'Costs and Benefits',
-    defaultMessage: 'Costs and Benefits',
+    id: 'Costs and benefits',
+    defaultMessage: 'Costs and benefits',
   },
   Relevance: { id: 'Relevance', defaultMessage: 'Relevance' },
-  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
   'Implementation Time': {
-    id: 'Implementation Time',
-    defaultMessage: 'Implementation Time',
+    id: 'Implementation time',
+    defaultMessage: 'Implementation time',
   },
-  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+  'Life Time': { id: 'Lifetime', defaultMessage: 'Lifetime' },
   Contact: { id: 'Contact', defaultMessage: 'Contact' },
 
   Websites: { id: 'Websites', defaultMessage: 'Websites' },
