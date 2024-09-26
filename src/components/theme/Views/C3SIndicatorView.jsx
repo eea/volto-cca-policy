@@ -71,7 +71,7 @@ const createIframe = (
   if (typeof ecde_identifier !== 'undefined' && ecde_identifier) {
     return (
       // '<iframe src="http://ecde-dev.copernicus-climate.eu/apps/ecde/?disabled=true&theme=eea&indicator=' +
-      '<iframe src="https://apps.copernicus-climate.eu/ecde/?disabled=true&theme=eea&indicator=' +
+      '<iframe src="https://apps.copernicus-climate.eu/c3s-apps/ecde/?disabled=true&theme=eea&indicator=' +
       ecde_identifier +
       '" style="width: 100%; border: 0; height: min(800px, 80vh);"/>'
     );

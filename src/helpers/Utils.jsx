@@ -71,7 +71,7 @@ export const ExternalLink = (props) => {
 };
 
 export const LinksList = (props) => {
-  let { title, value, withText, isInternal } = props;
+  let { value, withText, isInternal } = props;
 
   if (isInternal === undefined) {
     isInternal = false;
@@ -79,33 +79,27 @@ export const LinksList = (props) => {
 
   if (withText === true) {
     return (
-      <>
-        <h5 id="websites">{title}</h5>
-        <List>
-          {value.map((linkItem, index) => (
-            <ListItem key={index}>
-              {isInternal ? (
-                <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
-              ) : (
-                <ExternalLink url={linkItem[0]} text={linkItem[1]} />
-              )}
-            </ListItem>
-          ))}
-        </List>
-      </>
+      <List>
+        {value.map((linkItem, index) => (
+          <ListItem key={index}>
+            {isInternal ? (
+              <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
+            ) : (
+              <ExternalLink url={linkItem[0]} text={linkItem[1]} />
+            )}
+          </ListItem>
+        ))}
+      </List>
     );
   } else {
     return (
-      <>
-        <h5 id="websites">{title}</h5>
-        <List>
-          {value.map((url, index) => (
-            <ListItem key={index}>
-              <ExternalLink url={url} text={url} />
-            </ListItem>
-          ))}
-        </List>
-      </>
+      <List>
+        {value.map((url, index) => (
+          <ListItem key={index}>
+            <ExternalLink url={url} text={url} />
+          </ListItem>
+        ))}
+      </List>
     );
   }
 };
@@ -155,14 +149,14 @@ export const ReferenceInfo = (props) => {
           defaultMessage="Reference information"
         />
       </h2>
-
       {websites?.length > 0 && (
-        <LinksList
-          title={<FormattedMessage id="Websites:" defaultMessage="Websites:" />}
-          value={websites}
-        />
+        <>
+          <h5 id="websites">
+            <FormattedMessage id="Websites:" defaultMessage="Websites:" />
+          </h5>
+          <LinksList value={websites} />
+        </>
       )}
-
       {type !== ACE_PROJECT && type !== ORGANISATION && (
         <>
           {source && source?.data.length > 0 && (
@@ -173,7 +167,6 @@ export const ReferenceInfo = (props) => {
           )}
         </>
       )}
-
       {(contributor_list?.length > 0 || other_contributor?.length > 0) && (
         <>
           <h5>
@@ -190,7 +183,6 @@ export const ReferenceInfo = (props) => {
           {other_contributor}
         </>
       )}
-
       {contributions && contributions.length > 0 && (
         <>
           <h5>
