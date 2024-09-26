@@ -695,11 +695,6 @@ msgstr ""
 msgid "Contributor:"
 msgstr ""
 
-#: ../../climateadapt/browser/pt/adaptationoption_view.pt:41
-#: ../../climateadapt/browser/pt/casestudy_view.pt:84
-msgid "Costs and Benefits"
-msgstr ""
-
 #: ../../climateadapt/browser/__init__.py:197
 msgid "Countries"
 msgstr ""
@@ -1094,11 +1089,6 @@ msgstr ""
 msgid "Implementation"
 msgstr ""
 
-#: ../../climateadapt/browser/pt/adaptationoption_view.pt:47
-#: ../../climateadapt/browser/pt/casestudy_view.pt:92
-msgid "Implementation Time"
-msgstr ""
-
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:234
 msgid "Implementing adaptation"
 msgstr ""
@@ -1214,16 +1204,6 @@ msgstr ""
 
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
 msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
-msgstr ""
-
-#: ../../climateadapt/browser/pt/adaptationoption_view.pt:44
-#: ../../climateadapt/browser/pt/casestudy_view.pt:88
-msgid "Legal Aspects"
-msgstr ""
-
-#: ../../climateadapt/browser/pt/adaptationoption_view.pt:50
-#: ../../climateadapt/browser/pt/casestudy_view.pt:96
-msgid "Life Time"
 msgstr ""
 
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -1361,10 +1341,6 @@ msgstr ""
 
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:428
 msgid "OPPLA"
-msgstr ""
-
-#: ../../climateadapt/browser/pt/casestudy_view.pt:55
-msgid "Objectives"
 msgstr ""
 
 #: ../../climateadapt/vocabulary.py:336
@@ -1722,11 +1698,6 @@ msgstr ""
 
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:57
 msgid "Subnational or local HHAP"
-msgstr ""
-
-#: ../../climateadapt/browser/pt/adaptationoption_view.pt:38
-#: ../../climateadapt/browser/pt/casestudy_view.pt:80
-msgid "Success and Limiting Factors"
 msgstr ""
 
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:106

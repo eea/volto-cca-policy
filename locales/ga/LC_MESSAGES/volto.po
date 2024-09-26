@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -17,11 +16,6 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr ""
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Adaptation Approaches"
-msgstr ""
-
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -36,6 +30,11 @@ msgstr "Sonraí Oiriúnaithe"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm sa Chás seo"
+
+#. Default: "Adaptation approaches"
+#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+msgid "Adaptation approaches"
+msgstr ""
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -114,11 +113,6 @@ msgstr "Catagóir"
 msgid "Challenges"
 msgstr "Dúshláin"
 
-#. Default: "Choices"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Choices"
-msgstr "Roghanna"
-
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
@@ -135,7 +129,6 @@ msgid "City:"
 msgstr "Cathair:"
 
 #. Default: "Climate impact"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
 msgstr "Tionchar aeráide"
@@ -161,11 +154,6 @@ msgstr "Cás-staidéir Climate-ADAPT"
 msgid "Climate-ADAPT page for this event"
 msgstr "Leathanach Climate-ADAPT don imeacht seo"
 
-#. Default: "Close"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Close"
-msgstr "Dún"
-
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
@@ -182,10 +170,10 @@ msgstr "Eolas teagmhála don Fhaireachlann"
 msgid "Contributor:"
 msgstr "Rannpháirtí:"
 
-#. Default: "Costs and Benefits"
+#. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Costs and Benefits"
+msgid "Costs and benefits"
 msgstr "Costais agus Sochair"
 
 #. Default: "Countries:"
@@ -213,13 +201,7 @@ msgstr "Dáta eisiúna:"
 msgid "Dec"
 msgstr "Nollaig"
 
-#. Default: "Default"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Default"
-msgstr "Mainneachtain"
-
 #. Default: "Description"
-#: components/manage/Widgets/CreatableSelectWidget
 #: helpers/Utils
 msgid "Description"
 msgstr "Tuairisc"
@@ -235,7 +217,6 @@ msgid "Documents"
 msgstr "Doiciméid"
 
 #. Default: "Download Event"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Download Event"
 msgstr "Íoslódáil Imeacht"
@@ -246,7 +227,6 @@ msgid "Download the detailed agenda"
 msgstr ""
 
 #. Default: "Download this event in iCal format"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Íoslódáil an t-imeacht seo i bhformáid iCal"
@@ -331,10 +311,10 @@ msgstr "Catagóirí IPCC"
 msgid "If you have any further questions you can contact"
 msgstr "Má tá aon cheist eile agat is féidir leat teagmháil a dhéanamh"
 
-#. Default: "Implementation Time"
+#. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Implementation Time"
+msgid "Implementation time"
 msgstr "Am Cur Chun Feidhme"
 
 #. Default: "Importance and Relevance of Adaptation"
@@ -407,16 +387,16 @@ msgstr "Athraithe go Deireanach in Climate-ADAPT"
 msgid "Lead"
 msgstr "Luaidhe"
 
-#. Default: "Legal Aspects"
+#. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Legal Aspects"
+msgid "Legal aspects"
 msgstr "Gnéithe Dlíthiúla"
 
-#. Default: "Life Time"
+#. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Life Time"
+msgid "Lifetime"
 msgstr "Saolré"
 
 #. Default: "Links to further information"
@@ -459,29 +439,19 @@ msgstr "Gan HHAP"
 msgid "No information"
 msgstr "Níl aon eolas ar fáil"
 
-#. Default: "No options"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No options"
-msgstr "Níl aon roghanna ann"
-
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Níl aon torthaí ann"
-
-#. Default: "No value"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "No value"
-msgstr "Gan luach"
 
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Nov"
 msgstr "Samh"
 
-#. Default: "Objectives"
+#. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
-msgid "Objectives"
+msgid "Objectives of the adaptation measure"
 msgstr "Cuspóirí"
 
 #. Default: "Observatory Contributions:"
@@ -518,6 +488,11 @@ msgstr "Rannpháirtíocht"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Comhpháirtithe"
+
+#. Default: "Policy and legal background"
+#: components/theme/Views/CaseStudyView
+msgid "Policy and legal background"
+msgstr ""
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -581,18 +556,12 @@ msgstr "Doiciméid agus cuir i láthair ghaolmhara"
 msgid "Relevance"
 msgstr "Ábharthacht"
 
-#. Default: "Required"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Required"
-msgstr "Éigeantach"
-
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr "Sa"
 
 #. Default: "Sector"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView copy
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
 msgstr "Earnáil"
@@ -623,11 +592,6 @@ msgstr "Féach an físeán lasmuigh de Climate-ADAPT"
 msgid "Select"
 msgstr ""
 
-#. Default: "Select…"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Select…"
-msgstr "Roghnaigh..."
-
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
@@ -636,14 +600,8 @@ msgstr "Meán Fómhair"
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
-#: helpers/ShareInfo
 msgid "Share your information"
 msgstr "Comhroinn do chuid faisnéise"
-
-#. Default: "Short Name"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Short Name"
-msgstr "Ainm Gearr"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -683,10 +641,10 @@ msgstr "Fo-Náisiúnaigh:"
 msgid "Subnational or local"
 msgstr "Fonáisiúnta nó áitiúil"
 
-#. Default: "Success and Limiting Factors"
+#. Default: "Success and limiting factors"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-msgid "Success and Limiting Factors"
+msgid "Success and limiting factors"
 msgstr "Fachtóirí Ratha agus Teorannaithe"
 
 #. Default: "Th"
@@ -714,20 +672,15 @@ msgstr "Tagraíonn an dáta don dáta is déanaí ar a bhfoilsítear an mhír"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Tagraíonn an dáta don tráth a d’ullmhaigh nó a nuashonraigh saineolaithe rannpháirteacha an mhír atá le cur isteach lena foilsiú in Climate ADAPT"
 
-#. Default: "Title"
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Title"
-msgstr "Teideal"
-
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "Tu"
 
-#. Default: "Used for programmatic access to the fieldset."
-#: components/manage/Widgets/CreatableSelectWidget
-msgid "Used for programmatic access to the fieldset."
-msgstr "A úsáidtear le haghaidh rochtain ríomhchláraithe ar an fieldset."
+#. Default: "Updating notes"
+#: components/theme/Views/CaseStudyView
+msgid "Updating notes"
+msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -735,7 +688,6 @@ msgid "View all contributions in the resource catalogue"
 msgstr "Féach ar na haighneachtaí go léir sa chatalóg acmhainní"
 
 #. Default: "Visit external website"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Tabhair cuairt ar shuíomh gréasáin seachtrach"
@@ -746,7 +698,6 @@ msgid "We"
 msgstr "Táimid"
 
 #. Default: "Web"
-#: components/theme/Views/EventView
 #: helpers/Utils
 msgid "Web"
 msgstr "An Gréasán"
