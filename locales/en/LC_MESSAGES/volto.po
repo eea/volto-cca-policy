@@ -489,6 +489,11 @@ msgstr ""
 msgid "Partners"
 msgstr ""
 
+#. Default: "Policy and legal background"
+#: components/theme/Views/CaseStudyView
+msgid "Policy and legal background"
+msgstr ""
+
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
@@ -670,6 +675,11 @@ msgstr ""
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
+msgstr ""
+
+#. Default: "Updating notes"
+#: components/theme/Views/CaseStudyView
+msgid "Updating notes"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"

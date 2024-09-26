@@ -489,6 +489,11 @@ msgstr "Partecipazione"
 msgid "Partners"
 msgstr "Partner"
 
+#. Default: "Policy and legal background"
+#: components/theme/Views/CaseStudyView
+msgid "Policy and legal background"
+msgstr ""
+
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
@@ -671,6 +676,11 @@ msgstr "La data si riferisce al momento in cui la scheda è stata preparata o ag
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "Tu"
+
+#. Default: "Updating notes"
+#: components/theme/Views/CaseStudyView
+msgid "Updating notes"
+msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils

@@ -489,6 +489,11 @@ msgstr "Участие"
 msgid "Partners"
 msgstr "Партньори"
 
+#. Default: "Policy and legal background"
+#: components/theme/Views/CaseStudyView
+msgid "Policy and legal background"
+msgstr ""
+
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
@@ -671,6 +676,11 @@ msgstr "Датата се отнася до момента, в който еле
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "Ту"
+
+#. Default: "Updating notes"
+#: components/theme/Views/CaseStudyView
+msgid "Updating notes"
+msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils

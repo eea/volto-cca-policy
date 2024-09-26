@@ -489,6 +489,11 @@ msgstr "Deelname"
 msgid "Partners"
 msgstr "Partners"
 
+#. Default: "Policy and legal background"
+#: components/theme/Views/CaseStudyView
+msgid "Policy and legal background"
+msgstr ""
+
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
@@ -671,6 +676,11 @@ msgstr "De datum heeft betrekking op het moment waarop het item is opgesteld of 
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
 msgstr "TU"
+
+#. Default: "Updating notes"
+#: components/theme/Views/CaseStudyView
+msgid "Updating notes"
+msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
