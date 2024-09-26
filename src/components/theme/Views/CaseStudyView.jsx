@@ -79,6 +79,10 @@ const messages = defineMessages({
     id: 'Reference Information',
     defaultMessage: 'Reference Information',
   },
+  updating_notes: {
+    id: 'Updating notes',
+    defaultMessage: 'Updating notes',
+  },
 });
 
 const PrimaryPhoto = ({ content }) => {
@@ -321,7 +325,7 @@ const SectionContent = ({ sectionData, content }) => {
 
 function CaseStudyView(props) {
   const { content } = props;
-  const { long_description } = content;
+  const { long_description, updating_notes } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -371,6 +375,14 @@ function CaseStudyView(props) {
             >
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
+              {updating_notes && updating_notes.length > 0 && (
+                <div className="disclaimer-box">
+                  <h5>{intl.formatMessage(messages.updating_notes)}</h5>
+                  {updating_notes.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
+              )}
               <Divider />
               <div className="adaptation-details">
                 <Grid columns="12">
