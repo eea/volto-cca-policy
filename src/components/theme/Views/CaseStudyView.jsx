@@ -278,6 +278,7 @@ const SectionsMenu = ({ sections, title }) => {
 
 const SectionContent = ({ sectionData, content }) => {
   const intl = useIntl();
+  const sectionDataTitle = sectionData.contentTitle || sectionData.title;
 
   const adaptationOptionsLinks = () => {
     let list = [];
@@ -288,17 +289,12 @@ const SectionContent = ({ sectionData, content }) => {
   };
 
   const section = content[sectionData.field];
-
   for (var key in section) {
     if (section[key] === '') {
       section[key] = '<p>-</p>';
     }
   }
 
-  const sectionDataTitle =
-    sectionData.contentTitle !== undefined
-      ? sectionData.contentTitle
-      : sectionData.title;
   return (
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
@@ -324,6 +320,7 @@ const SectionContent = ({ sectionData, content }) => {
 };
 
 function CaseStudyView(props) {
+  const intl = useIntl();
   const { content } = props;
   const { long_description, updating_notes } = content;
 
@@ -345,7 +342,6 @@ function CaseStudyView(props) {
       (data) => data.group === group && hasValue(data.field),
     );
   };
-  const intl = useIntl();
 
   return (
     <div className="db-item-view case-study-view">
