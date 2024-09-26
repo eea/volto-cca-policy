@@ -34,19 +34,19 @@ const messages = defineMessages({
     defaultMessage: 'Stakeholder participation',
   },
   'Success and Limiting Factors': {
-    id: 'Success and Limiting Factors',
-    defaultMessage: 'Success and Limiting Factors',
+    id: 'Success and limiting factors',
+    defaultMessage: 'Success and limiting factors',
   },
   'Costs and Benefits': {
-    id: 'Costs and Benefits',
-    defaultMessage: 'Costs and Benefits',
+    id: 'Costs and benefits',
+    defaultMessage: 'Costs and benefits',
   },
-  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
   'Implementation Time': {
-    id: 'Implementation Time',
-    defaultMessage: 'Implementation Time',
+    id: 'Implementation time',
+    defaultMessage: 'Implementation time',
   },
-  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+  'Life Time': { id: 'Lifetime', defaultMessage: 'Lifetime' },
 });
 
 function createDataField(type, field, section, title) {
