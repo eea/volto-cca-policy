@@ -4,9 +4,11 @@ import { getClientProxyAddress } from './utils';
 import vocabs from './vocabulary';
 
 import facets from './facets';
+import views from './views';
 
 const ccaConfig = {
   title: 'ClimateAdapt Main',
+  ...views,
 };
 
 export const clusters = {
@@ -14,7 +16,7 @@ export const clusters = {
   // field: 'objectProvides',
   clusters: [
     {
-      name: 'Climate adapt',
+      name: 'Climate-ADAPT',
       icon: { name: 'file text' },
       values: ['climate'],
     },
@@ -30,7 +32,7 @@ export const clusters = {
     },
   ].map((cluster) => ({
     ...cluster,
-    defaultResultView: 'horizontalCard',
+    defaultResultView: 'ClusterHorizontalCardItem',
   })),
 };
 
@@ -48,7 +50,8 @@ cca_build_runtime_mappings['op_cluster'] = {
     source:
       // "emit('_all_'); if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')} if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {emit('Climate-ADAPT')}",
       // "emit('_all_'); if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')} if (doc['cca_include_in_mission.keyword'][0].toString() == 'true' or (doc['id.keyword'].length==1 and doc['id.keyword'][0].toString().indexOf('https://climate-adapt.eea.europa.eu/en/mission')==0)) {emit('Mission Portal')} else {emit('Climate adapt')}",
-      "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
+      // "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
+      "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)){emit('Health Observatory')}}}}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
   },
 };
 
@@ -104,22 +107,22 @@ export default function installMainSearch(config) {
   //   },
   // });
 
-  ccaSearch.permanentFilters.push({
-    terms: {
-      objectProvides: [
-        'Adaptation option',
-        'Case study',
-        'Guidance',
-        'Video',
-        'Indicator',
-        'Information portal',
-        'Organisation',
-        'Publication reference',
-        'Research and knowledge project',
-        'Tool',
-      ],
-    },
-  });
+  // ccaSearch.permanentFilters.push({
+  //   terms: {
+  //     objectProvides: [
+  //       'Adaptation option',
+  //       'Case study',
+  //       'Guidance',
+  //       'Video',
+  //       'Indicator',
+  //       'Information portal',
+  //       'Organisation',
+  //       'Publication reference',
+  //       'Research and knowledge project',
+  //       'Tool',
+  //     ],
+  //   },
+  // });
 
   ccaSearch.facets = facets;
   // console.log('ccaSearch.facets', ccaSearch.facets);
