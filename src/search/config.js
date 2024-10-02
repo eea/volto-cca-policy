@@ -1,5 +1,4 @@
 import { mergeConfig } from '@eeacms/search';
-import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 import { getClientProxyAddress } from './utils';
 import vocabs from './vocabulary';
 

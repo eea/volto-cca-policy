@@ -8,7 +8,6 @@ import {
   DateTime,
 } from '@eeacms/search/components';
 import { useAppConfig } from '@eeacms/search/lib/hocs';
-import { firstWords, getTermDisplayValue } from '@eeacms/search/lib/utils';
 
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
@@ -30,7 +29,7 @@ const healthBreadcrumb = (href, is_observatory) => {
 };
 
 const ExtraContent = (props) => {
-  const { result, vocab, is_mission, is_observatory } = props;
+  const { result, is_mission, is_observatory } = props;
   let title = 'Climate-ADAPT';
   if (is_mission) {
     title = 'Mission Portal';
@@ -88,12 +87,12 @@ const ClusterHorizontalCardItem = (props) => {
   let is_mission = false;
   let is_observatory = false;
   if (
-    result.cca_include_in_mission.raw == 'true' ||
+    result.cca_include_in_mission.raw === 'true' ||
     result.href.includes('climate-adapt.eea.europa.eu/en/mission')
   ) {
     is_mission = true;
   }
-  if (result.cca_include_in_search_observatory.raw == 'true') {
+  if (result.cca_include_in_search_observatory.raw === 'true') {
     is_observatory = true;
   }
 
@@ -119,7 +118,6 @@ const ClusterHorizontalCardItem = (props) => {
     extra: (
       <ExtraContent
         result={result}
-        vocab={vocab}
         is_mission={is_mission}
         is_observatory={is_observatory}
       />
