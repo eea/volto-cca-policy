@@ -78,8 +78,7 @@ const ExtraContent = (props) => {
 
 const ClusterHorizontalCardItem = (props) => {
   const { result } = props;
-  const { appConfig, registry } = useAppConfig();
-  const { vocab = {} } = appConfig;
+  const { registry } = useAppConfig();
   const clusters = result.clusterInfo;
 
   const UniversalCard = registry.resolve['UniversalCard'].component;
