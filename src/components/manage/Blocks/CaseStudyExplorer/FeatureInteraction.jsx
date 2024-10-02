@@ -119,20 +119,20 @@ export default function FeatureInteraction({
       }
     }
 
-    map.on('click', handleClick);
-
-    map.addInteraction(select);
-
-    // TODO: does this accumulate?
-    map.on('pointermove', (e) => {
+    function handlePointerMove(e) {
       const pixel = map.getEventPixel(e.originalEvent);
       const hit = map.hasFeatureAtPixel(pixel);
       map.getViewport().style.cursor = hit ? 'pointer' : '';
-    });
+    }
+
+    map.addInteraction(select);
+    map.on('click', handleClick);
+    map.on('pointermove', handlePointerMove);
 
     return () => {
       map.removeInteraction(select);
       map.un('click', handleClick);
+      map.un('pointermove', handlePointerMove);
     };
   }, [map, selectStyle, onFeatureSelect, selectedFeature, mapCenter]);
 
