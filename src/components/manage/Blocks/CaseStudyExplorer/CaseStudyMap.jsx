@@ -3,7 +3,6 @@ import React from 'react';
 import { Map, Layer, Layers } from '@eeacms/volto-openlayers-map/api';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
-import InfoOverlay from './InfoOverlay';
 import FeatureInteraction from './FeatureInteraction';
 
 import { getFeatures } from './utils';
@@ -46,23 +45,26 @@ export default function CaseStudyMap(props) {
     }
   }, [activeItems, pointsSource]);
 
+  const mapCenter = React.useMemo(
+    () => ({
+      center: ol.proj.fromLonLat([20, 50]),
+      showFullExtent: true,
+      zoom: 4,
+    }),
+    [],
+  );
+
   return features.length > 0 ? (
     <Map
-      view={{
-        center: ol.proj.fromLonLat([20, 50]),
-        showFullExtent: true,
-        zoom: 4,
-      }}
+      view={mapCenter}
       pixelRatio={1}
       controls={ol.control.defaults({ attribution: false })}
     >
-      <FeatureInteraction onFeatureSelect={onSelectedCase} />
       <Layers>
-        <InfoOverlay
-          selectedFeature={selectedCase}
+        <FeatureInteraction
           onFeatureSelect={onSelectedCase}
-          layerId={tileWMSSources[0]}
-          hasCusters={true}
+          selectedFeature={selectedCase}
+          mapCenter={mapCenter}
         />
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
         <Layer.Vector style={clusterStyle} source={clusterSource} zIndex={1} />

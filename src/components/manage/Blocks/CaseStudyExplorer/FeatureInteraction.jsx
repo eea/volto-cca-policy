@@ -1,6 +1,7 @@
 import React from 'react';
 import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
+import FeatureDisplay from './FeatureDisplay';
 
 const circleDistanceMultiplier = 1;
 const circleFootSeparation = 28;
@@ -58,9 +59,16 @@ function generatePointsCircle(count, clusterCenter, resolution) {
   return res;
 }
 
-export default function FeatureInteraction({ onFeatureSelect }) {
+export default function FeatureInteraction({
+  selectedFeature,
+  onFeatureSelect,
+  mapCenter,
+}) {
   const { map } = useMapContext();
   const { selectStyle } = useStyles();
+
+  const [isClient, setIsClient] = React.useState(false);
+  React.useEffect(() => setIsClient(true), []);
 
   React.useEffect(() => {
     if (!map) return;
@@ -72,7 +80,7 @@ export default function FeatureInteraction({ onFeatureSelect }) {
 
     select.on('select', function (e) {
       const features = e.target.getFeatures().getArray();
-      console.log('click', features);
+      // console.log('click', features);
 
       features.forEach((feature) => {
         const subfeatures = feature.values_.features;
@@ -83,7 +91,8 @@ export default function FeatureInteraction({ onFeatureSelect }) {
           onFeatureSelect(selectedFeature);
           const paddedExtent = ol.extent.buffer(extent, 50000);
 
-          map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
+          const view = map.getView();
+          view.fit(paddedExtent, { ...map.getSize(), duration: 1000 });
         } else {
           // zoom to extent of cluster points
           const extent = getExtentOfFeatures(subfeatures);
@@ -95,9 +104,22 @@ export default function FeatureInteraction({ onFeatureSelect }) {
           map.getView().fit(paddedExtent, { ...map.getSize(), duration: 1000 });
         }
       });
-
-      // return null;
     });
+
+    function handleClick(evt) {
+      if (evt.originalEvent.target.tagName === 'A') return;
+      if (selectedFeature) {
+        onFeatureSelect(null);
+
+        const view = map.getView();
+        view.animate({
+          ...mapCenter,
+          duration: 1000,
+        });
+      }
+    }
+
+    map.on('click', handleClick);
 
     map.addInteraction(select);
 
@@ -108,8 +130,24 @@ export default function FeatureInteraction({ onFeatureSelect }) {
       map.getViewport().style.cursor = hit ? 'pointer' : '';
     });
 
-    return () => map.removeInteraction(select);
-  }, [map, selectStyle, onFeatureSelect]);
+    return () => {
+      map.removeInteraction(select);
+      map.un('click', handleClick);
+    };
+  }, [map, selectStyle, onFeatureSelect, selectedFeature, mapCenter]);
 
-  return null;
+  return isClient ? (
+    <div
+      id="popup-overlay"
+      style={{
+        position: 'absolute',
+        bottom: '30px',
+        right: '30px',
+        zIndex: 1,
+        visibility: selectedFeature ? 'visible' : 'hidden',
+      }}
+    >
+      {selectedFeature ? <FeatureDisplay feature={selectedFeature} /> : null}
+    </div>
+  ) : null;
 }
