@@ -27,7 +27,14 @@ import {
 const messages = defineMessages({
   References: { id: 'References', defaultMessage: 'References' },
   Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
-  Objectives: { id: 'Objectives', defaultMessage: 'Objectives' },
+  Objectives: {
+    id: 'Objectives of the adaptation measure',
+    defaultMessage: 'Objectives of the adaptation measure',
+  },
+  'Policy and legal background': {
+    id: 'Policy and legal background',
+    defaultMessage: 'Policy and legal background',
+  },
   'Adaptation Options Implemented In This Case': {
     id: 'Adaptation Options Implemented In This Case',
     defaultMessage: 'Adaptation Options Implemented In This Case',
@@ -42,20 +49,20 @@ const messages = defineMessages({
     defaultMessage: 'Stakeholder participation',
   },
   'Success and Limiting Factors': {
-    id: 'Success and Limiting Factors',
-    defaultMessage: 'Success and Limiting Factors',
+    id: 'Success and limiting factors',
+    defaultMessage: 'Success and limiting factors',
   },
   'Costs and Benefits': {
-    id: 'Costs and Benefits',
-    defaultMessage: 'Costs and Benefits',
+    id: 'Costs and benefits',
+    defaultMessage: 'Costs and benefits',
   },
   Relevance: { id: 'Relevance', defaultMessage: 'Relevance' },
-  'Legal Aspects': { id: 'Legal Aspects', defaultMessage: 'Legal Aspects' },
+  'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
   'Implementation Time': {
-    id: 'Implementation Time',
-    defaultMessage: 'Implementation Time',
+    id: 'Implementation time',
+    defaultMessage: 'Implementation time',
   },
-  'Life Time': { id: 'Life Time', defaultMessage: 'Life Time' },
+  'Life Time': { id: 'Lifetime', defaultMessage: 'Lifetime' },
   Contact: { id: 'Contact', defaultMessage: 'Contact' },
 
   Websites: { id: 'Websites', defaultMessage: 'Websites' },
@@ -72,10 +79,13 @@ const messages = defineMessages({
     id: 'Reference Information',
     defaultMessage: 'Reference Information',
   },
+  updating_notes: {
+    id: 'Updating notes',
+    defaultMessage: 'Updating notes',
+  },
 });
 
-const PrimaryPhoto = (props) => {
-  const { content } = props;
+const PrimaryPhoto = ({ content }) => {
   const { primary_photo, primary_photo_copyright, title } = content;
 
   return primary_photo !== null ? (
@@ -92,6 +102,13 @@ const dataDisplay = [
     field: 'challenges',
     section: 'challenges_anchor',
     title: 'Challenges',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'policy_legal_background',
+    section: 'policy_anchor',
+    title: 'Policy and legal background',
     group: 1,
   },
   {
@@ -211,14 +228,13 @@ const sectionID = (title) => {
   return found.section;
 };
 
-const PhotoGallery = (props) => {
-  const { content } = props;
+const PhotoGallery = ({ content }) => {
   const { cca_gallery } = content;
 
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
-        <div className="casetstudy-gallery">
+        <div className="case-study-gallery">
           <div className="gallery-title">
             <span>
               <FormattedMessage
@@ -236,8 +252,8 @@ const PhotoGallery = (props) => {
   );
 };
 
-const SectionsMenu = (props) => {
-  const { sections, title } = props;
+// Sections Menu Component
+const SectionsMenu = ({ sections, title }) => {
   const intl = useIntl();
 
   return (
@@ -248,7 +264,7 @@ const SectionsMenu = (props) => {
           <List bulleted>
             {sections.map((data, index) => (
               <ListItem key={index}>
-                <AnchorLink href={'#' + sectionID(data.title)}>
+                <AnchorLink href={`#${sectionID(data.title)}`}>
                   {intl.formatMessage(messages[data.title])}
                 </AnchorLink>
               </ListItem>
@@ -260,9 +276,9 @@ const SectionsMenu = (props) => {
   );
 };
 
-const SectionContent = (props) => {
-  const { sectionData, content } = props;
+const SectionContent = ({ sectionData, content }) => {
   const intl = useIntl();
+  const sectionDataTitle = sectionData.contentTitle || sectionData.title;
 
   const adaptationOptionsLinks = () => {
     let list = [];
@@ -273,22 +289,16 @@ const SectionContent = (props) => {
   };
 
   const section = content[sectionData.field];
-
   for (var key in section) {
     if (section[key] === '') {
       section[key] = '<p>-</p>';
     }
   }
 
-  const sectionDataTitle =
-    sectionData.contentTitle !== undefined
-      ? sectionData.contentTitle
-      : sectionData.title;
   return (
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
         {intl.formatMessage(messages[sectionDataTitle])}
-        {/* {sectionDataTitle} */}
       </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
@@ -310,8 +320,9 @@ const SectionContent = (props) => {
 };
 
 function CaseStudyView(props) {
+  const intl = useIntl();
   const { content } = props;
-  const { long_description } = content;
+  const { long_description, updating_notes } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -331,7 +342,6 @@ function CaseStudyView(props) {
       (data) => data.group === group && hasValue(data.field),
     );
   };
-  const intl = useIntl();
 
   return (
     <div className="db-item-view case-study-view">
@@ -361,6 +371,14 @@ function CaseStudyView(props) {
             >
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
+              {updating_notes && updating_notes.length > 0 && (
+                <div className="disclaimer-box">
+                  <h5>{intl.formatMessage(messages.updating_notes)}</h5>
+                  {updating_notes.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
+              )}
               <Divider />
               <div className="adaptation-details">
                 <Grid columns="12">
@@ -426,9 +444,7 @@ function CaseStudyView(props) {
               className="col-right"
             >
               <PhotoGallery {...props} />
-
               <ContentMetadata {...props} />
-
               <DocumentsList {...props} />
             </Grid.Column>
           </div>
