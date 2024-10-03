@@ -49,13 +49,6 @@ export default function FeatureInteraction({
   React.useEffect(() => {
     if (!map) return;
 
-    const clusterLayer = new ol.layer.Vector({
-      source: clusterSource,
-      style: clusterStyle,
-    });
-    setClusterLayer(clusterLayer);
-    map.addLayer(clusterLayer);
-
     // Layer displaying the expanded view of overlapping cluster members.
     const clusterCirclesLayer = new ol.layer.Vector({
       source: clusterSource,
@@ -63,6 +56,13 @@ export default function FeatureInteraction({
     });
     setClusterCirclesLayer(clusterCirclesLayer);
     map.addLayer(clusterCirclesLayer);
+
+    const clusterLayer = new ol.layer.Vector({
+      source: clusterSource,
+      style: clusterStyle,
+    });
+    setClusterLayer(clusterLayer);
+    map.addLayer(clusterLayer);
   }, [map, clusterSource, clusterCircleStyle]);
 
   React.useEffect(() => {
@@ -75,6 +75,10 @@ export default function FeatureInteraction({
 
     select.on('select', function (e) {
       const features = e.target.getFeatures().getArray();
+      // const pixel = e.mapBrowserEvent.pixel;
+      // clusterLayer.getFeatures(pixel).then((fs) => {
+      //   console.log('fs', { fs, features });
+      // });
 
       features.forEach((feature) => {
         const subfeatures = feature.values_.features;
@@ -99,8 +103,9 @@ export default function FeatureInteraction({
             (ol.extent.getWidth(extent) < resolution &&
               ol.extent.getHeight(extent) < resolution)
           ) {
-            // console.log('set cluster circles style', feature, resolution);
-            setClicked(features, resolution);
+            console.log('set cluster circles style', features[0]);
+            setClicked(features[0], resolution);
+            clusterCirclesLayer.setStyle(clusterCircleStyle);
           } else {
             let extentBuffer =
               (extent[3] - extent[1] + extent[2] - extent[0]) / 4;
@@ -149,6 +154,8 @@ export default function FeatureInteraction({
     selectedFeature,
     mapCenter,
     clusterLayer,
+    clusterCircleStyle,
+    clusterCirclesLayer,
   ]);
 
   return isClient ? (
