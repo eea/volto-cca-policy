@@ -89,12 +89,12 @@ export function useStyles() {
 
   const clusterCircleStyle = React.useCallback(
     (cluster, resolution) => {
-      console.log('clusterCircleStyle', {
-        cluster,
-        resolution,
-        clickFeature,
-        clickResolution,
-      });
+      // console.log('clusterCircleStyle', {
+      //   cluster,
+      //   resolution,
+      //   clickFeature,
+      //   clickResolution,
+      // });
       if (cluster !== clickFeature || resolution !== clickResolution) {
         // console.log('return null', {
         //   cluster,
@@ -105,7 +105,7 @@ export function useStyles() {
         return null;
       }
 
-      console.log('members', cluster);
+      // console.log('members', cluster);
       const clusterMembers = cluster.get('features');
       const centerCoordinates = cluster.getGeometry().getCoordinates();
       return generatePointsCircle(

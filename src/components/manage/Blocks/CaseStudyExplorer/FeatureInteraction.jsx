@@ -66,7 +66,7 @@ export default function FeatureInteraction({
   }, [map, clusterSource, clusterCircleStyle]);
 
   React.useEffect(() => {
-    if (!map) return;
+    if (!(map && clusterLayer)) return;
 
     const select = new ol.interaction.Select({
       condition: ol.condition.click,
@@ -75,7 +75,6 @@ export default function FeatureInteraction({
 
     select.on('select', function (e) {
       const features = e.target.getFeatures().getArray();
-      // console.log('click', features);
 
       features.forEach((feature) => {
         const subfeatures = feature.values_.features;
@@ -100,8 +99,8 @@ export default function FeatureInteraction({
             (ol.extent.getWidth(extent) < resolution &&
               ol.extent.getHeight(extent) < resolution)
           ) {
-            console.log('set cluster circles style', feature, resolution);
-            setClicked(feature, resolution);
+            // console.log('set cluster circles style', feature, resolution);
+            setClicked(features, resolution);
           } else {
             let extentBuffer =
               (extent[3] - extent[1] + extent[2] - extent[0]) / 4;
@@ -143,7 +142,14 @@ export default function FeatureInteraction({
       map.un('click', handleClick);
       map.un('pointermove', handlePointerMove);
     };
-  }, [map, selectStyle, onFeatureSelect, selectedFeature, mapCenter]);
+  }, [
+    map,
+    selectStyle,
+    onFeatureSelect,
+    selectedFeature,
+    mapCenter,
+    clusterLayer,
+  ]);
 
   return isClient ? (
     <div
