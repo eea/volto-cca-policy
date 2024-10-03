@@ -103,7 +103,7 @@ export default function FeatureInteraction({
             (ol.extent.getWidth(extent) < resolution &&
               ol.extent.getHeight(extent) < resolution)
           ) {
-            console.log('set cluster circles style', features[0]);
+            // console.log('set cluster circles style', features[0]);
             setClicked(features[0], resolution);
             clusterCirclesLayer.setStyle(clusterCircleStyle);
           } else {
