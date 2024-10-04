@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input, Label } from 'semantic-ui-react';
+import { Input, Label, Button } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 
 import { injectIntl } from 'react-intl';
@@ -74,9 +74,9 @@ const GeolocationWidget = (props) => {
             />
           </div>
           <div className="field">
-            <button onClick={handleSearch}>
+            <Button onClick={handleSearch}>
               {isFetching ? 'Loading' : 'Search'}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
