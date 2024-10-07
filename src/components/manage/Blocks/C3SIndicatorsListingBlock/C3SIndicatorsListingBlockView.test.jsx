@@ -1,7 +1,7 @@
 import React from 'react';
 const mockStore = configureStore();
 
-describe('CaseStudyFilters', () => {
+describe('C3SIndicatorsListingBlockView', () => {
   it('should render the component', () => {
     const data = {
       metadata: [
