@@ -11,7 +11,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 import * as layers from './layers';
 import FeatureInteraction from './FeatureInteraction';
-import InfoOverlay from '@eeacms/volto-cca-policy/components/manage/Blocks/CaseStudyExplorer/InfoOverlay';
+import InfoOverlay from './InfoOverlay';
 
 import './styles.less';
 
