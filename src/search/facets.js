@@ -18,7 +18,17 @@ const adaptation_sectors = {
   showAllOptions: true,
   alwaysVisible: true,
 };
-
+const op_cluster = {
+  field: 'op_cluster',
+  factory: 'MultiTermFacet',
+  isFilterable: true,
+  isMulti: true,
+  label: 'Section',
+  show: 10000,
+  showInFacetsList: false,
+  ignoreNLPWhenActive: true,
+  blacklist: ['Others', 'Publications'],
+};
 // const clusters = {
 //   field: 'op_cluster',
 //   factory: 'MultiTermFacet',
@@ -113,6 +123,7 @@ const origin_websites = {
 const facets = [
   adaptation_sectors,
   // clusters,
+  op_cluster,
   objectProvides,
   issued_date,
   climate_impacts,

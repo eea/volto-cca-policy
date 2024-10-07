@@ -22,6 +22,7 @@ import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
+import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
 
 import { langRedirection } from './store/middleware';
 
@@ -339,7 +340,9 @@ const applyConfig = (config) => {
   config.settings.searchlib.resolve.HealthHorizontalCardItem = {
     component: HealthHorizontalCardItem,
   };
-
+  config.settings.searchlib.resolve.ClusterHorizontalCardItem = {
+    component: ClusterHorizontalCardItem,
+  };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
