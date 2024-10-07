@@ -6,7 +6,7 @@ export default function FeatureDisplay({ feature }) {
     <div id="csepopup">
       <p>
         <strong>
-          <a className="dbitem" href={feature.url}>
+          <a className="dbitem" href={feature.url} target="_blank">
             {feature.title}
           </a>
         </strong>
