@@ -89,7 +89,9 @@ export function useStyles() {
 
   const clusterCircleStyle = React.useCallback(
     (cluster, resolution) => {
-      if (cluster?.ol_uid) console.log(cluster?.ol_uid, cluster);
+      // if (cluster?.ol_uid) {
+      //   console.log(cluster?.ol_uid, cluster);
+      // }
       // console.log('clusterCircleStyle', {
       //   cluster,
       //   resolution,
