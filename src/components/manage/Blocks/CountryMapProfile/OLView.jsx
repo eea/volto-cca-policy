@@ -1,25 +1,22 @@
 import React from 'react';
 import { compose } from 'redux';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-
-import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { Grid } from 'semantic-ui-react';
 import {
-  euCountryNames as euCountryNamesRaw,
-  tooltipStyle,
   getImageUrl,
+  tooltipStyle,
   adjustEuCountryNames,
+  euCountryNames as euCountryNamesRaw,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
-
-import withResponsiveContainer from '../withResponsiveContainer';
-import withVisibilitySensor from '../withVisibilitySensor';
+import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
-
-import Filter from './Filter';
-import { Grid } from 'semantic-ui-react';
 import { useCountriesMetadata } from './hooks';
+import Filter from './Filter';
+import withResponsiveContainer from '../withResponsiveContainer';
+import withVisibilitySensor from '../withVisibilitySensor';
 import { addAppURL } from '@plone/volto/helpers';
 
 import './styles.less';
