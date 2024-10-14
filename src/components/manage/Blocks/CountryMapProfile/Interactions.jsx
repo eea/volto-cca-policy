@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   euCountryNames,
   setTooltipVisibility,
@@ -9,14 +8,13 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
 export const Interactions = ({
-  tooltipRef,
-  // onFeatureClick,
-  countries_metadata,
   baseUrl,
+  highlight,
+  tooltipRef,
   thematicMapMode,
   euCountryFeatures,
-  highlight,
   setStateHighlight,
+  countries_metadata,
 }) => {
   const map = useMapContext().map;
 
@@ -44,19 +42,18 @@ export const Interactions = ({
         feature &&
         euCountryNames.includes(feature.get('na'))
       ) {
-        // if (countries_metadata.length>0) {
         let countryName = feature.get('na');
         let noDataReportedMsg = `
-No data reported through the reporting mechanism of the Governance Regulation.
-Last information is available
-<a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
+          No data reported through the reporting mechanism of the Governance Regulation.
+          Last information is available
+          <a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
 
         if (countryName === 'Türkiye') {
           countryName = 'Turkiye';
           noDataReportedMsg = `
-Data reported in 2021 through the reporting mechanism of the Governance Regulation.
-Information is available
-<a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
+            Data reported in 2021 through the reporting mechanism of the Governance Regulation.
+            Information is available
+            <a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
         }
 
         if (!Object.hasOwn(countries_metadata[0], countryName)) {
@@ -78,29 +75,23 @@ Information is available
           tooltipContent =
             metadata[0]?.ccivportal_info ||
             '<span>No portal or platform reported</span>';
-          // tooltipContent.split('<p style="font-weight:bold;"></p>').join('');
         }
-        // overlaySource.addFeature(feature);
+
         map.getTargetElement().style.cursor = 'pointer';
         const node = tooltipRef.current;
         const flag = feature.get('flag').src;
         const cn = countryName.toLowerCase();
         let tooltipContentDiv = `
-<div class="country-tooltip">
-  <div id="country-name">
-    <a href="/en/countries-regions/countries/${cn}"><h3>${countryName}</h3></a>
-    <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
-  </div>
-  <div class="tooltip-content">${tooltipContent}</div>
-</div>
-`;
+          <div class="country-tooltip">
+            <div id="country-name">
+              <a href="/en/countries-regions/countries/${cn}"><h3>${countryName}</h3></a>
+              <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
+            </div>
+            <div class="tooltip-content">${tooltipContent}</div>
+          </div>`;
 
         setTooltipVisibility(node, tooltipContentDiv, domEvt, true);
       }
-
-      // if (feature) {
-      //   onFeatureClick(feature);
-      // }
     });
 
     map.on('pointermove', function (evt) {
@@ -118,6 +109,6 @@ Information is available
       setStateHighlight(highlight.current);
     });
   });
-  // }, [map, tooltipRef, onFeatureClick]);
+
   return null;
 };
