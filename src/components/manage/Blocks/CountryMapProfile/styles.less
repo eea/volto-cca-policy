@@ -1,4 +1,5 @@
 @height: 600px;
+@fpHeight: 450px;
 
 .countryMapProfile {
   height: @height;
@@ -56,10 +57,6 @@
   }
 
   .country-outline path {
-    fill: #e9e9e9;
-  }
-
-  .country-outline path {
     fill: #f5f5f5;
     stroke: #d1d1d1;
     stroke-width: 1;
@@ -69,24 +66,28 @@
     fill: #0170b7;
   }
 
+  label {
+    margin-bottom: 0.5em;
+  }
+
   .legend {
-    .legend-text {
-      width: 16em;
-    }
+    margin-top: 1em;
 
     .legend-el {
       display: flex;
       flex-direction: row;
-      padding: 0.8em 0;
+      padding: 0.6em 0;
     }
 
     .legend-box {
-      width: 40px;
-      height: 19px;
-      margin-top: 3px;
+      height: 17px;
       margin-right: 0.5em;
+      flex: 0 0 17px;
+      position: relative;
+      top: 4px;
     }
 
+    // Legend color mapping
     .content-available {
       background-color: #0170b7;
     }
@@ -103,13 +104,10 @@
       background-color: #78d9fc;
     }
 
-    .country-none {
-      border: 1px solid #ddd;
-      background-color: #fbfae6;
-    }
-
+    .country-none,
     .country-outside {
       background-color: #fbfae6;
+      border: 1px solid #ddd;
     }
   }
 
@@ -154,13 +152,10 @@
       background-color: #fff3ac;
     }
 
-    .country-none {
-      background-color: #f5f5f5;
-    }
-
+    .country-none,
     .country-outside {
-      border: 1px solid #ddd;
       background-color: #fbfae6;
+      border: 1px solid #ddd;
     }
 
     .country-noportal {
@@ -168,63 +163,55 @@
     }
   }
 
-  .country-blue path {
+  // Country color mapping and cursor style
+  .country-blue path,
+  .country-notreported path,
+  .country-noportal path,
+  .country-nasnapsap path,
+  .country-nassap path,
+  .country-napsap path,
+  .country-nasnap path,
+  .country-nas path,
+  .country-nap path,
+  .country-none path,
+  .country-nodata path {
     cursor: pointer;
-    // fill: @secondary-blue;
   }
 
   .country-notreported path {
-    cursor: pointer;
     fill: #fed7da;
   }
 
-  .country-noportal path {
-    cursor: pointer;
+  .country-noportal path,
+  .country-none path {
     fill: #e0e0e0;
   }
 
   .country-nasnapsap path {
-    cursor: pointer;
     fill: url(#nasnapsap);
   }
 
   .country-nassap path {
-    cursor: pointer;
     fill: url(#nassap);
   }
 
   .country-napsap path {
-    cursor: pointer;
     fill: url(#napsap);
   }
 
-  .country-nasnapsap path {
-    cursor: pointer;
-    fill: url(#nasnapsap);
-  }
-
   .country-nasnap path {
-    cursor: pointer;
     fill: #007db6;
   }
 
   .country-nas path {
-    cursor: pointer;
     fill: #78d9fc;
   }
 
   .country-nap path {
-    cursor: pointer;
     fill: #11cbff;
   }
 
-  .country-none path {
-    cursor: pointer;
-    fill: #e0e0e0;
-  }
-
   .country-nodata path {
-    cursor: pointer;
     fill: #f5f5f5;
   }
 
@@ -232,7 +219,9 @@
     fill: #8a9c3a;
   }
 
-  #map-tooltip {
+  // Tooltip for countries
+  #map-tooltip,
+  .country-tooltip {
     position: absolute;
     width: 400px;
     padding: 1em;
@@ -241,12 +230,6 @@
   }
 
   .country-tooltip {
-    position: absolute;
-    width: 400px;
-    padding: 1em;
-    border: 1px solid #c7c7c7;
-    background-color: #f7f7f7;
-
     span,
     li {
       color: #3a3a3a;
@@ -291,6 +274,40 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1em;
+    }
+  }
+}
+
+.cca-main-homepage .tabs-block {
+  .countryMapProfile {
+    min-height: @fpHeight;
+
+    .ol-map-wrapper,
+    .ol-map {
+      height: @fpHeight;
+    }
+
+    #country-map-filter {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .legend-box {
+      top: 2px;
+    }
+
+    label,
+    .legend .legend-text {
+      font-size: 14px !important;
+      line-height: 17px;
+    }
+
+    .legend {
+      margin-top: 0.2em;
+
+      .legend-el {
+        padding: 1em 0 0 0;
+      }
     }
   }
 }
