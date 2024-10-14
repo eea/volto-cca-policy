@@ -14,6 +14,8 @@
 [![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-develop)
 [![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-develop)
 
+Climate-ADAPT Frontend Policy
+
 [Volto](https://github.com/plone/volto) add-on
 
 ## Release
