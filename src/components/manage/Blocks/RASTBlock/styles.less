@@ -126,9 +126,9 @@
     }
 
     .title {
+      justify-content: flex-start;
       border: none;
       background-color: @grey-light;
-      justify-content: flex-start;
 
       &.active {
         background-color: @grey-dark;
@@ -144,8 +144,8 @@
     }
 
     .content {
-      background-color: @grey-light;
       padding: 1rem;
+      background-color: @grey-light;
 
       &.active {
         border: 2px solid @grey-dark;
@@ -159,8 +159,8 @@
         }
 
         &:not(:last-child) {
-          border-bottom: 1px solid @border-color;
           padding-bottom: 0.8em;
+          border-bottom: 1px solid @border-color;
         }
 
         &:not(:first-child) {
@@ -176,8 +176,8 @@
     }
 
     .cls-1 {
-      stroke-width: 3;
       stroke: @border-color;
+      stroke-width: 3;
     }
 
     &.step-1,
