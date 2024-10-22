@@ -3,6 +3,17 @@
 
 @import (multiple, reference, optional) '../../theme.config';
 
+@grey-light: #f1f0f5;
+@grey-dark: #e1e1e1;
+@blue: #004b80;
+@teal: #007b6a;
+@sand: #b78b02;
+@light-blue: #50afa3;
+@purple: #9e85b6;
+@blue-grey: #6889a6;
+@border-color: #3d5265;
+@text-color: #212d39;
+
 .rast-map-block {
   display: flex;
   align-items: center;
@@ -101,6 +112,157 @@
 
     .substep:not(:last-child) {
       padding-bottom: 0.8em;
+    }
+  }
+}
+
+.rast-block {
+  .ui.accordion {
+    margin-bottom: 0.7em;
+    color: @text-color;
+
+    &:has(svg) {
+      .title:not(.ui) {
+        padding: 0.3rem 0.5rem 0.3rem 0;
+      }
+    }
+
+    .title {
+      justify-content: flex-start;
+      border: none;
+      background-color: @grey-light;
+
+      &.active {
+        background-color: @grey-dark;
+      }
+
+      .item-title {
+        color: @text-color;
+        font-size: 15px;
+      }
+
+      > .icon {
+        order: unset;
+      }
+    }
+
+    .content {
+      padding: 1rem;
+      background-color: @grey-light;
+
+      &.active {
+        border: 2px solid @grey-dark;
+      }
+
+      .item {
+        a {
+          color: @text-color;
+          font-size: 14px;
+        }
+
+        &:not(:last-child) {
+          padding-bottom: 0.8em;
+          border-bottom: 1px solid @border-color;
+        }
+
+        &:not(:first-child) {
+          padding-top: 0.8em;
+        }
+      }
+
+      .substep.active {
+        a {
+          color: @text-color;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .cls-1 {
+      stroke: @text-color;
+      stroke-width: 3;
+    }
+
+    &.step-1,
+    &.step-2,
+    &.step-3,
+    &.step-4,
+    &.step-5,
+    &.step-6 {
+      .title.active {
+        .item-title {
+          color: @white;
+        }
+
+        .icon {
+          fill: @white !important;
+        }
+
+        .cls-1 {
+          stroke: @white;
+          stroke-width: 3;
+        }
+      }
+    }
+
+    &.step-1 {
+      .title.active {
+        background-color: @teal;
+      }
+
+      .content {
+        border: 2px solid @teal;
+      }
+    }
+
+    &.step-2 {
+      .title.active {
+        background-color: @blue;
+      }
+
+      .content {
+        border: 2px solid @blue;
+      }
+    }
+
+    &.step-3 {
+      .title.active {
+        background-color: @blue-grey;
+      }
+
+      .content {
+        border: 2px solid @blue-grey;
+      }
+    }
+
+    &.step-4 {
+      .title.active {
+        background-color: @purple;
+      }
+
+      .content {
+        border: 2px solid @purple;
+      }
+    }
+
+    &.step-5 {
+      .title.active {
+        background-color: @sand;
+      }
+
+      .content {
+        border: 2px solid @sand;
+      }
+    }
+
+    &.step-6 {
+      .title.active {
+        background-color: @light-blue;
+      }
+
+      .content {
+        border: 2px solid @light-blue;
+      }
     }
   }
 }
