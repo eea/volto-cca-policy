@@ -12,6 +12,7 @@
 @purple: #9e85b6;
 @blue-grey: #6889a6;
 @border-color: #3d5265;
+@text-color: #212d39;
 
 .rast-map-block {
   display: flex;
@@ -118,6 +119,7 @@
 .rast-block {
   .ui.accordion {
     margin-bottom: 0.7em;
+    color: @text-color;
 
     &:has(svg) {
       .title:not(.ui) {
@@ -135,6 +137,7 @@
       }
 
       .item-title {
+        color: @text-color;
         font-size: 15px;
       }
 
@@ -153,9 +156,8 @@
 
       .item {
         a {
-          color: inherit;
           font-size: 14px;
-          line-height: 18px;
+          color: @text-color;
         }
 
         &:not(:last-child) {
@@ -170,13 +172,14 @@
 
       .substep.active {
         a {
+          color: @text-color;
           font-weight: bold;
         }
       }
     }
 
     .cls-1 {
-      stroke: @border-color;
+      stroke: @text-color;
       stroke-width: 3;
     }
 
@@ -187,7 +190,9 @@
     &.step-5,
     &.step-6 {
       .title.active {
-        color: @white;
+        .item-title {
+          color: @white;
+        }
 
         .icon {
           fill: @white !important;
