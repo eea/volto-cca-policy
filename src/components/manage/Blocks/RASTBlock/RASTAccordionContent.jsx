@@ -24,28 +24,26 @@ const RASTAccordionContent = (props) => {
   );
 
   return (
-    <div className="dataset-content">
-      <div>
-        {items.length
-          ? items
-              .filter((item) => item['@type'] === 'Folder')
-              .map((item) => {
-                const active = item['@id'].endsWith(curent_location.pathname);
-                return (
-                  <List.Item
-                    key={item.id}
-                    className={cx('substep', {
-                      active: active,
-                    })}
-                  >
-                    <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
-                      {item.title}
-                    </Link>
-                  </List.Item>
-                );
-              })
-          : null}
-      </div>
+    <div>
+      {items.length
+        ? items
+            .filter((item) => item['@type'] === 'Folder')
+            .map((item) => {
+              const active = item['@id'].endsWith(curent_location.pathname);
+              return (
+                <List.Item
+                  key={item.id}
+                  className={cx('substep', {
+                    active: active,
+                  })}
+                >
+                  <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
+                    {item.title}
+                  </Link>
+                </List.Item>
+              );
+            })
+        : null}
     </div>
   );
 };

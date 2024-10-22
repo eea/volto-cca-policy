@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 180 180">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-dasharray: 0 0 0 0 63 5.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Layer_2">
+      <g id="g19">
+        <g id="g25">
+          <path id="path27" class="cls-1" d="M90,72.6c9.6,0,17.4,7.8,17.4,17.4s-7.8,17.4-17.4,17.4-17.4-7.8-17.4-17.4,7.8-17.4,17.4-17.4Z"/>
+        </g>
+        <g id="g29">
+          <path id="path31" class="cls-1" d="M90,83.9c3.4,0,6.1,2.7,6.1,6.1s-2.7,6.1-6.1,6.1-6.1-2.7-6.1-6.1,2.7-6.1,6.1-6.1Z"/>
+        </g>
+        <g id="g33">
+          <path id="path35" class="cls-1" d="M55.7,90h0c.5.9,10.6,17.4,34.6,17.4s33.2-16.1,33.9-17.4c-.5-.9-10.6-17.4-34.6-17.4s-33.2,16.1-33.9,17.4Z"/>
+        </g>
+        <g id="g37">
+          <path id="path39" class="cls-1" d="M136.9,90c0,25.9-21,46.9-46.9,46.9s-46.9-21-46.9-46.9,21-46.9,46.9-46.9,46.9,21,46.9,46.9Z"/>
+        </g>
+        <g id="g41">
+          <path id="path43" class="cls-1" d="M90,35.5v16.6"/>
+        </g>
+        <g id="g45">
+          <path id="path47" class="cls-1" d="M90,129.2v15.3"/>
+        </g>
+        <g id="g49">
+          <path id="path51" class="cls-1" d="M144.5,90h-7.6"/>
+        </g>
+        <g id="g53">
+          <path id="path55" class="cls-1" d="M43.1,90h-7.6"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
