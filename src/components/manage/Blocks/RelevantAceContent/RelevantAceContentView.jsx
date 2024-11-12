@@ -27,7 +27,9 @@ const RelevantAceContentView = (props) => {
     <ListItem key={index}>
       <ListIcon name="angle right" />
       <ListContent>
-        <Link to={flattenToAppURL(item.link)}>{item.item_title}</Link>
+        <Link to={flattenToAppURL(item.source?.[0]?.['@id'] || '/')}>
+          {item.item_title}
+        </Link>
       </ListContent>
     </ListItem>
   ));
