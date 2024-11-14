@@ -53,6 +53,83 @@ const dataprotection = {
   ],
 };
 
+const MaybeFlourishVisualization = ({ content }) => {
+  const { map_graphs } = content;
+
+  // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
+  const data_src = (map_graphs) => {
+    if (typeof map_graphs === 'string') {
+      const regex = /data-src="([^"]*)"/;
+      const match = regex.exec(map_graphs);
+
+      if (match && match.length > 1) {
+        const dataSrcValue = match[1];
+        return dataSrcValue;
+      }
+    }
+    return null;
+  };
+  const flourishPath = data_src(map_graphs);
+  const flourishUrl = map_graphs
+    ? `https://flo.uri.sh/${flourishPath}/embed`
+    : null;
+
+  return !!flourishPath ? (
+    <PrivacyProtection
+      data={{
+        url: flourishUrl,
+        dataprotection: dataprotection,
+      }}
+    >
+      <iframe
+        height="980"
+        width="100%"
+        src={flourishUrl}
+        title="Interactive or visual content"
+        className="flourish-embed-iframe"
+        sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+      ></iframe>
+    </PrivacyProtection>
+  ) : null;
+};
+
+function getFirstIframeSrc(htmlString) {
+  const regex = /<iframe[^>]+src=["']([^"']+)["']/;
+  const match = htmlString.match(regex);
+  return match ? match[1] : null;
+}
+
+const MaybeIframeVisualization = ({ content }) => {
+  const { map_graphs } = content;
+
+  const url = getFirstIframeSrc(map_graphs || '');
+
+  const [isClient, setIsClient] = React.useState();
+
+  React.useEffect(() => setIsClient(true), []);
+
+  if (!(isClient && url)) return null;
+
+  // <div dangerouslySetInnerHTML={{ __html: map_graphs }} />
+  return (
+    <PrivacyProtection
+      data={{
+        url: url,
+        dataprotection: dataprotection,
+      }}
+    >
+      <iframe
+        height="980"
+        width="100%"
+        src={url}
+        title="Interactive or visual content"
+        className="flourish-embed-iframe"
+        sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+      ></iframe>
+    </PrivacyProtection>
+  );
+};
+
 const DatabaseItemView = (props) => {
   const { content } = props;
   const type = content['@type'];
@@ -62,7 +139,6 @@ const DatabaseItemView = (props) => {
     title,
     acronym,
     embed_url,
-    map_graphs,
     long_description,
     organisational_websites,
     organisational_key_activities,
@@ -97,24 +173,6 @@ const DatabaseItemView = (props) => {
     default:
       subtitle = '';
   }
-
-  // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
-  const data_src = (map_graphs) => {
-    if (typeof map_graphs === 'string') {
-      const regex = /data-src="([^"]*)"/;
-      const match = regex.exec(map_graphs);
-
-      if (match && match.length > 1) {
-        const dataSrcValue = match[1];
-        return dataSrcValue;
-      }
-    }
-    return null;
-  };
-  const flourishPath = data_src(map_graphs);
-  const flourishUrl = map_graphs
-    ? `https://flo.uri.sh/${flourishPath}/embed`
-    : null;
 
   const is_cmshare_video = share_eea.some((domain) =>
     content?.embed_url?.includes(domain),
@@ -217,23 +275,8 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              {!!flourishPath && (
-                <PrivacyProtection
-                  data={{
-                    url: flourishUrl,
-                    dataprotection: dataprotection,
-                  }}
-                >
-                  <iframe
-                    height="980"
-                    width="100%"
-                    src={flourishUrl}
-                    title="Interactive or visual content"
-                    className="flourish-embed-iframe"
-                    sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
-                  ></iframe>
-                </PrivacyProtection>
-              )}
+              <MaybeFlourishVisualization {...props} />
+              <MaybeIframeVisualization {...props} />
 
               <Divider />
 
