@@ -108,7 +108,7 @@ const MaybeIframeVisualization = ({ content }) => {
 
   React.useEffect(() => setIsClient(true), []);
 
-  if (!isClient && url) return null;
+  if (!(isClient && url)) return null;
 
   // <div dangerouslySetInnerHTML={{ __html: map_graphs }} />
   return (
