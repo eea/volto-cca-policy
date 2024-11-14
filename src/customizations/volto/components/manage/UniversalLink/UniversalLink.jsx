@@ -53,7 +53,7 @@ const UniversalLink = ({
       //case: item like a Link
       let remoteUrl = item.remoteUrl || item.getRemoteUrl;
       if (!token && remoteUrl) {
-        url = remoteUrl;
+        url = item.getURL; // we use getURL, it is better
       }
 
       //case: item of type 'File'
