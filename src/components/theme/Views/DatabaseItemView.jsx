@@ -102,7 +102,7 @@ function getFirstIframeSrc(htmlString) {
 const MaybeIframeVisualization = ({ content }) => {
   const { map_graphs } = content;
 
-  const url = getFirstIframeSrc(map_graphs);
+  const url = getFirstIframeSrc(map_graphs || '');
 
   const [isClient, setIsClient] = React.useState();
 
