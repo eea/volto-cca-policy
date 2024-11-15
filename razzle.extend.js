@@ -24,6 +24,16 @@ const modify = (config, { target, dev }, webpack) => {
     ? themeLessPath
     : semanticLessPath;
 
+  const useClipboardPath = path.resolve(
+    `${path.dirname(
+      require.resolve('@eeacms/volto-cca-policy/'),
+    )}/useClipboard.js`,
+  );
+  config.resolve.alias[
+    '@plone/volto/hooks/clipboard/useClipboard'
+  ] = useClipboardPath;
+  console.log(config.resolve.alias);
+
   const babelLoader = config.module.rules.find(babelLoaderFinder);
   const sanitizePath = path.join(
     path.dirname(require.resolve('sanitize-html')),
