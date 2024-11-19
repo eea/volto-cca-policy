@@ -30,7 +30,17 @@ export default function installMissionFundingSearch(config) {
   };
 
   const { missionFundingSearch } = config.searchui;
-
+  missionFundingSearch.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
+    },
+  });
   missionFundingSearch.facets = facets;
 
   if (typeof window !== 'undefined') {

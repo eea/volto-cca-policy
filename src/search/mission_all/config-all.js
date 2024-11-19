@@ -54,6 +54,17 @@ export default function installMainSearch(config) {
       cluster_name: 'cca',
     },
   });
+  missionAll.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
+    },
+  });
   // missionAll.permanentFilters.push({
   //   bool: {
   //     must_not: [
