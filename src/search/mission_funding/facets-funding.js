@@ -3,7 +3,7 @@ import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-sea
 import spatialWhitelist from '@eeacms/volto-globalsearch/config/json/spatialWhitelist';
 import { cca_adaptation_sectors } from './../common';
 
-const blacklist = ['IncludeArchived', 'issued.date', 'spatial'];
+const blacklist = ['IncludeArchived', 'issued.date', 'spatial', 'language'];
 
 const facets = [
   multiTermFacet({

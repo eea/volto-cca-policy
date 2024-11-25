@@ -58,6 +58,18 @@ export default function installMainSearch(config) {
     },
   });
 
+  missionProjects.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
+    },
+  });
+
   missionProjects.facets = facets;
 
   if (typeof window !== 'undefined') {

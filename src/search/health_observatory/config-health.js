@@ -87,6 +87,17 @@ export default function installMainSearch(config) {
       cca_include_in_search_observatory: 'true',
     },
   });
+  ccaHealthSearch.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
+    },
+  });
   ccaHealthSearch.contentSectionsParams = {
     enable: true,
     sectionFacetsField: 'op_cluster',

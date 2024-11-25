@@ -30,7 +30,17 @@ export default function installMissionToolsSearch(config) {
   };
 
   const { missionToolsSearch } = config.searchui;
-
+  missionToolsSearch.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
+    },
+  });
   missionToolsSearch.facets = facets;
 
   if (typeof window !== 'undefined') {
