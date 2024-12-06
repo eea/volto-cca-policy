@@ -21,17 +21,17 @@ const facets = [
     alwaysVisible: false,
   }),
   cca_adaptation_sectors,
-  multiTermFacet({
-    field: 'spatial',
-    isFilterable: true,
-    isMulti: true,
-    label: 'Countries',
-    spatialWhitelist: spatialWhitelist,
-    show: 10000,
-    iconsFamily: 'Countries',
-    enableExact: true,
-    alwaysVisible: false,
-  }),
+  // multiTermFacet({
+  //   field: 'spatial',
+  //   isFilterable: true,
+  //   isMulti: true,
+  //   label: 'Countries',
+  //   spatialWhitelist: spatialWhitelist,
+  //   show: 10000,
+  //   iconsFamily: 'Countries',
+  //   enableExact: true,
+  //   alwaysVisible: false,
+  // }),
 
   ...globalSearchBaseConfig.facets.filter((f) => !blacklist.includes(f.field)),
 ];
