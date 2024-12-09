@@ -372,7 +372,7 @@ function CaseStudyView(props) {
               className="col-left"
             >
               {logo && (
-                <div className="has-logo">
+                <div>
                   <Image
                     src={logo?.scales?.mini?.download}
                     alt={title}
