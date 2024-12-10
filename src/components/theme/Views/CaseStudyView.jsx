@@ -336,6 +336,13 @@ function CaseStudyView(props) {
     if (Array.isArray(content[field]) && content[field].length === 0) {
       return false;
     }
+    if (
+      typeof content[field]?.data === 'string' &&
+      content[field]?.data.replace('<p>-</p>', '').length === 0
+    ) {
+      // console.log(field, typeof content[field].data, content[field].data);
+      return false;
+    }
     return true;
   };
 
