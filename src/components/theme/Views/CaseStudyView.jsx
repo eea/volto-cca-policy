@@ -338,9 +338,8 @@ function CaseStudyView(props) {
     }
     if (
       typeof content[field]?.data === 'string' &&
-      content[field]?.data.replace('<p>-</p>', '').length === 0
+      content[field]?.data.replace('<p></p>', '').length === 0
     ) {
-      // console.log(field, typeof content[field].data, content[field].data);
       return false;
     }
     return true;
