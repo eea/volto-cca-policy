@@ -24,6 +24,8 @@ import {
   ListItem,
 } from 'semantic-ui-react';
 
+import './CaseStudyView.less';
+
 const messages = defineMessages({
   References: { id: 'References', defaultMessage: 'References' },
   Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
@@ -322,7 +324,7 @@ const SectionContent = ({ sectionData, content }) => {
 function CaseStudyView(props) {
   const intl = useIntl();
   const { content } = props;
-  const { long_description, updating_notes } = content;
+  const { long_description, updating_notes, logo, title } = content;
 
   const hasValue = (field) => {
     if (!content.hasOwnProperty(field)) {
@@ -332,6 +334,12 @@ function CaseStudyView(props) {
       return false;
     }
     if (Array.isArray(content[field]) && content[field].length === 0) {
+      return false;
+    }
+    if (
+      typeof content[field]?.data === 'string' &&
+      content[field]?.data.replace('<p></p>', '').length === 0
+    ) {
       return false;
     }
     return true;
@@ -369,6 +377,15 @@ function CaseStudyView(props) {
               computer={8}
               className="col-left"
             >
+              {logo && (
+                <div>
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                </div>
+              )}
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
               {updating_notes && updating_notes.length > 0 && (
