@@ -70,6 +70,20 @@ export default function installMainSearch(config) {
 
   // console.log('config.searchui.ccaSearch clusers', clusters);
   // debugger;
+  config.searchui.globalsearch.download_fields = [
+    { field: 'about', name: 'About' },
+    { field: 'title', name: 'title' },
+    { field: 'issued', name: 'Issued' },
+    { field: 'objectProvides', name: 'Content type' },
+    { field: 'cca_adaptation_sectors', name: 'Sectors' },
+    { field: 'cca_climate_impacts', name: 'Climate impact' },
+    { field: 'transnational_regions', name: 'Transnational regions' },
+    { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
+    { field: 'cca_funding_programme', name: 'Funding programme' },
+    { field: 'cca_key_type_measure', name: 'Key type measure' },
+    { field: 'cca_geographic_countries', name: 'Countries' },
+    { field: 'cca_origin_websites', name: 'Origin website' },
+  ];
   config.searchui.ccaSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
     elastic_index: '_es/globalsearch',
