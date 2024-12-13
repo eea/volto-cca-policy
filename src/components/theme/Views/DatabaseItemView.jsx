@@ -94,15 +94,26 @@ const MaybeFlourishVisualization = ({ content }) => {
 };
 
 function getFirstIframeSrc(htmlString) {
-  const regex = /<iframe[^>]+src=["']([^"']+)["']/;
-  const match = htmlString.match(regex);
-  return match ? match[1] : null;
+  const iframeRegex = /<iframe[^>]+src=["']([^"']+)["']/;
+
+  const iframeMatch = htmlString.match(iframeRegex);
+  if (iframeMatch) {
+    return iframeMatch[1];
+  }
+
+  try {
+    const url = new URL(htmlString);
+    return url.href;
+  } catch (e) {
+    return null;
+  }
 }
 
 const MaybeIframeVisualization = ({ content }) => {
-  const { map_graphs } = content;
+  const { map_graphs, map_graphs_height } = content;
 
   const url = getFirstIframeSrc(map_graphs || '');
+  const height = map_graphs_height || 800;
 
   const [isClient, setIsClient] = React.useState();
 
@@ -110,7 +121,6 @@ const MaybeIframeVisualization = ({ content }) => {
 
   if (!(isClient && url)) return null;
 
-  // <div dangerouslySetInnerHTML={{ __html: map_graphs }} />
   return (
     <PrivacyProtection
       data={{
@@ -119,7 +129,7 @@ const MaybeIframeVisualization = ({ content }) => {
       }}
     >
       <iframe
-        height="980"
+        height={height}
         width="100%"
         src={url}
         title="Interactive or visual content"
