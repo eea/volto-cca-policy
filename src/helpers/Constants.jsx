@@ -525,6 +525,7 @@ export const EU_COUNTRIES = [
   'LV',
   'MT',
   'NL',
+  'NO',
   'PL',
   'PT',
   'RO',
