@@ -83,6 +83,8 @@ export default function installMainSearch(config) {
     { field: 'cca_key_type_measure', name: 'Key type measure' },
     { field: 'cca_geographic_countries', name: 'Countries' },
     { field: 'cca_origin_websites', name: 'Origin website' },
+    { field: 'cca_health_impacts', name: 'Health impacts' },
+    { field: 'cca_partner_contributors', name: 'Observatory impacts' },
   ];
   config.searchui.ccaSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
