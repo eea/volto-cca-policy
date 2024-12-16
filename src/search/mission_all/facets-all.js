@@ -2,13 +2,13 @@ import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-sea
 import { multiTermFacet } from '@eeacms/search';
 import {
   // objectProvides,
-  // language,
+  language,
   geographic_countries,
   cca_climate_impacts,
   cca_adaptation_sectors,
 } from '../common';
 
-const blacklist = ['IncludeArchived', 'issued.date'];
+const blacklist = ['IncludeArchived', 'issued.date', 'language'];
 let globalFacets = globalSearchBaseConfig.facets.filter(
   (f) => !blacklist.includes(f.field),
 );
@@ -23,6 +23,7 @@ globalFacets = globalFacets.concat(
   cca_climate_impacts,
   cca_adaptation_sectors,
   geographic_countries,
+  language,
   multiTermFacet({
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,

@@ -1,7 +1,11 @@
 import { multiTermFacet } from '@eeacms/search';
 
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
-import { cca_climate_impacts, cca_adaptation_sectors } from './../common';
+import {
+  cca_climate_impacts,
+  cca_adaptation_sectors,
+  language,
+} from './../common';
 
 const facets = [
   cca_climate_impacts,
@@ -31,6 +35,7 @@ const facets = [
     iconsFamily: 'Hazard Type',
     alwaysVisible: false,
   }),
+  language,
 ];
 
 export default facets;

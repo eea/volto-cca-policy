@@ -1,7 +1,11 @@
 import { multiTermFacet } from '@eeacms/search';
 
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
-import { cca_climate_impacts, cca_adaptation_sectors } from './../common';
+import {
+  cca_climate_impacts,
+  cca_adaptation_sectors,
+  language,
+} from './../common';
 
 const facets = [
   multiTermFacet({
@@ -41,7 +45,8 @@ const facets = [
     label: 'User requirements',
     alwaysVisible: false,
   }),
-  ...globalSearchBaseConfig.facets,
+  language,
+  // ...globalSearchBaseConfig.facets,
 ];
 
 export default facets;
