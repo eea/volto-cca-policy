@@ -1,6 +1,6 @@
 import { multiTermFacet } from '@eeacms/search';
 
-import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
+// import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
 import {
   cca_climate_impacts,
   cca_adaptation_sectors,
