@@ -4,48 +4,56 @@ import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { HTMLField, SubjectTags } from '@eeacms/volto-cca-policy/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 
-const PublicationDate = (props) => {
-  const date = props.content?.effective;
-  return date ? (
-    <div className="news-date-info">
-      Date:
-      <When start={date} end={date} whole_day={true} open_end={false} />
-    </div>
-  ) : null;
+const DescriptionText = ({ content }) => {
+  return (
+    <>
+      <p className="documentDescription">{content.description}</p>
+      <HTMLField value={content.text} className="content-text" />
+    </>
+  );
 };
 
 function NewsItemView(props) {
   const { content } = props;
+
+  // if (content.image_caption) {
+  //   Object.values(content.blocks).forEach((block) => {
+  //     if (block['@type'] === 'title' && !block.copyright?.trim()) {
+  //       block.copyright = content.image_caption;
+  //     }
+  //   });
+  // }
+
+  // These blocks are used in the Edit View for dexterity layout.
+  // We don't want to display them in the View mode.
   const {
-    blocks: filtered_blocks,
-    blocks_layout: filtered_blocks_layout,
-    hasBlockType,
-  } = filterBlocks(content, 'tabs_block');
+    blocks: filteredBlocks,
+    blocks_layout: filteredBlocksLayout,
+    hasBlockTypes,
+  } = filterBlocks(content, ['tabs_block', 'metadataSection']);
 
   return (
     <div className="cca-newsitem-view">
-      <PortalMessage content={content} />
-
       <Container>
-        {hasBlockType && (
+        <PortalMessage content={content} />
+        {hasBlockTypes ? (
           <>
-            <p className="documentDescription">{content.description}</p>
-            <HTMLField value={content.text} className="content-text" />
+            <DescriptionText content={content} />
+            <RenderBlocks
+              {...props}
+              content={{
+                ...content,
+                blocks: filteredBlocks,
+                blocks_layout: filteredBlocksLayout,
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <RenderBlocks {...props} content={content} />
           </>
         )}
-
-        <RenderBlocks
-          {...props}
-          content={{
-            ...content,
-            blocks: filtered_blocks,
-            blocks_layout: filtered_blocks_layout,
-          }}
-        />
-
-        <PublicationDate {...props} />
         <SubjectTags {...props} />
       </Container>
     </div>
