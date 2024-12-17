@@ -1,7 +1,7 @@
 import { multiTermFacet } from '@eeacms/search';
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
 // import spatialWhitelist from '@eeacms/volto-globalsearch/config/json/spatialWhitelist';
-import { cca_adaptation_sectors } from './../common';
+import { cca_adaptation_sectors, language } from './../common';
 
 const blacklist = ['IncludeArchived', 'issued.date', 'spatial', 'language'];
 
@@ -21,6 +21,7 @@ const facets = [
     alwaysVisible: false,
   }),
   cca_adaptation_sectors,
+  language,
   // multiTermFacet({
   //   field: 'spatial',
   //   isFilterable: true,
