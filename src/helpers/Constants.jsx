@@ -520,6 +520,7 @@ export const EU_COUNTRIES = [
   'HU',
   'IE',
   'IT',
+  'LI',
   'LT',
   'LU',
   'LV',
