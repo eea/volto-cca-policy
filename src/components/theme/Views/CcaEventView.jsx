@@ -48,10 +48,11 @@ function CcaEventView(props) {
   } = content;
 
   const {
-    blocks: filtered_blocks,
-    blocks_layout: filtered_blocks_layout,
-  } = filterBlocks(content, 'tabs_block');
-  const titleBlock = Object.values(filtered_blocks).find(
+    blocks: filteredBlocks,
+    blocks_layout: filteredBlocksLayout,
+  } = filterBlocks(content, ['tabs_block', 'metadataSection']);
+
+  const titleBlock = Object.values(filteredBlocks).find(
     (block) => block['@type'] === 'title',
   );
   if (titleBlock && !titleBlock.subtitle && content.subtitle) {
@@ -60,16 +61,6 @@ function CcaEventView(props) {
 
   return (
     <div className="cca-event-view">
-      <RenderBlocks
-        {...props}
-        content={{
-          ...content,
-          '@type': 'climate-adapt-event',
-          blocks: filtered_blocks,
-          blocks_layout: filtered_blocks_layout,
-        }}
-      />
-
       <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
@@ -143,6 +134,16 @@ function CcaEventView(props) {
                   <p>{event_language.title}</p>
                 </>
               )}
+
+              <RenderBlocks
+                {...props}
+                content={{
+                  ...content,
+                  '@type': 'climate-adapt-event',
+                  blocks: filteredBlocks,
+                  blocks_layout: filteredBlocksLayout,
+                }}
+              />
             </Grid.Column>
             <Grid.Column
               mobile={12}
