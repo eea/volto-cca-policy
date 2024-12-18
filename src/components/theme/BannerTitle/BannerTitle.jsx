@@ -11,8 +11,8 @@ const BannerTitle = (props) => {
   } = config;
   const contentTypes = ['Subsite', 'LRF', 'Plone Site'];
   const TitleBlockView = blocksConfig?.title?.view;
-  const hasTitleBlock = hasTypeOfBlock(blocks, '@type', 'title');
-  const hasCountryFlagBlock = hasTypeOfBlock(blocks, '@type', 'countryFlag');
+  const hasTitleBlock = hasTypeOfBlock(blocks, 'title');
+  const hasCountryFlagBlock = hasTypeOfBlock(blocks, 'countryFlag');
   const [hasBodyClass, setHasBodyClass] = React.useState(false);
   const isHomePage = contentTypes.indexOf(type) > -1 || hasBodyClass;
 

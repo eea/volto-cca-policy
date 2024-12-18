@@ -11,11 +11,13 @@ import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function EventView(props) {
   const { content } = props;
+  // These blocks are used in the Edit View for dexterity layout.
+  // We don't want to display them in the View mode.
   const {
-    blocks: filtered_blocks,
-    blocks_layout: filtered_blocks_layout,
-    hasBlockType,
-  } = filterBlocks(content, 'tabs_block');
+    blocks: filteredBlocks,
+    blocks_layout: filteredBlocksLayout,
+    hasBlockTypes,
+  } = filterBlocks(content, ['tabs_block', 'metadataSection']);
 
   return (
     <div className="cca-event-view">
@@ -25,7 +27,7 @@ function EventView(props) {
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column mobile={12} tablet={12} computer={8}>
-              {hasBlockType && (
+              {hasBlockTypes && (
                 <>
                   <p className="documentDescription">{content.description}</p>
                   <HTMLField value={content.text} className="content-text" />
@@ -36,8 +38,8 @@ function EventView(props) {
                 {...props}
                 content={{
                   ...content,
-                  blocks: filtered_blocks,
-                  blocks_layout: filtered_blocks_layout,
+                  blocks: filteredBlocks,
+                  blocks_layout: filteredBlocksLayout,
                 }}
               />
 

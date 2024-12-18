@@ -32,16 +32,16 @@ export function getBaseUrl(props) {
   return path;
 }
 
-export const hasTypeOfBlock = (obj, type, name) => {
+export const hasTypeOfBlock = (obj, name) => {
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
-      if (key === type && obj[key] === name) {
+      if (key === '@type' && obj[key] === name) {
         // console.log(`Key "${type}" with value "${name}" found`);
         return true;
       }
 
       if (typeof obj[key] === 'object' && obj[key] !== null) {
-        if (hasTypeOfBlock(obj[key], type, name)) {
+        if (hasTypeOfBlock(obj[key], name)) {
           return true;
         }
       }
@@ -51,22 +51,29 @@ export const hasTypeOfBlock = (obj, type, name) => {
   return false;
 };
 
-export const filterBlocks = (content, block_type) => {
-  const filteredBlocks = { ...content.blocks };
-  const filteredBlocksLayout = { ...content.blocks_layout };
+export const filterBlocks = (content, blockTypes = []) => {
+  const allBlocks = content.blocks || {};
+  const allBlockKeys = Object.keys(allBlocks);
 
-  const filteredBlockUID = Object.keys(filteredBlocks)?.filter(
-    (key) => filteredBlocks[key]['@type'] === block_type,
+  const filteredBlocks = { ...allBlocks };
+  const filteredLayoutItems = [...(content.blocks_layout?.items || [])];
+
+  const excludedBlockKeys = allBlockKeys.filter((key) =>
+    blockTypes.includes(allBlocks[key]['@type']),
   );
-  filteredBlockUID.forEach((key) => delete filteredBlocks[key]);
-  filteredBlocksLayout.items = filteredBlocksLayout?.items?.filter(
-    (item) => !filteredBlockUID.includes(item),
-  );
-  const hasBlockType = filteredBlockUID.length > 0;
+
+  excludedBlockKeys.forEach((key) => {
+    delete filteredBlocks[key];
+  });
 
   return {
     blocks: filteredBlocks,
-    blocks_layout: filteredBlocksLayout,
-    hasBlockType,
+    blocks_layout: {
+      ...content.blocks_layout,
+      items: filteredLayoutItems.filter(
+        (item) => !excludedBlockKeys.includes(item),
+      ),
+    },
+    hasBlockTypes: excludedBlockKeys.length > 0,
   };
 };
