@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl, FormattedMessage } from 'react-intl';
-import { Accordion, Icon, Checkbox } from 'semantic-ui-react';
+import { Accordion, Icon, Checkbox, Button } from 'semantic-ui-react';
 
 const AccordionIcon = ({ active }) => {
   return (
@@ -12,6 +12,7 @@ const AccordionIcon = ({ active }) => {
 };
 
 export default function CaseStudyFilters(props) {
+  const intl = useIntl();
   const {
     filters,
     activeFilters,
@@ -74,7 +75,6 @@ export default function CaseStudyFilters(props) {
     setQuerySectors(tempSectors);
   };
 
-  const intl = useIntl();
   return (
     <div className="casestudy-filters">
       <Accordion exclusive={false} className="secondary">
@@ -103,6 +103,7 @@ export default function CaseStudyFilters(props) {
             ),
           )}
         </Accordion.Content>
+
         <Accordion.Title
           active={activeIndex.includes(1)}
           index={1}
@@ -128,6 +129,7 @@ export default function CaseStudyFilters(props) {
             ),
           )}
         </Accordion.Content>
+
         <Accordion.Title
           active={activeIndex.includes(2)}
           index={2}
@@ -143,9 +145,7 @@ export default function CaseStudyFilters(props) {
           {Object.entries(filters?.measures || {}).map(
             ([key, values], index) => (
               <div className="subcategory" key={'ktm' + index}>
-                <p>
-                  <strong>{intl.formatMessage({ id: key })}</strong>
-                </p>
+                <h4>{intl.formatMessage({ id: key })}</h4>
                 {Object.entries(values).map(([_, valData]) => (
                   <Checkbox
                     label={intl.formatMessage({ id: valData.value })}
@@ -186,29 +186,28 @@ export default function CaseStudyFilters(props) {
           )}
         </Accordion.Content>
       </Accordion>
+
       {nrActiveFilters ? (
-        <button
-          className="ui primary button reset"
-          onClick={(_e) => resetFilters()}
-        >
+        <Button primary className="reset" onClick={(_e) => resetFilters()}>
           Reset
-        </button>
+        </Button>
       ) : null}
+
       <div className="case-study-legend">
         <p>
-          <span></span>
+          <span className="case-study-dot" />
           <FormattedMessage
             id="Climate-ADAPT case studies"
             defaultMessage="Climate-ADAPT case studies"
           />
         </p>
-        <p>
-          <span className="light-blue"></span>
+        {/* <p>
+          <span className="case-study-dot light-blue" />
           <FormattedMessage
             id="Case studies collected at national level in Spain, provided by AdapteCCA.es"
             defaultMessage="Case studies collected at national level in Spain, provided by AdapteCCA.es"
           />
-        </p>
+        </p> */}
       </div>
     </div>
   );
