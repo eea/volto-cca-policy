@@ -1,12 +1,4 @@
-a.dbitem {
-  font-size: 14px;
-}
-
-#csepopup > span {
-  display: 'block';
-  margin-bottom: '10px';
-  background-color: '#ddd';
-}
+@mapHeight: 70vh;
 
 #csepopup {
   width: 300px;
@@ -14,13 +6,14 @@ a.dbitem {
   border-bottom: 6px solid #005c96;
   background-color: white;
 
-  p {
-    padding: 0 10px 0 10px;
-    font-size: 13px;
+  a.dbitem {
+    font-size: 14px;
+    text-decoration: none;
+  }
 
-    p {
-      margin-bottom: 10px;
-    }
+  p {
+    padding: 0 10px;
+    font-size: 13px;
 
     a {
       text-decoration: underline;
@@ -37,26 +30,21 @@ a.dbitem {
     background-color: #ddd;
 
     img {
-      max-height: 133px;
+      max-height: 130px;
     }
   }
 }
 
 .section-case-study-explorer #popup-overlay {
-  width: 340px;
-  // max-height: 300px;
+  width: 300px;
   padding: 0;
   background-color: #fff;
 }
 
-@mapHeight: 70vh;
-
 .casestudy-explorer-map {
-  // height: @mapHeight;
   min-height: @mapHeight;
 
   .ol-map {
-    // height: @mapHeight;
     min-height: @mapHeight;
   }
 
@@ -68,54 +56,16 @@ a.dbitem {
 
   #cse-filter {
     h4 {
-      position: relative;
-      padding: 10px;
-      border-bottom: 1px solid #d8d8d8;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      background-color: #fff;
-      clear: both;
-      color: #005c96;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    p {
-      // padding: 2px;
-      padding-bottom: 10px;
-      clear: both;
-      line-height: 20px;
-
-      span {
-        float: left;
-        font-family: OpenSansM, sans-serif;
-        font-size: 12px;
-      }
-
-      input {
-        float: right;
-      }
-    }
-
-    div.title {
-      width: 100%;
+      font-size: 16px;
     }
 
     .ui.accordion {
-      & > .title > .icon {
-        line-height: 1rem;
-      }
-
-      p {
-        margin: 0;
-      }
-
       .content {
         overflow: auto;
         max-height: 400px;
 
         .subcategory {
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
       }
     }
@@ -132,7 +82,7 @@ a.dbitem {
       padding-top: 20px;
       margin-top: auto;
 
-      span {
+      .case-study-dot {
         display: inline-block;
         width: 12px;
         height: 12px;
@@ -141,10 +91,10 @@ a.dbitem {
         background-color: #005c96 !important;
         background-color: #bbb;
         border-radius: 50%;
-      }
 
-      span.light-blue {
-        background-color: #00ffff !important;
+        // &.light-blue {
+        //   background-color: #00ffff !important;
+        // }
       }
     }
   }
