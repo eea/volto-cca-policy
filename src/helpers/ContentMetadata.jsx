@@ -14,7 +14,7 @@ import {
   PUBLICATION_REPORT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import {
-  isObservatoryMetadataURL,
+  // isObservatoryMetadataURL,
   MetadataItemList,
 } from '@eeacms/volto-cca-policy/helpers';
 
