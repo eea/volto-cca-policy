@@ -1,6 +1,7 @@
 import { multiTermFacet } from '@eeacms/search';
 
-// import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
+import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
+
 import {
   cca_climate_impacts,
   cca_adaptation_sectors,
@@ -46,7 +47,7 @@ const facets = [
     alwaysVisible: false,
   }),
   language,
-  // ...globalSearchBaseConfig.facets,
+  ...globalSearchBaseConfig.facets.filter((f) => f.field !== 'language'),
 ];
 
 export default facets;
