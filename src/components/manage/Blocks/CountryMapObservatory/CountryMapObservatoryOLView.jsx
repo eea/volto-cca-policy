@@ -37,12 +37,21 @@ const CountryMapObservatoryView = (props) => {
     setOverlaySource(new ol.source.Vector());
 
     const features = new ol.format.GeoJSON().readFeatures(geofeatures);
-    const filtered = features.filter((f) =>
-      euCountryNames.includes(f.get('na')),
-    );
+    const updateEuCountryNames = euCountryNames.map((countryName) => {
+      if ('Turkey' === countryName) {
+        countryName = 'Türkiye';
+      }
+      return countryName;
+    });
 
+    const filtered = features.filter((f) =>
+      updateEuCountryNames.includes(f.get('na')),
+    );
     filtered.forEach((feature) => {
       const img = new Image();
+      if ('Türkiye' === feature.values_.na) {
+        feature.values_.na = 'Turkey';
+      }
       img.onload = function () {
         feature.set('flag', img);
       };
@@ -70,12 +79,14 @@ const CountryMapObservatoryView = (props) => {
 
   const onFeatureClick = React.useCallback(
     (feature) => {
-      const country = feature.get('na');
+      let country = feature.get('na');
+      if ('Türkiye' === country) {
+        country = 'Turkey';
+      }
       history.push(`${baseUrl}/${country.toLowerCase()}`);
     },
     [baseUrl, history],
   );
-  // console.log(geofeatures, projection, euCountriesSource, overlaySource);
 
   return tileWMSSources ? (
     <Map
