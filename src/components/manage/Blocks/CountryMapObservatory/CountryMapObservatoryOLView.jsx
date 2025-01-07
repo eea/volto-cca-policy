@@ -38,7 +38,7 @@ const CountryMapObservatoryView = (props) => {
 
     const features = new ol.format.GeoJSON().readFeatures(geofeatures);
     const updateEuCountryNames = euCountryNames.map((countryName) => {
-      if ('Turkey' == countryName) {
+      if ('Turkey' === countryName) {
         countryName = 'Türkiye';
       }
       return countryName;
@@ -49,7 +49,7 @@ const CountryMapObservatoryView = (props) => {
     );
     filtered.forEach((feature) => {
       const img = new Image();
-      if ('Türkiye' == feature.values_.na) {
+      if ('Türkiye' === feature.values_.na) {
         feature.values_.na = 'Turkey';
       }
       img.onload = function () {
@@ -80,7 +80,7 @@ const CountryMapObservatoryView = (props) => {
   const onFeatureClick = React.useCallback(
     (feature) => {
       let country = feature.get('na');
-      if ('Türkiye' == country) {
+      if ('Türkiye' === country) {
         country = 'Turkey';
       }
       history.push(`${baseUrl}/${country.toLowerCase()}`);
