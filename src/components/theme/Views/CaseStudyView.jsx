@@ -24,8 +24,6 @@ import {
   ListItem,
 } from 'semantic-ui-react';
 
-import './CaseStudyView.less';
-
 const messages = defineMessages({
   References: { id: 'References', defaultMessage: 'References' },
   Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
