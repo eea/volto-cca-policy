@@ -57,14 +57,6 @@ export const makeContributionsSearchQuery = (props) => {
   return url;
 };
 
-export const isObservatoryMetadataURL = (url) => {
-  return url.indexOf('/observatory/++aq++metadata') > -1;
-};
-
-export const makeObservatoryMetadataURL = (url) => {
-  return url.replace('/metadata/', '/observatory/++aq++metadata/');
-};
-
 export const fixEmbedURL = (url, is_cmshare_video) => {
   const suffix = '/download';
   if (is_cmshare_video && !url.includes(suffix)) {

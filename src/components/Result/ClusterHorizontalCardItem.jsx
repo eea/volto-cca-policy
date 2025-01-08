@@ -13,13 +13,6 @@ import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import ContentClusters from '@eeacms/search/components/Result/ContentClusters';
 
-const healthURL = (href, is_observatory) => {
-  if (is_observatory) {
-    return href.replace(/\/metadata\//, '/observatory/++aq++metadata/');
-  }
-  return href;
-};
-
 const healthBreadcrumb = (href, is_observatory) => {
   // It's only cosmetic. We don't want to show ++aq...
   if (is_observatory) {
@@ -52,7 +45,7 @@ const ExtraContent = (props) => {
       <div>
         <div className="result-info result-source">
           <span className="result-info-title">Source: </span>
-          <ExternalLink href={healthURL(result.href, is_observatory)}>
+          <ExternalLink href={result.href}>
             <strong title={result.source} className="source">
               {title}
               {/* {firstWords(
@@ -99,10 +92,7 @@ const ClusterHorizontalCardItem = (props) => {
     '@id': result.href,
     title: (
       <>
-        <ExternalLink
-          href={healthURL(result.href, is_observatory)}
-          title={result.title}
-        >
+        <ExternalLink href={result.href} title={result.title}>
           {result.title}
           {result.isNew && <Label className="new-item">New</Label>}
           {result.isExpired && (
