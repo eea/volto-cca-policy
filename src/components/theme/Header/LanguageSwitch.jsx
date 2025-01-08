@@ -6,7 +6,6 @@ import { Dropdown, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
-import {} from '@eeacms/volto-cca-policy/helpers';
 import cx from 'classnames';
 
 import { selectedLanguageAtom } from '../../../state';
