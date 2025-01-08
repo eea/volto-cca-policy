@@ -5,12 +5,8 @@ import { useSelector } from 'react-redux';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-import { useLocation } from 'react-router-dom';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
-import {
-  isObservatoryMetadataURL,
-  makeObservatoryMetadataURL,
-} from '@eeacms/volto-cca-policy/helpers';
+import {} from '@eeacms/volto-cca-policy/helpers';
 import cx from 'classnames';
 
 import { selectedLanguageAtom } from '../../../state';
@@ -18,8 +14,6 @@ import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asset
 
 export default function LanguageSwitch({ history }) {
   const { eea } = config.settings;
-  const location = useLocation();
-  const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
   );
@@ -39,14 +33,13 @@ export default function LanguageSwitch({ history }) {
     const url = translation
       ? flattenToAppURL(translation['@id'])
       : `/${item.code}`;
-    const to = isObservatoryItem ? makeObservatoryMetadataURL(url) : url;
 
     setLanguage(item.code);
     setSelectedLanguage(item.code);
     searchParams.set('set_language', item.code);
 
     history.push({
-      pathname: to,
+      pathname: url,
       search: searchParams.toString(),
     });
   };
