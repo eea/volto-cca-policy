@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Popup, Segment } from 'semantic-ui-react';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
@@ -13,10 +12,7 @@ import {
   INDICATOR,
   PUBLICATION_REPORT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
-import {
-  isObservatoryMetadataURL,
-  MetadataItemList,
-} from '@eeacms/volto-cca-policy/helpers';
+import { MetadataItemList } from '@eeacms/volto-cca-policy/helpers';
 
 const messages = defineMessages({
   default_info_tooltip: {
@@ -328,8 +324,6 @@ function ContentMetadata(props) {
     funding_programme,
   } = content;
   const type = content['@type'];
-  const location = useLocation();
-  const isObservatoryItem = isObservatoryMetadataURL(location.pathname);
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
   const dateTitles = {
@@ -343,29 +337,13 @@ function ContentMetadata(props) {
   const dateTitle = dateTitles[type] || dateTitles.default;
 
   return (
-    <Segment>
-      <div className="content-metadata">
+    <>
+      <Segment className="content-metadata">
         <PublicationDateInfo
           title={dateTitle}
           value={content?.publication_date}
           portaltype={type}
         />
-
-        {isObservatoryItem && (
-          <>
-            {health_impacts && health_impacts?.length > 0 && (
-              <>
-                <h5>
-                  <FormattedMessage
-                    id="Health impact:"
-                    defaultMessage="Health impact:"
-                  />
-                </h5>
-                <MetadataItemList value={health_impacts} />
-              </>
-            )}
-          </>
-        )}
 
         {keywords && keywords?.length > 0 && (
           <>
@@ -400,40 +378,36 @@ function ContentMetadata(props) {
           </>
         )}
 
-        {!isObservatoryItem && (
+        {climate_impacts && climate_impacts?.length > 0 && (
           <>
-            {climate_impacts && climate_impacts?.length > 0 && (
-              <>
-                <h5>
-                  <FormattedMessage
-                    id="Climate impacts:"
-                    defaultMessage="Climate impacts:"
-                  />
-                </h5>
-                <MetadataItemList value={climate_impacts} />
-              </>
-            )}
+            <h5>
+              <FormattedMessage
+                id="Climate impacts:"
+                defaultMessage="Climate impacts:"
+              />
+            </h5>
+            <MetadataItemList value={climate_impacts} />
+          </>
+        )}
 
-            {elements && elements?.length > 0 && (
-              <>
-                <h5>
-                  <FormattedMessage
-                    id="Adaptation Approaches:"
-                    defaultMessage="Adaptation Approaches:"
-                  />
-                </h5>
-                <MetadataItemList value={elements} />
-              </>
-            )}
+        {elements && elements?.length > 0 && (
+          <>
+            <h5>
+              <FormattedMessage
+                id="Adaptation Approaches:"
+                defaultMessage="Adaptation Approaches:"
+              />
+            </h5>
+            <MetadataItemList value={elements} />
+          </>
+        )}
 
-            {sectors && sectors?.length > 0 && (
-              <>
-                <h5>
-                  <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
-                </h5>
-                <MetadataItemList value={sectors} />
-              </>
-            )}
+        {sectors && sectors?.length > 0 && (
+          <>
+            <h5>
+              <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
+            </h5>
+            <MetadataItemList value={sectors} />
           </>
         )}
 
@@ -449,19 +423,15 @@ function ContentMetadata(props) {
           </>
         )}
 
-        {!isObservatoryItem && (
+        {funding_programme && funding_programme?.title?.length > 0 && (
           <>
-            {funding_programme && funding_programme?.title?.length > 0 && (
-              <>
-                <h5>
-                  <FormattedMessage
-                    id="Funding Programme:"
-                    defaultMessage="Funding Programme:"
-                  />
-                </h5>
-                <span>{funding_programme.title}</span>
-              </>
-            )}
+            <h5>
+              <FormattedMessage
+                id="Funding Programme:"
+                defaultMessage="Funding Programme:"
+              />
+            </h5>
+            <span>{funding_programme.title}</span>
           </>
         )}
 
@@ -485,8 +455,20 @@ function ContentMetadata(props) {
             <GeoChar {...props} />
           </>
         )}
-      </div>
-    </Segment>
+      </Segment>
+
+      {health_impacts && health_impacts?.length > 0 && (
+        <Segment className="content-metadata">
+          <h5>
+            <FormattedMessage
+              id="Health impact:"
+              defaultMessage="Health impact:"
+            />
+          </h5>
+          <MetadataItemList value={health_impacts} />
+        </Segment>
+      )}
+    </>
   );
 }
 
