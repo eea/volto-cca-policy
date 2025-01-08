@@ -19,6 +19,13 @@ function EventView(props) {
     hasBlockTypes,
   } = filterBlocks(content, ['tabs_block', 'metadataSection']);
 
+  const titleBlock = Object.values(content.blocks).find(
+    (block) => block['@type'] === 'title',
+  );
+  if (titleBlock && !titleBlock.copyright && content.image_caption) {
+    titleBlock.copyright = content.image_caption;
+  }
+
   return (
     <div className="cca-event-view">
       <PortalMessage content={content} />
