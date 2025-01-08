@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  makeContributionsSearchQuery,
-  makeObservatoryMetadataURL,
-} from '@eeacms/volto-cca-policy/helpers';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 import { UniversalLink } from '@plone/volto/components';
 
 import './styles.less';
@@ -25,10 +22,7 @@ const OrganisationCardsListingView = ({ items }) => {
         <div className="ui fluid card u-card" key={item['@id']}>
           <div className="content">
             <div className="header">
-              <UniversalLink
-                className="image"
-                href={makeObservatoryMetadataURL(item['@id'])}
-              >
+              <UniversalLink className="image" href={item['@id']}>
                 <div className="img-container">
                   <img
                     src={item['@id'] + '/@@images/logo/preview'}
@@ -39,7 +33,7 @@ const OrganisationCardsListingView = ({ items }) => {
               </UniversalLink>
               <UniversalLink
                 className="header-link org-name"
-                href={makeObservatoryMetadataURL(item['@id'])}
+                href={item['@id']}
               >
                 {item.title}
               </UniversalLink>
