@@ -85,11 +85,11 @@ export default function installMainSearch(config) {
             cca_include_in_mission: 'true',
           },
         },
-        {
-          prefix: {
-            'id.keyword': 'https://climate-adapt.eea.europa.eu/en/mission',
-          },
-        },
+        // {
+        //   prefix: {
+        //     'id.keyword': 'https://climate-adapt.eea.europa.eu/en/mission',
+        //   },
+        // },
       ],
       minimum_should_match: 1,
     },
