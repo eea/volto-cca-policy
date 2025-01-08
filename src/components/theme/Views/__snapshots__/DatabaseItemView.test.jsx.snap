@@ -149,41 +149,37 @@ exports[`DatabaseItemView should render the component 1`] = `
           className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            className="ui segment"
+            className="ui segment content-metadata"
           >
+            <h5>
+              Date of creation:
+            </h5>
+            <p>
+              NaN
+              <i
+                className="ri-question-fill"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+            </p>
+            <h5>
+              Keywords:
+            </h5>
+            <span>
+              keyword 1, keyword 2
+            </span>
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                Date of creation:
-              </h5>
               <p>
-                NaN
-                <i
-                  className="ri-question-fill"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
+                Global
               </p>
-              <h5>
-                Keywords:
-              </h5>
-              <span>
-                keyword 1, keyword 2
-              </span>
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
             </div>
           </div>
         </div>
