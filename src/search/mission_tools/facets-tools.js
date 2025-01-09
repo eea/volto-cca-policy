@@ -54,6 +54,4 @@ const facets = [
   ),
 ];
 
-console.log(facets);
-
 export default facets;
