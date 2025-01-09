@@ -3,6 +3,7 @@ import { multiTermFacet } from '@eeacms/search';
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
 
 import {
+  include_archived,
   cca_climate_impacts,
   cca_adaptation_sectors,
   language,
@@ -47,6 +48,7 @@ const facets = [
     alwaysVisible: false,
   }),
   language,
+  include_archived,
   ...globalSearchBaseConfig.facets.filter((f) => f.field !== 'language'),
 ];
 
