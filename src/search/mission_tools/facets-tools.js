@@ -49,7 +49,11 @@ const facets = [
   }),
   language,
   include_archived,
-  ...globalSearchBaseConfig.facets.filter((f) => f.field !== 'language'),
+  ...globalSearchBaseConfig.facets.filter(
+    (f) => !['language', 'IncludeArchived'].includes(f.field),
+  ),
 ];
+
+console.log(facets);
 
 export default facets;
