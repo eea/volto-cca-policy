@@ -85,19 +85,10 @@ const StartDate = (start) => {
 };
 
 const EventCardsListingView = ({ items, isEditMode, token }) => {
-  const go_to_contact = (contact_info) => {
-    if (contact_info.includes('@')) {
-      return `mailto:${contact_info}`;
-    }
-    return contact_info;
-  };
+  const goToContact = (contactInfo) =>
+    contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
 
-  const event_url = (item) => {
-    if (!!item.event_url) {
-      return item.event_url;
-    }
-    return item['@id'];
-  };
+  const getEventUrl = (item) => item.event_url || item['@id'];
 
   return (
     <div className="ui fluid eventCards">
@@ -113,12 +104,12 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                   <Grid.Column width={10}>
                     <div className="event-details">
                       <h3 className="listing-header">
-                        <UniversalLink href={event_url(item)}>
+                        <UniversalLink href={getEventUrl(item)}>
                           {item.title}
                         </UniversalLink>
                       </h3>
-                      <div className="listing-body-dates">
-                        {!!item.start && (
+                      {!!item.start && (
+                        <div className="listing-body-dates">
                           <span className="event-date">
                             <Icon className="ri-calendar-line" />
                             <When
@@ -128,16 +119,16 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                               open_end={item.open_end}
                             />
                           </span>
-                        )}
-                      </div>
-                      <div className="listing-body-dates">
-                        {!!item['location'] && (
+                        </div>
+                      )}
+                      {!!item.location && (
+                        <div className="listing-body-dates">
                           <span className="event-date">
                             <Icon className="map marker alternate" />
-                            {item['location']}
+                            {item.location}
                           </span>
-                        )}
-                      </div>
+                        </div>
+                      )}
                       {item.description && (
                         <p className="listing-description">
                           {item.description}
@@ -173,7 +164,7 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                               <a
                                 className="contact_email"
                                 title=""
-                                href={go_to_contact(item.contact_email)}
+                                href={goToContact(item.contact_email)}
                                 target="_blank"
                                 rel="noreferrer"
                               >
