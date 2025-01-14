@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { compose } from 'redux';
-import cx from 'classnames';
-import './styles.less';
-import { ConditionalLink } from '@plone/volto/components';
-import { Icon } from 'semantic-ui-react';
-import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import { Card, Grid } from 'semantic-ui-react';
-import { Label } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Card, Grid, Icon, Label } from 'semantic-ui-react';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { ConditionalLink, UniversalLink } from '@plone/volto/components';
+import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
+import './styles.less';
 
 const Separator = () => {
   return <div className="sep">&nbsp;&nbsp;⎯&nbsp;&nbsp;</div>;
@@ -37,6 +34,7 @@ const messages = defineMessages({
   sa: { id: 'Sa', defaultMessage: 'Sa' },
   su: { id: 'Su', defaultMessage: 'Su' },
 });
+
 const StartDate = (start) => {
   const start_date = new Date(start);
 
@@ -87,27 +85,15 @@ const StartDate = (start) => {
 };
 
 const EventCardsListingView = ({ items, isEditMode, token }) => {
-  const go_to_contact = (contact_info) => {
-    if (contact_info.includes('@')) {
-      return `mailto:${contact_info}`;
-    }
-    return contact_info;
-  };
+  const goToContact = (contactInfo) =>
+    contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
 
-  const event_url = (item) => {
-    if (!!item.event_url) {
-      return item.event_url;
-    }
-    return item.id;
-  };
+  const getEventUrl = (item) => item.event_url || item['@id'];
 
   return (
-    <div className={cx('ui fluid eventCards')}>
+    <div className="ui fluid eventCards">
       {items.map((item, index) => (
-        <div
-          className={cx('u-item listing-item simple-listing-item')}
-          key={item['@id']}
-        >
+        <div className="u-item listing-item simple-listing-item" key={item.UID}>
           <div className="wrapper">
             <Card fluid>
               <Card.Content>
@@ -117,13 +103,13 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                   </Grid.Column>
                   <Grid.Column width={10}>
                     <div className="event-details">
-                      <h3 className={'listing-header'}>
-                        <a href={event_url(item)}>
-                          {item.title ? item.title : item.id}
-                        </a>
+                      <h3 className="listing-header">
+                        <UniversalLink href={getEventUrl(item)}>
+                          {item.title}
+                        </UniversalLink>
                       </h3>
-                      <div className="listing-body-dates">
-                        {!!item.start && (
+                      {!!item.start && (
+                        <div className="listing-body-dates">
                           <span className="event-date">
                             <Icon className="ri-calendar-line" />
                             <When
@@ -133,18 +119,18 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                               open_end={item.open_end}
                             />
                           </span>
-                        )}
-                      </div>
-                      <div className="listing-body-dates">
-                        {!!item['location'] && (
+                        </div>
+                      )}
+                      {!!item.location && (
+                        <div className="listing-body-dates">
                           <span className="event-date">
                             <Icon className="map marker alternate" />
-                            {item['location']}
+                            {item.location}
                           </span>
-                        )}
-                      </div>
+                        </div>
+                      )}
                       {item.description && (
-                        <p className={'listing-description'}>
+                        <p className="listing-description">
                           {item.description}
                         </p>
                       )}
@@ -178,7 +164,7 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
                               <a
                                 className="contact_email"
                                 title=""
-                                href={go_to_contact(item.contact_email)}
+                                href={goToContact(item.contact_email)}
                                 target="_blank"
                                 rel="noreferrer"
                               >
