@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
