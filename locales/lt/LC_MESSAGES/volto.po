@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Galimas renginio foninis dokumentas"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Adaptacijos metodai:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Adaptacijos galimybės įgyvendintos šiuo atveju"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Adaptacijos metodai:"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -219,7 +219,7 @@ msgstr "Parsisiųsti renginį"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Atsisiųskite išsamią darbotvarkę"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -234,12 +234,12 @@ msgstr "Trukmė:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Išeikite per visą ekraną"
 
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
-msgstr ""
+msgstr "Sužinokite daugiau apie Climate-ADAPT"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -249,7 +249,7 @@ msgstr "Vasario mėn."
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr ""
+msgstr "Norėdami gauti daugiau paieškos parinkčių"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -259,7 +259,7 @@ msgstr "FR"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Visas ekranas"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -279,7 +279,7 @@ msgstr "Pradžia"
 #. Default: "Go to advanced search"
 #: index
 msgid "Go to advanced search"
-msgstr ""
+msgstr "Eikite į išplėstinę paiešką"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -417,7 +417,7 @@ msgstr "Nuorodos į papildomą informaciją"
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
-msgstr ""
+msgstr "Ieškote daugiau informacijos?"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -507,7 +507,7 @@ msgstr "Partneriai"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politika ir teisinis pagrindas"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -605,7 +605,7 @@ msgstr "Žiūrėti vaizdo įrašą už „Climate-ADAPT“ ribų"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Pasirinkite"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -695,7 +695,7 @@ msgstr "Tu"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Pastabų atnaujinimas"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1525,7 +1525,7 @@ msgstr "Paieška duomenų bazėje"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Klimato paslaugos"
 
 #. undefined
 #: health_menu:222
@@ -3287,4 +3287,4 @@ msgstr "Rūšiuoti_by"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

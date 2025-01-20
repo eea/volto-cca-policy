@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Az esemény háttérdokumentuma elérhető"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Alkalmazkodási módok:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Az ebben az esetben alkalmazott adaptációs lehetőségek"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Alkalmazkodási módok"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -219,7 +219,7 @@ msgstr "Esemény letöltése"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Töltse le a részletes napirendet"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -234,12 +234,12 @@ msgstr "Időtartam:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Lépjen ki a teljes képernyőről"
 
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
-msgstr ""
+msgstr "Fedezzen fel többet a Climate-ADAPT-ről"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -249,7 +249,7 @@ msgstr "február"
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr ""
+msgstr "További keresési lehetőségekért"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -259,7 +259,7 @@ msgstr "Fr"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Teljes képernyő"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -279,7 +279,7 @@ msgstr "Első lépések"
 #. Default: "Go to advanced search"
 #: index
 msgid "Go to advanced search"
-msgstr ""
+msgstr "Ugrás a speciális kereséshez"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -417,7 +417,7 @@ msgstr "További információkra mutató linkek"
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
-msgstr ""
+msgstr "További információt keres?"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -507,7 +507,7 @@ msgstr "Partnerek"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politikai és jogi háttér"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -605,7 +605,7 @@ msgstr "Lásd a Climate-ADAPT-on kívüli videót"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Válassza ki"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -695,7 +695,7 @@ msgstr "Tu"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Jegyzetek frissítése"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1525,7 +1525,7 @@ msgstr "Keresés az adatbázisban"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Klímaszolgáltatások"
 
 #. undefined
 #: health_menu:222
@@ -3287,4 +3287,4 @@ msgstr "sort_by"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Tapahtuman taustadokumentti on saatavilla"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Sopeutumismenetelmät:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Tässä tapauksessa toteutetut sopeutumisvaihtoehdot"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Sopeutumismenetelmät"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -219,7 +219,7 @@ msgstr "Lataa tapahtuma"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Lataa yksityiskohtainen esityslista"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -234,12 +234,12 @@ msgstr "Kesto:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Poistu koko näytöstä"
 
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
-msgstr ""
+msgstr "Tutustu lisää Climate-ADAPTiin"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -249,7 +249,7 @@ msgstr "helmikuu"
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr ""
+msgstr "Lisää hakuvaihtoehtoja"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -259,7 +259,7 @@ msgstr "Fr"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Koko näyttö"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -279,7 +279,7 @@ msgstr "Aloittaminen"
 #. Default: "Go to advanced search"
 #: index
 msgid "Go to advanced search"
-msgstr ""
+msgstr "Siirry tarkennettuun hakuun"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -417,7 +417,7 @@ msgstr "Linkit lisätietoihin"
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
-msgstr ""
+msgstr "Etsitkö lisätietoja?"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -507,7 +507,7 @@ msgstr "Yhteistyökumppanit"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politiikka ja oikeudellinen tausta"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -605,7 +605,7 @@ msgstr "Katso video Climate-ADAPT:n ulkopuolelta"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Valitse"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -695,7 +695,7 @@ msgstr "Tu"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Päivitetään muistiinpanoja"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1525,7 +1525,7 @@ msgstr "Hae tietokannasta"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Ilmastopalvelut"
 
 #. undefined
 #: health_menu:222
@@ -3287,4 +3287,4 @@ msgstr "lajittelu_by"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

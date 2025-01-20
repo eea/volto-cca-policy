@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Ein Hintergrunddokument zur Veranstaltung liegt vor"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
@@ -214,17 +214,17 @@ msgstr "Unterlagen"
 #. Default: "Download Event"
 #: helpers/Utils
 msgid "Download Event"
-msgstr ""
+msgstr "Veranstaltung herunterladen"
 
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Laden Sie die detaillierte Agenda herunter"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
 msgid "Download this event in iCal format"
-msgstr ""
+msgstr "Laden Sie diese Veranstaltung im iCal-Format herunter"
 
 #. Default: "Duration:"
 #: helpers/ContentMetadata
@@ -234,12 +234,12 @@ msgstr "Dauer:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Beenden Sie den Vollbildmodus"
 
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
-msgstr ""
+msgstr "Erfahren Sie mehr über Climate-ADAPT"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -249,7 +249,7 @@ msgstr "Febr"
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr ""
+msgstr "Für weitere Suchoptionen"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -259,7 +259,7 @@ msgstr "Fr"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Vollbild"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -279,7 +279,7 @@ msgstr "Einstieg"
 #. Default: "Go to advanced search"
 #: index
 msgid "Go to advanced search"
-msgstr ""
+msgstr "Gehen Sie zur erweiterten Suche"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -375,7 +375,7 @@ msgstr "Schlüsselaktivitäten im Klimawandel und Gesundheit"
 #. Default: "Key type measures"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Key type measures"
-msgstr ""
+msgstr "Schlüsseltypmaßnahmen"
 
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
@@ -417,7 +417,7 @@ msgstr "Links zu weiteren Informationen"
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
-msgstr ""
+msgstr "Suchen Sie weitere Informationen?"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -507,7 +507,7 @@ msgstr "Partner"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politischer und rechtlicher Hintergrund"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -605,7 +605,7 @@ msgstr "Schau das Video außerhalb von Climate-ADAPT an"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Wählen"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -695,7 +695,7 @@ msgstr "Di"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Notizen aktualisieren"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
