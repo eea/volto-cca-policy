@@ -93,11 +93,6 @@ msgstr "Description de l'étude de cas"
 msgid "Case Study illustrations"
 msgstr "Illustrations d’études de cas"
 
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Des études de cas collectées au niveau national en Espagne, fournies par AdapteCCA.ES"
-
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
@@ -241,10 +236,20 @@ msgstr "Durée:"
 msgid "Exit fullscreen"
 msgstr ""
 
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "Fév"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr ""
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -270,6 +275,11 @@ msgstr "Caractérisation géographique:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Commencer"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr ""
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -403,6 +413,11 @@ msgstr "Durée de vie"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Liens vers de plus amples informations"
+
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr ""
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -2218,6 +2233,11 @@ msgstr "Cas principalement développé et mis en œuvre en raison d’autres obj
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Études de Cas et Options d'Adaptation"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Des études de cas collectées au niveau national en Espagne, fournies par AdapteCCA.ES"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78

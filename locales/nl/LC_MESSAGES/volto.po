@@ -93,11 +93,6 @@ msgstr "Beschrijving van de casestudie"
 msgid "Case Study illustrations"
 msgstr "Illustraties van casestudy’s"
 
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Case studies verzameld op nationaal niveau in Spanje, geleverd door AdapteCCA.es"
-
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
@@ -241,10 +236,20 @@ msgstr "Duur:"
 msgid "Exit fullscreen"
 msgstr ""
 
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "Feb"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr ""
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -270,6 +275,11 @@ msgstr "Geografische karakterisering:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Aan de slag"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr ""
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -403,6 +413,11 @@ msgstr "Het leven Tijd"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Links naar meer informatie"
+
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr ""
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -2218,6 +2233,11 @@ msgstr "Case voornamelijk ontwikkeld en uitgevoerd op grond van andere beleidsdo
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Casestudy’s en aanpassingsopties"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Case studies verzameld op nationaal niveau in Spanje, geleverd door AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78

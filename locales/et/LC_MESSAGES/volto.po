@@ -93,11 +93,6 @@ msgstr "Juhtumiuuringu kirjeldus"
 msgid "Case Study illustrations"
 msgstr "Juhtumiuuringu illustratsioonid"
 
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Hispaanias riigi tasandil kogutud juhtumiuuringud, mille on esitanud AdapteCCA.es"
-
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
@@ -241,10 +236,20 @@ msgstr "Kestus:"
 msgid "Exit fullscreen"
 msgstr ""
 
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "Veebruar"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr ""
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -270,6 +275,11 @@ msgstr "Geograafiline iseloomustus:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Alustamine"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr ""
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -403,6 +413,11 @@ msgstr "Eluaeg"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Lingid lisateabe juurde"
+
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr ""
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -2218,6 +2233,11 @@ msgstr "Juhtum töötati välja ja seda rakendati peamiselt muude poliitikaeesm�
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Juhtumiuuringud ja kohanemisvõimalused"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Hispaanias riigi tasandil kogutud juhtumiuuringud, mille on esitanud AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
