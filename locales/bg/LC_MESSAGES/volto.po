@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Наличен е справочен документ за събитието"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Подходи за адаптация:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Опции за адаптация, приложени в този сл�
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Подходи за адаптация"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -92,11 +92,6 @@ msgstr "Описание на казуса"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
 msgstr "Илюстрации на казуси"
-
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Казуси, събрани на национално равнище в Испания, предоставени от AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -224,7 +219,7 @@ msgstr "Изтегляне на събитие"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Изтеглете подробния дневен ред"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -239,12 +234,22 @@ msgstr "Продължителност:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Изход от цял ​​екран"
+
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr "Разгледайте повече в Climate-ADAPT"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "февруари"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr "За повече опции за търсене"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -254,7 +259,7 @@ msgstr "от"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Цял екран"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -270,6 +275,11 @@ msgstr "Географско характеризиране:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Първи стъпки"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr "Отидете на разширено търсене"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -404,6 +414,11 @@ msgstr "Време на живот"
 msgid "Links to further information"
 msgstr "Връзки към допълнителна информация"
 
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr "Търся повече информация"
+
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
@@ -492,7 +507,7 @@ msgstr "Партньори"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Политика и правна основа"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -561,6 +576,21 @@ msgstr "Целесъобразност"
 msgid "Sa"
 msgstr "Са"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Търсете в базата данни Climate-ADAPT"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Потърсете в Мисията на ЕС за адаптация"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Търсете в каталога с ресурси на обсерваторията..."
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -590,7 +620,7 @@ msgstr "Вижте видео извън Climate-ADAPT"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Изберете"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -680,7 +710,7 @@ msgstr "Ту"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Актуализиране на бележки"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -2220,6 +2250,11 @@ msgid "Case studies and Adaptation Options"
 msgstr "Примери от практиката и варианти за адаптиране"
 
 #. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Казуси, събрани на национално равнище в Испания, предоставени от AdapteCCA.es"
+
+#. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
 msgid "Check-out created"
 msgstr "Напускането е създадено"
@@ -3267,4 +3302,4 @@ msgstr "сортиране_по"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

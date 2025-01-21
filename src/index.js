@@ -1,3 +1,4 @@
+import { defineMessages, FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
@@ -42,6 +43,21 @@ import BrokenLinks from './components/theme/Views/BrokenLinks';
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
 const pathToNegRegex = (p) => `(?!(${p}))`;
+
+const messages = defineMessages({
+  placeholderClimateSearch: {
+    id: 'Search the Climate-ADAPT database',
+    defaultMessage: 'Search the Climate-ADAPT database',
+  },
+  placeholderObservatorySearch: {
+    id: 'Search the Observatory Resource Catalogue...',
+    defaultMessage: 'Search the Observatory Resource Catalogue...',
+  },
+  placeholderMissionSearch: {
+    id: 'Search the EU Mission on Adaptation',
+    defaultMessage: 'Search the EU Mission on Adaptation',
+  },
+});
 
 const applyConfig = (config) => {
   const env = getEnv();
@@ -172,33 +188,67 @@ const applyConfig = (config) => {
       {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
-        matchpath: '/en/mission',
-        path: '/en/mission/advanced-search',
-        placeholder: 'Search the EU Mission on Adaptation',
-        description: 'For more search options',
-        buttonTitle: 'Go to advanced search',
-        buttonUrl:
-          'https://climate-adapt.eea.europa.eu/en/mission/advanced-search/',
+        matchpath: /\/([a-z]{2})\/mission/,
+        path: ({ currentLang }) => `/${currentLang}/mission/advanced-search`,
+        placeholder: ({ intl }) =>
+          intl.formatMessage(messages.placeholderMissionSearch),
+        description: (
+          <FormattedMessage
+            id="For more search options"
+            defaultMessage="For more search options"
+          />
+        ),
+        buttonTitle: (
+          <FormattedMessage
+            id="Go to advanced search"
+            defaultMessage="Go to advanced search"
+          />
+        ),
+        buttonUrl: ({ currentLang }) =>
+          `/${currentLang}/mission/advanced-search/`,
       },
       {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
-        matchpath: '/en/observatory',
-        path: '/en/observatory/advanced-search',
-        placeholder: 'Search the Observatory Resource Catalogue...',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        matchpath: /\/([a-z]{2})\/observatory/,
+        path: ({ currentLang }) =>
+          `/${currentLang}/observatory/advanced-search`,
+        placeholder: ({ intl }) =>
+          intl.formatMessage(messages.placeholderObservatorySearch),
+        description: (
+          <FormattedMessage
+            id="Looking for more information?"
+            defaultMessage="Looking for more information?"
+          />
+        ),
+        buttonTitle: (
+          <FormattedMessage
+            id="Explore more on Climate-ADAPT"
+            defaultMessage="Explore more on Climate-ADAPT"
+          />
+        ),
+        buttonUrl: ({ currentLang }) => `/${currentLang}/data-and-downloads/`,
       },
       {
         isDefault: true,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/',
-        path: '/en/data-and-downloads',
-        placeholder: 'Search the Climate-ADAPT database',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        path: ({ currentLang }) => `/${currentLang}/data-and-downloads`,
+        placeholder: ({ intl }) =>
+          intl.formatMessage(messages.placeholderClimateSearch),
+        description: (
+          <FormattedMessage
+            id="Looking for more information?"
+            defaultMessage="Looking for more information?"
+          />
+        ),
+        buttonTitle: (
+          <FormattedMessage
+            id="Explore more on Climate-ADAPT"
+            defaultMessage="Explore more on Climate-ADAPT"
+          />
+        ),
+        buttonUrl: ({ currentLang }) => `/${currentLang}/data-and-downloads/`,
       },
     ],
     logoTargetUrl: '/',

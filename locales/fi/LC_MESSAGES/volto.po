@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Tapahtuman taustadokumentti on saatavilla"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Sopeutumismenetelmät:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Tässä tapauksessa toteutetut sopeutumisvaihtoehdot"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Sopeutumismenetelmät"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -92,11 +92,6 @@ msgstr "Tapaustutkimuksen kuvaus"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
 msgstr "Tapaustutkimuksen havainnollistaminen"
-
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Espanjassa kansallisella tasolla kerätyt tapaustutkimukset, jotka toimittaa AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -224,7 +219,7 @@ msgstr "Lataa tapahtuma"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Lataa yksityiskohtainen esityslista"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -239,12 +234,22 @@ msgstr "Kesto:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Poistu koko näytöstä"
+
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr "Tutustu lisää Climate-ADAPTiin"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "helmikuu"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr "Lisää hakuvaihtoehtoja"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -254,7 +259,7 @@ msgstr "Fr"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Koko näyttö"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -270,6 +275,11 @@ msgstr "Maantieteellinen karakterisointi:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Aloittaminen"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr "Siirry tarkennettuun hakuun"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -404,6 +414,11 @@ msgstr "Elämänaika"
 msgid "Links to further information"
 msgstr "Linkit lisätietoihin"
 
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr "Etsitkö lisätietoja?"
+
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
@@ -492,7 +507,7 @@ msgstr "Yhteistyökumppanit"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politiikka ja oikeudellinen tausta"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -561,6 +576,21 @@ msgstr "Merkityksellisyys"
 msgid "Sa"
 msgstr "Sa"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Hae Climate-ADAPT-tietokannasta"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Hae EU:n sopeutumisoperaatiosta"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Hae observatorion resurssiluettelosta..."
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -590,7 +620,7 @@ msgstr "Katso video Climate-ADAPT:n ulkopuolelta"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Valitse"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -680,7 +710,7 @@ msgstr "Tu"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Päivitetään muistiinpanoja"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1510,7 +1540,7 @@ msgstr "Hae tietokannasta"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Ilmastopalvelut"
 
 #. undefined
 #: health_menu:222
@@ -2218,6 +2248,11 @@ msgstr "Tapaus on kehitetty ja pantu täytäntöön pääasiassa muiden poliitti
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Tapaustutkimukset ja sopeutumisvaihtoehdot"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Espanjassa kansallisella tasolla kerätyt tapaustutkimukset, jotka toimittaa AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -3267,4 +3302,4 @@ msgstr "lajittelu_by"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

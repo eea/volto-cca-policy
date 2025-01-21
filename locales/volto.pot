@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-26T08:46:04.444Z\n"
+"POT-Creation-Date: 2025-01-21T10:42:44.543Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -93,11 +93,6 @@ msgstr ""
 #. Default: "Case Study illustrations"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
-msgstr ""
-
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
 msgstr ""
 
 #. Default: "Case studies related to this option:"
@@ -243,9 +238,19 @@ msgstr ""
 msgid "Exit fullscreen"
 msgstr ""
 
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
+msgstr ""
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
 msgstr ""
 
 #. Default: "Fr"
@@ -271,6 +276,11 @@ msgstr ""
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
+msgstr ""
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
 msgstr ""
 
 #. Default: "Governance level:"
@@ -404,6 +414,11 @@ msgstr ""
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
+msgstr ""
+
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
 msgstr ""
 
 #. Default: "Macro-Transnational region:"
@@ -561,6 +576,21 @@ msgstr ""
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
+msgstr ""
+
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr ""
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr ""
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
 msgstr ""
 
 #. Default: "Sector"

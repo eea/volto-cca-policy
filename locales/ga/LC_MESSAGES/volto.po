@@ -93,11 +93,6 @@ msgstr "Tuairisc ar an gCás-Staidéar"
 msgid "Case Study illustrations"
 msgstr "Léaráidí cás-staidéir"
 
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Cás-staidéir a bailíodh ar an leibhéal náisiúnta sa Spáinn, arna soláthar ag AdapteCCA.es"
-
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
@@ -241,10 +236,20 @@ msgstr "Fad tréimhse:"
 msgid "Exit fullscreen"
 msgstr ""
 
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "Feabhra"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr ""
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -270,6 +275,11 @@ msgstr "Saintréithriú geografach:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Ag tosú"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr ""
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -403,6 +413,11 @@ msgstr "Saolré"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Naisc chuig tuilleadh eolais"
+
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr ""
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -560,6 +575,21 @@ msgstr "Ábharthacht"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
 msgstr "Sa"
+
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Cuardaigh an bunachar sonraí Climate-ADAPT"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Cuardaigh Misean an AE um Oiriúnú"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -2218,6 +2248,11 @@ msgstr "Cás a forbraíodh agus a cuireadh chun feidhme den chuid is mó mar ghe
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Cás-staidéir agus Roghanna Oiriúnaithe"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Cás-staidéir a bailíodh ar an leibhéal náisiúnta sa Spáinn, arna soláthar ag AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78

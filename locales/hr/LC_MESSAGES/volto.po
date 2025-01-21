@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Popratni dokument za događaj je dostupan"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Pristupi prilagodbe:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Mogućnosti prilagodbe primijenjene u ovom slučaju"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Pristupi prilagodbe"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -92,11 +92,6 @@ msgstr "Opis studije slučaja"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
 msgstr "Ilustracije studije slučaja"
-
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Studije slučaja prikupljene na nacionalnoj razini u Španjolskoj, koje je dostavio AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -224,7 +219,7 @@ msgstr "Preuzimanje događaja"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Preuzmite detaljan dnevni red"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -239,12 +234,22 @@ msgstr "Trajanje:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Izađi iz cijelog zaslona"
+
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr "Istražite više na Climate-ADAPT"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "veljača"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr "Za više opcija pretraživanja"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -254,7 +259,7 @@ msgstr "Fr"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Cijeli zaslon"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -270,6 +275,11 @@ msgstr "Zemljopisna karakterizacija:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Početak rada"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr "Idi na napredno pretraživanje"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -404,6 +414,11 @@ msgstr "Životno vrijeme"
 msgid "Links to further information"
 msgstr "Poveznice na dodatne informacije"
 
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr "Tražite više informacija?"
+
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
@@ -492,7 +507,7 @@ msgstr "Partneri"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politika i pravna pozadina"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -561,6 +576,21 @@ msgstr "Važnost"
 msgid "Sa"
 msgstr "Sa"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Pretražite bazu podataka Climate-ADAPT"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Pretražite misiju EU za prilagodbu"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Pretražite katalog izvora zvjezdarnice..."
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -590,7 +620,7 @@ msgstr "Pogledajte videozapis izvan aplikacije Climate-ADAPT"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Odaberite"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -680,7 +710,7 @@ msgstr "Tu"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Ažuriranje bilješki"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1510,7 +1540,7 @@ msgstr "Pretraživanje baze podataka"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Klimatske usluge"
 
 #. undefined
 #: health_menu:222
@@ -2218,6 +2248,11 @@ msgstr "Slučaj se uglavnom razvija i provodi zbog drugih ciljeva politike, ali 
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Studije slučaja i mogućnosti prilagodbe"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Studije slučaja prikupljene na nacionalnoj razini u Španjolskoj, koje je dostavio AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -3267,4 +3302,4 @@ msgstr "sort_by"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

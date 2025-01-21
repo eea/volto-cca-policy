@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "K dispozici je podkladový dokument akce"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Adaptační přístupy:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Možnosti přizpůsobení realizované v tomto případě"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Adaptační přístupy"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -92,11 +92,6 @@ msgstr "Popis případové studie"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
 msgstr "Ilustrace případových studií"
-
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Případové studie shromážděné na vnitrostátní úrovni ve Španělsku, které poskytl AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -224,7 +219,7 @@ msgstr "Událost ke stažení"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Stáhněte si podrobnou agendu"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -239,12 +234,22 @@ msgstr "Doba trvání:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Ukončete celou obrazovku"
+
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr "Prozkoumejte více na Climate-ADAPT"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "únor"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr "Pro více možností vyhledávání"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -254,7 +259,7 @@ msgstr "Fr"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Celá obrazovka"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -270,6 +275,11 @@ msgstr "Zeměpisná charakteristika:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Začínáme"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr "Přejděte na pokročilé vyhledávání"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -404,6 +414,11 @@ msgstr "Životní doba"
 msgid "Links to further information"
 msgstr "Odkazy na další informace"
 
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr "Hledáte další informace?"
+
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
@@ -492,7 +507,7 @@ msgstr "Partneři"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politika a právní pozadí"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -561,6 +576,21 @@ msgstr "Relevantnost"
 msgid "Sa"
 msgstr "Sa"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Prohledejte databázi Climate-ADAPT"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Hledejte misi EU pro přizpůsobení"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Prohledejte katalog zdrojů observatoře..."
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -590,7 +620,7 @@ msgstr "Viz video mimo Climate-ADAPT"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Vybrat"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -680,7 +710,7 @@ msgstr "Tu"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Aktualizace poznámek"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1510,7 +1540,7 @@ msgstr "Vyhledávání v databázi"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Klimatické služby"
 
 #. undefined
 #: health_menu:222
@@ -2218,6 +2248,11 @@ msgstr "Případ byl vypracován a prováděn především kvůli jiným politic
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Případové studie a adaptační možnosti"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Případové studie shromážděné na vnitrostátní úrovni ve Španělsku, které poskytl AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
