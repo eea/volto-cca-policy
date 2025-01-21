@@ -579,17 +579,17 @@ msgstr "Sa"
 #. Default: "Search the Climate-ADAPT database"
 #: index
 msgid "Search the Climate-ADAPT database"
-msgstr ""
+msgstr "Preiščite bazo podatkov Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
 msgid "Search the EU Mission on Adaptation"
-msgstr ""
+msgstr "Poiščite misijo EU za prilagajanje"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
 msgid "Search the Observatory Resource Catalogue..."
-msgstr ""
+msgstr "Iščite v katalogu virov observatorija ..."
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView

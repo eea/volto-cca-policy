@@ -579,17 +579,17 @@ msgstr "Са"
 #. Default: "Search the Climate-ADAPT database"
 #: index
 msgid "Search the Climate-ADAPT database"
-msgstr ""
+msgstr "Търсете в базата данни Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
 msgid "Search the EU Mission on Adaptation"
-msgstr ""
+msgstr "Потърсете в Мисията на ЕС за адаптация"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
 msgid "Search the Observatory Resource Catalogue..."
-msgstr ""
+msgstr "Търсете в каталога с ресурси на обсерваторията..."
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
