@@ -576,6 +576,21 @@ msgstr "Relevância"
 msgid "Sa"
 msgstr "Sa"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr ""
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr ""
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr ""
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
