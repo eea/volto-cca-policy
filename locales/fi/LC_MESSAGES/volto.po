@@ -576,6 +576,21 @@ msgstr "Merkityksellisyys"
 msgid "Sa"
 msgstr "Sa"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Hae Climate-ADAPT-tietokannasta"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Hae EU:n sopeutumisoperaatiosta"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Hae observatorion resurssiluettelosta..."
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"

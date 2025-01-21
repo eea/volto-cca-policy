@@ -576,6 +576,21 @@ msgstr "Aktualumas"
 msgid "Sa"
 msgstr "SA"
 
+#. Default: "Search the Climate-ADAPT database"
+#: index
+msgid "Search the Climate-ADAPT database"
+msgstr "Ieškokite Climate-ADAPT duomenų bazėje"
+
+#. Default: "Search the EU Mission on Adaptation"
+#: index
+msgid "Search the EU Mission on Adaptation"
+msgstr "Ieškokite ES prisitaikymo prie misijos"
+
+#. Default: "Search the Observatory Resource Catalogue..."
+#: index
+msgid "Search the Observatory Resource Catalogue..."
+msgstr "Ieškoti Observatorijos išteklių kataloge..."
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"

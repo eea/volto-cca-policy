@@ -1,4 +1,4 @@
-import { FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
@@ -43,6 +43,21 @@ import BrokenLinks from './components/theme/Views/BrokenLinks';
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
 const pathToNegRegex = (p) => `(?!(${p}))`;
+
+const messages = defineMessages({
+  placeholderClimateSearch: {
+    id: 'Search the Climate-ADAPT database',
+    defaultMessage: 'Search the Climate-ADAPT database',
+  },
+  placeholderObservatorySearch: {
+    id: 'Search the Observatory Resource Catalogue...',
+    defaultMessage: 'Search the Observatory Resource Catalogue...',
+  },
+  placeholderMissionSearch: {
+    id: 'Search the EU Mission on Adaptation',
+    defaultMessage: 'Search the EU Mission on Adaptation',
+  },
+});
 
 const applyConfig = (config) => {
   const env = getEnv();
@@ -176,10 +191,7 @@ const applyConfig = (config) => {
         matchpath: /\/([a-z]{2})\/mission/,
         path: ({ currentLang }) => `/${currentLang}/mission/advanced-search`,
         placeholder: ({ intl }) =>
-          intl.formatMessage({
-            id: 'Search the EU Mission on Adaptation',
-            defaultMessage: 'Search the EU Mission on Adaptation',
-          }),
+          intl.formatMessage(messages.placeholderMissionSearch),
         description: (
           <FormattedMessage
             id="For more search options"
@@ -202,10 +214,7 @@ const applyConfig = (config) => {
         path: ({ currentLang }) =>
           `/${currentLang}/observatory/advanced-search`,
         placeholder: ({ intl }) =>
-          intl.formatMessage({
-            id: 'Search the Observatory Resource Catalogue...',
-            defaultMessage: 'Search the Observatory Resource Catalogue...',
-          }),
+          intl.formatMessage(messages.placeholderObservatorySearch),
         description: (
           <FormattedMessage
             id="Looking for more information?"
@@ -226,10 +235,7 @@ const applyConfig = (config) => {
         matchpath: '/',
         path: ({ currentLang }) => `/${currentLang}/data-and-downloads`,
         placeholder: ({ intl }) =>
-          intl.formatMessage({
-            id: 'Search the Climate-ADAPT database',
-            defaultMessage: 'Search the Climate-ADAPT database',
-          }),
+          intl.formatMessage(messages.placeholderClimateSearch),
         description: (
           <FormattedMessage
             id="Looking for more information?"
