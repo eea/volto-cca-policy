@@ -14,12 +14,12 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Un document de fond pentru eveniment este disponibil"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Abordări de adaptare:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -34,7 +34,7 @@ msgstr "Opțiuni de adaptare puse în aplicare în acest caz"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Abordări de adaptare"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -92,11 +92,6 @@ msgstr "Descrierea studiului de caz"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
 msgstr "Ilustrații pentru studii de caz"
-
-#. Default: "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-#: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Studii de caz colectate la nivel național în Spania, furnizate de AdapteCCA.es"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -224,7 +219,7 @@ msgstr "Descarcă Evenimentul"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Descărcați agenda detaliată"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -239,12 +234,22 @@ msgstr "Durată:"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Ieșiți din ecranul complet"
+
+#. Default: "Explore more on Climate-ADAPT"
+#: index
+msgid "Explore more on Climate-ADAPT"
+msgstr "Explorați mai multe despre Climate-ADAPT"
 
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
 msgstr "Feb"
+
+#. Default: "For more search options"
+#: index
+msgid "For more search options"
+msgstr "Pentru mai multe opțiuni de căutare"
 
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -254,7 +259,7 @@ msgstr "FR"
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Ecran complet"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -270,6 +275,11 @@ msgstr "Caracterizarea geografică:"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Noțiuni de bază"
+
+#. Default: "Go to advanced search"
+#: index
+msgid "Go to advanced search"
+msgstr "Accesați căutarea avansată"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -404,6 +414,11 @@ msgstr "Timpul de viață"
 msgid "Links to further information"
 msgstr "Linkuri către informații suplimentare"
 
+#. Default: "Looking for more information?"
+#: index
+msgid "Looking for more information?"
+msgstr "Căutați mai multe informații?"
+
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
@@ -492,7 +507,7 @@ msgstr "Parteneri"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Politică și fundal juridic"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -590,7 +605,7 @@ msgstr "A se vedea videoclipul din afara Climate-ADAPT"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Selecteaza"
 
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -680,7 +695,7 @@ msgstr "TU"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Note de actualizare"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1510,7 +1525,7 @@ msgstr "Căutați în baza de date"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Servicii climatice"
 
 #. undefined
 #: health_menu:222
@@ -2218,6 +2233,11 @@ msgstr "Caz dezvoltat și pus în aplicare în principal din cauza altor obiecti
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
 msgid "Case studies and Adaptation Options"
 msgstr "Studii de caz și opțiuni de adaptare"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Studii de caz colectate la nivel național în Spania, furnizate de AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -3267,4 +3287,4 @@ msgstr "sortare_by"
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
-msgstr ""
+msgstr "text_searchitem_location"

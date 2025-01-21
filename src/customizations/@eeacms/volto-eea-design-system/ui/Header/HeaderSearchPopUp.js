@@ -3,6 +3,8 @@ import { Container, Input, List } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
+import { useSelector } from 'react-redux';
+import { useIntl } from 'react-intl';
 
 const getRandomItems = (arr, max) => {
   return (
@@ -27,6 +29,7 @@ function HeaderSearchPopUp({
     location.pathname.match(v.matchpath ? v.matchpath : v.path),
   );
   const activeView = localView.length > 0 ? localView[0] : defaultView[0];
+  const currentLang = useSelector((state) => state.intl.locale);
 
   const {
     path = '',
@@ -36,6 +39,14 @@ function HeaderSearchPopUp({
     placeholder = 'Search',
     searchSuggestions,
   } = activeView || {};
+
+  const searchPath = typeof path === 'function' ? path({ currentLang }) : path;
+
+  const url =
+    typeof buttonUrl === 'function'
+      ? buttonUrl({ currentLang })
+      : buttonUrl || defaultView[0].path;
+
   const { suggestionsTitle, suggestions, maxToShow } = searchSuggestions || {};
 
   const [visibleSuggestions, setVisibileSuggestions] = React.useState(
@@ -50,7 +61,7 @@ function HeaderSearchPopUp({
 
   const onSubmit = (event) => {
     const text = searchInputRef?.current?.inputRef?.current?.value;
-    history.push(`${path}?q=${text}`);
+    history.push(`${searchPath}?q=${text}`);
 
     if (window?.searchContext?.resetSearch) {
       window.searchContext.resetSearch({ searchTerm: text });
@@ -68,6 +79,10 @@ function HeaderSearchPopUp({
     onClose();
   };
 
+  const intl = useIntl();
+  const translatedPlaceholder =
+    typeof placeholder === 'function' ? placeholder({ intl }) : placeholder;
+
   return (
     <div id="search-box" ref={nodeRef}>
       <div className="wrapper">
@@ -84,7 +99,7 @@ function HeaderSearchPopUp({
                   handleEnterKeyPress(event, onSubmit);
                 },
               }}
-              placeholder={placeholder}
+              placeholder={translatedPlaceholder}
               fluid
             />
           </form>
@@ -114,7 +129,7 @@ function HeaderSearchPopUp({
             <Container>
               <div>{description}</div>
               <a
-                href={buttonUrl || defaultView[0].path}
+                href={url}
                 className="ui button white inverted"
                 title="Advanced search"
               >
