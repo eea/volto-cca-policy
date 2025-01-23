@@ -38,13 +38,12 @@ export default function TransRegionSelectView(props) {
   const { data, metadata, properties, mode = 'view' } = props;
   const content = metadata || properties;
   if (mode === 'edit') {
-    return <div>TransRegionSelectView</div>;
+    return <div>TransRegionSelectView: {data.region}</div>;
   }
   const { title } = content;
-  const { regions, countries: countriesAndFlag } = content['@components'][
-    'transnationalregion'
-  ];
-  const [countries] = countriesAndFlag;
+  const { regions, countries: countriesAndFlag } =
+    content['@components']['transnationalregion'] || {};
+  const [countries] = countriesAndFlag || [];
 
   const defaultValue = !!countries
     ? title
