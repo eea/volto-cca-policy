@@ -26,13 +26,6 @@ const DescriptionText = ({ content }) => {
 function NewsItemView(props) {
   const { content } = props;
 
-  const titleBlock = Object.values(content.blocks).find(
-    (block) => block['@type'] === 'title',
-  );
-  if (titleBlock && !titleBlock.copyright && content.image_caption) {
-    titleBlock.copyright = content.image_caption;
-  }
-
   // These blocks are used in the Edit View for dexterity layout.
   // We don't want to display them in the View mode.
   const {

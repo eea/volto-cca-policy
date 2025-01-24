@@ -456,7 +456,7 @@ const applyConfig = (config) => {
     },
     {
       match: {
-        path: /(.*)\/add/,
+        path: /(.*)\/add$/,
       },
       component: RedirectToLogin,
     },
