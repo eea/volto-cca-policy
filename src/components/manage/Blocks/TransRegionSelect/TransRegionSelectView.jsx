@@ -45,7 +45,7 @@ export default function TransRegionSelectView(props) {
     content['@components']['transnationalregion'] || data._v_ || {};
   const [countries] = countriesAndFlag || [];
 
-  console.log(regions, countries);
+  // console.log(regions, countries);
 
   const defaultValue = !!countries
     ? title
