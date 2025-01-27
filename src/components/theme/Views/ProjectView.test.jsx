@@ -25,6 +25,7 @@ describe('ProjectView', () => {
   it('should render the component', () => {
     const content = {
       title: 'My ProjectView',
+      cca_published: '2022-06-24T12:52:50+00:00',
       geochars:
         '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
     };
