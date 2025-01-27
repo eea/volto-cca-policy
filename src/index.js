@@ -21,6 +21,7 @@ import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
 import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
@@ -396,6 +397,7 @@ const applyConfig = (config) => {
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
+  config.widgets.id.promotional_image = PromotionalImageWidget;
 
   if (config.widgets.views?.widget) {
     config.widgets.views.id.rast_steps = RASTWidgetView;

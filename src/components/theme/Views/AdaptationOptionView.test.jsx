@@ -34,6 +34,7 @@ describe('AdaptationOptionView', () => {
         },
       ],
       websites: ['https://my-website.com'],
+      cca_published: '2022-06-24T12:52:50+00:00',
       source: {
         'content-type': 'text/html',
         data: '<p>Some text</p>',

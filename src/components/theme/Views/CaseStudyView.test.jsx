@@ -26,6 +26,7 @@ describe('CaseStudyView', () => {
     const content = {
       title: 'CaseStudyView',
       cca_gallery: [],
+      cca_published: '2022-06-24T12:52:50+00:00',
       geochars:
         '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
     };

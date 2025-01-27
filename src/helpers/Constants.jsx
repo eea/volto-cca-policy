@@ -542,4 +542,5 @@ export const EU_COUNTRIES = [
   'SK',
   'TR',
   'XK',
+  'GB',
 ];

@@ -37,6 +37,7 @@ describe('DatabaseItemView', () => {
           '<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>',
         encoding: 'utf-8',
       },
+      publication_date: '2022-06-24',
       geochars:
         '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
       keywords: ['keyword 1', 'keyword 2'],

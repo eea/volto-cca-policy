@@ -156,26 +156,14 @@ exports[`AdaptationOptionView should render the component 1`] = `
             }
           />
           <div
-            className="published-modified-info"
+            className="published-info"
           >
             <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
+              <strong>
+                Published in Climate-ADAPT
+              </strong>
+              : 
+              Jun 24, 2022
             </p>
           </div>
           <div

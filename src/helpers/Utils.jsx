@@ -254,64 +254,34 @@ export const ReferenceInfo = (props) => {
   ) : null;
 };
 
-export const PublishedModifiedInfo = (props) => {
-  const { content } = props;
+export const PublishedModifiedInfo = ({ content }) => {
+  const { cca_published, publication_date } = content;
 
-  const cca_modif = content.cca_last_modified;
-  const cca_publ = content.cca_published;
-
-  let published = null;
-  let modified = null;
   const dateFormatOptions = {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
   };
-  if (cca_modif !== undefined) {
-    modified = new Date(cca_modif).toLocaleString('default', dateFormatOptions);
-  } else {
-    modified = new Date(content.modification_date).toLocaleString(
-      'default',
-      dateFormatOptions,
-    );
-  }
-  if (cca_publ !== undefined) {
-    published = new Date(cca_publ).toLocaleString('default', dateFormatOptions);
-  } else {
-    published = new Date(content.publication_date).toLocaleString(
-      'default',
-      dateFormatOptions,
-    );
-  }
 
-  // TODO fix wrong information for some cases. Test for each content type.
-  return (
-    <div className="published-modified-info">
+  const published = new Date(cca_published || publication_date).toLocaleString(
+    'default',
+    dateFormatOptions,
+  );
+
+  return published ? (
+    <div className="published-info">
       <p>
-        <span>
-          <strong>
-            <FormattedMessage
-              id="Published in Climate-ADAPT"
-              defaultMessage="Published in Climate-ADAPT"
-            />
-          </strong>
-          &nbsp;
-          {published}
-        </span>
-        <span> &nbsp; - &nbsp; </span>
-        <span>
-          <strong>
-            <FormattedMessage
-              id="Last Modified in Climate-ADAPT"
-              defaultMessage="Last Modified in Climate-ADAPT"
-            />
-          </strong>
-          &nbsp;
-          {modified}
-        </span>
+        <strong>
+          <FormattedMessage
+            id="Published in Climate-ADAPT"
+            defaultMessage="Published in Climate-ADAPT"
+          />
+        </strong>
+        {': '}
+        {published}
       </p>
     </div>
-  );
+  ) : null;
 };
 
 export const DocumentsList = (props) => {
