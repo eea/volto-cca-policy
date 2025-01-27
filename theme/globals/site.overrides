@@ -199,3 +199,20 @@ body.subsite {
 iframe {
   border: none;
 }
+
+.label-file-widget-input {
+  font-weight: bold;
+}
+
+.image-download-btn {
+  display: inline-block;
+  padding: 7px 23px;
+  border: 2px solid #007eb1;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: #007eb1;
+  cursor: pointer;
+  opacity: 0.8;
+  max-width: max-content;
+  font-weight: bold;
+}
