@@ -216,3 +216,24 @@ iframe {
   max-width: max-content;
   font-weight: bold;
 }
+
+.block.metadata,
+.block.metadata-section {
+  .inline.field .wide.column {
+    .date-time-widget-wrapper {
+      .ui.input {
+        width: auto;
+        vertical-align: middle;
+
+        input {
+          height: 60px;
+          padding: 0.75em 0;
+          border-width: 0 0 0.0625rem 0;
+          border-radius: 0;
+
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
