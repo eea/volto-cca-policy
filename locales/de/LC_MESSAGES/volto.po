@@ -108,6 +108,11 @@ msgstr "Kategorie"
 msgid "Challenges"
 msgstr "Herausforderungen"
 
+#. Default: "Choose a file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Choose a file"
+msgstr ""
+
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
@@ -225,6 +230,21 @@ msgstr "Laden Sie die detaillierte Agenda herunter"
 #: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Laden Sie diese Veranstaltung im iCal-Format herunter"
+
+#. Default: "Drop file here to replace the existing file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Drop file here to replace the existing file"
+msgstr ""
+
+#. Default: "Drop file here to upload a new file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Drop file here to upload a new file"
+msgstr ""
+
+#. Default: "Drop files here ..."
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Drop files here ..."
+msgstr ""
 
 #. Default: "Duration:"
 #: helpers/ContentMetadata
@@ -387,11 +407,6 @@ msgstr "Suchbegriffe:"
 msgid "Language of the conference"
 msgstr "Konferenzsprache"
 
-#. Default: "Last Modified in Climate-ADAPT"
-#: helpers/Utils
-msgid "Last Modified in Climate-ADAPT"
-msgstr "Zuletzt aktualisiert in Climate-ADAPT"
-
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
 msgid "Lead"
@@ -509,6 +524,11 @@ msgstr "Partner"
 msgid "Policy and legal background"
 msgstr "Politischer und rechtlicher Hintergrund"
 
+#. Default: "Policy context of the adaptation measure"
+#: components/theme/Views/CaseStudyView
+msgid "Policy context of the adaptation measure"
+msgstr ""
+
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
@@ -566,10 +586,10 @@ msgstr "Verwandter Inhalt:"
 msgid "Related documents and presentations"
 msgstr "Verwandte Dokumente und Präsentationen"
 
-#. Default: "Relevance"
-#: components/theme/Views/CaseStudyView
-msgid "Relevance"
-msgstr "Relevanz"
+#. Default: "Replace existing file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Replace existing file"
+msgstr ""
 
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
