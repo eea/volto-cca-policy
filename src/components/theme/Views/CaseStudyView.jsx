@@ -56,7 +56,10 @@ const messages = defineMessages({
     id: 'Costs and benefits',
     defaultMessage: 'Costs and benefits',
   },
-  Relevance: { id: 'Relevance', defaultMessage: 'Relevance' },
+  'Policy context of the adaptation measure': {
+    id: 'Policy context of the adaptation measure',
+    defaultMessage: 'Policy context of the adaptation measure',
+  },
   'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
   'Implementation Time': {
     id: 'Implementation time',
@@ -112,6 +115,13 @@ const dataDisplay = [
     group: 1,
   },
   {
+    type: 'RelevanceItems',
+    field: 'relevance',
+    section: 'relevance_anchor',
+    title: 'Policy context of the adaptation measure',
+    group: 1,
+  },
+  {
     type: 'HTMLField',
     field: 'objectives',
     section: 'objectives_anchor',
@@ -130,14 +140,6 @@ const dataDisplay = [
     field: 'solutions',
     section: 'solutions_anchor',
     title: 'Solutions',
-    group: 1,
-  },
-  {
-    type: 'RelevanceItems',
-    field: 'relevance',
-    section: 'relevance_anchor',
-    title: 'Importance and Relevance of Adaptation',
-    contentTitle: 'Relevance', // override the title in content section
     group: 1,
   },
   {
