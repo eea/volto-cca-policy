@@ -1182,10 +1182,6 @@ msgstr ""
 msgid "Language of the conference"
 msgstr ""
 
-#: ../../climateadapt/browser/pt/ace_macros.pt:152
-msgid "Last Modified in Climate-ADAPT"
-msgstr ""
-
 #: ../../climateadapt/browser/pt/ace_macros.pt:166
 msgid "Lead"
 msgstr ""
@@ -1487,10 +1483,6 @@ msgstr ""
 
 #: ../../climateadapt/vocabulary.py:481
 msgid "Relative sea level"
-msgstr ""
-
-#: ../../climateadapt/browser/pt/casestudy_view.pt:187
-msgid "Relevance"
 msgstr ""
 
 #: ../../climateadapt/tiles/pt/filter_acecontent.pt:49

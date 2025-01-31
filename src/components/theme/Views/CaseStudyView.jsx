@@ -56,7 +56,10 @@ const messages = defineMessages({
     id: 'Costs and benefits',
     defaultMessage: 'Costs and benefits',
   },
-  Relevance: { id: 'Relevance', defaultMessage: 'Relevance' },
+  'Policy context of the adaptation measure': {
+    id: 'Policy context of the adaptation measure',
+    defaultMessage: 'Policy context of the adaptation measure',
+  },
   'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
   'Implementation Time': {
     id: 'Implementation time',
@@ -88,7 +91,7 @@ const messages = defineMessages({
 const PrimaryPhoto = ({ content }) => {
   const { primary_photo, primary_photo_copyright, title } = content;
 
-  return primary_photo !== null ? (
+  return primary_photo ? (
     <div className="case-studies-review-image-wrapper">
       <Image src={primary_photo?.scales?.mini?.download} alt={title} />
       <p>{primary_photo_copyright}</p>
@@ -112,6 +115,13 @@ const dataDisplay = [
     group: 1,
   },
   {
+    type: 'RelevanceItems',
+    field: 'relevance',
+    section: 'relevance_anchor',
+    title: 'Policy context of the adaptation measure',
+    group: 1,
+  },
+  {
     type: 'HTMLField',
     field: 'objectives',
     section: 'objectives_anchor',
@@ -130,14 +140,6 @@ const dataDisplay = [
     field: 'solutions',
     section: 'solutions_anchor',
     title: 'Solutions',
-    group: 1,
-  },
-  {
-    type: 'RelevanceItems',
-    field: 'relevance',
-    section: 'relevance_anchor',
-    title: 'Importance and Relevance of Adaptation',
-    contentTitle: 'Relevance', // override the title in content section
     group: 1,
   },
   {
@@ -212,21 +214,10 @@ const groups = {
   3: 'Reference Information',
 };
 
-const findSection = (title) => {
-  const found = dataDisplay.filter((item) => item.title === title);
-  if (found.length > 0) {
-    return found[0];
-  }
-  return null;
-};
+export const findSection = (title) =>
+  dataDisplay.find((item) => item.title === title) || null;
 
-const sectionID = (title) => {
-  const found = findSection(title);
-  if (found === null) {
-    return title;
-  }
-  return found.section;
-};
+export const sectionID = (title) => findSection(title)?.section || title;
 
 const PhotoGallery = ({ content }) => {
   const { cca_gallery } = content;
@@ -325,29 +316,20 @@ function CaseStudyView(props) {
   const { long_description, updating_notes, logo, title } = content;
 
   const hasValue = (field) => {
-    if (!content.hasOwnProperty(field)) {
-      return false;
-    }
-    if (content[field] === undefined || content[field] === null) {
-      return false;
-    }
-    if (Array.isArray(content[field]) && content[field].length === 0) {
-      return false;
-    }
+    const fieldValue = content[field];
+    if (!content.hasOwnProperty(field) || fieldValue == null) return false;
+    if (Array.isArray(fieldValue) && fieldValue.length === 0) return false;
     if (
-      typeof content[field]?.data === 'string' &&
-      content[field]?.data.replace('<p></p>', '').length === 0
-    ) {
+      typeof fieldValue?.data === 'string' &&
+      fieldValue?.data.replace('<p></p>', '').length === 0
+    )
       return false;
-    }
+
     return true;
   };
 
-  const usedSections = (group) => {
-    return dataDisplay.filter(
-      (data) => data.group === group && hasValue(data.field),
-    );
-  };
+  const usedSections = (group) =>
+    dataDisplay.filter((data) => data.group === group && hasValue(data.field));
 
   return (
     <div className="db-item-view case-study-view">
@@ -397,43 +379,39 @@ function CaseStudyView(props) {
               <Divider />
               <div className="adaptation-details">
                 <Grid columns="12">
-                  <Grid.Column mobile={12} tablet={12} computer={4}>
-                    <SectionsMenu
-                      sections={usedSections(1)}
-                      title={groups['1']}
-                    />
-                  </Grid.Column>
-                  <Grid.Column mobile={12} tablet={12} computer={4}>
-                    <SectionsMenu
-                      sections={usedSections(2)}
-                      title={groups['2']}
-                    />
-                  </Grid.Column>
-                  <Grid.Column mobile={12} tablet={12} computer={4}>
-                    <SectionsMenu
-                      sections={usedSections(3)}
-                      title={groups['3']}
-                    />
-                  </Grid.Column>
+                  {[1, 2, 3].map((groupID) => (
+                    <Grid.Column
+                      key={groupID}
+                      mobile={12}
+                      tablet={12}
+                      computer={4}
+                    >
+                      <SectionsMenu
+                        sections={usedSections(groupID)}
+                        title={groups[groupID]}
+                      />
+                    </Grid.Column>
+                  ))}
                 </Grid>
               </div>
               <Divider />
-              {[1, 2, 3].map(
-                (groupID, index) =>
-                  usedSections(groupID).length > 0 && (
-                    <Fragment key={index}>
-                      <h2>{intl.formatMessage(messages[groups[groupID]])}</h2>
-                      {usedSections(groupID).map((data, index) => (
-                        <SectionContent
-                          sectionData={data}
-                          content={content}
-                          key={index}
-                        />
-                      ))}
-                      {groupID !== 3 ? <Divider /> : null}
-                    </Fragment>
-                  ),
-              )}
+              {[1, 2, 3].map((groupID) => {
+                const sections = usedSections(groupID);
+                if (sections.length === 0) return null;
+                return (
+                  <Fragment key={groupID}>
+                    <h2>{intl.formatMessage(messages[groups[groupID]])}</h2>
+                    {sections.map((data, index) => (
+                      <SectionContent
+                        key={index}
+                        sectionData={data}
+                        content={content}
+                      />
+                    ))}
+                    {groupID !== 3 && <Divider />}
+                  </Fragment>
+                );
+              })}
               <PublishedModifiedInfo {...props} />
               <Divider />
               <p>

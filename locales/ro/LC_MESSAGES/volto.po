@@ -108,6 +108,11 @@ msgstr "Categorie"
 msgid "Challenges"
 msgstr "Provocări"
 
+#. Default: "Choose a file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Choose a file"
+msgstr ""
+
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Choose a region"
@@ -225,6 +230,21 @@ msgstr "Descărcați agenda detaliată"
 #: helpers/Utils
 msgid "Download this event in iCal format"
 msgstr "Descărcați acest eveniment în format iCal"
+
+#. Default: "Drop file here to replace the existing file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Drop file here to replace the existing file"
+msgstr ""
+
+#. Default: "Drop file here to upload a new file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Drop file here to upload a new file"
+msgstr ""
+
+#. Default: "Drop files here ..."
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Drop files here ..."
+msgstr ""
 
 #. Default: "Duration:"
 #: helpers/ContentMetadata
@@ -387,11 +407,6 @@ msgstr "Cuvinte cheie:"
 msgid "Language of the conference"
 msgstr "Limba conferinței"
 
-#. Default: "Last Modified in Climate-ADAPT"
-#: helpers/Utils
-msgid "Last Modified in Climate-ADAPT"
-msgstr "Ultima modificare în climă-ADAPT"
-
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
 msgid "Lead"
@@ -509,6 +524,11 @@ msgstr "Parteneri"
 msgid "Policy and legal background"
 msgstr "Politică și fundal juridic"
 
+#. Default: "Policy context of the adaptation measure"
+#: components/theme/Views/CaseStudyView
+msgid "Policy context of the adaptation measure"
+msgstr ""
+
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
@@ -566,10 +586,10 @@ msgstr "Conținut înrudit:"
 msgid "Related documents and presentations"
 msgstr "Documente și prezentări conexe"
 
-#. Default: "Relevance"
-#: components/theme/Views/CaseStudyView
-msgid "Relevance"
-msgstr "Relevanță"
+#. Default: "Replace existing file"
+#: components/theme/Widgets/PromotionalImageWidget
+msgid "Replace existing file"
+msgstr ""
 
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView

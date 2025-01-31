@@ -20,15 +20,6 @@ exports[`CaseStudyView should render the component 1`] = `
           className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="case-studies-review-image-wrapper"
-          >
-            <img
-              alt="CaseStudyView"
-              className="ui image"
-            />
-            <p />
-          </div>
-          <div
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
