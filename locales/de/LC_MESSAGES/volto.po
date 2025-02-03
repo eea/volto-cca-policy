@@ -264,7 +264,7 @@ msgstr "Erfahren Sie mehr über Climate-ADAPT"
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
-msgstr "Febr"
+msgstr "Feb"
 
 #. Default: "For more search options"
 #: index
@@ -370,7 +370,7 @@ msgstr "Jan"
 #. Default: "Jul"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jul"
-msgstr "Juli"
+msgstr "Jul"
 
 #. Default: "Jun"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -442,7 +442,7 @@ msgstr "Makrotransnationale Region:"
 #. Default: "Mar"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mar"
-msgstr "Beschädigen"
+msgstr "Mär"
 
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -645,7 +645,7 @@ msgstr "Wählen"
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
-msgstr "Sept"
+msgstr "Sep"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -679,7 +679,7 @@ msgstr "Stakeholderbeteiligung"
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Su"
-msgstr "Su"
+msgstr "So"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -700,7 +700,7 @@ msgstr "Erfolgsfaktoren und Hemmnisse"
 #. Default: "Th"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Th"
-msgstr "Th"
+msgstr "Do"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -745,7 +745,7 @@ msgstr "Besuchen Sie eine externe Website"
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr "Wir"
+msgstr "Mi"
 
 #. Default: "Web"
 #: helpers/Utils

@@ -61,12 +61,12 @@ msgstr "Agenda e documenti giustificativi"
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
-msgstr "aprile"
+msgstr "Apr"
 
 #. Default: "Aug"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Aug"
-msgstr "Agosto"
+msgstr "Ago"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -199,7 +199,7 @@ msgstr "Data di pubblicazione:"
 #. Default: "Dec"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Dec"
-msgstr "dicembre"
+msgstr "Dic"
 
 #. Default: "Description"
 #: helpers/Utils
@@ -274,7 +274,7 @@ msgstr "Per altre opzioni di ricerca"
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
-msgstr "Fr"
+msgstr "Ve"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -375,7 +375,7 @@ msgstr "Lug"
 #. Default: "Jun"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
-msgstr "giugno"
+msgstr "Giu"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -447,7 +447,7 @@ msgstr "Mar"
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "May"
-msgstr "Maggio"
+msgstr "Mag"
 
 #. Default: "Mo"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -477,7 +477,7 @@ msgstr "Nessun risultato"
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Nov"
-msgstr "novembre"
+msgstr "Nov"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -497,7 +497,7 @@ msgstr "Contributi dell'Osservatorio"
 #. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
-msgstr "ottobre"
+msgstr "Ott"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -645,7 +645,7 @@ msgstr "Seleziona"
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
-msgstr "Settembre"
+msgstr "Set"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -679,7 +679,7 @@ msgstr "Partecipazione degli attori interessatI"
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Su"
-msgstr "Su"
+msgstr "Do"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -725,7 +725,7 @@ msgstr "La data si riferisce al momento in cui la scheda è stata preparata o ag
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
-msgstr "Tu"
+msgstr "Ma"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -745,7 +745,7 @@ msgstr "Visita il sito web esterno"
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr "Noi"
+msgstr "Me"
 
 #. Default: "Web"
 #: helpers/Utils

@@ -61,12 +61,12 @@ msgstr "Agenda i dokumenty uzupełniające"
 #. Default: "Apr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Apr"
-msgstr "kwiecień"
+msgstr "Kwi"
 
 #. Default: "Aug"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Aug"
-msgstr "sierpień"
+msgstr "Sie"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -199,7 +199,7 @@ msgstr "Data wydania:"
 #. Default: "Dec"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Dec"
-msgstr "grudzień"
+msgstr "Gru"
 
 #. Default: "Description"
 #: helpers/Utils
@@ -264,7 +264,7 @@ msgstr "Dowiedz się więcej na temat Climate-ADAPT"
 #. Default: "Feb"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Feb"
-msgstr "luty"
+msgstr "Luty"
 
 #. Default: "For more search options"
 #: index
@@ -274,7 +274,7 @@ msgstr "Aby uzyskać więcej opcji wyszukiwania"
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
-msgstr "ks"
+msgstr "Pt"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -365,17 +365,17 @@ msgstr "Informacje"
 #. Default: "Jan"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jan"
-msgstr "styczeń"
+msgstr "Sty"
 
 #. Default: "Jul"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jul"
-msgstr "lipiec"
+msgstr "Lip"
 
 #. Default: "Jun"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
-msgstr "czerwca"
+msgstr "Cze"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -442,17 +442,17 @@ msgstr "Region makrotransnarodowy:"
 #. Default: "Mar"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mar"
-msgstr "Zniszczyć"
+msgstr "Mar"
 
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "May"
-msgstr "Móc"
+msgstr "Maj"
 
 #. Default: "Mo"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mo"
-msgstr "Pon"
+msgstr "Pn"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -477,7 +477,7 @@ msgstr "Brak wyników"
 #. Default: "Nov"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Nov"
-msgstr "listopad"
+msgstr "Lis"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -497,7 +497,7 @@ msgstr "Wkłady obserwatoriów"
 #. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
-msgstr "paź"
+msgstr "Paź"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -645,7 +645,7 @@ msgstr "Wybierz"
 #. Default: "Sep"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sep"
-msgstr "wrzesień"
+msgstr "Wrz"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -679,7 +679,7 @@ msgstr "Udział zainteresowanych stron"
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Su"
-msgstr "Su"
+msgstr "Nd"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -745,7 +745,7 @@ msgstr "Odwiedź zewnętrzną witrynę internetową"
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr "My"
+msgstr "Śr"
 
 #. Default: "Web"
 #: helpers/Utils

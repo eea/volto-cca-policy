@@ -274,7 +274,7 @@ msgstr "Pour plus d'options de recherche"
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
-msgstr "Fr"
+msgstr "Ve"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -370,12 +370,12 @@ msgstr "Jan"
 #. Default: "Jul"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jul"
-msgstr "Juillet"
+msgstr "Juil"
 
 #. Default: "Jun"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Jun"
-msgstr "juin"
+msgstr "Juin"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -447,12 +447,12 @@ msgstr "Mar"
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "May"
-msgstr "Peut"
+msgstr "Mai"
 
 #. Default: "Mo"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mo"
-msgstr "Mo"
+msgstr "Lu"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -497,7 +497,7 @@ msgstr "Contributions de l'Observatoire"
 #. Default: "Oct"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Oct"
-msgstr "Octobre"
+msgstr "Oct"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -679,7 +679,7 @@ msgstr "Participation des parties prenantes"
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Su"
-msgstr "Su"
+msgstr "Di"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -700,7 +700,7 @@ msgstr "Facteurs de réussite et facteurs limitants"
 #. Default: "Th"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Th"
-msgstr "Ème"
+msgstr "Je"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -725,7 +725,7 @@ msgstr "La date fait référence au moment où l'article a été préparé ou mi
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
-msgstr "Tu"
+msgstr "Ma"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -745,7 +745,7 @@ msgstr "Visiter un site Web externe"
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr "Nous"
+msgstr "Me"
 
 #. Default: "Web"
 #: helpers/Utils

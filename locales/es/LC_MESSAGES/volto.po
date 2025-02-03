@@ -274,7 +274,7 @@ msgstr "Para más opciones de búsqueda"
 #. Default: "Fr"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Fr"
-msgstr "fr"
+msgstr "Vi"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -447,12 +447,12 @@ msgstr "Mar"
 #. Default: "May"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "May"
-msgstr "Puede"
+msgstr "Mayo"
 
 #. Default: "Mo"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Mo"
-msgstr "Mes"
+msgstr "Lu"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -594,7 +594,7 @@ msgstr ""
 #. Default: "Sa"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Sa"
-msgstr "sa"
+msgstr "Sá"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -679,7 +679,7 @@ msgstr "Participación de partes interesadas"
 #. Default: "Su"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Su"
-msgstr "Su"
+msgstr "Do"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -700,7 +700,7 @@ msgstr "Factores de éxito y limitantes"
 #. Default: "Th"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Th"
-msgstr "Th"
+msgstr "Ju"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -725,7 +725,7 @@ msgstr "La fecha se refiere al momento en que el artículo ha sido preparado o a
 #. Default: "Tu"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Tu"
-msgstr "Tu"
+msgstr "Ma"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -745,7 +745,7 @@ msgstr "Visitar sitio web externo"
 #. Default: "We"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "We"
-msgstr "Nosotros"
+msgstr "Mi"
 
 #. Default: "Web"
 #: helpers/Utils
