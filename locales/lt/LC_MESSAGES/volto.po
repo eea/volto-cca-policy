@@ -58,16 +58,6 @@ msgstr "Papildoma informacija"
 msgid "Agenda and supporting documents"
 msgstr "Darbotvarkė ir patvirtinamieji dokumentai"
 
-#. Default: "Apr"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Apr"
-msgstr "Balandžio mėn."
-
-#. Default: "Aug"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Aug"
-msgstr "Aug"
-
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -196,11 +186,6 @@ msgstr "Paskelbimo data:"
 msgid "Date of release:"
 msgstr "Išleidimo data:"
 
-#. Default: "Dec"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Dec"
-msgstr "Gruodžio mėn."
-
 #. Default: "Description"
 #: helpers/Utils
 msgid "Description"
@@ -261,20 +246,10 @@ msgstr "Išeikite per visą ekraną"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Sužinokite daugiau apie Climate-ADAPT"
 
-#. Default: "Feb"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Feb"
-msgstr "Vasario mėn."
-
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Norėdami gauti daugiau paieškos parinkčių"
-
-#. Default: "Fr"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Fr"
-msgstr "FR"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -362,21 +337,6 @@ msgstr "Rodikliai"
 msgid "Info"
 msgstr "Info"
 
-#. Default: "Jan"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jan"
-msgstr "Sausio mėn."
-
-#. Default: "Jul"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jul"
-msgstr "Liepos mėn."
-
-#. Default: "Jun"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jun"
-msgstr "Birželis"
-
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Key Type Measure"
@@ -439,21 +399,6 @@ msgstr "Ieškote daugiau informacijos?"
 msgid "Macro-Transnational region:"
 msgstr "Makrotarptautinis regionas:"
 
-#. Default: "Mar"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Mar"
-msgstr "Kovo mėn."
-
-#. Default: "May"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "May"
-msgstr "Gegužės"
-
-#. Default: "Mo"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Mo"
-msgstr "MO"
-
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -474,11 +419,6 @@ msgstr "Informacijos nėra"
 msgid "No results"
 msgstr "Rezultatų nėra"
 
-#. Default: "Nov"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Nov"
-msgstr "Nov"
-
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -494,15 +434,15 @@ msgstr "Observatorijos indėlis:"
 msgid "Observatory contributions"
 msgstr "Observatorijos indėlis"
 
-#. Default: "Oct"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Oct"
-msgstr "Spalio mėn."
-
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
 msgstr "Organizacijos dokumentai"
+
+#. Default: "Organised by EEA"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Organised by EEA"
+msgstr ""
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -591,11 +531,6 @@ msgstr "Susiję dokumentai ir pristatymai"
 msgid "Replace existing file"
 msgstr ""
 
-#. Default: "Sa"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Sa"
-msgstr "SA"
-
 #. Default: "Search the Climate-ADAPT database"
 #: index
 msgid "Search the Climate-ADAPT database"
@@ -642,11 +577,6 @@ msgstr "Žiūrėti vaizdo įrašą už „Climate-ADAPT“ ribų"
 msgid "Select"
 msgstr "Pasirinkite"
 
-#. Default: "Sep"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Sep"
-msgstr "Rugsėjis"
-
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
@@ -676,11 +606,6 @@ msgstr "Finansavimo šaltinis"
 msgid "Stakeholder participation"
 msgstr "Suinteresuotųjų subjektų dalyvavimas"
 
-#. Default: "Su"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Su"
-msgstr "Su"
-
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
@@ -696,11 +621,6 @@ msgstr "Subnacionalinis arba vietinis"
 #: components/theme/Views/CaseStudyView
 msgid "Success and limiting factors"
 msgstr "Sėkmė ir ribojantys veiksniai"
-
-#. Default: "Th"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Th"
-msgstr "Th"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -722,11 +642,6 @@ msgstr "Data yra paskutinė daikto paskelbimo data."
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Data – tai momentas, kai prisidedantys ekspertai parengė arba atnaujino punktą, kuris turi būti pateiktas paskelbti „Climate ADAPT“"
 
-#. Default: "Tu"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Tu"
-msgstr "Tu"
-
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
@@ -741,11 +656,6 @@ msgstr "Peržiūrėti visus atsakymus išteklių kataloge"
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Apsilankykite išorės interneto svetainėje"
-
-#. Default: "We"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "We"
-msgstr "Mes"
 
 #. Default: "Web"
 #: helpers/Utils

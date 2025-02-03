@@ -1,74 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+import { connect, useSelector } from 'react-redux';
 import { Card, Grid, Icon, Label, Image } from 'semantic-ui-react';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
+import { capitalizeFirstLetter } from '@eeacms/volto-cca-policy/helpers';
 import config from '@plone/volto/registry';
 import './styles.less';
 
-const messages = defineMessages({
-  jan: { id: 'Jan', defaultMessage: 'Jan' },
-  feb: { id: 'Feb', defaultMessage: 'Feb' },
-  mar: { id: 'Mar', defaultMessage: 'Mar' },
-  apr: { id: 'Apr', defaultMessage: 'Apr' },
-  may: { id: 'May', defaultMessage: 'May' },
-  jun: { id: 'Jun', defaultMessage: 'Jun' },
-  jul: { id: 'Jul', defaultMessage: 'Jul' },
-  aug: { id: 'Aug', defaultMessage: 'Aug' },
-  sep: { id: 'Sep', defaultMessage: 'Sep' },
-  oct: { id: 'Oct', defaultMessage: 'Oct' },
-  nov: { id: 'Nov', defaultMessage: 'Nov' },
-  dec: { id: 'Dec', defaultMessage: 'Dec' },
+const goToContact = (contactInfo) =>
+  contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
 
-  mo: { id: 'Mo', defaultMessage: 'Mo' },
-  tu: { id: 'Tu', defaultMessage: 'Tu' },
-  we: { id: 'We', defaultMessage: 'We' },
-  th: { id: 'Th', defaultMessage: 'Th' },
-  fr: { id: 'Fr', defaultMessage: 'Fr' },
-  sa: { id: 'Sa', defaultMessage: 'Sa' },
-  su: { id: 'Su', defaultMessage: 'Su' },
-});
+const getEventUrl = (item) => item?.event_url || item['@id'];
 
 const StartDate = ({ start }) => {
-  const start_date = new Date(start);
-  const day = start_date.getDate();
-  const monthIndex = start_date.getMonth();
+  const startDate = new Date(start);
+  const day = startDate.getDate();
+  const currentLang = useSelector((state) => state.intl.locale);
 
-  const intl = useIntl();
-  const monthNames = [
-    intl.formatMessage(messages.jan),
-    intl.formatMessage(messages.feb),
-    intl.formatMessage(messages.mar),
-    intl.formatMessage(messages.apr),
-    intl.formatMessage(messages.may),
-    intl.formatMessage(messages.jun),
-    intl.formatMessage(messages.jul),
-    intl.formatMessage(messages.aug),
-    intl.formatMessage(messages.sep),
-    intl.formatMessage(messages.oct),
-    intl.formatMessage(messages.nov),
-    intl.formatMessage(messages.dec),
-  ];
+  const monthName = capitalizeFirstLetter(
+    startDate.toLocaleDateString(currentLang, { month: 'short' }),
+  );
 
-  const dayNames = {
-    Mo: intl.formatMessage(messages.mo),
-    Tu: intl.formatMessage(messages.tu),
-    We: intl.formatMessage(messages.we),
-    Th: intl.formatMessage(messages.th),
-    Fr: intl.formatMessage(messages.fr),
-    Sa: intl.formatMessage(messages.sa),
-    Su: intl.formatMessage(messages.su),
-  };
-
-  const monthName = monthNames[monthIndex];
-  const dayOfWeek =
-    dayNames[
-      start_date.toLocaleDateString('en', { weekday: 'short' }).substring(0, 2)
-    ];
+  const dayOfWeek = capitalizeFirstLetter(
+    startDate.toLocaleDateString(currentLang, { weekday: 'short' }),
+  );
 
   return (
     <div className="start-date">
@@ -77,11 +36,6 @@ const StartDate = ({ start }) => {
     </div>
   );
 };
-
-const goToContact = (contactInfo) =>
-  contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
-
-const getEventUrl = (item) => item?.event_url || item['@id'];
 
 const EventCard = ({ item, isEditMode }) => (
   <div className="u-item listing-item simple-listing-item" key={item.UID}>

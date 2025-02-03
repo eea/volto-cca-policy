@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-01-31T08:25:40.802Z\n"
+"POT-Creation-Date: 2025-02-03T13:57:05.869Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -58,16 +58,6 @@ msgstr ""
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
 msgid "Agenda and supporting documents"
-msgstr ""
-
-#. Default: "Apr"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Apr"
-msgstr ""
-
-#. Default: "Aug"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Aug"
 msgstr ""
 
 #. Default: "Background information"
@@ -198,11 +188,6 @@ msgstr ""
 msgid "Date of release:"
 msgstr ""
 
-#. Default: "Dec"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Dec"
-msgstr ""
-
 #. Default: "Description"
 #: helpers/Utils
 msgid "Description"
@@ -263,19 +248,9 @@ msgstr ""
 msgid "Explore more on Climate-ADAPT"
 msgstr ""
 
-#. Default: "Feb"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Feb"
-msgstr ""
-
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr ""
-
-#. Default: "Fr"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Fr"
 msgstr ""
 
 #. Default: "Fullscreen"
@@ -364,21 +339,6 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#. Default: "Jan"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jan"
-msgstr ""
-
-#. Default: "Jul"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jul"
-msgstr ""
-
-#. Default: "Jun"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jun"
-msgstr ""
-
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Key Type Measure"
@@ -441,21 +401,6 @@ msgstr ""
 msgid "Macro-Transnational region:"
 msgstr ""
 
-#. Default: "Mar"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Mar"
-msgstr ""
-
-#. Default: "May"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "May"
-msgstr ""
-
-#. Default: "Mo"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Mo"
-msgstr ""
-
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -476,11 +421,6 @@ msgstr ""
 msgid "No results"
 msgstr ""
 
-#. Default: "Nov"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Nov"
-msgstr ""
-
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -496,14 +436,14 @@ msgstr ""
 msgid "Observatory contributions"
 msgstr ""
 
-#. Default: "Oct"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Oct"
-msgstr ""
-
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
+msgstr ""
+
+#. Default: "Organised by EEA"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Organised by EEA"
 msgstr ""
 
 #. Default: "Other regions"
@@ -593,11 +533,6 @@ msgstr ""
 msgid "Replace existing file"
 msgstr ""
 
-#. Default: "Sa"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Sa"
-msgstr ""
-
 #. Default: "Search the Climate-ADAPT database"
 #: index
 msgid "Search the Climate-ADAPT database"
@@ -644,11 +579,6 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#. Default: "Sep"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Sep"
-msgstr ""
-
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
@@ -678,11 +608,6 @@ msgstr ""
 msgid "Stakeholder participation"
 msgstr ""
 
-#. Default: "Su"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Su"
-msgstr ""
-
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
@@ -697,11 +622,6 @@ msgstr ""
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Success and limiting factors"
-msgstr ""
-
-#. Default: "Th"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Th"
 msgstr ""
 
 #. Default: "The Adaptation Support Tool - Getting started"
@@ -724,11 +644,6 @@ msgstr ""
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr ""
 
-#. Default: "Tu"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Tu"
-msgstr ""
-
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
@@ -742,11 +657,6 @@ msgstr ""
 #. Default: "Visit external website"
 #: helpers/Utils
 msgid "Visit external website"
-msgstr ""
-
-#. Default: "We"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "We"
 msgstr ""
 
 #. Default: "Web"
