@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { Card, Grid, Icon, Label } from 'semantic-ui-react';
+import { Card, Grid, Icon, Label, Image } from 'semantic-ui-react';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
+import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
+import config from '@plone/volto/registry';
 import './styles.less';
 
 const messages = defineMessages({
@@ -30,8 +32,6 @@ const messages = defineMessages({
   sa: { id: 'Sa', defaultMessage: 'Sa' },
   su: { id: 'Su', defaultMessage: 'Su' },
 });
-
-const Separator = () => <div className="sep">&nbsp;&nbsp;-&nbsp;&nbsp;</div>;
 
 const StartDate = ({ start }) => {
   const start_date = new Date(start);
@@ -78,7 +78,12 @@ const StartDate = ({ start }) => {
   );
 };
 
-const EventCard = ({ item, isEditMode, goToContact, getEventUrl }) => (
+const goToContact = (contactInfo) =>
+  contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
+
+const getEventUrl = (item) => item?.event_url || item['@id'];
+
+const EventCard = ({ item, isEditMode }) => (
   <div className="u-item listing-item simple-listing-item" key={item.UID}>
     <div className="wrapper">
       <Card fluid>
@@ -94,11 +99,7 @@ const EventCard = ({ item, isEditMode, goToContact, getEventUrl }) => (
                     {item.title}
                   </UniversalLink>
                 </h3>
-                <EventDetails
-                  item={item}
-                  goToContact={goToContact}
-                  isEditMode={isEditMode}
-                />
+                <EventDetails item={item} isEditMode={isEditMode} />
               </div>
             </Grid.Column>
           </Grid>
@@ -108,7 +109,7 @@ const EventCard = ({ item, isEditMode, goToContact, getEventUrl }) => (
   </div>
 );
 
-const EventDetails = ({ item, goToContact, isEditMode }) => (
+const EventDetails = ({ item, isEditMode }) => (
   <>
     {item?.start && (
       <div className="listing-body-dates">
@@ -134,67 +135,73 @@ const EventDetails = ({ item, goToContact, isEditMode }) => (
     {item?.description && (
       <p className="listing-description">{item.description}</p>
     )}
-    <BottomInfo item={item} goToContact={goToContact} isEditMode={isEditMode} />
+    <BottomInfo item={item} isEditMode={isEditMode} />
   </>
 );
 
-const BottomInfo = ({ item, goToContact, isEditMode }) => (
-  <div className="bottom-info">
-    {item?.subjects && item.subjects.length > 0 && (
-      <>
-        <div className="subjects">
-          {item.subjects.map((tag) => (
-            <Label key={tag} size="small">
-              {tag}
-            </Label>
-          ))}
+const BottomInfo = ({ item, isEditMode }) => {
+  const { '@type': itemType, event_url, subjects, contact_email } = item || {};
+  const isCcaEventType = itemType === 'cca-event';
+  const isExternal = event_url && !event_url.includes(config.settings.apiPath);
+
+  return (
+    <>
+      {(!isExternal || isCcaEventType) && (
+        <div className="event-organisation">
+          <FormattedMessage
+            id="Organised by EEA"
+            defaultMessage="Organised by EEA"
+          />
+          <Image
+            className="eea-logo"
+            src={eeaLogo}
+            alt="European Environment Agency"
+            title="European Environment Agency"
+          />
         </div>
-        <Separator />
-      </>
-    )}
-    <div className="source">
-      <ConditionalLink item={item} condition={!isEditMode}>
-        <FormattedMessage
-          id="Climate-ADAPT page for this event"
-          defaultMessage="Climate-ADAPT page for this event"
-        />
-      </ConditionalLink>
-    </div>
-    {item?.contact_email && (
-      <>
-        <Separator />
-        <div className="email-info">
-          <Icon className="mail" />
-          <a
-            className="contact_email"
-            href={goToContact(item.contact_email)}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {item.contact_email}
-          </a>
+      )}
+      <div className="bottom-info">
+        {subjects && subjects.length > 0 && (
+          <div className="subjects">
+            {subjects.map((tag) => (
+              <Label key={tag} size="small">
+                {tag}
+              </Label>
+            ))}
+          </div>
+        )}
+
+        <div className="source">
+          <ConditionalLink item={item} condition={!isEditMode}>
+            <FormattedMessage
+              id="Climate-ADAPT page for this event"
+              defaultMessage="Climate-ADAPT page for this event"
+            />
+          </ConditionalLink>
         </div>
-      </>
-    )}
-  </div>
-);
+        {contact_email && (
+          <div className="email-info">
+            <Icon name="mail" />
+            <a
+              className="contact_email"
+              href={goToContact(contact_email)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {contact_email}
+            </a>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
 
 const EventCardsListingView = ({ items, isEditMode }) => {
-  const goToContact = (contactInfo) =>
-    contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
-
-  const getEventUrl = (item) => item.event_url || item['@id'];
-
   return (
     <div className="ui fluid eventCards">
       {items.map((item) => (
-        <EventCard
-          key={item.UID}
-          item={item}
-          isEditMode={isEditMode}
-          goToContact={goToContact}
-          getEventUrl={getEventUrl}
-        />
+        <EventCard key={item.UID} item={item} isEditMode={isEditMode} />
       ))}
     </div>
   );
