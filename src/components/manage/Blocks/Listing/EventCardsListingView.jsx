@@ -8,10 +8,6 @@ import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import './styles.less';
 
-const Separator = () => {
-  return <div className="sep">&nbsp;&nbsp;⎯&nbsp;&nbsp;</div>;
-};
-
 const messages = defineMessages({
   jan: { id: 'Jan', defaultMessage: 'Jan' },
   feb: { id: 'Feb', defaultMessage: 'Feb' },
@@ -35,9 +31,10 @@ const messages = defineMessages({
   su: { id: 'Su', defaultMessage: 'Su' },
 });
 
-const StartDate = (start) => {
-  const start_date = new Date(start);
+const Separator = () => <div className="sep">&nbsp;&nbsp;-&nbsp;&nbsp;</div>;
 
+const StartDate = ({ start }) => {
+  const start_date = new Date(start);
   const day = start_date.getDate();
   const monthIndex = start_date.getMonth();
 
@@ -68,7 +65,6 @@ const StartDate = (start) => {
   };
 
   const monthName = monthNames[monthIndex];
-
   const dayOfWeek =
     dayNames[
       start_date.toLocaleDateString('en', { weekday: 'short' }).substring(0, 2)
@@ -77,14 +73,113 @@ const StartDate = (start) => {
   return (
     <div className="start-date">
       <p className="day">{dayOfWeek}</p>
-      <p className="date">
-        {day} {monthName}
-      </p>
+      <p className="date">{`${day} ${monthName}`}</p>
     </div>
   );
 };
 
-const EventCardsListingView = ({ items, isEditMode, token }) => {
+const EventCard = ({ item, isEditMode, goToContact, getEventUrl }) => (
+  <div className="u-item listing-item simple-listing-item" key={item.UID}>
+    <div className="wrapper">
+      <Card fluid>
+        <Card.Content>
+          <Grid stackable columns={12}>
+            <Grid.Column width={2}>
+              {item?.start && <StartDate start={item.start} />}
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <div className="event-details">
+                <h3 className="listing-header">
+                  <UniversalLink href={getEventUrl(item)}>
+                    {item.title}
+                  </UniversalLink>
+                </h3>
+                <EventDetails
+                  item={item}
+                  goToContact={goToContact}
+                  isEditMode={isEditMode}
+                />
+              </div>
+            </Grid.Column>
+          </Grid>
+        </Card.Content>
+      </Card>
+    </div>
+  </div>
+);
+
+const EventDetails = ({ item, goToContact, isEditMode }) => (
+  <>
+    {item?.start && (
+      <div className="listing-body-dates">
+        <span className="event-date">
+          <Icon className="ri-calendar-line" />
+          <When
+            whole_day
+            start={item.start}
+            end={item.end}
+            open_end={item.open_end}
+          />
+        </span>
+      </div>
+    )}
+    {item?.location && (
+      <div className="listing-body-dates">
+        <span className="event-date">
+          <Icon className="map marker alternate" />
+          {item.location}
+        </span>
+      </div>
+    )}
+    {item?.description && (
+      <p className="listing-description">{item.description}</p>
+    )}
+    <BottomInfo item={item} goToContact={goToContact} isEditMode={isEditMode} />
+  </>
+);
+
+const BottomInfo = ({ item, goToContact, isEditMode }) => (
+  <div className="bottom-info">
+    {item?.subjects && item.subjects.length > 0 && (
+      <>
+        <div className="subjects">
+          {item.subjects.map((tag) => (
+            <Label key={tag} size="small">
+              {tag}
+            </Label>
+          ))}
+        </div>
+        <Separator />
+      </>
+    )}
+    <div className="source">
+      <ConditionalLink item={item} condition={!isEditMode}>
+        <FormattedMessage
+          id="Climate-ADAPT page for this event"
+          defaultMessage="Climate-ADAPT page for this event"
+        />
+      </ConditionalLink>
+    </div>
+    {item?.contact_email && (
+      <>
+        <Separator />
+        <div className="email-info">
+          <Icon className="mail" />
+          <a
+            className="contact_email"
+            href={goToContact(item.contact_email)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {item.contact_email}
+          </a>
+        </div>
+      </>
+    )}
+  </div>
+);
+
+const EventCardsListingView = ({ items, isEditMode }) => {
   const goToContact = (contactInfo) =>
     contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
 
@@ -92,95 +187,14 @@ const EventCardsListingView = ({ items, isEditMode, token }) => {
 
   return (
     <div className="ui fluid eventCards">
-      {items.map((item, index) => (
-        <div className="u-item listing-item simple-listing-item" key={item.UID}>
-          <div className="wrapper">
-            <Card fluid>
-              <Card.Content>
-                <Grid stackable columns={12}>
-                  <Grid.Column width={2}>
-                    {!!item.start && StartDate(item.start)}
-                  </Grid.Column>
-                  <Grid.Column width={10}>
-                    <div className="event-details">
-                      <h3 className="listing-header">
-                        <UniversalLink href={getEventUrl(item)}>
-                          {item.title}
-                        </UniversalLink>
-                      </h3>
-                      {!!item.start && (
-                        <div className="listing-body-dates">
-                          <span className="event-date">
-                            <Icon className="ri-calendar-line" />
-                            <When
-                              start={item.start}
-                              end={item.end}
-                              whole_day={true}
-                              open_end={item.open_end}
-                            />
-                          </span>
-                        </div>
-                      )}
-                      {!!item.location && (
-                        <div className="listing-body-dates">
-                          <span className="event-date">
-                            <Icon className="map marker alternate" />
-                            {item.location}
-                          </span>
-                        </div>
-                      )}
-                      {item.description && (
-                        <p className="listing-description">
-                          {item.description}
-                        </p>
-                      )}
-                      <div className="bottom-info">
-                        {!!item.subjects && item.subjects.length > 0 && (
-                          <>
-                            <div className="subjects">
-                              {item.subjects.map((tag) => (
-                                <Label key={tag} size="small">
-                                  {tag}
-                                </Label>
-                              ))}
-                            </div>
-
-                            <Separator />
-                          </>
-                        )}
-                        <div className="source">
-                          <ConditionalLink item={item} condition={!isEditMode}>
-                            <FormattedMessage
-                              id="Climate-ADAPT page for this event"
-                              defaultMessage="Climate-ADAPT page for this event"
-                            />
-                          </ConditionalLink>
-                        </div>
-                        {!!item.contact_email && (
-                          <>
-                            <Separator />
-                            <div className="email-info">
-                              <Icon className="mail" />
-                              <a
-                                className="contact_email"
-                                title=""
-                                href={goToContact(item.contact_email)}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {item.contact_email}
-                              </a>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </Grid.Column>
-                </Grid>
-              </Card.Content>
-            </Card>
-          </div>
-        </div>
+      {items.map((item) => (
+        <EventCard
+          key={item.UID}
+          item={item}
+          isEditMode={isEditMode}
+          goToContact={goToContact}
+          getEventUrl={getEventUrl}
+        />
       ))}
     </div>
   );
