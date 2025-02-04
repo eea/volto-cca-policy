@@ -58,16 +58,6 @@ msgstr "Zusätzliche Details"
 msgid "Agenda and supporting documents"
 msgstr "Agenda und weiterführende Dokumente"
 
-#. Default: "Apr"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Apr"
-msgstr "Apr"
-
-#. Default: "Aug"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Aug"
-msgstr "Aug"
-
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -196,11 +186,6 @@ msgstr "Veröffentlichungsdatum:"
 msgid "Date of release:"
 msgstr "Erscheinungsdatum:"
 
-#. Default: "Dec"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Dec"
-msgstr "Dez"
-
 #. Default: "Description"
 #: helpers/Utils
 msgid "Description"
@@ -261,20 +246,10 @@ msgstr "Beenden Sie den Vollbildmodus"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Erfahren Sie mehr über Climate-ADAPT"
 
-#. Default: "Feb"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Feb"
-msgstr "Febr"
-
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Für weitere Suchoptionen"
-
-#. Default: "Fr"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Fr"
-msgstr "Fr"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -362,21 +337,6 @@ msgstr "Indikatoren"
 msgid "Info"
 msgstr "Die Info"
 
-#. Default: "Jan"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jan"
-msgstr "Jan"
-
-#. Default: "Jul"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jul"
-msgstr "Juli"
-
-#. Default: "Jun"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Jun"
-msgstr "Jun"
-
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Key Type Measure"
@@ -439,21 +399,6 @@ msgstr "Suchen Sie weitere Informationen?"
 msgid "Macro-Transnational region:"
 msgstr "Makrotransnationale Region:"
 
-#. Default: "Mar"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Mar"
-msgstr "Beschädigen"
-
-#. Default: "May"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "May"
-msgstr "Mai"
-
-#. Default: "Mo"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Mo"
-msgstr "Mo"
-
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -474,11 +419,6 @@ msgstr "Keine Information"
 msgid "No results"
 msgstr "Keine Ergebnisse"
 
-#. Default: "Nov"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Nov"
-msgstr "Nov"
-
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -494,15 +434,15 @@ msgstr "Beiträge zum Observatorium:"
 msgid "Observatory contributions"
 msgstr "Beiträge der Beobachtungsstelle"
 
-#. Default: "Oct"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Oct"
-msgstr "Okt"
-
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
 msgstr "Organisationsdokumente"
+
+#. Default: "Organised by EEA"
+#: components/manage/Blocks/Listing/EventCardsListingView
+msgid "Organised by EEA"
+msgstr ""
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -591,11 +531,6 @@ msgstr "Verwandte Dokumente und Präsentationen"
 msgid "Replace existing file"
 msgstr ""
 
-#. Default: "Sa"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Sa"
-msgstr "Sa"
-
 #. Default: "Search the Climate-ADAPT database"
 #: index
 msgid "Search the Climate-ADAPT database"
@@ -642,11 +577,6 @@ msgstr "Schau das Video außerhalb von Climate-ADAPT an"
 msgid "Select"
 msgstr "Wählen"
 
-#. Default: "Sep"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Sep"
-msgstr "Sept"
-
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
@@ -676,11 +606,6 @@ msgstr "Fördermöglichkeit"
 msgid "Stakeholder participation"
 msgstr "Stakeholderbeteiligung"
 
-#. Default: "Su"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Su"
-msgstr "Su"
-
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
@@ -696,11 +621,6 @@ msgstr "Subnational oder lokal"
 #: components/theme/Views/CaseStudyView
 msgid "Success and limiting factors"
 msgstr "Erfolgsfaktoren und Hemmnisse"
-
-#. Default: "Th"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Th"
-msgstr "Th"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -722,11 +642,6 @@ msgstr "Das Datum bezieht sich auf das letzte Veröffentlichungsdatum des Eintra
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Das Datum bezieht sich auf den Zeitpunkt, zu dem der Artikel von den  Redakteuren aufbereitet oder aktualisiert wurde, um für die Veröffentlichung in Climate ADAPT angenommen zu werden."
 
-#. Default: "Tu"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "Tu"
-msgstr "Di"
-
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
@@ -741,11 +656,6 @@ msgstr "Sehen Sie sich alle Beiträge im Ressourcenkatalog an"
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Besuchen Sie eine externe Website"
-
-#. Default: "We"
-#: components/manage/Blocks/Listing/EventCardsListingView
-msgid "We"
-msgstr "Wir"
 
 #. Default: "Web"
 #: helpers/Utils

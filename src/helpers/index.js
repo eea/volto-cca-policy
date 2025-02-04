@@ -35,6 +35,9 @@ export const serializeText = (text) => {
   return isArray(text) ? serializeNodes(text) : text;
 };
 
+export const capitalizeFirstLetter = (str) =>
+  str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
 export const makeContributionsSearchQuery = (props) => {
   const { id } = props;
   const organisation = OBSERVATORY_PARTNERS[id];
