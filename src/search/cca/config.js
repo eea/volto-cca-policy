@@ -92,7 +92,6 @@ export default function installMainSearch(config) {
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     runtime_mappings: cca_build_runtime_mappings,
-    includeDefaultValues: true,
     ...vocabs,
   };
 
