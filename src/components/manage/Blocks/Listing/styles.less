@@ -1,3 +1,8 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
 // Organisation Cards Listing
 div.organisationCards {
   div.card.u-card {
@@ -46,23 +51,31 @@ div.indicatorCards {
 }
 
 // Event Cards Listing
-div.eventCards {
-  div.simple-listing-item {
-    border-bottom: 1px solid #ddd !important;
+.eventCards {
+  .u-item.listing-item.simple-listing-item {
+    border-bottom: 1px solid #ddd;
   }
 
-  a {
-    color: #006bb8 !important;
+  .u-item.listing-item a {
+    color: @linkColor !important;
   }
 
-  div.start-date {
-    max-width: 80px;
-
+  .start-date {
     .day {
-      border-bottom: 3px solid #ef7000;
-      color: #ef7000;
+      position: relative;
+      color: @ccaOrangeColor;
       font-size: 2.5em;
       font-weight: 900;
+
+      &:after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 80px;
+        height: 3px;
+        background-color: @ccaOrangeColor;
+        content: '';
+      }
     }
 
     .date {
@@ -71,15 +84,14 @@ div.eventCards {
     }
   }
 
-  div.bottom-info {
+  .bottom-info {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    gap: 1em;
 
     .sep {
-      position: relative;
-      top: -2px;
       color: #ddd;
     }
 
@@ -89,13 +101,31 @@ div.eventCards {
       justify-content: flex-start;
     }
 
-    div.subjects {
+    .subjects {
       .label {
-        margin-right: 0.3em;
-        margin-bottom: 0.3em;
+        padding: 5px 7px;
+        margin-right: 0.5em;
         background: #eee;
         color: #3d5265;
       }
+    }
+  }
+
+  .u-item.listing-item {
+    .ui.image.eea-logo {
+      width: 100px;
+      max-width: none;
+      height: 45px;
+      object-fit: initial;
+      object-position: unset;
+    }
+
+    .event-organisation {
+      display: flex;
+      align-items: center;
+      margin: 1em 0;
+      gap: 0.5em;
+      // flex-direction: column;
     }
   }
 }
