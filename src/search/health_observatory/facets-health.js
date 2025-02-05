@@ -24,6 +24,10 @@ const messages = defineMessages({
     id: 'Publishing year',
     defaultMessage: 'Publishing year',
   },
+  sections: {
+    id: 'Sections',
+    defaultMessage: 'Sections',
+  },
 });
 
 const op_cluster = {
@@ -31,7 +35,8 @@ const op_cluster = {
   factory: 'MultiTermFacet',
   isFilterable: true,
   isMulti: true,
-  label: messages.section,
+  // label: messages.sections,
+  label: 'Sections',
   show: 10000,
   showInFacetsList: false,
   ignoreNLPWhenActive: true,
@@ -41,7 +46,8 @@ const op_cluster = {
 const healthImpacts = {
   field: 'cca_health_impacts.keyword',
   factory: 'MultiTermFacet',
-  label: messages.healthImpacts,
+  // label: messages.healthImpacts,
+  label: 'Health impacts',
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -66,7 +72,8 @@ const healthImpacts = {
 const partnerContributions = {
   field: 'cca_partner_contributors.keyword',
   factory: 'MultiTermFacet',
-  label: messages.observatoryPartner,
+  // label: messages.observatoryPartner,
+  label: 'Observatory partner',
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -80,7 +87,8 @@ const partnerContributions = {
 const year = {
   field: 'year',
   factory: 'HistogramFacet',
-  label: messages.publishingYear,
+  // label: messages.publishingYear,
+  label: 'Publishing year',
   height: 100,
   showInFacetsList: true,
   isFilterable: false,

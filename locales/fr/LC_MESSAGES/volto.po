@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Un document de référence pour l'événement est disponible"
 
 #. Default: "Adaptation Approaches"
+#: search/cca/facets
 #: search/facets
 #: search/health_observatory/facets-health
 msgid "Adaptation Approaches"
@@ -38,6 +39,7 @@ msgid "Adaptation Options Implemented In This Case"
 msgstr "Options d'adaptation mises en oeuvre dans ce cas"
 
 #. Default: "Adaptation Sectors"
+#: search/cca/facets
 #: search/common
 #: search/facets
 msgid "Adaptation Sectors"
@@ -131,6 +133,7 @@ msgid "City:"
 msgstr "Ville:"
 
 #. Default: "Climate Impacts"
+#: search/cca/facets
 #: search/common
 #: search/facets
 msgid "Climate Impacts"
@@ -259,6 +262,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Durée:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr ""
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -280,6 +288,7 @@ msgid "Fullscreen"
 msgstr "Plein écran"
 
 #. Default: "Funding Programme"
+#: search/cca/facets
 #: search/facets
 msgid "Funding Programme"
 msgstr ""
@@ -313,6 +322,11 @@ msgstr "Niveau de gouvernance:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS disponible (cliquez sur le pays pour plus d'informations)"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr ""
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -376,12 +390,14 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Item from third parties"
+#: search/cca/facets
 #: search/facets
 msgid "Item from third parties"
 msgstr ""
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
 #: search/facets
 msgid "Key Type Measure"
 msgstr "Mesure de type clé"
@@ -489,6 +505,7 @@ msgid "Observatory contributions"
 msgstr "Contributions de l'Observatoire"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr ""
@@ -553,6 +570,11 @@ msgstr "Publié dans Climate-ADAPT"
 msgid "Publishing year"
 msgstr ""
 
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+msgid "RAST step(s) of relevance"
+msgstr ""
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
@@ -611,8 +633,14 @@ msgid "Search the Observatory Resource Catalogue..."
 msgstr "Rechercher dans le catalogue de ressources de l'Observatoire..."
 
 #. Default: "Section"
+#: search/cca/facets
 #: search/facets
 msgid "Section"
+msgstr ""
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
 msgstr ""
 
 #. Default: "Sector"
@@ -722,6 +750,7 @@ msgid "Topics:"
 msgstr ""
 
 #. Default: "Transnational regions"
+#: search/cca/facets
 #: search/facets
 msgid "Transnational regions"
 msgstr "Régions transnationales"
@@ -729,6 +758,11 @@ msgstr "Régions transnationales"
 #. Default: "Type of item"
 #: search/common
 msgid "Type of item"
+msgstr ""
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
 msgstr ""
 
 #. Default: "Updating notes"

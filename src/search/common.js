@@ -45,7 +45,6 @@ export const cca_climate_impacts = {
   field: 'cca_climate_impacts.keyword',
   factory: 'MultiTermFacet',
   label: messages.climateImpacts,
-  label: 'Climate impacts',
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
