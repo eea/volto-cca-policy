@@ -5,13 +5,33 @@ import {
   issued_date,
   geographic_countries,
 } from './../common';
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  adaptationApproaches: {
+    id: 'Adaptation Approaches',
+    defaultMessage: 'Adaptation Approaches',
+  },
+  healthImpacts: {
+    id: 'Health impacts',
+    defaultMessage: 'Health impacts',
+  },
+  observatoryPartner: {
+    id: 'Observatory partner',
+    defaultMessage: 'Observatory partner',
+  },
+  publishingYear: {
+    id: 'Publishing year',
+    defaultMessage: 'Publishing year',
+  },
+});
 
 const op_cluster = {
   field: 'op_cluster',
   factory: 'MultiTermFacet',
   isFilterable: true,
   isMulti: true,
-  label: 'Section',
+  label: messages.section,
   show: 10000,
   showInFacetsList: false,
   ignoreNLPWhenActive: true,
@@ -21,7 +41,7 @@ const op_cluster = {
 const healthImpacts = {
   field: 'cca_health_impacts.keyword',
   factory: 'MultiTermFacet',
-  label: 'Health impacts',
+  label: messages.healthImpacts,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -46,7 +66,7 @@ const healthImpacts = {
 const partnerContributions = {
   field: 'cca_partner_contributors.keyword',
   factory: 'MultiTermFacet',
-  label: 'Observatory partner',
+  label: messages.observatoryPartner,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -60,7 +80,7 @@ const partnerContributions = {
 const year = {
   field: 'year',
   factory: 'HistogramFacet',
-  label: 'Publishing year',
+  label: messages.publishingYear,
   height: 100,
   showInFacetsList: true,
   isFilterable: false,

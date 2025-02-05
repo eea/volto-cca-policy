@@ -16,6 +16,12 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr ""
 
+#. Default: "Adaptation Approaches"
+#: search/facets
+#: search/health_observatory/facets-health
+msgid "Adaptation Approaches"
+msgstr ""
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +36,12 @@ msgstr "Sonraí Oiriúnaithe"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm sa Chás seo"
+
+#. Default: "Adaptation Sectors"
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Earnálacha Oiriúnaithe"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +130,12 @@ msgstr "Roghnaigh léarscáil théamach:"
 msgid "City:"
 msgstr "Cathair:"
 
+#. Default: "Climate Impacts"
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr ""
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +183,11 @@ msgstr "Rannpháirtí:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Costais agus Sochair"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Tíortha"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -256,6 +279,11 @@ msgstr ""
 msgid "Fullscreen"
 msgstr ""
 
+#. Default: "Funding Programme"
+#: search/facets
+msgid "Funding Programme"
+msgstr ""
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -290,6 +318,11 @@ msgstr "HHWS ar fáil (cliceáil ar an tír chun tuilleadh eolais a fháil)"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Tionchar ar an tsláinte:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr ""
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +360,11 @@ msgstr "Am Cur Chun Feidhme"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Tábhacht agus Ábharthacht an Oiriúnaithe"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr ""
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +375,14 @@ msgstr "Táscairí"
 msgid "Info"
 msgstr "Faisnéis"
 
+#. Default: "Item from third parties"
+#: search/facets
+msgid "Item from third parties"
+msgstr ""
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Beart an Chineáil Eochrach"
 
@@ -361,6 +405,11 @@ msgstr "Príomhbhearta cineáil"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Eochairfhocail:"
+
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr ""
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
@@ -404,6 +453,11 @@ msgstr "Réigiún macra-thrasnáisiúnta:"
 msgid "National HHAP"
 msgstr "HHAP Náisiúnta"
 
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
+
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
@@ -433,6 +487,11 @@ msgstr "Rannchuidithe ón bhFaireachlann:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Rannchuidiú na Faireachlainne"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr ""
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +547,11 @@ msgstr "Foilseacháin agus Tuarascálacha Doiciméid"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Arna fhoilsiú in Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr ""
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +610,11 @@ msgstr "Cuardaigh Misean an AE um Oiriúnú"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
+#. Default: "Section"
+#: search/facets
+msgid "Section"
+msgstr ""
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +669,11 @@ msgstr "Foinse"
 msgid "Source of funding"
 msgstr "Foinse an mhaoinithe"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+msgid "Source:"
+msgstr "Foinse:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -641,6 +715,21 @@ msgstr "Tagraíonn an dáta don dáta is déanaí ar a bhfoilsítear an mhír"
 #: helpers/ContentMetadata
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Tagraíonn an dáta don tráth a d’ullmhaigh nó a nuashonraigh saineolaithe rannpháirteacha an mhír atá le cur isteach lena foilsiú in Climate ADAPT"
+
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/facets
+msgid "Transnational regions"
+msgstr "Réigiúin thrasnáisiúnta"
+
+#. Default: "Type of item"
+#: search/common
+msgid "Type of item"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1377,11 +1466,6 @@ msgid "TOPICS"
 msgstr "TOPICSanna"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Réigiúin thrasnáisiúnta"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Iompar"
@@ -2011,11 +2095,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Pleananna agus Straitéisí Oiriúnaithe"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Earnálacha Oiriúnaithe"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2322,6 @@ msgstr "Barúlacha:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Sainmhínithe coiteanna ar na téarmaí a úsáidtear go minic sa teach imréitigh."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Tíortha"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3085,6 @@ msgstr "Sóisialta: Roghanna oideachais"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Sóisialta: Eolasach"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Foinse:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43

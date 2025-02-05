@@ -1,5 +1,6 @@
 // Original: https://github.com/eea/volto-searchlib/blob/master/searchlib/components/Result/HorizontalCardItem.jsx
 // We need custom href for results.
+import { FormattedMessage } from 'react-intl';
 import React from 'react';
 import { Label } from 'semantic-ui-react';
 import {
@@ -38,13 +39,17 @@ const ExtraContent = (props) => {
           <DateTime format="DATE_MED" value={result.issued} />
         </div>
         <div className="result-info">
-          <span className="result-info-title">Topics: </span>
+          <span className="result-info-title">
+            <FormattedMessage id="Topics:" defaultMessage="Topics:" />{' '}
+          </span>
           <StringList value={result.tags} />
         </div>
       </div>
       <div>
         <div className="result-info result-source">
-          <span className="result-info-title">Source: </span>
+          <span className="result-info-title">
+            <FormattedMessage id="Source:" defaultMessage="Source:" />{' '}
+          </span>
           <ExternalLink href={result.href}>
             <strong title={result.source} className="source">
               {title}
@@ -94,7 +99,12 @@ const ClusterHorizontalCardItem = (props) => {
       <>
         <ExternalLink href={result.href} title={result.title}>
           {result.title}
-          {result.isNew && <Label className="new-item">New</Label>}
+          {result.isNew && (
+            <Label className="new-item">
+              {' '}
+              <FormattedMessage id="New" defaultMessage="New" />
+            </Label>
+          )}
           {result.isExpired && (
             <Label className="archived-item">Archived</Label>
           )}

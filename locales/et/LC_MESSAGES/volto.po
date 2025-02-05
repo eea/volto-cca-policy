@@ -16,6 +16,12 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Sündmuse taustadokument on saadaval"
 
+#. Default: "Adaptation Approaches"
+#: search/facets
+#: search/health_observatory/facets-health
+msgid "Adaptation Approaches"
+msgstr ""
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +36,12 @@ msgstr "Kohandamise üksikasjad"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Kohanemisvõimalused, mida antud juhul rakendatakse"
+
+#. Default: "Adaptation Sectors"
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Kohanemissektorid"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +130,12 @@ msgstr "Valige temaatiline kaart:"
 msgid "City:"
 msgstr "Linn:"
 
+#. Default: "Climate Impacts"
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr ""
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +183,11 @@ msgstr "Osaleja:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Kulud ja kasu"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Riigid"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -256,6 +279,11 @@ msgstr "Rohkemate otsinguvõimaluste jaoks"
 msgid "Fullscreen"
 msgstr "Täisekraan"
 
+#. Default: "Funding Programme"
+#: search/facets
+msgid "Funding Programme"
+msgstr ""
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -290,6 +318,11 @@ msgstr "HHWS on kättesaadav (lisateabe saamiseks klõpsake riigil)"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Mõju tervisele:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr ""
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +360,11 @@ msgstr "Rakendamise aeg"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Kohanemise tähtsus ja olulisus"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr ""
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +375,14 @@ msgstr "Näitajad"
 msgid "Info"
 msgstr "Teave"
 
+#. Default: "Item from third parties"
+#: search/facets
+msgid "Item from third parties"
+msgstr ""
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Võtmetüüp Meede"
 
@@ -361,6 +405,11 @@ msgstr "Põhimeetmed"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Märksõnad:"
+
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr ""
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
@@ -404,6 +453,11 @@ msgstr "Riikidevaheline makropiirkond:"
 msgid "National HHAP"
 msgstr "Riiklik HHAP"
 
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
+
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
@@ -433,6 +487,11 @@ msgstr "Vaatluskeskuse panused:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Vaatluskeskuse panus"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr ""
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +547,11 @@ msgstr "Väljaanded ja aruanded Dokumendid"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Avaldatud väljaandes Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr ""
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +610,11 @@ msgstr "Otsige ELi kohanemismissioonist"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Otsige observatooriumi ressursside kataloogist..."
 
+#. Default: "Section"
+#: search/facets
+msgid "Section"
+msgstr ""
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +669,11 @@ msgstr "Allikas"
 msgid "Source of funding"
 msgstr "Rahastamisallikas"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+msgid "Source:"
+msgstr "Allikas:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -641,6 +715,21 @@ msgstr "Kuupäev viitab artikli viimasele avaldamiskuupäevale."
 #: helpers/ContentMetadata
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Kuupäev viitab hetkele, mil osalevad eksperdid on punkti ette valmistanud või seda ajakohastanud, et esitada see kliimaalases ADAPTis avaldamiseks."
+
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/facets
+msgid "Transnational regions"
+msgstr "Riikidevahelised piirkonnad"
+
+#. Default: "Type of item"
+#: search/common
+msgid "Type of item"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1377,11 +1466,6 @@ msgid "TOPICS"
 msgstr "TOPICS"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Riikidevahelised piirkonnad"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Transport"
@@ -2011,11 +2095,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Kohanemiskavad ja -strateegiad"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Kohanemissektorid"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2322,6 @@ msgstr "Märkused:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Kliiringukojas sageli kasutatavate mõistete ühised määratlused."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Riigid"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3085,6 @@ msgstr "Sotsiaalne: haridusvõimalused"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Sotsiaalne: informatiivne"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Allikas:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
