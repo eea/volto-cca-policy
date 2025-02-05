@@ -3,7 +3,7 @@ import {
   language,
   issued_date,
   geographic_countries,
-} from './common';
+} from '../common';
 
 const adaptation_sectors = {
   field: 'cca_adaptation_sectors.keyword',

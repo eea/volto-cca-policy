@@ -1,4 +1,4 @@
-import installMainSearch from './config';
+import installMainSearch from './cca/config';
 import installHealthSearch from './health_observatory/config-health';
 import installMissionStoriesSearch from './mission_stories/config-stories';
 import installMissionToolsSearch from './mission_tools/config-tools';
@@ -37,12 +37,13 @@ const applyConfig = (config) => {
     installMissionAllSearch,
   ].reduce((acc, cur) => cur(acc), config.settings.searchlib);
 
-  config.settings.searchlib.searchui.ccaSearch.extraQueryParams = extraQueryParams;
-  config.settings.searchlib.searchui.ccaHealthSearch.extraQueryParams = extraQueryParams;
-  config.settings.searchlib.searchui.missionProjects.extraQueryParams = extraQueryParams;
-  config.settings.searchlib.searchui.missionStoriesSearch.extraQueryParams = extraQueryParams;
-  config.settings.searchlib.searchui.missionToolsSearch.extraQueryParams = extraQueryParams;
-  config.settings.searchlib.searchui.missionAll.extraQueryParams = extraQueryParams;
+  const searchui = config.settings.searchlib.searchui;
+  searchui.ccaSearch.extraQueryParams = extraQueryParams;
+  searchui.ccaHealthSearch.extraQueryParams = extraQueryParams;
+  searchui.missionProjects.extraQueryParams = extraQueryParams;
+  searchui.missionStoriesSearch.extraQueryParams = extraQueryParams;
+  searchui.missionToolsSearch.extraQueryParams = extraQueryParams;
+  searchui.missionAll.extraQueryParams = extraQueryParams;
 
   // console.log(config.settings.searchlib);
 

@@ -1,6 +1,6 @@
 import { mergeConfig } from '@eeacms/search';
-import { getClientProxyAddress } from './utils';
-import vocabs from './vocabulary';
+import { getClientProxyAddress } from '../utils';
+import vocabs from '../vocabulary';
 
 import facets from './facets';
 import views from './views';
@@ -114,6 +114,19 @@ export default function installMainSearch(config) {
       cluster_name: 'cca',
     },
   });
+
+  // ccaSearch.permanentFilters.push((filters) => {
+  //   const hasLanguageFilter = filters.find(({ field }) => field === 'language');
+  //   console.log('permanentFilters', hasLanguageFilter, filters);
+  //   if (!hasLanguageFilter) {
+  //     return {
+  //       terms: {
+  //         language: ['en'],
+  //       },
+  //     };
+  //   }
+  //   return null;
+  // });
 
   // ccaSearch.permanentFilters.push({
   //   terms: {
