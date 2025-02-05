@@ -136,9 +136,13 @@ export const language = {
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  default: {
-    values: ['en'],
-    type: 'any',
+  default: (options) => {
+    const { language } = options || {};
+    // console.log('options', options);
+    return {
+      values: [language || 'en'],
+      type: 'any',
+    };
   },
   facetValues: [
     'de',
