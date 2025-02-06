@@ -20,8 +20,10 @@ msgstr "Наличен е справочен документ за събити�
 #: search/cca/facets
 #: search/facets
 #: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
-msgstr ""
+msgstr "Подходи за адаптация"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
@@ -137,7 +139,7 @@ msgstr "Град:"
 #: search/common
 #: search/facets
 msgid "Climate Impacts"
-msgstr ""
+msgstr "Климатични въздействия"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -265,7 +267,7 @@ msgstr "Продължителност:"
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
-msgstr ""
+msgstr "Отговаря на условията за получаване на финансиране"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -290,8 +292,9 @@ msgstr "Цял екран"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/mission_projects/facets-projects
 msgid "Funding Programme"
-msgstr ""
+msgstr "Програма за финансиране"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -302,6 +305,11 @@ msgstr "Програма за финансиране:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Географско характеризиране:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Географски мащаб"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -326,7 +334,7 @@ msgstr "Налични HHWS (кликнете върху държавата за
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
 msgid "Health Impacts"
-msgstr ""
+msgstr "Въздействия върху здравето"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -336,7 +344,7 @@ msgstr "Въздействие върху здравето:"
 #. Default: "Health impacts"
 #: search/health_observatory/facets-health
 msgid "Health impacts"
-msgstr ""
+msgstr "Въздействия върху здравето"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -377,7 +385,7 @@ msgstr "Значение и значение на адаптацията"
 #. Default: "Include archived content"
 #: search/common
 msgid "Include archived content"
-msgstr ""
+msgstr "Включете архивирано съдържание"
 
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
@@ -393,7 +401,7 @@ msgstr "Информация"
 #: search/cca/facets
 #: search/facets
 msgid "Item from third parties"
-msgstr ""
+msgstr "Артикул от трети страни"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -425,12 +433,17 @@ msgstr "Ключови думи:"
 #. Default: "Language"
 #: search/common
 msgid "Language"
-msgstr ""
+msgstr "език"
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Език на конференцията"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Език(ци) на инструмента"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -463,6 +476,11 @@ msgstr "Търся повече информация"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
 msgstr "Макротранснационален регион:"
+
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Най-полезен за"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -508,7 +526,7 @@ msgstr "Принос на Обсерваторията"
 #: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
-msgstr ""
+msgstr "Партньор на обсерваторията"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -568,12 +586,13 @@ msgstr "Източник: Climate-ADAPT"
 #. Default: "Publishing year"
 #: search/health_observatory/facets-health
 msgid "Publishing year"
-msgstr ""
+msgstr "Година на издаване"
 
 #. Default: "RAST step(s) of relevance"
 #: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
-msgstr ""
+msgstr "RAST стъпка(и) на релевантност"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -636,12 +655,12 @@ msgstr "Търсете в каталога с ресурси на обсерва
 #: search/cca/facets
 #: search/facets
 msgid "Section"
-msgstr ""
+msgstr "Раздел"
 
 #. Default: "Sections"
 #: search/health_observatory/facets-health
 msgid "Sections"
-msgstr ""
+msgstr "Раздели"
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -699,6 +718,7 @@ msgstr "Източник на финансиране"
 
 #. Default: "Source:"
 #: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
 msgid "Source:"
 msgstr "Източник:"
 
@@ -746,6 +766,7 @@ msgstr "Датата се отнася до момента, в който еле
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr ""
 
@@ -757,18 +778,24 @@ msgstr "Транснационални региони"
 
 #. Default: "Type of item"
 #: search/common
+#: search/mission_all/facets-all
 msgid "Type of item"
-msgstr ""
+msgstr "Вид артикул"
 
 #. Default: "Types"
 #: search/health_observatory/config-health
 msgid "Types"
-msgstr ""
+msgstr "Видове"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Актуализиране на бележки"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Потребителски изисквания"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils

@@ -20,8 +20,10 @@ msgstr "Un document de référence pour l'événement est disponible"
 #: search/cca/facets
 #: search/facets
 #: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
-msgstr ""
+msgstr "Approches d'adaptation"
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
@@ -137,7 +139,7 @@ msgstr "Ville:"
 #: search/common
 #: search/facets
 msgid "Climate Impacts"
-msgstr ""
+msgstr "Impacts climatiques"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -265,7 +267,7 @@ msgstr "Durée:"
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
-msgstr ""
+msgstr "Admissible à recevoir un financement"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -290,8 +292,9 @@ msgstr "Plein écran"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/mission_projects/facets-projects
 msgid "Funding Programme"
-msgstr ""
+msgstr "Programme de financement"
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -302,6 +305,11 @@ msgstr "Programme de financement:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Caractérisation géographique:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Échelle géographique"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -326,7 +334,7 @@ msgstr "HHWS disponible (cliquez sur le pays pour plus d'informations)"
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
 msgid "Health Impacts"
-msgstr ""
+msgstr "Impacts sur la santé"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -336,7 +344,7 @@ msgstr "Impact sur la santé:"
 #. Default: "Health impacts"
 #: search/health_observatory/facets-health
 msgid "Health impacts"
-msgstr ""
+msgstr "Impacts sur la santé"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -377,7 +385,7 @@ msgstr "Importance et pertinence de l'adaptation"
 #. Default: "Include archived content"
 #: search/common
 msgid "Include archived content"
-msgstr ""
+msgstr "Inclure le contenu archivé"
 
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
@@ -393,7 +401,7 @@ msgstr "Info"
 #: search/cca/facets
 #: search/facets
 msgid "Item from third parties"
-msgstr ""
+msgstr "Article provenant de tiers"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -425,12 +433,17 @@ msgstr "Mots clés:"
 #. Default: "Language"
 #: search/common
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Langue de la conférence"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Langue(s) de l'outil"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -463,6 +476,11 @@ msgstr "Vous cherchez plus d'informations?"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
 msgstr "Région macro-transnationale :"
+
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Le plus utile pour"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -508,7 +526,7 @@ msgstr "Contributions de l'Observatoire"
 #: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
-msgstr ""
+msgstr "Partenaire de l'Observatoire"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -568,12 +586,13 @@ msgstr "Publié dans Climate-ADAPT"
 #. Default: "Publishing year"
 #: search/health_observatory/facets-health
 msgid "Publishing year"
-msgstr ""
+msgstr "Année de publication"
 
 #. Default: "RAST step(s) of relevance"
 #: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
-msgstr ""
+msgstr "Étape(s) RAST pertinente(s)"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -636,12 +655,12 @@ msgstr "Rechercher dans le catalogue de ressources de l'Observatoire..."
 #: search/cca/facets
 #: search/facets
 msgid "Section"
-msgstr ""
+msgstr "Section"
 
 #. Default: "Sections"
 #: search/health_observatory/facets-health
 msgid "Sections"
-msgstr ""
+msgstr "Sections"
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -699,6 +718,7 @@ msgstr "Source de financement"
 
 #. Default: "Source:"
 #: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
 msgid "Source:"
 msgstr "Source:"
 
@@ -746,6 +766,7 @@ msgstr "La date fait référence au moment où l'article a été préparé ou mi
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr ""
 
@@ -757,18 +778,24 @@ msgstr "Régions transnationales"
 
 #. Default: "Type of item"
 #: search/common
+#: search/mission_all/facets-all
 msgid "Type of item"
-msgstr ""
+msgstr "Type d'article"
 
 #. Default: "Types"
 #: search/health_observatory/config-health
 msgid "Types"
-msgstr ""
+msgstr "Espèces"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Notes de mise à jour"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Exigences des utilisateurs"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils

@@ -13,6 +13,7 @@ import { firstWords, getTermDisplayValue } from '@eeacms/search/lib/utils';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import ContentClusters from '@eeacms/search/components/Result/ContentClusters';
+import { FormattedMessage } from 'react-intl';
 
 const healthBreadcrumb = (href) => {
   // It's only cosmetic. We don't want to show ++aq...
@@ -29,13 +30,17 @@ const ExtraContent = (props) => {
           <DateTime format="DATE_MED" value={result.issued} />
         </div>
         <div className="result-info">
-          <span className="result-info-title">Topics: </span>
+          <span className="result-info-title">
+            <FormattedMessage id="Topics:" defaultMessage="Topics:" />{' '}
+          </span>
           <StringList value={result.tags} />
         </div>
       </div>
       <div>
         <div className="result-info result-source">
-          <span className="result-info-title">Source: </span>
+          <span className="result-info-title">
+            <FormattedMessage id="Source:" defaultMessage="Source:" />{' '}
+          </span>
           <ExternalLink href={result.href}>
             <strong title={result.source} className="source">
               {firstWords(

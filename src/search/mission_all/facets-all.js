@@ -8,6 +8,19 @@ import {
   cca_adaptation_sectors,
 } from '../common';
 
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  typeOfItem: {
+    id: 'Type of item',
+    defaultMessage: 'Type of item',
+  },
+  adaptationApproaches: {
+    id: 'Adaptation Approaches',
+    defaultMessage: 'Adaptation Approaches',
+  },
+});
+
 const blacklist = ['IncludeArchived', 'issued.date', 'language'];
 let globalFacets = globalSearchBaseConfig.facets.filter(
   (f) => !blacklist.includes(f.field),
@@ -15,7 +28,8 @@ let globalFacets = globalSearchBaseConfig.facets.filter(
 
 for (let i = 0; i < globalFacets.length; i++) {
   if (globalFacets[i]['field'] === 'objectProvides') {
-    globalFacets[i]['label'] = 'Type of item';
+    // globalFacets[i]['label'] = 'Type of item';
+    globalFacets[i]['label'] = messages.typeOfItem;
   }
 }
 
@@ -28,7 +42,8 @@ globalFacets = globalFacets.concat(
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Adaptation Approaches',
+    // label: 'Adaptation Approaches',
+    label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
 );

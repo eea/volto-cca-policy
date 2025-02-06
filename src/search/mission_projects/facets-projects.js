@@ -9,12 +9,25 @@ import {
   cca_adaptation_sectors,
 } from './../common';
 
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  fundingProgramme: {
+    id: 'Funding Programme',
+    defaultMessage: 'Funding Programme',
+  },
+  adaptationApproaches: {
+    id: 'Adaptation Approaches',
+    defaultMessage: 'Adaptation Approaches',
+  },
+});
+
 const facets = [
   multiTermFacet({
     field: 'cca_funding_programme.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Funding Programme',
+    label: messages.fundingProgramme,
     iconsFamily: 'Funding Programme',
     alwaysVisible: false,
   }),
@@ -25,6 +38,7 @@ const facets = [
     isFilterable: false,
     isMulti: true,
     label: 'Adaptation Approaches',
+    label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
   geographic_countries,

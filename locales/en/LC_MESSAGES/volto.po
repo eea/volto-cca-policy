@@ -20,6 +20,8 @@ msgstr ""
 #: search/cca/facets
 #: search/facets
 #: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
 msgstr "Adaptation Approaches translated"
 
@@ -290,6 +292,7 @@ msgstr ""
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/mission_projects/facets-projects
 msgid "Funding Programme"
 msgstr "Funding Programme translated"
 
@@ -301,6 +304,11 @@ msgstr ""
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
+msgstr ""
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
 msgstr ""
 
 #. Default: "Getting started"
@@ -432,6 +440,11 @@ msgstr "Language trasnlated"
 msgid "Language of the conference"
 msgstr ""
 
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr ""
+
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
 msgid "Lead"
@@ -462,6 +475,11 @@ msgstr ""
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
+msgstr ""
+
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
 msgstr ""
 
 #. Default: "National HHAP"
@@ -572,6 +590,7 @@ msgstr ""
 
 #. Default: "RAST step(s) of relevance"
 #: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
 msgstr "RAST step(s) of relevance translated"
 
@@ -699,6 +718,7 @@ msgstr ""
 
 #. Default: "Source:"
 #: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
 msgid "Source:"
 msgstr "Source trasnlated:"
 
@@ -746,6 +766,7 @@ msgstr ""
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr "Topics trasnlated:"
 
@@ -757,6 +778,7 @@ msgstr "Transnational regions translated"
 
 #. Default: "Type of item"
 #: search/common
+#: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Type of item translated"
 
@@ -768,6 +790,11 @@ msgstr "Types translated"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
+msgstr ""
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
