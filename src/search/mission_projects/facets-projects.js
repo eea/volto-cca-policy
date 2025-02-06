@@ -37,7 +37,6 @@ const facets = [
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Adaptation Approaches',
     label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
