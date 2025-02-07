@@ -23,7 +23,7 @@ msgstr ""
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
-msgstr "Adaptation Approaches translated"
+msgstr ""
 
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
@@ -45,7 +45,7 @@ msgstr ""
 #: search/common
 #: search/facets
 msgid "Adaptation Sectors"
-msgstr "Adaptation sectors translated"
+msgstr ""
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -139,7 +139,7 @@ msgstr ""
 #: search/common
 #: search/facets
 msgid "Climate Impacts"
-msgstr "Climate Impacts translated"
+msgstr ""
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -192,7 +192,7 @@ msgstr ""
 #. Default: "Countries"
 #: search/common
 msgid "Countries"
-msgstr "Countries translated"
+msgstr ""
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -267,7 +267,7 @@ msgstr ""
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
-msgstr "Eligible to receive funding translated"
+msgstr ""
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -294,7 +294,7 @@ msgstr ""
 #: search/facets
 #: search/mission_projects/facets-projects
 msgid "Funding Programme"
-msgstr "Funding Programme translated"
+msgstr ""
 
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
@@ -334,7 +334,7 @@ msgstr ""
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
 msgid "Health Impacts"
-msgstr "Health Impacts translated"
+msgstr ""
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -344,7 +344,7 @@ msgstr ""
 #. Default: "Health impacts"
 #: search/health_observatory/facets-health
 msgid "Health impacts"
-msgstr "Health impacts translated"
+msgstr ""
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -385,7 +385,7 @@ msgstr ""
 #. Default: "Include archived content"
 #: search/common
 msgid "Include archived content"
-msgstr "Include archived content translated"
+msgstr ""
 
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
@@ -401,14 +401,14 @@ msgstr ""
 #: search/cca/facets
 #: search/facets
 msgid "Item from third parties"
-msgstr "Item from thrist parties trasnlated"
+msgstr ""
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
 msgid "Key Type Measure"
-msgstr "Key type measure translated"
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -433,7 +433,7 @@ msgstr ""
 #. Default: "Language"
 #: search/common
 msgid "Language"
-msgstr "Language trasnlated"
+msgstr ""
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
@@ -526,7 +526,7 @@ msgstr ""
 #: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
-msgstr "Observatory partner translated"
+msgstr ""
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -592,7 +592,7 @@ msgstr ""
 #: search/mission_funding/facets-funding
 #: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
-msgstr "RAST step(s) of relevance translated"
+msgstr ""
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -720,7 +720,7 @@ msgstr ""
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Source:"
-msgstr "Source trasnlated:"
+msgstr ""
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -768,24 +768,24 @@ msgstr ""
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr "Topics trasnlated:"
+msgstr ""
 
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
 msgid "Transnational regions"
-msgstr "Transnational regions translated"
+msgstr ""
 
 #. Default: "Type of item"
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
-msgstr "Type of item translated"
+msgstr ""
 
 #. Default: "Types"
 #: search/health_observatory/config-health
 msgid "Types"
-msgstr "Types translated"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
