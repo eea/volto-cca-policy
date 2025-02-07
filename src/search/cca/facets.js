@@ -5,10 +5,47 @@ import {
   geographic_countries,
 } from '../common';
 
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  adaptationApproaches: {
+    id: 'Adaptation Approaches',
+    defaultMessage: 'Adaptation Approaches',
+  },
+  adaptationSectors: {
+    id: 'Adaptation Sectors',
+    defaultMessage: 'Adaptation Sectors',
+  },
+  climateImpacts: {
+    id: 'Climate Impacts',
+    defaultMessage: 'Climate Impacts',
+  },
+  fundingProgramme: {
+    id: 'Funding Programme',
+    defaultMessage: 'Funding Programme',
+  },
+  itemFromThirdParties: {
+    id: 'Item from third parties',
+    defaultMessage: 'Item from third parties',
+  },
+  keyTypeMeasure: {
+    id: 'Key Type Measure',
+    defaultMessage: 'Key Type Measure',
+  },
+  section: {
+    id: 'Section',
+    defaultMessage: 'Section',
+  },
+  transnationalRegions: {
+    id: 'Transnational regions',
+    defaultMessage: 'Transnational regions',
+  },
+});
+
 const adaptation_sectors = {
   field: 'cca_adaptation_sectors.keyword',
   factory: 'MultiTermFacet',
-  label: 'Adaptation Sectors',
+  label: messages.adaptationSectors,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: true,
@@ -23,7 +60,7 @@ const op_cluster = {
   factory: 'MultiTermFacet',
   isFilterable: true,
   isMulti: true,
-  label: 'Section',
+  label: messages.section,
   show: 10000,
   showInFacetsList: false,
   ignoreNLPWhenActive: true,
@@ -44,7 +81,7 @@ const op_cluster = {
 const climate_impacts = {
   field: 'cca_climate_impacts.keyword',
   factory: 'MultiTermFacet',
-  label: 'Climate impacts',
+  label: messages.climateImpacts,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -58,7 +95,7 @@ const climate_impacts = {
 const transnational_regions = {
   field: 'cca_geographic_transnational_region.keyword',
   factory: 'MultiTermFacet',
-  label: 'Transnational regions',
+  label: messages.transnationalRegions,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -71,7 +108,7 @@ const transnational_regions = {
 const adaptation_elements = {
   field: 'cca_adaptation_elements.keyword',
   factory: 'MultiTermFacet',
-  label: 'Adaptation Approaches',
+  label: messages.adaptationApproaches,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -84,7 +121,7 @@ const adaptation_elements = {
 const key_type_measure = {
   field: 'cca_key_type_measure.keyword',
   factory: 'MultiTermFacet',
-  label: 'Key Type Measure',
+  label: messages.keyTypeMeasure,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -97,7 +134,7 @@ const key_type_measure = {
 const funding_programme = {
   field: 'cca_funding_programme.keyword',
   factory: 'MultiTermFacet',
-  label: 'Funding Programme',
+  label: messages.fundingProgramme,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -110,7 +147,7 @@ const funding_programme = {
 const origin_websites = {
   field: 'cca_origin_websites.keyword',
   factory: 'MultiTermFacet',
-  label: 'Item from third parties',
+  label: messages.itemFromThirdParties,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,

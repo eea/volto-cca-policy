@@ -16,6 +16,15 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "K dispozici je podkladový dokument akce"
 
+#. Default: "Adaptation Approaches"
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
+msgid "Adaptation Approaches"
+msgstr "Adaptační přístupy"
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +39,13 @@ msgstr "Podrobnosti o přizpůsobení"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Možnosti přizpůsobení realizované v tomto případě"
+
+#. Default: "Adaptation Sectors"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Odvětví přizpůsobování se změně klimatu"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +134,13 @@ msgstr "Zvolte tematickou mapu:"
 msgid "City:"
 msgstr "Město:"
 
+#. Default: "Climate Impacts"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr "Dopady klimatu"
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +188,11 @@ msgstr "Přispěvatel:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Náklady a přínosy"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Země"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -236,6 +264,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Doba trvání:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr "Způsobilé k získání finančních prostředků"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -256,6 +289,13 @@ msgstr "Pro více možností vyhledávání"
 msgid "Fullscreen"
 msgstr "Celá obrazovka"
 
+#. Default: "Funding Programme"
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
+msgid "Funding Programme"
+msgstr "Program financování"
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -265,6 +305,11 @@ msgstr "Program financování:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Zeměpisná charakteristika:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Zeměpisné měřítko"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -286,10 +331,20 @@ msgstr "Úroveň správy:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS k dispozici (klikněte na zemi pro další informace)"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Zdravotní dopady"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Dopad na zdraví:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr "Zdravotní dopady"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +382,11 @@ msgstr "Doba realizace"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Důležitost a význam adaptace"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr "Zahrnout archivovaný obsah"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +397,16 @@ msgstr "Ukazatele"
 msgid "Info"
 msgstr "Informace"
 
+#. Default: "Item from third parties"
+#: search/cca/facets
+#: search/facets
+msgid "Item from third parties"
+msgstr "Položka od třetích stran"
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Typ klíče Opatření"
 
@@ -362,10 +430,20 @@ msgstr "Klíčová opatření"
 msgid "Keywords:"
 msgstr "Klíčová slova:"
 
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr "Jazyk"
+
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Jazyk konference"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Jazyk(y) nástroje"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -399,10 +477,20 @@ msgstr "Hledáte další informace?"
 msgid "Macro-Transnational region:"
 msgstr "Makro-nadnárodní region:"
 
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Nejužitečnější pro"
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Národní HHAP"
+
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -433,6 +521,12 @@ msgstr "Příspěvky observatoře:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Příspěvky střediska"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/config-health
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr "Partner observatoře"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +582,17 @@ msgstr "Publikace a zprávy Dokumenty"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Zveřejněno v Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr "Rok vydání"
+
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
+msgid "RAST step(s) of relevance"
+msgstr "Relevantní krok(y) RAST"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +651,17 @@ msgstr "Hledejte misi EU pro přizpůsobení"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Prohledejte katalog zdrojů observatoře..."
 
+#. Default: "Section"
+#: search/cca/facets
+#: search/facets
+msgid "Section"
+msgstr "Sekce"
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
+msgstr "Sekce"
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +716,12 @@ msgstr "Zdroj"
 msgid "Source of funding"
 msgstr "Zdroj financování"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Source:"
+msgstr "Zdroj:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -642,10 +764,38 @@ msgstr "Datum se vztahuje k nejzazšímu datu zveřejnění daného bodu."
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datum se vztahuje k okamžiku, kdy přispívající odborníci připravili nebo aktualizovali položku, která má být předložena ke zveřejnění v dokumentu Climate ADAPT."
 
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/cca/facets
+#: search/facets
+msgid "Transnational regions"
+msgstr "Nadnárodní regiony"
+
+#. Default: "Type of item"
+#: search/common
+#: search/mission_all/facets-all
+msgid "Type of item"
+msgstr "Typ položky"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Typy"
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Aktualizace poznámek"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Požadavky uživatele"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1377,11 +1527,6 @@ msgid "TOPICS"
 msgstr "TÉMA"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Nadnárodní regiony"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Doprava"
@@ -2011,11 +2156,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Adaptační plány a strategie"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Odvětví přizpůsobování se změně klimatu"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2383,6 @@ msgstr "Poznámky:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Společné definice termínů často používaných v clearingovém středisku."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Země"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3146,6 @@ msgstr "Sociální: Vzdělávací možnosti"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Sociální: Informační"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Zdroj:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43

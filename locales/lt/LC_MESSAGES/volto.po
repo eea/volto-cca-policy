@@ -16,6 +16,15 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Galimas renginio foninis dokumentas"
 
+#. Default: "Adaptation Approaches"
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
+msgid "Adaptation Approaches"
+msgstr "Prisitaikymo metodai"
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +39,13 @@ msgstr "Informacija apie pritaikymą"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Adaptacijos galimybės įgyvendintos šiuo atveju"
+
+#. Default: "Adaptation Sectors"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Prisitaikymo sektoriai"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +134,13 @@ msgstr "Pasirinkite teminį žemėlapį:"
 msgid "City:"
 msgstr "Miestas:"
 
+#. Default: "Climate Impacts"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr "Klimato poveikis"
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +188,11 @@ msgstr "Nuomonės referentas:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Išlaidos ir nauda"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Šalys"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -236,6 +264,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Trukmė:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr "Tinkamas gauti finansavimą"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -256,6 +289,13 @@ msgstr "Norėdami gauti daugiau paieškos parinkčių"
 msgid "Fullscreen"
 msgstr "Visas ekranas"
 
+#. Default: "Funding Programme"
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
+msgid "Funding Programme"
+msgstr "Finansavimo programa"
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -265,6 +305,11 @@ msgstr "Finansavimo programa:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Geografinis apibūdinimas:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Geografinis mastelis"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -286,10 +331,20 @@ msgstr "Valdymo lygmuo:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS yra (daugiau informacijos rasite šalyje)"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Poveikis sveikatai"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Poveikis sveikatai:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr "Poveikis sveikatai"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +382,11 @@ msgstr "Įgyvendinimo laikas"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Prisitaikymo svarba ir svarba"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr "Įtraukti archyvuotą turinį"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +397,16 @@ msgstr "Rodikliai"
 msgid "Info"
 msgstr "Info"
 
+#. Default: "Item from third parties"
+#: search/cca/facets
+#: search/facets
+msgid "Item from third parties"
+msgstr "Prekė iš trečiųjų šalių"
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Rakto tipo priemonė"
 
@@ -362,10 +430,20 @@ msgstr "Pagrindinės priemonės"
 msgid "Keywords:"
 msgstr "Raktažodžiai:"
 
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr "Kalba"
+
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Konferencijos kalba"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Įrankio kalba (-os)."
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -399,10 +477,20 @@ msgstr "Ieškote daugiau informacijos?"
 msgid "Macro-Transnational region:"
 msgstr "Makrotarptautinis regionas:"
 
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Labiausiai naudinga"
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Nacionalinis HHAP"
+
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -433,6 +521,12 @@ msgstr "Observatorijos indėlis:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Observatorijos indėlis"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/config-health
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr "Observatorijos partneris"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +582,17 @@ msgstr "Leidiniai ir ataskaitos Dokumentai"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Paskelbta „Climate-ADAPT“"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr "Leidybos metai"
+
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
+msgid "RAST step(s) of relevance"
+msgstr "RAST veiksmas (-ai)."
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +651,17 @@ msgstr "Ieškokite ES prisitaikymo prie misijos"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Ieškoti Observatorijos išteklių kataloge..."
 
+#. Default: "Section"
+#: search/cca/facets
+#: search/facets
+msgid "Section"
+msgstr "Skyrius"
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
+msgstr "Skyriai"
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +716,12 @@ msgstr "Šaltinis"
 msgid "Source of funding"
 msgstr "Finansavimo šaltinis"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Source:"
+msgstr "Šaltinis:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -642,10 +764,38 @@ msgstr "Data yra paskutinė daikto paskelbimo data."
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Data – tai momentas, kai prisidedantys ekspertai parengė arba atnaujino punktą, kuris turi būti pateiktas paskelbti „Climate ADAPT“"
 
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/cca/facets
+#: search/facets
+msgid "Transnational regions"
+msgstr "Tarptautiniai regionai"
+
+#. Default: "Type of item"
+#: search/common
+#: search/mission_all/facets-all
+msgid "Type of item"
+msgstr "Prekės tipas"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Tipai"
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Pastabų atnaujinimas"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Vartotojo reikalavimai"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1377,11 +1527,6 @@ msgid "TOPICS"
 msgstr "TEMOS"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Tarptautiniai regionai"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Transportas"
@@ -2011,11 +2156,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Prisitaikymo planai ir strategijos"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Prisitaikymo sektoriai"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2383,6 @@ msgstr "Pastabos:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Bendros kliringo namuose dažnai vartojamų terminų apibrėžtys."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Šalys"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3146,6 @@ msgstr "Socialiniai: švietimo galimybės"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Socialinis: Informacinis"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Šaltinis:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43

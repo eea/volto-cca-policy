@@ -16,6 +16,15 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Tapahtuman taustadokumentti on saatavilla"
 
+#. Default: "Adaptation Approaches"
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
+msgid "Adaptation Approaches"
+msgstr "Sopeutumislähestymistavat"
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +39,13 @@ msgstr "Sopeutumista koskevat tiedot"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Tässä tapauksessa toteutetut sopeutumisvaihtoehdot"
+
+#. Default: "Adaptation Sectors"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Sopeutumisalat"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +134,13 @@ msgstr "Valitse teemakartta:"
 msgid "City:"
 msgstr "Paikkakunta:"
 
+#. Default: "Climate Impacts"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr "Ilmaston vaikutukset"
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +188,11 @@ msgstr "Osallistuja:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Kustannukset ja hyödyt"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Maat"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -236,6 +264,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Kesto:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr "Oikeus saada rahoitusta"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -256,6 +289,13 @@ msgstr "Lisää hakuvaihtoehtoja"
 msgid "Fullscreen"
 msgstr "Koko näyttö"
 
+#. Default: "Funding Programme"
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
+msgid "Funding Programme"
+msgstr "Rahoitusohjelma"
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -265,6 +305,11 @@ msgstr "Rahoitusohjelma:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Maantieteellinen karakterisointi:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Maantieteellinen mittakaava"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -286,10 +331,20 @@ msgstr "Hallintotaso:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS saatavilla (napsauta maata saadaksesi lisätietoja)"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Terveysvaikutukset"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Terveysvaikutukset:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr "Terveysvaikutukset"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +382,11 @@ msgstr "Toteutusaika"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Sopeutumisen merkitys ja merkitys"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr "Sisällytä arkistoitu sisältö"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +397,16 @@ msgstr "Indikaattorit"
 msgid "Info"
 msgstr "Tietoa"
 
+#. Default: "Item from third parties"
+#: search/cca/facets
+#: search/facets
+msgid "Item from third parties"
+msgstr "Kohde kolmansilta osapuolilta"
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Keskeisen tyyppinen toimenpide"
 
@@ -362,10 +430,20 @@ msgstr "Keskeiset toimenpiteet"
 msgid "Keywords:"
 msgstr "Avainsanat:"
 
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr "Kieli"
+
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Konferenssin kieli"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Työkalun kieli(t)."
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -399,10 +477,20 @@ msgstr "Etsitkö lisätietoja?"
 msgid "Macro-Transnational region:"
 msgstr "Makroalue:"
 
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Hyödyllisin"
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Kansallinen HHAP"
+
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -433,6 +521,12 @@ msgstr "Seurantakeskuksen panokset:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Seurantakeskuksen panos"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/config-health
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr "Observatorion kumppani"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +582,17 @@ msgstr "Julkaisut ja raportit Asiakirjat"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Julkaisussa Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr "Julkaisuvuosi"
+
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
+msgid "RAST step(s) of relevance"
+msgstr "RAST-vaiheet"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +651,17 @@ msgstr "Hae EU:n sopeutumisoperaatiosta"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Hae observatorion resurssiluettelosta..."
 
+#. Default: "Section"
+#: search/cca/facets
+#: search/facets
+msgid "Section"
+msgstr "Osio"
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
+msgstr "Osat"
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +716,12 @@ msgstr "Lähde"
 msgid "Source of funding"
 msgstr "Rahoituslähde"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Source:"
+msgstr "Lähde:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -642,10 +764,38 @@ msgstr "Päivämäärä viittaa viimeisimpään julkaisupäivään."
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Päivämäärällä tarkoitetaan hetkeä, jona osallistuvat asiantuntijat ovat laatineet tai päivittäneet kohdan julkaistavaksi Climate ADAPT -sovelluksessa."
 
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/cca/facets
+#: search/facets
+msgid "Transnational regions"
+msgstr "Valtioiden rajat ylittävät alueet"
+
+#. Default: "Type of item"
+#: search/common
+#: search/mission_all/facets-all
+msgid "Type of item"
+msgstr "Kohteen tyyppi"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Tyypit"
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Päivitetään muistiinpanoja"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Käyttäjien vaatimukset"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1377,11 +1527,6 @@ msgid "TOPICS"
 msgstr "TOPICS"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Valtioiden rajat ylittävät alueet"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Liikenne"
@@ -2011,11 +2156,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Sopeutumissuunnitelmat ja -strategiat"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Sopeutumisalat"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2383,6 @@ msgstr "Huomautuksia:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Selvitysyhteisössä usein käytettyjen termien yhteiset määritelmät."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Maat"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3146,6 @@ msgstr "Sosiaalinen: Koulutusvaihtoehdot"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Sosiaalinen: Informatiivinen"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Lähde:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43

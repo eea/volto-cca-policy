@@ -1,10 +1,39 @@
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
 
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  countries: {
+    id: 'Countries',
+    defaultMessage: 'Countries',
+  },
+  climateImpacts: {
+    id: 'Climate Impacts',
+    defaultMessage: 'Climate Impacts',
+  },
+  adaptationSectors: {
+    id: 'Adaptation Sectors',
+    defaultMessage: 'Adaptation Sectors',
+  },
+  includeArchivedContent: {
+    id: 'Include archived content',
+    defaultMessage: 'Include archived content',
+  },
+  typeOfItem: {
+    id: 'Type of item',
+    defaultMessage: 'Type of item',
+  },
+  language: {
+    id: 'Language',
+    defaultMessage: 'Language',
+  },
+});
+
 export const geographic_countries = {
   field: 'cca_geographic_countries.keyword',
   factory: 'MultiTermFacet',
-  label: 'Countries',
+  label: messages.countries,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -15,7 +44,7 @@ export const geographic_countries = {
 export const cca_climate_impacts = {
   field: 'cca_climate_impacts.keyword',
   factory: 'MultiTermFacet',
-  label: 'Climate Impacts',
+  label: messages.climateImpacts,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -26,7 +55,7 @@ export const cca_climate_impacts = {
 export const cca_adaptation_sectors = {
   field: 'cca_adaptation_sectors.keyword',
   factory: 'MultiTermFacet',
-  label: 'Adaptation Sectors',
+  label: messages.adaptationSectors,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -36,7 +65,7 @@ export const cca_adaptation_sectors = {
 
 export const include_archived = booleanFacet(() => ({
   field: 'IncludeArchived',
-  label: 'Include archived content',
+  label: messages.includeArchivedContent,
   id: 'IncludeArchived',
   showInFacetsList: false,
   showInSecondaryFacetsList: true,
@@ -63,7 +92,7 @@ export const include_archived = booleanFacet(() => ({
 export const objectProvides = {
   field: 'objectProvides',
   factory: 'MultiTermFacet',
-  label: 'Type of item',
+  label: messages.typeOfItem,
   showInFacetsList: true,
   filterType: 'any',
   isFilterable: false,
@@ -130,19 +159,15 @@ export const issued_date = {
 export const language = {
   field: 'language',
   factory: 'MultiTermFacet',
-  label: 'Language',
+  label: messages.language,
   showInFacetsList: false,
   filterType: 'any',
   isFilterable: false,
   show: 10000,
   isMulti: true,
-  default: (options) => {
-    const { language } = options || {};
-    // console.log('options', options);
-    return {
-      values: [language || 'en'],
-      type: 'any',
-    };
+  default: {
+    values: ['en'],
+    type: 'any',
   },
   facetValues: [
     'de',
