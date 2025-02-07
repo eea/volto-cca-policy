@@ -16,6 +16,15 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Dokument o ozadju dogodka je na voljo"
 
+#. Default: "Adaptation Approaches"
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
+msgid "Adaptation Approaches"
+msgstr "Pristopi prilagajanja"
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +39,13 @@ msgstr "Podrobnosti o prilagoditvi"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Možnosti prilagajanja, ki se izvajajo v tem primeru"
+
+#. Default: "Adaptation Sectors"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Sektorji za prilagajanje"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +134,13 @@ msgstr "Izberite tematski zemljevid:"
 msgid "City:"
 msgstr "mesto:"
 
+#. Default: "Climate Impacts"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr "Podnebni vplivi"
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +188,11 @@ msgstr "Sodelujoči:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Stroški in koristi"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Države"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -236,6 +264,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Trajanje:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr "Upravičen do prejema sredstev"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -256,6 +289,13 @@ msgstr "Za več možnosti iskanja"
 msgid "Fullscreen"
 msgstr "Cel zaslon"
 
+#. Default: "Funding Programme"
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
+msgid "Funding Programme"
+msgstr "Program financiranja"
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -265,6 +305,11 @@ msgstr "Program financiranja:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Geografska opredelitev:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Geografsko merilo"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -286,10 +331,20 @@ msgstr "Raven upravljanja:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS na voljo (kliknite na državo za več informacij)"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Vplivi na zdravje"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Vpliv na zdravje:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr "Vplivi na zdravje"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +382,11 @@ msgstr "Čas izvedbe"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Pomen in pomembnost prilagajanja"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr "Vključi arhivirano vsebino"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +397,16 @@ msgstr "Kazalniki"
 msgid "Info"
 msgstr "Podatki"
 
+#. Default: "Item from third parties"
+#: search/cca/facets
+#: search/facets
+msgid "Item from third parties"
+msgstr "Predmet tretjih oseb"
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Mera vrste ključa"
 
@@ -362,10 +430,20 @@ msgstr "Ključni ukrepi"
 msgid "Keywords:"
 msgstr "Ključne besede:"
 
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr "Jezik"
+
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Jezik konference"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Jezik(-i) orodja"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -399,10 +477,20 @@ msgstr "Iščete več informacij?"
 msgid "Macro-Transnational region:"
 msgstr "Makronacionalna regija:"
 
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Najbolj uporaben za"
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Nacionalni HHAP"
+
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -433,6 +521,12 @@ msgstr "Prispevki opazovalnice:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Prispevki opazovalne skupine"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/config-health
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr "Partner observatorija"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +582,17 @@ msgstr "Publikacije in poročila Dokumenti"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Objavljeno v Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr "Leto izida"
+
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
+msgid "RAST step(s) of relevance"
+msgstr "Pomembni koraki RAST"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +651,17 @@ msgstr "Poiščite misijo EU za prilagajanje"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Iščite v katalogu virov observatorija ..."
 
+#. Default: "Section"
+#: search/cca/facets
+#: search/facets
+msgid "Section"
+msgstr "Razdelek"
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
+msgstr "Oddelki"
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +716,12 @@ msgstr "Vir:"
 msgid "Source of funding"
 msgstr "Vir financiranja"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Source:"
+msgstr "Vir:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -642,10 +764,38 @@ msgstr "Datum se nanaša na zadnji datum objave postavke."
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datum se nanaša na trenutek, ko so sodelujoči strokovnjaki pripravili ali posodobili točko, ki jo je treba predložiti za objavo v Climate ADAPT."
 
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/cca/facets
+#: search/facets
+msgid "Transnational regions"
+msgstr "Nadnacionalne regije"
+
+#. Default: "Type of item"
+#: search/common
+#: search/mission_all/facets-all
+msgid "Type of item"
+msgstr "Vrsta artikla"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Vrste"
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Posodabljanje zapiskov"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Uporabniške zahteve"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1377,11 +1527,6 @@ msgid "TOPICS"
 msgstr "TOPICS"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Nadnacionalne regije"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Promet"
@@ -2011,11 +2156,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Načrti in strategije prilagajanja"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Sektorji za prilagajanje"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2383,6 @@ msgstr "Pripombe:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Skupne opredelitve izrazov, ki se pogosto uporabljajo v klirinški hiši."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Države"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3146,6 @@ msgstr "Socialno: Izobraževalne možnosti"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Družabno: informativno"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Vir:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43

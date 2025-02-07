@@ -16,6 +16,15 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Um documento de referência para o evento está disponível"
 
+#. Default: "Adaptation Approaches"
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
+msgid "Adaptation Approaches"
+msgstr "Abordagens de Adaptação"
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +39,13 @@ msgstr "Dados relativos à adaptação"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Opções de adaptação implementadas neste caso"
+
+#. Default: "Adaptation Sectors"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Setores de adaptação"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,6 +134,13 @@ msgstr "Escolha o mapa temático:"
 msgid "City:"
 msgstr "Cidade:"
 
+#. Default: "Climate Impacts"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr "Impactos climáticos"
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +188,11 @@ msgstr "Colaborador:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Custos e benefícios"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Países"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -236,6 +264,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Duração:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr "Elegível para receber financiamento"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -256,6 +289,13 @@ msgstr "Para mais opções de pesquisa"
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
+#. Default: "Funding Programme"
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
+msgid "Funding Programme"
+msgstr "Programa de Financiamento"
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -265,6 +305,11 @@ msgstr "Programa de financiamento:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Caracterização geográfica:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Escala geográfica"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -286,10 +331,20 @@ msgstr "Nível de governação:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS disponível (clique no país para obter mais informações)"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Impactos na saúde"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Impacto na saúde:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr "Impactos na saúde"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +382,11 @@ msgstr "Prazo de execução"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Importância e relevância da adaptação"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr "Incluir conteúdo arquivado"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +397,16 @@ msgstr "Indicadores"
 msgid "Info"
 msgstr "Informação"
 
+#. Default: "Item from third parties"
+#: search/cca/facets
+#: search/facets
+msgid "Item from third parties"
+msgstr "Artigo de terceiros"
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Medida de tipo-chave"
 
@@ -362,10 +430,20 @@ msgstr "Principais tipos de medidas"
 msgid "Keywords:"
 msgstr "Palavras-chave:"
 
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr "Linguagem"
+
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "Língua da conferência"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Idioma(s) da ferramenta"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -399,10 +477,20 @@ msgstr "Procura mais informações?"
 msgid "Macro-Transnational region:"
 msgstr "Macrorregião transnacional:"
 
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "Mais útil para"
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "HHAP nacionais"
+
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -433,6 +521,12 @@ msgstr "Contribuições do Observatório:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "Contribuições do Observatório"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/config-health
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr "Parceiro do observatório"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +582,17 @@ msgstr "Publicações e relatórios Documentos"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Publicado em Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr "Ano de publicação"
+
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
+msgid "RAST step(s) of relevance"
+msgstr "Etapa(s) RAST de relevância"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +651,17 @@ msgstr "Pesquise a Missão da UE sobre Adaptação"
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Pesquise no Catálogo de Recursos do Observatório..."
 
+#. Default: "Section"
+#: search/cca/facets
+#: search/facets
+msgid "Section"
+msgstr "Seção"
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
+msgstr "Seções"
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +716,12 @@ msgstr "Fonte"
 msgid "Source of funding"
 msgstr "Fonte de financiamento"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Source:"
+msgstr "Fonte:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -642,10 +764,38 @@ msgstr "A data refere-se à última data de publicação do item"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "A data refere-se ao momento em que o item foi preparado ou atualizado por especialistas contribuintes a serem submetidos para publicação no Climate ADAPT"
 
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/cca/facets
+#: search/facets
+msgid "Transnational regions"
+msgstr "Regiões transnacionais"
+
+#. Default: "Type of item"
+#: search/common
+#: search/mission_all/facets-all
+msgid "Type of item"
+msgstr "Tipo de item"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Tipos"
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Atualizando notas"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Requisitos do usuário"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1377,11 +1527,6 @@ msgid "TOPICS"
 msgstr "TÓPICOS"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Regiões transnacionais"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Transportes"
@@ -2011,11 +2156,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Planos e Estratégias de Adaptação"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Setores de adaptação"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2383,6 @@ msgstr "Observações:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Definições comuns dos termos utilizados frequentemente na câmara de compensação."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Países"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3146,6 @@ msgstr "Social: Opções educativas"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Social: Informação"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Fonte:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
