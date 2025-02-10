@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-02-06T07:00:01.768Z\n"
+"POT-Creation-Date: 2025-02-10T08:03:03.497Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -74,6 +74,11 @@ msgstr ""
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
 msgid "Agenda and supporting documents"
+msgstr ""
+
+#. Default: "All time"
+#: search/common
+msgid "All time"
 msgstr ""
 
 #. Default: "Background information"
@@ -445,6 +450,36 @@ msgstr ""
 #. Default: "Language(s) of the tool"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
+msgstr ""
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr ""
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr ""
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr ""
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr ""
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr ""
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
 msgstr ""
 
 #. Default: "Lead"

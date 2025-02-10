@@ -74,6 +74,11 @@ msgstr "Información adicional"
 msgid "Agenda and supporting documents"
 msgstr "Orden del día y documentos de apoyo"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Todo el tiempo"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Idioma de la conferencia"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Idioma(s) de la herramienta"
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "últimos 2 años"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "últimos 3 meses"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "últimos 5 años"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Mes pasado"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "La semana pasada"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "El año pasado"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

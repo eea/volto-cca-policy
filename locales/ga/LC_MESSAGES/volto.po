@@ -74,6 +74,11 @@ msgstr "Sonraí breise"
 msgid "Agenda and supporting documents"
 msgstr "Clár oibre agus doiciméid tacaíochta"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "An t-am ar fad"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Teanga na Comhdhála"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Teanga(cha) na huirlise"
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "2 bhliain seo caite"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "3 mhí seo caite"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "5 bliana anuas"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "An mhí seo caite"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "An tseachtain seo caite"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "An bhliain seo caite"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

@@ -74,6 +74,11 @@ msgstr "Dodatni podaci"
 msgid "Agenda and supporting documents"
 msgstr "Dnevni red i popratni dokumenti"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Sve vrijeme"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Jezik konferencije"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Jezik(i) alata"
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Zadnje 2 godine"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Zadnja 3 mjeseca"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Zadnjih 5 godina"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Prošli mjesec"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Prošli tjedan"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Prošle godine"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
