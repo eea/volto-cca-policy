@@ -16,6 +16,15 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Az esemény háttérdokumentuma elérhető"
 
+#. Default: "Adaptation Approaches"
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
+msgid "Adaptation Approaches"
+msgstr "Alkalmazkodási megközelítések"
+
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
@@ -30,6 +39,13 @@ msgstr "Az alkalmazkodás részletei"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
 msgstr "Az ebben az esetben alkalmazott adaptációs lehetőségek"
+
+#. Default: "Adaptation Sectors"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Adaptation Sectors"
+msgstr "Alkalmazkodási ágazatok"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -57,6 +73,11 @@ msgstr "További részletek"
 #: components/theme/Views/CcaEventView
 msgid "Agenda and supporting documents"
 msgstr "Napirend és igazoló dokumentumok"
+
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Minden alkalommal"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -118,6 +139,13 @@ msgstr "Tematikus térkép kiválasztása:"
 msgid "City:"
 msgstr "Város:"
 
+#. Default: "Climate Impacts"
+#: search/cca/facets
+#: search/common
+#: search/facets
+msgid "Climate Impacts"
+msgstr "Éghajlati hatások"
+
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
@@ -165,6 +193,11 @@ msgstr "Közreműködő:"
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
 msgstr "Költségek és előnyök"
+
+#. Default: "Countries"
+#: search/common
+msgid "Countries"
+msgstr "Országok"
 
 #. Default: "Countries:"
 #: helpers/ContentMetadata
@@ -236,6 +269,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Időtartam:"
 
+#. Default: "Eligible to receive funding"
+#: search/mission_funding/facets-funding
+msgid "Eligible to receive funding"
+msgstr "Támogatásra jogosult"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -256,6 +294,13 @@ msgstr "További keresési lehetőségekért"
 msgid "Fullscreen"
 msgstr "Teljes képernyő"
 
+#. Default: "Funding Programme"
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
+msgid "Funding Programme"
+msgstr "Finanszírozási Program"
+
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
@@ -265,6 +310,11 @@ msgstr "Finanszírozási program:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Földrajzi jellemzés:"
+
+#. Default: "Geographical scale"
+#: search/mission_tools/facets-tools
+msgid "Geographical scale"
+msgstr "Földrajzi lépték"
 
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -286,10 +336,20 @@ msgstr "Irányítási szint:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS elérhető (további információkért kattintson az országra)"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Egészségügyi hatások"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
 msgstr "Egészségügyi hatás:"
+
+#. Default: "Health impacts"
+#: search/health_observatory/facets-health
+msgid "Health impacts"
+msgstr "Egészségügyi hatások"
 
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -327,6 +387,11 @@ msgstr "Végrehajtási idő"
 msgid "Importance and Relevance of Adaptation"
 msgstr "Az alkalmazkodás fontossága és relevanciája"
 
+#. Default: "Include archived content"
+#: search/common
+msgid "Include archived content"
+msgstr "Tartalmazza az archivált tartalmat"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -337,8 +402,16 @@ msgstr "Mutatók"
 msgid "Info"
 msgstr "Információk"
 
+#. Default: "Item from third parties"
+#: search/cca/facets
+#: search/facets
+msgid "Item from third parties"
+msgstr "Harmadik féltől származó tétel"
+
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Kulcstípus-mérték"
 
@@ -362,10 +435,50 @@ msgstr "Kulcsfontosságú intézkedések"
 msgid "Keywords:"
 msgstr "Kulcsszavak:"
 
+#. Default: "Language"
+#: search/common
+msgid "Language"
+msgstr "Nyelv"
+
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
 msgstr "A konferencia nyelve"
+
+#. Default: "Language(s) of the tool"
+#: search/mission_tools/facets-tools
+msgid "Language(s) of the tool"
+msgstr "Az eszköz nyelve(i)."
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Az elmúlt 2 év"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Az elmúlt 3 hónap"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Az elmúlt 5 év"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Múlt hónapban"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Múlt héten"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Tavaly"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
@@ -399,10 +512,20 @@ msgstr "További információt keres?"
 msgid "Macro-Transnational region:"
 msgstr "Makro-transznacionális régió:"
 
+#. Default: "Most useful for"
+#: search/mission_tools/facets-tools
+msgid "Most useful for"
+msgstr "A leghasznosabb a számára"
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Nemzeti HHAP"
+
+#. Default: "New"
+#: components/Result/ClusterHorizontalCardItem
+msgid "New"
+msgstr ""
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -433,6 +556,12 @@ msgstr "A megfigyelőközpont hozzájárulásai:"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
 msgstr "A megfigyelőközpont hozzájárulásai"
+
+#. Default: "Observatory partner"
+#: search/health_observatory/config-health
+#: search/health_observatory/facets-health
+msgid "Observatory partner"
+msgstr "Obszervatórium partnere"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -488,6 +617,17 @@ msgstr "Kiadványok és jelentések Dokumentumok"
 #: helpers/Utils
 msgid "Published in Climate-ADAPT"
 msgstr "Forrás: Climate-ADAPT"
+
+#. Default: "Publishing year"
+#: search/health_observatory/facets-health
+msgid "Publishing year"
+msgstr "Megjelenés éve"
+
+#. Default: "RAST step(s) of relevance"
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
+msgid "RAST step(s) of relevance"
+msgstr "A releváns RAST lépés(ek)."
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -546,6 +686,17 @@ msgstr ""
 msgid "Search the Observatory Resource Catalogue..."
 msgstr ""
 
+#. Default: "Section"
+#: search/cca/facets
+#: search/facets
+msgid "Section"
+msgstr "Szakasz"
+
+#. Default: "Sections"
+#: search/health_observatory/facets-health
+msgid "Sections"
+msgstr "Szakaszok"
+
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Sector"
@@ -600,6 +751,12 @@ msgstr "Forrás"
 msgid "Source of funding"
 msgstr "Finanszírozási forrás"
 
+#. Default: "Source:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Source:"
+msgstr "Forrás:"
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -642,10 +799,38 @@ msgstr "A dátum a tétel közzétételének legkésőbbi időpontjára vonatkoz
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "A dátum arra az időpontra utal, amikor a közreműködő szakértők elkészítették vagy frissítették a napirendi pontot, amelyet a Climate ADAPT-ban való közzététel céljából be kell nyújtani."
 
+#. Default: "Topics:"
+#: components/Result/ClusterHorizontalCardItem
+#: components/Result/HealthHorizontalCardItem
+msgid "Topics:"
+msgstr ""
+
+#. Default: "Transnational regions"
+#: search/cca/facets
+#: search/facets
+msgid "Transnational regions"
+msgstr "Transznacionális régiók"
+
+#. Default: "Type of item"
+#: search/common
+#: search/mission_all/facets-all
+msgid "Type of item"
+msgstr "Az elem típusa"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Típusok"
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Jegyzetek frissítése"
+
+#. Default: "User requirements"
+#: search/mission_tools/facets-tools
+msgid "User requirements"
+msgstr "Felhasználói követelmények"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1377,11 +1562,6 @@ msgid "TOPICS"
 msgstr "TÉMAKÖRÖK"
 
 #. undefined
-#: site_menu:47
-msgid "Transnational regions"
-msgstr "Transznacionális régiók"
-
-#. undefined
 #: site_menu:40
 msgid "Transport"
 msgstr "Közlekedés"
@@ -2011,11 +2191,6 @@ msgid "Adaptation Plans and Strategies"
 msgstr "Alkalmazkodási tervek és stratégiák"
 
 #. undefined
-#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:253
-msgid "Adaptation Sectors"
-msgstr "Alkalmazkodási ágazatok"
-
-#. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:73
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
 #: ../../climateadapt/browser/pt/video_view.pt:113
@@ -2243,11 +2418,6 @@ msgstr "Megjegyzések:"
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
 msgstr "Az elszámolóházban gyakran használt kifejezések közös meghatározása."
-
-#. undefined
-#: ../../climateadapt/browser/__init__.py:197
-msgid "Countries"
-msgstr "Országok"
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -3011,13 +3181,6 @@ msgstr "Szociális: Oktatási lehetőségek"
 #: ../../climateadapt/vocabulary.py:604
 msgid "Social: Informational"
 msgstr "Szociális: Információs"
-
-#. undefined
-#: ../../climateadapt/browser/pt/guidancedocument_view.pt:32
-#: ../../climateadapt/browser/pt/indicator_view.pt:44
-#: ../../climateadapt/browser/pt/informationportal_view.pt:32
-msgid "Source:"
-msgstr "Forrás:"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43

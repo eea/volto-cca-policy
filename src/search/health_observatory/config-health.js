@@ -6,6 +6,20 @@ import vocabs from './../vocabulary';
 import facets from './facets-health';
 import views from './views-health';
 
+// import { defineMessages } from 'react-intl';
+
+// const messages = defineMessages({
+//   types: {
+//     id: 'Types',
+//     defaultMessage: 'Types',
+//   },
+//   healthImpacts: { id: 'Health Impacts', defaultMessage: 'Health Impacts' },
+//   observatoryPartner: {
+//     id: 'Observatory partner',
+//     defaultMessage: 'Observatory partner',
+//   },
+// });
+
 const ccaConfig = {
   title: 'ClimateAdapt Health',
   ...views,
@@ -133,6 +147,7 @@ export default function installMainSearch(config) {
     {
       id: 'types',
       title: 'Types',
+      // title: messages.types,
       facetField: 'objectProvides',
       sortOn: 'alpha',
       icon: {
@@ -142,6 +157,7 @@ export default function installMainSearch(config) {
     {
       id: 'healthImpacts',
       title: 'Health Impacts',
+      // title: messages.healthImpacts,
       facetField: 'cca_health_impacts.keyword',
       sortOn: 'alpha',
       whitelist: [
@@ -155,6 +171,7 @@ export default function installMainSearch(config) {
     {
       id: 'observatoryPartner',
       title: 'Observatory partner',
+      // title: messages.observatoryPartner,
       facetField: 'cca_partner_contributors.keyword',
       sortOn: 'alpha',
     },
