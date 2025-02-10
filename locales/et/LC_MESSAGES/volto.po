@@ -74,6 +74,11 @@ msgstr "Täiendavad üksikasjad"
 msgid "Agenda and supporting documents"
 msgstr "Päevakord ja tõendavad dokumendid"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Kogu aeg"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Konverentsi keel"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Tööriista keel(ed)."
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Viimased 2 aastat"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Viimased 3 kuud"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Viimased 5 aastat"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Eelmisel kuul"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Eelmisel nädalal"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Eelmisel aastal"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

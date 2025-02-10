@@ -74,6 +74,11 @@ msgstr "További részletek"
 msgid "Agenda and supporting documents"
 msgstr "Napirend és igazoló dokumentumok"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Minden alkalommal"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "A konferencia nyelve"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Az eszköz nyelve(i)."
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Az elmúlt 2 év"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Az elmúlt 3 hónap"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Az elmúlt 5 év"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Múlt hónapban"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Múlt héten"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Tavaly"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

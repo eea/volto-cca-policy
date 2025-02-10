@@ -1,7 +1,7 @@
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
 
-import { defineMessages } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   countries: {
@@ -117,34 +117,48 @@ export const issued_date = {
   ignoreFromNlp: true,
   ranges: [
     {
+      label: <FormattedMessage id="All time" defaultMessage="All time" />,
       key: 'All time',
     },
     {
+      label: <FormattedMessage id="Last week" defaultMessage="Last week" />,
+
       key: 'Last week',
       from: 'now-1w',
       to: 'now',
     },
     {
+      label: <FormattedMessage id="Last month" defaultMessage="Last month" />,
       key: 'Last month',
       from: 'now-1m',
       to: 'now',
     },
     {
+      label: (
+        <FormattedMessage id="Last 3 months" defaultMessage="Last 3 months" />
+      ),
       key: 'Last 3 months',
       from: 'now-3m',
       to: 'now',
     },
     {
+      label: <FormattedMessage id="Last year" defaultMessage="Last year" />,
       key: 'Last year',
       from: 'now-1y',
       to: 'now',
     },
     {
+      label: (
+        <FormattedMessage id="Last 2 years" defaultMessage="Last 2 years" />
+      ),
       key: 'Last 2 years',
       from: 'now-2y',
       to: 'now',
     },
     {
+      label: (
+        <FormattedMessage id="Last 5 years" defaultMessage="Last 5 years" />
+      ),
       key: 'Last 5 years',
       from: 'now-5y',
       to: 'now',

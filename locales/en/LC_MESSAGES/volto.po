@@ -74,6 +74,11 @@ msgstr ""
 msgid "Agenda and supporting documents"
 msgstr ""
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr ""
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -443,6 +448,36 @@ msgstr ""
 #. Default: "Language(s) of the tool"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
+msgstr ""
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr ""
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr ""
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr ""
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr ""
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr ""
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
 msgstr ""
 
 #. Default: "Lead"
