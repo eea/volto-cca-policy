@@ -74,6 +74,11 @@ msgstr "Допълнителни подробности"
 msgid "Agenda and supporting documents"
 msgstr "Дневен ред и придружаващи документи"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Миналата година"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Език на конференцията"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Език(ци) на инструмента"
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Последните 2 години"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Последните 3 месеца"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Последните 5 години"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Миналия месец"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Миналата седмица"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Миналата година"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

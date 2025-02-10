@@ -74,6 +74,11 @@ msgstr "Detalii suplimentare"
 msgid "Agenda and supporting documents"
 msgstr "Ordinea de zi și documentele justificative"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Toate"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Limba conferinței"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Limba(e) instrumentului"
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Ultimii 2 ani"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Ultimele 3 luni"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Ultimii 5 ani"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Luna trecută"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Săptămâna trecută"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Anul trecut"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

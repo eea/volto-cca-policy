@@ -74,6 +74,11 @@ msgstr "Papildoma informacija"
 msgid "Agenda and supporting documents"
 msgstr "Darbotvarkė ir patvirtinamieji dokumentai"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Visą laiką"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Konferencijos kalba"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Įrankio kalba (-os)."
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Paskutinius 2 metus"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Paskutiniai 3 mėn"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Paskutiniai 5 metai"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Praėjusį mėnesį"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Praėjusią savaitę"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Praėjusiais metais"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView

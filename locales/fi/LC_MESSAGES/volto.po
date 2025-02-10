@@ -74,6 +74,11 @@ msgstr "Lisätiedot"
 msgid "Agenda and supporting documents"
 msgstr "Esityslista ja tausta-asiakirjat"
 
+#. Default: "All time"
+#: search/common
+msgid "All time"
+msgstr "Koko ajan"
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -444,6 +449,36 @@ msgstr "Konferenssin kieli"
 #: search/mission_tools/facets-tools
 msgid "Language(s) of the tool"
 msgstr "Työkalun kieli(t)."
+
+#. Default: "Last 2 years"
+#: search/common
+msgid "Last 2 years"
+msgstr "Viimeiset 2 vuotta"
+
+#. Default: "Last 3 months"
+#: search/common
+msgid "Last 3 months"
+msgstr "Viimeiset 3 kuukautta"
+
+#. Default: "Last 5 years"
+#: search/common
+msgid "Last 5 years"
+msgstr "Viimeiset 5 vuotta"
+
+#. Default: "Last month"
+#: search/common
+msgid "Last month"
+msgstr "Viime kuussa"
+
+#. Default: "Last week"
+#: search/common
+msgid "Last week"
+msgstr "Viime viikolla"
+
+#. Default: "Last year"
+#: search/common
+msgid "Last year"
+msgstr "Viime vuonna"
 
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
