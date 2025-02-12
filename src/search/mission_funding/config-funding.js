@@ -48,7 +48,5 @@ export default function installMissionFundingSearch(config) {
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
 
-  console.log(missionFundingSearch);
-
   return config;
 }
