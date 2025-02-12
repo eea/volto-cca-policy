@@ -19,6 +19,7 @@ const messages = defineMessages({
     id: 'Adaptation Approaches',
     defaultMessage: 'Adaptation Approaches',
   },
+  countries: { id: 'Countries', defaultMessage: 'Countries' },
 });
 
 const blacklist = ['IncludeArchived', 'issued.date', 'language'];
@@ -28,8 +29,14 @@ let globalFacets = globalSearchBaseConfig.facets.filter(
 
 for (let i = 0; i < globalFacets.length; i++) {
   if (globalFacets[i]['field'] === 'objectProvides') {
-    // globalFacets[i]['label'] = 'Type of item';
     globalFacets[i]['label'] = messages.typeOfItem;
+  }
+  if (
+    globalFacets[i]['field'] === 'spatial' &&
+    typeof globalFacets[i]['label'] === 'string' &&
+    globalFacets[i]['label'] === 'Countries'
+  ) {
+    globalFacets[i]['label'] = messages.countries;
   }
 }
 

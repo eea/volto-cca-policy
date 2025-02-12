@@ -41,6 +41,7 @@ export default function installMissionFundingSearch(config) {
       ],
     },
   });
+  missionFundingSearch.facets = facets;
 
   if (typeof window !== 'undefined') {
     config.searchui.missionFundingSearch.host =
