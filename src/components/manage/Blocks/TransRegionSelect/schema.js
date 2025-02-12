@@ -4,12 +4,18 @@ export default {
     {
       id: 'default',
       title: 'Default',
-      fields: ['title'],
+      fields: ['title', 'region'],
     },
   ],
   properties: {
     title: {
       title: 'Block title',
+    },
+    region: {
+      title: 'Region',
+      vocabulary: {
+        '@id': 'eea.climateadapt.regions',
+      },
     },
   },
   required: [],
