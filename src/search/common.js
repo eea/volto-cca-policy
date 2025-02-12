@@ -181,7 +181,8 @@ export const language = {
   isMulti: true,
   default: (options) => {
     const { language } = options || {};
-    // console.log('options', options);
+    console.log('options', options);
+
     return {
       values: [language || 'en'],
       type: 'any',

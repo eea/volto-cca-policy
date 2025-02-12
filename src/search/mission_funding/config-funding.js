@@ -41,11 +41,14 @@ export default function installMissionFundingSearch(config) {
       ],
     },
   });
+  missionFundingSearch.facets = facets;
 
   if (typeof window !== 'undefined') {
     config.searchui.missionFundingSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
+
+  console.log(missionFundingSearch);
 
   return config;
 }
