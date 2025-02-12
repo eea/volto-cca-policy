@@ -1,10 +1,10 @@
 import { multiTermFacet } from '@eeacms/search';
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
-// import spatialWhitelist from '@eeacms/volto-globalsearch/config/json/spatialWhitelist';
+import spatialWhitelist from '@eeacms/volto-globalsearch/config/json/spatialWhitelist';
 import {
   cca_adaptation_sectors,
   language,
-  geographic_countries,
+  // geographic_countries,
 } from './../common';
 
 import { defineMessages } from 'react-intl';
@@ -17,6 +17,10 @@ const messages = defineMessages({
   eligibleToReceiveFunding: {
     id: 'Eligible to receive funding',
     defaultMessage: 'Eligible to receive funding',
+  },
+  countries: {
+    id: 'Countries',
+    defaultMessage: 'Countries',
   },
 });
 
@@ -40,18 +44,17 @@ const facets = [
   cca_adaptation_sectors,
   ...globalSearchBaseConfig.facets.filter((f) => !blacklist.includes(f.field)),
   language,
-  geographic_countries,
-  // multiTermFacet({
-  //   field: 'spatial',
-  //   isFilterable: true,
-  //   isMulti: true,
-  //   label: 'Countries',
-  //   spatialWhitelist: spatialWhitelist,
-  //   show: 10000,
-  //   iconsFamily: 'Countries',
-  //   enableExact: true,
-  //   alwaysVisible: false,
-  // }),
+  multiTermFacet({
+    field: 'spatial',
+    isFilterable: true,
+    isMulti: true,
+    label: messages.countries,
+    spatialWhitelist: spatialWhitelist,
+    show: 10000,
+    iconsFamily: 'Countries',
+    enableExact: true,
+    alwaysVisible: false,
+  }),
 ];
 
 export default facets;
