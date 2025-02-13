@@ -7,6 +7,23 @@ import {
   language,
 } from './../common';
 
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  keyCommunitySystems: {
+    id: 'Key Community Systems',
+    defaultMessage: 'Key Community Systems',
+  },
+  fundingProgramme: {
+    id: 'Funding Programme',
+    defaultMessage: 'Funding Programme',
+  },
+  hazardType: {
+    id: 'Hazard Type',
+    defaultMessage: 'Hazard Type',
+  },
+});
+
 const facets = [
   cca_climate_impacts,
   cca_adaptation_sectors,
@@ -14,7 +31,7 @@ const facets = [
     field: 'key_system.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Key Community Systems',
+    label: messages.keyCommunitySystems,
     iconsFamily: 'Key Community Systems',
     alwaysVisible: false,
   }),
@@ -23,7 +40,7 @@ const facets = [
     field: 'cca_funding_programme.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Funding Programme',
+    label: messages.fundingProgramme,
     iconsFamily: 'Funding Programme',
     alwaysVisible: false,
   }),
@@ -31,7 +48,7 @@ const facets = [
     field: 'climate_threats.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Hazard Type',
+    label: messages.hazardType,
     iconsFamily: 'Hazard Type',
     alwaysVisible: false,
   }),

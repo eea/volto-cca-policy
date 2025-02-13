@@ -196,6 +196,8 @@ msgstr "Kosten und Nutzen"
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Länder"
 
@@ -298,6 +300,7 @@ msgstr "Vollbild"
 #: search/cca/facets
 #: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Förderprogramm"
 
@@ -335,6 +338,11 @@ msgstr "Regierungsebene:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS verfügbar (klicken Sie auf das Land für weitere Informationen)"
+
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
+msgstr "Gefahrentyp"
 
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
@@ -407,6 +415,11 @@ msgstr "Die Info"
 #: search/facets
 msgid "Item from third parties"
 msgstr "Artikel von Drittanbietern"
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
+msgstr "Wichtige Gemeinschaftssysteme"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -525,7 +538,7 @@ msgstr "Nationaler HHAP"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Neu"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -596,7 +609,7 @@ msgstr "Politischer und rechtlicher Hintergrund"
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Politischer Kontext der Anpassungsmaßnahme"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +816,7 @@ msgstr "Das Datum bezieht sich auf den Zeitpunkt, zu dem der Artikel von den  Re
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Themen:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets

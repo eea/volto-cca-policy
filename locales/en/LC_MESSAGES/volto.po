@@ -196,6 +196,8 @@ msgstr ""
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr ""
 
@@ -298,6 +300,7 @@ msgstr ""
 #: search/cca/facets
 #: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr ""
 
@@ -334,6 +337,11 @@ msgstr ""
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
+msgstr ""
+
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
 msgstr ""
 
 #. Default: "Health Impacts"
@@ -406,6 +414,11 @@ msgstr ""
 #: search/cca/facets
 #: search/facets
 msgid "Item from third parties"
+msgstr ""
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
 msgstr ""
 
 #. Default: "Key Type Measure"
