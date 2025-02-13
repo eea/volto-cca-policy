@@ -196,6 +196,8 @@ msgstr "Költségek és előnyök"
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Országok"
 
@@ -298,6 +300,7 @@ msgstr "Teljes képernyő"
 #: search/cca/facets
 #: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Finanszírozási Program"
 
@@ -335,6 +338,11 @@ msgstr "Irányítási szint:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS elérhető (további információkért kattintson az országra)"
+
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
+msgstr "Veszély típusa"
 
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
@@ -407,6 +415,11 @@ msgstr "Információk"
 #: search/facets
 msgid "Item from third parties"
 msgstr "Harmadik féltől származó tétel"
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
+msgstr "Kulcsfontosságú közösségi rendszerek"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -525,7 +538,7 @@ msgstr "Nemzeti HHAP"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Új"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -596,7 +609,7 @@ msgstr "Politikai és jogi háttér"
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Az alkalmazkodási intézkedés szakpolitikai háttere"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -674,17 +687,17 @@ msgstr ""
 #. Default: "Search the Climate-ADAPT database"
 #: index
 msgid "Search the Climate-ADAPT database"
-msgstr ""
+msgstr "Keresés a Climate-ADAPT adatbázisban"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
 msgid "Search the EU Mission on Adaptation"
-msgstr ""
+msgstr "Keresés az EU alkalmazkodással foglalkozó missziójában"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
 msgid "Search the Observatory Resource Catalogue..."
-msgstr ""
+msgstr "Keresés az Obszervatórium forráskatalógusában..."
 
 #. Default: "Section"
 #: search/cca/facets
@@ -803,7 +816,7 @@ msgstr "A dátum arra az időpontra utal, amikor a közreműködő szakértők e
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Témák:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets

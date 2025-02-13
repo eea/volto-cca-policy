@@ -525,7 +525,7 @@ msgstr "Национален HHAP"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Нов"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -596,7 +596,7 @@ msgstr "Политика и правна основа"
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Политически контекст на мярката за адаптиране"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +803,7 @@ msgstr "Датата се отнася до момента, в който еле
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "теми:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -1650,7 +1650,7 @@ msgstr "Търсене в базата данни"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Климатични услуги"
 
 #. undefined
 #: health_menu:222
