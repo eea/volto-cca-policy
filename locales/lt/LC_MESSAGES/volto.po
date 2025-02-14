@@ -196,6 +196,8 @@ msgstr "Išlaidos ir nauda"
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Šalys"
 
@@ -298,6 +300,7 @@ msgstr "Visas ekranas"
 #: search/cca/facets
 #: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Finansavimo programa"
 
@@ -335,6 +338,11 @@ msgstr "Valdymo lygmuo:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS yra (daugiau informacijos rasite šalyje)"
+
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
+msgstr "Pavojaus tipas"
 
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
@@ -407,6 +415,11 @@ msgstr "Info"
 #: search/facets
 msgid "Item from third parties"
 msgstr "Prekė iš trečiųjų šalių"
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
+msgstr "Pagrindinės bendruomenės sistemos"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -525,7 +538,7 @@ msgstr "Nacionalinis HHAP"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Nauja"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -596,7 +609,7 @@ msgstr "Politika ir teisinis pagrindas"
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Prisitaikymo priemonės politinis kontekstas"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +816,7 @@ msgstr "Data – tai momentas, kai prisidedantys ekspertai parengė arba atnauji
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Temos:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets

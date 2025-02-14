@@ -196,6 +196,8 @@ msgstr "Costuri și beneficii"
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Țări"
 
@@ -298,6 +300,7 @@ msgstr "Ecran complet"
 #: search/cca/facets
 #: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Programul de finanțare"
 
@@ -335,6 +338,11 @@ msgstr "Nivelul de guvernanță:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS disponibil (click pe țară pentru informații suplimentare)"
+
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
+msgstr "Tip de pericol"
 
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
@@ -407,6 +415,11 @@ msgstr "Informatii"
 #: search/facets
 msgid "Item from third parties"
 msgstr "Articol de la terți"
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
+msgstr "Sisteme comunitare cheie"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -525,7 +538,7 @@ msgstr "HHAP național"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -596,7 +609,7 @@ msgstr "Politică și fundal juridic"
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Contextul politic al măsurii de adaptare"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +816,7 @@ msgstr "Data se referă la momentul în care elementul a fost pregătit sau actu
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Subiecte:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets

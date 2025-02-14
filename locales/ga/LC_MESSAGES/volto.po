@@ -28,7 +28,7 @@ msgstr "Cur Chuige Oiriúnaithe"
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Cur Chuige Oiriúnaithe:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -50,7 +50,7 @@ msgstr "Earnálacha Oiriúnaithe"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Cur chuige oiriúnaithe"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -324,7 +324,7 @@ msgstr "Ag tosú"
 #. Default: "Go to advanced search"
 #: index
 msgid "Go to advanced search"
-msgstr ""
+msgstr "Téigh chuig cuardach casta"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -525,7 +525,7 @@ msgstr "HHAP Náisiúnta"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Nua"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -596,7 +596,7 @@ msgstr ""
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Comhthéacs beartais an bhirt oiriúnaithe"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +803,7 @@ msgstr "Tagraíonn an dáta don tráth a d’ullmhaigh nó a nuashonraigh saineo
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -1650,7 +1650,7 @@ msgstr "Cuardaigh an bunachar sonraí"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Seirbhísí Aeráide"
 
 #. undefined
 #: health_menu:222
