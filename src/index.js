@@ -411,6 +411,36 @@ const applyConfig = (config) => {
     { cssClass: 'small-text', label: 'Small text' },
   ];
 
+  // TODO: fix in all languages
+  config.settings.menuItemsLayouts = {
+    '/en/countries-regions': {
+      menuItemColumns: [
+        'three wide column',
+        'six wide column',
+        'three wide column',
+      ],
+      menuItemChildrenListColumns: [1, 4, 1],
+    },
+    '/en/eu-adaptation-policy': {
+      menuItemColumns: [
+        'two wide column',
+        'two wide column',
+        'six wide column',
+        'two wide column',
+      ],
+      menuItemChildrenListColumns: [1, 1, 4, 1],
+    },
+    '/en/observatory/evidence-on-climate-and-health-menu': {
+      menuItemColumns: [
+        'six wide column',
+        'two wide column',
+        'two wide column',
+        'two wide column',
+      ],
+      menuItemChildrenListColumns: [4, 1, 1, 1],
+    },
+  };
+
   // we won't need the listing for Folders
   delete config.views.layoutViews.listing_view;
 

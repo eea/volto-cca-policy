@@ -1,6 +1,3 @@
-import config from '@plone/volto/registry';
-import { isArray } from 'lodash';
-import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { OBSERVATORY_PARTNERS } from './Constants';
 export {
   HTMLField,
@@ -26,14 +23,6 @@ export {
   EU_COUNTRIES,
 } from './Constants';
 export clientOnly from './clientOnly';
-
-export const createSlateParagraph = (text) => {
-  return isArray(text) ? text : config.settings.slate.defaultValue();
-};
-
-export const serializeText = (text) => {
-  return isArray(text) ? serializeNodes(text) : text;
-};
 
 export const capitalizeFirstLetter = (str) =>
   str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
