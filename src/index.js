@@ -421,7 +421,7 @@ const applyConfig = (config) => {
       ],
       menuItemChildrenListColumns: [1, 4, 1],
     },
-    '/en/eu-adaptation-policy': {
+    '/en/eu-policy': {
       menuItemColumns: [
         'two wide column',
         'two wide column',
@@ -430,7 +430,7 @@ const applyConfig = (config) => {
       ],
       menuItemChildrenListColumns: [1, 1, 4, 1],
     },
-    '/en/observatory/evidence-on-climate-and-health-menu': {
+    '/en/observatory/evidence': {
       menuItemColumns: [
         'six wide column',
         'two wide column',
