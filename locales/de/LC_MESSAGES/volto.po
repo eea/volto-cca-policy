@@ -584,7 +584,7 @@ msgstr "Organisationsdokumente"
 #. Default: "Organised by EEA"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Organised by EEA"
-msgstr ""
+msgstr "Organisiert von der EEA"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
