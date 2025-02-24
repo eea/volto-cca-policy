@@ -34,7 +34,7 @@ div.organisationCards {
 // Indicators Cards Listing
 div.indicatorCards {
   a {
-    color: #006bb8 !important;
+    color: @linkColor !important;
   }
 
   h4 {
@@ -91,10 +91,6 @@ div.indicatorCards {
     justify-content: flex-start;
     gap: 1em;
 
-    .sep {
-      color: #ddd;
-    }
-
     .email-info {
       display: flex;
       align-items: center;
@@ -125,7 +121,6 @@ div.indicatorCards {
       align-items: center;
       margin: 1em 0;
       gap: 0.5em;
-      // flex-direction: column;
     }
   }
 }
