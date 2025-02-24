@@ -8,11 +8,6 @@
 @import './blocks.less';
 @import './print.less';
 
-// [class~='view-defaultview'] [id='page-document'] > *,
-// [class~='view-viewview'] [id='page-document'] > * {
-//   --container-text-width: 628px;
-// }
-
 @subsiteBackgroundGradient: linear-gradient(
   248.86deg,
   @green-1 24.22%,
@@ -234,6 +229,14 @@ iframe {
           font-size: 1em;
         }
       }
+    }
+  }
+}
+
+#mega-menu {
+  .ui.list.has--4--columns {
+    a.item {
+      break-inside: avoid-column;
     }
   }
 }
