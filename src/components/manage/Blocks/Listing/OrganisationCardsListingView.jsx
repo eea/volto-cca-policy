@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
 
 import './styles.less';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   website: {
@@ -19,7 +19,7 @@ const OrganisationCardsListingView = ({ items }) => {
   return (
     <div className="ui fluid four cards">
       {items.map((item, index) => (
-        <div className="ui fluid card u-card" key={item['@id']}>
+        <div className="ui fluid card u-card" key={index}>
           <div className="content">
             <div className="header">
               <UniversalLink className="image" href={item['@id']}>

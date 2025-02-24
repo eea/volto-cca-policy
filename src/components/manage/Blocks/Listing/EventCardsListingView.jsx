@@ -1,14 +1,14 @@
 import React from 'react';
-import { compose } from 'redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import { connect, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Card, Grid, Icon, Label, Image } from 'semantic-ui-react';
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
 import { capitalizeFirstLetter } from '@eeacms/volto-cca-policy/helpers';
 import config from '@plone/volto/registry';
+
+import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
 import './styles.less';
 
 const goToContact = (contactInfo) =>
@@ -97,10 +97,11 @@ const BottomInfo = ({ item, isEditMode }) => {
   const { '@type': itemType, event_url, subjects, contact_email } = item || {};
   const isCcaEventType = itemType === 'cca-event';
   const isExternal = event_url && !event_url.includes(config.settings.apiPath);
+  const isMissionEvent = item['@id'].includes('/en/mission');
 
   return (
     <>
-      {(!isExternal || isCcaEventType) && (
+      {!isMissionEvent && (!isExternal || isCcaEventType) && (
         <div className="event-organisation">
           <FormattedMessage
             id="Organised by EEA"
@@ -166,8 +167,4 @@ EventCardsListingView.propTypes = {
   isEditMode: PropTypes.bool,
 };
 
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(EventCardsListingView);
+export default EventCardsListingView;
