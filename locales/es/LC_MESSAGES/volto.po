@@ -196,6 +196,8 @@ msgstr "Costes y beneficios"
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Países"
 
@@ -298,6 +300,7 @@ msgstr "Pantalla completa"
 #: search/cca/facets
 #: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Programa de financiación"
 
@@ -335,6 +338,11 @@ msgstr "Niveles de gobierno:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS disponible (haga clic en el país para obtener más información)"
+
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
+msgstr "Tipo de peligro"
 
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
@@ -407,6 +415,11 @@ msgstr "Información"
 #: search/facets
 msgid "Item from third parties"
 msgstr "Artículo de terceros"
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
+msgstr "Sistemas comunitarios clave"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -525,7 +538,7 @@ msgstr "HHAP Nacional"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -571,7 +584,7 @@ msgstr "Documentos de organización"
 #. Default: "Organised by EEA"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Organised by EEA"
-msgstr ""
+msgstr "Organizado por la EEA"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -596,7 +609,7 @@ msgstr "Antecedentes políticos y legales"
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Contexto político de la medida de adaptación"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +816,7 @@ msgstr "La fecha se refiere al momento en que el artículo ha sido preparado o a
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Temas:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets

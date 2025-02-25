@@ -1,7 +1,12 @@
 import { multiTermFacet } from '@eeacms/search';
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
-// import spatialWhitelist from '@eeacms/volto-globalsearch/config/json/spatialWhitelist';
-import { cca_adaptation_sectors, language } from './../common';
+import spatialWhitelist from '@eeacms/volto-globalsearch/config/json/spatialWhitelist';
+import {
+  cca_adaptation_sectors,
+  language,
+  // geographic_countries,
+} from './../common';
+
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
@@ -13,9 +18,13 @@ const messages = defineMessages({
     id: 'Eligible to receive funding',
     defaultMessage: 'Eligible to receive funding',
   },
+  countries: {
+    id: 'Countries',
+    defaultMessage: 'Countries',
+  },
 });
 
-const blacklist = ['IncludeArchived', 'issued.date', 'spatial', 'language'];
+const blacklist = ['IncludeArchived', 'issued.date', 'language', 'spatial'];
 
 const facets = [
   multiTermFacet({
@@ -33,20 +42,19 @@ const facets = [
     alwaysVisible: false,
   }),
   cca_adaptation_sectors,
-  language,
-  // multiTermFacet({
-  //   field: 'spatial',
-  //   isFilterable: true,
-  //   isMulti: true,
-  //   label: 'Countries',
-  //   spatialWhitelist: spatialWhitelist,
-  //   show: 10000,
-  //   iconsFamily: 'Countries',
-  //   enableExact: true,
-  //   alwaysVisible: false,
-  // }),
-
   ...globalSearchBaseConfig.facets.filter((f) => !blacklist.includes(f.field)),
+  language,
+  multiTermFacet({
+    field: 'spatial',
+    isFilterable: true,
+    isMulti: true,
+    label: messages.countries,
+    spatialWhitelist: spatialWhitelist,
+    show: 10000,
+    iconsFamily: 'Countries',
+    enableExact: true,
+    alwaysVisible: false,
+  }),
 ];
 
 export default facets;

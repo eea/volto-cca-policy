@@ -28,6 +28,10 @@ const messages = defineMessages({
     id: 'Language',
     defaultMessage: 'Language',
   },
+  Published: {
+    id: 'Published',
+    defaultMessage: 'Published',
+  },
 });
 
 export const geographic_countries = {
@@ -110,7 +114,7 @@ export const issued_date = {
   showInFacetsList: false,
   filterType: 'any',
   isFilterable: false,
-  activeFilterLabel: 'Published',
+  activeFilterLabel: messages.Published,
   isFilter: true,
   showInSecondaryFacetsList: true,
   isMulti: false,
@@ -182,6 +186,7 @@ export const language = {
   default: (options) => {
     const { language } = options || {};
     // console.log('options', options);
+
     return {
       values: [language || 'en'],
       type: 'any',

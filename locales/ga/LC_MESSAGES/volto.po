@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
-msgstr ""
+msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
@@ -28,7 +28,7 @@ msgstr "Cur Chuige Oiriúnaithe"
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr ""
+msgstr "Cur Chuige Oiriúnaithe:"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -50,7 +50,7 @@ msgstr "Earnálacha Oiriúnaithe"
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Adaptation approaches"
-msgstr ""
+msgstr "Cur chuige oiriúnaithe"
 
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
@@ -242,7 +242,7 @@ msgstr "Íoslódáil Imeacht"
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
 msgid "Download the detailed agenda"
-msgstr ""
+msgstr "Íoslódáil an clár mionsonraithe"
 
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
@@ -277,22 +277,22 @@ msgstr "Incháilithe chun maoiniú a fháil"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Scoir lánscáileán"
 
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
-msgstr ""
+msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr ""
+msgstr "Le haghaidh tuilleadh roghanna cuardaigh"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
-msgstr ""
+msgstr "Lánscáileán"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -324,7 +324,7 @@ msgstr "Ag tosú"
 #. Default: "Go to advanced search"
 #: index
 msgid "Go to advanced search"
-msgstr ""
+msgstr "Téigh chuig cuardach casta"
 
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
@@ -505,7 +505,7 @@ msgstr "Naisc chuig tuilleadh eolais"
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
-msgstr ""
+msgstr "Ag lorg tuilleadh eolais?"
 
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
@@ -525,7 +525,7 @@ msgstr "HHAP Náisiúnta"
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
-msgstr ""
+msgstr "Nua"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -571,7 +571,7 @@ msgstr "Doiciméid Eagraíochta"
 #. Default: "Organised by EEA"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Organised by EEA"
-msgstr ""
+msgstr "Arna eagrú ag EEA"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -591,12 +591,12 @@ msgstr "Comhpháirtithe"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr ""
+msgstr "Cúlra beartais agus dlí"
 
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Policy context of the adaptation measure"
-msgstr ""
+msgstr "Comhthéacs beartais an bhirt oiriúnaithe"
 
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
@@ -803,7 +803,7 @@ msgstr "Tagraíonn an dáta don tráth a d’ullmhaigh nó a nuashonraigh saineo
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr ""
+msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -825,7 +825,7 @@ msgstr "Cineálacha"
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr ""
+msgstr "Nótaí á nuashonrú"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1650,7 +1650,7 @@ msgstr "Cuardaigh an bunachar sonraí"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Seirbhísí Aeráide"
 
 #. undefined
 #: health_menu:222
