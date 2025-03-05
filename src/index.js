@@ -428,7 +428,7 @@ const applyConfig = (config) => {
         'six wide column',
         'two wide column',
       ],
-      menuItemChildrenListColumns: [1, 1, 4, 1],
+      menuItemChildrenListColumns: [1, 1, 3, 1],
     },
     '/en/observatory/evidence': {
       menuItemColumns: [
@@ -437,7 +437,7 @@ const applyConfig = (config) => {
         'two wide column',
         'two wide column',
       ],
-      menuItemChildrenListColumns: [4, 1, 1, 1],
+      menuItemChildrenListColumns: [2, 1, 1, 1],
     },
   };
 
