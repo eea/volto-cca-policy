@@ -22,6 +22,10 @@ const messages = defineMessages({
     id: 'Countries',
     defaultMessage: 'Countries',
   },
+  euFunding: {
+    id: 'EU funding',
+    defaultMessage: 'EU funding',
+  },
 });
 
 const blacklist = ['IncludeArchived', 'issued.date', 'language', 'spatial'];
@@ -53,6 +57,13 @@ const facets = [
     show: 10000,
     iconsFamily: 'Countries',
     enableExact: true,
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_is_eu_funded.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.euFunding,
     alwaysVisible: false,
   }),
 ];

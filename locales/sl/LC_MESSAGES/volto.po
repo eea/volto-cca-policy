@@ -18,7 +18,6 @@ msgstr "Dokument o ozadju dogodka je na voljo"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -43,7 +42,6 @@ msgstr "Možnosti prilagajanja, ki se izvajajo v tem primeru"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Sektorji za prilagajanje"
 
@@ -142,7 +140,6 @@ msgstr "mesto:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Climate Impacts"
 msgstr "Podnebni vplivi"
 
@@ -271,6 +268,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Trajanje:"
 
+#. Default: "EU funding"
+#: search/mission_funding/facets-funding
+msgid "EU funding"
+msgstr "Financiranje EU"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -298,7 +300,6 @@ msgstr "Cel zaslon"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -343,11 +344,6 @@ msgstr "HHWS na voljo (kliknite na državo za več informacij)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Vrsta nevarnosti"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Vplivi na zdravje"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -412,7 +408,6 @@ msgstr "Podatki"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
 msgid "Item from third parties"
 msgstr "Predmet tretjih oseb"
 
@@ -424,7 +419,6 @@ msgstr "Ključni sistemi skupnosti"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
 msgid "Key Type Measure"
 msgstr "Mera vrste ključa"
 
@@ -571,7 +565,6 @@ msgid "Observatory contributions"
 msgstr "Prispevki opazovalne skupine"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner observatorija"
@@ -625,6 +618,11 @@ msgstr "Informacije o projektu"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
 msgstr "Publikacije in poročila Dokumenti"
+
+#. Default: "Published"
+#: search/common
+msgid "Published"
+msgstr "Objavljeno"
 
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
@@ -701,7 +699,6 @@ msgstr "Iščite v katalogu virov observatorija ..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
 msgid "Section"
 msgstr "Razdelek"
 
@@ -820,7 +817,6 @@ msgstr "Teme:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
 msgid "Transnational regions"
 msgstr "Nadnacionalne regije"
 
@@ -829,11 +825,6 @@ msgstr "Nadnacionalne regije"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Vrsta artikla"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Vrste"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -3036,11 +3027,6 @@ msgstr "Strokovno tematsko področje"
 #: ../../climateadapt/browser/pt/publicationreport_view.pt:50
 msgid "Project Documents"
 msgstr "Projektni dokumenti"
-
-#. undefined
-#: ../../climateadapt/browser/pt/item_statistics.pt:24
-msgid "Published"
-msgstr "Objavljeno"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:237
