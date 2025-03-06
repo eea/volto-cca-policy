@@ -18,7 +18,6 @@ msgstr "Un document de fond pentru eveniment este disponibil"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -43,7 +42,6 @@ msgstr "Opțiuni de adaptare puse în aplicare în acest caz"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Sectoare de adaptare"
 
@@ -142,7 +140,6 @@ msgstr "Orașul:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Climate Impacts"
 msgstr "Impactul asupra climei"
 
@@ -271,6 +268,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Durată:"
 
+#. Default: "EU funding"
+#: search/mission_funding/facets-funding
+msgid "EU funding"
+msgstr "Finanțare UE"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -298,7 +300,6 @@ msgstr "Ecran complet"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -343,11 +344,6 @@ msgstr "HHWS disponibil (click pe țară pentru informații suplimentare)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Tip de pericol"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Impactul asupra sănătății"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -412,7 +408,6 @@ msgstr "Informatii"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
 msgid "Item from third parties"
 msgstr "Articol de la terți"
 
@@ -424,7 +419,6 @@ msgstr "Sisteme comunitare cheie"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
 msgid "Key Type Measure"
 msgstr "Măsură de tip cheie"
 
@@ -571,7 +565,6 @@ msgid "Observatory contributions"
 msgstr "Contribuțiile Observatorului"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partener observator"
@@ -625,6 +618,11 @@ msgstr "Informații despre proiect"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
 msgstr "Publicații și rapoarte Documente"
+
+#. Default: "Published"
+#: search/common
+msgid "Published"
+msgstr "Publicată"
 
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
@@ -701,7 +699,6 @@ msgstr "Căutați în Catalogul de resurse ale Observatorului..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
 msgid "Section"
 msgstr "Secțiune"
 
@@ -820,7 +817,6 @@ msgstr "Subiecte:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
 msgid "Transnational regions"
 msgstr "Regiuni transnaționale"
 
@@ -829,11 +825,6 @@ msgstr "Regiuni transnaționale"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tipul articolului"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Tipuri"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -3036,11 +3027,6 @@ msgstr "Domeniul tematic profesional"
 #: ../../climateadapt/browser/pt/publicationreport_view.pt:50
 msgid "Project Documents"
 msgstr "Documente de proiect"
-
-#. undefined
-#: ../../climateadapt/browser/pt/item_statistics.pt:24
-msgid "Published"
-msgstr "Publicată"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:237
