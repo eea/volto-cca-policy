@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-02-12T20:41:40.046Z\n"
+"POT-Creation-Date: 2025-03-06T11:58:52.605Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,7 +20,6 @@ msgstr ""
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,7 +44,6 @@ msgstr ""
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Adaptation Sectors"
 msgstr ""
 
@@ -144,7 +142,6 @@ msgstr ""
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Climate Impacts"
 msgstr ""
 
@@ -273,6 +270,11 @@ msgstr ""
 msgid "Duration:"
 msgstr ""
 
+#. Default: "EU funding"
+#: search/mission_funding/facets-funding
+msgid "EU funding"
+msgstr ""
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -300,7 +302,6 @@ msgstr ""
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,11 +345,6 @@ msgstr ""
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
-msgstr ""
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
 msgstr ""
 
 #. Default: "Health impact:"
@@ -414,7 +410,6 @@ msgstr ""
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
 msgid "Item from third parties"
 msgstr ""
 
@@ -426,7 +421,6 @@ msgstr ""
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
 msgid "Key Type Measure"
 msgstr ""
 
@@ -573,7 +567,6 @@ msgid "Observatory contributions"
 msgstr ""
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr ""
@@ -626,6 +619,11 @@ msgstr ""
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
+msgstr ""
+
+#. Default: "Published"
+#: search/common
+msgid "Published"
 msgstr ""
 
 #. Default: "Published in Climate-ADAPT"
@@ -703,7 +701,6 @@ msgstr ""
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
 msgid "Section"
 msgstr ""
 
@@ -822,7 +819,6 @@ msgstr ""
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
 msgid "Transnational regions"
 msgstr ""
 
@@ -830,11 +826,6 @@ msgstr ""
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
-msgstr ""
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
 msgstr ""
 
 #. Default: "Updating notes"

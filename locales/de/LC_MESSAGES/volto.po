@@ -18,7 +18,6 @@ msgstr "Ein Hintergrunddokument zur Veranstaltung liegt vor"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -43,7 +42,6 @@ msgstr "In diesem Fall umgesetzte Anpassungsoptionen"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Sektoren der Anpassung"
 
@@ -142,7 +140,6 @@ msgstr "Stadt:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Climate Impacts"
 msgstr "Klimaauswirkungen"
 
@@ -271,6 +268,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Dauer:"
 
+#. Default: "EU funding"
+#: search/mission_funding/facets-funding
+msgid "EU funding"
+msgstr "EU-Finanzierung"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -298,7 +300,6 @@ msgstr "Vollbild"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -343,11 +344,6 @@ msgstr "HHWS verfügbar (klicken Sie auf das Land für weitere Informationen)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Gefahrentyp"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Auswirkungen auf die Gesundheit"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -412,7 +408,6 @@ msgstr "Die Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
 msgid "Item from third parties"
 msgstr "Artikel von Drittanbietern"
 
@@ -424,7 +419,6 @@ msgstr "Wichtige Gemeinschaftssysteme"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
 msgid "Key Type Measure"
 msgstr "Schlüsselmessung"
 
@@ -571,7 +565,6 @@ msgid "Observatory contributions"
 msgstr "Beiträge der Beobachtungsstelle"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner der Sternwarte"
@@ -625,6 +618,11 @@ msgstr "Projektinformation"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
 msgstr "Veröffentlichungen und Berichtsdokumente"
+
+#. Default: "Published"
+#: search/common
+msgid "Published"
+msgstr "Veröffentlicht"
 
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
@@ -701,7 +699,6 @@ msgstr "Durchsuchen Sie den Ressourcenkatalog des Observatoriums..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
 msgid "Section"
 msgstr "Abschnitt"
 
@@ -820,7 +817,6 @@ msgstr "Themen:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
 msgid "Transnational regions"
 msgstr "Transnationale Regionen"
 
@@ -829,11 +825,6 @@ msgstr "Transnationale Regionen"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Art des Artikels"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Typen"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -3036,11 +3027,6 @@ msgstr "Professioneller thematischer Bereich"
 #: ../../climateadapt/browser/pt/publicationreport_view.pt:50
 msgid "Project Documents"
 msgstr "Projektdokumente"
-
-#. undefined
-#: ../../climateadapt/browser/pt/item_statistics.pt:24
-msgid "Published"
-msgstr "Veröffentlicht"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:237

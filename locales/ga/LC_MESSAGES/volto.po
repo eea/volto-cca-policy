@@ -18,7 +18,6 @@ msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -43,7 +42,6 @@ msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm sa Chás seo"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Earnálacha Oiriúnaithe"
 
@@ -142,7 +140,6 @@ msgstr "Cathair:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
 msgid "Climate Impacts"
 msgstr "Tionchair Aeráide"
 
@@ -196,6 +193,8 @@ msgstr "Costais agus Sochair"
 
 #. Default: "Countries"
 #: search/common
+#: search/mission_all/facets-all
+#: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Tíortha"
 
@@ -269,6 +268,11 @@ msgstr ""
 msgid "Duration:"
 msgstr "Fad tréimhse:"
 
+#. Default: "EU funding"
+#: search/mission_funding/facets-funding
+msgid "EU funding"
+msgstr "Maoiniú AE"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -296,8 +300,8 @@ msgstr "Lánscáileán"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
 #: search/mission_projects/facets-projects
+#: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Clár Maoinithe"
 
@@ -336,10 +340,10 @@ msgstr "Leibhéal rialachais:"
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS ar fáil (cliceáil ar an tír chun tuilleadh eolais a fháil)"
 
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Tionchair Sláinte"
+#. Default: "Hazard Type"
+#: search/mission_stories/facets-stories
+msgid "Hazard Type"
+msgstr ""
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -404,14 +408,17 @@ msgstr "Faisnéis"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
 msgid "Item from third parties"
 msgstr "Mír ó thríú páirtithe"
+
+#. Default: "Key Community Systems"
+#: search/mission_stories/facets-stories
+msgid "Key Community Systems"
+msgstr ""
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
 msgid "Key Type Measure"
 msgstr "Beart an Chineáil Eochrach"
 
@@ -558,7 +565,6 @@ msgid "Observatory contributions"
 msgstr "Rannchuidiú na Faireachlainne"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Comhpháirtí réadlainne"
@@ -612,6 +618,11 @@ msgstr "Eolas faoin tionscadal"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
 msgstr "Foilseacháin agus Tuarascálacha Doiciméid"
+
+#. Default: "Published"
+#: search/common
+msgid "Published"
+msgstr "Foilsithe"
 
 #. Default: "Published in Climate-ADAPT"
 #: helpers/Utils
@@ -688,7 +699,6 @@ msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
 msgid "Section"
 msgstr "Alt"
 
@@ -807,7 +817,6 @@ msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
 msgid "Transnational regions"
 msgstr "Réigiúin thrasnáisiúnta"
 
@@ -816,11 +825,6 @@ msgstr "Réigiúin thrasnáisiúnta"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Cineál míre"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Cineálacha"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -3023,11 +3027,6 @@ msgstr "Réimse téamach gairmiúil"
 #: ../../climateadapt/browser/pt/publicationreport_view.pt:50
 msgid "Project Documents"
 msgstr "Doiciméid an Tionscadail"
-
-#. undefined
-#: ../../climateadapt/browser/pt/item_statistics.pt:24
-msgid "Published"
-msgstr "Foilsithe"
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:237
