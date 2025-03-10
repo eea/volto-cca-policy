@@ -1,6 +1,5 @@
 import React from 'react';
-import { TabPane, Tab } from 'semantic-ui-react';
-import { Accordion, Icon } from 'semantic-ui-react';
+import { TabPane, Tab, Accordion, Icon } from 'semantic-ui-react';
 import CountryTabPane from './CountryTabPane';
 
 import './styles.less';
