@@ -246,7 +246,17 @@ function GeoChar(props) {
             <FormattedMessage id="Countries:" defaultMessage="Countries:" />
           </h5>
           {spatial_values && spatial_values.length > 0 && (
-            <p>{spatial_values.map((item) => item.token).join(', ')}</p>
+            <p>
+              {spatial_values
+                .map((item) => item.token)
+                .map((token) =>
+                  intl.formatMessage({
+                    id: token,
+                    defaultMessage: token,
+                  }),
+                )
+                .join(', ')}
+            </p>
           )}
         </div>
       );
@@ -268,7 +278,16 @@ function GeoChar(props) {
               {section.title && (
                 <h5>{intl.formatMessage(messages[section.title])}</h5>
               )}
-              <p>{section.value.join(', ')}</p>
+              <p>
+                {section.value
+                  .map((countryName) =>
+                    intl.formatMessage({
+                      id: countryName,
+                      defaultMessage: countryName,
+                    }),
+                  )
+                  .join(', ')}
+              </p>
             </Fragment>
           ),
       )}
