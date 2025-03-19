@@ -3,6 +3,8 @@ import { Tab } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import AccordionList from './../AccordionList';
 import StatisticsSection from './../StatisticsSection';
+import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 
 const GovernanceTab = ({ result }) => {
   const statisticsData = [
@@ -53,12 +55,16 @@ const GovernanceTab = ({ result }) => {
       />
 
       <h3>Opportunities and benefits of climate action</h3>
-      <p>{result?.Describe}</p>
+
+      <HTMLField value={{ data: formatTextToHTML(result?.Describe) }} />
+
       <AccordionList
         accordions={[
           {
             title: ' Further details and evidence',
-            content: result?.Provide || 'No additional details provided.',
+            content: (
+              <HTMLField value={{ data: formatTextToHTML(result?.Provide) }} />
+            ),
           },
         ]}
       />

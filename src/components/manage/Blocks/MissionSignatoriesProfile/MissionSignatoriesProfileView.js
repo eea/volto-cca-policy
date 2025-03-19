@@ -7,6 +7,8 @@ import AssessmentTab from './TabSections/AssessmentTab';
 import PlanningTab from './TabSections/PlanningTab';
 import ActionPagesTab from './TabSections/ActionPagesTab';
 
+import './style.less';
+
 const MissionSignatoriesProfileView = (props) => {
   const { data } = props;
   const result = data?._v_results?.[0] || {};
@@ -15,7 +17,7 @@ const MissionSignatoriesProfileView = (props) => {
 
   return (
     <>
-      <div>
+      <div className="signatories-profile">
         {/* {
           dataJson['Cooperation_Experience'][0][
             'DescribeDetailCooperationEnhance'

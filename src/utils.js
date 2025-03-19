@@ -77,3 +77,17 @@ export const filterBlocks = (content, blockTypes = []) => {
     hasBlockTypes: excludedBlockKeys.length > 0,
   };
 };
+
+export const formatTextToHTML = (text) => {
+  if (!text) return '';
+
+  // Replace \\n\\n with </p><p> (separate paragraphs)
+  let formattedText = text.replace(/\\n\\n/g, '</p><p>');
+
+  // Replace \\n with <br /> (line breaks within paragraphs)
+  formattedText = formattedText.replace(/\\n/g, '<br />');
+
+  formattedText = `<p>${formattedText}</p>`;
+
+  return formattedText;
+};
