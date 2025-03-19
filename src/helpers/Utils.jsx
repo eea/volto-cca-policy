@@ -494,21 +494,39 @@ export const EventDetails = (props) => {
 
 export const MetadataItemList = (props) => {
   const { value, join_type } = props;
+  const intl = useIntl();
 
   return value && value.length > 0 ? (
     <>
       {!join_type ? (
-        <p>{value.map((item) => item.title).join(', ')}</p>
+        <p>
+          {value
+            .map((item) => item.title)
+            .map((title) =>
+              intl.formatMessage({
+                id: title,
+                defaultMessage: title,
+              }),
+            )
+            .join(', ')}
+        </p>
       ) : (
         <>
-          {value.map((item, index) => (
-            <React.Fragment key={index}>
-              <span>{item.title}</span>
-              {index !== value.length - 1 && (
-                <span dangerouslySetInnerHTML={{ __html: join_type }} />
-              )}
-            </React.Fragment>
-          ))}
+          {value
+            .map((item) =>
+              intl.formatMessage({
+                id: item.title,
+                defaultMessage: item.title,
+              }),
+            )
+            .map((item, index) => (
+              <React.Fragment key={index}>
+                <span>{item}</span>
+                {index !== value.length - 1 && (
+                  <span dangerouslySetInnerHTML={{ __html: join_type }} />
+                )}
+              </React.Fragment>
+            ))}
         </>
       )}
     </>

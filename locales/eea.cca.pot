@@ -142,3 +142,282 @@ msgstr ""
 
 msgid "No results"
 msgstr ""
+
+msgid "Global"
+msgstr ""
+
+msgid "Black Sea"
+msgstr ""
+
+
+msgid "Albania"
+msgstr ""
+
+msgid "Andorra"
+msgstr ""
+
+msgid "Armenia"
+msgstr ""
+
+msgid "Austria"
+msgstr ""
+
+msgid "Azerbaijan"
+msgstr ""
+
+msgid "Belarus"
+msgstr ""
+
+msgid "Belgium"
+msgstr ""
+
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+msgid "Bulgaria"
+msgstr ""
+
+msgid "Croatia"
+msgstr ""
+
+msgid "Cyprus"
+msgstr ""
+
+msgid "Czechia"
+msgstr ""
+
+msgid "Denmark"
+msgstr ""
+
+msgid "Estonia"
+msgstr ""
+
+msgid "France"
+msgstr ""
+
+msgid "Faroe Islands"
+msgstr ""
+
+msgid "Finland"
+msgstr ""
+
+msgid "Germany"
+msgstr ""
+
+msgid "Georgia"
+msgstr ""
+
+msgid "Greece"
+msgstr ""
+
+msgid "Hungary"
+msgstr ""
+
+msgid "Iceland"
+msgstr ""
+
+msgid "Kazakhstan"
+msgstr ""
+
+msgid "Kosovo"
+msgstr ""
+
+msgid "Ireland"
+msgstr ""
+
+msgid "Italy"
+msgstr ""
+
+msgid "Israel"
+msgstr ""
+
+msgid "Latvia"
+msgstr ""
+
+msgid "Liechtenstein"
+msgstr ""
+
+msgid "Lithuania"
+msgstr ""
+
+msgid "Luxembourg"
+msgstr ""
+
+msgid "Malta"
+msgstr ""
+
+msgid "Monaco"
+msgstr ""
+
+msgid "Malta"
+msgstr ""
+
+msgid "Moldova, Republic of"
+msgstr ""
+
+msgid "Montenegro"
+msgstr ""
+
+msgid "Netherlands"
+msgstr ""
+
+msgid "Norway"
+msgstr ""
+
+msgid "Poland"
+msgstr ""
+
+msgid "Portugal"
+msgstr ""
+
+msgid "Republic of North Macedonia"
+msgstr ""
+
+msgid "Romania"
+msgstr ""
+
+msgid "Russian Federation"
+msgstr ""
+
+msgid "San Marino"
+msgstr ""
+
+msgid "Serbia"
+msgstr ""
+
+msgid "Slovakia"
+msgstr ""
+
+msgid "Slovenia"
+msgstr ""
+
+msgid "Spain"
+msgstr ""
+
+msgid "Sweden"
+msgstr ""
+
+msgid "Switzerland"
+msgstr ""
+
+msgid "Turkiye"
+msgstr ""
+
+msgid "Türkiye"
+msgstr ""
+
+msgid "United Kingdom"
+msgstr ""
+
+msgid "Ukraine"
+msgstr ""
+
+#: acesearch-geochars
+msgid "Global"
+msgstr ""
+
+msgid "Europe"
+msgstr ""
+
+msgid "Macro-Transnational Regions"
+msgstr ""
+
+msgid "Biogeographical Regions"
+msgstr ""
+
+msgid "Countries"
+msgstr ""
+
+msgid "Subnational Regions"
+msgstr ""
+
+msgid "Municipality Name"
+msgstr ""
+
+msgid "Northern Periphery and Arctic"
+msgstr ""
+
+msgid "Baltic Sea"
+msgstr ""
+
+msgid "North West Europe"
+msgstr ""
+
+msgid "North Sea"
+msgstr ""
+
+msgid "Atlantic Area"
+msgstr ""
+
+msgid "Alpine Space"
+msgstr ""
+
+msgid "Central Europe"
+msgstr ""
+
+msgid "South West Europe"
+msgstr ""
+
+msgid "Mediterranean (Euro-Med)"
+msgstr ""
+
+msgid "Danube Area"
+msgstr ""
+
+msgid "Adriatic-Ionian"
+msgstr ""
+
+msgid "Mediterranean Sea Basin (NEXT)"
+msgstr ""
+
+msgid "Black Sea Basin (NEXT)"
+msgstr ""
+
+msgid "Outermost Regions"
+msgstr ""
+
+msgid "Alpine"
+msgstr ""
+
+msgid "Anatolian"
+msgstr ""
+
+msgid "Arctic"
+msgstr ""
+
+msgid "Atlantic"
+msgstr ""
+
+msgid "Black Sea"
+msgstr ""
+
+msgid "Boreal"
+msgstr ""
+
+msgid "Continental"
+msgstr ""
+
+msgid "Macaronesia"
+msgstr ""
+
+msgid "Mediterranean"
+msgstr ""
+
+msgid "Pannonian"
+msgstr ""
+
+msgid "Steppic"
+msgstr ""
+
+# _governance
+msgid "Transnational region (stretching across country borders)"
+msgstr ""
+
+msgid "National"
+msgstr ""
+
+msgid "Sub National Regions"
+msgstr ""
+
+msgid "Local (e.g. city or municipal level)"
+msgstr ""
