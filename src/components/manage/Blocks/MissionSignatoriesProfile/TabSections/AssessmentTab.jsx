@@ -11,10 +11,12 @@ import {
   ItemContent,
 } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
+import AccordionList from './../AccordionList';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
 
 const AssessmentTab = () => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
   return (
     <Tab.Pane>
       <h2>Assessment</h2>
@@ -26,7 +28,7 @@ const AssessmentTab = () => {
       </Callout>
 
       <div className="profile-content-box">
-        <h3>Nam tempor finibus lorem</h3>
+        <h3>Climate Risk Assessment</h3>
         <div className="profile-content-box-info">
           <ItemGroup unstackable className="row">
             <Item>
@@ -45,7 +47,7 @@ const AssessmentTab = () => {
           </div>
         </div>
 
-        <h4>Nam tempor finibus lorem, nec varius arcu convallis sed</h4>
+        <h4>The CRA conducted considers the following factors</h4>
 
         <div className="items-wrapper">
           <Grid className="column-grid">
@@ -114,17 +116,68 @@ const AssessmentTab = () => {
         </Button>
       </div>
 
+      <h3>Climate related hazards & sectors most exposed</h3>
       <p>
-        Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id orci a
-        neque vehicula malesuada. Donec vehicula libero vel leo convallis, nec
-        tincidunt felis tincidunt. Maecenas euismod tristique leo, vel malesuada
-        ligula malesuada sed. Donec eget libero id leo congue venenatis. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-        officia deserunt mollit anim id est laborum.
+        Donec eget libero id leo congue venenatis. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur.
       </p>
+
+      <br />
+
+      <Tab
+        menu={{
+          fluid: true,
+          className: 'secondary',
+          vertical: true,
+          pointing: true,
+        }}
+        grid={{ paneWidth: 9, tabWidth: 3, stackable: true }}
+        activeIndex={activeIndex}
+        onTabChange={(e, { activeIndex }) => setActiveIndex(activeIndex)}
+        panes={[
+          {
+            menuItem: 'Water related',
+            render: () => (
+              <AccordionList
+                accordions={[
+                  {
+                    title: 'Vestibulum ante ipsum primis',
+                    content: 'No additional details provided.',
+                  },
+                  {
+                    title: 'Etiam accumsan urna a mauris',
+                    content: 'No additional details provided.',
+                  },
+                ]}
+              />
+            ),
+          },
+          {
+            menuItem: 'Heat related',
+            render: () => (
+              <div>
+                Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id
+                orci a neque vehicula malesuada. Donec vehicula libero vel leo
+                convallis, nec tincidunt felis tincidunt. Maecenas euismod
+                tristique leo, vel malesuada ligula malesuada sed.
+              </div>
+            ),
+          },
+          {
+            menuItem: 'Other hazards',
+            render: () => (
+              <div>
+                Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id
+                orci a neque vehicula malesuada. Donec vehicula libero vel leo
+                convallis, nec tincidunt felis tincidunt. Maecenas euismod
+                tristique leo, vel malesuada ligula malesuada sed.
+              </div>
+            ),
+          },
+        ]}
+      />
     </Tab.Pane>
   );
 };
