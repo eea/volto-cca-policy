@@ -10,7 +10,7 @@ function getStyle(size, haveAdaptecca) {
       size === 1
         ? new ol.style.Style({
             image: new ol.style.Circle({
-              radius: 5,
+              radius: 7,
               stroke: new ol.style.Stroke({
                 color: '#fff',
               }),

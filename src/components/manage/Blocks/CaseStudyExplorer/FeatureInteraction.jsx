@@ -121,15 +121,6 @@ export default function FeatureInteraction({
 
     function handleClick(evt) {
       if (evt.originalEvent.target.tagName === 'A') return;
-      if (selectedFeature) {
-        onFeatureSelect(null);
-
-        const view = map.getView();
-        view.animate({
-          ...mapCenter,
-          duration: 1000,
-        });
-      }
     }
 
     function handlePointerMove(e) {
@@ -158,6 +149,20 @@ export default function FeatureInteraction({
     clusterCirclesLayer,
   ]);
 
+  function onClosePopup(evt) {
+    evt.preventDefault();
+
+    if (selectedFeature) {
+      onFeatureSelect(null);
+
+      const view = map.getView();
+      view.animate({
+        ...mapCenter,
+        duration: 2000,
+      });
+    }
+  }
+
   return isClient ? (
     <div
       id="popup-overlay"
@@ -169,7 +174,9 @@ export default function FeatureInteraction({
         visibility: selectedFeature ? 'visible' : 'hidden',
       }}
     >
-      {selectedFeature ? <FeatureDisplay feature={selectedFeature} /> : null}
+      {selectedFeature ? (
+        <FeatureDisplay feature={selectedFeature} onClose={onClosePopup} />
+      ) : null}
     </div>
   ) : null;
 }
