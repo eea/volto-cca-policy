@@ -29,7 +29,8 @@ const ASTNavigation = (props) => {
           rootPath,
           {
             'path.depth': 1,
-            portal_type: ['collective.cover.content'],
+            portal_type: ['Folder'],
+            object_provides: 'eea.climateadapt.interfaces.ICover',
             review_state: 'published',
             b_size: 100,
           },
