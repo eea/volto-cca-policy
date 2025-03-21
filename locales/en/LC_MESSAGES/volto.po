@@ -18,6 +18,7 @@ msgstr ""
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +43,7 @@ msgstr ""
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
 msgid "Adaptation Sectors"
 msgstr ""
 
@@ -80,6 +82,11 @@ msgstr ""
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
+msgstr ""
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
 msgstr ""
 
 #. Default: "Biogeographical regions:"
@@ -140,6 +147,7 @@ msgstr ""
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
 msgid "Climate Impacts"
 msgstr ""
 
@@ -293,6 +301,11 @@ msgstr ""
 msgid "For more search options"
 msgstr ""
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr ""
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +313,7 @@ msgstr ""
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -343,6 +357,11 @@ msgstr ""
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
+msgstr ""
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
 msgstr ""
 
 #. Default: "Health impact:"
@@ -408,6 +427,7 @@ msgstr ""
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
 msgid "Item from third parties"
 msgstr ""
 
@@ -419,6 +439,7 @@ msgstr ""
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr ""
 
@@ -565,6 +586,7 @@ msgid "Observatory contributions"
 msgstr ""
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr ""
@@ -699,6 +721,7 @@ msgstr ""
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
 msgid "Section"
 msgstr ""
 
@@ -817,6 +840,7 @@ msgstr ""
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
 msgid "Transnational regions"
 msgstr ""
 
@@ -824,6 +848,11 @@ msgstr ""
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
+msgstr ""
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
 msgstr ""
 
 #. Default: "Updating notes"
@@ -1068,6 +1097,436 @@ msgid "Other"
 msgstr ""
 
 #. undefined
+
+msgid "Global"
+msgstr ""
+
+#. undefined
+
+msgid "Black Sea"
+msgstr ""
+
+#. undefined
+
+msgid "Albania"
+msgstr ""
+
+#. undefined
+
+msgid "Andorra"
+msgstr ""
+
+#. undefined
+
+msgid "Armenia"
+msgstr ""
+
+#. undefined
+
+msgid "Austria"
+msgstr ""
+
+#. undefined
+
+msgid "Azerbaijan"
+msgstr ""
+
+#. undefined
+
+msgid "Belarus"
+msgstr ""
+
+#. undefined
+
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#. undefined
+
+msgid "Bulgaria"
+msgstr ""
+
+#. undefined
+
+msgid "Croatia"
+msgstr ""
+
+#. undefined
+
+msgid "Cyprus"
+msgstr ""
+
+#. undefined
+
+msgid "Czechia"
+msgstr ""
+
+#. undefined
+
+msgid "Denmark"
+msgstr ""
+
+#. undefined
+
+msgid "Estonia"
+msgstr ""
+
+#. undefined
+
+msgid "Faroe Islands"
+msgstr ""
+
+#. undefined
+
+msgid "Finland"
+msgstr ""
+
+#. undefined
+
+msgid "Germany"
+msgstr ""
+
+#. undefined
+
+msgid "Georgia"
+msgstr ""
+
+#. undefined
+
+msgid "Greece"
+msgstr ""
+
+#. undefined
+
+msgid "Hungary"
+msgstr ""
+
+#. undefined
+
+msgid "Iceland"
+msgstr ""
+
+#. undefined
+
+msgid "Kazakhstan"
+msgstr ""
+
+#. undefined
+
+msgid "Kosovo"
+msgstr ""
+
+#. undefined
+
+msgid "Ireland"
+msgstr ""
+
+#. undefined
+
+msgid "Italy"
+msgstr ""
+
+#. undefined
+
+msgid "Israel"
+msgstr ""
+
+#. undefined
+
+msgid "Latvia"
+msgstr ""
+
+#. undefined
+
+msgid "Liechtenstein"
+msgstr ""
+
+#. undefined
+
+msgid "Lithuania"
+msgstr ""
+
+#. undefined
+
+msgid "Luxembourg"
+msgstr ""
+
+#. undefined
+
+msgid "Malta"
+msgstr ""
+
+#. undefined
+
+msgid "Monaco"
+msgstr ""
+
+#. undefined
+
+msgid "Moldova, Republic of"
+msgstr ""
+
+#. undefined
+
+msgid "Montenegro"
+msgstr ""
+
+#. undefined
+
+msgid "Netherlands"
+msgstr ""
+
+#. undefined
+
+msgid "Norway"
+msgstr ""
+
+#. undefined
+
+msgid "Poland"
+msgstr ""
+
+#. undefined
+
+msgid "Portugal"
+msgstr ""
+
+#. undefined
+
+msgid "Republic of North Macedonia"
+msgstr ""
+
+#. undefined
+
+msgid "Romania"
+msgstr ""
+
+#. undefined
+
+msgid "Russian Federation"
+msgstr ""
+
+#. undefined
+
+msgid "San Marino"
+msgstr ""
+
+#. undefined
+
+msgid "Serbia"
+msgstr ""
+
+#. undefined
+
+msgid "Slovakia"
+msgstr ""
+
+#. undefined
+
+msgid "Slovenia"
+msgstr ""
+
+#. undefined
+
+msgid "Spain"
+msgstr ""
+
+#. undefined
+
+msgid "Sweden"
+msgstr ""
+
+#. undefined
+
+msgid "Switzerland"
+msgstr ""
+
+#. undefined
+
+msgid "Turkiye"
+msgstr ""
+
+#. undefined
+
+msgid "Türkiye"
+msgstr ""
+
+#. undefined
+
+msgid "United Kingdom"
+msgstr ""
+
+#. undefined
+
+msgid "Ukraine"
+msgstr ""
+
+#. undefined
+
+msgid "Europe"
+msgstr ""
+
+#. undefined
+
+msgid "Macro-Transnational Regions"
+msgstr ""
+
+#. undefined
+
+msgid "Biogeographical Regions"
+msgstr ""
+
+#. undefined
+
+msgid "Subnational Regions"
+msgstr ""
+
+#. undefined
+
+msgid "Municipality Name"
+msgstr ""
+
+#. undefined
+
+msgid "Northern Periphery and Arctic"
+msgstr ""
+
+#. undefined
+
+msgid "Baltic Sea"
+msgstr ""
+
+#. undefined
+
+msgid "North West Europe"
+msgstr ""
+
+#. undefined
+
+msgid "North Sea"
+msgstr ""
+
+#. undefined
+
+msgid "Atlantic Area"
+msgstr ""
+
+#. undefined
+
+msgid "Alpine Space"
+msgstr ""
+
+#. undefined
+
+msgid "Central Europe"
+msgstr ""
+
+#. undefined
+
+msgid "South West Europe"
+msgstr ""
+
+#. undefined
+
+msgid "Mediterranean (Euro-Med)"
+msgstr ""
+
+#. undefined
+
+msgid "Danube Area"
+msgstr ""
+
+#. undefined
+
+msgid "Adriatic-Ionian"
+msgstr ""
+
+#. undefined
+
+msgid "Mediterranean Sea Basin (NEXT)"
+msgstr ""
+
+#. undefined
+
+msgid "Black Sea Basin (NEXT)"
+msgstr ""
+
+#. undefined
+
+msgid "Outermost Regions"
+msgstr ""
+
+#. undefined
+
+msgid "Alpine"
+msgstr ""
+
+#. undefined
+
+msgid "Anatolian"
+msgstr ""
+
+#. undefined
+
+msgid "Arctic"
+msgstr ""
+
+#. undefined
+
+msgid "Atlantic"
+msgstr ""
+
+#. undefined
+
+msgid "Boreal"
+msgstr ""
+
+#. undefined
+
+msgid "Continental"
+msgstr ""
+
+#. undefined
+
+msgid "Macaronesia"
+msgstr ""
+
+#. undefined
+
+msgid "Mediterranean"
+msgstr ""
+
+#. undefined
+
+msgid "Pannonian"
+msgstr ""
+
+#. undefined
+
+msgid "Steppic"
+msgstr ""
+
+#. undefined
+
+msgid "Transnational region (stretching across country borders)"
+msgstr ""
+
+#. undefined
+
+msgid "National"
+msgstr ""
+
+#. undefined
+
+msgid "Sub National Regions"
+msgstr ""
+
+#. undefined
+
+msgid "Local (e.g. city or municipal level)"
+msgstr ""
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr ""
@@ -1099,11 +1558,6 @@ msgid "Adaptation Support Tool"
 msgstr ""
 
 #. undefined
-#: site_menu:48
-msgid "Adriatic-Ionian"
-msgstr ""
-
-#. undefined
 #: site_menu:29
 msgid "Agriculture"
 msgstr ""
@@ -1114,28 +1568,13 @@ msgid "Air pollution"
 msgstr ""
 
 #. undefined
-#: site_menu:49
-msgid "Alpine Space"
-msgstr ""
-
-#. undefined
 #: health_menu:44
 msgid "Annual reports"
 msgstr ""
 
 #. undefined
-#: site_menu:50
-msgid "Atlantic Area"
-msgstr ""
-
-#. undefined
 #: site_menu:51
 msgid "Balkan-Mediterranean"
-msgstr ""
-
-#. undefined
-#: site_menu:52
-msgid "Baltic Sea"
 msgstr ""
 
 #. undefined
@@ -1161,11 +1600,6 @@ msgstr ""
 #. undefined
 #: site_menu:79
 msgid "Case study explorer"
-msgstr ""
-
-#. undefined
-#: site_menu:53
-msgid "Central Europe"
 msgstr ""
 
 #. undefined
@@ -1446,11 +1880,6 @@ msgid "Marine and fisheries"
 msgstr ""
 
 #. undefined
-#: site_menu:55
-msgid "Mediterranean"
-msgstr ""
-
-#. undefined
 #: health_menu:28
 msgid "Mental health effects"
 msgstr ""
@@ -1478,21 +1907,6 @@ msgstr ""
 #. undefined
 #: site_menu:86
 msgid "Networks"
-msgstr ""
-
-#. undefined
-#: site_menu:56
-msgid "North Sea"
-msgstr ""
-
-#. undefined
-#: site_menu:57
-msgid "North West Europe"
-msgstr ""
-
-#. undefined
-#: site_menu:58
-msgid "Northern Periphery and Arctic"
 msgstr ""
 
 #. undefined
@@ -1548,11 +1962,6 @@ msgstr ""
 #. undefined
 #: site_menu:19
 msgid "Site map"
-msgstr ""
-
-#. undefined
-#: site_menu:59
-msgid "South West Europe"
 msgstr ""
 
 #. undefined
@@ -2256,11 +2665,6 @@ msgstr ""
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:42
 msgid "Allowed image sizes"
-msgstr ""
-
-#. undefined
-#: ../../climateadapt/browser/pt/transnational_regions.pt:419
-msgid "Alpine"
 msgstr ""
 
 #. undefined

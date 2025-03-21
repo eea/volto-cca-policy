@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -5,8 +6,8 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language: \n"
 "Language-Team: \n"
+"Language: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
@@ -17,10 +18,8 @@ msgid "A background document for the event is available"
 msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
-#: search/cca/facets
-#: search/health_observatory/facets-health
-#: search/mission_all/facets-all
-#: search/mission_projects/facets-projects
+#: search/cca/facets search/facets search/health_observatory/facets-health
+#: search/mission_all/facets-all search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
 msgstr "Cur Chuige Oiriúnaithe"
 
@@ -37,11 +36,10 @@ msgstr "Sonraí Oiriúnaithe"
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
-msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm sa Chás seo"
+msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm Sa Chás Seo"
 
 #. Default: "Adaptation Sectors"
-#: search/cca/facets
-#: search/common
+#: search/cca/facets search/common search/facets
 msgid "Adaptation Sectors"
 msgstr "Earnálacha Oiriúnaithe"
 
@@ -53,19 +51,19 @@ msgstr "Cur chuige oiriúnaithe"
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
-msgstr "Roghanna oiriúnúcháin"
+msgstr "Roghanna oiriúnaithe"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation sectors"
-msgstr "Earnálacha oiriúnúcháin"
+msgstr "Earnálacha oiriúnú"
 
 #. Default: "Additional Details"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
-msgstr "Sonraí breise"
+msgstr "Sonraí Breise"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -82,6 +80,11 @@ msgstr "An t-am ar fad"
 msgid "Background information"
 msgstr "Faisnéis chúlra"
 
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "an Bheilg"
+
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -90,17 +93,17 @@ msgstr "Réigiúin bhithgheografacha:"
 #. Default: "Case Studies Documents"
 #: helpers/Utils
 msgid "Case Studies Documents"
-msgstr "Cáipéisí Cás-Staidéir"
+msgstr "Doiciméid Cás-Staidéir"
 
 #. Default: "Case Study Description"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study Description"
-msgstr "Tuairisc ar an gCás-Staidéar"
+msgstr "Cur síos ar an gCás-Staidéar"
 
 #. Default: "Case Study illustrations"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
-msgstr "Léaráidí cás-staidéir"
+msgstr "Léaráidí Cás-Staidéir"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
@@ -120,7 +123,7 @@ msgstr "Dúshláin"
 #. Default: "Choose a file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Choose a file"
-msgstr ""
+msgstr "Roghnaigh comhad"
 
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -130,16 +133,15 @@ msgstr "Roghnaigh réigiún"
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
-msgstr "Roghnaigh léarscáil théamach:"
+msgstr "Roghnaigh mapa téamach:"
 
 #. Default: "City:"
 #: helpers/ContentMetadata
 msgid "City:"
-msgstr "Cathair:"
+msgstr "Cathair :"
 
 #. Default: "Climate Impacts"
-#: search/cca/facets
-#: search/common
+#: search/cca/facets search/common search/facets
 msgid "Climate Impacts"
 msgstr "Tionchair Aeráide"
 
@@ -162,38 +164,36 @@ msgstr "Tionchair aeráide:"
 #. Default: "Climate-ADAPT case studies"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Climate-ADAPT case studies"
-msgstr "Cás-staidéir Climate-ADAPT"
+msgstr "Cás-staidéir aeráide-ADAPT"
 
 #. Default: "Climate-ADAPT page for this event"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
-msgstr "Leathanach Climate-ADAPT don imeacht seo"
+msgstr "Leathanach Aeráide-ADAPT don imeacht seo"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView
-#: components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Teagmháil"
 
 #. Default: "Contact information for the Observatory"
 #: components/theme/Views/DatabaseItemView
 msgid "Contact information for the Observatory"
-msgstr "Eolas teagmhála don Fhaireachlann"
+msgstr "Eolas teagmhála don Réadlann"
 
 #. Default: "Contributor:"
 #: helpers/Utils
 msgid "Contributor:"
-msgstr "Rannpháirtí:"
+msgstr "Ranníocóir:"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
-msgstr "Costais agus Sochair"
+msgstr "Costais agus sochair"
 
 #. Default: "Countries"
-#: search/common
-#: search/mission_all/facets-all
+#: search/common search/mission_all/facets-all
 #: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Tíortha"
@@ -206,12 +206,12 @@ msgstr "Tíortha:"
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
 msgid "Date of creation:"
-msgstr "Dáta an chruthaithe:"
+msgstr "Dáta cruthaithe:"
 
 #. Default: "Date of publication:"
 #: helpers/ContentMetadata
 msgid "Date of publication:"
-msgstr "Dáta an fhoilsithe:"
+msgstr "Dáta foilsithe:"
 
 #. Default: "Date of release:"
 #: helpers/ContentMetadata
@@ -221,7 +221,7 @@ msgstr "Dáta eisiúna:"
 #. Default: "Description"
 #: helpers/Utils
 msgid "Description"
-msgstr "Tuairisc"
+msgstr "Cur síos"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -236,7 +236,7 @@ msgstr "Doiciméid"
 #. Default: "Download Event"
 #: helpers/Utils
 msgid "Download Event"
-msgstr "Íoslódáil Imeacht"
+msgstr "Íosluchtaigh imeacht"
 
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
@@ -246,32 +246,32 @@ msgstr "Íoslódáil an clár mionsonraithe"
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
 msgid "Download this event in iCal format"
-msgstr "Íoslódáil an t-imeacht seo i bhformáid iCal"
+msgstr "Íoslódáil an ócáid ​​i iCal"
 
 #. Default: "Drop file here to replace the existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
-msgstr ""
+msgstr "Buail an comhad anseo chun an comhad a athsholáthar"
 
 #. Default: "Drop file here to upload a new file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
-msgstr ""
+msgstr "Buail comhad anseo chun comhad nua a uaslódáil"
 
 #. Default: "Drop files here ..."
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
-msgstr ""
+msgstr "Buail comhaid anseo ..."
 
 #. Default: "Duration:"
 #: helpers/ContentMetadata
 msgid "Duration:"
-msgstr "Fad tréimhse:"
+msgstr "Fad:"
 
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
-msgstr "Maoiniú AE"
+msgstr "maoiniú AE"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -293,14 +293,18 @@ msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 msgid "For more search options"
 msgstr "Le haghaidh tuilleadh roghanna cuardaigh"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Fhrainc"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
 msgstr "Lánscáileán"
 
 #. Default: "Funding Programme"
-#: search/cca/facets
-#: search/mission_projects/facets-projects
+#: search/cca/facets search/facets search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Clár Maoinithe"
@@ -308,12 +312,12 @@ msgstr "Clár Maoinithe"
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
-msgstr "Clár Cistiúcháin:"
+msgstr "Clár Maoinithe:"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
-msgstr "Saintréithriú geografach:"
+msgstr "Tréithriú geografach:"
 
 #. Default: "Geographical scale"
 #: search/mission_tools/facets-tools
@@ -323,7 +327,7 @@ msgstr "Scála geografach"
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
-msgstr "Ag tosú"
+msgstr "Ag tosnú"
 
 #. Default: "Go to advanced search"
 #: index
@@ -338,17 +342,22 @@ msgstr "Leibhéal rialachais:"
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
-msgstr "HHWS ar fáil (cliceáil ar an tír chun tuilleadh eolais a fháil)"
+msgstr "HHWS ar fáil (cliceáil ar tír le haghaidh tuilleadh eolais)"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
-msgstr ""
+msgstr "Cineál Guaise"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Tionchair Sláinte"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
-msgstr "Tionchar ar an tsláinte:"
+msgstr "Tionchar sláinte:"
 
 #. Default: "Health impacts"
 #: search/health_observatory/facets-health
@@ -358,7 +367,7 @@ msgstr "Tionchair sláinte"
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
-msgstr "Pleananna gníomhaíochta maidir le sláinte teasa (HHAP)"
+msgstr "Pleananna gníomhaíochta um shláinte teasa (HHAP)"
 
 #. Default: "Heat health warning systems (HHWS)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +393,7 @@ msgstr "Má tá aon cheist eile agat is féidir leat teagmháil a dhéanamh"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Implementation time"
-msgstr "Am Cur Chun Feidhme"
+msgstr "Am forfheidhmithe"
 
 #. Default: "Importance and Relevance of Adaptation"
 #: components/theme/Views/CaseStudyView
@@ -404,38 +413,38 @@ msgstr "Táscairí"
 #. Default: "Info"
 #: helpers/Utils
 msgid "Info"
-msgstr "Faisnéis"
+msgstr "Eolas"
 
 #. Default: "Item from third parties"
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Item from third parties"
 msgstr "Mír ó thríú páirtithe"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
 msgid "Key Community Systems"
-msgstr ""
+msgstr "Príomhchórais Phobail"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Key Type Measure"
-msgstr "Beart an Chineáil Eochrach"
+msgstr "Beart Cineál Eochair"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
 msgid "Key Type Measures:"
-msgstr "Príomhbhearta Cineáil:"
+msgstr "Príomhbhearta Cineál:"
 
 #. Default: "Key activities within climate change and health"
 #: components/theme/Views/DatabaseItemView
 msgid "Key activities within climate change and health"
-msgstr "Príomhghníomhaíochtaí laistigh den athrú aeráide agus den tsláinte"
+msgstr "Príomhghníomhaíochtaí laistigh den athrú aeráide agus sláinte"
 
 #. Default: "Key type measures"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Key type measures"
-msgstr "Príomhbhearta cineáil"
+msgstr "Príomhbhearta cineál"
 
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
@@ -450,7 +459,7 @@ msgstr "Teanga"
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
 msgid "Language of the conference"
-msgstr "Teanga na Comhdhála"
+msgstr "Teanga na comhdhála"
 
 #. Default: "Language(s) of the tool"
 #: search/mission_tools/facets-tools
@@ -496,13 +505,13 @@ msgstr "Luaidhe"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Legal aspects"
-msgstr "Gnéithe Dlíthiúla"
+msgstr "Gnéithe dlíthiúla"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Lifetime"
-msgstr "Saolré"
+msgstr "Saol"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -517,7 +526,7 @@ msgstr "Ag lorg tuilleadh eolais?"
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
-msgstr "Réigiún macra-thrasnáisiúnta:"
+msgstr "Réigiún Macra-Trasnáisiúnta:"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -537,34 +546,35 @@ msgstr "Nua"
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
-msgstr "Gan HHAP"
+msgstr "Níl HHAP"
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No information"
-msgstr "Níl aon eolas ar fáil"
+msgstr "Gan eolas"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
-msgstr "Níl aon torthaí ann"
+msgstr "Gan torthaí"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
-msgstr "Cuspóirí"
+msgstr "Cuspóirí an bhirt oiriúnaithe"
 
 #. Default: "Observatory Contributions:"
 #: helpers/Utils
 msgid "Observatory Contributions:"
-msgstr "Rannchuidithe ón bhFaireachlann:"
+msgstr "Ranníocaíochtaí Réadlann:"
 
 #. Default: "Observatory contributions"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
-msgstr "Rannchuidiú na Faireachlainne"
+msgstr "Ranníocaíochtaí réadlainne"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Comhpháirtí réadlainne"
@@ -572,7 +582,7 @@ msgstr "Comhpháirtí réadlainne"
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
-msgstr "Doiciméid Eagraíochta"
+msgstr "Doiciméid Eagrúcháin"
 
 #. Default: "Organised by EEA"
 #: components/manage/Blocks/Listing/EventCardsListingView
@@ -607,17 +617,17 @@ msgstr "Comhthéacs beartais an bhirt oiriúnaithe"
 #. Default: "Practical information"
 #: components/theme/Views/CcaEventView
 msgid "Practical information"
-msgstr "Faisnéis phraiticiúil"
+msgstr "Eolas praiticiúil"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
-msgstr "Eolas faoin tionscadal"
+msgstr "Faisnéis tionscadail"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
-msgstr "Foilseacháin agus Tuarascálacha Doiciméid"
+msgstr "Doiciméid Foilseacháin agus Tuarascálacha"
 
 #. Default: "Published"
 #: search/common
@@ -635,32 +645,29 @@ msgid "Publishing year"
 msgstr "Bliain foilsitheoireachta"
 
 #. Default: "RAST step(s) of relevance"
-#: search/mission_funding/facets-funding
-#: search/mission_tools/facets-tools
+#: search/mission_funding/facets-funding search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
 msgstr "Céim(eanna) RAST ábhartha"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
-msgstr "Faisnéis Tagartha"
+msgstr "Eolas Tagartha"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
+#: components/theme/Views/AdaptationOptionView helpers/Utils
 msgid "Reference information"
-msgstr "Faisnéis tagartha"
+msgstr "Eolas tagartha"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView
-#: helpers/Utils
+#: components/theme/Views/CaseStudyView helpers/Utils
 msgid "References"
 msgstr "Tagairtí"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Region's countries:"
-msgstr "Tíortha an réigiúin:"
+msgstr "Tíortha an Réigiúin:"
 
 #. Default: "Regions"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
@@ -675,12 +682,12 @@ msgstr "Ábhar gaolmhar:"
 #. Default: "Related documents and presentations"
 #: components/theme/Views/DatabaseItemView
 msgid "Related documents and presentations"
-msgstr "Doiciméid agus cuir i láthair ghaolmhara"
+msgstr "Doiciméid ghaolmhara agus cur i láthair"
 
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
-msgstr ""
+msgstr "Ionadaigh an comhad atá ann cheana"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -698,7 +705,7 @@ msgid "Search the Observatory Resource Catalogue..."
 msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
 #. Default: "Section"
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Section"
 msgstr "Alt"
 
@@ -725,41 +732,40 @@ msgstr "Féach níos lú"
 #. Default: "See more"
 #: helpers/Utils
 msgid "See more"
-msgstr "Féach tuilleadh"
+msgstr "Féach níos mó"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
 msgid "See video outside Climate-ADAPT"
-msgstr "Féach an físeán lasmuigh de Climate-ADAPT"
+msgstr "Féach físeán lasmuigh de Climate-ADAPT"
 
 #. Default: "Select"
 #: components/manage/Blocks/ContentLinks/DropdownListView
 #: components/manage/Blocks/Listing/DropdownListingView
 msgid "Select"
-msgstr ""
+msgstr "Roghnaigh"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
 msgid "Share your information"
-msgstr "Comhroinn do chuid faisnéise"
+msgstr "Roinn do chuid faisnéise"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
-msgstr "Tuaslagáin"
+msgstr "Réitigh"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView
-#: helpers/Utils
+#: components/theme/Views/CaseStudyView helpers/Utils
 msgid "Source"
 msgstr "Foinse"
 
 #. Default: "Source of funding"
 #: components/theme/Views/ProjectView
 msgid "Source of funding"
-msgstr "Foinse an mhaoinithe"
+msgstr "Foinse maoinithe"
 
 #. Default: "Source:"
 #: components/Result/ClusterHorizontalCardItem
@@ -771,43 +777,51 @@ msgstr "Foinse:"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Stakeholder participation"
-msgstr "Rannpháirtíocht na bpáirtithe leasmhara"
+msgstr "Rannpháirtíocht geallsealbhóirí"
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
-msgstr "Fo-Náisiúnaigh:"
+msgstr "Fo-Náisiúnta:"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Subnational or local"
-msgstr "Fonáisiúnta nó áitiúil"
+msgstr "Fo-náisiúnta nó áitiúil"
 
 #. Default: "Success and limiting factors"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Success and limiting factors"
-msgstr "Fachtóirí Ratha agus Teorannaithe"
+msgstr "Fachtóirí ratha agus teorannacha"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
-msgstr "An Uirlis Tacaíochta um Oiriúnú - Ag tosú"
+msgstr "An Uirlis Tacaíochta Oiriúnaithe - Tús a chur leis"
 
 #. Default: "The date refers to the date of release of the video"
 #: helpers/ContentMetadata
 msgid "The date refers to the date of release of the video"
-msgstr "Tagraíonn an dáta do dháta eisiúna an fhíseáin"
+msgstr "Tagraíonn an dáta do dháta eisithe na físeáin"
 
 #. Default: "The date refers to the latest date of publication of the item"
 #: helpers/ContentMetadata
 msgid "The date refers to the latest date of publication of the item"
-msgstr "Tagraíonn an dáta don dáta is déanaí ar a bhfoilsítear an mhír"
+msgstr "Tagraíonn an dáta don dáta foilsithe is déanaí den mhír"
 
-#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared
+#. or updated by contributing experts to be submitted for the publication in
+#. Climate ADAPT"
 #: helpers/ContentMetadata
-msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-msgstr "Tagraíonn an dáta don tráth a d’ullmhaigh nó a nuashonraigh saineolaithe rannpháirteacha an mhír atá le cur isteach lena foilsiú in Climate ADAPT"
+msgid ""
+"The date refers to the moment in which the item has been prepared or updated"
+" by contributing experts to be submitted for the publication in Climate "
+"ADAPT"
+msgstr ""
+"Tagraíonn an dáta don mhóimint ina bhfuil an mhír ullmhaithe nó "
+"nuashonraithe ag saineolaithe rannpháirteacha le cur isteach lena fhoilsiú "
+"in Aeráide ADAPT"
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -816,15 +830,19 @@ msgid "Topics:"
 msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Transnational regions"
 msgstr "Réigiúin thrasnáisiúnta"
 
 #. Default: "Type of item"
-#: search/common
-#: search/mission_all/facets-all
+#: search/common search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Cineál míre"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Cineálacha"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -839,233 +857,541 @@ msgstr "Riachtanais úsáideora"
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
-msgstr "Féach ar na haighneachtaí go léir sa chatalóg acmhainní"
+msgstr "Féach ar gach ionchur sa chatalóg acmhainní"
 
 #. Default: "Visit external website"
 #: helpers/Utils
 msgid "Visit external website"
-msgstr "Tabhair cuairt ar shuíomh gréasáin seachtrach"
+msgstr "Tabhair cuairt ar an suíomh Gréasáin seachtrach"
 
 #. Default: "Web"
 #: helpers/Utils
 msgid "Web"
-msgstr "An Gréasán"
+msgstr "Gréasán"
 
 #. Default: "Web site"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Web site"
-msgstr "Suíomh gréasáin"
+msgstr "láithreán gréasáin"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
-msgstr "Suíomhanna gréasáin"
+msgstr "Láithreáin Ghréasáin"
 
 #. Default: "Websites:"
 #: helpers/Utils
 msgid "Websites:"
-msgstr "Suíomhanna gréasáin:"
+msgstr "Láithreáin Ghréasáin:"
 
 #. Default: "When"
 #: helpers/Utils
 msgid "When"
-msgstr "Cén uair"
+msgstr "Cathain"
 
 #. Default: "Where"
 #: helpers/Utils
 msgid "Where"
-msgstr "Cén áit?"
+msgstr "Cá"
 
 #. undefined
-
 msgid "Case studies"
 msgstr "Cás-staidéir"
 
 #. undefined
-
 msgid "Guidance"
 msgstr "Treoir"
 
 #. undefined
-
 msgid "Information portals"
 msgstr "Tairseacha faisnéise"
 
 #. undefined
-
 msgid "Videos"
 msgstr "Físeáin"
 
 #. undefined
-
 msgid "Organisations"
 msgstr "Eagraíochtaí"
 
 #. undefined
-
 msgid "Publication and reports"
 msgstr "Foilsiú agus tuarascálacha"
 
 #. undefined
-
 msgid "Publications and reports"
 msgstr "Foilseacháin agus tuarascálacha"
 
 #. undefined
-
 msgid "Research and knowledge projects"
 msgstr "Tionscadail taighde agus eolais"
 
 #. undefined
-
 msgid "Tools"
 msgstr "Uirlisí"
 
 #. undefined
-
 msgid "Based on your preferences, you can view this page in english"
-msgstr "Bunaithe ar do chuid sainroghanna, is féidir leat an leathanach seo a fheiceáil i mBéarla"
+msgstr ""
+"Bunaithe ar do chuid sainroghanna, is féidir leat féachaint ar an leathanach"
+" seo i mBéarla"
 
 #. undefined
-
 msgid "here"
 msgstr "anseo"
 
 #. undefined
-
 msgid "Latest <br/> News & Events"
-msgstr "An Nuacht & an tAimsir is Déanaí; Imeachtaí"
+msgstr "<br/> Nuacht & Imeachtaí is déanaí"
 
 #. undefined
-
 msgid "Most recent <br/> Case Study"
-msgstr "An Cás-Staidéar is déanaí"
+msgstr "<br/> Cás-Staidéar is déanaí"
 
 #. undefined
-
 msgid "Most recent <br/> Publication or Report"
-msgstr "Foilsiú nó Tuarascáil is déanaí"
+msgstr "<br/> Foilseachán nó Tuairisc is déanaí"
 
 #. undefined
-
 msgid "National adaption policy"
-msgstr "Beartas oiriúnaithe náisiúnta"
+msgstr "Beartas náisiúnta um oiriúnú"
 
 #. undefined
-
 msgid "Climate change impact and vulnerability assessments"
-msgstr "Measúnuithe ar thionchar an athraithe aeráide agus ar leochaileacht i leith an athraithe aeráide"
+msgstr "Tionchar athrú aeráide agus measúnuithe leochaileachta"
 
 #. undefined
-
 msgid "Adaptation portals and platforms"
 msgstr "Tairseacha agus ardáin oiriúnaithe"
 
 #. undefined
-
 msgid "Hazard category"
 msgstr "Catagóir ghuaise"
 
 #. undefined
-
 msgid "Hazard type"
 msgstr "Cineál guaise"
 
 #. undefined
-
 msgid "Indicator"
 msgstr "Táscaire"
 
 #. undefined
-
 msgid "Zip download"
 msgstr "Zip íoslódáil"
 
 #. undefined
-
 msgid "Download"
-msgstr "Íoslódáil"
+msgstr "Íosluchtaigh"
 
 #. undefined
-
 msgid "Heat and cold"
 msgstr "Teas agus fuar"
 
 #. undefined
-
 msgid "Mean air temperature"
-msgstr "Meánteocht aeir"
+msgstr "Meánteocht an aeir"
 
 #. undefined
-
 msgid "Extreme heat"
-msgstr "Teas foircneach"
+msgstr "Teas an-mhór"
 
 #. undefined
-
 msgid "Cold spells and frost"
 msgstr "Geasa fuar agus sioc"
 
 #. undefined
-
 msgid "Wet and dry"
 msgstr "Fliuch agus tirim"
 
 #. undefined
-
 msgid "Mean precipitation"
-msgstr "Meánfhrasaíocht"
+msgstr "Meán deascadh"
 
 #. undefined
-
 msgid "Extreme precipitation"
-msgstr "Frasaíocht fhoircneach"
+msgstr "Frasaíocht mhór"
 
 #. undefined
-
 msgid "River flooding"
-msgstr "Tuilte abhann"
+msgstr "Tuile abhann"
 
 #. undefined
-
 msgid "Aridity"
-msgstr "Aigéadacht"
+msgstr "Aridity"
 
 #. undefined
-
 msgid "Wildfire"
-msgstr "Falscaithe"
+msgstr "Tinte fiáin"
 
 #. undefined
-
 msgid "Snow and land ice"
 msgstr "Sneachta agus oighear talún"
 
 #. undefined
-
 msgid "Snow and ice"
 msgstr "Sneachta agus oighear"
 
 #. undefined
-
 msgid "Coastal"
 msgstr "Cósta"
 
 #. undefined
-
 msgid "Relative sea level"
-msgstr "Leibhéal coibhneasta na mara"
+msgstr "Leibhéal na farraige coibhneasta"
 
 #. undefined
-
 msgid "Coastal flooding"
-msgstr "Tuilte cósta"
+msgstr "Tuile cósta"
 
 #. undefined
-
 msgid "Other"
 msgstr "Eile"
+
+#. undefined
+msgid "Global"
+msgstr "Domhanda"
+
+#. undefined
+msgid "Black Sea"
+msgstr "An Mhuir Dhubh"
+
+#. undefined
+msgid "Albania"
+msgstr "an Albáin"
+
+#. undefined
+msgid "Andorra"
+msgstr "Andóra"
+
+#. undefined
+msgid "Armenia"
+msgstr "an Airméin"
+
+#. undefined
+msgid "Austria"
+msgstr "Ostair"
+
+#. undefined
+msgid "Azerbaijan"
+msgstr "Asarbaiseáin"
+
+#. undefined
+msgid "Belarus"
+msgstr "Bhealarúis"
+
+#. undefined
+msgid "Bosnia and Herzegovina"
+msgstr "An Bhoisnia agus an Heirseagaivéin"
+
+#. undefined
+msgid "Bulgaria"
+msgstr "Bhulgáir"
+
+#. undefined
+msgid "Croatia"
+msgstr "an Chróit"
+
+#. undefined
+msgid "Cyprus"
+msgstr "an Chipir"
+
+#. undefined
+msgid "Czechia"
+msgstr "Seicis"
+
+#. undefined
+msgid "Denmark"
+msgstr "an Danmhairg"
+
+#. undefined
+msgid "Estonia"
+msgstr "an Eastóin"
+
+#. undefined
+msgid "Faroe Islands"
+msgstr "Oileáin Fharó"
+
+#. undefined
+msgid "Finland"
+msgstr "an Fhionlainn"
+
+#. undefined
+msgid "Germany"
+msgstr "an Ghearmáin"
+
+#. undefined
+msgid "Georgia"
+msgstr "Georgia"
+
+#. undefined
+msgid "Greece"
+msgstr "an Ghréig"
+
+#. undefined
+msgid "Hungary"
+msgstr "an Ungáir"
+
+#. undefined
+msgid "Iceland"
+msgstr "Íoslainn"
+
+#. undefined
+msgid "Kazakhstan"
+msgstr "Chasacstáin"
+
+#. undefined
+msgid "Kosovo"
+msgstr "Chosaiv"
+
+#. undefined
+msgid "Ireland"
+msgstr "Éire"
+
+#. undefined
+msgid "Italy"
+msgstr "an Iodáil"
+
+#. undefined
+msgid "Israel"
+msgstr "Iosrael"
+
+#. undefined
+msgid "Latvia"
+msgstr "an Laitvia"
+
+#. undefined
+msgid "Liechtenstein"
+msgstr "Lichtinstéin"
+
+#. undefined
+msgid "Lithuania"
+msgstr "an Liotuáin"
+
+#. undefined
+msgid "Luxembourg"
+msgstr "Lucsamburg"
+
+#. undefined
+msgid "Malta"
+msgstr "Málta"
+
+#. undefined
+msgid "Monaco"
+msgstr "Monacó"
+
+#. undefined
+msgid "Moldova, Republic of"
+msgstr "Mholdóiv, Poblacht na"
+
+#. undefined
+msgid "Montenegro"
+msgstr "Montainéagró"
+
+#. undefined
+msgid "Netherlands"
+msgstr "Ísiltír"
+
+#. undefined
+msgid "Norway"
+msgstr "Iorua"
+
+#. undefined
+msgid "Poland"
+msgstr "an Pholainn"
+
+#. undefined
+msgid "Portugal"
+msgstr "an Phortaingéil"
+
+#. undefined
+msgid "Republic of North Macedonia"
+msgstr "Poblacht na Macadóine Thuaidh"
+
+#. undefined
+msgid "Romania"
+msgstr "an Rómáin"
+
+#. undefined
+msgid "Russian Federation"
+msgstr "Cónaidhm na Rúise"
+
+#. undefined
+msgid "San Marino"
+msgstr "San Mairíne"
+
+#. undefined
+msgid "Serbia"
+msgstr "Seirbia"
+
+#. undefined
+msgid "Slovakia"
+msgstr "an tSlóvaic"
+
+#. undefined
+msgid "Slovenia"
+msgstr "an tSlóivéin"
+
+#. undefined
+msgid "Spain"
+msgstr "Spáinn"
+
+#. undefined
+msgid "Sweden"
+msgstr "an tSualainn"
+
+#. undefined
+msgid "Switzerland"
+msgstr "Eilvéis"
+
+#. undefined
+msgid "Turkiye"
+msgstr "Tuircis"
+
+#. undefined
+msgid "Türkiye"
+msgstr "Tuircis"
+
+#. undefined
+msgid "United Kingdom"
+msgstr "An Ríocht Aontaithe"
+
+#. undefined
+msgid "Ukraine"
+msgstr "Úcráin"
+
+#. undefined
+msgid "Europe"
+msgstr "Eoraip"
+
+#. undefined
+msgid "Macro-Transnational Regions"
+msgstr "Réigiúin Macra-Thrasnáisiúnta"
+
+#. undefined
+msgid "Biogeographical Regions"
+msgstr "Réigiúin Bhithgheografacha"
+
+#. undefined
+msgid "Subnational Regions"
+msgstr "Réigiúin Fho-náisiúnta"
+
+#. undefined
+msgid "Municipality Name"
+msgstr "Ainm Bardasach"
+
+#. undefined
+msgid "Northern Periphery and Arctic"
+msgstr "An Forimeall Thuaidh agus an tArtach"
+
+#. undefined
+msgid "Baltic Sea"
+msgstr "Muir Bhailt"
+
+#. undefined
+msgid "North West Europe"
+msgstr "Iarthuaisceart na hEorpa"
+
+#. undefined
+msgid "North Sea"
+msgstr "An Mhuir Thuaidh"
+
+#. undefined
+msgid "Atlantic Area"
+msgstr "Limistéar an Atlantaigh"
+
+#. undefined
+msgid "Alpine Space"
+msgstr "Spás Alpach"
+
+#. undefined
+msgid "Central Europe"
+msgstr "Lár na hEorpa"
+
+#. undefined
+msgid "South West Europe"
+msgstr "Iardheisceart na hEorpa"
+
+#. undefined
+msgid "Mediterranean (Euro-Med)"
+msgstr "an Mheánmhuir (Euro-Med)"
+
+#. undefined
+msgid "Danube Area"
+msgstr "Limistéar na Danóibe"
+
+#. undefined
+msgid "Adriatic-Ionian"
+msgstr "Aidriadach-Iónach"
+
+#. undefined
+msgid "Mediterranean Sea Basin (NEXT)"
+msgstr "Imchuach na Meánmhara (Ar Aghaidh)"
+
+#. undefined
+msgid "Black Sea Basin (NEXT)"
+msgstr "Imchuach na Mara Duibhe (Ar Aghaidh)"
+
+#. undefined
+msgid "Outermost Regions"
+msgstr "Na Réigiúin is Forimeallaí"
+
+#. undefined
+msgid "Alpine"
+msgstr "Alpach"
+
+#. undefined
+msgid "Anatolian"
+msgstr "Anatolian"
+
+#. undefined
+msgid "Arctic"
+msgstr "Artach"
+
+#. undefined
+msgid "Atlantic"
+msgstr "Atlantach"
+
+#. undefined
+msgid "Boreal"
+msgstr "Boreal"
+
+#. undefined
+msgid "Continental"
+msgstr "Ilchríochach"
+
+#. undefined
+msgid "Macaronesia"
+msgstr "Macaronesia"
+
+#. undefined
+msgid "Mediterranean"
+msgstr "Meánmhara"
+
+#. undefined
+msgid "Pannonian"
+msgstr "Pannónach"
+
+#. undefined
+msgid "Steppic"
+msgstr "Steppic"
+
+#. undefined
+msgid "Transnational region (stretching across country borders)"
+msgstr "Réigiún trasnáisiúnta (ag síneadh trasna teorainneacha tíre)"
+
+#. undefined
+msgid "National"
+msgstr "Náisiúnta"
+
+#. undefined
+msgid "Sub National Regions"
+msgstr "Fo-Réigiúin Náisiúnta"
+
+#. undefined
+msgid "Local (e.g. city or municipal level)"
+msgstr "Áitiúil (m.sh. leibhéal cathrach nó cathrach)"
 
 #. undefined
 #: health_menu:43
@@ -1078,8 +1404,7 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "Oiriúnú in earnálacha beartais an Aontais Eorpaigh"
 
 #. undefined
-#: health_menu:9
-#: site_menu:10
+#: health_menu:9 site_menu:10
 msgid "About"
 msgstr "Eolas faoi"
 
@@ -1099,11 +1424,6 @@ msgid "Adaptation Support Tool"
 msgstr "Uirlis Tacaíochta don Oiriúnú"
 
 #. undefined
-#: site_menu:48
-msgid "Adriatic-Ionian"
-msgstr "Aidriadach‐Iónach"
-
-#. undefined
 #: site_menu:29
 msgid "Agriculture"
 msgstr "Talmhaíocht"
@@ -1114,29 +1434,14 @@ msgid "Air pollution"
 msgstr "Truailliú aeir"
 
 #. undefined
-#: site_menu:49
-msgid "Alpine Space"
-msgstr "Spás Alpach"
-
-#. undefined
 #: health_menu:44
 msgid "Annual reports"
 msgstr "Tuarascálacha bliantúla"
 
 #. undefined
-#: site_menu:50
-msgid "Atlantic Area"
-msgstr "Limistéar an Atlantaigh"
-
-#. undefined
 #: site_menu:51
 msgid "Balkan-Mediterranean"
 msgstr "Na Balcáin-an Mheánmhuir"
-
-#. undefined
-#: site_menu:52
-msgid "Baltic Sea"
-msgstr "Muir Bhailt"
 
 #. undefined
 #: site_menu:30
@@ -1162,11 +1467,6 @@ msgstr "Forbairt acmhainní"
 #: site_menu:79
 msgid "Case study explorer"
 msgstr "Taiscéalaí cás-staidéir"
-
-#. undefined
-#: site_menu:53
-msgid "Central Europe"
-msgstr "Lár na hEorpa"
 
 #. undefined
 #: site_menu:46
@@ -1209,8 +1509,7 @@ msgid "Countries, Transnational regions"
 msgstr "Tíortha, Réigiúin Thrasnáisiúnta"
 
 #. undefined
-#: health_menu:18
-#: site_menu:45
+#: health_menu:18 site_menu:45
 msgid "Country Profiles"
 msgstr "Próifílí tíre"
 
@@ -1270,8 +1569,7 @@ msgid "Mission Portal"
 msgstr "Tairseach na Misean"
 
 #. undefined
-#: site_menu:43
-#: site_menu:43
+#: site_menu:43 site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "Beartas Réigiúnach an Aontais"
 
@@ -1322,8 +1620,11 @@ msgstr "Fuinneamh"
 
 #. undefined
 #: site_menu:67
-msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr "leochaileacht na hEorpa i leith thionchair an athraithe aeráide a tharlaíonn lasmuigh den Eoraip"
+msgid ""
+"Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr ""
+"leochaileacht na hEorpa i leith thionchair an athraithe aeráide a tharlaíonn"
+" lasmuigh den Eoraip"
 
 #. undefined
 #: health_menu:32
@@ -1446,11 +1747,6 @@ msgid "Marine and fisheries"
 msgstr "An mhuir agus an t-iascach"
 
 #. undefined
-#: site_menu:55
-msgid "Mediterranean"
-msgstr "Meánmhuirí"
-
-#. undefined
 #: health_menu:28
 msgid "Mental health effects"
 msgstr "Éifeachtaí meabhairshláinte"
@@ -1468,7 +1764,9 @@ msgstr "Beartais Náisiúnta"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr "Córais rabhaidh náisiúnta maidir le sláinte teasa agus pleananna gníomhaíochta"
+msgstr ""
+"Córais rabhaidh náisiúnta maidir le sláinte teasa agus pleananna "
+"gníomhaíochta"
 
 #. undefined
 #: health_menu:17
@@ -1479,21 +1777,6 @@ msgstr "Anailís ar bheartais náisiúnta 2022"
 #: site_menu:86
 msgid "Networks"
 msgstr "Líonraí"
-
-#. undefined
-#: site_menu:56
-msgid "North Sea"
-msgstr "An Mhuir Thuaidh"
-
-#. undefined
-#: site_menu:57
-msgid "North West Europe"
-msgstr "Iarthuaisceart na hEorpa"
-
-#. undefined
-#: site_menu:58
-msgid "Northern Periphery and Arctic"
-msgstr "An Forimeall Thuaidh agus an tArtach"
 
 #. undefined
 #: health_menu:42
@@ -1549,11 +1832,6 @@ msgstr "Cuardaigh Acmhainní"
 #: site_menu:19
 msgid "Site map"
 msgstr "Léarscáil an láithreáin"
-
-#. undefined
-#: site_menu:59
-msgid "South West Europe"
-msgstr "Iardheisceart na hEorpa"
 
 #. undefined
 #: site_menu:73
@@ -1623,7 +1901,8 @@ msgstr "Galair veicteoir-iompartha"
 #. undefined
 #: health_menu:15
 msgid "WHO Europe activities on climate change and health"
-msgstr "Gníomhaíochtaí EDS na hEorpa maidir leis an athrú aeráide agus an tsláinte"
+msgstr ""
+"Gníomhaíochtaí EDS na hEorpa maidir leis an athrú aeráide agus an tsláinte"
 
 #. undefined
 #: health_menu:25
@@ -1636,8 +1915,7 @@ msgid "Water management"
 msgstr "Bainistíocht uisce"
 
 #. undefined
-#: health_menu:46
-#: site_menu:93
+#: health_menu:46 site_menu:93
 msgid "Webinars"
 msgstr "Seimineáir ghréasáin"
 
@@ -1667,107 +1945,88 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Nochtadh grúpaí leochaileacha do rioscaí aeráide"
 
 #. undefined
-#: 
 msgid "KEY EU ACTIONS"
 msgstr "GNÍOMHAÍOCHTAÍ EOCHAIR AE"
 
 #. undefined
-#: 
 msgid "Just resilience"
 msgstr "Athléimneacht chóir"
 
 #. undefined
-#: 
 msgid "Nature-based solutions"
 msgstr "Réitigh dhúlrabhunaithe"
 
 #. undefined
-#: 
 msgid "Economic losses and fatalities"
 msgstr "Caillteanais eacnamaíocha agus básanna"
 
 #. undefined
-#: 
 msgid "Strategic objectives 2030"
 msgstr "Cuspóirí straitéiseacha 2030"
 
 #. undefined
-#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Spásanna glasa uirbeacha a bheith ar fáil do ghrúpaí leochaileacha"
 
 #. undefined
-#: 
 msgid "Transnational, National, local"
 msgstr "Trasnáisiúnta, Náisiúnta, áitiúil"
 
 #. undefined
-#: 
 msgid "Aero-allergens"
 msgstr "Aerailléirginí"
 
 #. undefined
-#: 
 msgid "Heat"
 msgstr "Teas"
 
 #. undefined
-#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Inrochtaineacht ospidéal san Eoraip"
 
 #. undefined
-#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Oiriúnú san earnáil talmhaíochta"
 
 #. undefined
-#: 
 msgid "Ground-level ozone"
 msgstr "Ózón trópaisféarach"
 
 #. undefined
-#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Réamhaisnéis ózóin trópaisféaraigh (CAMS)"
 
 #. undefined
-#: 
 msgid "Pollution"
 msgstr "Truailliú"
 
 #. undefined
-#: 
 msgid "Occupational safety and health effects"
 msgstr "Éifeachtaí sláinte agus sábháilteachta ceirde"
 
 #. undefined
-#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Plean oibre na Faireachlainne do 2023-24"
 
 #. undefined
-#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Réamhaisnéis PM2.5 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Réamhaisnéis PM10 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Réamhaisnéis NO2 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
 msgid "2022 EEA Report on Climate & Health"
-msgstr "Tuarascáil 2022 ón nGníomhaireacht Eorpach Chomhshaoil maidir leis an Aeráid agus an tAampa; Sláinte"
+msgstr ""
+"Tuarascáil 2022 ón nGníomhaireacht Eorpach Chomhshaoil maidir leis an Aeráid"
+" agus an tAampa; Sláinte"
 
 #. undefined
-#: 
 msgid "European environment and health atlas"
 msgstr "Atlas comhshaoil agus sláinte na hEorpa"
 
@@ -1804,13 +2063,18 @@ msgstr "1.2 An próiseas a chur ar bun ar bhealach struchtúrtha"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
-msgstr "1.3 Meastachán a dhéanamh ar na hacmhainní daonna agus airgeadais is gá agus foinsí féideartha cistiúcháin fhadtéarmaigh a shainaithint"
+msgid ""
+"1.3 Estimating human and financial resources needed and identifying "
+"potential sources of long-term funding"
+msgstr ""
+"1.3 Meastachán a dhéanamh ar na hacmhainní daonna agus airgeadais is gá agus"
+" foinsí féideartha cistiúcháin fhadtéarmaigh a shainaithint"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
 msgid "1.3 Setting up adaptation processes within and beyond the municipality"
-msgstr "1.3 Próisis oiriúnaithe a chur ar bun laistigh den bhardas agus lasmuigh de"
+msgstr ""
+"1.3 Próisis oiriúnaithe a chur ar bun laistigh den bhardas agus lasmuigh de"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:148
@@ -1865,12 +2129,15 @@ msgstr "12 réigiún"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr "2. Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an athrú aeráide"
+msgstr ""
+"2. Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an "
+"athrú aeráide"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
 msgid "2.1 Recognizing past and present climate impacts"
-msgstr "2.1 Tionchair aeráide san am a chuaigh thart agus san am i láthair a aithint"
+msgstr ""
+"2.1 Tionchair aeráide san am a chuaigh thart agus san am i láthair a aithint"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:168
@@ -1879,8 +2146,11 @@ msgstr "2.1 Rioscaí aeráide a thuiscint"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr "2.2 Creataí chun measúnú a dhéanamh ar thionchair, leochaileachtaí agus rioscaí aeráide"
+msgid ""
+"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr ""
+"2.2 Creataí chun measúnú a dhéanamh ar thionchair, leochaileachtaí agus "
+"rioscaí aeráide"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -1889,8 +2159,12 @@ msgstr "2.2 Réamh-mheastacháin aeráide agus tionchair amach anseo a thuiscint
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
-msgstr "2.3 Seicheamh ginearálta le haghaidh tionchair aeráide, leochaileachtaí agus measúnuithe riosca"
+msgid ""
+"2.3 General sequence for climate impacts, vulnerabilities and risk "
+"assessments"
+msgstr ""
+"2.3 Seicheamh ginearálta le haghaidh tionchair aeráide, leochaileachtaí agus"
+" measúnuithe riosca"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -1910,7 +2184,8 @@ msgstr "2.4 Saincheisteanna trasteorann a chur san áireamh"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:184
 msgid "2.5 Addressing knowledge gaps and dealing with uncertainties"
-msgstr "2.5 Aghaidh a thabhairt ar bhearnaí eolais agus déileáil le héiginnteachtaí"
+msgstr ""
+"2.5 Aghaidh a thabhairt ar bhearnaí eolais agus déileáil le héiginnteachtaí"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:158
@@ -1920,22 +2195,31 @@ msgstr "2.5 Ról na gceantar máguaird san oiriúnú a thuiscint"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr "2.6 Príomhábhair imní maidir le hoiriúnú a shainaithint agus cuspóirí a shainiú"
+msgstr ""
+"2.6 Príomhábhair imní maidir le hoiriúnú a shainaithint agus cuspóirí a "
+"shainiú"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr "2.6 Príomhábhair imní maidir le hoiriúnú a shainaithint agus treoir straitéiseach a leagan síos"
+msgid ""
+"2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr ""
+"2.6 Príomhábhair imní maidir le hoiriúnú a shainaithint agus treoir "
+"straitéiseach a leagan síos"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr "2.7 Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an athrú aeráide: Féinseiceáil"
+msgstr ""
+"2.7 Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an "
+"athrú aeráide: Féinseiceáil"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr "2.7 Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an athrú aeráide: Féinseiceáil"
+msgstr ""
+"2.7 Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an "
+"athrú aeráide: Féinseiceáil"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -1976,8 +2260,12 @@ msgstr "4. Measúnú a dhéanamh ar roghanna oiriúnúcháin"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
-msgstr "4.1 Measúnú a dhéanamh ar roghanna oiriúnaithe féideartha i dtéarmaí éifeachtaí, ama, costas, tairbhí agus iarrachtaí"
+msgid ""
+"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
+"benefits and efforts"
+msgstr ""
+"4.1 Measúnú a dhéanamh ar roghanna oiriúnaithe féideartha i dtéarmaí "
+"éifeachtaí, ama, costas, tairbhí agus iarrachtaí"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -1992,7 +2280,9 @@ msgstr "4.2 Measúnú costais is tairbhe a dhéanamh ar bhearta oiriúnaithe"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr "4.2 Tosaíocht a thabhairt do roghanna oiriúnúcháin agus roghanna tosaíochta a roghnú"
+msgstr ""
+"4.2 Tosaíocht a thabhairt do roghanna oiriúnúcháin agus roghanna tosaíochta "
+"a roghnú"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
@@ -2037,7 +2327,9 @@ msgstr "5.2 Samplaí de phleananna gníomhaíochta oiriúnúcháin a aimsiú"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr "5.2 Rialachas an chur chun feidhme a eagrú ar fud na n-earnálacha agus na leibhéal"
+msgstr ""
+"5.2 Rialachas an chur chun feidhme a eagrú ar fud na n-earnálacha agus na "
+"leibhéal"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
@@ -2046,8 +2338,12 @@ msgstr "5.3 Oiriúnú a phríomhshruthú i mbeartais agus i bpleananna uirbeacha
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
-msgstr "5.3 Príomhshruthú: Oiriúnú a chomhtháthú in ionstraimí agus i mbeartais earnála"
+msgid ""
+"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
+"policies"
+msgstr ""
+"5.3 Príomhshruthú: Oiriúnú a chomhtháthú in ionstraimí agus i mbeartais "
+"earnála"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
@@ -2107,12 +2403,15 @@ msgstr "6.3 Samplaí de tháscairí faireacháin ar oiriúnú a aimsiú"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:299
 msgid "6.4 Communicating results to inform policy and practice"
-msgstr "6.4 Torthaí a chur in iúl chun bonn eolais a chur faoi bheartas agus cleachtas"
+msgstr ""
+"6.4 Torthaí a chur in iúl chun bonn eolais a chur faoi bheartas agus "
+"cleachtas"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr "6.4 Torthaí faireacháin a úsáid chun próiseas an oiriúnaithe a fheabhsú"
+msgstr ""
+"6.4 Torthaí faireacháin a úsáid chun próiseas an oiriúnaithe a fheabhsú"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
@@ -2126,18 +2425,36 @@ msgstr "6.5 Faireachán agus meastóireacht a dhéanamh ar oiriúnú: Féinseice
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
-msgstr "Úsáidfear luach do cháilíocht íomhánna ard-dlúis picteilín 2x, ó 1 (is ísle) go 95 (is airde). Ciallóidh luach 0 réamhshocrú plone.scaling, atá 62 faoi láthair."
+msgid ""
+"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 62."
+msgstr ""
+"Úsáidfear luach do cháilíocht íomhánna ard-dlúis picteilín 2x, ó 1 (is ísle)"
+" go 95 (is airde). Ciallóidh luach 0 réamhshocrú plone.scaling, atá 62 faoi "
+"láthair."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
-msgstr "Úsáidfear luach do cháilíocht íomhánna 3x ard-dlúis picteilín, ó 1 (is ísle) go 95 (is airde). Ciallóidh luach 0 réamhshocrú plone.scaling, atá 51 faoi láthair."
+msgid ""
+"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 51."
+msgstr ""
+"Úsáidfear luach do cháilíocht íomhánna 3x ard-dlúis picteilín, ó 1 (is ísle)"
+" go 95 (is airde). Ciallóidh luach 0 réamhshocrú plone.scaling, atá 51 faoi "
+"láthair."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
-msgstr "Luach do cháilíocht na n-íomhánna scálaithe, ó 1 (is ísle) go 95 (is airde). Ciallóidh luach 0 go n-úsáidfear mainneachtain plone.scaling, atá 88 faoi láthair."
+msgid ""
+"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
+" value of 0 will mean plone.scaling's default will be used, which is "
+"currently 88."
+msgstr ""
+"Luach do cháilíocht na n-íomhánna scálaithe, ó 1 (is ísle) go 95 (is airde)."
+" Ciallóidh luach 0 go n-úsáidfear mainneachtain plone.scaling, atá 88 faoi "
+"láthair."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2166,7 +2483,8 @@ msgstr "A3: Comhar agus líonraí comhordúcháin"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid "A3: Governance and Institutional: Coordination cooperation and networks"
+msgid ""
+"A3: Governance and Institutional: Coordination cooperation and networks"
 msgstr "A3: Rialachas agus Institiúideach: Comhar agus líonraí comhordúcháin"
 
 #. undefined
@@ -2259,11 +2577,6 @@ msgid "Allowed image sizes"
 msgstr "Méideanna ceadaithe íomhánna"
 
 #. undefined
-#: ../../climateadapt/browser/pt/transnational_regions.pt:419
-msgid "Alpine"
-msgstr "Alpach"
-
-#. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:82
 msgid "Assessing adaptation options"
 msgstr "Measúnú a dhéanamh ar roghanna oiriúnúcháin"
@@ -2276,12 +2589,16 @@ msgstr "Measúnú a dhéanamh ar roghanna oiriúnúcháin agus iad a roghnú"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
 msgid "Assessing climate change risks and vulnerabilities"
-msgstr "Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an athrú aeráide"
+msgstr ""
+"Measúnú a dhéanamh ar rioscaí agus leochaileachtaí a bhaineann leis an athrú"
+" aeráide"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:66
 msgid "Assessing risks and vulnerability <br /> to climate change"
-msgstr "Measúnú a dhéanamh ar rioscaí agus ar leochaileacht i leith an athraithe aeráide"
+msgstr ""
+"Measúnú a dhéanamh ar rioscaí agus ar leochaileacht i leith an athraithe "
+"aeráide"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:570
@@ -2296,7 +2613,8 @@ msgstr "B1: Ionstraimí dreasachta a mhaoiniú"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr "B2: Eacnamaíoch agus Airgeadais: Ionstraimí árachais agus roinnte riosca"
+msgstr ""
+"B2: Eacnamaíoch agus Airgeadais: Ionstraimí árachais agus roinnte riosca"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2340,18 +2658,29 @@ msgstr "Léaráidí Cás-Staidéir"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
-msgstr "Cás forbartha agus curtha chun feidhme agus páirtmhaoinithe mar bheart um Oiriúnú don Athrú Aeráide."
+msgid ""
+"Case developed and implemented and partially funded as a Climate Change "
+"Adaptation measure."
+msgstr ""
+"Cás forbartha agus curtha chun feidhme agus páirtmhaoinithe mar bheart um "
+"Oiriúnú don Athrú Aeráide."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr "Cás arna fhorbairt agus arna chur chun feidhme mar Bheart Oiriúnaithe don Athrú Aeráide."
+msgstr ""
+"Cás arna fhorbairt agus arna chur chun feidhme mar Bheart Oiriúnaithe don "
+"Athrú Aeráide."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
-msgstr "Cás a forbraíodh agus a cuireadh chun feidhme den chuid is mó mar gheall ar chuspóirí beartais eile, ach aird shuntasach á tabhairt ar ghnéithe a bhaineann le hOiriúnú don Athrú Aeráide"
+msgid ""
+"Case mainly developed and implemented because of other policy objectives, "
+"but with significant consideration of Climate Change Adaptation aspects"
+msgstr ""
+"Cás a forbraíodh agus a cuireadh chun feidhme den chuid is mó mar gheall ar "
+"chuspóirí beartais eile, ach aird shuntasach á tabhairt ar ghnéithe a "
+"bhaineann le hOiriúnú don Athrú Aeráide"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2360,8 +2689,11 @@ msgstr "Cás-staidéir agus Roghanna Oiriúnaithe"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Cás-staidéir a bailíodh ar an leibhéal náisiúnta sa Spáinn, arna soláthar ag AdapteCCA.es"
+msgid ""
+"Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr ""
+"Cás-staidéir a bailíodh ar an leibhéal náisiúnta sa Spáinn, arna soláthar ag"
+" AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -2421,7 +2753,9 @@ msgstr "Barúlacha:"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr "Sainmhínithe coiteanna ar na téarmaí a úsáidtear go minic sa teach imréitigh."
+msgstr ""
+"Sainmhínithe coiteanna ar na téarmaí a úsáidtear go minic sa teach "
+"imréitigh."
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -2445,8 +2779,11 @@ msgstr "D1: Roghanna glasa"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr "D1: Réitigh dhúlrabhunaithe agus cuir chuige bunaithe ar éiceachórais: Roghanna glasa"
+msgid ""
+"D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr ""
+"D1: Réitigh dhúlrabhunaithe agus cuir chuige bunaithe ar éiceachórais: "
+"Roghanna glasa"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2455,8 +2792,11 @@ msgstr "D2: Roghanna gorm"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr "D2: Réitigh dhúlrabhunaithe agus cuir chuige bunaithe ar Éiceachórais: Roghanna gorma"
+msgid ""
+"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr ""
+"D2: Réitigh dhúlrabhunaithe agus cuir chuige bunaithe ar Éiceachórais: "
+"Roghanna gorma"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2498,18 +2838,24 @@ msgstr "E1: Faisnéis agus múscailt feasachta"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid "E1: Knowledge and behavioural change: Information and awareness raising"
+msgid ""
+"E1: Knowledge and behavioural change: Information and awareness raising"
 msgstr "E1: Athrú eolais agus iompraíochta: Faisnéis agus múscailt feasachta"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:593
 msgid "E2: Capacity building empowering and lifestyle practices"
-msgstr "E2: Fothú acmhainneachta a chumhachtú agus cleachtais stíl mhaireachtála"
+msgstr ""
+"E2: Fothú acmhainneachta a chumhachtú agus cleachtais stíl mhaireachtála"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
-msgstr "E2: Athrú eolais agus iompraíochta: Fothú acmhainneachta a chumhachtú agus cleachtais stíl mhaireachtála"
+msgid ""
+"E2: Knowledge and behavioural change: Capacity building empowering and "
+"lifestyle practices"
+msgstr ""
+"E2: Athrú eolais agus iompraíochta: Fothú acmhainneachta a chumhachtú agus "
+"cleachtais stíl mhaireachtála"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2544,13 +2890,25 @@ msgstr "Imeachtaí"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
-msgstr "Fiosraigh cás-staidéir maidir le hoiriúnú d’fhoraoisí i dtéarmaí suíomh geografach, cumhdach téamach agus nasc chuig roghanna oiriúnúcháin tríd an Taiscéalaí Cás-Staidéir léarscáilbhunaithe."
+msgid ""
+"Explore Forest adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Fiosraigh cás-staidéir maidir le hoiriúnú d’fhoraoisí i dtéarmaí suíomh "
+"geografach, cumhdach téamach agus nasc chuig roghanna oiriúnúcháin tríd an "
+"Taiscéalaí Cás-Staidéir léarscáilbhunaithe."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
-msgstr "Fiosraigh cás-staidéir maidir le hoiriúnú uirbeach i dtéarmaí suíomh geografach, cumhdach téamach agus nasc chuig roghanna oiriúnúcháin tríd an Taiscéalaí Cás-Staidéir léarscáilbhunaithe."
+msgid ""
+"Explore Urban adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Fiosraigh cás-staidéir maidir le hoiriúnú uirbeach i dtéarmaí suíomh "
+"geografach, cumhdach téamach agus nasc chuig roghanna oiriúnúcháin tríd an "
+"Taiscéalaí Cás-Staidéir léarscáilbhunaithe."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2575,13 +2933,21 @@ msgstr "Cathracha Glasa FAO"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
-msgstr "Cuideoidh tairseach gréasáin FISE linn feabhas a chur ar shláinte agus athléimneacht ár bhforaoisí, a bhfuil ról ríthábhachtach acu maidir lenár mbithéagsúlacht a chosaint agus maidir leis an athrú aeráide a mhaolú."
+msgid ""
+"FISE web portal will help us to improve the health and resilience of our "
+"forests, which play a vital role in protecting our biodiversity and in "
+"mitigating climate change."
+msgstr ""
+"Cuideoidh tairseach gréasáin FISE linn feabhas a chur ar shláinte agus "
+"athléimneacht ár bhforaoisí, a bhfuil ról ríthábhachtach acu maidir lenár "
+"mbithéagsúlacht a chosaint agus maidir leis an athrú aeráide a mhaolú."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid "Find out how to contribute different types of information to Climate-ADAPT."
-msgstr "Faigh amach conas cineálacha éagsúla faisnéise a chur le Climate-ADAPT."
+msgid ""
+"Find out how to contribute different types of information to Climate-ADAPT."
+msgstr ""
+"Faigh amach conas cineálacha éagsúla faisnéise a chur le Climate-ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
@@ -2677,7 +3043,8 @@ msgstr "Treoirdhoiciméid"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:17
 msgid "Guidance on the Climate-ADAPT Database Search function."
-msgstr "Treoir maidir leis an bhfeidhm Cuardaigh Bunachar Sonraí Climate-ADAPT."
+msgstr ""
+"Treoir maidir leis an bhfeidhm Cuardaigh Bunachar Sonraí Climate-ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:15
@@ -2733,7 +3100,9 @@ msgstr "Roghanna oiriúnúcháin a shainaithint"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:38
 msgid "If you are new user the video tutorials can help you get started."
-msgstr "Más úsáideoir nua tú is féidir leis na ranganna teagaisc físe cabhrú leat tosú."
+msgstr ""
+"Más úsáideoir nua tú is féidir leis na ranganna teagaisc físe cabhrú leat "
+"tosú."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
@@ -2824,23 +3193,40 @@ msgstr "Córais úsáide talún agus bia"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
-msgstr "Faigh tuilleadh eolais faoi na roghanna éagsúla atá ann chun oiriúnú do thionchair éagsúla an athraithe aeráide ar fhoraoisí."
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in forests."
+msgstr ""
+"Faigh tuilleadh eolais faoi na roghanna éagsúla atá ann chun oiriúnú do "
+"thionchair éagsúla an athraithe aeráide ar fhoraoisí."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
-msgstr "Faigh tuilleadh eolais faoi na roghanna éagsúla atá ann chun oiriúnú do thionchair éagsúla an athraithe aeráide i gceantair uirbeacha."
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in urban areas."
+msgstr ""
+"Faigh tuilleadh eolais faoi na roghanna éagsúla atá ann chun oiriúnú do "
+"thionchair éagsúla an athraithe aeráide i gceantair uirbeacha."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
-msgstr "Faigh tuilleadh eolais faoin gcaoi ar féidir le cathracha dul in oiriúint don athrú aeráide chun a bheith ina gcathracha a sheasfaidh an aimsir agus a bheidh athléimneach ó thaobh na haeráide de"
+msgid ""
+"Learn more about how cities can adapt to climate change to become future-"
+"proof, climate-resilient cities"
+msgstr ""
+"Faigh tuilleadh eolais faoin gcaoi ar féidir le cathracha dul in oiriúint "
+"don athrú aeráide chun a bheith ina gcathracha a sheasfaidh an aimsir agus a"
+" bheidh athléimneach ó thaobh na haeráide de"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
-msgstr "Faigh tuilleadh eolais faoin gcaoi ar féidir le foraoisí dul in oiriúint don athrú aeráide chun fanacht sláintiúil, éagsúil, athléimneach agus táirgiúil"
+msgid ""
+"Learn more about how forests can adapt to climate change to stay healthy, "
+"diverse, resilient and productive"
+msgstr ""
+"Faigh tuilleadh eolais faoin gcaoi ar féidir le foraoisí dul in oiriúint don"
+" athrú aeráide chun fanacht sláintiúil, éagsúil, athléimneach agus táirgiúil"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -2902,8 +3288,11 @@ msgstr "Limistéir sléibhe"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr "Beartas oiriúnaithe náisiúnta nár tuairiscíodh thar thuairisciú éigeantach in 2023"
+msgid ""
+"National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr ""
+"Beartas oiriúnaithe náisiúnta nár tuairiscíodh thar thuairisciú éigeantach "
+"in 2023"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3148,8 +3537,12 @@ msgstr "Roghnaigh tír le dul go díreach chuig leathanach na tíre:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid "Select the sectors for which you want to receive a notification email when an item is modified."
-msgstr "Roghnaigh na hearnálacha ar mian leat ríomhphost fógra a fháil ina leith nuair a athraítear mír."
+msgid ""
+"Select the sectors for which you want to receive a notification email when "
+"an item is modified."
+msgstr ""
+"Roghnaigh na hearnálacha ar mian leat ríomhphost fógra a fháil ina leith "
+"nuair a athraítear mír."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3183,8 +3576,12 @@ msgstr "Sóisialta: Eolasach"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr "Sonraigh na huastoisí íomhá uile a cheadaítear, ceann amháin in aghaidh na líne. Is é &lt;name&gt; &lt;lt;leithead&gt;:&lt;airde&gt;."
+msgid ""
+"Specify all allowed maximum image dimensions, one per line. The required "
+"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr ""
+"Sonraigh na huastoisí íomhá uile a cheadaítear, ceann amháin in aghaidh na "
+"líne. Is é &lt;name&gt; &lt;lt;leithead&gt;:&lt;airde&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3199,12 +3596,15 @@ msgstr "Stoirmeacha"
 #. undefined
 #: ../../climateadapt/vocabulary.py:601
 msgid "Structural and physical: Ecosystem-based adaptation options"
-msgstr "Struchtúrach agus fisiciúil: Roghanna oiriúnaithe bunaithe ar éiceachórais"
+msgstr ""
+"Struchtúrach agus fisiciúil: Roghanna oiriúnaithe bunaithe ar éiceachórais"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:599
 msgid "Structural and physical: Engineering and built environment options"
-msgstr "Struchtúrach agus fisiciúil: Roghanna innealtóireachta agus timpeallachta tógtha"
+msgstr ""
+"Struchtúrach agus fisiciúil: Roghanna innealtóireachta agus timpeallachta "
+"tógtha"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:602
@@ -3233,28 +3633,73 @@ msgstr "Cúnant AE na Méaraí"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
-msgstr "Maoiníonn an tAontas an t-oiriúnú don athrú aeráide san Eoraip trí raon leathan ionstraimí. Áirithítear leis an gCreat Airgeadais Ilbhliantúil 2021-2027 gur caiteachas a bhaineann leis an aeráid é 25 % ar a laghad den bhuiséad Eorpach. Dá bhrí sin, ní mór gníomhaíochtaí maidir le hoiriúnú don athrú aeráide a chomhtháthú i ngach mórchlár caiteachais de chuid an Aontais, agus cuirtear córas rianaithe i bhfeidhm chun a ráthú go gcomhlíonfar na cuspóirí sin."
+msgid ""
+"The EU finances adaptation to climate change in Europe through a wide range "
+"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
+"at least 25% of the European budget is climate-related expenditure. "
+"Therefore, Climate adaptation actions have to be integrated into all the "
+"major EU spending programmes, and a tracking system is put in place to "
+"guarantee these objectives are met."
+msgstr ""
+"Maoiníonn an tAontas an t-oiriúnú don athrú aeráide san Eoraip trí raon "
+"leathan ionstraimí. Áirithítear leis an gCreat Airgeadais Ilbhliantúil "
+"2021-2027 gur caiteachas a bhaineann leis an aeráid é 25 % ar a laghad den "
+"bhuiséad Eorpach. Dá bhrí sin, ní mór gníomhaíochtaí maidir le hoiriúnú don "
+"athrú aeráide a chomhtháthú i ngach mórchlár caiteachais de chuid an "
+"Aontais, agus cuirtear córas rianaithe i bhfeidhm chun a ráthú go "
+"gcomhlíonfar na cuspóirí sin."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
-msgstr "Tá roinnt creataí beartais i bhfeidhm ag an Aontas chun athléimneacht chathracha na hEorpa agus a n-áitritheoirí a mhéadú, lena n-áirítear Straitéis an Aontais Eorpaigh um an Oiriúnú agus Straitéis Bhithéagsúlachta an Aontais 2030, agus tá roinnt tionscnamh forbartha aige chun feabhas a chur ar eolas agus ar infhaighteacht sonraí maidir le leochaileacht uirbeach agus acmhainneacht oiriúnaitheach. Cuireann sé tacaíocht airgeadais agus theicniúil ar fáil freisin do lucht ceaptha beartas agus do chleachtóirí chun cathracha a dhéanamh níos athléimní agus níos oiriúnaí."
+msgid ""
+"The EU has several policy frameworks in place to increase the resilience of "
+"European cities and their inhabitants, including the EU Adaptation Strategy "
+"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
+" to improve knowledge and data availability on urban vulnerability and "
+"adaptive capacity. It also provides financial and technical support to "
+"policy makers and practitioners to make cities more resilient and adaptive."
+msgstr ""
+"Tá roinnt creataí beartais i bhfeidhm ag an Aontas chun athléimneacht "
+"chathracha na hEorpa agus a n-áitritheoirí a mhéadú, lena n-áirítear "
+"Straitéis an Aontais Eorpaigh um an Oiriúnú agus Straitéis Bhithéagsúlachta "
+"an Aontais 2030, agus tá roinnt tionscnamh forbartha aige chun feabhas a "
+"chur ar eolas agus ar infhaighteacht sonraí maidir le leochaileacht uirbeach"
+" agus acmhainneacht oiriúnaitheach. Cuireann sé tacaíocht airgeadais agus "
+"theicniúil ar fáil freisin do lucht ceaptha beartas agus do chleachtóirí "
+"chun cathracha a dhéanamh níos athléimní agus níos oiriúnaí."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
-msgstr "Cuireann an Taiscéalaí Sonraí Aeráide Eorpach rochtain idirghníomhach ar fáil ar go leor innéacsanna aeráide ó Sheirbhís Copernicus um an Athrú Aeráide chun tacú le hoiriúnú don athrú aeráide."
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices from the Copernicus Climate Change Service in support of "
+"climate change adaptation."
+msgstr ""
+"Cuireann an Taiscéalaí Sonraí Aeráide Eorpach rochtain idirghníomhach ar "
+"fáil ar go leor innéacsanna aeráide ó Sheirbhís Copernicus um an Athrú "
+"Aeráide chun tacú le hoiriúnú don athrú aeráide."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
-msgstr "Soláthraíonn an Taiscéalaí Sonraí Aeráide Eorpach rochtain idirghníomhach ar go leor innéacsanna aeráide amhail innéacsanna aimsire dóiteáin chun tacú le hoiriúnú don athrú aeráide i bhforaoisí."
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices like fire weather indices in support of climate change "
+"adaptation in forests."
+msgstr ""
+"Soláthraíonn an Taiscéalaí Sonraí Aeráide Eorpach rochtain idirghníomhach ar"
+" go leor innéacsanna aeráide amhail innéacsanna aimsire dóiteáin chun tacú "
+"le hoiriúnú don athrú aeráide i bhforaoisí."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
-msgstr "Tá faisnéis san Fhaireachlann Eorpach um Thriomach (EDO) a bhaineann le triomach. Tugann siad sin forléargas ar an staid san Aontas maidir le triomaigh atá ar tí tarlú."
+msgid ""
+"The European Drought Observatory (EDO) contains drought-relevant "
+"information. These give an overview of the situation in the EU about "
+"imminent droughts."
+msgstr ""
+"Tá faisnéis san Fhaireachlann Eorpach um Thriomach (EDO) a bhaineann le "
+"triomach. Tugann siad sin forléargas ar an staid san Aontas maidir le "
+"triomaigh atá ar tí tarlú."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3263,23 +3708,60 @@ msgstr "An Córas Eorpach Faisnéise maidir le Dóiteáin Foraoise"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
-msgstr "Tacaíonn an Córas Eorpach Faisnéise maidir le Dóiteáin Foraoise (EFFIS) le foraoisí a chosaint ar dhóiteáin agus cuireann sé faisnéis chomhchuibhithe ar fáil don Aontas maidir le dóiteáin foraoise"
+msgid ""
+"The European Forest Fire Information System (EFFIS) supports the protection "
+"of forests against fires and provides the EU with harmonized information on "
+"forest fires"
+msgstr ""
+"Tacaíonn an Córas Eorpach Faisnéise maidir le Dóiteáin Foraoise (EFFIS) le "
+"foraoisí a chosaint ar dhóiteáin agus cuireann sé faisnéis chomhchuibhithe "
+"ar fáil don Aontas maidir le dóiteáin foraoise"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
-msgstr "Tugann Breathnóir Léarscáile an Oiriúnaithe Uirbigh forbhreathnú ar na guaiseacha aeráide atá ann faoi láthair agus a bheidh ann amach anseo, ar leochaileacht na gcathracha i leith na nguaiseacha sin agus ar a gcumas oiriúnaitheach."
+msgid ""
+"The Urban Adaptation Map Viewer provides an overview of the current and "
+"future climate hazards, the vulnerability of the cities to these hazards and"
+" their adaptive capacity."
+msgstr ""
+"Tugann Breathnóir Léarscáile an Oiriúnaithe Uirbigh forbhreathnú ar na "
+"guaiseacha aeráide atá ann faoi láthair agus a bheidh ann amach anseo, ar "
+"leochaileacht na gcathracha i leith na nguaiseacha sin agus ar a gcumas "
+"oiriúnaitheach."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
-msgstr "Cuidíonn an Uirlis Tacaíochta um Oiriúnú Uirbeach le cathracha, bailte agus údaráis áitiúla pleananna oiriúnaithe don athrú aeráide a fhorbairt, a chur chun feidhme agus faireachán a dhéanamh orthu."
+msgid ""
+"The Urban Adaptation Support Tool assists cities, towns and local "
+"authorities in developing, implementing and monitoring climate change "
+"adaptation plans."
+msgstr ""
+"Cuidíonn an Uirlis Tacaíochta um Oiriúnú Uirbeach le cathracha, bailte agus "
+"údaráis áitiúla pleananna oiriúnaithe don athrú aeráide a fhorbairt, a chur "
+"chun feidhme agus faireachán a dhéanamh orthu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr "Tá an ghéarchéim aeráide ag cur isteach go mór ar fhoraoisí na hEorpa, rud a fhágann go bhfuil siad ag éirí níos leochailí i leith guaiseacha amhail stoirmeacha, falscaithe, triomaigh, ráigeanna feithidí agus galar, nó ardú ar leibhéal na farraige. Tá na rioscaí agus na tionchair mhéadaitheacha ag cur isteach ar inmharthanacht eacnamaíoch na foraoiseachta agus laghdaíonn siad cumas na bhforaoisí seirbhísí riachtanacha éiceachórais a sholáthar. Freagraíonn an tAontas don dúshlán sin nach bhfacthas a leithéid riamh roimhe seo trí thacú le hoiriúnú foraoisí don athrú aeráide trí raon leathan beartas, amhail Straitéis Foraoise an Aontais, Straitéis an Aontais maidir le hOiriúnú don Athrú Aeráide, agus Straitéis Bhithéagsúlachta an Aontais."
+msgid ""
+"The climate crisis is severely affecting Europe's forests, making them "
+"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
+"and disease outbreaks, or sea level rise. The growing risks and impacts are "
+"affecting the economic viability of forestry and they reduce the capacity of"
+" forests to provide essential ecosystem services. The EU responds to this "
+"unprecedented challenge by supporting the adaptation of forests to climate "
+"change through a wide range of policies, like the EU Forest Strategy, EU "
+"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr ""
+"Tá an ghéarchéim aeráide ag cur isteach go mór ar fhoraoisí na hEorpa, rud a"
+" fhágann go bhfuil siad ag éirí níos leochailí i leith guaiseacha amhail "
+"stoirmeacha, falscaithe, triomaigh, ráigeanna feithidí agus galar, nó ardú "
+"ar leibhéal na farraige. Tá na rioscaí agus na tionchair mhéadaitheacha ag "
+"cur isteach ar inmharthanacht eacnamaíoch na foraoiseachta agus laghdaíonn "
+"siad cumas na bhforaoisí seirbhísí riachtanacha éiceachórais a sholáthar. "
+"Freagraíonn an tAontas don dúshlán sin nach bhfacthas a leithéid riamh "
+"roimhe seo trí thacú le hoiriúnú foraoisí don athrú aeráide trí raon leathan"
+" beartas, amhail Straitéis Foraoise an Aontais, Straitéis an Aontais maidir "
+"le hOiriúnú don Athrú Aeráide, agus Straitéis Bhithéagsúlachta an Aontais."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3371,7 +3853,8 @@ msgstr "Bliain:"
 msgid "back to search"
 msgstr "ar ais chun cuardach a dhéanamh"
 
-#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the
+#. richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "íomhá_teideal_tuairisc"

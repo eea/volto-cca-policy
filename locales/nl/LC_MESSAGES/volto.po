@@ -1,3 +1,4 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -5,8 +6,8 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language: \n"
 "Language-Team: \n"
+"Language: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
@@ -17,10 +18,8 @@ msgid "A background document for the event is available"
 msgstr "Er is een achtergronddocument voor het evenement beschikbaar"
 
 #. Default: "Adaptation Approaches"
-#: search/cca/facets
-#: search/health_observatory/facets-health
-#: search/mission_all/facets-all
-#: search/mission_projects/facets-projects
+#: search/cca/facets search/facets search/health_observatory/facets-health
+#: search/mission_all/facets-all search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
 msgstr "Aanpassingsbenaderingen"
 
@@ -32,16 +31,15 @@ msgstr "Aanpassingsbenaderingen:"
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Details"
-msgstr "Aanpassingsgegevens"
+msgstr "Aanpassingsdetails"
 
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
-msgstr "Aanpassingsopties die in dit geval worden toegepast"
+msgstr "Aanpassingsopties geïmplementeerd in dit geval"
 
 #. Default: "Adaptation Sectors"
-#: search/cca/facets
-#: search/common
+#: search/cca/facets search/common search/facets
 msgid "Adaptation Sectors"
 msgstr "Aanpassingssectoren"
 
@@ -53,7 +51,7 @@ msgstr "Aanpassingsbenaderingen"
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
-msgstr "Aanpassingsopties"
+msgstr "Aanpassingsmogelijkheden"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -82,30 +80,35 @@ msgstr "Altijd"
 msgid "Background information"
 msgstr "Achtergrondinformatie"
 
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "België"
+
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
-msgstr "Biogeografische regio’s:"
+msgstr "Biogeografische regio's:"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
 msgid "Case Studies Documents"
-msgstr "Documenten voor casestudy’s"
+msgstr "Casestudiedocumenten"
 
 #. Default: "Case Study Description"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study Description"
-msgstr "Beschrijving van de casestudie"
+msgstr "Casestudy Beschrijving"
 
 #. Default: "Case Study illustrations"
 #: components/theme/Views/CaseStudyView
 msgid "Case Study illustrations"
-msgstr "Illustraties van casestudy’s"
+msgstr "Casestudy-illustraties"
 
 #. Default: "Case studies related to this option:"
 #: components/theme/Views/AdaptationOptionView
 msgid "Case studies related to this option:"
-msgstr "Casestudy’s met betrekking tot deze optie:"
+msgstr "Casestudies met betrekking tot deze optie:"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -120,7 +123,7 @@ msgstr "Uitdagingen"
 #. Default: "Choose a file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Choose a file"
-msgstr ""
+msgstr "Kies een bestand"
 
 #. Default: "Choose a region"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -138,47 +141,45 @@ msgid "City:"
 msgstr "Stad:"
 
 #. Default: "Climate Impacts"
-#: search/cca/facets
-#: search/common
+#: search/cca/facets search/common search/facets
 msgid "Climate Impacts"
 msgstr "Klimaateffecten"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 msgid "Climate impact"
-msgstr "Gevolgen voor het klimaat"
+msgstr "Impact op het klimaat"
 
 #. Default: "Climate impacts"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Climate impacts"
-msgstr "Gevolgen voor het klimaat"
+msgstr "Klimaateffecten"
 
 #. Default: "Climate impacts:"
 #: helpers/ContentMetadata
 msgid "Climate impacts:"
-msgstr "Gevolgen voor het klimaat:"
+msgstr "Klimaateffecten:"
 
 #. Default: "Climate-ADAPT case studies"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Climate-ADAPT case studies"
-msgstr "Casestudy’s van Climate-ADAPT"
+msgstr "Casestudy's over klimaat-ADAPT"
 
 #. Default: "Climate-ADAPT page for this event"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
-msgstr "Climate-ADAPT pagina voor dit evenement"
+msgstr "Climate-ADAPT-pagina voor dit evenement"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView
-#: components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Contact"
 
 #. Default: "Contact information for the Observatory"
 #: components/theme/Views/DatabaseItemView
 msgid "Contact information for the Observatory"
-msgstr "Contactgegevens van het Waarnemingscentrum"
+msgstr "Contactgegevens van het Observatorium"
 
 #. Default: "Contributor:"
 #: helpers/Utils
@@ -189,11 +190,10 @@ msgstr "Bijdrager:"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Costs and benefits"
-msgstr "Kosten en voordelen"
+msgstr "Kosten en baten"
 
 #. Default: "Countries"
-#: search/common
-#: search/mission_all/facets-all
+#: search/common search/mission_all/facets-all
 #: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Landen"
@@ -206,7 +206,7 @@ msgstr "Landen:"
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
 msgid "Date of creation:"
-msgstr "Datum van aanmaak:"
+msgstr "Datum van creatie:"
 
 #. Default: "Date of publication:"
 #: helpers/ContentMetadata
@@ -216,17 +216,17 @@ msgstr "Datum van publicatie:"
 #. Default: "Date of release:"
 #: helpers/ContentMetadata
 msgid "Date of release:"
-msgstr "Datum van vrijgave:"
+msgstr "Datum van uitgave:"
 
 #. Default: "Description"
 #: helpers/Utils
 msgid "Description"
-msgstr "Omschrijving"
+msgstr "Beschrijving"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
 msgid "Disclaimer"
-msgstr "Disclaimer"
+msgstr "Vrijwaring"
 
 #. Default: "Documents"
 #: helpers/Utils
@@ -236,7 +236,7 @@ msgstr "Documenten"
 #. Default: "Download Event"
 #: helpers/Utils
 msgid "Download Event"
-msgstr "Download het evenement"
+msgstr "Evenement downloaden"
 
 #. Default: "Download the detailed agenda"
 #: components/theme/Views/CcaEventView
@@ -246,22 +246,22 @@ msgstr "Download de gedetailleerde agenda"
 #. Default: "Download this event in iCal format"
 #: helpers/Utils
 msgid "Download this event in iCal format"
-msgstr "Download dit evenement in iCal formaat"
+msgstr "Download dit evenement in iCal-formaat"
 
 #. Default: "Drop file here to replace the existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
-msgstr ""
+msgstr "Zet het bestand hier neer om het bestaande bestand te vervangen"
 
 #. Default: "Drop file here to upload a new file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
-msgstr ""
+msgstr "Zet het bestand hier neer om een ​​nieuw bestand te uploaden"
 
 #. Default: "Drop files here ..."
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
-msgstr ""
+msgstr "Zet bestanden hier neer..."
 
 #. Default: "Duration:"
 #: helpers/ContentMetadata
@@ -281,7 +281,7 @@ msgstr "Komt in aanmerking voor financiering"
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
-msgstr "Volledig scherm verlaten"
+msgstr "Volledig scherm afsluiten"
 
 #. Default: "Explore more on Climate-ADAPT"
 #: index
@@ -291,7 +291,12 @@ msgstr "Ontdek meer over Climate-ADAPT"
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
-msgstr "Voor meer zoekopties"
+msgstr "Voor meer zoekmogelijkheden"
+
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Frankrijk"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -299,8 +304,7 @@ msgid "Fullscreen"
 msgstr "Volledig scherm"
 
 #. Default: "Funding Programme"
-#: search/cca/facets
-#: search/mission_projects/facets-projects
+#: search/cca/facets search/facets search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Financieringsprogramma"
@@ -345,10 +349,15 @@ msgstr "HHWS beschikbaar (klik op land voor meer informatie)"
 msgid "Hazard Type"
 msgstr "Soort gevaar"
 
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Gevolgen voor de gezondheid"
+
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
-msgstr "Gevolgen voor de gezondheid:"
+msgstr "Impact op de gezondheid:"
 
 #. Default: "Health impacts"
 #: search/health_observatory/facets-health
@@ -358,7 +367,7 @@ msgstr "Gevolgen voor de gezondheid"
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
-msgstr "Hittegezondheidsactieplannen (HHAP)"
+msgstr "Actieplannen voor hittegezondheid (HHAP)"
 
 #. Default: "Heat health warning systems (HHWS)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -368,7 +377,7 @@ msgstr "Waarschuwingssystemen voor hittegezondheid (HHWS)"
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
 msgid "IPCC adaptation options categories:"
-msgstr "IPCC aanpassingsopties categorieën:"
+msgstr "Categorieën van IPCC-aanpassingsopties:"
 
 #. Default: "IPCC categories"
 #: components/theme/Views/AdaptationOptionView
@@ -378,18 +387,18 @@ msgstr "IPCC-categorieën"
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
-msgstr "Als u nog vragen heeft, kunt u contact opnemen met"
+msgstr "Als u nog vragen heeft, kunt u contact opnemen"
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Implementation time"
-msgstr "Uitvoeringstijd"
+msgstr "Implementatie tijd"
 
 #. Default: "Importance and Relevance of Adaptation"
 #: components/theme/Views/CaseStudyView
 msgid "Importance and Relevance of Adaptation"
-msgstr "Belang en relevantie van adaptatie"
+msgstr "Belang en relevantie van aanpassing"
 
 #. Default: "Include archived content"
 #: search/common
@@ -407,7 +416,7 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Item from third parties"
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Item from third parties"
 msgstr "Artikel van derden"
 
@@ -418,24 +427,24 @@ msgstr "Belangrijke gemeenschapssystemen"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Key Type Measure"
-msgstr "Sleuteltype Measure"
+msgstr "Sleuteltype Maatregel"
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
 msgid "Key Type Measures:"
-msgstr "Belangrijkste typemaatregelen:"
+msgstr "Belangrijkste type maatregelen:"
 
 #. Default: "Key activities within climate change and health"
 #: components/theme/Views/DatabaseItemView
 msgid "Key activities within climate change and health"
-msgstr "Kernactiviteiten op het gebied van klimaatverandering en gezondheid"
+msgstr "Sleutelactiviteiten binnen klimaatverandering en gezondheid"
 
 #. Default: "Key type measures"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 msgid "Key type measures"
-msgstr "Belangrijkste maatregelen van het type"
+msgstr "Sleuteltype maatregelen"
 
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
@@ -490,7 +499,7 @@ msgstr "Vorig jaar"
 #. Default: "Lead"
 #: components/theme/Views/ProjectView
 msgid "Lead"
-msgstr "Lood"
+msgstr "Leiding"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -502,12 +511,12 @@ msgstr "Juridische aspecten"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Lifetime"
-msgstr "Het leven Tijd"
+msgstr "Levensduur"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
-msgstr "Links naar meer informatie"
+msgstr "Links naar verdere informatie"
 
 #. Default: "Looking for more information?"
 #: index
@@ -527,7 +536,7 @@ msgstr "Meest nuttig voor"
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
-msgstr "Nationaal HHAP"
+msgstr "Nationale HHAP"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -552,19 +561,20 @@ msgstr "Geen resultaten"
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
-msgstr "Doelstellingen"
+msgstr "Doelstellingen van de aanpassingsmaatregel"
 
 #. Default: "Observatory Contributions:"
 #: helpers/Utils
 msgid "Observatory Contributions:"
-msgstr "Bijdragen van het Waarnemingscentrum:"
+msgstr "Observatoriumbijdragen:"
 
 #. Default: "Observatory contributions"
 #: components/manage/Blocks/Listing/OrganisationCardsListingView
 msgid "Observatory contributions"
-msgstr "Bijdragen van het Waarnemingscentrum"
+msgstr "Observatoriumbijdragen"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatoriumpartner"
@@ -577,12 +587,12 @@ msgstr "Organisatiedocumenten"
 #. Default: "Organised by EEA"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Organised by EEA"
-msgstr "Georganiseerd door EEA"
+msgstr "Georganiseerd door EMA"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
-msgstr "Andere regio’s"
+msgstr "Andere regio's"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -597,7 +607,7 @@ msgstr "Partners"
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
-msgstr "Beleids- en juridische achtergrond"
+msgstr "Beleid en juridische achtergrond"
 
 #. Default: "Policy context of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -632,11 +642,10 @@ msgstr "Gepubliceerd in Climate-ADAPT"
 #. Default: "Publishing year"
 #: search/health_observatory/facets-health
 msgid "Publishing year"
-msgstr "Jaar van uitgave"
+msgstr "Jaar van publicatie"
 
 #. Default: "RAST step(s) of relevance"
-#: search/mission_funding/facets-funding
-#: search/mission_tools/facets-tools
+#: search/mission_funding/facets-funding search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
 msgstr "Relevante RAST-stap(pen)."
 
@@ -646,14 +655,12 @@ msgid "Reference Information"
 msgstr "Referentie-informatie"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
+#: components/theme/Views/AdaptationOptionView helpers/Utils
 msgid "Reference information"
 msgstr "Referentie-informatie"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView
-#: helpers/Utils
+#: components/theme/Views/CaseStudyView helpers/Utils
 msgid "References"
 msgstr "Referenties"
 
@@ -665,7 +672,7 @@ msgstr "Landen van de regio:"
 #. Default: "Regions"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Regions"
-msgstr "Streken"
+msgstr "Regio's"
 
 #. Default: "Related content:"
 #: helpers/Utils
@@ -680,7 +687,7 @@ msgstr "Gerelateerde documenten en presentaties"
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
-msgstr ""
+msgstr "Vervang bestaand bestand"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -698,7 +705,7 @@ msgid "Search the Observatory Resource Catalogue..."
 msgstr "Doorzoek de bronnencatalogus van het Observatorium..."
 
 #. Default: "Section"
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Section"
 msgstr "Sectie"
 
@@ -725,12 +732,12 @@ msgstr "Zie minder"
 #. Default: "See more"
 #: helpers/Utils
 msgid "See more"
-msgstr "Bekijk meer"
+msgstr "Zie meer"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
 msgid "See video outside Climate-ADAPT"
-msgstr "Bekijk video buiten Climate-ADAPT"
+msgstr "Zie video buiten Climate-ADAPT"
 
 #. Default: "Select"
 #: components/manage/Blocks/ContentLinks/DropdownListView
@@ -751,8 +758,7 @@ msgstr "Oplossingen"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView
-#: helpers/Utils
+#: components/theme/Views/CaseStudyView helpers/Utils
 msgid "Source"
 msgstr "Bron"
 
@@ -792,22 +798,29 @@ msgstr "Succes en beperkende factoren"
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
-msgstr "Het hulpprogramma voor aanpassingsondersteuning — Aan de slag"
+msgstr "De aanpassingsondersteuningstool - Aan de slag"
 
 #. Default: "The date refers to the date of release of the video"
 #: helpers/ContentMetadata
 msgid "The date refers to the date of release of the video"
-msgstr "De datum verwijst naar de datum van vrijgave van de video"
+msgstr "De datum verwijst naar de releasedatum van de video"
 
 #. Default: "The date refers to the latest date of publication of the item"
 #: helpers/ContentMetadata
 msgid "The date refers to the latest date of publication of the item"
-msgstr "De datum heeft betrekking op de laatste datum van publicatie van het item."
+msgstr "De datum verwijst naar de laatste publicatiedatum van het item"
 
-#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared
+#. or updated by contributing experts to be submitted for the publication in
+#. Climate ADAPT"
 #: helpers/ContentMetadata
-msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-msgstr "De datum heeft betrekking op het moment waarop het item is opgesteld of bijgewerkt door bijdragende deskundigen die moeten worden ingediend voor de publicatie in Climate ADAPT."
+msgid ""
+"The date refers to the moment in which the item has been prepared or updated"
+" by contributing experts to be submitted for the publication in Climate "
+"ADAPT"
+msgstr ""
+"De datum verwijst naar het moment waarop het item door bijdragende "
+"deskundigen is voorbereid of bijgewerkt voor publicatie in Climate ADAPT."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -816,20 +829,24 @@ msgid "Topics:"
 msgstr "Onderwerpen:"
 
 #. Default: "Transnational regions"
-#: search/cca/facets
+#: search/cca/facets search/facets
 msgid "Transnational regions"
-msgstr "Transnationale regio’s"
+msgstr "Transnationale regio's"
 
 #. Default: "Type of item"
-#: search/common
-#: search/mission_all/facets-all
+#: search/common search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Soort artikel"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Soorten"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
-msgstr "Update-notities"
+msgstr "Notities bijwerken"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -839,7 +856,7 @@ msgstr "Gebruikersvereisten"
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
-msgstr "Bekijk alle bijdragen in de resourcecatalogus"
+msgstr "Bekijk alle bijdragen in de bronnencatalogus"
 
 #. Default: "Visit external website"
 #: helpers/Utils
@@ -878,194 +895,500 @@ msgid "Where"
 msgstr "Waar"
 
 #. undefined
-
 msgid "Case studies"
-msgstr "Casestudy’s"
+msgstr "Casestudies"
 
 #. undefined
-
 msgid "Guidance"
 msgstr "Begeleiding"
 
 #. undefined
-
 msgid "Information portals"
-msgstr "Informatieportalen"
+msgstr "Informatieportals"
 
 #. undefined
-
 msgid "Videos"
-msgstr "Filmpjes"
+msgstr "Video's"
 
 #. undefined
-
 msgid "Organisations"
 msgstr "Organisaties"
 
 #. undefined
-
 msgid "Publication and reports"
 msgstr "Publicatie en rapporten"
 
 #. undefined
-
 msgid "Publications and reports"
 msgstr "Publicaties en rapporten"
 
 #. undefined
-
 msgid "Research and knowledge projects"
 msgstr "Onderzoeks- en kennisprojecten"
 
 #. undefined
-
 msgid "Tools"
-msgstr "Gereedschap"
+msgstr "Hulpmiddelen"
 
 #. undefined
-
 msgid "Based on your preferences, you can view this page in english"
 msgstr "Op basis van uw voorkeuren kunt u deze pagina in het Engels bekijken"
 
 #. undefined
-
 msgid "here"
 msgstr "hier"
 
 #. undefined
-
 msgid "Latest <br/> News & Events"
-msgstr "Laatste nieuws & evenementen"
+msgstr "Laatste <br/> Nieuws en evenementen"
 
 #. undefined
-
 msgid "Most recent <br/> Case Study"
-msgstr "Meest recente case study"
+msgstr "Meest recente <br/> casestudy"
 
 #. undefined
-
 msgid "Most recent <br/> Publication or Report"
-msgstr "Meest recente publicatie of rapport"
+msgstr "Meest recente <br/> publicatie of rapport"
 
 #. undefined
-
 msgid "National adaption policy"
 msgstr "Nationaal aanpassingsbeleid"
 
 #. undefined
-
 msgid "Climate change impact and vulnerability assessments"
-msgstr "Effect- en kwetsbaarheidsbeoordelingen van de klimaatverandering"
+msgstr "Impact- en kwetsbaarheidsbeoordelingen van klimaatverandering"
 
 #. undefined
-
 msgid "Adaptation portals and platforms"
-msgstr "Aanpassingsportalen en platforms"
+msgstr "Aanpassingsportals en platforms"
 
 #. undefined
-
 msgid "Hazard category"
 msgstr "Gevarencategorie"
 
 #. undefined
-
 msgid "Hazard type"
-msgstr "Type gevaar"
+msgstr "Soort gevaar"
 
 #. undefined
-
 msgid "Indicator"
 msgstr "Indicator"
 
 #. undefined
-
 msgid "Zip download"
-msgstr "Zip downloaden"
+msgstr "Zip-download"
 
 #. undefined
-
 msgid "Download"
-msgstr "Download"
+msgstr "Downloaden"
 
 #. undefined
-
 msgid "Heat and cold"
-msgstr "Hitte en kou"
+msgstr "Warmte en kou"
 
 #. undefined
-
 msgid "Mean air temperature"
 msgstr "Gemiddelde luchttemperatuur"
 
 #. undefined
-
 msgid "Extreme heat"
 msgstr "Extreme hitte"
 
 #. undefined
-
 msgid "Cold spells and frost"
-msgstr "Koude spreuken en vorst"
+msgstr "Koude periodes en vorst"
 
 #. undefined
-
 msgid "Wet and dry"
 msgstr "Nat en droog"
 
 #. undefined
-
 msgid "Mean precipitation"
 msgstr "Gemiddelde neerslag"
 
 #. undefined
-
 msgid "Extreme precipitation"
 msgstr "Extreme neerslag"
 
 #. undefined
-
 msgid "River flooding"
-msgstr "Rivieroverstroming"
+msgstr "Overstromingen van rivieren"
 
 #. undefined
-
 msgid "Aridity"
 msgstr "Dorheid"
 
 #. undefined
-
 msgid "Wildfire"
-msgstr "Wildfire"
+msgstr "Wildvuur"
 
 #. undefined
-
 msgid "Snow and land ice"
 msgstr "Sneeuw en landijs"
 
 #. undefined
-
 msgid "Snow and ice"
 msgstr "Sneeuw en ijs"
 
 #. undefined
-
 msgid "Coastal"
 msgstr "Kust"
 
 #. undefined
-
 msgid "Relative sea level"
-msgstr "Relatieve zeespiegel"
+msgstr "Relatief zeeniveau"
 
 #. undefined
-
 msgid "Coastal flooding"
-msgstr "Overstromingen aan de kust"
+msgstr "Kustoverstromingen"
 
 #. undefined
-
 msgid "Other"
-msgstr "Andere"
+msgstr "Ander"
+
+#. undefined
+msgid "Global"
+msgstr "Globaal"
+
+#. undefined
+msgid "Black Sea"
+msgstr "Zwarte Zee"
+
+#. undefined
+msgid "Albania"
+msgstr "Albanië"
+
+#. undefined
+msgid "Andorra"
+msgstr "Andorra"
+
+#. undefined
+msgid "Armenia"
+msgstr "Armenië"
+
+#. undefined
+msgid "Austria"
+msgstr "Oostenrijk"
+
+#. undefined
+msgid "Azerbaijan"
+msgstr "Azerbeidzjan"
+
+#. undefined
+msgid "Belarus"
+msgstr "Wit-Rusland"
+
+#. undefined
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnië en Herzegovina"
+
+#. undefined
+msgid "Bulgaria"
+msgstr "Bulgarije"
+
+#. undefined
+msgid "Croatia"
+msgstr "Kroatië"
+
+#. undefined
+msgid "Cyprus"
+msgstr "Cyprus"
+
+#. undefined
+msgid "Czechia"
+msgstr "Tsjechië"
+
+#. undefined
+msgid "Denmark"
+msgstr "Denemarken"
+
+#. undefined
+msgid "Estonia"
+msgstr "Estland"
+
+#. undefined
+msgid "Faroe Islands"
+msgstr "Faeröer eilanden"
+
+#. undefined
+msgid "Finland"
+msgstr "Finland"
+
+#. undefined
+msgid "Germany"
+msgstr "Duitsland"
+
+#. undefined
+msgid "Georgia"
+msgstr "Georgië"
+
+#. undefined
+msgid "Greece"
+msgstr "Griekenland"
+
+#. undefined
+msgid "Hungary"
+msgstr "Hongarije"
+
+#. undefined
+msgid "Iceland"
+msgstr "IJsland"
+
+#. undefined
+msgid "Kazakhstan"
+msgstr "Kazachstan"
+
+#. undefined
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#. undefined
+msgid "Ireland"
+msgstr "Ierland"
+
+#. undefined
+msgid "Italy"
+msgstr "Italië"
+
+#. undefined
+msgid "Israel"
+msgstr "Israël"
+
+#. undefined
+msgid "Latvia"
+msgstr "Letland"
+
+#. undefined
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#. undefined
+msgid "Lithuania"
+msgstr "Litouwen"
+
+#. undefined
+msgid "Luxembourg"
+msgstr "Luxemburg"
+
+#. undefined
+msgid "Malta"
+msgstr "Malta"
+
+#. undefined
+msgid "Monaco"
+msgstr "Monaco"
+
+#. undefined
+msgid "Moldova, Republic of"
+msgstr "Moldavië, Republiek"
+
+#. undefined
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#. undefined
+msgid "Netherlands"
+msgstr "Nederland"
+
+#. undefined
+msgid "Norway"
+msgstr "Noorwegen"
+
+#. undefined
+msgid "Poland"
+msgstr "Polen"
+
+#. undefined
+msgid "Portugal"
+msgstr "Portugal"
+
+#. undefined
+msgid "Republic of North Macedonia"
+msgstr "Republiek Noord-Macedonië"
+
+#. undefined
+msgid "Romania"
+msgstr "Roemenië"
+
+#. undefined
+msgid "Russian Federation"
+msgstr "Russische Federatie"
+
+#. undefined
+msgid "San Marino"
+msgstr "San Marino"
+
+#. undefined
+msgid "Serbia"
+msgstr "Servië"
+
+#. undefined
+msgid "Slovakia"
+msgstr "Slowakije"
+
+#. undefined
+msgid "Slovenia"
+msgstr "Slovenië"
+
+#. undefined
+msgid "Spain"
+msgstr "Spanje"
+
+#. undefined
+msgid "Sweden"
+msgstr "Zweden"
+
+#. undefined
+msgid "Switzerland"
+msgstr "Zwitserland"
+
+#. undefined
+msgid "Turkiye"
+msgstr "Turkije"
+
+#. undefined
+msgid "Türkiye"
+msgstr "Turkije"
+
+#. undefined
+msgid "United Kingdom"
+msgstr "Verenigd Koninkrijk"
+
+#. undefined
+msgid "Ukraine"
+msgstr "Oekraïne"
+
+#. undefined
+msgid "Europe"
+msgstr "Europa"
+
+#. undefined
+msgid "Macro-Transnational Regions"
+msgstr "Macro-transnationale regio's"
+
+#. undefined
+msgid "Biogeographical Regions"
+msgstr "Biogeografische regio's"
+
+#. undefined
+msgid "Subnational Regions"
+msgstr "Subnationale regio's"
+
+#. undefined
+msgid "Municipality Name"
+msgstr "Naam gemeente"
+
+#. undefined
+msgid "Northern Periphery and Arctic"
+msgstr "Noordelijke periferie en noordpoolgebied"
+
+#. undefined
+msgid "Baltic Sea"
+msgstr "Oostzee"
+
+#. undefined
+msgid "North West Europe"
+msgstr "Noordwest-Europa"
+
+#. undefined
+msgid "North Sea"
+msgstr "Noordzee"
+
+#. undefined
+msgid "Atlantic Area"
+msgstr "Atlantisch gebied"
+
+#. undefined
+msgid "Alpine Space"
+msgstr "Alpenruimte"
+
+#. undefined
+msgid "Central Europe"
+msgstr "Midden-Europa"
+
+#. undefined
+msgid "South West Europe"
+msgstr "Zuidwest-Europa"
+
+#. undefined
+msgid "Mediterranean (Euro-Med)"
+msgstr "Mediterraan (Euro-Med)"
+
+#. undefined
+msgid "Danube Area"
+msgstr "Donaugebied"
+
+#. undefined
+msgid "Adriatic-Ionian"
+msgstr "Adriatisch-Ionisch"
+
+#. undefined
+msgid "Mediterranean Sea Basin (NEXT)"
+msgstr "Middellandse Zeebekken (VOLGENDE)"
+
+#. undefined
+msgid "Black Sea Basin (NEXT)"
+msgstr "Zwarte Zeebekken (VOLGENDE)"
+
+#. undefined
+msgid "Outermost Regions"
+msgstr "Ultraperifere regio's"
+
+#. undefined
+msgid "Alpine"
+msgstr "Alpen"
+
+#. undefined
+msgid "Anatolian"
+msgstr "Anatolisch"
+
+#. undefined
+msgid "Arctic"
+msgstr "Noordpoolgebied"
+
+#. undefined
+msgid "Atlantic"
+msgstr "Atlantische Oceaan"
+
+#. undefined
+msgid "Boreal"
+msgstr "Boreaal"
+
+#. undefined
+msgid "Continental"
+msgstr "Continentaal"
+
+#. undefined
+msgid "Macaronesia"
+msgstr "Macaronesië"
+
+#. undefined
+msgid "Mediterranean"
+msgstr "Middellandse Zee"
+
+#. undefined
+msgid "Pannonian"
+msgstr "Pannonisch"
+
+#. undefined
+msgid "Steppic"
+msgstr "Stappic"
+
+#. undefined
+msgid "Transnational region (stretching across country borders)"
+msgstr "Transnationale regio (die zich uitstrekt over de landsgrenzen heen)"
+
+#. undefined
+msgid "National"
+msgstr "Nationaal"
+
+#. undefined
+msgid "Sub National Regions"
+msgstr "Subnationale regio's"
+
+#. undefined
+msgid "Local (e.g. city or municipal level)"
+msgstr "Lokaal (bijvoorbeeld stedelijk of gemeentelijk niveau)"
 
 #. undefined
 #: health_menu:43
@@ -1078,8 +1401,7 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "AANPASSING IN EU-BELEIDSSECTOREN"
 
 #. undefined
-#: health_menu:9
-#: site_menu:10
+#: health_menu:9 site_menu:10
 msgid "About"
 msgstr "Over"
 
@@ -1099,11 +1421,6 @@ msgid "Adaptation Support Tool"
 msgstr "Ondersteuningstool voor aanpassing"
 
 #. undefined
-#: site_menu:48
-msgid "Adriatic-Ionian"
-msgstr "Adriatisch-Ionische"
-
-#. undefined
 #: site_menu:29
 msgid "Agriculture"
 msgstr "Landbouw"
@@ -1114,29 +1431,14 @@ msgid "Air pollution"
 msgstr "Luchtverontreiniging"
 
 #. undefined
-#: site_menu:49
-msgid "Alpine Space"
-msgstr "Alpiene ruimte"
-
-#. undefined
 #: health_menu:44
 msgid "Annual reports"
 msgstr "Jaarverslagen"
 
 #. undefined
-#: site_menu:50
-msgid "Atlantic Area"
-msgstr "Atlantisch gebied"
-
-#. undefined
 #: site_menu:51
 msgid "Balkan-Mediterranean"
 msgstr "Balkan-Mediterraan"
-
-#. undefined
-#: site_menu:52
-msgid "Baltic Sea"
-msgstr "Oostzee"
 
 #. undefined
 #: site_menu:30
@@ -1162,11 +1464,6 @@ msgstr "Capaciteitsopbouw"
 #: site_menu:79
 msgid "Case study explorer"
 msgstr "Case study explorer"
-
-#. undefined
-#: site_menu:53
-msgid "Central Europe"
-msgstr "Midden-Europa"
 
 #. undefined
 #: site_menu:46
@@ -1209,8 +1506,7 @@ msgid "Countries, Transnational regions"
 msgstr "Landen, transnationale regio’s"
 
 #. undefined
-#: health_menu:18
-#: site_menu:45
+#: health_menu:18 site_menu:45
 msgid "Country Profiles"
 msgstr "Profiel van het land"
 
@@ -1270,8 +1566,7 @@ msgid "Mission Portal"
 msgstr "Missieportaal"
 
 #. undefined
-#: site_menu:43
-#: site_menu:43
+#: site_menu:43 site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "REGIONAAL BELEID VAN DE EU"
 
@@ -1322,8 +1617,11 @@ msgstr "Energie"
 
 #. undefined
 #: site_menu:67
-msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr "De kwetsbaarheid van Europa voor de gevolgen van klimaatverandering buiten Europa"
+msgid ""
+"Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr ""
+"De kwetsbaarheid van Europa voor de gevolgen van klimaatverandering buiten "
+"Europa"
 
 #. undefined
 #: health_menu:32
@@ -1343,7 +1641,8 @@ msgstr "Europese systemen voor vroegtijdige waarschuwing"
 #. undefined
 #: health_menu:14
 msgid "European policies on climate adaptation and health"
-msgstr "Europees beleid inzake aanpassing aan de klimaatverandering en gezondheid"
+msgstr ""
+"Europees beleid inzake aanpassing aan de klimaatverandering en gezondheid"
 
 #. undefined
 #: health_menu:19
@@ -1446,11 +1745,6 @@ msgid "Marine and fisheries"
 msgstr "Zeeën en visserij"
 
 #. undefined
-#: site_menu:55
-msgid "Mediterranean"
-msgstr "Mediterrane"
-
-#. undefined
 #: health_menu:28
 msgid "Mental health effects"
 msgstr "Effecten op de geestelijke gezondheid"
@@ -1479,21 +1773,6 @@ msgstr "Nationale beleidsanalyse 2022"
 #: site_menu:86
 msgid "Networks"
 msgstr "Netwerken"
-
-#. undefined
-#: site_menu:56
-msgid "North Sea"
-msgstr "Noordzee"
-
-#. undefined
-#: site_menu:57
-msgid "North West Europe"
-msgstr "Noordwest-Europa"
-
-#. undefined
-#: site_menu:58
-msgid "Northern Periphery and Arctic"
-msgstr "Noordelijke periferie en noordpoolgebied"
 
 #. undefined
 #: health_menu:42
@@ -1549,11 +1828,6 @@ msgstr "Zoeken naar bronnen"
 #: site_menu:19
 msgid "Site map"
 msgstr "Plattegrond van de site"
-
-#. undefined
-#: site_menu:59
-msgid "South West Europe"
-msgstr "Zuidwest-Europa"
 
 #. undefined
 #: site_menu:73
@@ -1623,7 +1897,8 @@ msgstr "Door vector overgedragen ziekten"
 #. undefined
 #: health_menu:15
 msgid "WHO Europe activities on climate change and health"
-msgstr "WHO Europa-activiteiten op het gebied van klimaatverandering en gezondheid"
+msgstr ""
+"WHO Europa-activiteiten op het gebied van klimaatverandering en gezondheid"
 
 #. undefined
 #: health_menu:25
@@ -1636,8 +1911,7 @@ msgid "Water management"
 msgstr "Waterbeheer"
 
 #. undefined
-#: health_menu:46
-#: site_menu:93
+#: health_menu:46 site_menu:93
 msgid "Webinars"
 msgstr "Webinars"
 
@@ -1667,107 +1941,86 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Blootstelling van kwetsbare groepen aan klimaatrisico’s"
 
 #. undefined
-#: 
 msgid "KEY EU ACTIONS"
 msgstr "BELANGRIJKSTE EU-ACTIES"
 
 #. undefined
-#: 
 msgid "Just resilience"
 msgstr "Alleen weerbaarheid"
 
 #. undefined
-#: 
 msgid "Nature-based solutions"
 msgstr "Op de natuur gebaseerde oplossingen"
 
 #. undefined
-#: 
 msgid "Economic losses and fatalities"
 msgstr "Economische verliezen en dodelijke slachtoffers"
 
 #. undefined
-#: 
 msgid "Strategic objectives 2030"
 msgstr "Strategische doelstellingen 2030"
 
 #. undefined
-#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Beschikbaarheid van stedelijke groene ruimten voor kwetsbare groepen"
 
 #. undefined
-#: 
 msgid "Transnational, National, local"
 msgstr "Transnationaal, nationaal, lokaal"
 
 #. undefined
-#: 
 msgid "Aero-allergens"
 msgstr "Aero-allergenen"
 
 #. undefined
-#: 
 msgid "Heat"
 msgstr "Warmte"
 
 #. undefined
-#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Toegankelijkheid van ziekenhuizen in Europa"
 
 #. undefined
-#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "AANPASSING IN DE BOSBOUWSECTOR"
 
 #. undefined
-#: 
 msgid "Ground-level ozone"
 msgstr "Ozon op leefniveau"
 
 #. undefined
-#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Ozonprognose op leefniveau (CAMS)"
 
 #. undefined
-#: 
 msgid "Pollution"
 msgstr "Vervuiling"
 
 #. undefined
-#: 
 msgid "Occupational safety and health effects"
 msgstr "Gevolgen voor veiligheid en gezondheid op het werk"
 
 #. undefined
-#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Werkplan van de waarnemingspost voor 2023-24"
 
 #. undefined
-#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "PM2.5-prognose op grondniveau (CAMS)"
 
 #. undefined
-#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "PM10-prognose op grondniveau (CAMS)"
 
 #. undefined
-#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "NO2-prognose op grondniveau (CAMS)"
 
 #. undefined
-#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Verslag van het EEA over klimaat en gezondheid 2022"
 
 #. undefined
-#: 
 msgid "European environment and health atlas"
 msgstr "Europese atlas voor milieu en gezondheid"
 
@@ -1804,13 +2057,18 @@ msgstr "1.2 Het proces op een gestructureerde manier instellen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
-msgstr "1.3 Schatting van de benodigde personele en financiële middelen en het identificeren van mogelijke bronnen van langetermijnfinanciering"
+msgid ""
+"1.3 Estimating human and financial resources needed and identifying "
+"potential sources of long-term funding"
+msgstr ""
+"1.3 Schatting van de benodigde personele en financiële middelen en het "
+"identificeren van mogelijke bronnen van langetermijnfinanciering"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
 msgid "1.3 Setting up adaptation processes within and beyond the municipality"
-msgstr "1.3 Het opzetten van aanpassingsprocessen binnen en buiten de gemeente"
+msgstr ""
+"1.3 Het opzetten van aanpassingsprocessen binnen en buiten de gemeente"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:148
@@ -1820,7 +2078,8 @@ msgstr "1.4 Verzamelen van informatie"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:98
 msgid "1.4 Identifying and obtaining human and technical resources"
-msgstr "1.4 Het identificeren en verkrijgen van personele en technische middelen"
+msgstr ""
+"1.4 Het identificeren en verkrijgen van personele en technische middelen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:152
@@ -1865,12 +2124,14 @@ msgstr "12 regio’s"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr "2. Beoordeling van de risico’s en kwetsbaarheden van klimaatverandering"
+msgstr ""
+"2. Beoordeling van de risico’s en kwetsbaarheden van klimaatverandering"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
 msgid "2.1 Recognizing past and present climate impacts"
-msgstr "2.1 Erkenning van de gevolgen voor het klimaat in het verleden en het heden"
+msgstr ""
+"2.1 Erkenning van de gevolgen voor het klimaat in het verleden en het heden"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:168
@@ -1879,8 +2140,11 @@ msgstr "2.1 Het begrijpen van klimaatrisico’s"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr "2.2 Kader voor de beoordeling van klimaateffecten, kwetsbaarheden en risico’s"
+msgid ""
+"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr ""
+"2.2 Kader voor de beoordeling van klimaateffecten, kwetsbaarheden en "
+"risico’s"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -1889,8 +2153,12 @@ msgstr "2.2 Inzicht in klimaatprognoses en toekomstige effecten"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
-msgstr "2.3 Algemene volgorde voor klimaateffecten, kwetsbaarheden en risicobeoordelingen"
+msgid ""
+"2.3 General sequence for climate impacts, vulnerabilities and risk "
+"assessments"
+msgstr ""
+"2.3 Algemene volgorde voor klimaateffecten, kwetsbaarheden en "
+"risicobeoordelingen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -1920,22 +2188,31 @@ msgstr "2.5 Inzicht in de rol van omliggende gebieden bij de aanpassing"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr "2.6 Belangrijkste aanpassingspunten identificeren en doelstellingen vaststellen"
+msgstr ""
+"2.6 Belangrijkste aanpassingspunten identificeren en doelstellingen "
+"vaststellen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr "2.6 Het identificeren van de belangrijkste aanpassingsproblemen en het bepalen van een strategische richting"
+msgid ""
+"2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr ""
+"2.6 Het identificeren van de belangrijkste aanpassingsproblemen en het "
+"bepalen van een strategische richting"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr "2.7 Beoordeling van risico’s en kwetsbaarheden op het gebied van klimaatverandering: zelfcontrole"
+msgstr ""
+"2.7 Beoordeling van risico’s en kwetsbaarheden op het gebied van "
+"klimaatverandering: zelfcontrole"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr "2.7 Beoordeling van risico’s en kwetsbaarheden op het gebied van klimaatverandering: zelfcontrole"
+msgstr ""
+"2.7 Beoordeling van risico’s en kwetsbaarheden op het gebied van "
+"klimaatverandering: zelfcontrole"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -1976,8 +2253,12 @@ msgstr "4. Het beoordelen van aanpassingsopties"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
-msgstr "4.1 Beoordeling van mogelijke aanpassingsmogelijkheden op het gebied van effecten, tijd, kosten, baten en inspanningen"
+msgid ""
+"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
+"benefits and efforts"
+msgstr ""
+"4.1 Beoordeling van mogelijke aanpassingsmogelijkheden op het gebied van "
+"effecten, tijd, kosten, baten en inspanningen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -1987,17 +2268,21 @@ msgstr "4.1 Het kiezen van een beoordelingskader voor aanpassingsopties"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:213
 msgid "4.2 Conducting a cost-benefit analysis of adaptation measures"
-msgstr "4.2 Het uitvoeren van een kosten-batenanalyse van aanpassingsmaatregelen"
+msgstr ""
+"4.2 Het uitvoeren van een kosten-batenanalyse van aanpassingsmaatregelen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr "4.2 Prioritering van aanpassingsopties en het selecteren van voorkeursopties"
+msgstr ""
+"4.2 Prioritering van aanpassingsopties en het selecteren van voorkeursopties"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
 msgid "4.3 Preparing a strategy document and getting political approval"
-msgstr "4.3 Het opstellen van een strategiedocument en het verkrijgen van politieke goedkeuring"
+msgstr ""
+"4.3 Het opstellen van een strategiedocument en het verkrijgen van politieke "
+"goedkeuring"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
@@ -2037,17 +2322,25 @@ msgstr "5.2 Het vinden van voorbeelden van aanpassingsactieplannen"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr "5.2 Het organiseren van de governance van de tenuitvoerlegging tussen sectoren en niveaus"
+msgstr ""
+"5.2 Het organiseren van de governance van de tenuitvoerlegging tussen "
+"sectoren en niveaus"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
 msgid "5.3 Mainstreaming adaptation in urban policies and plans"
-msgstr "5.3 Het mainstreamen van aanpassing in stedelijke beleidsmaatregelen en plannen"
+msgstr ""
+"5.3 Het mainstreamen van aanpassing in stedelijke beleidsmaatregelen en "
+"plannen"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
-msgstr "5.3 Mainstreaming: integratie van aanpassing in instrumenten en sectoraal beleid"
+msgid ""
+"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
+"policies"
+msgstr ""
+"5.3 Mainstreaming: integratie van aanpassing in instrumenten en sectoraal "
+"beleid"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
@@ -2102,7 +2395,8 @@ msgstr "6.3 Definieer MRE-indicatoren en benadering van gemengde methoden"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
 msgid "6.3 Finding examples of adaptation monitoring indicators"
-msgstr "6.3 Het vinden van voorbeelden van indicatoren voor adaptatiemonitoring"
+msgstr ""
+"6.3 Het vinden van voorbeelden van indicatoren voor adaptatiemonitoring"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:299
@@ -2112,7 +2406,9 @@ msgstr "6.4 Communicerende resultaten om beleid en praktijk te informeren"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr "6.4 Met behulp van monitoringresultaten om het aanpassingsproces te verbeteren"
+msgstr ""
+"6.4 Met behulp van monitoringresultaten om het aanpassingsproces te "
+"verbeteren"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
@@ -2126,18 +2422,36 @@ msgstr "6.5 Bewaking en evaluatie van aanpassing: zelfcontrole"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
-msgstr "Een waarde voor de kwaliteit van 2x afbeeldingen met een hoge pixeldichtheid, van 1 (laagste) tot 95 (hoogste). Een waarde van 0 betekent dat plone.scaling standaard wordt gebruikt, wat momenteel 62 is."
+msgid ""
+"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 62."
+msgstr ""
+"Een waarde voor de kwaliteit van 2x afbeeldingen met een hoge "
+"pixeldichtheid, van 1 (laagste) tot 95 (hoogste). Een waarde van 0 betekent "
+"dat plone.scaling standaard wordt gebruikt, wat momenteel 62 is."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
-msgstr "Een waarde voor de kwaliteit van 3x afbeeldingen met een hoge pixeldichtheid, van 1 (laagste) tot 95 (hoogste). Een waarde van 0 betekent dat plone.scaling standaard wordt gebruikt, wat momenteel 51 is."
+msgid ""
+"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
+"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
+"which is currently 51."
+msgstr ""
+"Een waarde voor de kwaliteit van 3x afbeeldingen met een hoge "
+"pixeldichtheid, van 1 (laagste) tot 95 (hoogste). Een waarde van 0 betekent "
+"dat plone.scaling standaard wordt gebruikt, wat momenteel 51 is."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
-msgstr "Een waarde voor de kwaliteit van geschaalde afbeeldingen, van 1 (laagste) tot 95 (hoogste). Een waarde van 0 betekent dat plone.scaling standaard wordt gebruikt, wat momenteel 88 is."
+msgid ""
+"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
+" value of 0 will mean plone.scaling's default will be used, which is "
+"currently 88."
+msgstr ""
+"Een waarde voor de kwaliteit van geschaalde afbeeldingen, van 1 (laagste) "
+"tot 95 (hoogste). Een waarde van 0 betekent dat plone.scaling standaard "
+"wordt gebruikt, wat momenteel 88 is."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2166,8 +2480,10 @@ msgstr "A3: Coördinatiesamenwerking en -netwerken"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid "A3: Governance and Institutional: Coordination cooperation and networks"
-msgstr "A3: Governance en Institutioneel: Coördinatiesamenwerking en netwerken"
+msgid ""
+"A3: Governance and Institutional: Coordination cooperation and networks"
+msgstr ""
+"A3: Governance en Institutioneel: Coördinatiesamenwerking en netwerken"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:54
@@ -2259,11 +2575,6 @@ msgid "Allowed image sizes"
 msgstr "Toegestane beeldformaten"
 
 #. undefined
-#: ../../climateadapt/browser/pt/transnational_regions.pt:419
-msgid "Alpine"
-msgstr "Alpine"
-
-#. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:82
 msgid "Assessing adaptation options"
 msgstr "Beoordeling van aanpassingsopties"
@@ -2276,7 +2587,8 @@ msgstr "Beoordeling en selectie van aanpassingsopties"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
 msgid "Assessing climate change risks and vulnerabilities"
-msgstr "Beoordeling van de risico’s en kwetsbaarheden van de klimaatverandering"
+msgstr ""
+"Beoordeling van de risico’s en kwetsbaarheden van de klimaatverandering"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:66
@@ -2286,7 +2598,9 @@ msgstr "Risico’s en kwetsbaarheid voor klimaatverandering in kaart brengen"
 #. undefined
 #: ../../climateadapt/vocabulary.py:570
 msgid "B1: Economic and Finance: Financing incentive instruments"
-msgstr "B1: Economische en financiële instrumenten: Financieringsstimuleringsinstrumenten"
+msgstr ""
+"B1: Economische en financiële instrumenten: "
+"Financieringsstimuleringsinstrumenten"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:586
@@ -2296,7 +2610,9 @@ msgstr "B1: Financieringsstimuleringsinstrumenten"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr "B2: Economische en financiële instrumenten: Verzekerings- en risicodelingsinstrumenten"
+msgstr ""
+"B2: Economische en financiële instrumenten: Verzekerings- en "
+"risicodelingsinstrumenten"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2340,18 +2656,29 @@ msgstr "Illustraties van casestudy’s"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
-msgstr "Case ontwikkeld en uitgevoerd en gedeeltelijk gefinancierd als maatregel voor aanpassing aan de klimaatverandering."
+msgid ""
+"Case developed and implemented and partially funded as a Climate Change "
+"Adaptation measure."
+msgstr ""
+"Case ontwikkeld en uitgevoerd en gedeeltelijk gefinancierd als maatregel "
+"voor aanpassing aan de klimaatverandering."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr "Case ontwikkeld en geïmplementeerd als een aanpassingsmaatregel voor klimaatverandering."
+msgstr ""
+"Case ontwikkeld en geïmplementeerd als een aanpassingsmaatregel voor "
+"klimaatverandering."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
-msgstr "Case voornamelijk ontwikkeld en uitgevoerd op grond van andere beleidsdoelstellingen, maar met aanzienlijke aandacht voor de aspecten van de aanpassing aan de klimaatverandering"
+msgid ""
+"Case mainly developed and implemented because of other policy objectives, "
+"but with significant consideration of Climate Change Adaptation aspects"
+msgstr ""
+"Case voornamelijk ontwikkeld en uitgevoerd op grond van andere "
+"beleidsdoelstellingen, maar met aanzienlijke aandacht voor de aspecten van "
+"de aanpassing aan de klimaatverandering"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2360,8 +2687,11 @@ msgstr "Casestudy’s en aanpassingsopties"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
-msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr "Case studies verzameld op nationaal niveau in Spanje, geleverd door AdapteCCA.es"
+msgid ""
+"Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr ""
+"Case studies verzameld op nationaal niveau in Spanje, geleverd door "
+"AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -2421,7 +2751,9 @@ msgstr "Opmerkingen:"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr "Gemeenschappelijke definities van de termen die vaak in het clearinghouse worden gebruikt."
+msgstr ""
+"Gemeenschappelijke definities van de termen die vaak in het clearinghouse "
+"worden gebruikt."
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -2445,8 +2777,11 @@ msgstr "D1: Groene opties"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr "D1: Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen: Groene opties"
+msgid ""
+"D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr ""
+"D1: Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde "
+"benaderingen: Groene opties"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2455,8 +2790,11 @@ msgstr "D2: Blauwe opties"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr "D2: Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen: Blauwe opties"
+msgid ""
+"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr ""
+"D2: Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde "
+"benaderingen: Blauwe opties"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2498,7 +2836,8 @@ msgstr "E1: Voorlichting en bewustmaking"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid "E1: Knowledge and behavioural change: Information and awareness raising"
+msgid ""
+"E1: Knowledge and behavioural change: Information and awareness raising"
 msgstr "E1: Kennis en gedragsverandering: Informatie en bewustmaking"
 
 #. undefined
@@ -2508,8 +2847,12 @@ msgstr "E2: Capaciteitsopbouw versterken en leefstijlpraktijken"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
-msgstr "E2: Kennis- en gedragsverandering: capaciteitsopbouw versterken en leefstijlpraktijken"
+msgid ""
+"E2: Knowledge and behavioural change: Capacity building empowering and "
+"lifestyle practices"
+msgstr ""
+"E2: Kennis- en gedragsverandering: capaciteitsopbouw versterken en "
+"leefstijlpraktijken"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2544,13 +2887,25 @@ msgstr "Evenementen"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
-msgstr "Verken casestudy’s voor bosaanpassing op het gebied van geografische locatie, thematische dekking en koppeling met aanpassingsopties via de op kaart gebaseerde case study explorer."
+msgid ""
+"Explore Forest adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Verken casestudy’s voor bosaanpassing op het gebied van geografische "
+"locatie, thematische dekking en koppeling met aanpassingsopties via de op "
+"kaart gebaseerde case study explorer."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
-msgstr "Verken stedelijke adaptatie case studies in termen van geografische locatie, thematische dekking en link naar aanpassing opties via de kaart gebaseerde Case Study explorer."
+msgid ""
+"Explore Urban adaptation case studies in terms of geographic location, "
+"thematic coverage and link to adaptation options through the map-based Case "
+"study explorer."
+msgstr ""
+"Verken stedelijke adaptatie case studies in termen van geografische locatie,"
+" thematische dekking en link naar aanpassing opties via de kaart gebaseerde "
+"Case Study explorer."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2575,13 +2930,22 @@ msgstr "FAO Groene Steden"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
-msgstr "Het FISE-webportaal zal ons helpen de gezondheid en veerkracht van onze bossen te verbeteren, die een cruciale rol spelen bij de bescherming van onze biodiversiteit en bij het beperken van de klimaatverandering."
+msgid ""
+"FISE web portal will help us to improve the health and resilience of our "
+"forests, which play a vital role in protecting our biodiversity and in "
+"mitigating climate change."
+msgstr ""
+"Het FISE-webportaal zal ons helpen de gezondheid en veerkracht van onze "
+"bossen te verbeteren, die een cruciale rol spelen bij de bescherming van "
+"onze biodiversiteit en bij het beperken van de klimaatverandering."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid "Find out how to contribute different types of information to Climate-ADAPT."
-msgstr "Ontdek hoe u verschillende soorten informatie kunt bijdragen aan Climate-ADAPT."
+msgid ""
+"Find out how to contribute different types of information to Climate-ADAPT."
+msgstr ""
+"Ontdek hoe u verschillende soorten informatie kunt bijdragen aan Climate-"
+"ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
@@ -2733,7 +3097,9 @@ msgstr "Aanpassingsopties identificeren"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:38
 msgid "If you are new user the video tutorials can help you get started."
-msgstr "Als u een nieuwe gebruiker bent, kunnen de videotutorials u helpen aan de slag te gaan."
+msgstr ""
+"Als u een nieuwe gebruiker bent, kunnen de videotutorials u helpen aan de "
+"slag te gaan."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
@@ -2824,23 +3190,39 @@ msgstr "Landgebruik en voedselsystemen"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
-msgstr "Lees meer over de verschillende aanpassingsopties voor de verschillende effecten van klimaatverandering in bossen."
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in forests."
+msgstr ""
+"Lees meer over de verschillende aanpassingsopties voor de verschillende "
+"effecten van klimaatverandering in bossen."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
-msgstr "Lees meer over de verschillende aanpassingsopties voor de verschillende effecten van klimaatverandering in stedelijke gebieden."
+msgid ""
+"Learn more about different adaptation options to the various impacts of "
+"climate change in urban areas."
+msgstr ""
+"Lees meer over de verschillende aanpassingsopties voor de verschillende "
+"effecten van klimaatverandering in stedelijke gebieden."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
-msgstr "Lees meer over hoe steden zich kunnen aanpassen aan klimaatverandering om toekomstbestendige, klimaatbestendige steden te worden"
+msgid ""
+"Learn more about how cities can adapt to climate change to become future-"
+"proof, climate-resilient cities"
+msgstr ""
+"Lees meer over hoe steden zich kunnen aanpassen aan klimaatverandering om "
+"toekomstbestendige, klimaatbestendige steden te worden"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
-msgstr "Lees meer over hoe bossen zich kunnen aanpassen aan de klimaatverandering om gezond, divers, veerkrachtig en productief te blijven"
+msgid ""
+"Learn more about how forests can adapt to climate change to stay healthy, "
+"diverse, resilient and productive"
+msgstr ""
+"Lees meer over hoe bossen zich kunnen aanpassen aan de klimaatverandering om"
+" gezond, divers, veerkrachtig en productief te blijven"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -2902,8 +3284,11 @@ msgstr "Berggebieden"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr "Nationaal aanpassingsbeleid niet gerapporteerd na verplichte rapportage in 2023"
+msgid ""
+"National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr ""
+"Nationaal aanpassingsbeleid niet gerapporteerd na verplichte rapportage in "
+"2023"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3144,12 +3529,17 @@ msgstr "Selecteer een land"
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:49
 msgid "Select a country to go directly to the country's page:"
-msgstr "Selecteer een land om rechtstreeks naar de pagina van het land te gaan:"
+msgstr ""
+"Selecteer een land om rechtstreeks naar de pagina van het land te gaan:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid "Select the sectors for which you want to receive a notification email when an item is modified."
-msgstr "Selecteer de sectoren waarvoor u een e-mail wilt ontvangen wanneer een item wordt gewijzigd."
+msgid ""
+"Select the sectors for which you want to receive a notification email when "
+"an item is modified."
+msgstr ""
+"Selecteer de sectoren waarvoor u een e-mail wilt ontvangen wanneer een item "
+"wordt gewijzigd."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3183,8 +3573,12 @@ msgstr "Sociaal: Informatie"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr "Geef alle toegestane maximale beeldafmetingen op, één per regel. Het vereiste formaat is &lt;name &gt; &lt;width &gt;: &lt;height &gt;."
+msgid ""
+"Specify all allowed maximum image dimensions, one per line. The required "
+"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr ""
+"Geef alle toegestane maximale beeldafmetingen op, één per regel. Het "
+"vereiste formaat is &lt;name &gt; &lt;width &gt;: &lt;height &gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3233,28 +3627,72 @@ msgstr "Het Burgemeestersconvenant van de EU"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
-msgstr "De EU financiert de aanpassing aan de klimaatverandering in Europa via een breed scala aan instrumenten. Het meerjarig financieel kader 2021-2027 zorgt ervoor dat ten minste 25 % van de Europese begroting klimaatgerelateerde uitgaven zijn. Daarom moeten klimaatadaptatiemaatregelen worden geïntegreerd in alle grote uitgavenprogramma’s van de EU en wordt een traceringssysteem ingevoerd om te garanderen dat deze doelstellingen worden gehaald."
+msgid ""
+"The EU finances adaptation to climate change in Europe through a wide range "
+"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
+"at least 25% of the European budget is climate-related expenditure. "
+"Therefore, Climate adaptation actions have to be integrated into all the "
+"major EU spending programmes, and a tracking system is put in place to "
+"guarantee these objectives are met."
+msgstr ""
+"De EU financiert de aanpassing aan de klimaatverandering in Europa via een "
+"breed scala aan instrumenten. Het meerjarig financieel kader 2021-2027 zorgt"
+" ervoor dat ten minste 25 % van de Europese begroting klimaatgerelateerde "
+"uitgaven zijn. Daarom moeten klimaatadaptatiemaatregelen worden geïntegreerd"
+" in alle grote uitgavenprogramma’s van de EU en wordt een traceringssysteem "
+"ingevoerd om te garanderen dat deze doelstellingen worden gehaald."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
-msgstr "De EU beschikt over verschillende beleidskaders om de veerkracht van Europese steden en hun inwoners te vergroten, waaronder de aanpassingsstrategie van de EU en de EU-biodiversiteitsstrategie 2030, en heeft verschillende initiatieven ontwikkeld om de beschikbaarheid van kennis en gegevens over stedelijke kwetsbaarheid en aanpassingsvermogen te verbeteren. Zij biedt ook financiële en technische ondersteuning aan beleidsmakers en praktijkmensen om steden veerkrachtiger en adaptiever te maken."
+msgid ""
+"The EU has several policy frameworks in place to increase the resilience of "
+"European cities and their inhabitants, including the EU Adaptation Strategy "
+"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
+" to improve knowledge and data availability on urban vulnerability and "
+"adaptive capacity. It also provides financial and technical support to "
+"policy makers and practitioners to make cities more resilient and adaptive."
+msgstr ""
+"De EU beschikt over verschillende beleidskaders om de veerkracht van "
+"Europese steden en hun inwoners te vergroten, waaronder de "
+"aanpassingsstrategie van de EU en de EU-biodiversiteitsstrategie 2030, en "
+"heeft verschillende initiatieven ontwikkeld om de beschikbaarheid van kennis"
+" en gegevens over stedelijke kwetsbaarheid en aanpassingsvermogen te "
+"verbeteren. Zij biedt ook financiële en technische ondersteuning aan "
+"beleidsmakers en praktijkmensen om steden veerkrachtiger en adaptiever te "
+"maken."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
-msgstr "De European Climate Data Explorer biedt interactieve toegang tot vele klimaatindexen van de Copernicus Climate Change Service ter ondersteuning van de aanpassing aan de klimaatverandering."
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices from the Copernicus Climate Change Service in support of "
+"climate change adaptation."
+msgstr ""
+"De European Climate Data Explorer biedt interactieve toegang tot vele "
+"klimaatindexen van de Copernicus Climate Change Service ter ondersteuning "
+"van de aanpassing aan de klimaatverandering."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
-msgstr "De European Climate Data Explorer biedt interactieve toegang tot veel klimaatindexen zoals brandweerindexen ter ondersteuning van de aanpassing aan de klimaatverandering in bossen."
+msgid ""
+"The European Climate Data Explorer provides interactive access to many "
+"climate indices like fire weather indices in support of climate change "
+"adaptation in forests."
+msgstr ""
+"De European Climate Data Explorer biedt interactieve toegang tot veel "
+"klimaatindexen zoals brandweerindexen ter ondersteuning van de aanpassing "
+"aan de klimaatverandering in bossen."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
-msgstr "Het Europees Waarnemingscentrum voor droogte (EDO) bevat relevante informatie over droogte, die een overzicht geeft van de situatie in de EU met betrekking tot dreigende droogtes."
+msgid ""
+"The European Drought Observatory (EDO) contains drought-relevant "
+"information. These give an overview of the situation in the EU about "
+"imminent droughts."
+msgstr ""
+"Het Europees Waarnemingscentrum voor droogte (EDO) bevat relevante "
+"informatie over droogte, die een overzicht geeft van de situatie in de EU "
+"met betrekking tot dreigende droogtes."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3263,23 +3701,59 @@ msgstr "Het Europees bosbrandinformatiesysteem"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
-msgstr "Het Europees bosbrandinformatiesysteem (EFFIS) ondersteunt de bescherming van bossen tegen branden en biedt de EU geharmoniseerde informatie over bosbranden"
+msgid ""
+"The European Forest Fire Information System (EFFIS) supports the protection "
+"of forests against fires and provides the EU with harmonized information on "
+"forest fires"
+msgstr ""
+"Het Europees bosbrandinformatiesysteem (EFFIS) ondersteunt de bescherming "
+"van bossen tegen branden en biedt de EU geharmoniseerde informatie over "
+"bosbranden"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
-msgstr "De Urban Adaptation Map Viewer geeft een overzicht van de huidige en toekomstige klimaatrisico’s, de kwetsbaarheid van de steden voor deze gevaren en hun aanpassingsvermogen."
+msgid ""
+"The Urban Adaptation Map Viewer provides an overview of the current and "
+"future climate hazards, the vulnerability of the cities to these hazards and"
+" their adaptive capacity."
+msgstr ""
+"De Urban Adaptation Map Viewer geeft een overzicht van de huidige en "
+"toekomstige klimaatrisico’s, de kwetsbaarheid van de steden voor deze "
+"gevaren en hun aanpassingsvermogen."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
-msgstr "De Urban Adaptation Support Tool helpt steden, gemeenten en lokale overheden bij het ontwikkelen, uitvoeren en monitoren van plannen voor aanpassing aan de klimaatverandering."
+msgid ""
+"The Urban Adaptation Support Tool assists cities, towns and local "
+"authorities in developing, implementing and monitoring climate change "
+"adaptation plans."
+msgstr ""
+"De Urban Adaptation Support Tool helpt steden, gemeenten en lokale overheden"
+" bij het ontwikkelen, uitvoeren en monitoren van plannen voor aanpassing aan"
+" de klimaatverandering."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr "De klimaatcrisis heeft ernstige gevolgen voor de bossen in Europa, waardoor deze steeds kwetsbaarder worden voor gevaren zoals stormen, bosbranden, droogte, uitbraken van insecten en ziekten, of stijging van de zeespiegel. De toenemende risico’s en gevolgen beïnvloeden de economische levensvatbaarheid van de bosbouw en verminderen het vermogen van bossen om essentiële ecosysteemdiensten te leveren. De EU reageert op deze ongekende uitdaging door de aanpassing van bossen aan de klimaatverandering te ondersteunen via een breed scala aan beleidsmaatregelen, zoals de EU-bosstrategie, de EU-strategie voor aanpassing aan de klimaatverandering en de EU-biodiversiteitsstrategie."
+msgid ""
+"The climate crisis is severely affecting Europe's forests, making them "
+"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
+"and disease outbreaks, or sea level rise. The growing risks and impacts are "
+"affecting the economic viability of forestry and they reduce the capacity of"
+" forests to provide essential ecosystem services. The EU responds to this "
+"unprecedented challenge by supporting the adaptation of forests to climate "
+"change through a wide range of policies, like the EU Forest Strategy, EU "
+"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr ""
+"De klimaatcrisis heeft ernstige gevolgen voor de bossen in Europa, waardoor "
+"deze steeds kwetsbaarder worden voor gevaren zoals stormen, bosbranden, "
+"droogte, uitbraken van insecten en ziekten, of stijging van de zeespiegel. "
+"De toenemende risico’s en gevolgen beïnvloeden de economische "
+"levensvatbaarheid van de bosbouw en verminderen het vermogen van bossen om "
+"essentiële ecosysteemdiensten te leveren. De EU reageert op deze ongekende "
+"uitdaging door de aanpassing van bossen aan de klimaatverandering te "
+"ondersteunen via een breed scala aan beleidsmaatregelen, zoals de EU-"
+"bosstrategie, de EU-strategie voor aanpassing aan de klimaatverandering en "
+"de EU-biodiversiteitsstrategie."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3371,7 +3845,8 @@ msgstr "Jaar:"
 msgid "back to search"
 msgstr "terug naar zoeken"
 
-#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the
+#. richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "Image_captioning_description"

@@ -35,6 +35,13 @@ body.view-viewview.contenttype-subsite.section-mission
 }
 
 body.subsite-mkh {
+  --text-color-secondary: @green-5;
+  --border-color-secondary: @green-5;
+
+  .column > .ui.segment {
+    background-color: transparent;
+  }
+
   &.subsite-root {
     .content-area {
       padding: 0 !important;
@@ -84,6 +91,15 @@ body.subsite-mkh {
 
   .eea.banner {
     background: @green-1;
+  }
+
+  .ui.statistics:not(.inverted) .ui.statistic .slate.secondary {
+    color: @green-5;
+  }
+
+  .ui.secondary.pointing.menu .active.item {
+    color: @green-5;
+    border-color: @green-5;
   }
 
   #mega-menu {
