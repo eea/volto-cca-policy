@@ -222,11 +222,24 @@ export const sectionID = (title) => findSection(title)?.section || title;
 const PhotoGallery = ({ content }) => {
   const { cca_gallery } = content;
 
+  const [open, setOpen] = React.useState(false);
+  const [slideIndex, setSlideIndex] = React.useState(0);
+
+  const handleTitleClick = () => {
+    setSlideIndex(0);
+    setOpen(true);
+  };
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
         <div className="case-study-gallery">
-          <div className="gallery-title">
+          <div
+            className="gallery-title"
+            tabIndex={0}
+            role="button"
+            onClick={handleTitleClick}
+            onKeyDown={handleTitleClick}
+          >
             <span>
               <FormattedMessage
                 id="Case Study illustrations"
@@ -236,7 +249,13 @@ const PhotoGallery = ({ content }) => {
             <span> ({cca_gallery.length}) </span>
             <Icon className="ri-image-fill" />
           </div>
-          <ImageGallery items={cca_gallery} />
+          <ImageGallery
+            items={cca_gallery}
+            propOpen={open}
+            setPropOpen={setOpen}
+            propSlideIndex={slideIndex}
+            setPropSlideIndex={setSlideIndex}
+          />
         </div>
       )}
     </>
