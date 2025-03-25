@@ -10,10 +10,27 @@ import './styles.less';
 const Slider = loadable(() => import('react-slick'));
 
 const ImageGallery = (props) => {
-  const { items = [] } = props;
+  const {
+    items = [],
+    propOpen,
+    setPropOpen,
+    propSlideIndex,
+    setPropSlideIndex,
+  } = props;
+  // if state is managed from an external component then use the external state
+  // else use the local one
+  const [localOpen, setLocalOpen] = React.useState(false);
+  const open = propOpen === undefined ? localOpen : propOpen;
+  const setOpen = propOpen === undefined ? setLocalOpen : setPropOpen;
 
-  const [open, setOpen] = React.useState(false);
-  const [slideIndex, setSlideIndex] = React.useState(0);
+  // if state is managed from an external component then use the external state
+  // else use the local one
+  const [localSlideIndex, setLocalSlideIndex] = React.useState(0);
+  const slideIndex =
+    propSlideIndex === undefined ? localSlideIndex : propSlideIndex;
+  const setSlideIndex =
+    propSlideIndex === undefined ? setLocalSlideIndex : setPropSlideIndex;
+
   const [updateCount, setUpdateCount] = React.useState(0);
   const sliderRef = React.useRef(null);
 
@@ -32,7 +49,7 @@ const ImageGallery = (props) => {
       useTransform: false,
       initialSlide: slideIndex,
     }),
-    [slideIndex, updateCount],
+    [slideIndex, setSlideIndex, updateCount],
   );
 
   const handleClick = () => {
