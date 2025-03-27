@@ -4,8 +4,6 @@ import {
   Image,
   Button,
   Segment,
-  Grid,
-  GridColumn,
   Item,
   ItemGroup,
   ItemContent,
