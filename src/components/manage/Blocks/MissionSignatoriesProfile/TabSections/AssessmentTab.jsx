@@ -12,6 +12,7 @@ import {
 } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import AccordionList from './../AccordionList';
+import ItemsSection from './../ItemsSection';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
 
@@ -27,9 +28,9 @@ const AssessmentTab = () => {
         </p>
       </Callout>
 
-      <div className="profile-content-box">
+      <div className="section-wrapper">
         <h3>Climate Risk Assessment</h3>
-        <div className="profile-content-box-info">
+        <div className="section-wrapper-info">
           <ItemGroup unstackable className="row">
             <Item>
               <Image size="miny" src={image} />
@@ -50,57 +51,7 @@ const AssessmentTab = () => {
         <h4>The CRA conducted considers the following factors</h4>
 
         <div className="items-wrapper">
-          <Grid className="column-grid">
-            <GridColumn width={6} className="column-blocks-wrapper">
-              <ItemGroup unstackable className="row">
-                <Item>
-                  <Image size="small" src={image} />
-                  <ItemContent verticalAlign="middle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </ItemContent>
-                </Item>
-
-                <Item>
-                  <Image size="small" src={image} />
-                  <ItemContent verticalAlign="middle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </ItemContent>
-                </Item>
-
-                <Item>
-                  <Image size="small" src={image} />
-                  <ItemContent verticalAlign="middle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </ItemContent>
-                </Item>
-              </ItemGroup>
-            </GridColumn>
-
-            <GridColumn width={6}>
-              <ItemGroup unstackable className="row">
-                <Item>
-                  <Image size="small" src={image} />
-                  <ItemContent verticalAlign="middle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </ItemContent>
-                </Item>
-
-                <Item>
-                  <Image size="small" src={image} />
-                  <ItemContent verticalAlign="middle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </ItemContent>
-                </Item>
-
-                <Item>
-                  <Image size="small" src={image} />
-                  <ItemContent verticalAlign="middle">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </ItemContent>
-                </Item>
-              </ItemGroup>
-            </GridColumn>
-          </Grid>
+          <ItemsSection />
         </div>
 
         <h4>Further details</h4>

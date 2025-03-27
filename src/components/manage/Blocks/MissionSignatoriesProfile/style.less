@@ -1,22 +1,52 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
 .signatories-profile {
-  .profile-content-box {
+  
+  .items-wrapper {
+    margin: 2em 0;
+  }
+
+  .section-wrapper-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+    .date {
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .section-wrapper {
     padding: 1.5em;
     margin: 2em 0;
     background-color: #f9f9f9;
 
-    .items-wrapper {
-      margin: 2em 0;
+
+
+    .section-number {
+      color: @pineGreen;
     }
+  }
 
-    .profile-content-box-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
+  strong.date {
+    margin-right: 0.5em;
+  }
 
-      .date {
-        position: relative;
-        top: 5px;
-      }
+  .items-group {
+    column-count: 2;
+    display: block !important;
+
+    .item {
+      padding: 0.5em 0 !important;
+      break-inside: avoid-column;
+
+       .content {
+        padding-left: 0.5rem !important;
+       }
     }
   }
 }
