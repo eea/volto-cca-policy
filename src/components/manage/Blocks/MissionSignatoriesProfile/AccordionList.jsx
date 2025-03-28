@@ -21,7 +21,7 @@ const AccordionList = ({ accordions, variation }) => {
             onClick={() => handleAccordionClick(index)}
           >
             <Icon
-              name={
+              className={
                 activeIndex === index
                   ? 'ri-arrow-up-s-line'
                   : 'ri-arrow-down-s-line'
@@ -30,7 +30,7 @@ const AccordionList = ({ accordions, variation }) => {
             {accordion.title}
           </AccordionTitle>
           <AccordionContent active={activeIndex === index}>
-            <p>{accordion.content}</p>
+            {accordion.content}
           </AccordionContent>
         </React.Fragment>
       ))}
