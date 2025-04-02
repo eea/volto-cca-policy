@@ -70,11 +70,24 @@ export default function installMainSearch(config) {
 
   // console.log('config.searchui.ccaSearch clusers', clusters);
   // debugger;
-  config.searchui.globalsearch.download_fields = [
+  config.searchui.ccaSearch = {
+    ...mergeConfig(envConfig, config.searchui.globalsearchbase),
+    elastic_index: '_es/globalsearch',
+    index_name: 'data_searchui',
+    host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
+    runtime_mappings: cca_build_runtime_mappings,
+    ...vocabs,
+  };
+
+  config.searchui.ccaSearch.download_fields = [
+    // { field: 'cca_uid', name: 'UID' },
     { field: 'about', name: 'About' },
-    { field: 'title', name: 'title' },
-    { field: 'issued', name: 'Issued' },
+    { field: 'title', name: 'Title' },
+    { field: 'created', name: 'Creation Date' },
+    { field: 'issued', name: 'Publication Date' },
+    { field: 'creators', name: 'Creator' },
     { field: 'objectProvides', name: 'Content type' },
+    { field: 'cca_keywords', name: 'Keywords' },
     { field: 'cca_adaptation_sectors', name: 'Sectors' },
     { field: 'cca_climate_impacts', name: 'Climate impact' },
     { field: 'transnational_regions', name: 'Transnational regions' },
@@ -85,15 +98,8 @@ export default function installMainSearch(config) {
     { field: 'cca_origin_websites', name: 'Origin website' },
     { field: 'cca_health_impacts', name: 'Health impacts' },
     { field: 'cca_partner_contributors', name: 'Observatory impacts' },
+    // { field: 'fulltext', name: 'Description' },
   ];
-  config.searchui.ccaSearch = {
-    ...mergeConfig(envConfig, config.searchui.globalsearchbase),
-    elastic_index: '_es/globalsearch',
-    index_name: 'data_searchui',
-    host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
-    runtime_mappings: cca_build_runtime_mappings,
-    ...vocabs,
-  };
 
   const { ccaSearch } = config.searchui;
 
