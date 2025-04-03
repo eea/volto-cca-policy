@@ -1,4 +1,4 @@
-#
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -6,8 +6,8 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: \n"
+"Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
@@ -18,8 +18,11 @@ msgid "A background document for the event is available"
 msgstr "Ένα έγγραφο φόντου για την εκδήλωση είναι διαθέσιμο"
 
 #. Default: "Adaptation Approaches"
-#: search/cca/facets search/facets search/health_observatory/facets-health
-#: search/mission_all/facets-all search/mission_projects/facets-projects
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
 msgstr "Προσεγγίσεις Προσαρμογής"
 
@@ -39,7 +42,9 @@ msgid "Adaptation Options Implemented In This Case"
 msgstr "Επιλογές προσαρμογής που εφαρμόζονται σε αυτήν την περίπτωση"
 
 #. Default: "Adaptation Sectors"
-#: search/cca/facets search/common search/facets
+#: search/cca/facets
+#: search/common
+#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Τομείς Προσαρμογής"
 
@@ -141,7 +146,9 @@ msgid "City:"
 msgstr "Πόλη:"
 
 #. Default: "Climate Impacts"
-#: search/cca/facets search/common search/facets
+#: search/cca/facets
+#: search/common
+#: search/facets
 msgid "Climate Impacts"
 msgstr "Κλιματικές Επιπτώσεις"
 
@@ -172,7 +179,8 @@ msgid "Climate-ADAPT page for this event"
 msgstr "Climate-ADAPT σελίδα για αυτήν την εκδήλωση"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Επαφή"
 
@@ -193,7 +201,8 @@ msgid "Costs and benefits"
 msgstr "Κόστος και οφέλη"
 
 #. Default: "Countries"
-#: search/common search/mission_all/facets-all
+#: search/common
+#: search/mission_all/facets-all
 #: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "χωρών"
@@ -304,7 +313,9 @@ msgid "Fullscreen"
 msgstr "Πλήρης οθόνη"
 
 #. Default: "Funding Programme"
-#: search/cca/facets search/facets search/mission_projects/facets-projects
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Πρόγραμμα χρηματοδότησης"
@@ -416,7 +427,8 @@ msgid "Info"
 msgstr "Πληροφορίες"
 
 #. Default: "Item from third parties"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Item from third parties"
 msgstr "Είδος από τρίτους"
 
@@ -427,7 +439,8 @@ msgstr "Βασικά κοινοτικά συστήματα"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Τύπος κλειδιού Μέτρο"
 
@@ -645,7 +658,8 @@ msgid "Publishing year"
 msgstr "Έτος έκδοσης"
 
 #. Default: "RAST step(s) of relevance"
-#: search/mission_funding/facets-funding search/mission_tools/facets-tools
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
 msgstr "Σχετικά βήματα RAST"
 
@@ -655,12 +669,14 @@ msgid "Reference Information"
 msgstr "Πληροφορίες αναφοράς"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView helpers/Utils
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
 msgid "Reference information"
 msgstr "Πληροφορίες αναφοράς"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "References"
 msgstr "Αναφορές"
 
@@ -705,7 +721,8 @@ msgid "Search the Observatory Resource Catalogue..."
 msgstr "Αναζήτηση στον Κατάλογο Πόρων του Παρατηρητηρίου..."
 
 #. Default: "Section"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Section"
 msgstr "Τμήμα"
 
@@ -758,7 +775,8 @@ msgstr "Λύσεις"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "Source"
 msgstr "Πηγή"
 
@@ -808,21 +826,12 @@ msgstr "Η ημερομηνία αναφέρεται στην ημερομηνί
 #. Default: "The date refers to the latest date of publication of the item"
 #: helpers/ContentMetadata
 msgid "The date refers to the latest date of publication of the item"
-msgstr ""
-"Η ημερομηνία αναφέρεται στην τελευταία ημερομηνία δημοσίευσης του στοιχείου"
+msgstr "Η ημερομηνία αναφέρεται στην τελευταία ημερομηνία δημοσίευσης του στοιχείου"
 
-#. Default: "The date refers to the moment in which the item has been prepared
-#. or updated by contributing experts to be submitted for the publication in
-#. Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 #: helpers/ContentMetadata
-msgid ""
-"The date refers to the moment in which the item has been prepared or updated"
-" by contributing experts to be submitted for the publication in Climate "
-"ADAPT"
-msgstr ""
-"Η ημερομηνία αναφέρεται στη στιγμή κατά την οποία το αντικείμενο "
-"προετοιμάστηκε ή ενημερώθηκε από συνεισφέροντες εμπειρογνώμονες που θα "
-"υποβληθεί για δημοσίευση στο Climate ADAPT"
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "Η ημερομηνία αναφέρεται στη στιγμή κατά την οποία το αντικείμενο προετοιμάστηκε ή ενημερώθηκε από συνεισφέροντες εμπειρογνώμονες που θα υποβληθεί για δημοσίευση στο Climate ADAPT"
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -831,12 +840,14 @@ msgid "Topics:"
 msgstr "Θέματα:"
 
 #. Default: "Transnational regions"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Transnational regions"
 msgstr "Διακρατικές περιοχές"
 
 #. Default: "Type of item"
-#: search/common search/mission_all/facets-all
+#: search/common
+#: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Τύπος αντικειμένου"
 
@@ -897,501 +908,634 @@ msgid "Where"
 msgstr "Οπου"
 
 #. undefined
+
 msgid "Case studies"
 msgstr "Μελέτες περιπτώσεων"
 
 #. undefined
+
 msgid "Guidance"
 msgstr "Οδηγία"
 
 #. undefined
+
 msgid "Information portals"
 msgstr "Πύλες πληροφοριών"
 
 #. undefined
+
 msgid "Videos"
 msgstr "Βίντεο"
 
 #. undefined
+
 msgid "Organisations"
 msgstr "Οργανώσεις"
 
 #. undefined
+
 msgid "Publication and reports"
 msgstr "Δημοσίευση και εκθέσεις"
 
 #. undefined
+
 msgid "Publications and reports"
 msgstr "Δημοσιεύσεις και εκθέσεις"
 
 #. undefined
+
 msgid "Research and knowledge projects"
 msgstr "Έργα έρευνας και γνώσης"
 
 #. undefined
+
 msgid "Tools"
 msgstr "Εργαλεία"
 
 #. undefined
+
 msgid "Based on your preferences, you can view this page in english"
-msgstr ""
-"Με βάση τις προτιμήσεις σας, μπορείτε να δείτε αυτήν τη σελίδα στα αγγλικά"
+msgstr "Με βάση τις προτιμήσεις σας, μπορείτε να δείτε αυτήν τη σελίδα στα αγγλικά"
 
 #. undefined
+
 msgid "here"
 msgstr "εδώ"
 
 #. undefined
+
 msgid "Latest <br/> News & Events"
 msgstr "Τελευταία <br/> Νέα & Εκδηλώσεις"
 
 #. undefined
+
 msgid "Most recent <br/> Case Study"
 msgstr "Πιο πρόσφατη <br/> Μελέτη Περίπτωσης"
 
 #. undefined
+
 msgid "Most recent <br/> Publication or Report"
 msgstr "Πιο πρόσφατη δημοσίευση ή αναφορά <br/>"
 
 #. undefined
+
 msgid "National adaption policy"
 msgstr "Εθνική πολιτική προσαρμογής"
 
 #. undefined
+
 msgid "Climate change impact and vulnerability assessments"
 msgstr "Εκτιμήσεις επιπτώσεων και τρωτότητας στην κλιματική αλλαγή"
 
 #. undefined
+
 msgid "Adaptation portals and platforms"
 msgstr "Πύλες και πλατφόρμες προσαρμογής"
 
 #. undefined
+
 msgid "Hazard category"
 msgstr "Κατηγορία κινδύνου"
 
 #. undefined
+
 msgid "Hazard type"
 msgstr "Τύπος κινδύνου"
 
 #. undefined
+
 msgid "Indicator"
 msgstr "Δείκτης"
 
 #. undefined
+
 msgid "Zip download"
 msgstr "Λήψη zip"
 
 #. undefined
+
 msgid "Download"
 msgstr "Λήψη"
 
 #. undefined
+
 msgid "Heat and cold"
 msgstr "Ζέστη και κρύο"
 
 #. undefined
+
 msgid "Mean air temperature"
 msgstr "Μέση θερμοκρασία αέρα"
 
 #. undefined
+
 msgid "Extreme heat"
 msgstr "Ακραία ζέστη"
 
 #. undefined
+
 msgid "Cold spells and frost"
 msgstr "Κρυολογήματα και παγετός"
 
 #. undefined
+
 msgid "Wet and dry"
 msgstr "Υγρό και στεγνό"
 
 #. undefined
+
 msgid "Mean precipitation"
 msgstr "Μέση βροχόπτωση"
 
 #. undefined
+
 msgid "Extreme precipitation"
 msgstr "Ακραία βροχόπτωση"
 
 #. undefined
+
 msgid "River flooding"
 msgstr "Πλημμύρα ποταμού"
 
 #. undefined
+
 msgid "Aridity"
 msgstr "Ξηρασία"
 
 #. undefined
+
 msgid "Wildfire"
 msgstr "Ακράτητο πύρ δυσκολώς σβήνων"
 
 #. undefined
+
 msgid "Snow and land ice"
 msgstr "Χιόνι και πάγος γης"
 
 #. undefined
+
 msgid "Snow and ice"
 msgstr "Χιόνι και πάγος"
 
 #. undefined
+
 msgid "Coastal"
 msgstr "Παραλιακός"
 
 #. undefined
+
 msgid "Relative sea level"
 msgstr "Σχετική στάθμη της θάλασσας"
 
 #. undefined
+
 msgid "Coastal flooding"
 msgstr "Παράκτιες πλημμύρες"
 
 #. undefined
+
 msgid "Other"
 msgstr "Αλλος"
 
 #. undefined
+
 msgid "Global"
 msgstr "Καθολικός"
 
 #. undefined
+
 msgid "Black Sea"
 msgstr "Μαύρη Θάλασσα"
 
 #. undefined
+
 msgid "Albania"
 msgstr "Αλβανία"
 
 #. undefined
+
 msgid "Andorra"
 msgstr "Ανδόρα"
 
 #. undefined
+
 msgid "Armenia"
 msgstr "Αρμενία"
 
 #. undefined
+
 msgid "Austria"
 msgstr "Αυστρία"
 
 #. undefined
+
 msgid "Azerbaijan"
 msgstr "Αζερμπαϊτζάν"
 
 #. undefined
+
 msgid "Belarus"
 msgstr "Λευκορωσία"
 
 #. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Βοσνία-Ερζεγοβίνη"
 
 #. undefined
+
 msgid "Bulgaria"
 msgstr "Βουλγαρία"
 
 #. undefined
+
 msgid "Croatia"
 msgstr "την Κροατία"
 
 #. undefined
+
 msgid "Cyprus"
 msgstr "Κύπρος"
 
 #. undefined
+
 msgid "Czechia"
 msgstr "Τσεχία"
 
 #. undefined
+
 msgid "Denmark"
 msgstr "Δανία"
 
 #. undefined
+
 msgid "Estonia"
 msgstr "Εσθονία"
 
 #. undefined
+
 msgid "Faroe Islands"
 msgstr "Νησιά Φερόε"
 
 #. undefined
+
 msgid "Finland"
 msgstr "Φινλανδία"
 
 #. undefined
+
 msgid "Germany"
 msgstr "Γερμανία"
 
 #. undefined
+
 msgid "Georgia"
 msgstr "Γεωργία"
 
 #. undefined
+
 msgid "Greece"
 msgstr "Ελλάδα"
 
 #. undefined
+
 msgid "Hungary"
 msgstr "Ουγγαρία"
 
 #. undefined
+
 msgid "Iceland"
 msgstr "Ισλανδία"
 
 #. undefined
+
 msgid "Kazakhstan"
 msgstr "Καζακστάν"
 
 #. undefined
+
 msgid "Kosovo"
 msgstr "Κοσσυφοπέδιο"
 
 #. undefined
+
 msgid "Ireland"
 msgstr "Ιρλανδία"
 
 #. undefined
+
 msgid "Italy"
 msgstr "Ιταλία"
 
 #. undefined
+
 msgid "Israel"
 msgstr "Ισραήλ"
 
 #. undefined
+
 msgid "Latvia"
 msgstr "Λατβία"
 
 #. undefined
+
 msgid "Liechtenstein"
 msgstr "Λιχτενστάιν"
 
 #. undefined
+
 msgid "Lithuania"
 msgstr "Λιθουανία"
 
 #. undefined
+
 msgid "Luxembourg"
 msgstr "Λουξεμβούργο"
 
 #. undefined
+
 msgid "Malta"
 msgstr "Μάλτα"
 
 #. undefined
+
 msgid "Monaco"
 msgstr "Μονακό"
 
 #. undefined
+
 msgid "Moldova, Republic of"
 msgstr "Μολδαβία, Δημοκρατία της"
 
 #. undefined
+
 msgid "Montenegro"
 msgstr "Μαυροβούνιο"
 
 #. undefined
+
 msgid "Netherlands"
 msgstr "Ολλανδία"
 
 #. undefined
+
 msgid "Norway"
 msgstr "Νορβηγία"
 
 #. undefined
+
 msgid "Poland"
 msgstr "Πολωνία"
 
 #. undefined
+
 msgid "Portugal"
 msgstr "Πορτογαλία"
 
 #. undefined
+
 msgid "Republic of North Macedonia"
 msgstr "Δημοκρατία της Βόρειας Μακεδονίας"
 
 #. undefined
+
 msgid "Romania"
 msgstr "Ρουμανία"
 
 #. undefined
+
 msgid "Russian Federation"
 msgstr "Ρωσική Ομοσπονδία"
 
 #. undefined
+
 msgid "San Marino"
 msgstr "Άγιος Μαρίνος"
 
 #. undefined
+
 msgid "Serbia"
 msgstr "Σερβία"
 
 #. undefined
+
 msgid "Slovakia"
 msgstr "Σλοβακία"
 
 #. undefined
+
 msgid "Slovenia"
 msgstr "Σλοβενία"
 
 #. undefined
+
 msgid "Spain"
 msgstr "Ισπανία"
 
 #. undefined
+
 msgid "Sweden"
 msgstr "Σουηδία"
 
 #. undefined
+
 msgid "Switzerland"
 msgstr "Ελβετία"
 
 #. undefined
+
 msgid "Turkiye"
 msgstr "Τουρκία"
 
 #. undefined
+
 msgid "Türkiye"
 msgstr "Türkiye"
 
 #. undefined
+
 msgid "United Kingdom"
 msgstr "Ηνωμένο Βασίλειο"
 
 #. undefined
+
 msgid "Ukraine"
 msgstr "Ουκρανία"
 
 #. undefined
+
 msgid "Europe"
 msgstr "Ευρώπη"
 
 #. undefined
+
 msgid "Macro-Transnational Regions"
 msgstr "Μακρο-Διεθνικές Περιφέρειες"
 
 #. undefined
+
 msgid "Biogeographical Regions"
 msgstr "Βιογεωγραφικές Περιφέρειες"
 
 #. undefined
+
 msgid "Subnational Regions"
 msgstr "Υποεθνικές Περιφέρειες"
 
 #. undefined
+
 msgid "Municipality Name"
 msgstr "Όνομα Δήμου"
 
 #. undefined
+
 msgid "Northern Periphery and Arctic"
 msgstr "Βόρεια Περιφέρεια και Αρκτική"
 
 #. undefined
+
 msgid "Baltic Sea"
 msgstr "Βαλτική Θάλασσα"
 
 #. undefined
+
 msgid "North West Europe"
 msgstr "Βορειοδυτική Ευρώπη"
 
 #. undefined
+
 msgid "North Sea"
 msgstr "Βόρεια Θάλασσα"
 
 #. undefined
+
 msgid "Atlantic Area"
 msgstr "Περιοχή του Ατλαντικού"
 
 #. undefined
+
 msgid "Alpine Space"
 msgstr "Αλπικός Χώρος"
 
 #. undefined
+
 msgid "Central Europe"
 msgstr "Κεντρικής Ευρώπης"
 
 #. undefined
+
 msgid "South West Europe"
 msgstr "Νοτιοδυτική Ευρώπη"
 
 #. undefined
+
 msgid "Mediterranean (Euro-Med)"
 msgstr "Μεσογειακή (Ευρωμεσογειακή)"
 
 #. undefined
+
 msgid "Danube Area"
 msgstr "Περιοχή Δούναβη"
 
 #. undefined
+
 msgid "Adriatic-Ionian"
 msgstr "Αδριατικής-Ιονίου"
 
 #. undefined
+
 msgid "Mediterranean Sea Basin (NEXT)"
 msgstr "Λεκάνη της Μεσογείου (ΕΠΟΜΕΝΟ)"
 
 #. undefined
+
 msgid "Black Sea Basin (NEXT)"
 msgstr "Λεκάνη της Μαύρης Θάλασσας (ΕΠΟΜΕΝΟ)"
 
 #. undefined
+
 msgid "Outermost Regions"
 msgstr "Εξόχως απόκεντρες Περιφέρειες"
 
 #. undefined
+
 msgid "Alpine"
 msgstr "αλπικός"
 
 #. undefined
+
 msgid "Anatolian"
 msgstr "Ανατολίας"
 
 #. undefined
+
 msgid "Arctic"
 msgstr "αρκτικός"
 
 #. undefined
+
 msgid "Atlantic"
 msgstr "ατλαντικός"
 
 #. undefined
+
 msgid "Boreal"
 msgstr "Boreal"
 
 #. undefined
+
 msgid "Continental"
 msgstr "Ευρωπαϊκός"
 
 #. undefined
+
 msgid "Macaronesia"
 msgstr "Μακαρονησία"
 
 #. undefined
+
 msgid "Mediterranean"
 msgstr "μεσογειακός"
 
 #. undefined
+
 msgid "Pannonian"
 msgstr "Παννονική"
 
 #. undefined
+
 msgid "Steppic"
 msgstr "Steppic"
 
 #. undefined
+
 msgid "Transnational region (stretching across country borders)"
 msgstr "Διακρατική περιοχή (εκτείνεται πέρα ​​από τα σύνορα της χώρας)"
 
 #. undefined
+
 msgid "National"
 msgstr "Εθνικός"
 
 #. undefined
+
 msgid "Sub National Regions"
 msgstr "Υποεθνικές Περιφέρειες"
 
 #. undefined
+
 msgid "Local (e.g. city or municipal level)"
 msgstr "Τοπικό (π.χ. επίπεδο πόλης ή δήμου)"
+
+#. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr ""
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr ""
 
 #. undefined
 #: health_menu:43
@@ -1404,7 +1548,8 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "ΠΡΟΣΑΡΜΟΓΗ ΣΤΟΥΣ ΤΟΜΕΙΣ ΠΟΛΙΤΙΚΗΣ ΤΗΣ ΕΕ"
 
 #. undefined
-#: health_menu:9 site_menu:10
+#: health_menu:9
+#: site_menu:10
 msgid "About"
 msgstr "Για"
 
@@ -1509,7 +1654,8 @@ msgid "Countries, Transnational regions"
 msgstr "Χώρες, Διακρατικές περιοχές"
 
 #. undefined
-#: health_menu:18 site_menu:45
+#: health_menu:18
+#: site_menu:45
 msgid "Country Profiles"
 msgstr "Προφίλ χώρας"
 
@@ -1569,7 +1715,8 @@ msgid "Mission Portal"
 msgstr "Πύλη αποστολής"
 
 #. undefined
-#: site_menu:43 site_menu:43
+#: site_menu:43
+#: site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "ΠΕΡΙΦΕΡΕΙΑΚΗ ΠΟΛΙΤΙΚΗ ΕΕ"
 
@@ -1620,11 +1767,8 @@ msgstr "Ενέργεια"
 
 #. undefined
 #: site_menu:67
-msgid ""
-"Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr ""
-"Η ευπάθεια της Ευρώπης στις επιπτώσεις της κλιματικής αλλαγής εμφανίζεται "
-"εκτός Ευρώπης"
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Η ευπάθεια της Ευρώπης στις επιπτώσεις της κλιματικής αλλαγής εμφανίζεται εκτός Ευρώπης"
 
 #. undefined
 #: health_menu:32
@@ -1764,8 +1908,7 @@ msgstr "Εθνικές Πολιτικές"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr ""
-"Εθνικά συστήματα προειδοποίησης για τη θερμική υγεία και σχέδια δράσης"
+msgstr "Εθνικά συστήματα προειδοποίησης για τη θερμική υγεία και σχέδια δράσης"
 
 #. undefined
 #: health_menu:17
@@ -1913,7 +2056,8 @@ msgid "Water management"
 msgstr "Διαχείριση νερού"
 
 #. undefined
-#: health_menu:46 site_menu:93
+#: health_menu:46
+#: site_menu:93
 msgid "Webinars"
 msgstr "Διαδικτυακά σεμινάρια"
 
@@ -1943,86 +2087,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Έκθεση ευάλωτων ομάδων σε κλιματικούς κινδύνους"
 
 #. undefined
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "ΒΑΣΙΚΕΣ ΔΡΑΣΕΙΣ ΤΗΣ ΕΕ"
 
 #. undefined
+#: 
 msgid "Just resilience"
 msgstr "Μόνο ανθεκτικότητα"
 
 #. undefined
+#: 
 msgid "Nature-based solutions"
 msgstr "Λύσεις βασισμένες στη φύση"
 
 #. undefined
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Οικονομικές απώλειες και θάνατοι"
 
 #. undefined
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Στρατηγικοί στόχοι 2030"
 
 #. undefined
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Διαθεσιμότητα αστικών χώρων πρασίνου σε ευπαθείς ομάδες"
 
 #. undefined
+#: 
 msgid "Transnational, National, local"
 msgstr "Διακρατικό, Εθνικό, Τοπικό"
 
 #. undefined
+#: 
 msgid "Aero-allergens"
 msgstr "Αεροαλλεργιογόνα"
 
 #. undefined
+#: 
 msgid "Heat"
 msgstr "Θερμότητα"
 
 #. undefined
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Προσβασιμότητα νοσοκομείων στην Ευρώπη"
 
 #. undefined
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ΠΡΟΣΑΡΜΟΓΗ ΣΤΟ ΔΑΣΟΚΟΜΙΚΟ ΤΟΜΕΑ"
 
 #. undefined
+#: 
 msgid "Ground-level ozone"
 msgstr "Επίγειο όζον"
 
 #. undefined
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Πρόβλεψη επίγειου όζοντος (CAMS)"
 
 #. undefined
+#: 
 msgid "Pollution"
 msgstr "Ρύπανση"
 
 #. undefined
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Επιπτώσεις για την ασφάλεια και την υγεία στην εργασία"
 
 #. undefined
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Σχέδιο εργασιών του Παρατηρητηρίου για το 2023-24"
 
 #. undefined
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Πρόβλεψη επίγειου PM2,5 (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Πρόβλεψη PM10 σε επίπεδο εδάφους (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Πρόβλεψη NO2 σε επίπεδο εδάφους (CAMS)"
 
 #. undefined
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Έκθεση ΕΟΧ 2022 για το κλίμα και την υγεία"
 
 #. undefined
+#: 
 msgid "European environment and health atlas"
 msgstr "Ευρωπαϊκός άτλαντας περιβάλλοντος και υγείας"
 
@@ -2059,12 +2224,8 @@ msgstr "1.2 Ρύθμιση της διαδικασίας με δομημένο �
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid ""
-"1.3 Estimating human and financial resources needed and identifying "
-"potential sources of long-term funding"
-msgstr ""
-"1.3 Εκτίμηση ανθρώπινων και οικονομικών πόρων που απαιτούνται και εντοπισμός"
-" πιθανών πηγών μακροπρόθεσμης χρηματοδότησης"
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 Εκτίμηση ανθρώπινων και οικονομικών πόρων που απαιτούνται και εντοπισμός πιθανών πηγών μακροπρόθεσμης χρηματοδότησης"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
@@ -2124,14 +2285,12 @@ msgstr "12 περιφέρειες"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr ""
-"2. Αξιολόγηση των κινδύνων και των τρωτών σημείων της κλιματικής αλλαγής"
+msgstr "2. Αξιολόγηση των κινδύνων και των τρωτών σημείων της κλιματικής αλλαγής"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
 msgid "2.1 Recognizing past and present climate impacts"
-msgstr ""
-"2.1 Αναγνώριση των κλιματικών επιπτώσεων του παρελθόντος και του παρόντος"
+msgstr "2.1 Αναγνώριση των κλιματικών επιπτώσεων του παρελθόντος και του παρόντος"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:168
@@ -2140,11 +2299,8 @@ msgstr "2.1 Κατανόηση των κινδύνων για το κλίμα"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid ""
-"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr ""
-"2.2 Πλαίσια για την αξιολόγηση των κλιματικών επιπτώσεων, των τρωτών σημείων"
-" και των κινδύνων"
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Πλαίσια για την αξιολόγηση των κλιματικών επιπτώσεων, των τρωτών σημείων και των κινδύνων"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -2153,12 +2309,8 @@ msgstr "2.2 Κατανόηση των κλιματικών προβολών κα
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid ""
-"2.3 General sequence for climate impacts, vulnerabilities and risk "
-"assessments"
-msgstr ""
-"2.3 Γενική ακολουθία για τις κλιματικές επιπτώσεις, τα τρωτά σημεία και τις "
-"εκτιμήσεις κινδύνου"
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
+msgstr "2.3 Γενική ακολουθία για τις κλιματικές επιπτώσεις, τα τρωτά σημεία και τις εκτιμήσεις κινδύνου"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -2192,25 +2344,18 @@ msgstr "2.6 Προσδιορισμός βασικών ανησυχιών προ�
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid ""
-"2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr ""
-"2.6 Προσδιορισμός βασικών προβλημάτων προσαρμογής και καθορισμός στρατηγικής"
-" κατεύθυνσης"
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 Προσδιορισμός βασικών προβλημάτων προσαρμογής και καθορισμός στρατηγικής κατεύθυνσης"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr ""
-"2.7 Αξιολόγηση των κινδύνων και των τρωτών σημείων της κλιματικής αλλαγής: "
-"Αυτοέλεγχος"
+msgstr "2.7 Αξιολόγηση των κινδύνων και των τρωτών σημείων της κλιματικής αλλαγής: Αυτοέλεγχος"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr ""
-"2.7 Αξιολόγηση των κινδύνων και των τρωτών σημείων της κλιματικής αλλαγής: "
-"Αυτοέλεγχος"
+msgstr "2.7 Αξιολόγηση των κινδύνων και των τρωτών σημείων της κλιματικής αλλαγής: Αυτοέλεγχος"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -2251,12 +2396,8 @@ msgstr "4. Αξιολόγηση επιλογών προσαρμογής"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid ""
-"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
-"benefits and efforts"
-msgstr ""
-"4.1 Αξιολόγηση πιθανών επιλογών προσαρμογής όσον αφορά τα αποτελέσματα, το "
-"χρόνο, το κόστος, τα οφέλη και τις προσπάθειες"
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Αξιολόγηση πιθανών επιλογών προσαρμογής όσον αφορά τα αποτελέσματα, το χρόνο, το κόστος, τα οφέλη και τις προσπάθειες"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -2276,8 +2417,7 @@ msgstr "4.2 Προτεραιότητα επιλογών προσαρμογής �
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
 msgid "4.3 Preparing a strategy document and getting political approval"
-msgstr ""
-"4.3 Προετοιμασία ενός εγγράφου στρατηγικής και λήψη πολιτικής έγκρισης"
+msgstr "4.3 Προετοιμασία ενός εγγράφου στρατηγικής και λήψη πολιτικής έγκρισης"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
@@ -2317,8 +2457,7 @@ msgstr "5.2 Εύρεση παραδειγμάτων σχεδίων δράσης 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr ""
-"5.2 Οργάνωση διακυβέρνησης της εφαρμογής σε όλους τους τομείς και τα επίπεδα"
+msgstr "5.2 Οργάνωση διακυβέρνησης της εφαρμογής σε όλους τους τομείς και τα επίπεδα"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
@@ -2327,18 +2466,13 @@ msgstr "5.3 Ενσωμάτωση της προσαρμογής στις αστι
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid ""
-"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
-"policies"
-msgstr ""
-"5.3 Mainstreaming: Ενσωμάτωση της προσαρμογής στα μέσα και τις τομεακές "
-"πολιτικές"
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Mainstreaming: Ενσωμάτωση της προσαρμογής στα μέσα και τις τομεακές πολιτικές"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
 msgid "5.4 Addressing climate change through adaptation and mitigation"
-msgstr ""
-"5.4 Αντιμετώπιση της κλιματικής αλλαγής μέσω προσαρμογής και μετριασμού"
+msgstr "5.4 Αντιμετώπιση της κλιματικής αλλαγής μέσω προσαρμογής και μετριασμού"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:269
@@ -2398,9 +2532,7 @@ msgstr "6.4 Κοινοποίηση αποτελεσμάτων για ενημέ�
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr ""
-"6.4 Χρήση αποτελεσμάτων παρακολούθησης για την ενίσχυση της διαδικασίας "
-"προσαρμογής"
+msgstr "6.4 Χρήση αποτελεσμάτων παρακολούθησης για την ενίσχυση της διαδικασίας προσαρμογής"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
@@ -2414,36 +2546,18 @@ msgstr "6.5 Παρακολούθηση και αξιολόγηση προσαρ�
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid ""
-"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 62."
-msgstr ""
-"Μια τιμή για την ποιότητα εικόνων 2x υψηλής πυκνότητας pixel, από 1 "
-"(χαμηλότερη) έως 95 (υψηλότερη). Η τιμή 0 θα σημαίνει ότι θα χρησιμοποιηθεί "
-"η προεπιλογή του plone.scaling, η οποία επί του παρόντος είναι 62."
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "Μια τιμή για την ποιότητα εικόνων 2x υψηλής πυκνότητας pixel, από 1 (χαμηλότερη) έως 95 (υψηλότερη). Η τιμή 0 θα σημαίνει ότι θα χρησιμοποιηθεί η προεπιλογή του plone.scaling, η οποία επί του παρόντος είναι 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid ""
-"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 51."
-msgstr ""
-"Μια τιμή για την ποιότητα εικόνων 3x υψηλής πυκνότητας pixel, από 1 "
-"(χαμηλότερη) έως 95 (υψηλότερη). Η τιμή 0 θα σημαίνει ότι θα χρησιμοποιηθεί "
-"η προεπιλογή του plone.scaling, η οποία επί του παρόντος είναι 51."
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "Μια τιμή για την ποιότητα εικόνων 3x υψηλής πυκνότητας pixel, από 1 (χαμηλότερη) έως 95 (υψηλότερη). Η τιμή 0 θα σημαίνει ότι θα χρησιμοποιηθεί η προεπιλογή του plone.scaling, η οποία επί του παρόντος είναι 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid ""
-"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
-" value of 0 will mean plone.scaling's default will be used, which is "
-"currently 88."
-msgstr ""
-"Μια τιμή για την ποιότητα των εικόνων με κλίμακα, από 1 (χαμηλότερη) έως 95 "
-"(υψηλότερη). Η τιμή 0 θα σημαίνει ότι θα χρησιμοποιηθεί η προεπιλογή του "
-"plone.scaling, η οποία επί του παρόντος είναι 88."
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "Μια τιμή για την ποιότητα των εικόνων με κλίμακα, από 1 (χαμηλότερη) έως 95 (υψηλότερη). Η τιμή 0 θα σημαίνει ότι θα χρησιμοποιηθεί η προεπιλογή του plone.scaling, η οποία επί του παρόντος είναι 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2472,8 +2586,7 @@ msgstr "A3: Συντονιστική συνεργασία και δίκτυα"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid ""
-"A3: Governance and Institutional: Coordination cooperation and networks"
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
 msgstr "A3: Διακυβέρνηση και θεσμικά: Συντονιστική συνεργασία και δίκτυα"
 
 #. undefined
@@ -2583,14 +2696,12 @@ msgstr "Αξιολόγηση των κινδύνων και των τρωτών 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:66
 msgid "Assessing risks and vulnerability <br /> to climate change"
-msgstr ""
-"Αξιολόγηση των κινδύνων και της ευπάθειας <br /> στην κλιματική αλλαγή"
+msgstr "Αξιολόγηση των κινδύνων και της ευπάθειας <br /> στην κλιματική αλλαγή"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:570
 msgid "B1: Economic and Finance: Financing incentive instruments"
-msgstr ""
-"Β1: Οικονομικά και Χρηματοοικονομικά: Μέσα παροχής κινήτρων χρηματοδότησης"
+msgstr "Β1: Οικονομικά και Χρηματοοικονομικά: Μέσα παροχής κινήτρων χρηματοδότησης"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:586
@@ -2600,9 +2711,7 @@ msgstr "Β1: Χρηματοδοτικά μέσα κινήτρων"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr ""
-"Β2: Οικονομικά και χρηματοοικονομικά: Μέσα ασφάλισης και επιμερισμού "
-"κινδύνου"
+msgstr "Β2: Οικονομικά και χρηματοοικονομικά: Μέσα ασφάλισης και επιμερισμού κινδύνου"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2646,29 +2755,18 @@ msgstr "Εικονογραφήσεις Μελέτης Περίπτωσης"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid ""
-"Case developed and implemented and partially funded as a Climate Change "
-"Adaptation measure."
-msgstr ""
-"Υπόθεση που αναπτύχθηκε και εφαρμόστηκε και χρηματοδοτήθηκε εν μέρει ως "
-"μέτρο προσαρμογής στην κλιματική αλλαγή."
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Υπόθεση που αναπτύχθηκε και εφαρμόστηκε και χρηματοδοτήθηκε εν μέρει ως μέτρο προσαρμογής στην κλιματική αλλαγή."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr ""
-"Περίπτωση που αναπτύχθηκε και εφαρμόστηκε ως Μέτρο Προσαρμογής στην "
-"Κλιματική Αλλαγή."
+msgstr "Περίπτωση που αναπτύχθηκε και εφαρμόστηκε ως Μέτρο Προσαρμογής στην Κλιματική Αλλαγή."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid ""
-"Case mainly developed and implemented because of other policy objectives, "
-"but with significant consideration of Climate Change Adaptation aspects"
-msgstr ""
-"Η υπόθεση αναπτύχθηκε και εφαρμόστηκε κυρίως λόγω άλλων στόχων πολιτικής, "
-"αλλά με σημαντική εξέταση των πτυχών της προσαρμογής στην αλλαγή του "
-"κλίματος"
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Η υπόθεση αναπτύχθηκε και εφαρμόστηκε κυρίως λόγω άλλων στόχων πολιτικής, αλλά με σημαντική εξέταση των πτυχών της προσαρμογής στην αλλαγή του κλίματος"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2677,11 +2775,8 @@ msgstr "Περιπτωσιολογικές μελέτες και επιλογέ�
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
-msgid ""
-"Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-"Μελέτες περιπτώσεων που συλλέχθηκαν σε εθνικό επίπεδο στην Ισπανία, "
-"παρέχονται από το AdapteCCA.es"
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Μελέτες περιπτώσεων που συλλέχθηκαν σε εθνικό επίπεδο στην Ισπανία, παρέχονται από το AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -2741,8 +2836,7 @@ msgstr "Σχόλια:"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr ""
-"Κοινοί ορισμοί των όρων που χρησιμοποιούνται συχνά στο γραφείο συμψηφισμού."
+msgstr "Κοινοί ορισμοί των όρων που χρησιμοποιούνται συχνά στο γραφείο συμψηφισμού."
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -2766,11 +2860,8 @@ msgstr "Δ1: Πράσινες επιλογές"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid ""
-"D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr ""
-"Δ1: Λύσεις βασισμένες στη φύση και προσεγγίσεις με βάση το οικοσύστημα: "
-"Πράσινες επιλογές"
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr "Δ1: Λύσεις βασισμένες στη φύση και προσεγγίσεις με βάση το οικοσύστημα: Πράσινες επιλογές"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2779,11 +2870,8 @@ msgstr "Δ2: Μπλε επιλογές"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid ""
-"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr ""
-"Δ2: Λύσεις βασισμένες στη φύση και προσεγγίσεις με βάση το οικοσύστημα: Μπλε"
-" επιλογές"
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr "Δ2: Λύσεις βασισμένες στη φύση και προσεγγίσεις με βάση το οικοσύστημα: Μπλε επιλογές"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2825,8 +2913,7 @@ msgstr "Ε1: Ενημέρωση και ευαισθητοποίηση"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid ""
-"E1: Knowledge and behavioural change: Information and awareness raising"
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
 msgstr "Ε1: Γνώση και αλλαγή συμπεριφοράς: Ενημέρωση και ευαισθητοποίηση"
 
 #. undefined
@@ -2836,12 +2923,8 @@ msgstr "Ε2: Ενδυνάμωση της ικανότητας και πρακτ�
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid ""
-"E2: Knowledge and behavioural change: Capacity building empowering and "
-"lifestyle practices"
-msgstr ""
-"Ε2: Γνώση και αλλαγή συμπεριφοράς: Ενδυνάμωση οικοδόμησης ικανοτήτων και "
-"πρακτικές τρόπου ζωής"
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "Ε2: Γνώση και αλλαγή συμπεριφοράς: Ενδυνάμωση οικοδόμησης ικανοτήτων και πρακτικές τρόπου ζωής"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2876,25 +2959,13 @@ msgstr "Εκδηλώσεις"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid ""
-"Explore Forest adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Εξερευνήστε περιπτωσιολογικές μελέτες προσαρμογής στο δάσος όσον αφορά τη "
-"γεωγραφική θέση, τη θεματική κάλυψη και τη σύνδεση με επιλογές προσαρμογής "
-"μέσω της Εξερεύνησης μελέτης περίπτωσης που βασίζεται σε χάρτη."
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Εξερευνήστε περιπτωσιολογικές μελέτες προσαρμογής στο δάσος όσον αφορά τη γεωγραφική θέση, τη θεματική κάλυψη και τη σύνδεση με επιλογές προσαρμογής μέσω της Εξερεύνησης μελέτης περίπτωσης που βασίζεται σε χάρτη."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid ""
-"Explore Urban adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Εξερευνήστε τις μελέτες περιπτώσεων αστικής προσαρμογής όσον αφορά τη "
-"γεωγραφική θέση, τη θεματική κάλυψη και τη σύνδεση με επιλογές προσαρμογής "
-"μέσω της Εξερεύνησης μελέτης περίπτωσης που βασίζεται σε χάρτη."
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Εξερευνήστε τις μελέτες περιπτώσεων αστικής προσαρμογής όσον αφορά τη γεωγραφική θέση, τη θεματική κάλυψη και τη σύνδεση με επιλογές προσαρμογής μέσω της Εξερεύνησης μελέτης περίπτωσης που βασίζεται σε χάρτη."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2919,22 +2990,13 @@ msgstr "Πράσινες Πόλεις του FAO"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid ""
-"FISE web portal will help us to improve the health and resilience of our "
-"forests, which play a vital role in protecting our biodiversity and in "
-"mitigating climate change."
-msgstr ""
-"Η διαδικτυακή πύλη FISE θα μας βοηθήσει να βελτιώσουμε την υγεία και την "
-"ανθεκτικότητα των δασών μας, τα οποία διαδραματίζουν ζωτικό ρόλο στην "
-"προστασία της βιοποικιλότητάς μας και στον μετριασμό της κλιματικής αλλαγής."
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "Η διαδικτυακή πύλη FISE θα μας βοηθήσει να βελτιώσουμε την υγεία και την ανθεκτικότητα των δασών μας, τα οποία διαδραματίζουν ζωτικό ρόλο στην προστασία της βιοποικιλότητάς μας και στον μετριασμό της κλιματικής αλλαγής."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid ""
-"Find out how to contribute different types of information to Climate-ADAPT."
-msgstr ""
-"Μάθετε πώς να συνεισφέρετε διαφορετικούς τύπους πληροφοριών στο Climate-"
-"ADAPT."
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
+msgstr "Μάθετε πώς να συνεισφέρετε διαφορετικούς τύπους πληροφοριών στο Climate-ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
@@ -3086,9 +3148,7 @@ msgstr "Προσδιορισμός επιλογών προσαρμογής"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:38
 msgid "If you are new user the video tutorials can help you get started."
-msgstr ""
-"Εάν είστε νέος χρήστης, τα εκπαιδευτικά βίντεο μπορούν να σας βοηθήσουν να "
-"ξεκινήσετε."
+msgstr "Εάν είστε νέος χρήστης, τα εκπαιδευτικά βίντεο μπορούν να σας βοηθήσουν να ξεκινήσετε."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:92
@@ -3179,41 +3239,23 @@ msgstr "Συστήματα χρήσης γης και τροφίμων"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in forests."
-msgstr ""
-"Μάθετε περισσότερα σχετικά με τις διαφορετικές επιλογές προσαρμογής στις "
-"διάφορες επιπτώσεις της κλιματικής αλλαγής στα δάση."
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Μάθετε περισσότερα σχετικά με τις διαφορετικές επιλογές προσαρμογής στις διάφορες επιπτώσεις της κλιματικής αλλαγής στα δάση."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in urban areas."
-msgstr ""
-"Μάθετε περισσότερα σχετικά με τις διαφορετικές επιλογές προσαρμογής στις "
-"διάφορες επιπτώσεις της κλιματικής αλλαγής στις αστικές περιοχές."
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Μάθετε περισσότερα σχετικά με τις διαφορετικές επιλογές προσαρμογής στις διάφορες επιπτώσεις της κλιματικής αλλαγής στις αστικές περιοχές."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid ""
-"Learn more about how cities can adapt to climate change to become future-"
-"proof, climate-resilient cities"
-msgstr ""
-"Μάθετε περισσότερα για το πώς οι πόλεις μπορούν να προσαρμοστούν στην "
-"κλιματική αλλαγή για να γίνουν πόλεις ανθεκτικές στο μέλλον, ανθεκτικές στο "
-"κλίμα"
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Μάθετε περισσότερα για το πώς οι πόλεις μπορούν να προσαρμοστούν στην κλιματική αλλαγή για να γίνουν πόλεις ανθεκτικές στο μέλλον, ανθεκτικές στο κλίμα"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid ""
-"Learn more about how forests can adapt to climate change to stay healthy, "
-"diverse, resilient and productive"
-msgstr ""
-"Μάθετε περισσότερα για το πώς τα δάση μπορούν να προσαρμοστούν στην "
-"κλιματική αλλαγή για να παραμείνουν υγιή, ποικιλόμορφα, ανθεκτικά και "
-"παραγωγικά"
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Μάθετε περισσότερα για το πώς τα δάση μπορούν να προσαρμοστούν στην κλιματική αλλαγή για να παραμείνουν υγιή, ποικιλόμορφα, ανθεκτικά και παραγωγικά"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -3275,11 +3317,8 @@ msgstr "Ορεινές περιοχές"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid ""
-"National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
-"Η εθνική πολιτική προσαρμογής δεν αναφέρθηκε πέρα ​​από την υποχρεωτική "
-"υποβολή εκθέσεων το 2023"
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "Η εθνική πολιτική προσαρμογής δεν αναφέρθηκε πέρα ​​από την υποχρεωτική υποβολή εκθέσεων το 2023"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3524,12 +3563,8 @@ msgstr "Επιλέξτε μια χώρα για να μεταβείτε απευ
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid ""
-"Select the sectors for which you want to receive a notification email when "
-"an item is modified."
-msgstr ""
-"Επιλέξτε τους τομείς για τους οποίους θέλετε να λαμβάνετε ένα μήνυμα "
-"ηλεκτρονικού ταχυδρομείου ειδοποίησης όταν τροποποιείται ένα στοιχείο."
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Επιλέξτε τους τομείς για τους οποίους θέλετε να λαμβάνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου ειδοποίησης όταν τροποποιείται ένα στοιχείο."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3563,12 +3598,8 @@ msgstr "Κοινωνικά: Ενημερωτικά"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid ""
-"Specify all allowed maximum image dimensions, one per line. The required "
-"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
-"Καθορίστε όλες τις μέγιστες επιτρεπόμενες διαστάσεις εικόνας, μία ανά "
-"γραμμή. Η απαιτούμενη μορφή είναι &lt;name&gt; &lt;πλάτος&gt;:&lt;ύψος&gt;."
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Καθορίστε όλες τις μέγιστες επιτρεπόμενες διαστάσεις εικόνας, μία ανά γραμμή. Η απαιτούμενη μορφή είναι &lt;name&gt; &lt;πλάτος&gt;:&lt;ύψος&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3617,73 +3648,28 @@ msgstr "Το Σύμφωνο των Δημάρχων της ΕΕ"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid ""
-"The EU finances adaptation to climate change in Europe through a wide range "
-"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
-"at least 25% of the European budget is climate-related expenditure. "
-"Therefore, Climate adaptation actions have to be integrated into all the "
-"major EU spending programmes, and a tracking system is put in place to "
-"guarantee these objectives are met."
-msgstr ""
-"Η ΕΕ χρηματοδοτεί την προσαρμογή στην κλιματική αλλαγή στην Ευρώπη μέσω ενός"
-" ευρέος φάσματος μέσων. Το πολυετές δημοσιονομικό πλαίσιο 2021-2027 "
-"διασφαλίζει ότι τουλάχιστον το 25% του ευρωπαϊκού προϋπολογισμού είναι "
-"δαπάνες που σχετίζονται με το κλίμα. Ως εκ τούτου, οι δράσεις για την "
-"προσαρμογή του κλίματος πρέπει να ενσωματωθούν σε όλα τα μεγάλα προγράμματα "
-"δαπανών της ΕΕ και να τεθεί σε εφαρμογή ένα σύστημα παρακολούθησης που να "
-"εγγυάται την επίτευξη αυτών των στόχων."
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "Η ΕΕ χρηματοδοτεί την προσαρμογή στην κλιματική αλλαγή στην Ευρώπη μέσω ενός ευρέος φάσματος μέσων. Το πολυετές δημοσιονομικό πλαίσιο 2021-2027 διασφαλίζει ότι τουλάχιστον το 25% του ευρωπαϊκού προϋπολογισμού είναι δαπάνες που σχετίζονται με το κλίμα. Ως εκ τούτου, οι δράσεις για την προσαρμογή του κλίματος πρέπει να ενσωματωθούν σε όλα τα μεγάλα προγράμματα δαπανών της ΕΕ και να τεθεί σε εφαρμογή ένα σύστημα παρακολούθησης που να εγγυάται την επίτευξη αυτών των στόχων."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid ""
-"The EU has several policy frameworks in place to increase the resilience of "
-"European cities and their inhabitants, including the EU Adaptation Strategy "
-"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
-" to improve knowledge and data availability on urban vulnerability and "
-"adaptive capacity. It also provides financial and technical support to "
-"policy makers and practitioners to make cities more resilient and adaptive."
-msgstr ""
-"Η ΕΕ διαθέτει πολλά πλαίσια πολιτικής για την αύξηση της ανθεκτικότητας των "
-"ευρωπαϊκών πόλεων και των κατοίκων τους, συμπεριλαμβανομένης της στρατηγικής"
-" προσαρμογής της ΕΕ και της στρατηγικής της ΕΕ για τη βιοποικιλότητα 2030, "
-"και έχει αναπτύξει διάφορες πρωτοβουλίες για τη βελτίωση της γνώσης και της "
-"διαθεσιμότητας δεδομένων σχετικά με την αστική ευπάθεια και την "
-"προσαρμοστική ικανότητα. Παρέχει επίσης οικονομική και τεχνική υποστήριξη σε"
-" υπεύθυνους χάραξης πολιτικής και επαγγελματίες για να κάνουν τις πόλεις πιο"
-" ανθεκτικές και προσαρμοστικές."
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "Η ΕΕ διαθέτει πολλά πλαίσια πολιτικής για την αύξηση της ανθεκτικότητας των ευρωπαϊκών πόλεων και των κατοίκων τους, συμπεριλαμβανομένης της στρατηγικής προσαρμογής της ΕΕ και της στρατηγικής της ΕΕ για τη βιοποικιλότητα 2030, και έχει αναπτύξει διάφορες πρωτοβουλίες για τη βελτίωση της γνώσης και της διαθεσιμότητας δεδομένων σχετικά με την αστική ευπάθεια και την προσαρμοστική ικανότητα. Παρέχει επίσης οικονομική και τεχνική υποστήριξη σε υπεύθυνους χάραξης πολιτικής και επαγγελματίες για να κάνουν τις πόλεις πιο ανθεκτικές και προσαρμοστικές."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices from the Copernicus Climate Change Service in support of "
-"climate change adaptation."
-msgstr ""
-"Η European Climate Data Explorer παρέχει διαδραστική πρόσβαση σε πολλούς "
-"κλιματικούς δείκτες από την Υπηρεσία Κλιματικής Αλλαγής Copernicus για την "
-"υποστήριξη της προσαρμογής στην κλιματική αλλαγή."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "Η European Climate Data Explorer παρέχει διαδραστική πρόσβαση σε πολλούς κλιματικούς δείκτες από την Υπηρεσία Κλιματικής Αλλαγής Copernicus για την υποστήριξη της προσαρμογής στην κλιματική αλλαγή."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices like fire weather indices in support of climate change "
-"adaptation in forests."
-msgstr ""
-"Ο European Climate Data Explorer παρέχει διαδραστική πρόσβαση σε πολλούς "
-"κλιματικούς δείκτες, όπως δείκτες καιρού πυρκαγιάς, για την υποστήριξη της "
-"προσαρμογής στην κλιματική αλλαγή στα δάση."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "Ο European Climate Data Explorer παρέχει διαδραστική πρόσβαση σε πολλούς κλιματικούς δείκτες, όπως δείκτες καιρού πυρκαγιάς, για την υποστήριξη της προσαρμογής στην κλιματική αλλαγή στα δάση."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid ""
-"The European Drought Observatory (EDO) contains drought-relevant "
-"information. These give an overview of the situation in the EU about "
-"imminent droughts."
-msgstr ""
-"Το Ευρωπαϊκό Παρατηρητήριο Ξηρασίας (EDO) περιέχει πληροφορίες σχετικές με "
-"την ξηρασία. Αυτά παρέχουν μια επισκόπηση της κατάστασης στην ΕΕ σχετικά με "
-"τις επικείμενες ξηρασίες."
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "Το Ευρωπαϊκό Παρατηρητήριο Ξηρασίας (EDO) περιέχει πληροφορίες σχετικές με την ξηρασία. Αυτά παρέχουν μια επισκόπηση της κατάστασης στην ΕΕ σχετικά με τις επικείμενες ξηρασίες."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3692,59 +3678,23 @@ msgstr "Το Ευρωπαϊκό Σύστημα Πληροφοριών για τ�
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid ""
-"The European Forest Fire Information System (EFFIS) supports the protection "
-"of forests against fires and provides the EU with harmonized information on "
-"forest fires"
-msgstr ""
-"Το Ευρωπαϊκό Σύστημα Πληροφοριών για τις Πυρκαγιές των Δασών (EFFIS) "
-"υποστηρίζει την προστασία των δασών από πυρκαγιές και παρέχει στην ΕΕ "
-"εναρμονισμένες πληροφορίες για τις δασικές πυρκαγιές"
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Το Ευρωπαϊκό Σύστημα Πληροφοριών για τις Πυρκαγιές των Δασών (EFFIS) υποστηρίζει την προστασία των δασών από πυρκαγιές και παρέχει στην ΕΕ εναρμονισμένες πληροφορίες για τις δασικές πυρκαγιές"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid ""
-"The Urban Adaptation Map Viewer provides an overview of the current and "
-"future climate hazards, the vulnerability of the cities to these hazards and"
-" their adaptive capacity."
-msgstr ""
-"Το Urban Adaptation Map Viewer παρέχει μια επισκόπηση των σημερινών και "
-"μελλοντικών κλιματικών κινδύνων, της ευπάθειας των πόλεων σε αυτούς τους "
-"κινδύνους και της προσαρμοστικής τους ικανότητας."
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "Το Urban Adaptation Map Viewer παρέχει μια επισκόπηση των σημερινών και μελλοντικών κλιματικών κινδύνων, της ευπάθειας των πόλεων σε αυτούς τους κινδύνους και της προσαρμοστικής τους ικανότητας."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid ""
-"The Urban Adaptation Support Tool assists cities, towns and local "
-"authorities in developing, implementing and monitoring climate change "
-"adaptation plans."
-msgstr ""
-"Το Εργαλείο Υποστήριξης Αστικής Προσαρμογής βοηθά πόλεις, κωμοπόλεις και "
-"τοπικές αρχές στην ανάπτυξη, εφαρμογή και παρακολούθηση σχεδίων προσαρμογής "
-"στην κλιματική αλλαγή."
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "Το Εργαλείο Υποστήριξης Αστικής Προσαρμογής βοηθά πόλεις, κωμοπόλεις και τοπικές αρχές στην ανάπτυξη, εφαρμογή και παρακολούθηση σχεδίων προσαρμογής στην κλιματική αλλαγή."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid ""
-"The climate crisis is severely affecting Europe's forests, making them "
-"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
-"and disease outbreaks, or sea level rise. The growing risks and impacts are "
-"affecting the economic viability of forestry and they reduce the capacity of"
-" forests to provide essential ecosystem services. The EU responds to this "
-"unprecedented challenge by supporting the adaptation of forests to climate "
-"change through a wide range of policies, like the EU Forest Strategy, EU "
-"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr ""
-"Η κλιματική κρίση επηρεάζει σοβαρά τα δάση της Ευρώπης, καθιστώντας τα όλο "
-"και πιο ευάλωτα σε κινδύνους όπως καταιγίδες, πυρκαγιές, ξηρασίες, εστίες "
-"εντόμων και ασθενειών ή άνοδος της στάθμης της θάλασσας. Οι αυξανόμενοι "
-"κίνδυνοι και οι επιπτώσεις επηρεάζουν την οικονομική βιωσιμότητα της "
-"δασοκομίας και μειώνουν την ικανότητα των δασών να παρέχουν βασικές "
-"υπηρεσίες οικοσυστήματος. Η ΕΕ ανταποκρίνεται σε αυτήν την άνευ προηγουμένου"
-" πρόκληση υποστηρίζοντας την προσαρμογή των δασών στην κλιματική αλλαγή μέσω"
-" ενός ευρέος φάσματος πολιτικών, όπως η στρατηγική της ΕΕ για τα δάση, η "
-"στρατηγική της ΕΕ για την προσαρμογή στην κλιματική αλλαγή και η στρατηγική "
-"της ΕΕ για τη βιοποικιλότητα."
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Η κλιματική κρίση επηρεάζει σοβαρά τα δάση της Ευρώπης, καθιστώντας τα όλο και πιο ευάλωτα σε κινδύνους όπως καταιγίδες, πυρκαγιές, ξηρασίες, εστίες εντόμων και ασθενειών ή άνοδος της στάθμης της θάλασσας. Οι αυξανόμενοι κίνδυνοι και οι επιπτώσεις επηρεάζουν την οικονομική βιωσιμότητα της δασοκομίας και μειώνουν την ικανότητα των δασών να παρέχουν βασικές υπηρεσίες οικοσυστήματος. Η ΕΕ ανταποκρίνεται σε αυτήν την άνευ προηγουμένου πρόκληση υποστηρίζοντας την προσαρμογή των δασών στην κλιματική αλλαγή μέσω ενός ευρέος φάσματος πολιτικών, όπως η στρατηγική της ΕΕ για τα δάση, η στρατηγική της ΕΕ για την προσαρμογή στην κλιματική αλλαγή και η στρατηγική της ΕΕ για τη βιοποικιλότητα."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3836,8 +3786,7 @@ msgstr "Ετος:"
 msgid "back to search"
 msgstr "επιστροφή στην αναζήτηση"
 
-#. Default: "Enable automatic image captioning for images set in the
-#. richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "image_captioning_description"
@@ -3861,12 +3810,3 @@ msgstr "ταξινόμηση_κατά"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr "text_searchitem_location"
-
-msgid ""
-msgstr "#VALUE!"
-
-msgid "Monitoring &amp"
-msgstr "Παρακολούθηση & ενισχυ"
-
-msgid "Other European Information Systems:<br />&nbsp"
-msgstr "Άλλα ευρωπαϊκά συστήματα πληροφοριών:<br />&nbsp"

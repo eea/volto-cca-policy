@@ -1528,6 +1528,16 @@ msgid "Local (e.g. city or municipal level)"
 msgstr "Vietinis (pvz., miesto ar savivaldybės lygiu)"
 
 #. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr "Šalys, kuriose siūloma finansavimo galimybė"
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr "Regionas, kuriame siūlomas finansavimas"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 m. „Lancet Countdown-EEA“ informacinis pranešimas"

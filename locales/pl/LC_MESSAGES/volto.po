@@ -1528,6 +1528,16 @@ msgid "Local (e.g. city or municipal level)"
 msgstr "Lokalny (np. poziom miasta lub gminy)"
 
 #. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr "Kraje, w których oferowana jest możliwość finansowania"
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr "Region, w którym oferowane jest finansowanie"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-Informacje EEA"

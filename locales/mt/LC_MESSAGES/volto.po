@@ -1,4 +1,4 @@
-#
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -6,8 +6,8 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: \n"
+"Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
@@ -18,8 +18,11 @@ msgid "A background document for the event is available"
 msgstr "Dokument ta' sfond għall-avveniment huwa disponibbli"
 
 #. Default: "Adaptation Approaches"
-#: search/cca/facets search/facets search/health_observatory/facets-health
-#: search/mission_all/facets-all search/mission_projects/facets-projects
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
 msgstr "Approċċi ta' Adattament"
 
@@ -39,7 +42,9 @@ msgid "Adaptation Options Implemented In This Case"
 msgstr "Għażliet ta' Adattament Implimentati F'dan il-Każ"
 
 #. Default: "Adaptation Sectors"
-#: search/cca/facets search/common search/facets
+#: search/cca/facets
+#: search/common
+#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Setturi ta' Adattament"
 
@@ -141,7 +146,9 @@ msgid "City:"
 msgstr "Belt:"
 
 #. Default: "Climate Impacts"
-#: search/cca/facets search/common search/facets
+#: search/cca/facets
+#: search/common
+#: search/facets
 msgid "Climate Impacts"
 msgstr "Impatti tal-Klima"
 
@@ -172,7 +179,8 @@ msgid "Climate-ADAPT page for this event"
 msgstr "Klima-ADAPT paġna għal dan l-avveniment"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Kuntatt"
 
@@ -193,7 +201,8 @@ msgid "Costs and benefits"
 msgstr "Spejjeż u benefiċċji"
 
 #. Default: "Countries"
-#: search/common search/mission_all/facets-all
+#: search/common
+#: search/mission_all/facets-all
 #: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "Pajjiżi"
@@ -304,7 +313,9 @@ msgid "Fullscreen"
 msgstr "Skrin sħiħ"
 
 #. Default: "Funding Programme"
-#: search/cca/facets search/facets search/mission_projects/facets-projects
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Programm ta' Finanzjament"
@@ -416,7 +427,8 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Item from third parties"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Item from third parties"
 msgstr "Oġġett minn terzi persuni"
 
@@ -427,7 +439,8 @@ msgstr "Sistemi Ewlenin tal-Komunità"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Miżura tat-Tip Ewlenin"
 
@@ -645,7 +658,8 @@ msgid "Publishing year"
 msgstr "Sena tal-pubblikazzjoni"
 
 #. Default: "RAST step(s) of relevance"
-#: search/mission_funding/facets-funding search/mission_tools/facets-tools
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
 msgstr "Pass(i) RAST ta' rilevanza"
 
@@ -655,12 +669,14 @@ msgid "Reference Information"
 msgstr "Informazzjoni ta' Referenza"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView helpers/Utils
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
 msgid "Reference information"
 msgstr "Informazzjoni ta' referenza"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "References"
 msgstr "Referenzi"
 
@@ -705,7 +721,8 @@ msgid "Search the Observatory Resource Catalogue..."
 msgstr "Fittex fil-Katalgu tar-Riżorsi tal-Osservatorju..."
 
 #. Default: "Section"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Section"
 msgstr "Taqsima"
 
@@ -758,7 +775,8 @@ msgstr "Soluzzjonijiet"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "Source"
 msgstr "Sors"
 
@@ -810,18 +828,10 @@ msgstr "Id-data tirreferi għad-data tar-rilaxx tal-vidjo"
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Id-data tirreferi għall-aħħar data tal-pubblikazzjoni tal-oġġett"
 
-#. Default: "The date refers to the moment in which the item has been prepared
-#. or updated by contributing experts to be submitted for the publication in
-#. Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 #: helpers/ContentMetadata
-msgid ""
-"The date refers to the moment in which the item has been prepared or updated"
-" by contributing experts to be submitted for the publication in Climate "
-"ADAPT"
-msgstr ""
-"Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat jew "
-"aġġornat minn esperti li jikkontribwixxu biex jiġi sottomess għall-"
-"pubblikazzjoni fi Climate ADAPT"
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat jew aġġornat minn esperti li jikkontribwixxu biex jiġi sottomess għall-pubblikazzjoni fi Climate ADAPT"
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -830,12 +840,14 @@ msgid "Topics:"
 msgstr "Suġġetti:"
 
 #. Default: "Transnational regions"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Transnational regions"
 msgstr "Reġjuni transnazzjonali"
 
 #. Default: "Type of item"
-#: search/common search/mission_all/facets-all
+#: search/common
+#: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tip ta' oġġett"
 
@@ -896,500 +908,634 @@ msgid "Where"
 msgstr "Fejn"
 
 #. undefined
+
 msgid "Case studies"
 msgstr "Studji ta' każijiet"
 
 #. undefined
+
 msgid "Guidance"
 msgstr "Gwida"
 
 #. undefined
+
 msgid "Information portals"
 msgstr "Portali ta' informazzjoni"
 
 #. undefined
+
 msgid "Videos"
 msgstr "Vidjows"
 
 #. undefined
+
 msgid "Organisations"
 msgstr "Organizzazzjonijiet"
 
 #. undefined
+
 msgid "Publication and reports"
 msgstr "Pubblikazzjoni u rapporti"
 
 #. undefined
+
 msgid "Publications and reports"
 msgstr "Pubblikazzjonijiet u rapporti"
 
 #. undefined
+
 msgid "Research and knowledge projects"
 msgstr "Proġetti ta' riċerka u għarfien"
 
 #. undefined
+
 msgid "Tools"
 msgstr "Għodda"
 
 #. undefined
+
 msgid "Based on your preferences, you can view this page in english"
 msgstr "Ibbażat fuq il-preferenzi tiegħek, tista' tara din il-paġna bl-Ingliż"
 
 #. undefined
+
 msgid "here"
 msgstr "hawn"
 
 #. undefined
+
 msgid "Latest <br/> News & Events"
 msgstr "L-aħħar <br/> Aħbarijiet u Avvenimenti"
 
 #. undefined
+
 msgid "Most recent <br/> Case Study"
 msgstr "L-aktar Studju ta' Każ riċenti <br/>"
 
 #. undefined
+
 msgid "Most recent <br/> Publication or Report"
 msgstr "L-aktar Pubblikazzjoni jew Rapport <br/> riċenti"
 
 #. undefined
+
 msgid "National adaption policy"
 msgstr "Politika ta' adattament nazzjonali"
 
 #. undefined
+
 msgid "Climate change impact and vulnerability assessments"
 msgstr "Impatt tat-tibdil fil-klima u valutazzjonijiet tal-vulnerabbiltà"
 
 #. undefined
+
 msgid "Adaptation portals and platforms"
 msgstr "Portali u pjattaformi ta' adattament"
 
 #. undefined
+
 msgid "Hazard category"
 msgstr "Kategorija ta' periklu"
 
 #. undefined
+
 msgid "Hazard type"
 msgstr "Tip ta' periklu"
 
 #. undefined
+
 msgid "Indicator"
 msgstr "Indikatur"
 
 #. undefined
+
 msgid "Zip download"
 msgstr "Zip download"
 
 #. undefined
+
 msgid "Download"
 msgstr "Niżżel"
 
 #. undefined
+
 msgid "Heat and cold"
 msgstr "Saħħan u kesħa"
 
 #. undefined
+
 msgid "Mean air temperature"
 msgstr "Temperatura medja tal-arja"
 
 #. undefined
+
 msgid "Extreme heat"
 msgstr "Sħana estrema"
 
 #. undefined
+
 msgid "Cold spells and frost"
 msgstr "perjodi ta' kesħa u ġlata"
 
 #. undefined
+
 msgid "Wet and dry"
 msgstr "Imxarrab u niexef"
 
 #. undefined
+
 msgid "Mean precipitation"
 msgstr "Preċipitazzjoni medja"
 
 #. undefined
+
 msgid "Extreme precipitation"
 msgstr "Preċipitazzjoni estrema"
 
 #. undefined
+
 msgid "River flooding"
 msgstr "Għargħar tax-xmara"
 
 #. undefined
+
 msgid "Aridity"
 msgstr "Aridità"
 
 #. undefined
+
 msgid "Wildfire"
 msgstr "Nirien mifruxa"
 
 #. undefined
+
 msgid "Snow and land ice"
 msgstr "Borra u silġ tal-art"
 
 #. undefined
+
 msgid "Snow and ice"
 msgstr "Borra u silġ"
 
 #. undefined
+
 msgid "Coastal"
 msgstr "Kostali"
 
 #. undefined
+
 msgid "Relative sea level"
 msgstr "Livell relattiv tal-baħar"
 
 #. undefined
+
 msgid "Coastal flooding"
 msgstr "Għargħar kostali"
 
 #. undefined
+
 msgid "Other"
 msgstr "Oħrajn"
 
 #. undefined
+
 msgid "Global"
 msgstr "Globali"
 
 #. undefined
+
 msgid "Black Sea"
 msgstr "Baħar l-Iswed"
 
 #. undefined
+
 msgid "Albania"
 msgstr "Albanija"
 
 #. undefined
+
 msgid "Andorra"
 msgstr "Andorra"
 
 #. undefined
+
 msgid "Armenia"
 msgstr "Armenja"
 
 #. undefined
+
 msgid "Austria"
 msgstr "L-Awstrija"
 
 #. undefined
+
 msgid "Azerbaijan"
 msgstr "Ażerbajġan"
 
 #. undefined
+
 msgid "Belarus"
 msgstr "Belarus"
 
 #. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnja u Ħerzegovina"
 
 #. undefined
+
 msgid "Bulgaria"
 msgstr "Bulgarija"
 
 #. undefined
+
 msgid "Croatia"
 msgstr "il-Kroazja"
 
 #. undefined
+
 msgid "Cyprus"
 msgstr "Ċipru"
 
 #. undefined
+
 msgid "Czechia"
 msgstr "Ċekja"
 
 #. undefined
+
 msgid "Denmark"
 msgstr "id-Danimarka"
 
 #. undefined
+
 msgid "Estonia"
 msgstr "Estonja"
 
 #. undefined
+
 msgid "Faroe Islands"
 msgstr "Gżejjer Faroe"
 
 #. undefined
+
 msgid "Finland"
 msgstr "Finlandja"
 
 #. undefined
+
 msgid "Germany"
 msgstr "il-Ġermanja"
 
 #. undefined
+
 msgid "Georgia"
 msgstr "Ġeorġja"
 
 #. undefined
+
 msgid "Greece"
 msgstr "il-Greċja"
 
 #. undefined
+
 msgid "Hungary"
 msgstr "Ungerija"
 
 #. undefined
+
 msgid "Iceland"
 msgstr "l-Islanda"
 
 #. undefined
+
 msgid "Kazakhstan"
 msgstr "Każakstan"
 
 #. undefined
+
 msgid "Kosovo"
 msgstr "Kosovo"
 
 #. undefined
+
 msgid "Ireland"
 msgstr "l-Irlanda"
 
 #. undefined
+
 msgid "Italy"
 msgstr "l-Italja"
 
 #. undefined
+
 msgid "Israel"
 msgstr "Iżrael"
 
 #. undefined
+
 msgid "Latvia"
 msgstr "Il-Latvja"
 
 #. undefined
+
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
 #. undefined
+
 msgid "Lithuania"
 msgstr "il-Litwanja"
 
 #. undefined
+
 msgid "Luxembourg"
 msgstr "Lussemburgu"
 
 #. undefined
+
 msgid "Malta"
 msgstr "Malta"
 
 #. undefined
+
 msgid "Monaco"
 msgstr "Monako"
 
 #. undefined
+
 msgid "Moldova, Republic of"
 msgstr "Il-Moldova, ir-Repubblika ta'"
 
 #. undefined
+
 msgid "Montenegro"
 msgstr "Montenegro"
 
 #. undefined
+
 msgid "Netherlands"
 msgstr "l-Olanda"
 
 #. undefined
+
 msgid "Norway"
 msgstr "Norveġja"
 
 #. undefined
+
 msgid "Poland"
 msgstr "Polonja"
 
 #. undefined
+
 msgid "Portugal"
 msgstr "Portugall"
 
 #. undefined
+
 msgid "Republic of North Macedonia"
 msgstr "Repubblika tal-Maċedonja ta' Fuq"
 
 #. undefined
+
 msgid "Romania"
 msgstr "ir-Rumanija"
 
 #. undefined
+
 msgid "Russian Federation"
 msgstr "Federazzjoni Russa"
 
 #. undefined
+
 msgid "San Marino"
 msgstr "San Marino"
 
 #. undefined
+
 msgid "Serbia"
 msgstr "Serbja"
 
 #. undefined
+
 msgid "Slovakia"
 msgstr "Is-Slovakkja"
 
 #. undefined
+
 msgid "Slovenia"
 msgstr "Slovenja"
 
 #. undefined
+
 msgid "Spain"
 msgstr "Spanja"
 
 #. undefined
+
 msgid "Sweden"
 msgstr "l-Isvezja"
 
 #. undefined
+
 msgid "Switzerland"
 msgstr "L-Isvizzera"
 
 #. undefined
+
 msgid "Turkiye"
 msgstr "Turkiye"
 
 #. undefined
+
 msgid "Türkiye"
 msgstr "It-Turkija"
 
 #. undefined
+
 msgid "United Kingdom"
 msgstr "Ir-Renju Unit"
 
 #. undefined
+
 msgid "Ukraine"
 msgstr "l-Ukrajna"
 
 #. undefined
+
 msgid "Europe"
 msgstr "Ewropa"
 
 #. undefined
+
 msgid "Macro-Transnational Regions"
 msgstr "Reġjuni Makro-Transnazzjonali"
 
 #. undefined
+
 msgid "Biogeographical Regions"
 msgstr "Reġjuni Bijoġeografiċi"
 
 #. undefined
+
 msgid "Subnational Regions"
 msgstr "Reġjuni Subnazzjonali"
 
 #. undefined
+
 msgid "Municipality Name"
 msgstr "Isem tal-Muniċipalità"
 
 #. undefined
+
 msgid "Northern Periphery and Arctic"
 msgstr "Periferija tat-Tramuntana u l-Artiku"
 
 #. undefined
+
 msgid "Baltic Sea"
 msgstr "Baħar Baltiku"
 
 #. undefined
+
 msgid "North West Europe"
 msgstr "Majjistral tal-Ewropa"
 
 #. undefined
+
 msgid "North Sea"
 msgstr "Baħar tat-Tramuntana"
 
 #. undefined
+
 msgid "Atlantic Area"
 msgstr "Żona Atlantika"
 
 #. undefined
+
 msgid "Alpine Space"
 msgstr "Spazju Alpin"
 
 #. undefined
+
 msgid "Central Europe"
 msgstr "Ewropa Ċentrali"
 
 #. undefined
+
 msgid "South West Europe"
 msgstr "Lbiċ tal-Ewropa"
 
 #. undefined
+
 msgid "Mediterranean (Euro-Med)"
 msgstr "Mediterran (Ewro-Med)"
 
 #. undefined
+
 msgid "Danube Area"
 msgstr "Żona tad-Danubju"
 
 #. undefined
+
 msgid "Adriatic-Ionian"
 msgstr "Adrijatiku-Joniku"
 
 #. undefined
+
 msgid "Mediterranean Sea Basin (NEXT)"
 msgstr "Baċir tal-Baħar Mediterran (LI JMISS)"
 
 #. undefined
+
 msgid "Black Sea Basin (NEXT)"
 msgstr "Baċir tal-Baħar l-Iswed (LI JMISS)"
 
 #. undefined
+
 msgid "Outermost Regions"
 msgstr "Reġjuni Iktar Imbiegħda"
 
 #. undefined
+
 msgid "Alpine"
 msgstr "Alpini"
 
 #. undefined
+
 msgid "Anatolian"
 msgstr "Anatoljan"
 
 #. undefined
+
 msgid "Arctic"
 msgstr "Artiku"
 
 #. undefined
+
 msgid "Atlantic"
 msgstr "Atlantiku"
 
 #. undefined
+
 msgid "Boreal"
 msgstr "Boreali"
 
 #. undefined
+
 msgid "Continental"
 msgstr "Kontinentali"
 
 #. undefined
+
 msgid "Macaronesia"
 msgstr "Makaronesja"
 
 #. undefined
+
 msgid "Mediterranean"
 msgstr "Mediterran"
 
 #. undefined
+
 msgid "Pannonian"
 msgstr "Pannonjan"
 
 #. undefined
+
 msgid "Steppic"
 msgstr "Steppic"
 
 #. undefined
+
 msgid "Transnational region (stretching across country borders)"
 msgstr "Reġjun transnazzjonali (jiġġebbed bejn il-fruntieri tal-pajjiż)"
 
 #. undefined
+
 msgid "National"
 msgstr "Nazzjonali"
 
 #. undefined
+
 msgid "Sub National Regions"
 msgstr "Reġjuni Sub-Nazzjonali"
 
 #. undefined
+
 msgid "Local (e.g. city or municipal level)"
 msgstr "Lokali (eż. belt jew livell muniċipali)"
+
+#. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr ""
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr ""
 
 #. undefined
 #: health_menu:43
@@ -1402,7 +1548,8 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "ADATTAMENT FIS-SETTUR POLITIKA TAL-UE"
 
 #. undefined
-#: health_menu:9 site_menu:10
+#: health_menu:9
+#: site_menu:10
 msgid "About"
 msgstr "Dwar"
 
@@ -1507,7 +1654,8 @@ msgid "Countries, Transnational regions"
 msgstr "Pajjiżi, Reġjuni Transnazzjonali"
 
 #. undefined
-#: health_menu:18 site_menu:45
+#: health_menu:18
+#: site_menu:45
 msgid "Country Profiles"
 msgstr "Profili tal-Pajjiż"
 
@@ -1567,7 +1715,8 @@ msgid "Mission Portal"
 msgstr "Portal tal-Missjoni"
 
 #. undefined
-#: site_menu:43 site_menu:43
+#: site_menu:43
+#: site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "POLITIKA REĠJONALI TAL-UE"
 
@@ -1618,11 +1767,8 @@ msgstr "Enerġija"
 
 #. undefined
 #: site_menu:67
-msgid ""
-"Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr ""
-"Il-vulnerabbiltà tal-Ewropa għall-impatti tat-tibdil fil-klima li jseħħu "
-"barra mill-Ewropa"
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Il-vulnerabbiltà tal-Ewropa għall-impatti tat-tibdil fil-klima li jseħħu barra mill-Ewropa"
 
 #. undefined
 #: health_menu:32
@@ -1762,8 +1908,7 @@ msgstr "Politiki Nazzjonali"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr ""
-"Sistemi nazzjonali ta' twissija għas-saħħa tas-sħana u pjanijiet ta' azzjoni"
+msgstr "Sistemi nazzjonali ta' twissija għas-saħħa tas-sħana u pjanijiet ta' azzjoni"
 
 #. undefined
 #: health_menu:17
@@ -1911,7 +2056,8 @@ msgid "Water management"
 msgstr "Ġestjoni tal-ilma"
 
 #. undefined
-#: health_menu:46 site_menu:93
+#: health_menu:46
+#: site_menu:93
 msgid "Webinars"
 msgstr "Webinars"
 
@@ -1941,86 +2087,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "L-espożizzjoni ta' gruppi vulnerabbli għar-riskji klimatiċi"
 
 #. undefined
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "AZZJONIJIET EWLENIN TAL-UE"
 
 #. undefined
+#: 
 msgid "Just resilience"
 msgstr "Reżiljenza biss"
 
 #. undefined
+#: 
 msgid "Nature-based solutions"
 msgstr "Soluzzjonijiet ibbażati fuq in-natura"
 
 #. undefined
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Telf ekonomiku u fatalitajiet"
 
 #. undefined
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Għanijiet strateġiċi 2030"
 
 #. undefined
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Disponibbiltà ta' spazji ħodor urbani għal gruppi vulnerabbli"
 
 #. undefined
+#: 
 msgid "Transnational, National, local"
 msgstr "Transnazzjonali, Nazzjonali, lokali"
 
 #. undefined
+#: 
 msgid "Aero-allergens"
 msgstr "Aero-allerġeni"
 
 #. undefined
+#: 
 msgid "Heat"
 msgstr "Saħħan"
 
 #. undefined
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Aċċessibilità ta' sptarijiet fl-Ewropa"
 
 #. undefined
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADATTAMENT FIS-SETTUR TAL-FORESTA"
 
 #. undefined
+#: 
 msgid "Ground-level ozone"
 msgstr "Ożonu fil-livell tal-art"
 
 #. undefined
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Tbassir tal-ożonu fil-livell tal-art (CAMS)"
 
 #. undefined
+#: 
 msgid "Pollution"
 msgstr "Tniġġis"
 
 #. undefined
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Effetti fuq is-sigurtà u s-saħħa fuq il-post tax-xogħol"
 
 #. undefined
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Pjan ta' ħidma ta' l-osservatorju għall-2023-24"
 
 #. undefined
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Tbassir PM2.5 fil-livell tal-art (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Tbassir tal-PM10 fil-livell tal-art (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Tbassir NO2 fil-livell tal-art (CAMS)"
 
 #. undefined
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Rapport taż-ŻEE 2022 dwar il-Klima u s-Saħħa"
 
 #. undefined
+#: 
 msgid "European environment and health atlas"
 msgstr "Atlas Ewropew dwar l-ambjent u s-saħħa"
 
@@ -2057,19 +2224,13 @@ msgstr "1.2 Twaqqaf il-proċess b'mod strutturat"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid ""
-"1.3 Estimating human and financial resources needed and identifying "
-"potential sources of long-term funding"
-msgstr ""
-"1.3 L-istima tar-riżorsi umani u finanzjarji meħtieġa u l-identifikazzjoni "
-"ta' sorsi potenzjali ta' finanzjament fit-tul"
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 L-istima tar-riżorsi umani u finanzjarji meħtieġa u l-identifikazzjoni ta' sorsi potenzjali ta' finanzjament fit-tul"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
 msgid "1.3 Setting up adaptation processes within and beyond the municipality"
-msgstr ""
-"1.3 It-twaqqif ta' proċessi ta' adattament ġewwa u lil hinn mill-"
-"muniċipalità"
+msgstr "1.3 It-twaqqif ta' proċessi ta' adattament ġewwa u lil hinn mill-muniċipalità"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:148
@@ -2124,8 +2285,7 @@ msgstr "12-il reġjun"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr ""
-"2. Il-valutazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima"
+msgstr "2. Il-valutazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
@@ -2139,11 +2299,8 @@ msgstr "2.1 Nifhmu r-riskji klimatiċi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid ""
-"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr ""
-"2.2 Oqfsa għall-valutazzjoni tal-impatti, il-vulnerabbiltajiet u r-riskji "
-"tal-klima"
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Oqfsa għall-valutazzjoni tal-impatti, il-vulnerabbiltajiet u r-riskji tal-klima"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -2152,12 +2309,8 @@ msgstr "2.2 Nifhmu l-projezzjonijiet tal-klima u l-impatti futuri"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid ""
-"2.3 General sequence for climate impacts, vulnerabilities and risk "
-"assessments"
-msgstr ""
-"2.3 Sekwenza ġenerali għall-impatti tal-klima, il-vulnerabbiltajiet u "
-"l-valutazzjonijiet tar-riskju"
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
+msgstr "2.3 Sekwenza ġenerali għall-impatti tal-klima, il-vulnerabbiltajiet u l-valutazzjonijiet tar-riskju"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -2187,31 +2340,22 @@ msgstr "2.5 Nifhmu r-rwol taż-żoni tal-madwar fl-adattament"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
 msgid "2.6 Identifying main adaptation concerns and defining objectives"
-msgstr ""
-"2.6 L-identifikazzjoni tat-tħassib ewlieni dwar l-adattament u "
-"d-definizzjoni tal-objettivi"
+msgstr "2.6 L-identifikazzjoni tat-tħassib ewlieni dwar l-adattament u d-definizzjoni tal-objettivi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid ""
-"2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr ""
-"2.6 L-identifikazzjoni tat-tħassib ewlieni dwar l-adattament u t-twaqqif ta'"
-" direzzjoni strateġika"
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 L-identifikazzjoni tat-tħassib ewlieni dwar l-adattament u t-twaqqif ta' direzzjoni strateġika"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr ""
-"2.7 Evalwazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima: "
-"Kontroll personali"
+msgstr "2.7 Evalwazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima: Kontroll personali"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr ""
-"2.7 Il-valutazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima: "
-"Awtoverifika"
+msgstr "2.7 Il-valutazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima: Awtoverifika"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -2252,12 +2396,8 @@ msgstr "4. Evalwazzjoni ta' għażliet ta' adattament"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid ""
-"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
-"benefits and efforts"
-msgstr ""
-"4.1 Evalwazzjoni ta' għażliet ta' adattament possibbli f'termini ta' "
-"effetti, ħin, spejjeż, benefiċċji u sforzi"
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Evalwazzjoni ta' għażliet ta' adattament possibbli f'termini ta' effetti, ħin, spejjeż, benefiċċji u sforzi"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -2267,22 +2407,17 @@ msgstr "4.1 Għażla ta' qafas ta' valutazzjoni għall-għażliet ta' adattament
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:213
 msgid "4.2 Conducting a cost-benefit analysis of adaptation measures"
-msgstr ""
-"4.2 It-twettiq ta' analiżi tal-kost-benefiċċju tal-miżuri ta' adattament"
+msgstr "4.2 It-twettiq ta' analiżi tal-kost-benefiċċju tal-miżuri ta' adattament"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr ""
-"4.2 Prijoritizzazzjoni ta' għażliet ta' adattament u għażla ta' dawk "
-"preferuti"
+msgstr "4.2 Prijoritizzazzjoni ta' għażliet ta' adattament u għażla ta' dawk preferuti"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
 msgid "4.3 Preparing a strategy document and getting political approval"
-msgstr ""
-"4.3 It-tħejjija ta' dokument ta' strateġija u l-kisba ta' approvazzjoni "
-"politika"
+msgstr "4.3 It-tħejjija ta' dokument ta' strateġija u l-kisba ta' approvazzjoni politika"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
@@ -2292,8 +2427,7 @@ msgstr "4.3 Prijoritizzazzjoni ta' għażliet ta' adattament"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:223
 msgid "4.4 Assessing and selecting adaptation options: Self check"
-msgstr ""
-"4.4 Evalwazzjoni u għażla ta' għażliet ta' adattament: Kontroll personali"
+msgstr "4.4 Evalwazzjoni u għażla ta' għażliet ta' adattament: Kontroll personali"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:241
@@ -2323,9 +2457,7 @@ msgstr "5.2 Is-sejba ta' eżempji ta' pjanijiet ta' azzjoni ta' adattament"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:261
 msgid "5.2 Organising governance of implementation across sectors and levels"
-msgstr ""
-"5.2 L-organizzazzjoni tal-governanza tal-implimentazzjoni fis-setturi u "
-"l-livelli kollha"
+msgstr "5.2 L-organizzazzjoni tal-governanza tal-implimentazzjoni fis-setturi u l-livelli kollha"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
@@ -2334,25 +2466,18 @@ msgstr "5.3 L-integrazzjoni tal-adattament fil-politiki u l-pjanijiet urbani"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid ""
-"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
-"policies"
-msgstr ""
-"5.3 Integrazzjoni: Integrazzjoni tal-adattament fi strumenti u politiki "
-"settorjali"
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Integrazzjoni: Integrazzjoni tal-adattament fi strumenti u politiki settorjali"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
 msgid "5.4 Addressing climate change through adaptation and mitigation"
-msgstr ""
-"5.4 L-indirizzar tat-tibdil fil-klima permezz tal-adattament u "
-"l-mitigazzjoni"
+msgstr "5.4 L-indirizzar tat-tibdil fil-klima permezz tal-adattament u l-mitigazzjoni"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:269
 msgid "5.4 Multilevel coordination and supportive governance framework"
-msgstr ""
-"5.4 Koordinazzjoni f'diversi livelli u qafas ta' governanza ta' appoġġ"
+msgstr "5.4 Koordinazzjoni f'diversi livelli u qafas ta' governanza ta' appoġġ"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:273
@@ -2402,15 +2527,12 @@ msgstr "6.3 Is-sejba ta' eżempji ta' indikaturi ta' monitoraġġ tal-adattament
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:299
 msgid "6.4 Communicating results to inform policy and practice"
-msgstr ""
-"6.4 Il-komunikazzjoni tar-riżultati biex tinforma l-politika u l-prattika"
+msgstr "6.4 Il-komunikazzjoni tar-riżultati biex tinforma l-politika u l-prattika"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
 msgid "6.4 Using monitoring results to enhance the process of adaptation"
-msgstr ""
-"6.4 L-użu tar-riżultati tal-monitoraġġ biex jittejjeb il-proċess tal-"
-"adattament"
+msgstr "6.4 L-użu tar-riżultati tal-monitoraġġ biex jittejjeb il-proċess tal-adattament"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
@@ -2424,36 +2546,18 @@ msgstr "6.5 Monitoraġġ u valutazzjoni tal-adattament: Awtoverifika"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid ""
-"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 62."
-msgstr ""
-"Valur għall-kwalità ta' 2x immaġini b'densità għolja ta' pixels, minn 1 "
-"(l-inqas) sa 95 (l-ogħla). Valur ta' 0 ifisser li se jintuża l-inadempjenza "
-"ta' plone.scaling, li bħalissa hija 62."
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "Valur għall-kwalità ta' 2x immaġini b'densità għolja ta' pixels, minn 1 (l-inqas) sa 95 (l-ogħla). Valur ta' 0 ifisser li se jintuża l-inadempjenza ta' plone.scaling, li bħalissa hija 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid ""
-"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 51."
-msgstr ""
-"Valur għall-kwalità ta' 3x immaġini b'densità għolja ta' pixels, minn 1 "
-"(l-inqas) sa 95 (l-ogħla). Valur ta' 0 se jfisser li se tintuża "
-"l-inadempjenza ta' plone.scaling, li bħalissa hija 51."
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "Valur għall-kwalità ta' 3x immaġini b'densità għolja ta' pixels, minn 1 (l-inqas) sa 95 (l-ogħla). Valur ta' 0 se jfisser li se tintuża l-inadempjenza ta' plone.scaling, li bħalissa hija 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid ""
-"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
-" value of 0 will mean plone.scaling's default will be used, which is "
-"currently 88."
-msgstr ""
-"Valur għall-kwalità ta' immaġini skalati, minn 1 (l-inqas) sa 95 (l-ogħla). "
-"Valur ta' 0 ifisser li se jintuża l-inadempjenza ta' plone.scaling, li "
-"bħalissa hija 88."
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "Valur għall-kwalità ta' immaġini skalati, minn 1 (l-inqas) sa 95 (l-ogħla). Valur ta' 0 ifisser li se jintuża l-inadempjenza ta' plone.scaling, li bħalissa hija 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2482,10 +2586,8 @@ msgstr "A3: Kooperazzjoni ta' koordinazzjoni u netwerks"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid ""
-"A3: Governance and Institutional: Coordination cooperation and networks"
-msgstr ""
-"A3: Governanza u Istituzzjonali: Kooperazzjoni ta' koordinazzjoni u netwerks"
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
+msgstr "A3: Governanza u Istituzzjonali: Kooperazzjoni ta' koordinazzjoni u netwerks"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:54
@@ -2594,8 +2696,7 @@ msgstr "Il-valutazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:66
 msgid "Assessing risks and vulnerability <br /> to climate change"
-msgstr ""
-"Evalwazzjoni tar-riskji u l-vulnerabbiltà <br /> għat-tibdil fil-klima"
+msgstr "Evalwazzjoni tar-riskji u l-vulnerabbiltà <br /> għat-tibdil fil-klima"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:570
@@ -2610,8 +2711,7 @@ msgstr "B1: Strumenti ta' inċentiv ta' finanzjament"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr ""
-"B2: Ekonomiku u Finanzi: Assigurazzjoni u strumenti ta' qsim tar-riskju"
+msgstr "B2: Ekonomiku u Finanzi: Assigurazzjoni u strumenti ta' qsim tar-riskju"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2655,29 +2755,18 @@ msgstr "Illustrazzjonijiet ta' Studju ta' Każijiet"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid ""
-"Case developed and implemented and partially funded as a Climate Change "
-"Adaptation measure."
-msgstr ""
-"Każ żviluppat u implimentat u parzjalment iffinanzjat bħala miżura ta' "
-"Adattament għat-Tibdil fil-Klima."
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Każ żviluppat u implimentat u parzjalment iffinanzjat bħala miżura ta' Adattament għat-Tibdil fil-Klima."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr ""
-"Każ żviluppat u implimentat bħala Miżura ta' Adattament għat-Tibdil fil-"
-"Klima."
+msgstr "Każ żviluppat u implimentat bħala Miżura ta' Adattament għat-Tibdil fil-Klima."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid ""
-"Case mainly developed and implemented because of other policy objectives, "
-"but with significant consideration of Climate Change Adaptation aspects"
-msgstr ""
-"Każ prinċipalment żviluppat u implimentat minħabba għanijiet ta' politika "
-"oħra, iżda b'kunsiderazzjoni sinifikanti ta' aspetti ta' Adattament għat-"
-"Tibdil fil-Klima"
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Każ prinċipalment żviluppat u implimentat minħabba għanijiet ta' politika oħra, iżda b'kunsiderazzjoni sinifikanti ta' aspetti ta' Adattament għat-Tibdil fil-Klima"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2686,11 +2775,8 @@ msgstr "Studji ta' każijiet u Għażliet ta' Adattament"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
-msgid ""
-"Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-"Studji ta’ każijiet miġbura fuq livell nazzjonali fi Spanja, ipprovduti minn"
-" AdapteCCA.es"
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Studji ta’ każijiet miġbura fuq livell nazzjonali fi Spanja, ipprovduti minn AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -2750,8 +2836,7 @@ msgstr "Kummenti:"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:10
 msgid "Common definitions of the terms used frequently in the clearinghouse."
-msgstr ""
-"Definizzjonijiet komuni tat-termini użati ta' spiss fil-clearinghouse."
+msgstr "Definizzjonijiet komuni tat-termini użati ta' spiss fil-clearinghouse."
 
 #. undefined
 #: ../../climateadapt/browser/pt/ace_macros.pt:104
@@ -2775,11 +2860,8 @@ msgstr "D1: Għażliet ħodor"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid ""
-"D1: Nature based Solutions and Ecosystem based approaches: Green options"
-msgstr ""
-"D1: Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq "
-"l-Ekosistema: Għażliet ħodor"
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr "D1: Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosistema: Għażliet ħodor"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:591
@@ -2788,11 +2870,8 @@ msgstr "D2: Għażliet blu"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid ""
-"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
-msgstr ""
-"D2: Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq "
-"l-Ekosistema: Għażliet blu"
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr "D2: Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosistema: Għażliet blu"
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:141
@@ -2834,8 +2913,7 @@ msgstr "E1: Informazzjoni u tqajjim ta' kuxjenza"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid ""
-"E1: Knowledge and behavioural change: Information and awareness raising"
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
 msgstr "E1: Għarfien u bidla fl-imġieba: Informazzjoni u tqajjim ta' kuxjenza"
 
 #. undefined
@@ -2845,12 +2923,8 @@ msgstr "E2: It-tisħiħ tal-kapaċità u l-prattiki tal-istil tal-ħajja"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid ""
-"E2: Knowledge and behavioural change: Capacity building empowering and "
-"lifestyle practices"
-msgstr ""
-"E2: Għarfien u bidla fl-imġieba: Il-bini tal-kapaċità u l-prattiki tal-istil"
-" tal-ħajja"
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "E2: Għarfien u bidla fl-imġieba: Il-bini tal-kapaċità u l-prattiki tal-istil tal-ħajja"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2885,25 +2959,13 @@ msgstr "Avvenimenti"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid ""
-"Explore Forest adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Esplora studji tal-każ tal-adattament tal-Foresti f'termini ta 'lokazzjoni "
-"ġeografika, kopertura tematika u link għal għażliet ta' adattament permezz "
-"tal-esploratur tal-istudju tal-każ ibbażat fuq il-mapep."
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Esplora studji tal-każ tal-adattament tal-Foresti f'termini ta 'lokazzjoni ġeografika, kopertura tematika u link għal għażliet ta' adattament permezz tal-esploratur tal-istudju tal-każ ibbażat fuq il-mapep."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid ""
-"Explore Urban adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Esplora studji ta' każijiet ta' adattament urban f'termini ta' lokazzjoni "
-"ġeografika, kopertura tematika u rabta ma' għażliet ta' adattament permezz "
-"tal-esploratur ta' studju ta' każijiet ibbażat fuq il-mapep."
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Esplora studji ta' każijiet ta' adattament urban f'termini ta' lokazzjoni ġeografika, kopertura tematika u rabta ma' għażliet ta' adattament permezz tal-esploratur ta' studju ta' każijiet ibbażat fuq il-mapep."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2928,22 +2990,13 @@ msgstr "FAO Bliet Ħodor"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid ""
-"FISE web portal will help us to improve the health and resilience of our "
-"forests, which play a vital role in protecting our biodiversity and in "
-"mitigating climate change."
-msgstr ""
-"Il-portal tal-web tal-FISE se jgħinna ntejbu s-saħħa u r-reżiljenza tal-"
-"foresti tagħna, li għandhom rwol vitali fil-protezzjoni tal-bijodiversità "
-"tagħna u fil-mitigazzjoni tat-tibdil fil-klima."
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "Il-portal tal-web tal-FISE se jgħinna ntejbu s-saħħa u r-reżiljenza tal-foresti tagħna, li għandhom rwol vitali fil-protezzjoni tal-bijodiversità tagħna u fil-mitigazzjoni tat-tibdil fil-klima."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid ""
-"Find out how to contribute different types of information to Climate-ADAPT."
-msgstr ""
-"Skopri kif tikkontribwixxi tipi differenti ta' informazzjoni għal Climate-"
-"ADAPT."
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
+msgstr "Skopri kif tikkontribwixxi tipi differenti ta' informazzjoni għal Climate-ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:251
@@ -3039,8 +3092,7 @@ msgstr "Dokumenti ta' gwida"
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:17
 msgid "Guidance on the Climate-ADAPT Database Search function."
-msgstr ""
-"Gwida dwar il-funzjoni tat-Tiftix fil-Bażi tad-Database Climate-ADAPT."
+msgstr "Gwida dwar il-funzjoni tat-Tiftix fil-Bażi tad-Database Climate-ADAPT."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:15
@@ -3187,39 +3239,23 @@ msgstr "Użu tal-Art u Sistemi tal-Ikel"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in forests."
-msgstr ""
-"Tgħallem aktar dwar għażliet differenti ta' adattament għad-diversi impatti "
-"tat-tibdil fil-klima fil-foresti."
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Tgħallem aktar dwar għażliet differenti ta' adattament għad-diversi impatti tat-tibdil fil-klima fil-foresti."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in urban areas."
-msgstr ""
-"Tgħallem aktar dwar għażliet differenti ta' adattament għad-diversi impatti "
-"tat-tibdil fil-klima fiż-żoni urbani."
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Tgħallem aktar dwar għażliet differenti ta' adattament għad-diversi impatti tat-tibdil fil-klima fiż-żoni urbani."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid ""
-"Learn more about how cities can adapt to climate change to become future-"
-"proof, climate-resilient cities"
-msgstr ""
-"Tgħallem aktar dwar kif il-bliet jistgħu jadattaw għat-tibdil fil-klima biex"
-" isiru bliet reżistenti għall-ġejjieni u reżistenti għall-klima"
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Tgħallem aktar dwar kif il-bliet jistgħu jadattaw għat-tibdil fil-klima biex isiru bliet reżistenti għall-ġejjieni u reżistenti għall-klima"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid ""
-"Learn more about how forests can adapt to climate change to stay healthy, "
-"diverse, resilient and productive"
-msgstr ""
-"Tgħallem aktar dwar kif il-foresti jistgħu jadattaw għat-tibdil fil-klima "
-"biex jibqgħu b'saħħithom, diversi, reżiljenti u produttivi"
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Tgħallem aktar dwar kif il-foresti jistgħu jadattaw għat-tibdil fil-klima biex jibqgħu b'saħħithom, diversi, reżiljenti u produttivi"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -3281,11 +3317,8 @@ msgstr "Żoni tal-muntanji"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid ""
-"National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
-"Politika ta' adattament nazzjonali mhux irrappurtata lil hinn mir-rappurtar "
-"obbligatorju fl-2023"
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "Politika ta' adattament nazzjonali mhux irrappurtata lil hinn mir-rappurtar obbligatorju fl-2023"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3530,12 +3563,8 @@ msgstr "Agħżel pajjiż biex tmur direttament fil-paġna tal-pajjiż:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid ""
-"Select the sectors for which you want to receive a notification email when "
-"an item is modified."
-msgstr ""
-"Agħżel is-setturi li għalihom trid tirċievi email ta' notifika meta oġġett "
-"jiġi modifikat."
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Agħżel is-setturi li għalihom trid tirċievi email ta' notifika meta oġġett jiġi modifikat."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3569,12 +3598,8 @@ msgstr "Soċjali: Informazzjoni"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid ""
-"Specify all allowed maximum image dimensions, one per line. The required "
-"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
-"Speċifika d-dimensjonijiet massimi tal-immaġni kollha permessi, wieħed għal "
-"kull linja. Il-format meħtieġ huwa &lt;isem&gt; &lt;wisa&gt;:&lt;għoli&gt;."
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Speċifika d-dimensjonijiet massimi tal-immaġni kollha permessi, wieħed għal kull linja. Il-format meħtieġ huwa &lt;isem&gt; &lt;wisa&gt;:&lt;għoli&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3589,8 +3614,7 @@ msgstr "Maltempati"
 #. undefined
 #: ../../climateadapt/vocabulary.py:601
 msgid "Structural and physical: Ecosystem-based adaptation options"
-msgstr ""
-"Strutturali u fiżiċi: Għażliet ta' adattament ibbażati fuq l-ekosistema"
+msgstr "Strutturali u fiżiċi: Għażliet ta' adattament ibbażati fuq l-ekosistema"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:599
@@ -3624,71 +3648,28 @@ msgstr "Il-Patt tas-Sindki tal-UE"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid ""
-"The EU finances adaptation to climate change in Europe through a wide range "
-"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
-"at least 25% of the European budget is climate-related expenditure. "
-"Therefore, Climate adaptation actions have to be integrated into all the "
-"major EU spending programmes, and a tracking system is put in place to "
-"guarantee these objectives are met."
-msgstr ""
-"L-UE tiffinanzja l-adattament għat-tibdil fil-klima fl-Ewropa permezz ta' "
-"firxa wiesgħa ta' strumenti. Il-Qafas Finanzjarju Pluriennali 2021-2027 "
-"jiżgura li mill-inqas 25 % tal-baġit Ewropew ikun nefqa relatata mal-klima. "
-"Għalhekk, l-azzjonijiet ta' adattament għall-klima jridu jiġu integrati fil-"
-"programmi ta' nfiq ewlenin kollha tal-UE, u tiġi stabbilita sistema ta' "
-"traċċar biex tiggarantixxi li dawn l-objettivi jintlaħqu."
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "L-UE tiffinanzja l-adattament għat-tibdil fil-klima fl-Ewropa permezz ta' firxa wiesgħa ta' strumenti. Il-Qafas Finanzjarju Pluriennali 2021-2027 jiżgura li mill-inqas 25 % tal-baġit Ewropew ikun nefqa relatata mal-klima. Għalhekk, l-azzjonijiet ta' adattament għall-klima jridu jiġu integrati fil-programmi ta' nfiq ewlenin kollha tal-UE, u tiġi stabbilita sistema ta' traċċar biex tiggarantixxi li dawn l-objettivi jintlaħqu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid ""
-"The EU has several policy frameworks in place to increase the resilience of "
-"European cities and their inhabitants, including the EU Adaptation Strategy "
-"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
-" to improve knowledge and data availability on urban vulnerability and "
-"adaptive capacity. It also provides financial and technical support to "
-"policy makers and practitioners to make cities more resilient and adaptive."
-msgstr ""
-"L-UE għandha diversi oqfsa ta' politika fis-seħħ biex iżżid ir-reżiljenza "
-"tal-bliet Ewropej u l-abitanti tagħhom, inklużi l-Istrateġija ta' Adattament"
-" tal-UE u l-Istrateġija tal-UE għall-Bijodiversità 2030, u żviluppat diversi"
-" inizjattivi biex ittejjeb l-għarfien u d-disponibbiltà tad-dejta dwar il-"
-"vulnerabbiltà urbana u l-kapaċità adattiva. Jipprovdi wkoll appoġġ "
-"finanzjarju u tekniku lil dawk li jfasslu l-politika u lill-prattikanti biex"
-" jagħmlu l-ibliet aktar reżiljenti u adattivi."
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "L-UE għandha diversi oqfsa ta' politika fis-seħħ biex iżżid ir-reżiljenza tal-bliet Ewropej u l-abitanti tagħhom, inklużi l-Istrateġija ta' Adattament tal-UE u l-Istrateġija tal-UE għall-Bijodiversità 2030, u żviluppat diversi inizjattivi biex ittejjeb l-għarfien u d-disponibbiltà tad-dejta dwar il-vulnerabbiltà urbana u l-kapaċità adattiva. Jipprovdi wkoll appoġġ finanzjarju u tekniku lil dawk li jfasslu l-politika u lill-prattikanti biex jagħmlu l-ibliet aktar reżiljenti u adattivi."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices from the Copernicus Climate Change Service in support of "
-"climate change adaptation."
-msgstr ""
-"Il-European Climate Data Explorer jipprovdi aċċess interattiv għal ħafna "
-"indiċi tal-klima mis-Servizz Copernicus dwar it-Tibdil fil-Klima b'appoġġ "
-"għall-adattament għat-tibdil fil-klima."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "Il-European Climate Data Explorer jipprovdi aċċess interattiv għal ħafna indiċi tal-klima mis-Servizz Copernicus dwar it-Tibdil fil-Klima b'appoġġ għall-adattament għat-tibdil fil-klima."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices like fire weather indices in support of climate change "
-"adaptation in forests."
-msgstr ""
-"Il-European Climate Data Explorer jipprovdi aċċess interattiv għal bosta "
-"indiċijiet tal-klima bħall-indiċi tat-temp tan-nar b'appoġġ għall-adattament"
-" għat-tibdil fil-klima fil-foresti."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "Il-European Climate Data Explorer jipprovdi aċċess interattiv għal bosta indiċijiet tal-klima bħall-indiċi tat-temp tan-nar b'appoġġ għall-adattament għat-tibdil fil-klima fil-foresti."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid ""
-"The European Drought Observatory (EDO) contains drought-relevant "
-"information. These give an overview of the situation in the EU about "
-"imminent droughts."
-msgstr ""
-"L-Osservatorju Ewropew tan-Nixfa (EDO) fih informazzjoni rilevanti għan-"
-"nixfa. Dawn jagħtu ħarsa ġenerali lejn is-sitwazzjoni fl-UE dwar nixfiet "
-"imminenti."
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "L-Osservatorju Ewropew tan-Nixfa (EDO) fih informazzjoni rilevanti għan-nixfa. Dawn jagħtu ħarsa ġenerali lejn is-sitwazzjoni fl-UE dwar nixfiet imminenti."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3697,59 +3678,23 @@ msgstr "Is-Sistema Ewropea ta' Informazzjoni dwar in-Nirien tal-Foresti"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid ""
-"The European Forest Fire Information System (EFFIS) supports the protection "
-"of forests against fires and provides the EU with harmonized information on "
-"forest fires"
-msgstr ""
-"Is-Sistema Ewropea ta' Informazzjoni dwar in-Nirien fil-Foresti (EFFIS) "
-"tappoġġja l-protezzjoni tal-foresti kontra n-nirien u tipprovdi lill-UE "
-"b'informazzjoni armonizzata dwar in-nirien fil-foresti"
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Is-Sistema Ewropea ta' Informazzjoni dwar in-Nirien fil-Foresti (EFFIS) tappoġġja l-protezzjoni tal-foresti kontra n-nirien u tipprovdi lill-UE b'informazzjoni armonizzata dwar in-nirien fil-foresti"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid ""
-"The Urban Adaptation Map Viewer provides an overview of the current and "
-"future climate hazards, the vulnerability of the cities to these hazards and"
-" their adaptive capacity."
-msgstr ""
-"L-Urban Adattament Map Viewer jipprovdi ħarsa ġenerali lejn il-perikli "
-"klimatiċi attwali u futuri, il-vulnerabbiltà tal-bliet għal dawn il-perikli "
-"u l-kapaċità adattiva tagħhom."
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "L-Urban Adattament Map Viewer jipprovdi ħarsa ġenerali lejn il-perikli klimatiċi attwali u futuri, il-vulnerabbiltà tal-bliet għal dawn il-perikli u l-kapaċità adattiva tagħhom."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid ""
-"The Urban Adaptation Support Tool assists cities, towns and local "
-"authorities in developing, implementing and monitoring climate change "
-"adaptation plans."
-msgstr ""
-"L-Għodda ta' Appoġġ għall-Adattament Urban tassisti bliet, rħula u "
-"awtoritajiet lokali fl-iżvilupp, l-implimentazzjoni u l-monitoraġġ tal-"
-"pjanijiet ta' adattament għat-tibdil fil-klima."
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "L-Għodda ta' Appoġġ għall-Adattament Urban tassisti bliet, rħula u awtoritajiet lokali fl-iżvilupp, l-implimentazzjoni u l-monitoraġġ tal-pjanijiet ta' adattament għat-tibdil fil-klima."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid ""
-"The climate crisis is severely affecting Europe's forests, making them "
-"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
-"and disease outbreaks, or sea level rise. The growing risks and impacts are "
-"affecting the economic viability of forestry and they reduce the capacity of"
-" forests to provide essential ecosystem services. The EU responds to this "
-"unprecedented challenge by supporting the adaptation of forests to climate "
-"change through a wide range of policies, like the EU Forest Strategy, EU "
-"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr ""
-"Il-kriżi tal-klima qed taffettwa serjament il-foresti tal-Ewropa, u "
-"tagħmilhom dejjem aktar vulnerabbli għal perikli bħal maltempati, nirien "
-"selvaġġi, nixfiet, tifqigħat ta' insetti u mard, jew żieda fil-livell tal-"
-"baħar. Ir-riskji u l-impatti li qed jikbru qed jaffettwaw il-vijabbiltà "
-"ekonomika tal-forestrija u jnaqqsu l-kapaċità tal-foresti li jipprovdu "
-"servizzi essenzjali tal-ekosistema. L-UE twieġeb għal din l-isfida bla "
-"preċedent billi tappoġġja l-adattament tal-foresti għat-tibdil fil-klima "
-"permezz ta’ firxa wiesgħa ta’ politiki, bħall-Istrateġija tal-UE għall-"
-"Foresti, l-Istrateġija tal-UE dwar l-Adattament għat-Tibdil fil-Klima, u "
-"l-Istrateġija tal-UE dwar il-Bijodiversità."
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Il-kriżi tal-klima qed taffettwa serjament il-foresti tal-Ewropa, u tagħmilhom dejjem aktar vulnerabbli għal perikli bħal maltempati, nirien selvaġġi, nixfiet, tifqigħat ta' insetti u mard, jew żieda fil-livell tal-baħar. Ir-riskji u l-impatti li qed jikbru qed jaffettwaw il-vijabbiltà ekonomika tal-forestrija u jnaqqsu l-kapaċità tal-foresti li jipprovdu servizzi essenzjali tal-ekosistema. L-UE twieġeb għal din l-isfida bla preċedent billi tappoġġja l-adattament tal-foresti għat-tibdil fil-klima permezz ta’ firxa wiesgħa ta’ politiki, bħall-Istrateġija tal-UE għall-Foresti, l-Istrateġija tal-UE dwar l-Adattament għat-Tibdil fil-Klima, u l-Istrateġija tal-UE dwar il-Bijodiversità."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3841,8 +3786,7 @@ msgstr "Sena:"
 msgid "back to search"
 msgstr "lura biex tfittex"
 
-#. Default: "Enable automatic image captioning for images set in the
-#. richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "image_captioning_description"
@@ -3866,12 +3810,3 @@ msgstr "sort_by"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr "text_searchitem_location"
-
-msgid ""
-msgstr "#VALUE!"
-
-msgid "Monitoring &amp"
-msgstr "Monitoraġġ andamp"
-
-msgid "Other European Information Systems:<br />&nbsp"
-msgstr "Sistemi Ewropej oħra ta' Informazzjoni:<br />&nbsp"

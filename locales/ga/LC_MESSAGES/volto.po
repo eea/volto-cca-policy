@@ -1528,6 +1528,16 @@ msgid "Local (e.g. city or municipal level)"
 msgstr "Áitiúil (m.sh. leibhéal cathrach nó cathrach)"
 
 #. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr "Tíortha ina gcuirtear an deis maoinithe ar fáil"
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr "An réigiún ina bhfuil an maoiniú á thairiscint"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-EEA Faisnéisiú"

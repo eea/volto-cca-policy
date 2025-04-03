@@ -1528,6 +1528,16 @@ msgid "Local (e.g. city or municipal level)"
 msgstr "Lokalno (npr. mestna ali občinska raven)"
 
 #. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr "Države, kjer je ponujena možnost financiranja"
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr "Regija, kjer je na voljo financiranje"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-EEA Briefing (Poročilo EEA o odštevanju do leta 2021)"
