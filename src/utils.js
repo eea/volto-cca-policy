@@ -87,7 +87,5 @@ export const formatTextToHTML = (text) => {
   // Replace \\n with <br /> (line breaks within paragraphs)
   formattedText = formattedText.replace(/\\n/g, '<br />');
 
-  formattedText = `<p>${formattedText}</p>`;
-
-  return formattedText;
+  return `<p>${formattedText}</p>`;
 };

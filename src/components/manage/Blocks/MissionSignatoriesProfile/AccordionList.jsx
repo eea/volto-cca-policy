@@ -6,14 +6,14 @@ import {
   AccordionContent,
 } from 'semantic-ui-react';
 
-const AccordionList = ({ accordions }) => {
+const AccordionList = ({ accordions, variation }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const handleAccordionClick = (index) => {
     setActiveIndex(activeIndex === index ? -1 : index);
   };
 
   return (
-    <Accordion>
+    <Accordion className={variation}>
       {accordions.map((accordion, index) => (
         <React.Fragment key={index}>
           <AccordionTitle
@@ -21,7 +21,7 @@ const AccordionList = ({ accordions }) => {
             onClick={() => handleAccordionClick(index)}
           >
             <Icon
-              name={
+              className={
                 activeIndex === index
                   ? 'ri-arrow-up-s-line'
                   : 'ri-arrow-down-s-line'
@@ -30,7 +30,7 @@ const AccordionList = ({ accordions }) => {
             {accordion.title}
           </AccordionTitle>
           <AccordionContent active={activeIndex === index}>
-            <p>{accordion.content}</p>
+            {accordion.content}
           </AccordionContent>
         </React.Fragment>
       ))}
