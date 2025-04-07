@@ -1,4 +1,4 @@
-#
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -6,8 +6,8 @@ msgstr ""
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: \n"
+"Language-Team: \n"
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
@@ -18,8 +18,11 @@ msgid "A background document for the event is available"
 msgstr "K dispozici je podkladový dokument akce"
 
 #. Default: "Adaptation Approaches"
-#: search/cca/facets search/facets search/health_observatory/facets-health
-#: search/mission_all/facets-all search/mission_projects/facets-projects
+#: search/cca/facets
+#: search/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 msgid "Adaptation Approaches"
 msgstr "Adaptační přístupy"
 
@@ -39,7 +42,9 @@ msgid "Adaptation Options Implemented In This Case"
 msgstr "Možnosti adaptace implementované v tomto případě"
 
 #. Default: "Adaptation Sectors"
-#: search/cca/facets search/common search/facets
+#: search/cca/facets
+#: search/common
+#: search/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptační sektory"
 
@@ -141,7 +146,9 @@ msgid "City:"
 msgstr "Město:"
 
 #. Default: "Climate Impacts"
-#: search/cca/facets search/common search/facets
+#: search/cca/facets
+#: search/common
+#: search/facets
 msgid "Climate Impacts"
 msgstr "Dopady klimatu"
 
@@ -172,7 +179,8 @@ msgid "Climate-ADAPT page for this event"
 msgstr "Stránka Climate-ADAPT pro tuto událost"
 
 #. Default: "Contact"
-#: components/theme/Views/CaseStudyView components/theme/Views/CcaEventView
+#: components/theme/Views/CaseStudyView
+#: components/theme/Views/CcaEventView
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -193,7 +201,8 @@ msgid "Costs and benefits"
 msgstr "Náklady a přínosy"
 
 #. Default: "Countries"
-#: search/common search/mission_all/facets-all
+#: search/common
+#: search/mission_all/facets-all
 #: search/mission_funding/facets-funding
 msgid "Countries"
 msgstr "země"
@@ -304,7 +313,9 @@ msgid "Fullscreen"
 msgstr "Celá obrazovka"
 
 #. Default: "Funding Programme"
-#: search/cca/facets search/facets search/mission_projects/facets-projects
+#: search/cca/facets
+#: search/facets
+#: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
 msgstr "Program financování"
@@ -416,7 +427,8 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Item from third parties"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Item from third parties"
 msgstr "Položka od třetích stran"
 
@@ -427,7 +439,8 @@ msgstr "Klíčové komunitní systémy"
 
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Key Type Measure"
 msgstr "Měření typu klíče"
 
@@ -645,7 +658,8 @@ msgid "Publishing year"
 msgstr "Rok vydání"
 
 #. Default: "RAST step(s) of relevance"
-#: search/mission_funding/facets-funding search/mission_tools/facets-tools
+#: search/mission_funding/facets-funding
+#: search/mission_tools/facets-tools
 msgid "RAST step(s) of relevance"
 msgstr "Relevantní krok(y) RAST"
 
@@ -655,12 +669,14 @@ msgid "Reference Information"
 msgstr "Referenční informace"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView helpers/Utils
+#: components/theme/Views/AdaptationOptionView
+#: helpers/Utils
 msgid "Reference information"
 msgstr "Referenční informace"
 
 #. Default: "References"
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "References"
 msgstr "Reference"
 
@@ -705,7 +721,8 @@ msgid "Search the Observatory Resource Catalogue..."
 msgstr "Prohledejte katalog zdrojů observatoře..."
 
 #. Default: "Section"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Section"
 msgstr "Sekce"
 
@@ -758,7 +775,8 @@ msgstr "Řešení"
 
 #. Default: "Source"
 #: components/theme/Views/AdaptationOptionView
-#: components/theme/Views/CaseStudyView helpers/Utils
+#: components/theme/Views/CaseStudyView
+#: helpers/Utils
 msgid "Source"
 msgstr "Zdroj"
 
@@ -810,17 +828,10 @@ msgstr "Datum se vztahuje k datu vydání videa"
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Datum se vztahuje k poslednímu datu zveřejnění položky"
 
-#. Default: "The date refers to the moment in which the item has been prepared
-#. or updated by contributing experts to be submitted for the publication in
-#. Climate ADAPT"
+#. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 #: helpers/ContentMetadata
-msgid ""
-"The date refers to the moment in which the item has been prepared or updated"
-" by contributing experts to be submitted for the publication in Climate "
-"ADAPT"
-msgstr ""
-"Datum se vztahuje k okamžiku, kdy byla položka připravena nebo aktualizována"
-" přispívajícími odborníky, aby byla předložena ke zveřejnění v Climate ADAPT"
+msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
+msgstr "Datum se vztahuje k okamžiku, kdy byla položka připravena nebo aktualizována přispívajícími odborníky, aby byla předložena ke zveřejnění v Climate ADAPT"
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -829,12 +840,14 @@ msgid "Topics:"
 msgstr "témata:"
 
 #. Default: "Transnational regions"
-#: search/cca/facets search/facets
+#: search/cca/facets
+#: search/facets
 msgid "Transnational regions"
 msgstr "Nadnárodní regiony"
 
 #. Default: "Type of item"
-#: search/common search/mission_all/facets-all
+#: search/common
+#: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Typ položky"
 
@@ -895,501 +908,634 @@ msgid "Where"
 msgstr "Kde"
 
 #. undefined
+
 msgid "Case studies"
 msgstr "Případové studie"
 
 #. undefined
+
 msgid "Guidance"
 msgstr "Vedení"
 
 #. undefined
+
 msgid "Information portals"
 msgstr "Informační portály"
 
 #. undefined
+
 msgid "Videos"
 msgstr "videa"
 
 #. undefined
+
 msgid "Organisations"
 msgstr "Organizace"
 
 #. undefined
+
 msgid "Publication and reports"
 msgstr "Publikace a zprávy"
 
 #. undefined
+
 msgid "Publications and reports"
 msgstr "Publikace a zprávy"
 
 #. undefined
+
 msgid "Research and knowledge projects"
 msgstr "Výzkumné a znalostní projekty"
 
 #. undefined
+
 msgid "Tools"
 msgstr "Nástroje"
 
 #. undefined
+
 msgid "Based on your preferences, you can view this page in english"
-msgstr ""
-"Na základě vašich preferencí můžete tuto stránku zobrazit v angličtině"
+msgstr "Na základě vašich preferencí můžete tuto stránku zobrazit v angličtině"
 
 #. undefined
+
 msgid "here"
 msgstr "zde"
 
 #. undefined
+
 msgid "Latest <br/> News & Events"
 msgstr "Nejnovější <br/> Novinky a události"
 
 #. undefined
+
 msgid "Most recent <br/> Case Study"
 msgstr "Nejnovější <br/> případová studie"
 
 #. undefined
+
 msgid "Most recent <br/> Publication or Report"
 msgstr "Nejnovější <br/> publikace nebo zpráva"
 
 #. undefined
+
 msgid "National adaption policy"
 msgstr "Národní adaptační politika"
 
 #. undefined
+
 msgid "Climate change impact and vulnerability assessments"
 msgstr "Hodnocení dopadu změny klimatu a zranitelnosti"
 
 #. undefined
+
 msgid "Adaptation portals and platforms"
 msgstr "Adaptační portály a platformy"
 
 #. undefined
+
 msgid "Hazard category"
 msgstr "Kategorie nebezpečí"
 
 #. undefined
+
 msgid "Hazard type"
 msgstr "Typ nebezpečí"
 
 #. undefined
+
 msgid "Indicator"
 msgstr "Indikátor"
 
 #. undefined
+
 msgid "Zip download"
 msgstr "Stažení zipu"
 
 #. undefined
+
 msgid "Download"
 msgstr "Stáhnout"
 
 #. undefined
+
 msgid "Heat and cold"
 msgstr "Teplo a zima"
 
 #. undefined
+
 msgid "Mean air temperature"
 msgstr "Střední teplota vzduchu"
 
 #. undefined
+
 msgid "Extreme heat"
 msgstr "Extrémní horko"
 
 #. undefined
+
 msgid "Cold spells and frost"
 msgstr "Zima a mráz"
 
 #. undefined
+
 msgid "Wet and dry"
 msgstr "Mokré a suché"
 
 #. undefined
+
 msgid "Mean precipitation"
 msgstr "Průměrné srážky"
 
 #. undefined
+
 msgid "Extreme precipitation"
 msgstr "Extrémní srážky"
 
 #. undefined
+
 msgid "River flooding"
 msgstr "Záplavy řeky"
 
 #. undefined
+
 msgid "Aridity"
 msgstr "Vyprahlost"
 
 #. undefined
+
 msgid "Wildfire"
 msgstr "Blesk"
 
 #. undefined
+
 msgid "Snow and land ice"
 msgstr "Sníh a zemský led"
 
 #. undefined
+
 msgid "Snow and ice"
 msgstr "Sníh a led"
 
 #. undefined
+
 msgid "Coastal"
 msgstr "Pobřežní"
 
 #. undefined
+
 msgid "Relative sea level"
 msgstr "Relativní hladina moře"
 
 #. undefined
+
 msgid "Coastal flooding"
 msgstr "Pobřežní záplavy"
 
 #. undefined
+
 msgid "Other"
 msgstr "Ostatní"
 
 #. undefined
+
 msgid "Global"
 msgstr "Globální"
 
 #. undefined
+
 msgid "Black Sea"
 msgstr "Černé moře"
 
 #. undefined
+
 msgid "Albania"
 msgstr "Albánie"
 
 #. undefined
+
 msgid "Andorra"
 msgstr "Andorra"
 
 #. undefined
+
 msgid "Armenia"
 msgstr "Arménie"
 
 #. undefined
+
 msgid "Austria"
 msgstr "Rakousko"
 
 #. undefined
+
 msgid "Azerbaijan"
 msgstr "Ázerbajdžán"
 
 #. undefined
+
 msgid "Belarus"
 msgstr "Bělorusko"
 
 #. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosna a Hercegovina"
 
 #. undefined
+
 msgid "Bulgaria"
 msgstr "Bulharsko"
 
 #. undefined
+
 msgid "Croatia"
 msgstr "Chorvatsko"
 
 #. undefined
+
 msgid "Cyprus"
 msgstr "Kypr"
 
 #. undefined
+
 msgid "Czechia"
 msgstr "Česko"
 
 #. undefined
+
 msgid "Denmark"
 msgstr "Dánsko"
 
 #. undefined
+
 msgid "Estonia"
 msgstr "Estonsko"
 
 #. undefined
+
 msgid "Faroe Islands"
 msgstr "Faerské ostrovy"
 
 #. undefined
+
 msgid "Finland"
 msgstr "Finsko"
 
 #. undefined
+
 msgid "Germany"
 msgstr "Německo"
 
 #. undefined
+
 msgid "Georgia"
 msgstr "Gruzie"
 
 #. undefined
+
 msgid "Greece"
 msgstr "Řecko"
 
 #. undefined
+
 msgid "Hungary"
 msgstr "Maďarsko"
 
 #. undefined
+
 msgid "Iceland"
 msgstr "Island"
 
 #. undefined
+
 msgid "Kazakhstan"
 msgstr "Kazachstán"
 
 #. undefined
+
 msgid "Kosovo"
 msgstr "Kosovo"
 
 #. undefined
+
 msgid "Ireland"
 msgstr "Irsko"
 
 #. undefined
+
 msgid "Italy"
 msgstr "Itálie"
 
 #. undefined
+
 msgid "Israel"
 msgstr "Izrael"
 
 #. undefined
+
 msgid "Latvia"
 msgstr "Lotyšsko"
 
 #. undefined
+
 msgid "Liechtenstein"
 msgstr "Lichtenštejnsko"
 
 #. undefined
+
 msgid "Lithuania"
 msgstr "Litva"
 
 #. undefined
+
 msgid "Luxembourg"
 msgstr "Lucembursko"
 
 #. undefined
+
 msgid "Malta"
 msgstr "Malta"
 
 #. undefined
+
 msgid "Monaco"
 msgstr "Monako"
 
 #. undefined
+
 msgid "Moldova, Republic of"
 msgstr "Moldavsko, republika"
 
 #. undefined
+
 msgid "Montenegro"
 msgstr "Černá Hora"
 
 #. undefined
+
 msgid "Netherlands"
 msgstr "Nizozemí"
 
 #. undefined
+
 msgid "Norway"
 msgstr "Norsko"
 
 #. undefined
+
 msgid "Poland"
 msgstr "Polsko"
 
 #. undefined
+
 msgid "Portugal"
 msgstr "Portugalsko"
 
 #. undefined
+
 msgid "Republic of North Macedonia"
 msgstr "Republika Severní Makedonie"
 
 #. undefined
+
 msgid "Romania"
 msgstr "Rumunsko"
 
 #. undefined
+
 msgid "Russian Federation"
 msgstr "Ruská federace"
 
 #. undefined
+
 msgid "San Marino"
 msgstr "San Marino"
 
 #. undefined
+
 msgid "Serbia"
 msgstr "Srbsko"
 
 #. undefined
+
 msgid "Slovakia"
 msgstr "Slovensko"
 
 #. undefined
+
 msgid "Slovenia"
 msgstr "Slovinsko"
 
 #. undefined
+
 msgid "Spain"
 msgstr "Španělsko"
 
 #. undefined
+
 msgid "Sweden"
 msgstr "Švédsko"
 
 #. undefined
+
 msgid "Switzerland"
 msgstr "Švýcarsko"
 
 #. undefined
+
 msgid "Turkiye"
 msgstr "Turkiye"
 
 #. undefined
+
 msgid "Türkiye"
 msgstr "Turecko"
 
 #. undefined
+
 msgid "United Kingdom"
 msgstr "Spojené království"
 
 #. undefined
+
 msgid "Ukraine"
 msgstr "Ukrajina"
 
 #. undefined
+
 msgid "Europe"
 msgstr "Evropa"
 
 #. undefined
+
 msgid "Macro-Transnational Regions"
 msgstr "Makro-nadnárodní regiony"
 
 #. undefined
+
 msgid "Biogeographical Regions"
 msgstr "Biogeografické regiony"
 
 #. undefined
+
 msgid "Subnational Regions"
 msgstr "Subnárodní regiony"
 
 #. undefined
+
 msgid "Municipality Name"
 msgstr "Název obce"
 
 #. undefined
+
 msgid "Northern Periphery and Arctic"
 msgstr "Severní periferie a Arktida"
 
 #. undefined
+
 msgid "Baltic Sea"
 msgstr "Baltské moře"
 
 #. undefined
+
 msgid "North West Europe"
 msgstr "Severozápadní Evropa"
 
 #. undefined
+
 msgid "North Sea"
 msgstr "Severní moře"
 
 #. undefined
+
 msgid "Atlantic Area"
 msgstr "Atlantská oblast"
 
 #. undefined
+
 msgid "Alpine Space"
 msgstr "Alpský prostor"
 
 #. undefined
+
 msgid "Central Europe"
 msgstr "střední Evropa"
 
 #. undefined
+
 msgid "South West Europe"
 msgstr "Jihozápadní Evropa"
 
 #. undefined
+
 msgid "Mediterranean (Euro-Med)"
 msgstr "Středomoří (Euro-Med)"
 
 #. undefined
+
 msgid "Danube Area"
 msgstr "Oblast Dunaje"
 
 #. undefined
+
 msgid "Adriatic-Ionian"
 msgstr "jadransko-jónský"
 
 #. undefined
+
 msgid "Mediterranean Sea Basin (NEXT)"
 msgstr "Středozemní moře (NEXT)"
 
 #. undefined
+
 msgid "Black Sea Basin (NEXT)"
 msgstr "Černé moře (NEXT)"
 
 #. undefined
+
 msgid "Outermost Regions"
 msgstr "Nejvzdálenější regiony"
 
 #. undefined
+
 msgid "Alpine"
 msgstr "Vysokohorský"
 
 #. undefined
+
 msgid "Anatolian"
 msgstr "Anatolský"
 
 #. undefined
+
 msgid "Arctic"
 msgstr "Arktický"
 
 #. undefined
+
 msgid "Atlantic"
 msgstr "Atlantik"
 
 #. undefined
+
 msgid "Boreal"
 msgstr "boreální"
 
 #. undefined
+
 msgid "Continental"
 msgstr "Kontinentální"
 
 #. undefined
+
 msgid "Macaronesia"
 msgstr "Makaronésie"
 
 #. undefined
+
 msgid "Mediterranean"
 msgstr "Středomoří"
 
 #. undefined
+
 msgid "Pannonian"
 msgstr "panonský"
 
 #. undefined
+
 msgid "Steppic"
 msgstr "Stepní"
 
 #. undefined
+
 msgid "Transnational region (stretching across country borders)"
 msgstr "Nadnárodní region (sahající přes hranice zemí)"
 
 #. undefined
+
 msgid "National"
 msgstr "Národní"
 
 #. undefined
+
 msgid "Sub National Regions"
 msgstr "Subnárodní regiony"
 
 #. undefined
+
 msgid "Local (e.g. city or municipal level)"
 msgstr "Místní (např. úroveň města nebo obce)"
+
+#. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr "Země, kde se nabízí možnost financování"
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr "Region, kde je financování nabízeno"
 
 #. undefined
 #: health_menu:43
@@ -1402,7 +1548,8 @@ msgid "ADAPTATION IN EU POLICY SECTORS"
 msgstr "ÚPRAVY V ODVĚTVÍCH POLITIKY EU"
 
 #. undefined
-#: health_menu:9 site_menu:10
+#: health_menu:9
+#: site_menu:10
 msgid "About"
 msgstr "O nás"
 
@@ -1507,7 +1654,8 @@ msgid "Countries, Transnational regions"
 msgstr "Země, nadnárodní regiony"
 
 #. undefined
-#: health_menu:18 site_menu:45
+#: health_menu:18
+#: site_menu:45
 msgid "Country Profiles"
 msgstr "Profily zemí"
 
@@ -1567,7 +1715,8 @@ msgid "Mission Portal"
 msgstr "Portál pro služební cesty"
 
 #. undefined
-#: site_menu:43 site_menu:43
+#: site_menu:43
+#: site_menu:43
 msgid "EU REGIONAL POLICY"
 msgstr "REGIONÁLNÍ POLITIKA EU"
 
@@ -1618,10 +1767,8 @@ msgstr "Energetika"
 
 #. undefined
 #: site_menu:67
-msgid ""
-"Europe's vulnerability to climate change impacts occurring outside Europe"
-msgstr ""
-"Zranitelnost Evropy vůči dopadům změny klimatu, k nimž dochází mimo Evropu"
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Zranitelnost Evropy vůči dopadům změny klimatu, k nimž dochází mimo Evropu"
 
 #. undefined
 #: health_menu:32
@@ -1761,8 +1908,7 @@ msgstr "Vnitrostátní politiky"
 #. undefined
 #: health_menu:38
 msgid "National heat-health warning systems and action plans"
-msgstr ""
-"Vnitrostátní systémy varování v oblasti tepelného zdraví a akční plány"
+msgstr "Vnitrostátní systémy varování v oblasti tepelného zdraví a akční plány"
 
 #. undefined
 #: health_menu:17
@@ -1910,7 +2056,8 @@ msgid "Water management"
 msgstr "Hospodaření s vodou"
 
 #. undefined
-#: health_menu:46 site_menu:93
+#: health_menu:46
+#: site_menu:93
 msgid "Webinars"
 msgstr "Webináře"
 
@@ -1940,88 +2087,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Expozice zranitelných skupin klimatickým rizikům"
 
 #. undefined
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "KLÍČOVÁ OPATŘENÍ EU"
 
 #. undefined
+#: 
 msgid "Just resilience"
 msgstr "Spravedlivá odolnost"
 
 #. undefined
+#: 
 msgid "Nature-based solutions"
 msgstr "Řešení inspirovaná přírodou"
 
 #. undefined
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Ekonomické ztráty a úmrtí"
 
 #. undefined
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Strategické cíle do roku 2030"
 
 #. undefined
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Dostupnost městské zeleně pro zranitelné skupiny"
 
 #. undefined
+#: 
 msgid "Transnational, National, local"
 msgstr "Nadnárodní, národní, místní"
 
 #. undefined
+#: 
 msgid "Aero-allergens"
 msgstr "Aeroalergenní látky"
 
 #. undefined
+#: 
 msgid "Heat"
 msgstr "Teplo"
 
 #. undefined
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostupnost nemocnic v Evropě"
 
 #. undefined
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Úprava v lesním odvětví"
 
 #. undefined
+#: 
 msgid "Ground-level ozone"
 msgstr "Přízemní ozon"
 
 #. undefined
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognóza přízemního ozonu (CAMS)"
 
 #. undefined
+#: 
 msgid "Pollution"
 msgstr "Znečištění"
 
 #. undefined
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Účinky na bezpečnost a ochranu zdraví při práci"
 
 #. undefined
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Pracovní plán observatoře na období 2023–2024"
 
 #. undefined
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Přízemní předpověď PM2,5 (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Přízemní předpověď PM10 (CAMS)"
 
 #. undefined
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Prognóza NO2 na úrovni terénu (CAMS)"
 
 #. undefined
+#: 
 msgid "2022 EEA Report on Climate & Health"
-msgstr ""
-"Zpráva Evropské agentury pro životní prostředí (EEA) z roku 2022 o klimatu a"
-" amp; zdraví"
+msgstr "Zpráva Evropské agentury pro životní prostředí (EEA) z roku 2022 o klimatu a amp; zdraví"
 
 #. undefined
+#: 
 msgid "European environment and health atlas"
 msgstr "Evropský atlas životního prostředí a zdraví"
 
@@ -2039,9 +2205,7 @@ msgstr "1. Příprava podmínek pro adaptaci"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:136
 msgid "1.1 Obtaining high-level political support for adaptation"
-msgstr ""
-"1.1 Získání politické podpory na vysoké úrovni pro přizpůsobení se změně "
-"klimatu"
+msgstr "1.1 Získání politické podpory na vysoké úrovni pro přizpůsobení se změně klimatu"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:83
@@ -2060,12 +2224,8 @@ msgstr "1.2 Strukturované nastavení procesu"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:144
-msgid ""
-"1.3 Estimating human and financial resources needed and identifying "
-"potential sources of long-term funding"
-msgstr ""
-"1.3 Odhad potřebných lidských a finančních zdrojů a identifikace "
-"potenciálních zdrojů dlouhodobého financování"
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 Odhad potřebných lidských a finančních zdrojů a identifikace potenciálních zdrojů dlouhodobého financování"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
@@ -2125,8 +2285,7 @@ msgstr "12 regionů"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:163
 msgid "2. Assessing climate change risks and vulnerabilities"
-msgstr ""
-"2. Posuzování rizik a zranitelných míst souvisejících se změnou klimatu"
+msgstr "2. Posuzování rizik a zranitelných míst souvisejících se změnou klimatu"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
@@ -2140,10 +2299,8 @@ msgstr "2.1 Pochopení klimatických rizik"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:172
-msgid ""
-"2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
-msgstr ""
-"2.2 Rámce pro posuzování dopadů, zranitelnosti a rizik v oblasti klimatu"
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Rámce pro posuzování dopadů, zranitelnosti a rizik v oblasti klimatu"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
@@ -2152,12 +2309,8 @@ msgstr "2.2 Pochopení klimatických projekcí a budoucích dopadů"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:176
-msgid ""
-"2.3 General sequence for climate impacts, vulnerabilities and risk "
-"assessments"
-msgstr ""
-"2.3 Obecná posloupnost posouzení dopadů, zranitelnosti a rizik v oblasti "
-"klimatu"
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
+msgstr "2.3 Obecná posloupnost posouzení dopadů, zranitelnosti a rizik v oblasti klimatu"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
@@ -2191,25 +2344,18 @@ msgstr "2.6 Identifikace hlavních problémů přizpůsobení a definování cí
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:188
-msgid ""
-"2.6 Identifying main adaptation concerns and setting a strategic direction"
-msgstr ""
-"2.6 Identifikace hlavních problémů přizpůsobení a stanovení strategického "
-"směru"
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 Identifikace hlavních problémů přizpůsobení a stanovení strategického směru"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
-msgstr ""
-"2.7 Posuzování rizik a zranitelných míst souvisejících se změnou klimatu: "
-"sebekontrola"
+msgstr "2.7 Posuzování rizik a zranitelných míst souvisejících se změnou klimatu: sebekontrola"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:192
 msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
-msgstr ""
-"2.7 Posuzování rizik a zranitelných míst souvisejících se změnou klimatu: "
-"sebekontrola"
+msgstr "2.7 Posuzování rizik a zranitelných míst souvisejících se změnou klimatu: sebekontrola"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:199
@@ -2250,12 +2396,8 @@ msgstr "4. Posouzení možností přizpůsobení"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:229
-msgid ""
-"4.1 Assessing possible adaptation options in terms of effects, time, costs, "
-"benefits and efforts"
-msgstr ""
-"4.1 Posouzení možných možností přizpůsobení z hlediska účinků, času, "
-"nákladů, přínosů a úsilí"
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Posouzení možných možností přizpůsobení z hlediska účinků, času, nákladů, přínosů a úsilí"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
@@ -2270,8 +2412,7 @@ msgstr "4.2 Provedení analýzy nákladů a přínosů adaptačních opatření"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:233
 msgid "4.2 Prioritising adaptation options and selecting preferred ones"
-msgstr ""
-"4.2 Upřednostnění možností přizpůsobení a výběr upřednostňovaných možností"
+msgstr "4.2 Upřednostnění možností přizpůsobení a výběr upřednostňovaných možností"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:237
@@ -2301,8 +2442,7 @@ msgstr "5. Implementace adaptace"
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:238
 msgid "5.1 Designing an effective adaptation action plan"
-msgstr ""
-"5.1 Vypracování účinného akčního plánu pro přizpůsobení se změně klimatu"
+msgstr "5.1 Vypracování účinného akčního plánu pro přizpůsobení se změně klimatu"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:257
@@ -2326,18 +2466,13 @@ msgstr "5.3 Začleňování přizpůsobení do městských politik a plánů"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:265
-msgid ""
-"5.3 Mainstreaming: Integrating adaptation into instruments and sector "
-"policies"
-msgstr ""
-"5.3 Začleňování: Začlenění přizpůsobení do nástrojů a odvětvových politik"
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Začleňování: Začlenění přizpůsobení do nástrojů a odvětvových politik"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
 msgid "5.4 Addressing climate change through adaptation and mitigation"
-msgstr ""
-"5.4 Řešení změny klimatu prostřednictvím přizpůsobení se změně klimatu a "
-"jejího zmírňování"
+msgstr "5.4 Řešení změny klimatu prostřednictvím přizpůsobení se změně klimatu a jejího zmírňování"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:269
@@ -2382,8 +2517,7 @@ msgstr "6.2 Definování monitorovacích ukazatelů"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:295
 msgid "6.3 Defining MRE indicators and mixed-methods approach"
-msgstr ""
-"6.3 Definování ukazatelů MRE a přístupu založeného na smíšených metodách"
+msgstr "6.3 Definování ukazatelů MRE a přístupu založeného na smíšených metodách"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
@@ -2412,36 +2546,18 @@ msgstr "6.5 Monitorování a hodnocení adaptace: Vlastní kontrola"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
-msgid ""
-"A value for the quality of 2x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 62."
-msgstr ""
-"Hodnota pro kvalitu 2x obrazů s vysokou hustotou pixelů, od 1 (nejnižší) do "
-"95 (nejvyšší). Hodnota 0 bude znamenat, že bude použita výchozí hodnota "
-"plone.scaling, která je v současné době 62."
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "Hodnota pro kvalitu 2x obrazů s vysokou hustotou pixelů, od 1 (nejnižší) do 95 (nejvyšší). Hodnota 0 bude znamenat, že bude použita výchozí hodnota plone.scaling, která je v současné době 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
-msgid ""
-"A value for the quality of 3x high pixel density images, from 1 (lowest) to "
-"95 (highest). A value of 0 will mean plone.scaling's default will be used, "
-"which is currently 51."
-msgstr ""
-"Hodnota pro kvalitu 3x obrazů s vysokou hustotou pixelů, od 1 (nejnižší) do "
-"95 (nejvyšší). Hodnota 0 bude znamenat, že bude použita výchozí hodnota "
-"plone.scaling, která je v současné době 51."
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "Hodnota pro kvalitu 3x obrazů s vysokou hustotou pixelů, od 1 (nejnižší) do 95 (nejvyšší). Hodnota 0 bude znamenat, že bude použita výchozí hodnota plone.scaling, která je v současné době 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
-msgid ""
-"A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A"
-" value of 0 will mean plone.scaling's default will be used, which is "
-"currently 88."
-msgstr ""
-"Hodnota pro kvalitu zmenšených obrázků, od 1 (nejnižší) do 95 (nejvyšší). "
-"Hodnota 0 bude znamenat, že bude použita výchozí hodnota plone.scaling, "
-"která je v současné době 88."
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "Hodnota pro kvalitu zmenšených obrázků, od 1 (nejnižší) do 95 (nejvyšší). Hodnota 0 bude znamenat, že bude použita výchozí hodnota plone.scaling, která je v současné době 88."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:567
@@ -2470,8 +2586,7 @@ msgstr "A3: Koordinační spolupráce a sítě"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:569
-msgid ""
-"A3: Governance and Institutional: Coordination cooperation and networks"
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
 msgstr "A3: Správa a instituce: Koordinační spolupráce a sítě"
 
 #. undefined
@@ -2596,9 +2711,7 @@ msgstr "B1: Finanční pobídkové nástroje"
 #. undefined
 #: ../../climateadapt/vocabulary.py:571
 msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
-msgstr ""
-"B2: Hospodářství a finance: Pojišťovací nástroje a nástroje pro sdílení "
-"rizik"
+msgstr "B2: Hospodářství a finance: Pojišťovací nástroje a nástroje pro sdílení rizik"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:587
@@ -2642,27 +2755,18 @@ msgstr "Případové studie Ilustrace"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:368
-msgid ""
-"Case developed and implemented and partially funded as a Climate Change "
-"Adaptation measure."
-msgstr ""
-"Případ byl vypracován a proveden a částečně financován jako opatření pro "
-"přizpůsobení se změně klimatu."
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Případ byl vypracován a proveden a částečně financován jako opatření pro přizpůsobení se změně klimatu."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:366
 msgid "Case developed and implemented as a Climate Change Adaptation Measure."
-msgstr ""
-"Případ vyvinutý a prováděný jako opatření pro přizpůsobení se změně klimatu."
+msgstr "Případ vyvinutý a prováděný jako opatření pro přizpůsobení se změně klimatu."
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:369
-msgid ""
-"Case mainly developed and implemented because of other policy objectives, "
-"but with significant consideration of Climate Change Adaptation aspects"
-msgstr ""
-"Případ byl vypracován a prováděn především kvůli jiným politickým cílům, ale"
-" s významným zohledněním aspektů přizpůsobení se změně klimatu."
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Případ byl vypracován a prováděn především kvůli jiným politickým cílům, ale s významným zohledněním aspektů přizpůsobení se změně klimatu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:177
@@ -2671,11 +2775,8 @@ msgstr "Případové studie a adaptační možnosti"
 
 #. undefined
 #: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
-msgid ""
-"Case studies collected at national level in Spain, provided by AdapteCCA.es"
-msgstr ""
-"Případové studie shromážděné na vnitrostátní úrovni ve Španělsku, které "
-"poskytl AdapteCCA.es"
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Případové studie shromážděné na vnitrostátní úrovni ve Španělsku, které poskytl AdapteCCA.es"
 
 #. undefined
 #: ../../climateadapt/mayorsadapt/views.py:78
@@ -2759,8 +2860,7 @@ msgstr "D1: Zelené možnosti"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:574
-msgid ""
-"D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
 msgstr "D1: Přírodě blízká řešení a ekosystémové přístupy: zelené možnosti"
 
 #. undefined
@@ -2770,8 +2870,7 @@ msgstr "D2: Modré možnosti"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:575
-msgid ""
-"D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
 msgstr "D2: Přírodě blízká řešení a ekosystémové přístupy: Modré možnosti"
 
 #. undefined
@@ -2814,8 +2913,7 @@ msgstr "E1: Informování a zvyšování povědomí"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:576
-msgid ""
-"E1: Knowledge and behavioural change: Information and awareness raising"
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
 msgstr "E1: Znalosti a změna chování: zvyšování informovanosti a povědomí"
 
 #. undefined
@@ -2825,12 +2923,8 @@ msgstr "E2: Budování kapacit a postupy v oblasti životního stylu"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:577
-msgid ""
-"E2: Knowledge and behavioural change: Capacity building empowering and "
-"lifestyle practices"
-msgstr ""
-"E2: Znalost a změna chování: posilování kapacit a postupy v oblasti "
-"životního stylu"
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "E2: Znalost a změna chování: posilování kapacit a postupy v oblasti životního stylu"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:439
@@ -2865,25 +2959,13 @@ msgstr "Události"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:298
-msgid ""
-"Explore Forest adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Prozkoumejte případové studie přizpůsobení lesů z hlediska zeměpisné polohy,"
-" tematického pokrytí a propojení s možnostmi přizpůsobení prostřednictvím "
-"průzkumníka případových studií založeného na mapách."
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Prozkoumejte případové studie přizpůsobení lesů z hlediska zeměpisné polohy, tematického pokrytí a propojení s možnostmi přizpůsobení prostřednictvím průzkumníka případových studií založeného na mapách."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:253
-msgid ""
-"Explore Urban adaptation case studies in terms of geographic location, "
-"thematic coverage and link to adaptation options through the map-based Case "
-"study explorer."
-msgstr ""
-"Prozkoumejte případové studie městské adaptace z hlediska geografické "
-"polohy, tematického pokrytí a propojení s možnostmi adaptace prostřednictvím"
-" průzkumníka případových studií založeného na mapách."
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Prozkoumejte případové studie městské adaptace z hlediska geografické polohy, tematického pokrytí a propojení s možnostmi adaptace prostřednictvím průzkumníka případových studií založeného na mapách."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceproject_view.pt:139
@@ -2908,19 +2990,12 @@ msgstr "FAO Zelená města"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:248
-msgid ""
-"FISE web portal will help us to improve the health and resilience of our "
-"forests, which play a vital role in protecting our biodiversity and in "
-"mitigating climate change."
-msgstr ""
-"Internetový portál FISE nám pomůže zlepšit zdraví a odolnost našich lesů, "
-"které hrají zásadní úlohu při ochraně naší biologické rozmanitosti a "
-"zmírňování změny klimatu."
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "Internetový portál FISE nám pomůže zlepšit zdraví a odolnost našich lesů, které hrají zásadní úlohu při ochraně naší biologické rozmanitosti a zmírňování změny klimatu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/help-categories.pt:24
-msgid ""
-"Find out how to contribute different types of information to Climate-ADAPT."
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
 msgstr "Zjistěte, jak přispět různými typy informací do Climate-ADAPT."
 
 #. undefined
@@ -3164,39 +3239,23 @@ msgstr "Využívání půdy a potravinové systémy"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:285
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in forests."
-msgstr ""
-"Přečtěte si více o různých možnostech přizpůsobení se různým dopadům změny "
-"klimatu v lesích."
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Přečtěte si více o různých možnostech přizpůsobení se různým dopadům změny klimatu v lesích."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:267
-msgid ""
-"Learn more about different adaptation options to the various impacts of "
-"climate change in urban areas."
-msgstr ""
-"Přečtěte si více o různých možnostech přizpůsobení se různým dopadům změny "
-"klimatu v městských oblastech."
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Přečtěte si více o různých možnostech přizpůsobení se různým dopadům změny klimatu v městských oblastech."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:155
-msgid ""
-"Learn more about how cities can adapt to climate change to become future-"
-"proof, climate-resilient cities"
-msgstr ""
-"Další informace o tom, jak se města mohou přizpůsobit změně klimatu a stát "
-"se městy odolnými vůči změně klimatu, která obstojí i v budoucnu"
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Další informace o tom, jak se města mohou přizpůsobit změně klimatu a stát se městy odolnými vůči změně klimatu, která obstojí i v budoucnu"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:177
-msgid ""
-"Learn more about how forests can adapt to climate change to stay healthy, "
-"diverse, resilient and productive"
-msgstr ""
-"Další informace o tom, jak se mohou lesy přizpůsobit změně klimatu, aby "
-"zůstaly zdravé, rozmanité, odolné a produktivní"
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Další informace o tom, jak se mohou lesy přizpůsobit změně klimatu, aby zůstaly zdravé, rozmanité, odolné a produktivní"
 
 #. undefined
 #: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
@@ -3258,11 +3317,8 @@ msgstr "Horské oblasti"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
-msgid ""
-"National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr ""
-"Vnitrostátní adaptační politika nebyla v roce 2023 vykázána nad rámec "
-"povinného podávání zpráv"
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "Vnitrostátní adaptační politika nebyla v roce 2023 vykázána nad rámec povinného podávání zpráv"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
@@ -3507,12 +3563,8 @@ msgstr "Vyberte zemi a přejděte přímo na stránku dané země:"
 
 #. undefined
 #: ../../climateadapt/browser/overrides.py:60
-msgid ""
-"Select the sectors for which you want to receive a notification email when "
-"an item is modified."
-msgstr ""
-"Vyberte sektory, pro které chcete při změně položky dostávat e-mail s "
-"oznámením."
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Vyberte sektory, pro které chcete při změně položky dostávat e-mail s oznámením."
 
 #. undefined
 #: ../../climateadapt/tiles/pt/shareinfo.pt:8
@@ -3546,12 +3598,8 @@ msgstr "Sociální: Informační"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
-msgid ""
-"Specify all allowed maximum image dimensions, one per line. The required "
-"format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr ""
-"Zadejte všechny povolené maximální rozměry obrazu, jeden na řádek. "
-"Požadovaný formát je &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Zadejte všechny povolené maximální rozměry obrazu, jeden na řádek. Požadovaný formát je &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -3566,8 +3614,7 @@ msgstr "bouřky"
 #. undefined
 #: ../../climateadapt/vocabulary.py:601
 msgid "Structural and physical: Ecosystem-based adaptation options"
-msgstr ""
-"Strukturální a fyzické: možnosti přizpůsobení založené na ekosystémech"
+msgstr "Strukturální a fyzické: možnosti přizpůsobení založené na ekosystémech"
 
 #. undefined
 #: ../../climateadapt/vocabulary.py:599
@@ -3601,70 +3648,28 @@ msgstr "Pakt starostů a primátorů EU"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
-msgid ""
-"The EU finances adaptation to climate change in Europe through a wide range "
-"of instruments. The Multiannual Financial Framework 2021-2027 ensures that "
-"at least 25% of the European budget is climate-related expenditure. "
-"Therefore, Climate adaptation actions have to be integrated into all the "
-"major EU spending programmes, and a tracking system is put in place to "
-"guarantee these objectives are met."
-msgstr ""
-"EU financuje přizpůsobení se změně klimatu v Evropě prostřednictvím široké "
-"škály nástrojů. Víceletý finanční rámec na období 2021–2027 zajišťuje, aby "
-"nejméně 25 % evropského rozpočtu tvořily výdaje související s klimatem. "
-"Opatření pro přizpůsobení se změně klimatu proto musí být začleněna do všech"
-" hlavních výdajových programů EU a je zaveden systém sledování, který zaručí"
-" splnění těchto cílů."
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "EU financuje přizpůsobení se změně klimatu v Evropě prostřednictvím široké škály nástrojů. Víceletý finanční rámec na období 2021–2027 zajišťuje, aby nejméně 25 % evropského rozpočtu tvořily výdaje související s klimatem. Opatření pro přizpůsobení se změně klimatu proto musí být začleněna do všech hlavních výdajových programů EU a je zaveden systém sledování, který zaručí splnění těchto cílů."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
-msgid ""
-"The EU has several policy frameworks in place to increase the resilience of "
-"European cities and their inhabitants, including the EU Adaptation Strategy "
-"and the EU Biodiversity Strategy 2030, and has developed several initiatives"
-" to improve knowledge and data availability on urban vulnerability and "
-"adaptive capacity. It also provides financial and technical support to "
-"policy makers and practitioners to make cities more resilient and adaptive."
-msgstr ""
-"EU má několik politických rámců pro zvýšení odolnosti evropských měst a "
-"jejich obyvatel, včetně strategie EU pro přizpůsobení se změně klimatu a "
-"strategie EU v oblasti biologické rozmanitosti do roku 2030, a vypracovala "
-"několik iniciativ ke zlepšení dostupnosti znalostí a údajů o zranitelnosti "
-"měst a jejich adaptační kapacitě. Poskytuje rovněž finanční a technickou "
-"podporu tvůrcům politik a odborníkům z praxe s cílem zvýšit odolnost a "
-"adaptabilitu měst."
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "EU má několik politických rámců pro zvýšení odolnosti evropských měst a jejich obyvatel, včetně strategie EU pro přizpůsobení se změně klimatu a strategie EU v oblasti biologické rozmanitosti do roku 2030, a vypracovala několik iniciativ ke zlepšení dostupnosti znalostí a údajů o zranitelnosti měst a jejich adaptační kapacitě. Poskytuje rovněž finanční a technickou podporu tvůrcům politik a odborníkům z praxe s cílem zvýšit odolnost a adaptabilitu měst."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:234
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices from the Copernicus Climate Change Service in support of "
-"climate change adaptation."
-msgstr ""
-"Evropský průzkumník údajů o klimatu poskytuje interaktivní přístup k mnoha "
-"klimatickým indexům ze služby programu Copernicus pro změnu klimatu na "
-"podporu přizpůsobení se změně klimatu."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "Evropský průzkumník údajů o klimatu poskytuje interaktivní přístup k mnoha klimatickým indexům ze služby programu Copernicus pro změnu klimatu na podporu přizpůsobení se změně klimatu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:239
-msgid ""
-"The European Climate Data Explorer provides interactive access to many "
-"climate indices like fire weather indices in support of climate change "
-"adaptation in forests."
-msgstr ""
-"Evropský průzkumník klimatických dat poskytuje interaktivní přístup k mnoha "
-"klimatickým indexům, jako jsou indexy požárního počasí, na podporu "
-"přizpůsobení se změně klimatu v lesích."
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "Evropský průzkumník klimatických dat poskytuje interaktivní přístup k mnoha klimatickým indexům, jako jsou indexy požárního počasí, na podporu přizpůsobení se změně klimatu v lesích."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:257
-msgid ""
-"The European Drought Observatory (EDO) contains drought-relevant "
-"information. These give an overview of the situation in the EU about "
-"imminent droughts."
-msgstr ""
-"Evropská observatoř pro sledování sucha (EDO) obsahuje informace týkající se"
-" sucha, které poskytují přehled o situaci v EU, pokud jde o hrozící sucha."
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "Evropská observatoř pro sledování sucha (EDO) obsahuje informace týkající se sucha, které poskytují přehled o situaci v EU, pokud jde o hrozící sucha."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:269
@@ -3673,56 +3678,23 @@ msgstr "Evropský systém informací o lesních požárech"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:266
-msgid ""
-"The European Forest Fire Information System (EFFIS) supports the protection "
-"of forests against fires and provides the EU with harmonized information on "
-"forest fires"
-msgstr ""
-"Evropský systém informací o lesních požárech (EFFIS) podporuje ochranu lesů "
-"před požáry a poskytuje EU harmonizované informace o lesních požárech"
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Evropský systém informací o lesních požárech (EFFIS) podporuje ochranu lesů před požáry a poskytuje EU harmonizované informace o lesních požárech"
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:225
-msgid ""
-"The Urban Adaptation Map Viewer provides an overview of the current and "
-"future climate hazards, the vulnerability of the cities to these hazards and"
-" their adaptive capacity."
-msgstr ""
-"Urban Adaptation Map Viewer poskytuje přehled o současných a budoucích "
-"klimatických rizicích, zranitelnosti měst vůči těmto rizikům a jejich "
-"adaptační schopnosti."
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "Urban Adaptation Map Viewer poskytuje přehled o současných a budoucích klimatických rizicích, zranitelnosti měst vůči těmto rizikům a jejich adaptační schopnosti."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:216
-msgid ""
-"The Urban Adaptation Support Tool assists cities, towns and local "
-"authorities in developing, implementing and monitoring climate change "
-"adaptation plans."
-msgstr ""
-"Nástroj na podporu přizpůsobení se změně klimatu pomáhá městům, obcím a "
-"místním orgánům při vypracovávání, provádění a monitorování plánů pro "
-"přizpůsobení se změně klimatu."
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "Nástroj na podporu přizpůsobení se změně klimatu pomáhá městům, obcím a místním orgánům při vypracovávání, provádění a monitorování plánů pro přizpůsobení se změně klimatu."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:340
-msgid ""
-"The climate crisis is severely affecting Europe's forests, making them "
-"increasingly vulnerable to hazards like storms, wildfires, droughts, insect "
-"and disease outbreaks, or sea level rise. The growing risks and impacts are "
-"affecting the economic viability of forestry and they reduce the capacity of"
-" forests to provide essential ecosystem services. The EU responds to this "
-"unprecedented challenge by supporting the adaptation of forests to climate "
-"change through a wide range of policies, like the EU Forest Strategy, EU "
-"Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
-msgstr ""
-"Klimatická krize vážně postihuje evropské lesy a zvyšuje jejich zranitelnost"
-" vůči rizikům, jako jsou bouře, lesní požáry, sucha, ohniska hmyzu a chorob "
-"nebo zvyšování hladiny moří. Rostoucí rizika a dopady ovlivňují hospodářskou"
-" životaschopnost lesnictví a snižují schopnost lesů poskytovat základní "
-"ekosystémové služby. EU na tuto bezprecedentní výzvu reaguje podporou "
-"přizpůsobení lesů změně klimatu prostřednictvím široké škály politik, jako "
-"je strategie EU v oblasti lesnictví, strategie EU pro přizpůsobení se změně "
-"klimatu a strategie EU v oblasti biologické rozmanitosti."
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Klimatická krize vážně postihuje evropské lesy a zvyšuje jejich zranitelnost vůči rizikům, jako jsou bouře, lesní požáry, sucha, ohniska hmyzu a chorob nebo zvyšování hladiny moří. Rostoucí rizika a dopady ovlivňují hospodářskou životaschopnost lesnictví a snižují schopnost lesů poskytovat základní ekosystémové služby. EU na tuto bezprecedentní výzvu reaguje podporou přizpůsobení lesů změně klimatu prostřednictvím široké škály politik, jako je strategie EU v oblasti lesnictví, strategie EU pro přizpůsobení se změně klimatu a strategie EU v oblasti biologické rozmanitosti."
 
 #. undefined
 #: ../../climateadapt/browser/pt/regions-section.pt:83
@@ -3814,8 +3786,7 @@ msgstr "Rok:"
 msgid "back to search"
 msgstr "Zpět na vyhledávání"
 
-#. Default: "Enable automatic image captioning for images set in the
-#. richtexteditor based on the description of images."
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
 #: ../../climateadapt/image_scales/interfaces.py:211
 msgid "image_captioning_description"
 msgstr "image_captioning_description[editovat | editovat zdroj]"

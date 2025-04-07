@@ -1,10 +1,10 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import AccordionList from './../AccordionList';
-import StatisticsSection from './../StatisticsSection';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
+import AccordionList from './../AccordionList';
+import StatisticsSection from './../StatisticsSection';
 
 const GovernanceTab = ({ result }) => {
   const statisticsData = [
@@ -73,6 +73,7 @@ const GovernanceTab = ({ result }) => {
         {result?.Signatory} engages with other levels of government regarding
         their:
       </h3>
+
       <AccordionList
         accordions={[
           {
