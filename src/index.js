@@ -3,6 +3,7 @@ import loadable from '@loadable/component';
 import { compose } from 'redux';
 import { Sitemap } from '@plone/volto/components';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
+import SelectAutoCompleteWidget from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
 import {
   RASTWidgetView,
   TranslationDisclaimer,
@@ -521,6 +522,10 @@ const applyConfig = (config) => {
     storeExtender,
     ...config.settings.storeExtenders,
   ];
+
+  config.widgets.vocabulary[
+    'plone.app.vocabularies.Users'
+  ] = SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
