@@ -107,37 +107,32 @@ const applyConfig = (config) => {
   config.settings.defaultLanguage = 'en';
   config.settings.supportedLanguages = [
     'en',
-    'de',
-    'fr',
-    'es',
-    'it',
-    'pl',
-    'el',
+    'de', // german
+    'fr', // french
+    'es', // spanish
+    'it', // italian
+    'pl', // polish
+    'el', // greek
 
-    'bg',
-    'cs',
-    'da',
-    // 'de',
-    // 'el',
-    // 'es',
-    'et',
-    'fi',
-    // 'fr',
-    'ga',
-    'hr',
-    'hu',
-    // 'it',
-    'lt',
-    'lv',
-    'mt',
-    'nl',
-    'nn',
-    // 'pl',
-    'pt',
-    'sk',
-    'sl',
-    'sv',
+    'bg', // bulgarian
+    'cs', // czech
+    'da', // danish
+    'et', // estonian
+    'fi', // suomi (finish)
+    'ga', // irish
+    'hr', // croatian
+    'hu', // hungarian
+    'lt', // lituania
+    'lv', // latvia
+    'mt', // malta
+    'nl', // dutch
+    'nn', // norwegean (one of 2)
+    'pt', // portuguese
+    'sk', // slovakian
+    'sl', // slovenian
+    'sv', // swedish
     'is', // islenska, for iceland
+    'tr', // turkish
   ];
 
   // EEA customizations
@@ -170,6 +165,8 @@ const applyConfig = (config) => {
       { name: 'Suomi', code: 'fi' },
       { name: 'Svenska', code: 'sv' },
       { name: 'Íslenska', code: 'is' },
+      { name: 'Türkçe', code: 'tr' },
+      { name: 'Gaeilge', code: 'ga' },
     ],
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
