@@ -97,8 +97,8 @@ const applyConfig = (config) => {
   ];
 
   if (!config.settings.loadables.reactTable)
-    config.settings.loadables.reactTable = loadable.lib(() =>
-      import('@tanstack/react-table'),
+    config.settings.loadables.reactTable = loadable.lib(
+      () => import('@tanstack/react-table'),
     );
 
   config.settings.dateLocale = 'en-gb';
@@ -131,6 +131,7 @@ const applyConfig = (config) => {
     'lv',
     'mt',
     'nl',
+    'no',
     // 'pl',
     'pt',
     'sk',
@@ -160,6 +161,7 @@ const applyConfig = (config) => {
       { name: 'Magyar', code: 'hu' },
       { name: 'Malti', code: 'mt' },
       { name: 'Nederlands', code: 'nl' },
+      { name: 'Nynorsk', code: 'no' },
       { name: 'Português', code: 'pt' },
       { name: 'Română', code: 'ro' },
       { name: 'Slovenčina', code: 'sk' },
@@ -572,9 +574,8 @@ const applyConfig = (config) => {
     ...config.settings.storeExtenders,
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
