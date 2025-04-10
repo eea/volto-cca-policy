@@ -105,7 +105,38 @@ const applyConfig = (config) => {
   config.settings.isMultilingual = true;
   config.settings.hasLanguageDropdown = true;
   config.settings.defaultLanguage = 'en';
-  config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it', 'pl'];
+  config.settings.supportedLanguages = [
+    'en',
+    'de',
+    'fr',
+    'es',
+    'it',
+    'pl',
+    'el',
+
+    'bg',
+    'cs',
+    'da',
+    // 'de',
+    // 'el',
+    // 'es',
+    'et',
+    'fi',
+    // 'fr',
+    'ga',
+    'hr',
+    'hu',
+    // 'it',
+    'lt',
+    'lv',
+    'mt',
+    'nl',
+    // 'pl',
+    'pt',
+    'sk',
+    'sl',
+    'sv',
+  ];
 
   // EEA customizations
   config.settings.eea = {
@@ -117,6 +148,24 @@ const applyConfig = (config) => {
       { name: 'Español', code: 'es' },
       { name: 'Italiano', code: 'it' },
       { name: 'Polski', code: 'pl' },
+
+      { name: 'български', code: 'bg' },
+      { name: 'Čeština', code: 'cs' },
+      { name: 'Dansk', code: 'da' },
+      { name: 'Eesti keel', code: 'et' },
+      { name: 'Ελληνικά', code: 'el' },
+      { name: 'Hrvatski', code: 'hr' },
+      { name: 'Latviešu valoda', code: 'lv' },
+      { name: 'Lietuvių kalba', code: 'lt' },
+      { name: 'Magyar', code: 'hu' },
+      { name: 'Malti', code: 'mt' },
+      { name: 'Nederlands', code: 'nl' },
+      { name: 'Português', code: 'pt' },
+      { name: 'Română', code: 'ro' },
+      { name: 'Slovenčina', code: 'sk' },
+      { name: 'Slovenščina', code: 'sl' },
+      { name: 'Suomi', code: 'fi' },
+      { name: 'Svenska', code: 'sv' },
     ],
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
