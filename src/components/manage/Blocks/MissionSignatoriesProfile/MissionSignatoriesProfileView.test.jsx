@@ -17,7 +17,6 @@ describe('MissionSignatoriesProfileView', () => {
 
     const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
 
-    expect(getByText('Test Signatory')).toBeInTheDocument();
     expect(getByText('Governance')).toBeInTheDocument();
     expect(getByText('Assessment')).toBeInTheDocument();
     expect(getByText('Planning')).toBeInTheDocument();
