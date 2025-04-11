@@ -81,10 +81,17 @@ export const filterBlocks = (content, blockTypes = []) => {
 export const formatTextToHTML = (text) => {
   if (!text) return '';
 
-  // Replace \\n\\n with </p><p> (separate paragraphs)
-  let formattedText = text.replace(/\\n\\n/g, '</p><p>');
+  let formattedText = text;
 
-  // Replace \\n with <br /> (line breaks within paragraphs)
+  // Handle common escape issues
+  formattedText = formattedText.replace(/\\\\/g, '\\'); // unescape backslashes
+  formattedText = formattedText.replace(/\\'/g, "'"); // unescape single quotes
+  formattedText = formattedText.replace(/\\"/g, '"'); // unescape double quotes
+
+  // Replace \\n\\n with </p><p> for paragraph separation
+  formattedText = formattedText.replace(/\\n\\n/g, '</p><p>');
+
+  // Replace \\n with <br /> for line breaks
   formattedText = formattedText.replace(/\\n/g, '<br />');
 
   return `<p>${formattedText}</p>`;
