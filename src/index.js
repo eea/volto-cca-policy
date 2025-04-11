@@ -97,26 +97,77 @@ const applyConfig = (config) => {
   ];
 
   if (!config.settings.loadables.reactTable)
-    config.settings.loadables.reactTable = loadable.lib(() =>
-      import('@tanstack/react-table'),
+    config.settings.loadables.reactTable = loadable.lib(
+      () => import('@tanstack/react-table'),
     );
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
   config.settings.hasLanguageDropdown = true;
   config.settings.defaultLanguage = 'en';
-  config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it', 'pl'];
+  config.settings.supportedLanguages = [
+    'en',
+
+    'bg', // bulgarian
+    'es', // spanish
+    'cs', // czech
+    'da', // danish
+    'de', // german
+    'et', // estonian
+    'el', // greek
+    'fr', // french
+    'ga', // irish
+    'hr', // croatian
+    'it', // italian
+    'lv', // latvia
+    'lt', // lituania
+    'hu', // hungarian
+    'mt', // malta
+    'nl', // dutch
+    'pl', // polish
+    'pt', // portuguese
+    'ro', // romanian
+    'sk', // slovakian
+    'sl', // slovenian
+    'fi', // suomi (finish)
+    'sv', // swedish
+
+    'is', // islenska, for iceland
+    'nn', // norwegean (one of 2)
+    'tr', // turkish
+  ];
 
   // EEA customizations
   config.settings.eea = {
     ...(config.settings.eea || {}),
     languages: [
       { name: 'English', code: 'en' },
-      { name: 'Deutsch', code: 'de' },
-      { name: 'Français', code: 'fr' },
+      // { name: 'български', code: 'bg' },
       { name: 'Español', code: 'es' },
+      // { name: 'Čeština', code: 'cs' },
+      { name: 'Dansk', code: 'da' },
+      { name: 'Deutsch', code: 'de' },
+      // { name: 'Eesti keel', code: 'et' },
+      { name: 'Ελληνικά', code: 'el' },
+      { name: 'Français', code: 'fr' },
+      // { name: 'Gaeilge', code: 'ga' },
+      { name: 'Hrvatski', code: 'hr' },
       { name: 'Italiano', code: 'it' },
+      // { name: 'Latviešu valoda', code: 'lv' },
+      // { name: 'Lietuvių kalba', code: 'lt' },
+      // { name: 'Magyar', code: 'hu' },
+      // { name: 'Malti', code: 'mt' },
+      // { name: 'Nederlands', code: 'nl' },
       { name: 'Polski', code: 'pl' },
+      { name: 'Português', code: 'pt' },
+      // { name: 'Română', code: 'ro' },
+      // { name: 'Slovenčina', code: 'sk' },
+      // { name: 'Slovenščina', code: 'sl' },
+      { name: 'Suomi', code: 'fi' },
+      { name: 'Svenska', code: 'sv' },
+      { name: 'Íslenska', code: 'is' },
+      { name: 'Nynorsk', code: 'nn' },
+      // { name: 'Türkçe', code: 'tr' },
     ],
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
@@ -523,9 +574,8 @@ const applyConfig = (config) => {
     ...config.settings.storeExtenders,
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
