@@ -12,7 +12,7 @@ import './style.less';
 const MissionSignatoriesProfileView = (props) => {
   const { data } = props;
   const result = data?._v_results || {};
-  const governance = result?.governance[0] || {};
+  const governance = result?.governance?.[0] || {};
 
   // const dataJson = JSON.parse(result?.Cooperation_Experience);
   const [activeIndex, setActiveIndex] = React.useState(0);
