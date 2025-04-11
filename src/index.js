@@ -97,8 +97,8 @@ const applyConfig = (config) => {
   ];
 
   if (!config.settings.loadables.reactTable)
-    config.settings.loadables.reactTable = loadable.lib(() =>
-      import('@tanstack/react-table'),
+    config.settings.loadables.reactTable = loadable.lib(
+      () => import('@tanstack/react-table'),
     );
 
   config.settings.dateLocale = 'en-gb';
@@ -107,31 +107,33 @@ const applyConfig = (config) => {
   config.settings.defaultLanguage = 'en';
   config.settings.supportedLanguages = [
     'en',
-    'de', // german
-    'fr', // french
-    'es', // spanish
-    'it', // italian
-    'pl', // polish
-    'el', // greek
 
     'bg', // bulgarian
+    'es', // spanish
     'cs', // czech
     'da', // danish
+    'de', // german
     'et', // estonian
-    'fi', // suomi (finish)
+    'el', // greek
+    'fr', // french
     'ga', // irish
     'hr', // croatian
-    'hu', // hungarian
-    'lt', // lituania
+    'it', // italian
     'lv', // latvia
+    'lt', // lituania
+    'hu', // hungarian
     'mt', // malta
     'nl', // dutch
-    'nn', // norwegean (one of 2)
+    'pl', // polish
     'pt', // portuguese
+    'ro', // romanian
     'sk', // slovakian
     'sl', // slovenian
+    'fi', // suomi (finish)
     'sv', // swedish
+
     'is', // islenska, for iceland
+    'nn', // norwegean (one of 2)
     'tr', // turkish
   ];
 
@@ -140,33 +142,32 @@ const applyConfig = (config) => {
     ...(config.settings.eea || {}),
     languages: [
       { name: 'English', code: 'en' },
-      { name: 'Deutsch', code: 'de' },
-      { name: 'Français', code: 'fr' },
+      // { name: 'български', code: 'bg' },
       { name: 'Español', code: 'es' },
-      { name: 'Italiano', code: 'it' },
-      { name: 'Polski', code: 'pl' },
-
-      { name: 'български', code: 'bg' },
-      { name: 'Čeština', code: 'cs' },
+      // { name: 'Čeština', code: 'cs' },
       { name: 'Dansk', code: 'da' },
-      { name: 'Eesti keel', code: 'et' },
+      { name: 'Deutsch', code: 'de' },
+      // { name: 'Eesti keel', code: 'et' },
       { name: 'Ελληνικά', code: 'el' },
+      { name: 'Français', code: 'fr' },
+      // { name: 'Gaeilge', code: 'ga' },
       { name: 'Hrvatski', code: 'hr' },
-      { name: 'Latviešu valoda', code: 'lv' },
-      { name: 'Lietuvių kalba', code: 'lt' },
-      { name: 'Magyar', code: 'hu' },
-      { name: 'Malti', code: 'mt' },
-      { name: 'Nederlands', code: 'nl' },
-      { name: 'Nynorsk', code: 'nn' },
+      { name: 'Italiano', code: 'it' },
+      // { name: 'Latviešu valoda', code: 'lv' },
+      // { name: 'Lietuvių kalba', code: 'lt' },
+      // { name: 'Magyar', code: 'hu' },
+      // { name: 'Malti', code: 'mt' },
+      // { name: 'Nederlands', code: 'nl' },
+      { name: 'Polski', code: 'pl' },
       { name: 'Português', code: 'pt' },
-      { name: 'Română', code: 'ro' },
-      { name: 'Slovenčina', code: 'sk' },
-      { name: 'Slovenščina', code: 'sl' },
+      // { name: 'Română', code: 'ro' },
+      // { name: 'Slovenčina', code: 'sk' },
+      // { name: 'Slovenščina', code: 'sl' },
       { name: 'Suomi', code: 'fi' },
       { name: 'Svenska', code: 'sv' },
       { name: 'Íslenska', code: 'is' },
-      { name: 'Türkçe', code: 'tr' },
-      { name: 'Gaeilge', code: 'ga' },
+      { name: 'Nynorsk', code: 'nn' },
+      // { name: 'Türkçe', code: 'tr' },
     ],
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
@@ -573,9 +574,8 @@ const applyConfig = (config) => {
     ...config.settings.storeExtenders,
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
