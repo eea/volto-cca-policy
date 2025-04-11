@@ -25,7 +25,7 @@ const MissionSignatoriesProfileView = (props) => {
             'DescribeDetailCooperationEnhance'
           ]
         } */}
-        <h2>{result?.planning_titles[0]?.Signatory}</h2>
+        <h2>{result?.planning_titles?.[0].Signatory}</h2>
 
         <br />
 
