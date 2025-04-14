@@ -1,4 +1,6 @@
-const vocab = {
+import { eea_languages } from '@eeacms/volto-cca-policy/constants';
+
+export const vocab = {
   cluster_name: {
     cca: 'Climate-ADAPT',
   },
@@ -19,6 +21,8 @@ const vocab = {
     'Publication reference': 'Publications and reports',
     Video: 'Videos and podcasts',
   },
+  language: Object.assign(
+    {},
+    ...eea_languages.map(({ name, code }) => ({ [code]: name })),
+  ),
 };
-
-export default { vocab };
