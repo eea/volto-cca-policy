@@ -19,76 +19,89 @@ jest.mock('./TabSections/ActionPagesTab', () => () => (
 ));
 
 describe('MissionSignatoriesProfileView', () => {
-  it('should render the component with data', () => {
-    const data = {
-      _v_results: [
-        {
-          Describe: 'Test description',
-          Provide: 'Test evidence',
-          planning_titles: [{ Signatory: 'Test Signatory Title' }],
-        },
-      ],
-    };
+  const data = {
+    _v_results: {
+      planning_titles: [{ Signatory: 'Test Signatory Title' }],
+      planning_goals: [],
+      planning_climate_action: [],
+      planning_climate_sectors: [],
+      governance: [{}],
+    },
+  };
 
+  it('should render the component with data and tabs', () => {
     const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
 
-    // Assert static text
     expect(getByText('Governance')).toBeInTheDocument();
     expect(getByText('Assessment')).toBeInTheDocument();
     expect(getByText('Planning')).toBeInTheDocument();
     expect(getByText('Action Pages')).toBeInTheDocument();
+    expect(getByText('Introduction')).toBeInTheDocument();
   });
 
-  it('should render tabs and switch content correctly', async () => {
-    const data = {
-      _v_results: [
-        {
-          planning_titles: [{ Signatory: 'Test Signatory Title' }],
-        },
-      ],
-    };
+  it('should render Signatory title', () => {
+    const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
+    expect(getByText('Test Signatory Title')).toBeInTheDocument();
+  });
 
+  it('should handle missing planning_titles gracefully', () => {
+    const data = { _v_results: { governance: [{}] } };
+    const { container } = render(<MissionSignatoriesProfileView data={data} />);
+    expect(container).toBeInTheDocument();
+  });
+
+  it('should handle empty _v_results object gracefully', () => {
+    const { getByText } = render(
+      <MissionSignatoriesProfileView data={{ _v_results: {} }} />,
+    );
+    expect(getByText('Introduction')).toBeInTheDocument();
+  });
+
+  it('should handle completely missing data prop', () => {
+    const { getByText } = render(<MissionSignatoriesProfileView data={{}} />);
+    expect(getByText('Planning')).toBeInTheDocument();
+    expect(getByText('Introduction')).toBeInTheDocument();
+  });
+
+  it('should render all tab labels', () => {
+    const { getByText } = render(<MissionSignatoriesProfileView data={{}} />);
+    [
+      'Introduction',
+      'Governance',
+      'Assessment',
+      'Planning',
+      'Action Pages',
+    ].forEach((label) => {
+      expect(getByText(label)).toBeInTheDocument();
+    });
+  });
+
+  it('should switch between tabs and display correct content', async () => {
     const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
 
-    // Click on the 'Governance' tab
-    const governanceTab = getByText('Governance');
-    fireEvent.click(governanceTab);
-
-    // Wait for the content to change
+    fireEvent.click(getByText('Governance'));
     await waitFor(() =>
       expect(getByText('Governance Content')).toBeInTheDocument(),
     );
 
-    // Click on the 'Introduction' tab
-    const introductionTab = getByText('Introduction');
-    fireEvent.click(introductionTab);
-
-    // Wait for the content to change
+    fireEvent.click(getByText('Introduction'));
     await waitFor(() =>
       expect(getByText('Introduction Content')).toBeInTheDocument(),
     );
 
-    // Click on the 'Assessment' tab
-    const assessmentTab = getByText('Assessment');
-    fireEvent.click(assessmentTab);
-
-    // Wait for the content to change
+    fireEvent.click(getByText('Assessment'));
     await waitFor(() =>
       expect(getByText('Assessment Content')).toBeInTheDocument(),
     );
-  });
 
-  it('should handle missing data gracefully', () => {
-    const { getByText } = render(<MissionSignatoriesProfileView data={{}} />);
+    fireEvent.click(getByText('Planning'));
+    await waitFor(() =>
+      expect(getByText('Planning Content')).toBeInTheDocument(),
+    );
 
-    // Test if the component gracefully handles missing or incomplete data
-    expect(getByText('Governance')).toBeInTheDocument();
-    expect(getByText('Assessment')).toBeInTheDocument();
-    expect(getByText('Planning')).toBeInTheDocument();
-    expect(getByText('Action Pages')).toBeInTheDocument();
-
-    // Check that no specific data from `result` breaks the rendering
-    expect(getByText('Introduction')).toBeInTheDocument();
-    expect(getByText('Governance')).toBeInTheDocument();
+    fireEvent.click(getByText('Action Pages'));
+    await waitFor(() =>
+      expect(getByText('Action Pages Content')).toBeInTheDocument(),
+    );
   });
 });
