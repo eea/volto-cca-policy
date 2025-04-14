@@ -45,7 +45,7 @@ const applyConfig = (config) => {
   searchui.missionToolsSearch.extraQueryParams = extraQueryParams;
   searchui.missionAll.extraQueryParams = extraQueryParams;
 
-  console.log(config.settings.searchlib);
+  // console.log(config.settings.searchlib);
 
   return config;
 };
