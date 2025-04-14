@@ -10,9 +10,28 @@ import {
 } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import AccordionList from './../AccordionList';
-import ItemsSection from './../ItemsSection';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
+
+const ItemsSection = ({ items }) => {
+  return (
+    <ItemGroup className="items-group">
+      <Item>
+        <Image size="small" src={image} />
+        <ItemContent verticalAlign="middle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </ItemContent>
+      </Item>
+
+      <Item>
+        <Image size="small" src={image} />
+        <ItemContent verticalAlign="middle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </ItemContent>
+      </Item>
+    </ItemGroup>
+  );
+};
 
 const AssessmentTab = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);

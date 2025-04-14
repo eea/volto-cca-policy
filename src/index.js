@@ -42,6 +42,8 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
 
+import { eea_languages } from './constants';
+
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
 const pathToNegRegex = (p) => `(?!(${p}))`;
@@ -140,35 +142,7 @@ const applyConfig = (config) => {
   // EEA customizations
   config.settings.eea = {
     ...(config.settings.eea || {}),
-    languages: [
-      { name: 'English', code: 'en' },
-      // { name: 'български', code: 'bg' },
-      { name: 'Español', code: 'es' },
-      // { name: 'Čeština', code: 'cs' },
-      { name: 'Dansk', code: 'da' },
-      { name: 'Deutsch', code: 'de' },
-      // { name: 'Eesti keel', code: 'et' },
-      { name: 'Ελληνικά', code: 'el' },
-      { name: 'Français', code: 'fr' },
-      // { name: 'Gaeilge', code: 'ga' },
-      { name: 'Hrvatski', code: 'hr' },
-      { name: 'Italiano', code: 'it' },
-      // { name: 'Latviešu valoda', code: 'lv' },
-      // { name: 'Lietuvių kalba', code: 'lt' },
-      // { name: 'Magyar', code: 'hu' },
-      // { name: 'Malti', code: 'mt' },
-      // { name: 'Nederlands', code: 'nl' },
-      { name: 'Polski', code: 'pl' },
-      { name: 'Português', code: 'pt' },
-      // { name: 'Română', code: 'ro' },
-      // { name: 'Slovenčina', code: 'sk' },
-      // { name: 'Slovenščina', code: 'sl' },
-      { name: 'Suomi', code: 'fi' },
-      { name: 'Svenska', code: 'sv' },
-      { name: 'Íslenska', code: 'is' },
-      { name: 'Nynorsk', code: 'nn' },
-      // { name: 'Türkçe', code: 'tr' },
-    ],
+    languages: eea_languages,
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,
