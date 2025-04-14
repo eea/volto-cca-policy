@@ -1,9 +1,10 @@
 import { mergeConfig } from '@eeacms/search';
 import { getClientProxyAddress } from '../utils';
-import vocabs from '../vocabulary';
+import { vocab } from '../vocabulary';
 
 import facets from './facets';
 import views from './views';
+import { download_fields } from '../../constants';
 
 const ccaConfig = {
   title: 'ClimateAdapt Main',
@@ -76,30 +77,10 @@ export default function installMainSearch(config) {
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     runtime_mappings: cca_build_runtime_mappings,
-    ...vocabs,
+    vocab,
   };
 
-  config.searchui.ccaSearch.download_fields = [
-    // { field: 'cca_uid', name: 'UID' },
-    { field: 'about', name: 'About' },
-    { field: 'title', name: 'Title' },
-    { field: 'created', name: 'Creation Date' },
-    { field: 'issued', name: 'Publication Date' },
-    { field: 'creators', name: 'Creator' },
-    { field: 'objectProvides', name: 'Content type' },
-    { field: 'cca_keywords', name: 'Keywords' },
-    { field: 'cca_adaptation_sectors', name: 'Sectors' },
-    { field: 'cca_climate_impacts', name: 'Climate impact' },
-    { field: 'transnational_regions', name: 'Transnational regions' },
-    { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
-    { field: 'cca_funding_programme', name: 'Funding programme' },
-    { field: 'cca_key_type_measure', name: 'Key type measure' },
-    { field: 'cca_geographic_countries', name: 'Countries' },
-    { field: 'cca_origin_websites', name: 'Origin website' },
-    { field: 'cca_health_impacts', name: 'Health impacts' },
-    { field: 'cca_partner_contributors', name: 'Observatory impacts' },
-    // { field: 'fulltext', name: 'Description' },
-  ];
+  config.searchui.ccaSearch.download_fields = download_fields;
 
   const { ccaSearch } = config.searchui;
 
