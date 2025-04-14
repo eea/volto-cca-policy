@@ -23,7 +23,7 @@ const ItemsSection = ({ items }) => {
       {items.map((sector, index) => (
         <Item key={index}>
           <Image size="small" src={image} />
-          <ItemContent verticalAlign="middle">{sector.Sector}</ItemContent>
+          <ItemContent verticalAlign="middle">{sector}</ItemContent>
         </Item>
       ))}
     </ItemGroup>
@@ -78,12 +78,16 @@ const PlanningTab = ({ result }) => {
     planning_goals = [],
     planning_titles = [],
     planning_climate_action = [],
-    planning_climate_sectors = [],
   } = result || {};
 
   const titleData = planning_titles?.[0];
   const goalData = planning_goals?.[0];
-  const actionData = planning_climate_action?.[0];
+
+  const sortedGoals = [...planning_goals].sort((a, b) => {
+    const aNum = parseInt(a.Adaptation_Goal_Id.replace(/\D/g, ''), 10);
+    const bNum = parseInt(b.Adaptation_Goal_Id.replace(/\D/g, ''), 10);
+    return aNum - bNum;
+  });
 
   return (
     <Tab.Pane>
@@ -94,23 +98,29 @@ const PlanningTab = ({ result }) => {
         </Callout>
       )}
 
-      {planning_goals.map((goal, index) => (
-        <div key={index} className="section-wrapper">
-          <h5>
-            <span className="section-number">{index + 1}. </span>
-            {goal.Title}
-          </h5>
-          <AccordionList
-            variation="secondary"
-            accordions={[
-              {
-                title: goal.More_Details_Label || 'More details',
-                content: <PlanningGoalContent goal={goal} />,
-              },
-            ]}
-          />
-        </div>
-      ))}
+      {sortedGoals.map((goal, index) => {
+        const goalNumber = parseInt(
+          goal.Adaptation_Goal_Id.replace(/\D/g, ''),
+          10,
+        );
+        return (
+          <div key={index} className="section-wrapper">
+            <h5>
+              <span className="section-number">{goalNumber}. </span>
+              {goal.Title}
+            </h5>
+            <AccordionList
+              variation="secondary"
+              accordions={[
+                {
+                  title: goal.More_Details_Label || 'More details',
+                  content: <PlanningGoalContent goal={goal} />,
+                },
+              ]}
+            />
+          </div>
+        );
+      })}
 
       {goalData?.Climate_Action_Title && (
         <>
@@ -123,40 +133,56 @@ const PlanningTab = ({ result }) => {
         </>
       )}
 
-      {actionData?.Sectors_Introduction && (
-        <Message>
-          <p>{actionData.Sectors_Introduction}</p>
-        </Message>
-      )}
+      {planning_climate_action.map((action, index) => {
+        return (
+          <>
+            <br />
+            {action?.Sectors_Introduction && (
+              <Message>
+                <p>{action.Sectors_Introduction}</p>
+              </Message>
+            )}
 
-      <ItemsSection items={planning_climate_sectors} />
+            <ItemsSection items={action.Sectors} />
+            {action?.Description && <p>{action.Description}</p>}
 
-      {actionData?.Description && <p>{actionData.Description}</p>}
+            {(action?.Approval_Year || action?.End_Year) && (
+              <p>
+                {action?.Year_Of_Approval_Label}{' '}
+                <strong className="date">{action.Approval_Year}</strong>{' '}
+                {action?.End_Year_Of_Plan_Label}{' '}
+                <strong className="date">{action.End_Year}</strong>
+              </p>
+            )}
 
-      {(actionData?.Approval_Year || actionData?.End_Year) && (
-        <p>
-          {actionData?.Year_Of_Approval_Label}{' '}
-          <strong className="date">{actionData.Approval_Year}</strong>{' '}
-          {actionData?.End_Year_Of_Plan_Label}{' '}
-          <strong className="date">{actionData.End_Year}</strong>
-        </p>
-      )}
+            {action?.Name_Of_Plan_And_Hyperlink && (
+              <p>
+                {(() => {
+                  const [
+                    planName,
+                    planUrl,
+                  ] = action.Name_Of_Plan_And_Hyperlink.split(';').map((part) =>
+                    part.trim(),
+                  );
+                  return (
+                    <a href={planUrl} title={planName}>
+                      <strong>{action.Further_Information_Link_Text}</strong>
+                    </a>
+                  );
+                })()}
+              </p>
+            )}
 
-      {actionData?.Name_Of_Plan_And_Hyperlink && (
-        <p>
-          <a href={actionData.Name_Of_Plan_And_Hyperlink}>
-            <strong>{actionData.Further_Information_Link_Text}</strong>
-          </a>
-        </p>
-      )}
-
-      {actionData?.Attachment && (
-        <p>
-          <a href={actionData.Attachment}>
-            <strong>{actionData.Explore_Plan_Link_Text}</strong>
-          </a>
-        </p>
-      )}
+            {action?.Attachment && (
+              <p>
+                <a href={action.Attachment}>
+                  <strong>{action.Explore_Plan_Link_Text}</strong>
+                </a>
+              </p>
+            )}
+          </>
+        );
+      })}
     </Tab.Pane>
   );
 };
