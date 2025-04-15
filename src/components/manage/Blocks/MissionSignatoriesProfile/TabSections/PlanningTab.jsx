@@ -13,7 +13,7 @@ import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
   formatTextToHTML,
-  extractFirstURL,
+  extractPlanNameAndURL,
 } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from './../AccordionList';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
@@ -54,7 +54,7 @@ const PlanningGoalContent = ({ goal }) => {
         <Grid.Column mobile={12} tablet={12} computer={hasHazards ? 6 : 12}>
           {hasComments && (
             <>
-              <h5>{goal.Comments_Label}</h5>
+              <h5 className="small-label">{goal.Comments_Label}</h5>
               <Segment>
                 <HTMLField value={{ data: formatTextToHTML(goal.Comments) }} />
               </Segment>
@@ -62,7 +62,7 @@ const PlanningGoalContent = ({ goal }) => {
           )}
           {hasDescription && (
             <>
-              <h5>{goal.Description_Label}</h5>
+              <h5 className="small-label">{goal.Description_Label}</h5>
               <Segment>
                 <HTMLField
                   value={{ data: formatTextToHTML(goal.Description) }}
@@ -102,18 +102,14 @@ const PlanningTab = ({ result }) => {
       )}
 
       {sortedGoals.map((goal, index) => {
-        const goalNumber = parseInt(
-          goal.Adaptation_Goal_Id.replace(/\D/g, ''),
-          10,
-        );
         return (
           <div key={index} className="section-wrapper">
-            <h5 className="section-title">
-              <span className="section-number">{goalNumber}. </span>
-              <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
-            </h5>
+            <span className="goal-title-label">{goal?.Title_Label}</span>
+
+            <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+
             <AccordionList
-              variation="secondary"
+              variation="tertiary"
               accordions={[
                 {
                   title: goal?.More_Details_Label || 'More details',
@@ -157,22 +153,29 @@ const PlanningTab = ({ result }) => {
               </p>
             )}
 
-            {action?.Name_Of_Plan_And_Hyperlink &&
-              (() => {
-                const url = extractFirstURL(action.Name_Of_Plan_And_Hyperlink);
-                if (!url) return null;
+            {action?.Name_Of_Plan_And_Hyperlink && (
+              <p>
+                {(() => {
+                  const { name, url } = extractPlanNameAndURL(
+                    action.Name_Of_Plan_And_Hyperlink,
+                  );
 
-                return (
-                  <p>
-                    <a href={url} target="_blank" rel="noreferrer">
+                  return url ? (
+                    <a href={url} title={name} target="_blank" rel="noreferrer">
                       <strong>
-                        {action.Further_Information_Link_Text || url}
+                        {action.Further_Information_Link_Text}
+                        {name && ` [${name}]`}
                       </strong>
                     </a>
-                  </p>
-                );
-              })()}
-
+                  ) : (
+                    <strong>
+                      {action.Further_Information_Link_Text}
+                      {name && ` [${name}]`}
+                    </strong>
+                  );
+                })()}
+              </p>
+            )}
             {action?.Attachment && (
               <p>
                 <a href={action.Attachment}>

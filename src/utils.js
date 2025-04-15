@@ -93,9 +93,29 @@ export const formatTextToHTML = (text) => {
   return `<p>${formattedText}</p>`;
 };
 
-export const extractFirstURL = (text) => {
-  if (!text) return null;
+export const extractPlanNameAndURL = (text) => {
+  if (!text) return { name: '', url: '' };
 
-  const match = text.match(/(https?:\/\/[^\s;,]+)/i);
-  return match ? match[0] : null;
+  // Match URL inside parentheses
+  const parenthesisMatch = text.match(/\((https?:\/\/[^\s)]+)\)/);
+  // Match first direct URL not inside parentheses
+  const directMatch = text.match(/https?:\/\/[^\s,;)]+/);
+  const url = parenthesisMatch?.[1] || directMatch?.[0] || '';
+
+  let name = text;
+
+  if (url) {
+    // Remove URL and any punctuation before it
+    name = name
+      .replace(`(${url})`, '')
+      .replace(url, '')
+      .replace(/[-–;,:\s]+$/, '')
+      .replace(/[-–;,:\s]+$/, '')
+      .trim();
+  }
+
+  return {
+    name: name,
+    url,
+  };
 };

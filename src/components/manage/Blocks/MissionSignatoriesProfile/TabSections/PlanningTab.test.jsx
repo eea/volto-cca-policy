@@ -3,15 +3,18 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import PlanningTab from './PlanningTab';
 
-// Mock child components
-jest.mock('./../AccordionList', () => () => <div>Mock AccordionList</div>);
 jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
   HTMLField: ({ value }) => (
     <div dangerouslySetInnerHTML={{ __html: value.data }} />
   ),
 }));
+
 jest.mock('@eeacms/volto-cca-policy/utils', () => ({
   formatTextToHTML: (text) => text,
+  extractPlanNameAndURL: (str) => ({
+    name: 'Plan Example',
+    url: 'https://plan-link.com',
+  }),
 }));
 
 describe('PlanningTab', () => {
@@ -23,6 +26,7 @@ describe('PlanningTab', () => {
       {
         Adaptation_Goal_Id: 'AG-001',
         Title: 'Goal Title 1',
+        Title_Label: 'Goal 1 Label',
         More_Details_Label: 'Details',
         Climate_Hazards: ['Heat', 'Flood'],
         Climate_Hazards_Addressed_Label: 'Hazards',
@@ -36,6 +40,7 @@ describe('PlanningTab', () => {
       {
         Adaptation_Goal_Id: 'AG-002',
         Title: 'Goal Title 2',
+        Title_Label: 'Goal 2 Label',
         More_Details_Label: 'Details',
         Climate_Hazards: ['Drought', 'Storm'],
         Climate_Hazards_Addressed_Label: 'Hazards',
@@ -65,17 +70,13 @@ describe('PlanningTab', () => {
   };
 
   it('renders planning tab with basic data', () => {
-    const { getByText, getAllByText } = render(
-      <PlanningTab result={mockResult} />,
-    );
+    const { getByText } = render(<PlanningTab result={mockResult} />);
 
     expect(getByText('Planning Title')).toBeInTheDocument();
     expect(getByText('Abstract info')).toBeInTheDocument();
 
     expect(getByText('Goal Title 1')).toBeInTheDocument();
     expect(getByText('Goal Title 2')).toBeInTheDocument();
-
-    expect(getAllByText('Mock AccordionList').length).toBe(2);
 
     expect(getByText('Action Title')).toBeInTheDocument();
     expect(getByText('Intro to sectors')).toBeInTheDocument();
@@ -85,13 +86,25 @@ describe('PlanningTab', () => {
     expect(getByText(/2023/)).toBeInTheDocument();
     expect(getByText(/End Year:/)).toBeInTheDocument();
     expect(getByText(/2030/)).toBeInTheDocument();
-
-    expect(getByText('Explore Plan')).toBeInTheDocument();
   });
 
   it('renders ItemsSection if there are sectors', () => {
     const { getByText } = render(<PlanningTab result={mockResult} />);
 
     expect(getByText(/Agriculture/)).toBeInTheDocument();
+  });
+
+  it('renders image in ItemsSection', () => {
+    const { container } = render(<PlanningTab result={mockResult} />);
+    const images = container.querySelectorAll('img');
+    expect(images.length).toBeGreaterThan(0);
+  });
+
+  it('renders hyperlink with extracted name and URL', () => {
+    const { getByText } = render(<PlanningTab result={mockResult} />);
+
+    const link = getByText(/More Info \[Plan Example\]/);
+    expect(link).toBeInTheDocument();
+    expect(link.closest('a')).toHaveAttribute('href', 'https://plan-link.com');
   });
 });
