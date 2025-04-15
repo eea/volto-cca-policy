@@ -81,18 +81,21 @@ export const filterBlocks = (content, blockTypes = []) => {
 export const formatTextToHTML = (text) => {
   if (!text) return '';
 
-  let formattedText = text;
-
-  // Handle common escape issues
-  formattedText = formattedText.replace(/\\\\/g, '\\'); // unescape backslashes
-  formattedText = formattedText.replace(/\\'/g, "'"); // unescape single quotes
-  formattedText = formattedText.replace(/\\"/g, '"'); // unescape double quotes
-
-  // Replace \\n\\n with </p><p> for paragraph separation
-  formattedText = formattedText.replace(/\\n\\n/g, '</p><p>');
-
-  // Replace \\n with <br /> for line breaks
-  formattedText = formattedText.replace(/\\n/g, '<br />');
+  let formattedText = text
+    .replace(/\\\\/g, '\\') // unescape backslashes
+    .replace(/\\'/g, "'") // unescape single quotes
+    .replace(/\\"/g, '"') // unescape double quotes
+    .replace(/\\t\\n/g, '') // handle \t\n
+    .replace(/\\n\\n/g, '</p><p>') // double line break = paragraph
+    .replace(/\\no\s*/g, '<br />• ') // list-like "o " to bullet point
+    .replace(/\\n/g, '<br />'); // single line break
 
   return `<p>${formattedText}</p>`;
+};
+
+export const extractFirstURL = (text) => {
+  if (!text) return null;
+
+  const match = text.match(/(https?:\/\/[^\s;,]+)/i);
+  return match ? match[0] : null;
 };

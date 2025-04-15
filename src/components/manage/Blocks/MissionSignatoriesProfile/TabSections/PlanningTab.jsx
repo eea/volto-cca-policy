@@ -11,7 +11,10 @@ import {
 } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
+import {
+  formatTextToHTML,
+  extractFirstURL,
+} from '@eeacms/volto-cca-policy/utils';
 import AccordionList from './../AccordionList';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
@@ -105,15 +108,15 @@ const PlanningTab = ({ result }) => {
         );
         return (
           <div key={index} className="section-wrapper">
-            <h5>
+            <h5 className="section-title">
               <span className="section-number">{goalNumber}. </span>
-              {goal.Title}
+              <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
             </h5>
             <AccordionList
               variation="secondary"
               accordions={[
                 {
-                  title: goal.More_Details_Label || 'More details',
+                  title: goal?.More_Details_Label || 'More details',
                   content: <PlanningGoalContent goal={goal} />,
                 },
               ]}
@@ -123,19 +126,18 @@ const PlanningTab = ({ result }) => {
       })}
 
       {goalData?.Climate_Action_Title && (
-        <>
-          <h2>{goalData.Climate_Action_Title}</h2>
-          {goalData?.Climate_Action_Abstract && (
-            <Callout>
-              <p>{goalData.Climate_Action_Abstract}</p>
-            </Callout>
-          )}
-        </>
+        <h2>{goalData.Climate_Action_Title}</h2>
+      )}
+
+      {goalData?.Climate_Action_Abstract && (
+        <Callout>
+          <p>{goalData.Climate_Action_Abstract}</p>
+        </Callout>
       )}
 
       {planning_climate_action.map((action, index) => {
         return (
-          <>
+          <React.Fragment key={index}>
             <br />
             {action?.Sectors_Introduction && (
               <Message>
@@ -143,7 +145,7 @@ const PlanningTab = ({ result }) => {
               </Message>
             )}
 
-            <ItemsSection items={action.Sectors} />
+            <ItemsSection items={action?.Sectors} />
             {action?.Description && <p>{action.Description}</p>}
 
             {(action?.Approval_Year || action?.End_Year) && (
@@ -155,23 +157,21 @@ const PlanningTab = ({ result }) => {
               </p>
             )}
 
-            {action?.Name_Of_Plan_And_Hyperlink && (
-              <p>
-                {(() => {
-                  const [
-                    planName,
-                    planUrl,
-                  ] = action.Name_Of_Plan_And_Hyperlink.split(';').map((part) =>
-                    part.trim(),
-                  );
-                  return (
-                    <a href={planUrl} title={planName}>
-                      <strong>{action.Further_Information_Link_Text}</strong>
+            {action?.Name_Of_Plan_And_Hyperlink &&
+              (() => {
+                const url = extractFirstURL(action.Name_Of_Plan_And_Hyperlink);
+                if (!url) return null;
+
+                return (
+                  <p>
+                    <a href={url} target="_blank" rel="noreferrer">
+                      <strong>
+                        {action.Further_Information_Link_Text || url}
+                      </strong>
                     </a>
-                  );
-                })()}
-              </p>
-            )}
+                  </p>
+                );
+              })()}
 
             {action?.Attachment && (
               <p>
@@ -180,7 +180,7 @@ const PlanningTab = ({ result }) => {
                 </a>
               </p>
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </Tab.Pane>
