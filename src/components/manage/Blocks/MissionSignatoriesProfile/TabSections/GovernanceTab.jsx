@@ -4,85 +4,29 @@ import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from './../AccordionList';
-import StatisticsSection from './../StatisticsSection';
 
 const GovernanceTab = ({ result }) => {
-  const statisticsData = [
-    {
-      value: '460km',
-      label: 'Duis non quam et nisi tincidunt',
-    },
-    {
-      value: '51-60%',
-      label: 'Vestibulum ante ipsum primis',
-    },
-    {
-      value: '2.431.213',
-      label: 'Aliquam erat volutpat',
-    },
-    {
-      value: '2023',
-      label: 'Etiam accumsan urna a mauris',
-    },
-  ];
+  const { Introduction, Describe_Title, Describe, Provide_Title, Provide } =
+    result || {};
 
   return (
     <Tab.Pane>
       <h2>Governance</h2>
       <Callout>
-        <p>
-          Sed at risus vel nulla consequat fermentum. Donec et orci mauris.
-          Nullam tempor velit id mi luctus, a scelerisque libero accumsan. In
-          hac habitasse platea dictumst. Cras ac nunc nec massa tristique
-          fringilla.
-        </p>
+        <p>{Introduction}</p>
       </Callout>
 
-      <StatisticsSection statistics={statisticsData} />
+      <h3>{Describe_Title}</h3>
 
-      <h3>Climate related issues</h3>
-      <AccordionList
-        accordions={[
-          {
-            title: 'Vestibulum ante ipsum primis',
-            content: 'No additional details provided.',
-          },
-          {
-            title: 'Etiam accumsan urna a mauris',
-            content: 'No additional details provided.',
-          },
-        ]}
-      />
+      <HTMLField value={{ data: formatTextToHTML(Describe) }} />
 
-      <h3>Opportunities and benefits of climate action</h3>
-
-      <HTMLField value={{ data: formatTextToHTML(result?.Describe) }} />
+      <br />
 
       <AccordionList
         accordions={[
           {
-            title: ' Further details and evidence',
-            content: (
-              <HTMLField value={{ data: formatTextToHTML(result?.Provide) }} />
-            ),
-          },
-        ]}
-      />
-
-      <h3>
-        {result?.Signatory} engages with other levels of government regarding
-        their:
-      </h3>
-
-      <AccordionList
-        accordions={[
-          {
-            title: 'Vestibulum ante ipsum primis',
-            content: 'No additional details provided.',
-          },
-          {
-            title: 'Etiam accumsan urna a mauris',
-            content: 'No additional details provided.',
+            title: <>{Provide_Title}</>,
+            content: <HTMLField value={{ data: formatTextToHTML(Provide) }} />,
           },
         ]}
       />

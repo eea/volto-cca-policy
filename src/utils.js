@@ -81,18 +81,41 @@ export const filterBlocks = (content, blockTypes = []) => {
 export const formatTextToHTML = (text) => {
   if (!text) return '';
 
-  let formattedText = text;
-
-  // Handle common escape issues
-  formattedText = formattedText.replace(/\\\\/g, '\\'); // unescape backslashes
-  formattedText = formattedText.replace(/\\'/g, "'"); // unescape single quotes
-  formattedText = formattedText.replace(/\\"/g, '"'); // unescape double quotes
-
-  // Replace \\n\\n with </p><p> for paragraph separation
-  formattedText = formattedText.replace(/\\n\\n/g, '</p><p>');
-
-  // Replace \\n with <br /> for line breaks
-  formattedText = formattedText.replace(/\\n/g, '<br />');
+  let formattedText = text
+    .replace(/\\\\/g, '\\') // unescape backslashes
+    .replace(/\\'/g, "'") // unescape single quotes
+    .replace(/\\"/g, '"') // unescape double quotes
+    .replace(/\\t\\n/g, '') // handle \t\n
+    .replace(/\\n\\n/g, '</p><p>') // double line break = paragraph
+    .replace(/\\no\s*/g, '<br />• ') // list-like "o " to bullet point
+    .replace(/\\n/g, '<br />'); // single line break
 
   return `<p>${formattedText}</p>`;
+};
+
+export const extractPlanNameAndURL = (text) => {
+  if (!text) return { name: '', url: '' };
+
+  // Match URL inside parentheses
+  const parenthesisMatch = text.match(/\((https?:\/\/[^\s)]+)\)/);
+  // Match first direct URL not inside parentheses
+  const directMatch = text.match(/https?:\/\/[^\s,;)]+/);
+  const url = parenthesisMatch?.[1] || directMatch?.[0] || '';
+
+  let name = text;
+
+  if (url) {
+    // Remove URL and any punctuation before it
+    name = name
+      .replace(`(${url})`, '')
+      .replace(url, '')
+      .replace(/[-–;,:\s]+$/, '')
+      .replace(/[-–;,:\s]+$/, '')
+      .trim();
+  }
+
+  return {
+    name: name,
+    url,
+  };
 };

@@ -11,7 +11,10 @@ import {
 } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
+import {
+  formatTextToHTML,
+  extractPlanNameAndURL,
+} from '@eeacms/volto-cca-policy/utils';
 import AccordionList from './../AccordionList';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
@@ -51,7 +54,7 @@ const PlanningGoalContent = ({ goal }) => {
         <Grid.Column mobile={12} tablet={12} computer={hasHazards ? 6 : 12}>
           {hasComments && (
             <>
-              <h5>{goal.Comments_Label}</h5>
+              <h5 className="small-label">{goal.Comments_Label}</h5>
               <Segment>
                 <HTMLField value={{ data: formatTextToHTML(goal.Comments) }} />
               </Segment>
@@ -59,7 +62,7 @@ const PlanningGoalContent = ({ goal }) => {
           )}
           {hasDescription && (
             <>
-              <h5>{goal.Description_Label}</h5>
+              <h5 className="small-label">{goal.Description_Label}</h5>
               <Segment>
                 <HTMLField
                   value={{ data: formatTextToHTML(goal.Description) }}
@@ -99,21 +102,17 @@ const PlanningTab = ({ result }) => {
       )}
 
       {sortedGoals.map((goal, index) => {
-        const goalNumber = parseInt(
-          goal.Adaptation_Goal_Id.replace(/\D/g, ''),
-          10,
-        );
         return (
           <div key={index} className="section-wrapper">
-            <h5>
-              <span className="section-number">{goalNumber}. </span>
-              {goal.Title}
-            </h5>
+            <span className="goal-title-label">{goal?.Title_Label}</span>
+
+            <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+
             <AccordionList
-              variation="secondary"
+              variation="tertiary"
               accordions={[
                 {
-                  title: goal.More_Details_Label || 'More details',
+                  title: goal?.More_Details_Label || 'More details',
                   content: <PlanningGoalContent goal={goal} />,
                 },
               ]}
@@ -123,19 +122,18 @@ const PlanningTab = ({ result }) => {
       })}
 
       {goalData?.Climate_Action_Title && (
-        <>
-          <h2>{goalData.Climate_Action_Title}</h2>
-          {goalData?.Climate_Action_Abstract && (
-            <Callout>
-              <p>{goalData.Climate_Action_Abstract}</p>
-            </Callout>
-          )}
-        </>
+        <h2>{goalData.Climate_Action_Title}</h2>
+      )}
+
+      {goalData?.Climate_Action_Abstract && (
+        <Callout>
+          <p>{goalData.Climate_Action_Abstract}</p>
+        </Callout>
       )}
 
       {planning_climate_action.map((action, index) => {
         return (
-          <>
+          <React.Fragment key={index}>
             <br />
             {action?.Sectors_Introduction && (
               <Message>
@@ -143,7 +141,7 @@ const PlanningTab = ({ result }) => {
               </Message>
             )}
 
-            <ItemsSection items={action.Sectors} />
+            <ItemsSection items={action?.Sectors} />
             {action?.Description && <p>{action.Description}</p>}
 
             {(action?.Approval_Year || action?.End_Year) && (
@@ -158,21 +156,26 @@ const PlanningTab = ({ result }) => {
             {action?.Name_Of_Plan_And_Hyperlink && (
               <p>
                 {(() => {
-                  const [
-                    planName,
-                    planUrl,
-                  ] = action.Name_Of_Plan_And_Hyperlink.split(';').map((part) =>
-                    part.trim(),
+                  const { name, url } = extractPlanNameAndURL(
+                    action.Name_Of_Plan_And_Hyperlink,
                   );
-                  return (
-                    <a href={planUrl} title={planName}>
-                      <strong>{action.Further_Information_Link_Text}</strong>
+
+                  return url ? (
+                    <a href={url} title={name} target="_blank" rel="noreferrer">
+                      <strong>
+                        {action.Further_Information_Link_Text}
+                        {name && ` [${name}]`}
+                      </strong>
                     </a>
+                  ) : (
+                    <strong>
+                      {action.Further_Information_Link_Text}
+                      {name && ` [${name}]`}
+                    </strong>
                   );
                 })()}
               </p>
             )}
-
             {action?.Attachment && (
               <p>
                 <a href={action.Attachment}>
@@ -180,7 +183,7 @@ const PlanningTab = ({ result }) => {
                 </a>
               </p>
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </Tab.Pane>
