@@ -6,30 +6,43 @@ import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from './../AccordionList';
 
 const GovernanceTab = ({ result }) => {
-  const { Introduction, Describe_Title, Describe, Provide_Title, Provide } =
-    result || {};
+  const {
+    Title,
+    Introduction,
+    Describe_Title,
+    Describe,
+    Provide_Title,
+    Provide,
+  } = result[0] || [];
 
   return (
     <Tab.Pane>
-      <h2>Governance</h2>
-      <Callout>
-        <p>{Introduction}</p>
-      </Callout>
+      {Title && <h2>{Title}</h2>}
 
-      <h3>{Describe_Title}</h3>
+      {Introduction && (
+        <Callout>
+          <p>{Introduction}</p>
+        </Callout>
+      )}
 
-      <HTMLField value={{ data: formatTextToHTML(Describe) }} />
+      {Describe_Title && <h3>{Describe_Title}</h3>}
+
+      {Describe && <HTMLField value={{ data: formatTextToHTML(Describe) }} />}
 
       <br />
 
-      <AccordionList
-        accordions={[
-          {
-            title: <>{Provide_Title}</>,
-            content: <HTMLField value={{ data: formatTextToHTML(Provide) }} />,
-          },
-        ]}
-      />
+      {Provide_Title && (
+        <AccordionList
+          accordions={[
+            {
+              title: <>{Provide_Title}</>,
+              content: (
+                <HTMLField value={{ data: formatTextToHTML(Provide) }} />
+              ),
+            },
+          ]}
+        />
+      )}
     </Tab.Pane>
   );
 };
