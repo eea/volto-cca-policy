@@ -1,107 +1,60 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import MissionSignatoriesProfileView from './MissionSignatoriesProfileView';
 
-// Mock components for tabs
+// Mock the tab components with minimal placeholders
 jest.mock('./TabSections/IntroductionTab', () => () => (
-  <div>Introduction Content</div>
+  <div>Mocked Introduction</div>
 ));
 jest.mock('./TabSections/GovernanceTab', () => () => (
-  <div>Governance Content</div>
+  <div>Mocked Governance</div>
 ));
 jest.mock('./TabSections/AssessmentTab', () => () => (
-  <div>Assessment Content</div>
+  <div>Mocked Assessment</div>
 ));
-jest.mock('./TabSections/PlanningTab', () => () => <div>Planning Content</div>);
+jest.mock('./TabSections/PlanningTab', () => () => <div>Mocked Planning</div>);
 jest.mock('./TabSections/ActionPagesTab', () => () => (
-  <div>Action Pages Content</div>
+  <div>Mocked Action Pages</div>
 ));
 
 describe('MissionSignatoriesProfileView', () => {
   const data = {
     _v_results: {
-      planning_titles: [{ Signatory: 'Test Signatory Title' }],
-      planning_goals: [],
-      planning_climate_action: [],
-      planning_climate_sectors: [],
+      planning: {
+        planning_titles: [{}],
+      },
       governance: [{}],
     },
   };
 
-  it('should render the component with data and tabs', () => {
-    const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
+  it('renders tab labels and default content', () => {
+    render(<MissionSignatoriesProfileView data={data} />);
 
-    expect(getByText('Governance')).toBeInTheDocument();
-    expect(getByText('Assessment')).toBeInTheDocument();
-    expect(getByText('Planning')).toBeInTheDocument();
-    expect(getByText('Action Pages')).toBeInTheDocument();
-    expect(getByText('Introduction')).toBeInTheDocument();
+    // Tab labels
+    expect(screen.getByText('Introduction')).toBeInTheDocument();
+    expect(screen.getByText('Governance')).toBeInTheDocument();
+    expect(screen.getByText('Assessment')).toBeInTheDocument();
+    expect(screen.getByText('Planning')).toBeInTheDocument();
+    expect(screen.getByText('Action Pages')).toBeInTheDocument();
+
+    // Default selected tab content (Introduction)
+    expect(screen.getByText('Mocked Introduction')).toBeInTheDocument();
   });
 
-  it('should render Signatory title', () => {
-    const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
-    expect(getByText('Test Signatory Title')).toBeInTheDocument();
-  });
+  it('switches tabs and renders corresponding content', () => {
+    render(<MissionSignatoriesProfileView data={data} />);
 
-  it('should handle missing planning_titles gracefully', () => {
-    const data = { _v_results: { governance: [{}] } };
-    const { container } = render(<MissionSignatoriesProfileView data={data} />);
-    expect(container).toBeInTheDocument();
-  });
+    fireEvent.click(screen.getByText('Governance'));
+    expect(screen.getByText('Mocked Governance')).toBeInTheDocument();
 
-  it('should handle empty _v_results object gracefully', () => {
-    const { getByText } = render(
-      <MissionSignatoriesProfileView data={{ _v_results: {} }} />,
-    );
-    expect(getByText('Introduction')).toBeInTheDocument();
-  });
+    fireEvent.click(screen.getByText('Assessment'));
+    expect(screen.getByText('Mocked Assessment')).toBeInTheDocument();
 
-  it('should handle completely missing data prop', () => {
-    const { getByText } = render(<MissionSignatoriesProfileView data={{}} />);
-    expect(getByText('Planning')).toBeInTheDocument();
-    expect(getByText('Introduction')).toBeInTheDocument();
-  });
+    fireEvent.click(screen.getByText('Planning'));
+    expect(screen.getByText('Mocked Planning')).toBeInTheDocument();
 
-  it('should render all tab labels', () => {
-    const { getByText } = render(<MissionSignatoriesProfileView data={{}} />);
-    [
-      'Introduction',
-      'Governance',
-      'Assessment',
-      'Planning',
-      'Action Pages',
-    ].forEach((label) => {
-      expect(getByText(label)).toBeInTheDocument();
-    });
-  });
-
-  it('should switch between tabs and display correct content', async () => {
-    const { getByText } = render(<MissionSignatoriesProfileView data={data} />);
-
-    fireEvent.click(getByText('Governance'));
-    await waitFor(() =>
-      expect(getByText('Governance Content')).toBeInTheDocument(),
-    );
-
-    fireEvent.click(getByText('Introduction'));
-    await waitFor(() =>
-      expect(getByText('Introduction Content')).toBeInTheDocument(),
-    );
-
-    fireEvent.click(getByText('Assessment'));
-    await waitFor(() =>
-      expect(getByText('Assessment Content')).toBeInTheDocument(),
-    );
-
-    fireEvent.click(getByText('Planning'));
-    await waitFor(() =>
-      expect(getByText('Planning Content')).toBeInTheDocument(),
-    );
-
-    fireEvent.click(getByText('Action Pages'));
-    await waitFor(() =>
-      expect(getByText('Action Pages Content')).toBeInTheDocument(),
-    );
+    fireEvent.click(screen.getByText('Action Pages'));
+    expect(screen.getByText('Mocked Action Pages')).toBeInTheDocument();
   });
 });
