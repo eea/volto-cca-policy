@@ -4,8 +4,8 @@
 @import (multiple, reference, optional) '../../theme.config';
 
 .signatories-profile {
-  .items-wrapper {
-    margin: 2em 0;
+  .ui.items.items-group {
+    margin: 2em 0 !important;
   }
 
   .column > .ui.segment {
@@ -23,6 +23,12 @@
     }
   }
 
+  .tab-section-wrapper {
+    padding: 1.5em;
+    margin: 2em 0;
+    background-color: #f9f9f9;
+  }
+
   .section-wrapper {
     margin: 1em 0;
 
@@ -38,12 +44,17 @@
 
     .ui.accordion {
       margin-top: 1em;
+
+      .ui.segment.border {
+        border: 1px solid #E6E7E8;
+      }
     }
 
     .small-label {
       font-size: 1em;
     }
   }
+
 
   strong.date {
     margin-right: 0.5em;

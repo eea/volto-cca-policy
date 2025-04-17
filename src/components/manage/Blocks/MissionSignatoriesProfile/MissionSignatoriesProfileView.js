@@ -14,6 +14,7 @@ const MissionSignatoriesProfileView = (props) => {
   const result = data?._v_results || {};
   const governance = result?.governance?.[0] || [];
   const planning = result?.planning || {};
+  const assessment = result?.assessment || {};
 
   // const dataJson = JSON.parse(result?.Cooperation_Experience);
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -52,7 +53,7 @@ const MissionSignatoriesProfileView = (props) => {
             },
             {
               menuItem: 'Assessment',
-              render: () => <AssessmentTab />,
+              render: () => <AssessmentTab result={assessment} />,
             },
             {
               menuItem: 'Planning',
