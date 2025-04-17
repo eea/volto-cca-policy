@@ -13,7 +13,7 @@ const GovernanceTab = ({ result }) => {
     Describe,
     Provide_Title,
     Provide,
-  } = result[0] || [];
+  } = result;
 
   return (
     <Tab.Pane>
