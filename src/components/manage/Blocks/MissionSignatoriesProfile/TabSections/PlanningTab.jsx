@@ -81,7 +81,7 @@ const PlanningTab = ({ result }) => {
     planning_goals = [],
     planning_titles = [],
     planning_climate_action = [],
-  } = result || [];
+  } = result || {};
 
   const titleData = planning_titles?.[0];
   const goalData = planning_goals?.[0];
