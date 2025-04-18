@@ -27,6 +27,22 @@
     padding: 1.5em;
     margin: 2em 0;
     background-color: #f9f9f9;
+
+    &.assessment {
+      .ui.accordion {
+        margin-top: 1em;
+
+        .content.active {
+          background-color: @white;
+          padding: 1rem 1rem !important;
+        }
+  
+  
+        .ui.segment.border {
+          border: 1px solid #e6e7e8;
+        }
+      }
+    }
   }
 
   .section-wrapper {
@@ -44,10 +60,6 @@
 
     .ui.accordion {
       margin-top: 1em;
-
-      .ui.segment.border {
-        border: 1px solid #e6e7e8;
-      }
     }
 
     .small-label {

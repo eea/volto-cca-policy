@@ -29,7 +29,7 @@ const ItemsSection = ({ items }) => {
 
 const AssessmentAccordionContent = ({ result }) => {
   return (
-    <Segment>
+    <>
       <p>
         <a href={result.Hyperlink} target="_blank" rel="noreferrer">
           <strong>{result.Explore_Link_Text}</strong>
@@ -47,7 +47,7 @@ const AssessmentAccordionContent = ({ result }) => {
       <Segment className="border">
         <p>{result.Please_Explain}</p>
       </Segment>
-    </Segment>
+    </>
   );
 };
 
@@ -76,7 +76,7 @@ const AssessmentTab = ({ result }) => {
 
       {Abstract && <p>{Abstract}</p>}
 
-      <div className="tab-section-wrapper">
+      <div className="tab-section-wrapper assessment">
         {Cra_Title && <h3>{Cra_Title}</h3>}
         {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
 
@@ -91,7 +91,7 @@ const AssessmentTab = ({ result }) => {
               }`
             : null;
           return (
-            <div key={index} className="section-wrapper">
+            <div key={index}>
               <AccordionList
                 variation="tertiary"
                 accordions={[
@@ -104,15 +104,6 @@ const AssessmentTab = ({ result }) => {
             </div>
           );
         })}
-
-        <h4>Further details</h4>
-        <Segment>
-          Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id orci
-          a neque vehicula malesuada. Donec vehicula libero vel leo convallis,
-          nec tincidunt felis tincidunt. Maecenas euismod tristique leo, vel
-          malesuada ligula malesuada sed. Donec eget libero id leo congue
-          venenatis.
-        </Segment>
       </div>
 
       {Hazards_Title && <h3>{Hazards_Title}</h3>}
