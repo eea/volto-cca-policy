@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -20,6 +19,7 @@ msgstr "Un document de fond pentru eveniment este disponibil"
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,6 +45,7 @@ msgstr "Opțiuni de adaptare implementate în acest caz"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Sectoarele de adaptare"
 
@@ -149,6 +150,7 @@ msgstr "Oraş:"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Impactul asupra climei"
 
@@ -315,6 +317,7 @@ msgstr "Ecran complet"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -429,6 +432,7 @@ msgstr "Info"
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Articol de la terți"
 
@@ -441,6 +445,7 @@ msgstr "Sisteme comunitare cheie"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Măsură tip cheie"
 
@@ -723,6 +728,7 @@ msgstr "Căutați în Catalogul de resurse ale Observatorului..."
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Secțiune"
 
@@ -842,6 +848,7 @@ msgstr "Subiecte:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Regiunile transnaționale"
 
@@ -909,13 +916,33 @@ msgstr "Unde"
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr ""
+
+#. undefined
+
 msgid "Case studies"
 msgstr "Studii de caz"
 
 #. undefined
 
+msgid "Case study"
+msgstr ""
+
+#. undefined
+
 msgid "Guidance"
 msgstr "Îndrumare"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Indicator"
+
+#. undefined
+
+msgid "Information portal"
+msgstr ""
 
 #. undefined
 
@@ -929,13 +956,28 @@ msgstr "Videoclipuri"
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr ""
+
+#. undefined
+
 msgid "Organisations"
 msgstr "Organizații"
 
 #. undefined
 
+msgid "Organisation"
+msgstr ""
+
+#. undefined
+
 msgid "Publication and reports"
 msgstr "Publicare și rapoarte"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr ""
 
 #. undefined
 
@@ -949,8 +991,18 @@ msgstr "Proiecte de cercetare și cunoaștere"
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr ""
+
+#. undefined
+
 msgid "Tools"
 msgstr "Instrumente"
+
+#. undefined
+
+msgid "Tool"
+msgstr ""
 
 #. undefined
 
@@ -1001,11 +1053,6 @@ msgstr "Categoria de pericol"
 
 msgid "Hazard type"
 msgstr "Tip de pericol"
-
-#. undefined
-
-msgid "Indicator"
-msgstr "Indicator"
 
 #. undefined
 

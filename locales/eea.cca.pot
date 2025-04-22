@@ -17,7 +17,13 @@ msgstr ""
 msgid "Adaptation options"
 msgstr ""
 
+msgid "Adaptation option"
+msgstr ""
+
 msgid "Case studies"
+msgstr ""
+
+msgid "Case study"
 msgstr ""
 
 msgid "Guidance"
@@ -26,16 +32,31 @@ msgstr ""
 msgid "Indicators"
 msgstr ""
 
+msgid "Indicator"
+msgstr ""
+
+msgid "Information portal"
+msgstr ""
+
 msgid "Information portals"
 msgstr ""
 
 msgid "Videos"
 msgstr ""
 
+msgid "Video and podcast"
+msgstr ""
+
 msgid "Organisations"
 msgstr ""
 
+msgid "Organisation"
+msgstr ""
+
 msgid "Publication and reports"
+msgstr ""
+
+msgid "Publication and report"
 msgstr ""
 
 msgid "Publications and reports"
@@ -44,7 +65,13 @@ msgstr ""
 msgid "Research and knowledge projects"
 msgstr ""
 
+msgid "Research and knowledge project"
+msgstr ""
+
 msgid "Tools"
+msgstr ""
+
+msgid "Tool"
 msgstr ""
 
 msgid "Countries:"
