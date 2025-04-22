@@ -84,6 +84,13 @@ const AssessmentTab = ({ result }) => {
 
         {Attachments && <h4>{Attachments}</h4>}
 
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Quam porta convallis ultrices
+          aliquet. Imperdiet maecenas at velit gravida arcu blandit eget. Etiam
+          tellus vulputate mi vitae bibendum fermentum condimentum facilisis.
+          Amet et sed nunc pretium fames nibh lacus mi magna.
+        </p>
+
         {result.assessment_risks.map((risk, index) => {
           const title = risk?.Attachment_Title
             ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
