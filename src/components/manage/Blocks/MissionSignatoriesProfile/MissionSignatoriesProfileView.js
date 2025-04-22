@@ -12,7 +12,9 @@ import './style.less';
 const MissionSignatoriesProfileView = (props) => {
   const { data } = props;
   const result = data?._v_results || {};
-  const governance = result?.governance?.[0] || {};
+  const governance = result?.governance?.[0] || [];
+  const planning = result?.planning || {};
+  const assessment = result?.assessment || {};
 
   // const dataJson = JSON.parse(result?.Cooperation_Experience);
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -25,7 +27,8 @@ const MissionSignatoriesProfileView = (props) => {
             'DescribeDetailCooperationEnhance'
           ]
         } */}
-        <h2>{result?.planning_titles?.[0].Signatory}</h2>
+        <h2>{planning?.planning_titles?.[0].Signatory}</h2>
+        {/* <h2>{planning?.planning_titles?.[0].Id}</h2> */}
 
         <br />
 
@@ -50,20 +53,11 @@ const MissionSignatoriesProfileView = (props) => {
             },
             {
               menuItem: 'Assessment',
-              render: () => <AssessmentTab />,
+              render: () => <AssessmentTab result={assessment} />,
             },
             {
               menuItem: 'Planning',
-              render: () => (
-                <PlanningTab
-                  result={{
-                    planning_goals: result?.planning_goals,
-                    planning_titles: result?.planning_titles,
-                    planning_climate_action: result?.planning_climate_action,
-                    planning_climate_sectors: result?.planning_climate_sectors,
-                  }}
-                />
-              ),
+              render: () => <PlanningTab result={planning} />,
             },
             {
               menuItem: 'Action Pages',

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Tab,
   Image,
-  Button,
   Segment,
   Item,
   ItemGroup,
@@ -14,83 +13,109 @@ import AccordionList from './../AccordionList';
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
 
 const ItemsSection = ({ items }) => {
+  if (!items?.length) return null;
+
   return (
     <ItemGroup className="items-group">
-      <Item>
-        <Image size="small" src={image} />
-        <ItemContent verticalAlign="middle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </ItemContent>
-      </Item>
-
-      <Item>
-        <Image size="small" src={image} />
-        <ItemContent verticalAlign="middle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </ItemContent>
-      </Item>
+      {items.map((item, index) => (
+        <Item key={index}>
+          <Image size="small" src={image} />
+          <ItemContent verticalAlign="middle">{item.Factor}</ItemContent>
+        </Item>
+      ))}
     </ItemGroup>
   );
 };
 
-const AssessmentTab = () => {
+const AssessmentAccordionContent = ({ result }) => {
+  return (
+    <>
+      <p>
+        <a href={result.Hyperlink} target="_blank" rel="noreferrer">
+          <strong>{result.Explore_Link_Text}</strong>
+        </a>
+      </p>
+      <p>
+        <span>
+          {result.Year_Of_Publication_Label}
+          {': '}
+        </span>
+        <strong>{result.Year_Of_Publication}</strong>
+      </p>
+
+      <h5>{result.Further_Details_Label}</h5>
+      <Segment className="border">
+        <p>{result.Please_Explain}</p>
+      </Segment>
+    </>
+  );
+};
+
+const AssessmentTab = ({ result }) => {
+  const {
+    Title,
+    Subheading,
+    Abstract,
+    Cra_Title,
+    Cra_Abstract,
+    Attachments,
+    Hazards_Title,
+    Hazards_Abstract,
+  } = result.assessment_text[0] || [];
+
   const [activeIndex, setActiveIndex] = React.useState(0);
+
   return (
     <Tab.Pane>
-      <h2>Assessment</h2>
-      <Callout>
+      {Title && <h2>{Title}</h2>}
+      {Subheading && (
+        <Callout>
+          <p>{Subheading}</p>
+        </Callout>
+      )}
+
+      {Abstract && <p>{Abstract}</p>}
+
+      <div className="tab-section-wrapper assessment">
+        {Cra_Title && <h3>{Cra_Title}</h3>}
+        {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
+
+        <ItemsSection items={result.assessment_factors} />
+
+        {Attachments && <h4>{Attachments}</h4>}
+
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet consectetur. Quam porta convallis ultrices
+          aliquet. Imperdiet maecenas at velit gravida arcu blandit eget. Etiam
+          tellus vulputate mi vitae bibendum fermentum condimentum facilisis.
+          Amet et sed nunc pretium fames nibh lacus mi magna.
         </p>
-      </Callout>
 
-      <div className="section-wrapper">
-        <h3>Climate Risk Assessment</h3>
-        <div className="section-wrapper-info">
-          <ItemGroup unstackable className="row">
-            <Item>
-              <Image size="miny" src={image} />
-              <ItemContent
-                verticalAlign="middle"
-                style={{ paddingLeft: '5px' }}
-              >
-                Lorem ipsum dolor sit amet
-              </ItemContent>
-            </Item>
-          </ItemGroup>
-
-          <div className="date">
-            <p>Year of publication: 2022</p>
-          </div>
-        </div>
-
-        <h4>The CRA conducted considers the following factors</h4>
-
-        <div className="items-wrapper">
-          <ItemsSection />
-        </div>
-
-        <h4>Further details</h4>
-        <Segment>
-          Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id orci
-          a neque vehicula malesuada. Donec vehicula libero vel leo convallis,
-          nec tincidunt felis tincidunt. Maecenas euismod tristique leo, vel
-          malesuada ligula malesuada sed. Donec eget libero id leo congue
-          venenatis.
-        </Segment>
-        <Button primary inverted>
-          Download
-        </Button>
+        {result.assessment_risks.map((risk, index) => {
+          const title = risk?.Attachment_Title
+            ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
+                risk.Year_Of_Publication || ''
+              }`
+            : null;
+          return (
+            <div key={index}>
+              <AccordionList
+                variation="tertiary"
+                accordions={[
+                  {
+                    title: title,
+                    content: <AssessmentAccordionContent result={risk} />,
+                  },
+                ]}
+              />
+            </div>
+          );
+        })}
       </div>
 
-      <h3>Climate related hazards & sectors most exposed</h3>
-      <p>
-        Donec eget libero id leo congue venenatis. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-        esse cillum dolore eu fugiat nulla pariatur.
-      </p>
+      {Hazards_Title && <h3>{Hazards_Title}</h3>}
+
+      {Hazards_Abstract && <p>{Hazards_Abstract}</p>}
 
       <br />
 
