@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-03-18T08:52:34.397Z\n"
+"POT-Creation-Date: 2025-04-22T09:13:00.209Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,6 +21,7 @@ msgstr ""
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -46,6 +47,7 @@ msgstr ""
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr ""
 
@@ -150,6 +152,7 @@ msgstr ""
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr ""
 
@@ -316,6 +319,7 @@ msgstr ""
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -430,6 +434,7 @@ msgstr ""
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr ""
 
@@ -442,6 +447,7 @@ msgstr ""
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr ""
 
@@ -724,6 +730,7 @@ msgstr ""
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr ""
 
@@ -843,6 +850,7 @@ msgstr ""
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr ""
 

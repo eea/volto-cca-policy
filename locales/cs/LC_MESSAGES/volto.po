@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -20,6 +19,7 @@ msgstr "K dispozici je podkladový dokument akce"
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,6 +45,7 @@ msgstr "Možnosti adaptace implementované v tomto případě"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptační sektory"
 
@@ -149,6 +150,7 @@ msgstr "Město:"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Dopady klimatu"
 
@@ -315,6 +317,7 @@ msgstr "Celá obrazovka"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -429,6 +432,7 @@ msgstr "Info"
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Položka od třetích stran"
 
@@ -441,6 +445,7 @@ msgstr "Klíčové komunitní systémy"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Měření typu klíče"
 
@@ -723,6 +728,7 @@ msgstr "Prohledejte katalog zdrojů observatoře..."
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Sekce"
 
@@ -842,6 +848,7 @@ msgstr "témata:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Nadnárodní regiony"
 
@@ -909,13 +916,33 @@ msgstr "Kde"
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr ""
+
+#. undefined
+
 msgid "Case studies"
 msgstr "Případové studie"
 
 #. undefined
 
+msgid "Case study"
+msgstr ""
+
+#. undefined
+
 msgid "Guidance"
 msgstr "Vedení"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Indikátor"
+
+#. undefined
+
+msgid "Information portal"
+msgstr ""
 
 #. undefined
 
@@ -929,13 +956,28 @@ msgstr "videa"
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr ""
+
+#. undefined
+
 msgid "Organisations"
 msgstr "Organizace"
 
 #. undefined
 
+msgid "Organisation"
+msgstr ""
+
+#. undefined
+
 msgid "Publication and reports"
 msgstr "Publikace a zprávy"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr ""
 
 #. undefined
 
@@ -949,8 +991,18 @@ msgstr "Výzkumné a znalostní projekty"
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr ""
+
+#. undefined
+
 msgid "Tools"
 msgstr "Nástroje"
+
+#. undefined
+
+msgid "Tool"
+msgstr ""
 
 #. undefined
 
@@ -1001,11 +1053,6 @@ msgstr "Kategorie nebezpečí"
 
 msgid "Hazard type"
 msgstr "Typ nebezpečí"
-
-#. undefined
-
-msgid "Indicator"
-msgstr "Indikátor"
 
 #. undefined
 

@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -20,6 +19,7 @@ msgstr "Et bakgrunnsdokument for arrangementet er tilgjengelig"
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,6 +45,7 @@ msgstr "Tilpasningsalternativer implementert i dette tilfellet"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Tilpasningssektorer"
 
@@ -149,6 +150,7 @@ msgstr "By:"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimapåvirkninger"
 
@@ -315,6 +317,7 @@ msgstr "Fullskjerm"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -429,6 +432,7 @@ msgstr "Info"
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Vare fra tredjeparter"
 
@@ -441,6 +445,7 @@ msgstr "Nøkkelsamfunnssystemer"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Nøkkeltype Mål"
 
@@ -723,6 +728,7 @@ msgstr "Søk i Observatory Resource Catalogue..."
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Del"
 
@@ -842,6 +848,7 @@ msgstr "Emner:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnasjonale regioner"
 
@@ -909,13 +916,33 @@ msgstr "Hvor"
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr ""
+
+#. undefined
+
 msgid "Case studies"
 msgstr "Kasusstudier"
 
 #. undefined
 
+msgid "Case study"
+msgstr ""
+
+#. undefined
+
 msgid "Guidance"
 msgstr "Veiledning"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Indikator"
+
+#. undefined
+
+msgid "Information portal"
+msgstr ""
 
 #. undefined
 
@@ -929,13 +956,28 @@ msgstr "Videoer"
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr ""
+
+#. undefined
+
 msgid "Organisations"
 msgstr "Organisasjoner"
 
 #. undefined
 
+msgid "Organisation"
+msgstr ""
+
+#. undefined
+
 msgid "Publication and reports"
 msgstr "Publisering og rapporter"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr ""
 
 #. undefined
 
@@ -949,8 +991,18 @@ msgstr "Forsknings- og kunnskapsprosjekter"
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr ""
+
+#. undefined
+
 msgid "Tools"
 msgstr "Verktøy"
+
+#. undefined
+
+msgid "Tool"
+msgstr ""
 
 #. undefined
 
@@ -1001,11 +1053,6 @@ msgstr "Farekategori"
 
 msgid "Hazard type"
 msgstr "Faretype"
-
-#. undefined
-
-msgid "Indicator"
-msgstr "Indikator"
 
 #. undefined
 

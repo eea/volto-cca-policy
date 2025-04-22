@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -20,6 +19,7 @@ msgstr "Tapahtuman taustadokumentti on saatavilla"
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,6 +45,7 @@ msgstr "Tässä tapauksessa toteutetut mukautusvaihtoehdot"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Sopeutumissektorit"
 
@@ -149,6 +150,7 @@ msgstr "Kaupunki:"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Ilmaston vaikutukset"
 
@@ -315,6 +317,7 @@ msgstr "Koko näyttö"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -429,6 +432,7 @@ msgstr "Tiedot"
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Kohde kolmansilta osapuolilta"
 
@@ -441,6 +445,7 @@ msgstr "Keskeiset yhteisöjärjestelmät"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Avaintyypin mitta"
 
@@ -723,6 +728,7 @@ msgstr "Hae observatorion resurssiluettelosta..."
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "osio"
 
@@ -842,6 +848,7 @@ msgstr "Aiheet:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Kansainväliset alueet"
 
@@ -909,13 +916,33 @@ msgstr "Jossa"
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr ""
+
+#. undefined
+
 msgid "Case studies"
 msgstr "Tapaustutkimukset"
 
 #. undefined
 
+msgid "Case study"
+msgstr ""
+
+#. undefined
+
 msgid "Guidance"
 msgstr "Ohjaus"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Ilmaisin"
+
+#. undefined
+
+msgid "Information portal"
+msgstr ""
 
 #. undefined
 
@@ -929,13 +956,28 @@ msgstr "Videot"
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr ""
+
+#. undefined
+
 msgid "Organisations"
 msgstr "Organisaatiot"
 
 #. undefined
 
+msgid "Organisation"
+msgstr ""
+
+#. undefined
+
 msgid "Publication and reports"
 msgstr "Julkaisu ja raportit"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr ""
 
 #. undefined
 
@@ -949,8 +991,18 @@ msgstr "Tutkimus- ja tietoprojektit"
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr ""
+
+#. undefined
+
 msgid "Tools"
 msgstr "Työkalut"
+
+#. undefined
+
+msgid "Tool"
+msgstr ""
 
 #. undefined
 
@@ -1001,11 +1053,6 @@ msgstr "Vaaraluokka"
 
 msgid "Hazard type"
 msgstr "Vaaran tyyppi"
-
-#. undefined
-
-msgid "Indicator"
-msgstr "Ilmaisin"
 
 #. undefined
 
