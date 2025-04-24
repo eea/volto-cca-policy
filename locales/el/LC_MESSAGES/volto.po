@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -20,6 +19,7 @@ msgstr "Ένα έγγραφο φόντου για την εκδήλωση είν
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,6 +45,7 @@ msgstr "Επιλογές προσαρμογής που εφαρμόζονται 
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Τομείς Προσαρμογής"
 
@@ -149,6 +150,7 @@ msgstr "Πόλη:"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Κλιματικές Επιπτώσεις"
 
@@ -315,6 +317,7 @@ msgstr "Πλήρης οθόνη"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -429,6 +432,7 @@ msgstr "Πληροφορίες"
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Είδος από τρίτους"
 
@@ -441,6 +445,7 @@ msgstr "Βασικά κοινοτικά συστήματα"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Τύπος κλειδιού Μέτρο"
 
@@ -723,6 +728,7 @@ msgstr "Αναζήτηση στον Κατάλογο Πόρων του Παρα�
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Τμήμα"
 
@@ -842,6 +848,7 @@ msgstr "Θέματα:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Διακρατικές περιοχές"
 
@@ -909,13 +916,33 @@ msgstr "Οπου"
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr ""
+
+#. undefined
+
 msgid "Case studies"
 msgstr "Μελέτες περιπτώσεων"
 
 #. undefined
 
+msgid "Case study"
+msgstr ""
+
+#. undefined
+
 msgid "Guidance"
 msgstr "Οδηγία"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Δείκτης"
+
+#. undefined
+
+msgid "Information portal"
+msgstr ""
 
 #. undefined
 
@@ -929,13 +956,28 @@ msgstr "Βίντεο"
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr ""
+
+#. undefined
+
 msgid "Organisations"
 msgstr "Οργανώσεις"
 
 #. undefined
 
+msgid "Organisation"
+msgstr ""
+
+#. undefined
+
 msgid "Publication and reports"
 msgstr "Δημοσίευση και εκθέσεις"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr ""
 
 #. undefined
 
@@ -949,8 +991,18 @@ msgstr "Έργα έρευνας και γνώσης"
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr ""
+
+#. undefined
+
 msgid "Tools"
 msgstr "Εργαλεία"
+
+#. undefined
+
+msgid "Tool"
+msgstr ""
 
 #. undefined
 
@@ -1001,11 +1053,6 @@ msgstr "Κατηγορία κινδύνου"
 
 msgid "Hazard type"
 msgstr "Τύπος κινδύνου"
-
-#. undefined
-
-msgid "Indicator"
-msgstr "Δείκτης"
 
 #. undefined
 

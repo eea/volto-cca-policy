@@ -115,6 +115,7 @@ export default function CollectionStatsView(props) {
   const { queryParameterStyle = 'SearchBlock', query = {}, showLabel } = data;
   const base = getBase(props);
   let stats = useStats(getBaseUrl(pathname), id, data);
+  const intl = useIntl();
 
   const groupDefinition =
     config.blocks.blocksConfig.collectionStats?.groups?.[field] || {};
@@ -141,7 +142,10 @@ export default function CollectionStatsView(props) {
                   base,
                   query: query.query,
                   field: groupDefinition.searchFieldName || field,
-                  value: kV,
+                  value: intl.formatMessage({
+                    id: kV,
+                    defaultMessage: kV,
+                  }),
                   extraFilters,
                 })}
               >

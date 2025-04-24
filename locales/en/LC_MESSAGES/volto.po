@@ -19,6 +19,7 @@ msgstr ""
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,6 +45,7 @@ msgstr ""
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr ""
 
@@ -148,6 +150,7 @@ msgstr ""
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr ""
 
@@ -314,6 +317,7 @@ msgstr ""
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -428,6 +432,7 @@ msgstr ""
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr ""
 
@@ -440,6 +445,7 @@ msgstr ""
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr ""
 
@@ -722,6 +728,7 @@ msgstr ""
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr ""
 
@@ -841,6 +848,7 @@ msgstr ""
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr ""
 
@@ -908,12 +916,32 @@ msgstr ""
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr ""
+
+#. undefined
+
 msgid "Case studies"
 msgstr ""
 
 #. undefined
 
+msgid "Case study"
+msgstr ""
+
+#. undefined
+
 msgid "Guidance"
+msgstr ""
+
+#. undefined
+
+msgid "Indicator"
+msgstr ""
+
+#. undefined
+
+msgid "Information portal"
 msgstr ""
 
 #. undefined
@@ -928,12 +956,27 @@ msgstr ""
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr ""
+
+#. undefined
+
 msgid "Organisations"
 msgstr ""
 
 #. undefined
 
+msgid "Organisation"
+msgstr ""
+
+#. undefined
+
 msgid "Publication and reports"
+msgstr ""
+
+#. undefined
+
+msgid "Publication and report"
 msgstr ""
 
 #. undefined
@@ -948,7 +991,17 @@ msgstr ""
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr ""
+
+#. undefined
+
 msgid "Tools"
+msgstr ""
+
+#. undefined
+
+msgid "Tool"
 msgstr ""
 
 #. undefined
@@ -999,11 +1052,6 @@ msgstr ""
 #. undefined
 
 msgid "Hazard type"
-msgstr ""
-
-#. undefined
-
-msgid "Indicator"
 msgstr ""
 
 #. undefined
@@ -1524,6 +1572,16 @@ msgstr ""
 #. undefined
 
 msgid "Local (e.g. city or municipal level)"
+msgstr ""
+
+#. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr ""
+
+#. undefined
+
+msgid "Region where the funding is offered"
 msgstr ""
 
 #. undefined

@@ -11,9 +11,9 @@ import { useLocation } from 'react-router-dom';
  * INavigationPortlet
  */
 export function ContextNavigationComponent(props) {
+  const curentLocation = useLocation();
   const { location, items, skip_items, show_subfolders } = props;
   const [activeMenu, setActiveMenu] = React.useState(null);
-  const curentLocation = useLocation();
 
   React.useEffect(() => {
     let newItems = [...items];
@@ -21,10 +21,8 @@ export function ContextNavigationComponent(props) {
 
     for (let i = 0; i < newItems.length; i++) {
       let itemUrl = '/' + newItems[i]['@id'].split('/').slice(3).join('/');
-      newItems[i].is_active = false;
       if (curentLocation.pathname.includes(itemUrl)) {
         activeIndex = i;
-        newItems[i].is_active = true;
       }
     }
 

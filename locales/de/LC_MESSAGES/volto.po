@@ -20,6 +20,7 @@ msgstr "Ein Hintergrunddokument zur Veranstaltung liegt vor"
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,6 +46,7 @@ msgstr "In diesem Fall implementierte Anpassungsoptionen"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Anpassungssektoren"
 
@@ -149,6 +151,7 @@ msgstr "Stadt:"
 #: search/cca/facets
 #: search/common
 #: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimaauswirkungen"
 
@@ -315,6 +318,7 @@ msgstr "Vollbild"
 #. Default: "Funding Programme"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -429,6 +433,7 @@ msgstr "Info"
 #. Default: "Item from third parties"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Artikel von Drittanbietern"
 
@@ -441,6 +446,7 @@ msgstr "Wichtige Gemeinschaftssysteme"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Schlüsseltypmaß"
 
@@ -723,6 +729,7 @@ msgstr "Durchsuchen Sie den Ressourcenkatalog des Observatoriums..."
 #. Default: "Section"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Abschnitt"
 
@@ -842,6 +849,7 @@ msgstr "Themen:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnationale Regionen"
 
@@ -909,13 +917,33 @@ msgstr "Wo"
 
 #. undefined
 
+msgid "Adaptation option"
+msgstr "Anpassungsmöglichkeit"
+
+#. undefined
+
 msgid "Case studies"
 msgstr "Fallstudien"
 
 #. undefined
 
+msgid "Case study"
+msgstr "Fallstudie"
+
+#. undefined
+
 msgid "Guidance"
 msgstr "Anleitung"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Indikator"
+
+#. undefined
+
+msgid "Information portal"
+msgstr "Informationsportal"
 
 #. undefined
 
@@ -929,13 +957,28 @@ msgstr "Videos"
 
 #. undefined
 
+msgid "Video and podcast"
+msgstr "Video und Podcast"
+
+#. undefined
+
 msgid "Organisations"
 msgstr "Organisationen"
 
 #. undefined
 
+msgid "Organisation"
+msgstr "Organisation"
+
+#. undefined
+
 msgid "Publication and reports"
 msgstr "Veröffentlichungen und Berichte"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr "Veröffentlichung und Bericht"
 
 #. undefined
 
@@ -949,8 +992,18 @@ msgstr "Forschungs- und Wissensprojekte"
 
 #. undefined
 
+msgid "Research and knowledge project"
+msgstr "Forschungs- und Wissensprojekt"
+
+#. undefined
+
 msgid "Tools"
 msgstr "Werkzeuge"
+
+#. undefined
+
+msgid "Tool"
+msgstr "Werkzeug"
 
 #. undefined
 
@@ -1001,11 +1054,6 @@ msgstr "Gefahrenkategorie"
 
 msgid "Hazard type"
 msgstr "Gefahrentyp"
-
-#. undefined
-
-msgid "Indicator"
-msgstr "Indikator"
 
 #. undefined
 
