@@ -15,10 +15,11 @@ export function ContextNavigationComponent(props) {
   let activeMenu = null;
 
   const curent_location = useLocation();
+  const curent_location_pathname = curent_location.pathname;
   for (let i = 0; i < items.length; i++) {
     let itemUrl = '/' + items[i]['@id'].split('/').slice(3).join('/');
     items[i].is_active = false;
-    if (curent_location.pathname.includes(itemUrl)) {
+    if (curent_location_pathname.includes(itemUrl)) {
       activeMenu = i;
       items[i].is_active = true;
     }
