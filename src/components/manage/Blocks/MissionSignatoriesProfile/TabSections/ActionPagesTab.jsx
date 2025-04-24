@@ -1,50 +1,61 @@
 import React from 'react';
-import { Tab, Segment, Grid } from 'semantic-ui-react';
+import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import AccordionList from './../AccordionList';
 
 const ActionsTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
   const hasSectors = !!action?.Sectors;
-  const hasDescription = !!action?.Description;
+  const hasBenefits = !!action?.Co_Benefits;
   return (
-    <Grid columns="12">
-      <Grid.Column mobile={12} tablet={12} computer={6}>
-        {hasHazards && (
-          <>
-            <h5>{action.Hazards_Addressed_Label}</h5>
-            <ul>
-              {action.Climate_Hazards.map((hazard, index) => (
-                <li key={index}>{hazard}</li>
-              ))}
-            </ul>
-          </>
-        )}
-        {hasSectors && (
-          <>
-            <h5>{action.Sectors_Label}</h5>
-            <ul>
-              {action.Sectors.map((hazard, index) => (
-                <li key={index}>{hazard}</li>
-              ))}
-            </ul>
-          </>
-        )}
-      </Grid.Column>
+    <>
+      <Grid columns="12">
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          {hasHazards && (
+            <>
+              <h5>{action.Hazards_Addressed_Label}</h5>
+              <ul>
+                {action.Climate_Hazards.map((hazard, index) => (
+                  <li key={index}>{hazard}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          {hasSectors && (
+            <>
+              <h5>{action.Sectors_Label}</h5>
+              <ul>
+                {action.Sectors.map((hazard, index) => (
+                  <li key={index}>{hazard}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </Grid.Column>
 
-      <Grid.Column mobile={12} tablet={12} computer={hasHazards ? 6 : 12}>
-        {hasDescription && (
-          <>
-            <h5 className="small-label">{action.Description_Label}</h5>
-            <Segment>
-              {/* <HTMLField
-                value={{ data: formatTextToHTML(action.Description) }}
-              /> */}
-            </Segment>
-          </>
-        )}
-      </Grid.Column>
-    </Grid>
+        <Grid.Column mobile={12} tablet={12} computer={6}>
+          {hasBenefits && (
+            <>
+              <h5 className="small-label">{action.Co_Benefits_Label}</h5>
+              <ul>
+                {action.Co_Benefits.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </Grid.Column>
+      </Grid>
+      {action.Funding_Sources && (
+        <>
+          <br />
+          <p>
+            <span>{action.Funding_Sources_Label} </span>
+            <strong>{action.Funding_Sources}</strong>
+          </p>
+        </>
+      )}
+    </>
   );
 };
 
