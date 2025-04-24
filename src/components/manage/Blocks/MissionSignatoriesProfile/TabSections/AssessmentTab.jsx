@@ -61,18 +61,15 @@ const AssessmentTab = ({ result }) => {
     Attachments,
     Hazards_Title,
     Hazards_Abstract,
-  } = result.assessment_text[0] || [];
+  } = result.assessment_text?.[0] || [];
+  const assessment_risks = result.assessment_risks || [];
 
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   return (
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
-      {Subheading && (
-        <Callout>
-          <p>{Subheading}</p>
-        </Callout>
-      )}
+      {Subheading && <Callout>{Subheading}</Callout>}
 
       {Abstract && <p>{Abstract}</p>}
 
@@ -84,7 +81,7 @@ const AssessmentTab = ({ result }) => {
 
         {Attachments && <h4>{Attachments}</h4>}
 
-        {result.assessment_risks.map((risk, index) => {
+        {assessment_risks.map((risk, index) => {
           const title = risk?.Attachment_Title
             ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
                 risk.Year_Of_Publication || ''

@@ -60,7 +60,7 @@ const ActionsTabContent = ({ action }) => {
 };
 
 const ActionPagesTab = ({ result }) => {
-  const { Title, Abstract, Abstract_Line } = result.action_text[0] || {};
+  const { Title, Abstract, Abstract_Line } = result.action_text?.[0] || [];
   const actions = result.actions || [];
 
   const sortedActions = [...actions].sort((a, b) => {
@@ -73,11 +73,7 @@ const ActionPagesTab = ({ result }) => {
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
       {Abstract && <p>{Abstract}</p>}
-      {Abstract_Line && (
-        <Callout>
-          <p>{Abstract_Line}</p>
-        </Callout>
-      )}
+      {Abstract_Line && <Callout>{Abstract_Line}</Callout>}
 
       {sortedActions.map((action, index) => {
         return (

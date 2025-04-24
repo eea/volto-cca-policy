@@ -19,11 +19,7 @@ const GovernanceTab = ({ result }) => {
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
 
-      {Introduction && (
-        <Callout>
-          <p>{Introduction}</p>
-        </Callout>
-      )}
+      {Introduction && <Callout>{Introduction}</Callout>}
 
       {Describe_Title && <h3>{Describe_Title}</h3>}
 
