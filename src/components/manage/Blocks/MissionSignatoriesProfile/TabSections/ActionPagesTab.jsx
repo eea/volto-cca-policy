@@ -75,6 +75,8 @@ const ActionPagesTab = ({ result }) => {
       {Abstract && <p>{Abstract}</p>}
       {Abstract_Line && <Callout>{Abstract_Line}</Callout>}
 
+      <br />
+
       {sortedActions.map((action, index) => {
         return (
           <div key={index} className="section-wrapper">
