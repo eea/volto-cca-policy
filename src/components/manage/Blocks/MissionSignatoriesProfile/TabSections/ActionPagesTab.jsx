@@ -5,29 +5,34 @@ import AccordionList from './../AccordionList';
 
 const ActionsTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
-  const hasComments = !!action?.Comments;
+  const hasSectors = !!action?.Sectors;
   const hasDescription = !!action?.Description;
   return (
     <Grid columns="12">
-      {hasHazards && (
-        <Grid.Column mobile={12} tablet={12} computer={6}>
-          <h5>{action.Hazards_Addressed_Label}</h5>
-          <ul>
-            {action.Climate_Hazards.map((hazard, index) => (
-              <li key={index}>{hazard}</li>
-            ))}
-          </ul>
-        </Grid.Column>
-      )}
-      <Grid.Column mobile={12} tablet={12} computer={hasHazards ? 6 : 12}>
-        {hasComments && (
+      <Grid.Column mobile={12} tablet={12} computer={6}>
+        {hasHazards && (
           <>
-            <h5 className="small-label">{action.Comments_Label}</h5>
-            <Segment>
-              {/* <HTMLField value={{ data: formatTextToHTML(action.Comments) }} /> */}
-            </Segment>
+            <h5>{action.Hazards_Addressed_Label}</h5>
+            <ul>
+              {action.Climate_Hazards.map((hazard, index) => (
+                <li key={index}>{hazard}</li>
+              ))}
+            </ul>
           </>
         )}
+        {hasSectors && (
+          <>
+            <h5>{action.Sectors_Label}</h5>
+            <ul>
+              {action.Sectors.map((hazard, index) => (
+                <li key={index}>{hazard}</li>
+              ))}
+            </ul>
+          </>
+        )}
+      </Grid.Column>
+
+      <Grid.Column mobile={12} tablet={12} computer={hasHazards ? 6 : 12}>
         {hasDescription && (
           <>
             <h5 className="small-label">{action.Description_Label}</h5>
