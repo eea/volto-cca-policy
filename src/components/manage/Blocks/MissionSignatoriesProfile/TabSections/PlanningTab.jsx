@@ -95,11 +95,7 @@ const PlanningTab = ({ result }) => {
   return (
     <Tab.Pane>
       {titleData?.Title && <h2>{titleData.Title}</h2>}
-      {titleData?.Abstract_Line && (
-        <Callout>
-          <p>{titleData.Abstract_Line}</p>
-        </Callout>
-      )}
+      {titleData?.Abstract_Line && <Callout>{titleData.Abstract_Line}</Callout>}
 
       {sortedGoals.map((goal, index) => {
         return (
@@ -126,9 +122,7 @@ const PlanningTab = ({ result }) => {
       )}
 
       {goalData?.Climate_Action_Abstract && (
-        <Callout>
-          <p>{goalData.Climate_Action_Abstract}</p>
-        </Callout>
+        <Callout>{goalData.Climate_Action_Abstract}</Callout>
       )}
 
       {planning_climate_action.map((action, index) => {

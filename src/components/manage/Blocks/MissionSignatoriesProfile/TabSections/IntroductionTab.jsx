@@ -7,10 +7,8 @@ const IntroductionTab = () => {
     <Tab.Pane>
       <h2>Introduction</h2>
       <Callout>
-        <p>
-          Duis non quam et nisi tincidunt fermentum. Pellentesque habitant morbi
-          tristique senectus et netus et malesuada fames ac turpis egestas.
-        </p>
+        Duis non quam et nisi tincidunt fermentum. Pellentesque habitant morbi
+        tristique senectus et netus et malesuada fames ac turpis egestas.
       </Callout>
       <h3>The Mission on Adaptation</h3>
       <p>

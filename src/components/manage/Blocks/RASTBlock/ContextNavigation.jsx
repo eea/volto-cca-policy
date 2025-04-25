@@ -11,18 +11,23 @@ import { useLocation } from 'react-router-dom';
  * INavigationPortlet
  */
 export function ContextNavigationComponent(props) {
+  const curentLocation = useLocation();
   const { location, items, skip_items, show_subfolders } = props;
-  let activeMenu = null;
+  const [activeMenu, setActiveMenu] = React.useState(null);
 
-  const curent_location = useLocation();
-  for (let i = 0; i < items.length; i++) {
-    let itemUrl = '/' + items[i]['@id'].split('/').slice(3).join('/');
-    items[i].is_active = false;
-    if (curent_location.pathname.includes(itemUrl)) {
-      activeMenu = i;
-      items[i].is_active = true;
+  React.useEffect(() => {
+    let newItems = [...items];
+    let activeIndex = null;
+
+    for (let i = 0; i < newItems.length; i++) {
+      let itemUrl = '/' + newItems[i]['@id'].split('/').slice(3).join('/');
+      if (curentLocation.pathname.includes(itemUrl)) {
+        activeIndex = i;
+      }
     }
-  }
+
+    setActiveMenu(activeIndex);
+  }, [curentLocation, items]);
 
   return (
     <>
@@ -36,7 +41,7 @@ export function ContextNavigationComponent(props) {
         <RASTAccordion
           items={items}
           show_subfolders={show_subfolders}
-          curent_location={curent_location}
+          curent_location={curentLocation}
           activeMenu={activeMenu}
         />
       ) : null}
