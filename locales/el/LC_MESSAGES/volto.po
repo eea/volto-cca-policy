@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Οπου"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Επιλογή προσαρμογής"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Μελέτες περιπτώσεων"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Μελέτη περίπτωσης"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Δείκτης"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Πύλη πληροφοριών"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Βίντεο"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Βίντεο και podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Οργανώσεις"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Οργάνωση"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Δημοσίευση και εκθέσεις"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Δημοσίευση και έκθεση"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Έργα έρευνας και γνώσης"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Έργο έρευνας και γνώσης"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Εργαλεία"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Εργαλείο"
 
 #. undefined
 
@@ -1577,12 +1578,12 @@ msgstr "Τοπικό (π.χ. επίπεδο πόλης ή δήμου)"
 #. undefined
 
 msgid "Countries where the funding opportunity is offered"
-msgstr ""
+msgstr "Χώρες όπου προσφέρεται η ευκαιρία χρηματοδότησης"
 
 #. undefined
 
 msgid "Region where the funding is offered"
-msgstr ""
+msgstr "Περιφέρεια όπου προσφέρεται η χρηματοδότηση"
 
 #. undefined
 #: health_menu:43
@@ -2121,7 +2122,7 @@ msgstr "Αναζήτηση στη βάση δεδομένων"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Υπηρεσίες για το Κλίμα"
 
 #. undefined
 #: health_menu:222
@@ -3350,7 +3351,7 @@ msgstr "Θάλασσα και Αλιεία"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:98
 msgid "Monitoring &amp; Evaluation (M&amp;E)"
-msgstr ""
+msgstr "Παρακολούθηση &amp; Αξιολόγηση (Μ&Ε)"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
@@ -3436,7 +3437,7 @@ msgstr "Γνήσιο aceitem"
 #. undefined
 #: ../../climateadapt/browser/pt/footer_logos.pt:35
 msgid "Other European Information Systems:<br />&nbsp;"
-msgstr ""
+msgstr "Άλλα ευρωπαϊκά συστήματα πληροφοριών:<br />&nbsp"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:140

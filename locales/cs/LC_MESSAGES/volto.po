@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Kde"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Možnost adaptace"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Případové studie"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Případová studie"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indikátor"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Informační portál"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "videa"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Video a podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organizace"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organizace"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Publikace a zprávy"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Publikace a zpráva"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Výzkumné a znalostní projekty"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Výzkumný a znalostní projekt"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Nástroje"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Nástroj"
 
 #. undefined
 

@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Kur"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Adaptācijas iespēja"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Gadījumu izpēte"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Gadījuma izpēte"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indikators"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Informācijas portāls"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Videoklipi"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Video un podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organizācijas"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organizācija"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Publikācija un ziņojumi"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Publikācija un ziņojums"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Pētījumu un zināšanu projekti"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Pētījumu un zināšanu projekts"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Rīki"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Rīks"
 
 #. undefined
 
@@ -1577,12 +1578,12 @@ msgstr "Vietējais (piemēram, pilsētas vai pašvaldības līmenis)"
 #. undefined
 
 msgid "Countries where the funding opportunity is offered"
-msgstr ""
+msgstr "Valstis, kurās tiek piedāvāta finansējuma iespēja"
 
 #. undefined
 
 msgid "Region where the funding is offered"
-msgstr ""
+msgstr "Reģions, kurā tiek piedāvāts finansējums"
 
 #. undefined
 #: health_menu:43
@@ -2121,7 +2122,7 @@ msgstr "Meklēt datu bāzē"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Klimata pakalpojumi"
 
 #. undefined
 #: health_menu:222
@@ -3350,7 +3351,7 @@ msgstr "Jūra un zivsaimniecība"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:98
 msgid "Monitoring &amp; Evaluation (M&amp;E)"
-msgstr ""
+msgstr "Uzraudzība &amp; Novērtējums (M&E)"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
@@ -3436,7 +3437,7 @@ msgstr "Oriģināls aceitem"
 #. undefined
 #: ../../climateadapt/browser/pt/footer_logos.pt:35
 msgid "Other European Information Systems:<br />&nbsp;"
-msgstr ""
+msgstr "Citas Eiropas informācijas sistēmas:<br />&nbsp"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:140

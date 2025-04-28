@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Fejn"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Għażla ta' adattament"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Studji ta' każijiet"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Studju ta' każ"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indikatur"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Portal ta' informazzjoni"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Vidjows"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Vidjow u podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organizzazzjonijiet"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organizzazzjoni"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Pubblikazzjoni u rapporti"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Pubblikazzjoni u rapport"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Proġetti ta' riċerka u għarfien"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Proġett ta' riċerka u għarfien"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Għodda"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Għodda"
 
 #. undefined
 
@@ -1577,12 +1578,12 @@ msgstr "Lokali (eż. belt jew livell muniċipali)"
 #. undefined
 
 msgid "Countries where the funding opportunity is offered"
-msgstr ""
+msgstr "Pajjiżi fejn tiġi offruta l-opportunità ta’ finanzjament"
 
 #. undefined
 
 msgid "Region where the funding is offered"
-msgstr ""
+msgstr "Reġjun fejn jiġi offrut il-finanzjament"
 
 #. undefined
 #: health_menu:43
@@ -2121,7 +2122,7 @@ msgstr "Fittex fid-database"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Servizzi tal-Klima"
 
 #. undefined
 #: health_menu:222
@@ -3350,7 +3351,7 @@ msgstr "Marittimu u Sajd"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:98
 msgid "Monitoring &amp; Evaluation (M&amp;E)"
-msgstr ""
+msgstr "Monitoraġġ andamp; Evalwazzjoni (M&E)"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
@@ -3436,7 +3437,7 @@ msgstr "aceitem oriġinali"
 #. undefined
 #: ../../climateadapt/browser/pt/footer_logos.pt:35
 msgid "Other European Information Systems:<br />&nbsp;"
-msgstr ""
+msgstr "Sistemi Ewropej oħra ta' Informazzjoni:<br />&nbsp"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:140
