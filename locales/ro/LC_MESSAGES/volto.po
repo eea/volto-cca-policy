@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Unde"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Opțiune de adaptare"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Studii de caz"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Studiu de caz"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indicator"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Portal de informare"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Videoclipuri"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Video și podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organizații"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organizare"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Publicare și rapoarte"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Publicare și raport"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Proiecte de cercetare și cunoaștere"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Proiect de cercetare și cunoaștere"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Instrumente"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Instrument"
 
 #. undefined
 

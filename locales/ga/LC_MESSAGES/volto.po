@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Cá"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Rogha oiriúnaithe"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Cás-staidéir"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Cás-staidéar"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Táscaire"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Tairseach faisnéise"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Físeáin"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Físeán agus podchraoladh"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Eagraíochtaí"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Eagraíocht"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Foilsiú agus tuarascálacha"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Foilsiú agus tuarascáil"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Tionscadail taighde agus eolais"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Tionscadal taighde agus eolais"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Uirlisí"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Uirlis"
 
 #. undefined
 

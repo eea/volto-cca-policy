@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Kus"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Kohanemise võimalus"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Juhtumiuuringud"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Juhtumiuuring"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Näitaja"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Teabeportaal"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Videod"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Video ja podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organisatsioonid"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organisatsioon"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Väljaanne ja aruanded"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Väljaanne ja aruanne"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Uurimis- ja teadmusprojektid"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Uurimis- ja teadmisteprojekt"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Tööriistad"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Tööriist"
 
 #. undefined
 

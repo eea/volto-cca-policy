@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Kur"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Adaptacijos galimybė"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Atvejo tyrimai"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Atvejo analizė"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Rodiklis"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Informacinis portalas"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Vaizdo įrašai"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Vaizdo įrašas ir podcast'as"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organizacijos"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organizacija"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Publikacija ir ataskaitos"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Publikacija ir ataskaita"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Tyrimų ir žinių projektai"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Tyrimų ir žinių projektas"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Įrankiai"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Įrankis"
 
 #. undefined
 

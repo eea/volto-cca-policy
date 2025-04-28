@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "kje"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Možnost prilagoditve"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Študije primerov"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Študija primera"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indikator"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Informacijski portal"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Videoposnetki"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Video in podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organizacije"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organizacija"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Objava in poročila"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Objava in poročilo"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Raziskovalni projekti in projekti znanja"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Projekt raziskovanja in znanja"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Orodja"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Orodje"
 
 #. undefined
 
