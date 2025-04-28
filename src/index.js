@@ -99,8 +99,8 @@ const applyConfig = (config) => {
   ];
 
   if (!config.settings.loadables.reactTable)
-    config.settings.loadables.reactTable = loadable.lib(() =>
-      import('@tanstack/react-table'),
+    config.settings.loadables.reactTable = loadable.lib(
+      () => import('@tanstack/react-table'),
     );
 
   config.settings.dateLocale = 'en-gb';
@@ -138,6 +138,7 @@ const applyConfig = (config) => {
     'nn', // norwegean (one of 2)
     'tr', // turkish
   ];
+  config.settings.querystringSearchGet = true; // let's use get because we have varnish
 
   // EEA customizations
   config.settings.eea = {
@@ -548,9 +549,8 @@ const applyConfig = (config) => {
     ...config.settings.storeExtenders,
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
