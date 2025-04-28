@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Ahol"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Adaptációs lehetőség"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Esettanulmányok"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Esettanulmány"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indikátor"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Információs portál"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Videók"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Videó és podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Szervezetek"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Szervezet"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Publikáció és jelentések"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Publikáció és jelentés"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Kutatási és tudásprojektek"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Kutatási és tudásprojekt"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Eszközök"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Eszköz"
 
 #. undefined
 

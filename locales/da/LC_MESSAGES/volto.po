@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -917,7 +918,7 @@ msgstr "Hvor"
 #. undefined
 
 msgid "Adaptation option"
-msgstr ""
+msgstr "Mulighed for tilpasning"
 
 #. undefined
 
@@ -927,7 +928,7 @@ msgstr "Casestudier"
 #. undefined
 
 msgid "Case study"
-msgstr ""
+msgstr "Casestudie"
 
 #. undefined
 
@@ -942,7 +943,7 @@ msgstr "Indikator"
 #. undefined
 
 msgid "Information portal"
-msgstr ""
+msgstr "Informationsportal"
 
 #. undefined
 
@@ -957,7 +958,7 @@ msgstr "Videoer"
 #. undefined
 
 msgid "Video and podcast"
-msgstr ""
+msgstr "Video og podcast"
 
 #. undefined
 
@@ -967,7 +968,7 @@ msgstr "Organisationer"
 #. undefined
 
 msgid "Organisation"
-msgstr ""
+msgstr "Organisation"
 
 #. undefined
 
@@ -977,7 +978,7 @@ msgstr "Udgivelse og rapporter"
 #. undefined
 
 msgid "Publication and report"
-msgstr ""
+msgstr "Udgivelse og rapport"
 
 #. undefined
 
@@ -992,7 +993,7 @@ msgstr "Forsknings- og vidensprojekter"
 #. undefined
 
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Forsknings- og vidensprojekt"
 
 #. undefined
 
@@ -1002,7 +1003,7 @@ msgstr "Værktøjer"
 #. undefined
 
 msgid "Tool"
-msgstr ""
+msgstr "Værktøj"
 
 #. undefined
 
@@ -1577,12 +1578,12 @@ msgstr "Lokalt (f.eks. by- eller kommuneniveau)"
 #. undefined
 
 msgid "Countries where the funding opportunity is offered"
-msgstr ""
+msgstr "Lande, hvor finansieringsmuligheden tilbydes"
 
 #. undefined
 
 msgid "Region where the funding is offered"
-msgstr ""
+msgstr "Region, hvor midlerne tilbydes"
 
 #. undefined
 #: health_menu:43
@@ -2121,7 +2122,7 @@ msgstr "Søg i databasen"
 #. undefined
 #: health_menu:2201
 msgid "Climate  Services"
-msgstr ""
+msgstr "Klimatjenester"
 
 #. undefined
 #: health_menu:222
@@ -3350,7 +3351,7 @@ msgstr "Marine og fiskeri"
 #. undefined
 #: ../../climateadapt/tiles/pt/ast_navigation.pt:98
 msgid "Monitoring &amp; Evaluation (M&amp;E)"
-msgstr ""
+msgstr "Overvågning &amp; Evaluering (M&amp;E)"
 
 #. undefined
 #: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
@@ -3436,7 +3437,7 @@ msgstr "Original acevare"
 #. undefined
 #: ../../climateadapt/browser/pt/footer_logos.pt:35
 msgid "Other European Information Systems:<br />&nbsp;"
-msgstr ""
+msgstr "Andre europæiske informationssystemer:<br />&nbsp"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:140
