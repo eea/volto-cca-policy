@@ -138,6 +138,7 @@ const applyConfig = (config) => {
     'nn', // norwegean (one of 2)
     'tr', // turkish
   ];
+  config.settings.querystringSearchGet = true; // let's use get because we have varnish
 
   // EEA customizations
   config.settings.eea = {
