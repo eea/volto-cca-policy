@@ -45,14 +45,22 @@ p.has--clear--both:empty {
 }
 
 // Fix item image size
-#main .ui.items > .item > .image > img {
-  width: auto;
-}
+#main {
+  .ui.items > .item > .image > img {
+    width: auto;
+  }
+  .ui.items > .item > .image + .content{
+    padding-left: 1rem;
+  }
 
-#main .ui.items > .item > .image + .content{
-  padding-left: 1rem;
+  .ui.items > .item .ui.middle.aligned.image {
+    display: flex;
+  
+    img {
+      align-self: center;
+    }
+  }
 }
-
 
 // Add icon for external links
 // .content-area #view {
