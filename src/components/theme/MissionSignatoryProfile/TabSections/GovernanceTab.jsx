@@ -31,7 +31,7 @@ const GovernanceTab = ({ result }) => {
         <AccordionList
           accordions={[
             {
-              title: Provide_Title || 'More details',
+              title: Provide_Title,
               content: (
                 <HTMLField value={{ data: formatTextToHTML(Provide) }} />
               ),
