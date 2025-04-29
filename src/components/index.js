@@ -5,6 +5,7 @@ export { default as TranslationDisclaimer } from './theme/TranslationDisclaimer/
 export { default as ShareInfoButton } from './theme/ShareInfoButton/ShareInfoButton';
 export { default as ASTNavigation } from './theme/ASTNavigation/ASTNavigation';
 export { default as RedirectToLogin } from './theme/RedirectToLogin/RedirectToLogin';
+export { default as MissionSignatoryProfileView } from './theme/MissionSignatoryProfile/MissionSignatoryProfileView';
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';

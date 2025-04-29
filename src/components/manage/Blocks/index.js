@@ -22,7 +22,6 @@ import installTabsBlock from './TabsBlock';
 import installRedirectBlock from './RedirectBlock';
 import installContentLinks from './ContentLinks';
 import installASTNavigation from './ASTNavigation';
-import installMissionSignatoriesProfileBlock from './MissionSignatoriesProfile';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -54,6 +53,5 @@ export default function installBlocks(config) {
     installRedirectBlock,
     installContentLinks,
     installASTNavigation,
-    installMissionSignatoriesProfileBlock,
   )(config);
 }

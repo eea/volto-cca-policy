@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MissionSignatoriesProfileView from './MissionSignatoriesProfileView';
+import MissionSignatoryProfileView from './MissionSignatoryProfileView';
 
 // Mock the tab components with minimal placeholders
 jest.mock('./TabSections/IntroductionTab', () => () => (
@@ -18,7 +18,7 @@ jest.mock('./TabSections/ActionPagesTab', () => () => (
   <div>Mocked Action Pages</div>
 ));
 
-describe('MissionSignatoriesProfileView', () => {
+describe('MissionSignatoryProfileView', () => {
   const data = {
     _v_results: {
       planning: {
@@ -29,7 +29,7 @@ describe('MissionSignatoriesProfileView', () => {
   };
 
   it('renders tab labels and default content', () => {
-    render(<MissionSignatoriesProfileView data={data} />);
+    render(<MissionSignatoryProfileView data={data} />);
 
     // Tab labels
     expect(screen.getByText('Introduction')).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe('MissionSignatoriesProfileView', () => {
   });
 
   it('switches tabs and renders corresponding content', () => {
-    render(<MissionSignatoriesProfileView data={data} />);
+    render(<MissionSignatoryProfileView data={data} />);
 
     fireEvent.click(screen.getByText('Governance'));
     expect(screen.getByText('Mocked Governance')).toBeInTheDocument();

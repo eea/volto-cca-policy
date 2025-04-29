@@ -1,7 +1,7 @@
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 export const blockAvailableInMission = (properties, block) => {
-  const missionBlocks = ['mkh_map', 'rastBlock', 'missionSignatoriesProfile'];
+  const missionBlocks = ['mkh_map', 'rastBlock'];
   const id = properties?.['@id'];
 
   if (!id) {

@@ -8,7 +8,7 @@ import {
   ItemContent,
 } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import AccordionList from './../AccordionList';
+import AccordionList from '../AccordionList';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
 
