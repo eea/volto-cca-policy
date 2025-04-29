@@ -11,7 +11,8 @@ import './style.less';
 
 const MissionSignatoryProfileView = (props) => {
   const { content } = props || {};
-  const dataJson = props?.content['@components']?.missionsignatoryprofile || {};
+  const dataJson =
+    props?.content?.['@components']?.missionsignatoryprofile || {};
 
   const result = dataJson?.result || {};
   const governance = result?.governance?.[0] || [];
