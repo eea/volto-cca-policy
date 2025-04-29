@@ -90,6 +90,12 @@ export const formatTextToHTML = (text) => {
     .replace(/\\no\s*/g, '<br />• ') // list-like "o " to bullet point
     .replace(/\\n/g, '<br />'); // single line break
 
+  // Convert URLs to clickable links
+  formattedText = formattedText.replace(
+    /((https?:\/\/[^\s<>"]+))/g,
+    '<a href="$1" target="_blank" rel="noreferrer">$1</a>',
+  );
+
   return `<p>${formattedText}</p>`;
 };
 
