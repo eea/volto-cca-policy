@@ -15,7 +15,7 @@ import {
   formatTextToHTML,
   extractPlanNameAndURL,
 } from '@eeacms/volto-cca-policy/utils';
-import AccordionList from './../AccordionList';
+import AccordionList from '../AccordionList';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
 const ItemsSection = ({ items }) => {
