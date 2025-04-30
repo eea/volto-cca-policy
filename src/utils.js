@@ -1,7 +1,7 @@
 import { flattenToAppURL } from '@plone/volto/helpers';
 
 export const blockAvailableInMission = (properties, block) => {
-  const missionBlocks = ['mkh_map', 'rastBlock', 'missionSignatoriesProfile'];
+  const missionBlocks = ['mkh_map', 'rastBlock'];
   const id = properties?.['@id'];
 
   if (!id) {
@@ -89,6 +89,12 @@ export const formatTextToHTML = (text) => {
     .replace(/\\n\\n/g, '</p><p>') // double line break = paragraph
     .replace(/\\no\s*/g, '<br />• ') // list-like "o " to bullet point
     .replace(/\\n/g, '<br />'); // single line break
+
+  // Convert URLs to clickable links
+  formattedText = formattedText.replace(
+    /((https?:\/\/[^\s<>"]+))/g,
+    '<a href="$1" target="_blank" rel="noreferrer">$1</a>',
+  );
 
   return `<p>${formattedText}</p>`;
 };

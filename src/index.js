@@ -8,6 +8,7 @@ import {
   RASTWidgetView,
   TranslationDisclaimer,
   RedirectToLogin,
+  MissionSignatoryProfileView,
 } from '@eeacms/volto-cca-policy/components';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
@@ -375,6 +376,7 @@ const applyConfig = (config) => {
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
+    mission_signatory_profile: MissionSignatoryProfileView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
