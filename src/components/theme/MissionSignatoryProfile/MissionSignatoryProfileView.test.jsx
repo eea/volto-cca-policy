@@ -4,9 +4,6 @@ import '@testing-library/jest-dom';
 import MissionSignatoryProfileView from './MissionSignatoryProfileView';
 
 // Mock the tab components with minimal placeholders
-jest.mock('./TabSections/IntroductionTab', () => () => (
-  <div>Mocked Introduction</div>
-));
 jest.mock('./TabSections/GovernanceTab', () => () => (
   <div>Mocked Governance</div>
 ));
@@ -33,14 +30,10 @@ describe('MissionSignatoryProfileView', () => {
     render(<MissionSignatoryProfileView data={data} />);
 
     // Tab labels
-    expect(screen.getByText('Introduction')).toBeInTheDocument();
     expect(screen.getByText('Governance')).toBeInTheDocument();
     expect(screen.getByText('Assessment')).toBeInTheDocument();
     expect(screen.getByText('Planning')).toBeInTheDocument();
     expect(screen.getByText('Action')).toBeInTheDocument();
-
-    // Default selected tab content (Introduction)
-    expect(screen.getByText('Mocked Introduction')).toBeInTheDocument();
   });
 
   it('switches tabs and renders corresponding content', () => {
