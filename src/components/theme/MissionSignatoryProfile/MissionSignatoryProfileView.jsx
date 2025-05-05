@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tab, Container } from 'semantic-ui-react';
 import { BannerTitle } from '@eeacms/volto-cca-policy/helpers';
-import IntroductionTab from './TabSections/IntroductionTab';
 import GovernanceTab from './TabSections/GovernanceTab';
 import AssessmentTab from './TabSections/AssessmentTab';
 import PlanningTab from './TabSections/PlanningTab';
@@ -53,10 +52,6 @@ const MissionSignatoryProfileView = (props) => {
           activeIndex={activeIndex}
           onTabChange={(e, { activeIndex }) => setActiveIndex(activeIndex)}
           panes={[
-            {
-              menuItem: 'Introduction',
-              render: () => <IntroductionTab activeIndex={activeIndex} />,
-            },
             {
               menuItem: 'Governance',
               render: () => <GovernanceTab result={governance} />,
