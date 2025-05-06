@@ -37,12 +37,14 @@ const CountryMapObservatoryView = (props) => {
     setOverlaySource(new ol.source.Vector());
 
     const features = new ol.format.GeoJSON().readFeatures(geofeatures);
-    const updateEuCountryNames = euCountryNames.map((countryName) => {
-      if ('Turkey' === countryName) {
-        countryName = 'Türkiye';
-      }
-      return countryName;
-    });
+    const updateEuCountryNames = euCountryNames
+      .map((countryName) => {
+        if ('Turkey' === countryName) {
+          countryName = 'Türkiye';
+        }
+        return countryName;
+      })
+      .filter((countryName) => countryName !== 'United Kingdom');
 
     const filtered = features.filter((f) =>
       updateEuCountryNames.includes(f.get('na')),
