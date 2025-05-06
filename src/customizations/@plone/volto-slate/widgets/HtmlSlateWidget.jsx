@@ -25,8 +25,7 @@ import '@plone/volto-slate/widgets/style.css';
 
 const messages = defineMessages({
   error: {
-    id:
-      'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
+    id: 'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
     defaultMessage:
       'An error has occurred while editing "{name}" field. We have been notified and we are looking into it. Please save your work and retry. If the issue persists please contact the site administrator.',
   },
@@ -80,7 +79,8 @@ const HtmlSlateWidget = (props) => {
         parsed.getElementsByTagName('google-sheets-html-origin').length > 0
           ? parsed.querySelector('google-sheets-html-origin > table')
           : parsed.body;
-      let data = deserialize(editor, body, { collapseWhitespace: false });
+      let data = deserialize(editor, body, { collapseWhitespace: true });
+      // console.log({ data, parsed, body, html });
       if (data.length) {
         data = normalizeExternalData(editor, data);
       } else {
