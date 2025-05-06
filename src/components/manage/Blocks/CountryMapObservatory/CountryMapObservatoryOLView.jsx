@@ -44,7 +44,7 @@ const CountryMapObservatoryView = (props) => {
         }
         return countryName;
       })
-      .filter((countryName) => countryName != 'United Kingdom');
+      .filter((countryName) => countryName !== 'United Kingdom');
 
     const filtered = features.filter((f) =>
       updateEuCountryNames.includes(f.get('na')),

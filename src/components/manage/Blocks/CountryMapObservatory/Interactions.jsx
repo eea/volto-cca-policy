@@ -22,7 +22,7 @@ export const Interactions = ({ overlaySource, tooltipRef, onFeatureClick }) => {
   const map = useMapContext().map;
 
   const euCountryNamesFiltered = euCountryNames.filter(
-    (euCountryName) => euCountryName != 'United Kingdom',
+    (euCountryName) => euCountryName !== 'United Kingdom',
   );
 
   React.useEffect(() => {
