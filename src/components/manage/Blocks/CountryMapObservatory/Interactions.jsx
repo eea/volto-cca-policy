@@ -21,6 +21,10 @@ function setTooltipVisibility(node, label, event, visible) {
 export const Interactions = ({ overlaySource, tooltipRef, onFeatureClick }) => {
   const map = useMapContext().map;
 
+  const euCountryNamesFiltered = euCountryNames.filter(
+    (euCountryName) => euCountryName !== 'United Kingdom',
+  );
+
   React.useEffect(() => {
     if (!map) return;
 
@@ -40,7 +44,7 @@ export const Interactions = ({ overlaySource, tooltipRef, onFeatureClick }) => {
             overlaySource.removeFeature(highlight);
           } catch {}
         }
-        if (feature && euCountryNames.includes(feature.get('na'))) {
+        if (feature && euCountryNamesFiltered.includes(feature.get('na'))) {
           overlaySource.addFeature(feature);
           map.getTargetElement().style.cursor = 'pointer';
           const node = tooltipRef.current;
@@ -64,7 +68,7 @@ export const Interactions = ({ overlaySource, tooltipRef, onFeatureClick }) => {
         onFeatureClick(feature);
       }
     });
-  }, [map, overlaySource, tooltipRef, onFeatureClick]);
+  }, [map, overlaySource, tooltipRef, onFeatureClick, euCountryNamesFiltered]);
 
   return null;
 };
