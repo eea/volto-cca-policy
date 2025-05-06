@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Tab,
-  Message,
-  Segment,
-  Grid,
-  Item,
-  ItemGroup,
-  ItemContent,
-  Image,
-} from 'semantic-ui-react';
+import { Tab, Message, Segment, Grid, Item, Image } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
@@ -22,14 +13,14 @@ const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <ItemGroup className="items-group">
+    <Item.Group className="items-group">
       {items.map((sector, index) => (
         <Item key={index}>
           <Image size="small" src={image} />
-          <ItemContent verticalAlign="middle">{sector}</ItemContent>
+          <Item.Content verticalAlign="middle">{sector}</Item.Content>
         </Item>
       ))}
-    </ItemGroup>
+    </Item.Group>
   );
 };
 

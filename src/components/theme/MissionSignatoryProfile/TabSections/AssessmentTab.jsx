@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Tab,
-  Image,
-  Segment,
-  Item,
-  ItemGroup,
-  ItemContent,
-} from 'semantic-ui-react';
+import { Tab, Image, Segment, Item } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import AccordionList from '../AccordionList';
 
@@ -16,14 +9,14 @@ const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <ItemGroup className="items-group">
+    <Item.Group className="items-group">
       {items.map((item, index) => (
         <Item key={index}>
           <Image size="small" src={image} />
-          <ItemContent verticalAlign="middle">{item.Factor}</ItemContent>
+          <Item.Content verticalAlign="middle">{item.Factor}</Item.Content>
         </Item>
       ))}
-    </ItemGroup>
+    </Item.Group>
   );
 };
 
