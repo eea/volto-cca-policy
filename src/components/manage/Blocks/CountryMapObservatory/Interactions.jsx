@@ -68,7 +68,7 @@ export const Interactions = ({ overlaySource, tooltipRef, onFeatureClick }) => {
         onFeatureClick(feature);
       }
     });
-  }, [map, overlaySource, tooltipRef, onFeatureClick]);
+  }, [map, overlaySource, tooltipRef, onFeatureClick, euCountryNamesFiltered]);
 
   return null;
 };
