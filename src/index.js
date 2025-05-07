@@ -43,7 +43,7 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
 
-import { eea_languages } from './constants';
+import { eea_languages, non_eu_langs } from './constants';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -100,8 +100,8 @@ const applyConfig = (config) => {
   ];
 
   if (!config.settings.loadables.reactTable)
-    config.settings.loadables.reactTable = loadable.lib(() =>
-      import('@tanstack/react-table'),
+    config.settings.loadables.reactTable = loadable.lib(
+      () => import('@tanstack/react-table'),
     );
 
   config.settings.dateLocale = 'en-gb';
@@ -109,13 +109,12 @@ const applyConfig = (config) => {
   config.settings.hasLanguageDropdown = true;
   config.settings.defaultLanguage = 'en';
   config.settings.supportedLanguages = [
-    'en',
-
     'bg', // bulgarian
     'es', // spanish
     'cs', // czech
     'da', // danish
     'de', // german
+    'en',
     'et', // estonian
     'el', // greek
     'fr', // french
@@ -145,6 +144,7 @@ const applyConfig = (config) => {
   config.settings.eea = {
     ...(config.settings.eea || {}),
     languages: eea_languages,
+    non_eu_langs,
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,
@@ -551,9 +551,8 @@ const applyConfig = (config) => {
     ...config.settings.storeExtenders,
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
