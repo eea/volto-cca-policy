@@ -7,18 +7,11 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
 import cx from 'classnames';
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
 import { selectedLanguageAtom } from '../../../state';
-
-const messages = defineMessages({
-  nonEuLangs: {
-    id: 'Non-EU Languages',
-    defaultMessage: 'Non-EU Languages',
-  },
-});
 
 export default function LanguageSwitch({ history }) {
   const { eea } = config.settings;
