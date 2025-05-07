@@ -7,9 +7,11 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
 import cx from 'classnames';
+import { FormattedMessage } from 'react-intl';
+
+import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
 import { selectedLanguageAtom } from '../../../state';
-import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
 export default function LanguageSwitch({ history }) {
   const { eea } = config.settings;
@@ -43,6 +45,7 @@ export default function LanguageSwitch({ history }) {
     });
   };
 
+  // .filter((item) => eea.non_eu_langs.indexOf(item.code) !== -1)
   return (
     <Header.TopDropdownMenu
       id="language-switcher"
@@ -61,37 +64,79 @@ export default function LanguageSwitch({ history }) {
         role="listbox"
         aria-label="language switcher"
       >
-        {eea.languages.map((item, index) => {
-          const translated = (translations || []).some(
-            (obj) => obj.language === item.code,
-          );
-          const active = item.code === currentLang;
-          const disabled = !translated && !active;
+        {eea.languages
+          .filter((item) => eea.non_eu_langs.indexOf(item.code) === -1)
+          .map((item, index) => {
+            const translated = (translations || []).some(
+              (obj) => obj.language === item.code,
+            );
+            const active = item.code === currentLang;
+            const disabled = !translated && !active;
 
-          return (
-            <Dropdown.Item
-              className={cx({
-                disabled: disabled,
-                active: active,
-              })}
-              as="li"
-              key={index}
-              text={
-                <span>
-                  {item.name}
-                  <span className="country-code">
-                    {item.code.toUpperCase()}
+            return (
+              <Dropdown.Item
+                className={cx({
+                  disabled: disabled,
+                  active: active,
+                })}
+                as="li"
+                key={index}
+                text={
+                  <span>
+                    <span className="country-code">
+                      {item.code.toUpperCase()}
+                    </span>{' '}
+                    {item.name}
                   </span>
-                </span>
-              }
-              onClick={(e) =>
-                disabled || active
-                  ? e.preventDefault()
-                  : handlePageRedirect(item)
-              }
-            ></Dropdown.Item>
-          );
-        })}
+                }
+                onClick={(e) =>
+                  disabled || active
+                    ? e.preventDefault()
+                    : handlePageRedirect(item)
+                }
+              ></Dropdown.Item>
+            );
+          })}
+        <strong className="noneu-langs-label">
+          <FormattedMessage
+            id="Non-EU Languages"
+            defaultMessage="Non-EU Languages"
+          />
+        </strong>
+
+        {eea.languages
+          .filter((item) => eea.non_eu_langs.indexOf(item.code) !== -1)
+          .map((item, index) => {
+            const translated = (translations || []).some(
+              (obj) => obj.language === item.code,
+            );
+            const active = item.code === currentLang;
+            const disabled = !translated && !active;
+
+            return (
+              <Dropdown.Item
+                className={cx({
+                  disabled: disabled,
+                  active: active,
+                })}
+                as="li"
+                key={index}
+                text={
+                  <span>
+                    <span className="country-code">
+                      {item.code.toUpperCase()}
+                    </span>{' '}
+                    {item.name}
+                  </span>
+                }
+                onClick={(e) =>
+                  disabled || active
+                    ? e.preventDefault()
+                    : handlePageRedirect(item)
+                }
+              ></Dropdown.Item>
+            );
+          })}
       </ul>
     </Header.TopDropdownMenu>
   );

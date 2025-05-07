@@ -1,6 +1,7 @@
 import React from 'react';
-import { TabPane, Tab, Accordion, Icon } from 'semantic-ui-react';
+import { Message, TabPane, Tab, Accordion, Icon } from 'semantic-ui-react';
 import CountryTabPane from './CountryTabPane';
+import { FormattedMessage } from 'react-intl';
 
 import './styles.less';
 
@@ -10,6 +11,7 @@ export default function View(props) {
   // );
   const dataJson = props?.properties['@components']?.countryprofile?.html || {};
   const [activePanes, setActivePanes] = React.useState({});
+  const isNonEN = props?.properties?.language !== 'en';
 
   const panes = [];
   if (dataJson?.menu) {
@@ -32,6 +34,14 @@ export default function View(props) {
 
   return (
     <>
+      {isNonEN && (
+        <Message class="eea callout">
+          <FormattedMessage
+            id="officiallyInEnglish"
+            defaultMessage="Officially reported governmental information is only available in English"
+          />
+        </Message>
+      )}
       {dataJson.message_top ? (
         <div class="eea callout">{dataJson.message_top}</div>
       ) : null}
