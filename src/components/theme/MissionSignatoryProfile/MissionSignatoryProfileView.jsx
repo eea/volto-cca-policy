@@ -18,6 +18,9 @@ const MissionSignatoryProfileView = (props) => {
   const planning = result?.planning || {};
   const assessment = result?.assessment || {};
   const action = result?.action || {};
+  const tab_labels = result?.tab_labels || {};
+  const { Governance_Label, Assessment_Label, Planning_Label, Action_Label } =
+    tab_labels || {};
 
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -36,9 +39,6 @@ const MissionSignatoryProfileView = (props) => {
         }}
       />
       <div className="signatories-profile">
-        {/* <h2>{planning?.planning_titles?.[0].Signatory}</h2> */}
-        {/* <h2>{planning?.planning_titles?.[0].Id}</h2> */}
-
         <br />
 
         <Tab
@@ -53,19 +53,19 @@ const MissionSignatoryProfileView = (props) => {
           onTabChange={(e, { activeIndex }) => setActiveIndex(activeIndex)}
           panes={[
             {
-              menuItem: 'Governance',
+              menuItem: Governance_Label || 'Governance',
               render: () => <GovernanceTab result={governance} />,
             },
             {
-              menuItem: 'Assessment',
+              menuItem: Assessment_Label || 'Assessment',
               render: () => <AssessmentTab result={assessment} />,
             },
             {
-              menuItem: 'Planning',
+              menuItem: Planning_Label || 'Planning',
               render: () => <PlanningTab result={planning} />,
             },
             {
-              menuItem: 'Action',
+              menuItem: Action_Label || 'Action',
               render: () => <ActionPagesTab result={action} />,
             },
           ]}
