@@ -56,8 +56,9 @@ const AssessmentTab = ({ result }) => {
     Hazards_Abstract,
   } = result.assessment_text?.[0] || [];
   const assessment_risks = result.assessment_risks || [];
+  const assessment_sectors = result.assessment_sectors || [];
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  // const [activeIndex, setActiveIndex] = React.useState(0);
 
   return (
     <Tab.Pane>
@@ -102,7 +103,22 @@ const AssessmentTab = ({ result }) => {
 
       <br />
 
-      <Tab
+      {assessment_sectors && (
+        <AccordionList
+          accordions={assessment_sectors.map((category) => ({
+            title: category.Category_Name,
+            content: (
+              <ul>
+                {category.Sectors.map((sector, idx) => (
+                  <li key={idx}>{sector}</li>
+                ))}
+              </ul>
+            ),
+          }))}
+        />
+      )}
+
+      {/* <Tab
         menu={{
           fluid: true,
           className: 'secondary',
@@ -153,7 +169,7 @@ const AssessmentTab = ({ result }) => {
             ),
           },
         ]}
-      />
+      /> */}
     </Tab.Pane>
   );
 };

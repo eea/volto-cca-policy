@@ -54,10 +54,5 @@ describe('AssessmentTab', () => {
     // Items section
     expect(screen.getByText('Factor A')).toBeInTheDocument();
     expect(screen.getByText('Factor B')).toBeInTheDocument();
-
-    // Hazard tabs
-    expect(screen.getByText('Water related')).toBeInTheDocument();
-    expect(screen.getByText('Heat related')).toBeInTheDocument();
-    expect(screen.getByText('Other hazards')).toBeInTheDocument();
   });
 });
