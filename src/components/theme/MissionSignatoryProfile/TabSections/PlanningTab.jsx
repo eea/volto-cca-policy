@@ -34,7 +34,9 @@ const PlanningGoalContent = ({ goal }) => {
       <Grid columns="12">
         {hasHazards && (
           <Grid.Column mobile={12} tablet={12} computer={6}>
-            <h5>{goal.Climate_Hazards_Addressed_Label}</h5>
+            <h5 className="small-label">
+              {goal.Climate_Hazards_Addressed_Label}
+            </h5>
             <ul>
               {goal.Climate_Hazards.map((hazard, index) => (
                 <li key={index}>{hazard}</li>

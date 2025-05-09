@@ -13,7 +13,7 @@ const ActionsTabContent = ({ action }) => {
         <Grid.Column mobile={12} tablet={12} computer={6}>
           {hasHazards && (
             <>
-              <h5>{action.Hazards_Addressed_Label}</h5>
+              <h5 className="small-label">{action.Hazards_Addressed_Label}</h5>
               <ul>
                 {action.Climate_Hazards.map((hazard, index) => (
                   <li key={index}>{hazard}</li>
@@ -23,7 +23,7 @@ const ActionsTabContent = ({ action }) => {
           )}
           {hasSectors && (
             <>
-              <h5>{action.Sectors_Label}</h5>
+              <h5 className="small-label">{action.Sectors_Label}</h5>
               <ul>
                 {action.Sectors.map((hazard, index) => (
                   <li key={index}>{hazard}</li>
