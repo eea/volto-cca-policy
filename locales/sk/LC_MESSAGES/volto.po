@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Ilustrácie prípadovej štúdie"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Prípadové štúdie súvisiace s touto možnosťou:"
 
@@ -577,6 +576,11 @@ msgstr "Žiadne informácie"
 msgid "No results"
 msgstr "Žiadne výsledky"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Jazyky mimo EÚ"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Kedy"
 #: helpers/Utils
 msgid "Where"
 msgstr "Kde"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Krajiny, kde sa ponúka možnosť financovania"
 
 msgid "Region where the funding is offered"
 msgstr "Región, kde sa financovanie ponúka"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Príbeh misie"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Misijný nástroj"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Webová stránka"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimatické služby"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Len Odolnosť"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Spoločenské aspekty"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Environmentálne aspekty"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Aspekty zmiernenia"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Analýza nákladov a výnosov a náklady na údržbu"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikačný/upscalingový potenciál"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonomické aspekty"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Možnosť financovania"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videá a podcasty"
 
 #. undefined
 #: health_menu:43

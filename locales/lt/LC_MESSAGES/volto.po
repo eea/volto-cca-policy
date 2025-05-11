@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Atvejo analizės iliustracijos"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Su šia parinktimi susijusių atvejų tyrimai:"
 
@@ -577,6 +576,11 @@ msgstr "Jokios informacijos"
 msgid "No results"
 msgstr "Jokių rezultatų"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Ne ES kalbos"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Kada"
 #: helpers/Utils
 msgid "Where"
 msgstr "Kur"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Šalys, kuriose siūloma finansavimo galimybė"
 
 msgid "Region where the funding is offered"
 msgstr "Regionas, kuriame siūlomas finansavimas"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Misijos istorija"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Misijos įrankis"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Tinklalapis"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimato paslaugos"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Tiesiog Atsparumas"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Visuomeniniai aspektai"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Aplinkosaugos aspektai"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Sušvelninimo aspektai"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Kaštų ir naudos analizė ir priežiūros išlaidos"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikacijos / padidinimo potencialas"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonominiai aspektai"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Finansavimo galimybė"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Vaizdo įrašai ir podcast'ai"
 
 #. undefined
 #: health_menu:43

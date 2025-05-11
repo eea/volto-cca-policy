@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Ilustracje studium przypadku"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studia przypadków związane z tą opcją:"
 
@@ -577,6 +576,11 @@ msgstr "Brak informacji"
 msgid "No results"
 msgstr "Brak wyników"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Języki spoza UE"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Gdy"
 #: helpers/Utils
 msgid "Where"
 msgstr "Gdzie"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Kraje, w których oferowana jest możliwość finansowania"
 
 msgid "Region where the funding is offered"
 msgstr "Region, w którym oferowane jest finansowanie"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Historia misji"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Narzędzie misji"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Strona internetowa"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Usługi klimatyczne"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Po prostu odporność"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Aspekty społeczne"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Aspekty środowiskowe"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Aspekty łagodzące"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Analiza kosztów i korzyści oraz koszty utrzymania"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Potencjał replikacji/skalowania"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Aspekty ekonomiczne"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Możliwość finansowania"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Filmy i podcasty"
 
 #. undefined
 #: health_menu:43

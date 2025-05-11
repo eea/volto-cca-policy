@@ -112,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr ""
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr ""
 
@@ -576,6 +576,11 @@ msgstr ""
 msgid "No results"
 msgstr ""
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -912,6 +917,11 @@ msgstr ""
 #. Default: "Where"
 #: helpers/Utils
 msgid "Where"
+msgstr ""
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
 msgstr ""
 
 #. undefined
@@ -1582,6 +1592,71 @@ msgstr ""
 #. undefined
 
 msgid "Region where the funding is offered"
+msgstr ""
+
+#. undefined
+
+msgid "Mission story"
+msgstr ""
+
+#. undefined
+
+msgid "Mission tool"
+msgstr ""
+
+#. undefined
+
+msgid "Webpage"
+msgstr ""
+
+#. undefined
+
+msgid "Climate services"
+msgstr ""
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr ""
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr ""
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr ""
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr ""
+
+#. undefined
+
+msgid "Videos and podcasts"
 msgstr ""
 
 #. undefined

@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Esettanulmány illusztrációk"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Esettanulmányok ehhez a lehetőséghez:"
 
@@ -577,6 +576,11 @@ msgstr "Nincs információ"
 msgid "No results"
 msgstr "Nincs eredmény"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "EU-n kívüli nyelvek"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Amikor"
 #: helpers/Utils
 msgid "Where"
 msgstr "Ahol"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Azok az országok, ahol a finanszírozási lehetőséget kínálják"
 
 msgid "Region where the funding is offered"
 msgstr "Régió, ahol a finanszírozást felajánlják"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Küldetéstörténet"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Küldetés eszköz"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Weboldal"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klíma szolgáltatások"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Csak Rugalmasság"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Társadalmi szempontok"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Környezeti szempontok"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Enyhítési szempontok"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Költség-haszon elemzés és karbantartási költségek"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikációs/felskálázási lehetőség"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Gazdasági szempontok"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Finanszírozási lehetőség"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videók és podcastok"
 
 #. undefined
 #: health_menu:43

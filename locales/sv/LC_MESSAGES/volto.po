@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Fallstudieillustrationer"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Fallstudier relaterade till detta alternativ:"
 
@@ -577,6 +576,11 @@ msgstr "Ingen information"
 msgid "No results"
 msgstr "Inga resultat"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Språk utanför EU"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "När"
 #: helpers/Utils
 msgid "Where"
 msgstr "Där"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Länder där finansieringsmöjligheten erbjuds"
 
 msgid "Region where the funding is offered"
 msgstr "Region där finansieringen erbjuds"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Missionsberättelse"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Missionsverktyg"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "webbsida"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimattjänster"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Bara motståndskraft"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Samhällsaspekter"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Miljöaspekter"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Begränsande aspekter"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Kostnads-nyttoanalys och underhållskostnader"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikering/uppskalningspotential"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonomiska aspekter"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Finansieringsmöjlighet"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videor och poddar"
 
 #. undefined
 #: health_menu:43

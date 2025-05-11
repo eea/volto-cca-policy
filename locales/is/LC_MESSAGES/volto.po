@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Dæmisögumyndir"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Dæmi um þennan valkost:"
 
@@ -577,6 +576,11 @@ msgstr "Engar upplýsingar"
 msgid "No results"
 msgstr "Engar niðurstöður"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Tungumál utan ESB"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Hvenær"
 #: helpers/Utils
 msgid "Where"
 msgstr "Hvar"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Lönd þar sem kostur er á fjármögnun"
 
 msgid "Region where the funding is offered"
 msgstr "Svæði þar sem styrkurinn er í boði"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Trúboðssaga"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Mission tól"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Vefsíða"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Loftslagsþjónusta"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Bara Seiglu"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Samfélagslegir þættir"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Umhverfisþættir"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Mótvægisþættir"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Kostnaðar-ábatagreining og viðhaldskostnaður"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Afritunar-/stærðarmöguleiki"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Efnahagslegir þættir"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Fjármögnunartækifæri"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Myndbönd og podcast"
 
 #. undefined
 #: health_menu:43
