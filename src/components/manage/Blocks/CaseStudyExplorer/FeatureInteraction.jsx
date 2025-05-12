@@ -59,7 +59,7 @@ export default function FeatureInteraction({
 
     const clusterLayer = new ol.layer.Vector({
       source: clusterSource,
-      style: clusterStyle,
+      style: clusterStyle(ol),
     });
     setClusterLayer(clusterLayer);
     map.addLayer(clusterLayer);

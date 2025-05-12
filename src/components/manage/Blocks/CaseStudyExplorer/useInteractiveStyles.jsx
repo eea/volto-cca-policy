@@ -173,7 +173,7 @@ export function generatePointsCircle(count, clusterCenter, resolution) {
 }
 
 export function clusterStyle(ol) {
-  function _clusterStyle(feature) {
+  function _closure(feature) {
     const size = feature.get('features').length;
     const cases = feature
       .get('features')
@@ -181,7 +181,7 @@ export function clusterStyle(ol) {
 
     return getStyle(size, cases.length > 0 ? 1 : 0, ol);
   }
-  return _clusterStyle;
+  return _closure;
 }
 
 export function getExtentOfFeatures(features, ol) {
