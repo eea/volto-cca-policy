@@ -172,6 +172,7 @@ export function generatePointsCircle(count, clusterCenter, resolution) {
 
   return res;
 }
+
 export function clusterStyle(olStyle) {
   function _clusterStyle(feature) {
     const size = feature.get('features').length;

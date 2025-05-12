@@ -67,14 +67,14 @@ function FeatureInteraction({
     // Layer displaying the expanded view of overlapping cluster members.
     const clusterCirclesLayer = new olLayer.Vector({
       source: clusterSource,
-      // style: clusterCircleStyle,
+      style: clusterCircleStyle,
     });
     setClusterCirclesLayer(clusterCirclesLayer);
     map.addLayer(clusterCirclesLayer);
 
     const clusterLayer = new olLayer.Vector({
       source: clusterSource,
-      // style: clusterStyle(olStyle),
+      style: clusterStyle(olStyle),
     });
     setClusterLayer(clusterLayer);
     map.addLayer(clusterLayer);
