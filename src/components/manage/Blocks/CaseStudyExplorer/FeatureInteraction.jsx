@@ -52,7 +52,6 @@ function FeatureInteraction({
   );
 
   React.useEffect(() => {
-    console.log({ activeItems });
     if (activeItems) {
       const features = getFeatures(activeItems, { ol, olGeom, olProj });
       pointsSource.clear();
