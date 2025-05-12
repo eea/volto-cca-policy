@@ -1,7 +1,6 @@
 import React from 'react';
+import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-
 import FeatureDisplay from './FeatureDisplay';
 import { getFeatures } from './utils';
 import {
@@ -11,41 +10,26 @@ import {
   setClicked,
 } from './useInteractiveStyles';
 
-function FeatureInteraction({
+export default function FeatureInteraction({
   selectedFeature,
   onFeatureSelect,
   mapCenter,
   features,
   activeItems,
-  olSource,
-  olLayer,
-  olInteraction,
-  olStyle,
-  olGeom,
-  olProj,
-  olCondition,
-  ol,
 }) {
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => setIsClient(true), []);
-
   const { map } = useMapContext();
   const [clusterLayer, setClusterLayer] = React.useState();
   const [clusterCirclesLayer, setClusterCirclesLayer] = React.useState();
-  const { selectStyle, clusterCircleStyle } = useStyles({
-    olStyle,
-    olGeom,
-    ol,
-  });
+  const { selectStyle, clusterCircleStyle } = useStyles();
 
   const [pointsSource] = React.useState(
-    new olSource.Vector({
+    new ol.source.Vector({
       features,
     }),
   );
 
   const [clusterSource] = React.useState(
-    new olSource.Cluster({
+    new ol.source.Cluster({
       distance: 50,
       source: pointsSource,
     }),
@@ -53,37 +37,39 @@ function FeatureInteraction({
 
   React.useEffect(() => {
     if (activeItems) {
-      const features = getFeatures(activeItems, { ol, olGeom, olProj });
       pointsSource.clear();
-      pointsSource.addFeatures(features);
+      pointsSource.addFeatures(getFeatures(activeItems));
     }
-  }, [activeItems, pointsSource, ol, olGeom, olProj]);
+  }, [activeItems, pointsSource]);
+
+  const [isClient, setIsClient] = React.useState(false);
+  React.useEffect(() => setIsClient(true), []);
 
   // form the clusters layer
   React.useEffect(() => {
     if (!map) return;
 
     // Layer displaying the expanded view of overlapping cluster members.
-    const clusterCirclesLayer = new olLayer.Vector({
+    const clusterCirclesLayer = new ol.layer.Vector({
       source: clusterSource,
       style: clusterCircleStyle,
     });
     setClusterCirclesLayer(clusterCirclesLayer);
     map.addLayer(clusterCirclesLayer);
 
-    const clusterLayer = new olLayer.Vector({
+    const clusterLayer = new ol.layer.Vector({
       source: clusterSource,
-      style: clusterStyle(olStyle),
+      style: clusterStyle,
     });
     setClusterLayer(clusterLayer);
     map.addLayer(clusterLayer);
-  }, [map, clusterSource, clusterCircleStyle, olLayer, olStyle]);
+  }, [map, clusterSource, clusterCircleStyle]);
 
   React.useEffect(() => {
     if (!(map && clusterLayer)) return;
 
-    const select = new olInteraction.Select({
-      condition: olCondition.click,
+    const select = new ol.interaction.Select({
+      condition: ol.condition.click,
       style: selectStyle,
     });
 
@@ -110,7 +96,7 @@ function FeatureInteraction({
 
           const view = map.getView();
           const resolution = view.getResolution();
-          const extent = getExtentOfFeatures(subfeatures, olGeom);
+          const extent = getExtentOfFeatures(subfeatures);
 
           if (
             view.getZoom() === view.getMaxZoom() ||
@@ -161,10 +147,6 @@ function FeatureInteraction({
     clusterLayer,
     clusterCircleStyle,
     clusterCirclesLayer,
-    ol.extent,
-    olInteraction,
-    olGeom,
-    olCondition,
   ]);
 
   function onClosePopup(evt) {
@@ -198,14 +180,3 @@ function FeatureInteraction({
     </div>
   ) : null;
 }
-
-export default injectLazyLibs([
-  'olSource',
-  'olLayer',
-  'olInteraction',
-  'ol',
-  'olStyle',
-  'olGeom',
-  'olProj',
-  'olCondition',
-])(FeatureInteraction);
