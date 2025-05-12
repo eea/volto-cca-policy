@@ -1,5 +1,4 @@
 import React from 'react';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import FeatureDisplay from './FeatureDisplay';
 import { getFeatures } from './utils';
@@ -16,11 +15,12 @@ export default function FeatureInteraction({
   mapCenter,
   features,
   activeItems,
+  ol,
 }) {
   const { map } = useMapContext();
   const [clusterLayer, setClusterLayer] = React.useState();
   const [clusterCirclesLayer, setClusterCirclesLayer] = React.useState();
-  const { selectStyle, clusterCircleStyle } = useStyles();
+  const { selectStyle, clusterCircleStyle } = useStyles(ol);
 
   const [pointsSource] = React.useState(
     new ol.source.Vector({
@@ -38,9 +38,9 @@ export default function FeatureInteraction({
   React.useEffect(() => {
     if (activeItems) {
       pointsSource.clear();
-      pointsSource.addFeatures(getFeatures(activeItems));
+      pointsSource.addFeatures(getFeatures(activeItems, ol));
     }
-  }, [activeItems, pointsSource]);
+  }, [activeItems, pointsSource, ol]);
 
   const [isClient, setIsClient] = React.useState(false);
   React.useEffect(() => setIsClient(true), []);
@@ -63,7 +63,7 @@ export default function FeatureInteraction({
     });
     setClusterLayer(clusterLayer);
     map.addLayer(clusterLayer);
-  }, [map, clusterSource, clusterCircleStyle]);
+  }, [map, clusterSource, clusterCircleStyle, ol]);
 
   React.useEffect(() => {
     if (!(map && clusterLayer)) return;
@@ -96,7 +96,7 @@ export default function FeatureInteraction({
 
           const view = map.getView();
           const resolution = view.getResolution();
-          const extent = getExtentOfFeatures(subfeatures);
+          const extent = getExtentOfFeatures(subfeatures, ol);
 
           if (
             view.getZoom() === view.getMaxZoom() ||
@@ -147,6 +147,7 @@ export default function FeatureInteraction({
     clusterLayer,
     clusterCircleStyle,
     clusterCirclesLayer,
+    ol,
   ]);
 
   function onClosePopup(evt) {

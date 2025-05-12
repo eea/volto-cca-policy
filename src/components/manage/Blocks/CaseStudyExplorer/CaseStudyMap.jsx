@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { Map, Layer, Layers } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 
 import FeatureInteraction from './FeatureInteraction';
 
 import { getFeatures } from './utils';
 
-export default function CaseStudyMap(props) {
-  const { items, activeItems } = props;
+function CaseStudyMap(props) {
+  const { items, activeItems, ol } = props;
   const [selectedCase, onSelectedCase] = React.useState();
 
-  const features = React.useMemo(() => getFeatures(items), [items]);
+  const features = React.useMemo(() => getFeatures(items, ol), [items, ol]);
 
   const [tileWMSSources] = React.useState([
     new ol.source.TileWMS({
@@ -32,7 +32,7 @@ export default function CaseStudyMap(props) {
       showFullExtent: true,
       zoom: 4,
     }),
-    [],
+    [ol.proj],
   );
 
   return features.length > 0 ? (
@@ -48,9 +48,11 @@ export default function CaseStudyMap(props) {
           mapCenter={mapCenter}
           features={features}
           activeItems={activeItems}
+          ol={ol}
         />
         <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
       </Layers>
     </Map>
   ) : null;
 }
+export default withOpenLayers(CaseStudyMap);

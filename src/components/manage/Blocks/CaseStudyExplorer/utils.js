@@ -1,6 +1,4 @@
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-
-export function getFeatures(cases) {
+export function getFeatures(cases, ol) {
   const Feature = ol.ol.Feature;
 
   return cases.map((c, index) => {
