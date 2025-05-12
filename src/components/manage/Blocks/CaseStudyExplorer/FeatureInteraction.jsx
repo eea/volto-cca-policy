@@ -26,6 +26,9 @@ function FeatureInteraction({
   olCondition,
   ol,
 }) {
+  const [isClient, setIsClient] = React.useState(false);
+  React.useEffect(() => setIsClient(true), []);
+
   const { map } = useMapContext();
   const [clusterLayer, setClusterLayer] = React.useState();
   const [clusterCirclesLayer, setClusterCirclesLayer] = React.useState();
@@ -49,16 +52,13 @@ function FeatureInteraction({
   );
 
   React.useEffect(() => {
+    console.log({ activeItems });
     if (activeItems) {
+      const features = getFeatures(activeItems, { ol, olGeom, olProj });
       pointsSource.clear();
-      pointsSource.addFeatures(
-        getFeatures(activeItems, { ol, olGeom, olProj }),
-      );
+      pointsSource.addFeatures(features);
     }
   }, [activeItems, pointsSource, ol, olGeom, olProj]);
-
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => setIsClient(true), []);
 
   // form the clusters layer
   React.useEffect(() => {
@@ -67,14 +67,14 @@ function FeatureInteraction({
     // Layer displaying the expanded view of overlapping cluster members.
     const clusterCirclesLayer = new olLayer.Vector({
       source: clusterSource,
-      style: clusterCircleStyle,
+      // style: clusterCircleStyle,
     });
     setClusterCirclesLayer(clusterCirclesLayer);
     map.addLayer(clusterCirclesLayer);
 
     const clusterLayer = new olLayer.Vector({
       source: clusterSource,
-      style: clusterStyle(olStyle),
+      // style: clusterStyle(olStyle),
     });
     setClusterLayer(clusterLayer);
     map.addLayer(clusterLayer);
