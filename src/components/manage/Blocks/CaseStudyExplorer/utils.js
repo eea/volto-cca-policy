@@ -1,15 +1,11 @@
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-
-export function getFeatures(cases) {
-  const Feature = ol.ol.Feature;
+export function getFeatures(cases, { ol, olGeom, olProj }) {
+  const Feature = ol.Feature;
 
   return cases.map((c, index) => {
     const {
       geometry: { coordinates },
     } = c;
-    const point = new Feature(
-      new ol.geom.Point(ol.proj.fromLonLat(coordinates)),
-    );
+    const point = new Feature(new olGeom.Point(olProj.fromLonLat(coordinates)));
     point.setId(index);
     point.setProperties(
       {

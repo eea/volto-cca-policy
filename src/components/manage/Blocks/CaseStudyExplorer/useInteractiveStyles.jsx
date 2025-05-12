@@ -1,37 +1,37 @@
 import React from 'react';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+// import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 const _cached = {};
 
-function getStyle(size, haveAdaptecca) {
+function getStyle(size, haveAdaptecca, olStyle) {
   let style = _cached[size + '_' + haveAdaptecca];
 
   if (!style) {
     style =
       size === 1
-        ? new ol.style.Style({
-            image: new ol.style.Circle({
+        ? new olStyle.Style({
+            image: new olStyle.Circle({
               radius: 7,
-              stroke: new ol.style.Stroke({
+              stroke: new olStyle.Stroke({
                 color: '#fff',
               }),
-              fill: new ol.style.Fill({
+              fill: new olStyle.Fill({
                 color: haveAdaptecca ? '#00ffff' : '#005c96',
               }),
             }),
           })
-        : new ol.style.Style({
-            image: new ol.style.Circle({
+        : new olStyle.Style({
+            image: new olStyle.Circle({
               radius: 10 + Math.min(Math.floor(size / 3), 10),
-              stroke: new ol.style.Stroke({
+              stroke: new olStyle.Stroke({
                 color: '#fff',
               }),
-              fill: new ol.style.Fill({
+              fill: new olStyle.Fill({
                 color: haveAdaptecca ? '#318CE7' : '#005c96',
               }),
             }),
-            text: new ol.style.Text({
+            text: new olStyle.Text({
               text: size.toString(),
-              fill: new ol.style.Fill({
+              fill: new olStyle.Fill({
                 color: '#fff',
               }),
             }),
@@ -41,51 +41,54 @@ function getStyle(size, haveAdaptecca) {
   return style;
 }
 
-export function useStyles() {
-  const selectStyle = React.useCallback((feature) => {
-    const selected = new ol.style.Style({
-      image: new ol.style.Circle({
-        radius: 12,
-        fill: new ol.style.Fill({
-          color: '#005c96',
+export function useStyles({ olStyle, olGeom, ol }) {
+  const selectStyle = React.useCallback(
+    (feature) => {
+      const selected = new olStyle.Style({
+        image: new olStyle.Circle({
+          radius: 12,
+          fill: new olStyle.Fill({
+            color: '#005c96',
+          }),
+          stroke: new olStyle.Stroke({
+            color: 'rgba(0, 92, 150, 0.9)',
+            width: 2,
+          }),
         }),
-        stroke: new ol.style.Stroke({
-          color: 'rgba(0, 92, 150, 0.9)',
-          width: 2,
-        }),
-      }),
-    });
-    // const color = feature.get('COLOR') || '#eeeeee';
-    // selected.getFill().setColor(color);
-    const color = feature.values_.features[0].values_['color'] || '#ccc';
-    selected.image_.getFill().setColor(color);
-    return selected;
-  }, []);
+      });
+      // const color = feature.get('COLOR') || '#eeeeee';
+      // selected.getFill().setColor(color);
+      const color = feature.values_.features[0].values_['color'] || '#ccc';
+      selected.image_.getFill().setColor(color);
+      return selected;
+    },
+    [olStyle],
+  );
 
   const convexHullStroke = React.useMemo(
     () =>
-      new ol.style.Stroke({
+      new olStyle.Stroke({
         color: 'rgba(204, 85, 0, 1)',
         width: 1.5,
       }),
-    [],
+    [olStyle.Stroke],
   );
 
   const clusterMemberStyle = React.useMemo(() => {
-    const darkIcon = new ol.style.Icon({
+    const darkIcon = new olStyle.Icon({
       src: 'data/icons/emoticon-cool.svg',
     });
-    const lightIcon = new ol.style.Icon({
+    const lightIcon = new olStyle.Icon({
       src: 'data/icons/emoticon-cool-outline.svg',
     });
     const _clusterMemberStyle = (clusterMember) => {
-      return new ol.style.Style({
+      return new olStyle.Style({
         geometry: clusterMember.getGeometry(),
         image: clusterMember.get('LEISTUNG') > 5 ? darkIcon : lightIcon,
       });
     };
     return _clusterMemberStyle;
-  }, []);
+  }, [olStyle]);
 
   const clusterCircleStyle = React.useCallback(
     (cluster, resolution) => {
@@ -116,10 +119,10 @@ export function useStyles() {
         cluster.getGeometry().getCoordinates(),
         resolution,
       ).reduce((styles, coordinates, i) => {
-        const point = new ol.geom.Point(coordinates);
-        const line = new ol.geom.LineString([centerCoordinates, coordinates]);
+        const point = new olGeom.Point(coordinates);
+        const line = new olGeom.LineString([centerCoordinates, coordinates]);
         styles.unshift(
-          new ol.style.Style({
+          new olStyle.Style({
             geometry: line,
             stroke: convexHullStroke,
           }),
@@ -135,7 +138,7 @@ export function useStyles() {
         return styles;
       }, []);
     },
-    [convexHullStroke, clusterMemberStyle],
+    [convexHullStroke, clusterMemberStyle, olGeom, olStyle, ol],
   );
 
   return { clusterCircleStyle, selectStyle };
@@ -169,18 +172,21 @@ export function generatePointsCircle(count, clusterCenter, resolution) {
 
   return res;
 }
-export function clusterStyle(feature) {
-  const size = feature.get('features').length;
-  const cases = feature
-    .get('features')
-    .filter((_case) => _case['values_']['origin_adaptecca'] < 20);
+export function clusterStyle(olStyle) {
+  function _clusterStyle(feature) {
+    const size = feature.get('features').length;
+    const cases = feature
+      .get('features')
+      .filter((_case) => _case['values_']['origin_adaptecca'] < 20);
 
-  return getStyle(size, cases.length > 0 ? 1 : 0);
+    return getStyle(size, cases.length > 0 ? 1 : 0, olStyle);
+  }
+  return _clusterStyle;
 }
 
-export function getExtentOfFeatures(features) {
+export function getExtentOfFeatures(features, olGeom) {
   const points = features.map((f) => f.getGeometry().flatCoordinates);
-  const point = new ol.geom.MultiPoint(points);
+  const point = new olGeom.MultiPoint(points);
   return point.getExtent();
 }
 

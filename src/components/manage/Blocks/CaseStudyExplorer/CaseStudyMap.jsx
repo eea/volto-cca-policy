@@ -1,20 +1,24 @@
 import React from 'react';
 
 import { Map, Layer, Layers } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+// import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 import FeatureInteraction from './FeatureInteraction';
 
 import { getFeatures } from './utils';
 
-export default function CaseStudyMap(props) {
-  const { items, activeItems } = props;
+function CaseStudyMap(props) {
+  const { items, activeItems, ol, olGeom, olProj, olControl, olSource } = props;
   const [selectedCase, onSelectedCase] = React.useState();
 
-  const features = React.useMemo(() => getFeatures(items), [items]);
+  const features = React.useMemo(
+    () => getFeatures(items, { ol, olGeom, olProj }),
+    [items, ol, olGeom, olProj],
+  );
 
   const [tileWMSSources] = React.useState([
-    new ol.source.TileWMS({
+    new olSource.TileWMS({
       // see https://gisco-services.ec.europa.eu/maps/demo/ for more layers
       url: 'https://gisco-services.ec.europa.eu/maps/service',
       params: {
@@ -28,18 +32,18 @@ export default function CaseStudyMap(props) {
 
   const mapCenter = React.useMemo(
     () => ({
-      center: ol.proj.fromLonLat([20, 50]),
+      center: olProj.fromLonLat([20, 50]),
       showFullExtent: true,
       zoom: 4,
     }),
-    [],
+    [olProj],
   );
 
   return features.length > 0 ? (
     <Map
       view={mapCenter}
       pixelRatio={1}
-      controls={ol.control.defaults({ attribution: false })}
+      controls={olControl.defaults({ attribution: false })}
     >
       <Layers>
         <FeatureInteraction
@@ -54,3 +58,10 @@ export default function CaseStudyMap(props) {
     </Map>
   ) : null;
 }
+export default injectLazyLibs([
+  'ol',
+  'olGeom',
+  'olProj',
+  'olControl',
+  'olSource',
+])(CaseStudyMap);

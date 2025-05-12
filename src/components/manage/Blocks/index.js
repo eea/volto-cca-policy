@@ -7,9 +7,9 @@ import installSearchAceContent from './SearchAceContent';
 import installRelevantAceContent from './RelevantAceContent';
 import installFilterAceContent from './FilterAceContent';
 import installTransRegionSelect from './TransRegionSelect';
-import installCountryMapObservatory from './CountryMapObservatory';
-import installCountryMapHeatIndex from './CountryMapHeatIndex';
-import installCountryMapProfile from './CountryMapProfile';
+// import installCountryMapObservatory from './CountryMapObservatory';
+// import installCountryMapHeatIndex from './CountryMapHeatIndex';
+// import installCountryMapProfile from './CountryMapProfile';
 import installCountryProfileDetail from './CountryProfileDetail';
 import installListing from './Listing';
 import installRAST from './RASTBlock';
@@ -39,9 +39,9 @@ export default function installBlocks(config) {
     // installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
-    installCountryMapObservatory,
-    installCountryMapHeatIndex,
-    installCountryMapProfile,
+    // installCountryMapObservatory,
+    // installCountryMapHeatIndex,
+    // installCountryMapProfile,
     installCountryProfileDetail,
     installSearchAceContent,
     installRelevantAceContent,
