@@ -1,5 +1,6 @@
-import '@testing-library/jest-dom';
+import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import MissionSignatoryProfileView from './MissionSignatoryProfileView';
 
 // Mock the tab components with minimal placeholders
@@ -16,24 +17,32 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
 }));
 
 describe('MissionSignatoryProfileView', () => {
-  const data = {
-    _v_results: {
-      planning: {
-        planning_titles: [{}],
+  const content = {
+    '@components': {
+      missionsignatoryprofile: {
+        result: {
+          governance: [{}],
+          assessment: {},
+          planning: {},
+          action: {},
+          footer_text: {
+            Disclaimer_Title: 'Disclaimer Title',
+            Disclaimer: 'This is a disclaimer.',
+          },
+          tab_labels: [
+            { key: 'Governance_Label', value: 'Governance' },
+            { key: 'Assessment_Label', value: 'Assessment' },
+            { key: 'Planning_Label', value: 'Planning & Target' },
+            { key: 'Action_Label', value: 'Action' },
+            { key: 'Language', value: 'en' }, // will be filtered out
+          ],
+        },
       },
-      governance: [{}],
-      tab_labels: [
-        { key: 'Governance_Label', value: 'Governance' },
-        { key: 'Assessment_Label', value: 'Assessment' },
-        { key: 'Planning_Label', value: 'Planning & Target' },
-        { key: 'Action_Label', value: 'Action' },
-        { key: 'Language', value: 'en' }, // This one should be filtered out
-      ],
     },
   };
 
   it('renders tab labels and default content', () => {
-    render(<MissionSignatoryProfileView data={data} />);
+    render(<MissionSignatoryProfileView content={content} />);
 
     // Tab labels
     expect(screen.getByText('Governance')).toBeInTheDocument();
@@ -43,7 +52,7 @@ describe('MissionSignatoryProfileView', () => {
   });
 
   it('switches tabs and renders corresponding content', () => {
-    render(<MissionSignatoryProfileView data={data} />);
+    render(<MissionSignatoryProfileView content={content} />);
 
     fireEvent.click(screen.getByText('Governance'));
     expect(screen.getByText('Mocked Governance')).toBeInTheDocument();
@@ -56,5 +65,11 @@ describe('MissionSignatoryProfileView', () => {
 
     fireEvent.click(screen.getByText('Action'));
     expect(screen.getByText('Mocked Action')).toBeInTheDocument();
+  });
+
+  it('renders footer disclaimer text if present', () => {
+    render(<MissionSignatoryProfileView content={content} />);
+    expect(screen.getByText('Disclaimer Title')).toBeInTheDocument();
+    expect(screen.getByText('This is a disclaimer.')).toBeInTheDocument();
   });
 });
