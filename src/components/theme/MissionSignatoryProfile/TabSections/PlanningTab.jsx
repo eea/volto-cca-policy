@@ -88,17 +88,25 @@ const PlanningTab = ({ result }) => {
   return (
     <Tab.Pane>
       {titleData?.Title && <h2>{titleData.Title}</h2>}
-      {titleData?.Abstract_Line && <Callout>{titleData.Abstract_Line}</Callout>}
+      {titleData?.Abstract_Line && (
+        <Callout>
+          <HTMLField
+            value={{ data: formatTextToHTML(titleData?.Abstract_Line) }}
+          />
+        </Callout>
+      )}
 
       {sortedGoals.map((goal, index) => {
         return (
           <div key={index} className="section-wrapper">
-            <span className="goal-title-label">{goal?.Title_Label}</span>
+            <h5 className="section-title">
+              <span className="section-number">{goal?.Title_Label} </span>
 
-            <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+              <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+            </h5>
 
             <AccordionList
-              variation="tertiary"
+              variation="secondary"
               accordions={[
                 {
                   title: goal?.More_Details_Label || 'More details',
@@ -115,7 +123,11 @@ const PlanningTab = ({ result }) => {
       )}
 
       {goalData?.Climate_Action_Abstract && (
-        <Callout>{goalData.Climate_Action_Abstract}</Callout>
+        <Callout>
+          <HTMLField
+            value={{ data: formatTextToHTML(goalData.Climate_Action_Abstract) }}
+          />
+        </Callout>
       )}
 
       {planning_climate_action.map((action, index) => {
@@ -124,12 +136,22 @@ const PlanningTab = ({ result }) => {
             <br />
             {action?.Sectors_Introduction && (
               <Message>
-                <p>{action.Sectors_Introduction}</p>
+                <HTMLField
+                  value={{
+                    data: formatTextToHTML(action.Sectors_Introduction),
+                  }}
+                />
               </Message>
             )}
 
             <ItemsSection items={action?.Sectors} />
-            {action?.Description && <p>{action.Description}</p>}
+
+            {action?.Description && (
+              <HTMLField
+                className="description"
+                value={{ data: formatTextToHTML(action.Description) }}
+              />
+            )}
 
             {(action?.Approval_Year || action?.End_Year) && (
               <p>
