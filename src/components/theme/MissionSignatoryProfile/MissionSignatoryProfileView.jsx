@@ -8,6 +8,13 @@ import ActionPagesTab from './TabSections/ActionPagesTab';
 
 import './style.less';
 
+const tabRenderers = {
+  Governance_Label: (data) => <GovernanceTab result={data} />,
+  Assessment_Label: (data) => <AssessmentTab result={data} />,
+  Planning_Label: (data) => <PlanningTab result={data} />,
+  Action_Label: (data) => <ActionPagesTab result={data} />,
+};
+
 const MissionSignatoryProfileView = (props) => {
   const { content } = props || {};
   const dataJson =
@@ -19,11 +26,26 @@ const MissionSignatoryProfileView = (props) => {
   const assessment = result?.assessment || {};
   const action = result?.action || {};
   const footer_text = result?.footer_text || {};
-  const tab_labels = result?.tab_labels || {};
-  const { Governance_Label, Assessment_Label, Planning_Label, Action_Label } =
-    tab_labels || {};
+  const tab_labels = result?.tab_labels || [];
 
   const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const panes = tab_labels
+    .filter(({ key }) => key !== 'Language')
+    .map(({ key, value }) => {
+      const renderTab = tabRenderers[key];
+      const dataMap = {
+        Governance_Label: governance,
+        Assessment_Label: assessment,
+        Planning_Label: planning,
+        Action_Label: action,
+      };
+
+      return {
+        menuItem: value,
+        render: () => (renderTab ? renderTab(dataMap[key]) : null),
+      };
+    });
 
   return (
     <Container>
@@ -52,24 +74,7 @@ const MissionSignatoryProfileView = (props) => {
           grid={{ paneWidth: 9, tabWidth: 3, stackable: true }}
           activeIndex={activeIndex}
           onTabChange={(e, { activeIndex }) => setActiveIndex(activeIndex)}
-          panes={[
-            {
-              menuItem: Governance_Label || 'Governance',
-              render: () => <GovernanceTab result={governance} />,
-            },
-            {
-              menuItem: Assessment_Label || 'Assessment',
-              render: () => <AssessmentTab result={assessment} />,
-            },
-            {
-              menuItem: Planning_Label || 'Planning',
-              render: () => <PlanningTab result={planning} />,
-            },
-            {
-              menuItem: Action_Label || 'Action',
-              render: () => <ActionPagesTab result={action} />,
-            },
-          ]}
+          panes={panes}
         />
 
         {footer_text.Disclaimer && (
