@@ -75,7 +75,7 @@ const CountryMapObservatoryView = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures]);
+  }, [geofeatures, ol]);
 
   const baseUrl = getBaseUrl(props);
 
