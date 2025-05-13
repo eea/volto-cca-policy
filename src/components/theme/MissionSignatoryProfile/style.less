@@ -23,6 +23,10 @@
     }
   }
 
+  .description > p {
+    margin-bottom: 1em;
+  }
+
   .tab-section-wrapper {
     padding: 1.5em;
     margin: 2em 0;
@@ -45,25 +49,31 @@
   }
 
   .section-wrapper {
+    padding: 1em;
     margin: 1em 0;
+    background-color: #f9f9f9;
 
-    .goal-title-label {
-      display: inline-block;
-      padding: 0.3em 0.5em;
-      margin: 1em 0;
-      background-color: #dbe7f4;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5em;
     }
 
     .ui.accordion {
       margin-top: 1em;
+
+      .content.active {
+        padding-bottom: 1rem !important;
+      }
     }
 
     .small-label {
       font-size: 1em;
     }
+  }
+
+  .section-number {
+    color: @pineGreen;
   }
 
   strong.date {
@@ -82,5 +92,9 @@
         padding-left: 0.5rem !important;
       }
     }
+  }
+
+  .footer-text {
+    margin-top: 3em;
   }
 }

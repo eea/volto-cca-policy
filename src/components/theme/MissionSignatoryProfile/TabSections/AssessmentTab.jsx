@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tab, Image, Segment, Item } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
+import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
@@ -38,7 +40,7 @@ const AssessmentAccordionContent = ({ result }) => {
 
       <h5>{result.Further_Details_Label}</h5>
       <Segment className="border">
-        <p>{result.Please_Explain}</p>
+        <HTMLField value={{ data: formatTextToHTML(result.Please_Explain) }} />
       </Segment>
     </>
   );
@@ -63,9 +65,13 @@ const AssessmentTab = ({ result }) => {
   return (
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
-      {Subheading && <Callout>{Subheading}</Callout>}
+      {Subheading && (
+        <Callout>
+          <HTMLField value={{ data: formatTextToHTML(Subheading) }} />
+        </Callout>
+      )}
 
-      {Abstract && <p>{Abstract}</p>}
+      {Abstract && <HTMLField value={{ data: formatTextToHTML(Abstract) }} />}
 
       <div className="tab-section-wrapper assessment">
         {Cra_Title && <h3>{Cra_Title}</h3>}
@@ -99,7 +105,9 @@ const AssessmentTab = ({ result }) => {
 
       {Hazards_Title && <h3>{Hazards_Title}</h3>}
 
-      {Hazards_Abstract && <p>{Hazards_Abstract}</p>}
+      {Hazards_Abstract && (
+        <HTMLField value={{ data: formatTextToHTML(Hazards_Abstract) }} />
+      )}
 
       <br />
 

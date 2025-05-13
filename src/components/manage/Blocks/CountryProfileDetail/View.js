@@ -35,7 +35,7 @@ export default function View(props) {
   return (
     <>
       {isNonEN && (
-        <Message class="eea callout">
+        <Message className="eea callout">
           <FormattedMessage
             id="officiallyInEnglish"
             defaultMessage="Officially reported governmental information is only available in English"
@@ -43,7 +43,7 @@ export default function View(props) {
         </Message>
       )}
       {dataJson.message_top ? (
-        <div class="eea callout">{dataJson.message_top}</div>
+        <div className="eea callout">{dataJson.message_top}</div>
       ) : null}
       {dataJson.top_accordeon ? (
         <div className="top-accordion">

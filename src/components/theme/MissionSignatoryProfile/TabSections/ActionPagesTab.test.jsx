@@ -61,7 +61,7 @@ describe('ActionPagesTab', () => {
   };
 
   it('renders action tab content correctly', () => {
-    const { getByText, getAllByText } = render(
+    const { getByText, container } = render(
       <ActionPagesTab result={mockResult} />,
     );
 
@@ -71,9 +71,7 @@ describe('ActionPagesTab', () => {
     ).toBeInTheDocument();
     expect(getByText('Summary line here.')).toBeInTheDocument();
 
-    const sections = getAllByText(/^\d+\./).map((el) =>
-      el.closest('.section-wrapper'),
-    );
+    const sections = container.querySelectorAll('.section-wrapper');
 
     // First action
     const firstAction = within(sections[0]);

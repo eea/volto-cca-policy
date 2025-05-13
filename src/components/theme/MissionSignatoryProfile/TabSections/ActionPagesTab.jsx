@@ -1,12 +1,14 @@
-import React from 'react';
 import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
+import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 
 const ActionsTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
-  const hasSectors = !!action?.Sectors;
-  const hasBenefits = !!action?.Co_Benefits;
+  const hasSectors = action?.Sectors.length > 0;
+  const hasBenefits = action?.Co_Benefits.length > 0;
+
   return (
     <>
       <Grid columns="12">
@@ -72,21 +74,23 @@ const ActionPagesTab = ({ result }) => {
   return (
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
-      {Abstract && <p>{Abstract}</p>}
-      {Abstract_Line && <Callout>{Abstract_Line}</Callout>}
-
-      <br />
+      {Abstract && <HTMLField value={{ data: formatTextToHTML(Abstract) }} />}
+      {Abstract_Line && (
+        <Callout>
+          <HTMLField value={{ data: formatTextToHTML(Abstract_Line) }} />
+        </Callout>
+      )}
 
       {sortedActions.map((action, index) => {
         return (
           <div key={index} className="section-wrapper">
             <h5 className="section-title">
-              <span className="section-number">{action.Order}. </span>
-              <span>{action?.Action}</span>
+              <span className="section-number">{action.Action_Id}. </span>
+              <HTMLField value={{ data: formatTextToHTML(action?.Action) }} />
             </h5>
 
             <AccordionList
-              variation="tertiary"
+              variation="secondary"
               accordions={[
                 {
                   title: action?.More_Details_Label || 'More details',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Container } from 'semantic-ui-react';
+import { Tab, Container, Divider } from 'semantic-ui-react';
 import { BannerTitle } from '@eeacms/volto-cca-policy/helpers';
 import GovernanceTab from './TabSections/GovernanceTab';
 import AssessmentTab from './TabSections/AssessmentTab';
@@ -14,10 +14,11 @@ const MissionSignatoryProfileView = (props) => {
     props?.content?.['@components']?.missionsignatoryprofile || {};
 
   const result = dataJson?.result || {};
-  const governance = result?.governance?.[0] || [];
+  const governance = result?.governance?.[0] || {};
   const planning = result?.planning || {};
   const assessment = result?.assessment || {};
   const action = result?.action || {};
+  const footer_text = result?.footer_text || {};
   const tab_labels = result?.tab_labels || {};
   const { Governance_Label, Assessment_Label, Planning_Label, Action_Label } =
     tab_labels || {};
@@ -70,6 +71,14 @@ const MissionSignatoryProfileView = (props) => {
             },
           ]}
         />
+
+        {footer_text.Disclaimer && (
+          <div className="footer-text">
+            <Divider />
+            <strong>{footer_text.Disclaimer_Title}</strong>
+            <p>{footer_text.Disclaimer}</p>
+          </div>
+        )}
       </div>
     </Container>
   );
