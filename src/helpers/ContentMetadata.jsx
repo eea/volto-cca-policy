@@ -13,6 +13,7 @@ import {
   PUBLICATION_REPORT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import { MetadataItemList } from '@eeacms/volto-cca-policy/helpers';
+import { UniversalLink } from '@plone/volto/components';
 
 const messages = defineMessages({
   default_info_tooltip: {
@@ -342,6 +343,11 @@ function ContentMetadata(props) {
     key_type_measures,
     funding_programme,
   } = content;
+  // const related_case_studies = props.hasAttribute('related_case_studies')
+  //   ? props['related_case_studies']
+  //   : [];
+  const related_case_studies = props['related_case_studies'];
+
   const type = content['@type'];
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
@@ -363,6 +369,26 @@ function ContentMetadata(props) {
           value={content?.publication_date}
           portaltype={type}
         />
+
+        {related_case_studies?.length > 0 && (
+          <>
+            <h5>
+              <FormattedMessage
+                id="Case studies related to this option:"
+                defaultMessage="Case studies related to this option:"
+              />
+            </h5>
+            <ul className="related-case-studies">
+              {related_case_studies.map((item, index) => (
+                <li key={index}>
+                  <UniversalLink key={index} href={item.url}>
+                    {item.title}
+                  </UniversalLink>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
         {keywords && keywords?.length > 0 && (
           <>
