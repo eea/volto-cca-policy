@@ -9,13 +9,13 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   Container,
-  Segment,
+  // Segment,
   Divider,
   Grid,
   ListItem,
   List,
 } from 'semantic-ui-react';
-import { UniversalLink } from '@plone/volto/components';
+// import { UniversalLink } from '@plone/volto/components';
 import {
   ShareInfoButton,
   PortalMessage,
