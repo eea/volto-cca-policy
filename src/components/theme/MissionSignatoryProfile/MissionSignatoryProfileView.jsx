@@ -6,8 +6,6 @@ import AssessmentTab from './TabSections/AssessmentTab';
 import PlanningTab from './TabSections/PlanningTab';
 import ActionPagesTab from './TabSections/ActionPagesTab';
 
-import './style.less';
-
 const tabRenderers = {
   Governance_Label: (data) => <GovernanceTab result={data} />,
   Assessment_Label: (data) => <AssessmentTab result={data} />,
@@ -61,7 +59,7 @@ const MissionSignatoryProfileView = (props) => {
           hideShareButton: false,
         }}
       />
-      <div className="signatories-profile">
+      <div className="signatory-profile">
         <br />
 
         <Tab
