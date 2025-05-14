@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Statistic,
   StatisticValue,
@@ -7,10 +5,10 @@ import {
   StatisticGroup,
 } from 'semantic-ui-react';
 
-const StatisticsSection = ({ statistics }) => {
+const StatisticSection = ({ statistic }) => {
   return (
     <StatisticGroup widths="two" size="small">
-      {statistics.map((stat, index) => (
+      {statistic.map((stat, index) => (
         <Statistic key={index}>
           <StatisticValue>{stat.value}</StatisticValue>
           <StatisticLabel>{stat.label}</StatisticLabel>
@@ -20,4 +18,4 @@ const StatisticsSection = ({ statistics }) => {
   );
 };
 
-export default StatisticsSection;
+export default StatisticSection;

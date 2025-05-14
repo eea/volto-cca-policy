@@ -17,27 +17,42 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
 }));
 
 describe('MissionSignatoryProfileView', () => {
-  const data = {
-    _v_results: {
-      planning: {
-        planning_titles: [{}],
+  const content = {
+    '@components': {
+      missionsignatoryprofile: {
+        result: {
+          governance: [{}],
+          assessment: {},
+          planning: {},
+          action: {},
+          footer_text: {
+            Disclaimer_Title: 'Disclaimer Title',
+            Disclaimer: 'This is a disclaimer.',
+          },
+          tab_labels: [
+            { key: 'Governance_Label', value: 'Governance' },
+            { key: 'Assessment_Label', value: 'Assessment' },
+            { key: 'Planning_Label', value: 'Planning & Target' },
+            { key: 'Action_Label', value: 'Action' },
+            { key: 'Language', value: 'en' }, // will be filtered out
+          ],
+        },
       },
-      governance: [{}],
     },
   };
 
   it('renders tab labels and default content', () => {
-    render(<MissionSignatoryProfileView data={data} />);
+    render(<MissionSignatoryProfileView content={content} />);
 
     // Tab labels
     expect(screen.getByText('Governance')).toBeInTheDocument();
     expect(screen.getByText('Assessment')).toBeInTheDocument();
-    expect(screen.getByText('Planning')).toBeInTheDocument();
+    expect(screen.getByText('Planning & Target')).toBeInTheDocument();
     expect(screen.getByText('Action')).toBeInTheDocument();
   });
 
   it('switches tabs and renders corresponding content', () => {
-    render(<MissionSignatoryProfileView data={data} />);
+    render(<MissionSignatoryProfileView content={content} />);
 
     fireEvent.click(screen.getByText('Governance'));
     expect(screen.getByText('Mocked Governance')).toBeInTheDocument();
@@ -45,10 +60,16 @@ describe('MissionSignatoryProfileView', () => {
     fireEvent.click(screen.getByText('Assessment'));
     expect(screen.getByText('Mocked Assessment')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByText('Planning'));
+    fireEvent.click(screen.getByText('Planning & Target'));
     expect(screen.getByText('Mocked Planning')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('Action'));
     expect(screen.getByText('Mocked Action')).toBeInTheDocument();
+  });
+
+  it('renders footer disclaimer text if present', () => {
+    render(<MissionSignatoryProfileView content={content} />);
+    expect(screen.getByText('Disclaimer Title')).toBeInTheDocument();
+    expect(screen.getByText('This is a disclaimer.')).toBeInTheDocument();
   });
 });
