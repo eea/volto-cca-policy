@@ -65,11 +65,7 @@ const ActionPagesTab = ({ result }) => {
   const { Title, Abstract, Abstract_Line } = result.action_text?.[0] || [];
   const actions = result.actions || [];
 
-  const sortedActions = [...actions].sort((a, b) => {
-    const aNum = parseInt(a.Action_Id.replace(/\D/g, ''), 10);
-    const bNum = parseInt(b.Action_Id.replace(/\D/g, ''), 10);
-    return aNum - bNum;
-  });
+  const sortedActions = [...actions].sort((a, b) => a.Order - b.Order);
 
   return (
     <Tab.Pane>
@@ -85,7 +81,7 @@ const ActionPagesTab = ({ result }) => {
         return (
           <div key={index} className="section-wrapper">
             <h5 className="section-title">
-              <span className="section-number">{action.Action_Id}. </span>
+              <span className="section-number">{action.Order}. </span>
               <HTMLField value={{ data: formatTextToHTML(action?.Action) }} />
             </h5>
 
