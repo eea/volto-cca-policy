@@ -129,7 +129,6 @@ export class App extends Component {
     const isChromeless =
       this.props.isChromelessSSR ||
       (__CLIENT__ && window?.location?.search?.indexOf('chromeless=1') > -1);
-    console.log('chromless', isChromeless);
 
     return (
       <PluggablesProvider>
