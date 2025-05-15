@@ -1,9 +1,7 @@
-import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import MissionSignatoryProfileView from './MissionSignatoryProfileView';
 
-// Mock the tab components with minimal placeholders
 jest.mock('./TabSections/GovernanceTab', () => () => (
   <div>Mocked Governance</div>
 ));
@@ -12,8 +10,12 @@ jest.mock('./TabSections/AssessmentTab', () => () => (
 ));
 jest.mock('./TabSections/PlanningTab', () => () => <div>Mocked Planning</div>);
 jest.mock('./TabSections/ActionPagesTab', () => () => <div>Mocked Action</div>);
+
 jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
   BannerTitle: ({ children }) => <div>{children}</div>,
+  HTMLField: ({ value }) => (
+    <div dangerouslySetInnerHTML={{ __html: value?.data }} />
+  ),
 }));
 
 describe('MissionSignatoryProfileView', () => {
@@ -34,7 +36,7 @@ describe('MissionSignatoryProfileView', () => {
             { key: 'Assessment_Label', value: 'Assessment' },
             { key: 'Planning_Label', value: 'Planning & Target' },
             { key: 'Action_Label', value: 'Action' },
-            { key: 'Language', value: 'en' }, // will be filtered out
+            { key: 'Language', value: 'en' },
           ],
         },
       },
@@ -70,6 +72,8 @@ describe('MissionSignatoryProfileView', () => {
   it('renders footer disclaimer text if present', () => {
     render(<MissionSignatoryProfileView content={content} />);
     expect(screen.getByText('Disclaimer Title')).toBeInTheDocument();
-    expect(screen.getByText('This is a disclaimer.')).toBeInTheDocument();
+    expect(
+      screen.getByText((content) => content.includes('This is a disclaimer.')),
+    ).toBeInTheDocument();
   });
 });

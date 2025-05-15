@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tab, Container, Divider } from 'semantic-ui-react';
-import { BannerTitle } from '@eeacms/volto-cca-policy/helpers';
+import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
+import { BannerTitle, HTMLField } from '@eeacms/volto-cca-policy/helpers';
+
 import GovernanceTab from './TabSections/GovernanceTab';
 import AssessmentTab from './TabSections/AssessmentTab';
 import PlanningTab from './TabSections/PlanningTab';
@@ -77,11 +79,13 @@ const MissionSignatoryProfileView = (props) => {
           panes={panes}
         />
 
-        {footer_text.Disclaimer && (
+        {footer_text?.Disclaimer && (
           <div className="footer-text">
             <Divider />
-            <strong>{footer_text.Disclaimer_Title}</strong>
-            <p>{footer_text.Disclaimer}</p>
+            <strong>{footer_text?.Disclaimer_Title}</strong>
+            <HTMLField
+              value={{ data: formatTextToHTML(footer_text.Disclaimer) }}
+            />
           </div>
         )}
       </div>

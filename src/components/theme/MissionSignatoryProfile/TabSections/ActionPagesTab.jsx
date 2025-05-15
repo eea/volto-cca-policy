@@ -51,10 +51,14 @@ const ActionsTabContent = ({ action }) => {
       {action.Funding_Sources && (
         <>
           <br />
-          <p>
+          <div className="funding-sources">
             <span>{action.Funding_Sources_Label} </span>
-            <strong>{action.Funding_Sources}</strong>
-          </p>
+            <strong>
+              <HTMLField
+                value={{ data: formatTextToHTML(action.Funding_Sources) }}
+              />
+            </strong>
+          </div>
         </>
       )}
     </>
