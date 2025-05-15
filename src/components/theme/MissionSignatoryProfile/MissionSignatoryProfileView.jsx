@@ -25,6 +25,7 @@ const MissionSignatoryProfileView = (props) => {
   const action = result?.action || {};
   const footer_text = result?.footer_text || {};
   const tab_labels = result?.tab_labels || [];
+  const general_text = result?.general_text?.[0] || {};
 
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -57,6 +58,7 @@ const MissionSignatoryProfileView = (props) => {
           hidePublishingDate: true,
           hideDownloadButton: false,
           hideShareButton: false,
+          subtitle: general_text?.Country_Or_Area,
         }}
       />
       <div className="signatory-profile">
