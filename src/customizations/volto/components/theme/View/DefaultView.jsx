@@ -85,7 +85,8 @@ const DefaultView = (props) => {
       : 3;
   const currentLang = useSelector((state) => state.intl.locale);
 
-  // If the content is not yet loaded, then do not show anything
+  const isChromeless = location.search?.indexOf('chromeless=1') > -1;
+
   return contentLoaded ? (
     hasBlocksData(content) ? (
       <>
@@ -123,8 +124,8 @@ const DefaultView = (props) => {
             </Grid>
           </Container>
         ) : (
-          <Container id="page-document">
-            <BannerTitle {...props} />
+          <Container id="page-document" className="here">
+            {!isChromeless && <BannerTitle {...props} />}
             <RenderBlocks {...props} path={path} />
           </Container>
         )}
