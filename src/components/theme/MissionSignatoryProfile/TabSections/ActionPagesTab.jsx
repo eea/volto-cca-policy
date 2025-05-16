@@ -77,7 +77,7 @@ const ActionPagesTab = ({ result, general_text }) => {
   if (hasNoActions && hasNoText) {
     return (
       <Tab.Pane>
-        <h5>{No_Data_Reported_Label}</h5>
+        <p>{No_Data_Reported_Label}</p>
       </Tab.Pane>
     );
   }
