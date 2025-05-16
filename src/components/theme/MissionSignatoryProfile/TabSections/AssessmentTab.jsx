@@ -61,14 +61,13 @@ const AssessmentTab = ({ result, general_text }) => {
   const assessment_risks = result.assessment_risks || [];
   const assessment_hazards_sectors = result.assessment_hazards_sectors || [];
   const { No_Data_Reported_Label } = general_text || {};
+  // const [activeIndex, setActiveIndex] = React.useState(0);
 
   const NoResults =
     isEmpty(result.assessment_text) &&
     isEmpty(result.assessment_factors) &&
     isEmpty(result.assessment_risks) &&
     isEmpty(result.assessment_hazards_sectors);
-
-  // const [activeIndex, setActiveIndex] = React.useState(0);
 
   if (NoResults) {
     return (
