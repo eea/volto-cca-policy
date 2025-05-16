@@ -4,6 +4,8 @@ import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 
+const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
+
 const ActionsTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
   const hasSectors = action?.Sectors.length > 0;
@@ -69,15 +71,15 @@ const ActionPagesTab = ({ result, general_text }) => {
   const { action_text, actions } = result || {};
   const { No_Data_Reported_Label } = general_text || {};
   const { Title, Abstract, Abstract_Line } = action_text?.[0] || {};
-  const hasNoActions = !(actions?.length > 0);
-  const hasNoText = !(action_text?.length > 0);
 
   const sortedActions = [...(actions || [])].sort((a, b) => a.Order - b.Order);
 
-  if (hasNoActions && hasNoText) {
+  const NoResults = isEmpty(action_text) && isEmpty(actions);
+
+  if (NoResults) {
     return (
       <Tab.Pane>
-        <h5>{No_Data_Reported_Label}</h5>
+        <p>{No_Data_Reported_Label}</p>
       </Tab.Pane>
     );
   }

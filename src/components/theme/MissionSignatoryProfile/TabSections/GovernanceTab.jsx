@@ -5,7 +5,7 @@ import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import StatisticSection from '../StatisticSection';
 
-const GovernanceTab = ({ result }) => {
+const GovernanceTab = ({ result, general_text }) => {
   const {
     Title,
     Introduction,
@@ -21,7 +21,8 @@ const GovernanceTab = ({ result }) => {
     Statistic_Population_Size_Label,
     Statistic_Population_Year,
     Statistic_Population_Year_Label,
-  } = result;
+  } = result || {};
+  const { No_Data_Reported_Label } = general_text || {};
 
   const statisticData = [
     {
@@ -41,6 +42,14 @@ const GovernanceTab = ({ result }) => {
       label: Statistic_Population_Year_Label,
     },
   ].filter((stat) => stat.value && stat.label);
+
+  if (!result) {
+    return (
+      <Tab.Pane>
+        <p>{No_Data_Reported_Label}</p>
+      </Tab.Pane>
+    );
+  }
 
   return (
     <Tab.Pane>
