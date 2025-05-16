@@ -59,14 +59,14 @@ const AssessmentTab = ({ result, general_text }) => {
     Hazards_Abstract,
   } = result.assessment_text?.[0] || {};
   const assessment_risks = result.assessment_risks || [];
-  const assessment_sectors = result.assessment_sectors || [];
+  const assessment_hazards_sectors = result.assessment_hazards_sectors || [];
   const { No_Data_Reported_Label } = general_text || {};
 
   const NoResults =
     isEmpty(result.assessment_text) &&
     isEmpty(result.assessment_factors) &&
     isEmpty(result.assessment_risks) &&
-    isEmpty(result.assessment_sectors);
+    isEmpty(result.assessment_hazards_sectors);
 
   // const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -127,10 +127,10 @@ const AssessmentTab = ({ result, general_text }) => {
 
       <br />
 
-      {assessment_sectors && (
+      {assessment_hazards_sectors && (
         <AccordionList
-          accordions={assessment_sectors.map((category) => ({
-            title: category.Category_Name,
+          accordions={assessment_hazards_sectors.map((category) => ({
+            title: category.Hazard,
             content: (
               <ul>
                 {category.Sectors.map((sector, idx) => (
