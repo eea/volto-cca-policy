@@ -1,6 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import PlanningTab from './PlanningTab';
 
 jest.mock('@eeacms/volto-cca-policy/helpers', () => ({

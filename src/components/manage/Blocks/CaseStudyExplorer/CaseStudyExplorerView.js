@@ -72,7 +72,8 @@ export default function CaseStudyExplorerView(props) {
     setActiveItems(activeItems);
   }, [activeFilters, cases]);
 
-  if (__SERVER__) return '';
+  if (__SERVER__)
+    return <div className="casestudy-explorer-map">CaseStudyExplorer</div>;
 
   return (
     <div className="casestudy-explorer-map">

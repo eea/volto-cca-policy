@@ -1,6 +1,5 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 import AssessmentTab from './AssessmentTab';
 
 jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
