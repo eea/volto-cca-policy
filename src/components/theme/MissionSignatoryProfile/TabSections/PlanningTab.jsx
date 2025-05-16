@@ -9,6 +9,8 @@ import {
 import AccordionList from '../AccordionList';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
+const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
+
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
@@ -69,12 +71,13 @@ const PlanningGoalContent = ({ goal }) => {
   );
 };
 
-const PlanningTab = ({ result }) => {
+const PlanningTab = ({ result, general_text }) => {
   const {
     planning_goals = [],
     planning_titles = [],
     planning_climate_action = [],
   } = result || {};
+  const { No_Data_Reported_Label } = general_text || {};
 
   const titleData = planning_titles?.[0];
   const goalData = planning_goals?.[0];
@@ -84,6 +87,19 @@ const PlanningTab = ({ result }) => {
     const bNum = parseInt(b.Adaptation_Goal_Id.replace(/\D/g, ''), 10);
     return aNum - bNum;
   });
+
+  const NoResults =
+    isEmpty(planning_goals) &&
+    isEmpty(planning_titles) &&
+    isEmpty(planning_climate_action);
+
+  if (NoResults) {
+    return (
+      <Tab.Pane>
+        <h5>{No_Data_Reported_Label}</h5>
+      </Tab.Pane>
+    );
+  }
 
   return (
     <Tab.Pane>

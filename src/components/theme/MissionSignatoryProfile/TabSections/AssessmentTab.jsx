@@ -6,6 +6,8 @@ import AccordionList from '../AccordionList';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
 
+const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
+
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
@@ -45,7 +47,7 @@ const AssessmentAccordionContent = ({ result }) => {
   );
 };
 
-const AssessmentTab = ({ result }) => {
+const AssessmentTab = ({ result, general_text }) => {
   const {
     Title,
     Subheading,
@@ -55,11 +57,26 @@ const AssessmentTab = ({ result }) => {
     Attachments,
     Hazards_Title,
     Hazards_Abstract,
-  } = result.assessment_text?.[0] || [];
+  } = result.assessment_text?.[0] || {};
   const assessment_risks = result.assessment_risks || [];
   const assessment_sectors = result.assessment_sectors || [];
+  const { No_Data_Reported_Label } = general_text || {};
+
+  const NoResults =
+    isEmpty(result.assessment_text) &&
+    isEmpty(result.assessment_factors) &&
+    isEmpty(result.assessment_risks) &&
+    isEmpty(result.assessment_sectors);
 
   // const [activeIndex, setActiveIndex] = React.useState(0);
+
+  if (NoResults) {
+    return (
+      <Tab.Pane>
+        <h5>{No_Data_Reported_Label}</h5>
+      </Tab.Pane>
+    );
+  }
 
   return (
     <Tab.Pane>
