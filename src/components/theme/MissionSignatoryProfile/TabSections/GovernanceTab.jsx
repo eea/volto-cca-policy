@@ -21,7 +21,7 @@ const GovernanceTab = ({ result }) => {
     Statistic_Population_Size_Label,
     Statistic_Population_Year,
     Statistic_Population_Year_Label,
-  } = result;
+  } = result || {};
 
   const statisticData = [
     {
