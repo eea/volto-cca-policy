@@ -65,11 +65,22 @@ const ActionsTabContent = ({ action }) => {
   );
 };
 
-const ActionPagesTab = ({ result }) => {
-  const { Title, Abstract, Abstract_Line } = result.action_text?.[0] || [];
-  const actions = result.actions || [];
+const ActionPagesTab = ({ result, general_text }) => {
+  const { action_text, actions } = result || {};
+  const { No_Data_Reported_Label } = general_text || {};
+  const { Title, Abstract, Abstract_Line } = action_text?.[0] || {};
+  const hasNoActions = !(actions?.length > 0);
+  const hasNoText = !(action_text?.length > 0);
 
-  const sortedActions = [...actions].sort((a, b) => a.Order - b.Order);
+  const sortedActions = [...(actions || [])].sort((a, b) => a.Order - b.Order);
+
+  if (hasNoActions && hasNoText) {
+    return (
+      <Tab.Pane>
+        <h5>{No_Data_Reported_Label}</h5>
+      </Tab.Pane>
+    );
+  }
 
   return (
     <Tab.Pane>
@@ -81,11 +92,11 @@ const ActionPagesTab = ({ result }) => {
         </Callout>
       )}
 
-      {sortedActions.map((action, index) => {
+      {sortedActions?.map((action, index) => {
         return (
           <div key={index} className="section-wrapper">
             <h5 className="section-title">
-              <span className="section-number">{action.Order}. </span>
+              <span className="section-number">{action?.Order}. </span>
               <HTMLField value={{ data: formatTextToHTML(action?.Action) }} />
             </h5>
 
@@ -93,7 +104,7 @@ const ActionPagesTab = ({ result }) => {
               variation="secondary"
               accordions={[
                 {
-                  title: action?.More_Details_Label || 'More details',
+                  title: action?.More_Details_Label,
                   content: <ActionsTabContent action={action} />,
                 },
               ]}

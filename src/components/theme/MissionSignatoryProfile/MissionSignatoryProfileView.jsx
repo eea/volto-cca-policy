@@ -9,42 +9,42 @@ import PlanningTab from './TabSections/PlanningTab';
 import ActionPagesTab from './TabSections/ActionPagesTab';
 
 const tabRenderers = {
-  Governance_Label: (data) => <GovernanceTab result={data} />,
-  Assessment_Label: (data) => <AssessmentTab result={data} />,
-  Planning_Label: (data) => <PlanningTab result={data} />,
-  Action_Label: (data) => <ActionPagesTab result={data} />,
+  Governance_Label: (props) => <GovernanceTab {...props} />,
+  Assessment_Label: (props) => <AssessmentTab {...props} />,
+  Planning_Label: (props) => <PlanningTab {...props} />,
+  Action_Label: (props) => <ActionPagesTab {...props} />,
 };
 
-const MissionSignatoryProfileView = (props) => {
-  const { content } = props || {};
-  const dataJson =
-    props?.content?.['@components']?.missionsignatoryprofile || {};
+const MissionSignatoryProfileView = ({ content }) => {
+  const signatoryData =
+    content?.['@components']?.missionsignatoryprofile?.result || {};
 
-  const result = dataJson?.result || {};
-  const governance = result?.governance?.[0] || {};
-  const planning = result?.planning || {};
-  const assessment = result?.assessment || {};
-  const action = result?.action || {};
-  const footer_text = result?.footer_text || {};
-  const tab_labels = result?.tab_labels || [];
-  const general_text = result?.general_text?.[0] || {};
+  const {
+    governance = [{}],
+    planning = {},
+    assessment = {},
+    action = {},
+    footer_text = {},
+    tab_labels = [],
+    general_text = [{}],
+  } = signatoryData;
 
   const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const tabData = {
+    Governance_Label: { result: governance[0], general_text: general_text[0] },
+    Assessment_Label: { result: assessment, general_text: general_text[0] },
+    Planning_Label: { result: planning, general_text: general_text[0] },
+    Action_Label: { result: action, general_text: general_text[0] },
+  };
 
   const panes = tab_labels
     .filter(({ key }) => key !== 'Language')
     .map(({ key, value }) => {
-      const renderTab = tabRenderers[key];
-      const dataMap = {
-        Governance_Label: governance,
-        Assessment_Label: assessment,
-        Planning_Label: planning,
-        Action_Label: action,
-      };
-
+      const Renderer = tabRenderers[key];
       return {
         menuItem: value,
-        render: () => (renderTab ? renderTab(dataMap[key]) : null),
+        render: () => (Renderer ? Renderer(tabData[key]) : null),
       };
     });
 
@@ -60,12 +60,12 @@ const MissionSignatoryProfileView = (props) => {
           hidePublishingDate: true,
           hideDownloadButton: false,
           hideShareButton: false,
-          subtitle: general_text?.Country_Or_Area,
+          subtitle: general_text?.[0]?.Country_Or_Area,
         }}
       />
+
       <div className="signatory-profile">
         <br />
-
         <Tab
           menu={{
             fluid: true,
