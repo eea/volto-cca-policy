@@ -251,6 +251,12 @@ iframe {
   }
 }
 
+#footer {
+  .theme-sites {
+    padding: 3rem 0 ;
+  }
+}
+
 #mega-menu {
   .ui.list.has--4--columns {
     a.item {
@@ -302,10 +308,6 @@ iframe {
       .item {
         padding-left: 0.8em;
         min-width: 10em;
-      }
-
-      .noneu-langs-label {
-        // border-bottom: 1px solid black;
       }
     }
   }
