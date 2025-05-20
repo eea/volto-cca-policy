@@ -255,6 +255,10 @@ iframe {
   .theme-sites {
     padding: 3rem 0 ;
   }
+
+  .footer-header {
+    margin-bottom: 1.5em;
+  }
 }
 
 #mega-menu {
