@@ -555,6 +555,13 @@ const applyConfig = (config) => {
     ...config.settings.storeExtenders,
   ];
 
+  config.settings.initialReducersBlacklist = [
+    ...config.settings.initialReducersBlacklist,
+    'intl',
+    // 'router',
+    // 'content',
+  ];
+
   config.widgets.vocabulary[
     'plone.app.vocabularies.Users'
   ] = SelectAutoCompleteWidget;
