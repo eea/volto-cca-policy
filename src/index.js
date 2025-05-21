@@ -158,6 +158,10 @@ const applyConfig = (config) => {
     ],
     footerOpts: {
       ...(config.settings.eea?.footerOpts || {}),
+      buttonName: 'Explore our environmental information systems',
+      hrefButton: 'https://www.eea.europa.eu/en/information-systems#',
+      logosHeader: 'Managed by',
+      header: '',
       description:
         'The European Climate Adaptation Platform Climate-ADAPT is a partnership between the European Commission and the European Environment Agency.',
       managedBy: [
