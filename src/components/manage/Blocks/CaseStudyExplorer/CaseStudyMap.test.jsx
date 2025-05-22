@@ -35,6 +35,23 @@ jest.mock('@eeacms/volto-openlayers-map', () => ({
       defaults: jest.fn().mockReturnValue([]),
     },
   },
+  // Add the withOpenLayers HOC mock
+  withOpenLayers: (Component) => (props) => (
+    <Component
+      {...props}
+      ol={{
+        source: {
+          TileWMS: jest.fn().mockImplementation(() => ({})),
+        },
+        proj: {
+          fromLonLat: jest.fn().mockReturnValue([0, 0]),
+        },
+        control: {
+          defaults: jest.fn().mockReturnValue([]),
+        },
+      }}
+    />
+  ),
 }));
 
 jest.mock('./FeatureInteraction', () => () => (
