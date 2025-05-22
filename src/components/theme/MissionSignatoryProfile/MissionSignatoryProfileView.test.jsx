@@ -1,4 +1,5 @@
 import { render, fireEvent, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import MissionSignatoryProfileView from './MissionSignatoryProfileView';
 
@@ -38,15 +39,25 @@ describe('MissionSignatoryProfileView', () => {
             { key: 'Action_Label', value: 'Action' },
             { key: 'Language', value: 'en' },
           ],
+          general_text: [
+            {
+              Back_To_Map_Link: 'Back to map',
+              Country_Or_Area: 'Testland',
+            },
+          ],
         },
       },
     },
+    parent: {
+      '@id': '/signatories-map',
+    },
   };
 
-  it('renders tab labels and default content', () => {
-    render(<MissionSignatoryProfileView content={content} />);
+  const renderWithRouter = (ui) => render(<MemoryRouter>{ui}</MemoryRouter>);
 
-    // Tab labels
+  it('renders tab labels and default content', () => {
+    renderWithRouter(<MissionSignatoryProfileView content={content} />);
+
     expect(screen.getByText('Governance')).toBeInTheDocument();
     expect(screen.getByText('Assessment')).toBeInTheDocument();
     expect(screen.getByText('Planning & Target')).toBeInTheDocument();
@@ -54,7 +65,7 @@ describe('MissionSignatoryProfileView', () => {
   });
 
   it('switches tabs and renders corresponding content', () => {
-    render(<MissionSignatoryProfileView content={content} />);
+    renderWithRouter(<MissionSignatoryProfileView content={content} />);
 
     fireEvent.click(screen.getByText('Governance'));
     expect(screen.getByText('Mocked Governance')).toBeInTheDocument();
@@ -70,10 +81,10 @@ describe('MissionSignatoryProfileView', () => {
   });
 
   it('renders footer disclaimer text if present', () => {
-    render(<MissionSignatoryProfileView content={content} />);
+    renderWithRouter(<MissionSignatoryProfileView content={content} />);
     expect(screen.getByText('Disclaimer Title')).toBeInTheDocument();
     expect(
-      screen.getByText((content) => content.includes('This is a disclaimer.')),
+      screen.getByText((text) => text.includes('This is a disclaimer.')),
     ).toBeInTheDocument();
   });
 });

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Tab, Container, Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Tab, Container, Divider, Button, Icon } from 'semantic-ui-react';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import { BannerTitle, HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 import GovernanceTab from './TabSections/GovernanceTab';
 import AssessmentTab from './TabSections/AssessmentTab';
@@ -28,6 +30,9 @@ const MissionSignatoryProfileView = ({ content }) => {
     tab_labels = [],
     general_text = [{}],
   } = signatoryData;
+
+  const { Back_To_Map_Link, Country_Or_Area } = general_text?.[0] || {};
+  const backToMapPath = flattenToAppURL(content?.parent?.['@id'] || '/');
 
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -60,12 +65,18 @@ const MissionSignatoryProfileView = ({ content }) => {
           hidePublishingDate: true,
           hideDownloadButton: false,
           hideShareButton: false,
-          subtitle: general_text?.[0]?.Country_Or_Area,
+          subtitle: Country_Or_Area,
         }}
       />
 
       <div className="signatory-profile">
-        <br />
+        <Link to={backToMapPath}>
+          <Button icon inverted primary className="left labeled back-to-map">
+            <Icon className="chevron left icon" />
+            {Back_To_Map_Link || 'Back to Signatories map'}
+          </Button>
+        </Link>
+
         <Tab
           menu={{
             fluid: true,
