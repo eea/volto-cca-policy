@@ -22,7 +22,7 @@ import installASTNavigation from './ASTNavigation';
 
 // import installMKHMap from './MKHMap';
 // import installCountryMapHeatIndex from './CountryMapHeatIndex';
-// import installCountryMapProfile from './CountryMapProfile';
+import installCountryMapProfile from './CountryMapProfile';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -51,8 +51,8 @@ export default function installBlocks(config) {
     installRedirectBlock,
     installContentLinks,
     installASTNavigation,
+    installCountryMapProfile,
     // installMKHMap,
     // installCountryMapHeatIndex,
-    // installCountryMapProfile,
   )(config);
 }

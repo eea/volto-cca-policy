@@ -9,7 +9,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
@@ -25,13 +25,16 @@ import './styles.less';
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const View = (props) => {
-  const { geofeatures, projection } = props;
+  const { geofeatures, projection, ol } = props;
 
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
+  const styles = React.useMemo(
+    () => makeStyles(highlight, ol),
+    [stateHighlight],
+  );
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
@@ -161,6 +164,7 @@ const View = (props) => {
               <Layers>
                 {props.mode !== 'edit' && (
                   <Interactions
+                    ol={ol}
                     tooltipRef={tooltipRef}
                     // onFeatureClick={onFeatureClick}
                     countries_metadata={countries_metadata}
@@ -203,4 +207,5 @@ export default compose(
   withGeoJsonData,
   withResponsiveContainer('countryMapProfile'),
   withVisibilitySensor(),
+  withOpenLayers,
 )(View);
