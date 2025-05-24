@@ -1,4 +1,4 @@
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+// import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 
 // const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
 //   const context = state.context;
@@ -29,7 +29,7 @@ import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 //   context.restore();
 // };
 
-export const makeStyles = (highlight) => {
+export const makeStyles = (highlight, ol) => {
   const fill = new ol.style.Fill({ color: 'rgb(251,250,230, 0.8)' });
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',

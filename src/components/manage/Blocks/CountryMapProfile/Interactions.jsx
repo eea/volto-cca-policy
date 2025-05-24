@@ -4,7 +4,6 @@ import {
   setTooltipVisibility,
   getClosestFeatureToCoordinate,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
 export const Interactions = ({
@@ -15,6 +14,7 @@ export const Interactions = ({
   euCountryFeatures,
   setStateHighlight,
   countries_metadata,
+  ol,
 }) => {
   const map = useMapContext().map;
 
