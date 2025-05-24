@@ -31,9 +31,10 @@ const View = (props) => {
   const [stateHighlight, setStateHighlight] = React.useState();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const styles = React.useMemo(() => makeStyles(highlight, ol), [
-    stateHighlight,
-  ]);
+  const styles = React.useMemo(
+    () => makeStyles(highlight, ol),
+    [stateHighlight, ol],
+  );
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
@@ -125,7 +126,7 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames]);
+  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames, ol]);
 
   const baseUrl = props.path || props.location?.pathname || '';
 
