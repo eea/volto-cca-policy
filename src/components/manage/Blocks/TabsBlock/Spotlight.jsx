@@ -54,6 +54,7 @@ export const AssetTab = ({ props, tabIndex, tabTitle }) => {
 
       {assetType === 'image' && imageObject && (
         <Image
+          loading="lazy"
           src={
             isInternalURL(imageObject['@id'])
               ? `${flattenToAppURL(imageObject['@id'])}/${
