@@ -127,3 +127,5 @@ export const extractPlanNameAndURL = (text) => {
     url,
   };
 };
+
+export const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;

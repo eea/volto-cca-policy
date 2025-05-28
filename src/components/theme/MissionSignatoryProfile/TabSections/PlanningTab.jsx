@@ -5,11 +5,11 @@ import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
   formatTextToHTML,
   extractPlanNameAndURL,
+  isEmpty,
 } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
+import NoDataReported from '../NoDataReported';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
-
-const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
 
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
@@ -94,11 +94,7 @@ const PlanningTab = ({ result, general_text }) => {
     isEmpty(planning_climate_action);
 
   if (NoResults) {
-    return (
-      <Tab.Pane>
-        <p>{No_Data_Reported_Label}</p>
-      </Tab.Pane>
-    );
+    return <NoDataReported label={No_Data_Reported_Label} />;
   }
 
   return (
