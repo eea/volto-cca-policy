@@ -1,6 +1,4 @@
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
-
-export function getFeatures(cases) {
+export function getFeatures(cases, ol) {
   const Feature = ol.ol.Feature;
 
   return cases.map((c, index) => {
@@ -47,25 +45,38 @@ export function filterCases(cases, activeFilters) {
       impacts: false,
     };
 
-    activeFilters.sectors.forEach((filter) => {
-      if (_case.properties.sectors.includes(',' + filter + ','))
-        flag.sectors = true;
-    });
+    // activeFilters.sectors.forEach((filter) => {
+    //   if (_case.properties.sectors.includes(',' + filter + ','))
+    //     flag.sectors = true;
+    // });
+    flag.sectors = activeFilters.sectors.every((sub) =>
+      _case.properties.sectors.includes(sub),
+    );
 
-    activeFilters.elements.forEach((filter) => {
-      if (_case.properties.elements.includes(',' + filter + ','))
-        flag.elements = true;
-    });
+    // ADAPTATION APPROACHES
+    // activeFilters.elements.forEach((filter) => {
+    //   if (_case.properties.elements.includes(',' + filter + ','))
+    //     flag.elements = true;
+    // });
+    flag.elements = activeFilters.elements.every((sub) =>
+      _case.properties.elements.includes(sub),
+    );
 
-    activeFilters.impacts.forEach((filter) => {
-      if (_case.properties.impacts.includes(',' + filter + ','))
-        flag.impacts = true;
-    });
+    // activeFilters.impacts.forEach((filter) => {
+    //   if (_case.properties.impacts.includes(',' + filter + ','))
+    //     flag.impacts = true;
+    // });
+    flag.impacts = activeFilters.impacts.every((sub) =>
+      _case.properties.impacts.includes(sub),
+    );
 
-    activeFilters.measures.forEach((filter) => {
-      if (_case.properties.ktms.includes(',' + filter + ','))
-        flag.measures = true;
-    });
+    // activeFilters.measures.forEach((filter) => {
+    //   if (_case.properties.ktms.includes(',' + filter + ','))
+    //     flag.measures = true;
+    // });
+    flag.measures = activeFilters.measures.every((sub) =>
+      _case.properties.ktms.includes(sub),
+    );
 
     return (activeFilters.sectors.length ? flag.sectors : true) &&
       (activeFilters.elements.length ? flag.elements : true) &&

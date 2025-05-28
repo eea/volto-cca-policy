@@ -4,8 +4,8 @@ import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import { useHistory } from 'react-router-dom';
 
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import {
   euCountryNames,
   tooltipStyle,
@@ -24,10 +24,10 @@ import './styles.less';
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const CountryMapObservatoryView = (props) => {
-  const { geofeatures, projection } = props;
+  const { geofeatures, projection, ol } = props;
 
   const history = useHistory();
-  const styles = React.useMemo(makeStyles, []);
+  const styles = React.useMemo(() => makeStyles(ol), [ol]);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
@@ -75,7 +75,7 @@ const CountryMapObservatoryView = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures]);
+  }, [geofeatures, ol]);
 
   const baseUrl = getBaseUrl(props);
 
@@ -131,4 +131,5 @@ export default compose(
   withGeoJsonData,
   withResponsiveContainer('countryMapObservatory'),
   withVisibilitySensor(),
+  withOpenLayers,
 )(CountryMapObservatoryView);

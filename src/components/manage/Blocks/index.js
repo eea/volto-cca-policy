@@ -1,6 +1,5 @@
 import { compose } from 'redux';
 
-// import installMKHMap from './MKHMap';
 import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
 import installSearchAceContent from './SearchAceContent';
@@ -8,8 +7,6 @@ import installRelevantAceContent from './RelevantAceContent';
 import installFilterAceContent from './FilterAceContent';
 import installTransRegionSelect from './TransRegionSelect';
 import installCountryMapObservatory from './CountryMapObservatory';
-import installCountryMapHeatIndex from './CountryMapHeatIndex';
-import installCountryMapProfile from './CountryMapProfile';
 import installCountryProfileDetail from './CountryProfileDetail';
 import installListing from './Listing';
 import installRAST from './RASTBlock';
@@ -22,6 +19,10 @@ import installTabsBlock from './TabsBlock';
 import installRedirectBlock from './RedirectBlock';
 import installContentLinks from './ContentLinks';
 import installASTNavigation from './ASTNavigation';
+
+// import installMKHMap from './MKHMap';
+// import installCountryMapHeatIndex from './CountryMapHeatIndex';
+import installCountryMapProfile from './CountryMapProfile';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -36,12 +37,9 @@ export default function installBlocks(config) {
     installC3SIndicatorsOverviewBlock,
     installC3SIndicatorsListingBlock,
     installC3SIndicatorsGlossaryBlock,
-    // installMKHMap,
     installECDEIndicatorsBlock,
     installCaseStudyExplorerBlock,
     installCountryMapObservatory,
-    installCountryMapHeatIndex,
-    installCountryMapProfile,
     installCountryProfileDetail,
     installSearchAceContent,
     installRelevantAceContent,
@@ -53,5 +51,8 @@ export default function installBlocks(config) {
     installRedirectBlock,
     installContentLinks,
     installASTNavigation,
+    installCountryMapProfile,
+    // installMKHMap,
+    // installCountryMapHeatIndex,
   )(config);
 }

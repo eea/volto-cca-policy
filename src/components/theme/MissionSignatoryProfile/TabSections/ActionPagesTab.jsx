@@ -1,12 +1,16 @@
-import React from 'react';
 import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
+import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
+
+const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
 
 const ActionsTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
-  const hasSectors = !!action?.Sectors;
-  const hasBenefits = !!action?.Co_Benefits;
+  const hasSectors = action?.Sectors.length > 0;
+  const hasBenefits = action?.Co_Benefits.length > 0;
+
   return (
     <>
       <Grid columns="12">
@@ -49,47 +53,60 @@ const ActionsTabContent = ({ action }) => {
       {action.Funding_Sources && (
         <>
           <br />
-          <p>
+          <div className="funding-sources">
             <span>{action.Funding_Sources_Label} </span>
-            <strong>{action.Funding_Sources}</strong>
-          </p>
+            <strong>
+              <HTMLField
+                value={{ data: formatTextToHTML(action.Funding_Sources) }}
+              />
+            </strong>
+          </div>
         </>
       )}
     </>
   );
 };
 
-const ActionPagesTab = ({ result }) => {
-  const { Title, Abstract, Abstract_Line } = result.action_text?.[0] || [];
-  const actions = result.actions || [];
+const ActionPagesTab = ({ result, general_text }) => {
+  const { action_text, actions } = result || {};
+  const { No_Data_Reported_Label } = general_text || {};
+  const { Title, Abstract, Abstract_Line } = action_text?.[0] || {};
 
-  const sortedActions = [...actions].sort((a, b) => {
-    const aNum = parseInt(a.Action_Id.replace(/\D/g, ''), 10);
-    const bNum = parseInt(b.Action_Id.replace(/\D/g, ''), 10);
-    return aNum - bNum;
-  });
+  const sortedActions = [...(actions || [])].sort((a, b) => a.Order - b.Order);
+
+  const NoResults = isEmpty(action_text) && isEmpty(actions);
+
+  if (NoResults) {
+    return (
+      <Tab.Pane>
+        <p>{No_Data_Reported_Label}</p>
+      </Tab.Pane>
+    );
+  }
 
   return (
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
-      {Abstract && <p>{Abstract}</p>}
-      {Abstract_Line && <Callout>{Abstract_Line}</Callout>}
+      {Abstract && <HTMLField value={{ data: formatTextToHTML(Abstract) }} />}
+      {Abstract_Line && (
+        <Callout>
+          <HTMLField value={{ data: formatTextToHTML(Abstract_Line) }} />
+        </Callout>
+      )}
 
-      <br />
-
-      {sortedActions.map((action, index) => {
+      {sortedActions?.map((action, index) => {
         return (
           <div key={index} className="section-wrapper">
             <h5 className="section-title">
-              <span className="section-number">{action.Order}. </span>
-              <span>{action?.Action}</span>
+              <span className="section-number">{action?.Order}. </span>
+              <HTMLField value={{ data: formatTextToHTML(action?.Action) }} />
             </h5>
 
             <AccordionList
-              variation="tertiary"
+              variation="secondary"
               accordions={[
                 {
-                  title: action?.More_Details_Label || 'More details',
+                  title: action?.More_Details_Label,
                   content: <ActionsTabContent action={action} />,
                 },
               ]}

@@ -63,7 +63,6 @@ cca_build_runtime_mappings['op_cluster'] = {
 
 export default function installMainSearch(config) {
   const envConfig = ccaConfig;
-
   const pjson = require('@eeacms/volto-cca-policy/../package.json');
 
   envConfig.app_name = pjson.name;
@@ -221,7 +220,17 @@ export default function installMainSearch(config) {
     config.searchui.ccaSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();
   }
+  let fieldsMatchAll = [
+    'cca_climate_impacts.keyword',
+    'cca_adaptation_sectors.keyword',
+    'cca_adaptation_elements.keyword',
+    'cca_key_type_measure.keyword',
+  ];
+  config.searchui.ccaSearch.facets.forEach((facet) => {
+    if (fieldsMatchAll.includes(facet.field)) {
+      facet.filterType = 'all';
+    }
+  });
 
-  // console.log(config);
   return config;
 }

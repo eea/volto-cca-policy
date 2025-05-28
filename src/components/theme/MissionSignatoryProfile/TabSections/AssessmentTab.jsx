@@ -1,9 +1,12 @@
-import React from 'react';
 import { Tab, Image, Segment, Item } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
+import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
+
+const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
 
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
@@ -38,13 +41,13 @@ const AssessmentAccordionContent = ({ result }) => {
 
       <h5>{result.Further_Details_Label}</h5>
       <Segment className="border">
-        <p>{result.Please_Explain}</p>
+        <HTMLField value={{ data: formatTextToHTML(result.Please_Explain) }} />
       </Segment>
     </>
   );
 };
 
-const AssessmentTab = ({ result }) => {
+const AssessmentTab = ({ result, general_text }) => {
   const {
     Title,
     Subheading,
@@ -54,18 +57,36 @@ const AssessmentTab = ({ result }) => {
     Attachments,
     Hazards_Title,
     Hazards_Abstract,
-  } = result.assessment_text?.[0] || [];
+  } = result.assessment_text?.[0] || {};
   const assessment_risks = result.assessment_risks || [];
-  const assessment_sectors = result.assessment_sectors || [];
-
+  const assessment_hazards_sectors = result.assessment_hazards_sectors || [];
+  const { No_Data_Reported_Label } = general_text || {};
   // const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const NoResults =
+    isEmpty(result.assessment_text) &&
+    isEmpty(result.assessment_factors) &&
+    isEmpty(result.assessment_risks) &&
+    isEmpty(result.assessment_hazards_sectors);
+
+  if (NoResults) {
+    return (
+      <Tab.Pane>
+        <p>{No_Data_Reported_Label}</p>
+      </Tab.Pane>
+    );
+  }
 
   return (
     <Tab.Pane>
       {Title && <h2>{Title}</h2>}
-      {Subheading && <Callout>{Subheading}</Callout>}
+      {Subheading && (
+        <Callout>
+          <HTMLField value={{ data: formatTextToHTML(Subheading) }} />
+        </Callout>
+      )}
 
-      {Abstract && <p>{Abstract}</p>}
+      {Abstract && <HTMLField value={{ data: formatTextToHTML(Abstract) }} />}
 
       <div className="tab-section-wrapper assessment">
         {Cra_Title && <h3>{Cra_Title}</h3>}
@@ -99,14 +120,16 @@ const AssessmentTab = ({ result }) => {
 
       {Hazards_Title && <h3>{Hazards_Title}</h3>}
 
-      {Hazards_Abstract && <p>{Hazards_Abstract}</p>}
+      {Hazards_Abstract && (
+        <HTMLField value={{ data: formatTextToHTML(Hazards_Abstract) }} />
+      )}
 
       <br />
 
-      {assessment_sectors && (
+      {assessment_hazards_sectors && (
         <AccordionList
-          accordions={assessment_sectors.map((category) => ({
-            title: category.Category_Name,
+          accordions={assessment_hazards_sectors.map((category) => ({
+            title: category.Hazard,
             content: (
               <ul>
                 {category.Sectors.map((sector, idx) => (
