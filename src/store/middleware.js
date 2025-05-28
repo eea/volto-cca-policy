@@ -16,6 +16,13 @@ export const langRedirection = ({ dispatch, getState }) => (next) => (
       const urlParams = new URLSearchParams(queryString);
       const hasLanguageQueryParam = urlParams.has('set_language');
 
+      // sometimes there's Links where the target has moved
+      const nonApiPathname = pathname.replaceAll('++api++', '');
+      if (nonApiPathname !== pathname) {
+        action.payload.location.pathname = nonApiPathname;
+        window.history.replaceState(window.history.state, '', nonApiPathname);
+      }
+
       if (
         locale !== 'en' &&
         !isSearchPage &&
