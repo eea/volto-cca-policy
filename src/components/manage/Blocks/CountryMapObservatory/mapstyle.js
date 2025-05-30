@@ -1,14 +1,16 @@
-const flagRenderer = ({ stroke, fill, ol }) => (pixelCoordinates, state) => {
-  const context = state.context;
-  const geometry = state.geometry.clone();
-  geometry.setCoordinates(pixelCoordinates);
-  const extent = geometry.getExtent();
-  const width = ol.extent.getWidth(extent);
-  const height = ol.extent.getHeight(extent);
-  const flag = state.feature.get('flag');
-  if (!flag || height < 1 || width < 1) {
-    return;
-  }
+const flagRenderer =
+  ({ stroke, fill, ol }) =>
+  (pixelCoordinates, state) => {
+    const context = state.context;
+    const geometry = state.geometry.clone();
+    geometry.setCoordinates(pixelCoordinates);
+    const extent = geometry.getExtent();
+    const width = ol.extent.getWidth(extent);
+    const height = ol.extent.getHeight(extent);
+    const flag = state.feature.get('flag');
+    if (!flag || height < 1 || width < 1) {
+      return;
+    }
 
     // Stitch out country shape from the blue canvas
     context.save();
