@@ -38,7 +38,7 @@ exports[`renders an event view component with all props 1`] = `
           >
             <h5>
               A background document for the event is available
-
+               
             </h5>
             <div
               className="ui list documents-list"
@@ -78,7 +78,7 @@ exports[`renders an event view component with all props 1`] = `
           </h2>
           <p>
             If you have any further questions you can contact
-
+             
             <a
               href="mailto:test@example.com"
             >
@@ -107,7 +107,7 @@ exports[`renders an event view component with all props 1`] = `
                   Jun 23, 2019
                 </span>
                 <span>
-
+                   
                 </span>
                 <span
                   className="start-time"
@@ -125,7 +125,7 @@ exports[`renders an event view component with all props 1`] = `
                   Jun 24, 2019
                 </span>
                 <span>
-
+                   
                 </span>
                 <span
                   className="end-time"
@@ -226,7 +226,7 @@ exports[`renders an event view component with only required props 1`] = `
           >
             <h5>
               A background document for the event is available
-
+               
             </h5>
             <div
               className="ui list documents-list"
@@ -368,7 +368,7 @@ exports[`renders an event view component without links to api in the text 1`] = 
           >
             <h5>
               A background document for the event is available
-
+               
             </h5>
             <div
               className="ui list documents-list"
