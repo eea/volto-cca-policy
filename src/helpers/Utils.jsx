@@ -424,7 +424,7 @@ export const WebDetails = (props) => {
         <FormattedMessage id="Web" defaultMessage="Web" />
       </h4>
       <p>
-        <a href={eventUrl} target="_blank">
+        <a href={eventUrl} target="_blank" rel="noopener">
           <FormattedMessage
             id="Visit external website"
             defaultMessage="Visit external website"

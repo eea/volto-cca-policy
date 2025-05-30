@@ -562,9 +562,8 @@ const applyConfig = (config) => {
     // 'content',
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
