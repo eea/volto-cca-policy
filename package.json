@@ -46,7 +46,7 @@
     "react-visibility-sensor": "5.1.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-export-default-from": "7.24.7"
+    "@babel/plugin-proposal-export-default-from": "7.24.7",
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
