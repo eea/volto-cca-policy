@@ -1,3 +1,6 @@
+import { Fragment } from 'react';
+import { Popup, Segment } from 'semantic-ui-react';
+import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
   ACE_COUNTRIES,
   BIOREGIONS,
@@ -7,12 +10,55 @@ import {
   VIDEO,
   GUIDANCE,
   INDICATOR,
-  PUBICATION_REPORT,
+  PUBLICATION_REPORT,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
-import { Fragment } from 'react';
-import { Popup, Segment } from 'semantic-ui-react';
-import { isObservatoryURL } from '@eeacms/volto-cca-policy/helpers/Utils';
-import { useLocation } from 'react-router-dom';
+import { MetadataItemList } from '@eeacms/volto-cca-policy/helpers';
+import { UniversalLink } from '@plone/volto/components';
+
+const messages = defineMessages({
+  default_info_tooltip: {
+    id:
+      'The date refers to the moment in which the item has been prepared ' +
+      'or updated by contributing experts to be submitted for the publication ' +
+      'in Climate ADAPT',
+    defaultMessage:
+      'The date refers to the moment in which the item has been prepared ' +
+      'or updated by contributing experts to be submitted for the publication ' +
+      'in Climate ADAPT',
+  },
+  release_info_tooltip: {
+    id: 'The date refers to the date of release of the video',
+    defaultMessage: 'The date refers to the date of release of the video',
+  },
+  publication_info_tooltip: {
+    id: 'The date refers to the latest date of publication of the item',
+    defaultMessage:
+      'The date refers to the latest date of publication of the item',
+  },
+  release_date: {
+    id: 'Date of release:',
+    defaultMessage: 'Date of release:',
+  },
+  publication_date: {
+    id: 'Date of publication:',
+    defaultMessage: 'Date of publication:',
+  },
+  creation_date: {
+    id: 'Date of creation:',
+    defaultMessage: 'Date of creation:',
+  },
+  'Macro-Transnational region:': {
+    id: 'Macro-Transnational region:',
+    defaultMessage: 'Macro-Transnational region:',
+  },
+  'Biogeographical regions:': {
+    id: 'Biogeographical regions:',
+    defaultMessage: 'Biogeographical regions:',
+  },
+  'Countries:': { id: 'Countries:', defaultMessage: 'Countries:' },
+  'Sub Nationals:': { id: 'Sub Nationals:', defaultMessage: 'Sub Nationals:' },
+  'City:': { id: 'City:', defaultMessage: 'City:' },
+});
 
 function renderElement(value) {
   return [BIOREGIONS[value]];
@@ -190,15 +236,28 @@ function GeoChar(props) {
   const { content } = props;
   const { spatial_values, spatial_layer, geochars } = content;
   const j = JSON.parse(geochars);
+  const intl = useIntl();
 
   if (j === null) {
     if (spatial_layer) {
       return (
         <div className="geochar">
           <p>{spatial_layer}</p>
-          <h5>Countries:</h5>
+          <h5>
+            <FormattedMessage id="Countries:" defaultMessage="Countries:" />
+          </h5>
           {spatial_values && spatial_values.length > 0 && (
-            <p>{spatial_values.map((item) => item.token).join(', ')}</p>
+            <p>
+              {spatial_values
+                .map((item) => item.token)
+                .map((token) =>
+                  intl.formatMessage({
+                    id: token,
+                    defaultMessage: token,
+                  }),
+                )
+                .join(', ')}
+            </p>
           )}
         </div>
       );
@@ -217,8 +276,19 @@ function GeoChar(props) {
         (section, index) =>
           section.value && (
             <Fragment key={index}>
-              {section.title && <h5>{section.title}</h5>}
-              <p>{section.value.join(', ')}</p>
+              {section.title && (
+                <h5>{intl.formatMessage(messages[section.title])}</h5>
+              )}
+              <p>
+                {section.value
+                  .map((countryName) =>
+                    intl.formatMessage({
+                      id: countryName,
+                      defaultMessage: countryName,
+                    }),
+                  )
+                  .join(', ')}
+              </p>
             </Fragment>
           ),
       )}
@@ -226,25 +296,23 @@ function GeoChar(props) {
   );
 }
 
-function PublicationDateInfo(props) {
-  const { value, portaltype, title } = props;
-  let tooltipText =
-    'The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT';
-
-  if (portaltype === VIDEO) {
-    tooltipText = 'The date refers to the date of release of the video';
-  }
-  if (
-    portaltype === GUIDANCE ||
-    portaltype === INDICATOR ||
-    portaltype === PUBICATION_REPORT
-  ) {
-    tooltipText =
-      'The date refers to the latest date of publication of the item';
-  }
-
+function PublicationDateInfo({ value, portaltype, title }) {
+  const intl = useIntl();
   const publicationYear = new Date(value).getFullYear();
-  return publicationYear > 1970 ? (
+
+  const tooltipMessages = {
+    [VIDEO]: intl.formatMessage(messages.release_info_tooltip),
+    [GUIDANCE]: intl.formatMessage(messages.publication_info_tooltip),
+    [INDICATOR]: intl.formatMessage(messages.publication_info_tooltip),
+    [PUBLICATION_REPORT]: intl.formatMessage(messages.publication_info_tooltip),
+    default: intl.formatMessage(messages.default_info_tooltip),
+  };
+
+  const tooltipText = tooltipMessages[portaltype] || tooltipMessages.default;
+
+  if (publicationYear <= 1970) return null;
+
+  return (
     <>
       <h5>{title}</h5>
       <p>
@@ -255,30 +323,11 @@ function PublicationDateInfo(props) {
         />
       </p>
     </>
-  ) : null;
-}
-
-function ItemsList(props) {
-  let { value, join } = props;
-  if (join === undefined) {
-    join = ', ';
-  }
-  if (join === '<br />') {
-    return (
-      <span>
-        {value.map((item, index) => (
-          <Fragment key={index}>
-            <span>{item.title}</span>
-            <br />
-          </Fragment>
-        ))}
-      </span>
-    );
-  }
-  return <span>{value.map((item) => item.title).join(join)}</span>;
+  );
 }
 
 function ContentMetadata(props) {
+  const intl = useIntl();
   const { content } = props;
   const {
     sectors,
@@ -294,123 +343,177 @@ function ContentMetadata(props) {
     key_type_measures,
     funding_programme,
   } = content;
+  // const related_case_studies = props.hasAttribute('related_case_studies')
+  //   ? props['related_case_studies']
+  //   : [];
+  const related_case_studies = props['related_case_studies'];
+
   const type = content['@type'];
-  const location = useLocation();
-  const isObservatoryItem = isObservatoryURL(location.pathname);
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
-  let date_title;
-  if (type === VIDEO) {
-    date_title = 'Date of release:';
-  } else if (
-    type === PUBICATION_REPORT ||
-    type === INDICATOR ||
-    type === GUIDANCE
-  ) {
-    date_title = 'Date of publication:';
-  } else {
-    date_title = 'Date of creation:';
-  }
+  const dateTitles = {
+    [VIDEO]: intl.formatMessage(messages.release_date),
+    [PUBLICATION_REPORT]: intl.formatMessage(messages.publication_date),
+    [INDICATOR]: intl.formatMessage(messages.publication_date),
+    [GUIDANCE]: intl.formatMessage(messages.publication_date),
+    default: intl.formatMessage(messages.creation_date),
+  };
+
+  const dateTitle = dateTitles[type] || dateTitles.default;
 
   return (
-    <Segment>
-      <div className="content-metadata">
+    <>
+      <Segment className="content-metadata">
         <PublicationDateInfo
-          title={date_title}
+          title={dateTitle}
           value={content?.publication_date}
-          portaltype={content?.portal_type}
+          portaltype={type}
         />
 
-        {isObservatoryItem && (
+        {related_case_studies?.length > 0 && (
           <>
-            {health_impacts && health_impacts?.length > 0 && (
-              <>
-                <h5>Health impact:</h5>
-                <ItemsList value={health_impacts} />
-              </>
-            )}
+            <h5>
+              <FormattedMessage
+                id="Case studies related to this option:"
+                defaultMessage="Case studies related to this option:"
+              />
+            </h5>
+            <ul className="related-case-studies">
+              {related_case_studies.map((item, index) => (
+                <li key={index}>
+                  <UniversalLink key={index} href={item.url}>
+                    {item.title}
+                  </UniversalLink>
+                </li>
+              ))}
+            </ul>
           </>
         )}
 
         {keywords && keywords?.length > 0 && (
           <>
-            <h5>Keywords:</h5>
+            <h5>
+              <FormattedMessage id="Keywords:" defaultMessage="Keywords:" />
+            </h5>
             <span>{keywords?.sort().join(', ')}</span>
           </>
         )}
 
         {key_type_measures && key_type_measures?.length > 0 && (
           <>
-            <h5>Key Type Measures:</h5>
-            <ItemsList value={key_type_measures} />
+            <h5>
+              <FormattedMessage
+                id="Key Type Measures:"
+                defaultMessage="Key Type Measures:"
+              />
+            </h5>
+            <MetadataItemList value={key_type_measures} />
           </>
         )}
 
         {ipcc_category && ipcc_category?.length > 0 && (
           <>
-            <h5>IPCC adaptation options categories:</h5>
-            <ItemsList value={ipcc_category} />
+            <h5>
+              <FormattedMessage
+                id="IPCC adaptation options categories:"
+                defaultMessage="IPCC adaptation options categories:"
+              />
+            </h5>
+            <MetadataItemList value={ipcc_category} />
           </>
         )}
 
-        {!isObservatoryItem && (
+        {climate_impacts && climate_impacts?.length > 0 && (
           <>
-            {climate_impacts && climate_impacts?.length > 0 && (
-              <>
-                <h5>Climate impacts:</h5>
-                <ItemsList value={climate_impacts} />
-              </>
-            )}
+            <h5>
+              <FormattedMessage
+                id="Climate impacts:"
+                defaultMessage="Climate impacts:"
+              />
+            </h5>
+            <MetadataItemList value={climate_impacts} />
+          </>
+        )}
 
-            {elements && elements?.length > 0 && (
-              <>
-                <h5> Adaptation elements:</h5>
-                <ItemsList value={elements} />
-              </>
-            )}
+        {elements && elements?.length > 0 && (
+          <>
+            <h5>
+              <FormattedMessage
+                id="Adaptation Approaches:"
+                defaultMessage="Adaptation Approaches:"
+              />
+            </h5>
+            <MetadataItemList value={elements} />
+          </>
+        )}
 
-            {sectors && sectors?.length > 0 && (
-              <>
-                <h5>Sectors:</h5>
-                <ItemsList value={sectors} />
-              </>
-            )}
+        {sectors && sectors?.length > 0 && (
+          <>
+            <h5>
+              <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
+            </h5>
+            <MetadataItemList value={sectors} />
           </>
         )}
 
         {governance_level && governance_level?.length > 0 && (
           <>
-            <h5>Governance level:</h5>
-            <ItemsList value={governance_level} join="<br />" />
+            <h5>
+              <FormattedMessage
+                id="Governance level:"
+                defaultMessage="Governance level:"
+              />
+            </h5>
+            <MetadataItemList value={governance_level} join_type="<br />" />
           </>
         )}
 
-        {!isObservatoryItem && (
+        {funding_programme && funding_programme?.title?.length > 0 && (
           <>
-            {funding_programme && funding_programme?.title?.length > 0 && (
-              <>
-                <h5>Funding Programme:</h5>
-                <span>{funding_programme.title}</span>
-              </>
-            )}
+            <h5>
+              <FormattedMessage
+                id="Funding Programme:"
+                defaultMessage="Funding Programme:"
+              />
+            </h5>
+            <span>{funding_programme.title}</span>
           </>
         )}
 
         {duration && (
           <>
-            <h5>Duration:</h5>
+            <h5>
+              <FormattedMessage id="Duration:" defaultMessage="Duration:" />
+            </h5>
             <span>{duration}</span>
           </>
         )}
 
         {hasGeoChars && (
           <>
-            <h5>Geographic characterisation:</h5>
+            <h5>
+              <FormattedMessage
+                id="Geographic characterisation:"
+                defaultMessage="Geographic characterisation:"
+              />
+            </h5>
             <GeoChar {...props} />
           </>
         )}
-      </div>
-    </Segment>
+      </Segment>
+
+      {health_impacts && health_impacts?.length > 0 && (
+        <Segment className="content-metadata">
+          <h5>
+            <FormattedMessage
+              id="Health impact:"
+              defaultMessage="Health impact:"
+            />
+          </h5>
+          <MetadataItemList value={health_impacts} />
+        </Segment>
+      )}
+    </>
   );
 }
 

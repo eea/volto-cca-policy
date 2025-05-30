@@ -4,8 +4,8 @@ import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import { useHistory } from 'react-router-dom';
 
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import {
   euCountryNames,
   tooltipStyle,
@@ -24,10 +24,10 @@ import './styles.less';
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const CountryMapObservatoryView = (props) => {
-  const { geofeatures, projection } = props;
+  const { geofeatures, projection, ol } = props;
 
   const history = useHistory();
-  const styles = React.useMemo(makeStyles, []);
+  const styles = React.useMemo(() => makeStyles(ol), [ol]);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [overlaySource, setOverlaySource] = React.useState();
@@ -37,12 +37,23 @@ const CountryMapObservatoryView = (props) => {
     setOverlaySource(new ol.source.Vector());
 
     const features = new ol.format.GeoJSON().readFeatures(geofeatures);
-    const filtered = features.filter((f) =>
-      euCountryNames.includes(f.get('na')),
-    );
+    const updateEuCountryNames = euCountryNames
+      .map((countryName) => {
+        if ('Turkey' === countryName) {
+          countryName = 'Türkiye';
+        }
+        return countryName;
+      })
+      .filter((countryName) => countryName !== 'United Kingdom');
 
+    const filtered = features.filter((f) =>
+      updateEuCountryNames.includes(f.get('na')),
+    );
     filtered.forEach((feature) => {
       const img = new Image();
+      if ('Türkiye' === feature.values_.na) {
+        feature.values_.na = 'Turkey';
+      }
       img.onload = function () {
         feature.set('flag', img);
       };
@@ -64,18 +75,20 @@ const CountryMapObservatoryView = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures]);
+  }, [geofeatures, ol]);
 
   const baseUrl = getBaseUrl(props);
 
   const onFeatureClick = React.useCallback(
     (feature) => {
-      const country = feature.get('na');
+      let country = feature.get('na');
+      if ('Türkiye' === country) {
+        country = 'Turkey';
+      }
       history.push(`${baseUrl}/${country.toLowerCase()}`);
     },
     [baseUrl, history],
   );
-  // console.log(geofeatures, projection, euCountriesSource, overlaySource);
 
   return tileWMSSources ? (
     <Map
@@ -118,4 +131,5 @@ export default compose(
   withGeoJsonData,
   withResponsiveContainer('countryMapObservatory'),
   withVisibilitySensor(),
+  withOpenLayers,
 )(CountryMapObservatoryView);

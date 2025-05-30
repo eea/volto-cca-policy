@@ -6,6 +6,7 @@ import { getBaseUrl } from '@plone/volto/helpers';
 import { Icon, UniversalLink } from '@plone/volto/components';
 import { Icon as UiIcon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
+import { useIntl } from 'react-intl';
 
 import qs from 'query-string';
 import './styles.less';
@@ -23,26 +24,30 @@ const useStats = (path, id, data) => {
 };
 
 export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
+  const intl = useIntl();
+  const label = intl.formatMessage({ id: name });
   return (
-    <div className="tab-icon" title={name}>
+    <div className="tab-icon" title={label}>
       <div className="tab-icon-wrapper">
         {!source && name}
-        {!!source && <Icon title={name} name={source} size="50" />}
+        {!!source && <Icon title={label} name={source} size="50" />}
         <span className="count">{value}</span>
       </div>
-      {!!showLabel && <span className="label">{name}</span>}
+      {!!showLabel && <span className="label">{label}</span>}
     </div>
   );
 };
 
 export const RemixIcon = ({ name, value, source, showLabel = false }) => {
+  const intl = useIntl();
+  const label = intl.formatMessage({ id: name, defaultMessage: name });
   return (
-    <div className="tab-icon semantic-icon" title={name}>
+    <div className="tab-icon semantic-icon" title={label}>
       <div className="tab-icon-wrapper">
-        {!!source && <UiIcon title={name} name={source} />}
+        {!!source && <UiIcon title={label} name={source} />}
         <span className="count">{value}</span>
       </div>
-      {!!showLabel && <span className="label">{name}</span>}
+      {!!showLabel && <span className="label">{label}</span>}
     </div>
   );
 };
@@ -61,13 +66,29 @@ const makeSearchBlockQuery = ({ base, query, field, value }) => {
   return `${base}?${params}`;
 };
 
-const makeEEASearchQuery = ({ base, field, value }) => {
+const makeEEASearchQuery = ({ base, field, value, extraFilters }) => {
   // TODO: don't hardcode the language
-  const rest =
-    'filters[1][field]=issued.date&filters[1][values][0]=Last 5 years&filters[1][type]=any&filters[2][field]=language&filters[2][values][0]=en&filters[2][type]=any&sort-field=issued.date&sort-direction=desc';
-  const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${value}`;
+  const allFields = [
+    // ['issued.date', 'Last 5 years'],
+    ['language', 'en'],
+    [field, value],
+    ...(extraFilters?.map(({ id, value }) => [id, value]) || []),
+  ];
 
-  return `${base}?size=n_10_n&${filter}&${rest}`;
+  const rest = '&sort-field=issued.date&sort-direction=desc';
+
+  // See FilterAceContentView
+  const filters = allFields
+    .map(([name, anyValue], index) =>
+      [
+        `filters[${index}][field]=${name}`,
+        `filters[${index}][type]=any`,
+        `filters[${index}][values][0]=${anyValue}`,
+      ].join('&'),
+    )
+    .join('&');
+
+  return `${base}?size=n_10_n&${filters}&${rest}`;
 };
 
 const urlBuilders = {
@@ -77,47 +98,67 @@ const urlBuilders = {
 
 const nop = () => '';
 
+function remapItemTypeValue(val) {
+  const list = {
+    'Publication and report': 'Publication reference',
+    'Video and podcast': 'Video',
+  };
+  if (val in list) {
+    return list[val];
+  }
+  return val;
+}
+
 export default function CollectionStatsView(props) {
   const { id, data = {}, pathname = props.path } = props;
   const field = data.aggregateField?.value;
   const { queryParameterStyle = 'SearchBlock', query = {}, showLabel } = data;
   const base = getBase(props);
   let stats = useStats(getBaseUrl(pathname), id, data);
+  const intl = useIntl();
 
   const groupDefinition =
-    config.blocks.blocksConfig.collectionStats.groups[field] || {};
+    config.blocks.blocksConfig.collectionStats?.groups?.[field] || {};
   const { cleanup, icons = {}, iconComponent: IconComponent } = groupDefinition;
 
   if (cleanup) stats = cleanup(stats);
 
   const keys = Object.keys(stats);
   const urlHandler = urlBuilders[queryParameterStyle] || nop;
+  const extraFilters = data?.extraFilters || [];
 
   return (
     (field && keys.length > 0 && (
       <div className="collection-stats">
         {keys
           .sort((a, b) => a.localeCompare(b))
-          .map((k) => (
-            <UniversalLink
-              className="tab-item-link"
-              key={k}
-              href={urlHandler({
-                base,
-                query: query.query,
-                field: groupDefinition.searchFieldName || field,
-                value: k,
-              })}
-            >
-              <IconComponent
-                name={k}
-                value={stats[k]}
-                field={field}
-                source={icons[k]}
-                showLabel={showLabel}
-              />
-            </UniversalLink>
-          ))}
+          .map((k) => {
+            let kV = remapItemTypeValue(k);
+            return (
+              <UniversalLink
+                className="tab-item-link"
+                key={k}
+                href={urlHandler({
+                  base,
+                  query: query.query,
+                  field: groupDefinition.searchFieldName || field,
+                  value: intl.formatMessage({
+                    id: kV,
+                    defaultMessage: kV,
+                  }),
+                  extraFilters,
+                })}
+              >
+                <IconComponent
+                  name={k}
+                  value={stats[k]}
+                  field={field}
+                  source={icons[k]}
+                  showLabel={showLabel}
+                />
+              </UniversalLink>
+            );
+          })}
       </div>
     )) ||
     'no results'

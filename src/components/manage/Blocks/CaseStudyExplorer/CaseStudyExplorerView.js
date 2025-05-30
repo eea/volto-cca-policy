@@ -10,35 +10,75 @@ import { useCases } from './hooks';
 
 import './styles.less';
 
+import { useLocation } from 'react-router-dom';
+
 const cases_url = '@@case-studies-map.arcgis.json';
 
 export default function CaseStudyExplorerView(props) {
-  const cases = useCases(addAppURL(cases_url));
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const querySectorValue = searchParams.get('sectors')
+    ? searchParams.get('sectors').split(',')
+    : [];
 
+  const casesData = useCases(addAppURL(cases_url));
+  const [cases, setCases] = React.useState([]);
+
+  const [querySectors, setQuerySectors] = React.useState(querySectorValue);
   const [activeFilters, setActiveFilters] = React.useState({
-    sectors: [],
+    sectors: querySectorValue,
     impacts: [],
+    elements: [],
+    measures: [],
   });
 
   const [activeItems, setActiveItems] = React.useState(cases);
-  const [filters, setFilters] = React.useState([]);
+  const [filters, setFilters] = React.useState({
+    impacts: [],
+    elements: [],
+    sectors: [],
+    measures: {},
+  });
 
   React.useEffect(() => {
-    const _filters = getFilters(cases);
+    if (casesData.hasOwnProperty('features')) {
+      const _cases = casesData.features;
+      let _filters = filters;
+      setCases(_cases);
+      _filters.measures = casesData.filters.measures;
+      setFilters(_filters);
+    }
+  }, [casesData, filters]);
+
+  React.useEffect(() => {
+    const _filters_data = getFilters(cases);
+    let _filters = filters;
+    _filters.impacts = _filters_data.impacts;
+    _filters.sectors = _filters_data.sectors;
+    _filters.elements = _filters_data.elements;
     setFilters(_filters);
-  }, [cases, activeFilters.impacts, activeFilters.sectors, activeItems.length]);
+  }, [
+    filters,
+    cases,
+    activeFilters.impacts,
+    activeFilters.sectors,
+    activeFilters.elements,
+    activeFilters.measures,
+    activeItems.length,
+  ]);
 
   React.useEffect(() => {
     const activeItems = filterCases(cases, activeFilters);
     setActiveItems(activeItems);
   }, [activeFilters, cases]);
 
-  if (__SERVER__) return '';
+  if (__SERVER__)
+    return <div className="casestudy-explorer-map">Loading...</div>;
 
   return (
-    <div>
+    <div className="casestudy-explorer-map">
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column mobile={9} tablet={9} computer={9} className="col-left">
           {cases.length ? (
             <CaseStudyMap items={cases} activeItems={activeItems} />
           ) : null}
@@ -46,12 +86,14 @@ export default function CaseStudyExplorerView(props) {
         <Grid.Column
           mobile={3}
           tablet={3}
-          computer={2}
+          computer={3}
           className="col-left"
           id="cse-filter"
         >
           <CaseStudyFilters
             filters={filters}
+            querySectors={querySectors}
+            setQuerySectors={setQuerySectors}
             activeFilters={activeFilters}
             setActiveFilters={setActiveFilters}
           />
@@ -60,30 +102,3 @@ export default function CaseStudyExplorerView(props) {
     </div>
   );
 }
-
-// import { useDispatch } from 'react-redux'; // , useSelector
-// import { getVocabulary } from '@plone/volto/actions'; // , searchContent
-// const IPCC = 'eea.climateadapt.aceitems_ipcc_category';
-// const dispatch = useDispatch();
-// React.useEffect(() => {
-//   const action = getVocabulary({
-//     vocabNameOrURL: IPCC,
-//   });
-//   dispatch(action);
-// }, [dispatch]);
-// setMapKey(
-//   activeItems.length +
-//     '-' +
-//     activeFilters.sectors +
-//     '-' +
-//     activeFilters.impacts,
-// );
-//console.log('activeFilters filter cases', data);
-// setMapKey(
-//   activeItems.length +
-//     '-' +
-//     activeFilters.sectors +
-//     '-' +
-//     activeFilters.impacts,
-// );
-// const [mapKey, setMapKey] = React.useState('-');

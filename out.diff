@@ -1,0 +1,55 @@
+diff --git a/src/components/manage/Blocks/CaseStudyExplorer/CaseStudyExplorerView.js b/src/components/manage/Blocks/CaseStudyExplorer/CaseStudyExplorerView.js
+index f1f256d8..85d0490e 100644
+--- a/src/components/manage/Blocks/CaseStudyExplorer/CaseStudyExplorerView.js
++++ b/src/components/manage/Blocks/CaseStudyExplorer/CaseStudyExplorerView.js
+@@ -72,7 +72,8 @@ export default function CaseStudyExplorerView(props) {
+     setActiveItems(activeItems);
+   }, [activeFilters, cases]);
+ 
+-  if (__SERVER__) return '';
++  if (__SERVER__)
++    return <div className="casestudy-explorer-map">CaseStudyExplorer</div>;
+ 
+   return (
+     <div className="casestudy-explorer-map">
+diff --git a/src/components/theme/BannerTitle/BannerTitle.jsx b/src/components/theme/BannerTitle/BannerTitle.jsx
+index 386eb9e1..22f1b255 100644
+--- a/src/components/theme/BannerTitle/BannerTitle.jsx
++++ b/src/components/theme/BannerTitle/BannerTitle.jsx
+@@ -21,8 +21,10 @@ const BannerTitle = (props) => {
+     const hasHomePageClass = bodyClasses.includes('homepage');
+     setHasBodyClass(hasHomePageClass);
+   }, []);
++  const isChromeless =
++    __CLIENT__ && window?.location?.search?.indexOf('chromeless=1') > -1;
+ 
+-  return isHomePage ? null : (
++  return isHomePage || isChromeless ? null : (
+     <>
+       {!hasTitleBlock && !hasCountryFlagBlock ? (
+         <>
+diff --git a/src/customizations/volto/components/theme/View/DefaultView.jsx b/src/customizations/volto/components/theme/View/DefaultView.jsx
+index 90de6436..48ec77b6 100644
+--- a/src/customizations/volto/components/theme/View/DefaultView.jsx
++++ b/src/customizations/volto/components/theme/View/DefaultView.jsx
+@@ -85,7 +85,8 @@ const DefaultView = (props) => {
+       : 3;
+   const currentLang = useSelector((state) => state.intl.locale);
+ 
+-  // If the content is not yet loaded, then do not show anything
++  const isChromeless = location.search?.indexOf('chromeless=1') > -1;
++
+   return contentLoaded ? (
+     hasBlocksData(content) ? (
+       <>
+@@ -123,8 +124,8 @@ const DefaultView = (props) => {
+             </Grid>
+           </Container>
+         ) : (
+-          <Container id="page-document">
+-            <BannerTitle {...props} />
++          <Container id="page-document" className="here">
++            {!isChromeless && <BannerTitle {...props} />}
+             <RenderBlocks {...props} path={path} />
+           </Container>
+         )}

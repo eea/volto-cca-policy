@@ -1,0 +1,51 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.content-items {
+  margin-bottom: 1em;
+
+  .item:hover,
+  .item.active {
+    color: @primaryColor;
+  }
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+}
+
+.dropdown-view {
+  .ui.selection.dropdown:not(.multiple) {
+    display: inline-flex;
+    width: auto;
+    min-width: 180px;
+    align-items: center;
+    justify-content: space-between;
+
+    > .dropdown.icon {
+      position: relative;
+      top: 0;
+      right: -15px;
+      padding: 0;
+      font-size: 1rem;
+    }
+  }
+}
+
+.navigationList-view {
+  .item {
+    padding: 0.75rem 0 0.75rem 0.75rem !important;
+
+    &:hover {
+      color: @primaryColor;
+    }
+
+    &.active {
+      background: @primaryColor;
+      color: @white;
+    }
+  }
+}

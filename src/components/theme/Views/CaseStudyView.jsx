@@ -1,25 +1,97 @@
-import React, { Fragment } from 'react';
-import {
-  HTMLField,
-  ContentMetadata,
-  LinksList,
-  PublishedModifiedInfo,
-  DocumentsList,
-  ShareInfo,
-  BannerTitle,
-} from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Grid, Icon, Image, ListItem, List } from 'semantic-ui-react';
 import {
   ImageGallery,
   PortalMessage,
+  ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
+import {
+  BannerTitle,
+  ContentMetadata,
+  DocumentsList,
+  HTMLField,
+  LinksList,
+  PublishedModifiedInfo,
+} from '@eeacms/volto-cca-policy/helpers';
+import React, { Fragment } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import {
+  Container,
+  Divider,
+  Grid,
+  Icon,
+  Image,
+  List,
+  ListItem,
+} from 'semantic-ui-react';
 
-const PrimaryPhoto = (props) => {
-  const { content } = props;
+const messages = defineMessages({
+  References: { id: 'References', defaultMessage: 'References' },
+  Challenges: { id: 'Challenges', defaultMessage: 'Challenges' },
+  Objectives: {
+    id: 'Objectives of the adaptation measure',
+    defaultMessage: 'Objectives of the adaptation measure',
+  },
+  'Policy and legal background': {
+    id: 'Policy and legal background',
+    defaultMessage: 'Policy and legal background',
+  },
+  'Adaptation Options Implemented In This Case': {
+    id: 'Adaptation Options Implemented In This Case',
+    defaultMessage: 'Adaptation Options Implemented In This Case',
+  },
+  Solutions: { id: 'Solutions', defaultMessage: 'Solutions' },
+  'Importance and Relevance of Adaptation': {
+    id: 'Importance and Relevance of Adaptation',
+    defaultMessage: 'Importance and Relevance of Adaptation',
+  },
+  'Stakeholder participation': {
+    id: 'Stakeholder participation',
+    defaultMessage: 'Stakeholder participation',
+  },
+  'Success and Limiting Factors': {
+    id: 'Success and limiting factors',
+    defaultMessage: 'Success and limiting factors',
+  },
+  'Costs and Benefits': {
+    id: 'Costs and benefits',
+    defaultMessage: 'Costs and benefits',
+  },
+  'Policy context of the adaptation measure': {
+    id: 'Policy context of the adaptation measure',
+    defaultMessage: 'Policy context of the adaptation measure',
+  },
+  'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
+  'Implementation Time': {
+    id: 'Implementation time',
+    defaultMessage: 'Implementation time',
+  },
+  'Life Time': { id: 'Lifetime', defaultMessage: 'Lifetime' },
+  Contact: { id: 'Contact', defaultMessage: 'Contact' },
+
+  Websites: { id: 'Websites', defaultMessage: 'Websites' },
+  Source: { id: 'Source', defaultMessage: 'Source' },
+  'Case Study Description': {
+    id: 'Case Study Description',
+    defaultMessage: 'Case Study Description',
+  },
+  'Additional Details': {
+    id: 'Additional Details',
+    defaultMessage: 'Additional Details',
+  },
+  'Reference Information': {
+    id: 'Reference Information',
+    defaultMessage: 'Reference Information',
+  },
+  updating_notes: {
+    id: 'Updating notes',
+    defaultMessage: 'Updating notes',
+  },
+});
+
+const PrimaryPhoto = ({ content }) => {
   const { primary_photo, primary_photo_copyright, title } = content;
 
-  return primary_photo !== null ? (
+  return primary_photo ? (
     <div className="case-studies-review-image-wrapper">
       <Image src={primary_photo?.scales?.mini?.download} alt={title} />
       <p>{primary_photo_copyright}</p>
@@ -33,6 +105,20 @@ const dataDisplay = [
     field: 'challenges',
     section: 'challenges_anchor',
     title: 'Challenges',
+    group: 1,
+  },
+  {
+    type: 'HTMLField',
+    field: 'policy_legal_background',
+    section: 'policy_anchor',
+    title: 'Policy and legal background',
+    group: 1,
+  },
+  {
+    type: 'RelevanceItems',
+    field: 'relevance',
+    section: 'relevance_anchor',
+    title: 'Policy context of the adaptation measure',
     group: 1,
   },
   {
@@ -54,14 +140,6 @@ const dataDisplay = [
     field: 'solutions',
     section: 'solutions_anchor',
     title: 'Solutions',
-    group: 1,
-  },
-  {
-    type: 'RelevanceItems',
-    field: 'relevance',
-    section: 'relevance_anchor',
-    title: 'Importance and Relevance of Adaptation',
-    contentTitle: 'Relevance', // override the title in content section
     group: 1,
   },
   {
@@ -136,55 +214,68 @@ const groups = {
   3: 'Reference Information',
 };
 
-const findSection = (title) => {
-  const found = dataDisplay.filter((item) => item.title === title);
-  if (found.length > 0) {
-    return found[0];
-  }
-  return null;
-};
+export const findSection = (title) =>
+  dataDisplay.find((item) => item.title === title) || null;
 
-const sectionID = (title) => {
-  const found = findSection(title);
-  if (found === null) {
-    return title;
-  }
-  return found.section;
-};
+export const sectionID = (title) => findSection(title)?.section || title;
 
-const PhotoGallery = (props) => {
-  const { content } = props;
+const PhotoGallery = ({ content }) => {
   const { cca_gallery } = content;
 
+  const [open, setOpen] = React.useState(false);
+  const [slideIndex, setSlideIndex] = React.useState(0);
+
+  const handleTitleClick = () => {
+    setSlideIndex(0);
+    setOpen(true);
+  };
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
-        <div className="casetstudy-gallery">
-          <div className="gallery-title">
-            <span>Case Study illustrations</span>
+        <div className="case-study-gallery">
+          <div
+            className="gallery-title"
+            tabIndex={0}
+            role="button"
+            onClick={handleTitleClick}
+            onKeyDown={handleTitleClick}
+          >
+            <span>
+              <FormattedMessage
+                id="Case Study illustrations"
+                defaultMessage="Case Study illustrations"
+              />
+            </span>
             <span> ({cca_gallery.length}) </span>
-            <Icon name="ri-image-fill" />
+            <Icon className="ri-image-fill" />
           </div>
-          <ImageGallery items={cca_gallery} />
+          <ImageGallery
+            items={cca_gallery}
+            propOpen={open}
+            setPropOpen={setOpen}
+            propSlideIndex={slideIndex}
+            setPropSlideIndex={setSlideIndex}
+          />
         </div>
       )}
     </>
   );
 };
 
-const SectionsMenu = (props) => {
-  const { sections, title } = props;
+// Sections Menu Component
+const SectionsMenu = ({ sections, title }) => {
+  const intl = useIntl();
 
   return (
     <>
       {sections.length > 0 && (
         <div>
-          <h4>{title}</h4>
+          <h4>{intl.formatMessage(messages[title])}</h4>
           <List bulleted>
             {sections.map((data, index) => (
               <ListItem key={index}>
-                <AnchorLink href={'#' + sectionID(data.title)}>
-                  {data.title}
+                <AnchorLink href={`#${sectionID(data.title)}`}>
+                  {intl.formatMessage(messages[data.title])}
                 </AnchorLink>
               </ListItem>
             ))}
@@ -195,8 +286,9 @@ const SectionsMenu = (props) => {
   );
 };
 
-const SectionContent = (props) => {
-  const { sectionData, content } = props;
+const SectionContent = ({ sectionData, content }) => {
+  const intl = useIntl();
+  const sectionDataTitle = sectionData.contentTitle || sectionData.title;
 
   const adaptationOptionsLinks = () => {
     let list = [];
@@ -207,7 +299,6 @@ const SectionContent = (props) => {
   };
 
   const section = content[sectionData.field];
-
   for (var key in section) {
     if (section[key] === '') {
       section[key] = '<p>-</p>';
@@ -217,9 +308,7 @@ const SectionContent = (props) => {
   return (
     <div id={sectionID(sectionData.title)} className="section">
       <h5 className="section-title">
-        {sectionData.contentTitle !== undefined
-          ? sectionData.contentTitle
-          : sectionData.title}
+        {intl.formatMessage(messages[sectionDataTitle])}
       </h5>
       {sectionData.type === 'LinksList' ? (
         <LinksList value={content[sectionData.field]} />
@@ -241,33 +330,43 @@ const SectionContent = (props) => {
 };
 
 function CaseStudyView(props) {
+  const intl = useIntl();
   const { content } = props;
-  const { long_description } = content;
+  const { long_description, updating_notes, logo, title } = content;
 
   const hasValue = (field) => {
-    if (!content.hasOwnProperty(field)) {
+    const fieldValue = content[field];
+    if (!content.hasOwnProperty(field) || fieldValue == null) return false;
+    if (Array.isArray(fieldValue) && fieldValue.length === 0) return false;
+    if (
+      typeof fieldValue?.data === 'string' &&
+      fieldValue?.data.replace('<p></p>', '').length === 0
+    )
       return false;
-    }
-    if (content[field] === undefined || content[field] === null) {
-      return false;
-    }
-    if (Array.isArray(content[field]) && content[field].length === 0) {
-      return false;
-    }
+
     return true;
   };
 
-  const usedSections = (group) => {
-    return dataDisplay.filter(
-      (data) => data.group === group && hasValue(data.field),
-    );
-  };
+  const usedSections = (group) =>
+    dataDisplay.filter((data) => data.group === group && hasValue(data.field));
 
   return (
     <div className="db-item-view case-study-view">
-      <BannerTitle content={{ ...content, image: '' }} type="Case Studies" />
+      <BannerTitle
+        content={{ ...content, image: '' }}
+        data={{
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+          subtitle: 'Case Studies',
+        }}
+      />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -277,55 +376,63 @@ function CaseStudyView(props) {
               computer={8}
               className="col-left"
             >
+              {logo && (
+                <div>
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                </div>
+              )}
               <PrimaryPhoto {...props} />
               <HTMLField value={long_description} />
-
+              {updating_notes && updating_notes.length > 0 && (
+                <div className="disclaimer-box">
+                  <h5>{intl.formatMessage(messages.updating_notes)}</h5>
+                  {updating_notes.map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
+              )}
               <Divider />
               <div className="adaptation-details">
                 <Grid columns="12">
-                  <Grid.Column mobile={12} tablet={12} computer={4}>
-                    <SectionsMenu
-                      sections={usedSections(1)}
-                      title={groups['1']}
-                    />
-                  </Grid.Column>
-                  <Grid.Column mobile={12} tablet={12} computer={4}>
-                    <SectionsMenu
-                      sections={usedSections(2)}
-                      title={groups['2']}
-                    />
-                  </Grid.Column>
-                  <Grid.Column mobile={12} tablet={12} computer={4}>
-                    <SectionsMenu
-                      sections={usedSections(3)}
-                      title={groups['3']}
-                    />
-                  </Grid.Column>
+                  {[1, 2, 3].map((groupID) => (
+                    <Grid.Column
+                      key={groupID}
+                      mobile={12}
+                      tablet={12}
+                      computer={4}
+                    >
+                      <SectionsMenu
+                        sections={usedSections(groupID)}
+                        title={groups[groupID]}
+                      />
+                    </Grid.Column>
+                  ))}
                 </Grid>
               </div>
-
               <Divider />
-
-              {[1, 2, 3].map(
-                (groupID, index) =>
-                  usedSections(groupID).length > 0 && (
-                    <Fragment key={index}>
-                      <h2>{groups[groupID]}</h2>
-                      {usedSections(groupID).map((data, index) => (
-                        <SectionContent
-                          sectionData={data}
-                          content={content}
-                          key={index}
-                        />
-                      ))}
-                      {groupID !== 3 ? <Divider /> : null}
-                    </Fragment>
-                  ),
-              )}
-
+              {[1, 2, 3].map((groupID) => {
+                const sections = usedSections(groupID);
+                if (sections.length === 0) return null;
+                return (
+                  <Fragment key={groupID}>
+                    <h2>{intl.formatMessage(messages[groups[groupID]])}</h2>
+                    {sections.map((data, index) => (
+                      <SectionContent
+                        key={index}
+                        sectionData={data}
+                        content={content}
+                      />
+                    ))}
+                    {groupID !== 3 && <Divider />}
+                  </Fragment>
+                );
+              })}
               <PublishedModifiedInfo {...props} />
               <Divider />
-
               <p>
                 Please contact us for any other enquiry on this Case Study or to
                 share a new Case Study (email{' '}
@@ -340,7 +447,7 @@ function CaseStudyView(props) {
                 </span>
                 )
               </p>
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
@@ -349,14 +456,12 @@ function CaseStudyView(props) {
               className="col-right"
             >
               <PhotoGallery {...props} />
-
               <ContentMetadata {...props} />
-
               <DocumentsList {...props} />
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }

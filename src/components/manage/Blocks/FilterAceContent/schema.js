@@ -18,6 +18,7 @@ const FilterSchema = (data, macro_regions) => {
           'bio_regions',
           'funding_programme',
           'nr_items',
+          'sortBy',
         ],
       },
     ],

@@ -4,9 +4,6 @@ exports[`renders an event view component with all props 1`] = `
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -20,7 +17,6 @@ exports[`renders an event view component with all props 1`] = `
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Hello World!</p>",
@@ -31,7 +27,6 @@ exports[`renders an event view component with all props 1`] = `
             Agenda and supporting documents
           </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -42,8 +37,8 @@ exports[`renders an event view component with all props 1`] = `
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
-               
+              A background document for the event is available
+
             </h5>
             <div
               className="ui list documents-list"
@@ -72,7 +67,6 @@ exports[`renders an event view component with all props 1`] = `
             Participation
           </h3>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -84,9 +78,9 @@ exports[`renders an event view component with all props 1`] = `
           </h2>
           <p>
             If you have any further questions you can contact
-             
+
             <a
-              href="mailto:{content.contact_email}"
+              href="mailto:test@example.com"
             >
               test@example.com
             </a>
@@ -95,64 +89,98 @@ exports[`renders an event view component with all props 1`] = `
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
         >
-          <h3>
-            When
-          </h3>
-          <p
-            className="event-when"
+          <div
+            className="ui segment"
           >
-            <span
-              className="start"
+            <h4>
+              When
+            </h4>
+            <p
+              className="event-when"
             >
               <span
-                className="start-date"
+                className="start"
               >
-                Jun 23, 2019
+                <span
+                  className="start-date"
+                >
+                  Jun 23, 2019
+                </span>
+                <span>
+
+                </span>
+                <span
+                  className="start-time"
+                >
+                  3:20 PM
+                </span>
               </span>
-              <span>
-                 
-              </span>
+               to 
               <span
-                className="start-time"
+                className="end"
               >
-                6:20 PM
+                <span
+                  className="end-date"
+                >
+                  Jun 24, 2019
+                </span>
+                <span>
+
+                </span>
+                <span
+                  className="end-time"
+                >
+                  3:20 PM
+                </span>
               </span>
-            </span>
-             to 
-            <span
-              className="end"
+            </p>
+            <h4>
+              Where
+            </h4>
+            <p>
+              Volto, Plone
+            </p>
+            <h4>
+              Info
+            </h4>
+            <p>
+              test@example.com
+            </p>
+            <h4>
+              Web
+            </h4>
+            <p>
+              <a
+                href="https://www.example.com"
+                target="_blank"
+              >
+                Visit external website
+              </a>
+            </p>
+            <div
+              className="download-event"
             >
-              <span
-                className="end-date"
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
               >
-                Jun 24, 2019
-              </span>
-              <span>
-                 
-              </span>
-              <span
-                className="end-time"
-              >
-                6:20 PM
-              </span>
-            </span>
-          </p>
-          <h3>
-            Where
-          </h3>
-          <p>
-            Volto, Plone
-          </p>
-          <h3>
-            Language
-          </h3>
-          <p />
-          <h3>
-            Info
-          </h3>
-          <p>
-            test@example.com
-          </p>
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -164,9 +192,6 @@ exports[`renders an event view component with only required props 1`] = `
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -180,7 +205,6 @@ exports[`renders an event view component with only required props 1`] = `
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -191,7 +215,6 @@ exports[`renders an event view component with only required props 1`] = `
             Agenda and supporting documents
           </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -202,8 +225,8 @@ exports[`renders an event view component with only required props 1`] = `
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
-               
+              A background document for the event is available
+
             </h5>
             <div
               className="ui list documents-list"
@@ -232,7 +255,6 @@ exports[`renders an event view component with only required props 1`] = `
             Participation
           </h3>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -242,53 +264,65 @@ exports[`renders an event view component with only required props 1`] = `
           <h2>
             Contact
           </h2>
-          <p>
-            If you have any further questions you can contact
-             
-            <a
-              href="mailto:{content.contact_email}"
-            />
-          </p>
         </div>
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
         >
-          <h3>
-            When
-          </h3>
-          <p
-            className="event-when same-day"
+          <div
+            className="ui segment"
           >
-            <span
-              className="start-date"
+            <h4>
+              When
+            </h4>
+            <p
+              className="event-when same-day"
             >
-              Jun 23, 2019
-            </span>
-             from 
-            <span
-              className="start-time"
+              <span
+                className="start-date"
+              >
+                Jun 23, 2019
+              </span>
+               from 
+              <span
+                className="start-time"
+              >
+                3:20 PM
+              </span>
+               to 
+              <span
+                className="end-time"
+              >
+                4:20 PM
+              </span>
+            </p>
+            <h4>
+              Where
+            </h4>
+            <p />
+            <div
+              className="download-event"
             >
-              6:20 PM
-            </span>
-             to 
-            <span
-              className="end-time"
-            >
-              7:20 PM
-            </span>
-          </p>
-          <h3>
-            Where
-          </h3>
-          <p />
-          <h3>
-            Language
-          </h3>
-          <p />
-          <h3>
-            Info
-          </h3>
-          <p />
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -300,9 +334,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
 <div
   className="cca-event-view"
 >
-  <div>
-    Title Block Component
-  </div>
   <div
     className="ui container"
   >
@@ -316,7 +347,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
           className="nine wide computer twelve wide mobile twelve wide tablet column col-left"
         >
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Hello World!</p><p>This is an <a href=\\"http://localhost:8080/Plone/foo/bar\\">internal link</a> and a <a href=\\"http://localhost:8080/Plone/foo/baz\\">second link</a></p>",
@@ -327,7 +357,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
             Agenda and supporting documents
           </h2>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -338,8 +367,8 @@ exports[`renders an event view component without links to api in the text 1`] = 
             className="ui segment"
           >
             <h5>
-              A background document for the event is available 
-               
+              A background document for the event is available
+
             </h5>
             <div
               className="ui list documents-list"
@@ -368,7 +397,6 @@ exports[`renders an event view component without links to api in the text 1`] = 
             Participation
           </h3>
           <div
-            className="long_description"
             dangerouslySetInnerHTML={
               Object {
                 "__html": undefined,
@@ -378,53 +406,65 @@ exports[`renders an event view component without links to api in the text 1`] = 
           <h2>
             Contact
           </h2>
-          <p>
-            If you have any further questions you can contact
-             
-            <a
-              href="mailto:{content.contact_email}"
-            />
-          </p>
         </div>
         <div
           className="three wide computer twelve wide mobile twelve wide tablet column col-right"
         >
-          <h3>
-            When
-          </h3>
-          <p
-            className="event-when same-day"
+          <div
+            className="ui segment"
           >
-            <span
-              className="start-date"
+            <h4>
+              When
+            </h4>
+            <p
+              className="event-when same-day"
             >
-              Jun 23, 2019
-            </span>
-             from 
-            <span
-              className="start-time"
+              <span
+                className="start-date"
+              >
+                Jun 23, 2019
+              </span>
+               from 
+              <span
+                className="start-time"
+              >
+                3:20 PM
+              </span>
+               to 
+              <span
+                className="end-time"
+              >
+                4:20 PM
+              </span>
+            </p>
+            <h4>
+              Where
+            </h4>
+            <p />
+            <div
+              className="download-event"
             >
-              6:20 PM
-            </span>
-             to 
-            <span
-              className="end-time"
-            >
-              7:20 PM
-            </span>
-          </p>
-          <h3>
-            Where
-          </h3>
-          <p />
-          <h3>
-            Language
-          </h3>
-          <p />
-          <h3>
-            Info
-          </h3>
-          <p />
+              <a
+                className="ics-download"
+                href="http://localhost:8080/Plone/++api++/my-page/ics_view"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <button
+                  className="ui button icon inverted primary labeled"
+                  onClick={[Function]}
+                  title="Download this event in iCal format"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="calendar alternate outline icon"
+                    onClick={[Function]}
+                  />
+                  Download Event
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

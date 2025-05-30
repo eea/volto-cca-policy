@@ -5,23 +5,46 @@ exports[`RelevantAceContentView should render the component 1`] = `
   className="block relevant-acecontent-block"
 >
   <div
-    className="item"
-    onClick={[Function]}
-    role="listitem"
-    title="Publications and reports"
+    className="ui list"
+    role="list"
   >
-    <div>
-      Link
+    <div
+      className="item"
+      onClick={[Function]}
+      role="listitem"
+      title="Publications and reports"
+    >
+      <i
+        aria-hidden="true"
+        className="angle right icon"
+        onClick={[Function]}
+      />
+      <div
+        className="content"
+      >
+        <div>
+          Link
+        </div>
+      </div>
     </div>
-  </div>
-  <div
-    className="item"
-    onClick={[Function]}
-    role="listitem"
-    title="Information portals"
-  >
-    <div>
-      Link
+    <div
+      className="item"
+      onClick={[Function]}
+      role="listitem"
+      title="Information portals"
+    >
+      <i
+        aria-hidden="true"
+        className="angle right icon"
+        onClick={[Function]}
+      />
+      <div
+        className="content"
+      >
+        <div>
+          Link
+        </div>
+      </div>
     </div>
   </div>
 </div>

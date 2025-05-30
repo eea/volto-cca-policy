@@ -21,6 +21,12 @@ jest.mock('semantic-ui-react', () => ({
   ...jest.requireActual('semantic-ui-react'),
 }));
 
+jest.mock('@eeacms/volto-embed', () => {
+  return {
+    PrivacyProtection: jest.fn(({ children }) => <div>{children}</div>),
+  };
+});
+
 describe('DatabaseItemView', () => {
   it('should render the component', () => {
     const content = {
@@ -30,10 +36,21 @@ describe('DatabaseItemView', () => {
         data: '<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>',
         encoding: 'utf-8',
       },
+      publication_date: '2022-06-24',
       geochars:
         '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
       keywords: ['keyword 1', 'keyword 2'],
       websites: ['https://example.org/'],
+      contributions: [
+        {
+          title: 'Contributor 1',
+          url: '/',
+        },
+        {
+          title: 'Contributor 2',
+          url: '/',
+        },
+      ],
     };
 
     const store = mockStore({

@@ -11,9 +11,10 @@
 // @primaryColor: @green-6;
 @secondaryColor: #005c97;
 @ccaGreenColor: #8a9c39;
+@ccaOrangeColor: #ef7000;
 
-// @linkColor: @secondaryColor;
-// @linkHoverColor: @primaryColor;
+@linkColor: #006bb8;
+@linkHoverColor: #004b7f;
 // @linkActiveColor: @linkHoverColor;
 
 // Toolbar

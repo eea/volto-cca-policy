@@ -1,9 +1,24 @@
 import { mergeConfig } from '@eeacms/search';
 import { build_runtime_mappings } from '@eeacms/volto-globalsearch/utils';
 import { getClientProxyAddress } from './../utils';
+import { vocab } from './../vocabulary';
 
 import facets from './facets-health';
 import views from './views-health';
+
+// import { defineMessages } from 'react-intl';
+
+// const messages = defineMessages({
+//   types: {
+//     id: 'Types',
+//     defaultMessage: 'Types',
+//   },
+//   healthImpacts: { id: 'Health Impacts', defaultMessage: 'Health Impacts' },
+//   observatoryPartner: {
+//     id: 'Observatory partner',
+//     defaultMessage: 'Observatory partner',
+//   },
+// });
 
 const ccaConfig = {
   title: 'ClimateAdapt Health',
@@ -18,51 +33,46 @@ export const clusters = {
       name: 'Case studies',
       icon: { name: 'file text' },
       values: ['Case study'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Guidance',
       icon: { name: 'compass' },
       values: ['Guidance'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Indicators',
       icon: { name: 'area chart' },
       values: ['Indicator'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Information portals',
       icon: { name: 'info circle' },
       values: ['Information portal'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Publications and reports',
       icon: { name: 'newspaper' },
       values: ['Publication reference'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Research and knowledge projects',
       icon: { name: 'university' },
       values: ['Research and knowledge project'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Tools',
       icon: { name: 'wrench' },
       values: ['Tool'],
-      defaultResultView: 'horizontalCard',
     },
     {
       name: 'Videos',
       icon: { name: 'video play' },
       values: ['Video'],
-      defaultResultView: 'horizontalCard',
     },
-  ],
+  ].map((cluster) => ({
+    ...cluster,
+    defaultResultView: 'horizontalCard',
+  })),
 };
 
 export default function installMainSearch(config) {
@@ -80,11 +90,7 @@ export default function installMainSearch(config) {
     elastic_index: '_es/globalsearch',
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
-    vocab: {
-      cluster_name: {
-        cca: 'Climate-ADAPT',
-      },
-    },
+    vocab,
     runtime_mappings: build_runtime_mappings(clusters),
   };
 
@@ -93,6 +99,17 @@ export default function installMainSearch(config) {
   ccaHealthSearch.permanentFilters.push({
     term: {
       cca_include_in_search_observatory: 'true',
+    },
+  });
+  ccaHealthSearch.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
     },
   });
   ccaHealthSearch.contentSectionsParams = {
@@ -130,6 +147,7 @@ export default function installMainSearch(config) {
     {
       id: 'types',
       title: 'Types',
+      // title: messages.types,
       facetField: 'objectProvides',
       sortOn: 'alpha',
       icon: {
@@ -139,6 +157,7 @@ export default function installMainSearch(config) {
     {
       id: 'healthImpacts',
       title: 'Health Impacts',
+      // title: messages.healthImpacts,
       facetField: 'cca_health_impacts.keyword',
       sortOn: 'alpha',
       whitelist: [
@@ -152,6 +171,7 @@ export default function installMainSearch(config) {
     {
       id: 'observatoryPartner',
       title: 'Observatory partner',
+      // title: messages.observatoryPartner,
       facetField: 'cca_partner_contributors.keyword',
       sortOn: 'alpha',
     },

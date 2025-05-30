@@ -1,36 +1,68 @@
+import { defineMessages, FormattedMessage } from 'react-intl';
+import loadable from '@loadable/component';
 import { compose } from 'redux';
-
 import { Sitemap } from '@plone/volto/components';
+import DefaultView from '@plone/volto/components/theme/View/DefaultView';
+import SelectAutoCompleteWidget from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
+import {
+  RASTWidgetView,
+  TranslationDisclaimer,
+  RedirectToLogin,
+  MissionSignatoryProfileView,
+} from '@eeacms/volto-cca-policy/components';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
+
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
-import VideoView from './components/theme/Views/VideoView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
+import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
+// import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
+import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
+import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
 
-import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/climate-adapt-logo.svg';
-import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
-import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
+import { langRedirection } from './store/middleware';
 
 import installBlocks from './components/manage/Blocks';
 import installSearchEngine from './search';
 import installStore from './store';
 
-import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
-import MigrationButtons from './components/MigrationButtons';
+import ccaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_ADAPT_logo.svg';
+import ccaLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_ADAPT_logo_white.svg';
+import observatoryLogoWhite from '@eeacms/volto-cca-policy/../theme/assets/images/Header/Climate_and_health_logo_white.svg';
+import europeanComissionLogo from '@eeacms/volto-cca-policy/../theme/assets/images/Footer/ec_logo.svg';
+import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
-import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
-import CreatableSelectWidget from './components/manage/Widgets/CreatableSelectWidget';
+import './slate-styles.less';
+import BrokenLinks from './components/theme/Views/BrokenLinks';
+
+import { eea_languages, non_eu_langs } from './constants';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
 const pathToNegRegex = (p) => `(?!(${p}))`;
+
+const messages = defineMessages({
+  placeholderClimateSearch: {
+    id: 'Search the Climate-ADAPT database',
+    defaultMessage: 'Search the Climate-ADAPT database',
+  },
+  placeholderObservatorySearch: {
+    id: 'Search the Observatory Resource Catalogue...',
+    defaultMessage: 'Search the Observatory Resource Catalogue...',
+  },
+  placeholderMissionSearch: {
+    id: 'Search the EU Mission on Adaptation',
+    defaultMessage: 'Search the EU Mission on Adaptation',
+  },
+});
 
 const applyConfig = (config) => {
   const env = getEnv();
@@ -51,8 +83,8 @@ const applyConfig = (config) => {
       ...(config.settings.externalRoutes || []),
       {
         match: {
-          path: new RegExp(voltoLocationsRegex),
           exact: false,
+          path: new RegExp(voltoLocationsRegex),
           strict: false,
         },
         url(payload) {
@@ -62,34 +94,74 @@ const applyConfig = (config) => {
     ];
   }
 
-  // if (!config.settings.loadables.d3)
-  //   config.settings.loadables.d3 = loadable.lib(() => import('d3'));
-  // if (!config.settings.loadables.d3Geo)
-  //   config.settings.loadables.d3Geo = loadable.lib(() => import('d3-geo'));
+  config.settings.allowed_cors_destinations = [
+    ...(config.settings.allowed_cors_destinations || []),
+    'nominatim.openstreetmap.org',
+  ];
+
+  if (!config.settings.loadables.reactTable)
+    config.settings.loadables.reactTable = loadable.lib(() =>
+      import('@tanstack/react-table'),
+    );
 
   config.settings.dateLocale = 'en-gb';
   config.settings.isMultilingual = true;
   config.settings.hasLanguageDropdown = true;
   config.settings.defaultLanguage = 'en';
-  config.settings.supportedLanguages = ['en', 'de', 'fr', 'es', 'it', 'pl'];
+  config.settings.supportedLanguages = [
+    'bg', // bulgarian
+    'es', // spanish
+    'cs', // czech
+    'da', // danish
+    'de', // german
+    'en',
+    'et', // estonian
+    'el', // greek
+    'fr', // french
+    'ga', // irish
+    'hr', // croatian
+    'it', // italian
+    'lv', // latvia
+    'lt', // lituania
+    'hu', // hungarian
+    'mt', // malta
+    'nl', // dutch
+    'pl', // polish
+    'pt', // portuguese
+    'ro', // romanian
+    'sk', // slovakian
+    'sl', // slovenian
+    'fi', // suomi (finish)
+    'sv', // swedish
+
+    'is', // islenska, for iceland
+    'nn', // norwegean (one of 2)
+    'tr', // turkish
+  ];
+  config.settings.querystringSearchGet = true; // let's use get because we have varnish
 
   // EEA customizations
   config.settings.eea = {
     ...(config.settings.eea || {}),
-    languages: [
-      { name: 'English', code: 'en' },
-      { name: 'Deutsch', code: 'de' },
-      { name: 'Français', code: 'fr' },
-      { name: 'Español', code: 'es' },
-      { name: 'Italiano', code: 'it' },
-      { name: 'Polski', code: 'pl' },
-    ],
+    languages: eea_languages,
+    non_eu_langs,
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,
+      logoWhite: ccaLogoWhite,
     },
+    subsiteHeaderOpts: [
+      {
+        matchpath: '/observatory',
+        logoWhite: observatoryLogoWhite,
+      },
+    ],
     footerOpts: {
       ...(config.settings.eea?.footerOpts || {}),
+      buttonName: 'Explore our environmental information systems',
+      hrefButton: 'https://www.eea.europa.eu/en/information-systems#',
+      logosHeader: 'Managed by',
+      header: '',
       description:
         'The European Climate Adaptation Platform Climate-ADAPT is a partnership between the European Commission and the European Environment Agency.',
       managedBy: [
@@ -149,32 +221,67 @@ const applyConfig = (config) => {
       {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
-        matchpath: '/en/mission',
-        path: '/en/mission/knowledge-and-data/search-the-database',
-        placeholder: 'Search the Climate-ADAPT database',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        matchpath: /\/([a-z]{2})\/mission/,
+        path: ({ currentLang }) => `/${currentLang}/mission/advanced-search`,
+        placeholder: ({ intl }) =>
+          intl.formatMessage(messages.placeholderMissionSearch),
+        description: (
+          <FormattedMessage
+            id="For more search options"
+            defaultMessage="For more search options"
+          />
+        ),
+        buttonTitle: (
+          <FormattedMessage
+            id="Go to advanced search"
+            defaultMessage="Go to advanced search"
+          />
+        ),
+        buttonUrl: ({ currentLang }) =>
+          `/${currentLang}/mission/advanced-search/`,
       },
       {
         isDefault: false,
         // to replace search path change path to whatever you want and match with the page in volto website
-        matchpath: '/en/observatory',
-        path: '/en/observatory/advanced-search',
-        placeholder: 'Search the Observatory Resource Catalogue...',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        matchpath: /\/([a-z]{2})\/observatory/,
+        path: ({ currentLang }) =>
+          `/${currentLang}/observatory/advanced-search`,
+        placeholder: ({ intl }) =>
+          intl.formatMessage(messages.placeholderObservatorySearch),
+        description: (
+          <FormattedMessage
+            id="Looking for more information?"
+            defaultMessage="Looking for more information?"
+          />
+        ),
+        buttonTitle: (
+          <FormattedMessage
+            id="Explore more on Climate-ADAPT"
+            defaultMessage="Explore more on Climate-ADAPT"
+          />
+        ),
+        buttonUrl: ({ currentLang }) => `/${currentLang}/data-and-downloads/`,
       },
       {
         isDefault: true,
         // to replace search path change path to whatever you want and match with the page in volto website
         matchpath: '/',
-        path: '/en/data-and-downloads',
-        placeholder: 'Search the Climate-ADAPT database',
-        description: 'Looking for more information?',
-        buttonTitle: 'Explore more on Climate-ADAPT',
-        buttonUrl: 'https://climate-adapt.eea.europa.eu/en/data-and-downloads/',
+        path: ({ currentLang }) => `/${currentLang}/data-and-downloads`,
+        placeholder: ({ intl }) =>
+          intl.formatMessage(messages.placeholderClimateSearch),
+        description: (
+          <FormattedMessage
+            id="Looking for more information?"
+            defaultMessage="Looking for more information?"
+          />
+        ),
+        buttonTitle: (
+          <FormattedMessage
+            id="Explore more on Climate-ADAPT"
+            defaultMessage="Explore more on Climate-ADAPT"
+          />
+        ),
+        buttonUrl: ({ currentLang }) => `/${currentLang}/data-and-downloads/`,
       },
     ],
     logoTargetUrl: '/',
@@ -244,7 +351,7 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
-    maxNumberOfColumns: 5,
+    maxNumberOfColumns: 7,
   };
 
   config.blocks.blocksConfig.nextCloudVideo = {
@@ -267,36 +374,26 @@ const applyConfig = (config) => {
     'eea.climateadapt.guidancedocument': DatabaseItemView,
     'eea.climateadapt.informationportal': DatabaseItemView,
     'eea.climateadapt.publicationreport': DatabaseItemView,
-    'eea.climateadapt.video': VideoView,
+    'eea.climateadapt.video': DatabaseItemView,
     'eea.climateadapt.aceproject': ProjectView,
     'eea.climateadapt.casestudy': CaseStudyView,
     'eea.climateadapt.c3sindicator': C3SIndicatorView,
     'eea.climateadapt.adaptationoption': AdaptationOptionView,
     'News Item': NewsItemView,
+    mission_signatory_profile: MissionSignatoryProfileView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
 
+  config.views.layoutViews = {
+    ...config.views.layoutViews,
+    document_view: DefaultView,
+    album_view: DefaultView,
+    summary_view: DefaultView,
+    tabular_view: DefaultView,
+  };
+
   config.settings.contextNavigationLocations = [
-    // {
-    //   title: 'Regional Adaptation Support Tool',
-    //   columns: 4,
-    //   topLevel: 2,
-    //   bottomLevel: 0,
-    //   rootPath: '/mission/knowledge-and-data/regional-adaptation-support-tool',
-    // },
-    {
-      title: 'UrbanAST',
-      topLevel: 3,
-      bottomLevel: 2,
-      rootPath: 'knowledge/tools/urban-ast',
-    },
-    {
-      title: 'Adaptation Suport Tool',
-      topLevel: 3,
-      bottomLevel: 2,
-      rootPath: 'knowledge/tools/adaptation-support-tool',
-    },
     {
       title: 'Adaptation',
       topLevel: 4,
@@ -310,81 +407,71 @@ const applyConfig = (config) => {
       bottomLevel: 2,
       rootPath: 'countries-regions/transnational-regions/carpathian-mountains',
     },
-    {
-      title: 'Share your info',
-      topLevel: 2,
-      bottomLevel: 2,
-      rootPath: 'help/share-your-info',
-    },
   ];
 
-  const hideChildren = {
-    hideChildrenFromNavigation: false,
-  };
-
-  // mega menu layout settings
-  config.settings.menuItemsLayouts = {
-    // '*': {
-    //   hideChildrenFromNavigation: false,
-    // },
-    '/en/eu-policy': hideChildren,
-    '/de/eu-policy': hideChildren,
-    '/fr/eu-policy': hideChildren,
-    '/es/eu-policy': hideChildren,
-    '/it/eu-policy': hideChildren,
-    '/pl/eu-policy': hideChildren,
-    '/en/knowledge-1': hideChildren,
-    '/de/knowledge-1': hideChildren,
-    '/fr/knowledge-1': hideChildren,
-    '/es/knowledge-1': hideChildren,
-    '/it/knowledge-1': hideChildren,
-    '/pl/knowledge-1': hideChildren,
-    // observatory
-    '/en/observatory/about': hideChildren,
-    '/de/observatory/about': hideChildren,
-    '/fr/observatory/about': hideChildren,
-    '/es/observatory/about': hideChildren,
-    '/it/observatory/about': hideChildren,
-    '/pl/observatory/about': hideChildren,
-    '/en/observatory/policy-context-1': hideChildren,
-    '/de/observatory/policy-context-1': hideChildren,
-    '/fr/observatory/policy-context-1': hideChildren,
-    '/es/observatory/policy-context-1': hideChildren,
-    '/it/observatory/policy-context-1': hideChildren,
-    '/pl/observatory/policy-context-1': hideChildren,
-    '/en/observatory/evidence-on-climate-and-health': hideChildren,
-    '/de/observatory/evidence-on-climate-and-health': hideChildren,
-    '/fr/observatory/evidence-on-climate-and-health': hideChildren,
-    '/es/observatory/evidence-on-climate-and-health': hideChildren,
-    '/it/observatory/evidence-on-climate-and-health': hideChildren,
-    '/pl/observatory/evidence-on-climate-and-health': hideChildren,
-    '/en/observatory/resource-catalogue-1': hideChildren,
-    '/de/observatory/resource-catalogue-1': hideChildren,
-    '/fr/observatory/resource-catalogue-1': hideChildren,
-    '/es/observatory/resource-catalogue-1': hideChildren,
-    '/it/observatory/resource-catalogue-1': hideChildren,
-    '/pl/observatory/resource-catalogue-1': hideChildren,
-    '/en/observatory/publications-and-outreach': hideChildren,
-    '/de/observatory/publications-and-outreach': hideChildren,
-    '/fr/observatory/publications-and-outreach': hideChildren,
-    '/es/observatory/publications-and-outreach': hideChildren,
-    '/it/observatory/publications-and-outreach': hideChildren,
-    '/pl/observatory/publications-and-outreach': hideChildren,
-  };
+  config.settings.astNavigations = [
+    {
+      title: 'Urban adaptation support tool',
+      root_path: 'knowledge/tools/urban-ast',
+    },
+    {
+      title: 'Adaptation Suport Tool',
+      root_path: 'knowledge/tools/adaptation-support-tool',
+    },
+  ];
 
   // Custom results
   config.settings.searchlib.resolve.HealthHorizontalCardItem = {
     component: HealthHorizontalCardItem,
   };
-
+  config.settings.searchlib.resolve.ClusterHorizontalCardItem = {
+    component: ClusterHorizontalCardItem,
+  };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
-  config.widgets.id.geolocation = GeolocationWidget;
-  config.widgets.widget.creatableselect = CreatableSelectWidget;
+  // config.widgets.id.geolocation = GeolocationWidget;
+  config.widgets.id.promotional_image = PromotionalImageWidget;
 
-  config.blocks.blocksConfig.layoutSettings.schemaEnhancer = ({ schema }) => {
-    schema.properties.body_class.widget = 'creatableselect';
-    return schema;
+  if (config.widgets.views?.widget) {
+    config.widgets.views.id.rast_steps = RASTWidgetView;
+    config.widgets.views.widget.rast_steps = RASTWidgetView;
+  }
+
+  config.settings.slate.styleMenu.inlineStyles = [
+    ...(config.settings.slate.styleMenu?.inlineStyles || []),
+    { cssClass: 'large-text', label: 'Large text' },
+    { cssClass: 'medium-text', label: 'Medium text' },
+    { cssClass: 'small-text', label: 'Small text' },
+  ];
+
+  // TODO: fix in all languages
+  config.settings.menuItemsLayouts = {
+    '/en/countries-regions': {
+      menuItemColumns: [
+        'three wide column',
+        'six wide column',
+        'three wide column',
+      ],
+      menuItemChildrenListColumns: [1, 4, 1],
+    },
+    '/en/eu-policy': {
+      menuItemColumns: [
+        'two wide column',
+        'two wide column',
+        'six wide column',
+        'two wide column',
+      ],
+      menuItemChildrenListColumns: [1, 1, 3, 1],
+    },
+    '/en/observatory/evidence': {
+      menuItemColumns: [
+        'six wide column',
+        'two wide column',
+        'two wide column',
+        'two wide column',
+      ],
+      menuItemChildrenListColumns: [2, 1, 1, 1],
+    },
   };
 
   // we won't need the listing for Folders
@@ -409,7 +496,17 @@ const applyConfig = (config) => {
       component: Sitemap,
     },
 
+    {
+      path: `/broken-links`,
+      component: BrokenLinks,
+    },
+
     ...(config.addonRoutes || []),
+  ];
+
+  config.settings.nonContentRoutes = [
+    ...config.settings.nonContentRoutes,
+    '/broken-links',
   ];
 
   config.settings.appExtras = [
@@ -417,6 +514,16 @@ const applyConfig = (config) => {
     {
       match: '',
       component: MigrationButtons,
+    },
+    {
+      match: '',
+      component: TranslationDisclaimer,
+    },
+    {
+      match: {
+        path: /(.*)\/add$/,
+      },
+      component: RedirectToLogin,
     },
   ];
 
@@ -428,7 +535,36 @@ const applyConfig = (config) => {
       },
       GET_CONTENT: ['siblings'],
     },
+    {
+      match: {
+        path: /(.*)\/countries-regions\/countries\/(.*)/,
+      },
+      GET_CONTENT: ['siblings'],
+    },
+    {
+      match: '',
+      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],
+      querystring: { 'expand.navigation.depth': '3' },
+    },
   ];
+
+  // plug custom redux middleware
+  const storeExtender = (stack) => [langRedirection, ...stack];
+  config.settings.storeExtenders = [
+    storeExtender,
+    ...config.settings.storeExtenders,
+  ];
+
+  config.settings.initialReducersBlacklist = [
+    ...config.settings.initialReducersBlacklist,
+    'intl',
+    // 'router',
+    // 'content',
+  ];
+
+  config.widgets.vocabulary[
+    'plone.app.vocabularies.Users'
+  ] = SelectAutoCompleteWidget;
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };

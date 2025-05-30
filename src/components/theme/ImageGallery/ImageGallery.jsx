@@ -5,13 +5,32 @@ import { Modal, Image } from 'semantic-ui-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import './styles.less';
+
 const Slider = loadable(() => import('react-slick'));
 
 const ImageGallery = (props) => {
-  const { items = [] } = props;
+  const {
+    items = [],
+    propOpen,
+    setPropOpen,
+    propSlideIndex,
+    setPropSlideIndex,
+  } = props;
+  // if state is managed from an external component then use the external state
+  // else use the local one
+  const [localOpen, setLocalOpen] = React.useState(false);
+  const open = propOpen === undefined ? localOpen : propOpen;
+  const setOpen = propOpen === undefined ? setLocalOpen : setPropOpen;
 
-  const [open, setOpen] = React.useState(false);
-  const [slideIndex, setSlideIndex] = React.useState(0);
+  // if state is managed from an external component then use the external state
+  // else use the local one
+  const [localSlideIndex, setLocalSlideIndex] = React.useState(0);
+  const slideIndex =
+    propSlideIndex === undefined ? localSlideIndex : propSlideIndex;
+  const setSlideIndex =
+    propSlideIndex === undefined ? setLocalSlideIndex : setPropSlideIndex;
+
   const [updateCount, setUpdateCount] = React.useState(0);
   const sliderRef = React.useRef(null);
 
@@ -30,7 +49,7 @@ const ImageGallery = (props) => {
       useTransform: false,
       initialSlide: slideIndex,
     }),
-    [slideIndex, updateCount],
+    [slideIndex, setSlideIndex, updateCount],
   );
 
   const handleClick = () => {
@@ -39,6 +58,8 @@ const ImageGallery = (props) => {
       setOpen(true);
     }
   };
+
+  const image = items[slideIndex];
 
   return (
     <div className="image-gallery">
@@ -63,11 +84,20 @@ const ImageGallery = (props) => {
         onOpen={() => setOpen(true)}
       >
         <Modal.Content>
-          <h3>{items[slideIndex]?.title}</h3>
-          <p>{items[slideIndex]?.description}</p>
+          <h3>{image?.title}</h3>
+          <p>{image?.description}</p>
           <Slider {...carouselSettings} ref={sliderRef}>
             {items.map((item, i) => {
-              return <Image key={i} src={item.url} alt={item?.title} />;
+              return image.rights ? (
+                <div>
+                  <div className="image-slide">
+                    <div className="image-rights">@ {image.rights}</div>
+                    <Image key={i} src={item.url} alt={item?.title} />
+                  </div>
+                </div>
+              ) : (
+                <Image key={i} src={item.url} alt={item?.title} />
+              );
             })}
           </Slider>
           <div className="slide-image-count">

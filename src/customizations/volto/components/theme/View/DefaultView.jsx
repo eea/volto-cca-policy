@@ -21,7 +21,10 @@ import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import { RenderBlocks } from '@plone/volto/components';
 import ContextNavigation from '@plone/volto/components/theme/Navigation/ContextNavigation';
-import { BannerTitle } from '@eeacms/volto-cca-policy/components';
+import {
+  BannerTitle,
+  ASTNavigation,
+} from '@eeacms/volto-cca-policy/components';
 
 import { isEqual } from 'lodash';
 
@@ -32,10 +35,12 @@ import { isEqual } from 'lodash';
  * @returns {string} Markup of the component.
  */
 const DefaultView = (props) => {
-  const { content, location } = props;
-  const path = getBaseUrl(location?.pathname || '');
   const dispatch = useDispatch();
-  const { views } = config.widgets;
+  const { widgets, settings } = config;
+  const { views } = widgets;
+  const { content, location } = props;
+  const { astNavigations, contextNavigationLocations } = settings;
+  const path = getBaseUrl(location?.pathname || '');
   const contentSchema = useSelector((state) => state.schema?.schema);
   const fieldsetsToExclude = [
     'categorization',
@@ -67,8 +72,11 @@ const DefaultView = (props) => {
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
-  let currentNavigation = config.settings.contextNavigationLocations.find(
+  let currentNavigation = contextNavigationLocations.find(
     (element) => location.pathname.indexOf(element.rootPath) > -1,
+  );
+  const astNavigation = astNavigations.find(
+    (nav) => location.pathname.indexOf(nav.root_path) > -1,
   );
 
   const gridColumns =
@@ -77,36 +85,51 @@ const DefaultView = (props) => {
       : 3;
   const currentLang = useSelector((state) => state.intl.locale);
 
-  // If the content is not yet loaded, then do not show anything
+  const isChromeless = location.search?.indexOf('chromeless=1') > -1;
+
   return contentLoaded ? (
     hasBlocksData(content) ? (
-      currentNavigation ? (
-        <Container id="page-document">
-          <Grid>
-            <Grid.Column width={12 - gridColumns}>
-              <BannerTitle {...props} />
-              <RenderBlocks {...props} path={path} />
-            </Grid.Column>
-            <Grid.Column width={gridColumns}>
-              <ContextNavigation
-                params={{
-                  name: currentNavigation.title,
-                  includeTop: false,
-                  // currentFolderOnly: true,
-                  topLevel: currentNavigation.topLevel,
-                  bottomLevel: currentNavigation.bottomLevel,
-                  rootPath: `${currentLang}/${currentNavigation.rootPath}`,
-                }}
-              />
-            </Grid.Column>
-          </Grid>
-        </Container>
-      ) : (
-        <Container id="page-document">
-          <BannerTitle {...props} />
-          <RenderBlocks {...props} path={path} />
-        </Container>
-      )
+      <>
+        {currentNavigation ? (
+          <Container id="page-document">
+            <Grid>
+              <Grid.Column width={12 - gridColumns}>
+                <BannerTitle {...props} />
+                <RenderBlocks {...props} path={path} />
+              </Grid.Column>
+              <Grid.Column width={gridColumns}>
+                <ContextNavigation
+                  params={{
+                    name: currentNavigation.title,
+                    includeTop: false,
+                    // currentFolderOnly: true,
+                    topLevel: currentNavigation.topLevel + 1,
+                    bottomLevel: currentNavigation.bottomLevel + 1,
+                    rootPath: `${currentLang}/${currentNavigation.rootPath}`,
+                  }}
+                />
+              </Grid.Column>
+            </Grid>
+          </Container>
+        ) : astNavigation ? (
+          <Container id="page-document">
+            <Grid>
+              <Grid.Column mobile={12} tablet={12} computer={4}>
+                <ASTNavigation astNavigation={astNavigation} />
+              </Grid.Column>
+              <Grid.Column mobile={12} tablet={12} computer={8}>
+                <BannerTitle {...props} />
+                <RenderBlocks {...props} path={path} />
+              </Grid.Column>
+            </Grid>
+          </Container>
+        ) : (
+          <Container id="page-document" className="here">
+            {!isChromeless && <BannerTitle {...props} />}
+            <RenderBlocks {...props} path={path} />
+          </Container>
+        )}
+      </>
     ) : (
       <Container id="page-document">
         {fieldsets?.map((fs) => {

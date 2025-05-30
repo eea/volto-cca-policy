@@ -3,12 +3,20 @@
 
 @import (multiple, reference, optional) '../../theme.config';
 
+body.cca-main-homepage {
+  .collection-stats {
+    a {
+      word-break: break-word;
+    }
+  }
+}
+
 .collection-stats {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 1em 0;
-  gap: 1em;
+  gap: 0.7em;
 
   .semantic-icon {
     i.icon {

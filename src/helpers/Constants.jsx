@@ -5,10 +5,32 @@ export const INDICATOR = 'eea.climateadapt.indicator';
 export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
 export const ORGANISATION = 'eea.climateadapt.organisation';
 export const ACE_PROJECT = 'eea.climateadapt.aceproject';
-export const PUBICATION_REPORT = 'eea.climateadapt.publicationreport';
+export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
 export const TOOL = 'eea.climateadapt.tool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
+
+export const OBSERVATORY_PARTNERS = {
+  'copernicus-climate-change-service-ecmw':
+    'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring  Service',
+  'european-centre-for-disease-prevention-and-control-ecdc':
+    'European Centre for Disease Prevention and Control',
+  'european-commission': 'European Commission',
+  'european-commission-directorate-general-for-the-environment':
+    'European Commission Directorate-General for the Environment (DG ENV)',
+  'european-environment-agency-eea': 'European Environment Agency',
+  'european-food-safety-authority': 'European Food Safety Authority',
+  'european-policy-center': 'European Policy Centre',
+  'lancet-countdown': 'Lancet Countdown in Europe',
+  medecc: 'MedECC',
+  'association-schools-public-health-in-european-region-aspher':
+    'The Association of Schools of Public Health in the European Region',
+  'united-nations-environment-programme':
+    'United Nations Environment Programme',
+  'who-regional-office-for-europe-who-europe': 'WHO Regional Office for Europe',
+  'world-health-organization': 'World Health Organization',
+  'world-meteorological-organization-wmo': 'World Meteorological Organization',
+};
 
 export const ACE_COUNTRIES = {
   BE: 'Belgium',
@@ -25,14 +47,14 @@ export const ACE_COUNTRIES = {
   NL: 'Netherlands',
   PT: 'Portugal',
   NO: 'Norway',
-  TR: 'Turkey',
+  TR: 'Türkiye',
   LI: 'Liechtenstein',
   LV: 'Latvia',
   LT: 'Lithuania',
   LU: 'Luxembourg',
   RO: 'Romania',
   PL: 'Poland',
-  XK: 'Kosovo under UN Security Council Resolution 1244/99',
+  XK: 'Kosovo',
   CH: 'Switzerland',
   GR: 'Greece',
   EE: 'Estonia',
@@ -73,7 +95,8 @@ export const BIOREGIONS = {
   COUNTRIES: 'Countries',
   SUBNATIONAL: 'Subnational Regions',
   CITY: 'Municipality Name',
-  TRANS_MACRO_NORTHPERI: 'Northern Periphery',
+  TRANS_MACRO_OUTERMOST: 'Outermost Regions',
+  TRANS_MACRO_NORTHPERI: 'Northern Periphery and Arctic',
   TRANS_MACRO_BACLITC: 'Baltic Sea',
   TRANS_MACRO_NW_EUROPE: 'North West Europe',
   TRANS_MACRO_N_SEA: 'North Sea',
@@ -81,20 +104,20 @@ export const BIOREGIONS = {
   TRANS_MACRO_ALP_SPACE: 'Alpine Space',
   TRANS_MACRO_CEN_EUR: 'Central Europe',
   TRANS_MACRO_SW_EUR: 'South West Europe',
-  TRANS_MACRO_MED: 'Mediterranean',
-  TRANS_MACRO_DANUBE: 'Danube',
+  TRANS_MACRO_MED: 'Mediterranean (Euro-Med)',
+  TRANS_MACRO_DANUBE: 'Danube Area',
   TRANS_MACRO_ADR_IONIAN: 'Adriatic-Ionian',
-  TRANS_MACRO_BALKAN_MED: 'Balkan-Mediterranean',
-  TRANS_MACRO_CAR_AREA: 'Caribbean Area',
-  TRANS_MACRO_AMAZONIA: 'Amazonia',
-  TRANS_MACRO_IND_OCEAN_AREA: 'Indian Ocean Area',
-  TRANS_MACRO_SE_EUR: 'South East Europe',
-  TRANS_MACRO_MED_BASIN: 'Mediterranean Sea Basin',
-  TRANS_MACRO_MID_ATLANTIC: 'Mid-Atlantic',
-  TRANS_MACRO_ARCTIC: 'Arctic',
-  TRANS_MACRO_BLACKSEA: 'Black Sea',
-  TRANS_MACRO_ATLANTIC: 'Atlantic',
-  TRANS_MACRO_BLACKSEA_BASIN: 'Black Sea Basin',
+  // TRANS_MACRO_BALKAN_MED: 'Balkan-Mediterranean',
+  // TRANS_MACRO_CAR_AREA: 'Caribbean Area',
+  // TRANS_MACRO_AMAZONIA: 'Amazonia',
+  // TRANS_MACRO_IND_OCEAN_AREA: 'Indian Ocean Area',
+  // TRANS_MACRO_SE_EUR: 'South East Europe',
+  TRANS_MACRO_MED_BASIN: 'Mediterranean Sea Basin (NEXT)',
+  // TRANS_MACRO_MID_ATLANTIC: 'Mid-Atlantic',
+  // TRANS_MACRO_ARCTIC: 'Arctic',
+  // TRANS_MACRO_BLACKSEA: 'Black Sea',
+  // TRANS_MACRO_ATLANTIC: 'Atlantic',
+  TRANS_MACRO_BLACKSEA_BASIN: 'Black Sea Basin (NEXT)',
   TRANS_BIO_ALPINE: 'Alpine',
   TRANS_BIO_ANATOLIAN: 'Anatolian',
   TRANS_BIO_ARCTIC: 'Arctic',
@@ -481,9 +504,12 @@ export const SUBNATIONAL_REGIONS = {
 };
 
 export const EU_COUNTRIES = [
+  'AL',
   'AT',
+  'BA',
   'BE',
   'BG',
+  'CH',
   'CY',
   'CZ',
   'DE',
@@ -496,53 +522,25 @@ export const EU_COUNTRIES = [
   'HR',
   'HU',
   'IE',
+  'IS',
   'IT',
+  'LI',
   'LT',
   'LU',
   'LV',
+  'ME',
+  'MK',
   'MT',
   'NL',
+  'NO',
   'PL',
   'PT',
   'RO',
+  'RS',
   'SE',
   'SI',
   'SK',
+  'TR',
+  'XK',
+  'GB',
 ];
-
-export const WIDGET_COUNTRIES = Object.entries(ACE_COUNTRIES)
-  .map(([code, name]) => ({
-    code,
-    name,
-    label: 'chk_countries_' + code,
-  }))
-  .filter((country) => EU_COUNTRIES.includes(country.code))
-  .sort((a, b) => a.name.localeCompare(b.name));
-
-export const WIDGET_MACRO_TRANS_REGIONS = Object.entries(BIOREGIONS)
-  .map(([key, value]) => ({
-    key,
-    value: key,
-    text: value,
-  }))
-  .filter((macro) => macro.key.startsWith('TRANS_MACRO_'))
-  .sort((a, b) => a.text.localeCompare(b.name));
-
-export const WIDGET_BIOGEOGRAPHICAL_REGIONS = Object.entries(BIOREGIONS)
-  .map(([key, value]) => ({
-    key,
-    value: key,
-    text: value,
-  }))
-  .filter((macro) => macro.key.startsWith('TRANS_BIO_'))
-  .sort((a, b) => a.text.localeCompare(b.name));
-
-export const WIDGET_SUBNATIONAL_REGIONS_OPTIONS = Object.entries(
-  SUBNATIONAL_REGIONS,
-)
-  .map(([key, value]) => ({
-    key,
-    value: key,
-    text: value,
-  }))
-  .sort((a, b) => a.text.localeCompare(b.name));

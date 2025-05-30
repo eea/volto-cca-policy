@@ -13,10 +13,7 @@ import { firstWords, getTermDisplayValue } from '@eeacms/search/lib/utils';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import ContentClusters from '@eeacms/search/components/Result/ContentClusters';
-
-const healthURL = (href) => {
-  return href.replace(/\/metadata\//, '/observatory/++aq++metadata/');
-};
+import { FormattedMessage } from 'react-intl';
 
 const healthBreadcrumb = (href) => {
   // It's only cosmetic. We don't want to show ++aq...
@@ -33,14 +30,18 @@ const ExtraContent = (props) => {
           <DateTime format="DATE_MED" value={result.issued} />
         </div>
         <div className="result-info">
-          <span className="result-info-title">Topics: </span>
+          <span className="result-info-title">
+            <FormattedMessage id="Topics:" defaultMessage="Topics:" />{' '}
+          </span>
           <StringList value={result.tags} />
         </div>
       </div>
       <div>
         <div className="result-info result-source">
-          <span className="result-info-title">Source: </span>
-          <ExternalLink href={healthURL(result.href)}>
+          <span className="result-info-title">
+            <FormattedMessage id="Source:" defaultMessage="Source:" />{' '}
+          </span>
+          <ExternalLink href={result.href}>
             <strong title={result.source} className="source">
               {firstWords(
                 getTermDisplayValue({
@@ -75,7 +76,7 @@ const HealthHorizontalCardItem = (props) => {
     '@id': result.href,
     title: (
       <>
-        <ExternalLink href={healthURL(result.href)} title={result.title}>
+        <ExternalLink href={result.href} title={result.title}>
           {result.title}
           {result.isNew && <Label className="new-item">New</Label>}
           {result.isExpired && (

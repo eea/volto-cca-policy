@@ -13,30 +13,50 @@ exports[`SearchAceContentView should render the component 1`] = `
       onClick={[Function]}
       role="listitem"
     >
-      <a
-        href="/"
+      <i
+        aria-hidden="true"
+        className="angle right icon"
         onClick={[Function]}
+      />
+      <div
+        className="content"
       >
-        Publications and reports
-         (
-        154
-        )
-      </a>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Publications and reports
+           
+          (
+          154
+          )
+        </a>
+      </div>
     </div>
     <div
       className="item"
       onClick={[Function]}
       role="listitem"
     >
-      <a
-        href="/"
+      <i
+        aria-hidden="true"
+        className="angle right icon"
         onClick={[Function]}
+      />
+      <div
+        className="content"
       >
-        Information portals
-         (
-        57
-        )
-      </a>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Information portals
+           
+          (
+          57
+          )
+        </a>
+      </div>
     </div>
   </div>
   <a

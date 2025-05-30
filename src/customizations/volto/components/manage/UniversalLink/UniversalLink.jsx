@@ -29,6 +29,13 @@ const UniversalLink = ({
   const token = useSelector((state) => state.userSession?.token);
 
   let url = href;
+
+  // TODO: customized fixed when url is an empty array
+  if (Array.isArray(url)) {
+    url = url[0];
+  }
+  // end customized
+
   if (!href && item) {
     if (!item['@id']) {
       // eslint-disable-next-line no-console
@@ -46,15 +53,15 @@ const UniversalLink = ({
       //case: item like a Link
       let remoteUrl = item.remoteUrl || item.getRemoteUrl;
       if (!token && remoteUrl) {
-        url = remoteUrl;
+        url = item.getURL; // we use getURL, it is better
       }
 
       //case: item of type 'File'
       if (
-        !token &&
+        download &&
         config.settings.downloadableObjects.includes(item['@type'])
       ) {
-        url = `${url}/@@download/file`;
+        url = url.includes('/@@download/file') ? url : `${url}/@@download/file`;
       }
 
       if (
@@ -66,15 +73,21 @@ const UniversalLink = ({
     }
   }
 
-  const isExternal = !isInternalURL(url);
+  if (download && isInternalURL(url)) {
+    url = url.includes('/@@download/file') ? url : `${url}/@@download/file`;
+  }
 
-  const isDownload = (!isExternal && url.includes('@@download')) || download;
+  const isExternal = !isInternalURL(url);
+  const isDownload =
+    (!isExternal && url && url.includes('@@download')) || download;
+
   const isDisplayFile =
     (!isExternal && url.includes('@@display-file')) || false;
-
   const checkedURL = URLUtils.checkAndNormalizeUrl(url);
 
-  url = checkedURL.url;
+  // we can receive an item with a linkWithHash property set from ObjectBrowserWidget
+  // if so, we use that instead of the url prop
+  url = (item && item['linkWithHash']) || checkedURL.url;
   let tag = (
     <Link
       to={flattenToAppURL(url)}
@@ -88,16 +101,18 @@ const UniversalLink = ({
     </Link>
   );
 
-  const isBlank =
-    (isExternal || openLinkInNewTab) &&
-    (!checkedURL.isMail || !checkedURL.isTelephone);
-
   if (isExternal) {
     tag = (
       <a
         href={url}
         title={title}
-        target={isBlank ? '_blank' : null}
+        target={
+          !checkedURL.isMail &&
+          !checkedURL.isTelephone &&
+          !(openLinkInNewTab === false)
+            ? '_blank'
+            : null
+        }
         rel="noopener"
         className={className}
         {...props}
@@ -122,6 +137,7 @@ const UniversalLink = ({
       <a
         href={flattenToAppURL(url)}
         title={title}
+        target={!(openLinkInNewTab === false) ? '_blank' : null}
         rel="noopener"
         className={className}
         {...props}

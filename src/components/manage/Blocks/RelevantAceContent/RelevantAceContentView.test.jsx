@@ -22,6 +22,11 @@ jest.mock('react-router-dom', () => ({
 describe('RelevantAceContentView', () => {
   it('should render the component', () => {
     const data = {
+      element_type: [],
+      sector: [],
+      search_type: [],
+      special_tags: [],
+      search_text: '',
       _v_results: [
         ['Publications and reports', 'Publications and reports', '/', []],
         ['Information portals', 'Information portals', '/', []],

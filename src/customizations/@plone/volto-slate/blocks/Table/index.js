@@ -1,5 +1,5 @@
 import TableBlockEdit from '@plone/volto-slate/blocks/Table/TableBlockEdit';
-import TableBlockView from '@plone/volto-slate/blocks/Table/TableBlockView';
+import TableBlockView from './TableBlockView';
 import { extractTables } from './deconstruct';
 import { normalizeTable } from '@plone/volto-slate/blocks/Table/extensions/normalizeTable';
 import { normalizeExternalData } from '@plone/volto-slate/blocks/Text/extensions';

@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import cx from 'classnames';
 import { ConditionalLink } from '@plone/volto/components';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
-import { observatoryURL } from './common';
+
 import './styles.less';
 
 const fixedTitles = {
@@ -17,22 +14,19 @@ const fixTitle = (title) => {
   return fixedTitles[title] || title;
 };
 
-const IndicatorCardsListingView = ({ items, isEditMode, token }) => {
+const IndicatorCardsListingView = ({ items, isEditMode }) => {
   return (
-    <div className={cx('ui fluid indicatorCards')}>
+    <div className="ui fluid indicatorCards">
       {items.map((item, index) => (
-        <div
-          className={cx('u-item listing-item simple-listing-item')}
-          key={item['@id']}
-        >
+        <div className="u-item listing-item simple-listing-item" key={index}>
           <div className="wrapper">
             <div className="slot-top">
               <ConditionalLink
-                to={flattenToAppURL(getBaseUrl(observatoryURL(item)))}
+                to={flattenToAppURL(getBaseUrl(item['@id']))}
                 condition={!isEditMode}
               >
                 <div className="listing-body">
-                  <h4 className={'listing-header'}>
+                  <h4 className="listing-header">
                     {item.title ? item.title : item.id}
                   </h4>
                 </div>
@@ -62,8 +56,4 @@ IndicatorCardsListingView.propTypes = {
   isEditMode: PropTypes.bool,
 };
 
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(IndicatorCardsListingView);
+export default IndicatorCardsListingView;

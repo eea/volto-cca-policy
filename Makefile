@@ -70,10 +70,20 @@ install:		## Build and install development environment
 	${DOCKER_COMPOSE} pull
 	${DOCKER_COMPOSE} build
 
+.PHONY: build-frontend
+build-frontend:		## Build and install development environment
+	echo "Running:	${DOCKER_COMPOSE} build frontend"
+	${DOCKER_COMPOSE} build frontend
+
 .PHONY: start
 start:			## Start development environment
 	echo "Running:	${DOCKER_COMPOSE} up"
 	${DOCKER_COMPOSE} up
+
+.PHONY: start-backend
+start-backend:			## Start development environment
+	echo "Running:	${DOCKER_COMPOSE} up"
+	${DOCKER_COMPOSE} up backend
 
 .PHONY: shell
 shell:			## Start a shell in the frontend container
@@ -90,7 +100,7 @@ cypress-run:	## Run cypress integration tests
 
 .PHONY: test
 test:			## Run jest tests
-	${DOCKER_COMPOSE} run -e CI=1 frontend test
+	${DOCKER_COMPOSE} run -e CI=1 frontend test --watchAll
 
 .PHONY: test-update
 test-update:	## Update jest tests snapshots
@@ -127,8 +137,9 @@ lint-fix:		## Fix ES Lint
 
 .PHONY: i18n
 i18n:			## i18n
-	rm -rf build/messages
-	NODE_ENV=development $(NODE_MODULES)/.bin/i18n --addon
+# rm -rf build/messages
+# NODE_ENV=development $(NODE_MODULES)/.bin/i18n --addon
+	./i18n.cjs -a
 
 .PHONY: help
 help:                   ## Show this help.

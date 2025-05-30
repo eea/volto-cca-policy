@@ -35,6 +35,7 @@ const viewsMiddlewareConfigurator = (config) => {
       '**/@@case-studies-map.arcgis.json',
       '**@countries-metadata-extract',
       '**@@countries-heat-index-json',
+      '**@@translate-this-async',
     ],
     viewMiddleware,
   );

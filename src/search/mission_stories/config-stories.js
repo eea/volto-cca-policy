@@ -29,7 +29,17 @@ export default function installMissionStoriesSearch(config) {
   };
 
   const { missionStoriesSearch } = config.searchui;
-
+  missionStoriesSearch.permanentFilters.push({
+    bool: {
+      must_not: [
+        {
+          term: {
+            'seo_noindex.keyword': 'true',
+          },
+        },
+      ],
+    },
+  });
   missionStoriesSearch.facets = facets;
 
   if (typeof window !== 'undefined') {

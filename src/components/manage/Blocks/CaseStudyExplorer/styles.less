@@ -1,15 +1,31 @@
-#csepopup > span {
-  display: 'block';
-  margin-bottom: '10px';
-  background-color: '#ddd';
-}
+@mapHeight: 70vh;
 
 #csepopup {
+  width: 300px;
+  padding: 10px 0;
+  border-bottom: 6px solid #005c96;
+  background-color: white;
+
+  .close {
+    position: relative;
+    top: -8px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    float: right;
+  }
+
+  a.dbitem {
+    font-size: 14px;
+    text-decoration: none;
+  }
+
   p {
+    padding: 0 10px;
     font-size: 13px;
 
-    p {
-      margin-bottom: 10px;
+    a {
+      text-decoration: underline;
     }
   }
 
@@ -23,37 +39,72 @@
     background-color: #ddd;
 
     img {
-      max-height: 133px;
+      max-height: 130px;
     }
   }
 }
 
-#cse-filter {
-  h4 {
-    position: relative;
-    padding: 10px;
-    border-bottom: 1px solid #d8d8d8;
-    margin-bottom: 0 !important;
-    background-color: #005c96;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
+.section-case-study-explorer #popup-overlay {
+  width: 300px;
+  padding: 0;
+  background-color: #fff;
+}
+
+.casestudy-explorer-map {
+  min-height: @mapHeight;
+
+  .ol-map {
+    min-height: @mapHeight;
   }
 
-  p {
-    padding: 2px;
-    padding-left: 10px;
-    clear: both;
-    line-height: 20px;
+  .casestudy-filters {
+    display: flex;
+    min-height: @mapHeight;
+    flex-direction: column;
+  }
 
-    span {
-      float: left;
-      font-family: OpenSansM, sans-serif;
-      font-size: 12px;
+  #cse-filter {
+    h4 {
+      font-size: 16px;
     }
 
-    input {
-      float: right;
+    .ui.accordion {
+      .content {
+        overflow: auto;
+        max-height: 400px;
+
+        .subcategory {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    button.reset {
+      margin-top: 20px;
+    }
+
+    .ui.checkbox {
+      width: 100%;
+    }
+
+    .case-study-legend {
+      padding-top: 20px;
+      margin-top: auto;
+
+      .case-study-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-top: 3px;
+        margin-right: 5px;
+        background-color: #005c96 !important;
+        background-color: #bbb;
+        border-radius: 50%;
+
+        // &.light-blue {
+        //   background-color: #00ffff !important;
+        // }
+      }
     }
   }
 }

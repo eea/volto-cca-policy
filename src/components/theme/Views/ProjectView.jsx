@@ -3,18 +3,22 @@ import {
   HTMLField,
   ContentMetadata,
   PublishedModifiedInfo,
-  ShareInfo,
   ItemLogo,
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
-import { Divider, Grid } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import { Container, Divider, Grid } from 'semantic-ui-react';
+import {
+  ShareInfoButton,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
+import { FormattedMessage } from 'react-intl';
 
 import config from '@plone/volto/registry';
 
 function ProjectView(props) {
   const { content } = props;
   const { long_description, lead, funding, partners, acronym, title } = content;
+  const item_title = acronym ? title + ' (' + acronym + ')' : title;
 
   const {
     blocks: { blocksConfig },
@@ -29,9 +33,9 @@ function ProjectView(props) {
         data={{
           info: [{ description: '' }],
           hideContentType: true,
-          hideCreationDate: false,
-          hideModificationDate: false,
-          hidePublishingDate: false,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
           hideDownloadButton: false,
           hideShareButton: false,
           subtitle: 'Project',
@@ -39,11 +43,11 @@ function ProjectView(props) {
         metadata={{
           ...content,
           image: '',
-          title: title + ' (' + acronym + ')',
+          title: item_title,
         }}
       />
 
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
@@ -58,14 +62,28 @@ function ProjectView(props) {
 
               <Divider />
 
-              <h2>Project information</h2>
-              <h5>Lead</h5>
+              <h2>
+                <FormattedMessage
+                  id="Project information"
+                  defaultMessage="Project information"
+                />
+              </h2>
+              <h5>
+                <FormattedMessage id="Lead" defaultMessage="Lead" />
+              </h5>
               <p>{lead}</p>
-              <h5>Partners</h5>
+              <h5>
+                <FormattedMessage id="Partners" defaultMessage="Partners" />
+              </h5>
               <HTMLField value={partners} className="partners" />
               {funding && (
                 <>
-                  <h5>Source of funding</h5>
+                  <h5>
+                    <FormattedMessage
+                      id="Source of funding"
+                      defaultMessage="Source of funding"
+                    />
+                  </h5>
                   <p>{funding}</p>
                 </>
               )}
@@ -73,7 +91,7 @@ function ProjectView(props) {
               <Divider />
               <ReferenceInfo content={content} />
               <PublishedModifiedInfo {...props} />
-              <ShareInfo {...props} />
+              <ShareInfoButton {...props} />
             </Grid.Column>
             <Grid.Column
               mobile={12}
@@ -85,7 +103,7 @@ function ProjectView(props) {
             </Grid.Column>
           </div>
         </Grid>
-      </div>
+      </Container>
     </div>
   );
 }

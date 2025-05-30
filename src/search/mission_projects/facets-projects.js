@@ -5,36 +5,39 @@ import {
   language,
   issued_date,
   geographic_countries,
+  cca_climate_impacts,
+  cca_adaptation_sectors,
 } from './../common';
+
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  fundingProgramme: {
+    id: 'Funding Programme',
+    defaultMessage: 'Funding Programme',
+  },
+  adaptationApproaches: {
+    id: 'Adaptation Approaches',
+    defaultMessage: 'Adaptation Approaches',
+  },
+});
 
 const facets = [
   multiTermFacet({
     field: 'cca_funding_programme.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Funding Programme',
+    label: messages.fundingProgramme,
     iconsFamily: 'Funding Programme',
     alwaysVisible: false,
   }),
-  multiTermFacet({
-    field: 'cca_climate_impacts.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Climate Impacts',
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_adaptation_sectors.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Adaptation Sectors',
-    alwaysVisible: false,
-  }),
+  cca_climate_impacts,
+  cca_adaptation_sectors,
   multiTermFacet({
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Adaptation Elements',
+    label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
   geographic_countries,

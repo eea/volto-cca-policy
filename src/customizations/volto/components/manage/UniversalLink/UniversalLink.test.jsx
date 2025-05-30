@@ -120,9 +120,9 @@ describe('UniversalLink', () => {
       </Provider>,
     );
 
-    expect(getByTitle('Volto GitHub repository').getAttribute('target')).toBe(
-      '_blank',
-    );
+    expect(
+      getByTitle('Volto GitHub repository').getAttribute('target'),
+    ).toBeNull();
   });
 
   it('check UniversalLink renders ext link for blacklisted urls', () => {

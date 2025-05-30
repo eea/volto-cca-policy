@@ -1,25 +1,22 @@
 import React from 'react';
 import { compose } from 'redux';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-
-import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { Grid } from 'semantic-ui-react';
 import {
-  euCountryNames as euCountryNamesRaw,
-  tooltipStyle,
   getImageUrl,
+  tooltipStyle,
   adjustEuCountryNames,
+  euCountryNames as euCountryNamesRaw,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
-
-import withResponsiveContainer from '../withResponsiveContainer';
-import withVisibilitySensor from '../withVisibilitySensor';
+import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
+import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
-
-import Filter from './Filter';
-import { Grid } from 'semantic-ui-react';
 import { useCountriesMetadata } from './hooks';
+import Filter from './Filter';
+import withResponsiveContainer from '../withResponsiveContainer';
+import withVisibilitySensor from '../withVisibilitySensor';
 import { addAppURL } from '@plone/volto/helpers';
 
 import './styles.less';
@@ -28,13 +25,16 @@ import './styles.less';
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const View = (props) => {
-  const { geofeatures, projection } = props;
+  const { geofeatures, projection, ol } = props;
 
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
+  const styles = React.useMemo(() => makeStyles(highlight, ol), [
+    stateHighlight,
+    ol,
+  ]);
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
@@ -113,7 +113,12 @@ const View = (props) => {
       new ol.source.TileWMS({
         url: 'https://gisco-services.ec.europa.eu/maps/service',
         params: {
-          // LAYERS: 'OSMBlossomComposite', OSMCartoComposite, OSMPositronComposite
+          // LAYERS: 'OSMBlossomComposite',
+          // LAYERS: 'OSMCartoComposite',
+          // LAYERS: 'OSMPositronComposite',
+          // LAYERS: 'GreyEarth',
+          // LAYERS: 'OSMCarto',
+          // LAYERS: 'NaturalEarth',
           LAYERS: 'OSMBrightBackground',
           TILED: true,
         },
@@ -121,7 +126,7 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames]);
+  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames, ol]);
 
   const baseUrl = props.path || props.location?.pathname || '';
 
@@ -137,9 +142,9 @@ const View = (props) => {
   // console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
 
   return (
-    <div>
+    <div className="ol-country-map">
       <Grid columns="12">
-        <Grid.Column mobile={9} tablet={9} computer={10} className="col-left">
+        <Grid.Column mobile={12} tablet={12} computer={10} className="col-left">
           {tileWMSSources ? (
             <Map
               view={{
@@ -159,6 +164,7 @@ const View = (props) => {
               <Layers>
                 {props.mode !== 'edit' && (
                   <Interactions
+                    ol={ol}
                     tooltipRef={tooltipRef}
                     // onFeatureClick={onFeatureClick}
                     countries_metadata={countries_metadata}
@@ -180,8 +186,8 @@ const View = (props) => {
           ) : null}
         </Grid.Column>
         <Grid.Column
-          mobile={3}
-          tablet={3}
+          mobile={12}
+          tablet={12}
           computer={2}
           className="col-left"
           id="country-map-filter"
@@ -201,4 +207,5 @@ export default compose(
   withGeoJsonData,
   withResponsiveContainer('countryMapProfile'),
   withVisibilitySensor(),
+  withOpenLayers,
 )(View);

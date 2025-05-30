@@ -126,7 +126,7 @@ exports[`AdaptationOptionView should render the component 1`] = `
             Websites:
           </h5>
           <div
-            className="ui bulleted list"
+            className="ui list"
             role="list"
           >
             <div
@@ -156,26 +156,14 @@ exports[`AdaptationOptionView should render the component 1`] = `
             }
           />
           <div
-            className="published-modified-info"
+            className="published-info"
           >
             <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
+              <strong>
+                Published in Climate-ADAPT
+              </strong>
+              : 
+              Jun 24, 2022
             </p>
           </div>
           <div
@@ -192,7 +180,7 @@ exports[`AdaptationOptionView should render the component 1`] = `
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="right arrow icon"
+                  className="icon ri-share-line"
                   onClick={[Function]}
                 />
               </button>
@@ -203,27 +191,37 @@ exports[`AdaptationOptionView should render the component 1`] = `
           className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            className="ui segment"
+            className="ui segment content-metadata"
           >
+            <h5>
+              Date of creation:
+            </h5>
+            <p>
+              NaN
+              <i
+                className="ri-question-fill"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+            </p>
+            <h5>
+              IPCC adaptation options categories:
+            </h5>
+            <p>
+              Structural and physical: Ecosystem-based adaptation options
+            </p>
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                IPCC adaptation options categories:
-              </h5>
-              <span>
-                Structural and physical: Ecosystem-based adaptation options
-              </span>
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
+              <p>
+                Global
+              </p>
             </div>
           </div>
         </div>

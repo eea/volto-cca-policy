@@ -5,7 +5,8 @@ import { compose } from 'redux';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions';
-// import useChildren from './RASTView';
+
+import cx from 'classnames';
 
 const RASTAccordionContent = (props) => {
   const { main, curent_location } = props;
@@ -21,33 +22,28 @@ const RASTAccordionContent = (props) => {
   items = useSelector(
     (state) => state.content?.subrequests?.[location]?.data?.items || [],
   );
-  // const items = useChildren(location);
+
   return (
-    <div className="dataset-content">
-      <div>
-        {items.length
-          ? items
-              .filter((item) => item['@type'] === 'Folder')
-              .map((item) => (
+    <div>
+      {items.length
+        ? items
+            .filter((item) => item['@type'] === 'Folder')
+            .map((item) => {
+              const active = item['@id'].endsWith(curent_location.pathname);
+              return (
                 <List.Item
                   key={item.id}
-                  className={`${
-                    item['@id'].endsWith(curent_location.pathname)
-                      ? 'active'
-                      : ''
-                  }`}
+                  className={cx('substep', {
+                    active: active,
+                  })}
                 >
-                  <List.Content>
-                    <div className="dataset-item">
-                      <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
-                        {item.title}
-                      </Link>
-                    </div>
-                  </List.Content>
+                  <Link to={flattenToAppURL(getBaseUrl(item['@id']))}>
+                    {item.title}
+                  </Link>
                 </List.Item>
-              ))
-          : null}
-      </div>
+              );
+            })
+        : null}
     </div>
   );
 };

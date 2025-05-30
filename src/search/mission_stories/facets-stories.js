@@ -1,29 +1,37 @@
 import { multiTermFacet } from '@eeacms/search';
 
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
+import {
+  cca_climate_impacts,
+  cca_adaptation_sectors,
+  language,
+} from './../common';
+
+import { defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  keyCommunitySystems: {
+    id: 'Key Community Systems',
+    defaultMessage: 'Key Community Systems',
+  },
+  fundingProgramme: {
+    id: 'Funding Programme',
+    defaultMessage: 'Funding Programme',
+  },
+  hazardType: {
+    id: 'Hazard Type',
+    defaultMessage: 'Hazard Type',
+  },
+});
 
 const facets = [
-  multiTermFacet({
-    field: 'cca_climate_impacts.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Climate Impacts',
-    iconsFamily: 'Climate Impacts',
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_adaptation_sectors.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: 'Adaptation Sectors',
-    iconsFamily: 'Adaptation Sectors',
-    alwaysVisible: false,
-  }),
+  cca_climate_impacts,
+  cca_adaptation_sectors,
   multiTermFacet({
     field: 'key_system.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Key Community Systems',
+    label: messages.keyCommunitySystems,
     iconsFamily: 'Key Community Systems',
     alwaysVisible: false,
   }),
@@ -32,7 +40,7 @@ const facets = [
     field: 'cca_funding_programme.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Funding Programme',
+    label: messages.fundingProgramme,
     iconsFamily: 'Funding Programme',
     alwaysVisible: false,
   }),
@@ -40,10 +48,11 @@ const facets = [
     field: 'climate_threats.keyword',
     isFilterable: false,
     isMulti: true,
-    label: 'Hazard Type',
+    label: messages.hazardType,
     iconsFamily: 'Hazard Type',
     alwaysVisible: false,
   }),
+  language,
 ];
 
 export default facets;

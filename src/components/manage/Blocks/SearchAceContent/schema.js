@@ -42,7 +42,7 @@ const schema = {
       },
     },
     element_type: {
-      title: 'Element type',
+      title: 'Adaptation approach',
       widget: 'array',
       vocabulary: {
         '@id': 'eea.climateadapt.element_types_vocabulary',

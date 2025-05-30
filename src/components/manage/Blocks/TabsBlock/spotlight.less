@@ -1,0 +1,66 @@
+.spotlight-tabs {
+  // this is the container div
+
+  .ui.menu:not(.vertical) .item {
+    display: flex;
+    align-items: flex-end !important;
+  }
+}
+
+.ui.menu.menu-tabs-spotlight-variant {
+  // this is the menu
+  flex-wrap: wrap;
+  border: none;
+  margin: 1em 0 !important;
+  box-shadow: none;
+  font-size: 14px;
+  gap: 10px;
+
+  .ui.image.thumb {
+    width: 190px;
+    height: auto;
+  }
+
+  .image.icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .icon-image {
+    width: 85px;
+    height: 100%;
+
+    @media only screen and (max-width: 480px) {
+      width: 60px;
+    }
+  }
+
+  .item {
+    padding: 0.5em;
+    border: 1px solid transparent !important;
+
+    &:hover {
+      border: 1px solid #ddd !important;
+      border-radius: 4px;
+
+      .menu-item-text {
+        color: #0f6ba5;
+      }
+    }
+
+    &.active,
+    &.active:hover {
+      border: 1px solid #ddd !important;
+      border-radius: 5px;
+
+      .menu-item-text {
+        color: #0f6ba5;
+      }
+    }
+
+    &:before {
+      background: none;
+    }
+  }
+}

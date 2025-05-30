@@ -1,162 +1,162 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import cx from 'classnames';
-import './styles.less';
-import { ConditionalLink } from '@plone/volto/components';
-import { Icon } from 'semantic-ui-react';
+import { FormattedMessage } from 'react-intl';
+import { useSelector } from 'react-redux';
+import { Card, Grid, Icon, Label, Image } from 'semantic-ui-react';
+import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import { Card, Grid } from 'semantic-ui-react';
-import { Label } from 'semantic-ui-react';
+import { capitalizeFirstLetter } from '@eeacms/volto-cca-policy/helpers';
+import config from '@plone/volto/registry';
 
-const Separator = () => {
-  return <div className="sep">&nbsp;&nbsp;⎯&nbsp;&nbsp;</div>;
-};
+import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
+import './styles.less';
 
-const StartDate = (start) => {
-  const start_date = new Date(start);
+const goToContact = (contactInfo) =>
+  contactInfo.includes('@') ? `mailto:${contactInfo}` : contactInfo;
 
-  const day = start_date.getDate();
-  const monthIndex = start_date.getMonth();
+const getEventUrl = (item) => item?.event_url || item['@id'];
 
-  const monthNames = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+const StartDate = ({ start }) => {
+  const startDate = new Date(start);
+  const day = startDate.getDate();
+  const currentLang = useSelector((state) => state.intl.locale);
 
-  const monthName = monthNames[monthIndex];
+  const monthName = capitalizeFirstLetter(
+    startDate.toLocaleDateString(currentLang, { month: 'short' }),
+  );
 
-  const dayOfWeek = start_date
-    .toLocaleDateString('en', { weekday: 'short' })
-    .substring(0, 2);
+  const dayOfWeek = capitalizeFirstLetter(
+    startDate.toLocaleDateString(currentLang, { weekday: 'short' }),
+  );
 
   return (
     <div className="start-date">
       <p className="day">{dayOfWeek}</p>
-      <p className="date">
-        {day} {monthName}
-      </p>
+      <p className="date">{`${day} ${monthName}`}</p>
     </div>
   );
 };
 
-const EventCardsListingView = ({ items, isEditMode, token }) => {
-  const go_to_contact = (contact_info) => {
-    if (contact_info.includes('@')) {
-      return `mailto:${contact_info}`;
-    }
-    return contact_info;
-  };
+const EventCard = ({ item, isEditMode }) => (
+  <div className="u-item listing-item simple-listing-item" key={item.UID}>
+    <div className="wrapper">
+      <Card fluid>
+        <Card.Content>
+          <Grid stackable columns={12}>
+            <Grid.Column width={2}>
+              {item?.start && <StartDate start={item.start} />}
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <div className="event-details">
+                <h3 className="listing-header">
+                  <UniversalLink href={getEventUrl(item)}>
+                    {item.title}
+                  </UniversalLink>
+                </h3>
+                <EventDetails item={item} isEditMode={isEditMode} />
+              </div>
+            </Grid.Column>
+          </Grid>
+        </Card.Content>
+      </Card>
+    </div>
+  </div>
+);
 
-  const event_url = (item) => {
-    if (!!item.event_url) {
-      return item.event_url;
-    }
-    return item.id;
-  };
+const EventDetails = ({ item, isEditMode }) => (
+  <>
+    {item?.start && (
+      <div className="listing-body-dates">
+        <span className="event-date">
+          <Icon className="ri-calendar-line" />
+          <When
+            whole_day
+            start={item.start}
+            end={item.end}
+            open_end={item.open_end}
+          />
+        </span>
+      </div>
+    )}
+    {item?.location && (
+      <div className="listing-body-dates">
+        <span className="event-date">
+          <Icon className="map marker alternate" />
+          {item.location}
+        </span>
+      </div>
+    )}
+    {item?.description && (
+      <p className="listing-description">{item.description}</p>
+    )}
+    <BottomInfo item={item} isEditMode={isEditMode} />
+  </>
+);
+
+const BottomInfo = ({ item, isEditMode }) => {
+  const { '@type': itemType, event_url, subjects, contact_email } = item || {};
+  const isCcaEventType = itemType === 'cca-event';
+  const isExternal = event_url && !event_url.includes(config.settings.apiPath);
+  const isMissionEvent = item['@id'].includes('/en/mission');
 
   return (
-    <div className={cx('ui fluid eventCards')}>
-      {items.map((item, index) => (
-        <div
-          className={cx('u-item listing-item simple-listing-item')}
-          key={item['@id']}
-        >
-          <div className="wrapper">
-            <Card fluid>
-              <Card.Content>
-                <Grid stackable columns={12}>
-                  <Grid.Column width={2}>
-                    {!!item.start && StartDate(item.start)}
-                  </Grid.Column>
-                  <Grid.Column width={10}>
-                    <div className="event-details">
-                      <h3 className={'listing-header'}>
-                        <a href={event_url(item)}>
-                          {item.title ? item.title : item.id}
-                        </a>
-                      </h3>
-                      <div className="listing-body-dates">
-                        {!!item.start && (
-                          <span className="event-date">
-                            <Icon className="ri-calendar-line" />
-                            <When
-                              start={item.start}
-                              end={item.end}
-                              whole_day={true}
-                              open_end={item.open_end}
-                            />
-                          </span>
-                        )}
-                      </div>
-                      <div className="listing-body-dates">
-                        {!!item['location'] && (
-                          <span className="event-date">
-                            <Icon className="map marker alternate" />
-                            {item['location']}
-                          </span>
-                        )}
-                      </div>
-                      {item.description && (
-                        <p className={'listing-description'}>
-                          {item.description}
-                        </p>
-                      )}
-                      <div className="bottom-info">
-                        {!!item.subjects && item.subjects.length > 0 && (
-                          <>
-                            <div className="subjects">
-                              {item.subjects.map((tag) => (
-                                <Label key={tag} size="small">
-                                  {tag}
-                                </Label>
-                              ))}
-                            </div>
-
-                            <Separator />
-                          </>
-                        )}
-                        <div className="source">
-                          <ConditionalLink item={item} condition={!isEditMode}>
-                            Climate-ADAPT page for this event
-                          </ConditionalLink>
-                        </div>
-                        {!!item.contact_email && (
-                          <>
-                            <Separator />
-                            <div className="email-info">
-                              <Icon className="mail" />
-                              <a
-                                className="contact_email"
-                                title=""
-                                href={go_to_contact(item.contact_email)}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {item.contact_email}
-                              </a>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </Grid.Column>
-                </Grid>
-              </Card.Content>
-            </Card>
-          </div>
+    <>
+      {!isMissionEvent && (!isExternal || isCcaEventType) && (
+        <div className="event-organisation">
+          <FormattedMessage
+            id="Organised by EEA"
+            defaultMessage="Organised by EEA"
+          />
+          <Image
+            className="eea-logo"
+            src={eeaLogo}
+            alt="European Environment Agency"
+            title="European Environment Agency"
+          />
         </div>
+      )}
+      <div className="bottom-info">
+        {subjects && subjects.length > 0 && (
+          <div className="subjects">
+            {subjects.map((tag) => (
+              <Label key={tag} size="small">
+                {tag}
+              </Label>
+            ))}
+          </div>
+        )}
+
+        <div className="source">
+          <ConditionalLink item={item} condition={!isEditMode}>
+            <FormattedMessage
+              id="Climate-ADAPT page for this event"
+              defaultMessage="Climate-ADAPT page for this event"
+            />
+          </ConditionalLink>
+        </div>
+        {contact_email && (
+          <div className="email-info">
+            <Icon name="mail" />
+            <a
+              className="contact_email"
+              href={goToContact(contact_email)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {contact_email}
+            </a>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
+const EventCardsListingView = ({ items, isEditMode }) => {
+  return (
+    <div className="ui fluid eventCards">
+      {items.map((item) => (
+        <EventCard key={item.UID} item={item} isEditMode={isEditMode} />
       ))}
     </div>
   );
@@ -167,8 +167,4 @@ EventCardsListingView.propTypes = {
   isEditMode: PropTypes.bool,
 };
 
-export default compose(
-  connect((state) => ({
-    token: state.userSession.token,
-  })),
-)(EventCardsListingView);
+export default EventCardsListingView;

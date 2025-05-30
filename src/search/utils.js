@@ -38,11 +38,7 @@ export function getClientProxyAddress() {
 export const getSearchThumbUrl = () => (result, config, fallback) => {
   let image = fallback;
 
-  if (
-    result.about?.raw?.indexOf('://cca-p6.devel5cph.eionet.europa.eu') !== -1 ||
-    result.about?.raw?.indexOf('://cca.devel5cph.eionet.europa.eu') !== -1 ||
-    result.about?.raw?.indexOf('://climate-adapt.eea.europa.eu') !== -1
-  ) {
+  if (result.about?.raw?.indexOf('://climate-adapt.eea.europa.eu') !== -1) {
     if (result.cca_preview_image) {
       image = result?.about?.raw + '/@@images/preview_image/preview';
     }

@@ -41,7 +41,7 @@ exports[`DatabaseItemView should render the component 1`] = `
             Websites:
           </h5>
           <div
-            className="ui bulleted list"
+            className="ui list"
             role="list"
           >
             <div
@@ -56,27 +56,60 @@ exports[`DatabaseItemView should render the component 1`] = `
               </a>
             </div>
           </div>
+          <h5>
+            Observatory Contributions:
+          </h5>
           <div
-            className="published-modified-info"
+            className="ui bulleted list"
+            role="list"
+          >
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Contributor 1
+              </a>
+            </div>
+            <div
+              className="item"
+              onClick={[Function]}
+              role="listitem"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Contributor 2
+              </a>
+            </div>
+          </div>
+          <div>
+            <button
+              className="ui button"
+              onClick={[Function]}
+            >
+              <a
+                href="/en/observatory/advanced-search?size=n_10_n&filters%5B0%5D%5Bfield%5D=cca_partner_contributors.keyword&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=undefined&filters%5B1%5D%5Bfield%5D=issued.date&filters%5B1%5D%5Bvalues%5D%5B0%5D=All time&filters%5B1%5D%5Btype%5D=any&filters%5B2%5D%5Bfield%5D=language&filters%5B2%5D%5Bvalues%5D%5B0%5D=en&filters%5B2%5D%5Btype%5D=any&sort-field=issued.date&sort-direction=desc"
+                onClick={[Function]}
+              >
+                View all contributions in the resource catalogue
+              </a>
+            </button>
+          </div>
+          <div
+            className="published-info"
           >
             <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
+              <strong>
+                Published in Climate-ADAPT
+              </strong>
+              : 
+              Jun 24, 2022
             </p>
           </div>
           <div
@@ -93,7 +126,7 @@ exports[`DatabaseItemView should render the component 1`] = `
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="right arrow icon"
+                  className="icon ri-share-line"
                   onClick={[Function]}
                 />
               </button>
@@ -104,27 +137,37 @@ exports[`DatabaseItemView should render the component 1`] = `
           className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            className="ui segment"
+            className="ui segment content-metadata"
           >
+            <h5>
+              Date of creation:
+            </h5>
+            <p>
+              2022
+              <i
+                className="ri-question-fill"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+            </p>
+            <h5>
+              Keywords:
+            </h5>
+            <span>
+              keyword 1, keyword 2
+            </span>
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                Keywords:
-              </h5>
-              <span>
-                keyword 1, keyword 2
-              </span>
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
+              <p>
+                Global
+              </p>
             </div>
           </div>
         </div>

@@ -11,8 +11,10 @@ function useChildren(location) {
     dispatch(action);
   }, [location, dispatch]);
 
-  const items = useSelector(
-    (state) => state.content.subrequests?.[location]?.data?.items || [],
+  const items = useSelector((state) =>
+    (state.content.subrequests?.[location]?.data?.items || []).filter(
+      (i) => i.review_state === 'published',
+    ),
   );
   return items;
 }
@@ -23,6 +25,12 @@ export default function RASTView(props) {
   if (typeof root_path === 'undefined') {
     root_path = '/';
   }
+  let skip_items = data?.skip_items;
+  const show_subfolders = data?.show_subfolders;
+
+  if (typeof skip_items !== 'string') {
+    skip_items = '';
+  }
   let items = useChildren(root_path);
   if (root_path === '/') {
     items = [];
@@ -32,6 +40,8 @@ export default function RASTView(props) {
     <div className="block rast-block">
       <ContextNavigation
         items={items}
+        skip_items={skip_items}
+        show_subfolders={show_subfolders}
         location={{
           pathname: root_path,
         }}

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   euCountryNames,
   setTooltipVisibility,
@@ -8,14 +7,14 @@ import {
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
 export const Interactions = ({
-  tooltipRef,
-  // onFeatureClick,
-  countries_metadata,
   baseUrl,
+  highlight,
+  tooltipRef,
   thematicMapMode,
   euCountryFeatures,
-  highlight,
   setStateHighlight,
+  countries_metadata,
+  ol,
 }) => {
   const map = useMapContext().map;
 
@@ -30,7 +29,12 @@ export const Interactions = ({
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
+        ol,
       );
+      if (!feature) {
+        const node = tooltipRef.current;
+        node.style.visibility = 'hidden';
+      }
       const domEvt = evt.originalEvent;
 
       if (
@@ -38,23 +42,20 @@ export const Interactions = ({
         feature &&
         euCountryNames.includes(feature.get('na'))
       ) {
-        // if (countries_metadata.length>0) {
         let countryName = feature.get('na');
-        let noDataReportedMsg =
-          'No data reported through the reporting mechanism of the Governance Regulation. Last information is available <a href="' +
-          baseUrl +
-          '/' +
-          countryName.toLowerCase() +
-          '">here</a>';
+        let noDataReportedMsg = `
+          No data reported through the reporting mechanism of the Governance Regulation.
+          Last information is available
+          <a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
+
         if (countryName === 'Türkiye') {
           countryName = 'Turkiye';
-          noDataReportedMsg =
-            'Data reported in 2021 through the reporting mechanism of the Governance Regulation. Information is available <a href="' +
-            baseUrl +
-            '/' +
-            countryName.toLowerCase() +
-            '">here</a>';
+          noDataReportedMsg = `
+            Data reported in 2021 through the reporting mechanism of the Governance Regulation.
+            Information is available
+            <a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
         }
+
         if (!Object.hasOwn(countries_metadata[0], countryName)) {
           return;
         }
@@ -65,7 +66,7 @@ export const Interactions = ({
         let tooltipContent = '';
         if (thematicMapMode === 'National adaption policy') {
           if (metadata[0]?.notreported) {
-            tooltipContent = '<span>' + noDataReportedMsg + '</span>';
+            tooltipContent = `<span>${noDataReportedMsg}</span>`;
           } else {
             tooltipContent =
               metadata[0]?.mixed || '<span>NAS and NAP not reported</span>';
@@ -74,38 +75,23 @@ export const Interactions = ({
           tooltipContent =
             metadata[0]?.ccivportal_info ||
             '<span>No portal or platform reported</span>';
-          // tooltipContent.split('<p style="font-weight:bold;"></p>').join('');
         }
-        // overlaySource.addFeature(feature);
+
         map.getTargetElement().style.cursor = 'pointer';
         const node = tooltipRef.current;
-        let tooltipContentDiv =
-          `<div id="country-name">
-            <a href="https://climate-adapt.eea.europa.eu/en/countries-regions/countries/` +
-          countryName.toLowerCase() +
-          `">
-              <h3>` +
-          countryName +
-          `</h3>
-            </a>
-            <img class="tooltip-country-flag" src="` +
-          feature.get('flag').src +
-          // feature.getflag +
-          `" height="33" width="54">
-          </div><div class="tooltip-content">` +
-          tooltipContent +
-          `</div>`;
-        setTooltipVisibility(
-          node,
-          '<div class="country-tooltip">' + tooltipContentDiv + '</div>',
-          domEvt,
-          true,
-        );
-      }
+        const flag = feature.get('flag').src;
+        const cn = countryName.toLowerCase();
+        let tooltipContentDiv = `
+          <div class="country-tooltip">
+            <div id="country-name">
+              <a href="/en/countries-regions/countries/${cn}"><h3>${countryName}</h3></a>
+              <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
+            </div>
+            <div class="tooltip-content">${tooltipContent}</div>
+          </div>`;
 
-      // if (feature) {
-      //   onFeatureClick(feature);
-      // }
+        setTooltipVisibility(node, tooltipContentDiv, domEvt, true);
+      }
     });
 
     map.on('pointermove', function (evt) {
@@ -116,12 +102,13 @@ export const Interactions = ({
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
+        ol,
       );
 
       highlight.current = feature && feature.get('na');
       setStateHighlight(highlight.current);
     });
   });
-  // }, [map, tooltipRef, onFeatureClick]);
+
   return null;
 };

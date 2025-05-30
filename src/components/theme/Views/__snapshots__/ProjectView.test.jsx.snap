@@ -54,26 +54,14 @@ exports[`ProjectView should render the component 1`] = `
             className="ui divider"
           />
           <div
-            className="published-modified-info"
+            className="published-info"
           >
             <p>
-              <span>
-                <strong>
-                  Published in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
-              <span>
-                   -   
-              </span>
-              <span>
-                <strong>
-                  Last Modified in Climate-ADAPT
-                </strong>
-                 
-                Invalid Date
-              </span>
+              <strong>
+                Published in Climate-ADAPT
+              </strong>
+              : 
+              Jun 24, 2022
             </p>
           </div>
           <div
@@ -90,7 +78,7 @@ exports[`ProjectView should render the component 1`] = `
                 Share your information
                 <i
                   aria-hidden="true"
-                  className="right arrow icon"
+                  className="icon ri-share-line"
                   onClick={[Function]}
                 />
               </button>
@@ -101,21 +89,31 @@ exports[`ProjectView should render the component 1`] = `
           className="four wide computer twelve wide mobile twelve wide tablet column col-right"
         >
           <div
-            className="ui segment"
+            className="ui segment content-metadata"
           >
+            <h5>
+              Date of creation:
+            </h5>
+            <p>
+              NaN
+              <i
+                className="ri-question-fill"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+            </p>
+            <h5>
+              Geographic characterisation:
+            </h5>
             <div
-              className="content-metadata"
+              className="geochar"
             >
-              <h5>
-                Geographic characterisation:
-              </h5>
-              <div
-                className="geochar"
-              >
-                <p>
-                  Global
-                </p>
-              </div>
+              <p>
+                Global
+              </p>
             </div>
           </div>
         </div>

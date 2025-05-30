@@ -20,6 +20,7 @@ import { resetServerContext } from 'react-beautiful-dnd';
 import { CookiesProvider } from 'react-cookie';
 import cookiesMiddleware from 'universal-cookie-express';
 import debug from 'debug';
+// import crypto from 'crypto';
 
 import routes from '@plone/volto/routes';
 import config from '@plone/volto/registry';
@@ -64,6 +65,18 @@ if (config.settings) {
   });
 }
 
+// function buildCSPHeader(opts, nonce) {
+//   return Object.keys(opts)
+//     .sort()
+//     .reduce((acc, key) => {
+//       return [
+//         ...acc,
+//         `${key} ${opts[key].replaceAll('{nonce}', `'nonce-${nonce}'`)}`,
+//       ];
+//     }, [])
+//     .join('; ');
+// }
+
 function reactIntlErrorHandler(error) {
   debug('i18n')(error);
 }
@@ -71,6 +84,7 @@ function reactIntlErrorHandler(error) {
 const supported = new locale.Locales(keys(languages), 'en');
 
 const server = express()
+  .set('etag', false)
   .disable('x-powered-by')
   .head('/*', function (req, res) {
     // Support for HEAD requests. Required by start-test utility in CI.

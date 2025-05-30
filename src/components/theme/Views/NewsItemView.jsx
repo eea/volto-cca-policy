@@ -1,50 +1,64 @@
-// import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import React from 'react';
-import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { Container } from 'semantic-ui-react';
+import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import { HTMLField, SubjectTags } from '@eeacms/volto-cca-policy/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { Label } from 'semantic-ui-react';
-import {
-  BannerTitle,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
+import { UniversalLink } from '@plone/volto/components';
 
-// const Date = (props) => {
-//   const date = props.content?.effective;
-//   return date ? (
-//     <>
-//       <When start={date} end={date} whole_day={true} open_end={false} />
-//     </>
-//   ) : null;
-// };
-
-const SubjectTags = (props) => {
-  const tags = props.content?.subjects;
-  return tags?.length > 0 ? (
+const DescriptionText = ({ content }) => {
+  return (
     <>
-      Filed under:{' '}
-      {tags.map((tag) => (
-        <Label key={tag}>{tag}</Label>
-      ))}
+      <p className="documentDescription">{content.description}</p>
+      <HTMLField value={content.text} className="content-text" />
+      {content.remoteUrl && (
+        <div className="news-link">
+          <span>Read more on </span>
+          <UniversalLink href={content.remoteUrl}>
+            {content.remoteUrl}
+          </UniversalLink>
+        </div>
+      )}
     </>
-  ) : null;
+  );
 };
 
-function CcaEventView(props) {
+function NewsItemView(props) {
   const { content } = props;
+
+  // These blocks are used in the Edit View for dexterity layout.
+  // We don't want to display them in the View mode.
+  const {
+    blocks: filteredBlocks,
+    blocks_layout: filteredBlocksLayout,
+    hasBlockTypes,
+  } = filterBlocks(content, ['tabs_block', 'metadataSection']);
 
   return (
     <div className="cca-newsitem-view">
-      <BannerTitle content={content} />
-      <div className="ui container">
+      <Container>
         <PortalMessage content={content} />
-        <p>{content.description}</p>
-        <HTMLField value={content.text} className="long_description" />
-        <RenderBlocks {...props} />
-        {/* <Date {...props} /> */}
+        {hasBlockTypes ? (
+          <>
+            <DescriptionText content={content} />
+            <RenderBlocks
+              {...props}
+              content={{
+                ...content,
+                blocks: filteredBlocks,
+                blocks_layout: filteredBlocksLayout,
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <RenderBlocks {...props} content={content} />
+          </>
+        )}
         <SubjectTags {...props} />
-      </div>
+      </Container>
     </div>
   );
 }
 
-export default CcaEventView;
+export default NewsItemView;

@@ -4,7 +4,7 @@ import CollectionStatsView, {
   RemixIcon,
 } from './CollectionStatsView';
 
-import worldSVG from '@plone/volto/icons/world.svg';
+import dotsSVG from '@plone/volto/icons/dots.svg';
 import airPollutionSvg from '@eeacms/volto-cca-policy/icons/air_pollution_and_aero-allergens.svg';
 import heatSvg from '@eeacms/volto-cca-policy/icons/heat.svg';
 import climateSensitiveSvg from '@eeacms/volto-cca-policy/icons/climate-sensitive_diseases.svg';
@@ -20,19 +20,19 @@ const healthImpactIcons = {
 };
 
 const portalTypeIcons = {
+  'Adaptation option': 'cogs',
   'Case study': 'file text',
   Guidance: 'compass',
   Indicator: 'area chart',
   'Information portal': 'info circle',
-  'Publication reference': 'newspaper',
+  Organisation: 'sitemap',
+  'Publication and report': 'newspaper',
   'Research and knowledge project': 'university',
   Tool: 'wrench',
-  Video: 'video play',
+  'Video and podcast': 'video play',
   // 'eea.climateadapt.aceproject': '',
-  // 'eea.climateadapt.adaptationoption': '',
   // 'eea.climateadapt.c3sindicator': '',
   // 'eea.climateadapt.mapgraphdataset': '',
-  // 'eea.climateadapt.organisation': '',
 };
 
 const portalTypesToSearchTypes = {
@@ -42,21 +42,22 @@ const portalTypesToSearchTypes = {
   'eea.climateadapt.indicator': 'Indicator',
   'eea.climateadapt.c3sindicator': 'Indicator',
   'eea.climateadapt.informationportal': 'Information portal',
-  'eea.climateadapt.publicationreport': 'Publication reference',
+  'eea.climateadapt.organisation': 'Organisation',
+  'eea.climateadapt.publicationreport': 'Publication and report',
+  'eea.climateadapt.aceproject': 'Research and knowledge project',
   'eea.climateadapt.researchproject': 'Research and knowledge project',
   'eea.climateadapt.tool': 'Tool',
-  'eea.climateadapt.video': 'Video',
+  'eea.climateadapt.video': 'Video and podcast',
   // TODO: what about these?
   // 'eea.climateadapt.aceproject': '',
   // 'eea.climateadapt.mapgraphdataset': '',
-  // 'eea.climateadapt.organisation': '',
 };
 
 export default function installCollectionStatsBlock(config) {
   config.blocks.blocksConfig.collectionStats = {
     id: 'collectionStats',
     title: 'Collection Statistics',
-    icon: worldSVG,
+    icon: dotsSVG,
     group: 'site',
     edit: CollectionStatsEdit,
     view: CollectionStatsView,
