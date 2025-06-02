@@ -1,4 +1,4 @@
-export default {
+const viewsCCA = {
   resultViews: [
     {
       id: 'ClusterHorizontalCardItem',
@@ -13,3 +13,5 @@ export default {
     },
   ],
 };
+
+export default viewsCCA;
