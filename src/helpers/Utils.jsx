@@ -111,7 +111,20 @@ export const BannerTitle = (props) => {
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
 
-  return <TitleBlockView {...props} data={data} metadata={content} />;
+  const blockData = {
+    '@type': 'title',
+    ...data,
+  };
+
+  return (
+    <TitleBlockView
+      {...props}
+      data={blockData}
+      metadata={content}
+      properties={content}
+      blocksConfig={blocksConfig}
+    />
+  );
 };
 
 export const ReferenceInfo = (props) => {
