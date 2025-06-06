@@ -23,7 +23,7 @@ const Item = () => ({
   required: ['title'],
 });
 
-export default {
+const schema = {
   title: 'Relevant Ace Content',
   fieldsets: [
     {
@@ -153,3 +153,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;
