@@ -16,7 +16,12 @@ export default function FeatureDisplay({ feature, onClose }) {
       </div>
       <p>
         <strong>
-          <a className="dbitem" href={feature.url} target="_blank">
+          <a
+            className="dbitem"
+            href={feature.url}
+            target="_blank"
+            rel="noopener"
+          >
             {feature.title}
           </a>
         </strong>

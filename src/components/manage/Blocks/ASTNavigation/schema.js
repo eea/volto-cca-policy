@@ -24,7 +24,7 @@ const Item = () => ({
   required: ['href'],
 });
 
-export default {
+const schema = {
   title: 'AST Navigation',
   fieldsets: [
     {
@@ -60,3 +60,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;

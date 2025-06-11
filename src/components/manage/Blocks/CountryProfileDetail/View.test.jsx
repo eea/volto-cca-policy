@@ -13,8 +13,7 @@ describe('View', () => {
     const properties = {
       '@components': {
         countryprofile: {
-          html:
-            '{"menu":[],"content":[],"html":"","updated":"","message_top":"", "top_accordeon":""}',
+          html: '{"menu":[],"content":[],"html":"","updated":"","message_top":"", "top_accordeon":""}',
         },
       },
     };
