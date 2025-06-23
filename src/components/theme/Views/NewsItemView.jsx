@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { HTMLField, SubjectTags } from '@eeacms/volto-cca-policy/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { UniversalLink } from '@plone/volto/components';
@@ -37,7 +36,6 @@ function NewsItemView(props) {
   return (
     <div className="cca-newsitem-view">
       <Container>
-        <PortalMessage content={content} />
         {hasBlockTypes ? (
           <>
             <DescriptionText content={content} />

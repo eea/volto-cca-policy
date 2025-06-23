@@ -13,7 +13,6 @@ import {
   Image,
   Button,
 } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
@@ -227,7 +226,6 @@ function C3SIndicatorView(props) {
       />
 
       <Container className="">
-        <PortalMessage content={content} />
         <LogoWrapper logo={logo}>
           <h2>
             <FormattedMessage

@@ -1,6 +1,5 @@
 import {
   ImageGallery,
-  PortalMessage,
   ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
 import {
@@ -367,7 +366,6 @@ function CaseStudyView(props) {
       />
 
       <Container>
-        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

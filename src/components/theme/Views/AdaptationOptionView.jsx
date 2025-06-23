@@ -16,10 +16,7 @@ import {
   List,
 } from 'semantic-ui-react';
 // import { UniversalLink } from '@plone/volto/components';
-import {
-  ShareInfoButton,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
+import { ShareInfoButton } from '@eeacms/volto-cca-policy/components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
@@ -182,7 +179,6 @@ function AdaptationOptionView(props) {
       />
 
       <Container>
-        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column
