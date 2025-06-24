@@ -7,6 +7,7 @@ import {
   HTMLField,
 } from '@eeacms/volto-cca-policy/helpers';
 import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function EventView(props) {
   const { content } = props;
@@ -28,6 +29,7 @@ function EventView(props) {
   return (
     <div className="cca-event-view">
       <Container>
+        <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column mobile={12} tablet={12} computer={8}>

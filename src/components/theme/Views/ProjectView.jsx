@@ -7,7 +7,11 @@ import {
   ReferenceInfo,
 } from '@eeacms/volto-cca-policy/helpers';
 import { Container, Divider, Grid } from 'semantic-ui-react';
-import { ShareInfoButton } from '@eeacms/volto-cca-policy/components';
+import {
+  ShareInfoButton,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
+
 import { FormattedMessage } from 'react-intl';
 
 import config from '@plone/volto/registry';
@@ -45,6 +49,7 @@ function ProjectView(props) {
       />
 
       <Container>
+        <PortalMessage content={content} />
         <Grid columns="12">
           <div className="row">
             <Grid.Column

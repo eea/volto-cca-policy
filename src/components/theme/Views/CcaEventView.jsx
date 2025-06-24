@@ -6,6 +6,7 @@ import {
   EventDetails,
   DocumentsList,
 } from '@eeacms/volto-cca-policy/helpers';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
@@ -61,6 +62,7 @@ function CcaEventView(props) {
   return (
     <div className="cca-event-view">
       <Container>
+        <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column
