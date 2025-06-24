@@ -1,10 +1,9 @@
 import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
+import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
-
-const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
+import NoDataReported from '../NoDataReported';
 
 const ActionsTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
@@ -77,11 +76,7 @@ const ActionPagesTab = ({ result, general_text }) => {
   const NoResults = isEmpty(action_text) && isEmpty(actions);
 
   if (NoResults) {
-    return (
-      <Tab.Pane>
-        <p>{No_Data_Reported_Label}</p>
-      </Tab.Pane>
-    );
+    return <NoDataReported label={No_Data_Reported_Label} />;
   }
 
   return (

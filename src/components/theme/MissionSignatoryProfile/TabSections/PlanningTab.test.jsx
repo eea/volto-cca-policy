@@ -9,6 +9,7 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
 }));
 
 jest.mock('@eeacms/volto-cca-policy/utils', () => ({
+  isEmpty: (arr) => !arr || arr.length === 0,
   formatTextToHTML: (text) => text,
   extractPlanNameAndURL: (str) => ({
     name: 'Plan Example',

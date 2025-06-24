@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { HTMLField, SubjectTags } from '@eeacms/volto-cca-policy/helpers';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { UniversalLink } from '@plone/volto/components';
 
