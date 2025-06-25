@@ -2,7 +2,6 @@ import { BodyClass, flattenToAppURL } from '@plone/volto/helpers';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-
 import '@eeacms/volto-eea-website-theme/components/theme/DraftBackground/draft.css';
 
 /**
