@@ -28,9 +28,8 @@ function EventView(props) {
 
   return (
     <div className="cca-event-view">
-      <PortalMessage content={content} />
-
       <Container>
+        <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column mobile={12} tablet={12} computer={8}>
