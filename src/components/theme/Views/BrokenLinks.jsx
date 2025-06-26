@@ -11,8 +11,6 @@ import {
   TableRow,
 } from 'semantic-ui-react';
 
-import './brokenlinks.less';
-
 function Filter({ column }) {
   const columnFilterValue = column.getFilterValue();
   const { filterVariant } = column.columnDef.meta ?? {};

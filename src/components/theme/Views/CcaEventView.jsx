@@ -47,10 +47,8 @@ function CcaEventView(props) {
     contact_email,
   } = content;
 
-  const {
-    blocks: filteredBlocks,
-    blocks_layout: filteredBlocksLayout,
-  } = filterBlocks(content, ['tabs_block', 'metadataSection']);
+  const { blocks: filteredBlocks, blocks_layout: filteredBlocksLayout } =
+    filterBlocks(content, ['tabs_block', 'metadataSection']);
 
   const titleBlock = Object.values(filteredBlocks).find(
     (block) => block['@type'] === 'title',

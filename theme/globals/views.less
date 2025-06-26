@@ -33,6 +33,10 @@ div.geochars-field {
   }
 }
 
+.geolocation-field .ol-map {
+  cursor: pointer;
+}
+
 .btn-right {
   margin: calc(2rem - 0.1em) 0em 1rem;
   float: right;
@@ -337,3 +341,23 @@ hr {
 }
 
 
+.broken-links-table {
+  td {
+    max-width: 200px;
+  }
+
+  a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .select-none {
+    user-select: none;
+  }
+}

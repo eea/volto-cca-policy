@@ -29,6 +29,7 @@ const BannerTitle = (props) => {
           <TitleBlockView
             {...props}
             data={{
+              '@type': 'title',
               info: [{ description: '' }],
               hideContentType: false,
               hideCreationDate: false,
@@ -38,6 +39,7 @@ const BannerTitle = (props) => {
               hideShareButton: false,
             }}
             metadata={content}
+            properties={content}
           />
         </>
       ) : null}

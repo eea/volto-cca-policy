@@ -18,9 +18,8 @@ const ASTNavigation = (props) => {
   const searchSubrequests = useSelector((state) => state.search.subrequests);
   const items = searchSubrequests?.ast?.items || [];
   const isAdaptationSupportTool = isAdaptationSupportToolURL(rootPath);
-  const isUrbanAdaptationSupportTool = isUrbanAdaptationSupportToolURL(
-    rootPath,
-  );
+  const isUrbanAdaptationSupportTool =
+    isUrbanAdaptationSupportToolURL(rootPath);
 
   React.useEffect(() => {
     if (isAdaptationSupportTool) {
