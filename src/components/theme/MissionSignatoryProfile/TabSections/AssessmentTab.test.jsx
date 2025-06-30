@@ -6,6 +6,11 @@ jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
   Callout: ({ children }) => <div>{children}</div>,
 }));
 
+jest.mock('@eeacms/volto-cca-policy/utils', () => ({
+  isEmpty: (arr) => !arr || arr.length === 0,
+  formatTextToHTML: (text) => text,
+}));
+
 const mockData = {
   assessment_text: [
     {

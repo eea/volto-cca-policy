@@ -22,9 +22,7 @@ import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-// import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
-import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
 
@@ -44,6 +42,9 @@ import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
 
 import { eea_languages, non_eu_langs } from './constants';
+
+// import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+// import MigrationButtons from './components/MigrationButtons';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -511,10 +512,10 @@ const applyConfig = (config) => {
 
   config.settings.appExtras = [
     ...(config.settings.appExtras || []),
-    {
-      match: '',
-      component: MigrationButtons,
-    },
+    // {
+    //   match: '',
+    //   component: MigrationButtons,
+    // },
     {
       match: '',
       component: TranslationDisclaimer,

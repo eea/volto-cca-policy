@@ -1,12 +1,11 @@
 import { Tab, Image, Segment, Item } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
+import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
+import NoDataReported from '../NoDataReported';
 
 import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
-
-const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
 
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
@@ -61,7 +60,6 @@ const AssessmentTab = ({ result, general_text }) => {
   const assessment_risks = result.assessment_risks || [];
   const assessment_hazards_sectors = result.assessment_hazards_sectors || [];
   const { No_Data_Reported_Label } = general_text || {};
-  // const [activeIndex, setActiveIndex] = React.useState(0);
 
   const NoResults =
     isEmpty(result.assessment_text) &&
@@ -70,11 +68,7 @@ const AssessmentTab = ({ result, general_text }) => {
     isEmpty(result.assessment_hazards_sectors);
 
   if (NoResults) {
-    return (
-      <Tab.Pane>
-        <p>{No_Data_Reported_Label}</p>
-      </Tab.Pane>
-    );
+    return <NoDataReported label={No_Data_Reported_Label} />;
   }
 
   return (
@@ -90,32 +84,39 @@ const AssessmentTab = ({ result, general_text }) => {
 
       <div className="tab-section-wrapper assessment">
         {Cra_Title && <h3>{Cra_Title}</h3>}
-        {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
 
-        <ItemsSection items={result.assessment_factors} />
+        {result.assessment_factors.length > 0 && (
+          <>
+            {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
+            <ItemsSection items={result.assessment_factors} />
+          </>
+        )}
 
-        {Attachments && <h4>{Attachments}</h4>}
-
-        {assessment_risks.map((risk, index) => {
-          const title = risk?.Attachment_Title
-            ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
-                risk.Year_Of_Publication || ''
-              }`
-            : null;
-          return (
-            <div key={index}>
-              <AccordionList
-                variation="tertiary"
-                accordions={[
-                  {
-                    title: title,
-                    content: <AssessmentAccordionContent result={risk} />,
-                  },
-                ]}
-              />
-            </div>
-          );
-        })}
+        {assessment_risks.length > 0 && (
+          <>
+            {Attachments && <h4>{Attachments}</h4>}
+            {assessment_risks.map((risk, index) => {
+              const title = risk?.Attachment_Title
+                ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
+                    risk.Year_Of_Publication || ''
+                  }`
+                : null;
+              return (
+                <div key={index}>
+                  <AccordionList
+                    variation="tertiary"
+                    accordions={[
+                      {
+                        title: title,
+                        content: <AssessmentAccordionContent result={risk} />,
+                      },
+                    ]}
+                  />
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
 
       {Hazards_Title && <h3>{Hazards_Title}</h3>}
@@ -140,59 +141,6 @@ const AssessmentTab = ({ result, general_text }) => {
           }))}
         />
       )}
-
-      {/* <Tab
-        menu={{
-          fluid: true,
-          className: 'secondary',
-          vertical: true,
-          pointing: true,
-        }}
-        grid={{ paneWidth: 9, tabWidth: 3, stackable: true }}
-        activeIndex={activeIndex}
-        onTabChange={(e, { activeIndex }) => setActiveIndex(activeIndex)}
-        panes={[
-          {
-            menuItem: 'Water related',
-            render: () => (
-              <AccordionList
-                accordions={[
-                  {
-                    title: 'Vestibulum ante ipsum primis',
-                    content: 'No additional details provided.',
-                  },
-                  {
-                    title: 'Etiam accumsan urna a mauris',
-                    content: 'No additional details provided.',
-                  },
-                ]}
-              />
-            ),
-          },
-          {
-            menuItem: 'Heat related',
-            render: () => (
-              <div>
-                Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id
-                orci a neque vehicula malesuada. Donec vehicula libero vel leo
-                convallis, nec tincidunt felis tincidunt. Maecenas euismod
-                tristique leo, vel malesuada ligula malesuada sed.
-              </div>
-            ),
-          },
-          {
-            menuItem: 'Other hazards',
-            render: () => (
-              <div>
-                Nam tempor finibus lorem, nec varius arcu convallis sed. Nunc id
-                orci a neque vehicula malesuada. Donec vehicula libero vel leo
-                convallis, nec tincidunt felis tincidunt. Maecenas euismod
-                tristique leo, vel malesuada ligula malesuada sed.
-              </div>
-            ),
-          },
-        ]}
-      /> */}
     </Tab.Pane>
   );
 };
