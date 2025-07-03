@@ -544,7 +544,7 @@ const applyConfig = (config) => {
     },
     {
       match: '',
-      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],
+      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions', 'workflow'],
       querystring: { 'expand.navigation.depth': '3' },
     },
   ];
