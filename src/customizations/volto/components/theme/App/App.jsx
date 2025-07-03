@@ -316,11 +316,11 @@ export function connectAppComponent(AppComponent) {
           }
         },
       },
-      {
-        key: 'workflow',
-        promise: ({ location, store: { dispatch } }) =>
-          __SERVER__ && dispatch(getWorkflow(getBaseUrl(location.pathname))),
-      },
+      // {
+      //   key: 'workflow',
+      //   promise: ({ location, store: { dispatch } }) =>
+      //     __SERVER__ && dispatch(getWorkflow(getBaseUrl(location.pathname))),
+      // },
     ]),
     injectIntl,
     connect((state, props) => {
