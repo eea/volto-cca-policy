@@ -205,8 +205,10 @@ class View extends Component {
     const { views } = config;
     if (this.props.error && this.props.error.code === 301) {
       const redirect = flattenToAppURL(this.props.error.url)
-        .split('?')[0]
-        .replaceAll('/++api++', '/');
+        .replaceAll('/++api++', '/')
+        .split('?')[0];
+      // eslint-disable-next-line no-console
+      console.log('Redirecting', redirect);
       return <Redirect to={`${redirect}${this.props.location.search}`} />;
     } else if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
