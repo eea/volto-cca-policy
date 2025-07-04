@@ -1,9 +1,11 @@
 import React from 'react';
 import { compose } from 'redux';
 
-import RASTMap from './RASTMap';
 import RASTAccordion from './RASTAccordion';
 import { useLocation } from 'react-router-dom';
+import loadable from '@loadable/component';
+
+const RASTMap = loadable(() => import('./RASTMap'));
 
 /**
  * A navigation slot implementation, similar to the classic Plone navigation
