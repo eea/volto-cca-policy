@@ -204,16 +204,21 @@ class View extends Component {
   render() {
     const { views } = config;
     if (this.props.error && this.props.error.code === 301) {
-      const base = typeof window !== 'undefined' ? window.location.origin : '';
+      // const base = typeof window !== 'undefined' ? window.location.origin : '';
 
       const redirect = flattenToAppURL(this.props.error.url)
         .replaceAll('/++api++', '/')
+        .replaceAll('//', '/')
         .split('?')[0];
+      const redirParams = {
+        pathname: redirect,
+        search: this.props.location.search,
+      };
+
       // eslint-disable-next-line no-console
-      console.log('Redirecting', redirect);
-      return (
-        <Redirect to={`${base}${redirect}${this.props.location.search}`} />
-      );
+      console.log('Redirecting', redirParams);
+
+      return <Redirect to={redirParams} push={true} />;
     } else if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
       if (this.props.error.status === undefined) {
