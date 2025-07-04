@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Léaráidí Cás-Staidéir"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Cás-staidéir a bhaineann leis an rogha seo:"
 
@@ -577,6 +576,11 @@ msgstr "Gan eolas"
 msgid "No results"
 msgstr "Gan torthaí"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Teangacha Neamh-AE"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Cathain"
 #: helpers/Utils
 msgid "Where"
 msgstr "Cá"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Tíortha ina gcuirtear an deis maoinithe ar fáil"
 
 msgid "Region where the funding is offered"
 msgstr "An réigiún ina bhfuil an maoiniú á thairiscint"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Scéal misean"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Uirlis misean"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Leathanach Gréasáin"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Seirbhísí aeráide"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Just Athléimneacht"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Gnéithe sochaíocha"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Gnéithe comhshaoil"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Gnéithe maolaithe"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Anailís costais is tairbhe agus costais chothabhála"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Poitéinseal macasamhlú/uasghrádaithe"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Gnéithe eacnamaíocha"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Deis maoinithe"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Físeáin agus podchraoltaí"
 
 #. undefined
 #: health_menu:43

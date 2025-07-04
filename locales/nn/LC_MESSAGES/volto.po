@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Kasusstudieillustrasjoner"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Kasusstudier relatert til dette alternativet:"
 
@@ -577,6 +576,11 @@ msgstr "Ingen informasjon"
 msgid "No results"
 msgstr "Ingen resultater"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Når"
 #: helpers/Utils
 msgid "Where"
 msgstr "Hvor"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Land der finansieringsmuligheten tilbys"
 
 msgid "Region where the funding is offered"
 msgstr "Region der finansieringen tilbys"
+
+#. undefined
+
+msgid "Mission story"
+msgstr ""
+
+#. undefined
+
+msgid "Mission tool"
+msgstr ""
+
+#. undefined
+
+msgid "Webpage"
+msgstr ""
+
+#. undefined
+
+msgid "Climate services"
+msgstr ""
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr ""
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr ""
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr ""
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr ""
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr ""
 
 #. undefined
 #: health_menu:43
