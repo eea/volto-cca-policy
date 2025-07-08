@@ -59,45 +59,6 @@ const View = (props) => {
 
     euCountryFeatures.current = filtered;
 
-    if (countries_metadata.length > 0) {
-      filtered.forEach((feature) => {
-        let countryName = feature.get('na');
-        if (countryName === 'Türkiye') {
-          countryName = 'Turkiye';
-        }
-        if (Object.hasOwn(countries_metadata[0], countryName)) {
-          let metadata = countries_metadata[0][countryName];
-          if (metadata !== undefined) {
-            if (thematicMapMode === 'National adaption policy') {
-              if (metadata[0]?.notreported) {
-                feature.set('fillBlue', 'blue3');
-              } else if (
-                metadata[0]?.nap_mixed?.length ||
-                metadata[0]?.nas_mixed.length ||
-                metadata[0]?.sap_mixed.length
-              ) {
-                feature.set('fillBlue', 'blue1');
-              } else {
-                feature.set('fillBlue', 'blue2');
-              }
-            } else {
-              if (metadata[0]?.notreported) {
-                feature.set('fillBlue', 'blue3');
-              } else if (
-                ['both', 'hazard', 'adaptation', 'not_specified'].includes(
-                  metadata[0]?.focus_info || [],
-                )
-              ) {
-                feature.set('fillBlue', 'blue1');
-              } else {
-                feature.set('fillBlue', 'blue2');
-              }
-            }
-          }
-        }
-      });
-    }
-
     filtered.forEach((feature) => {
       const img = new Image();
       img.onload = function () {
@@ -138,9 +99,6 @@ const View = (props) => {
   //   [baseUrl, history],
   // );
   // console.log('thematicMapMode', thematicMapMode);
-  // console.log('euCountriesSource', euCountriesSource);
-  // console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
-
   return (
     <div className="ol-country-map">
       <Grid columns="12">

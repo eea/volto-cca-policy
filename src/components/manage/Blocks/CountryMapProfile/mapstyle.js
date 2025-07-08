@@ -42,16 +42,53 @@ export const makeStyles = (highlight, ol) => {
   });
 
   const getFillColor = (feature) => {
-    if (feature.get('fillBlue') === 'blue1') {
+    const countryCode = feature.get('id');
+    const countriesUE = [
+      'AT',
+      'BE',
+      'BG',
+      'CH',
+      'CZ',
+      'CY',
+      'DE',
+      'DK',
+      'EE',
+      'EL',
+      'ES',
+      'FI',
+      'FR',
+      'GR',
+      'HR',
+      'HU',
+      'IE',
+      'IS',
+      'IT',
+      'LI',
+      'LT',
+      'LU',
+      'LV',
+      'MT',
+      'NL',
+      'NO',
+      'PL',
+      'PT',
+      'RO',
+      'SE',
+      'SI',
+      'SK',
+      'TR',
+    ];
+    const countriesCoopereting = ['RS', 'BA', 'MK', 'ME', 'AL', 'XK'];
+    const countriesEastern = ['UA', 'MO', 'MD', 'GE'];
+    if (countriesUE.includes(countryCode)) {
+      return new ol.style.Fill({ color: 'rgb(0, 123, 108, 1)' });
+    }
+    if (countriesCoopereting.includes(countryCode)) {
       return new ol.style.Fill({ color: 'rgb(0, 75, 127, 1)' });
     }
-    if (feature.get('fillBlue') === 'blue2') {
-      return new ol.style.Fill({ color: 'rgb(10, 153, 255, 1)' });
+    if (countriesEastern.includes(countryCode)) {
+      return new ol.style.Fill({ color: 'rgb(159, 214, 255, 1)' });
     }
-    if (feature.get('fillBlue') === 'blue3') {
-      return new ol.style.Fill({ color: 'rgb(120, 217, 252, 1)' });
-    }
-    // console.log(feature.get('fillBlue'));
     return fill;
   };
 
