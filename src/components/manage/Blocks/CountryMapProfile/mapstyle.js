@@ -81,10 +81,10 @@ export const makeStyles = (highlight, ol) => {
     const countriesCoopereting = ['RS', 'BA', 'MK', 'ME', 'AL', 'XK'];
     const countriesEastern = ['UA', 'MO', 'MD', 'GE'];
     if (countriesUE.includes(countryCode)) {
-      return new ol.style.Fill({ color: 'rgb(0, 123, 108, 1)' });
+      return new ol.style.Fill({ color: '#007b6C' });
     }
     if (countriesCoopereting.includes(countryCode)) {
-      return new ol.style.Fill({ color: 'rgb(0, 75, 127, 1)' });
+      return new ol.style.Fill({ color: '#004B7F' });
     }
     if (countriesEastern.includes(countryCode)) {
       return new ol.style.Fill({ color: 'rgb(159, 214, 255, 1)' });

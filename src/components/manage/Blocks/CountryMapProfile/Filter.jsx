@@ -1,15 +1,6 @@
 import React from 'react';
-import { Radio } from 'semantic-ui-react';
-
-function hidePopup() {
-  const collections = document.getElementsByClassName('map-tooltip');
-  for (let i = 0; i < collections.length; i++) {
-    collections[i].style.visibility = 'hidden';
-  }
-}
 
 export default function Filter(props) {
-  const { thematicMapMode, setThematicMapMode } = props;
   return (
     <>
       <div className="legend portals-legend">

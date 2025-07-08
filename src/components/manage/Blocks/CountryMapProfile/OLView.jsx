@@ -106,10 +106,10 @@ const View = (props) => {
           {tileWMSSources ? (
             <Map
               view={{
-                center: ol.proj.fromLonLat([10, 50], projection),
+                center: ol.proj.fromLonLat([11, 50], projection),
                 projection,
                 showFullExtent: true,
-                zoom: 4,
+                zoom: 3.8,
               }}
               pixelRatio={1}
             >
