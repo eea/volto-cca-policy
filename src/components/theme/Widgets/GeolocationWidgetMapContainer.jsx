@@ -1,4 +1,5 @@
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
+// import { openlayers as ol } from '@eeacms/volto-openlayers-map';
 import {
   Controls,
   Interactions,
@@ -9,7 +10,7 @@ import {
 import React, { useState } from 'react';
 import { useMapContext } from '@eeacms/volto-openlayers-map/hocs';
 
-function PinInteraction({ longitude, latitude, onChange }) {
+function PinInteraction({ longitude, latitude, onChange, ol }) {
   const mapContext = useMapContext();
   const { addLayer, addInteraction, map } = mapContext;
 
@@ -63,13 +64,14 @@ function PinInteraction({ longitude, latitude, onChange }) {
       const [longitude, latitude] = lonLat;
       onChange({ latitude, longitude });
     });
-  }, [addInteraction, addLayer, map, onChange, latitude, longitude]);
+  }, [addInteraction, addLayer, map, onChange, latitude, longitude, ol]);
 
   return null;
 }
 
 const TileSetLoader = (props) => {
   const [tileWMSSources, setTileWMSSources] = useState([]);
+  const { ol } = props;
 
   React.useEffect(() => {
     setTileWMSSources([
@@ -83,7 +85,7 @@ const TileSetLoader = (props) => {
         transition: 0,
       }),
     ]);
-  }, []);
+  }, [ol]);
 
   return tileWMSSources ? (
     <MapContainer {...props} source={tileWMSSources[0]} />
@@ -91,7 +93,7 @@ const TileSetLoader = (props) => {
 };
 
 const MapContainer = (props) => {
-  const { longitude, latitude, source, onChange } = props;
+  const { longitude, latitude, source, onChange, ol } = props;
   return (
     <Map
       view={{
@@ -105,6 +107,7 @@ const MapContainer = (props) => {
       <Layers>
         <Controls attribution={false} zoom={false} />
         <PinInteraction
+          ol={ol}
           latitude={latitude}
           longitude={longitude}
           onChange={onChange}
@@ -125,4 +128,4 @@ const MapContainer = (props) => {
   );
 };
 
-export default TileSetLoader;
+export default withOpenLayers(TileSetLoader);

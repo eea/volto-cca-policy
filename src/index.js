@@ -43,7 +43,7 @@ import BrokenLinks from './components/theme/Views/BrokenLinks';
 
 import { eea_languages, non_eu_langs } from './constants';
 
-// import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 // import MigrationButtons from './components/MigrationButtons';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
@@ -430,7 +430,7 @@ const applyConfig = (config) => {
   };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
-  // config.widgets.id.geolocation = GeolocationWidget;
+  config.widgets.id.geolocation = GeolocationWidget;
   config.widgets.id.promotional_image = PromotionalImageWidget;
 
   if (config.widgets.views?.widget) {
