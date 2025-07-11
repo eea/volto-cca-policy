@@ -8,6 +8,11 @@ import {
 } from '@eeacms/volto-cca-policy/components';
 import { fixEmbedURL } from '@eeacms/volto-cca-policy/helpers';
 import {
+  buildFlourishUrl,
+  flourishDataprotection,
+  getDataSrcFromEmbedCode,
+} from '@eeacms/volto-cca-policy/helpers/flourishUtils';
+import {
   TOOL,
   GUIDANCE,
   INDICATOR,
@@ -30,51 +35,18 @@ import {
 
 const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
-const dataprotection = {
-  enabled: true,
-  privacy_cookie_key: 'flourish',
-  privacy_statement: [
-    {
-      children: [
-        {
-          text:
-            'This map is hosted by a third party [Flourish]. ' +
-            'By showing the external content you accept the terms ' +
-            'and conditions of www.flourish.studio. This includes ' +
-            'their cookie policies, which we have no control over.',
-        },
-      ],
-      type: 'p',
-    },
-  ],
-};
-
 const MaybeFlourishVisualization = ({ content }) => {
   const { map_graphs } = content;
 
   // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
-  const data_src = (map_graphs) => {
-    if (typeof map_graphs === 'string') {
-      const regex = /data-src="([^"]*)"/;
-      const match = regex.exec(map_graphs);
-
-      if (match && match.length > 1) {
-        const dataSrcValue = match[1];
-        return dataSrcValue;
-      }
-    }
-    return null;
-  };
-  const flourishPath = data_src(map_graphs);
-  const flourishUrl = map_graphs
-    ? `https://flo.uri.sh/${flourishPath}/embed`
-    : null;
+  const flourishPath = getDataSrcFromEmbedCode(map_graphs);
+  const flourishUrl = buildFlourishUrl(flourishPath);
 
   return !!flourishPath ? (
     <PrivacyProtection
       data={{
         url: flourishUrl,
-        dataprotection: dataprotection,
+        dataprotection: flourishDataprotection,
       }}
     >
       <iframe
@@ -121,7 +93,7 @@ const MaybeIframeVisualization = ({ content }) => {
     <PrivacyProtection
       data={{
         url: url,
-        dataprotection: dataprotection,
+        dataprotection: flourishDataprotection,
       }}
     >
       <iframe
