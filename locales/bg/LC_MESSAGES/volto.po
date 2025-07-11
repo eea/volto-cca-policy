@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Илюстрации от казус"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Казуси, свързани с тази опция:"
 
@@ -577,6 +576,11 @@ msgstr "Няма информация"
 msgid "No results"
 msgstr "Няма резултати"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Езици извън ЕС"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Кога"
 #: helpers/Utils
 msgid "Where"
 msgstr "Къде"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Държави, в които се предлага възможност
 
 msgid "Region where the funding is offered"
 msgstr "Регион, в който се предлага финансиране"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "История на мисията"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Инструмент за мисия"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Уеб страница"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Климатични услуги"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Просто устойчивост"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Социални аспекти"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Екологични аспекти"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Смекчаващи аспекти"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Анализ на разходите и ползите и разходите за поддръжка"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Потенциал за репликация/преувеличаване"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Икономически аспекти"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Възможност за финансиране"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Видеоклипове и подкасти"
 
 #. undefined
 #: health_menu:43

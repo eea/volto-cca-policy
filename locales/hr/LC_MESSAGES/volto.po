@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -113,7 +112,7 @@ msgid "Case Study illustrations"
 msgstr "Ilustracije studije slučaja"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studije slučaja vezane uz ovu opciju:"
 
@@ -577,6 +576,11 @@ msgstr "Nema informacija"
 msgid "No results"
 msgstr "Nema rezultata"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr "Jezici izvan EU"
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -914,6 +918,11 @@ msgstr "Kada"
 #: helpers/Utils
 msgid "Where"
 msgstr "Gdje"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1584,6 +1593,71 @@ msgstr "Zemlje u kojima se nudi mogućnost financiranja"
 
 msgid "Region where the funding is offered"
 msgstr "Regija u kojoj se nudi financiranje"
+
+#. undefined
+
+msgid "Mission story"
+msgstr "Priča o misiji"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Alat za misiju"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Web stranica"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimatske usluge"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Samo otpornost"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Društveni aspekti"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Ekološki aspekti"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Aspekti ublažavanja"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Analiza isplativosti i troškova održavanja"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Potencijal replikacije/nadgrađivanja"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonomski aspekti"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Mogućnost financiranja"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videozapisi i podcasti"
 
 #. undefined
 #: health_menu:43
