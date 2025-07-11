@@ -14,7 +14,9 @@ const FlourishEmbedBlockView = ({ data, mode }) => {
   const flourishUrl = buildFlourishUrl(flourishPath);
 
   if (!flourishUrl)
-    return isEditMode ? <div>Paste a valid Flourish embed code.</div> : null;
+    return isEditMode ? (
+      <div>Add a valid Flourish embed code to display the visualization.</div>
+    ) : null;
 
   return (
     <PrivacyProtection
