@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,8 +18,6 @@ msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,8 +42,6 @@ msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm Sa Chás Seo"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Earnálacha Oiriúnaithe"
 
@@ -87,11 +82,6 @@ msgstr "An t-am ar fad"
 msgid "Background information"
 msgstr "Faisnéis chúlra"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "an Bheilg"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -113,7 +103,7 @@ msgid "Case Study illustrations"
 msgstr "Léaráidí Cás-Staidéir"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Cás-staidéir a bhaineann leis an rogha seo:"
 
@@ -150,8 +140,6 @@ msgstr "Cathair :"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Tionchair Aeráide"
 
@@ -305,11 +293,6 @@ msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 msgid "For more search options"
 msgstr "Le haghaidh tuilleadh roghanna cuardaigh"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Fhrainc"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -317,8 +300,6 @@ msgstr "Lánscáileán"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -363,11 +344,6 @@ msgstr "HHWS ar fáil (cliceáil ar tír le haghaidh tuilleadh eolais)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Cineál Guaise"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Tionchair Sláinte"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -432,8 +408,6 @@ msgstr "Eolas"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Mír ó thríú páirtithe"
 
@@ -445,8 +419,6 @@ msgstr "Príomhchórais Phobail"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Beart Cineál Eochair"
 
@@ -520,6 +492,11 @@ msgstr "An bhliain seo caite"
 msgid "Lead"
 msgstr "Luaidhe"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -577,6 +554,11 @@ msgstr "Gan eolas"
 msgid "No results"
 msgstr "Gan torthaí"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -593,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Ranníocaíochtaí réadlainne"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Comhpháirtí réadlainne"
@@ -728,8 +709,6 @@ msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Alt"
 
@@ -840,6 +819,11 @@ msgstr "Tagraíonn an dáta don dáta foilsithe is déanaí den mhír"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Tagraíonn an dáta don mhóimint ina bhfuil an mhír ullmhaithe nó nuashonraithe ag saineolaithe rannpháirteacha le cur isteach lena fhoilsiú in Aeráide ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -848,8 +832,6 @@ msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Réigiúin thrasnáisiúnta"
 
@@ -858,11 +840,6 @@ msgstr "Réigiúin thrasnáisiúnta"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Cineál míre"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Cineálacha"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -914,6 +891,11 @@ msgstr "Cathain"
 #: helpers/Utils
 msgid "Where"
 msgstr "Cá"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1187,6 +1169,11 @@ msgstr "Bhealarúis"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "an Bheilg"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "An Bhoisnia agus an Heirseagaivéin"
 
@@ -1219,6 +1206,11 @@ msgstr "an Danmhairg"
 
 msgid "Estonia"
 msgstr "an Eastóin"
+
+#. undefined
+
+msgid "France"
+msgstr "Fhrainc"
 
 #. undefined
 
