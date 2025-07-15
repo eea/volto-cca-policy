@@ -1,35 +1,14 @@
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { Provider } from 'react-intl-redux';
 import DropdownListingView from './DropdownListingView';
-import config from '@plone/volto/registry';
-
-config.blocks = {
-  blocksConfig: {
-    contentLinks: {
-      variations: [
-        {
-          id: 'default',
-          title: 'Simple list (default)',
-          isDefault: true,
-        },
-        {
-          id: 'navigationList',
-          title: 'Navigation list',
-          isDefault: false,
-        },
-      ],
-    },
-  },
-};
 
 const mockStore = configureStore();
 
 describe('DropdownListingView', () => {
-  it('should render the component', () => {
+  it('renders dropdown with items', () => {
     const data = {
       '@type': 'listing',
       items: [
@@ -54,14 +33,18 @@ describe('DropdownListingView', () => {
       },
     });
 
-    const component = renderer.create(
+    render(
       <Provider store={store}>
         <MemoryRouter>
           <DropdownListingView {...data} />
         </MemoryRouter>
       </Provider>,
     );
-    const json = component.toJSON();
-    expect(json).toMatchSnapshot();
+
+    // Check the placeholder text is present
+    expect(screen.getByText('Select')).toBeInTheDocument();
+
+    expect(screen.getAllByText('Item 1').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Item 2').length).toBeGreaterThan(0);
   });
 });

@@ -1,8 +1,7 @@
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { Provider } from 'react-intl-redux';
 import { BrokenLinksComponent } from './BrokenLinks';
 
@@ -17,7 +16,18 @@ describe('BrokenLinksComponent', () => {
         messages: {},
       },
     });
+
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () =>
+          Promise.resolve({
+            broken_links: {},
+          }),
+      }),
+    );
+
     const reactTable = await import('@tanstack/react-table');
+
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -25,6 +35,9 @@ describe('BrokenLinksComponent', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(container).toBeTruthy();
+
+    await waitFor(() => {
+      expect(container).toBeTruthy();
+    });
   });
 });

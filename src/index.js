@@ -22,9 +22,7 @@ import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
-import MigrationButtons from './components/MigrationButtons';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
 
@@ -44,6 +42,9 @@ import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
 
 import { eea_languages, non_eu_langs } from './constants';
+
+import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+// import MigrationButtons from './components/MigrationButtons';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);
 
@@ -158,6 +159,10 @@ const applyConfig = (config) => {
     ],
     footerOpts: {
       ...(config.settings.eea?.footerOpts || {}),
+      buttonName: 'Explore our environmental information systems',
+      hrefButton: 'https://www.eea.europa.eu/en/information-systems#',
+      logosHeader: 'Managed by',
+      header: '',
       description:
         'The European Climate Adaptation Platform Climate-ADAPT is a partnership between the European Commission and the European Environment Agency.',
       managedBy: [
@@ -507,10 +512,10 @@ const applyConfig = (config) => {
 
   config.settings.appExtras = [
     ...(config.settings.appExtras || []),
-    {
-      match: '',
-      component: MigrationButtons,
-    },
+    // {
+    //   match: '',
+    //   component: MigrationButtons,
+    // },
     {
       match: '',
       component: TranslationDisclaimer,
@@ -539,7 +544,7 @@ const applyConfig = (config) => {
     },
     {
       match: '',
-      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions'],
+      GET_CONTENT: ['navigation', 'breadcrumbs', 'actions', 'workflow'],
       querystring: { 'expand.navigation.depth': '3' },
     },
   ];
@@ -549,6 +554,13 @@ const applyConfig = (config) => {
   config.settings.storeExtenders = [
     storeExtender,
     ...config.settings.storeExtenders,
+  ];
+
+  config.settings.initialReducersBlacklist = [
+    ...config.settings.initialReducersBlacklist,
+    'intl',
+    // 'router',
+    // 'content',
   ];
 
   config.widgets.vocabulary[

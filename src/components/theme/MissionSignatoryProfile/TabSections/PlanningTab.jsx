@@ -5,8 +5,10 @@ import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
   formatTextToHTML,
   extractPlanNameAndURL,
+  isEmpty,
 } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
+import NoDataReported from '../NoDataReported';
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
 const ItemsSection = ({ items }) => {
@@ -34,7 +36,9 @@ const PlanningGoalContent = ({ goal }) => {
       <Grid columns="12">
         {hasHazards && (
           <Grid.Column mobile={12} tablet={12} computer={6}>
-            <h5>{goal.Climate_Hazards_Addressed_Label}</h5>
+            <h5 className="small-label">
+              {goal.Climate_Hazards_Addressed_Label}
+            </h5>
             <ul>
               {goal.Climate_Hazards.map((hazard, index) => (
                 <li key={index}>{hazard}</li>
@@ -67,12 +71,13 @@ const PlanningGoalContent = ({ goal }) => {
   );
 };
 
-const PlanningTab = ({ result }) => {
+const PlanningTab = ({ result, general_text }) => {
   const {
     planning_goals = [],
     planning_titles = [],
     planning_climate_action = [],
   } = result || {};
+  const { No_Data_Reported_Label } = general_text || {};
 
   const titleData = planning_titles?.[0];
   const goalData = planning_goals?.[0];
@@ -83,20 +88,37 @@ const PlanningTab = ({ result }) => {
     return aNum - bNum;
   });
 
+  const NoResults =
+    isEmpty(planning_goals) &&
+    isEmpty(planning_titles) &&
+    isEmpty(planning_climate_action);
+
+  if (NoResults) {
+    return <NoDataReported label={No_Data_Reported_Label} />;
+  }
+
   return (
     <Tab.Pane>
       {titleData?.Title && <h2>{titleData.Title}</h2>}
-      {titleData?.Abstract_Line && <Callout>{titleData.Abstract_Line}</Callout>}
+      {titleData?.Abstract_Line && (
+        <Callout>
+          <HTMLField
+            value={{ data: formatTextToHTML(titleData?.Abstract_Line) }}
+          />
+        </Callout>
+      )}
 
       {sortedGoals.map((goal, index) => {
         return (
           <div key={index} className="section-wrapper">
-            <span className="goal-title-label">{goal?.Title_Label}</span>
+            <h5 className="section-title">
+              <span className="section-number">{goal?.Title_Label} </span>
 
-            <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+              <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+            </h5>
 
             <AccordionList
-              variation="tertiary"
+              variation="secondary"
               accordions={[
                 {
                   title: goal?.More_Details_Label || 'More details',
@@ -113,7 +135,11 @@ const PlanningTab = ({ result }) => {
       )}
 
       {goalData?.Climate_Action_Abstract && (
-        <Callout>{goalData.Climate_Action_Abstract}</Callout>
+        <Callout>
+          <HTMLField
+            value={{ data: formatTextToHTML(goalData.Climate_Action_Abstract) }}
+          />
+        </Callout>
       )}
 
       {planning_climate_action.map((action, index) => {
@@ -122,12 +148,22 @@ const PlanningTab = ({ result }) => {
             <br />
             {action?.Sectors_Introduction && (
               <Message>
-                <p>{action.Sectors_Introduction}</p>
+                <HTMLField
+                  value={{
+                    data: formatTextToHTML(action.Sectors_Introduction),
+                  }}
+                />
               </Message>
             )}
 
             <ItemsSection items={action?.Sectors} />
-            {action?.Description && <p>{action.Description}</p>}
+
+            {action?.Description && (
+              <HTMLField
+                className="description"
+                value={{ data: formatTextToHTML(action.Description) }}
+              />
+            )}
 
             {(action?.Approval_Year || action?.End_Year) && (
               <p>

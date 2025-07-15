@@ -62,7 +62,7 @@ export const cca_adaptation_sectors = {
   factory: 'MultiTermFacet',
   label: messages.adaptationSectors,
   showInFacetsList: true,
-  filterType: 'any',
+  filterType: 'all',
   isFilterable: false,
   show: 10000,
   isMulti: true,

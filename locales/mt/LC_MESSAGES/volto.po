@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,8 +18,6 @@ msgstr "Dokument ta' sfond għall-avveniment huwa disponibbli"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,8 +42,6 @@ msgstr "Għażliet ta' Adattament Implimentati F'dan il-Każ"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Setturi ta' Adattament"
 
@@ -87,11 +82,6 @@ msgstr "Il-ħin kollu"
 msgid "Background information"
 msgstr "Informazzjoni ta' sfond"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "il-Belġju"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -113,7 +103,7 @@ msgid "Case Study illustrations"
 msgstr "Illustrazzjonijiet ta' Studju ta' Każijiet"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studji ta’ każijiet relatati ma’ din l-għażla:"
 
@@ -150,8 +140,6 @@ msgstr "Belt:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Impatti tal-Klima"
 
@@ -305,11 +293,6 @@ msgstr "Esplora aktar dwar Climate-ADAPT"
 msgid "For more search options"
 msgstr "Għal aktar għażliet ta 'tfittxija"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Franza"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -317,8 +300,6 @@ msgstr "Skrin sħiħ"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -363,11 +344,6 @@ msgstr "HHWS disponibbli (ikklikkja fuq il-pajjiż għal aktar informazzjoni)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Tip ta' Periklu"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Impatti fuq is-Saħħa"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -432,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Oġġett minn terzi persuni"
 
@@ -445,8 +419,6 @@ msgstr "Sistemi Ewlenin tal-Komunità"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Miżura tat-Tip Ewlenin"
 
@@ -520,6 +492,11 @@ msgstr "Is-sena li għaddiet"
 msgid "Lead"
 msgstr "Ċomb"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -577,6 +554,11 @@ msgstr "L-ebda informazzjoni"
 msgid "No results"
 msgstr "Ebda riżultati"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -593,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Kontribuzzjonijiet ta' l-osservatorju"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Imsieħeb tal-osservatorju"
@@ -728,8 +709,6 @@ msgstr "Fittex fil-Katalgu tar-Riżorsi tal-Osservatorju..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Taqsima"
 
@@ -840,6 +819,11 @@ msgstr "Id-data tirreferi għall-aħħar data tal-pubblikazzjoni tal-oġġett"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat jew aġġornat minn esperti li jikkontribwixxu biex jiġi sottomess għall-pubblikazzjoni fi Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -848,8 +832,6 @@ msgstr "Suġġetti:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Reġjuni transnazzjonali"
 
@@ -858,11 +840,6 @@ msgstr "Reġjuni transnazzjonali"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tip ta' oġġett"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Tipi"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -914,6 +891,11 @@ msgstr "Meta"
 #: helpers/Utils
 msgid "Where"
 msgstr "Fejn"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1187,6 +1169,11 @@ msgstr "Belarus"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "il-Belġju"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnja u Ħerzegovina"
 
@@ -1219,6 +1206,11 @@ msgstr "id-Danimarka"
 
 msgid "Estonia"
 msgstr "Estonja"
+
+#. undefined
+
+msgid "France"
+msgstr "Franza"
 
 #. undefined
 

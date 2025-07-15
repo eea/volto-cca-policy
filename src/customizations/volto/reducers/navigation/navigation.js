@@ -57,6 +57,9 @@ export default function navigation(state = initialState, action = {}) {
         loading: true,
       };
     case `${GET_CONTENT}_SUCCESS`:
+      if (Object.keys(action.result).length === 0) {
+        return state;
+      }
       hasExpander = hasApiExpander(
         'navigation',
         getBaseUrl(flattenToAppURL(action.result['@id'])),

@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,8 +18,6 @@ msgstr "Popratni dokument za događaj je dostupan"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,8 +42,6 @@ msgstr "Mogućnosti prilagodbe implementirane u ovom slučaju"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Sektori adaptacije"
 
@@ -87,11 +82,6 @@ msgstr "Sve vrijeme"
 msgid "Background information"
 msgstr "Pozadinske informacije"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgija"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -113,7 +103,7 @@ msgid "Case Study illustrations"
 msgstr "Ilustracije studije slučaja"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studije slučaja vezane uz ovu opciju:"
 
@@ -150,8 +140,6 @@ msgstr "Grad:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimatski utjecaji"
 
@@ -305,11 +293,6 @@ msgstr "Istražite više na Climate-ADAPT"
 msgid "For more search options"
 msgstr "Za više opcija pretraživanja"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Francuska"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -317,8 +300,6 @@ msgstr "Cijeli zaslon"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -363,11 +344,6 @@ msgstr "Dostupan HHWS (kliknite na zemlju za dodatne informacije)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Vrsta opasnosti"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Zdravstveni utjecaji"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -432,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Stavka trećih strana"
 
@@ -445,8 +419,6 @@ msgstr "Ključni sustavi zajednice"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Ključna vrsta mjerenja"
 
@@ -520,6 +492,11 @@ msgstr "Prošle godine"
 msgid "Lead"
 msgstr "Dovesti"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -577,6 +554,11 @@ msgstr "Nema informacija"
 msgid "No results"
 msgstr "Nema rezultata"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -593,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Prilozi Zvjezdarnice"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner zvjezdarnice"
@@ -728,8 +709,6 @@ msgstr "Pretražite katalog izvora zvjezdarnice..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Odjeljak"
 
@@ -840,6 +819,11 @@ msgstr "Datum se odnosi na zadnji datum objave artikla"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datum se odnosi na trenutak u kojem je stavka pripremljena ili ažurirana od strane stručnjaka koji doprinose kako bi se predala za objavljivanje u Climate ADAPT-u"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -848,8 +832,6 @@ msgstr "Teme:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnacionalne regije"
 
@@ -858,11 +840,6 @@ msgstr "Transnacionalne regije"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Vrsta artikla"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Vrste"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -914,6 +891,11 @@ msgstr "Kada"
 #: helpers/Utils
 msgid "Where"
 msgstr "Gdje"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1187,6 +1169,11 @@ msgstr "Bjelorusija"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgija"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosna i Hercegovina"
 
@@ -1219,6 +1206,11 @@ msgstr "Danska"
 
 msgid "Estonia"
 msgstr "Estonija"
+
+#. undefined
+
+msgid "France"
+msgstr "Francuska"
 
 #. undefined
 

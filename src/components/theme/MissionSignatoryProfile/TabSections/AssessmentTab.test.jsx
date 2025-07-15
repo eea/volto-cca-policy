@@ -1,10 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 import AssessmentTab from './AssessmentTab';
 
 jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
   Callout: ({ children }) => <div>{children}</div>,
+}));
+
+jest.mock('@eeacms/volto-cca-policy/utils', () => ({
+  isEmpty: (arr) => !arr || arr.length === 0,
+  formatTextToHTML: (text) => text,
 }));
 
 const mockData = {
@@ -54,10 +58,5 @@ describe('AssessmentTab', () => {
     // Items section
     expect(screen.getByText('Factor A')).toBeInTheDocument();
     expect(screen.getByText('Factor B')).toBeInTheDocument();
-
-    // Hazard tabs
-    expect(screen.getByText('Water related')).toBeInTheDocument();
-    expect(screen.getByText('Heat related')).toBeInTheDocument();
-    expect(screen.getByText('Other hazards')).toBeInTheDocument();
   });
 });

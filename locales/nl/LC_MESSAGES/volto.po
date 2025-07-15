@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,8 +18,6 @@ msgstr "Er is een achtergronddocument voor het evenement beschikbaar"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,8 +42,6 @@ msgstr "Aanpassingsopties geïmplementeerd in dit geval"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Aanpassingssectoren"
 
@@ -87,11 +82,6 @@ msgstr "Altijd"
 msgid "Background information"
 msgstr "Achtergrondinformatie"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "België"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -113,7 +103,7 @@ msgid "Case Study illustrations"
 msgstr "Casestudy-illustraties"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Casestudies met betrekking tot deze optie:"
 
@@ -150,8 +140,6 @@ msgstr "Stad:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimaateffecten"
 
@@ -305,11 +293,6 @@ msgstr "Ontdek meer over Climate-ADAPT"
 msgid "For more search options"
 msgstr "Voor meer zoekmogelijkheden"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Frankrijk"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -317,8 +300,6 @@ msgstr "Volledig scherm"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -363,11 +344,6 @@ msgstr "HHWS beschikbaar (klik op land voor meer informatie)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Soort gevaar"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Gevolgen voor de gezondheid"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -432,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Artikel van derden"
 
@@ -445,8 +419,6 @@ msgstr "Belangrijke gemeenschapssystemen"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Sleuteltype Maatregel"
 
@@ -520,6 +492,11 @@ msgstr "Vorig jaar"
 msgid "Lead"
 msgstr "Leiding"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -577,6 +554,11 @@ msgstr "Geen informatie"
 msgid "No results"
 msgstr "Geen resultaten"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -593,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Observatoriumbijdragen"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatoriumpartner"
@@ -728,8 +709,6 @@ msgstr "Doorzoek de bronnencatalogus van het Observatorium..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Sectie"
 
@@ -840,6 +819,11 @@ msgstr "De datum verwijst naar de laatste publicatiedatum van het item"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "De datum verwijst naar het moment waarop het item door bijdragende deskundigen is voorbereid of bijgewerkt voor publicatie in Climate ADAPT."
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -848,8 +832,6 @@ msgstr "Onderwerpen:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnationale regio's"
 
@@ -858,11 +840,6 @@ msgstr "Transnationale regio's"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Soort artikel"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Soorten"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -914,6 +891,11 @@ msgstr "Wanneer"
 #: helpers/Utils
 msgid "Where"
 msgstr "Waar"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1187,6 +1169,11 @@ msgstr "Wit-Rusland"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "België"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnië en Herzegovina"
 
@@ -1219,6 +1206,11 @@ msgstr "Denemarken"
 
 msgid "Estonia"
 msgstr "Estland"
+
+#. undefined
+
+msgid "France"
+msgstr "Frankrijk"
 
 #. undefined
 

@@ -9,13 +9,13 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   Container,
-  Segment,
+  // Segment,
   Divider,
   Grid,
   ListItem,
   List,
 } from 'semantic-ui-react';
-import { UniversalLink } from '@plone/volto/components';
+// import { UniversalLink } from '@plone/volto/components';
 import {
   ShareInfoButton,
   PortalMessage,
@@ -253,9 +253,12 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
-              <ContentMetadata {...props} />
+              <ContentMetadata
+                {...props}
+                related_case_studies={related_case_studies}
+              />
 
-              {related_case_studies?.length > 0 && (
+              {/* {related_case_studies?.length > 0 && (
                 <Segment>
                   <h5>
                     <FormattedMessage
@@ -273,7 +276,7 @@ function AdaptationOptionView(props) {
                     ))}
                   </ul>
                 </Segment>
-              )}
+              )} */}
             </Grid.Column>
           </div>
         </Grid>

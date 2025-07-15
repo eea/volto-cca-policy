@@ -35,6 +35,23 @@ jest.mock('@eeacms/volto-openlayers-map', () => ({
       defaults: jest.fn().mockReturnValue([]),
     },
   },
+  // Add the withOpenLayers HOC mock
+  withOpenLayers: (Component) => (props) => (
+    <Component
+      {...props}
+      ol={{
+        source: {
+          TileWMS: jest.fn().mockImplementation(() => ({})),
+        },
+        proj: {
+          fromLonLat: jest.fn().mockReturnValue([0, 0]),
+        },
+        control: {
+          defaults: jest.fn().mockReturnValue([]),
+        },
+      }}
+    />
+  ),
 }));
 
 jest.mock('./FeatureInteraction', () => () => (
@@ -66,11 +83,11 @@ describe('CaseStudyMap', () => {
             portal_type: 'casestudy',
             description:
               '<p>The Sand Motor is a mega-nourishment implemented in the Delfland Coast.</p>',
-            url: 'http://website.com',
+            url: 'https://website.com',
             adaptation_options_links:
-              "<a href='http://website.com'>Beach and shoreface nourishment</a>",
+              "<a href='https://website.com'>Beach and shoreface nourishment</a>",
             elements_str: 'Nature-based solutions',
-            image: 'http://website.com/preview',
+            image: 'https://website.com/preview',
             origin_adaptecca: 20,
             adaptation_options: 'Dune construction',
           },
@@ -90,11 +107,11 @@ describe('CaseStudyMap', () => {
             portal_type: 'casestudy',
             description:
               '<p>The Sand Motor is a mega-nourishment implemented in the Delfland Coast.</p>',
-            url: 'http://website.com',
+            url: 'https://website.com',
             adaptation_options_links:
-              "<a href='http://website.com'>Beach and shoreface nourishment</a>",
+              "<a href='https://website.com'>Beach and shoreface nourishment</a>",
             elements_str: 'Nature-based solutions',
-            image: 'http://website.com/preview',
+            image: 'https://website.com/preview',
             origin_adaptecca: 20,
             adaptation_options: 'Dune construction',
           },

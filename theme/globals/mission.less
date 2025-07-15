@@ -70,7 +70,7 @@ body.subsite-mkh {
     color: @green-1 !important;
   }
 
-  .main-menu {
+  .main-menu:not(.inverted) {
     .item a {
       color: @blue-1;
     }
@@ -84,6 +84,7 @@ body.subsite-mkh {
       color: @green-1;
     }
   }
+
 
   .search-action {
     background-color: @green-1;
@@ -115,6 +116,124 @@ body.subsite-mkh {
   #mega-menu,
   #mega-menu .ui.accordion .content {
     background: @subsiteBackgroundGradient;
+  }
+
+  /* Mission signatory profile */
+  .signatory-profile {
+    .ui.items.items-group {
+      margin: 2em 0 !important;
+    }
+
+    .ui.inverted.button.back-to-map {
+      margin-bottom: 2em;
+      box-shadow: 0px 0px 0px 2px @pineGreen inset !important;
+      color: @pineGreen;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:focus-visible {
+        background-color: @pineGreen;
+      }
+    }
+
+    .column > .ui.segment {
+      background-color: #fff !important;
+    }
+
+    .funding-sources {
+      span {
+        float: left;
+        margin-right: 5px;
+      }
+    }
+
+    .section-wrapper-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+
+      .date {
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .description > p {
+      margin-bottom: 1em;
+    }
+
+    .tab-section-wrapper {
+      padding: 1.5em;
+      margin: 2em 0;
+      background-color: #f9f9f9;
+
+      &.assessment {
+        .ui.accordion {
+          margin-top: 1em;
+
+          .content.active {
+            padding: 1rem 1rem !important;
+            background-color: @white;
+          }
+
+          .ui.segment.border {
+            border: 1px solid #e6e7e8;
+          }
+        }
+      }
+    }
+
+    .section-wrapper {
+      padding: 1em;
+      margin: 1em 0;
+      background-color: #f9f9f9;
+
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5em;
+      }
+
+      .ui.accordion {
+        margin-top: 1em;
+
+        .content.active {
+          padding-bottom: 1rem !important;
+        }
+      }
+
+      .small-label {
+        font-size: 1em;
+      }
+    }
+
+    .section-number {
+      color: @pineGreen;
+    }
+
+    strong.date {
+      margin-right: 0.5em;
+    }
+
+    .items-group {
+      display: block !important;
+      column-count: 2;
+
+      .item {
+        padding: 0.5em 0 !important;
+        break-inside: avoid-column;
+
+        .content {
+          padding-left: 0.5rem !important;
+        }
+      }
+    }
+
+    .footer-text {
+      margin-top: 3em;
+      font-size: 15px;
+    }
   }
 }
 

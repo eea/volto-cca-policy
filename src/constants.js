@@ -3,9 +3,11 @@ export const download_fields = [
   { field: 'about', name: 'About' },
   { field: 'title', name: 'Title' },
   { field: 'created', name: 'Creation Date' },
-  { field: 'issued', name: 'Publication Date' },
+  { field: 'issued', name: 'Issued Date' },
+  { field: 'publication_date', name: 'Publication Date' },
   { field: 'creators', name: 'Creator' },
   { field: 'objectProvides', name: 'Content type' },
+  { field: 'fulltext', name: 'Description' },
   { field: 'cca_keywords', name: 'Keywords' },
   { field: 'cca_adaptation_sectors', name: 'Sectors' },
   { field: 'cca_climate_impacts', name: 'Climate impact' },
@@ -17,7 +19,6 @@ export const download_fields = [
   { field: 'cca_origin_websites', name: 'Origin website' },
   { field: 'cca_health_impacts', name: 'Health impacts' },
   { field: 'cca_partner_contributors', name: 'Observatory impacts' },
-  // { field: 'fulltext', name: 'Description' },
 ];
 
 export const eea_languages = [

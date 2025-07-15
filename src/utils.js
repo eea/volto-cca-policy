@@ -92,11 +92,13 @@ export const formatTextToHTML = (text) => {
 
   // Convert URLs to clickable links
   formattedText = formattedText.replace(
-    /((https?:\/\/[^\s<>"]+))/g,
+    /(?<!["'>])((https?:\/\/[^\s<>"]+))/g,
     '<a href="$1" target="_blank" rel="noreferrer">$1</a>',
   );
 
-  return `<p>${formattedText}</p>`;
+  return formattedText.includes('<p>') || formattedText.includes('<a>')
+    ? formattedText
+    : `<p>${formattedText}</p>`;
 };
 
 export const extractPlanNameAndURL = (text) => {
@@ -125,3 +127,5 @@ export const extractPlanNameAndURL = (text) => {
     url,
   };
 };
+
+export const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;

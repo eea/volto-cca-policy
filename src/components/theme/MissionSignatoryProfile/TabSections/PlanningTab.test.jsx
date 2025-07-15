@@ -1,6 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 import PlanningTab from './PlanningTab';
 
 jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
@@ -10,6 +9,7 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
 }));
 
 jest.mock('@eeacms/volto-cca-policy/utils', () => ({
+  isEmpty: (arr) => !arr || arr.length === 0,
   formatTextToHTML: (text) => text,
   extractPlanNameAndURL: (str) => ({
     name: 'Plan Example',
@@ -60,9 +60,10 @@ describe('PlanningTab', () => {
         Approval_Year: '2023',
         End_Year_Of_Plan_Label: 'End Year:',
         End_Year: '2030',
-        Name_Of_Plan_And_Hyperlink: 'http://example.com; https://plan-link.com',
+        Name_Of_Plan_And_Hyperlink:
+          'https://example.com; https://plan-link.com',
         Further_Information_Link_Text: 'More Info',
-        Attachment: 'http://attachment.com',
+        Attachment: 'https://attachment.com',
         Explore_Plan_Link_Text: 'Explore Plan',
         Sectors: ['Agriculture'],
       },

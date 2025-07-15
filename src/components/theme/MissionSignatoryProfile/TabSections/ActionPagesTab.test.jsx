@@ -1,11 +1,14 @@
-import React from 'react';
-import { render, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render, within } from '@testing-library/react';
 import ActionPagesTab from './ActionPagesTab';
 
-// Mocking components used inside
 jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
   Callout: ({ children }) => <div>{children}</div>,
+}));
+
+jest.mock('@eeacms/volto-cca-policy/utils', () => ({
+  isEmpty: (arr) => !arr || arr.length === 0,
+  formatTextToHTML: (text) => text,
 }));
 
 jest.mock('./../AccordionList', () => ({ variation, accordions }) => (
@@ -61,7 +64,7 @@ describe('ActionPagesTab', () => {
   };
 
   it('renders action tab content correctly', () => {
-    const { getByText, getAllByText } = render(
+    const { getByText, container } = render(
       <ActionPagesTab result={mockResult} />,
     );
 
@@ -71,9 +74,7 @@ describe('ActionPagesTab', () => {
     ).toBeInTheDocument();
     expect(getByText('Summary line here.')).toBeInTheDocument();
 
-    const sections = getAllByText(/^\d+\./).map((el) =>
-      el.closest('.section-wrapper'),
-    );
+    const sections = container.querySelectorAll('.section-wrapper');
 
     // First action
     const firstAction = within(sections[0]);

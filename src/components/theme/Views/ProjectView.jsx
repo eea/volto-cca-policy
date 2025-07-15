@@ -11,6 +11,7 @@ import {
   ShareInfoButton,
   PortalMessage,
 } from '@eeacms/volto-cca-policy/components';
+
 import { FormattedMessage } from 'react-intl';
 
 import config from '@plone/volto/registry';

@@ -24,6 +24,7 @@ import ContextNavigation from '@plone/volto/components/theme/Navigation/ContextN
 import {
   BannerTitle,
   ASTNavigation,
+  PortalMessage,
 } from '@eeacms/volto-cca-policy/components';
 
 import { isEqual } from 'lodash';
@@ -85,12 +86,14 @@ const DefaultView = (props) => {
       : 3;
   const currentLang = useSelector((state) => state.intl.locale);
 
-  // If the content is not yet loaded, then do not show anything
+  const isChromeless = location.search?.indexOf('chromeless=1') > -1;
+
   return contentLoaded ? (
     hasBlocksData(content) ? (
       <>
         {currentNavigation ? (
           <Container id="page-document">
+            <PortalMessage content={content} />
             <Grid>
               <Grid.Column width={12 - gridColumns}>
                 <BannerTitle {...props} />
@@ -112,6 +115,7 @@ const DefaultView = (props) => {
           </Container>
         ) : astNavigation ? (
           <Container id="page-document">
+            <PortalMessage content={content} />
             <Grid>
               <Grid.Column mobile={12} tablet={12} computer={4}>
                 <ASTNavigation astNavigation={astNavigation} />
@@ -124,7 +128,8 @@ const DefaultView = (props) => {
           </Container>
         ) : (
           <Container id="page-document">
-            <BannerTitle {...props} />
+            <PortalMessage content={content} />
+            {!isChromeless && <BannerTitle {...props} />}
             <RenderBlocks {...props} path={path} />
           </Container>
         )}
