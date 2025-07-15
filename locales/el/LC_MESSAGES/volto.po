@@ -18,8 +18,6 @@ msgstr "Ένα έγγραφο φόντου για την εκδήλωση είν
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Επιλογές προσαρμογής που εφαρμόζονται 
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Τομείς Προσαρμογής"
 
@@ -85,11 +81,6 @@ msgstr "Όλο το χρόνο"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Πληροφορίες ιστορικού"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Βέλγιο"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Πόλη:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Κλιματικές Επιπτώσεις"
 
@@ -304,11 +293,6 @@ msgstr "Εξερευνήστε περισσότερα για το Climate-ADAPT"
 msgid "For more search options"
 msgstr "Για περισσότερες επιλογές αναζήτησης"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Γαλλία"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Πλήρης οθόνη"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "Διαθέσιμο HHWS (κάντε κλικ στη χώρα για πε
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Τύπος κινδύνου"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Επιπτώσεις στην υγεία"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Πληροφορίες"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Είδος από τρίτους"
 
@@ -444,8 +419,6 @@ msgstr "Βασικά κοινοτικά συστήματα"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Τύπος κλειδιού Μέτρο"
 
@@ -518,6 +491,11 @@ msgstr "Πέρυσι"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Μόλυβδος"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Συνεισφορές παρατηρητηρίου"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Συνεργάτης του Παρατηρητηρίου"
@@ -732,8 +709,6 @@ msgstr "Αναζήτηση στον Κατάλογο Πόρων του Παρα�
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Τμήμα"
 
@@ -844,6 +819,11 @@ msgstr "Η ημερομηνία αναφέρεται στην τελευταία
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Η ημερομηνία αναφέρεται στη στιγμή κατά την οποία το αντικείμενο προετοιμάστηκε ή ενημερώθηκε από συνεισφέροντες εμπειρογνώμονες που θα υποβληθεί για δημοσίευση στο Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Θέματα:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Διακρατικές περιοχές"
 
@@ -862,11 +840,6 @@ msgstr "Διακρατικές περιοχές"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Τύπος αντικειμένου"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Τύποι"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Λευκορωσία"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Βέλγιο"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Βοσνία-Ερζεγοβίνη"
 
@@ -1228,6 +1206,11 @@ msgstr "Δανία"
 
 msgid "Estonia"
 msgstr "Εσθονία"
+
+#. undefined
+
+msgid "France"
+msgstr "Γαλλία"
 
 #. undefined
 
@@ -2209,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Έκθεση ευάλωτων ομάδων σε κλιματικούς κινδύνους"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "ΒΑΣΙΚΕΣ ΔΡΑΣΕΙΣ ΤΗΣ ΕΕ"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Μόνο ανθεκτικότητα"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Λύσεις βασισμένες στη φύση"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Οικονομικές απώλειες και θάνατοι"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Στρατηγικοί στόχοι 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Διαθεσιμότητα αστικών χώρων πρασίνου σε ευπαθείς ομάδες"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Διακρατικό, Εθνικό, Τοπικό"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Αεροαλλεργιογόνα"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Θερμότητα"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Προσβασιμότητα νοσοκομείων στην Ευρώπη"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ΠΡΟΣΑΡΜΟΓΗ ΣΤΟ ΔΑΣΟΚΟΜΙΚΟ ΤΟΜΕΑ"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Επίγειο όζον"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Πρόβλεψη επίγειου όζοντος (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Ρύπανση"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Επιπτώσεις για την ασφάλεια και την υγεία στην εργασία"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Σχέδιο εργασιών του Παρατηρητηρίου για το 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Πρόβλεψη επίγειου PM2,5 (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Πρόβλεψη PM10 σε επίπεδο εδάφους (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Πρόβλεψη NO2 σε επίπεδο εδάφους (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Έκθεση ΕΟΧ 2022 για το κλίμα και την υγεία"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Ευρωπαϊκός άτλαντας περιβάλλοντος και υγείας"
 

@@ -35,7 +35,7 @@ exports[`FileWidget renders a file widget component with value 1`] = `
             <img
               class="ui small image image-preview"
               id="field-my-field-image"
-              src="http://myfile?id=0"
+              src="https://myfile?id=0"
             />
             <label
               class="label-file-widget-input"
@@ -55,7 +55,7 @@ exports[`FileWidget renders a file widget component with value 1`] = `
           <a
             class="image-download-btn"
             download="myfile"
-            href="http://myfile"
+            href="https://myfile"
           >
             Download image
           </a>

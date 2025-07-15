@@ -44,7 +44,6 @@ import {
   getContent,
   getNavigation,
   getTypes,
-  getWorkflow,
 } from '@plone/volto/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
@@ -315,11 +314,6 @@ export function connectAppComponent(AppComponent) {
             return dispatch(getTypes(getBaseUrl(location.pathname)));
           }
         },
-      },
-      {
-        key: 'workflow',
-        promise: ({ location, store: { dispatch } }) =>
-          __SERVER__ && dispatch(getWorkflow(getBaseUrl(location.pathname))),
       },
     ]),
     injectIntl,

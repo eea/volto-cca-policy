@@ -18,8 +18,6 @@ msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm Sa Chás Seo"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Earnálacha Oiriúnaithe"
 
@@ -85,11 +81,6 @@ msgstr "An t-am ar fad"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Faisnéis chúlra"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "an Bheilg"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Cathair :"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Tionchair Aeráide"
 
@@ -304,11 +293,6 @@ msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 msgid "For more search options"
 msgstr "Le haghaidh tuilleadh roghanna cuardaigh"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Fhrainc"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Lánscáileán"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "HHWS ar fáil (cliceáil ar tír le haghaidh tuilleadh eolais)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Cineál Guaise"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Tionchair Sláinte"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Eolas"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Mír ó thríú páirtithe"
 
@@ -444,8 +419,6 @@ msgstr "Príomhchórais Phobail"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Beart Cineál Eochair"
 
@@ -518,6 +491,11 @@ msgstr "An bhliain seo caite"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Luaidhe"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Ranníocaíochtaí réadlainne"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Comhpháirtí réadlainne"
@@ -732,8 +709,6 @@ msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Alt"
 
@@ -844,6 +819,11 @@ msgstr "Tagraíonn an dáta don dáta foilsithe is déanaí den mhír"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Tagraíonn an dáta don mhóimint ina bhfuil an mhír ullmhaithe nó nuashonraithe ag saineolaithe rannpháirteacha le cur isteach lena fhoilsiú in Aeráide ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Réigiúin thrasnáisiúnta"
 
@@ -862,11 +840,6 @@ msgstr "Réigiúin thrasnáisiúnta"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Cineál míre"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Cineálacha"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Bhealarúis"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "an Bheilg"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "An Bhoisnia agus an Heirseagaivéin"
 
@@ -1228,6 +1206,11 @@ msgstr "an Danmhairg"
 
 msgid "Estonia"
 msgstr "an Eastóin"
+
+#. undefined
+
+msgid "France"
+msgstr "Fhrainc"
 
 #. undefined
 
@@ -2209,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Nochtadh grúpaí leochaileacha do rioscaí aeráide"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "GNÍOMHAÍOCHTAÍ EOCHAIR AE"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Athléimneacht chóir"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Réitigh dhúlrabhunaithe"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Caillteanais eacnamaíocha agus básanna"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Cuspóirí straitéiseacha 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Spásanna glasa uirbeacha a bheith ar fáil do ghrúpaí leochaileacha"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Trasnáisiúnta, Náisiúnta, áitiúil"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aerailléirginí"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Teas"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Inrochtaineacht ospidéal san Eoraip"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Oiriúnú san earnáil talmhaíochta"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Ózón trópaisféarach"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Réamhaisnéis ózóin trópaisféaraigh (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Truailliú"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Éifeachtaí sláinte agus sábháilteachta ceirde"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Plean oibre na Faireachlainne do 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Réamhaisnéis PM2.5 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Réamhaisnéis PM10 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Réamhaisnéis NO2 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Tuarascáil 2022 ón nGníomhaireacht Eorpach Chomhshaoil maidir leis an Aeráid agus an tAampa; Sláinte"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Atlas comhshaoil agus sláinte na hEorpa"
 

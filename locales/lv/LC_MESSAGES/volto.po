@@ -18,8 +18,6 @@ msgstr "Ir pieejams pasākuma fona dokuments"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Šajā gadījumā ieviestās pielāgošanas iespējas"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptācijas nozares"
 
@@ -85,11 +81,6 @@ msgstr "Visu laiku"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Fona informācija"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Beļģija"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Pilsēta:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimata ietekme"
 
@@ -304,11 +293,6 @@ msgstr "Izpētiet vairāk par Climate-ADAPT"
 msgid "For more search options"
 msgstr "Lai iegūtu vairāk meklēšanas iespēju"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Francija"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Pilnekrāna režīms"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "HHWS pieejams (lai iegūtu plašāku informāciju, noklikšķiniet uz va
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Bīstamības veids"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Ietekme uz veselību"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Informācija"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Prece no trešajām pusēm"
 
@@ -444,8 +419,6 @@ msgstr "Galvenās kopienas sistēmas"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Atslēgas veida pasākums"
 
@@ -518,6 +491,11 @@ msgstr "Pagājušajā gadā"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Svins"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Observatorijas ieguldījums"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatorijas partneris"
@@ -732,8 +709,6 @@ msgstr "Meklēt Observatorijas resursu katalogā..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "sadaļa"
 
@@ -844,6 +819,11 @@ msgstr "Datums attiecas uz vienuma jaunāko publicēšanas datumu"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datums attiecas uz brīdi, kad vienumu ir sagatavojuši vai atjauninājuši iesaistītie eksperti, kas jāiesniedz publicēšanai Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Tēmas:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnacionālie reģioni"
 
@@ -862,11 +840,6 @@ msgstr "Transnacionālie reģioni"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Preces veids"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Veidi"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Baltkrievija"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Beļģija"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnija un Hercegovina"
 
@@ -1228,6 +1206,11 @@ msgstr "Dānija"
 
 msgid "Estonia"
 msgstr "Igaunija"
+
+#. undefined
+
+msgid "France"
+msgstr "Francija"
 
 #. undefined
 

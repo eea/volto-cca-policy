@@ -12,8 +12,8 @@ describe('FeatureDisplay', () => {
   it('should render the component', () => {
     const feature = {
       title: 'Case study',
-      url: 'http://example.com',
-      image: 'http://example.com/image.jpg',
+      url: 'https://example.com',
+      image: 'https://example.com/image.jpg',
       impacts: 'Impact A, Impact B',
       adaptation_options_links: '',
     };

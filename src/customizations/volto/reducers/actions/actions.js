@@ -1,55 +1,40 @@
 /**
- * Navigation reducer.
- * @module reducers/navigation/navigation
+ * Actions reducer.
+ * @module reducers/actions/actions
  */
 
-import { map } from 'lodash';
+import { GET_CONTENT, LIST_ACTIONS } from '@plone/volto/constants/ActionTypes';
 import {
   flattenToAppURL,
   getBaseUrl,
   hasApiExpander,
 } from '@plone/volto/helpers';
 
-import {
-  GET_CONTENT,
-  GET_NAVIGATION,
-} from '@plone/volto/constants/ActionTypes';
-
 const initialState = {
   error: null,
-  items: [],
+  actions: {
+    object: [],
+    object_buttons: [],
+    site_actions: [],
+    user: [],
+    document_actions: [],
+    portal_tabs: [],
+  },
   loaded: false,
   loading: false,
 };
 
 /**
- * Recursive function that process the items returned by the navigation
- * endpoint
- * @function getRecursiveItems
- * @param {array} items The items inside a navigation response.
- * @returns {*} The navigation items object (recursive)
- */
-function getRecursiveItems(items) {
-  return map(items, (item) => ({
-    title: item.title,
-    description: item.description,
-    url: flattenToAppURL(item['@id']),
-    ...item,
-    ...(item.items && { items: getRecursiveItems(item.items) }),
-  }));
-}
-
-/**
- * Navigation reducer.
- * @function navigation
+ * Actions reducer.
+ * @function actions
  * @param {Object} state Current state.
  * @param {Object} action Action to be handled.
  * @returns {Object} New state.
  */
-export default function navigation(state = initialState, action = {}) {
+export default function actions(state = initialState, action = {}) {
   let hasExpander;
   switch (action.type) {
-    case `${GET_NAVIGATION}_PENDING`:
+    case `${LIST_ACTIONS}_PENDING`:
       return {
         ...state,
         error: null,
@@ -61,41 +46,41 @@ export default function navigation(state = initialState, action = {}) {
         return state;
       }
       hasExpander = hasApiExpander(
-        'navigation',
+        'actions',
         getBaseUrl(flattenToAppURL(action.result['@id'])),
       );
       if (hasExpander && !action.subrequest) {
         return {
           ...state,
           error: null,
-          items: getRecursiveItems(
-            action.result['@components'].navigation.items,
-          ),
+          actions: action.result['@components']?.actions,
           loaded: true,
           loading: false,
         };
       }
       return state;
-    case `${GET_NAVIGATION}_SUCCESS`:
-      // Even if the expander is set or not, if the GET_NAVIGATION is
+    case `${LIST_ACTIONS}_SUCCESS`:
+      // Even if the expander is set or not, if the LIST_ACTIONS is
       // called, we want it to store the data if the actions data is
       // not set in the expander data (['@components']) but in the "normal"
       // action result (we look for the object property returned by the endpoint)
-      if (!action.result?.['@components'] && action.result?.items) {
+      // Unfortunately, this endpoint returns all the actions in a plain object
+      // with no structure :(
+      if (action.result.object) {
         return {
           ...state,
           error: null,
-          items: getRecursiveItems(action.result.items),
+          actions: action.result,
           loaded: true,
           loading: false,
         };
       }
       return state;
-    case `${GET_NAVIGATION}_FAIL`:
+    case `${LIST_ACTIONS}_FAIL`:
       return {
         ...state,
         error: action.error,
-        items: [],
+        actions: {},
         loaded: false,
         loading: false,
       };

@@ -18,8 +18,6 @@ msgstr "Et bakgrunnsdokument for arrangementet er tilgjengelig"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Tilpasningsalternativer implementert i dette tilfellet"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Tilpasningssektorer"
 
@@ -85,11 +81,6 @@ msgstr "Hele tiden"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Bakgrunnsinformasjon"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgia"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "By:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimapåvirkninger"
 
@@ -304,11 +293,6 @@ msgstr "Utforsk mer på Climate-ADAPT"
 msgid "For more search options"
 msgstr "For flere søkealternativer"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Frankrike"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Fullskjerm"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "HHWS tilgjengelig (klikk på land for mer informasjon)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Faretype"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Helsepåvirkninger"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Vare fra tredjeparter"
 
@@ -444,8 +419,6 @@ msgstr "Nøkkelsamfunnssystemer"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Nøkkeltype Mål"
 
@@ -518,6 +491,11 @@ msgstr "I fjor"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Bly"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Observatoriebidrag"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatoriepartner"
@@ -732,8 +709,6 @@ msgstr "Søk i Observatory Resource Catalogue..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Del"
 
@@ -844,6 +819,11 @@ msgstr "Datoen refererer til siste dato for publisering av varen"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datoen refererer til tidspunktet da elementet er utarbeidet eller oppdatert av medvirkende eksperter som skal sendes inn for publisering i Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Emner:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnasjonale regioner"
 
@@ -862,11 +840,6 @@ msgstr "Transnasjonale regioner"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Type vare"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Typer"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Hviterussland"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgia"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnia-Hercegovina"
 
@@ -1228,6 +1206,11 @@ msgstr "Danmark"
 
 msgid "Estonia"
 msgstr "Estland"
+
+#. undefined
+
+msgid "France"
+msgstr "Frankrike"
 
 #. undefined
 

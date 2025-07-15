@@ -86,11 +86,6 @@ msgstr "Tüm zamanlar"
 msgid "Background information"
 msgstr "Arka plan bilgisi"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belçika"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -304,11 +299,6 @@ msgstr "Climate-ADAPT hakkında daha fazlasını keşfedin"
 msgid "For more search options"
 msgstr "Daha fazla arama seçeneği için"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Fransa"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -362,11 +352,6 @@ msgstr "HHWS mevcut (daha fazla bilgi için ülkeye tıklayın)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Tehlike Türü"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Sağlık Etkileri"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -519,6 +504,11 @@ msgstr "Geçen sene"
 msgid "Lead"
 msgstr "Yol göstermek"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -597,7 +587,6 @@ msgid "Observatory contributions"
 msgstr "Gözlemevi katkıları"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Gözlemevi ortağı"
@@ -844,6 +833,11 @@ msgstr "Tarih, öğenin en son yayınlanma tarihini ifade eder"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Tarih, maddenin Climate ADAPT'ta yayınlanmak üzere katkıda bulunan uzmanlar tarafından hazırlandığı veya güncellendiği anı ifade eder."
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -862,11 +856,6 @@ msgstr "Ulusötesi bölgeler"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Öğe türü"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Türler"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1185,11 @@ msgstr "Beyaz Rusya"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belçika"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosna Hersek"
 
@@ -1228,6 +1222,11 @@ msgstr "Danimarka"
 
 msgid "Estonia"
 msgstr "Estonya"
+
+#. undefined
+
+msgid "France"
+msgstr "Fransa"
 
 #. undefined
 
@@ -2209,107 +2208,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Savunmasız grupların iklim risklerine maruz kalması"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "ANA AB EYLEMLERİ"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Sadece dayanıklılık"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Doğa bazlı çözümler"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Ekonomik kayıplar ve ölümler"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Stratejik hedefler 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Kentsel yeşil alanların hassas grupların kullanımına sunulması"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Ulusötesi, Ulusal, yerel"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aero-alerjenler"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Sıcaklık"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Avrupa'daki hastanelerin erişilebilirliği"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ORMANCILIK SEKTÖRÜNDE UYUM"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Yer seviyesinde ozon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Yer seviyesinde ozon tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Kirlilik"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "İş güvenliği ve sağlığına etkileri"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "2023-24 için gözlemevi çalışma planı"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Yer seviyesinde PM2.5 tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Yer seviyesinde PM10 tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Yer seviyesinde NO2 tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 AÇA İklim ve Sağlık Raporu"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Avrupa çevre ve sağlık atlası"
 

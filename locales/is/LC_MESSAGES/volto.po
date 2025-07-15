@@ -18,8 +18,6 @@ msgstr "Bakgrunnsskjal fyrir viðburðinn er fáanlegt"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Aðlögunarvalkostir innleiddir í þessu tilfelli"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Aðlögunarsvið"
 
@@ -85,11 +81,6 @@ msgstr "Alla tíð"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Bakgrunnsupplýsingar"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgíu"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Borg:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Loftslagsáhrif"
 
@@ -304,11 +293,6 @@ msgstr "Kannaðu meira á Climate-ADAPT"
 msgid "For more search options"
 msgstr "Fyrir fleiri leitarmöguleika"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Frakklandi"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Fullskjár"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "HHWS í boði (smelltu á land fyrir frekari upplýsingar)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Tegund hættu"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Heilsuáhrif"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Upplýsingar"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Atriði frá þriðja aðila"
 
@@ -444,8 +419,6 @@ msgstr "Helstu samfélagskerfi"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Lykill Tegund Mál"
 
@@ -518,6 +491,11 @@ msgstr "Í fyrra"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Blý"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Stjörnuskoðunarframlög"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Stjörnuskoðunarfélagi"
@@ -732,8 +709,6 @@ msgstr "Leitaðu í auðlindaskrá Observatory..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "kafla"
 
@@ -844,6 +819,11 @@ msgstr "Dagsetningin vísar til síðasta útgáfudags hlutarins"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Dagsetningin vísar til þess augnabliks þegar hluturinn hefur verið útbúinn eða uppfærður af sérfræðingum sem leggja skal fram til birtingar í Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Efni:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Þverþjóðleg svæði"
 
@@ -862,11 +840,6 @@ msgstr "Þverþjóðleg svæði"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tegund hlutar"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Tegundir"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Hvíta-Rússland"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgíu"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnía og Hersegóvína"
 
@@ -1228,6 +1206,11 @@ msgstr "Danmörku"
 
 msgid "Estonia"
 msgstr "Eistland"
+
+#. undefined
+
+msgid "France"
+msgstr "Frakklandi"
 
 #. undefined
 
@@ -2209,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Útsetning viðkvæmra hópa fyrir loftslagsáhættu"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "LYKILEGÐIR ESB"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Bara seiglu"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Náttúrulegar lausnir"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Efnahagslegt tjón og banaslys"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Stefnumiðuð markmið 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Framboð á grænum svæðum í þéttbýli fyrir viðkvæma hópa"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Þverþjóðlegt, þjóðlegt, staðbundið"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Loftofnæmisvaldar"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Hiti"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Aðgengi sjúkrahúsa í Evrópu"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "AÐLÖGUN Í SKÓGRÆKNI"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Óson á jörðu niðri"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Ósonspá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Mengun"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Vinnuverndar- og heilsuáhrif"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Starfsáætlun eftirlitsstofnana 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "PM2.5 spá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "PM10 spá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "NO2 spá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 EES skýrsla um loftslag og heilsu"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Evrópskur umhverfis- og heilsuatlas"
 

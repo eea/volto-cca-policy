@@ -18,8 +18,6 @@ msgstr "Sündmuse taustadokument on saadaval"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Sel juhul rakendatud kohanemisvalikud"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Kohanemissektorid"
 
@@ -85,11 +81,6 @@ msgstr "Kogu aeg"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Taustteave"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgia"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Linn:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Kliimamõjud"
 
@@ -304,11 +293,6 @@ msgstr "Lisateavet Climate-ADAPT kohta"
 msgid "For more search options"
 msgstr "Rohkemate otsinguvõimaluste jaoks"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Prantsusmaa"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Täisekraan"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "HHWS on saadaval (lisateabe saamiseks klõpsake riigil)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Ohu tüüp"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Mõju tervisele"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Üksus kolmandatelt isikutelt"
 
@@ -444,8 +419,6 @@ msgstr "Peamised kogukonnasüsteemid"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Võtmetüübi mõõt"
 
@@ -518,6 +491,11 @@ msgstr "Eelmisel aastal"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Plii"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Vaatluskeskuse kaastööd"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Vaatluskeskuse partner"
@@ -732,8 +709,6 @@ msgstr "Otsige observatooriumi ressursside kataloogist..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "jaotis"
 
@@ -844,6 +819,11 @@ msgstr "Kuupäev viitab üksuse hiliseimale avaldamise kuupäevale"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Kuupäev viitab hetkele, mil üksust on koostanud või ajakohastanud kaasatud eksperdid, et see esitataks Climate ADAPT avaldamiseks"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Teemad:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Rahvusvahelised piirkonnad"
 
@@ -862,11 +840,6 @@ msgstr "Rahvusvahelised piirkonnad"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Kauba tüüp"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Tüübid"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Valgevene"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgia"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnia ja Hertsegoviina"
 
@@ -1228,6 +1206,11 @@ msgstr "Taani"
 
 msgid "Estonia"
 msgstr "Eesti"
+
+#. undefined
+
+msgid "France"
+msgstr "Prantsusmaa"
 
 #. undefined
 
@@ -2209,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Haavatavate rühmade kokkupuude kliimariskidega"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "Peamised ELi meetmed"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Õiglane vastupanuvõime"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Looduspõhised lahendused"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Majanduslik kahju ja surmajuhtumid"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Strateegilised eesmärgid 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Linna rohealade kättesaadavus haavatavatele rühmadele"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Riikidevaheline, riiklik, kohalik"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroallergeenid"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Soojus"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Haiglate juurdepääsetavus Euroopas"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Kohanemine metsandussektoris"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Troposfääriosoon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Troposfääriosooni prognoos (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Saaste"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Mõju tööohutusele ja töötervishoiule"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Vaatluskeskuse töökava aastateks 2023–2024"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "PM2,5-osakeste prognoos maapinna tasandil (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "PM10-osakeste prognoos maapinna tasandil (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Maapealne NO2 prognoos (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Euroopa Keskkonnaameti 2022. aasta aruanne „Climate & Health“"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Euroopa keskkonna- ja terviseatlas"
 

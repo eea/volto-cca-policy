@@ -18,8 +18,6 @@ msgstr "Az esemény háttérdokumentuma elérhető"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Ebben az esetben megvalósított adaptációs lehetőségek"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Alkalmazkodási ágazatok"
 
@@ -85,11 +81,6 @@ msgstr "Minden alkalommal"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Háttérinformációk"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgium"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Város:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Éghajlati hatások"
 
@@ -304,11 +293,6 @@ msgstr "Fedezzen fel többet a Climate-ADAPT-ről"
 msgid "For more search options"
 msgstr "További keresési lehetőségekért"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Franciaország"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Teljes képernyő"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "HHWS elérhető (további információért kattintson az országra)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Veszély típusa"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Egészségügyi hatások"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Harmadik féltől származó tétel"
 
@@ -444,8 +419,6 @@ msgstr "Kulcsfontosságú közösségi rendszerek"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Kulcstípus Mérték"
 
@@ -518,6 +491,11 @@ msgstr "Tavaly"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Ólom"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Obszervatóriumi hozzájárulások"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Obszervatórium partnere"
@@ -732,8 +709,6 @@ msgstr "Keresés az Obszervatórium forráskatalógusában..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Szakasz"
 
@@ -844,6 +819,11 @@ msgstr "A dátum a tétel legkésőbbi megjelenési dátumára vonatkozik"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "A dátum arra a pillanatra vonatkozik, amikor az elemet a közreműködő szakértők elkészítették vagy frissítették a Climate ADAPT-ban való közzététel céljából."
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Témák:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transznacionális régiók"
 
@@ -862,11 +840,6 @@ msgstr "Transznacionális régiók"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Az elem típusa"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Típusok"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Fehéroroszország"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgium"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosznia és Hercegovina"
 
@@ -1228,6 +1206,11 @@ msgstr "Dánia"
 
 msgid "Estonia"
 msgstr "Észtország"
+
+#. undefined
+
+msgid "France"
+msgstr "Franciaország"
 
 #. undefined
 
@@ -2209,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "A veszélyeztetett csoportok éghajlati kockázatoknak való kitettsége"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "FŐ UNIÓS INTÉZKEDÉSEK"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Méltányos reziliencia"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Természetalapú megoldások"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Gazdasági veszteségek és halálesetek"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Stratégiai célkitűzések 2030-ig"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "A városi zöldterületek elérhetősége a veszélyeztetett csoportok számára"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Transznacionális, nemzeti, helyi"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroallergén anyagok"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Hő"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "A kórházak hozzáférhetősége Európában"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "KIIGAZÍTÁS AZ ERDÉSZETI ÁGAZATBAN"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Talajközeli ózon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Földközeli ózonelőrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Szennyezés"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Munkahelyi biztonsági és egészségvédelmi hatások"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "A megfigyelőközpont 2023–2024-es munkaterve"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Földszinti PM2,5-előrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Földi PM10-előrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Földszinti NO2-előrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Az EEA 2022. évi jelentése az éghajlatváltozásról és az egészségügyről"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Európai környezetvédelmi és egészségügyi atlasz"
 

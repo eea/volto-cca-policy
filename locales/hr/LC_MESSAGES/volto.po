@@ -18,8 +18,6 @@ msgstr "Popratni dokument za događaj je dostupan"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +42,6 @@ msgstr "Mogućnosti prilagodbe implementirane u ovom slučaju"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Sektori adaptacije"
 
@@ -85,11 +81,6 @@ msgstr "Sve vrijeme"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Pozadinske informacije"
-
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgija"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -149,8 +140,6 @@ msgstr "Grad:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimatski utjecaji"
 
@@ -304,11 +293,6 @@ msgstr "Istražite više na Climate-ADAPT"
 msgid "For more search options"
 msgstr "Za više opcija pretraživanja"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Francuska"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -316,8 +300,6 @@ msgstr "Cijeli zaslon"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -362,11 +344,6 @@ msgstr "Dostupan HHWS (kliknite na zemlju za dodatne informacije)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Vrsta opasnosti"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Zdravstveni utjecaji"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -431,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Stavka trećih strana"
 
@@ -444,8 +419,6 @@ msgstr "Ključni sustavi zajednice"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Ključna vrsta mjerenja"
 
@@ -518,6 +491,11 @@ msgstr "Prošle godine"
 #: components/theme/Views/ProjectView
 msgid "Lead"
 msgstr "Dovesti"
+
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -597,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Prilozi Zvjezdarnice"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner zvjezdarnice"
@@ -732,8 +709,6 @@ msgstr "Pretražite katalog izvora zvjezdarnice..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Odjeljak"
 
@@ -844,6 +819,11 @@ msgstr "Datum se odnosi na zadnji datum objave artikla"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datum se odnosi na trenutak u kojem je stavka pripremljena ili ažurirana od strane stručnjaka koji doprinose kako bi se predala za objavljivanje u Climate ADAPT-u"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -852,8 +832,6 @@ msgstr "Teme:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnacionalne regije"
 
@@ -862,11 +840,6 @@ msgstr "Transnacionalne regije"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Vrsta artikla"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Vrste"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1196,6 +1169,11 @@ msgstr "Bjelorusija"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgija"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosna i Hercegovina"
 
@@ -1228,6 +1206,11 @@ msgstr "Danska"
 
 msgid "Estonia"
 msgstr "Estonija"
+
+#. undefined
+
+msgid "France"
+msgstr "Francuska"
 
 #. undefined
 
@@ -2209,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Izloženost ranjivih skupina klimatskim rizicima"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "KLJUČNA DJELOVANJA EU-a"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Pravedna otpornost"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Prirodna rješenja"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Gospodarski gubici i smrtni slučajevi"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Strateški ciljevi za 2030."
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Dostupnost gradskih zelenih površina ranjivim skupinama"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "transnacionalni, nacionalni, lokalni"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroalergeni"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Toplina"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostupnost bolnica u Europi"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "PRILAGODBA U ŠUMARSKOM SEKTORU"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "prizemni ozon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognoza prizemnog ozona (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Onečišćenje"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Učinci na sigurnost i zdravlje na radu"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Plan rada Opservatorija za razdoblje 2023. 2024."
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Prognoza PM2,5 na razini tla (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Prognoza PM10 na razini tla (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Prognoza NO2 na razini tla (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Izvješće Europske agencije za okoliš o klimi i klimi za 2022.; Zdravlje"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Europski atlas okoliša i zdravlja"
 
