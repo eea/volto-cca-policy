@@ -819,6 +819,11 @@ msgstr "Dagsetningin vísar til síðasta útgáfudags hlutarins"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Dagsetningin vísar til þess augnabliks þegar hluturinn hefur verið útbúinn eða uppfærður af sérfræðingum sem leggja skal fram til birtingar í Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -891,3 +896,2957 @@ msgstr "Hvar"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr ""
+
+#. undefined
+
+msgid "Adaptation option"
+msgstr "Aðlögunarmöguleiki"
+
+#. undefined
+
+msgid "Case studies"
+msgstr "Dæmisögur"
+
+#. undefined
+
+msgid "Case study"
+msgstr "Tilviksrannsókn"
+
+#. undefined
+
+msgid "Guidance"
+msgstr "Leiðsögn"
+
+#. undefined
+
+msgid "Indicator"
+msgstr "Vísir"
+
+#. undefined
+
+msgid "Information portal"
+msgstr "Upplýsingagátt"
+
+#. undefined
+
+msgid "Information portals"
+msgstr "Upplýsingagáttir"
+
+#. undefined
+
+msgid "Videos"
+msgstr "Myndbönd"
+
+#. undefined
+
+msgid "Video and podcast"
+msgstr "Myndband og podcast"
+
+#. undefined
+
+msgid "Organisations"
+msgstr "Samtök"
+
+#. undefined
+
+msgid "Organisation"
+msgstr "Skipulag"
+
+#. undefined
+
+msgid "Publication and reports"
+msgstr "Útgáfa og skýrslur"
+
+#. undefined
+
+msgid "Publication and report"
+msgstr "Útgáfa og skýrsla"
+
+#. undefined
+
+msgid "Publications and reports"
+msgstr "Rit og skýrslur"
+
+#. undefined
+
+msgid "Research and knowledge projects"
+msgstr "Rannsókna- og þekkingarverkefni"
+
+#. undefined
+
+msgid "Research and knowledge project"
+msgstr "Rannsóknar- og þekkingarverkefni"
+
+#. undefined
+
+msgid "Tools"
+msgstr "Verkfæri"
+
+#. undefined
+
+msgid "Tool"
+msgstr "Verkfæri"
+
+#. undefined
+
+msgid "Based on your preferences, you can view this page in english"
+msgstr "Byggt á óskum þínum geturðu skoðað þessa síðu á ensku"
+
+#. undefined
+
+msgid "here"
+msgstr "hér"
+
+#. undefined
+
+msgid "Latest <br/> News & Events"
+msgstr "Nýjustu <br/> fréttir og viðburðir"
+
+#. undefined
+
+msgid "Most recent <br/> Case Study"
+msgstr "Nýjasta <br/> dæmisögu"
+
+#. undefined
+
+msgid "Most recent <br/> Publication or Report"
+msgstr "Nýjasta <br/> útgáfu eða skýrsla"
+
+#. undefined
+
+msgid "National adaption policy"
+msgstr "Landsstefna aðlögunar"
+
+#. undefined
+
+msgid "Climate change impact and vulnerability assessments"
+msgstr "Mat á áhrifum loftslagsbreytinga og varnarleysi"
+
+#. undefined
+
+msgid "Adaptation portals and platforms"
+msgstr "Aðlögunargáttir og vettvangar"
+
+#. undefined
+
+msgid "Hazard category"
+msgstr "Hættuflokkur"
+
+#. undefined
+
+msgid "Hazard type"
+msgstr "Hættutegund"
+
+#. undefined
+
+msgid "Zip download"
+msgstr "Zip niðurhal"
+
+#. undefined
+
+msgid "Download"
+msgstr "Sækja"
+
+#. undefined
+
+msgid "Heat and cold"
+msgstr "Hiti og kuldi"
+
+#. undefined
+
+msgid "Mean air temperature"
+msgstr "Meðallofthiti"
+
+#. undefined
+
+msgid "Extreme heat"
+msgstr "Mikill hiti"
+
+#. undefined
+
+msgid "Cold spells and frost"
+msgstr "Kuldakast og frost"
+
+#. undefined
+
+msgid "Wet and dry"
+msgstr "Blautt og þurrt"
+
+#. undefined
+
+msgid "Mean precipitation"
+msgstr "Meðalúrkoma"
+
+#. undefined
+
+msgid "Extreme precipitation"
+msgstr "Mikil úrkoma"
+
+#. undefined
+
+msgid "River flooding"
+msgstr "Árflóð"
+
+#. undefined
+
+msgid "Aridity"
+msgstr "Þurrkur"
+
+#. undefined
+
+msgid "Wildfire"
+msgstr "Skógareldur"
+
+#. undefined
+
+msgid "Snow and land ice"
+msgstr "Snjór og landís"
+
+#. undefined
+
+msgid "Snow and ice"
+msgstr "Snjór og hálka"
+
+#. undefined
+
+msgid "Coastal"
+msgstr "Strönd"
+
+#. undefined
+
+msgid "Relative sea level"
+msgstr "Hlutfallslegt sjávarmál"
+
+#. undefined
+
+msgid "Coastal flooding"
+msgstr "Strandflóð"
+
+#. undefined
+
+msgid "Other"
+msgstr "Annað"
+
+#. undefined
+
+msgid "Global"
+msgstr "Alþjóðlegt"
+
+#. undefined
+
+msgid "Black Sea"
+msgstr "Svartahaf"
+
+#. undefined
+
+msgid "Albania"
+msgstr "Albanía"
+
+#. undefined
+
+msgid "Andorra"
+msgstr "Andorra"
+
+#. undefined
+
+msgid "Armenia"
+msgstr "Armenía"
+
+#. undefined
+
+msgid "Austria"
+msgstr "Austurríki"
+
+#. undefined
+
+msgid "Azerbaijan"
+msgstr "Aserbaídsjan"
+
+#. undefined
+
+msgid "Belarus"
+msgstr "Hvíta-Rússland"
+
+#. undefined
+
+msgid "Belgium"
+msgstr "Belgíu"
+
+#. undefined
+
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnía og Hersegóvína"
+
+#. undefined
+
+msgid "Bulgaria"
+msgstr "Búlgaría"
+
+#. undefined
+
+msgid "Croatia"
+msgstr "Króatía"
+
+#. undefined
+
+msgid "Cyprus"
+msgstr "Kýpur"
+
+#. undefined
+
+msgid "Czechia"
+msgstr "Tékkland"
+
+#. undefined
+
+msgid "Denmark"
+msgstr "Danmörku"
+
+#. undefined
+
+msgid "Estonia"
+msgstr "Eistland"
+
+#. undefined
+
+msgid "France"
+msgstr "Frakklandi"
+
+#. undefined
+
+msgid "Faroe Islands"
+msgstr "Færeyjar"
+
+#. undefined
+
+msgid "Finland"
+msgstr "Finnlandi"
+
+#. undefined
+
+msgid "Germany"
+msgstr "Þýskalandi"
+
+#. undefined
+
+msgid "Georgia"
+msgstr "Georgíu"
+
+#. undefined
+
+msgid "Greece"
+msgstr "Grikkland"
+
+#. undefined
+
+msgid "Hungary"
+msgstr "Ungverjaland"
+
+#. undefined
+
+msgid "Iceland"
+msgstr "Ísland"
+
+#. undefined
+
+msgid "Kazakhstan"
+msgstr "Kasakstan"
+
+#. undefined
+
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#. undefined
+
+msgid "Ireland"
+msgstr "Írland"
+
+#. undefined
+
+msgid "Italy"
+msgstr "Ítalíu"
+
+#. undefined
+
+msgid "Israel"
+msgstr "Ísrael"
+
+#. undefined
+
+msgid "Latvia"
+msgstr "Lettland"
+
+#. undefined
+
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#. undefined
+
+msgid "Lithuania"
+msgstr "Litháen"
+
+#. undefined
+
+msgid "Luxembourg"
+msgstr "Lúxemborg"
+
+#. undefined
+
+msgid "Malta"
+msgstr "Möltu"
+
+#. undefined
+
+msgid "Monaco"
+msgstr "Mónakó"
+
+#. undefined
+
+msgid "Moldova, Republic of"
+msgstr "Moldóva, Lýðveldið"
+
+#. undefined
+
+msgid "Montenegro"
+msgstr "Svartfjallaland"
+
+#. undefined
+
+msgid "Netherlands"
+msgstr "Hollandi"
+
+#. undefined
+
+msgid "Norway"
+msgstr "Noregi"
+
+#. undefined
+
+msgid "Poland"
+msgstr "Pólland"
+
+#. undefined
+
+msgid "Portugal"
+msgstr "Portúgal"
+
+#. undefined
+
+msgid "Republic of North Macedonia"
+msgstr "Lýðveldið Norður Makedónía"
+
+#. undefined
+
+msgid "Romania"
+msgstr "Rúmenía"
+
+#. undefined
+
+msgid "Russian Federation"
+msgstr "Rússland"
+
+#. undefined
+
+msgid "San Marino"
+msgstr "San Marínó"
+
+#. undefined
+
+msgid "Serbia"
+msgstr "Serbía"
+
+#. undefined
+
+msgid "Slovakia"
+msgstr "Slóvakíu"
+
+#. undefined
+
+msgid "Slovenia"
+msgstr "Slóvenía"
+
+#. undefined
+
+msgid "Spain"
+msgstr "Spánn"
+
+#. undefined
+
+msgid "Sweden"
+msgstr "Svíþjóð"
+
+#. undefined
+
+msgid "Switzerland"
+msgstr "Sviss"
+
+#. undefined
+
+msgid "Turkiye"
+msgstr "Turkiye"
+
+#. undefined
+
+msgid "Türkiye"
+msgstr "Türkiye"
+
+#. undefined
+
+msgid "United Kingdom"
+msgstr "Bretland"
+
+#. undefined
+
+msgid "Ukraine"
+msgstr "Úkraína"
+
+#. undefined
+
+msgid "Europe"
+msgstr "Evrópu"
+
+#. undefined
+
+msgid "Macro-Transnational Regions"
+msgstr "Fjölþjóðleg svæði"
+
+#. undefined
+
+msgid "Biogeographical Regions"
+msgstr "Líffræðileg svæði"
+
+#. undefined
+
+msgid "Subnational Regions"
+msgstr "Undirþjóðleg svæði"
+
+#. undefined
+
+msgid "Municipality Name"
+msgstr "Nafn sveitarfélags"
+
+#. undefined
+
+msgid "Northern Periphery and Arctic"
+msgstr "Norðurjaðar og norðurskautssvæði"
+
+#. undefined
+
+msgid "Baltic Sea"
+msgstr "Eystrasalt"
+
+#. undefined
+
+msgid "North West Europe"
+msgstr "Norðvestur Evrópu"
+
+#. undefined
+
+msgid "North Sea"
+msgstr "Norðursjó"
+
+#. undefined
+
+msgid "Atlantic Area"
+msgstr "Atlantshafssvæðið"
+
+#. undefined
+
+msgid "Alpine Space"
+msgstr "Alpine Space"
+
+#. undefined
+
+msgid "Central Europe"
+msgstr "Mið-Evrópu"
+
+#. undefined
+
+msgid "South West Europe"
+msgstr "Suðvestur-Evrópu"
+
+#. undefined
+
+msgid "Mediterranean (Euro-Med)"
+msgstr "Miðjarðarhaf (Euro-Med)"
+
+#. undefined
+
+msgid "Danube Area"
+msgstr "Dóná svæði"
+
+#. undefined
+
+msgid "Adriatic-Ionian"
+msgstr "Adríahafs-jóníska"
+
+#. undefined
+
+msgid "Mediterranean Sea Basin (NEXT)"
+msgstr "Miðjarðarhafssvæðið (NEXT)"
+
+#. undefined
+
+msgid "Black Sea Basin (NEXT)"
+msgstr "Svartahafssvæðið (NÆST)"
+
+#. undefined
+
+msgid "Outermost Regions"
+msgstr "Ystu svæði"
+
+#. undefined
+
+msgid "Alpine"
+msgstr "Alpine"
+
+#. undefined
+
+msgid "Anatolian"
+msgstr "Anatólískt"
+
+#. undefined
+
+msgid "Arctic"
+msgstr "Norðurskautið"
+
+#. undefined
+
+msgid "Atlantic"
+msgstr "Atlantshaf"
+
+#. undefined
+
+msgid "Boreal"
+msgstr "Boreal"
+
+#. undefined
+
+msgid "Continental"
+msgstr "Continental"
+
+#. undefined
+
+msgid "Macaronesia"
+msgstr "Makarónesía"
+
+#. undefined
+
+msgid "Mediterranean"
+msgstr "Miðjarðarhafið"
+
+#. undefined
+
+msgid "Pannonian"
+msgstr "Pannonískt"
+
+#. undefined
+
+msgid "Steppic"
+msgstr "Steppic"
+
+#. undefined
+
+msgid "Transnational region (stretching across country borders)"
+msgstr "Þverþjóðlegt svæði (teygir sig yfir landamæri)"
+
+#. undefined
+
+msgid "National"
+msgstr "National"
+
+#. undefined
+
+msgid "Sub National Regions"
+msgstr "Undir landssvæði"
+
+#. undefined
+
+msgid "Local (e.g. city or municipal level)"
+msgstr "Staðbundið (t.d. borgar- eða sveitarfélag)"
+
+#. undefined
+
+msgid "Countries where the funding opportunity is offered"
+msgstr "Lönd þar sem kostur er á fjármögnun"
+
+#. undefined
+
+msgid "Region where the funding is offered"
+msgstr "Svæði þar sem styrkurinn er í boði"
+
+#. undefined
+#: health_menu:43
+msgid "2021 Lancet Countdown-EEA Briefing"
+msgstr "2021 Lancet Countdown-EES kynningarfundur"
+
+#. undefined
+#: site_menu:28
+msgid "ADAPTATION IN EU POLICY SECTORS"
+msgstr "AÐLÖGUN Í STEFNUGERUM ESB"
+
+#. undefined
+#: health_menu:9
+#: site_menu:10
+msgid "About"
+msgstr "Um"
+
+#. undefined
+#: site_menu:11
+msgid "About Climate-ADAPT"
+msgstr "Um Climate-ADAPT"
+
+#. undefined
+#: health_menu:10
+msgid "About the Observatory"
+msgstr "Um Stjörnustöðina"
+
+#. undefined
+#: site_menu:74
+msgid "Adaptation Support Tool"
+msgstr "Aðlögunarstuðningsverkfæri"
+
+#. undefined
+#: site_menu:29
+msgid "Agriculture"
+msgstr "Landbúnaður"
+
+#. undefined
+#: health_menu:27
+msgid "Air pollution"
+msgstr "Loftmengun"
+
+#. undefined
+#: health_menu:44
+msgid "Annual reports"
+msgstr "Ársskýrslur"
+
+#. undefined
+#: site_menu:51
+msgid "Balkan-Mediterranean"
+msgstr "Balkanskaga-Miðjarðarhafið"
+
+#. undefined
+#: site_menu:30
+msgid "Biodiversity"
+msgstr "Líffræðileg fjölbreytni"
+
+#. undefined
+#: site_menu:31
+msgid "Buildings"
+msgstr "Byggingar"
+
+#. undefined
+#: health_menu:34
+msgid "C3S European health service (under development)"
+msgstr "C3S evrópsk heilbrigðisþjónusta (í þróun)"
+
+#. undefined
+#: health_menu:45
+msgid "Capacity building"
+msgstr "Getuuppbygging"
+
+#. undefined
+#: site_menu:79
+msgid "Case study explorer"
+msgstr "Könnuður tilviksrannsóknar"
+
+#. undefined
+#: site_menu:46
+msgid "Cities and towns"
+msgstr "Borgir og bæir"
+
+#. undefined
+#: site_menu:69
+msgid "Climate Services"
+msgstr "Loftslagsþjónusta"
+
+#. undefined
+#: site_menu:17
+msgid "Climate-ADAPT events and webinars"
+msgstr "Climate-ADAPT viðburðir og vefnámskeið"
+
+#. undefined
+#: site_menu:16
+msgid "Climate-ADAPT performance reporting"
+msgstr "Climate-ADAPT árangursskýrslur"
+
+#. undefined
+#: site_menu:83
+msgid "Climate-ADAPT use cases"
+msgstr "Climate-ADAPT notkunartilvik"
+
+#. undefined
+#: site_menu:32
+msgid "Coastal areas"
+msgstr "Strandsvæði"
+
+#. undefined
+#: site_menu:44
+msgid "Countries, Transnational regions, Cities"
+msgstr "Lönd, fjölþjóðleg svæði, borgir"
+
+#. undefined
+#: site_menu:44
+msgid "Countries, Transnational regions"
+msgstr "Lönd, fjölþjóðleg svæði"
+
+#. undefined
+#: health_menu:18
+#: site_menu:45
+msgid "Country Profiles"
+msgstr "Landssnið"
+
+#. undefined
+#: site_menu:18
+msgid "Country specific promotions"
+msgstr "Landssértækar kynningar"
+
+#. undefined
+#: site_menu:68
+msgid "DATA AND INDICATORS"
+msgstr "GÖGN OG VÍSAR"
+
+#. undefined
+#: site_menu:54
+msgid "Danube"
+msgstr "Dóná"
+
+#. undefined
+#: site_menu:33
+msgid "Disaster risk reduction"
+msgstr "Minnkun hörmungaráhættu"
+
+#. undefined
+#: site_menu:13
+msgid "Dissemination materials"
+msgstr "Miðlunarefni"
+
+#. undefined
+#: health_menu:33
+msgid "ECDC Vibrio map viewer"
+msgstr "ECDC Vibrio kortaskoðari"
+
+#. undefined
+#: site_menu:21
+msgid "EU ADAPTATION POLICY"
+msgstr "AÐLAUNARSTEFNA ESB"
+
+#. undefined
+#: site_menu:22
+msgid "EU Adaptation Strategy"
+msgstr "Aðlögunaráætlun ESB"
+
+#. undefined
+#: site_menu:25
+msgid "EU Covenant of Mayors"
+msgstr "Borgarstjórasáttmáli ESB"
+
+#. undefined
+#: site_menu:23
+msgid "EU Mission on Adaptation"
+msgstr "Sendinefnd ESB um aðlögun"
+
+#. undefined
+#: site_menu:23
+msgid "Mission Portal"
+msgstr "Erindisgátt"
+
+#. undefined
+#: site_menu:43
+#: site_menu:43
+msgid "EU REGIONAL POLICY"
+msgstr "SVÆÐISSTEFNA ESB"
+
+#. undefined
+#: site_menu:24
+msgid "EU Reporting on Adaptation"
+msgstr "Skýrsla ESB um aðlögun"
+
+#. undefined
+#: site_menu:26
+msgid "EU Sustainable Finance Strategy"
+msgstr "Stefna ESB um sjálfbær fjármál"
+
+#. undefined
+#: site_menu:27
+msgid "EU funding of adaptation"
+msgstr "ESB fjármögnun aðlögunar"
+
+#. undefined
+#: site_menu:20
+msgid "EU policy"
+msgstr "stefnu ESB"
+
+#. undefined
+#: site_menu:72
+msgid "EUROPEAN CLIMATE DATA EXPLORER"
+msgstr "EVRÓPSKUR LOFTSLAGSGAGNAKANNARI"
+
+#. undefined
+#: site_menu:85
+msgid "EUROPEAN Climate and Health Observatory"
+msgstr "EUROPEAN Climate and Health Observatory"
+
+#. undefined
+#: site_menu:77
+msgid "Economic tools"
+msgstr "Hagræn tæki"
+
+#. undefined
+#: site_menu:34
+msgid "Ecosystem-based approaches"
+msgstr "Vistkerfismiðaðar nálganir"
+
+#. undefined
+#: site_menu:35
+msgid "Energy"
+msgstr "Orka"
+
+#. undefined
+#: site_menu:67
+msgid "Europe's vulnerability to climate change impacts occurring outside Europe"
+msgstr "Viðkvæmni Evrópu fyrir áhrifum loftslagsbreytinga sem eiga sér stað utan Evrópu"
+
+#. undefined
+#: health_menu:32
+msgid "European Climate Data Explorer"
+msgstr "European Climate Data Explorer"
+
+#. undefined
+#: health_menu:13
+msgid "European Policy Framework"
+msgstr "Evrópustefnuramma"
+
+#. undefined
+#: health_menu:37
+msgid "European early warning systems"
+msgstr "Evrópsk viðvörunarkerfi"
+
+#. undefined
+#: health_menu:14
+msgid "European policies on climate adaptation and health"
+msgstr "Evrópustefna um loftslagsaðlögun og heilsu"
+
+#. undefined
+#: health_menu:19
+msgid "Evidence on climate and health"
+msgstr "Vísbendingar um loftslag og heilsu"
+
+#. undefined
+#: site_menu:90
+msgid "FAQ for providers"
+msgstr "Algengar spurningar fyrir veitendur"
+
+#. undefined
+#: site_menu:89
+msgid "FAQ for users"
+msgstr "Algengar spurningar fyrir notendur"
+
+#. undefined
+#: site_menu:36
+msgid "Financial"
+msgstr "Fjárhagsleg"
+
+#. undefined
+#: health_menu:23
+msgid "Flooding"
+msgstr "Flóð"
+
+#. undefined
+#: site_menu:37
+msgid "Forestry"
+msgstr "Skógrækt"
+
+#. undefined
+#: site_menu:88
+msgid "Glossary"
+msgstr "Orðalisti"
+
+#. undefined
+#: site_menu:91
+msgid "Guidance to search function"
+msgstr "Leiðbeiningar um leitaraðgerð"
+
+#. undefined
+#: site_menu:38
+msgid "Health"
+msgstr "Heilsa"
+
+#. undefined
+#: health_menu:20
+msgid "Health effects"
+msgstr "Heilsuáhrif"
+
+#. undefined
+#: health_menu:36
+msgid "Health warning systems"
+msgstr "Heilsuviðvörunarkerfi"
+
+#. undefined
+#: health_menu:21
+msgid "Heat and health"
+msgstr "Hiti og heilsa"
+
+#. undefined
+#: site_menu:87
+msgid "Help"
+msgstr "Hjálp"
+
+#. undefined
+#: site_menu:82
+msgid "INTERREG projects"
+msgstr "INTERREG verkefni"
+
+#. undefined
+#: site_menu:63
+msgid "Impacts, risks and vulnerabilities"
+msgstr "Áhrif, áhættur og varnarleysi"
+
+#. undefined
+#: site_menu:70
+msgid "Indicators in Climate-ADAPT"
+msgstr "Vísar í Climate-ADAPT"
+
+#. undefined
+#: site_menu:15
+msgid "Inspiring Climate-ADAPT use cases"
+msgstr "Hvetjandi Climate-ADAPT notkunartilvik"
+
+#. undefined
+#: site_menu:61
+msgid "Knowledge"
+msgstr "Þekking"
+
+#. undefined
+#: site_menu:81
+msgid "LIFE projects"
+msgstr "LÍF verkefni"
+
+#. undefined
+#: site_menu:39
+msgid "Marine and fisheries"
+msgstr "Sjávarútvegur og sjávarútvegur"
+
+#. undefined
+#: health_menu:28
+msgid "Mental health effects"
+msgstr "Áhrif á geðheilsu"
+
+#. undefined
+#: site_menu:66
+msgid "Monitoring, Reporting and Evaluation"
+msgstr "Eftirlit, skýrslugerð og mat"
+
+#. undefined
+#: health_menu:16
+msgid "National Policies"
+msgstr "Landsstefnur"
+
+#. undefined
+#: health_menu:38
+msgid "National heat-health warning systems and action plans"
+msgstr "Innlend hita-heilsuviðvörunarkerfi og aðgerðaáætlanir"
+
+#. undefined
+#: health_menu:17
+msgid "National policy analysis 2022"
+msgstr "Landsstefnugreining 2022"
+
+#. undefined
+#: site_menu:86
+msgid "Networks"
+msgstr "Netkerfi"
+
+#. undefined
+#: health_menu:42
+msgid "Observatory publications"
+msgstr "Stjörnuskoðunarútgáfur"
+
+#. undefined
+#: health_menu:11
+msgid "Observatory workplan for 2021-22"
+msgstr "Starfsáætlun eftirlitsstofnana 2021-22"
+
+#. undefined
+#: site_menu:12
+msgid "Outreach & dissemination"
+msgstr "Útbreiðsla og miðlun"
+
+#. undefined
+#: site_menu:78
+msgid "PRACTICE"
+msgstr "ÆFING"
+
+#. undefined
+#: health_menu:12
+msgid "Policy context"
+msgstr "Samhengi stefnu"
+
+#. undefined
+#: health_menu:30
+msgid "Projections and tools"
+msgstr "Sýningar og verkfæri"
+
+#. undefined
+#: health_menu:41
+msgid "Publications and outreach"
+msgstr "Útgáfur og útrás"
+
+#. undefined
+#: site_menu:71
+msgid "RESEARCH AND INNOVATION PROJECTS"
+msgstr "RANNSÓKNA- OG NÝSKÖPUNARVERKEFNI"
+
+#. undefined
+#: health_menu:39
+msgid "Resource catalogue"
+msgstr "Auðlindaskrá"
+
+#. undefined
+#: health_menu:40
+msgid "Search for Resources"
+msgstr "Leitaðu að auðlindum"
+
+#. undefined
+#: site_menu:19
+msgid "Site map"
+msgstr "Veftré"
+
+#. undefined
+#: site_menu:73
+msgid "TOOLS"
+msgstr "TÆKJA"
+
+#. undefined
+#: site_menu:62
+msgid "TOPICS"
+msgstr "EFNI"
+
+#. undefined
+#: site_menu:40
+msgid "Transport"
+msgstr "Flutningur"
+
+#. undefined
+#: site_menu:92
+msgid "Tutorial Videos"
+msgstr "Kennslumyndbönd"
+
+#. undefined
+#: site_menu:14
+msgid "Tutorial videos"
+msgstr "Kennslumyndbönd"
+
+#. undefined
+#: health_menu:35
+msgid "UV Index forecast (CAMS)"
+msgstr "UV Index spá (CAMS)"
+
+#. undefined
+#: health_menu:26
+msgid "UV radiation"
+msgstr "UV geislun"
+
+#. undefined
+#: site_menu:65
+msgid "Uncertainty guidance"
+msgstr "Leiðbeiningar um óvissu"
+
+#. undefined
+#: site_menu:41
+msgid "Urban"
+msgstr "Urban"
+
+#. undefined
+#: site_menu:76
+msgid "Urban Adaptation Map Viewer"
+msgstr "Urban Adaptation Map Viewer"
+
+#. undefined
+#: health_menu:31
+msgid "Urban Adaptation Map Viewer (health focus)"
+msgstr "Urban Adaptation Map Viewer (áhersla á heilsu)"
+
+#. undefined
+#: site_menu:75
+msgid "Urban Adaptation Support Tool"
+msgstr "Stuðningstól fyrir aðlögun þéttbýlis"
+
+#. undefined
+#: health_menu:24
+msgid "Vector-borne diseases"
+msgstr "Sjúkdómar sem berast með vektor"
+
+#. undefined
+#: health_menu:15
+msgid "WHO Europe activities on climate change and health"
+msgstr "Starfsemi WHO í Evrópu um loftslagsbreytingar og heilsu"
+
+#. undefined
+#: health_menu:25
+msgid "Water and food-borne diseases"
+msgstr "Vatns- og matarsjúkdómar"
+
+#. undefined
+#: site_menu:42
+msgid "Water management"
+msgstr "Vatnsbúskapur"
+
+#. undefined
+#: health_menu:46
+#: site_menu:93
+msgid "Webinars"
+msgstr "Vefnámskeið"
+
+#. undefined
+#: health_menu:22
+msgid "Wildfires"
+msgstr "Skógareldar"
+
+#. undefined
+#: site_menu:84
+msgid "Search the database"
+msgstr "Leitaðu í gagnagrunninum"
+
+#. undefined
+#: health_menu:2201
+msgid "Climate  Services"
+msgstr "Loftslagsþjónusta"
+
+#. undefined
+#: health_menu:222
+msgid "Outreach"
+msgstr "Útrás"
+
+#. undefined
+#: health_menu:222
+msgid "Exposure of vulnerable groups to climate risks"
+msgstr "Útsetning viðkvæmra hópa fyrir loftslagsáhættu"
+
+#. undefined
+#: 
+msgid "KEY EU ACTIONS"
+msgstr "LYKILEGÐIR ESB"
+
+#. undefined
+#: 
+msgid "Just resilience"
+msgstr "Bara seiglu"
+
+#. undefined
+#: 
+msgid "Nature-based solutions"
+msgstr "Náttúrulegar lausnir"
+
+#. undefined
+#: 
+msgid "Economic losses and fatalities"
+msgstr "Efnahagslegt tjón og banaslys"
+
+#. undefined
+#: 
+msgid "Strategic objectives 2030"
+msgstr "Stefnumiðuð markmið 2030"
+
+#. undefined
+#: 
+msgid "Availability of urban green spaces to vulnerable groups"
+msgstr "Framboð á grænum svæðum í þéttbýli fyrir viðkvæma hópa"
+
+#. undefined
+#: 
+msgid "Transnational, National, local"
+msgstr "Þverþjóðlegt, þjóðlegt, staðbundið"
+
+#. undefined
+#: 
+msgid "Aero-allergens"
+msgstr "Loftofnæmisvaldar"
+
+#. undefined
+#: 
+msgid "Heat"
+msgstr "Hiti"
+
+#. undefined
+#: 
+msgid "Accessibility of hospitals in Europe"
+msgstr "Aðgengi sjúkrahúsa í Evrópu"
+
+#. undefined
+#: 
+msgid "ADAPTATION IN THE FORESTRY SECTOR"
+msgstr "AÐLÖGUN Í SKÓGRÆKNI"
+
+#. undefined
+#: 
+msgid "Ground-level ozone"
+msgstr "Óson á jörðu niðri"
+
+#. undefined
+#: 
+msgid "Ground-level ozone forecast (CAMS)"
+msgstr "Ósonspá á jörðu niðri (CAMS)"
+
+#. undefined
+#: 
+msgid "Pollution"
+msgstr "Mengun"
+
+#. undefined
+#: 
+msgid "Occupational safety and health effects"
+msgstr "Vinnuverndar- og heilsuáhrif"
+
+#. undefined
+#: 
+msgid "Observatory workplan for 2023-24"
+msgstr "Starfsáætlun eftirlitsstofnana 2023-24"
+
+#. undefined
+#: 
+msgid "Ground-level PM2.5 forecast (CAMS)"
+msgstr "PM2.5 spá á jörðu niðri (CAMS)"
+
+#. undefined
+#: 
+msgid "Ground-level PM10 forecast (CAMS)"
+msgstr "PM10 spá á jörðu niðri (CAMS)"
+
+#. undefined
+#: 
+msgid "Ground-level NO2 forecast (CAMS)"
+msgstr "NO2 spá á jörðu niðri (CAMS)"
+
+#. undefined
+#: 
+msgid "2022 EEA Report on Climate & Health"
+msgstr "2022 EES skýrsla um loftslag og heilsu"
+
+#. undefined
+#: 
+msgid "European environment and health atlas"
+msgstr "Evrópskur umhverfis- og heilsuatlas"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:80
+#: ../../climateadapt/vocabulary.py:456
+msgid "-NONSPECIFIC-"
+msgstr "-ÓSPECIFIK-"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:130
+msgid "1. Preparing the ground for adaptation"
+msgstr "1. Undirbúa jarðveginn fyrir aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:136
+msgid "1.1 Obtaining high-level political support for adaptation"
+msgstr "1.1 Að afla pólitísks stuðnings á háu stigi við aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:83
+msgid "1.1 Obtaining political support for adaptation"
+msgstr "1.1 Að afla pólitísks stuðnings við aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:88
+msgid "1.2 Collecting initial information"
+msgstr "1.2 Söfnun fyrstu upplýsinga"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:140
+msgid "1.2 Setting up the process in a structured way"
+msgstr "1.2 Að setja ferlið upp á skipulegan hátt"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:144
+msgid "1.3 Estimating human and financial resources needed and identifying potential sources of long-term funding"
+msgstr "1.3 Mat á mannauði og fjármunum sem þörf er á og auðkenning á hugsanlegum fjármögnunarleiðum til langs tíma"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:93
+msgid "1.3 Setting up adaptation processes within and beyond the municipality"
+msgstr "1.3 Uppsetning aðlögunarferla innan og utan sveitarfélagsins"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:148
+msgid "1.4 Collecting information"
+msgstr "1.4 Upplýsingasöfnun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:98
+msgid "1.4 Identifying and obtaining human and technical resources"
+msgstr "1.4 Að bera kennsl á og afla mannafla og tækni"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:152
+msgid "1.5 Communicating adaptation and raising awareness"
+msgstr "1.5 Að miðla aðlögun og vitundarvakningu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:103
+msgid "1.5 Identifying and obtaining financing and funding"
+msgstr "1.5 Að bera kennsl á og afla fjármögnunar og fjármögnunar"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:108
+msgid "1.6 Identifying and engaging stakeholders"
+msgstr "1.6 Að bera kennsl á og virkja hagsmunaaðila"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:156
+msgid "1.6 Preparing the ground for adaptation: Self-check"
+msgstr "1.6 Undirbúa jarðveginn fyrir aðlögun: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:113
+msgid "1.7 Communicating adaptation to different target audiences"
+msgstr "1.7 Að miðla aðlögun til mismunandi markhópa"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:118
+msgid "1.8 Finding additional support"
+msgstr "1.8 Að finna viðbótarstuðning"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:123
+msgid "1.9 Preparing the ground for adaptation: Self check"
+msgstr "1.9 Undirbúa jarðveginn fyrir aðlögun: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:415
+msgid "12 regions"
+msgstr "12 svæði"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:163
+msgid "2. Assessing climate change risks and vulnerabilities"
+msgstr "2. Mat á áhættu og varnarleysi í loftslagsbreytingum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:138
+msgid "2.1 Recognizing past and present climate impacts"
+msgstr "2.1 Að viðurkenna fyrri og núverandi loftslagsáhrif"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:168
+msgid "2.1 Understanding climate risks"
+msgstr "2.1 Skilningur á loftslagsáhættu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:172
+msgid "2.2 Frameworks for assessing climate impacts, vulnerabilities and risks"
+msgstr "2.2 Rammar fyrir mat á loftslagsáhrifum, viðkvæmni og áhættu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:143
+msgid "2.2 Understanding climate projections and future impacts"
+msgstr "2.2 Skilningur á loftslagsspám og framtíðaráhrifum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:176
+msgid "2.3 General sequence for climate impacts, vulnerabilities and risk assessments"
+msgstr "2.3 Almenn röð loftslagsáhrifa, veikleika og áhættumats"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:148
+msgid "2.3 Identifying vulnerable urban sectors"
+msgstr "2.3 Að bera kennsl á viðkvæma borgargeira"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:153
+msgid "2.4 Conducting risk and vulnerability assessments"
+msgstr "2.4 Gerð áhættu- og veikleikamats"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:180
+msgid "2.4 Taking trans-boundary issues into account"
+msgstr "2.4 Taka mið af málefnum yfir landamæri"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:184
+msgid "2.5 Addressing knowledge gaps and dealing with uncertainties"
+msgstr "2.5 Að bregðast við þekkingareyðum og takast á við óvissu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:158
+msgid "2.5 Understanding the role of surrounding areas in adaptation"
+msgstr "2.5 Skilningur á hlutverki nærliggjandi svæða í aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:163
+msgid "2.6 Identifying main adaptation concerns and defining objectives"
+msgstr "2.6 Að bera kennsl á helstu áhyggjur af aðlögun og skilgreina markmið"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:188
+msgid "2.6 Identifying main adaptation concerns and setting a strategic direction"
+msgstr "2.6 Að bera kennsl á helstu áhyggjuefni aðlögunar og marka stefnumótandi stefnu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:168
+msgid "2.7 Assessing climate change risks and vulnerabilities: Self check"
+msgstr "2.7 Mat á áhættu og varnarleysi í loftslagsbreytingum: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:192
+msgid "2.7 Assessing climate change risks and vulnerabilities: Self-check"
+msgstr "2.7 Mat á áhættu og varnarleysi í loftslagsbreytingum: Sjálfsskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:199
+msgid "3. Identifying adaptation options"
+msgstr "3. Að greina aðlögunarmöguleika"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:204
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:183
+msgid "3.1 Creating a catalogue of relevant adaptation options"
+msgstr "3.1 Búa til skrá yfir viðeigandi aðlögunarvalkosti"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:208
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:188
+msgid "3.2 Finding examples of good adaptation practices"
+msgstr "3.2 Að finna dæmi um góða aðlögunarhætti"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:212
+msgid "3.3 Describing adaptation options in detail"
+msgstr "3.3 Aðlögunarvalkostum lýst í smáatriðum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:193
+msgid "3.3 Identifying adaptation options: Self check"
+msgstr "3.3 Að bera kennsl á aðlögunarmöguleika: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:216
+msgid "3.4 Identifying adaptation options: Self-check"
+msgstr "3.4 Að greina aðlögunarmöguleika: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:223
+msgid "4. Assessing adaptation options"
+msgstr "4. Mat á aðlögunarmöguleikum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:229
+msgid "4.1 Assessing possible adaptation options in terms of effects, time, costs, benefits and efforts"
+msgstr "4.1 Mat á mögulegum aðlögunarkostum með tilliti til áhrifa, tíma, kostnaðar, ávinnings og viðleitni"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:208
+msgid "4.1 Choosing an assessment framework for adaptation options"
+msgstr "4.1 Val á matsramma fyrir aðlögunarvalkosti"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:213
+msgid "4.2 Conducting a cost-benefit analysis of adaptation measures"
+msgstr "4.2 Gerð kostnaðar- og ábatagreiningar á aðlögunaraðgerðum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:233
+msgid "4.2 Prioritising adaptation options and selecting preferred ones"
+msgstr "4.2 Forgangsraða aðlögunarmöguleikum og velja þá helsta"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:237
+msgid "4.3 Preparing a strategy document and getting political approval"
+msgstr "4.3 Útbúa stefnuskrá og fá pólitískt samþykki"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:218
+msgid "4.3 Prioritising adaptation options"
+msgstr "4.3 Forgangsraða aðlögunarmöguleikum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:223
+msgid "4.4 Assessing and selecting adaptation options: Self check"
+msgstr "4.4 Mat og val aðlögunarvalkosta: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:241
+msgid "4.4 Assessing and selecting adaptation options: Self-check"
+msgstr "4.4 Mat og val á aðlögunarmöguleikum: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:251
+msgid "5. Implementing Adaptation"
+msgstr "5. Innleiðing aðlögunar"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:238
+msgid "5.1 Designing an effective adaptation action plan"
+msgstr "5.1 Hanna skilvirka aðlögunaráætlun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:257
+msgid "5.1 Developing an adaptation action plan"
+msgstr "5.1 Þróun aðgerðaáætlunar um aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:243
+msgid "5.2 Finding examples of adaptation action plans"
+msgstr "5.2 Að finna dæmi um aðlögunaráætlanir"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:261
+msgid "5.2 Organising governance of implementation across sectors and levels"
+msgstr "5.2 Skipuleggja stjórnun framkvæmda þvert á geira og stig"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:248
+msgid "5.3 Mainstreaming adaptation in urban policies and plans"
+msgstr "5.3 Samþætting aðlögunar í borgarstefnu og áætlunum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:265
+msgid "5.3 Mainstreaming: Integrating adaptation into instruments and sector policies"
+msgstr "5.3 Samþætting: Samþætting aðlögunar í tæki og geirastefnur"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:253
+msgid "5.4 Addressing climate change through adaptation and mitigation"
+msgstr "5.4 Taka á loftslagsbreytingum með aðlögun og mótvægi"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:269
+msgid "5.4 Multilevel coordination and supportive governance framework"
+msgstr "5.4 Samhæfing á mörgum stigum og stuðningsramma um stjórnarhætti"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:273
+msgid "5.5 Implementing Adaptation: Self-check"
+msgstr "5.5 Innleiðing aðlögunar: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:258
+msgid "5.5 Implementing adaptation: Self check"
+msgstr "5.5 Innleiðing aðlögunar: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:280
+msgid "6. Monitoring and Evaluating Adaptation"
+msgstr "6. Eftirlit og mat á aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:273
+msgid "6.1 Developing the monitoring and evaluation approach"
+msgstr "6.1 Þróa eftirlits- og matsaðferðina"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:287
+msgid "6.1 Understanding drivers and purposes"
+msgstr "6.1 Að skilja ökumenn og tilgang"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:291
+msgid "6.2 Deciding who to involve in the process"
+msgstr "6.2 Ákvörðun um hverja á að taka þátt í ferlinu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:278
+msgid "6.2 Defining monitoring indicators"
+msgstr "6.2 Skilgreining vöktunarvísa"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:295
+msgid "6.3 Defining MRE indicators and mixed-methods approach"
+msgstr "6.3 Skilgreining á MRE-vísum og nálgun með blönduðum aðferðum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:283
+msgid "6.3 Finding examples of adaptation monitoring indicators"
+msgstr "6.3 Að finna dæmi um aðlögunarvöktunarvísa"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:299
+msgid "6.4 Communicating results to inform policy and practice"
+msgstr "6.4 Að miðla niðurstöðum til að upplýsa stefnu og starfshætti"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:288
+msgid "6.4 Using monitoring results to enhance the process of adaptation"
+msgstr "6.4 Notkun vöktunarniðurstaðna til að auka aðlögunarferlið"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:293
+msgid "6.5 Monitoring and evaluating adaptation: Self check"
+msgstr "6.5 Eftirlit og mat á aðlögun: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:303
+msgid "6.5 Monitoring and evaluating adaptation: Self-check"
+msgstr "6.5 Eftirlit og mat á aðlögun: Sjálfskoðun"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:93
+msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
+msgstr "Gildi fyrir gæði 2x mynda með mikilli pixlaþéttleika, frá 1 (lægst) til 95 (hæst). Gildið 0 þýðir að sjálfgefið er að plone.scaling sé notað, sem er nú 62."
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:106
+msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
+msgstr "Gildi fyrir gæði 3x mynda með mikilli pixlaþéttleika, frá 1 (lægst) til 95 (hæst). Gildið 0 þýðir að sjálfgefið er að plone.scaling sé notað, sem er nú 51."
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:67
+msgid "A value for the quality of scaled images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 88."
+msgstr "Gildi fyrir gæði kvörðunar mynda, frá 1 (lægst) til 95 (hæst). Gildi 0 þýðir að sjálfgefið er að plone.scaling sé notað, sem er nú 88."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:567
+msgid "A1: Governance and Institutional: Policy Instruments"
+msgstr "A1: Stjórnarhættir og stofnanir: Stefnumótunartæki"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:583
+msgid "A1: Policy Instruments"
+msgstr "A1: Stefna"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:568
+msgid "A2: Governance and Institutional: Management and planning"
+msgstr "A2: Stjórnarhættir og stofnanir: Stjórnun og áætlanagerð"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:584
+msgid "A2: Management and planning"
+msgstr "A2: Stjórnun og áætlanagerð"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:585
+msgid "A3: Coordination cooperation and networks"
+msgstr "A3: Samhæfingarsamvinna og tengslanet"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:569
+msgid "A3: Governance and Institutional: Coordination cooperation and networks"
+msgstr "A3: Stjórnarhættir og stofnanir: Samhæfingarsamvinna og tengslanet"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:54
+msgid "About the Urban Adaptation Support Tool"
+msgstr "Um Urban Adaptation Support Tool"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:52
+msgid "Adaptation <br /> Support Tool"
+msgstr "Aðlögunartæki <br /> Stuðningstól"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:338
+msgid "Adaptation Measures and Actions"
+msgstr "Aðlögunarráðstafanir og aðgerðir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:198
+msgid "Adaptation Options and Case Studies"
+msgstr "Aðlögunarmöguleikar og dæmisögur"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:339
+msgid "Adaptation Plans and Strategies"
+msgstr "Aðlögunaráætlanir og áætlanir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:73
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:54
+#: ../../climateadapt/browser/pt/video_view.pt:113
+msgid "Adaptation elements"
+msgstr "Aðlögunarþættir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:107
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:158
+#: ../../climateadapt/browser/pt/casestudy_view.pt:340
+msgid "Adaptation elements:"
+msgstr "Aðlögunarþættir:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:95
+msgid "Adaptation portal or platform reported"
+msgstr "Aðlögunargátt eða vettvangur tilkynntur"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:115
+msgid "Adaptation to climate change"
+msgstr "Aðlögun að loftslagsbreytingum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:63
+msgid "Adaptation to climate change in urban areas"
+msgstr "Aðlögun að loftslagsbreytingum í þéttbýli"
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:371
+msgid "AdapteCCA"
+msgstr "AdapteCCA"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:420
+msgid "Adriatic and Ionian"
+msgstr "Adríahaf og Jónahaf"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:454
+msgid "Air pollution and aero-allergens"
+msgstr "Loftmengun og loftofnæmisvaldar"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:885
+msgid "All adaptation sectors"
+msgstr "Allir aðlögunargeirar"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:882
+msgid "All climate impacts"
+msgstr "Öll loftslagsáhrif"
+
+#. undefined
+#: ../../climateadapt/tiles/search_acecontent.py:888
+msgid "All key type measures"
+msgstr "Allar helstu gerðir ráðstafana"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:42
+msgid "Allowed image sizes"
+msgstr "Leyfðar myndastærðir"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:82
+msgid "Assessing adaptation options"
+msgstr "Mat á aðlögunarmöguleikum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:204
+msgid "Assessing and selecting adaptation options"
+msgstr "Að meta og velja aðlögunarvalkosti"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:134
+msgid "Assessing climate change risks and vulnerabilities"
+msgstr "Mat á áhættu og varnarleysi í loftslagsbreytingum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:66
+msgid "Assessing risks and vulnerability <br /> to climate change"
+msgstr "Mat á áhættu og viðkvæmni <br /> fyrir loftslagsbreytingum"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:570
+msgid "B1: Economic and Finance: Financing incentive instruments"
+msgstr "B1: Efnahagur og fjármál: Fjármögnunarhvatatæki"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:586
+msgid "B1: Financing incentive instruments"
+msgstr "B1: Fjármögnunarhvatatæki"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:571
+msgid "B2: Economic and Finance: Insurance and risk sharing instruments"
+msgstr "B2: Efnahagur og fjármál: Tryggingar og áhættuhlutdeild"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:587
+msgid "B2: Insurance and risk sharing instruments"
+msgstr "B2: Tryggingar og áhættuhlutdeild gerninga"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:189
+msgid "Biogeographical regions"
+msgstr "Líffræðileg svæði"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:299
+msgid "Business and industry"
+msgstr "Viðskipti og iðnaður"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:588
+msgid "C1: Grey options"
+msgstr "C1: Gráir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:572
+msgid "C1: Physical and technological: Grey options"
+msgstr "C1: Líkamleg og tæknileg: Gráir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:573
+msgid "C2: Physical and technological: Technological options"
+msgstr "C2: Líkamleg og tæknileg: Tæknilegir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:589
+msgid "C2: Technological options"
+msgstr "C2: Tæknilegir valkostir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:292
+msgid "Case Study Illustrations"
+msgstr "Dæmisögumyndir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:368
+msgid "Case developed and implemented and partially funded as a Climate Change Adaptation measure."
+msgstr "Mál þróað og útfært og fjármagnað að hluta sem aðgerð til aðlögunar á loftslagsbreytingum."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:366
+msgid "Case developed and implemented as a Climate Change Adaptation Measure."
+msgstr "Mál þróað og útfært sem aðlögunarráðstöfun í loftslagsbreytingum."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:369
+msgid "Case mainly developed and implemented because of other policy objectives, but with significant consideration of Climate Change Adaptation aspects"
+msgstr "Málið þróað og hrint í framkvæmd vegna annarra stefnumarkmiða, en með verulegu tillit til loftslagsbreytingaaðlögunarþátta"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:177
+msgid "Case studies and Adaptation Options"
+msgstr "Dæmisögur og aðlögunarvalkostir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:301
+msgid "Case studies collected at national level in Spain, provided by AdapteCCA.es"
+msgstr "Dæmirannsóknir safnað á landsvísu á Spáni, veittar af AdapteCCA.es"
+
+#. undefined
+#: ../../climateadapt/mayorsadapt/views.py:78
+msgid "Check-out created"
+msgstr "Útskráning búin til"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:51
+msgid "Choose a country"
+msgstr "Veldu land"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/country_select.pt:10
+msgid "Choose a country:"
+msgstr "Veldu land:"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:231
+msgid "City"
+msgstr "Borg"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:201
+msgid "City Initiatives"
+msgstr "Frumkvæði borgarinnar"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:483
+msgid "City Networks"
+msgstr "Borgarnet"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:111
+msgid "Climate Impacts in Europe"
+msgstr "Loftslagsáhrif í Evrópu"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:58
+msgid "Climate change impacts on European cities"
+msgstr "Loftslagsbreytingar hafa áhrif á borgir í Evrópu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:63
+msgid "Climate-ADAPT Event"
+msgstr "Climate-ADAPT viðburður"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:452
+msgid "Climate-sensitive diseases"
+msgstr "Loftslagsnæmar sjúkdómar"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:218
+msgid "Comments:"
+msgstr "Athugasemdir:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:10
+msgid "Common definitions of the terms used frequently in the clearinghouse."
+msgstr "Algengar skilgreiningar á hugtökum sem notuð eru oft í greiðslustöðinni."
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:104
+msgid "Created by:"
+msgstr "Búið til af:"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:461
+msgid "Critical Infrastructure"
+msgstr "Mikilvægar innviðir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:301
+msgid "Cultural heritage"
+msgstr "Menningararfur"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:590
+msgid "D1: Green options"
+msgstr "D1: Grænir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:574
+msgid "D1: Nature based Solutions and Ecosystem based approaches: Green options"
+msgstr "D1: Náttúrulausnir og vistkerfisbundnar nálganir: Grænir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:591
+msgid "D2: Blue options"
+msgstr "D2: Bláir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:575
+msgid "D2: Nature based Solutions and Ecosystem based approaches: Blue options"
+msgstr "D2: Náttúrulausnir og vistkerfisbundnar nálganir: Bláir valkostir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:141
+msgid "DRMKC"
+msgstr "DRMKC"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:171
+msgid "Data and Tools"
+msgstr "Gögn og verkfæri"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:159
+#: ../../climateadapt/browser/pt/guidancedocument_view.pt:21
+#: ../../climateadapt/browser/pt/organisation_view.pt:18
+msgid "Description:"
+msgstr "Lýsing:"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:42
+#: ../../climateadapt/vocabulary.py:302
+msgid "Disaster Risk Reduction"
+msgstr "Minnkun hörmungaráhættu"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:346
+msgid "Droughts"
+msgstr "Þurrkar"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:451
+msgid "Droughts and floods"
+msgstr "Þurrkar og flóð"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:592
+msgid "E1: Information and awareness raising"
+msgstr "E1: Upplýsingar og vitundarvakning"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:576
+msgid "E1: Knowledge and behavioural change: Information and awareness raising"
+msgstr "E1: Þekking og hegðunarbreyting: Upplýsinga- og vitundarvakning"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:593
+msgid "E2: Capacity building empowering and lifestyle practices"
+msgstr "E2: Getuuppbygging og lífsstílsvenjur"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:577
+msgid "E2: Knowledge and behavioural change: Capacity building empowering and lifestyle practices"
+msgstr "E2: Þekking og hegðunarbreyting: Getuuppbygging og lífsstílsvenjur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:439
+msgid "EU Missions"
+msgstr "ESB sendinefndir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:466
+msgid "Ecosystems and Nature Based Solutions"
+msgstr "Vistkerfi og náttúrulegar lausnir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:395
+msgid "European Climate Pact"
+msgstr "Evrópski loftslagssáttmálinn"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:260
+msgid "European Drought Observatory"
+msgstr "Þurrkathugunarstöð Evrópu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
+msgid "Event"
+msgstr "Viðburður"
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:25
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:17
+msgid "Events"
+msgstr "Viðburðir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:298
+msgid "Explore Forest adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Kannaðu dæmisögur um aðlögun skóga með tilliti til landfræðilegrar staðsetningar, þematískrar umfjöllunar og tengingar við aðlögunarvalkosti í gegnum kortatengda tilvikskannana."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:253
+msgid "Explore Urban adaptation case studies in terms of geographic location, thematic coverage and link to adaptation options through the map-based Case study explorer."
+msgstr "Kannaðu dæmisögur um aðlögun í þéttbýli með tilliti til landfræðilegrar staðsetningar, þemaþekju og tengingar við aðlögunarvalkosti í gegnum kortatengda tilvikskannakann."
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:139
+#: ../../climateadapt/browser/pt/casestudy_view.pt:369
+msgid "External source"
+msgstr "Ytri heimild"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:476
+msgid "Extreme Precipitation"
+msgstr "Mikil úrkoma"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:347
+msgid "Extreme Temperatures"
+msgstr "Mikill hiti"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:417
+msgid "FAO Green Cities"
+msgstr "Grænar borgir FAO"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:248
+msgid "FISE web portal will help us to improve the health and resilience of our forests, which play a vital role in protecting our biodiversity and in mitigating climate change."
+msgstr "FISE vefgáttin mun hjálpa okkur að bæta heilbrigði og seiglu skóga okkar, sem gegna mikilvægu hlutverki við að vernda líffræðilegan fjölbreytileika okkar og draga úr loftslagsbreytingum."
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:24
+msgid "Find out how to contribute different types of information to Climate-ADAPT."
+msgstr "Finndu út hvernig á að leggja mismunandi gerðir af upplýsingum til Climate-ADAPT."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:251
+msgid "Forestry Information System for Europe"
+msgstr "Skógræktarupplýsingakerfi fyrir Evrópu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:31
+msgid "Frequently asked questions in one place."
+msgstr "Algengar spurningar á einum stað."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:216
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:195
+msgid "Funding and Financing"
+msgstr "Fjármögnun og fjármögnun"
+
+#. undefined
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:7
+msgid "General"
+msgstr "Almennt"
+
+#. undefined
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:60
+msgid "Geographic characterisation"
+msgstr "Landfræðileg lýsing"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:78
+#: ../../climateadapt/browser/pt/video_view.pt:123
+msgid "Geographic characterization"
+msgstr "Landfræðileg lýsing"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:117
+#: ../../climateadapt/browser/pt/casestudy_view.pt:364
+#: ../../climateadapt/browser/pt/indicator_view.pt:103
+msgid "Geographic characterization:"
+msgstr "Landfræðileg einkenni:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:13
+msgid "Go back"
+msgstr "Farðu til baka"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:300
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:255
+msgid "Go to Case Study Explorer"
+msgstr "Farðu í Case Study Explorer"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:352
+msgid "Go to EU funding of adaptation"
+msgstr "Farðu í ESB fjármögnun aðlögunar"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:287
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:269
+msgid "Go to the Adaptation Options"
+msgstr "Farðu í Aðlögunarvalkostir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:237
+msgid "Go to the European Climate Data Explorer"
+msgstr "Farðu í European Climate Data Explorer"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:342
+msgid "Go to the Forest Policy Overview"
+msgstr "Farðu í Skógastefnuyfirlit"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:228
+msgid "Go to the Urban Adaptation Map Viewer"
+msgstr "Farðu í Urban Adaptation Map Viewer"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:218
+msgid "Go to the Urban Adaptation Support Tool"
+msgstr "Farðu í Urban Adaptation Support Tool"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:311
+msgid "Go to the Urban Policy Overview"
+msgstr "Farðu í Borgarstefnuyfirlit"
+
+#. undefined
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:10
+msgid "Guidance documents"
+msgstr "Leiðbeiningarskjöl"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:17
+msgid "Guidance on the Climate-ADAPT Database Search function."
+msgstr "Leiðbeiningar um Climate-ADAPT gagnagrunnsleitaraðgerðina."
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:15
+msgid "Guidance to <br /> search function"
+msgstr "Leiðbeiningar um <br /> leitaraðgerð"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-heat-index.pt:111
+msgid "HHWS website"
+msgstr "Vefsíða HHWS"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:462
+msgid "Health and Wellbeing"
+msgstr "Heilsa og vellíðan"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-heat-index.pt:105
+msgid "Heat index of HHWS:"
+msgstr "Hitastuðull HHWS:"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:79
+msgid "High pixel density mode"
+msgstr "Hár pixlaþéttleiki hamur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:12
+msgid "Home"
+msgstr "Heim"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:423
+msgid "How to use the map?"
+msgstr "Hvernig á að nota kortið?"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:307
+msgid "ICT"
+msgstr "UT"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:349
+msgid "Ice and Snow"
+msgstr "Ís og snjór"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:74
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:179
+msgid "Identifying adaptation options"
+msgstr "Að greina aðlögunarmöguleika"
+
+#. undefined
+#: ../../climateadapt/browser/pt/help-categories.pt:38
+msgid "If you are new user the video tutorials can help you get started."
+msgstr "Ef þú ert nýr notandi geta kennslumyndböndin hjálpað þér að byrja."
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:92
+msgid "Image quality at 2x"
+msgstr "Myndgæði við 2x"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:105
+msgid "Image quality at 3x"
+msgstr "Myndgæði við 3x"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:90
+msgid "Implementation"
+msgstr "Framkvæmd"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:234
+msgid "Implementing adaptation"
+msgstr "Innleiða aðlögun"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:120
+msgid "Info:"
+msgstr "Upplýsingar:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:9
+msgid "Information Portals"
+msgstr "Upplýsingagáttir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:606
+msgid "Institutional: Economic options"
+msgstr "Stofnana: Hagrænir valkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:608
+msgid "Institutional: Government policies and programmes"
+msgstr "Stofnanir: Stefna og áætlanir stjórnvalda"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:607
+msgid "Institutional: Law and regulations"
+msgstr "Stofnanir: Lög og reglur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:56
+msgid "Item Documents"
+msgstr "Atriðaskjöl"
+
+#. undefined
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:129
+msgid "Item’s creation:"
+msgstr "Gerð vara:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:267
+msgid "Key Type Measures"
+msgstr "Lykiltegundarráðstafanir"
+
+#. undefined
+#: ../../climateadapt/browser/admin.py:562
+msgid "Keyword succesfully deleted: ${kw_old}."
+msgstr "Lykilorði eytt: ${kw_old}."
+
+#. undefined
+#: ../../climateadapt/browser/admin.py:592
+msgid "Keyword succesfully renamed: ${kw_old} to ${kw_new}."
+msgstr "Lykilorðinu hefur verið breytt: ${kw_old} í ${kw_new}."
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:65
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:48
+#: ../../climateadapt/browser/pt/video_view.pt:103
+msgid "Keywords"
+msgstr "Leitarorð"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:308
+msgid "Land use planning"
+msgstr "Landnýtingarskipulag"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:463
+msgid "Land-use and Food Systems"
+msgstr "Landnotkun og matvælakerfi"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:285
+msgid "Learn more about different adaptation options to the various impacts of climate change in forests."
+msgstr "Lærðu meira um mismunandi aðlögunarmöguleika að hinum ýmsu áhrifum loftslagsbreytinga í skógum."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:267
+msgid "Learn more about different adaptation options to the various impacts of climate change in urban areas."
+msgstr "Lærðu meira um mismunandi aðlögunarmöguleika að hinum ýmsu áhrifum loftslagsbreytinga í þéttbýli."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:155
+msgid "Learn more about how cities can adapt to climate change to become future-proof, climate-resilient cities"
+msgstr "Lærðu meira um hvernig borgir geta lagað sig að loftslagsbreytingum til að verða framtíðarheldar, loftslagsþolnar borgir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:177
+msgid "Learn more about how forests can adapt to climate change to stay healthy, diverse, resilient and productive"
+msgstr "Lærðu meira um hvernig skógar geta lagað sig að loftslagsbreytingum til að vera heilbrigðir, fjölbreyttir, seigir og afkastamiklir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:26
+msgid "Link to Map Viewer:"
+msgstr "Tengill á kortaskoðara:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:44
+#: ../../climateadapt/browser/pt/indicator_view.pt:49
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:37
+msgid "Link to metadata:"
+msgstr "Tengill á lýsigögn:"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:467
+msgid "Local Economic Systems"
+msgstr "Staðbundin efnahagskerfi"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:450
+msgid "MCR 2030"
+msgstr "MCR 2030"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:180
+msgid "Macro-Transnational region"
+msgstr "Fjölþjóðlegt svæði"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:238
+msgid "Map"
+msgstr "Kort"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:263
+msgid "Maps, graphs and datasets"
+msgstr "Kort, línurit og gagnasöfn"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:46
+#: ../../climateadapt/vocabulary.py:309
+msgid "Marine and Fisheries"
+msgstr "Sjávarútvegur og sjávarútvegur"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:98
+msgid "Monitoring &amp; Evaluation (M&amp;E)"
+msgstr "Vöktun & amp; Mat (M&E)"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:269
+msgid "Monitoring and evaluating adaptation"
+msgstr "Eftirlit og mat á aðlögun"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:310
+msgid "Mountain areas"
+msgstr "Fjallsvæði"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:119
+msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
+msgstr "Landsaðlögunarstefna ekki tilkynnt umfram skylduskil árið 2023"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:115
+msgid "National adaptation policy reported in 2023"
+msgstr "Landsaðlögunarstefna tilkynnt árið 2023"
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:20
+#: ../../climateadapt/browser/pt/viewlet_sharepage_submenu.pt:16
+msgid "News"
+msgstr "Fréttir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:80
+msgid "No assessments reported"
+msgstr "Engar úttektir tilkynntar"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:88
+msgid "No data reported in 2021"
+msgstr "Engin gögn tilkynnt árið 2021"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:104
+msgid "No data reported in 2023"
+msgstr "Engin gögn tilkynnt árið 2023"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:99
+msgid "No portal or platform reported"
+msgstr "Engin gátt eða vettvangur tilkynntur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/health_homepage.pt:65
+msgid "No upcoming events."
+msgstr "Engir viðburðir á næstunni."
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:315
+msgid "Non specific"
+msgstr "Ekki sértækt"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:428
+msgid "OPPLA"
+msgstr "OPPLA"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:336
+msgid "Observations and Scenarios"
+msgstr "Athuganir og sviðsmyndir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:76
+msgid "One or more assessments reported"
+msgstr "Eitt eða fleiri mat tilkynnt"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:125
+msgid "Online registration"
+msgstr "Skráning á netinu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:18
+msgid "Original aceitem"
+msgstr "Upprunalegur asetur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/footer_logos.pt:35
+msgid "Other European Information Systems:<br />&nbsp;"
+msgstr "Önnur evrópsk upplýsingakerfi:<br />&nbsp"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:140
+msgid "Outside EEA coverage"
+msgstr "Utan EES umfjöllun"
+
+#. undefined
+#: ../../climateadapt/browser/pt/c3s_indicators_overview.pt:15
+msgid "Overview list of all indices"
+msgstr "Yfirlitslisti yfir allar vísitölur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:189
+msgid "Policy Overview"
+msgstr "Yfirlit yfir stefnu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:210
+msgid "Policy overview"
+msgstr "Yfirlit yfir stefnu"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:23
+msgid "Portal Type"
+msgstr "Tegund gáttar"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:58
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:79
+msgid "Preparing the ground for adaptation"
+msgstr "Undirbúa jarðveginn fyrir aðlögun"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:119
+#: ../../climateadapt/tiles/pt/urbanast_navigation.pt:68
+msgid "Principles and success factors"
+msgstr "Meginreglur og árangursþættir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:21
+msgid "Privacy and Legal Notice"
+msgstr "Persónuvernd og lagaleg tilkynning"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:59
+msgid "Professional thematic domain"
+msgstr "Faglegt þema lén"
+
+#. undefined
+#: ../../climateadapt/browser/pt/publicationreport_view.pt:50
+msgid "Project Documents"
+msgstr "Verkefnisskjöl"
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:237
+msgid "Reference"
+msgstr "Tilvísun"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:40
+msgid "Reference:"
+msgstr "Tilvísun:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/adaptationoption_view.pt:113
+msgid "References:"
+msgstr "Heimildir:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:61
+msgid "Registration"
+msgstr "Skráning"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:124
+msgid "Registration:"
+msgstr "Skráning:"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/filter_acecontent.pt:49
+msgid "Relevant tile"
+msgstr "Viðeigandi flísar"
+
+#. undefined
+#: ../../climateadapt/browser/pt/case-study-and-adaptation-options-map-viewer.pt:277
+msgid "Reset"
+msgstr "Endurstilla"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:472
+msgid "Resilient Cities Network"
+msgstr "Resilient Cities Network"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:183
+msgid "Resource Catalogue"
+msgstr "Auðlindaskrá"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:112
+msgid "Reviewed by:"
+msgstr "Metið af:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/navbar_footer.pt:18
+msgid "SITE MAP"
+msgstr "VÍÐARKORT"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:66
+msgid "Scaled image quality"
+msgstr "Stækkuð myndgæði"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:58
+msgid "Scroll to top"
+msgstr "Skrunaðu efst"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:350
+msgid "Sea Level Rise"
+msgstr "Sjávarborðshækkun"
+
+#. undefined
+#: ../../climateadapt/browser/pt/observatory_indicators_search.pt:101
+msgid "Search"
+msgstr "Leita"
+
+#. undefined
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:203
+msgid "Search results"
+msgstr "Leitarniðurstöður"
+
+#. undefined
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:212
+msgid "Search results for: ${term}"
+msgstr "Leitarniðurstöður fyrir: ${term}"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:319
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:288
+msgid "Search the Climate Adapt Database:"
+msgstr "Leitaðu í Climate Adapt Database:"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/search_acecontent.pt:66
+msgid "Search tile"
+msgstr "Leitarflísar"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:340
+msgid "Sector Policies"
+msgstr "Geirastefnur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceitem_view.pt:76
+#: ../../climateadapt/browser/pt/indicator_view.pt:98
+#: ../../climateadapt/browser/pt/mapgraphdataset_view.pt:57
+msgid "Sectors"
+msgstr "Geirar"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-list.pt:5
+msgid "Select a country"
+msgstr "Veldu land"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-d3.pt:49
+msgid "Select a country to go directly to the country's page:"
+msgstr "Veldu land til að fara beint á síðu landsins:"
+
+#. undefined
+#: ../../climateadapt/browser/overrides.py:60
+msgid "Select the sectors for which you want to receive a notification email when an item is modified."
+msgstr "Veldu þá geira sem þú vilt fá tilkynningu í tölvupósti fyrir þegar hlut er breytt."
+
+#. undefined
+#: ../../climateadapt/tiles/pt/shareinfo.pt:8
+msgid "Share button tile"
+msgstr "Deila hnappaflísum"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/shareinfo.pt:11
+msgid "Share type:"
+msgstr "Tegund deila:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/observatory_indicators_search.pt:108
+msgid "Show all sources"
+msgstr "Sýna allar heimildir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:605
+msgid "Social: Behavioural"
+msgstr "Félagslegt: Hegðun"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:603
+msgid "Social: Educational options"
+msgstr "Félagslegt: Menntunarvalkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:604
+msgid "Social: Informational"
+msgstr "Félagslegt: Upplýsandi"
+
+#. undefined
+#: ../../climateadapt/image_scales/interfaces.py:43
+msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Tilgreindu allar leyfilegar hámarksstærðir myndar, eina í hverri línu. Áskilið snið er &lt;name&gt; &lt;breidd&gt;:&lt;hæð&gt;."
+
+#. undefined
+#: ../../climateadapt/browser/pt/casestudy_view.pt:76
+msgid "Stakeholder Participation"
+msgstr "Þátttaka hagsmunaaðila"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:351
+msgid "Storms"
+msgstr "Stormar"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:601
+msgid "Structural and physical: Ecosystem-based adaptation options"
+msgstr "Uppbygging og eðlisfræðileg: Aðlögunarvalkostir sem byggja á vistkerfi"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:599
+msgid "Structural and physical: Engineering and built environment options"
+msgstr "Byggingar- og eðlisfræðilegar: Verkfræði- og byggðavalkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:602
+msgid "Structural and physical: Service options"
+msgstr "Uppbygging og líkamleg: Þjónustuvalkostir"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:600
+msgid "Structural and physical: Technological options"
+msgstr "Byggingar- og eðlisfræðilegir: Tæknilegir valkostir"
+
+#. undefined
+#: ../../climateadapt/browser/__init__.py:202
+msgid "Sub Nationals"
+msgstr "Undirþjóðir"
+
+#. undefined
+#: ../../climateadapt/browser/pt/countries-heat-index.pt:57
+msgid "Subnational or local HHAP"
+msgstr "Undirþjóðlegt eða staðbundið HHAP"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:384
+msgid "The EU Covenant of Mayors"
+msgstr "Borgarstjórasáttmáli ESB"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:350
+msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
+msgstr "ESB fjármagnar aðlögun að loftslagsbreytingum í Evrópu með margvíslegum tækjum. Fjölára fjárhagsramminn 2021-2027 tryggir að að minnsta kosti 25% af fjárlögum Evrópu séu loftslagstengd útgjöld. Þess vegna þarf að samþætta loftslagsaðlögunaraðgerðir inn í allar helstu útgjaldaáætlanir ESB og eftirlitskerfi er komið á til að tryggja að þessum markmiðum sé náð."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:309
+msgid "The EU has several policy frameworks in place to increase the resilience of European cities and their inhabitants, including the EU Adaptation Strategy and the EU Biodiversity Strategy 2030, and has developed several initiatives to improve knowledge and data availability on urban vulnerability and adaptive capacity. It also provides financial and technical support to policy makers and practitioners to make cities more resilient and adaptive."
+msgstr "ESB hefur nokkra stefnuramma til að auka seiglu evrópskra borga og íbúa þeirra, þar á meðal ESB aðlögunaráætlun og líffræðileg fjölbreytileikaáætlun ESB 2030, og hefur þróað nokkur frumkvæði til að bæta þekkingu og aðgengi að gögnum um varnarleysi í borgum og aðlögunargetu. Það veitir einnig fjárhagslegan og tæknilegan stuðning til stefnumótenda og iðkenda til að gera borgir seigurri og aðlögunarhæfari."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:234
+msgid "The European Climate Data Explorer provides interactive access to many climate indices from the Copernicus Climate Change Service in support of climate change adaptation."
+msgstr "European Climate Data Explorer veitir gagnvirkan aðgang að mörgum loftslagsvísitölum frá Copernicus Climate Change Service til stuðnings aðlögun loftslagsbreytinga."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:239
+msgid "The European Climate Data Explorer provides interactive access to many climate indices like fire weather indices in support of climate change adaptation in forests."
+msgstr "European Climate Data Explorer veitir gagnvirkan aðgang að mörgum loftslagsvísitölum eins og eldveðurvísitölum til stuðnings aðlögun loftslagsbreytinga í skógum."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:257
+msgid "The European Drought Observatory (EDO) contains drought-relevant information. These give an overview of the situation in the EU about imminent droughts."
+msgstr "European Drought Observatory (EDO) inniheldur upplýsingar sem skipta máli fyrir þurrka. Þetta gefur yfirlit yfir stöðuna í ESB varðandi yfirvofandi þurrka."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:269
+msgid "The European Forest Fire Information System"
+msgstr "Evrópska skógareldaupplýsingakerfið"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:266
+msgid "The European Forest Fire Information System (EFFIS) supports the protection of forests against fires and provides the EU with harmonized information on forest fires"
+msgstr "Evrópska skógareldaupplýsingakerfið (EFFIS) styður vernd skóga gegn eldi og veitir ESB samræmdar upplýsingar um skógarelda"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:225
+msgid "The Urban Adaptation Map Viewer provides an overview of the current and future climate hazards, the vulnerability of the cities to these hazards and their adaptive capacity."
+msgstr "Urban Adaptation Map Viewer veitir yfirlit yfir núverandi og framtíðarhættu í loftslagi, viðkvæmni borganna fyrir þessum hættum og aðlögunargetu þeirra."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:216
+msgid "The Urban Adaptation Support Tool assists cities, towns and local authorities in developing, implementing and monitoring climate change adaptation plans."
+msgstr "Stuðningsverkfæri fyrir aðlögun þéttbýlis aðstoðar borgir, bæi og sveitarfélög við að þróa, innleiða og fylgjast með aðlögunaráætlunum fyrir loftslagsbreytingar."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:340
+msgid "The climate crisis is severely affecting Europe's forests, making them increasingly vulnerable to hazards like storms, wildfires, droughts, insect and disease outbreaks, or sea level rise. The growing risks and impacts are affecting the economic viability of forestry and they reduce the capacity of forests to provide essential ecosystem services. The EU responds to this unprecedented challenge by supporting the adaptation of forests to climate change through a wide range of policies, like the EU Forest Strategy, EU Strategy on Adaptation to Climate Change, and the EU Biodiversity Strategy."
+msgstr "Loftslagskreppan hefur alvarleg áhrif á skóga Evrópu og gerir þá sífellt viðkvæmari fyrir hættum eins og stormum, skógareldum, þurrkum, skordýra- og sjúkdómafaraldri eða hækkun sjávarborðs. Vaxandi áhætta og áhrif hafa áhrif á hagkvæmni skógræktar og draga úr getu skóga til að veita nauðsynlega vistkerfisþjónustu. ESB bregst við þessari fordæmalausu áskorun með því að styðja aðlögun skóga að loftslagsbreytingum með fjölmörgum stefnum, eins og skógaráætlun ESB, áætlun ESB um aðlögun að loftslagsbreytingum og áætlun ESB um líffræðilegan fjölbreytileika."
+
+#. undefined
+#: ../../climateadapt/browser/pt/regions-section.pt:83
+msgid "To go to one of the regions please click on the maps."
+msgstr "Til að fara í eitt af svæðunum vinsamlega smelltu á kortin."
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_forest.pt:192
+msgid "Tools and data"
+msgstr "Verkfæri og gögn"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:25
+msgid "Total"
+msgstr "Samtals"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:311
+msgid "Tourism"
+msgstr "Ferðaþjónusta"
+
+#. undefined
+#: ../../climateadapt/browser/pt/transnational_regions.pt:410
+msgid "Transnational regions and other regions and countries"
+msgstr "Þverþjóðleg svæði og önnur svæði og lönd"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:461
+msgid "URBACT"
+msgstr "URBACT"
+
+#. undefined
+#: ../../climateadapt/browser/pt/landing_page_urban.pt:406
+msgid "Urban Innovative Actions"
+msgstr "Nýsköpunaraðgerðir í þéttbýli"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/ast_navigation.pt:123
+msgid "Using the Adaptation Support Tool"
+msgstr "Með því að nota aðlögunarstuðningstólið"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/filter_acecontent.pt:61
+msgid "View all"
+msgstr "Skoða allt"
+
+#. undefined
+#: ../../climateadapt/tiles/pt/relevant_acecontent.pt:119
+msgid "View more"
+msgstr "Skoða meira"
+
+#. undefined
+#: ../../climateadapt/browser/pt/aceproject_view.pt:18
+msgid "View on DRMKC"
+msgstr "Skoðaðu á DRMKC"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:337
+msgid "Vulnerability Assessment"
+msgstr "Varnarleysismat"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:464
+msgid "Water Management"
+msgstr "Vatnsstjórnun"
+
+#. undefined
+#: ../../climateadapt/vocabulary.py:352
+msgid "Water Scarcity"
+msgstr "Vatnsskortur"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:112
+msgid "When:"
+msgstr "Hvenær:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ccaevent_view.pt:116
+msgid "Where:"
+msgstr "Hvar:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/item_statistics.pt:19
+msgid "Year:"
+msgstr "Ár:"
+
+#. undefined
+#: ../../climateadapt/browser/pt/ace_macros.pt:33
+msgid "back to search"
+msgstr "aftur til að leita"
+
+#. Default: "Enable automatic image captioning for images set in the richtexteditor based on the description of images."
+#: ../../climateadapt/image_scales/interfaces.py:211
+msgid "image_captioning_description"
+msgstr "image_captioning_description"
+
+#. Default: "Enable image captioning"
+#: ../../climateadapt/image_scales/interfaces.py:210
+msgid "image_captioning_title"
+msgstr "image_captioning_title"
+
+#. Default: "Filter the results."
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:250
+msgid "narrow_search_options"
+msgstr "þröngir_leitarvalkostir"
+
+#. Default: "Sort by"
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:451
+msgid "sort_by"
+msgstr "flokka_eftir"
+
+#. Default: "Located in"
+#: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
+msgid "text_searchitem_location"
+msgstr "textaleitaratriði_staðsetning"

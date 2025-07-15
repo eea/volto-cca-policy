@@ -19,6 +19,7 @@ import installTabsBlock from './TabsBlock';
 import installRedirectBlock from './RedirectBlock';
 import installContentLinks from './ContentLinks';
 import installASTNavigation from './ASTNavigation';
+import installFlourishEmbedBlock from './FlourishEmbedBlock';
 
 // import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
@@ -51,6 +52,8 @@ export default function installBlocks(config) {
     installContentLinks,
     installASTNavigation,
     installCountryMapProfile,
+    installFlourishEmbedBlock,
+    // installMKHMap,
     // installCountryMapHeatIndex,
   )(config);
 }

@@ -1,7 +1,7 @@
+import { FormattedMessage } from 'react-intl';
 import { Message, Icon } from 'semantic-ui-react';
 
-const PortalMessage = (props) => {
-  const { content } = props;
+const PortalMessage = ({ content }) => {
   const { review_state } = content;
   const isArchivedContent = review_state === 'archived';
 
@@ -9,8 +9,10 @@ const PortalMessage = (props) => {
     <Message info icon>
       <Icon name="info" />
       <Message.Content>
-        This object has been archived because its content is outdated. You can
-        still access it as legacy.
+        <FormattedMessage
+          id="This object has been archived because its content is outdated. You can still access it as legacy."
+          defaultMessage="This object has been archived because its content is outdated. You can still access it as legacy."
+        />
       </Message.Content>
     </Message>
   ) : null;
