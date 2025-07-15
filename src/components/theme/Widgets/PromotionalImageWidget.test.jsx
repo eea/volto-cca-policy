@@ -48,7 +48,7 @@ describe('FileWidget', () => {
           fieldSet="default"
           onChange={() => {}}
           value={{
-            download: 'http://myfile',
+            download: 'https://myfile',
             'content-type': 'image/png',
             filename: 'myfile',
             encoding: '',
