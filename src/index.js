@@ -522,7 +522,7 @@ const applyConfig = (config) => {
     },
     {
       match: {
-        path: /(.*)\/add$/,
+        path: /^.*\/add$/,
       },
       component: RedirectToLogin,
     },
@@ -532,13 +532,13 @@ const applyConfig = (config) => {
     ...config.settings.apiExpanders,
     {
       match: {
-        path: /(.*)\/policy-context\/country-profiles\/(.*)/,
+        path: /\/policy-context\/country-profiles\/.+/,
       },
       GET_CONTENT: ['siblings'],
     },
     {
       match: {
-        path: /(.*)\/countries-regions\/countries\/(.*)/,
+        path: /\/countries-regions\/countries\/.+/,
       },
       GET_CONTENT: ['siblings'],
     },

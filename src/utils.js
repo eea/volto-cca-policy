@@ -117,8 +117,7 @@ export const extractPlanNameAndURL = (text) => {
     name = name
       .replace(`(${url})`, '')
       .replace(url, '')
-      .replace(/[-–;,:\s]+$/, '')
-      .replace(/[-–;,:\s]+$/, '')
+      .replace(/[-\u2013;,:\s]+$/, '')
       .trim();
   }
 
