@@ -26,7 +26,6 @@ import './styles.less';
 
 const View = (props) => {
   const { geofeatures, projection, ol } = props;
-
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
@@ -52,7 +51,10 @@ const View = (props) => {
   const euCountryFeatures = React.useRef();
 
   React.useEffect(() => {
-    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures, {
+      dataProjection: 'EPSG:4326',
+      featureProjection: 'EPSG:3857',
+    });
     const filtered = features.filter((f) =>
       euCountryNames.includes(f.get('na')),
     );
