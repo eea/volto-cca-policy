@@ -1,11 +1,8 @@
-import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ImageGallery from './ImageGallery';
 
-jest.mock('react-slick', () => (props) => (
-  <div data-testid="mock-slider">{props.children}</div>
-));
+jest.mock('react-slick', () => (props) => <div>React Slick Gallery</div>);
 
 const mockItems = [
   {
@@ -18,6 +15,7 @@ const mockItems = [
     url: 'https://example.com/image2.jpg',
     title: 'Image Two',
     description: 'Second image description',
+    rights: 'Author Two',
   },
 ];
 
