@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,8 +18,6 @@ msgstr "Bakgrunnsskjal fyrir viðburðinn er fáanlegt"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,8 +42,6 @@ msgstr "Aðlögunarvalkostir innleiddir í þessu tilfelli"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Aðlögunarsvið"
 
@@ -87,11 +82,6 @@ msgstr "Alla tíð"
 msgid "Background information"
 msgstr "Bakgrunnsupplýsingar"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgíu"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -113,7 +103,7 @@ msgid "Case Study illustrations"
 msgstr "Dæmisögumyndir"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Dæmi um þennan valkost:"
 
@@ -150,8 +140,6 @@ msgstr "Borg:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Loftslagsáhrif"
 
@@ -305,11 +293,6 @@ msgstr "Kannaðu meira á Climate-ADAPT"
 msgid "For more search options"
 msgstr "Fyrir fleiri leitarmöguleika"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Frakklandi"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -317,8 +300,6 @@ msgstr "Fullskjár"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -363,11 +344,6 @@ msgstr "HHWS í boði (smelltu á land fyrir frekari upplýsingar)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Tegund hættu"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Heilsuáhrif"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -432,8 +408,6 @@ msgstr "Upplýsingar"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Atriði frá þriðja aðila"
 
@@ -445,8 +419,6 @@ msgstr "Helstu samfélagskerfi"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Lykill Tegund Mál"
 
@@ -520,6 +492,11 @@ msgstr "Í fyrra"
 msgid "Lead"
 msgstr "Blý"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -577,6 +554,11 @@ msgstr "Engar upplýsingar"
 msgid "No results"
 msgstr "Engar niðurstöður"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -593,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Stjörnuskoðunarframlög"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Stjörnuskoðunarfélagi"
@@ -728,8 +709,6 @@ msgstr "Leitaðu í auðlindaskrá Observatory..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "kafla"
 
@@ -840,6 +819,11 @@ msgstr "Dagsetningin vísar til síðasta útgáfudags hlutarins"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Dagsetningin vísar til þess augnabliks þegar hluturinn hefur verið útbúinn eða uppfærður af sérfræðingum sem leggja skal fram til birtingar í Climate ADAPT"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -848,8 +832,6 @@ msgstr "Efni:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Þverþjóðleg svæði"
 
@@ -858,11 +840,6 @@ msgstr "Þverþjóðleg svæði"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tegund hlutar"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Tegundir"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -914,6 +891,11 @@ msgstr "Hvenær"
 #: helpers/Utils
 msgid "Where"
 msgstr "Hvar"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1187,6 +1169,11 @@ msgstr "Hvíta-Rússland"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgíu"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnía og Hersegóvína"
 
@@ -1219,6 +1206,11 @@ msgstr "Danmörku"
 
 msgid "Estonia"
 msgstr "Eistland"
+
+#. undefined
+
+msgid "France"
+msgstr "Frakklandi"
 
 #. undefined
 

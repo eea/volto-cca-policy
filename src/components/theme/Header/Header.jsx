@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { compose } from 'recompose';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
@@ -62,6 +62,7 @@ const DirectLinkLogo = ({
  */
 const EEAHeader = (props) => {
   const { pathname, token, items, subsite } = props;
+  const currentLang = useSelector((state) => state.intl.locale);
   const router_pathname = useSelector((state) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
@@ -153,32 +154,50 @@ const EEAHeader = (props) => {
           </Header.TopDropdownMenu>
         </Header.TopItem>
 
-        {!!headerOpts.partnerLinks && (
-          <Header.TopItem>
-            <Header.TopDropdownMenu
-              id="theme-sites"
-              text={headerOpts.partnerLinks.title}
-              viewportWidth={width}
-            >
-              <div className="wrapper">
-                {headerOpts.partnerLinks.links.map((item, index) => (
-                  <Dropdown.Item key={index}>
-                    <a
-                      href={item.href}
-                      className="site"
-                      target="_blank"
-                      onKeyDown={(evt) => evt.stopPropagation()}
-                    >
-                      {item.title}
-                    </a>
-                  </Dropdown.Item>
-                ))}
-              </div>
-            </Header.TopDropdownMenu>
-          </Header.TopItem>
-        )}
+        <div className="top-header-right-items">
+          <div className="item">
+            <div className="divider text">
+              <Link
+                to={
+                  pathname.includes('/observatory')
+                    ? `/${currentLang}/observatory/sitemap`
+                    : pathname.includes('/mission')
+                    ? `/${currentLang}/mission/sitemap`
+                    : `/${currentLang}/sitemap`
+                }
+              >
+                Sitemap
+              </Link>
+            </div>
+          </div>
 
-        {config.settings.isMultilingual && <LanguageSwitch {...props} />}
+          {!!headerOpts.partnerLinks && (
+            <Header.TopItem>
+              <Header.TopDropdownMenu
+                id="theme-sites"
+                text={headerOpts.partnerLinks.title}
+                viewportWidth={width}
+              >
+                <div className="wrapper">
+                  {headerOpts.partnerLinks.links.map((item, index) => (
+                    <Dropdown.Item key={index}>
+                      <a
+                        href={item.href}
+                        className="site"
+                        target="_blank"
+                        onKeyDown={(evt) => evt.stopPropagation()}
+                      >
+                        {item.title}
+                      </a>
+                    </Dropdown.Item>
+                  ))}
+                </div>
+              </Header.TopDropdownMenu>
+            </Header.TopItem>
+          )}
+
+          {config.settings.isMultilingual && <LanguageSwitch {...props} />}
+        </div>
       </Header.TopHeader>
       <Header.Main
         pathname={pathname}
@@ -229,7 +248,6 @@ const EEAHeader = (props) => {
             href={item.url || '/'}
             title={item.title}
             onClick={(e) => {
-              // debugger;
               onClick(e, item);
             }}
           >

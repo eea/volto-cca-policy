@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,8 +18,6 @@ msgstr "Sündmuse taustadokument on saadaval"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -45,8 +42,6 @@ msgstr "Sel juhul rakendatud kohanemisvalikud"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Kohanemissektorid"
 
@@ -87,11 +82,6 @@ msgstr "Kogu aeg"
 msgid "Background information"
 msgstr "Taustteave"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgia"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
@@ -113,7 +103,7 @@ msgid "Case Study illustrations"
 msgstr "Juhtumianalüüsi illustratsioonid"
 
 #. Default: "Case studies related to this option:"
-#: components/theme/Views/AdaptationOptionView
+#: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Selle valikuga seotud juhtumiuuringud:"
 
@@ -150,8 +140,6 @@ msgstr "Linn:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Kliimamõjud"
 
@@ -305,11 +293,6 @@ msgstr "Lisateavet Climate-ADAPT kohta"
 msgid "For more search options"
 msgstr "Rohkemate otsinguvõimaluste jaoks"
 
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Prantsusmaa"
-
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -317,8 +300,6 @@ msgstr "Täisekraan"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -363,11 +344,6 @@ msgstr "HHWS on saadaval (lisateabe saamiseks klõpsake riigil)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Ohu tüüp"
-
-#. Default: "Health Impacts"
-#: search/health_observatory/config-health
-msgid "Health Impacts"
-msgstr "Mõju tervisele"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -432,8 +408,6 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Üksus kolmandatelt isikutelt"
 
@@ -445,8 +419,6 @@ msgstr "Peamised kogukonnasüsteemid"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Võtmetüübi mõõt"
 
@@ -520,6 +492,11 @@ msgstr "Eelmisel aastal"
 msgid "Lead"
 msgstr "Plii"
 
+#. Default: "Learn more"
+#: components/manage/Blocks/Listing/EventAccordionListingView
+msgid "Learn more"
+msgstr ""
+
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -577,6 +554,11 @@ msgstr "Info puudub"
 msgid "No results"
 msgstr "Tulemusi pole"
 
+#. Default: "Non-EU Languages"
+#: components/theme/Header/LanguageSwitch
+msgid "Non-EU Languages"
+msgstr ""
+
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
 msgid "Objectives of the adaptation measure"
@@ -593,7 +575,6 @@ msgid "Observatory contributions"
 msgstr "Vaatluskeskuse kaastööd"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Vaatluskeskuse partner"
@@ -728,8 +709,6 @@ msgstr "Otsige observatooriumi ressursside kataloogist..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "jaotis"
 
@@ -840,6 +819,11 @@ msgstr "Kuupäev viitab üksuse hiliseimale avaldamise kuupäevale"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Kuupäev viitab hetkele, mil üksust on koostanud või ajakohastanud kaasatud eksperdid, et see esitataks Climate ADAPT avaldamiseks"
 
+#. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
+#: components/theme/PortalMessage/PortalMessage
+msgid "This object has been archived because its content is outdated. You can still access it as legacy."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -848,8 +832,6 @@ msgstr "Teemad:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Rahvusvahelised piirkonnad"
 
@@ -858,11 +840,6 @@ msgstr "Rahvusvahelised piirkonnad"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Kauba tüüp"
-
-#. Default: "Types"
-#: search/health_observatory/config-health
-msgid "Types"
-msgstr "Tüübid"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -914,6 +891,11 @@ msgstr "Millal"
 #: helpers/Utils
 msgid "Where"
 msgstr "Kus"
+
+#. Default: "Officially reported governmental information is only available in English"
+#: components/manage/Blocks/CountryProfileDetail/View
+msgid "officiallyInEnglish"
+msgstr ""
 
 #. undefined
 
@@ -1187,6 +1169,11 @@ msgstr "Valgevene"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgia"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnia ja Hertsegoviina"
 
@@ -1219,6 +1206,11 @@ msgstr "Taani"
 
 msgid "Estonia"
 msgstr "Eesti"
+
+#. undefined
+
+msgid "France"
+msgstr "Prantsusmaa"
 
 #. undefined
 

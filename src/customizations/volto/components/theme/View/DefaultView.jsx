@@ -24,6 +24,7 @@ import ContextNavigation from '@plone/volto/components/theme/Navigation/ContextN
 import {
   BannerTitle,
   ASTNavigation,
+  PortalMessage,
 } from '@eeacms/volto-cca-policy/components';
 
 import { isEqual } from 'lodash';
@@ -92,6 +93,7 @@ const DefaultView = (props) => {
       <>
         {currentNavigation ? (
           <Container id="page-document">
+            <PortalMessage content={content} />
             <Grid>
               <Grid.Column width={12 - gridColumns}>
                 <BannerTitle {...props} />
@@ -113,6 +115,7 @@ const DefaultView = (props) => {
           </Container>
         ) : astNavigation ? (
           <Container id="page-document">
+            <PortalMessage content={content} />
             <Grid>
               <Grid.Column mobile={12} tablet={12} computer={4}>
                 <ASTNavigation astNavigation={astNavigation} />
@@ -124,7 +127,8 @@ const DefaultView = (props) => {
             </Grid>
           </Container>
         ) : (
-          <Container id="page-document" className="here">
+          <Container id="page-document">
+            <PortalMessage content={content} />
             {!isChromeless && <BannerTitle {...props} />}
             <RenderBlocks {...props} path={path} />
           </Container>
