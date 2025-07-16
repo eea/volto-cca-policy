@@ -72,6 +72,24 @@ const messages = defineMessages({
  * ```
  *
  */
+function parseDataURL(dataUrl) {
+  if (!dataUrl.startsWith('data:')) return null;
+
+  const commaIndex = dataUrl.indexOf(',');
+  if (commaIndex === -1) return null;
+
+  const meta = dataUrl.slice(5, commaIndex);
+  const data = dataUrl.slice(commaIndex + 1);
+
+  const [contentType, encoding] = meta.split(';');
+
+  return {
+    'content-type': contentType || '',
+    encoding: encoding || '',
+    data: data || '',
+  };
+}
+
 const FileWidget = (props) => {
   const { id, value, onChange, isDisabled } = props;
   const [fileType, setFileType] = React.useState(false);
@@ -99,27 +117,31 @@ const FileWidget = (props) => {
     const file = files[0];
     if (!validateFileUploadSize(file, intl.formatMessage)) return;
     readAsDataURL(file).then((data) => {
-      const fields = data.match(/^data:(.*);(.*),(.*)$/);
-      onChange(id, {
-        data: fields[3],
-        encoding: fields[2],
-        'content-type': fields[1],
-        filename: file.name,
-      });
+      const fields = parseDataURL(data);
+      if (fields) {
+        onChange(id, {
+          data: fields.data,
+          encoding: fields.encoding,
+          'content-type': fields['content-type'],
+          filename: file.name,
+        });
+      }
     });
 
-    let reader = new FileReader();
+    const reader = new FileReader();
     reader.onload = function () {
-      const fields = reader.result.match(/^data:(.*);(.*),(.*)$/);
-      if (imageMimetypes.includes(fields[1])) {
+      const parsed = parseDataURL(reader.result);
+      if (parsed && imageMimetypes.includes(parsed['content-type'])) {
         setFileType(true);
-        let imagePreview = document.getElementById(`field-${id}-image`);
-        imagePreview.src = reader.result;
+        const imagePreview = document.getElementById(`field-${id}-image`);
+        if (imagePreview) {
+          imagePreview.src = reader.result;
+        }
       } else {
         setFileType(false);
       }
     };
-    reader.readAsDataURL(files[0]);
+    reader.readAsDataURL(file);
   };
 
   return (
