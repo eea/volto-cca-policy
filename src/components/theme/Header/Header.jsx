@@ -26,7 +26,10 @@ import cx from 'classnames';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
 function removeTrailingSlash(path) {
-  return path.replace(/\/+$/, '');
+  while (path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+  return path;
 }
 
 /**

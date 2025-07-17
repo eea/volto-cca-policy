@@ -89,10 +89,10 @@ const ImageGallery = (props) => {
           <Slider {...carouselSettings} ref={sliderRef}>
             {items.map((item, i) => {
               return image.rights ? (
-                <div>
+                <div key={i}>
                   <div className="image-slide">
                     <div className="image-rights">@ {image.rights}</div>
-                    <Image key={i} src={item.url} alt={item?.title} />
+                    <Image src={item.url} alt={item?.title} />
                   </div>
                 </div>
               ) : (
