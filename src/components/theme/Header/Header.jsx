@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { compose } from 'recompose';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
