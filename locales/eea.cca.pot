@@ -451,3 +451,48 @@ msgstr ""
 
 msgid "Region where the funding is offered"
 msgstr ""
+
+msgid "Mission story"
+msgstr ""
+
+msgid "Mission tool"
+msgstr ""
+
+msgid "Webpage"
+msgstr ""
+
+msgid "Climate services"
+msgstr ""
+
+msgid "Just Resilience"
+msgstr ""
+
+msgid "Societal aspects"
+msgstr ""
+
+msgid "Environmental aspects"
+msgstr ""
+
+msgid "Mitigation aspects"
+msgstr ""
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr ""
+
+msgid "Replication/upscaling potential"
+msgstr ""
+
+msgid "Economic aspects"
+msgstr ""
+
+msgid "Publications and reports"
+msgstr ""
+
+msgid "Webpage"
+msgstr ""
+
+msgid "Funding oportunity"
+msgstr ""
+
+msgid "Videos and podcasts"
+msgstr ""

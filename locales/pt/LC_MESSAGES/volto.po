@@ -557,7 +557,7 @@ msgstr "Nenhum resultado"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Idiomas fora da UE"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Região onde o financiamento é oferecido"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "História da missão"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Ferramenta de missão"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Página da Internet"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Serviços climáticos"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Apenas resiliência"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Aspectos sociais"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Aspectos ambientais"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Aspectos de mitigação"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Análise de custo-benefício e custos de manutenção"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Potencial de replicação/upscaling"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Aspectos econômicos"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Oportunidade de financiamento"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Vídeos e podcasts"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "Contagem Regressiva da Lancet para 2021 - Briefing da AEA"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Exposição dos grupos vulneráveis aos riscos climáticos"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "PRINCIPAIS AÇÕES DA UE"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Resiliência justa"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Soluções baseadas na natureza"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Perdas económicas e mortes"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Objetivos estratégicos para 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Disponibilidade de espaços verdes urbanos a grupos vulneráveis"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Transnacional, nacional, local"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Alergénios aeronáuticos"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Calor"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Acessibilidade dos hospitais na Europa"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADAPTAÇÃO NO SETOR FLORESTAL"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Ozono troposférico"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Previsão do ozono troposférico (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Poluição"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Efeitos na segurança e saúde no trabalho"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Plano de trabalho do Observatório para 2023-2024"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Previsão PM2,5 ao nível do solo (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Previsão PM10 ao nível do solo (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Previsão de NO2 ao nível do solo (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Relatório de 2022 da AEA sobre o clima e a saúde"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Atlas europeu do ambiente e da saúde"
 

@@ -557,7 +557,7 @@ msgstr "Engar niðurstöður"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Tungumál utan ESB"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Svæði þar sem styrkurinn er í boði"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Trúboðssaga"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Mission tól"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Vefsíða"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Loftslagsþjónusta"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Bara Seiglu"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Samfélagslegir þættir"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Umhverfisþættir"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Mótvægisþættir"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Kostnaðar-ábatagreining og viðhaldskostnaður"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Afritunar-/stærðarmöguleiki"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Efnahagslegir þættir"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Fjármögnunartækifæri"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Myndbönd og podcast"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-EES kynningarfundur"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Útsetning viðkvæmra hópa fyrir loftslagsáhættu"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "LYKILEGÐIR ESB"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Bara seiglu"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Náttúrulegar lausnir"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Efnahagslegt tjón og banaslys"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Stefnumiðuð markmið 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Framboð á grænum svæðum í þéttbýli fyrir viðkvæma hópa"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Þverþjóðlegt, þjóðlegt, staðbundið"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Loftofnæmisvaldar"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Hiti"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Aðgengi sjúkrahúsa í Evrópu"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "AÐLÖGUN Í SKÓGRÆKNI"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Óson á jörðu niðri"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Ósonspá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Mengun"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Vinnuverndar- og heilsuáhrif"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Starfsáætlun eftirlitsstofnana 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "PM2.5 spá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "PM10 spá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "NO2 spá á jörðu niðri (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 EES skýrsla um loftslag og heilsu"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Evrópskur umhverfis- og heilsuatlas"
 
