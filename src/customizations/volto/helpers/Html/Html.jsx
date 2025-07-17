@@ -127,7 +127,12 @@ class Html extends Component {
               })};`,
             },
           })}
-
+          <link
+            rel="sitemap"
+            type="application/xml"
+            title="Sitemap"
+            href="/sitemap-index.xml"
+          ></link>
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="icon" href="/icon.svg" type="image/svg+xml" />
           <link

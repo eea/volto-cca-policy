@@ -65,7 +65,6 @@ const DirectLinkLogo = ({
  */
 const EEAHeader = (props) => {
   const { pathname, token, items, subsite } = props;
-  const currentLang = useSelector((state) => state.intl.locale);
   const router_pathname = useSelector((state) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
@@ -158,22 +157,6 @@ const EEAHeader = (props) => {
         </Header.TopItem>
 
         <div className="top-header-right-items">
-          <div className="item">
-            <div className="divider text">
-              <Link
-                to={
-                  pathname.includes('/observatory')
-                    ? `/${currentLang}/observatory/sitemap`
-                    : pathname.includes('/mission')
-                    ? `/${currentLang}/mission/sitemap`
-                    : `/${currentLang}/sitemap`
-                }
-              >
-                Sitemap
-              </Link>
-            </div>
-          </div>
-
           {!!headerOpts.partnerLinks && (
             <Header.TopItem>
               <Header.TopDropdownMenu
