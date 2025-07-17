@@ -557,7 +557,7 @@ msgstr "Ebda riżultati"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Lingwi mhux tal-UE"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Reġjun fejn jiġi offrut il-finanzjament"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Storja tal-missjoni"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Għodda tal-missjoni"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Webpage"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Servizzi tal-klima"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Just Reżiljenza"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Aspetti tas-soċjetà"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Aspetti ambjentali"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Aspetti ta' mitigazzjoni"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Analiżi kost-benefiċċju u spejjeż ta 'manutenzjoni"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Potenzjal ta' replikazzjoni/upscaling"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Aspetti ekonomiċi"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Opportunità ta' finanzjament"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Vidjows u podcasts"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-ŻEE Briefing"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "L-espożizzjoni ta' gruppi vulnerabbli għar-riskji klimatiċi"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "AZZJONIJIET EWLENIN TAL-UE"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Reżiljenza biss"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Soluzzjonijiet ibbażati fuq in-natura"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Telf ekonomiku u fatalitajiet"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Għanijiet strateġiċi 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Disponibbiltà ta' spazji ħodor urbani għal gruppi vulnerabbli"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Transnazzjonali, Nazzjonali, lokali"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aero-allerġeni"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Saħħan"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Aċċessibilità ta' sptarijiet fl-Ewropa"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADATTAMENT FIS-SETTUR TAL-FORESTA"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Ożonu fil-livell tal-art"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Tbassir tal-ożonu fil-livell tal-art (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Tniġġis"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Effetti fuq is-sigurtà u s-saħħa fuq il-post tax-xogħol"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Pjan ta' ħidma ta' l-osservatorju għall-2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Tbassir PM2.5 fil-livell tal-art (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Tbassir tal-PM10 fil-livell tal-art (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Tbassir NO2 fil-livell tal-art (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Rapport taż-ŻEE 2022 dwar il-Klima u s-Saħħa"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Atlas Ewropew dwar l-ambjent u s-saħħa"
 

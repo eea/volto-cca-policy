@@ -18,6 +18,8 @@ msgstr "Etkinliğe ilişkin bir arka plan belgesi mevcut"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +44,8 @@ msgstr "Bu Durumda Uygulanan Uyarlama Seçenekleri"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptasyon Sektörleri"
 
@@ -140,6 +144,8 @@ msgstr "Şehir:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "İklim Etkileri"
 
@@ -300,6 +306,8 @@ msgstr "Tam ekran"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -408,6 +416,8 @@ msgstr "Bilgi"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Üçüncü taraflardan gelen öğe"
 
@@ -419,6 +429,8 @@ msgstr "Temel Topluluk Sistemleri"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Anahtar Tipi Ölçü"
 
@@ -557,7 +569,7 @@ msgstr "Sonuç yok"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "AB Dışı Diller"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -709,6 +721,8 @@ msgstr "Gözlemevi Kaynak Kataloğunda Arayın..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Bölüm"
 
@@ -832,6 +846,8 @@ msgstr "Konular:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Ulusötesi bölgeler"
 
@@ -1578,6 +1594,71 @@ msgid "Region where the funding is offered"
 msgstr "Finansmanın sunulduğu bölge"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Görev hikayesi"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Görev aracı"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Web sayfası"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "İklim hizmetleri"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Sadece Dayanıklılık"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Toplumsal yönler"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Çevresel hususlar"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Azaltma yönleri"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Maliyet-fayda analizi ve bakım maliyetleri"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Çoğaltma/yükseltme potansiyeli"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonomik yönler"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Finansman fırsatı"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videolar ve podcast'ler"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Geri Sayımı-AÇA Brifingi"
@@ -2127,107 +2208,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Savunmasız grupların iklim risklerine maruz kalması"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "ANA AB EYLEMLERİ"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Sadece dayanıklılık"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Doğa bazlı çözümler"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Ekonomik kayıplar ve ölümler"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Stratejik hedefler 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Kentsel yeşil alanların hassas grupların kullanımına sunulması"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Ulusötesi, Ulusal, yerel"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aero-alerjenler"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Sıcaklık"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Avrupa'daki hastanelerin erişilebilirliği"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ORMANCILIK SEKTÖRÜNDE UYUM"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Yer seviyesinde ozon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Yer seviyesinde ozon tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Kirlilik"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "İş güvenliği ve sağlığına etkileri"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "2023-24 için gözlemevi çalışma planı"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Yer seviyesinde PM2.5 tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Yer seviyesinde PM10 tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Yer seviyesinde NO2 tahmini (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 AÇA İklim ve Sağlık Raporu"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Avrupa çevre ve sağlık atlası"
 

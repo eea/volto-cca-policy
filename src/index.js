@@ -567,6 +567,21 @@ const applyConfig = (config) => {
     'plone.app.vocabularies.Users'
   ] = SelectAutoCompleteWidget;
 
+  config.settings.matomoTrackerIdFn = (pathname) => {
+    return pathname.split('/')[2] === 'mission'
+      ? {
+          matomoSiteId:
+            typeof window !== 'undefined'
+              ? window.env?.RAZZLE_MATOMO_SITE_ID || '321'
+              : '321',
+          matomoSecondSiteId:
+            typeof window !== 'undefined'
+              ? window.env?.RAZZLE_MATOMO_MISSION_SITE_ID || '321'
+              : '321',
+        }
+      : null;
+  };
+
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };
 

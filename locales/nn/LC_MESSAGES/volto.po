@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,6 +19,8 @@ msgstr "Et bakgrunnsdokument for arrangementet er tilgjengelig"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +45,8 @@ msgstr "Tilpasningsalternativer implementert i dette tilfellet"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Tilpasningssektorer"
 
@@ -81,6 +86,21 @@ msgstr "Hele tiden"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Bakgrunnsinformasjon"
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "Belgia"
+
+#. Default: "Protección de la biodiversidad"
+#: search/vocabulary
+msgid "Biodiversidad"
+msgstr ""
+
+#. Default: "Biodiversity"
+#: search/vocabulary
+msgid "Biodiversity"
+msgstr "Biologisk mangfold"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -140,6 +160,8 @@ msgstr "By:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimapåvirkninger"
 
@@ -293,6 +315,11 @@ msgstr "Utforsk mer på Climate-ADAPT"
 msgid "For more search options"
 msgstr "For flere søkealternativer"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Frankrike"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +327,8 @@ msgstr "Fullskjerm"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,6 +373,11 @@ msgstr "HHWS tilgjengelig (klikk på land for mer informasjon)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Faretype"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr ""
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -408,6 +442,8 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Vare fra tredjeparter"
 
@@ -419,6 +455,8 @@ msgstr "Nøkkelsamfunnssystemer"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Nøkkeltype Mål"
 
@@ -495,7 +533,7 @@ msgstr "Bly"
 #. Default: "Learn more"
 #: components/manage/Blocks/Listing/EventAccordionListingView
 msgid "Learn more"
-msgstr ""
+msgstr "Meer informatie"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -557,7 +595,7 @@ msgstr "Ingen resultater"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Niet-EU-talen"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -575,6 +613,7 @@ msgid "Observatory contributions"
 msgstr "Observatoriebidrag"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatoriepartner"
@@ -709,6 +748,8 @@ msgstr "Søk i Observatory Resource Catalogue..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Del"
 
@@ -822,7 +863,7 @@ msgstr "Datoen refererer til tidspunktet da elementet er utarbeidet eller oppdat
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
-msgstr ""
+msgstr "Dit object is gearchiveerd omdat de inhoud ervan verouderd is. U kunt het nog steeds als verouderd object raadplegen."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -832,6 +873,8 @@ msgstr "Emner:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnasjonale regioner"
 
@@ -840,6 +883,11 @@ msgstr "Transnasjonale regioner"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Type vare"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -895,7 +943,7 @@ msgstr "Hvor"
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
-msgstr ""
+msgstr "officieelIn het Engels"
 
 #. undefined
 
@@ -1169,11 +1217,6 @@ msgstr "Hviterussland"
 
 #. undefined
 
-msgid "Belgium"
-msgstr "Belgia"
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnia-Hercegovina"
 
@@ -1206,11 +1249,6 @@ msgstr "Danmark"
 
 msgid "Estonia"
 msgstr "Estland"
-
-#. undefined
-
-msgid "France"
-msgstr "Frankrike"
 
 #. undefined
 
@@ -1578,6 +1616,71 @@ msgid "Region where the funding is offered"
 msgstr "Region der finansieringen tilbys"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Missieverhaal"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Missietool"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Webpagina"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimaatdiensten"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Gewoon veerkracht"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Maatschappelijke aspecten"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Milieuaspecten"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Mitigatieaspecten"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Kosten-batenanalyse en onderhoudskosten"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replicatie-/opschalingspotentieel"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Economische aspecten"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Financieringsmogelijkheid"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Video's en podcasts"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-EEA Briefing"
@@ -1627,11 +1730,6 @@ msgstr "Årsrapporter"
 #: site_menu:51
 msgid "Balkan-Mediterranean"
 msgstr "Balkan-Middelhavet"
-
-#. undefined
-#: site_menu:30
-msgid "Biodiversity"
-msgstr "Biologisk mangfold"
 
 #. undefined
 #: site_menu:31
