@@ -101,6 +101,15 @@ export const formatTextToHTML = (text) => {
     : `<p>${formattedText}</p>`;
 };
 
+const trimTrailingChars = (str) => {
+  const charsToTrim = ['-', '–', ';', ',', ':', ' '];
+  let end = str.length;
+  while (end > 0 && charsToTrim.includes(str[end - 1])) {
+    end--;
+  }
+  return str.substring(0, end);
+};
+
 export const extractPlanNameAndURL = (text) => {
   if (!text) return { name: '', url: '' };
 
@@ -114,12 +123,8 @@ export const extractPlanNameAndURL = (text) => {
 
   if (url) {
     // Remove URL and any punctuation before it
-    name = name
-      .replace(`(${url})`, '')
-      .replace(url, '')
-      .replace(/[-–;,:\s]+$/, '')
-      .replace(/[-–;,:\s]+$/, '')
-      .trim();
+    name = name.replace(`(${url})`, '').replace(url, '');
+    name = trimTrailingChars(name).trim();
   }
 
   return {

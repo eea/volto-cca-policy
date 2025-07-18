@@ -557,7 +557,7 @@ msgstr "Nincs eredmény"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "EU-n kívüli nyelvek"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Régió, ahol a finanszírozást felajánlják"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Küldetéstörténet"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Küldetés eszköz"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Weboldal"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klíma szolgáltatások"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Csak Rugalmasság"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Társadalmi szempontok"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Környezeti szempontok"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Enyhítési szempontok"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Költség-haszon elemzés és karbantartási költségek"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikációs/felskálázási lehetőség"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Gazdasági szempontok"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Finanszírozási lehetőség"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videók és podcastok"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021. évi Lancet Countdown-EEA tájékoztató"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "A veszélyeztetett csoportok éghajlati kockázatoknak való kitettsége"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "FŐ UNIÓS INTÉZKEDÉSEK"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Méltányos reziliencia"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Természetalapú megoldások"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Gazdasági veszteségek és halálesetek"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Stratégiai célkitűzések 2030-ig"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "A városi zöldterületek elérhetősége a veszélyeztetett csoportok számára"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Transznacionális, nemzeti, helyi"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroallergén anyagok"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Hő"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "A kórházak hozzáférhetősége Európában"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "KIIGAZÍTÁS AZ ERDÉSZETI ÁGAZATBAN"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Talajközeli ózon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Földközeli ózonelőrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Szennyezés"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Munkahelyi biztonsági és egészségvédelmi hatások"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "A megfigyelőközpont 2023–2024-es munkaterve"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Földszinti PM2,5-előrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Földi PM10-előrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Földszinti NO2-előrejelzés (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Az EEA 2022. évi jelentése az éghajlatváltozásról és az egészségügyről"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Európai környezetvédelmi és egészségügyi atlasz"
 

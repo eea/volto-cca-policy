@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { compose } from 'recompose';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
@@ -26,7 +26,10 @@ import cx from 'classnames';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
 function removeTrailingSlash(path) {
-  return path.replace(/\/+$/, '');
+  while (path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+  return path;
 }
 
 /**
@@ -62,7 +65,6 @@ const DirectLinkLogo = ({
  */
 const EEAHeader = (props) => {
   const { pathname, token, items, subsite } = props;
-  const currentLang = useSelector((state) => state.intl.locale);
   const router_pathname = useSelector((state) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
@@ -155,22 +157,6 @@ const EEAHeader = (props) => {
         </Header.TopItem>
 
         <div className="top-header-right-items">
-          <div className="item">
-            <div className="divider text">
-              <Link
-                to={
-                  pathname.includes('/observatory')
-                    ? `/${currentLang}/observatory/sitemap`
-                    : pathname.includes('/mission')
-                    ? `/${currentLang}/mission/sitemap`
-                    : `/${currentLang}/sitemap`
-                }
-              >
-                Sitemap
-              </Link>
-            </div>
-          </div>
-
           {!!headerOpts.partnerLinks && (
             <Header.TopItem>
               <Header.TopDropdownMenu

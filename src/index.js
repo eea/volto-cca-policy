@@ -522,7 +522,7 @@ const applyConfig = (config) => {
     },
     {
       match: {
-        path: /(.*)\/add$/,
+        path: /^.*\/add$/,
       },
       component: RedirectToLogin,
     },
@@ -532,13 +532,13 @@ const applyConfig = (config) => {
     ...config.settings.apiExpanders,
     {
       match: {
-        path: /(.*)\/policy-context\/country-profiles\/(.*)/,
+        path: /\/policy-context\/country-profiles\/.+/,
       },
       GET_CONTENT: ['siblings'],
     },
     {
       match: {
-        path: /(.*)\/countries-regions\/countries\/(.*)/,
+        path: /\/countries-regions\/countries\/.+/,
       },
       GET_CONTENT: ['siblings'],
     },
@@ -566,6 +566,21 @@ const applyConfig = (config) => {
   config.widgets.vocabulary[
     'plone.app.vocabularies.Users'
   ] = SelectAutoCompleteWidget;
+
+  config.settings.matomoTrackerIdFn = (pathname) => {
+    return pathname.split('/')[2] === 'mission'
+      ? {
+          matomoSiteId:
+            typeof window !== 'undefined'
+              ? window.env?.RAZZLE_MATOMO_SITE_ID || '321'
+              : '321',
+          matomoSecondSiteId:
+            typeof window !== 'undefined'
+              ? window.env?.RAZZLE_MATOMO_MISSION_SITE_ID || '321'
+              : '321',
+        }
+      : null;
+  };
 
   return compose(installBlocks, installSearchEngine, installStore)(config);
 };

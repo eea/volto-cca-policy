@@ -557,7 +557,7 @@ msgstr "Nema rezultata"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Jezici izvan EU"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Regija u kojoj se nudi financiranje"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Priča o misiji"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Alat za misiju"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Web stranica"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimatske usluge"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Samo otpornost"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Društveni aspekti"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Ekološki aspekti"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Aspekti ublažavanja"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Analiza isplativosti i troškova održavanja"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Potencijal replikacije/nadgrađivanja"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonomski aspekti"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Mogućnost financiranja"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videozapisi i podcasti"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "Lancet Countdown 2021. Kratko izvješće o EGP-u"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Izloženost ranjivih skupina klimatskim rizicima"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "KLJUČNA DJELOVANJA EU-a"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Pravedna otpornost"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Prirodna rješenja"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Gospodarski gubici i smrtni slučajevi"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Strateški ciljevi za 2030."
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Dostupnost gradskih zelenih površina ranjivim skupinama"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "transnacionalni, nacionalni, lokalni"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroalergeni"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Toplina"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostupnost bolnica u Europi"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "PRILAGODBA U ŠUMARSKOM SEKTORU"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "prizemni ozon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognoza prizemnog ozona (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Onečišćenje"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Učinci na sigurnost i zdravlje na radu"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Plan rada Opservatorija za razdoblje 2023. 2024."
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Prognoza PM2,5 na razini tla (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Prognoza PM10 na razini tla (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Prognoza NO2 na razini tla (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Izvješće Europske agencije za okoliš o klimi i klimi za 2022.; Zdravlje"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Europski atlas okoliša i zdravlja"
 

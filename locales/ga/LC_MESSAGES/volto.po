@@ -557,7 +557,7 @@ msgstr "Gan torthaí"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Teangacha Neamh-AE"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "An réigiún ina bhfuil an maoiniú á thairiscint"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Scéal misean"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Uirlis misean"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Leathanach Gréasáin"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Seirbhísí aeráide"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Just Athléimneacht"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Gnéithe sochaíocha"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Gnéithe comhshaoil"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Gnéithe maolaithe"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Anailís costais is tairbhe agus costais chothabhála"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Poitéinseal macasamhlú/uasghrádaithe"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Gnéithe eacnamaíocha"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Deis maoinithe"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Físeáin agus podchraoltaí"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-EEA Faisnéisiú"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Nochtadh grúpaí leochaileacha do rioscaí aeráide"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "GNÍOMHAÍOCHTAÍ EOCHAIR AE"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Athléimneacht chóir"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Réitigh dhúlrabhunaithe"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Caillteanais eacnamaíocha agus básanna"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Cuspóirí straitéiseacha 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Spásanna glasa uirbeacha a bheith ar fáil do ghrúpaí leochaileacha"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Trasnáisiúnta, Náisiúnta, áitiúil"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aerailléirginí"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Teas"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Inrochtaineacht ospidéal san Eoraip"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Oiriúnú san earnáil talmhaíochta"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Ózón trópaisféarach"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Réamhaisnéis ózóin trópaisféaraigh (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Truailliú"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Éifeachtaí sláinte agus sábháilteachta ceirde"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Plean oibre na Faireachlainne do 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Réamhaisnéis PM2.5 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Réamhaisnéis PM10 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Réamhaisnéis NO2 ar leibhéal na talún (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Tuarascáil 2022 ón nGníomhaireacht Eorpach Chomhshaoil maidir leis an Aeráid agus an tAampa; Sláinte"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Atlas comhshaoil agus sláinte na hEorpa"
 

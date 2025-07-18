@@ -557,7 +557,7 @@ msgstr "Jokių rezultatų"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Ne ES kalbos"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Regionas, kuriame siūlomas finansavimas"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Misijos istorija"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Misijos įrankis"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Tinklalapis"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Klimato paslaugos"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Tiesiog Atsparumas"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Visuomeniniai aspektai"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Aplinkosaugos aspektai"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Sušvelninimo aspektai"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Kaštų ir naudos analizė ir priežiūros išlaidos"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikacijos / padidinimo potencialas"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Ekonominiai aspektai"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Finansavimo galimybė"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Vaizdo įrašai ir podcast'ai"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 m. „Lancet Countdown-EEA“ informacinis pranešimas"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Klimato rizikos poveikis pažeidžiamoms grupėms"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "PAGRINDINIAI ES VEIKSMAI"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Teisingas atsparumas"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Gamtos procesais pagrįsti sprendimai"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Ekonominiai nuostoliai ir žūtys"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "2030 m. strateginiai tikslai"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Žaliųjų miesto erdvių prieinamumas pažeidžiamoms grupėms"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Tarptautinis, nacionalinis, vietinis"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroalerginiai"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Šilumos"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Ligoninių prieinamumas Europoje"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "PRISITAIKYMAS MIŠKININKYSTĖS SEKTORIUJE"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Pažemio ozonas"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Pažemio ozono prognozė (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Tarša"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Poveikis darbuotojų saugai ir sveikatai"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "2023–24 m. observatorijos darbo planas"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Žemės lygio PM2,5 prognozė (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Žemės lygio PM10 prognozė (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Žemės lygio NO2 prognozė (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 m. EAA klimato ir sveikatos ataskaita"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Europos aplinkos ir sveikatos atlasas"
 
