@@ -23,12 +23,13 @@
     "@eeacms/volto-eea-design-system",
     "@eeacms/volto-eea-website-theme",
     "@eeacms/volto-tabs-block",
+    "@eeacms/volto-datablocks",
     "@eeacms/volto-embed",
     "@eeacms/volto-globalsearch"
   ],
   "dependencies": {
     "@eeacms/volto-block-style": "github:eea/volto-block-style#6.x.x",
-    "@eeacms/volto-datablocks": "^7.2.5",
+    "@eeacms/volto-datablocks": "^7.3.2",
     "@eeacms/volto-eea-design-system": "<=1.36.3",
     "@eeacms/volto-eea-website-theme": "^1.35.0",
     "@eeacms/volto-embed": "^9.1.1",
