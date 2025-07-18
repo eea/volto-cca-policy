@@ -34,3 +34,17 @@
     cursor: auto !important;
   }
 }
+
+
+.top-header-right-items {
+  display: flex;
+  gap: 1.5rem;
+
+  a,
+  a:active,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: @dropdownColor;
+  }
+}

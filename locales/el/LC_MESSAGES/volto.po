@@ -557,7 +557,7 @@ msgstr "Κανένα αποτέλεσμα"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Γλώσσες εκτός ΕΕ"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Περιφέρεια όπου προσφέρεται η χρηματοδότηση"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Η ιστορία της αποστολής"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Εργαλείο αποστολής"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Ιστοσελίδα"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Υπηρεσίες για το κλίμα"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Απλά Ανθεκτικότητα"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Κοινωνικές πτυχές"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Περιβαλλοντικές πτυχές"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Πτυχές μετριασμού"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Ανάλυση κόστους-οφέλους και κόστος συντήρησης"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Δυνατότητα αναπαραγωγής/αναβάθμισης"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Οικονομικές πτυχές"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Ευκαιρία χρηματοδότησης"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Βίντεο και podcast"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021 Lancet Countdown-Ενημέρωση ΕΟΧ"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Έκθεση ευάλωτων ομάδων σε κλιματικούς κινδύνους"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "ΒΑΣΙΚΕΣ ΔΡΑΣΕΙΣ ΤΗΣ ΕΕ"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Μόνο ανθεκτικότητα"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Λύσεις βασισμένες στη φύση"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Οικονομικές απώλειες και θάνατοι"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Στρατηγικοί στόχοι 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Διαθεσιμότητα αστικών χώρων πρασίνου σε ευπαθείς ομάδες"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Διακρατικό, Εθνικό, Τοπικό"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Αεροαλλεργιογόνα"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Θερμότητα"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Προσβασιμότητα νοσοκομείων στην Ευρώπη"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ΠΡΟΣΑΡΜΟΓΗ ΣΤΟ ΔΑΣΟΚΟΜΙΚΟ ΤΟΜΕΑ"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Επίγειο όζον"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Πρόβλεψη επίγειου όζοντος (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Ρύπανση"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Επιπτώσεις για την ασφάλεια και την υγεία στην εργασία"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Σχέδιο εργασιών του Παρατηρητηρίου για το 2023-24"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Πρόβλεψη επίγειου PM2,5 (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Πρόβλεψη PM10 σε επίπεδο εδάφους (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Πρόβλεψη NO2 σε επίπεδο εδάφους (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Έκθεση ΕΟΧ 2022 για το κλίμα και την υγεία"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Ευρωπαϊκός άτλαντας περιβάλλοντος και υγείας"
 

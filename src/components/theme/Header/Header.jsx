@@ -30,7 +30,10 @@ import loadable from '@loadable/component';
 const LazyLanguageSwitcher = loadable(() => import('./LanguageSwitch'));
 
 function removeTrailingSlash(path) {
-  return path.replace(/\/+$/, '');
+  while (path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+  return path;
 }
 
 /**
@@ -157,38 +160,40 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
           </Header.TopDropdownMenu>
         </Header.TopItem>
 
-        {!!headerOpts.partnerLinks && (
-          <Header.TopItem>
-            <Header.TopDropdownMenu
-              id="theme-sites"
-              text={headerOpts.partnerLinks.title}
-              aria-label={headerOpts.partnerLinks.title}
-              viewportWidth={width}
-            >
-              <div className="wrapper" tabIndex={0} role={'presentation'}>
-                {headerOpts.partnerLinks.links.map((item, index) => (
-                  <Dropdown.Item key={index}>
-                    <a
-                      href={item.href}
-                      className="site"
-                      target="_blank"
-                      rel="noopener"
-                      onKeyDown={(evt) => evt.stopPropagation()}
-                    >
-                      {item.title}
-                    </a>
-                  </Dropdown.Item>
-                ))}
-              </div>
-            </Header.TopDropdownMenu>
-          </Header.TopItem>
-        )}
-
-        {config.settings.isMultilingual &&
-          config.settings.supportedLanguages.length > 1 &&
-          config.settings.hasLanguageDropdown && (
-            <LazyLanguageSwitcher width={width} history={history} />
+        <div className="top-header-right-items">
+          {!!headerOpts.partnerLinks && (
+            <Header.TopItem>
+              <Header.TopDropdownMenu
+                id="theme-sites"
+                text={headerOpts.partnerLinks.title}
+                aria-label={headerOpts.partnerLinks.title}
+                viewportWidth={width}
+              >
+                <div className="wrapper" tabIndex={0} role={'presentation'}>
+                  {headerOpts.partnerLinks.links.map((item, index) => (
+                    <Dropdown.Item key={index}>
+                      <a
+                        href={item.href}
+                        className="site"
+                        target="_blank"
+                        rel="noopener"
+                        onKeyDown={(evt) => evt.stopPropagation()}
+                      >
+                        {item.title}
+                      </a>
+                    </Dropdown.Item>
+                  ))}
+                </div>
+              </Header.TopDropdownMenu>
+            </Header.TopItem>
           )}
+
+          {config.settings.isMultilingual &&
+            config.settings.supportedLanguages.length > 1 &&
+            config.settings.hasLanguageDropdown && (
+              <LazyLanguageSwitcher width={width} history={history} />
+            )}
+        </div>
       </Header.TopHeader>
       <Header.Main
         pathname={pathname}

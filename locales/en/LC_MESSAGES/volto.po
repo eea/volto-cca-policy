@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr ""
 
 #. undefined
+
+msgid "Mission story"
+msgstr ""
+
+#. undefined
+
+msgid "Mission tool"
+msgstr ""
+
+#. undefined
+
+msgid "Webpage"
+msgstr ""
+
+#. undefined
+
+msgid "Climate services"
+msgstr ""
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr ""
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr ""
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr ""
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr ""
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr ""
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr ""
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr ""

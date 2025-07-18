@@ -193,6 +193,7 @@ const DatabaseItemView = (props) => {
                           width="100%"
                           height="480"
                           src={fixEmbedURL(embed_url, is_cmshare_video)}
+                          type="video/mp4"
                         >
                           <track default kind="captions" srcLang="en" src="" />
                         </video>

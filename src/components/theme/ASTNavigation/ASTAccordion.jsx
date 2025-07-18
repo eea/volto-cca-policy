@@ -2,9 +2,11 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Accordion, List } from 'semantic-ui-react';
 import { useIntl, defineMessages } from 'react-intl';
-import ASTLogoMap from './ASTLogoMap';
-import UASTLogoMap from './UASTLogoMap';
 import cx from 'classnames';
+import loadable from '@loadable/component';
+
+const ASTLogoMap = loadable(() => import('./ASTLogoMap'));
+const UASTLogoMap = loadable(() => import('./UASTLogoMap'));
 
 const messages = defineMessages({
   ast_start_title: {

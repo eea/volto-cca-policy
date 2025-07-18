@@ -20,8 +20,8 @@ export default function LanguageSwitch({ history }) {
   );
   const [, setSelectedLanguage] = useAtom(selectedLanguageAtom);
   const width = useSelector((state) => state.screen?.width);
-
   const currentLang = useSelector((state) => state.intl.locale);
+
   const [language, setLanguage] = React.useState(
     currentLang || eea.defaultLanguage,
   );
@@ -45,7 +45,43 @@ export default function LanguageSwitch({ history }) {
     });
   };
 
-  // .filter((item) => eea.non_eu_langs.indexOf(item.code) !== -1)
+  const renderLanguageItems = (languages) =>
+    languages.map((item, index) => {
+      const translated = (translations || []).some(
+        (obj) => obj.language === item.code,
+      );
+      const active = item.code === currentLang;
+      const disabled = !translated && !active;
+
+      return (
+        <Dropdown.Item
+          className={cx({
+            disabled: disabled,
+            active: active,
+          })}
+          as="li"
+          key={index}
+          text={
+            <span>
+              <span className="country-code">{item.code.toUpperCase()}</span>{' '}
+              {item.name}
+            </span>
+          }
+          onClick={(e) =>
+            disabled || active ? e.preventDefault() : handlePageRedirect(item)
+          }
+        />
+      );
+    });
+
+  const euLanguages = eea.languages.filter(
+    (item) => eea.non_eu_langs.indexOf(item.code) === -1,
+  );
+
+  const nonEuLanguages = eea.languages.filter(
+    (item) => eea.non_eu_langs.indexOf(item.code) !== -1,
+  );
+
   return (
     <Header.TopDropdownMenu
       id="language-switcher"
@@ -56,7 +92,7 @@ export default function LanguageSwitch({ history }) {
       }
       text={`${language.toUpperCase()}`}
       mobileText={`${language.toUpperCase()}`}
-      icon={<Image src={globeIcon} alt="language dropdown globe icon"></Image>}
+      icon={<Image src={globeIcon} alt="language dropdown globe icon" />}
       viewportWidth={width}
     >
       <ul
@@ -64,39 +100,8 @@ export default function LanguageSwitch({ history }) {
         role="listbox"
         aria-label="language switcher"
       >
-        {eea.languages
-          .filter((item) => eea.non_eu_langs.indexOf(item.code) === -1)
-          .map((item, index) => {
-            const translated = (translations || []).some(
-              (obj) => obj.language === item.code,
-            );
-            const active = item.code === currentLang;
-            const disabled = !translated && !active;
+        {renderLanguageItems(euLanguages)}
 
-            return (
-              <Dropdown.Item
-                className={cx({
-                  disabled: disabled,
-                  active: active,
-                })}
-                as="li"
-                key={index}
-                text={
-                  <span>
-                    <span className="country-code">
-                      {item.code.toUpperCase()}
-                    </span>{' '}
-                    {item.name}
-                  </span>
-                }
-                onClick={(e) =>
-                  disabled || active
-                    ? e.preventDefault()
-                    : handlePageRedirect(item)
-                }
-              ></Dropdown.Item>
-            );
-          })}
         <strong className="noneu-langs-label">
           <FormattedMessage
             id="Non-EU Languages"
@@ -104,39 +109,7 @@ export default function LanguageSwitch({ history }) {
           />
         </strong>
 
-        {eea.languages
-          .filter((item) => eea.non_eu_langs.indexOf(item.code) !== -1)
-          .map((item, index) => {
-            const translated = (translations || []).some(
-              (obj) => obj.language === item.code,
-            );
-            const active = item.code === currentLang;
-            const disabled = !translated && !active;
-
-            return (
-              <Dropdown.Item
-                className={cx({
-                  disabled: disabled,
-                  active: active,
-                })}
-                as="li"
-                key={index}
-                text={
-                  <span>
-                    <span className="country-code">
-                      {item.code.toUpperCase()}
-                    </span>{' '}
-                    {item.name}
-                  </span>
-                }
-                onClick={(e) =>
-                  disabled || active
-                    ? e.preventDefault()
-                    : handlePageRedirect(item)
-                }
-              ></Dropdown.Item>
-            );
-          })}
+        {renderLanguageItems(nonEuLanguages)}
       </ul>
     </Header.TopDropdownMenu>
   );

@@ -557,7 +557,7 @@ msgstr "Tulemusi pole"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Euroopa Liidu välised keeled"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1578,6 +1578,71 @@ msgid "Region where the funding is offered"
 msgstr "Piirkond, kus rahastatakse"
 
 #. undefined
+
+msgid "Mission story"
+msgstr "Missiooni lugu"
+
+#. undefined
+
+msgid "Mission tool"
+msgstr "Missiooni tööriist"
+
+#. undefined
+
+msgid "Webpage"
+msgstr "Veebileht"
+
+#. undefined
+
+msgid "Climate services"
+msgstr "Kliimateenused"
+
+#. undefined
+
+msgid "Just Resilience"
+msgstr "Lihtsalt vastupidavus"
+
+#. undefined
+
+msgid "Societal aspects"
+msgstr "Ühiskondlikud aspektid"
+
+#. undefined
+
+msgid "Environmental aspects"
+msgstr "Keskkonnaaspektid"
+
+#. undefined
+
+msgid "Mitigation aspects"
+msgstr "Leevenduslikud aspektid"
+
+#. undefined
+
+msgid "Cost-benefit analysis and maintenance costs"
+msgstr "Tasuvusanalüüs ja hoolduskulud"
+
+#. undefined
+
+msgid "Replication/upscaling potential"
+msgstr "Replikatsiooni/ülesskaleerimise potentsiaal"
+
+#. undefined
+
+msgid "Economic aspects"
+msgstr "Majanduslikud aspektid"
+
+#. undefined
+
+msgid "Funding oportunity"
+msgstr "Rahastamise võimalus"
+
+#. undefined
+
+msgid "Videos and podcasts"
+msgstr "Videod ja taskuhäälingusaated"
+
+#. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
 msgstr "2021. aasta ülevaade Lancetist – Euroopa Keskkonnaameti ülevaade"
@@ -2127,107 +2192,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Haavatavate rühmade kokkupuude kliimariskidega"
 
 #. undefined
-#: 
+#:
 msgid "KEY EU ACTIONS"
 msgstr "Peamised ELi meetmed"
 
 #. undefined
-#: 
+#:
 msgid "Just resilience"
 msgstr "Õiglane vastupanuvõime"
 
 #. undefined
-#: 
+#:
 msgid "Nature-based solutions"
 msgstr "Looduspõhised lahendused"
 
 #. undefined
-#: 
+#:
 msgid "Economic losses and fatalities"
 msgstr "Majanduslik kahju ja surmajuhtumid"
 
 #. undefined
-#: 
+#:
 msgid "Strategic objectives 2030"
 msgstr "Strateegilised eesmärgid 2030"
 
 #. undefined
-#: 
+#:
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Linna rohealade kättesaadavus haavatavatele rühmadele"
 
 #. undefined
-#: 
+#:
 msgid "Transnational, National, local"
 msgstr "Riikidevaheline, riiklik, kohalik"
 
 #. undefined
-#: 
+#:
 msgid "Aero-allergens"
 msgstr "Aeroallergeenid"
 
 #. undefined
-#: 
+#:
 msgid "Heat"
 msgstr "Soojus"
 
 #. undefined
-#: 
+#:
 msgid "Accessibility of hospitals in Europe"
 msgstr "Haiglate juurdepääsetavus Euroopas"
 
 #. undefined
-#: 
+#:
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Kohanemine metsandussektoris"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone"
 msgstr "Troposfääriosoon"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Troposfääriosooni prognoos (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Pollution"
 msgstr "Saaste"
 
 #. undefined
-#: 
+#:
 msgid "Occupational safety and health effects"
 msgstr "Mõju tööohutusele ja töötervishoiule"
 
 #. undefined
-#: 
+#:
 msgid "Observatory workplan for 2023-24"
 msgstr "Vaatluskeskuse töökava aastateks 2023–2024"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "PM2,5-osakeste prognoos maapinna tasandil (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "PM10-osakeste prognoos maapinna tasandil (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Maapealne NO2 prognoos (CAMS)"
 
 #. undefined
-#: 
+#:
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Euroopa Keskkonnaameti 2022. aasta aruanne „Climate & Health“"
 
 #. undefined
-#: 
+#:
 msgid "European environment and health atlas"
 msgstr "Euroopa keskkonna- ja terviseatlas"
 
