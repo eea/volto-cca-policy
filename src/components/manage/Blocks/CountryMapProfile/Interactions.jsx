@@ -77,17 +77,21 @@ export const Interactions = ({
         euCountryNames.includes(feature.get('na'))
       ) {
         let countryName = feature.get('na');
+        let baseUrlPath = baseUrl;
+        if (!baseUrlPath.includes('countries-regions/countries/')) {
+          baseUrlPath = baseUrlPath + '/countries-regions/countries';
+        }
         let noDataReportedMsg = `
           No data reported through the reporting mechanism of the Governance Regulation.
           Last information is available
-          <a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
+          <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
 
         if (countryName === 'Türkiye') {
           countryName = 'Turkiye';
           noDataReportedMsg = `
             Data reported in 2021 through the reporting mechanism of the Governance Regulation.
             Information is available
-            <a href="${baseUrl}/${countryName.toLowerCase()}">here</a>`;
+            <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
         }
 
         if (!Object.hasOwn(countries_metadata[0], countryName)) {
