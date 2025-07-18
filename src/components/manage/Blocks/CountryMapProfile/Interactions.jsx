@@ -40,6 +40,40 @@ export const Interactions = ({
       if (
         countries_metadata.length > 0 &&
         feature &&
+        [
+          'Bosnia and Herzegovina',
+          'Montenegro',
+          'Albania',
+          'North Macedonia',
+          'Kosovo',
+        ].includes(feature.get('na'))
+      ) {
+        console.log('CONSOLE LOG', feature.get('na'));
+        map.getTargetElement().style.cursor = 'pointer';
+        let countryName = feature.get('na');
+        const node = tooltipRef.current;
+        const flag = feature.get('flag').src;
+        const cn = countryName.toLowerCase();
+        let tooltipContent = 'Information was not reported in 2025.';
+        if (countryName == 'Kosovo') {
+          tooltipContent =
+            tooltipContent +
+            '<hr>This designation is without prejudice to positions on status, and is in line with UNSCR 1244/99 and the ICJ opinion on Kosovo Declaration of Independence';
+        }
+        let tooltipContentDiv = `
+          <div class="country-tooltip">
+            <div id="country-name">
+              <h3>${countryName}</h3>
+              <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
+            </div>
+            <div class="tooltip-content"><span>${tooltipContent}</span></div>
+          </div>`;
+
+        setTooltipVisibility(node, tooltipContentDiv, domEvt, true);
+      }
+      if (
+        countries_metadata.length > 0 &&
+        feature &&
         euCountryNames.includes(feature.get('na'))
       ) {
         let countryName = feature.get('na');

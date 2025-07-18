@@ -41,7 +41,7 @@ const View = (props) => {
     'National adaption policy',
   );
   const countries_metadata_url =
-    '/en/countries-regions/countries/@@countries-metadata-extract?langflag=1';
+    '/en/countries-regions/countries/@@countries-metadata-extract-2025?langflag=1';
   const countries_metadata = useCountriesMetadata(
     addAppURL(countries_metadata_url),
   );
@@ -108,10 +108,10 @@ const View = (props) => {
           {tileWMSSources ? (
             <Map
               view={{
-                center: ol.proj.fromLonLat([11, 50], projection),
+                center: ol.proj.fromLonLat([14.5, 57], projection),
                 projection,
                 showFullExtent: true,
-                zoom: 3.8,
+                zoom: 3.3,
               }}
               pixelRatio={1}
             >
