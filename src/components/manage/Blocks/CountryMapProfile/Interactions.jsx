@@ -48,14 +48,12 @@ export const Interactions = ({
           'Kosovo',
         ].includes(feature.get('na'))
       ) {
-        console.log('CONSOLE LOG', feature.get('na'));
         map.getTargetElement().style.cursor = 'pointer';
         let countryName = feature.get('na');
         const node = tooltipRef.current;
         const flag = feature.get('flag').src;
-        const cn = countryName.toLowerCase();
         let tooltipContent = 'Information was not reported in 2025.';
-        if (countryName == 'Kosovo') {
+        if (countryName === 'Kosovo') {
           tooltipContent =
             tooltipContent +
             '<hr>This designation is without prejudice to positions on status, and is in line with UNSCR 1244/99 and the ICJ opinion on Kosovo Declaration of Independence';
