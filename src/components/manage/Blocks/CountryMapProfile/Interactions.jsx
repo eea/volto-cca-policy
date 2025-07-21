@@ -93,6 +93,11 @@ export const Interactions = ({
             <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
         }
 
+        if (countryName === 'Switzerland') {
+          noDataReportedMsg = `
+          <span>National Adaptation Strategy </span><ul><li><a href="https://www.bafu.admin.ch/bafu/en/home/topics/climate/publications-studies/publications/adaptation-climate-change-switzerland-2012.html">Adaptation to climate change in Switzerland - First part of the Federal Councils strategy</a><p style="font-style:oblique;">Aadopted</p></li></ul><span>National Adaptation Plan </span><ul><li><a href="https://www.bafu.admin.ch/bafu/de/home/themen/klima/publikationen-studien/publikationen/anpassung-klimawandel-schweiz-aktionsplan-2020-2025.html">Adaptation to climate change in Switzerland: Action Plan 2020-2025</a><p style="font-style:oblique;">Adopted</p></li></ul>`;
+        }
+
         if (!Object.hasOwn(countries_metadata[0], countryName)) {
           return;
         }
