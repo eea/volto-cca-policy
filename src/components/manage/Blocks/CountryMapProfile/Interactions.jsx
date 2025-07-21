@@ -52,7 +52,8 @@ export const Interactions = ({
         let countryName = feature.get('na');
         const node = tooltipRef.current;
         const flag = feature.get('flag').src;
-        let tooltipContent = 'Information was not reported in 2025.';
+        let tooltipContent =
+          'No data reported through the reporting mechanism of the adapted Governance Regulation for the Energy Community\'s Contracting Parties. More information is available <a href="https://www.energy-community.org/">here</a>.';
         if (countryName === 'Kosovo') {
           tooltipContent =
             tooltipContent +
