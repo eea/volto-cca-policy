@@ -80,14 +80,18 @@ export const makeStyles = (highlight, ol) => {
     ];
     const countriesCoopereting = ['RS', 'BA', 'MK', 'ME', 'AL', 'XK'];
     const countriesEastern = ['UA', 'MO', 'MD', 'GE'];
-    if (countriesUE.includes(countryCode)) {
-      return new ol.style.Fill({ color: '#007b6C' });
+    const countriesEEAMemberCountries = ['IS', 'NO', 'CH', 'LI', 'TR'];
+    if (countriesEEAMemberCountries.includes(countryCode)) {
+      return new ol.style.Fill({ color: '#50B0A4' });
     }
     if (countriesCoopereting.includes(countryCode)) {
-      return new ol.style.Fill({ color: '#004B7F' });
+      return new ol.style.Fill({ color: '#A0E5DC' });
     }
     if (countriesEastern.includes(countryCode)) {
-      return new ol.style.Fill({ color: 'rgb(159, 214, 255, 1)' });
+      return new ol.style.Fill({ color: '#C8FFF8' });
+    }
+    if (countriesUE.includes(countryCode)) {
+      return new ol.style.Fill({ color: '#007B6C' });
     }
     return fill;
   };
