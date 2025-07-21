@@ -46,7 +46,7 @@ const SelectSubRegions = (props) => {
         multiple
         selection
         options={availableRegions}
-        value={regions}
+        value={regions || []}
         onChange={handleSelect}
       />
     </div>
@@ -74,7 +74,7 @@ const SelectMacroRegions = (props) => {
         multiple
         selection
         options={WIDGET_MACRO_TRANS_REGIONS}
-        value={regions}
+        value={regions || []}
         onChange={handleSelect}
       />
     </div>
@@ -92,7 +92,7 @@ const SelectBioRegions = (props) => {
         multiple
         selection
         options={WIDGET_BIOGEOGRAPHICAL_REGIONS}
-        value={regions}
+        value={regions || []}
         onChange={handleSelect}
       />
     </div>
@@ -147,7 +147,7 @@ const GeocharsWidget = (props) => {
   if (value !== null) {
     geoElements = JSON.parse(value).geoElements;
   } else {
-    geoElements = DEFAULT_GEOCHARS;
+    geoElements = DEFAULT_GEOCHARS.geoElements;
   }
 
   const element = geoElements.element;
