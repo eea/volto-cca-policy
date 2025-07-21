@@ -76,6 +76,7 @@ export const Interactions = ({
         euCountryNames.includes(feature.get('na'))
       ) {
         let countryName = feature.get('na');
+        let countryNamePrint = feature.get('na');
         let baseUrlPath = baseUrl;
         if (!baseUrlPath.includes('countries-regions/countries/')) {
           baseUrlPath = baseUrlPath + '/countries-regions/countries';
@@ -123,10 +124,13 @@ export const Interactions = ({
         const node = tooltipRef.current;
         const flag = feature.get('flag').src;
         const cn = countryName.toLowerCase();
+        if (countryNamePrint === 'Moldova') {
+          countryNamePrint = 'Republic of Moldova';
+        }
         let tooltipContentDiv = `
           <div class="country-tooltip">
             <div id="country-name">
-              <a href="/en/countries-regions/countries/${cn}"><h3>${countryName}</h3></a>
+              <a href="/en/countries-regions/countries/${cn}"><h3>${countryNamePrint}</h3></a>
               <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
             </div>
             <div class="tooltip-content">${tooltipContent}</div>
