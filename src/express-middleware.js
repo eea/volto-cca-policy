@@ -34,6 +34,7 @@ export default function (config) {
     [
       '**/@@case-studies-map.arcgis.json',
       '**@countries-metadata-extract',
+      '**@countries-metadata-extract-2025',
       '**@@countries-heat-index-json',
       '**@@translate-this-async',
     ],
