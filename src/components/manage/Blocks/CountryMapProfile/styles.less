@@ -97,7 +97,7 @@
     }
 
     .no-focus {
-      background-color: #efe7d4;
+      background-color: #fff;
     }
 
     .country-notreported {
@@ -107,16 +107,28 @@
     .country-none,
     .country-outside {
       border: 1px solid #ddd;
-      background-color: #fbfae6;
+      background-color: #fff;
     }
+  }
+
+  .country-eea-eu-member {
+    background-color: #007b6c;
+  }
+
+  .country-eea-member {
+    background-color: #50b0a4;
+  }
+
+  .country-eea-coopereting {
+    background-color: #a0e5dc;
+  }
+
+  .country-eastern {
+    background-color: #c8fff8;
   }
 
   .legend.nasnap-legend {
     display: block;
-
-    .country-nasnap {
-      background-color: #004b7f;
-    }
 
     .country-nas {
       background-color: #78d9fc;
@@ -131,7 +143,7 @@
     }
 
     .country-nodata {
-      background-color: #efe7d4;
+      background-color: #fff;
     }
   }
 
@@ -149,13 +161,13 @@
     }
 
     .country-not-specified {
-      background-color: #fff3ac;
+      background-color: #fff;
     }
 
     .country-none,
     .country-outside {
       border: 1px solid #ddd;
-      background-color: #fbfae6;
+      background-color: #fff;
     }
 
     .country-noportal {
@@ -216,7 +228,7 @@
   }
 
   .country-outline.ue path:hover {
-    fill: #8a9c3a;
+    fill: #005248;
   }
 
   // Tooltip for countries
@@ -247,10 +259,18 @@
 
     #country-name {
       padding-bottom: 2em;
+
+      h3 {
+        color: #000;
+      }
     }
 
     p:empty {
       display: none;
+    }
+
+    .tooltip-content {
+      color: #000;
     }
   }
 
