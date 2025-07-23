@@ -21,4 +21,3 @@ Also added `unwrapDivs()`:
 - Unwraps `<div>` elements
 - Wraps loose text nodes in `<p>` tags
 - Ensures imported HTML is editable in the Slate editor
-
