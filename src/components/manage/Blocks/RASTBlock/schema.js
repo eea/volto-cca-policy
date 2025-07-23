@@ -1,6 +1,6 @@
 const fields = ['root_path', 'skip_items', 'show_subfolders'];
 
-export default {
+const schema = {
   title: 'RAST',
 
   fieldsets: [
@@ -37,3 +37,5 @@ export default {
 
   required: [],
 };
+
+export default schema;

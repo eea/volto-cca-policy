@@ -2,12 +2,12 @@ import React from 'react';
 import { find } from 'lodash';
 import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
+import config from '@plone/volto/registry';
 import cx from 'classnames';
-import { FormattedMessage } from 'react-intl';
 
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 

@@ -39,11 +39,7 @@ export const slateBeforeEach = (contentType = 'Document') => {
     path: 'cypress',
   });
   cy.visit('/cypress/my-page');
-  // cy.waitForResourceToLoad('@navigation');
   // The breadcrumb is auto-expanded.
-  // cy.waitForResourceToLoad('@breadcrumbs');
-  // cy.waitForResourceToLoad('@actions');
-  // cy.waitForResourceToLoad('@types');
   // cy.waitForResourceToLoad('my-page');
   cy.wait('@content');
   cy.navigate('/cypress/my-page/edit');

@@ -1,4 +1,4 @@
-export default {
+const schema = {
   title: 'Flourish visualization block',
   fieldsets: [
     {
@@ -15,3 +15,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;

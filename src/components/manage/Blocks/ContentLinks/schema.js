@@ -23,7 +23,7 @@ const Item = () => ({
   required: ['title'],
 });
 
-export default {
+const schema = {
   title: 'Content links',
   fieldsets: [
     {
@@ -45,3 +45,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;

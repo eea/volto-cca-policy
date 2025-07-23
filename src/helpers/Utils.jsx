@@ -111,7 +111,20 @@ export const BannerTitle = (props) => {
   } = config;
   const TitleBlockView = blocksConfig?.title?.view;
 
-  return <TitleBlockView {...props} data={data} metadata={content} />;
+  const blockData = {
+    '@type': 'title',
+    ...data,
+  };
+
+  return (
+    <TitleBlockView
+      {...props}
+      data={blockData}
+      metadata={content}
+      properties={content}
+      blocksConfig={blocksConfig}
+    />
+  );
 };
 
 export const ReferenceInfo = (props) => {
@@ -424,7 +437,7 @@ export const WebDetails = (props) => {
         <FormattedMessage id="Web" defaultMessage="Web" />
       </h4>
       <p>
-        <a href={eventUrl} target="_blank">
+        <a href={eventUrl} target="_blank" rel="noopener">
           <FormattedMessage
             id="Visit external website"
             defaultMessage="Visit external website"
