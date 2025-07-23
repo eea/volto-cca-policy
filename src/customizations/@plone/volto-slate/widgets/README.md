@@ -15,3 +15,5 @@ and this:
 ```js
 let data = deserialize(editor, body, { collapseWhitespace: true });
 ```
+
+Also added unwrapTopLevelDivs() to unwrap <div> elements and wrap text nodes in <p> before deserialization, ensuring imported HTML is editable in the Slate editor.
