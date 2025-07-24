@@ -16,8 +16,4 @@ and this:
 let data = deserialize(editor, body, { collapseWhitespace: true });
 ```
 
-Also added `unwrapDivs()`:
-
-- Unwraps `<div>` elements
-- Wraps loose text nodes in `<p>` tags
-- Ensures imported HTML is editable in the Slate editor
+Also added `unwrapDivs()` to unwrap `<div>` elements and wrap loose text nodes in `<p>` before deserialization. This fixes issues where content inside `<div>` tags was not recognized by the Slate editor and appeared empty or uneditable in edit mode.
