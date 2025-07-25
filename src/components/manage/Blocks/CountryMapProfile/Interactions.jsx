@@ -130,7 +130,7 @@ export const Interactions = ({
         let tooltipContentDiv = `
           <div class="country-tooltip">
             <div id="country-name">
-              <a href="/en/countries-regions/countries/${cn}"><h3>${countryNamePrint}</h3></a>
+              <a href="/en/countries-regions/countries/${cn}" target="_blank"><h3>${countryNamePrint}</h3></a>
               <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
             </div>
             <div class="tooltip-content">${tooltipContent}</div>

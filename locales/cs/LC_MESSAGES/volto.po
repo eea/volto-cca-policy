@@ -18,6 +18,8 @@ msgstr "K dispozici je podkladový dokument akce"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +44,8 @@ msgstr "Možnosti adaptace implementované v tomto případě"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptační sektory"
 
@@ -81,6 +85,11 @@ msgstr "Celou dobu"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Základní informace"
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "Belgie"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -140,6 +149,8 @@ msgstr "Město:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Dopady klimatu"
 
@@ -268,10 +279,30 @@ msgstr "Sem přetáhněte soubory..."
 msgid "Duration:"
 msgstr "Trvání:"
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr "Spolupracující země EHP a smluvní strany Energetického společenství"
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr "Členské země EHP"
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr "Členské státy EU a členské země EHP"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
 msgstr "financování EU"
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr "Členové východního partnerství a smluvní strany Energetického společenství"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -293,6 +324,11 @@ msgstr "Prozkoumejte více na Climate-ADAPT"
 msgid "For more search options"
 msgstr "Pro více možností vyhledávání"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Francie"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +336,8 @@ msgstr "Celá obrazovka"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,6 +382,11 @@ msgstr "HHWS k dispozici (klikněte na zemi pro další informace)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Typ nebezpečí"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Zdravotní dopady"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -408,6 +451,8 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Položka od třetích stran"
 
@@ -419,6 +464,8 @@ msgstr "Klíčové komunitní systémy"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Měření typu klíče"
 
@@ -495,7 +542,7 @@ msgstr "Vést"
 #. Default: "Learn more"
 #: components/manage/Blocks/Listing/EventAccordionListingView
 msgid "Learn more"
-msgstr ""
+msgstr "Zjistěte více"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -575,6 +622,7 @@ msgid "Observatory contributions"
 msgstr "Příspěvky observatoře"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner observatoře"
@@ -623,6 +671,11 @@ msgstr "Praktické informace"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informace o projektu"
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
+msgstr "Odkaz na publikaci"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
@@ -709,6 +762,8 @@ msgstr "Prohledejte katalog zdrojů observatoře..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Sekce"
 
@@ -822,7 +877,7 @@ msgstr "Datum se vztahuje k okamžiku, kdy byla položka připravena nebo aktual
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
-msgstr ""
+msgstr "Tento objekt byl archivován, protože jeho obsah je zastaralý. Stále k němu můžete přistupovat jako ke starší verzi."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -832,6 +887,8 @@ msgstr "témata:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Nadnárodní regiony"
 
@@ -840,6 +897,11 @@ msgstr "Nadnárodní regiony"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Typ položky"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Typy"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -850,6 +912,11 @@ msgstr "Aktualizace poznámek"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Požadavky uživatele"
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
+msgstr "Video"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -895,7 +962,7 @@ msgstr "Kde"
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
-msgstr ""
+msgstr "oficiálně v angličtině"
 
 #. undefined
 
@@ -1169,11 +1236,6 @@ msgstr "Bělorusko"
 
 #. undefined
 
-msgid "Belgium"
-msgstr "Belgie"
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr "Bosna a Hercegovina"
 
@@ -1206,11 +1268,6 @@ msgstr "Dánsko"
 
 msgid "Estonia"
 msgstr "Estonsko"
-
-#. undefined
-
-msgid "France"
-msgstr "Francie"
 
 #. undefined
 
@@ -2192,107 +2249,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Expozice zranitelných skupin klimatickým rizikům"
 
 #. undefined
-#:
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "KLÍČOVÁ OPATŘENÍ EU"
 
 #. undefined
-#:
+#: 
 msgid "Just resilience"
 msgstr "Spravedlivá odolnost"
 
 #. undefined
-#:
+#: 
 msgid "Nature-based solutions"
 msgstr "Řešení inspirovaná přírodou"
 
 #. undefined
-#:
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Ekonomické ztráty a úmrtí"
 
 #. undefined
-#:
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Strategické cíle do roku 2030"
 
 #. undefined
-#:
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Dostupnost městské zeleně pro zranitelné skupiny"
 
 #. undefined
-#:
+#: 
 msgid "Transnational, National, local"
 msgstr "Nadnárodní, národní, místní"
 
 #. undefined
-#:
+#: 
 msgid "Aero-allergens"
 msgstr "Aeroalergenní látky"
 
 #. undefined
-#:
+#: 
 msgid "Heat"
 msgstr "Teplo"
 
 #. undefined
-#:
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostupnost nemocnic v Evropě"
 
 #. undefined
-#:
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "Úprava v lesním odvětví"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone"
 msgstr "Přízemní ozon"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognóza přízemního ozonu (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Pollution"
 msgstr "Znečištění"
 
 #. undefined
-#:
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Účinky na bezpečnost a ochranu zdraví při práci"
 
 #. undefined
-#:
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Pracovní plán observatoře na období 2023–2024"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Přízemní předpověď PM2,5 (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Přízemní předpověď PM10 (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Prognóza NO2 na úrovni terénu (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Zpráva Evropské agentury pro životní prostředí (EEA) z roku 2022 o klimatu a amp; zdraví"
 
 #. undefined
-#:
+#: 
 msgid "European environment and health atlas"
 msgstr "Evropský atlas životního prostředí a zdraví"
 

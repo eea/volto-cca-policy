@@ -18,6 +18,8 @@ msgstr ""
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +44,8 @@ msgstr ""
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr ""
 
@@ -80,6 +84,11 @@ msgstr ""
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
+msgstr ""
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
 msgstr ""
 
 #. Default: "Biogeographical regions:"
@@ -140,6 +149,8 @@ msgstr ""
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr ""
 
@@ -268,9 +279,29 @@ msgstr ""
 msgid "Duration:"
 msgstr ""
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr ""
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr ""
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr ""
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
+msgstr ""
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr ""
 
 #. Default: "Eligible to receive funding"
@@ -293,6 +324,11 @@ msgstr ""
 msgid "For more search options"
 msgstr ""
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr ""
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +336,8 @@ msgstr ""
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -343,6 +381,11 @@ msgstr ""
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
+msgstr ""
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
 msgstr ""
 
 #. Default: "Health impact:"
@@ -408,6 +451,8 @@ msgstr ""
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr ""
 
@@ -419,6 +464,8 @@ msgstr ""
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr ""
 
@@ -575,6 +622,7 @@ msgid "Observatory contributions"
 msgstr ""
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr ""
@@ -622,6 +670,11 @@ msgstr ""
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
+msgstr ""
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
 msgstr ""
 
 #. Default: "Publications and Reports Documents"
@@ -709,6 +762,8 @@ msgstr ""
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr ""
 
@@ -832,6 +887,8 @@ msgstr ""
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr ""
 
@@ -839,6 +896,11 @@ msgstr ""
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
+msgstr ""
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
 msgstr ""
 
 #. Default: "Updating notes"
@@ -849,6 +911,11 @@ msgstr ""
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
+msgstr ""
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
@@ -1169,11 +1236,6 @@ msgstr ""
 
 #. undefined
 
-msgid "Belgium"
-msgstr ""
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
@@ -1205,11 +1267,6 @@ msgstr ""
 #. undefined
 
 msgid "Estonia"
-msgstr ""
-
-#. undefined
-
-msgid "France"
 msgstr ""
 
 #. undefined
