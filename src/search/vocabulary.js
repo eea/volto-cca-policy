@@ -1,4 +1,16 @@
 import { eea_languages } from '@eeacms/volto-cca-policy/constants';
+import { defineMessages } from 'react-intl';
+
+defineMessages({
+  publicationReference: {
+    id: 'Publication reference',
+    defaultMessage: 'Publications and reports',
+  },
+  video: {
+    id: 'Video',
+    defaultMessage: 'Videos and podcasts',
+  },
+});
 
 export const vocab = {
   cluster_name: {

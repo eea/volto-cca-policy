@@ -36,30 +36,14 @@ export const clusters = {
   })),
 };
 
-// console.log('clusters default', clusters, build_runtime_mappings(clusters));
-// console.log(
-//   'clusters mission',
-//   clusters_mission,
-//   build_runtime_mappings(clusters_mission),
-// );
-
 const cca_build_runtime_mappings = {};
 cca_build_runtime_mappings['op_cluster'] = {
   type: 'keyword',
   script: {
     source:
-      // "emit('_all_'); if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')} if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {emit('Climate-ADAPT')}",
-      // "emit('_all_'); if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')} if (doc['cca_include_in_mission.keyword'][0].toString() == 'true' or (doc['id.keyword'].length==1 and doc['id.keyword'][0].toString().indexOf('https://climate-adapt.eea.europa.eu/en/mission')==0)) {emit('Mission Portal')} else {emit('Climate adapt')}",
-      // "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {emit('Health Observatory')}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
       "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)){emit('Health Observatory')}}}}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
   },
 };
-
-// const mapping = {};
-// mapping[settings.name] = {
-//   type: 'keyword',
-//   script: { source: source },
-// };
 
 export default function installMainSearch(config) {
   const envConfig = ccaConfig;
@@ -68,8 +52,6 @@ export default function installMainSearch(config) {
   envConfig.app_name = pjson.name;
   envConfig.app_version = pjson.version;
 
-  // console.log('config.searchui.ccaSearch clusers', clusters);
-  // debugger;
   config.searchui.ccaSearch = {
     ...mergeConfig(envConfig, config.searchui.globalsearchbase),
     elastic_index: '_es/globalsearch',
@@ -101,38 +83,7 @@ export default function installMainSearch(config) {
     },
   });
 
-  // ccaSearch.permanentFilters.push((filters) => {
-  //   const hasLanguageFilter = filters.find(({ field }) => field === 'language');
-  //   console.log('permanentFilters', hasLanguageFilter, filters);
-  //   if (!hasLanguageFilter) {
-  //     return {
-  //       terms: {
-  //         language: ['en'],
-  //       },
-  //     };
-  //   }
-  //   return null;
-  // });
-
-  // ccaSearch.permanentFilters.push({
-  //   terms: {
-  //     objectProvides: [
-  //       'Adaptation option',
-  //       'Case study',
-  //       'Guidance',
-  //       'Video',
-  //       'Indicator',
-  //       'Information portal',
-  //       'Organisation',
-  //       'Publication reference',
-  //       'Research and knowledge project',
-  //       'Tool',
-  //     ],
-  //   },
-  // });
-
   ccaSearch.facets = facets;
-  // console.log('ccaSearch.facets', ccaSearch.facets);
 
   ccaSearch.initialView.tilesLandingPageParams.sections = [
     {
@@ -196,24 +147,6 @@ export default function installMainSearch(config) {
         className: 'facet-option-icon',
       },
     },
-    // {
-    //   id: 'language',
-    //   title: 'Languages',
-    //   facetField: 'language',
-    //   sortOn: 'custom',
-    //   sortOrder: 'asc',
-    // },
-    // {
-    //   id: 'website',
-    //   title: 'Websites',
-    //   facetField: 'cluster_name',
-    //   sortOn: 'count',
-    //   sortOrder: 'desc',
-    //   icon: {
-    //     family: 'Sources',
-    //     className: 'facet-option-icon',
-    //   },
-    // },
   ];
 
   if (typeof window !== 'undefined') {

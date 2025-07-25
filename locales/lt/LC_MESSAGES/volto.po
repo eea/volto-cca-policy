@@ -18,6 +18,8 @@ msgstr "Galimas renginio foninis dokumentas"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +44,8 @@ msgstr "Šiuo atveju pritaikytos parinktys"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Prisitaikymo sektoriai"
 
@@ -81,6 +85,11 @@ msgstr "Visą laiką"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Fono informacija"
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "Belgija"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -140,6 +149,8 @@ msgstr "Miestas:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimato poveikis"
 
@@ -268,10 +279,30 @@ msgstr "Numeskite failus čia..."
 msgid "Duration:"
 msgstr "Trukmė:"
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr "EEE bendradarbiaujančios šalys ir Energijos bendrijos susitariančiosios šalys"
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr "EEE šalys narės"
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr "ES valstybės narės ir EEE šalys narės"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
 msgstr "ES finansavimo"
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr "Rytų partnerystės nariai ir Energijos bendrijos susitariančiosios šalys"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -293,6 +324,11 @@ msgstr "Sužinokite daugiau apie Climate-ADAPT"
 msgid "For more search options"
 msgstr "Norėdami gauti daugiau paieškos parinkčių"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Prancūzija"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +336,8 @@ msgstr "Visas ekranas"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,6 +382,11 @@ msgstr "Galimas HHWS (daugiau informacijos spustelėkite šalį)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Pavojaus tipas"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Poveikis sveikatai"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -408,6 +451,8 @@ msgstr "Informacija"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Prekė iš trečiųjų šalių"
 
@@ -419,6 +464,8 @@ msgstr "Pagrindinės bendruomenės sistemos"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Rakto tipo priemonė"
 
@@ -495,7 +542,7 @@ msgstr "Švinas"
 #. Default: "Learn more"
 #: components/manage/Blocks/Listing/EventAccordionListingView
 msgid "Learn more"
-msgstr ""
+msgstr "Sužinokite daugiau"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -575,6 +622,7 @@ msgid "Observatory contributions"
 msgstr "Observatorijos įnašai"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatorijos partneris"
@@ -623,6 +671,11 @@ msgstr "Praktinė informacija"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informacija apie projektą"
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
+msgstr "Leidinio nuoroda"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
@@ -709,6 +762,8 @@ msgstr "Ieškoti Observatorijos išteklių kataloge..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Skyrius"
 
@@ -822,7 +877,7 @@ msgstr "Data nurodo momentą, kai elementą parengė arba atnaujino prisidedanty
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
-msgstr ""
+msgstr "Šis objektas buvo suarchyvuotas, nes jo turinys pasenęs. Vis tiek galite jį pasiekti kaip palikimą."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -832,6 +887,8 @@ msgstr "Temos:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Tarptautiniai regionai"
 
@@ -840,6 +897,11 @@ msgstr "Tarptautiniai regionai"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Prekės tipas"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Tipai"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -850,6 +912,11 @@ msgstr "Pastabų atnaujinimas"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Vartotojo reikalavimai"
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
+msgstr "Vaizdo įrašas"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -895,7 +962,7 @@ msgstr "Kur"
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
-msgstr ""
+msgstr "oficialiai anglų kalba"
 
 #. undefined
 
@@ -1169,11 +1236,6 @@ msgstr "Baltarusija"
 
 #. undefined
 
-msgid "Belgium"
-msgstr "Belgija"
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnija ir Hercegovina"
 
@@ -1206,11 +1268,6 @@ msgstr "Danija"
 
 msgid "Estonia"
 msgstr "Estija"
-
-#. undefined
-
-msgid "France"
-msgstr "Prancūzija"
 
 #. undefined
 
@@ -2192,107 +2249,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Klimato rizikos poveikis pažeidžiamoms grupėms"
 
 #. undefined
-#:
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "PAGRINDINIAI ES VEIKSMAI"
 
 #. undefined
-#:
+#: 
 msgid "Just resilience"
 msgstr "Teisingas atsparumas"
 
 #. undefined
-#:
+#: 
 msgid "Nature-based solutions"
 msgstr "Gamtos procesais pagrįsti sprendimai"
 
 #. undefined
-#:
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Ekonominiai nuostoliai ir žūtys"
 
 #. undefined
-#:
+#: 
 msgid "Strategic objectives 2030"
 msgstr "2030 m. strateginiai tikslai"
 
 #. undefined
-#:
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Žaliųjų miesto erdvių prieinamumas pažeidžiamoms grupėms"
 
 #. undefined
-#:
+#: 
 msgid "Transnational, National, local"
 msgstr "Tarptautinis, nacionalinis, vietinis"
 
 #. undefined
-#:
+#: 
 msgid "Aero-allergens"
 msgstr "Aeroalerginiai"
 
 #. undefined
-#:
+#: 
 msgid "Heat"
 msgstr "Šilumos"
 
 #. undefined
-#:
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Ligoninių prieinamumas Europoje"
 
 #. undefined
-#:
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "PRISITAIKYMAS MIŠKININKYSTĖS SEKTORIUJE"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone"
 msgstr "Pažemio ozonas"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Pažemio ozono prognozė (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Pollution"
 msgstr "Tarša"
 
 #. undefined
-#:
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Poveikis darbuotojų saugai ir sveikatai"
 
 #. undefined
-#:
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "2023–24 m. observatorijos darbo planas"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Žemės lygio PM2,5 prognozė (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Žemės lygio PM10 prognozė (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Žemės lygio NO2 prognozė (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 m. EAA klimato ir sveikatos ataskaita"
 
 #. undefined
-#:
+#: 
 msgid "European environment and health atlas"
 msgstr "Europos aplinkos ir sveikatos atlasas"
 
