@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -91,16 +90,6 @@ msgstr "Bakgrunnsinformasjon"
 #: helpers/Constants
 msgid "Belgium"
 msgstr "Belgia"
-
-#. Default: "Protección de la biodiversidad"
-#: search/vocabulary
-msgid "Biodiversidad"
-msgstr ""
-
-#. Default: "Biodiversity"
-#: search/vocabulary
-msgid "Biodiversity"
-msgstr "Biologisk mangfold"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -290,10 +279,30 @@ msgstr "Slipp filer her..."
 msgid "Duration:"
 msgstr "Varighet:"
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr "EER-samenwerkende landen en verdragsluitende partijen bij de Energiegemeenschap"
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr "EER-lidstaten"
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr "EU-lidstaten en EER-lidstaten"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
 msgstr "EU-finansiering"
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr "Leden van het Oostelijk Partnerschap en contractpartijen van de Energiegemeenschap"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -377,7 +386,7 @@ msgstr "Faretype"
 #. Default: "Health Impacts"
 #: search/health_observatory/config-health
 msgid "Health Impacts"
-msgstr ""
+msgstr "Gezondheidseffecten"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -663,6 +672,11 @@ msgstr "Praktisk informasjon"
 msgid "Project information"
 msgstr "Prosjektinformasjon"
 
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
+msgstr "Publicatiereferentie"
+
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
 msgid "Publications and Reports Documents"
@@ -887,7 +901,7 @@ msgstr "Type vare"
 #. Default: "Types"
 #: search/health_observatory/config-health
 msgid "Types"
-msgstr ""
+msgstr "Typen"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -898,6 +912,11 @@ msgstr "Oppdatering av notater"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Brukerkrav"
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
+msgstr "Video"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -1730,6 +1749,11 @@ msgstr "Årsrapporter"
 #: site_menu:51
 msgid "Balkan-Mediterranean"
 msgstr "Balkan-Middelhavet"
+
+#. undefined
+#: site_menu:30
+msgid "Biodiversity"
+msgstr "Biologisk mangfold"
 
 #. undefined
 #: site_menu:31

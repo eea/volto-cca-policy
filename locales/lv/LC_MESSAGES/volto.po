@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,6 +19,8 @@ msgstr "Ir pieejams pasākuma fona dokuments"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +45,8 @@ msgstr "Šajā gadījumā ieviestās pielāgošanas iespējas"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptācijas nozares"
 
@@ -81,6 +86,11 @@ msgstr "Visu laiku"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Fona informācija"
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "Beļģija"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -140,6 +150,8 @@ msgstr "Pilsēta:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimata ietekme"
 
@@ -268,10 +280,30 @@ msgstr "Nometiet failus šeit..."
 msgid "Duration:"
 msgstr "Ilgums:"
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr "EEZ sadarbības valstis un Enerģētikas kopienas līgumslēdzējas puses"
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr "EEZ dalībvalstis"
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr "ES dalībvalstis un EEZ dalībvalstis"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
 msgstr "ES finansējums"
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr "Austrumu partnerības dalībnieki un Enerģētikas kopienas līgumslēdzējas puses"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -293,6 +325,11 @@ msgstr "Izpētiet vairāk par Climate-ADAPT"
 msgid "For more search options"
 msgstr "Lai iegūtu vairāk meklēšanas iespēju"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Francija"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +337,8 @@ msgstr "Pilnekrāna režīms"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,6 +383,11 @@ msgstr "HHWS pieejams (lai iegūtu plašāku informāciju, noklikšķiniet uz va
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Bīstamības veids"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Ietekme uz veselību"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -408,6 +452,8 @@ msgstr "Informācija"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Prece no trešajām pusēm"
 
@@ -419,6 +465,8 @@ msgstr "Galvenās kopienas sistēmas"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Atslēgas veida pasākums"
 
@@ -495,7 +543,7 @@ msgstr "Svins"
 #. Default: "Learn more"
 #: components/manage/Blocks/Listing/EventAccordionListingView
 msgid "Learn more"
-msgstr ""
+msgstr "Uzziniet vairāk"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -557,7 +605,7 @@ msgstr "Nav rezultātu"
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
-msgstr ""
+msgstr "Valodas ārpus ES"
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -575,6 +623,7 @@ msgid "Observatory contributions"
 msgstr "Observatorijas ieguldījums"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatorijas partneris"
@@ -623,6 +672,11 @@ msgstr "Praktiska informācija"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informācija par projektu"
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
+msgstr "Publikācijas atsauce"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
@@ -709,6 +763,8 @@ msgstr "Meklēt Observatorijas resursu katalogā..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "sadaļa"
 
@@ -822,7 +878,7 @@ msgstr "Datums attiecas uz brīdi, kad vienumu ir sagatavojuši vai atjaunināju
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
-msgstr ""
+msgstr "Šis objekts ir arhivēts, jo tā saturs ir novecojis. Jūs joprojām varat tai piekļūt kā mantojumam."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -832,6 +888,8 @@ msgstr "Tēmas:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transnacionālie reģioni"
 
@@ -840,6 +898,11 @@ msgstr "Transnacionālie reģioni"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Preces veids"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Veidi"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -850,6 +913,11 @@ msgstr "Piezīmju atjaunināšana"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Lietotāju prasības"
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
+msgstr "Video"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -895,7 +963,7 @@ msgstr "Kur"
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
-msgstr ""
+msgstr "oficiāli angļu valodā"
 
 #. undefined
 
@@ -1169,11 +1237,6 @@ msgstr "Baltkrievija"
 
 #. undefined
 
-msgid "Belgium"
-msgstr "Beļģija"
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnija un Hercegovina"
 
@@ -1206,11 +1269,6 @@ msgstr "Dānija"
 
 msgid "Estonia"
 msgstr "Igaunija"
-
-#. undefined
-
-msgid "France"
-msgstr "Francija"
 
 #. undefined
 
@@ -1580,67 +1638,67 @@ msgstr "Reģions, kurā tiek piedāvāts finansējums"
 #. undefined
 
 msgid "Mission story"
-msgstr ""
+msgstr "Misijas stāsts"
 
 #. undefined
 
 msgid "Mission tool"
-msgstr ""
+msgstr "Misijas rīks"
 
 #. undefined
 
 msgid "Webpage"
-msgstr ""
+msgstr "Tīmekļa lapa"
 
 #. undefined
 
 msgid "Climate services"
-msgstr ""
+msgstr "Klimata pakalpojumi"
 
 #. undefined
 
 msgid "Just Resilience"
-msgstr ""
+msgstr "Vienkārši Izturība"
 
 #. undefined
 
 msgid "Societal aspects"
-msgstr ""
+msgstr "Sabiedrības aspekti"
 
 #. undefined
 
 msgid "Environmental aspects"
-msgstr ""
+msgstr "Vides aspekti"
 
 #. undefined
 
 msgid "Mitigation aspects"
-msgstr ""
+msgstr "Seku mazināšanas aspekti"
 
 #. undefined
 
 msgid "Cost-benefit analysis and maintenance costs"
-msgstr ""
+msgstr "Izmaksu un ieguvumu analīze un uzturēšanas izmaksas"
 
 #. undefined
 
 msgid "Replication/upscaling potential"
-msgstr ""
+msgstr "Replikācijas/paaugstināšanas potenciāls"
 
 #. undefined
 
 msgid "Economic aspects"
-msgstr ""
+msgstr "Ekonomiskie aspekti"
 
 #. undefined
 
 msgid "Funding oportunity"
-msgstr ""
+msgstr "Finansēšanas iespēja"
 
 #. undefined
 
 msgid "Videos and podcasts"
-msgstr ""
+msgstr "Videoklipi un aplādes"
 
 #. undefined
 #: health_menu:43

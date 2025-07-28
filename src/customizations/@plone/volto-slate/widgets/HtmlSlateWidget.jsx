@@ -70,6 +70,28 @@ const HtmlSlateWidget = (props) => {
     [token],
   );
 
+  const unwrapDivs = (element) => {
+    const divs = Array.from(element.querySelectorAll('div'));
+
+    divs.forEach((div) => {
+      const parent = div.parentNode;
+
+      while (div.firstChild) {
+        const child = div.firstChild;
+
+        if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
+          const p = document.createElement('p');
+          p.textContent = child.textContent;
+          parent.insertBefore(p, div);
+          div.removeChild(child);
+        } else {
+          parent.insertBefore(child, div);
+        }
+      }
+
+      parent.removeChild(div);
+    });
+  };
   const fromHtml = React.useCallback(
     (value) => {
       const html = value?.data || '';
@@ -79,8 +101,11 @@ const HtmlSlateWidget = (props) => {
         parsed.getElementsByTagName('google-sheets-html-origin').length > 0
           ? parsed.querySelector('google-sheets-html-origin > table')
           : parsed.body;
+
+      unwrapDivs(body);
+
       let data = deserialize(editor, body, { collapseWhitespace: true });
-      // console.log({ data, parsed, body, html });
+
       if (data.length) {
         data = normalizeExternalData(editor, data);
       } else {
@@ -91,7 +116,6 @@ const HtmlSlateWidget = (props) => {
       // Editor.normalize(editor);
       // TODO: need to add {text: ""} placeholders between elements
       const res = data.length ? data : [createEmptyParagraph()];
-      // console.log('from html', { html: value?.data, res });
       return res;
     },
     [editor],

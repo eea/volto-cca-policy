@@ -18,6 +18,8 @@ msgstr "Dokument ta' sfond għall-avveniment huwa disponibbli"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +44,8 @@ msgstr "Għażliet ta' Adattament Implimentati F'dan il-Każ"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Setturi ta' Adattament"
 
@@ -81,6 +85,11 @@ msgstr "Il-ħin kollu"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Informazzjoni ta' sfond"
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "il-Belġju"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -140,6 +149,8 @@ msgstr "Belt:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Impatti tal-Klima"
 
@@ -268,10 +279,30 @@ msgstr "Waqqa 'fajls hawn..."
 msgid "Duration:"
 msgstr "Tul ta' żmien:"
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr "Pajjiżi li Kooperaw taż-ŻEE u Partijiet Kontraenti tal-Komunità tal-Enerġija"
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr "Pajjiżi Membri taż-ŻEE"
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr "Stati Membri tal-UE u Pajjiżi Membri taż-ŻEE"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
 msgstr "finanzjament mill-UE"
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr "Membri tal-Parnership tal-Lvant u Partijiet Kontraenti tal-Komunità tal-Enerġija"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -293,6 +324,11 @@ msgstr "Esplora aktar dwar Climate-ADAPT"
 msgid "For more search options"
 msgstr "Għal aktar għażliet ta 'tfittxija"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Franza"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +336,8 @@ msgstr "Skrin sħiħ"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,6 +382,11 @@ msgstr "HHWS disponibbli (ikklikkja fuq il-pajjiż għal aktar informazzjoni)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Tip ta' Periklu"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Impatti fuq is-Saħħa"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -408,6 +451,8 @@ msgstr "Info"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Oġġett minn terzi persuni"
 
@@ -419,6 +464,8 @@ msgstr "Sistemi Ewlenin tal-Komunità"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Miżura tat-Tip Ewlenin"
 
@@ -495,7 +542,7 @@ msgstr "Ċomb"
 #. Default: "Learn more"
 #: components/manage/Blocks/Listing/EventAccordionListingView
 msgid "Learn more"
-msgstr ""
+msgstr "Tgħallem aktar"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -575,6 +622,7 @@ msgid "Observatory contributions"
 msgstr "Kontribuzzjonijiet ta' l-osservatorju"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Imsieħeb tal-osservatorju"
@@ -623,6 +671,11 @@ msgstr "Informazzjoni prattika"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informazzjoni dwar il-proġett"
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
+msgstr "Referenza tal-pubblikazzjoni"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
@@ -709,6 +762,8 @@ msgstr "Fittex fil-Katalgu tar-Riżorsi tal-Osservatorju..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Taqsima"
 
@@ -822,7 +877,7 @@ msgstr "Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat je
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
-msgstr ""
+msgstr "Dan l-oġġett ġie arkivjat minħabba li l-kontenut tiegħu huwa skadut. Xorta tista' taċċessah bħala wirt."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -832,6 +887,8 @@ msgstr "Suġġetti:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Reġjuni transnazzjonali"
 
@@ -840,6 +897,11 @@ msgstr "Reġjuni transnazzjonali"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tip ta' oġġett"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Tipi"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -850,6 +912,11 @@ msgstr "Aġġornament noti"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Rekwiżiti tal-utent"
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
+msgstr "Video"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -895,7 +962,7 @@ msgstr "Fejn"
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
-msgstr ""
+msgstr "uffiċjalment bl-Ingliż"
 
 #. undefined
 
@@ -1169,11 +1236,6 @@ msgstr "Belarus"
 
 #. undefined
 
-msgid "Belgium"
-msgstr "il-Belġju"
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnja u Ħerzegovina"
 
@@ -1206,11 +1268,6 @@ msgstr "id-Danimarka"
 
 msgid "Estonia"
 msgstr "Estonja"
-
-#. undefined
-
-msgid "France"
-msgstr "Franza"
 
 #. undefined
 
@@ -2192,107 +2249,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "L-espożizzjoni ta' gruppi vulnerabbli għar-riskji klimatiċi"
 
 #. undefined
-#:
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "AZZJONIJIET EWLENIN TAL-UE"
 
 #. undefined
-#:
+#: 
 msgid "Just resilience"
 msgstr "Reżiljenza biss"
 
 #. undefined
-#:
+#: 
 msgid "Nature-based solutions"
 msgstr "Soluzzjonijiet ibbażati fuq in-natura"
 
 #. undefined
-#:
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Telf ekonomiku u fatalitajiet"
 
 #. undefined
-#:
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Għanijiet strateġiċi 2030"
 
 #. undefined
-#:
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Disponibbiltà ta' spazji ħodor urbani għal gruppi vulnerabbli"
 
 #. undefined
-#:
+#: 
 msgid "Transnational, National, local"
 msgstr "Transnazzjonali, Nazzjonali, lokali"
 
 #. undefined
-#:
+#: 
 msgid "Aero-allergens"
 msgstr "Aero-allerġeni"
 
 #. undefined
-#:
+#: 
 msgid "Heat"
 msgstr "Saħħan"
 
 #. undefined
-#:
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Aċċessibilità ta' sptarijiet fl-Ewropa"
 
 #. undefined
-#:
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADATTAMENT FIS-SETTUR TAL-FORESTA"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone"
 msgstr "Ożonu fil-livell tal-art"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Tbassir tal-ożonu fil-livell tal-art (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Pollution"
 msgstr "Tniġġis"
 
 #. undefined
-#:
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Effetti fuq is-sigurtà u s-saħħa fuq il-post tax-xogħol"
 
 #. undefined
-#:
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Pjan ta' ħidma ta' l-osservatorju għall-2023-24"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Tbassir PM2.5 fil-livell tal-art (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Tbassir tal-PM10 fil-livell tal-art (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Tbassir NO2 fil-livell tal-art (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "Rapport taż-ŻEE 2022 dwar il-Klima u s-Saħħa"
 
 #. undefined
-#:
+#: 
 msgid "European environment and health atlas"
 msgstr "Atlas Ewropew dwar l-ambjent u s-saħħa"
 

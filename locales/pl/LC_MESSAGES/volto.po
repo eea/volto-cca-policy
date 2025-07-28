@@ -18,6 +18,8 @@ msgstr "Dostępny jest dokument dotyczący wydarzenia"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -42,6 +44,8 @@ msgstr "Opcje adaptacyjne zaimplementowane w tym przypadku"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Sektory adaptacyjne"
 
@@ -81,6 +85,11 @@ msgstr "Cały czas"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Informacje ogólne"
+
+#. Default: "Belgium"
+#: helpers/Constants
+msgid "Belgium"
+msgstr "Belgia"
 
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
@@ -140,6 +149,8 @@ msgstr "Miasto:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/facets
+#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Wpływ klimatu"
 
@@ -268,10 +279,30 @@ msgstr "Upuść pliki tutaj..."
 msgid "Duration:"
 msgstr "Czas trwania:"
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr "Kraje współpracujące EOG i Strony Wspólnoty Energetycznej"
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr "Kraje członkowskie EOG"
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr "Państwa członkowskie UE i państwa członkowskie EOG"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
 msgstr "Finansowanie UE"
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr "Członkowie Partnerstwa Wschodniego i Strony Wspólnoty Energetycznej"
 
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
@@ -293,6 +324,11 @@ msgstr "Dowiedz się więcej na temat Climate-ADAPT"
 msgid "For more search options"
 msgstr "Aby uzyskać więcej opcji wyszukiwania"
 
+#. Default: "France"
+#: helpers/Constants
+msgid "France"
+msgstr "Francja"
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
@@ -300,6 +336,8 @@ msgstr "Pełny ekran"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -344,6 +382,11 @@ msgstr "Dostępny HHWS (kliknij kraj, aby uzyskać więcej informacji)"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
 msgstr "Rodzaj zagrożenia"
+
+#. Default: "Health Impacts"
+#: search/health_observatory/config-health
+msgid "Health Impacts"
+msgstr "Wpływ na zdrowie"
 
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
@@ -408,6 +451,8 @@ msgstr "Informacje"
 
 #. Default: "Item from third parties"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Przedmiot od osób trzecich"
 
@@ -419,6 +464,8 @@ msgstr "Kluczowe systemy społecznościowe"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Miara typu klucza"
 
@@ -495,7 +542,7 @@ msgstr "Ołów"
 #. Default: "Learn more"
 #: components/manage/Blocks/Listing/EventAccordionListingView
 msgid "Learn more"
-msgstr ""
+msgstr "Dowiedz się więcej"
 
 #. Default: "Legal aspects"
 #: components/theme/Views/AdaptationOptionView
@@ -575,6 +622,7 @@ msgid "Observatory contributions"
 msgstr "Wkłady obserwatoriów"
 
 #. Default: "Observatory partner"
+#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner obserwatorium"
@@ -623,6 +671,11 @@ msgstr "Informacje praktyczne"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informacje o projekcie"
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
+msgstr "Odniesienie do publikacji"
 
 #. Default: "Publications and Reports Documents"
 #: helpers/Utils
@@ -709,6 +762,8 @@ msgstr "Przeszukaj katalog zasobów Obserwatorium..."
 
 #. Default: "Section"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Section"
 msgstr "Sekcja"
 
@@ -822,7 +877,7 @@ msgstr "Data odnosi się do momentu, w którym pozycja została przygotowana lub
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
-msgstr ""
+msgstr "Ten obiekt został zarchiwizowany, ponieważ jego zawartość jest nieaktualna. Nadal możesz uzyskać do niego dostęp jako do starszej wersji."
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -832,6 +887,8 @@ msgstr "Tematy:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/facets
+#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Regiony transnarodowe"
 
@@ -840,6 +897,11 @@ msgstr "Regiony transnarodowe"
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Typ przedmiotu"
+
+#. Default: "Types"
+#: search/health_observatory/config-health
+msgid "Types"
+msgstr "Typy"
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -850,6 +912,11 @@ msgstr "Aktualizowanie notatek"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Wymagania użytkownika"
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
+msgstr "Wideo"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -895,7 +962,7 @@ msgstr "Gdzie"
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
-msgstr ""
+msgstr "oficjalniepo angielsku"
 
 #. undefined
 
@@ -1169,11 +1236,6 @@ msgstr "Białoruś"
 
 #. undefined
 
-msgid "Belgium"
-msgstr "Belgia"
-
-#. undefined
-
 msgid "Bosnia and Herzegovina"
 msgstr "Bośnia i Hercegowina"
 
@@ -1206,11 +1268,6 @@ msgstr "Dania"
 
 msgid "Estonia"
 msgstr "Estonia"
-
-#. undefined
-
-msgid "France"
-msgstr "Francja"
 
 #. undefined
 
@@ -2192,107 +2249,107 @@ msgid "Exposure of vulnerable groups to climate risks"
 msgstr "Narażenie wrażliwych grup na zagrożenia klimatyczne"
 
 #. undefined
-#:
+#: 
 msgid "KEY EU ACTIONS"
 msgstr "KLUCZOWE DZIAŁANIA UE"
 
 #. undefined
-#:
+#: 
 msgid "Just resilience"
 msgstr "Sprawiedliwa odporność"
 
 #. undefined
-#:
+#: 
 msgid "Nature-based solutions"
 msgstr "Rozwiązania oparte na przyrodzie"
 
 #. undefined
-#:
+#: 
 msgid "Economic losses and fatalities"
 msgstr "Straty ekonomiczne i ofiary śmiertelne"
 
 #. undefined
-#:
+#: 
 msgid "Strategic objectives 2030"
 msgstr "Cele strategiczne 2030"
 
 #. undefined
-#:
+#: 
 msgid "Availability of urban green spaces to vulnerable groups"
 msgstr "Dostępność miejskich terenów zielonych dla grup wrażliwych"
 
 #. undefined
-#:
+#: 
 msgid "Transnational, National, local"
 msgstr "Ponadnarodowy, narodowy, lokalny"
 
 #. undefined
-#:
+#: 
 msgid "Aero-allergens"
 msgstr "Alergeny wziewne"
 
 #. undefined
-#:
+#: 
 msgid "Heat"
 msgstr "Ciepło"
 
 #. undefined
-#:
+#: 
 msgid "Accessibility of hospitals in Europe"
 msgstr "Dostępność szpitali w Europie"
 
 #. undefined
-#:
+#: 
 msgid "ADAPTATION IN THE FORESTRY SECTOR"
 msgstr "ADAPTACJA W SEKTORZE LEŚNYM"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone"
 msgstr "Ozonu w warstwie przyziemnej"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level ozone forecast (CAMS)"
 msgstr "Prognoza ozonu w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Pollution"
 msgstr "Zanieczyszczenie"
 
 #. undefined
-#:
+#: 
 msgid "Occupational safety and health effects"
 msgstr "Bezpieczeństwo i higiena pracy"
 
 #. undefined
-#:
+#: 
 msgid "Observatory workplan for 2023-24"
 msgstr "Plan pracy Obserwatorium na 2023-24"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM2.5 forecast (CAMS)"
 msgstr "Prognoza PM2.5 w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level PM10 forecast (CAMS)"
 msgstr "Prognoza PM10 w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "Ground-level NO2 forecast (CAMS)"
 msgstr "Prognoza NO2 w warstwie przyziemnej (CAMS)"
 
 #. undefined
-#:
+#: 
 msgid "2022 EEA Report on Climate & Health"
 msgstr "2022 Raport EOG na temat klimatu i zdrowia"
 
 #. undefined
-#:
+#: 
 msgid "European environment and health atlas"
 msgstr "Europejski atlas środowiska i zdrowia"
 
