@@ -32,6 +32,6 @@ describe('Filter', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(container.querySelector('#sections-selector')).toBeInTheDocument();
+    expect(container.querySelector('.portals-legend')).toBeInTheDocument();
   });
 });

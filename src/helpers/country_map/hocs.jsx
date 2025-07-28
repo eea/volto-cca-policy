@@ -1,7 +1,8 @@
 import React from 'react';
 import geoJsonUrl from '@eeacms/volto-cca-policy/cntrg.data';
 
-const projection = 'EPSG:4326';
+// const projection = 'EPSG:4326';
+const projection = 'EPSG:3857';
 
 export const withGeoJsonData = (WrappedComponent) => {
   function Wrapper(props) {

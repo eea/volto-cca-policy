@@ -26,7 +26,6 @@ import './styles.less';
 
 const View = (props) => {
   const { geofeatures, projection, ol } = props;
-
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
@@ -42,7 +41,7 @@ const View = (props) => {
     'National adaption policy',
   );
   const countries_metadata_url =
-    '/en/countries-regions/countries/@@countries-metadata-extract?langflag=1';
+    '/en/countries-regions/countries/@@countries-metadata-extract-2025?langflag=1';
   const countries_metadata = useCountriesMetadata(
     addAppURL(countries_metadata_url),
   );
@@ -52,51 +51,15 @@ const View = (props) => {
   const euCountryFeatures = React.useRef();
 
   React.useEffect(() => {
-    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures, {
+      dataProjection: 'EPSG:4326',
+      featureProjection: 'EPSG:3857',
+    });
     const filtered = features.filter((f) =>
       euCountryNames.includes(f.get('na')),
     );
 
     euCountryFeatures.current = filtered;
-
-    if (countries_metadata.length > 0) {
-      filtered.forEach((feature) => {
-        let countryName = feature.get('na');
-        if (countryName === 'Türkiye') {
-          countryName = 'Turkiye';
-        }
-        if (Object.hasOwn(countries_metadata[0], countryName)) {
-          let metadata = countries_metadata[0][countryName];
-          if (metadata !== undefined) {
-            if (thematicMapMode === 'National adaption policy') {
-              if (metadata[0]?.notreported) {
-                feature.set('fillBlue', 'blue3');
-              } else if (
-                metadata[0]?.nap_mixed?.length ||
-                metadata[0]?.nas_mixed.length ||
-                metadata[0]?.sap_mixed.length
-              ) {
-                feature.set('fillBlue', 'blue1');
-              } else {
-                feature.set('fillBlue', 'blue2');
-              }
-            } else {
-              if (metadata[0]?.notreported) {
-                feature.set('fillBlue', 'blue3');
-              } else if (
-                ['both', 'hazard', 'adaptation', 'not_specified'].includes(
-                  metadata[0]?.focus_info || [],
-                )
-              ) {
-                feature.set('fillBlue', 'blue1');
-              } else {
-                feature.set('fillBlue', 'blue2');
-              }
-            }
-          }
-        }
-      });
-    }
 
     filtered.forEach((feature) => {
       const img = new Image();
@@ -138,9 +101,6 @@ const View = (props) => {
   //   [baseUrl, history],
   // );
   // console.log('thematicMapMode', thematicMapMode);
-  // console.log('euCountriesSource', euCountriesSource);
-  // console.log('filtered', euCountriesSource?.getFeatures() || 'NOT SET YET');
-
   return (
     <div className="ol-country-map">
       <Grid columns="12">
@@ -148,10 +108,10 @@ const View = (props) => {
           {tileWMSSources ? (
             <Map
               view={{
-                center: ol.proj.fromLonLat([10, 50], projection),
+                center: ol.proj.fromLonLat([14.5, 57], projection),
                 projection,
                 showFullExtent: true,
-                zoom: 4,
+                zoom: 3.3,
               }}
               pixelRatio={1}
             >
