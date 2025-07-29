@@ -1,4 +1,4 @@
-export default {
+const viewsHealth = {
   resultViews: [
     {
       id: 'healthHorizontalCardItem',
@@ -13,3 +13,5 @@ export default {
     },
   ],
 };
+
+export default viewsHealth;

@@ -18,7 +18,7 @@
 //       noValueOption: false,
 //     },
 
-export default {
+const schema = {
   title: 'C3S Indicators Overview',
 
   fieldsets: [
@@ -33,3 +33,5 @@ export default {
 
   required: [],
 };
+
+export default schema;
