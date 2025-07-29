@@ -1,4 +1,4 @@
-export default {
+const schema = {
   title: 'C3S Indicators Glossary',
 
   fieldsets: [
@@ -12,3 +12,5 @@ export default {
 
   required: [],
 };
+
+export default schema;

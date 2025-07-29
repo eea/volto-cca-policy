@@ -350,11 +350,6 @@ const applyConfig = (config) => {
     }
   }
 
-  config.blocks.blocksConfig.__grid = {
-    ...config.blocks.blocksConfig.__grid,
-    maxNumberOfColumns: 7,
-  };
-
   config.blocks.blocksConfig.nextCloudVideo = {
     ...config.blocks.blocksConfig.nextCloudVideo,
     whiteList: [
@@ -563,9 +558,8 @@ const applyConfig = (config) => {
     // 'content',
   ];
 
-  config.widgets.vocabulary[
-    'plone.app.vocabularies.Users'
-  ] = SelectAutoCompleteWidget;
+  config.widgets.vocabulary['plone.app.vocabularies.Users'] =
+    SelectAutoCompleteWidget;
 
   config.settings.matomoTrackerIdFn = (pathname) => {
     return pathname.split('/')[2] === 'mission'

@@ -249,11 +249,8 @@ export function deconstructToVoltoBlocks(editor) {
   return new Promise((resolve, reject) => {
     if (!editor?.children) return;
 
-    const {
-      properties,
-      onChangeFormData,
-      onSelectBlock,
-    } = editor.getBlockProps();
+    const { properties, onChangeFormData, onSelectBlock } =
+      editor.getBlockProps();
     const blocksFieldname = getBlocksFieldname(properties);
     const blocksLayoutFieldname = getBlocksLayoutFieldname(properties);
 

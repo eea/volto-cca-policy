@@ -4,10 +4,10 @@
  */
 
 import React from 'react';
-import { compose } from 'recompose';
-import { withRouter } from 'react-router-dom';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { connect, useDispatch, useSelector } from 'react-redux';
+
+import { withRouter } from 'react-router-dom';
 import { UniversalLink } from '@plone/volto/components';
 import {
   getBaseUrl,
@@ -16,14 +16,18 @@ import {
   toPublicURL,
   BodyClass,
 } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 import { getNavigation } from '@plone/volto/actions';
 import { Header, Logo } from '@eeacms/volto-eea-design-system/ui';
 import { usePrevious } from '@eeacms/volto-eea-design-system/helpers';
-import LanguageSwitch from './LanguageSwitch';
-import cx from 'classnames';
-
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
+
+import config from '@plone/volto/registry';
+import { compose } from 'recompose';
+
+import cx from 'classnames';
+import loadable from '@loadable/component';
+
+const LazyLanguageSwitcher = loadable(() => import('./LanguageSwitch'));
 
 function removeTrailingSlash(path) {
   while (path.endsWith('/')) {
@@ -63,8 +67,7 @@ const DirectLinkLogo = ({
 /**
  * EEA Specific Header component.
  */
-const EEAHeader = (props) => {
-  const { pathname, token, items, subsite } = props;
+const EEAHeader = ({ pathname, token, items, history, subsite }) => {
   const router_pathname = useSelector((state) => {
     return removeTrailingSlash(state.router?.location?.pathname) || '';
   });
@@ -76,10 +79,12 @@ const EEAHeader = (props) => {
     const has_home_layout =
       layout === 'homepage_inverse_view' ||
       (__CLIENT__ && document.body.classList.contains('homepage-inverse'));
+
     return (
       has_home_layout &&
       (removeTrailingSlash(pathname) === router_pathname ||
-        router_pathname.endsWith('/edit'))
+        router_pathname.endsWith('/edit') ||
+        router_pathname.endsWith('/add'))
     );
   });
 
@@ -95,20 +100,17 @@ const EEAHeader = (props) => {
   React.useEffect(() => {
     const { settings } = config;
     const base_url = getBaseUrl(pathname);
+
+    // Check if navigation data needs to be fetched based on the API expander availability
     if (!hasApiExpander('navigation', base_url)) {
       dispatch(getNavigation(base_url, settings.navDepth));
     }
-  }, [pathname, dispatch]);
 
-  React.useEffect(() => {
+    // Additional check for token changes
     if (token !== previousToken) {
-      const { settings } = config;
-      const base = getBaseUrl(pathname);
-      if (!hasApiExpander('navigation', base)) {
-        dispatch(getNavigation(base, settings.navDepth));
-      }
+      dispatch(getNavigation(base_url, settings.navDepth));
     }
-  }, [token, dispatch, pathname, previousToken]);
+  }, [pathname, token, dispatch, previousToken]);
 
   const subsiteView = subsiteHeaderOpts.filter((v) =>
     router_pathname.match(v.matchpath),
@@ -125,21 +127,22 @@ const EEAHeader = (props) => {
       {isHomePageInverse && <BodyClass className="homepage" />}
       <Header.TopHeader>
         <Header.TopItem className="official-union">
-          <Image src={eeaFlag} alt="eea flag"></Image>
+          <Image src={eeaFlag} alt="European Union flag"></Image>
           <Header.TopDropdownMenu
             text="An official website of the European Union | How do you know?"
             tabletText="EEA information systems"
-            mobileText=" "
+            mobileText="EEA information systems"
             icon="chevron down"
             aria-label="dropdown"
-            className=""
+            classNameHeader="mobile-sr-only"
             viewportWidth={width}
           >
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div
               className="content"
               onClick={(evt) => evt.stopPropagation()}
               onKeyDown={(evt) => evt.stopPropagation()}
+              tabIndex={0}
+              role={'presentation'}
             >
               <p>
                 All official European Union website addresses are in the{' '}
@@ -148,6 +151,7 @@ const EEAHeader = (props) => {
               <a
                 href="https://europa.eu/european-union/contact/institutions-bodies_en"
                 target="_blank"
+                rel="noopener"
                 onKeyDown={(evt) => evt.stopPropagation()}
               >
                 See all EU institutions and bodies
@@ -162,15 +166,17 @@ const EEAHeader = (props) => {
               <Header.TopDropdownMenu
                 id="theme-sites"
                 text={headerOpts.partnerLinks.title}
+                aria-label={headerOpts.partnerLinks.title}
                 viewportWidth={width}
               >
-                <div className="wrapper">
+                <div className="wrapper" tabIndex={0} role={'presentation'}>
                   {headerOpts.partnerLinks.links.map((item, index) => (
                     <Dropdown.Item key={index}>
                       <a
                         href={item.href}
                         className="site"
                         target="_blank"
+                        rel="noopener"
                         onKeyDown={(evt) => evt.stopPropagation()}
                       >
                         {item.title}
@@ -182,7 +188,11 @@ const EEAHeader = (props) => {
             </Header.TopItem>
           )}
 
-          {config.settings.isMultilingual && <LanguageSwitch {...props} />}
+          {config.settings.isMultilingual &&
+            config.settings.supportedLanguages.length > 1 &&
+            config.settings.hasLanguageDropdown && (
+              <LazyLanguageSwitcher width={width} history={history} />
+            )}
         </div>
       </Header.TopHeader>
       <Header.Main

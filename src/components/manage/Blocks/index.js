@@ -22,7 +22,6 @@ import installASTNavigation from './ASTNavigation';
 import installFlourishEmbedBlock from './FlourishEmbedBlock';
 import installDataConnectedEmbed from './DataConnectedEmbedBlock';
 
-// import installMKHMap from './MKHMap';
 // import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
 

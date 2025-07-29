@@ -33,8 +33,7 @@ describe('DatabaseItemView', () => {
       title: 'My DatabaseItemView',
       long_description: {
         'content-type': null,
-        data:
-          '<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>',
+        data: '<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>',
         encoding: 'utf-8',
       },
       publication_date: '2022-06-24',

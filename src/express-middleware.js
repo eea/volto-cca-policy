@@ -24,7 +24,7 @@ function viewMiddleware(req, res, next) {
     .catch(next);
 }
 
-export default function (config) {
+const viewsMiddlewareConfigurator = (config) => {
   const middleware = express.Router();
 
   // TODO: do we want catch all?
@@ -43,4 +43,6 @@ export default function (config) {
   middleware.id = 'viewsMiddleware';
   config.settings.expressMiddleware.push(middleware);
   return config;
-}
+};
+
+export default viewsMiddlewareConfigurator;
