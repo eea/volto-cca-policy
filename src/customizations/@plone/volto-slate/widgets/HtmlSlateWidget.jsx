@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { debounce } from 'lodash';
 import ReactDOMServer from 'react-dom/server';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
@@ -14,7 +15,6 @@ import SlateEditor from '@plone/volto-slate/editor/SlateEditor';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { makeEditor } from '@plone/volto-slate/utils';
 import deserialize from '@plone/volto-slate/editor/deserialize';
-
 import {
   createEmptyParagraph,
   normalizeExternalData,
@@ -58,8 +58,6 @@ const HtmlSlateWidget = (props) => {
           <MemoryRouter>{serializeNodes(value || [])}</MemoryRouter>
         </Provider>,
       );
-      // console.log('toHtml value', JSON.stringify(value));
-      // console.log('toHtml html', html);
 
       return {
         'content-type': value ? value['content-type'] : 'text/html',
@@ -92,6 +90,7 @@ const HtmlSlateWidget = (props) => {
       parent.removeChild(div);
     });
   };
+
   const fromHtml = React.useCallback(
     (value) => {
       const html = value?.data || '';
@@ -121,15 +120,38 @@ const HtmlSlateWidget = (props) => {
     [editor],
   );
 
-  const valueFromHtml = React.useMemo(() => {
-    return fromHtml(value);
+  const lastSavedHtmlRef = React.useRef(value?.data);
+
+  const [valueFromHtml, setValueFromHtml] = React.useState(() =>
+    fromHtml(value),
+  );
+
+  React.useEffect(() => {
+    if (value?.data !== lastSavedHtmlRef.current) {
+      setValueFromHtml(fromHtml(value));
+    }
   }, [value, fromHtml]);
+
+  const debouncedOnChange = React.useMemo(() => {
+    return debounce((newSlateValue) => {
+      const htmlValue = toHtml(newSlateValue);
+      lastSavedHtmlRef.current = htmlValue.data;
+      onChange(id, htmlValue);
+    }, 100);
+  }, [id, onChange, toHtml]);
+
+  React.useEffect(() => {
+    return () => {
+      debouncedOnChange.cancel();
+    };
+  }, [debouncedOnChange]);
 
   const handleChange = React.useCallback(
     (newValue) => {
-      onChange(id, toHtml(newValue));
+      setValueFromHtml(newValue);
+      debouncedOnChange(newValue);
     },
-    [onChange, toHtml, id],
+    [debouncedOnChange],
   );
 
   const handleClick = React.useCallback(() => {
