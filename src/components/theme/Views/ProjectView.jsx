@@ -27,11 +27,14 @@ function ProjectView(props) {
 
   const TitleBlockView = blocksConfig?.title?.view;
 
+  const titleBlockData = { ...content, title: item_title, image: '' };
+
   return (
     <div className="db-item-view project-view">
       <TitleBlockView
         {...props}
         data={{
+          '@type': 'title',
           info: [{ description: '' }],
           hideContentType: true,
           hideCreationDate: true,
@@ -41,11 +44,8 @@ function ProjectView(props) {
           hideShareButton: false,
           subtitle: 'Project',
         }}
-        metadata={{
-          ...content,
-          image: '',
-          title: item_title,
-        }}
+        metadata={titleBlockData}
+        properties={titleBlockData}
       />
 
       <Container>
