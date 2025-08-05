@@ -34,7 +34,7 @@
     "@eeacms/volto-embed": "*",
     "@eeacms/volto-globalsearch": "2.1.2",
     "@eeacms/volto-openlayers-map": "1.0.1",
-    "@eeacms/volto-searchlib": "2.1.7",
+    "@eeacms/volto-searchlib": "2.1.8",
     "@eeacms/volto-slate-label": "1.0.1",
     "@eeacms/volto-tabs-block": "9.0.3",
     "@elastic/search-ui": "1.21.2",
