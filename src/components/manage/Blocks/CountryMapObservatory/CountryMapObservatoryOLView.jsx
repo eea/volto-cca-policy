@@ -128,7 +128,7 @@ const CountryMapObservatoryView = (props) => {
 
 export default compose(
   clientOnly,
-  withGeoJsonData,
+  withGeoJsonData(),
   withResponsiveContainer('countryMapObservatory'),
   withVisibilitySensor(),
   withOpenLayers,

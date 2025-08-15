@@ -2,11 +2,8 @@
 // import flags from './flags.js';
 
 export const euCountryNames = [
-  'Albania',
   'Austria',
   'Belgium',
-  'Bosnia-Herzegovina',
-  'Bosnia and Herzegovina',
   'Bulgaria',
   'Cyprus',
   'Croatia',
@@ -15,23 +12,17 @@ export const euCountryNames = [
   'Estonia',
   'Finland',
   'France',
-  'Georgia',
   'Germany',
   'Greece',
   'Hungary',
   'Iceland',
   'Ireland',
-  'Kosovo',
   'Italy',
   'Latvia',
   'Lithuania',
   'Luxembourg',
   'Malta',
-  'Moldova',
-  'Moldova, Republic of',
-  'Montenegro',
   'Netherlands',
-  'North Macedonia',
   'Poland',
   'Portugal',
   'Romania',
@@ -41,11 +32,23 @@ export const euCountryNames = [
   'Spain',
   'Sweden',
   'United Kingdom',
-  'Ukraine',
   'Liechtenstein',
   'Norway',
   'Switzerland',
   'Turkey',
+];
+
+export const euCountryNamesEnergy = [
+  'Albania',
+  'Bosnia-Herzegovina',
+  'Bosnia and Herzegovina',
+  'Georgia',
+  'Kosovo',
+  'Moldova',
+  'Moldova, Republic of',
+  'Montenegro',
+  'North Macedonia',
+  'Ukraine',
 ];
 
 export function getFocusCountryNames() {
