@@ -51,6 +51,11 @@ export const euCountryNamesEnergy = [
   'Ukraine',
 ];
 
+export const euCountryNamesIncludingEnergy = [
+  ...euCountryNames,
+  ...euCountryNamesEnergy,
+];
+
 export function getFocusCountryNames() {
   return euCountryNames;
 }
