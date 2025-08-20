@@ -5,7 +5,7 @@ import {
   getImageUrl,
   tooltipStyle,
   adjustEuCountryNames,
-  euCountryNames as euCountryNamesRaw,
+  euCountryNamesIncludingEnergy as euCountryNamesRaw,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
@@ -164,7 +164,7 @@ const View = (props) => {
 
 export default compose(
   clientOnly,
-  withGeoJsonData,
+  withGeoJsonData(true),
   withResponsiveContainer('countryMapProfile'),
   withVisibilitySensor(),
   withOpenLayers,

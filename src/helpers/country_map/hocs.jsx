@@ -1,10 +1,10 @@
 import React from 'react';
 import geoJsonUrl from '@eeacms/volto-cca-policy/cntrg.data';
 
-// const projection = 'EPSG:4326';
-const projection = 'EPSG:3857';
+const projection = 'EPSG:4326';
+const projectionFlat = 'EPSG:3857';
 
-export const withGeoJsonData = (WrappedComponent) => {
+export const withGeoJsonData = (showFlatMap) => (WrappedComponent) => {
   function Wrapper(props) {
     const [geofeatures, setGeofeatures] = React.useState();
     React.useEffect(() => {
@@ -20,7 +20,7 @@ export const withGeoJsonData = (WrappedComponent) => {
       <WrappedComponent
         {...props}
         geofeatures={geofeatures}
-        projection={projection}
+        projection={showFlatMap ? projectionFlat : projection}
       />
     ) : null;
   }
