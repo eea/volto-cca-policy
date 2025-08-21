@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Bakgrunnsskjal fyrir viðburðinn er fáanlegt"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Aðlögunarvalkostir innleiddir í þessu tilfelli"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Aðlögunarsvið"
 
@@ -86,15 +83,20 @@ msgstr "Alla tíð"
 msgid "Background information"
 msgstr "Bakgrunnsupplýsingar"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgíu"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Líffræðileg svæði:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Bláir valkostir"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Styrkjandi getu og lífsstílshættir"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Borg:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Loftslagsáhrif"
 
@@ -195,6 +195,11 @@ msgstr "Samskiptaupplýsingar fyrir Stjörnustöðina"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Framlag:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Samhæfingarsamvinna og tengslanet"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "ESB fjármögnun"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Aðilar í Austur-samstarfinu og samningsaðilar orkusamfélagsins"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Efnahags- og fjármál"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Hætta á öllum skjánum"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Kannaðu meira á Climate-ADAPT"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Fjármögnunarhvatatæki"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Fyrir fleiri leitarmöguleika"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Frakklandi"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Fullskjár"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Að byrja"
 msgid "Go to advanced search"
 msgstr "Farðu í ítarlega leit"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Stjórnarhættir og stofnana"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Stjórnarstig:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Grænir valkostir"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Gráir valkostir"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Tegund hættu"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Heilsuáhrif"
 
@@ -449,10 +472,18 @@ msgstr "Vísar"
 msgid "Info"
 msgstr "Upplýsingar"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Upplýsinga- og vitundarvakning"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Tryggingar og áhættuhlutdeild"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Atriði frá þriðja aðila"
 
@@ -464,8 +495,6 @@ msgstr "Helstu samfélagskerfi"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Lykill Tegund Mál"
 
@@ -488,6 +517,11 @@ msgstr "Lykiltegundarráðstafanir"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Leitarorð:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Þekking og hegðunarbreyting"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Ertu að leita að frekari upplýsingum?"
 msgid "Macro-Transnational region:"
 msgstr "Fjölþjóðlegt svæði:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Stjórn og áætlanagerð"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "Notalegast fyrir"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "National HHAP"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Náttúru byggðar lausnir og vistkerfi byggðar nálganir"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Stjörnuskoðunarframlög"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Stjörnuskoðunarfélagi"
@@ -651,6 +694,16 @@ msgstr "Þátttaka"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Samstarfsaðilar"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Líkamlegt og tæknilegt"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Stjórntæki"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Skiptu um núverandi skrá"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Leitaðu í Climate-ADAPT gagnagrunninum"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Leitaðu að ESB sendinefndinni um aðlögun"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Leitaðu í auðlindaskrá Observatory..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "kafla"
 
@@ -854,6 +905,11 @@ msgstr "Undirþjóðlegt eða staðbundið"
 msgid "Success and limiting factors"
 msgstr "Árangur og takmarkandi þættir"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Tæknilegir valkostir"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Efni:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Þverþjóðleg svæði"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Tegund hlutar"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Tegundir"
 
@@ -1236,6 +1290,11 @@ msgstr "Hvíta-Rússland"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgíu"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnía og Hersegóvína"
 
@@ -1268,6 +1327,11 @@ msgstr "Danmörku"
 
 msgid "Estonia"
 msgstr "Eistland"
+
+#. undefined
+
+msgid "France"
+msgstr "Frakklandi"
 
 #. undefined
 

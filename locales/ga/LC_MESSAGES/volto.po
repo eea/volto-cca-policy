@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Roghanna Oiriúnaithe a Cuireadh i bhFeidhm Sa Chás Seo"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Earnálacha Oiriúnaithe"
 
@@ -86,15 +83,20 @@ msgstr "An t-am ar fad"
 msgid "Background information"
 msgstr "Faisnéis chúlra"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "an Bheilg"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Réigiúin bhithgheografacha:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Roghanna gorm"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Tógáil cumais cumasú agus cleachtais stíl mhaireachtála"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Cathair :"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Tionchair Aeráide"
 
@@ -195,6 +195,11 @@ msgstr "Eolas teagmhála don Réadlann"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Ranníocóir:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Comhar comhordaithe agus líonraí"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "maoiniú AE"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Baill Chomhpháirtíocht an Oirthir agus Páirtithe Conarthacha an Chomhphobail Fuinnimh"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Eacnamaíoch agus Airgeadais"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Scoir lánscáileán"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Ionstraimí dreasachta maoinithe"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Le haghaidh tuilleadh roghanna cuardaigh"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Fhrainc"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Lánscáileán"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Ag tosnú"
 msgid "Go to advanced search"
 msgstr "Téigh chuig cuardach casta"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Rialachas agus Institiúideach"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Leibhéal rialachais:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Roghanna glasa"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Roghanna liath"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Cineál Guaise"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Tionchair Sláinte"
 
@@ -449,10 +472,18 @@ msgstr "Táscairí"
 msgid "Info"
 msgstr "Eolas"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Ardú faisnéise agus feasachta"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Ionstraimí árachais agus comhroinnte riosca"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Mír ó thríú páirtithe"
 
@@ -464,8 +495,6 @@ msgstr "Príomhchórais Phobail"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Beart Cineál Eochair"
 
@@ -488,6 +517,11 @@ msgstr "Príomhbhearta cineál"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Eochairfhocail:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Athrú eolais agus iompraíochta"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Ag lorg tuilleadh eolais?"
 msgid "Macro-Transnational region:"
 msgstr "Réigiún Macra-Trasnáisiúnta:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Bainistíocht agus pleanáil"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "An chuid is mó úsáideach le haghaidh"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "HHAP Náisiúnta"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Réitigh Dúlra agus cuir chuige atá bunaithe ar an Éiceachóras"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Ranníocaíochtaí réadlainne"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Comhpháirtí réadlainne"
@@ -651,6 +694,16 @@ msgstr "Rannpháirtíocht"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Comhpháirtithe"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Fisiciúil agus teicneolaíochta"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Ionstraimí Beartais"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Ionadaigh an comhad atá ann cheana"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Cuardaigh an bunachar sonraí Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Cuardaigh Misean an AE um Oiriúnú"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Alt"
 
@@ -854,6 +905,11 @@ msgstr "Fo-náisiúnta nó áitiúil"
 msgid "Success and limiting factors"
 msgstr "Fachtóirí ratha agus teorannacha"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Roghanna teicneolaíochta"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Ábhair:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Réigiúin thrasnáisiúnta"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Cineál míre"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Cineálacha"
 
@@ -1236,6 +1290,11 @@ msgstr "Bhealarúis"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "an Bheilg"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "An Bhoisnia agus an Heirseagaivéin"
 
@@ -1268,6 +1327,11 @@ msgstr "an Danmhairg"
 
 msgid "Estonia"
 msgstr "an Eastóin"
+
+#. undefined
+
+msgid "France"
+msgstr "Fhrainc"
 
 #. undefined
 

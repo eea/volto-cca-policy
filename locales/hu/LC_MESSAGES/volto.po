@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Az esemény háttérdokumentuma elérhető"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Ebben az esetben megvalósított adaptációs lehetőségek"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Alkalmazkodási ágazatok"
 
@@ -86,15 +83,20 @@ msgstr "Minden alkalommal"
 msgid "Background information"
 msgstr "Háttérinformációk"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgium"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Biogeográfiai régiók:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Kék opciók"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Kapacitásépítési képességek és életmód gyakorlatok"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Város:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Éghajlati hatások"
 
@@ -195,6 +195,11 @@ msgstr "Az Obszervatórium elérhetőségei"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Hozzájáruló:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Koordinációs együttműködés és hálózatok"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "EU-s finanszírozás"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "a keleti partnerség tagjai és az Energiaközösség szerződő felei"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Gazdaság és pénzügyek"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Lépjen ki a teljes képernyőről"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Fedezzen fel többet a Climate-ADAPT-ről"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Finanszírozási ösztönző eszközök"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "További keresési lehetőségekért"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Franciaország"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Teljes képernyő"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Kezdő lépések"
 msgid "Go to advanced search"
 msgstr "Ugrás a speciális kereséshez"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Irányítási és intézményi"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Kormányzási szint:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Zöld opciók"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Szürke lehetőségek"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Veszély típusa"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Egészségügyi hatások"
 
@@ -449,10 +472,18 @@ msgstr "Mutatók"
 msgid "Info"
 msgstr "Info"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Tájékoztatás és figyelemfelkeltés"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Biztosítási és kockázatmegosztási eszközök"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Harmadik féltől származó tétel"
 
@@ -464,8 +495,6 @@ msgstr "Kulcsfontosságú közösségi rendszerek"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Kulcstípus Mérték"
 
@@ -488,6 +517,11 @@ msgstr "Kulcs típusú intézkedések"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Kulcsszavak:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Tudás és viselkedés változás"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "További információt keres?"
 msgid "Macro-Transnational region:"
 msgstr "Makro-transznacionális régió:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Irányítás és tervezés"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "A leghasznosabb a számára"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Országos HHAP"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Természet alapú megoldások és ökoszisztéma alapú megközelítések"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Obszervatóriumi hozzájárulások"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Obszervatórium partnere"
@@ -651,6 +694,16 @@ msgstr "Részvétel"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Partnerek"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Fizikai és technológiai"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Szakpolitikai eszközök"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Cserélje le a meglévő fájlt"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Keresés a Climate-ADAPT adatbázisban"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Keresés az EU alkalmazkodással foglalkozó missziójában"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Keresés az Obszervatórium forráskatalógusában..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Szakasz"
 
@@ -854,6 +905,11 @@ msgstr "Szubnacionális vagy helyi"
 msgid "Success and limiting factors"
 msgstr "Siker és korlátozó tényezők"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Technológiai lehetőségek"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Témák:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Transznacionális régiók"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Az elem típusa"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Típusok"
 
@@ -1236,6 +1290,11 @@ msgstr "Fehéroroszország"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgium"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosznia és Hercegovina"
 
@@ -1268,6 +1327,11 @@ msgstr "Dánia"
 
 msgid "Estonia"
 msgstr "Észtország"
+
+#. undefined
+
+msgid "France"
+msgstr "Franciaország"
 
 #. undefined
 
