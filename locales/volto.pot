@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-05-11T19:40:37.037Z\n"
+"POT-Creation-Date: 2025-08-21T04:44:57.445Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -87,6 +87,16 @@ msgstr ""
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
+msgstr ""
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr ""
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
 msgstr ""
 
 #. Default: "Case Studies Documents"
@@ -187,6 +197,11 @@ msgstr ""
 msgid "Contributor:"
 msgstr ""
 
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr ""
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -270,9 +285,34 @@ msgstr ""
 msgid "Duration:"
 msgstr ""
 
+#. Default: "EEA Cooperating Countries and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Cooperating Countries and Energy Community Contracting Parties"
+msgstr ""
+
+#. Default: "EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EEA Member Countries"
+msgstr ""
+
+#. Default: "EU Member States and EEA Member Countries"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "EU Member States and EEA Member Countries"
+msgstr ""
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
+msgstr ""
+
+#. Default: "Eastern Parnership Members and Energy Community Contracting Parties"
+#: components/manage/Blocks/CountryMapProfile/Filter
+msgid "Eastern Parnership Members and Energy Community Contracting Parties"
+msgstr ""
+
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
 msgstr ""
 
 #. Default: "Eligible to receive funding"
@@ -288,6 +328,11 @@ msgstr ""
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
 msgstr ""
 
 #. Default: "For more search options"
@@ -332,9 +377,24 @@ msgstr ""
 msgid "Go to advanced search"
 msgstr ""
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr ""
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
+msgstr ""
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr ""
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
 msgstr ""
 
 #. Default: "HHWS available (click on country for further information)"
@@ -345,6 +405,11 @@ msgstr ""
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
 msgid "Hazard Type"
+msgstr ""
+
+#. Default: "Health Impacts"
+#: messages
+msgid "Health Impacts"
 msgstr ""
 
 #. Default: "Health impact:"
@@ -408,6 +473,16 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr ""
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr ""
+
 #. Default: "Item from third parties"
 #: search/cca/facets
 msgid "Item from third parties"
@@ -442,6 +517,11 @@ msgstr ""
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
+msgstr ""
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
 msgstr ""
 
 #. Default: "Language"
@@ -526,6 +606,11 @@ msgstr ""
 msgid "Macro-Transnational region:"
 msgstr ""
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr ""
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -534,6 +619,11 @@ msgstr ""
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
+msgstr ""
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr ""
 
 #. Default: "New"
@@ -606,6 +696,16 @@ msgstr ""
 msgid "Partners"
 msgstr ""
 
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr ""
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr ""
+
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
 msgid "Policy and legal background"
@@ -624,6 +724,11 @@ msgstr ""
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
+msgstr ""
+
+#. Default: "Publications and reports"
+#: search/vocabulary
+msgid "Publication reference"
 msgstr ""
 
 #. Default: "Publications and Reports Documents"
@@ -695,17 +800,17 @@ msgid "Replace existing file"
 msgstr ""
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr ""
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr ""
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr ""
 
@@ -801,6 +906,11 @@ msgstr ""
 msgid "Success and limiting factors"
 msgstr ""
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr ""
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -843,6 +953,11 @@ msgstr ""
 msgid "Type of item"
 msgstr ""
 
+#. Default: "Types"
+#: messages
+msgid "Types"
+msgstr ""
+
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
@@ -851,6 +966,11 @@ msgstr ""
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
+msgstr ""
+
+#. Default: "Videos and podcasts"
+#: search/vocabulary
+msgid "Video"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
@@ -898,4 +1018,3 @@ msgstr ""
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr ""
-

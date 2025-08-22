@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Dokument ta' sfond għall-avveniment huwa disponibbli"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Għażliet ta' Adattament Implimentati F'dan il-Każ"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Setturi ta' Adattament"
 
@@ -86,15 +83,20 @@ msgstr "Il-ħin kollu"
 msgid "Background information"
 msgstr "Informazzjoni ta' sfond"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "il-Belġju"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Reġjuni bijoġeografiċi:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Għażliet blu"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Il-bini tal-kapaċità li jagħti s-setgħa u l-prattiki tal-istil tal-ħajja"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Belt:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Impatti tal-Klima"
 
@@ -195,6 +195,11 @@ msgstr "Informazzjoni ta' kuntatt għall-Osservatorju"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Kontributur:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Kooperazzjoni ta' koordinazzjoni u netwerks"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "finanzjament mill-UE"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Membri tal-Parnership tal-Lvant u Partijiet Kontraenti tal-Komunità tal-Enerġija"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Ekonomiku u Finanzi"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Ħruġ fullscreen"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Esplora aktar dwar Climate-ADAPT"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Strumenti ta' inċentiv ta' finanzjament"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Għal aktar għażliet ta 'tfittxija"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Franza"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Skrin sħiħ"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Nibdew"
 msgid "Go to advanced search"
 msgstr "Mur fit-tfittxija avvanzata"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Governanza u Istituzzjonali"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Livell ta' governanza:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Għażliet ħodor"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Għażliet griżi"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Tip ta' Periklu"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Impatti fuq is-Saħħa"
 
@@ -449,10 +472,18 @@ msgstr "Indikaturi"
 msgid "Info"
 msgstr "Info"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Informazzjoni u tqajjim ta' kuxjenza"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Assigurazzjoni u strumenti ta' qsim tar-riskju"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Oġġett minn terzi persuni"
 
@@ -464,8 +495,6 @@ msgstr "Sistemi Ewlenin tal-Komunità"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Miżura tat-Tip Ewlenin"
 
@@ -488,6 +517,11 @@ msgstr "Miżuri tat-tip ewlenin"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Kliem ewlieni:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Għarfien u bidla fl-imġieba"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Qed tfittex aktar informazzjoni?"
 msgid "Macro-Transnational region:"
 msgstr "Reġjun Makro-Transnazzjonali:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Ġestjoni u ppjanar"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "L-aktar utli għal"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "HHAP Nazzjonali"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosistema"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Kontribuzzjonijiet ta' l-osservatorju"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Imsieħeb tal-osservatorju"
@@ -651,6 +694,16 @@ msgstr "Parteċipazzjoni"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Imsieħba"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Fiżiku u teknoloġiku"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Strumenti ta' Politika"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Ibdel il-fajl eżistenti"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Fittex fid-database Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Fittex il-Missjoni tal-UE dwar l-Adattament"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Fittex fil-Katalgu tar-Riżorsi tal-Osservatorju..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Taqsima"
 
@@ -854,6 +905,11 @@ msgstr "Subnazzjonali jew lokali"
 msgid "Success and limiting factors"
 msgstr "Suċċess u fatturi li jillimitaw"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Għażliet teknoloġiċi"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Suġġetti:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Reġjuni transnazzjonali"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Tip ta' oġġett"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Tipi"
 
@@ -1236,6 +1290,11 @@ msgstr "Belarus"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "il-Belġju"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnja u Ħerzegovina"
 
@@ -1268,6 +1327,11 @@ msgstr "id-Danimarka"
 
 msgid "Estonia"
 msgstr "Estonja"
+
+#. undefined
+
+msgid "France"
+msgstr "Franza"
 
 #. undefined
 

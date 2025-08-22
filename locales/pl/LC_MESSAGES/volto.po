@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Dostępny jest dokument dotyczący wydarzenia"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Opcje adaptacyjne zaimplementowane w tym przypadku"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Sektory adaptacyjne"
 
@@ -86,15 +83,20 @@ msgstr "Cały czas"
 msgid "Background information"
 msgstr "Informacje ogólne"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgia"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Regiony biogeograficzne:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Opcje niebieskie"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Budowanie potencjału, wzmacnianie pozycji i praktyki związane ze stylem życia"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Miasto:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Wpływ klimatu"
 
@@ -195,6 +195,11 @@ msgstr "Dane kontaktowe Obserwatorium"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Współpracownik:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Współpraca koordynacyjna i sieci"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "Finansowanie UE"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Członkowie Partnerstwa Wschodniego i Strony Wspólnoty Energetycznej"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Ekonomia i finanse"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Wyjdź z pełnego ekranu"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Dowiedz się więcej na temat Climate-ADAPT"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Finansowanie instrumentów motywacyjnych"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Aby uzyskać więcej opcji wyszukiwania"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Francja"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Pełny ekran"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Rozpoczęcie"
 msgid "Go to advanced search"
 msgstr "Przejdź do wyszukiwania zaawansowanego"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Zarządzanie i instytucje"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Poziom zarządzania:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Zielone opcje"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Opcje szare"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Rodzaj zagrożenia"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Wpływ na zdrowie"
 
@@ -449,10 +472,18 @@ msgstr "Wskaźniki"
 msgid "Info"
 msgstr "Informacje"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Informacja i podnoszenie świadomości"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Ubezpieczenia i instrumenty podziału ryzyka"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Przedmiot od osób trzecich"
 
@@ -464,8 +495,6 @@ msgstr "Kluczowe systemy społecznościowe"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Miara typu klucza"
 
@@ -488,6 +517,11 @@ msgstr "Kluczowe miary typu"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Słowa kluczowe:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Wiedza i zmiana zachowania"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Szukasz więcej informacji?"
 msgid "Macro-Transnational region:"
 msgstr "Region makrotransnarodowy:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Zarządzanie i planowanie"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "Najbardziej przydatne dla"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Krajowy HHAP"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Rozwiązania oparte na naturze i podejścia oparte na ekosystemach"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Wkłady obserwatoriów"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner obserwatorium"
@@ -651,6 +694,16 @@ msgstr "Udział"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Wzmacniacz"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Fizyczne i technologiczne"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Instrumenty polityki"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Zastąp istniejący plik"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Przeszukaj bazę danych Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Przeszukaj misję UE dotyczącą adaptacji"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Przeszukaj katalog zasobów Obserwatorium..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Sekcja"
 
@@ -854,6 +905,11 @@ msgstr "Subkrajowy lub lokalny"
 msgid "Success and limiting factors"
 msgstr "Sukces i czynniki ograniczające"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Opcje technologiczne"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Tematy:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Regiony transnarodowe"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Typ przedmiotu"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Typy"
 
@@ -1236,6 +1290,11 @@ msgstr "Białoruś"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgia"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bośnia i Hercegowina"
 
@@ -1268,6 +1327,11 @@ msgstr "Dania"
 
 msgid "Estonia"
 msgstr "Estonia"
+
+#. undefined
+
+msgid "France"
+msgstr "Francja"
 
 #. undefined
 
