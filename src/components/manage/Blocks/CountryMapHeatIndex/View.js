@@ -186,7 +186,7 @@ const View = (props) => {
 };
 
 export default compose(
-  withGeoJsonData,
+  withGeoJsonData(),
   clientOnly,
   withResponsiveContainer('countryMapHeatIndex'),
   withVisibilitySensor(),

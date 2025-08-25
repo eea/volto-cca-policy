@@ -496,3 +496,56 @@ msgstr ""
 
 msgid "Videos and podcasts"
 msgstr ""
+
+#: A1,A2,A3
+msgid "Governance and Institutional"
+msgstr ""
+
+msgid "Policy Instruments"
+msgstr ""
+
+msgid "Management and planning"
+msgstr ""
+
+msgid "Coordination cooperation and networks"
+msgstr ""
+
+#: B1,B2
+msgid "Economic and Finance"
+msgstr ""
+
+msgid "Financing incentive instruments"
+msgstr ""
+
+msgid "Insurance and risk sharing instruments"
+msgstr ""
+
+#: C1,C2
+msgid "Physical and technological"
+msgstr ""
+
+msgid "Grey options"
+msgstr ""
+
+msgid "Technological options"
+msgstr ""
+
+#: D1,D2
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr ""
+
+msgid "Green options"
+msgstr ""
+
+msgid "Blue options"
+msgstr ""
+
+#: E1,E2
+msgid "Knowledge and behavioural change"
+msgstr ""
+
+msgid "Information and awareness raising"
+msgstr ""
+
+msgid "Capacity building empowering and lifestyle practices"
+msgstr ""

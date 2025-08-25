@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Etkinliğe ilişkin bir arka plan belgesi mevcut"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Bu Durumda Uygulanan Uyarlama Seçenekleri"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Adaptasyon Sektörleri"
 
@@ -86,15 +83,20 @@ msgstr "Tüm zamanlar"
 msgid "Background information"
 msgstr "Arka plan bilgisi"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belçika"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Biyocoğrafik bölgeler:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Mavi seçenekler"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Kapasite geliştirme, güçlendirme ve yaşam tarzı uygulamaları"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Şehir:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "İklim Etkileri"
 
@@ -195,6 +195,11 @@ msgstr "Gözlemevinin iletişim bilgileri"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Katkıda bulunan:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Koordinasyon işbirliği ve ağlar"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "AB finansmanı"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Doğu Ortaklığı Üyeleri ve Enerji Topluluğu Sözleşme Tarafları"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Ekonomi ve Finans"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Tam ekrandan çık"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Climate-ADAPT hakkında daha fazlasını keşfedin"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Finansman teşvik araçları"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Daha fazla arama seçeneği için"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Fransa"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Tam ekran"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Başlarken"
 msgid "Go to advanced search"
 msgstr "Gelişmiş aramaya git"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Yönetişim ve Kurumsal"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Yönetişim düzeyi:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Yeşil seçenekler"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Gri seçenekler"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Tehlike Türü"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Sağlık Etkileri"
 
@@ -449,10 +472,18 @@ msgstr "Göstergeler"
 msgid "Info"
 msgstr "Bilgi"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Bilgilendirme ve farkındalık yaratma"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Sigorta ve risk paylaşım araçları"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Üçüncü taraflardan gelen öğe"
 
@@ -464,8 +495,6 @@ msgstr "Temel Topluluk Sistemleri"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Anahtar Tipi Ölçü"
 
@@ -488,6 +517,11 @@ msgstr "Anahtar türü önlemler"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Anahtar Kelimeler:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Bilgi ve davranış değişikliği"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Daha fazla bilgi mi arıyorsunuz?"
 msgid "Macro-Transnational region:"
 msgstr "Makro-Ulusötesi bölge:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Yönetim ve planlama"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "Şunun için en yararlısı:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Ulusal HHAP"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Doğa temelli çözümler ve ekosistem temelli yaklaşımlar"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Gözlemevi katkıları"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Gözlemevi ortağı"
@@ -651,6 +694,16 @@ msgstr "Katılım"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Ortaklar"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Fiziksel ve teknolojik"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Politika Araçları"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Mevcut dosyayı değiştir"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Climate-ADAPT veritabanında arama yapın"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "AB Uyum Misyonu'nda arama yapın"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Gözlemevi Kaynak Kataloğunda Arayın..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Bölüm"
 
@@ -854,6 +905,11 @@ msgstr "Ulusal veya yerel"
 msgid "Success and limiting factors"
 msgstr "Başarı ve sınırlayıcı faktörler"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Teknolojik seçenekler"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Konular:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Ulusötesi bölgeler"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Öğe türü"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Türler"
 
@@ -1236,6 +1290,11 @@ msgstr "Beyaz Rusya"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belçika"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosna Hersek"
 
@@ -1268,6 +1327,11 @@ msgstr "Danimarka"
 
 msgid "Estonia"
 msgstr "Estonya"
+
+#. undefined
+
+msgid "France"
+msgstr "Fransa"
 
 #. undefined
 

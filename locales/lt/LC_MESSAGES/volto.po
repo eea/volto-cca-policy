@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Galimas renginio foninis dokumentas"
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Šiuo atveju pritaikytos parinktys"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Prisitaikymo sektoriai"
 
@@ -86,15 +83,20 @@ msgstr "Visą laiką"
 msgid "Background information"
 msgstr "Fono informacija"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Belgija"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Biogeografiniai regionai:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Mėlynos parinktys"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Gebėjimų stiprinimas ir gyvenimo būdo praktika"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Miestas:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Klimato poveikis"
 
@@ -195,6 +195,11 @@ msgstr "Observatorijos kontaktinė informacija"
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Bendraautoris:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Koordinavimo bendradarbiavimas ir tinklai"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "ES finansavimo"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Rytų partnerystės nariai ir Energijos bendrijos susitariančiosios šalys"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Ekonomika ir finansai"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Išeikite per visą ekraną"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Sužinokite daugiau apie Climate-ADAPT"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Finansavimo skatinimo priemonės"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Norėdami gauti daugiau paieškos parinkčių"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Prancūzija"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Visas ekranas"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Darbo pradžia"
 msgid "Go to advanced search"
 msgstr "Eikite į išplėstinę paiešką"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Valdymas ir institucinis"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Valdymo lygis:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Žalios parinktys"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Pilkos spalvos parinktys"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Pavojaus tipas"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Poveikis sveikatai"
 
@@ -449,10 +472,18 @@ msgstr "Rodikliai"
 msgid "Info"
 msgstr "Informacija"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Informacija ir sąmoningumo didinimas"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Draudimas ir rizikos pasidalijimo priemonės"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Prekė iš trečiųjų šalių"
 
@@ -464,8 +495,6 @@ msgstr "Pagrindinės bendruomenės sistemos"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Rakto tipo priemonė"
 
@@ -488,6 +517,11 @@ msgstr "Pagrindinio tipo priemonės"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Raktiniai žodžiai:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Žinių ir elgesio pokyčiai"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Ieškote daugiau informacijos?"
 msgid "Macro-Transnational region:"
 msgstr "Makro-tarptautinis regionas:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Valdymas ir planavimas"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "Labiausiai naudinga"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Nacionalinis HHAP"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Gamta pagrįsti sprendimai ir ekosistemomis pagrįsti metodai"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Observatorijos įnašai"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatorijos partneris"
@@ -651,6 +694,16 @@ msgstr "Dalyvavimas"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Partneriai"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Fizinis ir technologinis"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "Politikos priemonės"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Pakeiskite esamą failą"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Ieškokite Climate-ADAPT duomenų bazėje"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Ieškokite ES prisitaikymo prie misijos"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Ieškoti Observatorijos išteklių kataloge..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Skyrius"
 
@@ -854,6 +905,11 @@ msgstr "Subnacionalinis arba vietinis"
 msgid "Success and limiting factors"
 msgstr "Sėkmė ir ribojantys veiksniai"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Technologinės galimybės"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Temos:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Tarptautiniai regionai"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Prekės tipas"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Tipai"
 
@@ -1236,6 +1290,11 @@ msgstr "Baltarusija"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Belgija"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnija ir Hercegovina"
 
@@ -1268,6 +1327,11 @@ msgstr "Danija"
 
 msgid "Estonia"
 msgstr "Estija"
+
+#. undefined
+
+msgid "France"
+msgstr "Prancūzija"
 
 #. undefined
 

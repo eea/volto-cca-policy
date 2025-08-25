@@ -1,3 +1,4 @@
+#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -18,8 +19,6 @@ msgstr "Ένα έγγραφο φόντου για την εκδήλωση είν
 
 #. Default: "Adaptation Approaches"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
 #: search/mission_projects/facets-projects
@@ -44,8 +43,6 @@ msgstr "Επιλογές προσαρμογής που εφαρμόζονται 
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Adaptation Sectors"
 msgstr "Τομείς Προσαρμογής"
 
@@ -86,15 +83,20 @@ msgstr "Όλο το χρόνο"
 msgid "Background information"
 msgstr "Πληροφορίες ιστορικού"
 
-#. Default: "Belgium"
-#: helpers/Constants
-msgid "Belgium"
-msgstr "Βέλγιο"
-
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
 msgstr "Βιογεωγραφικές περιοχές:"
+
+#. Default: "Blue options"
+#: messages
+msgid "Blue options"
+msgstr "Μπλε επιλογές"
+
+#. Default: "Capacity building empowering and lifestyle practices"
+#: messages
+msgid "Capacity building empowering and lifestyle practices"
+msgstr "Πρακτικές ενδυνάμωσης και τρόπου ζωής για την ανάπτυξη ικανοτήτων"
 
 #. Default: "Case Studies Documents"
 #: helpers/Utils
@@ -149,8 +151,6 @@ msgstr "Πόλη:"
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/facets
-#: search/fise/facets
 msgid "Climate Impacts"
 msgstr "Κλιματικές Επιπτώσεις"
 
@@ -195,6 +195,11 @@ msgstr "Στοιχεία επικοινωνίας για το Παρατηρητ
 #: helpers/Utils
 msgid "Contributor:"
 msgstr "Συνεισφέρων:"
+
+#. Default: "Coordination cooperation and networks"
+#: messages
+msgid "Coordination cooperation and networks"
+msgstr "Συντονισμός συνεργασίας και δικτύων"
 
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
@@ -304,6 +309,11 @@ msgstr "χρηματοδότηση της ΕΕ"
 msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Μέλη της Ανατολικής Εταιρικής Σχέσης και Συμβαλλόμενα Μέρη της Ενεργειακής Κοινότητας"
 
+#. Default: "Economic and Finance"
+#: messages
+msgid "Economic and Finance"
+msgstr "Οικονομικών και Οικονομικών"
+
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
@@ -319,15 +329,15 @@ msgstr "Έξοδος από πλήρη οθόνη"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Εξερευνήστε περισσότερα για το Climate-ADAPT"
 
+#. Default: "Financing incentive instruments"
+#: messages
+msgid "Financing incentive instruments"
+msgstr "Χρηματοδοτικά μέσα παροχής κινήτρων"
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Για περισσότερες επιλογές αναζήτησης"
-
-#. Default: "France"
-#: helpers/Constants
-msgid "France"
-msgstr "Γαλλία"
 
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -336,8 +346,6 @@ msgstr "Πλήρης οθόνη"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 #: search/mission_projects/facets-projects
 #: search/mission_stories/facets-stories
 msgid "Funding Programme"
@@ -368,10 +376,25 @@ msgstr "Ξεκινώντας"
 msgid "Go to advanced search"
 msgstr "Μεταβείτε στη σύνθετη αναζήτηση"
 
+#. Default: "Governance and Institutional"
+#: messages
+msgid "Governance and Institutional"
+msgstr "Διακυβέρνηση και θεσμική"
+
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
 msgstr "Επίπεδο διακυβέρνησης:"
+
+#. Default: "Green options"
+#: messages
+msgid "Green options"
+msgstr "Πράσινες επιλογές"
+
+#. Default: "Grey options"
+#: messages
+msgid "Grey options"
+msgstr "Γκρι επιλογές"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -384,7 +407,7 @@ msgid "Hazard Type"
 msgstr "Τύπος κινδύνου"
 
 #. Default: "Health Impacts"
-#: search/health_observatory/config-health
+#: messages
 msgid "Health Impacts"
 msgstr "Επιπτώσεις στην υγεία"
 
@@ -449,10 +472,18 @@ msgstr "δείκτες"
 msgid "Info"
 msgstr "Πληροφορίες"
 
+#. Default: "Information and awareness raising"
+#: messages
+msgid "Information and awareness raising"
+msgstr "Ενημέρωση και ευαισθητοποίηση"
+
+#. Default: "Insurance and risk sharing instruments"
+#: messages
+msgid "Insurance and risk sharing instruments"
+msgstr "Μέσα ασφάλισης και επιμερισμού κινδύνου"
+
 #. Default: "Item from third parties"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Item from third parties"
 msgstr "Είδος από τρίτους"
 
@@ -464,8 +495,6 @@ msgstr "Βασικά κοινοτικά συστήματα"
 #. Default: "Key Type Measure"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Key Type Measure"
 msgstr "Τύπος κλειδιού Μέτρο"
 
@@ -488,6 +517,11 @@ msgstr "Μέτρα βασικού τύπου"
 #: helpers/ContentMetadata
 msgid "Keywords:"
 msgstr "Λέξεις-κλειδιά:"
+
+#. Default: "Knowledge and behavioural change"
+#: messages
+msgid "Knowledge and behavioural change"
+msgstr "Γνώση και αλλαγή συμπεριφοράς"
 
 #. Default: "Language"
 #: search/common
@@ -571,6 +605,11 @@ msgstr "Ψάχνετε για περισσότερες πληροφορίες;"
 msgid "Macro-Transnational region:"
 msgstr "Μακρο-διεθνική περιοχή:"
 
+#. Default: "Management and planning"
+#: messages
+msgid "Management and planning"
+msgstr "Διαχείριση και προγραμματισμός"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -580,6 +619,11 @@ msgstr "Το πιο χρήσιμο για"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
 msgstr "Εθνικό HHAP"
+
+#. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages
+msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr "Λύσεις βασισμένες στη φύση και προσεγγίσεις με βάση το οικοσύστημα"
 
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
@@ -622,7 +666,6 @@ msgid "Observatory contributions"
 msgstr "Συνεισφορές παρατηρητηρίου"
 
 #. Default: "Observatory partner"
-#: search/health_observatory/config-health
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Συνεργάτης του Παρατηρητηρίου"
@@ -651,6 +694,16 @@ msgstr "Συμμετοχή"
 #: components/theme/Views/ProjectView
 msgid "Partners"
 msgstr "Συνεργάτες"
+
+#. Default: "Physical and technological"
+#: messages
+msgid "Physical and technological"
+msgstr "Φυσική και τεχνολογική"
+
+#. Default: "Policy Instruments"
+#: messages
+msgid "Policy Instruments"
+msgstr "μέσα πολιτικής"
 
 #. Default: "Policy and legal background"
 #: components/theme/Views/CaseStudyView
@@ -746,24 +799,22 @@ msgid "Replace existing file"
 msgstr "Αντικατάσταση υπάρχοντος αρχείου"
 
 #. Default: "Search the Climate-ADAPT database"
-#: index
+#: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Αναζητήστε τη βάση δεδομένων Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
-#: index
+#: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Αναζητήστε την αποστολή της ΕΕ για την προσαρμογή"
 
 #. Default: "Search the Observatory Resource Catalogue..."
-#: index
+#: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Αναζήτηση στον Κατάλογο Πόρων του Παρατηρητηρίου..."
 
 #. Default: "Section"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Section"
 msgstr "Τμήμα"
 
@@ -854,6 +905,11 @@ msgstr "Υποεθνικές ή τοπικές"
 msgid "Success and limiting factors"
 msgstr "Επιτυχία και περιοριστικοί παράγοντες"
 
+#. Default: "Technological options"
+#: messages
+msgid "Technological options"
+msgstr "Τεχνολογικές επιλογές"
+
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
@@ -887,8 +943,6 @@ msgstr "Θέματα:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
-#: search/facets
-#: search/fise/facets
 msgid "Transnational regions"
 msgstr "Διακρατικές περιοχές"
 
@@ -899,7 +953,7 @@ msgid "Type of item"
 msgstr "Τύπος αντικειμένου"
 
 #. Default: "Types"
-#: search/health_observatory/config-health
+#: messages
 msgid "Types"
 msgstr "Τύποι"
 
@@ -1236,6 +1290,11 @@ msgstr "Λευκορωσία"
 
 #. undefined
 
+msgid "Belgium"
+msgstr "Βέλγιο"
+
+#. undefined
+
 msgid "Bosnia and Herzegovina"
 msgstr "Βοσνία-Ερζεγοβίνη"
 
@@ -1268,6 +1327,11 @@ msgstr "Δανία"
 
 msgid "Estonia"
 msgstr "Εσθονία"
+
+#. undefined
+
+msgid "France"
+msgstr "Γαλλία"
 
 #. undefined
 
