@@ -56,7 +56,7 @@ const MissionSignatoryProfileView = ({ content }) => {
   return (
     <Container>
       <BannerTitle
-        content={content}
+        content={{ ...content, image: signatoryData?.image }}
         data={{
           info: [{ description: '' }],
           hideContentType: true,
