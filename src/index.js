@@ -554,6 +554,7 @@ const applyConfig = (config) => {
   config.settings.initialReducersBlacklist = [
     ...config.settings.initialReducersBlacklist,
     'intl',
+    'reduxAsyncConnect',
     // 'router',
     // 'content',
   ];
