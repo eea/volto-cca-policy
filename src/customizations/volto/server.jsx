@@ -1,6 +1,3 @@
-/*  Original: https://github.com/plone/volto/blob/16.x.x/src/server.jsx */
-/*  Line: 59 - Fix crash when a supported language it's not in volto/locales folder */
-
 /* eslint no-console: 0 */
 import '@plone/volto/config'; // This is the bootstrap for the global config - server side
 import { existsSync, lstatSync, readFileSync } from 'fs';
@@ -20,7 +17,7 @@ import { resetServerContext } from 'react-beautiful-dnd';
 import { CookiesProvider } from 'react-cookie';
 import cookiesMiddleware from 'universal-cookie-express';
 import debug from 'debug';
-// import crypto from 'crypto';
+import crypto from 'crypto';
 
 import routes from '@plone/volto/routes';
 import config from '@plone/volto/registry';
@@ -49,7 +46,18 @@ import {
 } from '@plone/volto/helpers/AsyncConnect';
 
 let locales = {};
+const isCSP = process.env.CSP_HEADER || config.settings.serverConfig.csp;
 
+// if (config.settings) {
+//   config.settings.supportedLanguages.forEach((lang) => {
+//     const langFileName = toGettextLang(lang);
+//     import('@root/../locales/' + langFileName + '.json').then((locale) => {
+//       locales = { ...locales, [toReactIntlLang(lang)]: locale.default };
+//     });
+//   });
+// }
+
+// customized
 if (config.settings) {
   config.settings.supportedLanguages.forEach((lang) => {
     const langFileName = toGettextLang(lang);
@@ -64,18 +72,7 @@ if (config.settings) {
     // end customization
   });
 }
-
-// function buildCSPHeader(opts, nonce) {
-//   return Object.keys(opts)
-//     .sort()
-//     .reduce((acc, key) => {
-//       return [
-//         ...acc,
-//         `${key} ${opts[key].replaceAll('{nonce}', `'nonce-${nonce}'`)}`,
-//       ];
-//     }, [])
-//     .join('; ');
-// }
+//end customized
 
 function reactIntlErrorHandler(error) {
   debug('i18n')(error);
@@ -84,8 +81,8 @@ function reactIntlErrorHandler(error) {
 const supported = new locale.Locales(keys(languages), 'en');
 
 const server = express()
-  .set('etag', false)
   .disable('x-powered-by')
+  .set('etag', false)
   .head('/*', function (req, res) {
     // Support for HEAD requests. Required by start-test utility in CI.
     res.send('');
@@ -125,7 +122,28 @@ server.use(function (err, req, res, next) {
   }
 });
 
+function buildCSPHeader(opts, nonce) {
+  if (typeof opts === 'string') {
+    //CSP_HEADER
+    return opts.replaceAll('{nonce}', `'nonce-${nonce}'`);
+  }
+  return Object.keys(opts)
+    .sort()
+    .reduce((acc, key) => {
+      return [
+        ...acc,
+        `${key} ${opts[key].replaceAll('{nonce}', `'nonce-${nonce}'`)}`,
+      ];
+    }, [])
+    .join('; ');
+}
+
 function setupServer(req, res, next) {
+  if (isCSP) {
+    const nonce = crypto.randomBytes(16).toString('base64');
+    res.locals.nonce = nonce;
+  }
+
   const api = new Api(req);
 
   const lang = toReactIntlLang(
@@ -199,7 +217,11 @@ function setupServer(req, res, next) {
 }
 
 server.get('/*', (req, res) => {
-  const { errorHandler } = res.locals;
+  const { errorHandler, nonce } = res.locals;
+
+  if (isCSP) {
+    res.setHeader('Content-Security-Policy', buildCSPHeader(isCSP, nonce));
+  }
 
   const api = new Api(req);
 
@@ -265,7 +287,7 @@ server.get('/*', (req, res) => {
         : store.getState().content.data?.language?.token ||
           config.settings.defaultLanguage;
 
-      if (toBackendLang(initialLang) !== contentLang) {
+      if (toBackendLang(initialLang) !== contentLang && url !== '/') {
         const newLang = toReactIntlLang(
           new locale.Locales(contentLang).best(supported).toString(),
         );
@@ -310,6 +332,7 @@ server.get('/*', (req, res) => {
               ${renderToString(
                 <Html
                   extractor={extractor}
+                  nonce={nonce}
                   markup={markup}
                   store={store}
                   extractScripts={
@@ -331,6 +354,7 @@ server.get('/*', (req, res) => {
               ${renderToString(
                 <Html
                   extractor={extractor}
+                  nonce={nonce}
                   markup={markup}
                   store={store}
                   criticalCss={readCriticalCss(req)}
