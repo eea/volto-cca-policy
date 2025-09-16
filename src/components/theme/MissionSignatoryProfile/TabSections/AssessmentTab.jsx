@@ -5,7 +5,7 @@ import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
 
-import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
+import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
@@ -72,7 +72,7 @@ const AssessmentTab = ({ result, general_text }) => {
   }
 
   return (
-    <Tab.Pane>
+    <Tab.Pane className="assessment-tab">
       {Title && <h2>{Title}</h2>}
       {Subheading && (
         <Callout>

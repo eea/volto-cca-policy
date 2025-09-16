@@ -1,9 +1,26 @@
-import { Tab, Grid } from 'semantic-ui-react';
+import { Tab, Grid, Item, Image } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
+
+import image from '@eeacms/volto-cca-policy/../theme/assets/images/administrative_support_service.png';
+
+const ItemsSection = ({ items }) => {
+  if (!items?.length) return null;
+
+  return (
+    <Item.Group className="items-group">
+      {items.map((item, index) => (
+        <Item key={index}>
+          <Image size="tiny" src={image} />
+          <Item.Content verticalAlign="middle">{item}</Item.Content>
+        </Item>
+      ))}
+    </Item.Group>
+  );
+};
 
 const ActionTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
@@ -27,11 +44,7 @@ const ActionTabContent = ({ action }) => {
           {hasSectors && (
             <>
               <h5 className="small-label">{action.Sectors_Label}</h5>
-              <ul>
-                {action.Sectors.map((hazard, index) => (
-                  <li key={index}>{hazard}</li>
-                ))}
-              </ul>
+              <ItemsSection items={action.Sectors} />
             </>
           )}
         </Grid.Column>
@@ -80,7 +93,7 @@ const ActionTab = ({ result, general_text }) => {
   }
 
   return (
-    <Tab.Pane>
+    <Tab.Pane className="action-tab">
       {Title && <h2>{Title}</h2>}
       {Abstract && <HTMLField value={{ data: formatTextToHTML(Abstract) }} />}
       {Abstract_Line && (

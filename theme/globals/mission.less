@@ -14,15 +14,11 @@
   }
 }
 
-body.view-viewview.contenttype-subsite.section-mission
-  .block.gridBlock
-  .image {
+body.view-viewview.contenttype-subsite.section-mission .block.gridBlock .image {
   height: 260px;
 }
 
-body.view-viewview.contenttype-subsite.section-mission
-  .block.gridBlock
-  img {
+body.view-viewview.contenttype-subsite.section-mission .block.gridBlock img {
   height: 260px;
   object-fit: contain;
 }
@@ -78,7 +74,6 @@ body.subsite-mkh {
     }
   }
 
-
   .search-action {
     background-color: @green-1;
   }
@@ -114,7 +109,13 @@ body.subsite-mkh {
   /* Mission signatory profile */
   .signatory-profile {
     .ui.items.items-group {
-      margin: 2em 0 !important;
+      margin: 2em 0;
+    }
+
+    .action-tab {
+      .ui.items.items-group {
+        margin: 1em 0;
+      }
     }
 
     .ui.inverted.button.back-to-map {

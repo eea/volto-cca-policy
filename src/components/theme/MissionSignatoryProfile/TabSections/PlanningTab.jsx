@@ -98,7 +98,7 @@ const PlanningTab = ({ result, general_text }) => {
   }
 
   return (
-    <Tab.Pane>
+    <Tab.Pane className="planning-tab">
       {titleData?.Title && <h2>{titleData.Title}</h2>}
       {titleData?.Abstract_Line && (
         <Callout>
