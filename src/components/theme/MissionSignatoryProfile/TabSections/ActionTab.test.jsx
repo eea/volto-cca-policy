@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, within } from '@testing-library/react';
-import ActionPagesTab from './ActionPagesTab';
+import ActionTab from './ActionTab';
 
 jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
   Callout: ({ children }) => <div>{children}</div>,
@@ -64,9 +64,7 @@ describe('ActionPagesTab', () => {
   };
 
   it('renders action tab content correctly', () => {
-    const { getByText, container } = render(
-      <ActionPagesTab result={mockResult} />,
-    );
+    const { getByText, container } = render(<ActionTab result={mockResult} />);
 
     expect(getByText('Adaptation Actions')).toBeInTheDocument();
     expect(

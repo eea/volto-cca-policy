@@ -8,13 +8,13 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import GovernanceTab from './TabSections/GovernanceTab';
 import AssessmentTab from './TabSections/AssessmentTab';
 import PlanningTab from './TabSections/PlanningTab';
-import ActionPagesTab from './TabSections/ActionPagesTab';
+import ActionTab from './TabSections/ActionTab';
 
 const tabRenderers = {
   Governance_Label: (props) => <GovernanceTab {...props} />,
   Assessment_Label: (props) => <AssessmentTab {...props} />,
   Planning_Label: (props) => <PlanningTab {...props} />,
-  Action_Label: (props) => <ActionPagesTab {...props} />,
+  Action_Label: (props) => <ActionTab {...props} />,
 };
 
 const MissionSignatoryProfileView = ({ content }) => {

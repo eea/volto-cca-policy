@@ -5,7 +5,7 @@ import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
 
-const ActionsTabContent = ({ action }) => {
+const ActionTabContent = ({ action }) => {
   const hasHazards = action?.Climate_Hazards?.length > 0;
   const hasSectors = action?.Sectors.length > 0;
   const hasBenefits = action?.Co_Benefits.length > 0;
@@ -66,7 +66,7 @@ const ActionsTabContent = ({ action }) => {
   );
 };
 
-const ActionPagesTab = ({ result, general_text }) => {
+const ActionTab = ({ result, general_text }) => {
   const { action_text, actions } = result || {};
   const { No_Data_Reported_Label } = general_text || {};
   const { Title, Abstract, Abstract_Line } = action_text?.[0] || {};
@@ -102,7 +102,7 @@ const ActionPagesTab = ({ result, general_text }) => {
               accordions={[
                 {
                   title: action?.More_Details_Label,
-                  content: <ActionsTabContent action={action} />,
+                  content: <ActionTabContent action={action} />,
                 },
               ]}
             />
@@ -113,4 +113,4 @@ const ActionPagesTab = ({ result, general_text }) => {
   );
 };
 
-export default ActionPagesTab;
+export default ActionTab;
