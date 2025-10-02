@@ -17,9 +17,14 @@ const tabRenderers = {
   Action_Label: (props) => <ActionTab {...props} />,
 };
 
-const MissionSignatoryProfileView = ({ content }) => {
+const MissionSignatoryProfileView = ({ content, location }) => {
+  const isSandbox = location.pathname.includes(
+    '/sandbox/eea-sandbox/signatory-reporting',
+  );
   const signatoryData =
-    content?.['@components']?.missionsignatoryprofile?.result || {};
+    content?.['@components']?.missionsignatoryprofile?.[
+      isSandbox ? 'result_beta' : 'result'
+    ] || {};
 
   const {
     governance = [{}],
