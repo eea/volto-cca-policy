@@ -1,7 +1,12 @@
+import cx from 'classnames';
 import { Tab, Image, Segment, Item } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
+import {
+  formatTextToHTML,
+  isEmpty,
+  normalizeImageFileName,
+} from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
 
@@ -11,13 +16,25 @@ const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <Item.Group className="items-group">
-      {items.map((item, index) => (
-        <Item key={index}>
-          <Image size="small" src={image} />
-          <Item.Content verticalAlign="middle">{item.Factor}</Item.Content>
-        </Item>
-      ))}
+    <Item.Group className={cx('items-group', { column: items.length > 5 })}>
+      {items.map((item, index) => {
+        const sanitizedIcon = normalizeImageFileName(item.Icon);
+
+        return (
+          <Item key={index}>
+            {item.Icon ? (
+              <Image
+                src={`/en/mission/icons/signatory-reporting/factors/${sanitizedIcon}/@@images/image`}
+              />
+            ) : (
+              <Image size="small" src={image} />
+            )}
+            <Item.Content>
+              <p>{item.Factor}</p>
+            </Item.Content>
+          </Item>
+        );
+      })}
     </Item.Group>
   );
 };
