@@ -115,6 +115,11 @@ body.subsite-mkh {
     .action-tab {
       .ui.items.items-group {
         margin: 1em 0;
+
+        .ui.image {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
 
@@ -212,11 +217,20 @@ body.subsite-mkh {
 
     .items-group {
       display: block !important;
-      column-count: 2;
+
+      &.column {
+        column-count: 2;
+        column-gap: 15px;
+      }
 
       .item {
         padding: 0.5em 0 !important;
         break-inside: avoid-column;
+
+        .ui.image {
+          width: 40px;
+          height: 40px;
+        }
 
         .content {
           padding-left: 0.5rem !important;

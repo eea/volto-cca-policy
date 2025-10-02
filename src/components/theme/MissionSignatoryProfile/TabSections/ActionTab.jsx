@@ -1,3 +1,5 @@
+import cx from 'classnames';
+import { useLocation } from 'react-router-dom';
 import { Tab, Grid, Item, Image } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
@@ -5,17 +7,22 @@ import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
 
-import image from '@eeacms/volto-cca-policy/../theme/assets/images/administrative_support_service.png';
-
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <Item.Group className="items-group">
+    <Item.Group className={cx('items-group', { column: items.length > 10 })}>
       {items.map((item, index) => (
         <Item key={index}>
-          <Image size="tiny" src={image} />
-          <Item.Content verticalAlign="middle">{item}</Item.Content>
+          {item.Icon && (
+            <Image
+              size="tiny"
+              src={`/en/mission/icons/signatory-reporting/sector/${item.Icon}/@@images/image`}
+            />
+          )}
+          <Item.Content>
+            <p>{item.Sector}</p>
+          </Item.Content>
         </Item>
       ))}
     </Item.Group>
@@ -23,14 +30,19 @@ const ItemsSection = ({ items }) => {
 };
 
 const ActionTabContent = ({ action }) => {
+  const location = useLocation();
   const hasHazards = action?.Climate_Hazards?.length > 0;
   const hasSectors = action?.Sectors.length > 0;
   const hasBenefits = action?.Co_Benefits.length > 0;
 
+  const isSandbox = location.pathname.includes(
+    '/mission/sandbox/eea-sandbox/signatory-reporting',
+  );
+
   return (
     <>
       <Grid columns="12">
-        <Grid.Column mobile={12} tablet={12} computer={6}>
+        <Grid.Column mobile={12} tablet={12} computer={hasBenefits ? 6 : 9}>
           {hasHazards && (
             <>
               <h5 className="small-label">{action.Hazards_Addressed_Label}</h5>
@@ -44,13 +56,21 @@ const ActionTabContent = ({ action }) => {
           {hasSectors && (
             <>
               <h5 className="small-label">{action.Sectors_Label}</h5>
-              <ItemsSection items={action.Sectors} />
+              {isSandbox ? (
+                <ItemsSection items={action.Sectors} />
+              ) : (
+                <ul>
+                  {action.Sectors.map((item, index) => (
+                    <li key={index}>{item.Sector}</li>
+                  ))}
+                </ul>
+              )}
             </>
           )}
         </Grid.Column>
 
-        <Grid.Column mobile={12} tablet={12} computer={6}>
-          {hasBenefits && (
+        {hasBenefits && (
+          <Grid.Column mobile={12} tablet={12} computer={6}>
             <>
               <h5 className="small-label">{action.Co_Benefits_Label}</h5>
               <ul>
@@ -59,8 +79,8 @@ const ActionTabContent = ({ action }) => {
                 ))}
               </ul>
             </>
-          )}
-        </Grid.Column>
+          </Grid.Column>
+        )}
       </Grid>
       {action.Funding_Sources && (
         <>

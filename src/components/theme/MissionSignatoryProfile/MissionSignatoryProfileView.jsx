@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Tab, Container, Divider, Button, Icon } from 'semantic-ui-react';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import { BannerTitle, HTMLField } from '@eeacms/volto-cca-policy/helpers';
@@ -17,9 +17,10 @@ const tabRenderers = {
   Action_Label: (props) => <ActionTab {...props} />,
 };
 
-const MissionSignatoryProfileView = ({ content, location }) => {
+const MissionSignatoryProfileView = ({ content }) => {
+  const location = useLocation();
   const isSandbox = location.pathname.includes(
-    '/sandbox/eea-sandbox/signatory-reporting',
+    '/mission/sandbox/eea-sandbox/signatory-reporting',
   );
   const signatoryData =
     content?.['@components']?.missionsignatoryprofile?.[

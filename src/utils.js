@@ -134,3 +134,22 @@ export const extractPlanNameAndURL = (text) => {
 };
 
 export const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
+
+export const normalizeImageFileName = (filename) => {
+  if (!filename) return '';
+
+  const parts = filename.split('.');
+  if (parts.length < 2)
+    return filename.split('(').join('-').split(')').join('-');
+
+  const ext = parts.pop();
+  let name = parts.join('.');
+
+  name = name.split('(').join('-').split(')').join('-');
+
+  if (name.endsWith('-')) {
+    name = name.slice(0, -1);
+  }
+
+  return `${name}.${ext}`;
+};
