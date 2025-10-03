@@ -116,9 +116,16 @@ body.subsite-mkh {
       .ui.items.items-group {
         margin: 1em 0;
 
+        .item {
+          .content {
+            font-size: 16px;
+            max-width: 300px;
+          }
+        }
+
         .ui.image {
-          width: 30px;
-          height: 30px;
+          width: 35px;
+          height: 35px;
         }
       }
     }
@@ -218,14 +225,17 @@ body.subsite-mkh {
     .items-group {
       display: block !important;
 
-      &.column {
-        column-count: 2;
-        column-gap: 15px;
+      @media only screen and (min-width: 900px) {
+        &.column {
+          column-count: 2;
+          column-gap: 15px;
+        }
       }
 
       .item {
         padding: 0.5em 0 !important;
         break-inside: avoid-column;
+        align-items: center;
 
         .ui.image {
           width: 40px;
@@ -233,7 +243,9 @@ body.subsite-mkh {
         }
 
         .content {
-          padding-left: 0.5rem !important;
+          font-size: 18px;
+          padding-left: 0.6rem !important;
+          max-width: 300px;
         }
       }
     }

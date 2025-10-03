@@ -1,31 +1,48 @@
 import React from 'react';
+import cx from 'classnames';
 import { Tab, Message, Segment, Grid, Item, Image } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
+  isEmpty,
   formatTextToHTML,
   extractPlanNameAndURL,
-  isEmpty,
+  normalizeImageFileName,
 } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
+
 import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
 
 const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <Item.Group className="items-group">
-      {items.map((sector, index) => (
-        <Item key={index}>
-          <Image size="small" src={image} />
-          <Item.Content verticalAlign="middle">{sector}</Item.Content>
-        </Item>
-      ))}
+    <Item.Group
+      unstackable
+      className={cx('items-group', { column: items.length > 3 })}
+    >
+      {items.map((item, index) => {
+        const normalizedIcon = normalizeImageFileName(item.Icon);
+
+        return (
+          <Item key={index}>
+            {item.Icon ? (
+              <Image
+                src={`/en/mission/icons/signatory-reporting/sector/${normalizedIcon}/@@images/image`}
+              />
+            ) : (
+              <Image size="small" src={image} />
+            )}
+            <Item.Content verticalAlign="middle">
+              <p>{item.Sector}</p>
+            </Item.Content>
+          </Item>
+        );
+      })}
     </Item.Group>
   );
 };
-
 const PlanningGoalContent = ({ goal }) => {
   const hasHazards = goal?.Climate_Hazards?.length > 0;
   const hasComments = !!goal?.Comments;
