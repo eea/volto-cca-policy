@@ -11,7 +11,10 @@ const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <Item.Group className={cx('items-group', { column: items.length > 10 })}>
+    <Item.Group
+      unstackable
+      className={cx('items-group', { column: items.length > 3 })}
+    >
       {items.map((item, index) => (
         <Item key={index}>
           {item.Icon && (

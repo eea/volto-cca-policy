@@ -3,8 +3,8 @@ import { Tab, Image, Segment, Item } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
-  formatTextToHTML,
   isEmpty,
+  formatTextToHTML,
   normalizeImageFileName,
 } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
@@ -16,20 +16,23 @@ const ItemsSection = ({ items }) => {
   if (!items?.length) return null;
 
   return (
-    <Item.Group className={cx('items-group', { column: items.length > 5 })}>
+    <Item.Group
+      unstackable
+      className={cx('items-group', { column: items.length > 3 })}
+    >
       {items.map((item, index) => {
-        const sanitizedIcon = normalizeImageFileName(item.Icon);
+        const normalizedIcon = normalizeImageFileName(item.Icon);
 
         return (
           <Item key={index}>
             {item.Icon ? (
               <Image
-                src={`/en/mission/icons/signatory-reporting/factors/${sanitizedIcon}/@@images/image`}
+                src={`/en/mission/icons/signatory-reporting/factors/${normalizedIcon}/@@images/image`}
               />
             ) : (
               <Image size="small" src={image} />
             )}
-            <Item.Content>
+            <Item.Content verticalAlign="middle">
               <p>{item.Factor}</p>
             </Item.Content>
           </Item>
