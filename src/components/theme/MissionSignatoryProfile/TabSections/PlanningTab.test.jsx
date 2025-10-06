@@ -66,7 +66,7 @@ describe('PlanningTab', () => {
         Further_Information_Link_Text: 'More Info',
         Attachment: 'https://attachment.com',
         Explore_Plan_Link_Text: 'Explore Plan',
-        Sectors: ['Agriculture'],
+        Sectors: [{ Sector: 'Agriculture', Icon: '' }],
       },
     ],
   };
