@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { render, within } from '@testing-library/react';
 import ActionTab from './ActionTab';
 
@@ -64,7 +65,11 @@ describe('ActionPagesTab', () => {
   };
 
   it('renders action tab content correctly', () => {
-    const { getByText, container } = render(<ActionTab result={mockResult} />);
+    const { getByText, container } = render(
+      <MemoryRouter>
+        <ActionTab result={mockResult} />
+      </MemoryRouter>,
+    );
 
     expect(getByText('Adaptation Actions')).toBeInTheDocument();
     expect(
@@ -74,7 +79,6 @@ describe('ActionPagesTab', () => {
 
     const sections = container.querySelectorAll('.section-wrapper');
 
-    // First action
     const firstAction = within(sections[0]);
     expect(firstAction.getByText('First action')).toBeInTheDocument();
     expect(firstAction.getByText('Hazards addressed')).toBeInTheDocument();
@@ -82,7 +86,6 @@ describe('ActionPagesTab', () => {
     expect(firstAction.getByText('Funding source:')).toBeInTheDocument();
     expect(firstAction.getByText('National Funds')).toBeInTheDocument();
 
-    // Second action
     const secondAction = within(sections[1]);
     expect(secondAction.getByText('Second action')).toBeInTheDocument();
     expect(secondAction.getByText('Hazards addressed')).toBeInTheDocument();
