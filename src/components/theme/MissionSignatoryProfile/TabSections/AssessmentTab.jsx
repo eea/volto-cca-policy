@@ -1,46 +1,10 @@
-import cx from 'classnames';
-import { Tab, Image, Segment, Item } from 'semantic-ui-react';
+import { Tab, Segment } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import {
-  isEmpty,
-  formatTextToHTML,
-  normalizeImageFileName,
-} from '@eeacms/volto-cca-policy/utils';
+import { isEmpty, formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
-
-import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
-
-const ItemsSection = ({ items }) => {
-  if (!items?.length) return null;
-
-  return (
-    <Item.Group
-      unstackable
-      className={cx('items-group', { column: items.length > 3 })}
-    >
-      {items.map((item, index) => {
-        const normalizedIcon = normalizeImageFileName(item.Icon);
-
-        return (
-          <Item key={index}>
-            {item.Icon ? (
-              <Image
-                src={`/en/mission/icons/signatory-reporting/factors/${normalizedIcon}/@@images/image`}
-              />
-            ) : (
-              <Image size="small" src={image} />
-            )}
-            <Item.Content verticalAlign="middle">
-              <p>{item.Factor}</p>
-            </Item.Content>
-          </Item>
-        );
-      })}
-    </Item.Group>
-  );
-};
+import ItemsSection from '../ItemsSection';
 
 const AssessmentAccordionContent = ({ result }) => {
   return (
@@ -108,7 +72,11 @@ const AssessmentTab = ({ result, general_text }) => {
         {result.assessment_factors.length > 0 && (
           <>
             {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
-            <ItemsSection items={result.assessment_factors} />
+            <ItemsSection
+              items={result.assessment_factors}
+              field="Factor"
+              iconPath="factors"
+            />
           </>
         )}
 

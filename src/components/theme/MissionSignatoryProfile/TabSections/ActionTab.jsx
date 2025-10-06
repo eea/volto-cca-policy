@@ -1,36 +1,11 @@
-import cx from 'classnames';
 import { useLocation } from 'react-router-dom';
-import { Tab, Grid, Item, Image } from 'semantic-ui-react';
+import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
-
-const ItemsSection = ({ items }) => {
-  if (!items?.length) return null;
-
-  return (
-    <Item.Group
-      unstackable
-      className={cx('items-group', { column: items.length > 3 })}
-    >
-      {items.map((item, index) => (
-        <Item key={index}>
-          {item.Icon && (
-            <Image
-              size="tiny"
-              src={`/en/mission/icons/signatory-reporting/sector/${item.Icon}/@@images/image`}
-            />
-          )}
-          <Item.Content>
-            <p>{item.Sector}</p>
-          </Item.Content>
-        </Item>
-      ))}
-    </Item.Group>
-  );
-};
+import ItemsSection from '../ItemsSection';
 
 const ActionTabContent = ({ action }) => {
   const location = useLocation();
@@ -60,7 +35,11 @@ const ActionTabContent = ({ action }) => {
             <>
               <h5 className="small-label">{action.Sectors_Label}</h5>
               {isSandbox ? (
-                <ItemsSection items={action.Sectors} />
+                <ItemsSection
+                  items={action.Sectors}
+                  field="Sector"
+                  iconPath="sector"
+                />
               ) : (
                 <ul>
                   {action.Sectors.map((item, index) => (
