@@ -15,6 +15,7 @@ jest.mock('@eeacms/volto-cca-policy/utils', () => ({
     name: 'Plan Example',
     url: 'https://plan-link.com',
   }),
+  normalizeImageFileName: (filename) => filename || '',
 }));
 
 describe('PlanningTab', () => {
