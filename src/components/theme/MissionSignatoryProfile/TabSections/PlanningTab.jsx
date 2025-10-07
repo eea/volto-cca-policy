@@ -1,30 +1,15 @@
 import React from 'react';
-import { Tab, Message, Segment, Grid, Item, Image } from 'semantic-ui-react';
+import { Tab, Message, Segment, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import {
+  isEmpty,
   formatTextToHTML,
   extractPlanNameAndURL,
-  isEmpty,
 } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
-import image from '@eeacms/volto-cca-policy/../theme/assets/images/image-narrow.svg';
-
-const ItemsSection = ({ items }) => {
-  if (!items?.length) return null;
-
-  return (
-    <Item.Group className="items-group">
-      {items.map((sector, index) => (
-        <Item key={index}>
-          <Image size="small" src={image} />
-          <Item.Content verticalAlign="middle">{sector}</Item.Content>
-        </Item>
-      ))}
-    </Item.Group>
-  );
-};
+import ItemsSection from '../ItemsSection';
 
 const PlanningGoalContent = ({ goal }) => {
   const hasHazards = goal?.Climate_Hazards?.length > 0;
@@ -98,8 +83,9 @@ const PlanningTab = ({ result, general_text }) => {
   }
 
   return (
-    <Tab.Pane>
+    <Tab.Pane className="planning-tab">
       {titleData?.Title && <h2>{titleData.Title}</h2>}
+
       {titleData?.Abstract_Line && (
         <Callout>
           <HTMLField
@@ -108,27 +94,24 @@ const PlanningTab = ({ result, general_text }) => {
         </Callout>
       )}
 
-      {sortedGoals.map((goal, index) => {
-        return (
-          <div key={index} className="section-wrapper">
-            <h5 className="section-title">
-              <span className="section-number">{goal?.Title_Label} </span>
+      {sortedGoals.map((goal, index) => (
+        <div key={index} className="section-wrapper">
+          <h5 className="section-title">
+            <span className="section-number">{goal?.Title_Label} </span>
+            <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
+          </h5>
 
-              <HTMLField value={{ data: formatTextToHTML(goal?.Title) }} />
-            </h5>
-
-            <AccordionList
-              variation="secondary"
-              accordions={[
-                {
-                  title: goal?.More_Details_Label || 'More details',
-                  content: <PlanningGoalContent goal={goal} />,
-                },
-              ]}
-            />
-          </div>
-        );
-      })}
+          <AccordionList
+            variation="secondary"
+            accordions={[
+              {
+                title: goal?.More_Details_Label || 'More details',
+                content: <PlanningGoalContent goal={goal} />,
+              },
+            ]}
+          />
+        </div>
+      ))}
 
       {goalData?.Climate_Action_Title && (
         <h2>{goalData.Climate_Action_Title}</h2>
@@ -142,71 +125,73 @@ const PlanningTab = ({ result, general_text }) => {
         </Callout>
       )}
 
-      {planning_climate_action.map((action, index) => {
-        return (
-          <React.Fragment key={index}>
-            <br />
-            {action?.Sectors_Introduction && (
-              <Message>
-                <HTMLField
-                  value={{
-                    data: formatTextToHTML(action.Sectors_Introduction),
-                  }}
-                />
-              </Message>
-            )}
-
-            <ItemsSection items={action?.Sectors} />
-
-            {action?.Description && (
+      {planning_climate_action.map((action, index) => (
+        <React.Fragment key={index}>
+          <br />
+          {action?.Sectors_Introduction && (
+            <Message>
               <HTMLField
-                className="description"
-                value={{ data: formatTextToHTML(action.Description) }}
+                value={{
+                  data: formatTextToHTML(action.Sectors_Introduction),
+                }}
               />
-            )}
+            </Message>
+          )}
 
-            {(action?.Approval_Year || action?.End_Year) && (
-              <p>
-                {action?.Year_Of_Approval_Label}{' '}
-                <strong className="date">{action.Approval_Year}</strong>{' '}
-                {action?.End_Year_Of_Plan_Label}{' '}
-                <strong className="date">{action.End_Year}</strong>
-              </p>
-            )}
+          <ItemsSection
+            items={action?.Sectors}
+            field="Sector"
+            iconPath="sector"
+          />
 
-            {action?.Name_Of_Plan_And_Hyperlink && (
-              <p>
-                {(() => {
-                  const { name, url } = extractPlanNameAndURL(
-                    action.Name_Of_Plan_And_Hyperlink,
-                  );
+          {action?.Description && (
+            <HTMLField
+              className="description"
+              value={{ data: formatTextToHTML(action.Description) }}
+            />
+          )}
 
-                  return url ? (
-                    <a href={url} title={name} target="_blank" rel="noreferrer">
-                      <strong>
-                        {action.Further_Information_Link_Text}
-                        {name && ` [${name}]`}
-                      </strong>
-                    </a>
-                  ) : (
+          {(action?.Approval_Year || action?.End_Year) && (
+            <p>
+              {action?.Year_Of_Approval_Label}{' '}
+              <strong className="date">{action.Approval_Year}</strong>{' '}
+              {action?.End_Year_Of_Plan_Label}{' '}
+              <strong className="date">{action.End_Year}</strong>
+            </p>
+          )}
+
+          {action?.Name_Of_Plan_And_Hyperlink && (
+            <p>
+              {(() => {
+                const { name, url } = extractPlanNameAndURL(
+                  action.Name_Of_Plan_And_Hyperlink,
+                );
+                return url ? (
+                  <a href={url} title={name} target="_blank" rel="noreferrer">
                     <strong>
                       {action.Further_Information_Link_Text}
                       {name && ` [${name}]`}
                     </strong>
-                  );
-                })()}
-              </p>
-            )}
-            {action?.Attachment && (
-              <p>
-                <a href={action.Attachment}>
-                  <strong>{action.Explore_Plan_Link_Text}</strong>
-                </a>
-              </p>
-            )}
-          </React.Fragment>
-        );
-      })}
+                  </a>
+                ) : (
+                  <strong>
+                    {action.Further_Information_Link_Text}
+                    {name && ` [${name}]`}
+                  </strong>
+                );
+              })()}
+            </p>
+          )}
+
+          {action?.Attachment && (
+            <p>
+              <a href={action.Attachment}>
+                <strong>{action.Explore_Plan_Link_Text}</strong>
+              </a>
+            </p>
+          )}
+        </React.Fragment>
+      ))}
     </Tab.Pane>
   );
 };

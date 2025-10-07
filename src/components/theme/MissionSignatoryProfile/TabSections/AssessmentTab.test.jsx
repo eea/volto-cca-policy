@@ -9,6 +9,7 @@ jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
 jest.mock('@eeacms/volto-cca-policy/utils', () => ({
   isEmpty: (arr) => !arr || arr.length === 0,
   formatTextToHTML: (text) => text,
+  normalizeImageFileName: (filename) => filename || '',
 }));
 
 const mockData = {

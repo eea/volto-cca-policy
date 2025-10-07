@@ -10,7 +10,7 @@ jest.mock('./TabSections/AssessmentTab', () => () => (
   <div>Mocked Assessment</div>
 ));
 jest.mock('./TabSections/PlanningTab', () => () => <div>Mocked Planning</div>);
-jest.mock('./TabSections/ActionPagesTab', () => () => <div>Mocked Action</div>);
+jest.mock('./TabSections/ActionTab', () => () => <div>Mocked Action</div>);
 
 jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
   BannerTitle: ({ children }) => <div>{children}</div>,

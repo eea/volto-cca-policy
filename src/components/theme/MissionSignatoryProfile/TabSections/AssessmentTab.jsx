@@ -1,26 +1,10 @@
-import { Tab, Image, Segment, Item } from 'semantic-ui-react';
+import { Tab, Segment } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
+import { isEmpty, formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
-
-import image from '@eeacms/volto-cca-policy/../theme//assets/images/image-narrow.svg';
-
-const ItemsSection = ({ items }) => {
-  if (!items?.length) return null;
-
-  return (
-    <Item.Group className="items-group">
-      {items.map((item, index) => (
-        <Item key={index}>
-          <Image size="small" src={image} />
-          <Item.Content verticalAlign="middle">{item.Factor}</Item.Content>
-        </Item>
-      ))}
-    </Item.Group>
-  );
-};
+import ItemsSection from '../ItemsSection';
 
 const AssessmentAccordionContent = ({ result }) => {
   return (
@@ -72,7 +56,7 @@ const AssessmentTab = ({ result, general_text }) => {
   }
 
   return (
-    <Tab.Pane>
+    <Tab.Pane className="assessment-tab">
       {Title && <h2>{Title}</h2>}
       {Subheading && (
         <Callout>
@@ -88,7 +72,11 @@ const AssessmentTab = ({ result, general_text }) => {
         {result.assessment_factors.length > 0 && (
           <>
             {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
-            <ItemsSection items={result.assessment_factors} />
+            <ItemsSection
+              items={result.assessment_factors}
+              field="Factor"
+              iconPath="factors"
+            />
           </>
         )}
 
