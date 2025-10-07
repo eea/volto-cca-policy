@@ -52,7 +52,7 @@ const GovernanceTab = ({ result, general_text }) => {
   }
 
   return (
-    <Tab.Pane>
+    <Tab.Pane className="governance-tab">
       {Title && <h2>{Title}</h2>}
 
       {Introduction && <Callout>{Introduction}</Callout>}
