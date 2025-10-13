@@ -85,7 +85,7 @@ const AssessmentTab = ({ result, general_text }) => {
             {Attachments && <h4>{Attachments}</h4>}
             {assessment_risks.map((risk, index) => {
               const title = risk?.Attachment_Title
-                ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
+                ? `${index + 1}. ${risk.Attachment_Title} - ${
                     risk.Year_Of_Publication || ''
                   }`
                 : null;
