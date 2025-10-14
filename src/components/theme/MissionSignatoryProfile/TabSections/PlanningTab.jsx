@@ -127,9 +127,8 @@ const PlanningTab = ({ result, general_text }) => {
 
       {planning_climate_action.map((action, index) => (
         <React.Fragment key={index}>
-          <br />
           {action?.Sectors_Introduction && (
-            <Message>
+            <Message className="sectors-introduction">
               <HTMLField
                 value={{
                   data: formatTextToHTML(action.Sectors_Introduction),
@@ -173,12 +172,7 @@ const PlanningTab = ({ result, general_text }) => {
                       {name && ` [${name}]`}
                     </strong>
                   </a>
-                ) : (
-                  <strong>
-                    {action.Further_Information_Link_Text}
-                    {name && ` [${name}]`}
-                  </strong>
-                );
+                ) : null;
               })()}
             </p>
           )}

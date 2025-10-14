@@ -63,19 +63,19 @@ const GovernanceTab = ({ result, general_text }) => {
 
       {Describe && <HTMLField value={{ data: formatTextToHTML(Describe) }} />}
 
-      <br />
-
       {Provide && (
-        <AccordionList
-          accordions={[
-            {
-              title: Provide_Title,
-              content: (
-                <HTMLField value={{ data: formatTextToHTML(Provide) }} />
-              ),
-            },
-          ]}
-        />
+        <div className="provide-section">
+          <AccordionList
+            accordions={[
+              {
+                title: Provide_Title,
+                content: (
+                  <HTMLField value={{ data: formatTextToHTML(Provide) }} />
+                ),
+              },
+            ]}
+          />
+        </div>
       )}
     </Tab.Pane>
   );
