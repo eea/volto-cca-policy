@@ -10,8 +10,8 @@ import ItemsSection from '../ItemsSection';
 const ActionTabContent = ({ action }) => {
   const location = useLocation();
   const hasHazards = action?.Climate_Hazards?.length > 0;
-  const hasSectors = action?.Sectors.length > 0;
-  const hasBenefits = action?.Co_Benefits.length > 0;
+  const hasSectors = action?.Sectors?.length > 0;
+  const hasBenefits = action?.Co_Benefits?.length > 0;
 
   const isSandbox = location.pathname.includes(
     '/mission/sandbox/eea-sandbox/signatory-reporting',
@@ -65,17 +65,14 @@ const ActionTabContent = ({ action }) => {
         )}
       </Grid>
       {action.Funding_Sources && (
-        <>
-          <br />
-          <div className="funding-sources">
-            <span>{action.Funding_Sources_Label} </span>
-            <strong>
-              <HTMLField
-                value={{ data: formatTextToHTML(action.Funding_Sources) }}
-              />
-            </strong>
-          </div>
-        </>
+        <div className="funding-sources">
+          <span>{action.Funding_Sources_Label} </span>
+          <strong>
+            <HTMLField
+              value={{ data: formatTextToHTML(action.Funding_Sources) }}
+            />
+          </strong>
+        </div>
       )}
     </>
   );

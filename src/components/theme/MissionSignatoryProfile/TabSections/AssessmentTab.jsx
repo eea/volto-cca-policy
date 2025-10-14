@@ -41,8 +41,9 @@ const AssessmentTab = ({ result, general_text }) => {
     Hazards_Title,
     Hazards_Abstract,
   } = result.assessment_text?.[0] || {};
-  const assessment_risks = result.assessment_risks || [];
-  const assessment_hazards_sectors = result.assessment_hazards_sectors || [];
+
+  const assessment_risks = result?.assessment_risks || [];
+  const assessment_hazards_sectors = result?.assessment_hazards_sectors || [];
   const { No_Data_Reported_Label } = general_text || {};
 
   const NoResults =
@@ -58,6 +59,7 @@ const AssessmentTab = ({ result, general_text }) => {
   return (
     <Tab.Pane className="assessment-tab">
       {Title && <h2>{Title}</h2>}
+
       {Subheading && (
         <Callout>
           <HTMLField value={{ data: formatTextToHTML(Subheading) }} />
@@ -69,7 +71,7 @@ const AssessmentTab = ({ result, general_text }) => {
       <div className="tab-section-wrapper assessment">
         {Cra_Title && <h3>{Cra_Title}</h3>}
 
-        {result.assessment_factors.length > 0 && (
+        {result.assessment_factors?.length > 0 && (
           <>
             {Cra_Abstract && <h5>{Cra_Abstract}</h5>}
             <ItemsSection
@@ -83,26 +85,19 @@ const AssessmentTab = ({ result, general_text }) => {
         {assessment_risks.length > 0 && (
           <>
             {Attachments && <h4>{Attachments}</h4>}
-            {assessment_risks.map((risk, index) => {
-              const title = risk?.Attachment_Title
-                ? `${risk.Assessment_Id}. ${risk.Attachment_Title} - ${
-                    risk.Year_Of_Publication || ''
-                  }`
-                : null;
-              return (
-                <div key={index}>
-                  <AccordionList
-                    variation="tertiary"
-                    accordions={[
-                      {
-                        title: title,
-                        content: <AssessmentAccordionContent result={risk} />,
-                      },
-                    ]}
-                  />
-                </div>
-              );
-            })}
+
+            <AccordionList
+              variation="tertiary"
+              multiple={false}
+              accordions={assessment_risks.map((risk, index) => ({
+                title: risk?.Attachment_Title
+                  ? `${index + 1}. ${risk.Attachment_Title} - ${
+                      risk.Year_Of_Publication || ''
+                    }`
+                  : `Risk ${index + 1}`,
+                content: <AssessmentAccordionContent result={risk} />,
+              }))}
+            />
           </>
         )}
       </div>
@@ -115,7 +110,7 @@ const AssessmentTab = ({ result, general_text }) => {
 
       <br />
 
-      {assessment_hazards_sectors && (
+      {assessment_hazards_sectors.length > 0 && (
         <AccordionList
           accordions={assessment_hazards_sectors.map((category) => ({
             title: category.Hazard,
