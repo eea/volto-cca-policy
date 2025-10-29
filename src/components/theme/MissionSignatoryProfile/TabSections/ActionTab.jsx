@@ -1,4 +1,3 @@
-import { useLocation } from 'react-router-dom';
 import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
@@ -8,14 +7,9 @@ import NoDataReported from '../NoDataReported';
 import ItemsSection from '../ItemsSection';
 
 const ActionTabContent = ({ action }) => {
-  const location = useLocation();
   const hasHazards = action?.Climate_Hazards?.length > 0;
   const hasSectors = action?.Sectors?.length > 0;
   const hasBenefits = action?.Co_Benefits?.length > 0;
-
-  const isSandbox = location.pathname.includes(
-    '/mission/sandbox/eea-sandbox/signatory-reporting',
-  );
 
   return (
     <>
@@ -34,7 +28,8 @@ const ActionTabContent = ({ action }) => {
           {hasSectors && (
             <>
               <h5 className="small-label">{action.Sectors_Label}</h5>
-              {isSandbox ? (
+
+              {action.Sectors.some((s) => s.Icon) ? (
                 <ItemsSection
                   items={action.Sectors}
                   field="Sector"
