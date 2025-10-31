@@ -110,18 +110,52 @@ const AssessmentTab = ({ result, general_text }) => {
 
       <br />
 
-      {assessment_hazards_sectors.length > 0 && (
+      {assessment_hazards_sectors?.length > 0 && (
         <AccordionList
-          accordions={assessment_hazards_sectors.map((category) => ({
-            title: category.Hazard,
-            content: (
-              <ul>
-                {category.Sectors.map((sector, idx) => (
-                  <li key={idx}>{sector}</li>
-                ))}
-              </ul>
-            ),
-          }))}
+          accordions={assessment_hazards_sectors.flatMap((item) => {
+            // Beta data (Category > Hazards > Sectors)
+            if (item.Category && Array.isArray(item.Hazards)) {
+              return [
+                {
+                  title: item.Category,
+                  content: (
+                    <ul>
+                      {item.Hazards.map((hazard, index) => (
+                        <li key={index}>
+                          <strong>{hazard.Hazard}</strong>
+                          {Array.isArray(hazard.Sectors) &&
+                            hazard.Sectors.length > 0 && (
+                              <ul>
+                                {hazard.Sectors.map((sector, sIndex) => (
+                                  <li key={sIndex}>{sector}</li>
+                                ))}
+                              </ul>
+                            )}
+                        </li>
+                      ))}
+                    </ul>
+                  ),
+                },
+              ];
+            }
+
+            // Production data (Category=null but has Hazards array)
+            if (item.Category === null && Array.isArray(item.Hazards)) {
+              return item.Hazards.map((hazard) => ({
+                title: hazard.Hazard,
+                content: (
+                  <ul>
+                    {Array.isArray(hazard.Sectors) &&
+                      hazard.Sectors.map((sector, index) => (
+                        <li key={index}>{sector}</li>
+                      ))}
+                  </ul>
+                ),
+              }));
+            }
+
+            return [];
+          })}
         />
       )}
     </Tab.Pane>

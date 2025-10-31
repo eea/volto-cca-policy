@@ -105,7 +105,7 @@ describe('PlanningTab', () => {
   it('renders hyperlink with extracted name and URL', () => {
     const { getByText } = render(<PlanningTab result={mockResult} />);
 
-    const link = getByText(/More Info \[Plan Example\]/);
+    const link = getByText('More Info');
     expect(link).toBeInTheDocument();
     expect(link.closest('a')).toHaveAttribute('href', 'https://plan-link.com');
   });

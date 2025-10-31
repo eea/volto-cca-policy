@@ -2,7 +2,12 @@ import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ImageGallery from './ImageGallery';
 
-jest.mock('react-slick', () => (props) => <div>React Slick Gallery</div>);
+jest.mock('react-slick', () => {
+  const React = require('react');
+  return React.forwardRef((props, ref) => (
+    <div ref={ref}>React Slick Gallery</div>
+  ));
+});
 
 const mockItems = [
   {

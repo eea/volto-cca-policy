@@ -113,24 +113,29 @@ const trimTrailingChars = (str) => {
 export const extractPlanNameAndURL = (text) => {
   if (!text) return { name: '', url: '' };
 
-  // Match URL inside parentheses
-  const parenthesisMatch = text.match(/\((https?:\/\/[^\s)]+)\)/);
-  // Match first direct URL not inside parentheses
-  const directMatch = text.match(/https?:\/\/[^\s,;)]+/);
-  const url = parenthesisMatch?.[1] || directMatch?.[0] || '';
+  // Match all URLs
+  const urls = text.match(/https?:\/\/[^\s,;)]+/g) || [];
 
   let name = text;
+  let url = '';
 
-  if (url) {
-    // Remove URL and any punctuation before it
-    name = name.replace(`(${url})`, '').replace(url, '');
-    name = trimTrailingChars(name).trim();
+  if (urls.length > 1) {
+    // Edge case like Rotterdam: use second URL as the actual link
+    name = text.split(urls[0])[0] || urls[0]; // name is before or equals first URL
+    url = urls[1];
+  } else {
+    const parenthesisMatch = text.match(/\((https?:\/\/[^\s)]+)\)/);
+    const directMatch = text.match(/https?:\/\/[^\s,;)]+/);
+    url = parenthesisMatch?.[1] || directMatch?.[0] || '';
+
+    if (url) {
+      name = text.replace(`(${url})`, '').replace(url, '');
+    }
   }
 
-  return {
-    name: name,
-    url,
-  };
+  name = trimTrailingChars(name).trim();
+
+  return { name, url };
 };
 
 export const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;

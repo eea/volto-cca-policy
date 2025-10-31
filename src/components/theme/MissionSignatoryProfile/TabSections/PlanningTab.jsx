@@ -159,27 +159,27 @@ const PlanningTab = ({ result, general_text }) => {
             </p>
           )}
 
-          {action?.Name_Of_Plan_And_Hyperlink && (
-            <p>
-              {(() => {
-                const { name, url } = extractPlanNameAndURL(
-                  action.Name_Of_Plan_And_Hyperlink,
-                );
-                return url ? (
-                  <a href={url} title={name} target="_blank" rel="noreferrer">
-                    <strong>
-                      {action.Further_Information_Link_Text}
-                      {name && ` [${name}]`}
-                    </strong>
+          {(() => {
+            const { url } = extractPlanNameAndURL(
+              action?.Name_Of_Plan_And_Hyperlink,
+            );
+
+            if (url && action?.Further_Information_Link_Text) {
+              return (
+                <p>
+                  <a href={url} target="_blank" rel="noreferrer">
+                    <strong>{action.Further_Information_Link_Text}</strong>
                   </a>
-                ) : null;
-              })()}
-            </p>
-          )}
+                </p>
+              );
+            }
+
+            return null;
+          })()}
 
           {action?.Attachment && (
             <p>
-              <a href={action.Attachment}>
+              <a href={action.Attachment} target="_blank" rel="noreferrer">
                 <strong>{action.Explore_Plan_Link_Text}</strong>
               </a>
             </p>
