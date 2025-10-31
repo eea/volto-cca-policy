@@ -6,6 +6,14 @@ jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
   Callout: ({ children }) => <div>{children}</div>,
 }));
 
+jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
+  HTMLField: ({ value }) => <div>{value.data}</div>,
+}));
+
+jest.mock('../NoDataReported', () => ({ label }) => (
+  <div data-testid="no-data">{label}</div>
+));
+
 jest.mock('@eeacms/volto-cca-policy/utils', () => ({
   isEmpty: (arr) => !arr || arr.length === 0,
   formatTextToHTML: (text) => text,
@@ -38,13 +46,28 @@ const mockData = {
       Please_Explain: 'Explanation content here.',
     },
   ],
+  assessment_hazards_sectors: [
+    {
+      Category: 'Water Management',
+      Hazards: [
+        { Hazard: 'Flooding', Sectors: ['Agriculture', 'Health'] },
+        { Hazard: 'Drought', Sectors: ['Energy'] },
+      ],
+    },
+    {
+      Category: null,
+      Hazards: [
+        { Hazard: 'Storms', Sectors: ['Transport', 'Tourism'] },
+        { Hazard: 'Heatwaves', Sectors: ['Health'] },
+      ],
+    },
+  ],
 };
 
 describe('AssessmentTab', () => {
-  it('renders core sections and nested tabs', () => {
+  it('renders all major sections correctly', () => {
     render(<AssessmentTab result={mockData} />);
 
-    // General headings
     expect(screen.getByText('Assessment Title')).toBeInTheDocument();
     expect(screen.getByText('Assessment Subheading')).toBeInTheDocument();
     expect(
@@ -56,8 +79,54 @@ describe('AssessmentTab', () => {
     expect(screen.getByText('Hazards')).toBeInTheDocument();
     expect(screen.getByText('Hazards abstract text.')).toBeInTheDocument();
 
-    // Items section
     expect(screen.getByText('Factor A')).toBeInTheDocument();
     expect(screen.getByText('Factor B')).toBeInTheDocument();
+  });
+
+  it('renders assessment risks accordion with link and details', () => {
+    render(<AssessmentTab result={mockData} />);
+
+    expect(
+      screen.getByText('1. Risk Attachment Title - 2023'),
+    ).toBeInTheDocument();
+
+    expect(screen.getByText('Explore this risk')).toBeInTheDocument();
+    expect(screen.getByText('Details')).toBeInTheDocument();
+    expect(screen.getByText('Explanation content here.')).toBeInTheDocument();
+
+    const link = screen.getByRole('link', { name: 'Explore this risk' });
+    expect(link).toHaveAttribute('href', 'https://example.com');
+  });
+
+  it('renders beta-style hazards (Category > Hazard > Sector)', () => {
+    render(<AssessmentTab result={mockData} />);
+
+    expect(screen.getByText('Water Management')).toBeInTheDocument();
+    expect(screen.getByText('Flooding')).toBeInTheDocument();
+    expect(screen.getByText('Drought')).toBeInTheDocument();
+
+    expect(screen.getByText('Agriculture')).toBeInTheDocument();
+    expect(screen.getAllByText('Health').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText('Energy')).toBeInTheDocument();
+  });
+
+  it('renders production-style hazards (Hazard > Sectors)', () => {
+    render(<AssessmentTab result={mockData} />);
+
+    expect(screen.getByText('Storms')).toBeInTheDocument();
+    expect(screen.getByText('Heatwaves')).toBeInTheDocument();
+    expect(screen.getByText('Transport')).toBeInTheDocument();
+    expect(screen.getByText('Tourism')).toBeInTheDocument();
+    expect(screen.getAllByText('Health').length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('renders NoDataReported when no data available', () => {
+    render(
+      <AssessmentTab
+        result={{}}
+        general_text={{ No_Data_Reported_Label: 'No info' }}
+      />,
+    );
+    expect(screen.getByTestId('no-data')).toHaveTextContent('No info');
   });
 });
