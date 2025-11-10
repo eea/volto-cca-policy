@@ -21,6 +21,73 @@ export const download_fields = [
   { field: 'cca_partner_contributors', name: 'Observatory impacts' },
 ];
 
+export const download_mission_funding_fields = [
+  { field: 'about', name: 'About' },
+  { field: 'title', name: 'Title' },
+  { field: 'created', name: 'Creation Date' },
+  { field: 'issued', name: 'Issued Date' },
+  {
+    field: 'cca_objective_funding_programme',
+    name: 'Objective of the funding programme',
+  },
+  {
+    field: 'cca_funding_type',
+    name: 'Type of funding',
+  },
+  {
+    field: 'cca_funding_rate',
+    name: 'Funding rate (percentage of covered costs)',
+  },
+  {
+    field: 'cca_budget_range',
+    name: 'Expected budget range of proposals',
+  },
+  {
+    field: 'cca_is_blended',
+    name: 'Can the received funding be combined with other funding sources (blended)?',
+  },
+  {
+    field: 'cca_is_consortium_required',
+    name: 'Is a Consortium required to apply for the funding?',
+  },
+  {
+    field: 'cca_administering_authority',
+    name: 'Administering authority',
+  },
+  {
+    field: 'cca_publication_page',
+    name: 'Publication page',
+  },
+  {
+    field: 'cca_general_information',
+    name: 'General information',
+  },
+  {
+    field: 'cca_further_information',
+    name: 'Further information',
+  },
+  {
+    field: 'spatial',
+    name: 'Countries where the funding opportunity is offered',
+  },
+  {
+    field: 'cca_funding_region',
+    name: 'Region where the funding is offered',
+  },
+  {
+    field: 'cca_rast_steps',
+    name: 'RAST step(s) of relevance',
+  },
+  {
+    field: 'cca_eligible_entities',
+    name: 'Eligible to receive funding',
+  },
+  {
+    field: 'cca_adaptation_sectors',
+    name: 'Adaptation Sectors',
+  },
+];
+
 export const eea_languages = [
   { name: 'български', code: 'bg' },
   { name: 'Español', code: 'es' },

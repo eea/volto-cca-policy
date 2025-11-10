@@ -1,5 +1,6 @@
 import { mergeConfig } from '@eeacms/search';
 import { getClientProxyAddress } from '../utils';
+import { download_mission_funding_fields } from '../../constants';
 
 import facets from './facets-funding';
 
@@ -28,6 +29,9 @@ export default function installMissionFundingSearch(config) {
       },
     },
   };
+
+  config.searchui.missionFundingSearch.download_fields =
+    download_mission_funding_fields;
 
   const { missionFundingSearch } = config.searchui;
   missionFundingSearch.permanentFilters.push({
