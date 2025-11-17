@@ -472,6 +472,10 @@ const applyConfig = (config) => {
       ],
       menuItemChildrenListColumns: [2, 1, 1, 1],
     },
+    '/en/observatory/topics': {
+      menuItemColumns: ['six wide column', 'six wide column'],
+      menuItemChildrenListColumns: [2, 1],
+    },
   };
 
   // we won't need the listing for Folders
