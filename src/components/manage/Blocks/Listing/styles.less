@@ -5,18 +5,23 @@
 
 // Organisation Cards Listing
 .organisationCards {
-  margin: 2em 0;
-
   .ui.cards {
     .card.u-card {
       border: 1px solid #ccc;
       margin: 0.75em;
-      height: 240px;
+
+      &:hover .card-title {
+        text-decoration: underline;
+      }
 
       .header {
         height: 100%;
+        gap: 1em;
         display: flex !important;
-        flex-direction: column;
+      }
+
+      .image {
+        width: 100%;
       }
 
       .img-container {

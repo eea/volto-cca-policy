@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { CardGroup, CardHeader, CardContent, Card } from 'semantic-ui-react';
-import { UniversalLink } from '@plone/volto/components';
 
 import './styles.less';
 
@@ -11,7 +10,7 @@ const OrganisationCardsListingView = ({ items }) => {
         <Card fluid className="u-card" key={index} href={item['@id']}>
           <CardContent>
             <CardHeader>
-              <UniversalLink className="image">
+              <div className="image">
                 <div className="img-container">
                   <img
                     src={item['@id'] + '/@@images/logo/preview'}
@@ -19,10 +18,8 @@ const OrganisationCardsListingView = ({ items }) => {
                     className="ui image"
                   ></img>
                 </div>
-              </UniversalLink>
-              <UniversalLink className="header-link org-name">
-                {item.title}
-              </UniversalLink>
+              </div>
+              <div className="card-title">{item.title}</div>
             </CardHeader>
           </CardContent>
         </Card>
