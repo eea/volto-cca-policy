@@ -4,29 +4,30 @@
 @import (multiple, reference, optional) '../../theme.config';
 
 // Organisation Cards Listing
-div.organisationCards {
-  div.card.u-card {
-    border: 1px solid #ccc;
-    margin: 10px;
+.organisationCards {
+  margin: 2em 0;
 
-    div.img-container {
-      min-height: 120px;
-      text-align: center;
+  .ui.cards {
+    .card.u-card {
+      border: 1px solid #ccc;
+      margin: 0.75em;
+      height: 240px;
 
-      img {
-        width: auto;
-        max-height: 100px;
+      .header {
+        height: 100%;
+        display: flex !important;
+        flex-direction: column;
       }
-    }
 
-    a.org-name {
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      font-size: 1em;
-    }
+      .img-container {
+        min-height: 120px;
+        text-align: center;
 
-    a.org-site {
-      font-size: 0.7em;
+        img {
+          width: auto;
+          max-height: 100px;
+        }
+      }
     }
   }
 }
