@@ -474,7 +474,7 @@ const applyConfig = (config) => {
     },
     '/en/observatory/topics': {
       menuItemColumns: ['six wide column', 'six wide column'],
-      menuItemChildrenListColumns: [2, 1],
+      menuItemChildrenListColumns: [3, 1],
     },
   };
 
