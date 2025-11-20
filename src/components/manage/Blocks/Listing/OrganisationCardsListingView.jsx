@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
-import { CardGroup, CardHeader, CardContent, Card } from 'semantic-ui-react';
+import {
+  CardGroup,
+  CardHeader,
+  CardContent,
+  CardDescription,
+  Card,
+} from 'semantic-ui-react';
 
 import './styles.less';
 
 const OrganisationCardsListingView = ({ items }) => {
   return (
-    <CardGroup itemsPerRow={4}>
+    <CardGroup itemsPerRow={4} stackable>
       {items.map((item, index) => (
         <Card fluid className="u-card" key={index} href={item['@id']}>
           <CardContent>
@@ -16,11 +22,13 @@ const OrganisationCardsListingView = ({ items }) => {
                     src={item['@id'] + '/@@images/logo/preview'}
                     alt={item.title}
                     className="ui image"
-                  ></img>
+                  />
                 </div>
               </div>
-              <div className="card-title">{item.title}</div>
             </CardHeader>
+            <CardDescription>
+              <h5 className="card-title">{item.title}</h5>
+            </CardDescription>
           </CardContent>
         </Card>
       ))}
