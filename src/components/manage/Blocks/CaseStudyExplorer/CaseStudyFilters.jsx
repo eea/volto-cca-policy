@@ -93,7 +93,7 @@ export default function CaseStudyFilters(props) {
           {Object.entries(filters?.sectors || {}).map(
             ([value, label], index) => (
               <Checkbox
-                label={intl.formatMessage({ id: label })}
+                label={intl.formatMessage({ id: label.trim() })}
                 value={value}
                 checked={activeFilters.sectors.includes(value)}
                 name="sectors"
@@ -119,7 +119,7 @@ export default function CaseStudyFilters(props) {
           {Object.entries(filters?.impacts || {}).map(
             ([value, label], index) => (
               <Checkbox
-                label={intl.formatMessage({ id: label })}
+                label={intl.formatMessage({ id: label.trim() })}
                 checked={activeFilters.impacts.includes(value)}
                 value={value}
                 name="impacts"
@@ -145,10 +145,10 @@ export default function CaseStudyFilters(props) {
           {Object.entries(filters?.measures || {}).map(
             ([key, values], index) => (
               <div className="subcategory" key={'ktm' + index}>
-                <h4>{intl.formatMessage({ id: key })}</h4>
+                <h4>{intl.formatMessage({ id: key.trim() })}</h4>
                 {Object.entries(values).map(([_, valData]) => (
                   <Checkbox
-                    label={intl.formatMessage({ id: valData.value })}
+                    label={intl.formatMessage({ id: valData.value.trim() })}
                     value={valData.key}
                     checked={activeFilters.measures.includes(valData.key)}
                     name="measures"
@@ -175,7 +175,7 @@ export default function CaseStudyFilters(props) {
           {Object.entries(filters?.elements || {}).map(
             ([value, label], index) => (
               <Checkbox
-                label={intl.formatMessage({ id: label })}
+                label={intl.formatMessage({ id: label.trim() })}
                 value={value}
                 checked={activeFilters.elements.includes(value)}
                 name="elements"
