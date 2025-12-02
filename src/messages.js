@@ -79,7 +79,7 @@ export const messagesList = defineMessages({
     id: 'Capacity building empowering and lifestyle practices',
     defaultMessage: 'Capacity building empowering and lifestyle practices',
   },
-  e2: {
+  e3: {
     id: 'Capacity building empowering and lifestyle practices',
     defaultMessage: 'Capacity building empowering and lifestyle practices',
   },
