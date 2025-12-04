@@ -18,6 +18,7 @@ import {
   Tags,
   Toolbar,
 } from '@plone/volto/components';
+import { AlternateHrefLangs } from '@plone/volto/components/theme/AlternateHrefLangs/AlternateHrefLangs';
 import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
@@ -203,22 +204,11 @@ class View extends Component {
    */
   render() {
     const { views } = config;
-    if (this.props.error && this.props.error.code === 301) {
-      // const base = typeof window !== 'undefined' ? window.location.origin : '';
-
+    if ([301, 302].includes(this.props.error?.code)) {
       const redirect = flattenToAppURL(this.props.error.url)
-        .replaceAll('/++api++', '/')
-        .replaceAll('//', '/')
-        .split('?')[0];
-      const redirParams = {
-        pathname: redirect,
-        search: this.props.location.search,
-      };
-
-      // eslint-disable-next-line no-console
-      console.log('Redirecting', redirParams);
-
-      return <Redirect to={redirParams} push={true} />;
+        .split('?')[0]
+        .replace('/++api++', '');
+      return <Redirect to={`${redirect}${this.props.location.search}`} />;
     } else if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
       if (this.props.error.status === undefined) {
@@ -247,6 +237,7 @@ class View extends Component {
     return (
       <div id="view">
         <ContentMetadataTags content={this.props.content} />
+        <AlternateHrefLangs content={this.props.content} />
         {/* Body class if displayName in component is set */}
         <BodyClass
           className={
