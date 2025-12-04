@@ -798,16 +798,19 @@ msgid "Replace existing file"
 msgstr ""
 
 #. Default: "Search the Climate-ADAPT database"
+#: index
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr ""
 
 #. Default: "Search the EU Mission on Adaptation"
+#: index
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr ""
 
 #. Default: "Search the Observatory Resource Catalogue..."
+#: index
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr ""
@@ -4034,4 +4037,9 @@ msgstr ""
 #. Default: "Located in"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
+msgstr ""
+
+#. undefined
+
+msgid "Biodiversity protection"
 msgstr ""

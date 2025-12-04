@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -799,16 +798,19 @@ msgid "Replace existing file"
 msgstr "Cserélje le a meglévő fájlt"
 
 #. Default: "Search the Climate-ADAPT database"
+#: index
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Keresés a Climate-ADAPT adatbázisban"
 
 #. Default: "Search the EU Mission on Adaptation"
+#: index
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Keresés az EU alkalmazkodással foglalkozó missziójában"
 
 #. Default: "Search the Observatory Resource Catalogue..."
+#: index
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Keresés az Obszervatórium forráskatalógusában..."
@@ -4036,3 +4038,8 @@ msgstr "sort_by"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr "text_searchitem_location"
+
+#. undefined
+
+msgid "Biodiversity protection"
+msgstr "Biodiverzitás védelme"

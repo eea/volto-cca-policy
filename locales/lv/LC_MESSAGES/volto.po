@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -799,16 +798,19 @@ msgid "Replace existing file"
 msgstr "Aizstāt esošo failu"
 
 #. Default: "Search the Climate-ADAPT database"
+#: index
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Meklējiet Climate-ADAPT datu bāzē"
 
 #. Default: "Search the EU Mission on Adaptation"
+#: index
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Meklēt ES adaptācijas misijā"
 
 #. Default: "Search the Observatory Resource Catalogue..."
+#: index
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Meklēt Observatorijas resursu katalogā..."
@@ -913,7 +915,7 @@ msgstr "Tehnoloģiskās iespējas"
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "The Adaptation Support Tool - Getting started"
-msgstr "Adaptācijas atbalsta rīks — darba sākšana"
+msgstr "Adaptācijas atbalsta rīks — darba sākšana"
 
 #. Default: "The date refers to the date of release of the video"
 #: helpers/ContentMetadata
@@ -1766,7 +1768,7 @@ msgstr "Videoklipi un aplādes"
 #. undefined
 #: health_menu:43
 msgid "2021 Lancet Countdown-EEA Briefing"
-msgstr "2021. gada Lancet Countdown-EEA instruktāža"
+msgstr "2021. gada Lancet Countdown-EEA instruktāža"
 
 #. undefined
 #: site_menu:28
@@ -2139,7 +2141,7 @@ msgstr "Valsts karstuma un veselības brīdinājuma sistēmas un rīcības plān
 #. undefined
 #: health_menu:17
 msgid "National policy analysis 2022"
-msgstr "Valsts politikas analīze 2022. gadā"
+msgstr "Valsts politikas analīze 2022. gadā"
 
 #. undefined
 #: site_menu:86
@@ -2410,7 +2412,7 @@ msgstr "Piezemes NO2 prognoze (CAMS)"
 #. undefined
 #: 
 msgid "2022 EEA Report on Climate & Health"
-msgstr "EVA 2022. gada ziņojums par klimatu un veselību"
+msgstr "EVA 2022. gada ziņojums par klimatu un veselību"
 
 #. undefined
 #: 
@@ -2773,12 +2775,12 @@ msgstr "6.5. Adaptācijas uzraudzība un novērtēšana: pašpārbaude"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:93
 msgid "A value for the quality of 2x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 62."
-msgstr "2 reizes augsta pikseļu blīvuma attēlu kvalitātes vērtība no 1 (zemākais) līdz 95 (augstākais). Vērtība 0 nozīmēs, ka tiks izmantota plone.scaling noklusējuma vērtība, kas pašlaik ir 62."
+msgstr "2 reizes augsta pikseļu blīvuma attēlu kvalitātes vērtība no 1 (zemākais) līdz 95 (augstākais). Vērtība 0 nozīmēs, ka tiks izmantota plone.scaling noklusējuma vērtība, kas pašlaik ir 62."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:106
 msgid "A value for the quality of 3x high pixel density images, from 1 (lowest) to 95 (highest). A value of 0 will mean plone.scaling's default will be used, which is currently 51."
-msgstr "3 reizes augsta pikseļu blīvuma attēlu kvalitātes vērtība no 1 (zemākais) līdz 95 (augstākais). Vērtība 0 nozīmēs, ka tiks izmantota plone.scaling noklusējuma vērtība, kas pašlaik ir 51."
+msgstr "3 reizes augsta pikseļu blīvuma attēlu kvalitātes vērtība no 1 (zemākais) līdz 95 (augstākais). Vērtība 0 nozīmēs, ka tiks izmantota plone.scaling noklusējuma vērtība, kas pašlaik ir 51."
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:67
@@ -3503,7 +3505,7 @@ msgstr "Vietējās ekonomikas sistēmas"
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:450
 msgid "MCR 2030"
-msgstr "MCR 2030"
+msgstr "MCR 2030"
 
 #. undefined
 #: ../../climateadapt/browser/__init__.py:180
@@ -3544,12 +3546,12 @@ msgstr "Kalnu apvidi"
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:119
 msgid "National adaptation policy not reported beyond mandatory reporting in 2023"
-msgstr "Valsts adaptācijas politika netika ziņots pēc obligātās ziņošanas 2023. gadā"
+msgstr "Valsts adaptācijas politika netika ziņots pēc obligātās ziņošanas 2023. gadā"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:115
 msgid "National adaptation policy reported in 2023"
-msgstr "Valsts adaptācijas politika, par kuru ziņots 2023. gadā"
+msgstr "Valsts adaptācijas politika, par kuru ziņots 2023. gadā"
 
 #. undefined
 #: ../../climateadapt/browser/pt/health_homepage.pt:20
@@ -3565,12 +3567,12 @@ msgstr "Nav ziņots par novērtējumiem"
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:88
 msgid "No data reported in 2021"
-msgstr "Nav ziņots par datiem par 2021. gadu"
+msgstr "Nav ziņots par datiem par 2021. gadu"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:104
 msgid "No data reported in 2023"
-msgstr "Nav ziņots par datiem par 2023. gadu"
+msgstr "Nav ziņots par datiem par 2023. gadu"
 
 #. undefined
 #: ../../climateadapt/browser/pt/countries-d3.pt:99
@@ -3825,7 +3827,7 @@ msgstr "Sociālie: informatīvi"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
 msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr "Norādiet visus atļautos maksimālos attēla izmērus — vienu katrā rindā. Nepieciešamais formāts ir &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
+msgstr "Norādiet visus atļautos maksimālos attēla izmērus — vienu katrā rindā. Nepieciešamais formāts ir &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -4036,3 +4038,8 @@ msgstr "kārtot_pēc"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr "text_searchitem_location"
+
+#. undefined
+
+msgid "Biodiversity protection"
+msgstr "Bioloģiskās daudzveidības aizsardzība"
