@@ -204,11 +204,36 @@ class View extends Component {
    */
   render() {
     const { views } = config;
-    if ([301, 302].includes(this.props.error?.code)) {
-      const redirect = flattenToAppURL(this.props.error.url)
+
+    if (this.props.content?.['@components']?.redirect) {
+      const redirectInfo = this.props.content['@components'].redirect;
+      const redirect = flattenToAppURL(redirectInfo.url)
         .split('?')[0]
         .replace('/++api++', '');
-      return <Redirect to={`${redirect}${this.props.location.search}`} />;
+      const targetUrl = `${redirect}${this.props.location.search}`;
+
+      if (this.props.staticContext) {
+        this.props.staticContext.error_code = redirectInfo.status || 302;
+      }
+
+      return <Redirect to={targetUrl} />;
+    }
+
+    if (this.props.error && [301, 302].includes(this.props.error.code)) {
+      const redirect = flattenToAppURL(this.props.error.url)
+        .replaceAll('/++api++', '/')
+        .replaceAll('//', '/')
+        .split('?')[0];
+      const redirParams = {
+        pathname: redirect,
+        search: this.props.location.search,
+      };
+
+      if (this.props.staticContext) {
+        this.props.staticContext.error_code = this.props.error.code;
+      }
+
+      return <Redirect to={redirParams} push={true} />;
     } else if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
       if (this.props.error.status === undefined) {

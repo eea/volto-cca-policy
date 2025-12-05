@@ -322,10 +322,22 @@ const apiMiddlewareFactory =
             }
 
             // Redirect
-            else if (error?.code === 301) {
+            else if (error?.code === 301 || error?.code === 302) {
+              // console.log('API middleware: Redirect error caught', {
+              //   code: error.code,
+              //   error: error,
+              //   responseBody: error.response?.body,
+              // });
+
+              const redirectUrl =
+                error.response?.body?.url || error.response?.body?.location;
+
               next({
                 ...rest,
-                error,
+                error: {
+                  ...error,
+                  url: redirectUrl,
+                },
                 statusCode: error.code,
                 connectionRefused: false,
                 type: SET_APIERROR,
