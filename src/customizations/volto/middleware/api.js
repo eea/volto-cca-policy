@@ -322,6 +322,7 @@ const apiMiddlewareFactory =
             }
 
             // Redirect
+            // customization
             else if (error?.code === 301 || error?.code === 302) {
               const redirectUrl =
                 error.response?.body?.url || error.response?.body?.location;
@@ -337,6 +338,7 @@ const apiMiddlewareFactory =
                 type: SET_APIERROR,
               });
             }
+            // end of customization
 
             // Redirect
             else if (error?.code === 408) {
