@@ -18,6 +18,7 @@ import {
   Tags,
   Toolbar,
 } from '@plone/volto/components';
+import { AlternateHrefLangs } from '@plone/volto/components/theme/AlternateHrefLangs/AlternateHrefLangs';
 import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
@@ -98,6 +99,8 @@ class View extends Component {
        * Error type
        */
       status: PropTypes.number,
+      code: PropTypes.number,
+      url: PropTypes.string,
     }),
   };
 
@@ -203,23 +206,33 @@ class View extends Component {
    */
   render() {
     const { views } = config;
-    if (this.props.error && this.props.error.code === 301) {
-      // const base = typeof window !== 'undefined' ? window.location.origin : '';
 
-      const redirect = flattenToAppURL(this.props.error.url)
-        .replaceAll('/++api++', '/')
+    // customization
+    const redirectData =
+      this.props.content?.['@components']?.redirect ||
+      ([301, 302].includes(this.props.error?.code) && {
+        url: this.props.error.url,
+        status: this.props.error.code,
+      });
+
+    if (redirectData) {
+      const redirect = flattenToAppURL(redirectData.url)
+        .replace('/++api++', '')
         .replaceAll('//', '/')
         .split('?')[0];
-      const redirParams = {
-        pathname: redirect,
-        search: this.props.location.search,
-      };
+      const targetUrl = `${redirect}${this.props.location.search}`;
 
-      // eslint-disable-next-line no-console
-      console.log('Redirecting', redirParams);
+      if (this.props.staticContext) {
+        this.props.staticContext.error_code = redirectData.status || 302;
+      }
 
-      return <Redirect to={redirParams} push={true} />;
-    } else if (this.props.error && !this.props.connectionRefused) {
+      const shouldPush = redirectData.status === 302;
+
+      return <Redirect to={targetUrl} push={shouldPush} />;
+    }
+    // end of customization
+
+    if (this.props.error && !this.props.connectionRefused) {
       let FoundView;
       if (this.props.error.status === undefined) {
         // For some reason, while development and if CORS is in place and the
@@ -247,6 +260,7 @@ class View extends Component {
     return (
       <div id="view">
         <ContentMetadataTags content={this.props.content} />
+        <AlternateHrefLangs content={this.props.content} />
         {/* Body class if displayName in component is set */}
         <BodyClass
           className={

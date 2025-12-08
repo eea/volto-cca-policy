@@ -50,10 +50,7 @@ export function addExpandersToPath(path, type, isAnonymous) {
   } = qs.parseUrl(path, { decode: false });
 
   const expandersFromConfig = apiExpanders
-    .filter((expand) => {
-      const res = matchPath(url, expand.match) && expand[type];
-      return res;
-    })
+    .filter((expand) => matchPath(url, expand.match) && expand[type])
     .map((expand) => expand[type]);
 
   const expandMerge = compact(
@@ -70,7 +67,15 @@ export function addExpandersToPath(path, type, isAnonymous) {
 
   const querystringFromConfig = apiExpanders
     .filter((expand) => matchPath(url, expand.match) && expand[type])
-    .reduce((acc, expand) => ({ ...acc, ...expand?.['querystring'] }), {});
+    .reduce((acc, expand) => {
+      let querystring = expand?.['querystring'];
+      // The querystring accepts being a function to be able to take other
+      // config parameters
+      if (typeof querystring === 'function') {
+        querystring = querystring(config);
+      }
+      return { ...acc, ...querystring };
+    }, {});
 
   const queryMerge = { ...query, ...querystringFromConfig };
 
@@ -128,6 +133,13 @@ const apiMiddlewareFactory =
     const { settings } = config;
 
     const isAnonymous = !getState().userSession.token;
+    // const token = getState().userSession.token;
+    // let isAnonymous = true;
+    // if (token) {
+    //   const tokenExpiration = jwtDecode(token).exp;
+    //   const currentTime = new Date().getTime() / 1000;
+    //   isAnonymous = !token || currentTime > tokenExpiration;
+    // }
 
     if (typeof action === 'function') {
       return action(dispatch, getState);
@@ -310,15 +322,23 @@ const apiMiddlewareFactory =
             }
 
             // Redirect
-            else if (error?.code === 301) {
+            // customization
+            else if (error?.code === 301 || error?.code === 302) {
+              const redirectUrl =
+                error.response?.body?.url || error.response?.body?.location;
+
               next({
                 ...rest,
-                error,
+                error: {
+                  ...error,
+                  url: redirectUrl,
+                },
                 statusCode: error.code,
                 connectionRefused: false,
                 type: SET_APIERROR,
               });
             }
+            // end of customization
 
             // Redirect
             else if (error?.code === 408) {
@@ -337,7 +357,7 @@ const apiMiddlewareFactory =
                 ...rest,
                 error,
                 statusCode: error.response,
-                message: error.response.body.message,
+                message: error.response?.body?.message,
                 connectionRefused: false,
                 type: SET_APIERROR,
               });
