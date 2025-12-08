@@ -323,12 +323,6 @@ const apiMiddlewareFactory =
 
             // Redirect
             else if (error?.code === 301 || error?.code === 302) {
-              // console.log('API middleware: Redirect error caught', {
-              //   code: error.code,
-              //   error: error,
-              //   responseBody: error.response?.body,
-              // });
-
               const redirectUrl =
                 error.response?.body?.url || error.response?.body?.location;
 
