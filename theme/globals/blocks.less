@@ -93,3 +93,56 @@
 .ui.items > .item > img + .content {
   padding-left: 1rem;
 }
+
+.color-bg-green {
+  background-color: @green;
+}
+
+/* Divider */
+.ui.divider.green,
+.ui.divider.green:not(.vertical):not(.horizontal) {
+  border-top-color: @green;
+  color: @green;
+}
+
+/* Listing cards */
+.ui.accordion.green > .active.title,
+.ui.accordion.green.inverted > .title,
+.ui.accordion.green > .filter,
+.ui.accordion.secondary.green > .active.title,
+.ui.accordion.secondary.green.inverted > .title,
+.ui.accordion.secondary.green > .filter {
+  --bg-color: @green;
+}
+
+.ui.accordion.green > .active.title,
+.ui.accordion.green.inverted > .title,
+.ui.accordion.green.inverted > .icon,
+.ui.accordion.green > .filter {
+  --text-color-hover: white;
+  --text-color: white;
+}
+
+.ui.card.green {
+  box-shadow: none !important;
+  border: none;
+}
+
+.ui.card.green {
+  --card-text-color: @green;
+  --card-background-color: white;
+}
+
+.card.green.inverted,
+.cardsVisualization .ui.card.green {
+  --card-background-color: white;
+  --card-text-color: @green !important;
+}
+
+.cardsVisualization {
+  .ui.cards {
+    .ui.card.green::before {
+      background-color: @green;
+    }
+  }
+}
