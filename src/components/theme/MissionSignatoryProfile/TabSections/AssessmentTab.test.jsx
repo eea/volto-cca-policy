@@ -98,26 +98,15 @@ describe('AssessmentTab', () => {
     expect(link).toHaveAttribute('href', 'https://example.com');
   });
 
-  it('renders beta-style hazards (Category > Hazard > Sector)', () => {
+  it('renders hazards (Category > Hazard > Sector)', () => {
     render(<AssessmentTab result={mockData} />);
 
     expect(screen.getByText('Water Management')).toBeInTheDocument();
     expect(screen.getByText('Flooding')).toBeInTheDocument();
     expect(screen.getByText('Drought')).toBeInTheDocument();
-
     expect(screen.getByText('Agriculture')).toBeInTheDocument();
     expect(screen.getAllByText('Health').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('Energy')).toBeInTheDocument();
-  });
-
-  it('renders production-style hazards (Hazard > Sectors)', () => {
-    render(<AssessmentTab result={mockData} />);
-
-    expect(screen.getByText('Storms')).toBeInTheDocument();
-    expect(screen.getByText('Heatwaves')).toBeInTheDocument();
-    expect(screen.getByText('Transport')).toBeInTheDocument();
-    expect(screen.getByText('Tourism')).toBeInTheDocument();
-    expect(screen.getAllByText('Health').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders NoDataReported when no data available', () => {

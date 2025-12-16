@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -28,7 +27,7 @@ msgstr "Approches d'adaptation"
 #. Default: "Adaptation Approaches:"
 #: helpers/ContentMetadata
 msgid "Adaptation Approaches:"
-msgstr "Approches d’adaptation :"
+msgstr "Approches d’adaptation :"
 
 #. Default: "Adaptation Details"
 #: components/theme/Views/AdaptationOptionView
@@ -86,7 +85,7 @@ msgstr "Informations générales"
 #. Default: "Biogeographical regions:"
 #: helpers/ContentMetadata
 msgid "Biogeographical regions:"
-msgstr "Régions biogéographiques :"
+msgstr "Régions biogéographiques :"
 
 #. Default: "Blue options"
 #: messages
@@ -116,7 +115,7 @@ msgstr "Illustrations d’études de cas"
 #. Default: "Case studies related to this option:"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
-msgstr "Études de cas liées à cette option :"
+msgstr "Études de cas liées à cette option :"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -141,7 +140,7 @@ msgstr "Choisissez une région"
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
-msgstr "Choisissez une carte thématique :"
+msgstr "Choisissez une carte thématique :"
 
 #. Default: "City:"
 #: helpers/ContentMetadata
@@ -168,7 +167,7 @@ msgstr "Impacts climatiques"
 #. Default: "Climate impacts:"
 #: helpers/ContentMetadata
 msgid "Climate impacts:"
-msgstr "Impacts climatiques :"
+msgstr "Impacts climatiques :"
 
 #. Default: "Climate-ADAPT case studies"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -217,7 +216,7 @@ msgstr "Pays"
 #. Default: "Countries:"
 #: helpers/ContentMetadata
 msgid "Countries:"
-msgstr "Pays :"
+msgstr "Pays :"
 
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
@@ -227,7 +226,7 @@ msgstr "Date de création :"
 #. Default: "Date of publication:"
 #: helpers/ContentMetadata
 msgid "Date of publication:"
-msgstr "Date de parution :"
+msgstr "Date de parution :"
 
 #. Default: "Date of release:"
 #: helpers/ContentMetadata
@@ -354,7 +353,7 @@ msgstr "Programme de financement"
 #. Default: "Funding Programme:"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
-msgstr "Programme de financement :"
+msgstr "Programme de financement :"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
@@ -384,7 +383,7 @@ msgstr "Gouvernance et Institutionnel"
 #. Default: "Governance level:"
 #: helpers/ContentMetadata
 msgid "Governance level:"
-msgstr "Niveau de gouvernance :"
+msgstr "Niveau de gouvernance :"
 
 #. Default: "Green options"
 #: messages
@@ -414,7 +413,7 @@ msgstr "Impacts sur la santé"
 #. Default: "Health impact:"
 #: helpers/ContentMetadata
 msgid "Health impact:"
-msgstr "Impact sur la santé :"
+msgstr "Impact sur la santé :"
 
 #. Default: "Health impacts"
 #: search/health_observatory/facets-health
@@ -434,7 +433,7 @@ msgstr "Systèmes d’alerte sanitaire en matière de chaleur (HHWS)"
 #. Default: "IPCC adaptation options categories:"
 #: helpers/ContentMetadata
 msgid "IPCC adaptation options categories:"
-msgstr "Catégories d’options d’adaptation du GIEC :"
+msgstr "Catégories d’options d’adaptation du GIEC :"
 
 #. Default: "IPCC categories"
 #: components/theme/Views/AdaptationOptionView
@@ -501,7 +500,7 @@ msgstr "Type de clé Mesure"
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
 msgid "Key Type Measures:"
-msgstr "Mesures de type clé :"
+msgstr "Mesures de type clé :"
 
 #. Default: "Key activities within climate change and health"
 #: components/theme/Views/DatabaseItemView
@@ -516,7 +515,7 @@ msgstr "Mesures de type clé"
 #. Default: "Keywords:"
 #: helpers/ContentMetadata
 msgid "Keywords:"
-msgstr "Mots-clés :"
+msgstr "Mots-clés :"
 
 #. Default: "Knowledge and behavioural change"
 #: messages
@@ -603,7 +602,7 @@ msgstr "Vous cherchez plus d’informations ?"
 #. Default: "Macro-Transnational region:"
 #: helpers/ContentMetadata
 msgid "Macro-Transnational region:"
-msgstr "Région macro-transnationale :"
+msgstr "Région macro-transnationale :"
 
 #. Default: "Management and planning"
 #: messages
@@ -776,7 +775,7 @@ msgstr "Références"
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Region's countries:"
-msgstr "Pays de la région :"
+msgstr "Pays de la région :"
 
 #. Default: "Regions"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
@@ -786,7 +785,7 @@ msgstr "Régions"
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
-msgstr "Contenu associé :"
+msgstr "Contenu associé :"
 
 #. Default: "Related documents and presentations"
 #: components/theme/Views/DatabaseItemView
@@ -799,16 +798,19 @@ msgid "Replace existing file"
 msgstr "Remplacer le fichier existant"
 
 #. Default: "Search the Climate-ADAPT database"
+#: index
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Rechercher dans la base de données Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
+#: index
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Rechercher la mission de l'UE sur l'adaptation"
 
 #. Default: "Search the Observatory Resource Catalogue..."
+#: index
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Rechercher dans le catalogue de ressources de l'Observatoire..."
@@ -892,7 +894,7 @@ msgstr "Participation des parties prenantes"
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
 msgid "Sub Nationals:"
-msgstr "Sous-nationaux :"
+msgstr "Sous-nationaux :"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -939,7 +941,7 @@ msgstr "Cet objet a été archivé car son contenu est obsolète. Vous pouvez to
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
 msgid "Topics:"
-msgstr "Sujets :"
+msgstr "Sujets :"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -1001,7 +1003,7 @@ msgstr "Sites Web"
 #. Default: "Websites:"
 #: helpers/Utils
 msgid "Websites:"
-msgstr "Sites Web :"
+msgstr "Sites Web :"
 
 #. Default: "When"
 #: helpers/Utils
@@ -3338,7 +3340,7 @@ msgstr "Santé et bien-être"
 #. undefined
 #: ../../climateadapt/browser/pt/countries-heat-index.pt:105
 msgid "Heat index of HHWS:"
-msgstr "Indice de chaleur de HHWS :"
+msgstr "Indice de chaleur de HHWS :"
 
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:79
@@ -3439,12 +3441,12 @@ msgstr "Mesures de type clé"
 #. undefined
 #: ../../climateadapt/browser/admin.py:562
 msgid "Keyword succesfully deleted: ${kw_old}."
-msgstr "Mot clé supprimé avec succès : ${kw_old}."
+msgstr "Mot clé supprimé avec succès : ${kw_old}."
 
 #. undefined
 #: ../../climateadapt/browser/admin.py:592
 msgid "Keyword succesfully renamed: ${kw_old} to ${kw_new}."
-msgstr "Mot clé renommé avec succès : ${kw_old} en ${kw_new}."
+msgstr "Mot clé renommé avec succès : ${kw_old} en ${kw_new}."
 
 #. undefined
 #: ../../climateadapt/browser/pt/aceitem_view.pt:65
@@ -3825,7 +3827,7 @@ msgstr "Social: information"
 #. undefined
 #: ../../climateadapt/image_scales/interfaces.py:43
 msgid "Specify all allowed maximum image dimensions, one per line. The required format is &lt;name&gt; &lt;width&gt;:&lt;height&gt;."
-msgstr "Spécifiez toutes les dimensions maximales autorisées de l’image, une par ligne. Le format requis est &lt;nom&gt; &lt;largeur&gt; :&lt;hauteur&gt;."
+msgstr "Spécifiez toutes les dimensions maximales autorisées de l’image, une par ligne. Le format requis est &lt;nom&gt; &lt;largeur&gt; :&lt;hauteur&gt;."
 
 #. undefined
 #: ../../climateadapt/browser/pt/casestudy_view.pt:76
@@ -4036,3 +4038,8 @@ msgstr "Trier par"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr "text_searchitem_location"
+
+#. undefined
+
+msgid "Biodiversity protection"
+msgstr "Protection de la biodiversité"

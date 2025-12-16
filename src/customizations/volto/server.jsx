@@ -321,7 +321,11 @@ server.get('/*', (req, res) => {
       }
 
       if (context.url) {
-        res.redirect(flattenToAppURL(context.url));
+        // customization
+        // Use error_code if set (for Link redirects with specific status)
+        const redirectStatus = context.error_code || 302;
+        res.redirect(redirectStatus, flattenToAppURL(context.url));
+        // end of customization
       } else if (context.error_code) {
         res.set({
           'Cache-Control': 'no-cache',

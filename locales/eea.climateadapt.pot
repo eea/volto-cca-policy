@@ -1898,3 +1898,6 @@ msgstr ""
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr ""
+
+msgid "Biodiversity protection"
+msgstr ""

@@ -1,4 +1,3 @@
-#. 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -799,16 +798,19 @@ msgid "Replace existing file"
 msgstr "Vervang bestaand bestand"
 
 #. Default: "Search the Climate-ADAPT database"
+#: index
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Zoek in de Climate-ADAPT-database"
 
 #. Default: "Search the EU Mission on Adaptation"
+#: index
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Zoek naar de EU-missie voor aanpassing"
 
 #. Default: "Search the Observatory Resource Catalogue..."
+#: index
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Doorzoek de bronnencatalogus van het Observatorium..."
@@ -3875,7 +3877,7 @@ msgstr "Het Burgemeestersconvenant van de EU"
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_forest.pt:350
 msgid "The EU finances adaptation to climate change in Europe through a wide range of instruments. The Multiannual Financial Framework 2021-2027 ensures that at least 25% of the European budget is climate-related expenditure. Therefore, Climate adaptation actions have to be integrated into all the major EU spending programmes, and a tracking system is put in place to guarantee these objectives are met."
-msgstr "De EU financiert de aanpassing aan de klimaatverandering in Europa via een breed scala aan instrumenten. Het meerjarig financieel kader 2021-2027 zorgt ervoor dat ten minste 25 % van de Europese begroting klimaatgerelateerde uitgaven zijn. Daarom moeten klimaatadaptatiemaatregelen worden geïntegreerd in alle grote uitgavenprogramma’s van de EU en wordt een traceringssysteem ingevoerd om te garanderen dat deze doelstellingen worden gehaald."
+msgstr "De EU financiert de aanpassing aan de klimaatverandering in Europa via een breed scala aan instrumenten. Het meerjarig financieel kader 2021-2027 zorgt ervoor dat ten minste 25 % van de Europese begroting klimaatgerelateerde uitgaven zijn. Daarom moeten klimaatadaptatiemaatregelen worden geïntegreerd in alle grote uitgavenprogramma’s van de EU en wordt een traceringssysteem ingevoerd om te garanderen dat deze doelstellingen worden gehaald."
 
 #. undefined
 #: ../../climateadapt/browser/pt/landing_page_urban.pt:309
@@ -4036,3 +4038,8 @@ msgstr "Sorteer_by"
 #: ../../climateadapt/browser/pt-overrides/plone.app.search.search.pt:541
 msgid "text_searchitem_location"
 msgstr "text_searchitem_location"
+
+#. undefined
+
+msgid "Biodiversity protection"
+msgstr "Bescherming van biodiversiteit"

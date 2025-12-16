@@ -113,7 +113,6 @@ const AssessmentTab = ({ result, general_text }) => {
       {assessment_hazards_sectors?.length > 0 && (
         <AccordionList
           accordions={assessment_hazards_sectors.flatMap((item) => {
-            // Beta data (Category > Hazards > Sectors)
             if (item.Category && Array.isArray(item.Hazards)) {
               return [
                 {
@@ -137,21 +136,6 @@ const AssessmentTab = ({ result, general_text }) => {
                   ),
                 },
               ];
-            }
-
-            // Production data (Category=null but has Hazards array)
-            if (item.Category === null && Array.isArray(item.Hazards)) {
-              return item.Hazards.map((hazard) => ({
-                title: hazard.Hazard,
-                content: (
-                  <ul>
-                    {Array.isArray(hazard.Sectors) &&
-                      hazard.Sectors.map((sector, index) => (
-                        <li key={index}>{sector}</li>
-                      ))}
-                  </ul>
-                ),
-              }));
             }
 
             return [];
