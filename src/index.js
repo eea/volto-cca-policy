@@ -570,6 +570,11 @@ const applyConfig = (config) => {
   config.widgets.vocabulary['plone.app.vocabularies.Users'] =
     SelectAutoCompleteWidget;
 
+  config.settings.themeColors = [
+    ...config.settings.themeColors,
+    { value: 'green', title: 'EEA Green' },
+  ];
+
   config.settings.matomoTrackerIdFn = (pathname) => {
     return pathname.split('/')[2] === 'mission'
       ? {
