@@ -33,7 +33,17 @@ import {
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
 
-const share_eea = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
+const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
+
+const SUBTITLES = {
+  [TOOL]: 'Tools',
+  [PUBLICATION_REPORT]: 'Publications and Report',
+  [GUIDANCE]: 'Guidance Document',
+  [INDICATOR]: 'Indicator',
+  [INFORMATION_PORTAL]: 'Information Portal',
+  [ORGANISATION]: 'Organisation',
+  [VIDEO]: 'Video',
+};
 
 const MaybeFlourishVisualization = ({ content }) => {
   const { map_graphs } = content;
@@ -158,38 +168,12 @@ const DatabaseItemView = (props) => {
     related_documents_presentations,
   } = content;
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
+  const subtitle = SUBTITLES[type] ?? '';
   const hasVisualization = !!content?.map_graphs?.length;
   const isFullWidthVisualization =
     hasVisualization && content?.map_graphs_full_width;
 
-  let subtitle;
-  switch (type) {
-    case TOOL:
-      subtitle = 'Tools';
-      break;
-    case PUBLICATION_REPORT:
-      subtitle = 'Publications and Report';
-      break;
-    case GUIDANCE:
-      subtitle = 'Guidance Document';
-      break;
-    case INDICATOR:
-      subtitle = 'Indicator';
-      break;
-    case INFORMATION_PORTAL:
-      subtitle = 'Information Portal';
-      break;
-    case ORGANISATION:
-      subtitle = 'Organisation';
-      break;
-    case VIDEO:
-      subtitle = 'Video';
-      break;
-    default:
-      subtitle = '';
-  }
-
-  const is_cmshare_video = share_eea.some((domain) =>
+  const is_cmshare_video = SHARE_EEA.some((domain) =>
     content?.embed_url?.includes(domain),
   );
 
@@ -316,8 +300,6 @@ const DatabaseItemView = (props) => {
                 >
                   <BottomInfo {...props} />
                 </Grid.Column>
-
-                <Grid.Column computer={4} />
               </Grid.Row>
             </>
           )}
