@@ -117,34 +117,64 @@
   }
 }
 
+/* (EEA) Green theme */
+.green,
+.has--theme--green {
+  /* Accordion */
+  .ui.accordion.green > .active.title,
+  .ui.accordion.green.inverted > .title,
+  .ui.accordion.green > .filter,
+  .ui.accordion.secondary.green > .active.title,
+  .ui.accordion.secondary.green.inverted > .title,
+  .ui.accordion.secondary.green > .filter {
+    --bg-color: @green;
+  }
+
+  .ui.accordion.green > .active.title,
+  .ui.accordion.green.inverted > .title,
+  .ui.accordion.green.inverted > .icon,
+  .ui.accordion.green > .filter {
+    --text-color-hover: white;
+    --text-color: white;
+  }
+
+  /* Table */
+  .ui.table {
+    tr th {
+      border-bottom: 1px solid @green;
+    }
+  }
+
+  .ui.celled.table tr th,
+  .ui.celled.table tr td {
+    border-left: 1px solid @green;
+  }
+
+  /* Callout */
+  .eea.callout {
+    border-color: @green;
+  }
+
+  /* Statistics */
+  .ui.statistics:not(.inverted) .ui.statistic .value {
+    color: @green !important;
+  }
+
+  .color-bg-primary {
+    background-color: @green !important;
+  }
+
+  /* Divider */
+  .ui.divider.green,
+  .ui.divider.green:not(.vertical):not(.horizontal) {
+    border-top-color: @green;
+    color: @green;
+  }
+}
+
 /* Hero */
 .color-bg-green {
   background-color: @green;
-}
-
-/* Divider */
-.ui.divider.green,
-.ui.divider.green:not(.vertical):not(.horizontal) {
-  border-top-color: @green;
-  color: @green;
-}
-
-/* Accordion */
-.ui.accordion.green > .active.title,
-.ui.accordion.green.inverted > .title,
-.ui.accordion.green > .filter,
-.ui.accordion.secondary.green > .active.title,
-.ui.accordion.secondary.green.inverted > .title,
-.ui.accordion.secondary.green > .filter {
-  --bg-color: @green;
-}
-
-.ui.accordion.green > .active.title,
-.ui.accordion.green.inverted > .title,
-.ui.accordion.green.inverted > .icon,
-.ui.accordion.green > .filter {
-  --text-color-hover: white;
-  --text-color: white;
 }
 
 /* Listing cards */
