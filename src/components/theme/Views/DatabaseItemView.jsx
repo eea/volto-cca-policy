@@ -63,7 +63,6 @@ const MaybeFlourishVisualization = ({ content }) => {
 
 function getFirstIframeSrc(htmlString) {
   const iframeRegex = /<iframe[^>]+src=["']([^"']+)["']/;
-
   const iframeMatch = htmlString.match(iframeRegex);
   if (iframeMatch) {
     return iframeMatch[1];
@@ -79,10 +78,8 @@ function getFirstIframeSrc(htmlString) {
 
 const MaybeIframeVisualization = ({ content }) => {
   const { map_graphs, map_graphs_height } = content;
-
   const url = getFirstIframeSrc(map_graphs || '');
   const height = map_graphs_height || 800;
-
   const [isClient, setIsClient] = React.useState();
 
   React.useEffect(() => setIsClient(true), []);
@@ -108,6 +105,47 @@ const MaybeIframeVisualization = ({ content }) => {
   );
 };
 
+const BottomInfo = (props) => {
+  const { content } = props;
+  const { organisational_websites, organisational_contact_information } =
+    content;
+
+  return (
+    <>
+      <Divider />
+      <ReferenceInfo content={content} />
+
+      {organisational_websites && (
+        <>
+          <h5>
+            <FormattedMessage
+              id="Links to further information"
+              defaultMessage="Links to further information"
+            />
+          </h5>
+          <HTMLField value={organisational_websites} />
+        </>
+      )}
+
+      {organisational_contact_information && (
+        <>
+          <h5>
+            <FormattedMessage
+              id="Contact information for the Observatory"
+              defaultMessage="Contact information for the Observatory"
+            />
+          </h5>
+          <HTMLField value={organisational_contact_information} />
+        </>
+      )}
+
+      <ContentRelatedItems {...props} />
+      <PublishedModifiedInfo {...props} />
+      <ShareInfoButton {...props} />
+    </>
+  );
+};
+
 const DatabaseItemView = (props) => {
   const { content } = props;
   const type = content['@type'];
@@ -116,12 +154,13 @@ const DatabaseItemView = (props) => {
     acronym,
     embed_url,
     long_description,
-    organisational_websites,
     organisational_key_activities,
-    organisational_contact_information,
     related_documents_presentations,
   } = content;
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
+  const hasVisualization = !!content?.map_graphs?.length;
+  const isFullWidthVisualization =
+    hasVisualization && content?.map_graphs_full_width;
 
   let subtitle;
   switch (type) {
@@ -173,54 +212,46 @@ const DatabaseItemView = (props) => {
       <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
-          <div className="row">
+          <Grid.Row>
             <Grid.Column
               mobile={12}
               tablet={12}
               computer={8}
               className="col-left"
             >
-              <ItemLogo {...props}></ItemLogo>
+              <ItemLogo {...props} />
 
-              {type === VIDEO && (
-                <>
-                  {is_cmshare_video && (
-                    <div className="video-wrapper">
-                      <center>
-                        <video
-                          controls="controls"
-                          preload="metadata"
-                          width="100%"
-                          height="480"
-                          src={fixEmbedURL(embed_url, is_cmshare_video)}
-                          type="video/mp4"
-                        >
-                          <track default kind="captions" srcLang="en" src="" />
-                        </video>
-                      </center>
-                    </div>
-                  )}
-                </>
+              {type === VIDEO && is_cmshare_video && (
+                <div className="video-wrapper">
+                  <center>
+                    <video
+                      controls="controls"
+                      preload="metadata"
+                      width="100%"
+                      height="480"
+                      src={fixEmbedURL(embed_url, is_cmshare_video)}
+                      type="video/mp4"
+                    >
+                      <track default kind="captions" srcLang="en" src="" />
+                    </video>
+                  </center>
+                </div>
               )}
 
               <HTMLField value={long_description} />
 
-              {type === VIDEO && (
-                <>
-                  {!is_cmshare_video && (
-                    <div className="external-video">
-                      <ExternalLink
-                        url={embed_url}
-                        text={
-                          <FormattedMessage
-                            id="See video outside Climate-ADAPT"
-                            defaultMessage="See video outside Climate-ADAPT"
-                          />
-                        }
+              {type === VIDEO && !is_cmshare_video && (
+                <div className="external-video">
+                  <ExternalLink
+                    url={embed_url}
+                    text={
+                      <FormattedMessage
+                        id="See video outside Climate-ADAPT"
+                        defaultMessage="See video outside Climate-ADAPT"
                       />
-                    </div>
-                  )}
-                </>
+                    }
+                  />
+                </div>
               )}
 
               {related_documents_presentations && (
@@ -248,40 +279,13 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              <MaybeFlourishVisualization {...props} />
-              <MaybeIframeVisualization {...props} />
-
-              <Divider />
-
-              <ReferenceInfo content={content} />
-
-              {organisational_websites && (
+              {hasVisualization && !isFullWidthVisualization && (
                 <>
-                  <h5>
-                    <FormattedMessage
-                      id="Links to further information"
-                      defaultMessage="Links to further information"
-                    />
-                  </h5>
-                  <HTMLField value={organisational_websites} />
+                  <MaybeFlourishVisualization {...props} />
+                  <MaybeIframeVisualization {...props} />
+                  <BottomInfo {...props} />
                 </>
               )}
-
-              {organisational_contact_information && (
-                <>
-                  <h5>
-                    <FormattedMessage
-                      id="Contact information for the Observatory"
-                      defaultMessage="Contact information for the Observatory"
-                    />
-                  </h5>
-                  <HTMLField value={organisational_contact_information} />
-                </>
-              )}
-
-              <ContentRelatedItems {...props} />
-              <PublishedModifiedInfo {...props} />
-              <ShareInfoButton {...props} />
             </Grid.Column>
 
             <Grid.Column
@@ -293,7 +297,30 @@ const DatabaseItemView = (props) => {
               <ContentMetadata {...props} />
               <DocumentsList {...props} />
             </Grid.Column>
-          </div>
+          </Grid.Row>
+
+          {isFullWidthVisualization && (
+            <>
+              <Grid.Row>
+                <Grid.Column mobile={12} tablet={12} computer={12}>
+                  <MaybeFlourishVisualization {...props} />
+                  <MaybeIframeVisualization {...props} />
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column
+                  mobile={12}
+                  tablet={12}
+                  computer={12}
+                  className="col-left"
+                >
+                  <BottomInfo {...props} />
+                </Grid.Column>
+
+                <Grid.Column computer={4} />
+              </Grid.Row>
+            </>
+          )}
         </Grid>
       </Container>
     </div>
