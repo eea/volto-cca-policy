@@ -270,7 +270,7 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              <BottomInfo {...props} />
+              {!isFullWidthVisualization && <BottomInfo {...props} />}
             </Grid.Column>
 
             <Grid.Column
