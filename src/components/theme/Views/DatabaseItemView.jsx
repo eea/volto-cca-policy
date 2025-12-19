@@ -267,9 +267,10 @@ const DatabaseItemView = (props) => {
                 <>
                   <MaybeFlourishVisualization {...props} />
                   <MaybeIframeVisualization {...props} />
-                  <BottomInfo {...props} />
                 </>
               )}
+
+              <BottomInfo {...props} />
             </Grid.Column>
 
             <Grid.Column
