@@ -342,13 +342,11 @@ function ContentMetadata(props) {
     governance_level,
     key_type_measures,
     funding_programme,
+    include_in_observatory,
   } = content;
-  // const related_case_studies = props.hasAttribute('related_case_studies')
-  //   ? props['related_case_studies']
-  //   : [];
   const related_case_studies = props['related_case_studies'];
-
   const type = content['@type'];
+
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
   const dateTitles = {
@@ -502,17 +500,19 @@ function ContentMetadata(props) {
         )}
       </Segment>
 
-      {health_impacts && health_impacts?.length > 0 && (
-        <Segment className="content-metadata">
-          <h5>
-            <FormattedMessage
-              id="Health impact:"
-              defaultMessage="Health impact:"
-            />
-          </h5>
-          <MetadataItemList value={health_impacts} />
-        </Segment>
-      )}
+      {include_in_observatory &&
+        health_impacts &&
+        health_impacts?.length > 0 && (
+          <Segment className="content-metadata">
+            <h5>
+              <FormattedMessage
+                id="Health impact:"
+                defaultMessage="Health impact:"
+              />
+            </h5>
+            <MetadataItemList value={health_impacts} />
+          </Segment>
+        )}
     </>
   );
 }
