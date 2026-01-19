@@ -25,7 +25,6 @@ export const Interactions = ({
       if (evt.dragging) {
         return;
       }
-
       const feature = getClosestFeatureToCoordinate(
         evt.coordinate,
         euCountryFeatures.current,
@@ -36,7 +35,6 @@ export const Interactions = ({
         node.style.visibility = 'hidden';
       }
       const domEvt = evt.originalEvent;
-
       if (
         countries_metadata.length > 0 &&
         feature &&
@@ -73,7 +71,10 @@ export const Interactions = ({
       if (
         countries_metadata.length > 0 &&
         feature &&
-        euCountryNames.includes(feature.get('na'))
+        (euCountryNames.includes(feature.get('na')) ||
+          ['Ukraine', 'Moldova', 'Georgia', 'Türkiye', 'Turkiye'].includes(
+            feature.get('na'),
+          ))
       ) {
         let countryName = feature.get('na');
         let countryNamePrint = feature.get('na');
