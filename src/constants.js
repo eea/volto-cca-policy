@@ -136,7 +136,7 @@ export const download_mission_funding_fields = [
 //   { field: 'cca_user_requirements', name: 'User requirements' },
 // ];
 
-export const supported_languages = [
+export const eea_languages = [
   { name: 'български', code: 'bg' },
   { name: 'Español', code: 'es' },
   { name: 'Čeština', code: 'cs' },
