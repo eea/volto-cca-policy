@@ -88,7 +88,55 @@ export const download_mission_funding_fields = [
   },
 ];
 
-export const eea_languages = [
+// Download fields for mission content types
+// Don't delete - might be needed later (ticket refs #295149)
+// export const download_mission_stories_fields = [
+//   { field: 'about', name: 'About' },
+//   { field: 'title', name: 'Title' },
+//   { field: 'main_content', name: 'Content' },
+//   { field: 'created', name: 'Creation Date' },
+//   { field: 'issued', name: 'Issued Date' },
+//   { field: 'cca_climate_impacts', name: 'Climate impact' },
+//   { field: 'cca_adaptation_sectors', name: 'Sectors' },
+//   { field: 'key_system', name: 'Key Community Systems' },
+//   { field: 'cca_funding_programme', name: 'Funding programme' },
+//   {
+//     field: 'spatial',
+//     name: 'Countries ',
+//   },
+//   { field: 'cca_keywords', name: 'Keywords' },
+// ];
+
+// export const download_mission_projects_fields = [
+//   { field: 'about', name: 'About' },
+//   { field: 'title', name: 'Title' },
+//   { field: 'main_content', name: 'Content' },
+//   { field: 'created', name: 'Creation Date' },
+//   { field: 'issued', name: 'Issued Date' },
+//   { field: 'cca_keywords', name: 'Keywords' },
+//   { field: 'cca_funding_programme', name: 'Funding Programme' },
+//   { field: 'cca_climate_impacts', name: 'Climate impact' },
+//   { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
+//   { field: 'cca_adaptation_sectors', name: 'Sectors' },
+//   { field: 'cca_geographic_countries', name: 'Countries' },
+// ];
+
+// export const download_mission_tools_fields = [
+//   { field: 'about', name: 'About' },
+//   { field: 'title', name: 'Title' },
+//   { field: 'main_content', name: 'Content' },
+//   { field: 'created', name: 'Creation Date' },
+//   { field: 'issued', name: 'Issued Date' },
+//   { field: 'cca_rast_steps', name: 'RAST step(s) of relevance' },
+//   { field: 'cca_geographical_scale', name: 'Geographical scale' },
+//   { field: 'cca_climate_impacts', name: 'Climate impact' },
+//   { field: 'cca_tool_language', name: 'Language(s) of the tool' },
+//   { field: 'cca_adaptation_sectors', name: 'Sectors' },
+//   { field: 'cca_most_useful_for', name: 'Most useful for' },
+//   { field: 'cca_user_requirements', name: 'User requirements' },
+// ];
+
+export const supported_languages = [
   { name: 'български', code: 'bg' },
   { name: 'Español', code: 'es' },
   { name: 'Čeština', code: 'cs' },
