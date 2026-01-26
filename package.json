@@ -32,7 +32,7 @@
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-embed": "*",
-    "@eeacms/volto-globalsearch": "2.1.2",
+    "@eeacms/volto-globalsearch": "3.0.0",
     "@eeacms/volto-openlayers-map": "1.0.1",
     "@eeacms/volto-searchlib": "^2.1.10",
     "@eeacms/volto-slate-label": "1.0.1",
