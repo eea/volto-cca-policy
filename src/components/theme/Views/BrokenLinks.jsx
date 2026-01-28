@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableHeaderCell,
   TableRow,
+  Input,
 } from 'semantic-ui-react';
 
 function Filter({ column }) {
@@ -80,6 +81,7 @@ function DebouncedInput({
   value: initialValue,
   onChange,
   debounce = 500,
+  className,
   ...props
 }) {
   const [value, setValue] = React.useState(initialValue);
@@ -97,10 +99,10 @@ function DebouncedInput({
   }, [value, debounce, onChange]);
 
   return (
-    <input
+    <Input
       {...props}
       value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={(_, data) => setValue(data.value)}
     />
   );
 }
