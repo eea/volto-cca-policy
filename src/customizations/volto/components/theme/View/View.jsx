@@ -26,6 +26,7 @@ import {
   flattenToAppURL,
   getLayoutFieldname,
   hasApiExpander,
+  isInternalURL,
 } from '@plone/volto/helpers';
 
 import config from '@plone/volto/registry';
@@ -216,6 +217,18 @@ class View extends Component {
       });
 
     if (redirectData) {
+      const isExternal = !isInternalURL(redirectData.url);
+
+      if (isExternal) {
+        if (this.props.staticContext) {
+          this.props.staticContext.error_code = redirectData.status || 302;
+          this.props.staticContext.url = redirectData.url;
+        } else if (typeof window !== 'undefined') {
+          window.location.replace(redirectData.url);
+        }
+        return null;
+      }
+
       const redirect = flattenToAppURL(redirectData.url)
         .replace('/++api++', '')
         .replaceAll('//', '/')
