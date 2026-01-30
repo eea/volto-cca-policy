@@ -15,6 +15,7 @@ import { Grid } from 'semantic-ui-react';
 // TODO: internationalize
 import { FormattedMessage } from 'react-intl';
 
+import config from '@plone/volto/registry';
 import './style.less';
 
 const Select = loadable(() => import('react-select'));
@@ -121,10 +122,6 @@ const applyQuery = (
   if (measures) defaultQuery.push(measures);
 
   const sort_on = data.sortBy || 'effective';
-  const itemModel =
-    variation === 'listing'
-      ? { '@type': 'simpleItem' }
-      : { '@type': 'eventCards' };
 
   return {
     block: id,
@@ -132,8 +129,8 @@ const applyQuery = (
     query: defaultQuery,
     sort_on,
     sort_order: sort_on === 'getId' ? 'ascending' : 'descending',
-    template: 'summary',
-    itemModel,
+    // template: 'summary',
+    // itemModel: { '@type': 'simpleItem' },
   };
 };
 
@@ -194,7 +191,18 @@ const vocabImpactsAction = getVocabulary({ vocabNameOrURL: IMPACTS });
 const vocabSectorsAction = getVocabulary({ vocabNameOrURL: SECTORS });
 const vocabMeasuresAction = getVocabulary({ vocabNameOrURL: KEY_TYPE });
 
-function ListingWrapper({ id, listingBodyData, path, isEditMode }) {
+function ListingWrapper({ id, listingBodyData, path, isEditMode, variation }) {
+  const getListingBodyVariation = () => {
+    const variations = config.blocks.blocksConfig.listing.variations || [];
+    return (
+      variations.find((v) => v.id === variation) ||
+      variations.find((v) => v.isDefault) ||
+      variations[0]
+    );
+  };
+
+  const listingVariation = getListingBodyVariation();
+
   return (
     <div className="listing-wrapper">
       <ListingBody
@@ -202,6 +210,7 @@ function ListingWrapper({ id, listingBodyData, path, isEditMode }) {
         data={listingBodyData}
         path={path}
         isEditMode={isEditMode}
+        variation={listingVariation}
       />
     </div>
   );
@@ -276,9 +285,8 @@ function FiltersPanel({
 
 const FilterAceContentView = (props) => {
   const { data, id, mode = 'view', path } = props;
-  const { title, variation = 'listing', button_label } = data;
+  const { title, variation = 'simpleListing', button_label } = data;
 
-  // console.log('variation', variation);
   const dispatch = useDispatch();
   const currentLang = useSelector((state) => state.intl.locale);
 
@@ -378,8 +386,9 @@ const FilterAceContentView = (props) => {
   const listing = (
     <ListingWrapper
       id={id}
-      listingBodyData={listingBodyData}
       path={path}
+      variation={variation}
+      listingBodyData={listingBodyData}
       isEditMode={mode === 'edit'}
     />
   );

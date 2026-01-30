@@ -1,8 +1,70 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
 .filter-acecontent-block {
+  margin: 1.5em 0;
+
+  h5 {
+    margin-bottom: 0.3em;
+    margin-top: 1em;
+  }
+
+  .react-select-container {
+    width: 230px;
+    border: 1px solid #bcbec0;
+
+    .react-select__control {
+      min-height: auto;
+      border: none;
+    }
+
+    .react-select__value-container {
+      padding: 5px !important;
+    }
+
+    .react-select__menu {
+      border: 1px solid #bcbec0;
+      width: 230px;
+      margin-left: -1px;
+      border-top: none;
+      margin-top: -1px;
+    }
+
+    .react-select__indicator {
+      top: 4px;
+      right: 6px;
+      position: relative;
+    }
+  }
+
+  .simple-listing-item {
+    color: @linkColor;
+    margin-bottom: 0.5em;
+    padding-left: 13px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      font-family: 'Icons';
+      content: '\f105';
+      color: @linkColor;
+      font-size: 14px;
+    }
+  }
+
+  .simple-listing-link:hover .simple-listing-item {
+    color: @linkHoverColor;
+  }
+
   .ui.button.inverted.primary.view-btn {
     margin-top: 1em;
     margin-right: 0;
   }
+
   .listing-wrapper {
     margin-top: 1.5em;
   }

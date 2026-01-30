@@ -18,13 +18,13 @@ export default function installBlock(config) {
     },
     variations: [
       {
-        id: 'listing',
+        id: 'simpleListing',
         title: 'Listing',
         isDefault: true,
         fullobjects: true,
       },
       {
-        id: 'cards',
+        id: 'simpleCards',
         title: 'Cards',
         isDefault: false,
         fullobjects: true,
