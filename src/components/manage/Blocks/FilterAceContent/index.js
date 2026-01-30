@@ -16,6 +16,20 @@ export default function installBlock(config) {
       addPermission: [],
       view: [],
     },
+    variations: [
+      {
+        id: 'listing',
+        title: 'Listing',
+        isDefault: true,
+        fullobjects: true,
+      },
+      {
+        id: 'cards',
+        title: 'Cards',
+        isDefault: false,
+        fullobjects: true,
+      },
+    ],
     restricted: ({ properties, block }) => {
       return blockAvailableInMission(properties, block);
     },
