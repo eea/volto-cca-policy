@@ -276,8 +276,9 @@ function FiltersPanel({
 
 const FilterAceContentView = (props) => {
   const { data, id, mode = 'view', path } = props;
-  const { title, variation = 'listing' } = data;
+  const { title, variation = 'listing', button_label } = data;
 
+  // console.log('variation', variation);
   const dispatch = useDispatch();
   const currentLang = useSelector((state) => state.intl.locale);
 
@@ -384,8 +385,8 @@ const FilterAceContentView = (props) => {
   );
 
   const viewAllButton = (
-    <Link className="ui button primary inverted" to={viewAllUrl}>
-      View all
+    <Link className="ui button primary inverted view-btn" to={viewAllUrl}>
+      {button_label || 'View all'}
     </Link>
   );
 
