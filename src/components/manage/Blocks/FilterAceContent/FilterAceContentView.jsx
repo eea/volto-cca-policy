@@ -75,7 +75,15 @@ const fieldmap = {
   funding_programme: 'funding_programme',
 };
 
-const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
+const applyQuery = (
+  id,
+  data,
+  currentLang,
+  impacts,
+  sectors,
+  measures,
+  variation,
+) => {
   const defaultQuery = Object.entries(data)
     .filter(
       ([field, value]) => FIELDS.includes(field) && value && value.length > 0,
@@ -113,6 +121,11 @@ const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
   if (measures) defaultQuery.push(measures);
 
   const sort_on = data.sortBy || 'effective';
+  const itemModel =
+    variation === 'listing'
+      ? { '@type': 'simpleItem' }
+      : { '@type': 'eventCards' };
+
   return {
     block: id,
     limit: data.nr_items,
@@ -120,7 +133,7 @@ const applyQuery = (id, data, currentLang, impacts, sectors, measures) => {
     sort_on,
     sort_order: sort_on === 'getId' ? 'ascending' : 'descending',
     template: 'summary',
-    itemModel: { '@type': 'simpleItem' },
+    itemModel,
   };
 };
 
@@ -301,6 +314,7 @@ const FilterAceContentView = (props) => {
     impactsQuery,
     sectorsQuery,
     measuresQuery,
+    variation,
   );
 
   const viewAllUrl = buildQueryUrl({
