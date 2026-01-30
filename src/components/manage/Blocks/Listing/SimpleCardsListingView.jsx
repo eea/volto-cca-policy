@@ -1,36 +1,45 @@
 import PropTypes from 'prop-types';
 import {
+  Image,
   Card,
   CardGroup,
   CardHeader,
   CardContent,
-  CardDescription,
 } from 'semantic-ui-react';
+import { ConditionalLink } from '@plone/volto/components';
 
 import './styles.less';
 
-const SimpleCardsListingView = (data) => {
-  const { items = [] } = data;
+const SimpleCardsListingView = ({ items, isEditMode }) => {
+  // console.log('items', items);
 
   return (
     <CardGroup itemsPerRow={4} stackable>
       {items.map((item, index) => (
-        <Card fluid className="u-card" key={index} href={item['@id']}>
+        <Card fluid className="u-card" key={index}>
+          <div className="image">
+            {item.image ? (
+              <Image
+                // src={item['@id'] + '/@@images/logo/preview'}
+                src={item.image?.scales?.preview?.download}
+                alt={item.title}
+                title={item.title}
+              />
+            ) : (
+              <div style={{ height: '120px', backgroundColor: '#f0f0f0' }} />
+            )}
+          </div>
           <CardContent>
             <CardHeader>
-              <div className="image">
-                <div className="img-container">
-                  <img
-                    src={item['@id'] + '/@@images/logo/preview'}
-                    alt={item.title}
-                    className="ui image"
-                  />
-                </div>
-              </div>
+              <ConditionalLink
+                to={item['@id']}
+                className="header-link"
+                title={item.title}
+                condition={!isEditMode}
+              >
+                {item.title}
+              </ConditionalLink>
             </CardHeader>
-            <CardDescription>
-              <h5 className="card-title">{item.title}</h5>
-            </CardDescription>
           </CardContent>
         </Card>
       ))}

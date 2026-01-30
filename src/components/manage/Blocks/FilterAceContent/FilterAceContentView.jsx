@@ -403,7 +403,7 @@ const FilterAceContentView = (props) => {
     <div className={`block filter-acecontent-block ${variation}-view`}>
       {title && <h4>{title}</h4>}
 
-      {variation === 'cards' ? (
+      {variation === 'simpleCards' ? (
         <Grid stackable>
           <Grid.Row>
             <Grid.Column width={3}>
