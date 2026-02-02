@@ -1,0 +1,333 @@
+@height: 600px;
+@fpHeight: 450px;
+
+.countryMapProfile {
+  height: @height;
+  min-height: @height;
+
+  .ol-map-wrapper,
+  .ol-map {
+    height: @height;
+  }
+
+  &.sized-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2em;
+  }
+
+  p.title {
+    border-bottom: 1px solid #3d5265;
+    font-weight: bold;
+  }
+
+  .ui.radio.checkbox {
+    margin-right: 0.5em;
+  }
+
+  #country_map {
+    position: relative;
+    margin: 50px;
+    fill: #fff;
+  }
+
+  .tooltip {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 10px;
+  }
+
+  .graticule {
+    fill: none;
+    stroke: black;
+    stroke-dasharray: 10, 10;
+    stroke-width: 1;
+  }
+
+  .semi-graticule {
+    fill: none;
+    stroke: gray;
+    stroke-dasharray: 1, 1;
+    stroke-width: 0.6;
+  }
+
+  .country-outline path {
+    fill: #f5f5f5;
+    stroke: #d1d1d1;
+    stroke-width: 1;
+  }
+
+  .country-available path {
+    fill: #0170b7;
+  }
+
+  label {
+    margin-bottom: 0.5em;
+  }
+
+  .legend {
+    margin-top: 1em;
+
+    .legend-el {
+      display: flex;
+      flex-direction: row;
+      padding: 0.6em 0;
+    }
+
+    .legend-box {
+      position: relative;
+      top: 4px;
+      height: 17px;
+      flex: 0 0 17px;
+      margin-right: 0.5em;
+    }
+
+    // Legend color mapping
+    .content-available {
+      background-color: #0170b7;
+    }
+
+    .no-content {
+      background-color: #72dffe;
+    }
+
+    .no-focus {
+      background-color: #fff;
+    }
+
+    .country-notreported {
+      background-color: #78d9fc;
+    }
+
+    .country-none,
+    .country-outside {
+      border: 1px solid #ddd;
+      background-color: #fff;
+    }
+  }
+
+  .country-eea-eu-member {
+    background-color: #007b6c;
+  }
+
+  .country-eea-member {
+    background-color: #50b0a4;
+  }
+
+  .country-eea-coopereting {
+    background-color: #a0e5dc;
+  }
+
+  .country-eastern {
+    background-color: #c8fff8;
+  }
+
+  .legend.nasnap-legend {
+    display: block;
+
+    .country-nas {
+      background-color: #78d9fc;
+    }
+
+    .country-nap {
+      background-color: #0a99ff;
+    }
+
+    .country-sap {
+      background-image: url("data:image/svg+xml,<svg id='sappatternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='sappattern' patternUnits='userSpaceOnUse' width='8' height='5' patternTransform='scale(1) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><line x1='0' y='0' x2='0' y2='11.5' stroke='black' stroke-width='1'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23sappattern)'/></svg>");
+    }
+
+    .country-nodata {
+      background-color: #fff;
+    }
+  }
+
+  .legend.portals-legend {
+    .country-hazards {
+      background-color: #acedff;
+    }
+
+    .country-adaptation {
+      background-color: #11cbff;
+    }
+
+    .country-both {
+      background-color: #004b7f;
+    }
+
+    .country-not-specified {
+      background-color: #fff;
+    }
+
+    .country-none,
+    .country-outside {
+      border: 1px solid #ddd;
+      background-color: #fff;
+    }
+
+    .country-noportal {
+      background-color: #0a99ff;
+    }
+  }
+
+  // Country color mapping and cursor style
+  .country-blue path,
+  .country-notreported path,
+  .country-noportal path,
+  .country-nasnapsap path,
+  .country-nassap path,
+  .country-napsap path,
+  .country-nasnap path,
+  .country-nas path,
+  .country-nap path,
+  .country-none path,
+  .country-nodata path {
+    cursor: pointer;
+  }
+
+  .country-notreported path {
+    fill: #fed7da;
+  }
+
+  .country-noportal path,
+  .country-none path {
+    fill: #e0e0e0;
+  }
+
+  .country-nasnapsap path {
+    fill: url(#nasnapsap);
+  }
+
+  .country-nassap path {
+    fill: url(#nassap);
+  }
+
+  .country-napsap path {
+    fill: url(#napsap);
+  }
+
+  .country-nasnap path {
+    fill: #007db6;
+  }
+
+  .country-nas path {
+    fill: #78d9fc;
+  }
+
+  .country-nap path {
+    fill: #11cbff;
+  }
+
+  .country-nodata path {
+    fill: #f5f5f5;
+  }
+
+  .country-outline.ue path:hover {
+    fill: #005248;
+  }
+
+  // Tooltip for countries
+  #map-tooltip,
+  .country-tooltip {
+    position: absolute;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #c7c7c7;
+    background-color: #f7f7f7;
+  }
+
+  .country-tooltip {
+    span,
+    li {
+      color: #3a3a3a;
+      font-size: 14px;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .tooltip-content {
+      padding-top: 2em;
+      border-top: 2px solid #005c96;
+    }
+
+    #country-name {
+      padding-bottom: 2em;
+
+      h3 {
+        color: #000;
+      }
+    }
+
+    p:empty {
+      display: none;
+    }
+
+    .tooltip-content {
+      color: #000;
+    }
+  }
+
+  #country-name a {
+    text-decoration: none;
+  }
+
+  #country-name .tooltip-country-flag {
+    position: absolute;
+    top: 10px;
+    right: 1em;
+  }
+
+  #tooltip-content {
+    padding-top: 1em;
+    border-top: 2px solid #005c96;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .legend.nasnap-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+  }
+}
+
+.cca-main-homepage .tabs-block {
+  .countryMapProfile {
+    min-height: @fpHeight;
+
+    .ol-map-wrapper,
+    .ol-map {
+      height: @fpHeight;
+    }
+
+    #country-map-filter {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .legend-box {
+      top: 2px;
+    }
+
+    label,
+    .legend .legend-text {
+      font-size: 14px !important;
+      line-height: 17px;
+    }
+
+    .legend {
+      margin-top: 0.2em;
+
+      .legend-el {
+        padding: 1em 0 0 0;
+      }
+    }
+  }
+}
