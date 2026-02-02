@@ -22,6 +22,7 @@ const Select = loadable(() => import('react-select'));
 
 const IMPACTS = 'eea.climateadapt.aceitems_climateimpacts';
 const SECTORS = 'eea.climateadapt.aceitems_sectors';
+const ELEMENTS = 'eea.climateadapt.aceitems_elements';
 const KEY_TYPE = 'eea.climateadapt.aceitems_key_type_measures_short';
 
 const otherMacroRegions = [
@@ -34,6 +35,7 @@ const otherMacroRegions = [
 
 const impacts_no_value = [{ label: 'All climate impacts', value: '' }];
 const sectors_no_value = [{ label: 'All adaptation sectors', value: '' }];
+const elements_no_value = [{ label: 'All adaptation approaches', value: '' }];
 const measures_no_value = [{ label: 'All key type measures', value: '' }];
 
 const _datatypes = {
@@ -82,6 +84,7 @@ const applyQuery = (
   currentLang,
   impacts,
   sectors,
+  elements,
   measures,
   variation,
 ) => {
@@ -119,6 +122,7 @@ const applyQuery = (
 
   if (impacts) defaultQuery.push(impacts);
   if (sectors) defaultQuery.push(sectors);
+  if (elements) defaultQuery.push(elements);
   if (measures) defaultQuery.push(measures);
 
   const sort_on = data.sortBy || 'effective';
@@ -139,6 +143,7 @@ const applyQuery = (
 const eeaSearchFieldMap = {
   impacts: 'cca_climate_impacts.keyword',
   sectors: 'cca_adaptation_sectors.keyword',
+  elements: 'cca_adaptation_elements.keyword',
   measures: 'cca_key_type_measure.keyword',
   funding_programme: 'cca_funding_programme.keyword',
   search_type: 'objectProvides',
@@ -189,6 +194,7 @@ function buildQueryUrl({ vocabs, ...data }) {
 
 const vocabImpactsAction = getVocabulary({ vocabNameOrURL: IMPACTS });
 const vocabSectorsAction = getVocabulary({ vocabNameOrURL: SECTORS });
+const vocabElementsAction = getVocabulary({ vocabNameOrURL: ELEMENTS });
 const vocabMeasuresAction = getVocabulary({ vocabNameOrURL: KEY_TYPE });
 
 function ListingWrapper({ id, listingBodyData, path, isEditMode, variation }) {
@@ -219,9 +225,11 @@ function ListingWrapper({ id, listingBodyData, path, isEditMode, variation }) {
 function FiltersPanel({
   impactsVocabItems,
   sectorsVocabItems,
+  elementsVocabItems,
   measuresVocabItems,
   onImpactsChange,
   onSectorsChange,
+  onElementsChange,
   onMeasuresChange,
   variation,
 }) {
@@ -257,6 +265,25 @@ function FiltersPanel({
         components={{ DropdownIndicator, Option }}
         defaultValue={sectors_no_value}
         onChange={(opt) => onSectorsChange(opt?.value)}
+      />
+
+      <span className="filter-title">
+        <FormattedMessage
+          id="Adaptation Approaches"
+          defaultMessage="Adaptation Approaches"
+        />
+      </span>
+      <Select
+        id="field-elements"
+        name="elements"
+        className="react-select-container"
+        classNamePrefix="react-select"
+        options={[elements_no_value[0], ...(elementsVocabItems || [])]}
+        styles={customSelectStyles}
+        theme={selectTheme}
+        components={{ DropdownIndicator, Option }}
+        defaultValue={elements_no_value}
+        onChange={(opt) => onElementsChange(opt?.value)}
       />
 
       <div id="key-type-measure">
@@ -300,6 +327,11 @@ const FilterAceContentView = (props) => {
       ? state.vocabularies[SECTORS].items
       : [],
   );
+  const elementsVocabItems = useSelector((state) =>
+    state.vocabularies[ELEMENTS]?.loaded
+      ? state.vocabularies[ELEMENTS].items
+      : [],
+  );
   const measuresVocabItems = useSelector((state) =>
     state.vocabularies[KEY_TYPE]?.loaded
       ? state.vocabularies[KEY_TYPE].items
@@ -308,11 +340,13 @@ const FilterAceContentView = (props) => {
 
   const [impactsQuery, setImpactsQuery] = React.useState(null);
   const [sectorsQuery, setSectorsQuery] = React.useState(null);
+  const [elementsQuery, setElementsQuery] = React.useState(null);
   const [measuresQuery, setMeasuresQuery] = React.useState(null);
 
   React.useEffect(() => {
     dispatch(vocabImpactsAction);
     dispatch(vocabSectorsAction);
+    dispatch(vocabElementsAction);
     dispatch(vocabMeasuresAction);
   }, [dispatch]);
 
@@ -322,6 +356,7 @@ const FilterAceContentView = (props) => {
     currentLang,
     impactsQuery,
     sectorsQuery,
+    elementsQuery,
     measuresQuery,
     variation,
   );
@@ -329,12 +364,14 @@ const FilterAceContentView = (props) => {
   const viewAllUrl = buildQueryUrl({
     impacts: impactsQuery,
     sectors: sectorsQuery,
+    elements: elementsQuery,
     measures: measuresQuery,
     search_type: data.search_type,
     funding_programme: data.funding_programme,
     language: currentLang,
     vocabs: {
       sectors: sectorsVocabItems,
+      elements: elementsVocabItems,
       measures: measuresVocabItems,
       impacts: impactsVocabItems,
     },
@@ -345,6 +382,7 @@ const FilterAceContentView = (props) => {
       variation={variation}
       impactsVocabItems={impactsVocabItems}
       sectorsVocabItems={sectorsVocabItems}
+      elementsVocabItems={elementsVocabItems}
       measuresVocabItems={measuresVocabItems}
       viewAllUrl={viewAllUrl}
       onImpactsChange={(value) => {
@@ -365,6 +403,17 @@ const FilterAceContentView = (props) => {
                 i: 'sectors',
                 o: 'plone.app.querystring.operation.selection.any',
                 v: value.toUpperCase(),
+              }
+            : null,
+        );
+      }}
+      onElementsChange={(value) => {
+        setElementsQuery(
+          value
+            ? {
+                i: 'elements',
+                o: 'plone.app.querystring.operation.selection.any',
+                v: value,
               }
             : null,
         );
