@@ -385,25 +385,16 @@ export const LogoWrapper = ({ logo, children }) =>
 export const ItemLogo = (props) => {
   const { content } = props;
   const type = content['@type'];
-  const { image, logo, title } = content;
-
-  let logo_image;
-  if (logo) {
-    logo_image = logo;
-  } else if (!logo && image) {
-    logo_image = image;
-  } else {
-    logo_image = null;
-  }
+  const { logo, title } = content;
 
   return type !== VIDEO ? (
-    <LogoWrapper logo={logo_image}>
+    <LogoWrapper logo={logo}>
       <h2>
         <FormattedMessage id="Description" defaultMessage="Description" />
       </h2>
-      {logo_image && (
+      {logo && (
         <Image
-          src={logo_image?.scales?.mini?.download}
+          src={logo?.scales?.mini?.download}
           alt={title}
           className="db-logo"
         />
