@@ -11,23 +11,28 @@ import { ConditionalLink } from '@plone/volto/components';
 import './styles.less';
 
 const SimpleCardsListingView = ({ items, isEditMode }) => {
-  // console.log('items', items);
-
   return (
     <CardGroup itemsPerRow={4} stackable>
       {items.map((item, index) => (
         <Card fluid className="u-card" key={index}>
           <div className="image">
-            {item.image ? (
-              <Image
-                // src={item['@id'] + '/@@images/logo/preview'}
-                src={item.image?.scales?.preview?.download}
-                alt={item.title}
-                title={item.title}
-              />
-            ) : (
-              <div style={{ height: '120px', backgroundColor: '#f0f0f0' }} />
-            )}
+            <div className="image">
+              {item.image || item.logo ? (
+                <Image
+                  src={
+                    item.image?.scales?.preview?.download ||
+                    item.logo?.scales?.preview?.download
+                  }
+                  alt={item.title}
+                  title={item.title}
+                  style={{
+                    objectFit: item.image ? 'cover' : 'contain',
+                  }}
+                />
+              ) : (
+                <div className="no-image-placeholder" />
+              )}
+            </div>
           </div>
           <CardContent>
             <CardHeader>
