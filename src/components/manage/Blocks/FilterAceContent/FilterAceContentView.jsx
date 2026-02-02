@@ -33,11 +33,6 @@ const otherMacroRegions = [
   'TRANS_MACRO_IND_OCEAN_AREA',
 ];
 
-const impacts_no_value = [{ label: 'All climate impacts', value: '' }];
-const sectors_no_value = [{ label: 'All adaptation sectors', value: '' }];
-const elements_no_value = [{ label: 'All adaptation approaches', value: '' }];
-const measures_no_value = [{ label: 'All key type measures', value: '' }];
-
 const _datatypes = {
   DOCUMENT: 'Publications and reports',
   INFORMATIONSOURCE: 'Information portal',
@@ -86,7 +81,6 @@ const applyQuery = (
   sectors,
   elements,
   measures,
-  variation,
 ) => {
   const defaultQuery = Object.entries(data)
     .filter(
@@ -166,21 +160,18 @@ function buildQueryUrl({ vocabs, ...data }) {
 
     const realValue = ploneFilter?.v ?? ploneFilter;
 
+    const type = Array.isArray(realValue) ? 'all' : 'any';
+
     let filter = [
       `filters[$index][field]=${name}`,
-      `filters[$index][type]=any`,
+      `filters[$index][type]=${type}`,
     ];
 
-    if (Array.isArray(realValue)) {
-      realValue
-        .map((rv) => toLabel(rv, key, vocabs?.[key]))
-        .forEach((v, i) => {
-          filter.push(`filters[$index][values][${i}]=${encodeURIComponent(v)}`);
-        });
-    } else {
-      const v = toLabel(realValue, key, vocabs?.[key]);
-      filter.push(`filters[$index][values][0]=${encodeURIComponent(v)}`);
-    }
+    (Array.isArray(realValue) ? realValue : [realValue])
+      .map((rv) => toLabel(rv, key, vocabs?.[key]))
+      .forEach((v, i) => {
+        filter.push(`filters[$index][values][${i}]=${encodeURIComponent(v)}`);
+      });
 
     acc.push(filter.join('&'));
     return acc;
@@ -189,6 +180,7 @@ function buildQueryUrl({ vocabs, ...data }) {
   filters = filters
     .map((line, index) => line.replaceAll('$index', index))
     .join('&');
+
   return `/en/data-and-downloads?size=n_10&${filters}`;
 }
 
@@ -227,6 +219,10 @@ function FiltersPanel({
   sectorsVocabItems,
   elementsVocabItems,
   measuresVocabItems,
+  selectedImpacts,
+  selectedSectors,
+  selectedElements,
+  selectedMeasures,
   onImpactsChange,
   onSectorsChange,
   onElementsChange,
@@ -239,32 +235,36 @@ function FiltersPanel({
         <FormattedMessage id="Climate impact" defaultMessage="Climate impact" />
       </span>
       <Select
+        isMulti
+        isClearable={false}
         id="field-impacts"
         name="impacts"
         className="react-select-container"
         classNamePrefix="react-select"
-        options={[impacts_no_value[0], ...(impactsVocabItems || [])]}
+        options={impactsVocabItems || []}
         styles={customSelectStyles}
         theme={selectTheme}
         components={{ DropdownIndicator, Option }}
-        defaultValue={impacts_no_value}
-        onChange={(opt) => onImpactsChange(opt?.value)}
+        value={selectedImpacts}
+        onChange={(opts) => onImpactsChange((opts || []).map((op) => op.value))}
       />
 
       <span className="filter-title">
         <FormattedMessage id="Sector" defaultMessage="Sector" />
       </span>
       <Select
+        isMulti
+        isClearable={false}
         id="field-sectors"
         name="sectors"
         className="react-select-container"
         classNamePrefix="react-select"
-        options={[sectors_no_value[0], ...(sectorsVocabItems || [])]}
+        options={sectorsVocabItems || []}
         styles={customSelectStyles}
         theme={selectTheme}
         components={{ DropdownIndicator, Option }}
-        defaultValue={sectors_no_value}
-        onChange={(opt) => onSectorsChange(opt?.value)}
+        value={selectedSectors}
+        onChange={(opts) => onSectorsChange((opts || []).map((op) => op.value))}
       />
 
       <span className="filter-title">
@@ -274,16 +274,20 @@ function FiltersPanel({
         />
       </span>
       <Select
+        isMulti
+        isClearable={false}
         id="field-elements"
         name="elements"
         className="react-select-container"
         classNamePrefix="react-select"
-        options={[elements_no_value[0], ...(elementsVocabItems || [])]}
+        options={elementsVocabItems || []}
         styles={customSelectStyles}
         theme={selectTheme}
         components={{ DropdownIndicator, Option }}
-        defaultValue={elements_no_value}
-        onChange={(opt) => onElementsChange(opt?.value)}
+        value={selectedElements}
+        onChange={(opts) =>
+          onElementsChange((opts || []).map((op) => op.value))
+        }
       />
 
       <div id="key-type-measure">
@@ -294,16 +298,20 @@ function FiltersPanel({
           />
         </span>
         <Select
+          isMulti
+          isClearable={false}
           id="field-measure"
           name="measure"
           className="react-select-container"
           classNamePrefix="react-select"
-          options={[measures_no_value[0], ...(measuresVocabItems || [])]}
+          options={measuresVocabItems || []}
           styles={customSelectStyles}
           theme={selectTheme}
           components={{ DropdownIndicator, Option }}
-          defaultValue={measures_no_value}
-          onChange={(opt) => onMeasuresChange(opt?.value)}
+          value={selectedMeasures}
+          onChange={(opts) =>
+            onMeasuresChange((opts || []).map((op) => op.value))
+          }
         />
       </div>
     </div>
@@ -358,7 +366,6 @@ const FilterAceContentView = (props) => {
     sectorsQuery,
     elementsQuery,
     measuresQuery,
-    variation,
   );
 
   const viewAllUrl = buildQueryUrl({
@@ -377,6 +384,22 @@ const FilterAceContentView = (props) => {
     },
   });
 
+  const selectedImpacts = impactsQuery?.v
+    ? impactsVocabItems.filter((o) => impactsQuery.v.includes(o.value))
+    : [];
+
+  const selectedSectors = sectorsQuery?.v
+    ? sectorsVocabItems.filter((o) => sectorsQuery.v.includes(o.value))
+    : [];
+
+  const selectedElements = elementsQuery?.v
+    ? elementsVocabItems.filter((o) => elementsQuery.v.includes(o.value))
+    : [];
+
+  const selectedMeasures = measuresQuery?.v
+    ? measuresVocabItems.filter((o) => measuresQuery.v.includes(o.value))
+    : [];
+
   const filters = (
     <FiltersPanel
       variation={variation}
@@ -384,47 +407,50 @@ const FilterAceContentView = (props) => {
       sectorsVocabItems={sectorsVocabItems}
       elementsVocabItems={elementsVocabItems}
       measuresVocabItems={measuresVocabItems}
-      viewAllUrl={viewAllUrl}
-      onImpactsChange={(value) => {
+      selectedImpacts={selectedImpacts}
+      selectedSectors={selectedSectors}
+      selectedElements={selectedElements}
+      selectedMeasures={selectedMeasures}
+      onImpactsChange={(values) => {
         setImpactsQuery(
-          value
+          values && values.length > 0
             ? {
                 i: 'climate_impacts',
-                o: 'plone.app.querystring.operation.selection.any',
-                v: value,
+                o: 'plone.app.querystring.operation.selection.all',
+                v: values,
               }
             : null,
         );
       }}
-      onSectorsChange={(value) => {
+      onSectorsChange={(values) => {
         setSectorsQuery(
-          value
+          values && values.length > 0
             ? {
                 i: 'sectors',
-                o: 'plone.app.querystring.operation.selection.any',
-                v: value.toUpperCase(),
+                o: 'plone.app.querystring.operation.selection.all',
+                v: values,
               }
             : null,
         );
       }}
-      onElementsChange={(value) => {
+      onElementsChange={(values) => {
         setElementsQuery(
-          value
+          values && values.length > 0
             ? {
                 i: 'elements',
-                o: 'plone.app.querystring.operation.selection.any',
-                v: value,
+                o: 'plone.app.querystring.operation.selection.all',
+                v: values,
               }
             : null,
         );
       }}
-      onMeasuresChange={(value) => {
+      onMeasuresChange={(values) => {
         setMeasuresQuery(
-          value
+          values && values.length > 0
             ? {
                 i: 'key_type_measures',
-                o: 'plone.app.querystring.operation.selection.any',
-                v: value,
+                o: 'plone.app.querystring.operation.selection.all',
+                v: values,
               }
             : null,
         );

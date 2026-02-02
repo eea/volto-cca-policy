@@ -274,7 +274,6 @@ iframe {
 .top.bar {
   .ui.container {
     .wrapper.language-list {
-
       display: grid;
       /* display: flex; */
       /* flex-direction: column; */
