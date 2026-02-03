@@ -17,7 +17,6 @@ import {
   CASE_STUDY,
   PUBLICATION_REPORT,
   ORGANISATION,
-  ADAPTATION_OPTION,
   ACE_PROJECT,
   VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
