@@ -11,150 +11,100 @@ exports[`AdaptationOptionView should render the component 1`] = `
     className="ui container"
   >
     <div
-      className="ui twelve column grid"
+      className="ui grid"
     >
       <div
-        className="row"
+        className="twelve column row"
       >
         <div
           className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
-          <h2>
-            Description
-          </h2>
           <div
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": undefined,
-              }
-            }
-          />
-          <div
-            className="adaptation-details"
+            className="accordion ui primary"
           >
             <div
-              className="ui twelve column grid"
-            >
-              <div
-                className="six wide computer twelve wide mobile twelve wide tablet column"
-              >
-                <h4>
-                  Additional Details
-                </h4>
-                <div
-                  className="ui bulleted list"
-                  role="list"
-                >
-                  <div
-                    className="item"
-                    onClick={[Function]}
-                    role="listitem"
-                  >
-                    <a
-                      href="#ipcc_category"
-                      onClick={[Function]}
-                    >
-                      IPCC categories
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="six wide computer twelve wide mobile twelve wide tablet column"
-              >
-                <h4>
-                  Reference information
-                </h4>
-                <div
-                  className="ui bulleted list"
-                  role="list"
-                >
-                  <div
-                    className="item"
-                    onClick={[Function]}
-                    role="listitem"
-                  >
-                    <a
-                      href="#websites"
-                      onClick={[Function]}
-                    >
-                      Websites
-                    </a>
-                  </div>
-                  <div
-                    className="item"
-                    onClick={[Function]}
-                    role="listitem"
-                  >
-                    <a
-                      href="#source"
-                      onClick={[Function]}
-                    >
-                      Source
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="ui divider"
-          />
-          <h2>
-            Adaptation Details
-          </h2>
-          <div
-            className="section"
-            id="ipcc_category"
-          >
-            <h5
-              className="section-title"
-            >
-              IPCC categories
-            </h5>
-            Structural and physical: Ecosystem-based adaptation options
-          </div>
-          <div
-            className="ui divider"
-          />
-          <h2>
-            Reference information
-          </h2>
-          <h5
-            id="websites"
-          >
-            Websites:
-          </h5>
-          <div
-            className="ui list"
-            role="list"
-          >
-            <div
-              className="item"
+              className="title"
               onClick={[Function]}
-              role="listitem"
             >
-              <a
-                href="https://my-website.com"
+              <i
+                aria-hidden="true"
+                className="icon ri-arrow-down-s-line"
+                onClick={[Function]}
+              />
+              Description
+            </div>
+            <div
+              className="content"
+            >
+              <div
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": undefined,
+                  }
+                }
+              />
+            </div>
+            <div
+              className="title"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="icon ri-arrow-down-s-line"
+                onClick={[Function]}
+              />
+              IPCC categories
+            </div>
+            <div
+              className="content"
+            >
+              <p>
+                Structural and physical: Ecosystem-based adaptation options
+              </p>
+            </div>
+            <div
+              className="title"
+              onClick={[Function]}
+            >
+              <i
+                aria-hidden="true"
+                className="icon ri-arrow-down-s-line"
+                onClick={[Function]}
+              />
+              References
+            </div>
+            <div
+              className="content"
+            >
+              <div
+                className="source"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<p>Some text</p>",
+                  }
+                }
+              />
+              <h5>
+                Websites:
+              </h5>
+              <div
+                className="ui list"
+                role="list"
               >
-                https://my-website.com
-              </a>
+                <div
+                  className="item"
+                  onClick={[Function]}
+                  role="listitem"
+                >
+                  <a
+                    href="https://my-website.com"
+                  >
+                    https://my-website.com
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <h5
-            id="source"
-          >
-            Source
-            :
-          </h5>
-          <div
-            className="source"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>Some text</p>",
-              }
-            }
-          />
           <div
             className="published-info"
           >
