@@ -7,8 +7,6 @@ import StatusCircle from './StatusCircle';
 import AccordionList from './AccordionList';
 
 export default function MenuProfile(props) {
-  const [activePanes, setActivePanes] = React.useState({});
-
   const dataJsonString = props.dataJson;
   const dataJson = JSON.parse(dataJsonString);
 
@@ -86,16 +84,14 @@ export default function MenuProfile(props) {
   };
   for (let i = 0; i < hazards.length; i++) {
     const hazardData = hazards[i];
-    if (hazardData.Occurrence != 'Future') {
+    if (hazardData.Occurrence !== 'Future') {
       continue;
     }
-    console.log(hazardData);
     panesHazardData[hazardData.Group][hazardData.Type].push({
       Title: hazardData.Event,
       Status: '?!?!',
     });
   }
-  console.log('panesHazardData', panesHazardData);
   let panesHazard = [];
   Object.entries(panesHazardData).forEach(([key, data]) => {
     let content = <PanesHazardContent data={data} />;
@@ -128,8 +124,9 @@ export default function MenuProfile(props) {
     let keyElements = [];
     Object.entries(dataJson?.Key_Affected_Sectors ?? []).forEach(
       ([sectorKey, sectorData]) => {
-        if (sectorData.PrimarySector == key) {
+        if (sectorData.PrimarySector === key) {
           keyElements.push({
+            Id: sectorKey,
             Title: sectorData.SectorDescribe,
             Text: ReactDOMServer.renderToString(
               <KeyAffectedSectorContent data={sectorData} />,

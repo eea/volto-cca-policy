@@ -24,7 +24,11 @@ export default function StatusCircle(props) {
   }
   return (
     <>
-      <img src={statusIcon} style={{ width: '24px', height: '24px' }} />
+      <img
+        src={statusIcon}
+        alt="Status"
+        style={{ width: '24px', height: '24px' }}
+      />
       &nbsp;
       {statusPrint}
     </>

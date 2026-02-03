@@ -13,8 +13,8 @@ import MenuSubNational from './MenuSubNational';
 import './styles.less';
 
 export default function CountryProfileDetail2026View(props) {
-  const dataHtml =
-    props?.properties['@components']?.countryprofile2026?.html || '';
+  // const dataHtml =
+  //   props?.properties['@components']?.countryprofile2026?.html || '';
   const dataJson =
     props?.properties['@components']?.countryprofile2026?.json || {};
   const countryName = props?.properties['title'];

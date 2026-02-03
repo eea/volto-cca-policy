@@ -4,7 +4,6 @@ import AccordionList from './AccordionList';
 export default function MenuGoodPractices(props) {
   const dataJsonString = props.dataJson;
   const dataJson = JSON.parse(dataJsonString);
-  let tabElements = [];
   let panesGoodPractices = [];
   if (dataJson?.National_Circumstances) {
     if (dataJson?.National_Circumstances?.BiogeophysicalCharacteristics) {

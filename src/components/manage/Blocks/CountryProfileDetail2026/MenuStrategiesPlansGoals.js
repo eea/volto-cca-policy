@@ -69,7 +69,7 @@ export default function MenuStrategiesPlansGoals(props) {
     let keyElements = [];
     Object.entries(dataJson?.Strategies_Plans?.Action_Measures ?? []).forEach(
       ([sectorKey, sectorData]) => {
-        if (sectorData.SectorsAffected == key) {
+        if (sectorData.SectorsAffected === key) {
           keyElements.push({
             Title: sectorData.Title,
             Text: ReactDOMServer.renderToString(
