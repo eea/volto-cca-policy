@@ -1,5 +1,6 @@
 import { Tab } from 'semantic-ui-react';
 import AccordionList from './AccordionList';
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 export default function MenuGoodPractices(props) {
   const dataJsonString = props.dataJson;
@@ -11,10 +12,10 @@ export default function MenuGoodPractices(props) {
         menuItem: 'International frameworks',
         render: () => (
           <>
-            <p className="callout">
+            <Callout>
               This section shows the country’s involvement in international and
-              regional cooperation frameworks that support climate adaptation.
-            </p>
+              regional cooperation frameworks that support climate adaptation
+            </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
             </div>
@@ -28,10 +29,10 @@ export default function MenuGoodPractices(props) {
         menuItem: 'Science',
         render: () => (
           <>
-            <p className="callout">
+            <Callout>
               This section highlights cooperation in research, knowledge
               exchange, and scientific activities related to climate adaptation.
-            </p>
+            </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
             </div>
@@ -45,10 +46,10 @@ export default function MenuGoodPractices(props) {
         menuItem: 'Policy',
         render: () => (
           <>
-            <p className="callout">
+            <Callout>
               This section summarizes collaboration on policy development,
               governance, and shared adaptation initiatives.
-            </p>
+            </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
             </div>

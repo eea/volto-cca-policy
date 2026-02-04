@@ -1,5 +1,6 @@
 import AccordionList from './AccordionList';
 import { Message, Icon } from 'semantic-ui-react';
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 import './styles.less';
 
@@ -76,7 +77,7 @@ export default function MenuSubNational(props) {
   });
   return (
     <>
-      <div className="documentDescription eea callout">
+      <Callout>
         <p>
           This section presents examples of good practices reported by the
           country, together with cooperation activities that support climate
@@ -86,7 +87,7 @@ export default function MenuSubNational(props) {
             national, regional and international levels.
           </strong>
         </p>
-      </div>
+      </Callout>
       <div className="grayBackGround">
         <h2>Sub-national governance and institutional arrangements</h2>
         <div className="styled-dividerBlock secondary has--theme--secondary styled">
@@ -116,15 +117,18 @@ export default function MenuSubNational(props) {
           reported by the country. The number and type of practices may vary
           depending on national experience, priorities and reporting status.
         </p>
-        <AccordionList elements={elementsGoodPractics} />
-        <Message icon>
-          <Icon className="tiny icon ri-information-fill middle aligned" />
-          <p>
-            Information for this section was not reported by the country in the
-            2025 reporting cycle. Content will be added once official data
-            becomes available
-          </p>
-        </Message>
+        {elementsGoodPractics.length > 0 ? (
+          <AccordionList elements={elementsGoodPractics} />
+        ) : (
+          <Message icon>
+            <Icon className="tiny icon ri-information-fill middle aligned" />
+            <p>
+              Information for this section was not reported by the country in
+              the 2025 reporting cycle. Content will be added once official data
+              becomes available
+            </p>
+          </Message>
+        )}
       </div>
     </>
   );

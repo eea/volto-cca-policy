@@ -122,7 +122,7 @@ export default function MenuProfile(props) {
     return contactsArray.flatMap((c) => c?.Publications ?? []);
   })();
   return (
-    <div class="cp2026">
+    <div className="cp2026">
       <h2>Adaptation policy framework</h2>
       <h3>National framework</h3>
       {adaptationPolicies.map((adaptation, index) => (
@@ -136,14 +136,14 @@ export default function MenuProfile(props) {
             <p>
               <strong>{adaptation['Type']}</strong>
             </p>
-            <div class="ui unstackable items row">
-              <div class="item secondary">
+            <div className="ui unstackable items row">
+              <div className="item secondary">
                 <i
                   aria-hidden="true"
-                  class="tiny icon ri-external-link-line secondary middle aligned"
+                  className="tiny icon ri-external-link-line secondary middle aligned"
                 ></i>
-                <div class="middle aligned content">
-                  <div class="description">
+                <div className="middle aligned content">
+                  <div className="description">
                     <p>
                       <a href={adaptation['Link']}>{adaptation['Title']}</a>
                     </p>
@@ -174,14 +174,14 @@ export default function MenuProfile(props) {
               <b>{website.Title}</b>
             </p>
             <p>{website.Department}</p>
-            <div class="ui unstackable items row">
-              <div class="item secondary">
+            <div className="ui unstackable items row">
+              <div className="item secondary">
                 <i
                   aria-hidden="true"
-                  class="tiny icon ri-external-link-line secondary middle aligned"
+                  className="tiny icon ri-external-link-line secondary middle aligned"
                 ></i>
-                <div class="middle aligned content">
-                  <div class="description">
+                <div className="middle aligned content">
+                  <div className="description">
                     <p>
                       <a href={website['Url']}>{website['Url']}</a>
                     </p>
@@ -199,14 +199,14 @@ export default function MenuProfile(props) {
             <p>
               <b>{website.Publisher}</b>
             </p>
-            <div class="ui unstackable items row">
-              <div class="item secondary">
+            <div className="ui unstackable items row">
+              <div className="item secondary">
                 <i
                   aria-hidden="true"
-                  class="tiny icon ri-external-link-line secondary middle aligned"
+                  className="tiny icon ri-external-link-line secondary middle aligned"
                 ></i>
-                <div class="middle aligned content">
-                  <div class="description">
+                <div className="middle aligned content">
+                  <div className="description">
                     <p>
                       <a href={website['WebLink']}>{website['WebLink']}</a>
                     </p>
@@ -225,14 +225,14 @@ export default function MenuProfile(props) {
               <b>{data.Organisation}</b>
             </p>
             <p>{data.Department}</p>
-            <div class="ui unstackable items row">
-              <div class="item secondary">
+            <div className="ui unstackable items row">
+              <div className="item secondary">
                 <i
                   aria-hidden="true"
-                  class="tiny icon ri-external-link-line secondary middle aligned"
+                  className="tiny icon ri-external-link-line secondary middle aligned"
                 ></i>
-                <div class="middle aligned content">
-                  <div class="description">
+                <div className="middle aligned content">
+                  <div className="description">
                     <p>
                       <a href={data['Website']}>{data['Website']}</a>
                     </p>
@@ -285,12 +285,12 @@ const ListDiv = ({ elements }) => {
                     {element?.Title && <>{element.Title}</>}
                   </p>
 
-                  <div class="item secondary">
+                  <div className="item secondary">
                     <i
                       aria-hidden="true"
-                      class="tiny icon ri-external-link-line secondary middle aligned"
+                      className="tiny icon ri-external-link-line secondary middle aligned"
                     ></i>
-                    <span class="small-text">
+                    <span className="small-text">
                       <a href={element.Link}>{element.LinkName}</a>
                     </span>
                   </div>

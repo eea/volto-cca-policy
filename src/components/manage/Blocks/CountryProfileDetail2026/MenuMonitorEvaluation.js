@@ -1,4 +1,5 @@
 import AccordionList from './AccordionList';
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 export default function MenuMonitorEvaluation(props) {
   const dataJsonString = props.dataJson;
@@ -102,9 +103,10 @@ export default function MenuMonitorEvaluation(props) {
       });
     }
   }
+  let h2Counter = 0;
   return (
     <>
-      <div class="documentDescription eea callout">
+      <Callout>
         <p>
           This section{' '}
           <strong>
@@ -114,14 +116,24 @@ export default function MenuMonitorEvaluation(props) {
           an overview of how each country strengthens resilience and integrates
           adaptation across sectors and governance levels.
         </p>
-      </div>
-      {Object.entries(elements).map(([key, element]) => (
-        <div key={key}>
-          <h2>{element.Title}</h2>
-          <p>{element.Description}</p>
-          <AccordionList elements={element.items} />
-        </div>
-      ))}
+      </Callout>
+      {Object.entries(elements).map(([key, element]) => {
+        if (element.items.length === 0) {
+          return '';
+        }
+        h2Counter += 1;
+        return (
+          <>
+            <h2>
+              {h2Counter}. {element.Title}
+            </h2>
+            <div>
+              <p>{element.Description}</p>
+              <AccordionList elements={element.items} />
+            </div>
+          </>
+        );
+      })}
     </>
   );
 }

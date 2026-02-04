@@ -1,6 +1,7 @@
 import { Tab } from 'semantic-ui-react';
 import AccordionList from './AccordionList';
 import ReactDOMServer from 'react-dom/server';
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 export default function MenuStrategiesPlansGoals(props) {
   const dataJsonString = props.dataJson;
@@ -88,7 +89,7 @@ export default function MenuStrategiesPlansGoals(props) {
   });
   return (
     <>
-      <div class="documentDescription eea callout">
+      <Callout>
         <p>
           This section provides an overview of the country’s
           <strong>
@@ -100,7 +101,7 @@ export default function MenuStrategiesPlansGoals(props) {
           also presents actions and measures that support climate resilience
           across key sectors.
         </p>
-      </div>
+      </Callout>
       <AccordionList elements={elements} />
       <h2>Selection of actions and (programmes of) measures</h2>
       <p>

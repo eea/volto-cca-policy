@@ -1,4 +1,5 @@
 import AccordionList from './AccordionList';
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 export default function MenuLegalPolicy(props) {
   const dataJsonString = props.dataJson;
@@ -45,7 +46,7 @@ export default function MenuLegalPolicy(props) {
   }
   return (
     <>
-      <div class="documentDescription eea callout">
+      <Callout>
         <p>
           This section outlines{' '}
           <strong>
@@ -55,7 +56,7 @@ export default function MenuLegalPolicy(props) {
           strategies contribute to achieving climate resilience in line with EU
           Mission objectives.
         </p>
-      </div>
+      </Callout>
       <AccordionList elements={elements} />
     </>
   );
