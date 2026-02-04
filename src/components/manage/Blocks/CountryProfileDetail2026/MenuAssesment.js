@@ -184,14 +184,14 @@ const PanesHazardContent = ({ data }) => {
   return (
     <>
       <p>
-        <span class="fw-light">{data.Description}</span>
+        <span className="fw-light">{data.Description}</span>
       </p>
       <div>
         <p>
           <strong>Acute Hazards</strong>
         </p>
-        <div class="styled-dividerBlock">
-          <div class="ui fitted divider divider-spacing-s"></div>
+        <div className="styled-dividerBlock">
+          <div className="ui fitted divider divider-spacing-s"></div>
         </div>
         <Grid columns="12" className="cpBgGray">
           <Grid.Column
@@ -201,7 +201,7 @@ const PanesHazardContent = ({ data }) => {
             className="col-right"
           >
             <p>
-              <span class="fw-light">Hazard type</span>
+              <span className="fw-light">Hazard type</span>
             </p>
           </Grid.Column>
           <Grid.Column
@@ -211,7 +211,7 @@ const PanesHazardContent = ({ data }) => {
             className="col-right"
           >
             <p>
-              <span class="fw-light">Future status</span>
+              <span className="fw-light">Future status</span>
             </p>
           </Grid.Column>
 
@@ -224,7 +224,7 @@ const PanesHazardContent = ({ data }) => {
                 className="col-right"
               >
                 <p>
-                  <span class="fw-light">{data.Title}</span>
+                  <span className="fw-light">{data.Title}</span>
                 </p>
               </Grid.Column>
               <Grid.Column

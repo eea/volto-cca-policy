@@ -15,8 +15,8 @@ export default function MenuGoodPractices(props) {
               This section shows the country’s involvement in international and
               regional cooperation frameworks that support climate adaptation.
             </p>
-            <div class="styled-dividerBlock secondary has--theme--secondary styled">
-              <div class="ui divider secondary divider-spacing-s"></div>
+            <div className="styled-dividerBlock secondary has--theme--secondary styled">
+              <div className="ui divider secondary divider-spacing-s"></div>
             </div>
             {dataJson.National_Circumstances.BiogeophysicalCharacteristics}
           </>
@@ -32,8 +32,8 @@ export default function MenuGoodPractices(props) {
               This section highlights cooperation in research, knowledge
               exchange, and scientific activities related to climate adaptation.
             </p>
-            <div class="styled-dividerBlock secondary has--theme--secondary styled">
-              <div class="ui divider secondary divider-spacing-s"></div>
+            <div className="styled-dividerBlock secondary has--theme--secondary styled">
+              <div className="ui divider secondary divider-spacing-s"></div>
             </div>
             {dataJson.National_Circumstances.DemographicSituation}
           </>
@@ -49,8 +49,8 @@ export default function MenuGoodPractices(props) {
               This section summarizes collaboration on policy development,
               governance, and shared adaptation initiatives.
             </p>
-            <div class="styled-dividerBlock secondary has--theme--secondary styled">
-              <div class="ui divider secondary divider-spacing-s"></div>
+            <div className="styled-dividerBlock secondary has--theme--secondary styled">
+              <div className="ui divider secondary divider-spacing-s"></div>
             </div>
             {dataJson.National_Circumstances.EconomicInfrastructuralSituation}
           </>
@@ -93,8 +93,8 @@ export default function MenuGoodPractices(props) {
         />
       </div>
       <h2>Good practices and lessons learnt</h2>
-      <div class="styled-dividerBlock tertiary has--theme--tertiary styled">
-        <div class="ui fitted divider tertiary divider-spacing-s"></div>
+      <div className="styled-dividerBlock tertiary has--theme--tertiary styled">
+        <div className="ui fitted divider tertiary divider-spacing-s"></div>
       </div>
       <p>
         This section presents selected good practices and lessons learnt

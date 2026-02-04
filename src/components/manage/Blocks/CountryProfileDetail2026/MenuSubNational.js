@@ -1,4 +1,6 @@
 import AccordionList from './AccordionList';
+import { Message, Icon } from 'semantic-ui-react';
+
 import './styles.less';
 
 export default function MenuSubNational(props) {
@@ -74,7 +76,7 @@ export default function MenuSubNational(props) {
   });
   return (
     <>
-      <div class="documentDescription eea callout">
+      <div className="documentDescription eea callout">
         <p>
           This section presents examples of good practices reported by the
           country, together with cooperation activities that support climate
@@ -87,11 +89,11 @@ export default function MenuSubNational(props) {
       </div>
       <div className="grayBackGround">
         <h2>Sub-national governance and institutional arrangements</h2>
-        <div class="styled-dividerBlock secondary has--theme--secondary styled">
-          <div class="ui fitted divider secondary divider-spacing-s"></div>
+        <div className="styled-dividerBlock secondary has--theme--secondary styled">
+          <div className="ui fitted divider secondary divider-spacing-s"></div>
         </div>
-        <div class="styled-dividerBlock">
-          <div class="ui hidden divider divider-spacing-s"></div>
+        <div className="styled-dividerBlock">
+          <div className="ui hidden divider divider-spacing-s"></div>
         </div>
         <p>
           This section provides an overview of governance structures and
@@ -101,40 +103,28 @@ export default function MenuSubNational(props) {
         </p>
         <AccordionList elements={elementsSubNational} />
       </div>
+      <h2>Good practices and lessons learnt</h2>
       <div>
-        <h2 class="mt-4">Good practices and lessons learnt</h2>
-        <div class="styled-dividerBlock secondary has--theme--secondary styled">
-          <div class="ui fitted divider secondary divider-spacing-s"></div>
+        <div className="styled-dividerBlock secondary has--theme--secondary styled">
+          <div className="ui fitted divider secondary divider-spacing-s"></div>
         </div>
-        <div class="styled-dividerBlock">
-          <div class="ui hidden divider divider-spacing-s"></div>
+        <div className="styled-dividerBlock">
+          <div className="ui hidden divider divider-spacing-s"></div>
         </div>
         <p>
           This section presents selected good practices and lessons learnt
           reported by the country. The number and type of practices may vary
           depending on national experience, priorities and reporting status.
         </p>
-        {elementsGoodPractics.length > 0 ? (
-          <AccordionList elements={elementsGoodPractics} />
-        ) : (
-          <div className="noticeBackGround">
-            <div className="ui unstackable items row">
-              <div className="item">
-                <i
-                  aria-hidden="true"
-                  class="tiny icon ri-information-fill middle aligned"
-                ></i>
-                <div clasName="middle aligned content">
-                  <p>
-                    Information for this section was not reported by the country
-                    in the 2025 reporting cycle. Content will be added once
-                    official data becomes available.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        <AccordionList elements={elementsGoodPractics} />
+        <Message icon>
+          <Icon className="tiny icon ri-information-fill middle aligned" />
+          <p>
+            Information for this section was not reported by the country in the
+            2025 reporting cycle. Content will be added once official data
+            becomes available
+          </p>
+        </Message>
       </div>
     </>
   );
