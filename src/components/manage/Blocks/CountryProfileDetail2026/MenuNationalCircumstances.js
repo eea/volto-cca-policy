@@ -24,5 +24,17 @@ export default function MenuNationalCircumstances(props) {
       });
     }
   }
-  return <AccordionList elements={elements} />;
+  return (
+    <>
+      <div class="documentDescription eea callout">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Nunc ac velit felis fermentum
+          pretium vulputate sapien eleifend. Amet dolor ultricies laoreet sed.
+          Ut semper lacinia nisl aliquet aenean gravida. Quam lectus viverra eu
+          enim a lorem sed vestibulum. Suspendisse a dictum eu venenatis mattis.
+        </p>
+      </div>
+      <AccordionList elements={elements} />
+    </>
+  );
 }

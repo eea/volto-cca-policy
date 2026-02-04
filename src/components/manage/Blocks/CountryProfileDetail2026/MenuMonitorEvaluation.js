@@ -104,6 +104,17 @@ export default function MenuMonitorEvaluation(props) {
   }
   return (
     <>
+      <div class="documentDescription eea callout">
+        <p>
+          This section{' '}
+          <strong>
+            summarizes national progress on climate change adaptation
+          </strong>
+          , including key actions, funding, and monitoring efforts. It provides
+          an overview of how each country strengthens resilience and integrates
+          adaptation across sectors and governance levels.
+        </p>
+      </div>
       {Object.entries(elements).map(([key, element]) => (
         <div key={key}>
           <h2>{element.Title}</h2>

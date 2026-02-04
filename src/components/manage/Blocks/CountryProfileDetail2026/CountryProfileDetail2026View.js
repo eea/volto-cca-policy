@@ -79,7 +79,7 @@ export default function CountryProfileDetail2026View(props) {
   });
 
   return (
-    <>
+    <div id="countryProfile2026">
       <Tab
         className="secondary menu"
         panes={panes}
@@ -94,6 +94,6 @@ export default function CountryProfileDetail2026View(props) {
           tabIndex: 0,
         }}
       />
-    </>
+    </div>
   );
 }

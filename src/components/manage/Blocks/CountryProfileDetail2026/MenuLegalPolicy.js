@@ -43,5 +43,20 @@ export default function MenuLegalPolicy(props) {
       });
     }
   }
-  return <AccordionList elements={elements} />;
+  return (
+    <>
+      <div class="documentDescription eea callout">
+        <p>
+          This section outlines{' '}
+          <strong>
+            the institutional arrangements and governance at the national level
+          </strong>
+          . It summarizes how institutions coordinate action and how national
+          strategies contribute to achieving climate resilience in line with EU
+          Mission objectives.
+        </p>
+      </div>
+      <AccordionList elements={elements} />
+    </>
+  );
 }

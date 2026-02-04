@@ -1,4 +1,5 @@
 import AccordionList from './AccordionList';
+import './styles.less';
 
 export default function MenuSubNational(props) {
   const dataJsonString = props.dataJson;
@@ -84,7 +85,7 @@ export default function MenuSubNational(props) {
           </strong>
         </p>
       </div>
-      <div>
+      <div className="grayBackGround">
         <h2>Sub-national governance and institutional arrangements</h2>
         <div class="styled-dividerBlock secondary has--theme--secondary styled">
           <div class="ui fitted divider secondary divider-spacing-s"></div>
@@ -101,7 +102,7 @@ export default function MenuSubNational(props) {
         <AccordionList elements={elementsSubNational} />
       </div>
       <div>
-        <h2>Good practices and lessons learnt</h2>
+        <h2 class="mt-4">Good practices and lessons learnt</h2>
         <div class="styled-dividerBlock secondary has--theme--secondary styled">
           <div class="ui fitted divider secondary divider-spacing-s"></div>
         </div>
@@ -113,7 +114,27 @@ export default function MenuSubNational(props) {
           reported by the country. The number and type of practices may vary
           depending on national experience, priorities and reporting status.
         </p>
-        <AccordionList elements={elementsGoodPractics} />
+        {elementsGoodPractics.length > 0 ? (
+          <AccordionList elements={elementsGoodPractics} />
+        ) : (
+          <div className="noticeBackGround">
+            <div className="ui unstackable items row">
+              <div className="item">
+                <i
+                  aria-hidden="true"
+                  class="tiny icon ri-information-fill middle aligned"
+                ></i>
+                <div clasName="middle aligned content">
+                  <p>
+                    Information for this section was not reported by the country
+                    in the 2025 reporting cycle. Content will be added once
+                    official data becomes available.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

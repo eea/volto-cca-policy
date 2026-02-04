@@ -88,6 +88,19 @@ export default function MenuStrategiesPlansGoals(props) {
   });
   return (
     <>
+      <div class="documentDescription eea callout">
+        <p>
+          This section provides an overview of the country’s
+          <strong>
+            {' '}
+            climate change adaptation strategy and its implementation
+          </strong>
+          . It summarizes strategic priorities, governance processes, and how
+          adaptation is integrated into sectoral planning. Where available, it
+          also presents actions and measures that support climate resilience
+          across key sectors.
+        </p>
+      </div>
       <AccordionList elements={elements} />
       <h2>Selection of actions and (programmes of) measures</h2>
       <p>

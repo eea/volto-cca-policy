@@ -243,57 +243,70 @@ export default function MenuProfile(props) {
           </Grid.Column>
         ))}
       </Grid>
+      <div className="noticeBackGround mt-2">
+        <p>
+          <strong>Disclaimer:</strong>The information presented in these pages
+          is based on the reporting according to 'Regulation (EU) 2018/1999 on
+          the Governance of the Energy Union and Climate Action'. For
+          Liechtenstein and Norway, the information presented is based on the
+          reporting according to 'Regulation (EU) No 525/2013 on a mechanism for
+          monitoring and reporting greenhouse gas emissions and for reporting
+          other information relevant to climate change'.
+        </p>
+      </div>
     </div>
   );
 }
 
 const ListDiv = ({ elements }) => {
   return (
-    <>
-      {elements.map((categoryData, index) => (
-        <div key={index}>
-          {categoryData.category.length > 0 && (
-            <p>
-              <b>{categoryData.category}</b>
-            </p>
-          )}
-          {categoryData.elements.map((element) => (
-            <Grid columns="12">
-              <Grid.Column
-                mobile={9}
-                tablet={9}
-                computer={9}
-                eteorological
-                observati
-                className="col-left"
-              >
-                <p>
-                  {element?.TitleBold && <b>{element.TitleBold}</b>}
-                  {element?.Title && <>{element.Title}</>}
-                </p>
+    <div>
+      {elements
+        .filter((categoryData) => categoryData.elements.length > 0)
+        .map((categoryData, index) => (
+          <div key={index} className="cpBgGray">
+            {categoryData.category.length > 0 && (
+              <p>
+                <b>{categoryData.category}</b>
+              </p>
+            )}
+            {categoryData.elements.map((element) => (
+              <Grid columns="12">
+                <Grid.Column
+                  mobile={9}
+                  tablet={9}
+                  computer={9}
+                  eteorological
+                  observati
+                  className="col-left"
+                >
+                  <p>
+                    {element?.TitleBold && <b>{element.TitleBold}</b>}
+                    {element?.Title && <>{element.Title}</>}
+                  </p>
 
-                <div class="item secondary">
-                  <i
-                    aria-hidden="true"
-                    class="tiny icon ri-external-link-line secondary middle aligned"
-                  ></i>
-                  <span class="small-text">
-                    <a href={element.Link}>{element.LinkName}</a>
-                  </span>
-                </div>
-              </Grid.Column>
-              <Grid.Column
-                mobile={3}
-                tablet={3}
-                computer={3}
-                className="col-left"
-              >
-                <StatusCircle statusValue={element.Status} />
-              </Grid.Column>
-            </Grid>
-          ))}
-        </div>
-      ))}
-    </>
+                  <div class="item secondary">
+                    <i
+                      aria-hidden="true"
+                      class="tiny icon ri-external-link-line secondary middle aligned"
+                    ></i>
+                    <span class="small-text">
+                      <a href={element.Link}>{element.LinkName}</a>
+                    </span>
+                  </div>
+                </Grid.Column>
+                <Grid.Column
+                  mobile={3}
+                  tablet={3}
+                  computer={3}
+                  className="col-left"
+                >
+                  <StatusCircle statusValue={element.Status} />
+                </Grid.Column>
+              </Grid>
+            ))}
+          </div>
+        ))}
+    </div>
   );
 };
