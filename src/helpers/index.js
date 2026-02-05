@@ -21,6 +21,7 @@ export {
   OTHER_REGIONS,
   SUBNATIONAL_REGIONS,
   EU_COUNTRIES,
+  RELEVANT_SYNERGIES,
 } from './Constants';
 export clientOnly from './clientOnly';
 

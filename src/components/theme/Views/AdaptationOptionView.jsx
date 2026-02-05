@@ -13,7 +13,8 @@ import {
 } from '@eeacms/volto-cca-policy/components';
 import { FormattedMessage } from 'react-intl';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import { Container, Grid } from 'semantic-ui-react';
+import { Container, Grid, Label } from 'semantic-ui-react';
+import { RELEVANT_SYNERGIES } from '@eeacms/volto-cca-policy/helpers';
 
 function AdaptationOptionView(props) {
   const { content = {} } = props;
@@ -24,6 +25,10 @@ function AdaptationOptionView(props) {
     lifetime,
     description,
     cost_benefit,
+    intro_paragraph,
+    advantages,
+    disadvantages,
+    relevant_synergies,
     legal_aspects,
     ipcc_category,
     long_description,
@@ -39,6 +44,7 @@ function AdaptationOptionView(props) {
       .filter(Boolean);
     return titles.sort().join(', ');
   }, [ipcc_category]);
+  const relevantSynergyValue = relevant_synergies?.token;
 
   const accordions = useMemo(() => {
     const items = [
@@ -197,12 +203,65 @@ function AdaptationOptionView(props) {
               className="col-left"
             >
               {description && <Callout>{description}</Callout>}
-              <h2>
+              {intro_paragraph && <HTMLField value={intro_paragraph} />}
+              {advantages && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Advantages"
+                      defaultMessage="Advantages"
+                    />
+                  </h5>
+                  <HTMLField value={advantages} />
+                </>
+              )}
+              {disadvantages && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Disadvantages"
+                      defaultMessage="Disadvantages"
+                    />
+                  </h5>
+                  <HTMLField value={disadvantages} />
+                </>
+              )}
+
+              {(relevantSynergyValue === 'Yes' ||
+                relevantSynergyValue === 'No') && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Relevant synergies with mitigation"
+                      defaultMessage="Relevant synergies with mitigation"
+                    />
+                  </h5>
+
+                  {relevantSynergyValue === 'Yes' ? (
+                    <>
+                      <span>
+                        <FormattedMessage id="Yes" defaultMessage="Yes" />
+                      </span>
+                      <div className="synergies-list">
+                        {RELEVANT_SYNERGIES.map((item, index) => (
+                          <Label key={index}>{item}</Label>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <span>
+                      <FormattedMessage id="No" defaultMessage="No" />
+                    </span>
+                  )}
+                </>
+              )}
+
+              <h3>
                 <FormattedMessage
                   id="Read the full text of the adaptation option"
                   defaultMessage="Read the full text of the adaptation option"
                 />
-              </h2>
+              </h3>
               <AccordionList variation="primary" accordions={accordions} />
               <PublishedModifiedInfo {...props} />
               <ShareInfoButton {...props} />
