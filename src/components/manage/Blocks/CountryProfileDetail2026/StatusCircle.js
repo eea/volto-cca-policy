@@ -11,12 +11,15 @@ export default function StatusCircle(props) {
   let statusIcon = '';
   switch (statusValue.toLowerCase()) {
     case 'adopted':
+    case 'uncertain / unknown':
+    case 'significantly decreasing':
       statusIcon = CircleGreen;
       break;
     case 'established':
       statusIcon = CirclePurple;
       break;
     case 'What':
+    case 'significantly increasing':
       statusIcon = CircleRed;
       break;
     default:

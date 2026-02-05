@@ -89,7 +89,7 @@ export default function MenuProfile(props) {
     }
     panesHazardData[hazardData.Group][hazardData.Type].push({
       Title: hazardData.Event,
-      Status: '?!?!',
+      Status: mapStatus(hazardData.PatternValue),
     });
   }
   let panesHazard = [];
@@ -236,7 +236,6 @@ const PanesHazardContent = ({ data }) => {
                 <p>
                   <span className="fw-light">
                     <StatusCircle statusValue={data.Status} />
-                    {data.Status}
                   </span>
                 </p>
               </Grid.Column>
@@ -293,7 +292,6 @@ const PanesHazardContent = ({ data }) => {
                 <p>
                   <span className="fw-light">
                     <StatusCircle statusValue={data.Status} />
-                    {data.Status}
                   </span>
                 </p>
               </Grid.Column>
@@ -327,3 +325,27 @@ const KeyAffectedSectorContent = ({ data }) => {
     </>
   );
 };
+
+function mapStatus(name) {
+  let response = '';
+  switch (name) {
+    case '? evolution uncertain or unknown':
+      response = 'uncertain / unknown';
+      break;
+    case '- significantly decreasing':
+      response = 'significantly decreasing';
+      break;
+    case '+ significantly increasing':
+      response = 'significantly increasing';
+      break;
+    case '0 hazard not of relevance':
+      response = 'not of relevance';
+      break;
+    case '= without significant change':
+      response = 'no significant change';
+      break;
+    default:
+      response = 'NOT FOUND:' + name;
+  }
+  return response;
+}
