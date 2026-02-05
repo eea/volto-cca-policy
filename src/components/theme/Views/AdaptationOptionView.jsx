@@ -12,6 +12,7 @@ import {
   ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
 import { FormattedMessage } from 'react-intl';
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { Container, Grid } from 'semantic-ui-react';
 
 function AdaptationOptionView(props) {
@@ -21,6 +22,7 @@ function AdaptationOptionView(props) {
     websites,
     category,
     lifetime,
+    description,
     cost_benefit,
     legal_aspects,
     ipcc_category,
@@ -194,6 +196,13 @@ function AdaptationOptionView(props) {
               computer={8}
               className="col-left"
             >
+              {description && <Callout>{description}</Callout>}
+              <h2>
+                <FormattedMessage
+                  id="Read the full text of the adaptation option"
+                  defaultMessage="Read the full text of the adaptation option"
+                />
+              </h2>
               <AccordionList variation="primary" accordions={accordions} />
               <PublishedModifiedInfo {...props} />
               <ShareInfoButton {...props} />
