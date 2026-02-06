@@ -15,6 +15,8 @@ import { FormattedMessage } from 'react-intl';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { Container, Grid, Label } from 'semantic-ui-react';
 import { RELEVANT_SYNERGIES } from '@eeacms/volto-cca-policy/helpers';
+import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 function AdaptationOptionView(props) {
   const { content = {} } = props;
@@ -35,8 +37,15 @@ function AdaptationOptionView(props) {
     success_limitations,
     implementation_time,
     related_case_studies,
+    show_related_resources,
     stakeholder_participation,
   } = content;
+
+  const { blocks, blocks_layout } = getFilteredBlocks(
+    content,
+    'tabs_block',
+    'metadataSection',
+  );
 
   const ipccCategories = useMemo(() => {
     const titles = (ipcc_category ?? [])
@@ -193,7 +202,6 @@ function AdaptationOptionView(props) {
 
       <Container>
         <PortalMessage content={content} />
-
         <Grid>
           <Grid.Row columns={12}>
             <Grid.Column
@@ -202,7 +210,9 @@ function AdaptationOptionView(props) {
               computer={8}
               className="col-left"
             >
-              {description && <Callout>{description}</Callout>}
+              {description.trim() !== 'None' && (
+                <Callout>{description}</Callout>
+              )}
               {intro_paragraph && <HTMLField value={intro_paragraph} />}
               {advantages && (
                 <>
@@ -299,6 +309,24 @@ function AdaptationOptionView(props) {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        {show_related_resources && (
+          <>
+            <h3>
+              <FormattedMessage
+                id="Related Resources"
+                defaultMessage="Related Resources"
+              />
+            </h3>
+            <RenderBlocks
+              {...props}
+              content={{
+                ...content,
+                blocks,
+                blocks_layout,
+              }}
+            />
+          </>
+        )}
       </Container>
     </div>
   );
