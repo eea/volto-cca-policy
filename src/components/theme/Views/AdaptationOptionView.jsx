@@ -294,25 +294,6 @@ function AdaptationOptionView(props) {
                 {...props}
                 related_case_studies={related_case_studies}
               />
-              {/* {related_case_studies?.length > 0 && (
-                <Segment>
-                  <h5>
-                    <FormattedMessage
-                      id="Case studies related to this option:"
-                      defaultMessage="Case studies related to this option:"
-                    />
-                  </h5>
-                  <ul className="related-case-studies">
-                    {related_case_studies.map((item, index) => (
-                      <li key={index}>
-                        <UniversalLink key={index} href={item.url}>
-                          {item.title}
-                        </UniversalLink>
-                      </li>
-                    ))}
-                  </ul>
-                </Segment>
-              )} */}
             </Grid.Column>
           </Grid.Row>
         </Grid>
