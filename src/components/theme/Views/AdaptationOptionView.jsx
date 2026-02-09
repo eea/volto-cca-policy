@@ -13,7 +13,7 @@ import {
 } from '@eeacms/volto-cca-policy/components';
 import { FormattedMessage } from 'react-intl';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import { Container, Grid, Label } from 'semantic-ui-react';
+import { Container, Grid, Label, Image } from 'semantic-ui-react';
 import { RELEVANT_SYNERGIES } from '@eeacms/volto-cca-policy/helpers';
 import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
@@ -21,6 +21,7 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 function AdaptationOptionView(props) {
   const { content = {} } = props;
   const {
+    image,
     source,
     websites,
     category,
@@ -283,6 +284,12 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
+              {image && (
+                <Image
+                  src={content.image?.scales?.large?.download}
+                  className="preview-image"
+                />
+              )}
               <ContentMetadata
                 {...props}
                 related_case_studies={related_case_studies}
