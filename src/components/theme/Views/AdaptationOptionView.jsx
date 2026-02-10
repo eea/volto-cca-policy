@@ -274,24 +274,6 @@ function AdaptationOptionView(props) {
                 />
               </h3>
               <AccordionList variation="primary" accordions={accordions} />
-              {show_related_resources && (
-                <>
-                  <h3>
-                    <FormattedMessage
-                      id="Related Resources"
-                      defaultMessage="Related Resources"
-                    />
-                  </h3>
-                  <RenderBlocks
-                    {...props}
-                    content={{
-                      ...content,
-                      blocks,
-                      blocks_layout,
-                    }}
-                  />
-                </>
-              )}
               <PublishedModifiedInfo {...props} />
               <ShareInfoButton {...props} />
             </Grid.Column>
@@ -315,6 +297,24 @@ function AdaptationOptionView(props) {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        {show_related_resources && (
+          <>
+            <h3>
+              <FormattedMessage
+                id="Related Resources"
+                defaultMessage="Related Resources"
+              />
+            </h3>
+            <RenderBlocks
+              {...props}
+              content={{
+                ...content,
+                blocks,
+                blocks_layout,
+              }}
+            />
+          </>
+        )}
       </Container>
     </div>
   );
