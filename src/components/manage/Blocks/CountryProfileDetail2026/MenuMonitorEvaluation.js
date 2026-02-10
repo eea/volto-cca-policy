@@ -24,7 +24,7 @@ export default function MenuMonitorEvaluation(props) {
       items: [],
     },
     StepsToReview: {
-      Title: 'Monitoring, reporting and evaluation (MRE)',
+      Title: 'Steps to review',
       Description:
         "This section explains the country's formal approach to MRE, including the frameworks, legal basic and specific processes that guide implementation.",
       items: [],
