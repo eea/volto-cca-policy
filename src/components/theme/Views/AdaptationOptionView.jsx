@@ -1,21 +1,22 @@
 import React, { useMemo } from 'react';
+import { FormattedMessage } from 'react-intl';
 import {
   HTMLField,
   ContentMetadata,
   PublishedModifiedInfo,
   BannerTitle,
   LinksList,
+  RELEVANT_SYNERGIES,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   AccordionList,
   PortalMessage,
   ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
-import { FormattedMessage } from 'react-intl';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { Container, Grid, Label, Image } from 'semantic-ui-react';
-import { RELEVANT_SYNERGIES } from '@eeacms/volto-cca-policy/helpers';
 import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
+import { UniversalLink } from '@plone/volto/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 function AdaptationOptionView(props) {
@@ -40,6 +41,7 @@ function AdaptationOptionView(props) {
     related_case_studies,
     show_related_resources,
     stakeholder_participation,
+    relevant_eu_policies_items,
   } = content;
 
   const { blocks, blocks_layout } = getFilteredBlocks(
@@ -215,6 +217,31 @@ function AdaptationOptionView(props) {
                 <Callout>{description}</Callout>
               )}
               {intro_paragraph && <HTMLField value={intro_paragraph} />}
+
+              {(relevant_eu_policies_items?.length ?? 0) > 0 && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Relevant EU policies"
+                      defaultMessage="Relevant EU policies"
+                    />
+                  </h5>
+
+                  <p className="relevant-eu-policies">
+                    {relevant_eu_policies_items
+                      .filter((it) => it?.url && it?.title)
+                      .map((it, index, arr) => (
+                        <React.Fragment key={it.id || it.url}>
+                          <UniversalLink href={it.url} openInNewTab>
+                            {it.title}
+                          </UniversalLink>
+                          {index < arr.length - 1 && ', '}
+                        </React.Fragment>
+                      ))}
+                  </p>
+                </>
+              )}
+
               {advantages && (
                 <>
                   <h5>
