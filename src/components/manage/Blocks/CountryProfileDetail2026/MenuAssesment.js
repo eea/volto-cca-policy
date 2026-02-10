@@ -101,35 +101,62 @@ export default function MenuProfile(props) {
     });
   });
 
-  let panesKeysData = {
-    'agriculture and food': 'Agriculture & food',
-    biodiversity: 'Biodiversity',
-    buildings: 'Buildings',
-    business: 'Business',
-    energy: 'Energy',
-    forestry: 'Forestry',
-    health: 'Health',
-    'land use planning': 'Land use planning',
-    tourism: 'Tourism',
-    transport: 'Transport',
-    'water management': 'Water management',
-    other: 'Other',
-    urban: 'Urban',
-    CivilProtection: 'Civil protection',
-    // 'coastal areas'
-    // 'finance and insurance'
-  };
-  let panesKeys = [];
-  Object.entries(panesKeysData).forEach(([key, data]) => {
+  const panesKeys = Object.values(dataJson?.Key_Affected_Sectors ?? {}).map(
+    (item) => item.PrimarySector,
+  );
+
+  const resultPanesKeys = [
+    ...panesKeys
+      .filter((item) => item.toLowerCase() !== 'other')
+      .sort((a, b) => a.localeCompare(b)),
+    ...panesKeys.filter((item) => item.toLowerCase() === 'other'),
+  ];
+
+  Object.entries(resultPanesKeys).forEach(([key, data]) => {
     let keyElements = [];
     Object.entries(dataJson?.Key_Affected_Sectors ?? []).forEach(
       ([sectorKey, sectorData]) => {
-        if (sectorData.PrimarySector === key) {
+        if (sectorData.PrimarySector === data) {
           keyElements.push({
-            Id: sectorKey,
-            Title: sectorData.SectorDescribe,
+            // Id: sectorKey + '_0',
+            Title:
+              'Observed impact of key hazards, including changes in frequency and magnitude',
             Text: ReactDOMServer.renderToString(
-              <KeyAffectedSectorContent data={sectorData} />,
+              <KeyAffectedSectorContent
+                rating={sectorData.ImpactsKeyHazards}
+                assestment={sectorData.DescribeImpactsKeyHazards}
+              />,
+            ),
+          });
+          keyElements.push({
+            // Id: sectorKey + '_1',
+            Title:
+              'Key hazards likelihood of occurrence and exposure to them under future climate',
+            Text: ReactDOMServer.renderToString(
+              <KeyAffectedSectorContent
+                rating={sectorData.KeyHazardsLikelihood}
+                assestment={sectorData.DescribeLikelihood}
+              />,
+            ),
+          });
+          keyElements.push({
+            // Id: sectorKey + '_2',
+            Title: 'Vulnerability, including adaptive capacity',
+            Text: ReactDOMServer.renderToString(
+              <KeyAffectedSectorContent
+                rating={sectorData.Vulnerability}
+                assestment={sectorData.DescribeVulnerability}
+              />,
+            ),
+          });
+          keyElements.push({
+            // Id: sectorKey + '_3',
+            Title: 'Risk of potential future impacts',
+            Text: ReactDOMServer.renderToString(
+              <KeyAffectedSectorContent
+                rating={sectorData.RiskFutureImpacts}
+                assestment={sectorData.DescribeRisk}
+              />,
             ),
           });
         }
@@ -137,7 +164,9 @@ export default function MenuProfile(props) {
     );
     if (keyElements.length) {
       panesKeys.push({
-        menuItem: data,
+        menuItem: (data.charAt(0).toUpperCase() + data.slice(1))
+          .split('(')[0]
+          .trim(),
         render: () => <AccordionList elements={keyElements} />,
       });
     }
@@ -303,7 +332,7 @@ const PanesHazardContent = ({ data }) => {
   );
 };
 
-const KeyAffectedSectorContent = ({ data }) => {
+const KeyAffectedSectorContent = ({ rating, assestment }) => {
   return (
     <>
       <Grid columns="12">
@@ -314,14 +343,14 @@ const KeyAffectedSectorContent = ({ data }) => {
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={4} className="col-right">
           <p>
-            <b>{data.Vulnerability}</b>
+            <b>{rating}</b>
           </p>
         </Grid.Column>
       </Grid>
       <p>
         <strong>Assessment</strong>
       </p>
-      {data.DescribeImpactsKeyHazards}
+      {assestment}
     </>
   );
 };
