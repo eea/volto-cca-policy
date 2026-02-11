@@ -19,6 +19,10 @@ exports[`AdaptationOptionView should render the component 1`] = `
         <div
           className="eight wide computer twelve wide mobile twelve wide tablet column col-left"
         >
+          
+          <h3>
+            Read the full text of the adaptation option
+          </h3>
           <div
             className="accordion ui primary"
           >
