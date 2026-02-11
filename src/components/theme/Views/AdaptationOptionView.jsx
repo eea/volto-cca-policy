@@ -57,6 +57,7 @@ function AdaptationOptionView(props) {
     return titles.sort().join(', ');
   }, [ipcc_category]);
   const relevantSynergyValue = relevant_synergies?.token;
+  const desc = (description ?? '').trim();
 
   const accordions = useMemo(() => {
     const items = [
@@ -213,9 +214,7 @@ function AdaptationOptionView(props) {
               computer={8}
               className="col-left"
             >
-              {description.trim() !== 'None' && (
-                <Callout>{description}</Callout>
-              )}
+              {desc && desc !== 'None' && <Callout>{desc}</Callout>}
               {intro_paragraph && <HTMLField value={intro_paragraph} />}
 
               {(relevant_eu_policies_items?.length ?? 0) > 0 && (
