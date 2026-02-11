@@ -17,7 +17,6 @@ import {
   CASE_STUDY,
   PUBLICATION_REPORT,
   ORGANISATION,
-  ADAPTATION_OPTION,
   ACE_PROJECT,
   VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
@@ -141,15 +140,6 @@ export const ReferenceInfo = (props) => {
   const [isReadMore, setIsReadMore] = React.useState(false);
   const contributions_rest = contributions ? contributions.slice(0, 10) : [];
 
-  let source_title;
-  if (type === ADAPTATION_OPTION) {
-    source_title = (
-      <FormattedMessage id="References" defaultMessage="References" />
-    );
-  } else {
-    source_title = <FormattedMessage id="Source" defaultMessage="Source" />;
-  }
-
   return (websites && websites?.length > 0) ||
     (source && source?.data.length > 0) ||
     (contributor_list && contributor_list?.length > 0) ||
@@ -174,7 +164,9 @@ export const ReferenceInfo = (props) => {
         <>
           {source && source?.data.length > 0 && (
             <>
-              <h5 id="source">{source_title}:</h5>
+              <h5 id="source">
+                <FormattedMessage id="Source" defaultMessage="Source" />:
+              </h5>
               <HTMLField value={source} className="source" />
             </>
           )}
@@ -385,25 +377,16 @@ export const LogoWrapper = ({ logo, children }) =>
 export const ItemLogo = (props) => {
   const { content } = props;
   const type = content['@type'];
-  const { image, logo, title } = content;
-
-  let logo_image;
-  if (logo) {
-    logo_image = logo;
-  } else if (!logo && image) {
-    logo_image = image;
-  } else {
-    logo_image = null;
-  }
+  const { logo, title } = content;
 
   return type !== VIDEO ? (
-    <LogoWrapper logo={logo_image}>
+    <LogoWrapper logo={logo}>
       <h2>
         <FormattedMessage id="Description" defaultMessage="Description" />
       </h2>
-      {logo_image && (
+      {logo && (
         <Image
-          src={logo_image?.scales?.mini?.download}
+          src={logo?.scales?.mini?.download}
           alt={title}
           className="db-logo"
         />

@@ -399,12 +399,25 @@ function ContentMetadata(props) {
 
         {key_type_measures && key_type_measures?.length > 0 && (
           <>
-            <h5>
-              <FormattedMessage
-                id="Key Type Measures:"
-                defaultMessage="Key Type Measures:"
+            <div
+              style={{ display: 'flex', alignItems: 'start', marginTop: '1em' }}
+            >
+              <h5>
+                <FormattedMessage
+                  id="Key Type Measures:"
+                  defaultMessage="Key Type Measures:"
+                />
+              </h5>
+              <Popup
+                content={
+                  <FormattedMessage
+                    id="Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+                    defaultMessage="Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+                  />
+                }
+                trigger={<i className="ri-question-fill"></i>}
               />
-            </h5>
+            </div>
             <MetadataItemList value={key_type_measures} />
           </>
         )}
