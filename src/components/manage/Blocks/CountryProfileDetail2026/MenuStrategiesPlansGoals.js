@@ -83,7 +83,11 @@ export default function MenuStrategiesPlansGoals(props) {
     if (keyElements.length) {
       panesKeys.push({
         menuItem: data,
-        render: () => <AccordionList elements={keyElements} />,
+        render: () => (
+          <div>
+            <AccordionList elements={keyElements} />
+          </div>
+        ),
       });
     }
   });
