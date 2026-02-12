@@ -25,7 +25,6 @@ import { toast } from 'react-toastify';
 import { Toast } from '@plone/volto/components';
 import aheadSVG from '@plone/volto/icons/ahead.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
-import './Login.less';
 
 // Import authomatic components and actions
 import {
