@@ -34,7 +34,7 @@ const View = (props) => {
 export default compose(
   clientOnly,
   withGeoJsonData(true),
-  withResponsiveContainer('countryMapProfile'),
+  withResponsiveContainer('countryMapProfileBlock'),
   withVisibilitySensor(),
   withOpenLayers,
 )(View);

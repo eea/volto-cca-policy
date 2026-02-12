@@ -167,7 +167,11 @@ export default function MenuProfile(props) {
         menuItem: (data.charAt(0).toUpperCase() + data.slice(1))
           .split('(')[0]
           .trim(),
-        render: () => <AccordionList elements={keyElements} />,
+        render: () => (
+          <div>
+            <AccordionList elements={keyElements} />
+          </div>
+        ),
       });
     }
   });
