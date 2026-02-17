@@ -328,7 +328,7 @@ function PublicationDateInfo({ value, portaltype, title }) {
 
 function ContentMetadata(props) {
   const intl = useIntl();
-  const { content } = props;
+  const { content, related_case_studies } = props;
   const {
     sectors,
     geochars,
@@ -344,7 +344,6 @@ function ContentMetadata(props) {
     funding_programme,
     include_in_observatory,
   } = content;
-  const related_case_studies = props['related_case_studies'];
   const type = content['@type'];
 
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
