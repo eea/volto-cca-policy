@@ -1,3 +1,4 @@
+import React from 'react';
 import AccordionList from './AccordionList';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
@@ -31,9 +32,18 @@ export default function MenuMonitorEvaluation(props) {
     },
   };
   if (dataJson?.Monitoring_Evaluation) {
-    if (dataJson?.Monitoring_Evaluation?.DescribeMREMethodology) {
+    if (
+      dataJson?.Monitoring_Evaluation?.DescribeMonitoringReportingEvaluation
+    ) {
       elements.MRE.items.push({
         Title: 'MRE methodology',
+        Text: dataJson.Monitoring_Evaluation
+          .DescribeMonitoringReportingEvaluation,
+      });
+    }
+    if (dataJson?.Monitoring_Evaluation?.DescribeMREMethodology) {
+      elements.MRE.items.push({
+        Title: 'MRE implementation',
         Text: dataJson.Monitoring_Evaluation.DescribeMREMethodology,
       });
     }
@@ -44,6 +54,9 @@ export default function MenuMonitorEvaluation(props) {
       elements.StateOfPlay.items.push({
         Title: 'Implementation',
         Text: dataJson.Monitoring_Evaluation.DescribeStatePlay,
+        // Text: (dangerouslySetInnerHTML = {
+        //   __html: dataJson.Monitoring_Evaluation.DescribeStatePlay,
+        // }),
       });
     }
     if (dataJson?.Monitoring_Evaluation?.SummaryClimateAdaptation) {
