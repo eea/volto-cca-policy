@@ -20,7 +20,7 @@ export const CONTENT_TYPE_LABELS = {
   [ACE_PROJECT]: 'Research and knowledge project',
   [PUBLICATION_REPORT]: 'Publications and reports',
   [TOOL]: 'Tool',
-  [VIDEO]: 'Videos',
+  [VIDEO]: 'Video',
 };
 
 export const OBSERVATORY_PARTNERS = {
