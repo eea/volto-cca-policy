@@ -200,25 +200,21 @@ export const ReferenceInfo = (props) => {
             />
           </h5>
           {!isReadMore ? (
-            <>
-              <List bulleted>
-                {contributions_rest.map((item) => (
-                  <ListItem key={item.url}>
-                    <Link to={item.url}>{item.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
-            </>
+            <List bulleted>
+              {contributions_rest.map((item) => (
+                <ListItem key={item.url}>
+                  <Link to={item.url}>{item.title}</Link>
+                </ListItem>
+              ))}
+            </List>
           ) : (
-            <>
-              <List bulleted>
-                {contributions.map((item) => (
-                  <ListItem key={item.url}>
-                    <Link to={item.url}>{item.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
-            </>
+            <List bulleted>
+              {contributions.map((item) => (
+                <ListItem key={item.url}>
+                  <Link to={item.url}>{item.title}</Link>
+                </ListItem>
+              ))}
+            </List>
           )}
           {contributions.length > 10 && (
             <Button
