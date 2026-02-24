@@ -11,8 +11,13 @@ import {
   GUIDANCE,
   INDICATOR,
   PUBLICATION_REPORT,
+  ADAPTATION_OPTION,
+  CONTENT_TYPE_LABELS,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
-import { MetadataItemList } from '@eeacms/volto-cca-policy/helpers';
+import {
+  MetadataItemList,
+  LinkedMetadataItemList,
+} from '@eeacms/volto-cca-policy/helpers';
 import { UniversalLink } from '@plone/volto/components';
 
 const messages = defineMessages({
@@ -328,7 +333,7 @@ function PublicationDateInfo({ value, portaltype, title }) {
 
 function ContentMetadata(props) {
   const intl = useIntl();
-  const { content } = props;
+  const { content, related_case_studies } = props;
   const {
     sectors,
     geochars,
@@ -344,8 +349,8 @@ function ContentMetadata(props) {
     funding_programme,
     include_in_observatory,
   } = content;
-  const related_case_studies = props['related_case_studies'];
   const type = content['@type'];
+  const contentTypeLabel = CONTENT_TYPE_LABELS[type];
 
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
@@ -393,7 +398,15 @@ function ContentMetadata(props) {
             <h5>
               <FormattedMessage id="Keywords:" defaultMessage="Keywords:" />
             </h5>
-            <span>{keywords?.sort().join(', ')}</span>
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={[...keywords].sort()}
+                contentType={contentTypeLabel}
+                join_type=", "
+              />
+            ) : (
+              <span>{keywords?.sort().join(', ')}</span>
+            )}
           </>
         )}
 
@@ -418,7 +431,16 @@ function ContentMetadata(props) {
                 trigger={<i className="ri-question-fill"></i>}
               />
             </div>
-            <MetadataItemList value={key_type_measures} />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={key_type_measures}
+                field="cca_key_type_measure.keyword"
+                contentType={contentTypeLabel}
+                getSearchValue={(item) => item.token || item.title || item}
+              />
+            ) : (
+              <MetadataItemList value={key_type_measures} />
+            )}
           </>
         )}
 
@@ -430,7 +452,14 @@ function ContentMetadata(props) {
                 defaultMessage="IPCC adaptation options categories:"
               />
             </h5>
-            <MetadataItemList value={ipcc_category} />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={ipcc_category}
+                contentType={contentTypeLabel}
+              />
+            ) : (
+              <MetadataItemList value={ipcc_category} />
+            )}
           </>
         )}
 
@@ -442,7 +471,15 @@ function ContentMetadata(props) {
                 defaultMessage="Climate impacts:"
               />
             </h5>
-            <MetadataItemList value={climate_impacts} />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={climate_impacts}
+                field="cca_climate_impacts.keyword"
+                contentType={contentTypeLabel}
+              />
+            ) : (
+              <MetadataItemList value={climate_impacts} />
+            )}
           </>
         )}
 
@@ -454,7 +491,15 @@ function ContentMetadata(props) {
                 defaultMessage="Adaptation Approaches:"
               />
             </h5>
-            <MetadataItemList value={elements} />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={elements}
+                field="cca_adaptation_elements.keyword"
+                contentType={contentTypeLabel}
+              />
+            ) : (
+              <MetadataItemList value={elements} />
+            )}
           </>
         )}
 
@@ -463,7 +508,15 @@ function ContentMetadata(props) {
             <h5>
               <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
             </h5>
-            <MetadataItemList value={sectors} />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={sectors}
+                field="cca_adaptation_sectors.keyword"
+                contentType={contentTypeLabel}
+              />
+            ) : (
+              <MetadataItemList value={sectors} />
+            )}
           </>
         )}
 
@@ -475,7 +528,15 @@ function ContentMetadata(props) {
                 defaultMessage="Governance level:"
               />
             </h5>
-            <MetadataItemList value={governance_level} join_type="<br />" />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                value={governance_level}
+                contentType={contentTypeLabel}
+                join_type="<br />"
+              />
+            ) : (
+              <MetadataItemList value={governance_level} join_type="<br />" />
+            )}
           </>
         )}
 

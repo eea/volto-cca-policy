@@ -10,6 +10,19 @@ export const TOOL = 'eea.climateadapt.tool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
 
+export const CONTENT_TYPE_LABELS = {
+  [ADAPTATION_OPTION]: 'Adaptation option',
+  [CASE_STUDY]: 'Case study',
+  [GUIDANCE]: 'Guidance',
+  [INDICATOR]: 'Indicator',
+  [INFORMATION_PORTAL]: 'Information portal',
+  [ORGANISATION]: 'Organisation',
+  [ACE_PROJECT]: 'Research and knowledge project',
+  [PUBLICATION_REPORT]: 'Publications and reports',
+  [TOOL]: 'Tool',
+  [VIDEO]: 'Videos',
+};
+
 export const OBSERVATORY_PARTNERS = {
   'copernicus-climate-change-service-ecmw':
     'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring  Service',

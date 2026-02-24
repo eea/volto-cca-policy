@@ -13,6 +13,7 @@ export {
   SubjectTags,
   EventDetails,
   MetadataItemList,
+  LinkedMetadataItemList,
 } from './Utils';
 export { default as ContentMetadata } from './ContentMetadata';
 export {
@@ -23,31 +24,72 @@ export {
   EU_COUNTRIES,
   RELEVANT_SYNERGIES,
 } from './Constants';
-export clientOnly from './clientOnly';
+export { default as clientOnly } from './clientOnly';
 
 export const capitalizeFirstLetter = (str) =>
   str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
-export const makeContributionsSearchQuery = (props) => {
-  const { id } = props;
-  const organisation = OBSERVATORY_PARTNERS[id];
+export const addFilterParams = (params, filters) => {
+  filters.forEach((f, i) => {
+    params.set(`filters[${i}][field]`, f.field);
+    params.set(`filters[${i}][type]`, f.type);
+    (f.values || []).forEach((val, vi) => {
+      params.set(`filters[${i}][values][${vi}]`, val);
+    });
+  });
+};
+
+export const makeContributionsSearchQuery = ({ id } = {}) => {
+  const organisation = OBSERVATORY_PARTNERS?.[id];
   const base = '/en/observatory/advanced-search';
-  const field = 'cca_partner_contributors.keyword';
-  const filter = `filters[0][field]=${field}&filters[0][type]=any&filters[0][values][0]=${organisation}`;
-  const rest =
-    'filters[1][field]=issued.date' +
-    '&filters[1][values][0]=All time' +
-    '&filters[1][type]=any' +
-    '&filters[2][field]=language' +
-    '&filters[2][values][0]=en' +
-    '&filters[2][type]=any' +
-    '&sort-field=issued.date' +
-    '&sort-direction=desc';
 
-  const query = `${base}?size=n_10_n&${filter}&${rest}`;
-  const url = query.replaceAll('[', '%5B').replaceAll(']', '%5D');
+  // If partner is missing, fall back to base (or return null if you prefer)
+  if (!organisation) return `${base}?size=n_10_n`;
 
-  return url;
+  const params = new URLSearchParams();
+  params.set('size', 'n_10_n');
+
+  addFilterParams(params, [
+    {
+      field: 'cca_partner_contributors.keyword',
+      type: 'any',
+      values: [organisation],
+    },
+    { field: 'issued.date', type: 'any', values: ['All time'] },
+    { field: 'language', type: 'any', values: ['en'] },
+  ]);
+
+  params.set('sort-field', 'issued.date');
+  params.set('sort-direction', 'desc');
+
+  return `${base}?${params.toString()}`;
+};
+
+export const makeAdvancedSearchQuery = ({ field, value, contentType }) => {
+  const base = '/en/data-and-downloads/';
+  const params = new URLSearchParams();
+  params.set('size', 'n_10_n');
+
+  const filters = [
+    { field: 'issued.date', values: ['All time'], type: 'any' },
+    { field: 'language', values: ['en'], type: 'any' },
+    { field: 'objectProvides', values: [contentType], type: 'any' },
+  ];
+
+  if (field) {
+    filters.push({ field, values: [value], type: 'all' });
+  }
+
+  addFilterParams(params, filters);
+
+  params.set('sort-field', 'issued.date');
+  params.set('sort-direction', 'desc');
+
+  if (!field) {
+    params.set('q', value ?? '');
+  }
+
+  return `${base}?${params.toString()}`;
 };
 
 export const fixEmbedURL = (url, is_cmshare_video) => {

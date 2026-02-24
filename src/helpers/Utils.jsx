@@ -21,7 +21,10 @@ import {
   VIDEO,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
+import {
+  makeContributionsSearchQuery,
+  makeAdvancedSearchQuery,
+} from '@eeacms/volto-cca-policy/helpers';
 
 const messages = defineMessages({
   downloadEvent: {
@@ -217,7 +220,6 @@ export const ReferenceInfo = (props) => {
               </List>
             </>
           )}
-
           {contributions.length > 10 && (
             <Button
               basic
@@ -242,7 +244,6 @@ export const ReferenceInfo = (props) => {
               )}
             </Button>
           )}
-
           <div>
             <Button>
               <Link to={search_link}>
@@ -523,6 +524,63 @@ export const MetadataItemList = (props) => {
                 )}
               </React.Fragment>
             ))}
+        </>
+      )}
+    </>
+  ) : null;
+};
+
+export const LinkedMetadataItemList = (props) => {
+  const { value, join_type, field, contentType, getSearchValue } = props;
+  const intl = useIntl();
+
+  const resolveSearchValue = (item) => {
+    if (getSearchValue) return getSearchValue(item);
+    return item.title || item;
+  };
+
+  const resolveLabel = (item) => {
+    const label = item.title || item;
+    return intl.formatMessage({ id: label, defaultMessage: label });
+  };
+
+  return value && value.length > 0 ? (
+    <>
+      {!join_type ? (
+        <p>
+          {value.map((item, index) => (
+            <React.Fragment key={index}>
+              <Link
+                to={makeAdvancedSearchQuery({
+                  field,
+                  value: resolveSearchValue(item),
+                  contentType,
+                })}
+              >
+                {resolveLabel(item)}
+              </Link>
+              {index < value.length - 1 && ', '}
+            </React.Fragment>
+          ))}
+        </p>
+      ) : (
+        <>
+          {value.map((item, index) => (
+            <React.Fragment key={index}>
+              <Link
+                to={makeAdvancedSearchQuery({
+                  field,
+                  value: resolveSearchValue(item),
+                  contentType,
+                })}
+              >
+                {resolveLabel(item)}
+              </Link>
+              {index !== value.length - 1 && (
+                <span dangerouslySetInnerHTML={{ __html: join_type }} />
+              )}
+            </React.Fragment>
+          ))}
         </>
       )}
     </>
