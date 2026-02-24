@@ -401,6 +401,7 @@ function ContentMetadata(props) {
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
                 value={[...keywords].sort()}
+                contentType={contentTypeLabel}
                 join_type=", "
               />
             ) : (
