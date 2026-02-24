@@ -9,6 +9,10 @@ export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
 export const TOOL = 'eea.climateadapt.tool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
+export const CCA_EVENT = 'cca-event';
+export const MISSION_SIGNATORY_PROFILE = 'mission_signatory_profile';
+export const NEWS_ITEM = 'News Item';
+export const EVENT = 'Event';
 
 export const CONTENT_TYPE_LABELS = {
   [ADAPTATION_OPTION]: 'Adaptation option',
@@ -21,6 +25,8 @@ export const CONTENT_TYPE_LABELS = {
   [PUBLICATION_REPORT]: 'Publications and reports',
   [TOOL]: 'Tool',
   [VIDEO]: 'Video',
+  [NEWS_ITEM]: 'News Item',
+  [EVENT]: 'Event',
 };
 
 export const OBSERVATORY_PARTNERS = {

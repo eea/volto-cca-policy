@@ -5,6 +5,7 @@ import { searchContent } from '@plone/volto/actions';
 import ECDEIndicator from './ECDEIndicator';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
+import { C3S_INDICATOR } from '@eeacms/volto-cca-policy/helpers/Constants';
 
 const regions_url =
   'https://nest.discomap.eea.europa.eu/arcgis/rest/services/CLIMA/Regions_cities/MapServer/2/query?where=1+%3D+1&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=*&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=pjson';
@@ -44,7 +45,7 @@ function useIndicators() {
     const action = searchContent(
       '/',
       {
-        portal_type: 'eea.climateadapt.c3sindicator',
+        portal_type: C3S_INDICATOR,
         origin_website: 'C3S',
       },
       'ecde_indicators',
