@@ -82,8 +82,8 @@ export const LinksList = (props) => {
   if (withText === true) {
     return (
       <List>
-        {value.map((linkItem, index) => (
-          <ListItem key={index}>
+        {value.map((linkItem) => (
+          <ListItem key={linkItem[0]}>
             {isInternal ? (
               <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
             ) : (
@@ -96,8 +96,8 @@ export const LinksList = (props) => {
   } else {
     return (
       <List>
-        {value.map((url, index) => (
-          <ListItem key={index}>
+        {value.map((url) => (
+          <ListItem key={url}>
             <ExternalLink url={url} text={url} />
           </ListItem>
         ))}
@@ -200,25 +200,21 @@ export const ReferenceInfo = (props) => {
             />
           </h5>
           {!isReadMore ? (
-            <>
-              <List bulleted>
-                {contributions_rest.map((item, index) => (
-                  <ListItem key={index}>
-                    <Link to={item.url}>{item.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
-            </>
+            <List bulleted>
+              {contributions_rest.map((item) => (
+                <ListItem key={item.url}>
+                  <Link to={item.url}>{item.title}</Link>
+                </ListItem>
+              ))}
+            </List>
           ) : (
-            <>
-              <List bulleted>
-                {contributions.map((item, index) => (
-                  <ListItem key={index}>
-                    <Link to={item.url}>{item.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
-            </>
+            <List bulleted>
+              {contributions.map((item) => (
+                <ListItem key={item.url}>
+                  <Link to={item.url}>{item.title}</Link>
+                </ListItem>
+              ))}
+            </List>
           )}
           {contributions.length > 10 && (
             <Button
@@ -329,8 +325,8 @@ export const DocumentsList = (props) => {
         {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
       <List className="documents-list">
-        {files.map((file, index) => (
-          <ListItem key={index}>
+        {files.map((file) => (
+          <ListItem key={file.url}>
             <a href={file.url} className="document-list-item">
               <i className="file alternate icon"></i>
               <span>{file.title}</span>
@@ -362,8 +358,8 @@ export const ContentRelatedItems = (props) => {
         />
       </h5>
 
-      {contentRelatedItems.map((item, index) => (
-        <Fragment key={index}>
+      {contentRelatedItems.map((item) => (
+        <Fragment key={item['@id']}>
           <UniversalLink item={item}>{item.title}</UniversalLink>
           <br />
         </Fragment>
@@ -495,7 +491,23 @@ export const MetadataItemList = (props) => {
 
   return value && value.length > 0 ? (
     <>
-      {!join_type ? (
+      {join_type ? (
+        <>
+          {value.map((item, index) => (
+            <React.Fragment key={item.token || item.title}>
+              <span>
+                {intl.formatMessage({
+                  id: item.title,
+                  defaultMessage: item.title,
+                })}
+              </span>
+              {index !== value.length - 1 && (
+                <span dangerouslySetInnerHTML={{ __html: join_type }} />
+              )}
+            </React.Fragment>
+          ))}
+        </>
+      ) : (
         <p>
           {value
             .map((item) => item.title)
@@ -507,24 +519,6 @@ export const MetadataItemList = (props) => {
             )
             .join(', ')}
         </p>
-      ) : (
-        <>
-          {value
-            .map((item) =>
-              intl.formatMessage({
-                id: item.title,
-                defaultMessage: item.title,
-              }),
-            )
-            .map((item, index) => (
-              <React.Fragment key={index}>
-                <span>{item}</span>
-                {index !== value.length - 1 && (
-                  <span dangerouslySetInnerHTML={{ __html: join_type }} />
-                )}
-              </React.Fragment>
-            ))}
-        </>
       )}
     </>
   ) : null;
@@ -546,27 +540,10 @@ export const LinkedMetadataItemList = (props) => {
 
   return value && value.length > 0 ? (
     <>
-      {!join_type ? (
-        <p>
-          {value.map((item, index) => (
-            <React.Fragment key={index}>
-              <Link
-                to={makeAdvancedSearchQuery({
-                  field,
-                  value: resolveSearchValue(item),
-                  contentType,
-                })}
-              >
-                {resolveLabel(item)}
-              </Link>
-              {index < value.length - 1 && ', '}
-            </React.Fragment>
-          ))}
-        </p>
-      ) : (
+      {join_type ? (
         <>
           {value.map((item, index) => (
-            <React.Fragment key={index}>
+            <React.Fragment key={resolveSearchValue(item)}>
               <Link
                 to={makeAdvancedSearchQuery({
                   field,
@@ -582,6 +559,23 @@ export const LinkedMetadataItemList = (props) => {
             </React.Fragment>
           ))}
         </>
+      ) : (
+        <p>
+          {value.map((item, index) => (
+            <React.Fragment key={resolveSearchValue(item)}>
+              <Link
+                to={makeAdvancedSearchQuery({
+                  field,
+                  value: resolveSearchValue(item),
+                  contentType,
+                })}
+              >
+                {resolveLabel(item)}
+              </Link>
+              {index < value.length - 1 && ', '}
+            </React.Fragment>
+          ))}
+        </p>
       )}
     </>
   ) : null;
