@@ -5,6 +5,8 @@ import {
   ACE_COUNTRIES,
   BIOREGIONS,
   SUBNATIONAL_REGIONS,
+  MetadataItemList,
+  LinkedMetadataItemList,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   VIDEO,
@@ -14,10 +16,6 @@ import {
   ADAPTATION_OPTION,
   CONTENT_TYPE_LABELS,
 } from '@eeacms/volto-cca-policy/helpers/Constants';
-import {
-  MetadataItemList,
-  LinkedMetadataItemList,
-} from '@eeacms/volto-cca-policy/helpers';
 import { UniversalLink } from '@plone/volto/components';
 
 const messages = defineMessages({
@@ -400,12 +398,20 @@ function ContentMetadata(props) {
             </h5>
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
-                value={[...keywords].sort()}
+                value={[...keywords].sort((a, b) =>
+                  a.toLowerCase().localeCompare(b.toLowerCase()),
+                )}
                 contentType={contentTypeLabel}
                 join_type=", "
               />
             ) : (
-              <span>{keywords?.sort().join(', ')}</span>
+              <span>
+                {[...keywords]
+                  .sort((a, b) =>
+                    a.toLowerCase().localeCompare(b.toLowerCase()),
+                  )
+                  .join(', ')}
+              </span>
             )}
           </>
         )}
