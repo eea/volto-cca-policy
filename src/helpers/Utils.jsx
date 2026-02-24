@@ -495,19 +495,7 @@ export const MetadataItemList = (props) => {
 
   return value && value.length > 0 ? (
     <>
-      {!join_type ? (
-        <p>
-          {value
-            .map((item) => item.title)
-            .map((title) =>
-              intl.formatMessage({
-                id: title,
-                defaultMessage: title,
-              }),
-            )
-            .join(', ')}
-        </p>
-      ) : (
+      {join_type ? (
         <>
           {value
             .map((item) =>
@@ -525,6 +513,18 @@ export const MetadataItemList = (props) => {
               </React.Fragment>
             ))}
         </>
+      ) : (
+        <p>
+          {value
+            .map((item) => item.title)
+            .map((title) =>
+              intl.formatMessage({
+                id: title,
+                defaultMessage: title,
+              }),
+            )
+            .join(', ')}
+        </p>
       )}
     </>
   ) : null;
@@ -546,24 +546,7 @@ export const LinkedMetadataItemList = (props) => {
 
   return value && value.length > 0 ? (
     <>
-      {!join_type ? (
-        <p>
-          {value.map((item, index) => (
-            <React.Fragment key={index}>
-              <Link
-                to={makeAdvancedSearchQuery({
-                  field,
-                  value: resolveSearchValue(item),
-                  contentType,
-                })}
-              >
-                {resolveLabel(item)}
-              </Link>
-              {index < value.length - 1 && ', '}
-            </React.Fragment>
-          ))}
-        </p>
-      ) : (
+      {join_type ? (
         <>
           {value.map((item, index) => (
             <React.Fragment key={index}>
@@ -582,6 +565,23 @@ export const LinkedMetadataItemList = (props) => {
             </React.Fragment>
           ))}
         </>
+      ) : (
+        <p>
+          {value.map((item, index) => (
+            <React.Fragment key={index}>
+              <Link
+                to={makeAdvancedSearchQuery({
+                  field,
+                  value: resolveSearchValue(item),
+                  contentType,
+                })}
+              >
+                {resolveLabel(item)}
+              </Link>
+              {index < value.length - 1 && ', '}
+            </React.Fragment>
+          ))}
+        </p>
       )}
     </>
   ) : null;
