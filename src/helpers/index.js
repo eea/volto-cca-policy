@@ -65,7 +65,7 @@ export const makeContributionsSearchQuery = ({ id } = {}) => {
   return `${base}?${params.toString()}`;
 };
 
-export const makeAdvancedSearchQuery = ({ field, value, contentType }) => {
+export const makeAdvancedSearchQuery = ({ field, value }) => {
   const base = '/en/data-and-downloads/';
   const params = new URLSearchParams();
   params.set('size', 'n_10_n');
@@ -73,7 +73,7 @@ export const makeAdvancedSearchQuery = ({ field, value, contentType }) => {
   const filters = [
     { field: 'issued.date', values: ['All time'], type: 'any' },
     { field: 'language', values: ['en'], type: 'any' },
-    { field: 'objectProvides', values: [contentType], type: 'any' },
+    // { field: 'objectProvides', values: [contentType], type: 'any' },
   ];
 
   if (field) {

@@ -12,15 +12,7 @@ import {
   flourishDataprotection,
   getDataSrcFromEmbedCode,
 } from '@eeacms/volto-cca-policy/helpers/flourishUtils';
-import {
-  TOOL,
-  GUIDANCE,
-  INDICATOR,
-  INFORMATION_PORTAL,
-  PUBLICATION_REPORT,
-  ORGANISATION,
-  VIDEO,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+import { VIDEO, CONTENT_TYPE_LABELS } from '@eeacms/volto-cca-policy/constants';
 import {
   HTMLField,
   ReferenceInfo,
@@ -34,16 +26,6 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 
 const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
-
-const SUBTITLES = {
-  [TOOL]: 'Tools',
-  [PUBLICATION_REPORT]: 'Publications and Report',
-  [GUIDANCE]: 'Guidance Document',
-  [INDICATOR]: 'Indicator',
-  [INFORMATION_PORTAL]: 'Information Portal',
-  [ORGANISATION]: 'Organisation',
-  [VIDEO]: 'Video',
-};
 
 const MaybeFlourishVisualization = ({ content }) => {
   const { map_graphs } = content;
@@ -168,7 +150,7 @@ const DatabaseItemView = (props) => {
     related_documents_presentations,
   } = content;
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
-  const subtitle = SUBTITLES[type] ?? '';
+  const subtitle = CONTENT_TYPE_LABELS[type] ?? '';
   const hasVisualization = !!content?.map_graphs?.length;
   const isFullWidthVisualization =
     hasVisualization && content?.map_graphs_full_width;

@@ -14,8 +14,8 @@ import {
   INDICATOR,
   PUBLICATION_REPORT,
   ADAPTATION_OPTION,
-  CONTENT_TYPE_LABELS,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+  // CONTENT_TYPE_LABELS,
+} from '@eeacms/volto-cca-policy/constants';
 import { UniversalLink } from '@plone/volto/components';
 
 const messages = defineMessages({
@@ -348,7 +348,7 @@ function ContentMetadata(props) {
     include_in_observatory,
   } = content;
   const type = content['@type'];
-  const contentTypeLabel = CONTENT_TYPE_LABELS[type];
+  // const contentTypeLabel = CONTENT_TYPE_LABELS[type];
 
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
@@ -401,7 +401,7 @@ function ContentMetadata(props) {
                 value={[...keywords].sort((a, b) =>
                   a.toLowerCase().localeCompare(b.toLowerCase()),
                 )}
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
                 join_type=", "
               />
             ) : (
@@ -441,7 +441,7 @@ function ContentMetadata(props) {
               <LinkedMetadataItemList
                 value={key_type_measures}
                 field="cca_key_type_measure.keyword"
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
                 getSearchValue={(item) => item.token || item.title || item}
               />
             ) : (
@@ -461,7 +461,7 @@ function ContentMetadata(props) {
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
                 value={ipcc_category}
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
               />
             ) : (
               <MetadataItemList value={ipcc_category} />
@@ -481,7 +481,7 @@ function ContentMetadata(props) {
               <LinkedMetadataItemList
                 value={climate_impacts}
                 field="cca_climate_impacts.keyword"
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
               />
             ) : (
               <MetadataItemList value={climate_impacts} />
@@ -501,7 +501,7 @@ function ContentMetadata(props) {
               <LinkedMetadataItemList
                 value={elements}
                 field="cca_adaptation_elements.keyword"
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
               />
             ) : (
               <MetadataItemList value={elements} />
@@ -518,7 +518,7 @@ function ContentMetadata(props) {
               <LinkedMetadataItemList
                 value={sectors}
                 field="cca_adaptation_sectors.keyword"
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
               />
             ) : (
               <MetadataItemList value={sectors} />
@@ -537,7 +537,7 @@ function ContentMetadata(props) {
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
                 value={governance_level}
-                contentType={contentTypeLabel}
+                // contentType={contentTypeLabel}
                 join_type="<br />"
               />
             ) : (

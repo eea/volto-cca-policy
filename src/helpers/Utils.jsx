@@ -19,7 +19,7 @@ import {
   ORGANISATION,
   ACE_PROJECT,
   VIDEO,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+} from '@eeacms/volto-cca-policy/constants';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import {
   makeContributionsSearchQuery,
@@ -525,7 +525,7 @@ export const MetadataItemList = (props) => {
 };
 
 export const LinkedMetadataItemList = (props) => {
-  const { value, join_type, field, contentType, getSearchValue } = props;
+  const { value, join_type, field, getSearchValue } = props; // contentType
   const intl = useIntl();
 
   const resolveSearchValue = (item) => {
@@ -548,7 +548,7 @@ export const LinkedMetadataItemList = (props) => {
                 to={makeAdvancedSearchQuery({
                   field,
                   value: resolveSearchValue(item),
-                  contentType,
+                  // contentType,
                 })}
               >
                 {resolveLabel(item)}
@@ -567,7 +567,7 @@ export const LinkedMetadataItemList = (props) => {
                 to={makeAdvancedSearchQuery({
                   field,
                   value: resolveSearchValue(item),
-                  contentType,
+                  // contentType,
                 })}
               >
                 {resolveLabel(item)}

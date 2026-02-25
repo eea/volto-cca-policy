@@ -1,28 +1,3 @@
-export const ADAPTATION_OPTION = 'eea.climateadapt.adaptationoption';
-export const CASE_STUDY = 'eea.climateadapt.casestudy';
-export const GUIDANCE = 'eea.climateadapt.guidancedocument';
-export const INDICATOR = 'eea.climateadapt.indicator';
-export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
-export const ORGANISATION = 'eea.climateadapt.organisation';
-export const ACE_PROJECT = 'eea.climateadapt.aceproject';
-export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
-export const TOOL = 'eea.climateadapt.tool';
-export const VIDEO = 'eea.climateadapt.video';
-export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
-
-export const CONTENT_TYPE_LABELS = {
-  [ADAPTATION_OPTION]: 'Adaptation option',
-  [CASE_STUDY]: 'Case study',
-  [GUIDANCE]: 'Guidance',
-  [INDICATOR]: 'Indicator',
-  [INFORMATION_PORTAL]: 'Information portal',
-  [ORGANISATION]: 'Organisation',
-  [ACE_PROJECT]: 'Research and knowledge project',
-  [PUBLICATION_REPORT]: 'Publications and reports',
-  [TOOL]: 'Tool',
-  [VIDEO]: 'Videos',
-};
-
 export const OBSERVATORY_PARTNERS = {
   'copernicus-climate-change-service-ecmw':
     'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring  Service',
