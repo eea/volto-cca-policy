@@ -118,10 +118,9 @@ const TranslationInfo = (props) => {
             )}
           </Button>
         </div>
-
+        <br />
         <div className="header">
           <h5>
-            {' '}
             <FormattedMessage
               id="exclusion_of_liability.title"
               defaultMessage="Exclusion of liability"
