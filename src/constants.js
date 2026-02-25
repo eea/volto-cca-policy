@@ -9,9 +9,9 @@ export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
 export const TOOL = 'eea.climateadapt.tool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
-export const CCA_EVENT = 'cca-event';
 export const MISSION_SIGNATORY_PROFILE = 'mission_signatory_profile';
 export const NEWS_ITEM = 'News Item';
+export const CCA_EVENT = 'cca-event';
 export const EVENT = 'Event';
 
 export const CONTENT_TYPE_LABELS = {
@@ -29,7 +29,7 @@ export const CONTENT_TYPE_LABELS = {
   [EVENT]: 'Event',
 };
 
-export const download_fields = [
+export const DOWNLOAD_FIELDS = [
   // { field: 'cca_uid', name: 'UID' },
   { field: 'about', name: 'About' },
   { field: 'title', name: 'Title' },
@@ -42,7 +42,10 @@ export const download_fields = [
   { field: 'cca_keywords', name: 'Keywords' },
   { field: 'cca_adaptation_sectors', name: 'Sectors' },
   { field: 'cca_climate_impacts', name: 'Climate impact' },
-  { field: 'transnational_regions', name: 'Transnational regions' },
+  {
+    field: 'cca_geographic_transnational_region',
+    name: 'Transnational regions',
+  },
   { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
   { field: 'cca_funding_programme', name: 'Funding programme' },
   { field: 'cca_key_type_measure', name: 'Key type measure' },
@@ -52,7 +55,7 @@ export const download_fields = [
   { field: 'cca_partner_contributors', name: 'Observatory impacts' },
 ];
 
-export const download_mission_funding_fields = [
+export const DOWNLOAD_MISSION_FUNDING_FIELDS = [
   { field: 'about', name: 'About' },
   { field: 'title', name: 'Title' },
   { field: 'created', name: 'Creation Date' },
@@ -121,7 +124,7 @@ export const download_mission_funding_fields = [
 
 // Download fields for mission content types
 // Don't delete - might be needed later (ticket refs #295149)
-// export const download_mission_stories_fields = [
+// export const DOWNLOAD_MISSION_STORIES_FIELDS = [
 //   { field: 'about', name: 'About' },
 //   { field: 'title', name: 'Title' },
 //   { field: 'main_content', name: 'Content' },
@@ -138,7 +141,7 @@ export const download_mission_funding_fields = [
 //   { field: 'cca_keywords', name: 'Keywords' },
 // ];
 
-// export const download_mission_projects_fields = [
+// export const DOWNLOAD_MISSION_PROJECTS_FIELDS = [
 //   { field: 'about', name: 'About' },
 //   { field: 'title', name: 'Title' },
 //   { field: 'main_content', name: 'Content' },
@@ -152,7 +155,7 @@ export const download_mission_funding_fields = [
 //   { field: 'cca_geographic_countries', name: 'Countries' },
 // ];
 
-// export const download_mission_tools_fields = [
+// export const DOWNLOAD_MISSION_TOOLS_FIELDS = [
 //   { field: 'about', name: 'About' },
 //   { field: 'title', name: 'Title' },
 //   { field: 'main_content', name: 'Content' },
