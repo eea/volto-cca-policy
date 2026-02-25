@@ -1,3 +1,34 @@
+export const ADAPTATION_OPTION = 'eea.climateadapt.adaptationoption';
+export const CASE_STUDY = 'eea.climateadapt.casestudy';
+export const GUIDANCE = 'eea.climateadapt.guidancedocument';
+export const INDICATOR = 'eea.climateadapt.indicator';
+export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
+export const ORGANISATION = 'eea.climateadapt.organisation';
+export const ACE_PROJECT = 'eea.climateadapt.aceproject';
+export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
+export const TOOL = 'eea.climateadapt.tool';
+export const VIDEO = 'eea.climateadapt.video';
+export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
+export const CCA_EVENT = 'cca-event';
+export const MISSION_SIGNATORY_PROFILE = 'mission_signatory_profile';
+export const NEWS_ITEM = 'News Item';
+export const EVENT = 'Event';
+
+export const CONTENT_TYPE_LABELS = {
+  [ADAPTATION_OPTION]: 'Adaptation option',
+  [CASE_STUDY]: 'Case study',
+  [GUIDANCE]: 'Guidance',
+  [INDICATOR]: 'Indicator',
+  [INFORMATION_PORTAL]: 'Information portal',
+  [ORGANISATION]: 'Organisation',
+  [ACE_PROJECT]: 'Research and knowledge project',
+  [PUBLICATION_REPORT]: 'Publications and reports',
+  [TOOL]: 'Tool',
+  [VIDEO]: 'Video',
+  [NEWS_ITEM]: 'News Item',
+  [EVENT]: 'Event',
+};
+
 export const download_fields = [
   // { field: 'cca_uid', name: 'UID' },
   { field: 'about', name: 'About' },

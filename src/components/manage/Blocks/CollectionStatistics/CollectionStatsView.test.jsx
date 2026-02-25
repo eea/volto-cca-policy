@@ -21,7 +21,7 @@ import {
   C3S_INDICATOR,
   NEWS_ITEM,
   EVENT,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+} from '@eeacms/volto-cca-policy/constants';
 
 const mockStore = configureStore();
 

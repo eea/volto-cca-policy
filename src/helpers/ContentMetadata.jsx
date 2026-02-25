@@ -15,7 +15,7 @@ import {
   PUBLICATION_REPORT,
   ADAPTATION_OPTION,
   CONTENT_TYPE_LABELS,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+} from '@eeacms/volto-cca-policy/constants';
 import { UniversalLink } from '@plone/volto/components';
 
 const messages = defineMessages({

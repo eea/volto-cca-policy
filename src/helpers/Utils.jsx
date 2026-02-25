@@ -19,7 +19,7 @@ import {
   ORGANISATION,
   ACE_PROJECT,
   VIDEO,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+} from '@eeacms/volto-cca-policy/constants';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import {
   makeContributionsSearchQuery,

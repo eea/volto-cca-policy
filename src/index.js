@@ -36,7 +36,9 @@ import {
   MISSION_SIGNATORY_PROFILE,
   NEWS_ITEM,
   EVENT,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+  eea_languages,
+  non_eu_langs,
+} from '@eeacms/volto-cca-policy/constants';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
@@ -57,8 +59,6 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 
 import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
-
-import { eea_languages, non_eu_langs } from './constants';
 
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 // import MigrationButtons from './components/MigrationButtons';

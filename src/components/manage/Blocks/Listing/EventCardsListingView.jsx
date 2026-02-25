@@ -7,7 +7,7 @@ import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { capitalizeFirstLetter } from '@eeacms/volto-cca-policy/helpers';
 import config from '@plone/volto/registry';
-import { CCA_EVENT } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { CCA_EVENT } from '@eeacms/volto-cca-policy/constants';
 
 import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
 import './styles.less';
