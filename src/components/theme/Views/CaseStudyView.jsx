@@ -438,7 +438,7 @@ function CaseStudyView(props) {
                 share a new Case Study (email{' '}
                 <span className="link-mailto">
                   <a
-                    href="mailto: climate.adapt@eea.europa.eu"
+                    href="mailto:climate.adapt@eea.europa.eu"
                     target="_blank"
                     rel="noreferrer"
                   >
