@@ -1,169 +1,192 @@
-import React, { Fragment } from 'react';
+import React, { useMemo } from 'react';
+import { FormattedMessage } from 'react-intl';
 import {
   HTMLField,
   ContentMetadata,
-  ReferenceInfo,
   PublishedModifiedInfo,
   BannerTitle,
-  ItemLogo,
+  LinksList,
+  RELEVANT_SYNERGIES,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
-  Container,
-  // Segment,
-  Divider,
-  Grid,
-  ListItem,
-  List,
-} from 'semantic-ui-react';
-// import { UniversalLink } from '@plone/volto/components';
-import {
-  ShareInfoButton,
+  AccordionList,
   PortalMessage,
+  ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
-
-const messages = defineMessages({
-  Category: { id: 'Category', defaultMessage: 'Category' },
-  'IPCC categories': {
-    id: 'IPCC categories',
-    defaultMessage: 'IPCC categories',
-  },
-  'Stakeholder participation': {
-    id: 'Stakeholder participation',
-    defaultMessage: 'Stakeholder participation',
-  },
-  'Success and Limiting Factors': {
-    id: 'Success and limiting factors',
-    defaultMessage: 'Success and limiting factors',
-  },
-  'Costs and Benefits': {
-    id: 'Costs and benefits',
-    defaultMessage: 'Costs and benefits',
-  },
-  'Legal Aspects': { id: 'Legal aspects', defaultMessage: 'Legal aspects' },
-  'Implementation Time': {
-    id: 'Implementation time',
-    defaultMessage: 'Implementation time',
-  },
-  'Life Time': { id: 'Lifetime', defaultMessage: 'Lifetime' },
-});
-
-function createDataField(type, field, section, title) {
-  return {
-    type,
-    field,
-    section,
-    title,
-  };
-}
-
-const dataDisplay = [
-  createDataField('other', 'category', 'ao_category', 'Category'),
-  createDataField('other', 'ipcc_category', 'ipcc_category', 'IPCC categories'),
-  createDataField(
-    'HTMLField',
-    'stakeholder_participation',
-    'stakeholder_participation',
-    'Stakeholder participation',
-  ),
-  createDataField(
-    'HTMLField',
-    'success_limitations',
-    'success_factors',
-    'Success and Limiting Factors',
-  ),
-  createDataField(
-    'HTMLField',
-    'cost_benefit',
-    'costs_benefits',
-    'Costs and Benefits',
-  ),
-  createDataField('HTMLField', 'legal_aspects', 'legal', 'Legal Aspects'),
-  createDataField(
-    'HTMLField',
-    'implementation_time',
-    'implementation',
-    'Implementation Time',
-  ),
-  createDataField('HTMLField', 'lifetime', 'life_time', 'Life Time'),
-];
-
-const findSection = (title) => {
-  const found = dataDisplay.find((item) => item.title === title);
-  return found;
-};
-
-const sectionID = (title) => {
-  const found = findSection(title);
-  if (found === null) {
-    return title;
-  }
-  return found.section;
-};
-
-const SectionsMenu = (props) => {
-  const { sections } = props;
-  const intl = useIntl();
-
-  return (
-    <div className="adaptation-details">
-      <Grid columns="12">
-        <Grid.Column mobile={12} tablet={12} computer={6}>
-          {sections.length > 0 && (
-            <>
-              <h4>
-                <FormattedMessage
-                  id="Additional Details"
-                  defaultMessage="Additional Details"
-                />
-              </h4>
-              <List bulleted>
-                {sections.map((data, index) => (
-                  <ListItem key={index}>
-                    <AnchorLink href={'#' + sectionID(data.title)}>
-                      {intl.formatMessage(messages[data.title])}
-                    </AnchorLink>
-                  </ListItem>
-                ))}
-              </List>
-            </>
-          )}
-        </Grid.Column>
-        <Grid.Column mobile={12} tablet={12} computer={6}>
-          <h4>
-            <FormattedMessage
-              id="Reference information"
-              defaultMessage="Reference information"
-            />
-          </h4>
-          <List bulleted>
-            <ListItem>
-              <AnchorLink href="#websites">
-                <FormattedMessage id="Websites" defaultMessage="Websites" />
-              </AnchorLink>
-            </ListItem>
-            <ListItem>
-              <AnchorLink href="#source">
-                <FormattedMessage id="Source" defaultMessage="Source" />
-              </AnchorLink>
-            </ListItem>
-          </List>
-        </Grid.Column>
-      </Grid>
-    </div>
-  );
-};
+import { Callout } from '@eeacms/volto-eea-design-system/ui';
+import { Container, Grid, Label, Image } from 'semantic-ui-react';
+import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
+import { UniversalLink } from '@plone/volto/components';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 function AdaptationOptionView(props) {
-  const { content } = props;
-  const { related_case_studies, long_description, ipcc_category } = content;
+  const { content = {} } = props;
+  const {
+    image,
+    source,
+    websites,
+    category,
+    lifetime,
+    description,
+    cost_benefit,
+    intro_paragraph,
+    advantages,
+    disadvantages,
+    relevant_synergies,
+    legal_aspects,
+    ipcc_category,
+    long_description,
+    success_limitations,
+    implementation_time,
+    related_case_studies,
+    show_related_resources,
+    stakeholder_participation,
+    relevant_eu_policies_items,
+  } = content;
 
-  const usedSections = dataDisplay.filter((data) =>
-    content?.hasOwnProperty(data.field),
+  const { blocks, blocks_layout } = getFilteredBlocks(
+    content,
+    'tabs_block',
+    'metadataSection',
   );
 
-  const intl = useIntl();
+  const ipccCategories = useMemo(() => {
+    const titles = (ipcc_category ?? [])
+      .map((item) => item?.title)
+      .filter(Boolean);
+    return titles.sort().join(', ');
+  }, [ipcc_category]);
+  const relevantSynergyValue = relevant_synergies?.token;
+  const desc = (description ?? '').trim();
+
+  const accordions = useMemo(() => {
+    const items = [
+      {
+        title: (
+          <FormattedMessage id="Description" defaultMessage="Description" />
+        ),
+        content: <HTMLField value={long_description} />,
+      },
+
+      (ipcc_category?.length ?? 0) > 0
+        ? {
+            title: (
+              <FormattedMessage
+                id="IPCC categories"
+                defaultMessage="IPCC categories"
+              />
+            ),
+            content: <p>{ipccCategories}</p>,
+          }
+        : null,
+
+      category
+        ? {
+            title: <FormattedMessage id="Category" defaultMessage="Category" />,
+            content: <p>{category}</p>,
+          }
+        : null,
+
+      stakeholder_participation
+        ? {
+            title: (
+              <FormattedMessage
+                id="Stakeholder participation"
+                defaultMessage="Stakeholder participation"
+              />
+            ),
+            content: <HTMLField value={stakeholder_participation} />,
+          }
+        : null,
+
+      success_limitations
+        ? {
+            title: (
+              <FormattedMessage
+                id="Success and limiting factors"
+                defaultMessage="Success and limiting factors"
+              />
+            ),
+            content: <HTMLField value={success_limitations} />,
+          }
+        : null,
+
+      cost_benefit
+        ? {
+            title: (
+              <FormattedMessage
+                id="Costs and benefits"
+                defaultMessage="Costs and benefits"
+              />
+            ),
+            content: <HTMLField value={cost_benefit} />,
+          }
+        : null,
+
+      legal_aspects
+        ? {
+            title: (
+              <FormattedMessage
+                id="Legal aspects"
+                defaultMessage="Legal aspects"
+              />
+            ),
+            content: <HTMLField value={legal_aspects} />,
+          }
+        : null,
+
+      implementation_time
+        ? {
+            title: (
+              <FormattedMessage
+                id="Implementation time"
+                defaultMessage="Implementation time"
+              />
+            ),
+            content: <HTMLField value={implementation_time} />,
+          }
+        : null,
+
+      lifetime
+        ? {
+            title: <FormattedMessage id="Lifetime" defaultMessage="Lifetime" />,
+            content: <HTMLField value={lifetime} />,
+          }
+        : null,
+
+      {
+        title: <FormattedMessage id="References" defaultMessage="References" />,
+        content: (
+          <>
+            <HTMLField value={source} className="source" />
+            {(websites?.length ?? 0) > 0 && (
+              <>
+                <h5>
+                  <FormattedMessage id="Websites:" defaultMessage="Websites:" />
+                </h5>
+                <LinksList value={websites} />
+              </>
+            )}
+          </>
+        ),
+      },
+    ];
+
+    return items.filter(Boolean);
+  }, [
+    long_description,
+    ipcc_category,
+    ipccCategories,
+    category,
+    stakeholder_participation,
+    success_limitations,
+    cost_benefit,
+    legal_aspects,
+    implementation_time,
+    lifetime,
+    source,
+    websites,
+  ]);
 
   return (
     <div className="db-item-view adaptation-option-view">
@@ -183,66 +206,100 @@ function AdaptationOptionView(props) {
 
       <Container>
         <PortalMessage content={content} />
-        <Grid columns="12">
-          <div className="row">
+        <Grid>
+          <Grid.Row columns={12}>
             <Grid.Column
               mobile={12}
               tablet={12}
               computer={8}
               className="col-left"
             >
-              <ItemLogo {...props}></ItemLogo>
-              <HTMLField value={long_description} />
-              <SectionsMenu sections={usedSections} />
+              {desc && desc !== 'None' && <Callout>{desc}</Callout>}
+              {intro_paragraph && <HTMLField value={intro_paragraph} />}
 
-              <Divider />
-
-              {content?.ipcc_category?.length > 0 && (
-                <Fragment>
-                  <h2>
+              {(relevant_eu_policies_items?.length ?? 0) > 0 && (
+                <>
+                  <h5>
                     <FormattedMessage
-                      id="Adaptation Details"
-                      defaultMessage="Adaptation Details"
+                      id="Relevant EU policies"
+                      defaultMessage="Relevant EU policies"
                     />
-                  </h2>
-                  <div id={sectionID('IPCC categories')} className="section">
-                    <h5 className="section-title">
-                      <FormattedMessage
-                        id="IPCC categories"
-                        defaultMessage="IPCC categories"
-                      />
-                    </h5>
-                    {ipcc_category
-                      .map((item) => item.title)
-                      .sort()
-                      .join(', ')}
+                  </h5>
 
-                    {usedSections.length > 0 && (
-                      <>
-                        {usedSections
-                          .filter((data) => data.field !== 'ipcc_category')
-                          .map((data, index) => (
-                            <Fragment key={index}>
-                              <div
-                                id={sectionID(data.title)}
-                                className="section"
-                              >
-                                <h5 className="section-title">
-                                  {intl.formatMessage(messages[data.title])}
-                                </h5>
-                                <HTMLField value={content[data.field]} />
-                              </div>
-                            </Fragment>
-                          ))}
-                      </>
-                    )}
-                  </div>
-                  <Divider />
-                </Fragment>
+                  <p className="relevant-eu-policies">
+                    {relevant_eu_policies_items
+                      .filter((it) => it?.url && it?.title)
+                      .map((it, index, arr) => (
+                        <React.Fragment key={it.id || it.url}>
+                          <UniversalLink href={it.url} openInNewTab>
+                            {it.title}
+                          </UniversalLink>
+                          {index < arr.length - 1 && ', '}
+                        </React.Fragment>
+                      ))}
+                  </p>
+                </>
               )}
 
-              <ReferenceInfo content={content} />
+              {advantages && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Advantages"
+                      defaultMessage="Advantages"
+                    />
+                  </h5>
+                  <HTMLField value={advantages} />
+                </>
+              )}
+              {disadvantages && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Disadvantages"
+                      defaultMessage="Disadvantages"
+                    />
+                  </h5>
+                  <HTMLField value={disadvantages} />
+                </>
+              )}
 
+              {(relevantSynergyValue === 'Yes' ||
+                relevantSynergyValue === 'No') && (
+                <>
+                  <h5>
+                    <FormattedMessage
+                      id="Relevant synergies with mitigation"
+                      defaultMessage="Relevant synergies with mitigation"
+                    />
+                  </h5>
+
+                  {relevantSynergyValue === 'Yes' ? (
+                    <>
+                      <span>
+                        <FormattedMessage id="Yes" defaultMessage="Yes" />
+                      </span>
+                      <div className="synergies-list">
+                        {RELEVANT_SYNERGIES.map((item, index) => (
+                          <Label key={index}>{item}</Label>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <span>
+                      <FormattedMessage id="No" defaultMessage="No" />
+                    </span>
+                  )}
+                </>
+              )}
+
+              <h3>
+                <FormattedMessage
+                  id="Read the full text of the adaptation option"
+                  defaultMessage="Read the full text of the adaptation option"
+                />
+              </h3>
+              <AccordionList variation="primary" accordions={accordions} />
               <PublishedModifiedInfo {...props} />
               <ShareInfoButton {...props} />
             </Grid.Column>
@@ -253,33 +310,37 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
+              {image && (
+                <Image
+                  src={content.image?.scales?.large?.download}
+                  className="preview-image"
+                />
+              )}
               <ContentMetadata
                 {...props}
                 related_case_studies={related_case_studies}
               />
-
-              {/* {related_case_studies?.length > 0 && (
-                <Segment>
-                  <h5>
-                    <FormattedMessage
-                      id="Case studies related to this option:"
-                      defaultMessage="Case studies related to this option:"
-                    />
-                  </h5>
-                  <ul className="related-case-studies">
-                    {related_case_studies.map((item, index) => (
-                      <li key={index}>
-                        <UniversalLink key={index} href={item.url}>
-                          {item.title}
-                        </UniversalLink>
-                      </li>
-                    ))}
-                  </ul>
-                </Segment>
-              )} */}
             </Grid.Column>
-          </div>
+          </Grid.Row>
         </Grid>
+        {show_related_resources && (
+          <>
+            <h3>
+              <FormattedMessage
+                id="Related Resources"
+                defaultMessage="Related Resources"
+              />
+            </h3>
+            <RenderBlocks
+              {...props}
+              content={{
+                ...content,
+                blocks,
+                blocks_layout,
+              }}
+            />
+          </>
+        )}
       </Container>
     </div>
   );

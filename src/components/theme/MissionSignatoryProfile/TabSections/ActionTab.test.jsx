@@ -12,18 +12,20 @@ jest.mock('@eeacms/volto-cca-policy/utils', () => ({
   formatTextToHTML: (text) => text,
 }));
 
-jest.mock('./../AccordionList', () => ({ variation, accordions }) => (
-  <div>
-    {accordions.map((item, index) => (
-      <div key={index}>
-        <div>{item.title}</div>
-        <div>{item.content}</div>
-      </div>
-    ))}
-  </div>
-));
+jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  AccordionList: ({ accordions }) => (
+    <div>
+      {accordions.map((item, index) => (
+        <div key={index}>
+          <div>{item.title}</div>
+          <div>{item.content}</div>
+        </div>
+      ))}
+    </div>
+  ),
+}));
 
-describe('ActionPagesTab', () => {
+describe('ActionTab', () => {
   const mockResult = {
     action_text: [
       {

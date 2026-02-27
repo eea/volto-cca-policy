@@ -166,7 +166,7 @@ hr {
   }
 
   .share-info {
-    margin: 3.5em 0 !important;
+    margin: 2.5em 0 !important;
 
     .ui.button {
       margin: 0 !important;
@@ -352,5 +352,47 @@ hr {
 
   .select-none {
     user-select: none;
+  }
+}
+
+.synergies-list {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  margin-top: 0.5em;
+
+  .ui.label {
+    font-size: 12px;
+  }
+}
+
+.section-adaptation-options {
+  .block.gridBlock .grid-items [data-rbd-droppable-id] {
+    flex-wrap: wrap;
+  }
+
+  .block.gridBlock .four.grid-items [class^='block-editor-'] {
+    width: 33.33%;
+  }
+
+  .block.gridBlock {
+    .six.column.grid > .column {
+      width: 33.33%;
+    }
+  }
+
+  .ui.image.preview-image {
+    height: 220px;
+    width: 100%;
+  }
+
+  #page-edit {
+    .eea.banner .image {
+      background-image: none;
+    }
+  }
+
+  .published-info {
+    margin: 2.5em 0;
   }
 }
