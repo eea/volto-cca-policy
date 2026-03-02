@@ -33,44 +33,46 @@ const RASTAccordion = ({
     }
   };
 
-  const renderAccordionItem = (item, index) => {
-    const active = activeMenu === index;
-    // Icons start from the second item
-    const icon = icons[index - 1] || null;
+  return (
+    <>
+      {items.map((item, index) => {
+        const active = activeMenu === index;
 
-    return (
-      <Accordion key={item.id} className={`step-${index}`}>
-        <Accordion.Title
-          role="button"
-          tabIndex={0}
-          index={index}
-          active={active}
-          aria-expanded={active}
-          onClick={() => handleNavigation(item.url)}
-          onKeyDown={(e) => handleKeyDown(e, item.url)}
-        >
-          {icon && <Icon name={icon} size="70px" />}
-          <span className="item-title">{item.title}</span>
-        </Accordion.Title>
+        // Icons start from the second item
+        const icon = icons[index - 1] || null;
 
-        {show_subfolders && (
-          <Accordion.Content active={active}>
-            <RASTAccordionContent
-              curent_location={curent_location}
-              key={index}
-              main={{
-                title: item.title,
-                href: item['@id'],
-                url: item.url,
-              }}
-            />
-          </Accordion.Content>
-        )}
-      </Accordion>
-    );
-  };
+        return (
+          <Accordion key={item.id} className={`step-${index}`}>
+            <Accordion.Title
+              role="button"
+              tabIndex={0}
+              index={index}
+              active={active}
+              aria-expanded={active}
+              onClick={() => handleNavigation(item.url)}
+              onKeyDown={(e) => handleKeyDown(e, item.url)}
+            >
+              {icon && <Icon name={icon} size="70px" />}
+              <span className="item-title">{item.title}</span>
+            </Accordion.Title>
 
-  return <>{items.map(renderAccordionItem)}</>;
+            {show_subfolders && (
+              <Accordion.Content active={active}>
+                <RASTAccordionContent
+                  curent_location={curent_location}
+                  main={{
+                    title: item.title,
+                    href: item['@id'],
+                    url: item.url,
+                  }}
+                />
+              </Accordion.Content>
+            )}
+          </Accordion>
+        );
+      })}
+    </>
+  );
 };
 
 export default RASTAccordion;
