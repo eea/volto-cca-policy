@@ -17,12 +17,14 @@ import {
   CASE_STUDY,
   PUBLICATION_REPORT,
   ORGANISATION,
-  ADAPTATION_OPTION,
   ACE_PROJECT,
   VIDEO,
-} from '@eeacms/volto-cca-policy/helpers/Constants';
+} from '@eeacms/volto-cca-policy/constants';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
-import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers';
+import {
+  makeContributionsSearchQuery,
+  makeAdvancedSearchQuery,
+} from '@eeacms/volto-cca-policy/helpers';
 
 const messages = defineMessages({
   downloadEvent: {
@@ -80,8 +82,8 @@ export const LinksList = (props) => {
   if (withText === true) {
     return (
       <List>
-        {value.map((linkItem, index) => (
-          <ListItem key={index}>
+        {value.map((linkItem) => (
+          <ListItem key={linkItem[0]}>
             {isInternal ? (
               <UniversalLink href={linkItem[0]}>{linkItem[1]}</UniversalLink>
             ) : (
@@ -94,8 +96,8 @@ export const LinksList = (props) => {
   } else {
     return (
       <List>
-        {value.map((url, index) => (
-          <ListItem key={index}>
+        {value.map((url) => (
+          <ListItem key={url}>
             <ExternalLink url={url} text={url} />
           </ListItem>
         ))}
@@ -141,15 +143,6 @@ export const ReferenceInfo = (props) => {
   const [isReadMore, setIsReadMore] = React.useState(false);
   const contributions_rest = contributions ? contributions.slice(0, 10) : [];
 
-  let source_title;
-  if (type === ADAPTATION_OPTION) {
-    source_title = (
-      <FormattedMessage id="References" defaultMessage="References" />
-    );
-  } else {
-    source_title = <FormattedMessage id="Source" defaultMessage="Source" />;
-  }
-
   return (websites && websites?.length > 0) ||
     (source && source?.data.length > 0) ||
     (contributor_list && contributor_list?.length > 0) ||
@@ -174,7 +167,9 @@ export const ReferenceInfo = (props) => {
         <>
           {source && source?.data.length > 0 && (
             <>
-              <h5 id="source">{source_title}:</h5>
+              <h5 id="source">
+                <FormattedMessage id="Source" defaultMessage="Source" />:
+              </h5>
               <HTMLField value={source} className="source" />
             </>
           )}
@@ -205,27 +200,22 @@ export const ReferenceInfo = (props) => {
             />
           </h5>
           {!isReadMore ? (
-            <>
-              <List bulleted>
-                {contributions_rest.map((item, index) => (
-                  <ListItem key={index}>
-                    <Link to={item.url}>{item.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
-            </>
+            <List bulleted>
+              {contributions_rest.map((item) => (
+                <ListItem key={item.url}>
+                  <Link to={item.url}>{item.title}</Link>
+                </ListItem>
+              ))}
+            </List>
           ) : (
-            <>
-              <List bulleted>
-                {contributions.map((item, index) => (
-                  <ListItem key={index}>
-                    <Link to={item.url}>{item.title}</Link>
-                  </ListItem>
-                ))}
-              </List>
-            </>
+            <List bulleted>
+              {contributions.map((item) => (
+                <ListItem key={item.url}>
+                  <Link to={item.url}>{item.title}</Link>
+                </ListItem>
+              ))}
+            </List>
           )}
-
           {contributions.length > 10 && (
             <Button
               basic
@@ -250,7 +240,6 @@ export const ReferenceInfo = (props) => {
               )}
             </Button>
           )}
-
           <div>
             <Button>
               <Link to={search_link}>
@@ -336,8 +325,8 @@ export const DocumentsList = (props) => {
         {section_title} {content.show_counter && <>({files.length})</>}
       </h5>
       <List className="documents-list">
-        {files.map((file, index) => (
-          <ListItem key={index}>
+        {files.map((file) => (
+          <ListItem key={file.url}>
             <a href={file.url} className="document-list-item">
               <i className="file alternate icon"></i>
               <span>{file.title}</span>
@@ -369,8 +358,8 @@ export const ContentRelatedItems = (props) => {
         />
       </h5>
 
-      {contentRelatedItems.map((item, index) => (
-        <Fragment key={index}>
+      {contentRelatedItems.map((item) => (
+        <Fragment key={item['@id']}>
           <UniversalLink item={item}>{item.title}</UniversalLink>
           <br />
         </Fragment>
@@ -385,25 +374,16 @@ export const LogoWrapper = ({ logo, children }) =>
 export const ItemLogo = (props) => {
   const { content } = props;
   const type = content['@type'];
-  const { image, logo, title } = content;
-
-  let logo_image;
-  if (logo) {
-    logo_image = logo;
-  } else if (!logo && image) {
-    logo_image = image;
-  } else {
-    logo_image = null;
-  }
+  const { logo, title } = content;
 
   return type !== VIDEO ? (
-    <LogoWrapper logo={logo_image}>
+    <LogoWrapper logo={logo}>
       <h2>
         <FormattedMessage id="Description" defaultMessage="Description" />
       </h2>
-      {logo_image && (
+      {logo && (
         <Image
-          src={logo_image?.scales?.mini?.download}
+          src={logo?.scales?.mini?.download}
           alt={title}
           className="db-logo"
         />
@@ -511,7 +491,23 @@ export const MetadataItemList = (props) => {
 
   return value && value.length > 0 ? (
     <>
-      {!join_type ? (
+      {join_type ? (
+        <>
+          {value.map((item, index) => (
+            <React.Fragment key={item.token || item.title}>
+              <span>
+                {intl.formatMessage({
+                  id: item.title,
+                  defaultMessage: item.title,
+                })}
+              </span>
+              {index !== value.length - 1 && (
+                <span dangerouslySetInnerHTML={{ __html: join_type }} />
+              )}
+            </React.Fragment>
+          ))}
+        </>
+      ) : (
         <p>
           {value
             .map((item) => item.title)
@@ -523,24 +519,63 @@ export const MetadataItemList = (props) => {
             )
             .join(', ')}
         </p>
-      ) : (
+      )}
+    </>
+  ) : null;
+};
+
+export const LinkedMetadataItemList = (props) => {
+  const { value, join_type, field, getSearchValue } = props; // contentType
+  const intl = useIntl();
+
+  const resolveSearchValue = (item) => {
+    if (getSearchValue) return getSearchValue(item);
+    return item.title || item;
+  };
+
+  const resolveLabel = (item) => {
+    const label = item.title || item;
+    return intl.formatMessage({ id: label, defaultMessage: label });
+  };
+
+  return value && value.length > 0 ? (
+    <>
+      {join_type ? (
         <>
-          {value
-            .map((item) =>
-              intl.formatMessage({
-                id: item.title,
-                defaultMessage: item.title,
-              }),
-            )
-            .map((item, index) => (
-              <React.Fragment key={index}>
-                <span>{item}</span>
-                {index !== value.length - 1 && (
-                  <span dangerouslySetInnerHTML={{ __html: join_type }} />
-                )}
-              </React.Fragment>
-            ))}
+          {value.map((item, index) => (
+            <React.Fragment key={resolveSearchValue(item)}>
+              <Link
+                to={makeAdvancedSearchQuery({
+                  field,
+                  value: resolveSearchValue(item),
+                  // contentType,
+                })}
+              >
+                {resolveLabel(item)}
+              </Link>
+              {index !== value.length - 1 && (
+                <span dangerouslySetInnerHTML={{ __html: join_type }} />
+              )}
+            </React.Fragment>
+          ))}
         </>
+      ) : (
+        <p>
+          {value.map((item, index) => (
+            <React.Fragment key={resolveSearchValue(item)}>
+              <Link
+                to={makeAdvancedSearchQuery({
+                  field,
+                  value: resolveSearchValue(item),
+                  // contentType,
+                })}
+              >
+                {resolveLabel(item)}
+              </Link>
+              {index < value.length - 1 && ', '}
+            </React.Fragment>
+          ))}
+        </p>
       )}
     </>
   ) : null;

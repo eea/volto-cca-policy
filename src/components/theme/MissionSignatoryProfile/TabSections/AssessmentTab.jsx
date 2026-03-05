@@ -1,8 +1,8 @@
 import { Tab, Segment } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import { AccordionList } from '@eeacms/volto-cca-policy/components';
 import { isEmpty, formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
-import AccordionList from '../AccordionList';
 import NoDataReported from '../NoDataReported';
 import ItemsSection from '../ItemsSection';
 

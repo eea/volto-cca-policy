@@ -1,15 +1,3 @@
-export const ADAPTATION_OPTION = 'eea.climateadapt.adaptationoption';
-export const CASE_STUDY = 'eea.climateadapt.casestudy';
-export const GUIDANCE = 'eea.climateadapt.guidancedocument';
-export const INDICATOR = 'eea.climateadapt.indicator';
-export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
-export const ORGANISATION = 'eea.climateadapt.organisation';
-export const ACE_PROJECT = 'eea.climateadapt.aceproject';
-export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
-export const TOOL = 'eea.climateadapt.tool';
-export const VIDEO = 'eea.climateadapt.video';
-export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
-
 export const OBSERVATORY_PARTNERS = {
   'copernicus-climate-change-service-ecmw':
     'Copernicus Climate Change Service and Copernicus Atmosphere Monitoring  Service',
@@ -543,4 +531,10 @@ export const EU_COUNTRIES = [
   'TR',
   'XK',
   'GB',
+];
+
+export const RELEVANT_SYNERGIES = [
+  'Reducing energy demand',
+  'Transition to renewable energy',
+  'Carbon capture and storage',
 ];
