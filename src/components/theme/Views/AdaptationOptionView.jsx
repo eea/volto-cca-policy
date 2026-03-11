@@ -34,7 +34,6 @@ function AdaptationOptionView(props) {
     disadvantages,
     relevant_synergies,
     legal_aspects,
-    ipcc_category,
     long_description,
     success_limitations,
     implementation_time,
@@ -50,12 +49,6 @@ function AdaptationOptionView(props) {
     'metadataSection',
   );
 
-  const ipccCategories = useMemo(() => {
-    const titles = (ipcc_category ?? [])
-      .map((item) => item?.title)
-      .filter(Boolean);
-    return titles.sort().join(', ');
-  }, [ipcc_category]);
   const relevantSynergyValue = relevant_synergies?.token;
   const desc = (description ?? '').trim();
 
@@ -67,18 +60,6 @@ function AdaptationOptionView(props) {
         ),
         content: <HTMLField value={long_description} />,
       },
-
-      (ipcc_category?.length ?? 0) > 0
-        ? {
-            title: (
-              <FormattedMessage
-                id="IPCC categories"
-                defaultMessage="IPCC categories"
-              />
-            ),
-            content: <p>{ipccCategories}</p>,
-          }
-        : null,
 
       category
         ? {
@@ -175,8 +156,6 @@ function AdaptationOptionView(props) {
     return items.filter(Boolean);
   }, [
     long_description,
-    ipcc_category,
-    ipccCategories,
     category,
     stakeholder_participation,
     success_limitations,
