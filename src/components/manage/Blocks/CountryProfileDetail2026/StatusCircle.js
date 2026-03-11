@@ -33,7 +33,7 @@ export default function StatusCircle(props) {
         style={{ width: '24px', height: '24px' }}
       />
       &nbsp;
-      {statusPrint}
+      <span className="font-weight-6">{statusPrint}</span>
     </>
   );
 }

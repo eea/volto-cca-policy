@@ -8,7 +8,7 @@ export default function MenuProfile(props) {
   const dataJson = JSON.parse(dataJsonString);
   const adaptationPolicies = dataJson['Legal_Policies']['AdaptationPolicies']
     .map(({ Type, Link, Title, Status }) => ({
-      TitleBold: Type,
+      TitleBold: Type?.includes(':') ? Type.split(':')[1].trim() : Type,
       Link,
       Title,
       Status,
@@ -123,7 +123,7 @@ export default function MenuProfile(props) {
   })();
   return (
     <div className="cp2026">
-      <h2>Adaptation policy framework</h2>
+      <h2>Adaptation policies</h2>
       <h3>National framework</h3>
       {adaptationPolicies.map((adaptation, index) => (
         <Grid columns="12" className="cpBgGray">
@@ -134,7 +134,7 @@ export default function MenuProfile(props) {
             className="col-right"
           >
             <p>
-              <strong>{adaptation['Type']}</strong>
+              <strong>{adaptation['TitleBold']}</strong>
             </p>
             <div className="ui unstackable items row">
               <div className="item secondary">
@@ -243,7 +243,7 @@ export default function MenuProfile(props) {
           </Grid.Column>
         ))}
       </Grid>
-      <div className="noticeBackGround mt-2">
+      <div className="noticeBackGround">
         <p>
           <strong>Disclaimer:</strong>The information presented in these pages
           is based on the reporting according to 'Regulation (EU) 2018/1999 on
@@ -299,7 +299,7 @@ const ListDiv = ({ elements }) => {
                   mobile={3}
                   tablet={3}
                   computer={3}
-                  className="col-left"
+                  className="col-left font-weight-6"
                 >
                   <StatusCircle statusValue={element.Status} />
                 </Grid.Column>

@@ -13,8 +13,11 @@ export default function MenuGoodPractices(props) {
         render: () => (
           <>
             <Callout>
-              This section shows the country’s involvement in international and
-              regional cooperation frameworks that support climate adaptation
+              <p>
+                This section shows the country’s involvement in international
+                and regional cooperation frameworks that support climate
+                adaptation
+              </p>
             </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
@@ -30,8 +33,11 @@ export default function MenuGoodPractices(props) {
         render: () => (
           <>
             <Callout>
-              This section highlights cooperation in research, knowledge
-              exchange, and scientific activities related to climate adaptation.
+              <p>
+                This section highlights cooperation in research, knowledge
+                exchange, and scientific activities related to climate
+                adaptation.
+              </p>
             </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
@@ -47,8 +53,10 @@ export default function MenuGoodPractices(props) {
         render: () => (
           <>
             <Callout>
-              This section summarizes collaboration on policy development,
-              governance, and shared adaptation initiatives.
+              <p>
+                This section summarizes collaboration on policy development,
+                governance, and shared adaptation initiatives.
+              </p>
             </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>

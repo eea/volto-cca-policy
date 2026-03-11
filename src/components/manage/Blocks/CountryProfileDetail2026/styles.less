@@ -18,11 +18,39 @@ div.cp2026 {
 }
 
 div#countryProfile2026 {
+  div.three.column {
+    div.vertical.tabular {
+      border: 0;
+
+      a {
+        padding: 0.65rem 0.25rem;
+        border-right: 0;
+        border-bottom: 1px solid #ddd !important;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  div.pb-0 {
+    padding-bottom: 0;
+  }
+
+  div.pt-1 {
+    padding-top: 0.7rem;
+  }
+
   div.callout {
+    border-left-color: #01796e;
+
     p {
-      color: #000 !important;
+      color: #01796e !important;
       font-size: 1.125rem;
     }
+  }
+
+  div.accordion div.title.active {
+    background-color: #01796e;
   }
 
   div.grayBackGround {
@@ -32,11 +60,35 @@ div#countryProfile2026 {
 
   div.noticeBackGround {
     padding: 1rem;
+    margin-top: 40px;
     background-color: #dae8f4;
 
     p {
       padding-left: 2rem;
       font-size: 1em;
+    }
+  }
+
+  div.cpBgGray {
+    p {
+      // margin-bottom: 0px;
+    }
+
+    .font-weight-6 {
+      font-weight: bold;
+    }
+
+    div.ui.grid {
+      margin-top: 0px;
+    }
+  }
+
+  .stretched {
+    .secondary.menu {
+      a.active {
+        border-color: #01796e;
+        color: #01796e;
+      }
     }
   }
 }
