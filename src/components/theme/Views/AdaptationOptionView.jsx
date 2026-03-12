@@ -242,7 +242,7 @@ function AdaptationOptionView(props) {
                 </>
               )}
 
-              {relevant_synergies.length > 0 && (
+              {(relevant_synergies?.length ?? 0) > 0 && (
                 <>
                   <h5>
                     <FormattedMessage
