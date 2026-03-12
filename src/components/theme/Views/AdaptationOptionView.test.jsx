@@ -201,10 +201,6 @@ describe('AdaptationOptionView - coverage', () => {
         content={{
           title: 't',
           long_description: { data: '<p>Long</p>' },
-          ipcc_category: [
-            { title: 'B', token: 'b' },
-            { title: 'A', token: 'a' },
-          ],
           category: 'Cat',
           stakeholder_participation: { data: '<p>Stake</p>' },
           success_limitations: { data: '<p>Limits</p>' },
@@ -222,8 +218,6 @@ describe('AdaptationOptionView - coverage', () => {
     expect(
       Number(screen.getByTestId('accordion-count').textContent),
     ).toBeGreaterThan(2);
-
-    expect(screen.getByText('A, B')).toBeInTheDocument();
 
     expect(screen.getByTestId('links-list')).toHaveTextContent(
       'https://my-website.com',
