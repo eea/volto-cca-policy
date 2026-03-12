@@ -150,7 +150,17 @@ export default function MenuProfile(props) {
             Text: ReactDOMServer.renderToString(
               <KeyAffectedSectorContent
                 rating={sectorData.KeyHazardsLikelihood}
-                assestment={sectorData.DescribeLikelihood}
+                assestment1={sectorData.DescribeLikelihood.replace(
+                  '\n',
+                  '<br>',
+                )}
+                assestment={sectorData.DescribeLikelihood.split('\n').map(
+                  (line, i) => (
+                    <p className="pb-0" key={i}>
+                      {line}
+                    </p>
+                  ),
+                )}
               />,
             ),
           });

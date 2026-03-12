@@ -5,6 +5,51 @@
   height: @height;
   min-height: @height;
 
+  div.countryProfileNumbers {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    div {
+      text-align: center;
+
+      h3 {
+        color: #01796e;
+        font-size: 3rem;
+      }
+
+      p {
+        color: #004e84;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  table {
+    thead {
+      th {
+        padding: 5px;
+        border-bottom: 2px solid #01796e;
+        text-align: center;
+      }
+
+      th:not(:last-child) {
+        border-right: 2px solid #01796e;
+      }
+    }
+
+    tbody {
+      td {
+        padding: 10px;
+        border-bottom: 2px solid #ddd;
+      }
+
+      td:not(:last-child) {
+        border-right: 2px solid #01796e;
+      }
+    }
+  }
+
   .ol-map-wrapper,
   .ol-map {
     height: @height;
@@ -111,7 +156,15 @@
     }
   }
 
+  .legend-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+
   .country-eea-eu-member {
+    display: inline-block;
     background-color: #007b6c;
   }
 
