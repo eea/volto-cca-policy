@@ -7,6 +7,7 @@ import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 import { capitalizeFirstLetter } from '@eeacms/volto-cca-policy/helpers';
 import config from '@plone/volto/registry';
+import { CCA_EVENT } from '@eeacms/volto-cca-policy/constants';
 
 import eeaLogo from '@eeacms/volto-cca-policy/../theme/assets/images/eea-logo.svg';
 import './styles.less';
@@ -95,7 +96,7 @@ const EventDetails = ({ item, isEditMode }) => (
 
 const BottomInfo = ({ item, isEditMode }) => {
   const { '@type': itemType, event_url, subjects, contact_email } = item || {};
-  const isCcaEventType = itemType === 'cca-event';
+  const isCcaEventType = itemType === CCA_EVENT;
   const isExternal = event_url && !event_url.includes(config.settings.apiPath);
   const isMissionEvent = item['@id'].includes('/en/mission');
 
