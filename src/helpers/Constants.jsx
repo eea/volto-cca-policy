@@ -532,9 +532,3 @@ export const EU_COUNTRIES = [
   'XK',
   'GB',
 ];
-
-export const RELEVANT_SYNERGIES = [
-  'Reducing energy demand',
-  'Transition to renewable energy',
-  'Carbon capture and storage',
-];

@@ -35,7 +35,11 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
   LinksList: ({ value }) => (
     <div data-testid="links-list">{(value || []).join(',')}</div>
   ),
-  RELEVANT_SYNERGIES: ['Synergy A', 'Synergy B'],
+  MetadataItemList: ({ value }) => (
+    <div data-testid="metadata-item-list">
+      {(value || []).map((item) => item.title).join(', ')}
+    </div>
+  ),
 }));
 
 jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
@@ -115,33 +119,66 @@ describe('AdaptationOptionView - coverage', () => {
     expect(screen.queryByText('No URL')).not.toBeInTheDocument();
   });
 
-  test('renders synergies "Yes" path and shows synergy labels', () => {
+  test('renders synergies section with multiple titles when token are set', () => {
     renderWithStore(
       <AdaptationOptionView
         content={{
           title: 't',
           long_description: { data: '<p>Long</p>' },
-          relevant_synergies: { token: 'Yes' },
+          relevant_synergies: [
+            {
+              token: 'reducing_energy_demand',
+              title: 'Reducing energy demand',
+            },
+            {
+              token: 'carbon_capture_and_storage',
+              title: 'Carbon capture and storage',
+            },
+          ],
         }}
       />,
     );
 
-    expect(screen.getByText('Synergy A')).toBeInTheDocument();
-    expect(screen.getByText('Synergy B')).toBeInTheDocument();
+    expect(
+      screen.getByText('Reducing energy demand, Carbon capture and storage'),
+    ).toBeInTheDocument();
   });
 
-  test('renders synergies "No" path', () => {
+  test('does not render synergies section when token is no_relevant_synergies', () => {
     renderWithStore(
       <AdaptationOptionView
         content={{
           title: 't',
           long_description: { data: '<p>Long</p>' },
-          relevant_synergies: { token: 'No' },
+          relevant_synergies: [
+            {
+              token: 'no_relevant_synergies',
+              title: 'No relevant synergies with mitigation',
+            },
+          ],
         }}
       />,
     );
 
-    expect(screen.getByText('No')).toBeInTheDocument();
+    expect(
+      screen.queryByText('Relevant synergies with mitigation'),
+    ).not.toBeInTheDocument();
+  });
+
+  test('does not render synergies section when the array is empty', () => {
+    renderWithStore(
+      <AdaptationOptionView
+        content={{
+          title: 't',
+          long_description: { data: '<p>Long</p>' },
+          relevant_synergies: [],
+        }}
+      />,
+    );
+
+    expect(
+      screen.queryByText('Relevant synergies with mitigation'),
+    ).not.toBeInTheDocument();
   });
 
   test('renders related resources when enabled', () => {
