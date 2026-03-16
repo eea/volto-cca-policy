@@ -5,8 +5,214 @@
   height: @height;
   min-height: @height;
 
+  .country-selectors {
+    margin-bottom: 20px;
+  }
+
+  .country-info-panel {
+    position: absolute;
+    z-index: 10;
+    top: 2px;
+    left: 2px;
+    width: 450px;
+    max-height: 80%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+    .panel-header {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #005c96;
+      margin-bottom: 20px;
+
+      .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .country-title {
+        display: flex;
+        align-items: center;
+
+        .panel-flag {
+          width: 40px;
+          height: auto;
+          margin-right: 15px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+          margin: 0;
+          color: #000;
+          font-size: 1.5rem;
+        }
+      }
+
+      .view-profile-link {
+        padding: 4px 10px;
+        border: 1px solid #005c96;
+        color: #005c96;
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #f0f7ff;
+        }
+      }
+    }
+
+    .panel-content {
+      h4 {
+        margin-bottom: 10px;
+        color: #000;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+      }
+
+      .metadata-content {
+        font-size: 0.85rem;
+        line-height: 1.4;
+
+        .adopted-item {
+          margin-bottom: 15px;
+
+          a {
+            display: block;
+            color: #005c96;
+            font-weight: 500;
+            line-height: 1.2;
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          .status {
+            margin-top: 4px;
+            color: #666;
+            font-size: 0.8rem;
+            font-style: italic;
+          }
+        }
+      }
+
+      .column {
+        font-size: 0.85rem;
+        line-height: 1.4;
+
+        ul {
+          padding-left: 20px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .map-legend-wrapper {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.9);
+    border-top-left-radius: 4px;
+
+    .map-legend-label {
+      padding: 2px 8px;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    .map-legend-items {
+      margin-top: 10px;
+      text-align: left;
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        color: #3a3a3a;
+        font-size: 13px;
+        line-height: 1.2;
+
+        .legend-box {
+          top: 0;
+          height: 15px;
+          flex: 0 0 15px;
+          margin-right: 10px;
+        }
+
+        span {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+
+  div.countryProfileNumbers {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    div {
+      text-align: center;
+
+      h3 {
+        color: #01796e;
+        font-size: 3rem;
+      }
+
+      p {
+        color: #004e84;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  table {
+    thead {
+      th {
+        padding: 5px;
+        border-bottom: 2px solid #01796e;
+        text-align: center;
+      }
+
+      th:not(:last-child) {
+        border-right: 2px solid #01796e;
+      }
+    }
+
+    tbody {
+      td {
+        padding: 10px;
+        border-bottom: 2px solid #ddd;
+      }
+
+      td:not(:last-child) {
+        border-right: 2px solid #01796e;
+      }
+    }
+  }
+
   .ol-map-wrapper,
   .ol-map {
+    position: relative;
     height: @height;
   }
 
@@ -111,7 +317,15 @@
     }
   }
 
+  .legend-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+
   .country-eea-eu-member {
+    display: inline-block;
     background-color: #007b6c;
   }
 

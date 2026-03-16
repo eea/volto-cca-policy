@@ -84,13 +84,29 @@ export default function MenuProfile(props) {
   };
   for (let i = 0; i < hazards.length; i++) {
     const hazardData = hazards[i];
-    if (hazardData.Occurrence !== 'Future') {
-      continue;
+    const hazardDataEvent = hazardData.Event.replace('_', ' ').replace(
+      ' Future',
+      '',
+    );
+    if (!panesHazardData[hazardData.Group][hazardData.Type][hazardDataEvent]) {
+      panesHazardData[hazardData.Group][hazardData.Type][hazardDataEvent] = {
+        observed: null,
+        future: null,
+      };
     }
-    panesHazardData[hazardData.Group][hazardData.Type].push({
-      Title: hazardData.Event,
-      Status: mapStatus(hazardData.PatternValue),
-    });
+    if (hazardData.Occurrence === 'Observed') {
+      panesHazardData[hazardData.Group][hazardData.Type][
+        hazardDataEvent
+      ].observed = hazardData.YesNo_Value.toLowerCase();
+    }
+    if (hazardData.Occurrence === 'Future') {
+      panesHazardData[hazardData.Group][hazardData.Type][
+        hazardDataEvent
+      ].PatternValue = hazardData.PatternValue;
+      panesHazardData[hazardData.Group][hazardData.Type][
+        hazardDataEvent
+      ].future = mapStatus(hazardData.PatternValue);
+    }
   }
   let panesHazard = [];
   Object.entries(panesHazardData).forEach(([key, data]) => {
@@ -104,7 +120,6 @@ export default function MenuProfile(props) {
   const panesKeys = Object.values(dataJson?.Key_Affected_Sectors ?? {}).map(
     (item) => item.PrimarySector,
   );
-
   const resultPanesKeys = [
     ...panesKeys
       .filter((item) => item.toLowerCase() !== 'other')
@@ -118,7 +133,7 @@ export default function MenuProfile(props) {
       ([sectorKey, sectorData]) => {
         if (sectorData.PrimarySector === data) {
           keyElements.push({
-            // Id: sectorKey + '_0',
+            Id: sectorKey + '_0',
             Title:
               'Observed impact of key hazards, including changes in frequency and magnitude',
             Text: ReactDOMServer.renderToString(
@@ -129,18 +144,28 @@ export default function MenuProfile(props) {
             ),
           });
           keyElements.push({
-            // Id: sectorKey + '_1',
+            Id: sectorKey + '_1',
             Title:
               'Key hazards likelihood of occurrence and exposure to them under future climate',
             Text: ReactDOMServer.renderToString(
               <KeyAffectedSectorContent
                 rating={sectorData.KeyHazardsLikelihood}
-                assestment={sectorData.DescribeLikelihood}
+                assestment1={sectorData.DescribeLikelihood.replace(
+                  '\n',
+                  '<br>',
+                )}
+                assestment={sectorData.DescribeLikelihood.split('\n').map(
+                  (line, i) => (
+                    <p className="pb-0" key={i}>
+                      {line}
+                    </p>
+                  ),
+                )}
               />,
             ),
           });
           keyElements.push({
-            // Id: sectorKey + '_2',
+            Id: sectorKey + '_2',
             Title: 'Vulnerability, including adaptive capacity',
             Text: ReactDOMServer.renderToString(
               <KeyAffectedSectorContent
@@ -150,7 +175,7 @@ export default function MenuProfile(props) {
             ),
           });
           keyElements.push({
-            // Id: sectorKey + '_3',
+            Id: sectorKey + '_3',
             Title: 'Risk of potential future impacts',
             Text: ReactDOMServer.renderToString(
               <KeyAffectedSectorContent
@@ -164,6 +189,7 @@ export default function MenuProfile(props) {
     );
     if (keyElements.length) {
       panesKeys.push({
+        id: key,
         menuItem: (data.charAt(0).toUpperCase() + data.slice(1))
           .split('(')[0]
           .trim(),
@@ -219,114 +245,125 @@ const PanesHazardContent = ({ data }) => {
       <p>
         <span className="fw-light">{data.Description}</span>
       </p>
-      <div>
+      <div className="cpBgGray hazard">
         <p>
           <strong>Acute Hazards</strong>
         </p>
         <div className="styled-dividerBlock">
           <div className="ui fitted divider divider-spacing-s"></div>
         </div>
-        <Grid columns="12" className="cpBgGray">
+        <Grid columns="12">
           <Grid.Column
             mobile={12}
             tablet={12}
-            computer={6}
-            className="col-right"
+            computer={5}
+            className="col-right pb-0"
           >
-            <p>
-              <span className="fw-light">Hazard type</span>
-            </p>
+            <span className="fw-light">Hazard type</span>
           </Grid.Column>
           <Grid.Column
             mobile={12}
             tablet={12}
-            computer={6}
-            className="col-right"
+            computer={3}
+            className="col-right pb-0"
           >
-            <p>
-              <span className="fw-light">Future status</span>
-            </p>
+            <span className="fw-light">Observed status</span>
           </Grid.Column>
-
-          {data.AC.map((data, index) => (
+          <Grid.Column
+            mobile={12}
+            tablet={12}
+            computer={4}
+            className="col-right pb-0"
+          >
+            <span className="fw-light">Future status</span>
+          </Grid.Column>
+          {Object.entries(data.AC).map(([hazardType, values]) => (
             <>
               <Grid.Column
                 mobile={12}
                 tablet={12}
-                computer={6}
-                className="col-right"
+                computer={5}
+                className="col-right pb-0"
               >
-                <p>
-                  <span className="fw-light">{data.Title}</span>
-                </p>
+                {hazardType}
               </Grid.Column>
               <Grid.Column
                 mobile={12}
                 tablet={12}
-                computer={6}
-                className="col-right"
+                computer={3}
+                className="col-right pb-0"
               >
-                <p>
-                  <span className="fw-light">
-                    <StatusCircle statusValue={data.Status} />
-                  </span>
-                </p>
+                {values.observed}
+              </Grid.Column>
+              <Grid.Column
+                mobile={12}
+                tablet={12}
+                computer={4}
+                className="col-right pb-0"
+              >
+                <StatusCircle statusValue={values.future} />
               </Grid.Column>
             </>
           ))}
         </Grid>
       </div>
-      <div>
+      <div className="cpBgGray">
         <p>
           <strong>Chronic Hazards</strong>
         </p>
         <div className="styled-dividerBlock">
           <div className="ui fitted divider divider-spacing-s"></div>
         </div>
-        <Grid columns="12" className="cpBgGray">
+        <Grid columns="12">
           <Grid.Column
             mobile={12}
             tablet={12}
-            computer={6}
-            className="col-right"
+            computer={5}
+            className="col-right pb-0"
           >
-            <p>
-              <span className="fw-light">Hazard type</span>
-            </p>
+            <span className="fw-light">Hazard type</span>
           </Grid.Column>
           <Grid.Column
             mobile={12}
             tablet={12}
-            computer={6}
-            className="col-right"
+            computer={3}
+            className="col-right pb-0"
           >
-            <p>
-              <span className="fw-light">Future status</span>
-            </p>
+            <span className="fw-light">Observed status</span>
           </Grid.Column>
-          {data.CH.map((data, index) => (
+          <Grid.Column
+            mobile={12}
+            tablet={12}
+            computer={4}
+            className="col-right pb-0"
+          >
+            <span className="fw-light">Future status</span>
+          </Grid.Column>
+          {Object.entries(data.CH).map(([hazardType, values]) => (
             <>
               <Grid.Column
                 mobile={12}
                 tablet={12}
-                computer={6}
-                className="col-right"
+                computer={5}
+                className="col-right pb-0 pt-1"
               >
-                <p>
-                  <span className="fw-light">{data.Title}</span>
-                </p>
+                {hazardType}
               </Grid.Column>
               <Grid.Column
                 mobile={12}
                 tablet={12}
-                computer={6}
-                className="col-right"
+                computer={3}
+                className="col-right pb-0 pt-1"
               >
-                <p>
-                  <span className="fw-light">
-                    <StatusCircle statusValue={data.Status} />
-                  </span>
-                </p>
+                {values.observed}
+              </Grid.Column>
+              <Grid.Column
+                mobile={12}
+                tablet={12}
+                computer={4}
+                className="col-right pb-0 pt-1"
+              >
+                <StatusCircle statusValue={values.future} />
               </Grid.Column>
             </>
           ))}
@@ -351,6 +388,7 @@ const KeyAffectedSectorContent = ({ rating, assestment }) => {
           </p>
         </Grid.Column>
       </Grid>
+      <br />
       <p>
         <strong>Assessment</strong>
       </p>
@@ -378,7 +416,7 @@ function mapStatus(name) {
       response = 'no significant change';
       break;
     default:
-      response = 'NOT FOUND:' + name;
+      response = 'NF:' + name;
   }
   return response;
 }
