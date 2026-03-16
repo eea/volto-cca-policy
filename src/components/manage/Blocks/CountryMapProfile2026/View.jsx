@@ -47,17 +47,23 @@ const View = (props) => {
     addAppURL(countries_metadata_url),
   );
 
-  const euCountryNames = adjustEuCountryNames(euCountryNamesRaw);
-  const countryOptions = [
-    { key: 'none', value: '', text: 'Select a country' },
-    ...euCountryNames
-      .map((name) => ({
-        key: name,
-        value: name,
-        text: name,
-      }))
-      .sort((a, b) => a.text.localeCompare(b.text)),
-  ];
+  const euCountryNames = React.useMemo(
+    () => adjustEuCountryNames(euCountryNamesRaw),
+    [],
+  );
+  const countryOptions = React.useMemo(
+    () => [
+      { key: 'none', value: '', text: 'Select a country' },
+      ...euCountryNames
+        .map((name) => ({
+          key: name,
+          value: name,
+          text: name,
+        }))
+        .sort((a, b) => a.text.localeCompare(b.text)),
+    ],
+    [euCountryNames],
+  );
 
   const autocompleteOptions = React.useMemo(() => {
     if (searchQuery.length < 2) return [];
