@@ -68,8 +68,8 @@ const View = (props) => {
           opt.text.toLowerCase().includes(searchQuery.toLowerCase()),
       )
       .slice(0, AUTOCOMPLETE_LIMIT);
-  }, [countryOptions, searchQuery]);
-  // }, [searchQuery]);
+    // }, [countryOptions, searchQuery]);
+  }, [searchQuery]);
 
   const [isLegendExpanded, setIsLegendExpanded] = React.useState(false);
 

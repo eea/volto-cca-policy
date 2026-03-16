@@ -74,23 +74,23 @@ export const Interactions = ({
         if (!baseUrlPath.includes('countries-regions/countries/')) {
           baseUrlPath = baseUrlPath + '/countries-regions/countries';
         }
-        let noDataReportedMsg = `
-          No data reported through the reporting mechanism of the Governance Regulation.
-          Last information is available
-          <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
+        // let noDataReportedMsg = `
+        //   No data reported through the reporting mechanism of the Governance Regulation.
+        //   Last information is available
+        //   <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
 
-        if (countryName === 'Türkiye') {
-          countryName = 'Turkiye';
-          noDataReportedMsg = `
-            Data reported in 2021 through the reporting mechanism of the Governance Regulation.
-            Information is available
-            <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
-        }
+        // if (countryName === 'Türkiye') {
+        //   countryName = 'Turkiye';
+        //   noDataReportedMsg = `
+        //     Data reported in 2021 through the reporting mechanism of the Governance Regulation.
+        //     Information is available
+        //     <a href="${baseUrlPath}/${countryName.toLowerCase()}">here</a>`;
+        // }
 
-        if (countryName === 'Switzerland') {
-          noDataReportedMsg = `
-          <span>National Adaptation Strategy </span><ul><li><a href="https://www.bafu.admin.ch/bafu/en/home/topics/climate/publications-studies/publications/adaptation-climate-change-switzerland-2012.html">Adaptation to climate change in Switzerland - First part of the Federal Councils strategy</a><p style="font-style:oblique;">Adopted</p></li></ul><span>National Adaptation Plan </span><ul><li><a href="https://www.bafu.admin.ch/bafu/de/home/themen/klima/publikationen-studien/publikationen/anpassung-klimawandel-schweiz-aktionsplan-2020-2025.html">Adaptation to climate change in Switzerland: Action Plan 2020-2025</a><p style="font-style:oblique;">Adopted</p></li></ul>`;
-        }
+        // if (countryName === 'Switzerland') {
+        //   noDataReportedMsg = `
+        //   <span>National Adaptation Strategy </span><ul><li><a href="https://www.bafu.admin.ch/bafu/en/home/topics/climate/publications-studies/publications/adaptation-climate-change-switzerland-2012.html">Adaptation to climate change in Switzerland - First part of the Federal Councils strategy</a><p style="font-style:oblique;">Adopted</p></li></ul><span>National Adaptation Plan </span><ul><li><a href="https://www.bafu.admin.ch/bafu/de/home/themen/klima/publikationen-studien/publikationen/anpassung-klimawandel-schweiz-aktionsplan-2020-2025.html">Adaptation to climate change in Switzerland: Action Plan 2020-2025</a><p style="font-style:oblique;">Adopted</p></li></ul>`;
+        // }
 
         if (!Object.hasOwn(countries_metadata[0], countryName)) {
           return;
@@ -99,7 +99,7 @@ export const Interactions = ({
         if (metadata === undefined) {
           return;
         }
-        let tooltipContent = '';
+        // let tooltipContent = '';
         // if (thematicMapMode === 'National adaption policy') {
         //   if (metadata[0]?.notreported) {
         //     tooltipContent = `<span>${noDataReportedMsg}</span>`;
@@ -108,14 +108,14 @@ export const Interactions = ({
         //       metadata[0]?.mixed || '<span>NAS and NAP not reported</span>';
         //   }
         // } else {
-        tooltipContent =
-          metadata[0]?.ccivportal_info ||
-          '<span>No portal or platform reported</span>';
+        // tooltipContent =
+        //   metadata[0]?.ccivportal_info ||
+        //   '<span>No portal or platform reported</span>';
         // }
 
         map.getTargetElement().style.cursor = 'pointer';
-        const flag = feature.get('flag').src;
-        const cn = countryName.toLowerCase();
+        // const flag = feature.get('flag').src;
+        // const cn = countryName.toLowerCase();
         if (countryNamePrint === 'Moldova') {
           countryNamePrint = 'Republic of Moldova';
         }
@@ -131,7 +131,8 @@ export const Interactions = ({
         // setTooltipVisibility(node, tooltipContentDiv, evt, true);
       }
     },
-    [baseUrl, countries_metadata, map, thematicMapMode, tooltipRef],
+    // [baseUrl, countries_metadata, map, thematicMapMode, tooltipRef],
+    [baseUrl, countries_metadata, map, tooltipRef],
   );
 
   React.useEffect(() => {
