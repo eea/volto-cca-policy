@@ -15,26 +15,19 @@ export const Interactions = ({
   setStateHighlight,
   countries_metadata,
   ol,
+  selectedCountry,
+  setSelectedCountry,
 }) => {
   const map = useMapContext().map;
 
-  React.useEffect(() => {
-    if (!map) return;
-
-    map.on('click', function (evt) {
-      if (evt.dragging) {
+  const handleTooltip = React.useCallback(
+    (feature, evt) => {
+      const node = tooltipRef.current;
+      if (!feature) {
+        node.style.visibility = 'hidden';
         return;
       }
-      const feature = getClosestFeatureToCoordinate(
-        evt.coordinate,
-        euCountryFeatures.current,
-        ol,
-      );
-      if (!feature) {
-        const node = tooltipRef.current;
-        node.style.visibility = 'hidden';
-      }
-      const domEvt = evt.originalEvent;
+
       if (
         countries_metadata.length > 0 &&
         feature &&
@@ -48,7 +41,6 @@ export const Interactions = ({
       ) {
         map.getTargetElement().style.cursor = 'pointer';
         let countryName = feature.get('na');
-        const node = tooltipRef.current;
         const flag = feature.get('flag').src;
         let tooltipContent =
           'No data reported through the reporting mechanism of the adapted Governance Regulation for the Energy Community\'s Contracting Parties. More information is available <a href="https://www.energy-community.org/">here</a>.';
@@ -63,10 +55,10 @@ export const Interactions = ({
               <h3>${countryName}</h3>
               <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
             </div>
-            <div class="tooltip-content"><span>${tooltipContent}</span></div>
+            <div class="tooltip-content"><span>${tooltipContent}</span> ABC</div>
           </div>`;
 
-        setTooltipVisibility(node, tooltipContentDiv, domEvt, true);
+        setTooltipVisibility(node, tooltipContentDiv, evt, true);
       }
       if (
         countries_metadata.length > 0 &&
@@ -122,7 +114,6 @@ export const Interactions = ({
         }
 
         map.getTargetElement().style.cursor = 'pointer';
-        const node = tooltipRef.current;
         const flag = feature.get('flag').src;
         const cn = countryName.toLowerCase();
         if (countryNamePrint === 'Moldova') {
@@ -137,11 +128,67 @@ export const Interactions = ({
             <div class="tooltip-content">${tooltipContent}</div>
           </div>`;
 
-        setTooltipVisibility(node, tooltipContentDiv, domEvt, true);
+        // setTooltipVisibility(node, tooltipContentDiv, evt, true);
       }
-    });
+    },
+    [baseUrl, countries_metadata, map, thematicMapMode, tooltipRef],
+  );
 
-    map.on('pointermove', function (evt) {
+  React.useEffect(() => {
+    if (!map || !euCountryFeatures.current) return;
+
+    if (!selectedCountry) {
+      map.getView().animate({
+        center: ol.proj.fromLonLat([14.5, 57]),
+        zoom: 3.3,
+        duration: 1000,
+      });
+      handleTooltip(null);
+      return;
+    }
+
+    const feature = euCountryFeatures.current.find(
+      (f) => f.get('na') === selectedCountry,
+    );
+    if (feature) {
+      const extent = feature.getGeometry().getExtent();
+      map.getView().fit(extent, {
+        padding: [50, 50, 50, 50],
+        duration: 1000,
+        maxZoom: 6,
+      });
+
+      // Show tooltip at center of country
+      const pixel = map.getPixelFromCoordinate(ol.extent.getCenter(extent));
+      handleTooltip(feature, {
+        clientX: pixel[0] + map.getTargetElement().getBoundingClientRect().left,
+        clientY: pixel[1] + map.getTargetElement().getBoundingClientRect().top,
+      });
+    } else {
+      handleTooltip(null);
+    }
+  }, [selectedCountry, map, euCountryFeatures, ol, handleTooltip]);
+
+  React.useEffect(() => {
+    if (!map) return;
+
+    const onClick = (evt) => {
+      if (evt.dragging) {
+        return;
+      }
+      const feature = getClosestFeatureToCoordinate(
+        evt.coordinate,
+        euCountryFeatures.current,
+        ol,
+      );
+      if (feature) {
+        setSelectedCountry(feature.get('na'));
+      } else {
+        setSelectedCountry('');
+      }
+    };
+
+    const onPointerMove = (evt) => {
       if (evt.dragging) {
         return;
       }
@@ -154,8 +201,23 @@ export const Interactions = ({
 
       highlight.current = feature && feature.get('na');
       setStateHighlight(highlight.current);
-    });
-  });
+    };
+
+    map.on('click', onClick);
+    map.on('pointermove', onPointerMove);
+
+    return () => {
+      map.un('click', onClick);
+      map.un('pointermove', onPointerMove);
+    };
+  }, [
+    map,
+    euCountryFeatures,
+    ol,
+    setSelectedCountry,
+    highlight,
+    setStateHighlight,
+  ]);
 
   return null;
 };

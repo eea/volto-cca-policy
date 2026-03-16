@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose } from 'redux';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Dropdown } from 'semantic-ui-react';
 import {
   getImageUrl,
   tooltipStyle,
@@ -22,18 +22,18 @@ import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 import './styles.less';
 
-// const url =
-//   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
-
 const View = (props) => {
   const { geofeatures, projection, ol } = props;
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
+  const [selectedCountry, setSelectedCountry] = React.useState('');
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const AUTOCOMPLETE_LIMIT = 4;
 
   const styles = React.useMemo(
-    () => makeStyles(highlight, ol),
+    () => makeStyles(highlight, selectedCountry, ol),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [stateHighlight, ol],
+    [stateHighlight, selectedCountry, ol],
   );
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
@@ -48,6 +48,29 @@ const View = (props) => {
   );
 
   const euCountryNames = adjustEuCountryNames(euCountryNamesRaw);
+  const countryOptions = [
+    { key: 'none', value: '', text: 'Select a country' },
+    ...euCountryNames
+      .map((name) => ({
+        key: name,
+        value: name,
+        text: name,
+      }))
+      .sort((a, b) => a.text.localeCompare(b.text)),
+  ];
+
+  const autocompleteOptions = React.useMemo(() => {
+    if (searchQuery.length < 3) return [];
+    return countryOptions
+      .filter(
+        (opt) =>
+          opt.value &&
+          opt.text.toLowerCase().includes(searchQuery.toLowerCase()),
+      )
+      .slice(0, AUTOCOMPLETE_LIMIT);
+  }, [countryOptions, searchQuery]);
+
+  const [isLegendExpanded, setIsLegendExpanded] = React.useState(false);
 
   const euCountryFeatures = React.useRef();
 
@@ -77,12 +100,6 @@ const View = (props) => {
       new ol.source.TileWMS({
         url: 'https://gisco-services.ec.europa.eu/maps/service',
         params: {
-          // LAYERS: 'OSMBlossomComposite',
-          // LAYERS: 'OSMCartoComposite',
-          // LAYERS: 'OSMPositronComposite',
-          // LAYERS: 'GreyEarth',
-          // LAYERS: 'OSMCarto',
-          // LAYERS: 'NaturalEarth',
           LAYERS: 'OSMBrightBackground',
           TILED: true,
         },
@@ -94,18 +111,56 @@ const View = (props) => {
 
   const baseUrl = props.path || props.location?.pathname || '';
 
-  // const onFeatureClick = React.useCallback(
-  //   (feature) => {
-  //     const country = feature.get('na');
-  //     // history.push(`${baseUrl}/${country.toLowerCase()}`);
-  //   },
-  //   [baseUrl, history],
-  // );
-  // console.log('thematicMapMode', thematicMapMode);
+  const selectedFeature = euCountryFeatures.current?.find(
+    (f) => f.get('na') === selectedCountry,
+  );
+  const flagUrl = selectedFeature?.get('flag')?.src;
+  const metadata = countries_metadata?.[0]?.[selectedCountry]?.[0];
+
+  const renderAdopted = (html) => {
+    if (!html) return 'No data reported';
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const lis = doc.querySelectorAll('li');
+    const adoptedItems = Array.from(lis).filter((li) => {
+      const p = li.querySelector('p');
+      return p && p.textContent.trim().toLowerCase() === 'adopted';
+    });
+
+    if (adoptedItems.length === 0) return 'No data reported';
+
+    return adoptedItems.map((li, idx) => {
+      const a = li.querySelector('a');
+      const p = li.querySelector('p');
+      return (
+        <div key={idx} className="adopted-item">
+          {a ? (
+            <a href={a.href} target="_blank" rel="noreferrer">
+              {a.textContent}
+            </a>
+          ) : (
+            <span>{li.textContent.replace(p.textContent, '')}</span>
+          )}
+          <p className="status">{p.textContent}</p>
+        </div>
+      );
+    });
+  };
+
   return (
     <div className="ol-country-map" id="countryMapProfileBlock">
       <Callout>
-        <p>Some long text here</p>
+        <p>
+          Explore insights on Europe's climate adaptation progress. In 2025, EU
+          Member States, EEA Member Countries and Energy Community Contracting
+          Parties submitted their reports under Article 19 of the Regulation
+          (EU) 2018/1999 on the Governance of the Energy Union and Climate
+          Action and the adapted Governance Regulation (2018/1999) as
+          incorporated and adapted by the Energy Community Ministerial Council
+          decision 2021/14/mc-enc. Requirements are outlined in Annex I of the
+          Implementing Regulation (2020/1208) and the Energy Community adapted
+          Implementing Regulation (2020/1208).
+        </p>
       </Callout>
       <h2>Climate-ADAPT country profiles</h2>
       <p>
@@ -113,6 +168,38 @@ const View = (props) => {
         Adaptation Plan (NAP) status, or click “View country profile” to see all
         adaptation policies and actions.
       </p>
+
+      <Grid columns={2} stackable className="country-selectors">
+        <Grid.Column>
+          <Dropdown
+            placeholder="Search country"
+            fluid
+            search
+            selection
+            clearable
+            options={autocompleteOptions}
+            value={selectedCountry}
+            searchQuery={searchQuery}
+            onSearchChange={(e, { searchQuery }) => setSearchQuery(searchQuery)}
+            onChange={(e, { value }) => {
+              setSelectedCountry(value);
+              setSearchQuery('');
+            }}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <Dropdown
+            placeholder="Select country"
+            fluid
+            selection
+            clearable
+            options={countryOptions}
+            value={selectedCountry}
+            onChange={(e, { value }) => setSelectedCountry(value)}
+          />
+        </Grid.Column>
+      </Grid>
+
       {tileWMSSources ? (
         <Map
           view={{
@@ -128,19 +215,95 @@ const View = (props) => {
             style={tooltipStyle}
             className="map-tooltip"
           ></div>
+
+          {selectedCountry && (
+            <div className="country-info-panel">
+              <div className="panel-header">
+                <div className="header-top">
+                  <div className="country-title">
+                    {flagUrl && (
+                      <img
+                        src={flagUrl}
+                        alt={selectedCountry}
+                        className="panel-flag"
+                      />
+                    )}
+                    <h3>{selectedCountry}</h3>
+                  </div>
+                  <a
+                    href={`/en/countries-regions/countries/${selectedCountry.toLowerCase()}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="view-profile-link"
+                  >
+                    View {selectedCountry}'s profile
+                  </a>
+                </div>
+              </div>
+              <div className="panel-content">
+                <Grid columns={2} divided>
+                  <Grid.Column>
+                    <h4>National Adaptation Strategy (NAS)</h4>
+                    <div className="metadata-content">
+                      {renderAdopted(metadata?.nas_mixed)}
+                    </div>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <h4>National Adaptation Plan (NAP)</h4>
+                    <div className="metadata-content">
+                      {renderAdopted(metadata?.nap_mixed)}
+                    </div>
+                  </Grid.Column>
+                </Grid>
+              </div>
+            </div>
+          )}
+
+          <div className="map-legend-wrapper">
+            <div
+              className="map-legend-label"
+              onClick={() => setIsLegendExpanded(!isLegendExpanded)}
+            >
+              Legend {isLegendExpanded ? '▲' : '▲'}
+            </div>
+            {isLegendExpanded && (
+              <div className="map-legend-items">
+                <div className="legend-item">
+                  <span className="country-eea-eu-member legend-box"></span>
+                  <span>EU Member States and EEA Member Countries</span>
+                </div>
+                <div className="legend-item">
+                  <span className="country-eea-member legend-box"></span>
+                  <span>EU Member Countries</span>
+                </div>
+                <div className="legend-item">
+                  <span className="country-eea-coopereting legend-box"></span>
+                  <span>
+                    EEA Cooperating Countries and Energy Community Contracting
+                    Parties
+                  </span>
+                </div>
+                <div className="legend-item">
+                  <span className="country-eastern legend-box"></span>
+                  <span>Energy Community Contracting Parties</span>
+                </div>
+              </div>
+            )}
+          </div>
           <Controls attribution={false} />
           <Layers>
             {props.mode !== 'edit' && (
               <Interactions
                 ol={ol}
                 tooltipRef={tooltipRef}
-                // onFeatureClick={onFeatureClick}
                 countries_metadata={countries_metadata}
                 baseUrl={baseUrl}
                 thematicMapMode={thematicMapMode}
                 euCountryFeatures={euCountryFeatures}
                 highlight={highlight}
                 setStateHighlight={setStateHighlight}
+                selectedCountry={selectedCountry}
+                setSelectedCountry={setSelectedCountry}
               />
             )}
             <Layer.Vector
@@ -148,6 +311,14 @@ const View = (props) => {
               zIndex={7}
               style={styles.eucountriesStyle}
             />
+            {selectedCountry && (
+              <Layer.Vector
+                key={`highlight-${selectedCountry}`}
+                source={euCountriesSource}
+                zIndex={8}
+                style={styles.highlightedCountryStyle}
+              />
+            )}
             <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
           </Layers>
         </Map>
@@ -179,7 +350,13 @@ const View = (props) => {
         </Grid.Column>
       </Grid>
       <h2>Legend for the climate-ADAPT country profiles map</h2>
-      <p>The colors on the map represent the different...</p>
+      <p>
+        The colors on the map represent the different country groups involved in
+        reporting on national adaptation actions under the Governance Regulation
+        on the Energy Union and Climate Action (2018/1999) and related
+        processes, distinguishing between those that have a legal obligation to
+        report and those that report on a voluntary basis.
+      </p>
       <table>
         <thead>
           <tr>
@@ -223,12 +400,6 @@ const View = (props) => {
           </tr>
         </tbody>
       </table>
-      <div id="country-map-filter">
-        <Filter
-          thematicMapMode={thematicMapMode}
-          setThematicMapMode={setThematicMapMode}
-        />
-      </div>
     </div>
   );
 };

@@ -29,12 +29,17 @@
 //   context.restore();
 // };
 
-export const makeStyles = (highlight, ol) => {
+export const makeStyles = (highlight, selectedCountry, ol) => {
   const fill = new ol.style.Fill({ color: 'rgb(251,250,230, 0.8)' });
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',
     color: '#333333',
     width: 1,
+  });
+
+  const selectedStroke = new ol.style.Stroke({
+    color: '#f69c35',
+    width: 3,
   });
 
   const colored = new ol.style.Fill({
@@ -115,7 +120,6 @@ export const makeStyles = (highlight, ol) => {
         name === highlight.current ? colored : getFillColor(feature),
         stroke,
       );
-      // console.log(highlight.current);
 
       renderContext.drawGeometry(geometry);
       context.clip();
@@ -123,5 +127,28 @@ export const makeStyles = (highlight, ol) => {
     },
   });
 
-  return { eucountriesStyle };
+  const highlightedCountryStyle = new ol.style.Style({
+    renderer: (pixelCoordinates, state) => {
+      const context = state.context;
+      const geometry = state.geometry.clone();
+      geometry.setCoordinates(pixelCoordinates);
+      const feature = state.feature;
+      const name = feature.get('na');
+
+      if (name !== selectedCountry) return;
+
+      context.save();
+      const renderContext = ol.render.toContext(context, {
+        pixelRatio: 1,
+      });
+
+      renderContext.setFillStrokeStyle(getFillColor(feature), selectedStroke);
+
+      renderContext.drawGeometry(geometry);
+      context.clip();
+      context.restore();
+    },
+  });
+
+  return { eucountriesStyle, highlightedCountryStyle };
 };
