@@ -68,8 +68,7 @@ const View = (props) => {
           opt.text.toLowerCase().includes(searchQuery.toLowerCase()),
       )
       .slice(0, AUTOCOMPLETE_LIMIT);
-    // }, [countryOptions, searchQuery]);
-  }, [searchQuery]);
+  }, [countryOptions, searchQuery]);
 
   const [isLegendExpanded, setIsLegendExpanded] = React.useState(false);
 
@@ -260,12 +259,13 @@ const View = (props) => {
           )}
 
           <div className="map-legend-wrapper">
-            <div
+            <button
+              type="button"
               className="map-legend-label"
               onClick={() => setIsLegendExpanded(!isLegendExpanded)}
             >
               Legend {isLegendExpanded ? '▲' : '▲'}
-            </div>
+            </button>
             {isLegendExpanded && (
               <div className="map-legend-items">
                 <div className="legend-item">
