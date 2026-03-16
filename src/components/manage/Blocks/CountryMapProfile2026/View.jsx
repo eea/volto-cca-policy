@@ -55,6 +55,7 @@ const View = (props) => {
     () => [
       { key: 'none', value: '', text: 'Select a country' },
       ...euCountryNames
+        .filter((name) => name && !name.startsWith('United Kingdom'))
         .map((name) => ({
           key: name,
           value: name,
@@ -71,6 +72,7 @@ const View = (props) => {
       .filter(
         (opt) =>
           opt.value &&
+          !opt.value.startsWith('United Kingdom') &&
           opt.text.toLowerCase().includes(searchQuery.toLowerCase()),
       )
       .slice(0, AUTOCOMPLETE_LIMIT);
