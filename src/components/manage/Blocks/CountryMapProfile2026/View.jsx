@@ -14,7 +14,7 @@ import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 import { useCountriesMetadata } from './hooks';
-import Filter from './Filter';
+// import Filter from './Filter';
 import withResponsiveContainer from '../withResponsiveContainer';
 import withVisibilitySensor from '../withVisibilitySensor';
 import { addAppURL } from '@plone/volto/helpers';
@@ -38,9 +38,9 @@ const View = (props) => {
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
-  const [thematicMapMode, setThematicMapMode] = React.useState(
-    'National adaption policy',
-  );
+  // const [thematicMapMode, setThematicMapMode] = React.useState(
+  //   'National adaption policy',
+  // );
   const countries_metadata_url =
     '/en/countries-regions/countries/@@countries-metadata-extract-2025?langflag=1';
   const countries_metadata = useCountriesMetadata(
@@ -60,7 +60,7 @@ const View = (props) => {
   ];
 
   const autocompleteOptions = React.useMemo(() => {
-    if (searchQuery.length < 3) return [];
+    if (searchQuery.length < 2) return [];
     return countryOptions
       .filter(
         (opt) =>
@@ -69,6 +69,7 @@ const View = (props) => {
       )
       .slice(0, AUTOCOMPLETE_LIMIT);
   }, [countryOptions, searchQuery]);
+  // }, [searchQuery]);
 
   const [isLegendExpanded, setIsLegendExpanded] = React.useState(false);
 
@@ -107,7 +108,7 @@ const View = (props) => {
         transition: 0,
       }),
     ]);
-  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames, ol]);
+  }, [geofeatures, countries_metadata, euCountryNames, ol]);
 
   const baseUrl = props.path || props.location?.pathname || '';
 
@@ -168,7 +169,6 @@ const View = (props) => {
         Adaptation Plan (NAP) status, or click “View country profile” to see all
         adaptation policies and actions.
       </p>
-
       <Grid columns={2} stackable className="country-selectors">
         <Grid.Column>
           <Dropdown
@@ -199,7 +199,7 @@ const View = (props) => {
           />
         </Grid.Column>
       </Grid>
-
+      Filter
       {tileWMSSources ? (
         <Map
           view={{
@@ -298,7 +298,7 @@ const View = (props) => {
                 tooltipRef={tooltipRef}
                 countries_metadata={countries_metadata}
                 baseUrl={baseUrl}
-                thematicMapMode={thematicMapMode}
+                // thematicMapMode={thematicMapMode}
                 euCountryFeatures={euCountryFeatures}
                 highlight={highlight}
                 setStateHighlight={setStateHighlight}

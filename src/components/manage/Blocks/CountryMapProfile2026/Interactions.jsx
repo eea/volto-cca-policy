@@ -100,18 +100,18 @@ export const Interactions = ({
           return;
         }
         let tooltipContent = '';
-        if (thematicMapMode === 'National adaption policy') {
-          if (metadata[0]?.notreported) {
-            tooltipContent = `<span>${noDataReportedMsg}</span>`;
-          } else {
-            tooltipContent =
-              metadata[0]?.mixed || '<span>NAS and NAP not reported</span>';
-          }
-        } else {
-          tooltipContent =
-            metadata[0]?.ccivportal_info ||
-            '<span>No portal or platform reported</span>';
-        }
+        // if (thematicMapMode === 'National adaption policy') {
+        //   if (metadata[0]?.notreported) {
+        //     tooltipContent = `<span>${noDataReportedMsg}</span>`;
+        //   } else {
+        //     tooltipContent =
+        //       metadata[0]?.mixed || '<span>NAS and NAP not reported</span>';
+        //   }
+        // } else {
+        tooltipContent =
+          metadata[0]?.ccivportal_info ||
+          '<span>No portal or platform reported</span>';
+        // }
 
         map.getTargetElement().style.cursor = 'pointer';
         const flag = feature.get('flag').src;
@@ -119,14 +119,14 @@ export const Interactions = ({
         if (countryNamePrint === 'Moldova') {
           countryNamePrint = 'Republic of Moldova';
         }
-        let tooltipContentDiv = `
-          <div class="country-tooltip">
-            <div id="country-name">
-              <a href="/en/countries-regions/countries/${cn}" target="_blank"><h3>${countryNamePrint}</h3></a>
-              <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
-            </div>
-            <div class="tooltip-content">${tooltipContent}</div>
-          </div>`;
+        // let tooltipContentDiv = `
+        //   <div class="country-tooltip">
+        //     <div id="country-name">
+        //       <a href="/en/countries-regions/countries/${cn}" target="_blank"><h3>${countryNamePrint}</h3></a>
+        //       <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
+        //     </div>
+        //     <div class="tooltip-content">${tooltipContent}</div>
+        //   </div>`;
 
         // setTooltipVisibility(node, tooltipContentDiv, evt, true);
       }
