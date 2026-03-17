@@ -3,16 +3,16 @@
 [![Releases](https://img.shields.io/github/v/release/eea/volto-cca-policy)](https://github.com/eea/volto-cca-policy/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-cca-policy%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-cca-policy/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-master)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-cca-policy%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-cca-policy/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy-develop)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&branch=develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy&branch=develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&branch=develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy&branch=develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&branch=develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy&branch=develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-cca-policy&branch=develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-cca-policy&branch=develop)
 
 Climate-ADAPT Frontend Policy 
 

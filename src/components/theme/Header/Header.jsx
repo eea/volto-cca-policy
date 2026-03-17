@@ -141,7 +141,6 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               className="content"
               onClick={(evt) => evt.stopPropagation()}
               onKeyDown={(evt) => evt.stopPropagation()}
-              tabIndex={0}
               role={'presentation'}
             >
               <p>
@@ -169,7 +168,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                 aria-label={headerOpts.partnerLinks.title}
                 viewportWidth={width}
               >
-                <div className="wrapper" tabIndex={0} role={'presentation'}>
+                <div className="wrapper" role={'presentation'}>
                   {headerOpts.partnerLinks.links.map((item, index) => (
                     <Dropdown.Item key={index}>
                       <a

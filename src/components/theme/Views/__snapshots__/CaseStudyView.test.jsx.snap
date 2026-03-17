@@ -70,7 +70,7 @@ exports[`CaseStudyView should render the component 1`] = `
               className="link-mailto"
             >
               <a
-                href="mailto: climate.adapt@eea.europa.eu"
+                href="mailto:climate.adapt@eea.europa.eu"
                 rel="noreferrer"
                 target="_blank"
               >

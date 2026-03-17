@@ -95,11 +95,7 @@ export default function LanguageSwitch({ history }) {
       icon={<Image src={globeIcon} alt="language dropdown globe icon" />}
       viewportWidth={width}
     >
-      <ul
-        className="wrapper language-list"
-        role="listbox"
-        aria-label="language switcher"
-      >
+      <ul className="wrapper language-list" aria-label="language switcher">
         {renderLanguageItems(euLanguages)}
 
         <strong className="noneu-langs-label">
