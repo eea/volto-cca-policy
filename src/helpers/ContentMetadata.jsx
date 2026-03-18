@@ -461,6 +461,7 @@ function ContentMetadata(props) {
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
                 value={ipcc_category}
+                // field="cca_ipcc_category.keyword"
                 // contentType={contentTypeLabel}
               />
             ) : (
