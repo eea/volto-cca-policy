@@ -105,11 +105,12 @@ export class ObjectBrowserWidgetComponent extends Component {
     this.placeholderRef = React.createRef();
   }
   renderLabel(item) {
-    // show linkWithHash if available, otherwise @id
-    const href = item['linkWithHash'] || item['@id'];
+    // Prefer fully preserved href if present
+    const href = item.linkHref || item.linkWithHash || item['@id'];
+
     return (
       <Popup
-        key={flattenToAppURL(href)}
+        key={href}
         content={
           <div style={{ display: 'flex' }}>
             {isInternalURL(href) ? (
@@ -118,7 +119,7 @@ export class ObjectBrowserWidgetComponent extends Component {
               <Icon name={blankSVG} size="18px" />
             )}
             &nbsp;
-            {flattenToAppURL(href)}
+            {href}
           </div>
         }
         trigger={
@@ -183,6 +184,7 @@ export class ObjectBrowserWidgetComponent extends Component {
           ...this.props.selectedItemAttrs,
           // Add the required attributes for the widget to work
           '@id',
+          'linkHref', // add linkHref to the allowed attributes
           'linkWithHash', // add linkWithHash to the allowed attributes
           'title',
         ];
@@ -210,11 +212,9 @@ export class ObjectBrowserWidgetComponent extends Component {
 
   onManualLinkInput = (e) => {
     this.setState({ manualLinkInput: e.target.value });
-    if (this.validateManualLink(e.target.value)) {
-      this.setState({ validURL: true });
-    } else {
-      this.setState({ validURL: false });
-    }
+    this.setState({
+      validURL: this.validateManualLink(e.target.value),
+    });
   };
 
   validateManualLink = (url) => {
@@ -225,61 +225,68 @@ export class ObjectBrowserWidgetComponent extends Component {
     }
   };
 
+  hasQueryOrHash = (url) => {
+    return url.includes('?') || url.includes('#');
+  };
+
   /**
-   * Splits a URL into its link and hash components.
-   * @param {string} url - The URL to split.
-   * @returns {[string, string]} - An array containing the link and hash components of the URL.
+   * Returns the clean path used to resolve a Plone object,
+   * stripping query string and hash fragment.
    */
-  getHashAndLinkFromUrl = (url) => {
-    return url.split('#');
+  getLookupPathFromUrl = (url) => {
+    return url.split('?')[0].split('#')[0];
   };
 
   onSubmitManualLink = () => {
-    if (this.validateManualLink(this.state.manualLinkInput)) {
-      if (isInternalURL(this.state.manualLinkInput)) {
-        const [link, hash] = this.getHashAndLinkFromUrl(
-          this.state.manualLinkInput,
-        );
-        const relative_link = flattenToAppURL(link);
-        // convert it into an internal on if possible
-        this.props
-          .searchContent(
-            '/',
-            {
-              'path.query': relative_link,
-              'path.depth': '0',
-              sort_on: 'getObjPositionInParent',
-              metadata_fields: '_all',
-              b_size: 1000,
-            },
-            `${this.props.block}-${this.props.mode}`,
-          )
-          .then((resp) => {
-            if (resp.items?.length > 0) {
-              // if there is a hash within the url, add it to the item as linkWithHash
-              if (hash) {
-                resp.items[0]['linkWithHash'] = `${relative_link}#${hash}`;
-              }
-              this.onChange(resp.items[0]);
-            } else {
-              this.props.onChange(this.props.id, [
-                {
-                  '@id': flattenToAppURL(link),
-                  title: removeProtocol(link),
-                },
-              ]);
-            }
-          });
-      } else {
-        this.props.onChange(this.props.id, [
-          {
-            '@id': normalizeUrl(this.state.manualLinkInput),
-            title: removeProtocol(this.state.manualLinkInput),
-          },
-        ]);
-      }
-      this.setState({ validURL: true, manualLinkInput: '' });
+    if (!this.validateManualLink(this.state.manualLinkInput)) {
+      return;
     }
+
+    if (isInternalURL(this.state.manualLinkInput)) {
+      const originalUrl = this.state.manualLinkInput;
+      const lookupPath = this.getLookupPathFromUrl(originalUrl);
+      const relativeLink = flattenToAppURL(lookupPath);
+      const shouldPreserveOriginal = this.hasQueryOrHash(originalUrl);
+
+      this.props
+        .searchContent(
+          '/',
+          {
+            'path.query': relativeLink,
+            'path.depth': '0',
+            sort_on: 'getObjPositionInParent',
+            metadata_fields: '_all',
+            b_size: 1000,
+          },
+          `${this.props.block}-${this.props.mode}`,
+        )
+        .then((resp) => {
+          if (resp.items?.length > 0) {
+            const resolvedItem = {
+              ...resp.items[0],
+              ...(shouldPreserveOriginal ? { linkHref: originalUrl } : {}),
+            };
+            this.onChange(resolvedItem);
+          } else {
+            this.props.onChange(this.props.id, [
+              {
+                '@id': relativeLink,
+                ...(shouldPreserveOriginal ? { linkHref: originalUrl } : {}),
+                title: removeProtocol(originalUrl),
+              },
+            ]);
+          }
+        });
+    } else {
+      this.props.onChange(this.props.id, [
+        {
+          '@id': normalizeUrl(this.state.manualLinkInput),
+          title: removeProtocol(this.state.manualLinkInput),
+        },
+      ]);
+    }
+
+    this.setState({ validURL: true, manualLinkInput: '' });
   };
 
   onKeyDownManualLink = (e) => {
