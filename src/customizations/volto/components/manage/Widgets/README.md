@@ -1,0 +1,1 @@
+Customized ObjectBrowserWidget to preserve query strings in the manually pasted internal URL. (refs #299560)
