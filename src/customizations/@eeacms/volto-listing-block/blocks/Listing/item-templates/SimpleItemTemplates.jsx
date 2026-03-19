@@ -15,10 +15,19 @@ const getStyles = (props) => {
   return res;
 };
 
+const getItemHref = (item) => {
+  const preservedHref = item?.linkHref || item?.linkWithHash;
+  if (preservedHref) {
+    return preservedHref;
+  }
+  return item?.['@id'] ? getBaseUrl(item['@id']) : undefined;
+};
+
 const BasicItem = (props) => {
   const { item, className, isEditMode = false } = props;
   const { hasMetaType } = props.itemModel;
   const styles = getStyles(props);
+  const href = getItemHref(item);
 
   return (
     <div
@@ -30,9 +39,9 @@ const BasicItem = (props) => {
     >
       <div className="wrapper">
         <div className="slot-top">
-          <ConditionalLink to={getBaseUrl(item['@id'])} condition={!isEditMode}>
+          <ConditionalLink to={href} condition={!isEditMode && !!href}>
             <div className="listing-body">
-              <p className={'listing-header'}>
+              <p className="listing-header">
                 {item.title ? item.title : item.id}
               </p>
             </div>
