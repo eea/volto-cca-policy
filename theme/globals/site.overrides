@@ -49,6 +49,7 @@ p.has--clear--both:empty {
   .ui.items > .item > .image > img {
     width: auto;
   }
+
   .ui.items > .item > .image + .content {
     padding-left: 1rem;
   }
@@ -219,15 +220,15 @@ iframe {
 
 .image-download-btn {
   display: inline-block;
+  max-width: max-content;
   padding: 7px 23px;
   border: 2px solid #007eb1;
-  margin-top: 10px;
   border-radius: 10px;
+  margin-top: 10px;
   color: #007eb1;
   cursor: pointer;
-  opacity: 0.8;
-  max-width: max-content;
   font-weight: bold;
+  opacity: 0.8;
 }
 
 .block.metadata,
@@ -253,7 +254,7 @@ iframe {
 
 #footer {
   .theme-sites {
-    padding: 3rem 0 ;
+    padding: 3rem 0;
   }
 
   .footer-header {
@@ -273,45 +274,45 @@ iframe {
 .top.bar {
   .ui.container {
     .wrapper.language-list {
+      display: grid;
       /* display: flex; */
       /* flex-direction: column; */
       margin: 0.25rem 0;
       gap: 0.25rem;
-      white-space: pre-wrap;
-
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
       grid-auto-flow: column;
       grid-auto-rows: auto;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
       grid-template-rows: repeat(10, auto);
+      white-space: pre-wrap;
 
       .menu {
-        cursor: auto;
         position: absolute;
-        display: none;
-        outline: none;
+        z-index: 11;
         top: 100%;
+        display: none;
+        width: fit-content;
         min-width: -moz-max-content;
         min-width: max-content;
-        margin: 0;
-        padding: 0;
-        background: #fff;
-        font-size: 1em;
-        text-shadow: none;
-        text-align: left;
-        box-shadow: 0 2px 3px 0 #e6e7e8;
-        border: 1px solid #e6e7e8;
-        border-radius: 0;
-        transition: opacity 0.1s ease;
-        z-index: 11;
-        will-change: transform, opacity;
 
         max-width: 100%;
-        width: fit-content;
+        padding: 0;
+        border: 1px solid #e6e7e8;
+        border-radius: 0;
+        margin: 0;
+        background: #fff;
+        box-shadow: 0 2px 3px 0 #e6e7e8;
+        cursor: auto;
+        font-size: 1em;
+        outline: none;
+        text-align: left;
+        text-shadow: none;
+        transition: opacity 0.1s ease;
+        will-change: transform, opacity;
       }
+
       .item {
-        padding-left: 0.8em;
         min-width: 10em;
+        padding-left: 0.8em;
       }
     }
   }

@@ -20,6 +20,25 @@ import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
 import C3SIndicatorView from './components/theme/Views/C3SIndicatorView';
 import DatabaseItemView from './components/theme/Views/DatabaseItemView';
+import {
+  ADAPTATION_OPTION,
+  CASE_STUDY,
+  GUIDANCE,
+  INDICATOR,
+  INFORMATION_PORTAL,
+  ORGANISATION,
+  ACE_PROJECT,
+  PUBLICATION_REPORT,
+  TOOL,
+  VIDEO,
+  C3S_INDICATOR,
+  CCA_EVENT,
+  MISSION_SIGNATORY_PROFILE,
+  NEWS_ITEM,
+  EVENT,
+  eea_languages,
+  non_eu_langs,
+} from '@eeacms/volto-cca-policy/constants';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
@@ -40,8 +59,6 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 
 import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
-
-import { eea_languages, non_eu_langs } from './constants';
 
 import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
 // import MigrationButtons from './components/MigrationButtons';
@@ -366,21 +383,21 @@ const applyConfig = (config) => {
 
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
-    Event: EventView,
-    'cca-event': CcaEventView,
-    'eea.climateadapt.tool': DatabaseItemView,
-    'eea.climateadapt.indicator': DatabaseItemView,
-    'eea.climateadapt.organisation': DatabaseItemView,
-    'eea.climateadapt.guidancedocument': DatabaseItemView,
-    'eea.climateadapt.informationportal': DatabaseItemView,
-    'eea.climateadapt.publicationreport': DatabaseItemView,
-    'eea.climateadapt.video': DatabaseItemView,
-    'eea.climateadapt.aceproject': ProjectView,
-    'eea.climateadapt.casestudy': CaseStudyView,
-    'eea.climateadapt.c3sindicator': C3SIndicatorView,
-    'eea.climateadapt.adaptationoption': AdaptationOptionView,
-    'News Item': NewsItemView,
-    mission_signatory_profile: MissionSignatoryProfileView,
+    [EVENT]: EventView,
+    [CCA_EVENT]: CcaEventView,
+    [TOOL]: DatabaseItemView,
+    [INDICATOR]: DatabaseItemView,
+    [ORGANISATION]: DatabaseItemView,
+    [GUIDANCE]: DatabaseItemView,
+    [INFORMATION_PORTAL]: DatabaseItemView,
+    [PUBLICATION_REPORT]: DatabaseItemView,
+    [VIDEO]: DatabaseItemView,
+    [ACE_PROJECT]: ProjectView,
+    [CASE_STUDY]: CaseStudyView,
+    [C3S_INDICATOR]: C3SIndicatorView,
+    [ADAPTATION_OPTION]: AdaptationOptionView,
+    [NEWS_ITEM]: NewsItemView,
+    [MISSION_SIGNATORY_PROFILE]: MissionSignatoryProfileView,
   };
 
   config.views.layoutViewsNamesMapping.view_cca_event = 'CCA Event View';
