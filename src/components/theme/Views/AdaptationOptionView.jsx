@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import {
   HTMLField,
   ContentMetadata,
   PublishedModifiedInfo,
   BannerTitle,
   LinksList,
-  RELEVANT_SYNERGIES,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   AccordionList,
@@ -14,12 +13,13 @@ import {
   ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import { Container, Grid, Label, Image } from 'semantic-ui-react';
+import { Container, Grid, Image } from 'semantic-ui-react';
 import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
 import { UniversalLink } from '@plone/volto/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 function AdaptationOptionView(props) {
+  const intl = useIntl();
   const { content = {} } = props;
   const {
     image,
@@ -34,7 +34,6 @@ function AdaptationOptionView(props) {
     disadvantages,
     relevant_synergies,
     legal_aspects,
-    ipcc_category,
     long_description,
     success_limitations,
     implementation_time,
@@ -50,13 +49,6 @@ function AdaptationOptionView(props) {
     'metadataSection',
   );
 
-  const ipccCategories = useMemo(() => {
-    const titles = (ipcc_category ?? [])
-      .map((item) => item?.title)
-      .filter(Boolean);
-    return titles.sort().join(', ');
-  }, [ipcc_category]);
-  const relevantSynergyValue = relevant_synergies?.token;
   const desc = (description ?? '').trim();
 
   const accordions = useMemo(() => {
@@ -67,18 +59,6 @@ function AdaptationOptionView(props) {
         ),
         content: <HTMLField value={long_description} />,
       },
-
-      (ipcc_category?.length ?? 0) > 0
-        ? {
-            title: (
-              <FormattedMessage
-                id="IPCC categories"
-                defaultMessage="IPCC categories"
-              />
-            ),
-            content: <p>{ipccCategories}</p>,
-          }
-        : null,
 
       category
         ? {
@@ -175,8 +155,6 @@ function AdaptationOptionView(props) {
     return items.filter(Boolean);
   }, [
     long_description,
-    ipcc_category,
-    ipccCategories,
     category,
     stakeholder_participation,
     success_limitations,
@@ -264,8 +242,7 @@ function AdaptationOptionView(props) {
                 </>
               )}
 
-              {(relevantSynergyValue === 'Yes' ||
-                relevantSynergyValue === 'No') && (
+              {(relevant_synergies?.length ?? 0) > 0 && (
                 <>
                   <h5>
                     <FormattedMessage
@@ -273,23 +250,18 @@ function AdaptationOptionView(props) {
                       defaultMessage="Relevant synergies with mitigation"
                     />
                   </h5>
-
-                  {relevantSynergyValue === 'Yes' ? (
-                    <>
-                      <span>
-                        <FormattedMessage id="Yes" defaultMessage="Yes" />
-                      </span>
-                      <div className="synergies-list">
-                        {RELEVANT_SYNERGIES.map((item, index) => (
-                          <Label key={index}>{item}</Label>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <span>
-                      <FormattedMessage id="No" defaultMessage="No" />
-                    </span>
-                  )}
+                  <div className="synergies-list">
+                    <p>
+                      {relevant_synergies
+                        .map((item) =>
+                          intl.formatMessage({
+                            id: item.title,
+                            defaultMessage: item.title,
+                          }),
+                        )
+                        .join(', ')}
+                    </p>
+                  </div>
                 </>
               )}
 

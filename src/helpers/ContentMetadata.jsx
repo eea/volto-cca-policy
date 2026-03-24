@@ -461,6 +461,7 @@ function ContentMetadata(props) {
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
                 value={ipcc_category}
+                field="cca_ipcc_category.keyword"
                 // contentType={contentTypeLabel}
               />
             ) : (
@@ -537,6 +538,7 @@ function ContentMetadata(props) {
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
                 value={governance_level}
+                field="cca_governance_level_list.keyword"
                 // contentType={contentTypeLabel}
                 join_type="<br />"
               />
