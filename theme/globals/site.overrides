@@ -330,3 +330,89 @@ iframe {
   }
 }
 // end language dropdown
+
+#image-upload-widget-image {
+  text-align: left;
+
+  .field-file-name {
+    padding: 10px 0 !important;
+    gap: 0.5em;
+    text-align: left;
+  }
+
+  .dropzone-text {
+    margin: 0 !important;
+  }
+
+  .image-upload-widget .toolbar-wrapper {
+    text-align: center;
+  }
+
+  img {
+    margin-top: 0.5em;
+  }
+
+  .image-upload-widget-toolbar {
+    position: relative;
+    top: 0;
+    right: 0;
+
+    button.ui.button {
+      box-shadow: none;
+      outline: none;
+    }
+
+    button.ui.button:hover {
+      background-color: #edf1f2 !important;
+      outline: none;
+    }
+  }
+
+  .toolbar-inner {
+    display: flex;
+    width: fit-content !important;
+    height: 40px;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.975);
+    box-shadow:
+      0 0 8px rgba(0, 0, 0, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+
+    .ui.icon.button {
+      padding: 4px;
+      border-radius: 1px;
+      margin-left: 4px;
+      color: @brown !important;
+
+      &:hover {
+        background-color: #edf1f2 !important;
+      }
+    }
+  }
+
+  .help {
+    text-align: left;
+  }
+
+  .field-file-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  img {
+    width: 100%;
+    max-width: 200px !important;
+  }
+
+  .toolbar-wrapper {
+    justify-self: flex-start;
+  }
+}
+
+.image-upload-widget {
+  .help {
+    text-align: left;
+  }
+}

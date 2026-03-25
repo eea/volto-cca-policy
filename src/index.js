@@ -9,6 +9,7 @@ import {
   TranslationDisclaimer,
   RedirectToLogin,
   MissionSignatoryProfileView,
+  ImageWidget,
 } from '@eeacms/volto-cca-policy/components';
 import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
@@ -448,6 +449,7 @@ const applyConfig = (config) => {
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
   config.widgets.id.promotional_image = PromotionalImageWidget;
+  config.widgets.id.image = ImageWidget;
 
   if (config.widgets.views?.widget) {
     config.widgets.views.id.rast_steps = RASTWidgetView;
