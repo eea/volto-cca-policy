@@ -10,3 +10,4 @@ export { default as AccordionList } from './theme/AccordionList/AccordionList';
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';
+export { default as ImageWidget } from './theme/Widgets/ImageWidget';
