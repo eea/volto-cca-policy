@@ -50,6 +50,11 @@ msgstr "Sopeutumissektorit"
 msgid "Adaptation approaches"
 msgstr "Sopeutuminen lähestyy"
 
+#. Default: "Adaptation option"
+#: messages copy
+msgid "Adaptation option"
+msgstr "Sopeutumisvaihtoehto"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -88,11 +93,13 @@ msgid "Biogeographical regions:"
 msgstr "Biomaantieteelliset alueet:"
 
 #. Default: "Blue options"
+#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Siniset vaihtoehdot"
 
 #. Default: "Capacity building empowering and lifestyle practices"
+#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Valmiuksien kehittäminen voimaannuttamista ja elämäntapakäytäntöjä"
@@ -116,6 +123,11 @@ msgstr "Tapaustutkimuksen kuvat"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Tähän vaihtoehtoon liittyvät tapaustutkimukset:"
+
+#. Default: "Case study"
+#: messages copy
+msgid "Case study"
+msgstr "Tapaustutkimus"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -196,6 +208,7 @@ msgid "Contributor:"
 msgstr "Osallistuja:"
 
 #. Default: "Coordination cooperation and networks"
+#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinointiyhteistyö ja verkostot"
@@ -309,6 +322,7 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "itäisen kumppanuuden jäsenet ja energiayhteisön sopimuspuolet"
 
 #. Default: "Economic and Finance"
+#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Talous ja rahoitus"
@@ -329,6 +343,7 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Tutustu lisää Climate-ADAPTiin"
 
 #. Default: "Financing incentive instruments"
+#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Rahoituskannustinvälineet"
@@ -355,6 +370,11 @@ msgstr "Rahoitusohjelma"
 msgid "Funding Programme:"
 msgstr "Rahoitusohjelma:"
 
+#. Default: "Funding oportunity"
+#: messages copy
+msgid "Funding oportunity"
+msgstr "Rahoitusmahdollisuus"
+
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
@@ -376,6 +396,7 @@ msgid "Go to advanced search"
 msgstr "Siirry tarkennettuun hakuun"
 
 #. Default: "Governance and Institutional"
+#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Hallinto ja institutionaalinen"
@@ -386,14 +407,21 @@ msgid "Governance level:"
 msgstr "Hallintotaso:"
 
 #. Default: "Green options"
+#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Vihreät vaihtoehdot"
 
 #. Default: "Grey options"
+#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Harmaa vaihtoehdot"
+
+#. Default: "Guidance"
+#: messages copy
+msgid "Guidance"
+msgstr "Ohjeistus"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -406,6 +434,7 @@ msgid "Hazard Type"
 msgstr "Vaaran tyyppi"
 
 #. Default: "Health Impacts"
+#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Terveysvaikutukset"
@@ -461,6 +490,11 @@ msgstr "Sopeutumisen tärkeys ja merkityksellisyys"
 msgid "Include archived content"
 msgstr "Sisällytä arkistoitu sisältö"
 
+#. Default: "Indicator"
+#: messages copy
+msgid "Indicator"
+msgstr "Indikaattori"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -472,11 +506,18 @@ msgid "Info"
 msgstr "Tiedot"
 
 #. Default: "Information and awareness raising"
+#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Tiedotus ja tietoisuuden lisääminen"
 
+#. Default: "Information portal"
+#: messages copy
+msgid "Information portal"
+msgstr "Tietoportaali"
+
 #. Default: "Insurance and risk sharing instruments"
+#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Vakuutus- ja riskinjakovälineet"
@@ -518,6 +559,7 @@ msgid "Keywords:"
 msgstr "Avainsanat:"
 
 #. Default: "Knowledge and behavioural change"
+#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Tieto ja käyttäytymisen muutos"
@@ -605,9 +647,20 @@ msgid "Macro-Transnational region:"
 msgstr "Kansainvälinen makroalue:"
 
 #. Default: "Management and planning"
+#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Hallinto ja suunnittelu"
+
+#. Default: "Mission story"
+#: messages copy
+msgid "Mission story"
+msgstr "Missiotarina"
+
+#. Default: "Mission tool"
+#: messages copy
+msgid "Mission tool"
+msgstr "Missiotyökalu"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -620,6 +673,7 @@ msgid "National HHAP"
 msgstr "Kansallinen HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Luontopohjaiset ratkaisut ja ekosysteemipohjaiset lähestymistavat"
@@ -628,6 +682,11 @@ msgstr "Luontopohjaiset ratkaisut ja ekosysteemipohjaiset lähestymistavat"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Uusi"
+
+#. Default: "News"
+#: messages copy
+msgid "News"
+msgstr "Uutiset"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -664,6 +723,11 @@ msgstr "Observatorion panokset:"
 msgid "Observatory partner"
 msgstr "Observatorion kumppani"
 
+#. Default: "Organisation"
+#: messages copy
+msgid "Organisation"
+msgstr "Organisaatio"
+
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
@@ -690,11 +754,13 @@ msgid "Partners"
 msgstr "Yhteistyökumppanit"
 
 #. Default: "Physical and technological"
+#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fyysinen ja teknologinen"
 
 #. Default: "Policy Instruments"
+#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Politiikan välineet"
@@ -792,20 +858,28 @@ msgstr "Asiaan liittyvät asiakirjat ja esitykset"
 msgid "Replace existing file"
 msgstr "Korvaa olemassa oleva tiedosto"
 
+#. Default: "Research and knowledge project"
+#: messages copy
+msgid "Research and knowledge project"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
+#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Hae Climate-ADAPT-tietokannasta"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
+#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Hae EU:n sopeutumisoperaatiosta"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
+#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Hae observatorion resurssiluettelosta..."
@@ -903,6 +977,7 @@ msgid "Success and limiting factors"
 msgstr "Menestys ja rajoittavat tekijät"
 
 #. Default: "Technological options"
+#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Tekniset vaihtoehdot"
@@ -932,6 +1007,11 @@ msgstr "Päivämäärällä tarkoitetaan hetkeä, jolloin osallistuneet asiantun
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Tämä objekti on arkistoitu, koska sen sisältö on vanhentunut. Voit edelleen käyttää sitä perintönä."
 
+#. Default: "Tool"
+#: messages copy
+msgid "Tool"
+msgstr "Työkalu"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -950,6 +1030,7 @@ msgid "Type of item"
 msgstr "Kohteen tyyppi"
 
 #. Default: "Types"
+#: messages copy
 #: messages
 msgid "Types"
 msgstr "Tyypit"
@@ -969,6 +1050,11 @@ msgstr "Käyttäjien vaatimukset"
 msgid "Video"
 msgstr "Video"
 
+#. Default: "Videos and podcasts"
+#: messages copy
+msgid "Videos and podcasts"
+msgstr "Videot ja podcastit"
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -983,6 +1069,11 @@ msgstr "Vieraile ulkoisella verkkosivustolla"
 #: helpers/Utils
 msgid "Web"
 msgstr "Web"
+
+#. Default: "Webpage"
+#: messages copy
+msgid "Webpage"
+msgstr "Verkkosivu"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -1006,32 +1097,32 @@ msgid "Where"
 msgstr "Jossa"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "Konekäännös voi antaa sinulle peruskäsityksen sisällöstä kielellä, jota ymmärrät. Se on täysin automatisoitu eikä vaadi ihmisen toimia. Konekäännöksen laatu ja tarkkuus voivat vaihdella merkittävästi tekstistä toiseen ja eri kieliparien välillä. Euroopan komissio ei takaa tarkkuutta eikä ota vastuuta mahdollisista virheistä. Joitakin sisältöjä (kuten kuvia, videoita, tiedostoja jne.) ei välttämättä voida kääntää järjestelmän teknisten rajoitusten vuoksi."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Älä käytä eTranslation-palvelua EU-lainsäädännön kääntämiseen. Alkuperäiset versiot 24 virallisella kielellä ovat saatavilla <link_eurlex>Eur-Lexissä</link_eurlex>. Katso myös <link_languagepolicy>Europan kielipolitiikka</link_languagepolicy> ja <link_legalnotice>oikeudellinen huomautus</link_legalnotice> (sisältää tietosuojakäytännön ja tekijänoikeusilmoituksen)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Tämä käännös on luotu eTranslation-konekäännöksellä, jonka tarjoaa Euroopan komissio."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Näytä vähemmän"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Näytä lisää"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Vastuun poissulkeminen"
 

@@ -50,6 +50,11 @@ msgstr "Adaptační sektory"
 msgid "Adaptation approaches"
 msgstr "Adaptační přístupy"
 
+#. Default: "Adaptation option"
+#: messages copy
+msgid "Adaptation option"
+msgstr "Možnost adaptace"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -88,11 +93,13 @@ msgid "Biogeographical regions:"
 msgstr "Biogeografické oblasti:"
 
 #. Default: "Blue options"
+#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Modré možnosti"
 
 #. Default: "Capacity building empowering and lifestyle practices"
+#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Posilování kapacit a postupy životního stylu"
@@ -116,6 +123,11 @@ msgstr "Ilustrace případové studie"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Případové studie související s touto možností:"
+
+#. Default: "Case study"
+#: messages copy
+msgid "Case study"
+msgstr "Případová studie"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -196,6 +208,7 @@ msgid "Contributor:"
 msgstr "Přispěvatel:"
 
 #. Default: "Coordination cooperation and networks"
+#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinační spolupráce a sítě"
@@ -309,6 +322,7 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Členové východního partnerství a smluvní strany Energetického společenství"
 
 #. Default: "Economic and Finance"
+#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Ekonomika a finance"
@@ -329,6 +343,7 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Prozkoumejte více na Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
+#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Financování motivačních nástrojů"
@@ -355,6 +370,11 @@ msgstr "Program financování"
 msgid "Funding Programme:"
 msgstr "Program financování:"
 
+#. Default: "Funding oportunity"
+#: messages copy
+msgid "Funding oportunity"
+msgstr "Možnost financování"
+
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
@@ -376,6 +396,7 @@ msgid "Go to advanced search"
 msgstr "Přejděte na pokročilé vyhledávání"
 
 #. Default: "Governance and Institutional"
+#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Správa a institucionální"
@@ -386,14 +407,21 @@ msgid "Governance level:"
 msgstr "Úroveň správy:"
 
 #. Default: "Green options"
+#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Zelené možnosti"
 
 #. Default: "Grey options"
+#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Šedé možnosti"
+
+#. Default: "Guidance"
+#: messages copy
+msgid "Guidance"
+msgstr "Pokyny"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -406,6 +434,7 @@ msgid "Hazard Type"
 msgstr "Typ nebezpečí"
 
 #. Default: "Health Impacts"
+#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Zdravotní dopady"
@@ -461,6 +490,11 @@ msgstr "Význam a význam adaptace"
 msgid "Include archived content"
 msgstr "Zahrnout archivovaný obsah"
 
+#. Default: "Indicator"
+#: messages copy
+msgid "Indicator"
+msgstr "Ukazatel"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -472,11 +506,18 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
+#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Zvyšování informovanosti a povědomí"
 
+#. Default: "Information portal"
+#: messages copy
+msgid "Information portal"
+msgstr "Informační portál"
+
 #. Default: "Insurance and risk sharing instruments"
+#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Nástroje pojištění a sdílení rizik"
@@ -518,6 +559,7 @@ msgid "Keywords:"
 msgstr "klíčová slova:"
 
 #. Default: "Knowledge and behavioural change"
+#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Změna znalostí a chování"
@@ -605,9 +647,20 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-nadnárodní region:"
 
 #. Default: "Management and planning"
+#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Řízení a plánování"
+
+#. Default: "Mission story"
+#: messages copy
+msgid "Mission story"
+msgstr "Příběh mise"
+
+#. Default: "Mission tool"
+#: messages copy
+msgid "Mission tool"
+msgstr "Nástroj mise"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -620,6 +673,7 @@ msgid "National HHAP"
 msgstr "Národní HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Řešení založená na přírodě a přístupy založené na ekosystému"
@@ -628,6 +682,11 @@ msgstr "Řešení založená na přírodě a přístupy založené na ekosystém
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Nový"
+
+#. Default: "News"
+#: messages copy
+msgid "News"
+msgstr "Novinky"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -664,6 +723,11 @@ msgstr "Příspěvky observatoře:"
 msgid "Observatory partner"
 msgstr "Partner observatoře"
 
+#. Default: "Organisation"
+#: messages copy
+msgid "Organisation"
+msgstr "Organizace"
+
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
@@ -690,11 +754,13 @@ msgid "Partners"
 msgstr "Partneři"
 
 #. Default: "Physical and technological"
+#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fyzikální a technologické"
 
 #. Default: "Policy Instruments"
+#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Nástroje politiky"
@@ -792,20 +858,28 @@ msgstr "Související dokumenty a prezentace"
 msgid "Replace existing file"
 msgstr "Nahradit existující soubor"
 
+#. Default: "Research and knowledge project"
+#: messages copy
+msgid "Research and knowledge project"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
+#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Prohledejte databázi Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
+#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Hledejte misi EU pro přizpůsobení"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
+#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Prohledejte katalog zdrojů observatoře..."
@@ -903,6 +977,7 @@ msgid "Success and limiting factors"
 msgstr "Úspěch a limitující faktory"
 
 #. Default: "Technological options"
+#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Technologické možnosti"
@@ -932,6 +1007,11 @@ msgstr "Datum se vztahuje k okamžiku, kdy byla položka připravena nebo aktual
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Tento objekt byl archivován, protože jeho obsah je zastaralý. Stále k němu můžete přistupovat jako ke starší verzi."
 
+#. Default: "Tool"
+#: messages copy
+msgid "Tool"
+msgstr "Nástroj"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -950,6 +1030,7 @@ msgid "Type of item"
 msgstr "Typ položky"
 
 #. Default: "Types"
+#: messages copy
 #: messages
 msgid "Types"
 msgstr "Typy"
@@ -969,6 +1050,11 @@ msgstr "Požadavky uživatele"
 msgid "Video"
 msgstr "Video"
 
+#. Default: "Videos and podcasts"
+#: messages copy
+msgid "Videos and podcasts"
+msgstr "Videa a podcasty"
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -983,6 +1069,11 @@ msgstr "Navštivte externí web"
 #: helpers/Utils
 msgid "Web"
 msgstr "Web"
+
+#. Default: "Webpage"
+#: messages copy
+msgid "Webpage"
+msgstr "Webová stránka"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -1006,32 +1097,32 @@ msgid "Where"
 msgstr "Kde"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "Strojový překlad vám může poskytnout základní představu o obsahu v jazyce, kterému rozumíte. Je plně automatizovaný a nevyžaduje žádný lidský zásah. Kvalita a přesnost strojového překladu se může výrazně lišit v závislosti na textu a jazykových dvojicích. Evropská komise nezaručuje přesnost a nepřebírá žádnou odpovědnost za případné chyby. Některý obsah (například obrázky, videa, soubory atd.) nemusí být přeložen z důvodu technických omezení systému."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Nepoužívejte eTranslation k překladu právních předpisů EU. Autentické verze ve 24 úředních jazycích jsou k dispozici na <link_eurlex>Eur-Lex</link_eurlex>. Viz také <link_languagepolicy>jazyková politika Europy</link_languagepolicy> a <link_legalnotice>právní upozornění</link_legalnotice> (včetně zásad ochrany osobních údajů a upozornění na autorská práva)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Tento překlad generuje eTranslation, nástroj pro strojový překlad poskytovaný Evropskou komisí."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Zobrazit méně"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Zobrazit více"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Vyloučení odpovědnosti"
 
