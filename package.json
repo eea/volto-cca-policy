@@ -29,7 +29,7 @@
     "@plone-collective/volto-authomatic"
   ],
   "dependencies": {
-    "@eeacms/volto-datablocks": "7.3.5",
+    "@eeacms/volto-datablocks": "8.0.0",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-embed": "*",
