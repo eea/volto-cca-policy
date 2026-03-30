@@ -50,6 +50,11 @@ msgstr "Setturi ta' Adattament"
 msgid "Adaptation approaches"
 msgstr "Approċċi ta' adattament"
 
+#. Default: "Adaptation option"
+#: messages copy
+msgid "Adaptation option"
+msgstr "Għażla ta' adattament"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -88,11 +93,13 @@ msgid "Biogeographical regions:"
 msgstr "Reġjuni bijoġeografiċi:"
 
 #. Default: "Blue options"
+#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Għażliet blu"
 
 #. Default: "Capacity building empowering and lifestyle practices"
+#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Il-bini tal-kapaċità li jagħti s-setgħa u l-prattiki tal-istil tal-ħajja"
@@ -116,6 +123,11 @@ msgstr "Illustrazzjonijiet ta' Studju ta' Każijiet"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studji ta’ każijiet relatati ma’ din l-għażla:"
+
+#. Default: "Case study"
+#: messages copy
+msgid "Case study"
+msgstr "Studju tal-każ"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -196,6 +208,7 @@ msgid "Contributor:"
 msgstr "Kontributur:"
 
 #. Default: "Coordination cooperation and networks"
+#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Kooperazzjoni ta' koordinazzjoni u netwerks"
@@ -309,6 +322,7 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Membri tal-Parnership tal-Lvant u Partijiet Kontraenti tal-Komunità tal-Enerġija"
 
 #. Default: "Economic and Finance"
+#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Ekonomiku u Finanzi"
@@ -329,6 +343,7 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Esplora aktar dwar Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
+#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Strumenti ta' inċentiv ta' finanzjament"
@@ -355,6 +370,11 @@ msgstr "Programm ta' Finanzjament"
 msgid "Funding Programme:"
 msgstr "Programm ta' Finanzjament:"
 
+#. Default: "Funding oportunity"
+#: messages copy
+msgid "Funding oportunity"
+msgstr "Opportunità ta' finanzjament"
+
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
@@ -376,6 +396,7 @@ msgid "Go to advanced search"
 msgstr "Mur fit-tfittxija avvanzata"
 
 #. Default: "Governance and Institutional"
+#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Governanza u Istituzzjonali"
@@ -386,14 +407,21 @@ msgid "Governance level:"
 msgstr "Livell ta' governanza:"
 
 #. Default: "Green options"
+#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Għażliet ħodor"
 
 #. Default: "Grey options"
+#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Għażliet griżi"
+
+#. Default: "Guidance"
+#: messages copy
+msgid "Guidance"
+msgstr "Gwida"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -406,6 +434,7 @@ msgid "Hazard Type"
 msgstr "Tip ta' Periklu"
 
 #. Default: "Health Impacts"
+#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Impatti fuq is-Saħħa"
@@ -461,6 +490,11 @@ msgstr "Importanza u Rilevanza tal-Adattament"
 msgid "Include archived content"
 msgstr "Inkludi kontenut arkivjat"
 
+#. Default: "Indicator"
+#: messages copy
+msgid "Indicator"
+msgstr "Indikatur"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -472,11 +506,18 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
+#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informazzjoni u tqajjim ta' kuxjenza"
 
+#. Default: "Information portal"
+#: messages copy
+msgid "Information portal"
+msgstr "Portal tal-informazzjoni"
+
 #. Default: "Insurance and risk sharing instruments"
+#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Assigurazzjoni u strumenti ta' qsim tar-riskju"
@@ -518,6 +559,7 @@ msgid "Keywords:"
 msgstr "Kliem ewlieni:"
 
 #. Default: "Knowledge and behavioural change"
+#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Għarfien u bidla fl-imġieba"
@@ -605,9 +647,20 @@ msgid "Macro-Transnational region:"
 msgstr "Reġjun Makro-Transnazzjonali:"
 
 #. Default: "Management and planning"
+#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Ġestjoni u ppjanar"
+
+#. Default: "Mission story"
+#: messages copy
+msgid "Mission story"
+msgstr "Storja tal-missjoni"
+
+#. Default: "Mission tool"
+#: messages copy
+msgid "Mission tool"
+msgstr "Għodda tal-missjoni"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -620,6 +673,7 @@ msgid "National HHAP"
 msgstr "HHAP Nazzjonali"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosistema"
@@ -628,6 +682,11 @@ msgstr "Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosi
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Ġdid"
+
+#. Default: "News"
+#: messages copy
+msgid "News"
+msgstr "Aħbarijiet"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -664,6 +723,11 @@ msgstr "Kontribuzzjonijiet tal-Osservatorju:"
 msgid "Observatory partner"
 msgstr "Imsieħeb tal-osservatorju"
 
+#. Default: "Organisation"
+#: messages copy
+msgid "Organisation"
+msgstr "Organizzazzjoni"
+
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
@@ -690,11 +754,13 @@ msgid "Partners"
 msgstr "Imsieħba"
 
 #. Default: "Physical and technological"
+#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fiżiku u teknoloġiku"
 
 #. Default: "Policy Instruments"
+#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Strumenti ta' Politika"
@@ -792,20 +858,28 @@ msgstr "Dokumenti u preżentazzjonijiet relatati"
 msgid "Replace existing file"
 msgstr "Ibdel il-fajl eżistenti"
 
+#. Default: "Research and knowledge project"
+#: messages copy
+msgid "Research and knowledge project"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
+#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Fittex fid-database Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
+#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Fittex il-Missjoni tal-UE dwar l-Adattament"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
+#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Fittex fil-Katalgu tar-Riżorsi tal-Osservatorju..."
@@ -903,6 +977,7 @@ msgid "Success and limiting factors"
 msgstr "Suċċess u fatturi li jillimitaw"
 
 #. Default: "Technological options"
+#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Għażliet teknoloġiċi"
@@ -932,6 +1007,11 @@ msgstr "Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat je
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Dan l-oġġett ġie arkivjat minħabba li l-kontenut tiegħu huwa skadut. Xorta tista' taċċessah bħala wirt."
 
+#. Default: "Tool"
+#: messages copy
+msgid "Tool"
+msgstr "Għodda"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -950,6 +1030,7 @@ msgid "Type of item"
 msgstr "Tip ta' oġġett"
 
 #. Default: "Types"
+#: messages copy
 #: messages
 msgid "Types"
 msgstr "Tipi"
@@ -969,6 +1050,11 @@ msgstr "Rekwiżiti tal-utent"
 msgid "Video"
 msgstr "Video"
 
+#. Default: "Videos and podcasts"
+#: messages copy
+msgid "Videos and podcasts"
+msgstr "Vidjows u podcasts"
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -983,6 +1069,11 @@ msgstr "Żur il-websajt esterna"
 #: helpers/Utils
 msgid "Web"
 msgstr "Web"
+
+#. Default: "Webpage"
+#: messages copy
+msgid "Webpage"
+msgstr "Paġna web"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -1006,32 +1097,32 @@ msgid "Where"
 msgstr "Fejn"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "It-traduzzjoni awtomatika tista’ tagħtik idea bażika tal-kontenut f’lingwa li tifhem. Hija kompletament awtomatizzata u ma tinvolvi l-ebda intervent uman. Il-kwalità u l-eżattezza tat-traduzzjoni awtomatika jistgħu jvarjaw b’mod sinifikanti minn test għal ieħor u bejn pari ta’ lingwi differenti. Il-Kummissjoni Ewropea ma tiggarantixxix l-eżattezza u ma taċċetta l-ebda responsabbiltà għal żbalji possibbli. Xi kontenut (bħal stampi, vidjows, fajls, eċċ.) jista’ ma jiġix tradott minħabba l-limitazzjonijiet tekniċi tas-sistema."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Tużax eTranslation biex tittraduċi l-leġiżlazzjoni tal-UE. Verżjonijiet awtentiċi fl-24 lingwa uffiċjali huma disponibbli fuq <link_eurlex>Eur-Lex</link_eurlex>. Ara wkoll il-<link_languagepolicy>politika lingwistika Europa</link_languagepolicy> u l-<link_legalnotice>avviż legali</link_legalnotice> (jinkludi l-politika tal-privatezza u l-avviż tad-drittijiet tal-awtur)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Din it-traduzzjoni hija ġġenerata minn eTranslation, għodda ta’ traduzzjoni awtomatika pprovduta mill-Kummissjoni Ewropea."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Uri inqas"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Uri aktar"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Esklużjoni tar-responsabbiltà"
 
