@@ -4,7 +4,7 @@ import { vocab } from '../vocabulary';
 
 import facets from './facets';
 import views from './views';
-import { download_fields } from '../../constants';
+import { DOWNLOAD_FIELDS } from '@eeacms/volto-cca-policy/constants';
 
 const ccaConfig = {
   title: 'ClimateAdapt Main',
@@ -61,7 +61,7 @@ export default function installMainSearch(config) {
     vocab,
   };
 
-  config.searchui.ccaSearch.download_fields = download_fields;
+  config.searchui.ccaSearch.download_fields = DOWNLOAD_FIELDS;
 
   const { ccaSearch } = config.searchui;
 

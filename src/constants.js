@@ -1,4 +1,35 @@
-export const download_fields = [
+export const ADAPTATION_OPTION = 'eea.climateadapt.adaptationoption';
+export const CASE_STUDY = 'eea.climateadapt.casestudy';
+export const GUIDANCE = 'eea.climateadapt.guidancedocument';
+export const INDICATOR = 'eea.climateadapt.indicator';
+export const INFORMATION_PORTAL = 'eea.climateadapt.informationportal';
+export const ORGANISATION = 'eea.climateadapt.organisation';
+export const ACE_PROJECT = 'eea.climateadapt.aceproject';
+export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
+export const TOOL = 'eea.climateadapt.tool';
+export const VIDEO = 'eea.climateadapt.video';
+export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
+export const MISSION_SIGNATORY_PROFILE = 'mission_signatory_profile';
+export const NEWS_ITEM = 'News Item';
+export const CCA_EVENT = 'cca-event';
+export const EVENT = 'Event';
+
+export const CONTENT_TYPE_LABELS = {
+  [ADAPTATION_OPTION]: 'Adaptation option',
+  [CASE_STUDY]: 'Case study',
+  [GUIDANCE]: 'Guidance',
+  [INDICATOR]: 'Indicator',
+  [INFORMATION_PORTAL]: 'Information portal',
+  [ORGANISATION]: 'Organisation',
+  [ACE_PROJECT]: 'Research and knowledge project',
+  [PUBLICATION_REPORT]: 'Publications and reports',
+  [TOOL]: 'Tool',
+  [VIDEO]: 'Video',
+  [NEWS_ITEM]: 'News Item',
+  [EVENT]: 'Event',
+};
+
+export const DOWNLOAD_FIELDS = [
   // { field: 'cca_uid', name: 'UID' },
   { field: 'about', name: 'About' },
   { field: 'title', name: 'Title' },
@@ -11,7 +42,10 @@ export const download_fields = [
   { field: 'cca_keywords', name: 'Keywords' },
   { field: 'cca_adaptation_sectors', name: 'Sectors' },
   { field: 'cca_climate_impacts', name: 'Climate impact' },
-  { field: 'transnational_regions', name: 'Transnational regions' },
+  {
+    field: 'cca_geographic_transnational_region',
+    name: 'Transnational regions',
+  },
   { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
   { field: 'cca_funding_programme', name: 'Funding programme' },
   { field: 'cca_key_type_measure', name: 'Key type measure' },
@@ -21,7 +55,7 @@ export const download_fields = [
   { field: 'cca_partner_contributors', name: 'Observatory impacts' },
 ];
 
-export const download_mission_funding_fields = [
+export const DOWNLOAD_MISSION_FUNDING_FIELDS = [
   { field: 'about', name: 'About' },
   { field: 'title', name: 'Title' },
   { field: 'created', name: 'Creation Date' },
@@ -90,7 +124,7 @@ export const download_mission_funding_fields = [
 
 // Download fields for mission content types
 // Don't delete - might be needed later (ticket refs #295149)
-// export const download_mission_stories_fields = [
+// export const DOWNLOAD_MISSION_STORIES_FIELDS = [
 //   { field: 'about', name: 'About' },
 //   { field: 'title', name: 'Title' },
 //   { field: 'main_content', name: 'Content' },
@@ -107,7 +141,7 @@ export const download_mission_funding_fields = [
 //   { field: 'cca_keywords', name: 'Keywords' },
 // ];
 
-// export const download_mission_projects_fields = [
+// export const DOWNLOAD_MISSION_PROJECTS_FIELDS = [
 //   { field: 'about', name: 'About' },
 //   { field: 'title', name: 'Title' },
 //   { field: 'main_content', name: 'Content' },
@@ -121,7 +155,7 @@ export const download_mission_funding_fields = [
 //   { field: 'cca_geographic_countries', name: 'Countries' },
 // ];
 
-// export const download_mission_tools_fields = [
+// export const DOWNLOAD_MISSION_TOOLS_FIELDS = [
 //   { field: 'about', name: 'About' },
 //   { field: 'title', name: 'Title' },
 //   { field: 'main_content', name: 'Content' },
