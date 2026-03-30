@@ -37,7 +37,7 @@
     "@eeacms/volto-openlayers-map": "1.0.1",
     "@eeacms/volto-searchlib": "^2.1.10",
     "@eeacms/volto-slate-label": "2.0.0",
-    "@eeacms/volto-tabs-block": "10.0.0",
+    "@eeacms/volto-tabs-block": "^9.0.3",
     "@elastic/search-ui": "1.21.2",
     "@plone-collective/volto-authomatic": "2.0.1",
     "@tanstack/react-table": "8.19.3",
