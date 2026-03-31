@@ -33,14 +33,23 @@ body.cca-main-homepage {
     display: inline-block;
   }
 
-  .tab-item-link:hover {
-    .count {
-      background-color: @ccaGreenColor;
+  .tab-item-link {
+    &:hover,
+    &.active {
+      .count {
+        background-color: @ccaGreenColor;
+      }
+
+      .tab-icon,
+      .label {
+        color: @primaryColor;
+      }
     }
 
-    .tab-icon,
-    .label {
-      color: @primaryColor;
+    &.active {
+      .label {
+        font-weight: 500;
+      }
     }
   }
 
