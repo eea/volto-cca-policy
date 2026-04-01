@@ -184,6 +184,17 @@ function AdaptationOptionView(props) {
 
       <Container>
         <PortalMessage content={content} />
+
+        <div className="styled-group info-section">
+          <p>
+            <span className="small-text">
+              This page is currently under construction, so it may look a bit
+              different than you're used to. We're in the process of preparing a
+              new layout to improve your experience. A fresh new look for the
+              adaptation options pages is coming soon.
+            </span>
+          </p>
+        </div>
         <Grid>
           <Grid.Row columns={12}>
             <Grid.Column
