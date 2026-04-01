@@ -1,4 +1,5 @@
 import { compose } from 'redux';
+import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 import installECDEIndicatorsBlock from './ECDEIndicators';
 import installCaseStudyExplorerBlock from './CaseStudyExplorer';
@@ -21,13 +22,40 @@ import installContentLinks from './ContentLinks';
 import installASTNavigation from './ASTNavigation';
 import installFlourishEmbedBlock from './FlourishEmbedBlock';
 import installDataConnectedEmbed from './DataConnectedEmbedBlock';
-
-// import installCountryMapHeatIndex from './CountryMapHeatIndex';
 import installCountryMapProfile from './CountryMapProfile';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
   config.blocks.blocksConfig.layoutSettings.restricted = false;
+
+  if (config.blocks.blocksConfig.maps) {
+    config.blocks.blocksConfig.maps.restricted = false;
+  }
+
+  if (config.blocks.blocksConfig.layoutSettings) {
+    config.blocks.blocksConfig.layoutSettings.blockHasOwnFocusManagement = false;
+  }
+
+  if (config.blocks.blocksConfig.video) {
+    config.blocks.blocksConfig.video.restricted = false;
+  }
+
+  config.blocks.blocksConfig.nextCloudVideo = {
+    ...config.blocks.blocksConfig.nextCloudVideo,
+    whiteList: [
+      'https://cmshare.eea.europa.eu',
+      'https://shareit.eea.europa.eu',
+    ],
+  };
+
+  if (config.blocks.blocksConfig.countryFlag) {
+    config.blocks.blocksConfig.countryFlag = {
+      ...config.blocks.blocksConfig.countryFlag,
+      restricted: ({ properties, block }) => {
+        return blockAvailableInMission(properties, block);
+      },
+    };
+  }
 
   // override the noResultsComponent to avoid the "No results" text
   config.blocks.blocksConfig['listing'].noResultsComponent = () => null;
@@ -55,7 +83,5 @@ export default function installBlocks(config) {
     installCountryMapProfile,
     installFlourishEmbedBlock,
     installDataConnectedEmbed,
-    // installMKHMap,
-    // installCountryMapHeatIndex,
   )(config);
 }
