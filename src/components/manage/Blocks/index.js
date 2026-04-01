@@ -57,6 +57,11 @@ export default function installBlocks(config) {
     };
   }
 
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
+    maxLength: 6,
+  };
+
   // override the noResultsComponent to avoid the "No results" text
   config.blocks.blocksConfig['listing'].noResultsComponent = () => null;
 
