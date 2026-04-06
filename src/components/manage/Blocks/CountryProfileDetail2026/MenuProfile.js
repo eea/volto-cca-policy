@@ -162,11 +162,11 @@ export default function MenuProfile(props) {
           </Grid.Column>
         </Grid>
       ))}
-      <h3>Data and climate services</h3>
+      <h3 id="climate_services">Data and climate services</h3>
       <ListDiv elements={dataAndClimateServices} />
-      <h3>Monitoring and reporting</h3>
+      <h3 id="monitoring_reporting">Monitoring and reporting</h3>
       <ListDiv elements={monitoringAndReportingData} />
-      <h3 id="knowledge_portals_and_platforms">
+      <h3 id="adaptation_knowledge">
         Adaptation knowledge portals and platforms
       </h3>
       <Grid columns="12">
@@ -194,7 +194,7 @@ export default function MenuProfile(props) {
           </Grid.Column>
         ))}
       </Grid>
-      <h3>Key publications</h3>
+      <h3 id="key_publications">Key publications</h3>
       <Grid columns="12">
         {portalsPublications.map((website, index) => (
           <Grid.Column mobile={12} tablet={12} computer={6}>

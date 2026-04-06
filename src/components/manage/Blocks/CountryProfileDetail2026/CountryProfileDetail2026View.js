@@ -37,13 +37,39 @@ const STATIC_MENU_LABELS = [
 const SUBMENUS = {
   Summary: [
     { label: 'Adaptation policies', href: '#adaptation_policies' },
+    { label: 'Data and climate services', href: '#climate_services' },
+    { label: 'Monitoring and reporting', href: 'monitoring_reporting' },
     {
-      label: 'Portal platforms and key publications',
-      href: '#knowledge_portals_and_platforms',
+      label: 'Adaptation knowledge portals and platforms',
+      href: 'adaptation_knowledge',
     },
+    { label: 'Key publications', href: '#key_publications' },
     { label: 'Contact', href: '#contact' },
   ],
-  // 'Monitoring and evaluation': [{ label: 'AnotherSubMenu1', href: '#bbb1' }],
+  'Assessment and key affected sectors': [
+    { label: 'Hazard assessment', href: 'hazard_assessment' },
+    {
+      label: 'Supporting assessment information',
+      href: 'supporting_assessment',
+    },
+    { label: 'Key affected sectors', href: 'key_affected_sectors' },
+  ],
+
+  'Strategies, plans and goals': [
+    { label: 'Adaptation governance overview', href: 'overview' },
+    { label: 'Adaptation actions and measures', href: '#measures' },
+  ],
+
+  'Monitoring and evaluation': [
+    { label: 'Monitoring, reporting and evaluation', href: '#mre' },
+    { label: 'State of play', href: '#state_play' },
+    { label: 'Progress on adaptation', href: '#progress' },
+    { label: 'Steps to review', href: '#steps_review' },
+  ],
+  'Good practices, cooperation and synergies': [
+    { label: 'Cooperation and experience', href: 'cooperation' },
+    { label: 'Good practices and lessons learnt', href: '#good_practices' },
+  ],
 };
 
 export default function CountryProfileDetail2026View(props) {
@@ -185,7 +211,7 @@ export default function CountryProfileDetail2026View(props) {
           inverted: false,
           pointing: true,
           fluid: true,
-          className: 'secondary',
+          className: 'secondary sticky_top',
           tabIndex: 0,
         }}
       />

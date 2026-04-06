@@ -8,24 +8,28 @@ export default function MenuMonitorEvaluation(props) {
   let elements = {
     MRE: {
       Title: 'Monitoring, reporting and evaluation (MRE)',
+      id: 'mre',
       Description:
         "This section explains the country's formal approach to MRE, including the frameworks, legal basic and specific processes that guide implementation.",
       items: [],
     },
     StateOfPlay: {
       Title: 'State of play',
+      id: 'state_play',
       Description:
         'A summary of the current status of MRE activities, including the indicators used, data sources, ad ongoing monitoring efforts across different sectors.',
       items: [],
     },
     ProgressOnAdaptation: {
       Title: 'Progress on adaptation',
+      id: 'progress',
       Description:
         'This section highlights key achievements, outcomes from adaptation efforts',
       items: [],
     },
     StepsToReview: {
       Title: 'Steps to review',
+      id: 'steps_review',
       Description:
         "This section explains the country's formal approach to MRE, including the frameworks, legal basic and specific processes that guide implementation.",
       items: [],
@@ -137,7 +141,7 @@ export default function MenuMonitorEvaluation(props) {
         h2Counter += 1;
         return (
           <>
-            <h2>
+            <h2 id={element.id}>
               {h2Counter}. {element.Title}
             </h2>
             <div>

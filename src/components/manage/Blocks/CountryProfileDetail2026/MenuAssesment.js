@@ -203,7 +203,7 @@ export default function MenuProfile(props) {
   });
   return (
     <>
-      <h2>Hazard assessment</h2>
+      <h2 id="hazard_assessment">Hazard assessment</h2>
       <Tab
         className="secondary menu"
         panes={panesHazard}
@@ -218,9 +218,9 @@ export default function MenuProfile(props) {
           tabIndex: 0,
         }}
       />
-      <h2>Supporting assessment information</h2>
+      <h2 id="supporting_assessment">Supporting assessment information</h2>
       <AccordionList elements={elements} />
-      <h2>Key affected sectors</h2>
+      <h2 id="key_affected_sectors">Key affected sectors</h2>
       <Tab
         className="secondary menu"
         panes={panesKeys}
