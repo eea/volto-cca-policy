@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { getQueryStats } from '@eeacms/volto-cca-policy/store';
 import { getBaseUrl as getBase } from '@eeacms/volto-cca-policy/utils';
 import { getBaseUrl } from '@plone/volto/helpers';
@@ -25,7 +26,8 @@ const useStats = (path, id, data) => {
 
 export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
   const intl = useIntl();
-  const label = intl.formatMessage({ id: name });
+  const label = intl.formatMessage({ id: name, defaultMessage: name });
+
   return (
     <div className="tab-icon" title={label}>
       <div className="tab-icon-wrapper">
@@ -41,6 +43,7 @@ export const StatVoltoIcon = ({ name, value, source, showLabel = false }) => {
 export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   const intl = useIntl();
   const label = intl.formatMessage({ id: name, defaultMessage: name });
+
   return (
     <div className="tab-icon semantic-icon" title={label}>
       <div className="tab-icon-wrapper">
@@ -52,7 +55,7 @@ export const RemixIcon = ({ name, value, source, showLabel = false }) => {
   );
 };
 
-const makeSearchBlockQuery = ({ base, query, field, value }) => {
+const makeSearchBlockQuery = ({ base, query = [], field, value }) => {
   const filtered = [
     ...query.filter(({ i }) => i !== field),
     {
@@ -61,8 +64,8 @@ const makeSearchBlockQuery = ({ base, query, field, value }) => {
       v: [value],
     },
   ];
-  const params = qs.stringify({ query: JSON.stringify(filtered) });
 
+  const params = qs.stringify({ query: JSON.stringify(filtered) });
   return `${base}?${params}`;
 };
 
@@ -103,17 +106,48 @@ function remapItemTypeValue(val) {
     'Publication and report': 'Publication reference',
     'Video and podcast': 'Video',
   };
-  if (val in list) {
-    return list[val];
+
+  return list[val] || val;
+}
+
+function getActiveFilters(locationSearch) {
+  try {
+    const params = new URLSearchParams(locationSearch);
+    const queryParam = params.get('query');
+    if (!queryParam) return [];
+
+    const parsed = JSON.parse(queryParam);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
   }
-  return val;
+}
+
+function isFilterActive(activeFilters, field, value) {
+  return activeFilters.some(
+    (f) =>
+      f?.i === field &&
+      Array.isArray(f?.v) &&
+      f.v.includes(value) &&
+      f?.o === 'plone.app.querystring.operation.selection.any',
+  );
 }
 
 export default function CollectionStatsView(props) {
   const { id, data = {}, pathname = props.path } = props;
-  const field = data.aggregateField?.value;
+  const field =
+    typeof data.aggregateField === 'string'
+      ? data.aggregateField
+      : data.aggregateField?.value;
+
   const { queryParameterStyle = 'SearchBlock', query = {}, showLabel } = data;
   const base = getBase(props);
+  const location = useLocation();
+  const activeFilters = React.useMemo(
+    () => getActiveFilters(location.search),
+    [location.search],
+  );
+
   let stats = useStats(getBaseUrl(pathname), id, data);
   const intl = useIntl();
 
@@ -128,26 +162,37 @@ export default function CollectionStatsView(props) {
   const extraFilters = data?.extraFilters || [];
 
   return (
-    (field && keys.length > 0 && (
+    (field && keys.length > 0 && IconComponent && (
       <div className="collection-stats">
         {keys
           .sort((a, b) => a.localeCompare(b))
           .map((k) => {
-            let kV = remapItemTypeValue(k);
+            const kV = remapItemTypeValue(k);
+            const currentField = groupDefinition.searchFieldName || field;
+            const currentValue = intl.formatMessage({
+              id: kV,
+              defaultMessage: kV,
+            });
+
+            const href = urlHandler({
+              base,
+              query: query.query,
+              field: currentField,
+              value: currentValue,
+              extraFilters,
+            });
+
+            const active = isFilterActive(
+              activeFilters,
+              currentField,
+              currentValue,
+            );
+
             return (
               <UniversalLink
-                className="tab-item-link"
+                className={`tab-item-link ${active ? 'active' : ''}`}
                 key={k}
-                href={urlHandler({
-                  base,
-                  query: query.query,
-                  field: groupDefinition.searchFieldName || field,
-                  value: intl.formatMessage({
-                    id: kV,
-                    defaultMessage: kV,
-                  }),
-                  extraFilters,
-                })}
+                href={href}
               >
                 <IconComponent
                   name={k}

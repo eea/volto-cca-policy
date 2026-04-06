@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterAceContentView renders default variation and snapshot matches 1`] = `
+<div
+  className="block filter-acecontent-block simpleListing-view"
+>
+  <h4>
+    Test title
+  </h4>
+  <div
+    className="filters-panel simpleListing"
+  >
+    <span
+      className="filter-title"
+    >
+      Climate impact
+    </span>
+    <span
+      className="filter-title"
+    >
+      Sector
+    </span>
+    <span
+      className="filter-title"
+    >
+      Adaptation Approaches
+    </span>
+    <div
+      id="key-type-measure"
+    >
+      <span
+        className="filter-title"
+      >
+        Key Type Measure
+      </span>
+    </div>
+  </div>
+  <div
+    className="listing-wrapper"
+  >
+    <div>
+      ListingBody
+    </div>
+  </div>
+  <div>
+    Link
+  </div>
+</div>
+`;
+
+exports[`FilterAceContentView renders simpleCards variation (Grid branch) 1`] = `
+<div
+  className="block filter-acecontent-block simpleCards-view"
+>
+  <h4>
+    Cards title
+  </h4>
+  <div
+    className="ui stackable grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="three wide column"
+      >
+        <div
+          className="filters-panel simpleCards"
+        >
+          <span
+            className="filter-title"
+          >
+            Climate impact
+          </span>
+          <span
+            className="filter-title"
+          >
+            Sector
+          </span>
+          <span
+            className="filter-title"
+          >
+            Adaptation Approaches
+          </span>
+          <div
+            id="key-type-measure"
+          >
+            <span
+              className="filter-title"
+            >
+              Key Type Measure
+            </span>
+          </div>
+        </div>
+        <div>
+          Link
+        </div>
+      </div>
+      <div
+        className="eight wide column"
+      >
+        <div
+          className="listing-wrapper"
+        >
+          <div>
+            ListingBody
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

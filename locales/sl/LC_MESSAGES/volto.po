@@ -50,6 +50,11 @@ msgstr "Prilagoditveni sektorji"
 msgid "Adaptation approaches"
 msgstr "Prilagoditveni pristopi"
 
+#. Default: "Adaptation option"
+#: messages copy
+msgid "Adaptation option"
+msgstr "Možnost prilagajanja"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -88,11 +93,13 @@ msgid "Biogeographical regions:"
 msgstr "Biogeografske regije:"
 
 #. Default: "Blue options"
+#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Modre možnosti"
 
 #. Default: "Capacity building empowering and lifestyle practices"
+#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Prakse krepitve moči in življenjskega sloga"
@@ -116,6 +123,11 @@ msgstr "Ilustracije študij primerov"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Študije primerov v zvezi s to možnostjo:"
+
+#. Default: "Case study"
+#: messages copy
+msgid "Case study"
+msgstr "Študija primera"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -196,6 +208,7 @@ msgid "Contributor:"
 msgstr "Sodelavec:"
 
 #. Default: "Coordination cooperation and networks"
+#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinacijsko sodelovanje in mreže"
@@ -309,6 +322,7 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Članice vzhodnega partnerstva in pogodbenice energetske skupnosti"
 
 #. Default: "Economic and Finance"
+#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Gospodarstvo in finance"
@@ -329,6 +343,7 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Raziščite več na Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
+#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Financiranje spodbujevalnih instrumentov"
@@ -355,6 +370,11 @@ msgstr "Program financiranja"
 msgid "Funding Programme:"
 msgstr "Program financiranja:"
 
+#. Default: "Funding oportunity"
+#: messages copy
+msgid "Funding oportunity"
+msgstr "Možnost financiranja"
+
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
@@ -376,6 +396,7 @@ msgid "Go to advanced search"
 msgstr "Pojdite na napredno iskanje"
 
 #. Default: "Governance and Institutional"
+#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Upravljanje in institucionalno"
@@ -386,14 +407,21 @@ msgid "Governance level:"
 msgstr "Raven upravljanja:"
 
 #. Default: "Green options"
+#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Zelene možnosti"
 
 #. Default: "Grey options"
+#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Sive možnosti"
+
+#. Default: "Guidance"
+#: messages copy
+msgid "Guidance"
+msgstr "Smernice"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -406,6 +434,7 @@ msgid "Hazard Type"
 msgstr "Vrsta nevarnosti"
 
 #. Default: "Health Impacts"
+#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Vplivi na zdravje"
@@ -461,6 +490,11 @@ msgstr "Pomen in ustreznost prilagajanja"
 msgid "Include archived content"
 msgstr "Vključi arhivirano vsebino"
 
+#. Default: "Indicator"
+#: messages copy
+msgid "Indicator"
+msgstr "Kazalnik"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -472,11 +506,18 @@ msgid "Info"
 msgstr "Informacije"
 
 #. Default: "Information and awareness raising"
+#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informiranje in ozaveščanje"
 
+#. Default: "Information portal"
+#: messages copy
+msgid "Information portal"
+msgstr "Informacijski portal"
+
 #. Default: "Insurance and risk sharing instruments"
+#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Instrumenti zavarovanja in delitve tveganja"
@@ -518,6 +559,7 @@ msgid "Keywords:"
 msgstr "Ključne besede:"
 
 #. Default: "Knowledge and behavioural change"
+#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Sprememba znanja in vedenja"
@@ -605,9 +647,20 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-transnacionalna regija:"
 
 #. Default: "Management and planning"
+#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Upravljanje in načrtovanje"
+
+#. Default: "Mission story"
+#: messages copy
+msgid "Mission story"
+msgstr "Zgodba o misiji"
+
+#. Default: "Mission tool"
+#: messages copy
+msgid "Mission tool"
+msgstr "Orodje misije"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -620,6 +673,7 @@ msgid "National HHAP"
 msgstr "Nacionalni HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Rešitve, ki temeljijo na naravi, in pristopi, ki temeljijo na ekosistemu"
@@ -628,6 +682,11 @@ msgstr "Rešitve, ki temeljijo na naravi, in pristopi, ki temeljijo na ekosistem
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Novo"
+
+#. Default: "News"
+#: messages copy
+msgid "News"
+msgstr "Novice"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -664,6 +723,11 @@ msgstr "Prispevki observatorija:"
 msgid "Observatory partner"
 msgstr "Partner observatorija"
 
+#. Default: "Organisation"
+#: messages copy
+msgid "Organisation"
+msgstr "Organizacija"
+
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
@@ -690,11 +754,13 @@ msgid "Partners"
 msgstr "Partnerji"
 
 #. Default: "Physical and technological"
+#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fizično in tehnološko"
 
 #. Default: "Policy Instruments"
+#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Instrumenti politike"
@@ -792,20 +858,28 @@ msgstr "Povezani dokumenti in predstavitve"
 msgid "Replace existing file"
 msgstr "Zamenjajte obstoječo datoteko"
 
+#. Default: "Research and knowledge project"
+#: messages copy
+msgid "Research and knowledge project"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
+#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Preiščite bazo podatkov Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
+#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Poiščite misijo EU za prilagajanje"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
+#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Iščite v katalogu virov observatorija ..."
@@ -903,6 +977,7 @@ msgid "Success and limiting factors"
 msgstr "Uspeh in omejitveni dejavniki"
 
 #. Default: "Technological options"
+#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Tehnološke možnosti"
@@ -932,6 +1007,11 @@ msgstr "Datum se nanaša na trenutek, v katerem so sodelujoči strokovnjaki prip
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Ta objekt je bil arhiviran, ker je njegova vsebina zastarela. Še vedno lahko dostopate do njega kot dediščine."
 
+#. Default: "Tool"
+#: messages copy
+msgid "Tool"
+msgstr "Orodje"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -950,6 +1030,7 @@ msgid "Type of item"
 msgstr "Vrsta artikla"
 
 #. Default: "Types"
+#: messages copy
 #: messages
 msgid "Types"
 msgstr "Vrste"
@@ -969,6 +1050,11 @@ msgstr "Uporabniške zahteve"
 msgid "Video"
 msgstr "Video"
 
+#. Default: "Videos and podcasts"
+#: messages copy
+msgid "Videos and podcasts"
+msgstr "Videoposnetki in podkasti"
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -983,6 +1069,11 @@ msgstr "Obiščite zunanje spletno mesto"
 #: helpers/Utils
 msgid "Web"
 msgstr "Splet"
+
+#. Default: "Webpage"
+#: messages copy
+msgid "Webpage"
+msgstr "Spletna stran"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -1006,32 +1097,32 @@ msgid "Where"
 msgstr "kje"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "Strojno prevajanje vam lahko da osnovno predstavo o vsebini v jeziku, ki ga razumete. Je popolnoma avtomatizirano in ne vključuje človeškega posredovanja. Kakovost in natančnost strojnega prevajanja se lahko precej razlikujeta od besedila do besedila in med različnimi jezikovnimi pari. Evropska komisija ne jamči za točnost in ne prevzema nobene odgovornosti za morebitne napake. Nekatere vsebine (kot so slike, videoposnetki, datoteke itd.) morda ne bodo prevedene zaradi tehničnih omejitev sistema."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Za prevajanje zakonodaje EU ne uporabljajte e-prevajalca. Avtentične različice v 24 uradnih jezikih so na voljo na <link_eurlex>Eur-Lex</link_eurlex>. Glejte tudi <link_languagepolicy>jezikovno politiko Evrope</link_languagepolicy> in <link_legalnotice>pravno obvestilo</link_legalnotice> (vključuje politiko zasebnosti in obvestilo o avtorskih pravicah)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Ta prevod je ustvarjen z orodjem za strojno prevajanje eTranslation, ki ga zagotavlja Evropska komisija."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Prikaži manj"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Prikaži več"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Izključitev odgovornosti"
 

@@ -7,7 +7,7 @@ import {
   formatTextToHTML,
   extractPlanNameAndURL,
 } from '@eeacms/volto-cca-policy/utils';
-import AccordionList from '../AccordionList';
+import { AccordionList } from '@eeacms/volto-cca-policy/components';
 import NoDataReported from '../NoDataReported';
 import ItemsSection from '../ItemsSection';
 

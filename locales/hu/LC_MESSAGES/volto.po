@@ -50,6 +50,11 @@ msgstr "Alkalmazkodási ágazatok"
 msgid "Adaptation approaches"
 msgstr "Alkalmazkodási megközelítések"
 
+#. Default: "Adaptation option"
+#: messages copy
+msgid "Adaptation option"
+msgstr "Alkalmazkodási lehetőség"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -88,11 +93,13 @@ msgid "Biogeographical regions:"
 msgstr "Biogeográfiai régiók:"
 
 #. Default: "Blue options"
+#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Kék opciók"
 
 #. Default: "Capacity building empowering and lifestyle practices"
+#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Kapacitásépítési képességek és életmód gyakorlatok"
@@ -116,6 +123,11 @@ msgstr "Esettanulmány illusztrációk"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Esettanulmányok ehhez a lehetőséghez:"
+
+#. Default: "Case study"
+#: messages copy
+msgid "Case study"
+msgstr "Esettanulmány"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -196,6 +208,7 @@ msgid "Contributor:"
 msgstr "Hozzájáruló:"
 
 #. Default: "Coordination cooperation and networks"
+#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinációs együttműködés és hálózatok"
@@ -309,6 +322,7 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "a keleti partnerség tagjai és az Energiaközösség szerződő felei"
 
 #. Default: "Economic and Finance"
+#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Gazdaság és pénzügyek"
@@ -329,6 +343,7 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Fedezzen fel többet a Climate-ADAPT-ről"
 
 #. Default: "Financing incentive instruments"
+#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Finanszírozási ösztönző eszközök"
@@ -355,6 +370,11 @@ msgstr "Finanszírozási Program"
 msgid "Funding Programme:"
 msgstr "Finanszírozási program:"
 
+#. Default: "Funding oportunity"
+#: messages copy
+msgid "Funding oportunity"
+msgstr "Finanszírozási lehetőség"
+
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
@@ -376,6 +396,7 @@ msgid "Go to advanced search"
 msgstr "Ugrás a speciális kereséshez"
 
 #. Default: "Governance and Institutional"
+#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Irányítási és intézményi"
@@ -386,14 +407,21 @@ msgid "Governance level:"
 msgstr "Kormányzási szint:"
 
 #. Default: "Green options"
+#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Zöld opciók"
 
 #. Default: "Grey options"
+#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Szürke lehetőségek"
+
+#. Default: "Guidance"
+#: messages copy
+msgid "Guidance"
+msgstr "Útmutatás"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -406,6 +434,7 @@ msgid "Hazard Type"
 msgstr "Veszély típusa"
 
 #. Default: "Health Impacts"
+#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Egészségügyi hatások"
@@ -461,6 +490,11 @@ msgstr "Az alkalmazkodás jelentősége és jelentősége"
 msgid "Include archived content"
 msgstr "Tartalmazza az archivált tartalmat"
 
+#. Default: "Indicator"
+#: messages copy
+msgid "Indicator"
+msgstr "Mutató"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -472,11 +506,18 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
+#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Tájékoztatás és figyelemfelkeltés"
 
+#. Default: "Information portal"
+#: messages copy
+msgid "Information portal"
+msgstr "Információs portál"
+
 #. Default: "Insurance and risk sharing instruments"
+#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Biztosítási és kockázatmegosztási eszközök"
@@ -518,6 +559,7 @@ msgid "Keywords:"
 msgstr "Kulcsszavak:"
 
 #. Default: "Knowledge and behavioural change"
+#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Tudás és viselkedés változás"
@@ -605,9 +647,20 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-transznacionális régió:"
 
 #. Default: "Management and planning"
+#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Irányítás és tervezés"
+
+#. Default: "Mission story"
+#: messages copy
+msgid "Mission story"
+msgstr "Missziós történet"
+
+#. Default: "Mission tool"
+#: messages copy
+msgid "Mission tool"
+msgstr "Missziós eszköz"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -620,6 +673,7 @@ msgid "National HHAP"
 msgstr "Országos HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Természet alapú megoldások és ökoszisztéma alapú megközelítések"
@@ -628,6 +682,11 @@ msgstr "Természet alapú megoldások és ökoszisztéma alapú megközelítése
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Új"
+
+#. Default: "News"
+#: messages copy
+msgid "News"
+msgstr "Hírek"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -664,6 +723,11 @@ msgstr "Obszervatóriumi hozzájárulások:"
 msgid "Observatory partner"
 msgstr "Obszervatórium partnere"
 
+#. Default: "Organisation"
+#: messages copy
+msgid "Organisation"
+msgstr "Szervezet"
+
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
@@ -690,11 +754,13 @@ msgid "Partners"
 msgstr "Partnerek"
 
 #. Default: "Physical and technological"
+#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fizikai és technológiai"
 
 #. Default: "Policy Instruments"
+#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Szakpolitikai eszközök"
@@ -792,20 +858,28 @@ msgstr "Kapcsolódó dokumentumok és prezentációk"
 msgid "Replace existing file"
 msgstr "Cserélje le a meglévő fájlt"
 
+#. Default: "Research and knowledge project"
+#: messages copy
+msgid "Research and knowledge project"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
+#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Keresés a Climate-ADAPT adatbázisban"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
+#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Keresés az EU alkalmazkodással foglalkozó missziójában"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
+#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Keresés az Obszervatórium forráskatalógusában..."
@@ -903,6 +977,7 @@ msgid "Success and limiting factors"
 msgstr "Siker és korlátozó tényezők"
 
 #. Default: "Technological options"
+#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Technológiai lehetőségek"
@@ -932,6 +1007,11 @@ msgstr "A dátum arra a pillanatra vonatkozik, amikor az elemet a közreműköd�
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Ezt az objektumot archiválták, mert a tartalma elavult. Továbbra is hozzáférhet örökségként."
 
+#. Default: "Tool"
+#: messages copy
+msgid "Tool"
+msgstr "Eszköz"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -950,6 +1030,7 @@ msgid "Type of item"
 msgstr "Az elem típusa"
 
 #. Default: "Types"
+#: messages copy
 #: messages
 msgid "Types"
 msgstr "Típusok"
@@ -969,6 +1050,11 @@ msgstr "Felhasználói követelmények"
 msgid "Video"
 msgstr "Videó"
 
+#. Default: "Videos and podcasts"
+#: messages copy
+msgid "Videos and podcasts"
+msgstr "Videók és podcastok"
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -983,6 +1069,11 @@ msgstr "Látogassa meg a külső webhelyet"
 #: helpers/Utils
 msgid "Web"
 msgstr "Web"
+
+#. Default: "Webpage"
+#: messages copy
+msgid "Webpage"
+msgstr "Weboldal"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -1006,32 +1097,32 @@ msgid "Where"
 msgstr "Ahol"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "A gépi fordítás alapvető képet adhat a tartalomról egy Ön által értett nyelven. Teljesen automatizált, és nem igényel emberi beavatkozást. A gépi fordítás minősége és pontossága szövegenként és nyelvpáronként jelentősen eltérhet. Az Európai Bizottság nem garantálja a pontosságot, és nem vállal felelősséget az esetleges hibákért. Előfordulhat, hogy bizonyos tartalmak (például képek, videók, fájlok stb.) a rendszer technikai korlátai miatt nem fordíthatók le."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Ne használja az eTranslation szolgáltatást uniós jogszabályok fordítására. A 24 hivatalos nyelven hiteles változatok elérhetők az <link_eurlex>Eur-Lex</link_eurlex> weboldalon. Lásd még az <link_languagepolicy>Europa nyelvi szabályzatát</link_languagepolicy> és a <link_legalnotice>jogi nyilatkozatot</link_legalnotice> (beleértve az adatvédelmi szabályzatot és a szerzői jogi nyilatkozatot)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Ezt a fordítást az eTranslation, az Európai Bizottság által biztosított gépi fordítóeszköz készítette."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Kevesebb megjelenítése"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Mutass többet"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Felelősség kizárása"
 

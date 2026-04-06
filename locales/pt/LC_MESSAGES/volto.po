@@ -50,6 +50,11 @@ msgstr "Setores de Adaptação"
 msgid "Adaptation approaches"
 msgstr "Abordagens de adaptação"
 
+#. Default: "Adaptation option"
+#: messages copy
+msgid "Adaptation option"
+msgstr "Opção de adaptação"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -88,11 +93,13 @@ msgid "Biogeographical regions:"
 msgstr "Regiões biogeográficas:"
 
 #. Default: "Blue options"
+#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Opções azuis"
 
 #. Default: "Capacity building empowering and lifestyle practices"
+#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Capacitação, práticas de empoderamento e estilo de vida"
@@ -116,6 +123,11 @@ msgstr "Ilustrações de estudo de caso"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Estudos de caso relacionados a esta opção:"
+
+#. Default: "Case study"
+#: messages copy
+msgid "Case study"
+msgstr "Estudo de caso"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -196,6 +208,7 @@ msgid "Contributor:"
 msgstr "Contribuinte:"
 
 #. Default: "Coordination cooperation and networks"
+#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Coordenação, cooperação e redes"
@@ -309,6 +322,7 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Membros da Parceria Oriental e Partes Contratantes da Comunidade Energética"
 
 #. Default: "Economic and Finance"
+#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Economia e Finanças"
@@ -329,6 +343,7 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Explore mais em Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
+#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Instrumentos de incentivo ao financiamento"
@@ -355,6 +370,11 @@ msgstr "Programa de Financiamento"
 msgid "Funding Programme:"
 msgstr "Programa de Financiamento:"
 
+#. Default: "Funding oportunity"
+#: messages copy
+msgid "Funding oportunity"
+msgstr "Oportunidade de financiamento"
+
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
 msgid "Geographic characterisation:"
@@ -376,6 +396,7 @@ msgid "Go to advanced search"
 msgstr "Vá para a pesquisa avançada"
 
 #. Default: "Governance and Institutional"
+#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Governança e Institucional"
@@ -386,14 +407,21 @@ msgid "Governance level:"
 msgstr "Nível de governança:"
 
 #. Default: "Green options"
+#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Opções verdes"
 
 #. Default: "Grey options"
+#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Opções em cinza"
+
+#. Default: "Guidance"
+#: messages copy
+msgid "Guidance"
+msgstr "Orientação"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -406,6 +434,7 @@ msgid "Hazard Type"
 msgstr "Tipo de perigo"
 
 #. Default: "Health Impacts"
+#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Impactos na saúde"
@@ -461,6 +490,11 @@ msgstr "Importância e Relevância da Adaptação"
 msgid "Include archived content"
 msgstr "Incluir conteúdo arquivado"
 
+#. Default: "Indicator"
+#: messages copy
+msgid "Indicator"
+msgstr "Indicador"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -472,11 +506,18 @@ msgid "Info"
 msgstr "Informações"
 
 #. Default: "Information and awareness raising"
+#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informação e conscientização"
 
+#. Default: "Information portal"
+#: messages copy
+msgid "Information portal"
+msgstr "Portal de informação"
+
 #. Default: "Insurance and risk sharing instruments"
+#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Instrumentos de seguro e partilha de riscos"
@@ -518,6 +559,7 @@ msgid "Keywords:"
 msgstr "Palavras-chave:"
 
 #. Default: "Knowledge and behavioural change"
+#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Conhecimento e mudança comportamental"
@@ -605,9 +647,20 @@ msgid "Macro-Transnational region:"
 msgstr "Região Macrotransnacional:"
 
 #. Default: "Management and planning"
+#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Gestão e planejamento"
+
+#. Default: "Mission story"
+#: messages copy
+msgid "Mission story"
+msgstr "História da missão"
+
+#. Default: "Mission tool"
+#: messages copy
+msgid "Mission tool"
+msgstr "Ferramenta da missão"
 
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
@@ -620,6 +673,7 @@ msgid "National HHAP"
 msgstr "HHAP nacional"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
+#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Soluções baseadas na natureza e abordagens baseadas em ecossistemas"
@@ -628,6 +682,11 @@ msgstr "Soluções baseadas na natureza e abordagens baseadas em ecossistemas"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Novo"
+
+#. Default: "News"
+#: messages copy
+msgid "News"
+msgstr "Notícias"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -664,6 +723,11 @@ msgstr "Contribuições do Observatório:"
 msgid "Observatory partner"
 msgstr "Parceiro do observatório"
 
+#. Default: "Organisation"
+#: messages copy
+msgid "Organisation"
+msgstr "Organização"
+
 #. Default: "Organisation Documents"
 #: helpers/Utils
 msgid "Organisation Documents"
@@ -690,11 +754,13 @@ msgid "Partners"
 msgstr "Parceiros"
 
 #. Default: "Physical and technological"
+#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Físico e tecnológico"
 
 #. Default: "Policy Instruments"
+#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Instrumentos de Política"
@@ -792,20 +858,28 @@ msgstr "Documentos e apresentações relacionados"
 msgid "Replace existing file"
 msgstr "Substituir arquivo existente"
 
+#. Default: "Research and knowledge project"
+#: messages copy
+msgid "Research and knowledge project"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
+#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Pesquise na base de dados Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
+#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Pesquise a Missão da UE sobre Adaptação"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
+#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Pesquise no Catálogo de Recursos do Observatório..."
@@ -903,6 +977,7 @@ msgid "Success and limiting factors"
 msgstr "Sucesso e fatores limitantes"
 
 #. Default: "Technological options"
+#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Opções tecnológicas"
@@ -932,6 +1007,11 @@ msgstr "A data refere-se ao momento em que o item foi preparado ou atualizado po
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Este objeto foi arquivado porque seu conteúdo está desatualizado. Você ainda pode acessá-lo como legado."
 
+#. Default: "Tool"
+#: messages copy
+msgid "Tool"
+msgstr "Ferramenta"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -950,6 +1030,7 @@ msgid "Type of item"
 msgstr "Tipo de item"
 
 #. Default: "Types"
+#: messages copy
 #: messages
 msgid "Types"
 msgstr "Tipos"
@@ -969,6 +1050,11 @@ msgstr "Requisitos do usuário"
 msgid "Video"
 msgstr "Vídeo"
 
+#. Default: "Videos and podcasts"
+#: messages copy
+msgid "Videos and podcasts"
+msgstr "Vídeos e podcasts"
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -983,6 +1069,11 @@ msgstr "Visite o site externo"
 #: helpers/Utils
 msgid "Web"
 msgstr "Rede"
+
+#. Default: "Webpage"
+#: messages copy
+msgid "Webpage"
+msgstr "Página web"
 
 #. Default: "Websites"
 #: components/theme/Views/AdaptationOptionView
@@ -1006,32 +1097,32 @@ msgid "Where"
 msgstr "Onde"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "A tradução automática pode fornecer uma ideia geral do conteúdo em um idioma que você compreende. É um processo totalmente automatizado, sem intervenção humana. A qualidade e a precisão da tradução automática podem variar significativamente de um texto para outro e entre diferentes pares de idiomas. A Comissão Europeia não garante a exatidão e não se responsabiliza por eventuais erros. Alguns conteúdos (como imagens, vídeos, arquivos, etc.) podem não ser traduzidos devido às limitações técnicas do sistema."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Não utilize o eTranslation para traduzir a legislação da UE. Versões autênticas nos 24 idiomas oficiais estão disponíveis no <link_eurlex>Eur-Lex</link_eurlex>. Consulte também a <link_languagepolicy>Política linguística da Europa</link_languagepolicy> e o <link_legalnotice>Aviso legal</link_legalnotice> (que inclui a política de privacidade e o aviso de direitos autorais)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Esta tradução foi gerada pelo eTranslation, uma ferramenta de tradução automática fornecida pela Comissão Europeia."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Mostrar menos"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Mostrar mais"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Exclusão de responsabilidade"
 
