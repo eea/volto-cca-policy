@@ -414,7 +414,6 @@ const UnconnectedImageInput = (props) => {
     </div>
   );
 
-  console.log('value', value);
   return value ? (
     <div
       id="image-upload-widget-image"
