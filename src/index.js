@@ -11,7 +11,6 @@ import {
   MissionSignatoryProfileView,
   ImageWidget,
 } from '@eeacms/volto-cca-policy/components';
-import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
@@ -312,30 +311,6 @@ const applyConfig = (config) => {
     websiteTitle: 'Climate-ADAPT',
   };
 
-  // Enable volto-embed
-  if (config.blocks.blocksConfig.maps) {
-    config.blocks.blocksConfig.maps.restricted = false;
-  }
-
-  if (config.blocks.blocksConfig.layoutSettings) {
-    config.blocks.blocksConfig.layoutSettings.blockHasOwnFocusManagement = false;
-  }
-
-  // Enable video
-  if (config.blocks.blocksConfig.video) {
-    config.blocks.blocksConfig.video.restricted = false;
-  }
-
-  // Disable blocks on Mission
-  if (config.blocks.blocksConfig.countryFlag) {
-    config.blocks.blocksConfig.countryFlag = {
-      ...config.blocks.blocksConfig.countryFlag,
-      restricted: ({ properties, block }) => {
-        return blockAvailableInMission(properties, block);
-      },
-    };
-  }
-
   const { facetWidgets } = config.blocks.blocksConfig.search.extensions;
   const { rewriteOptions } = facetWidgets;
   const origin_website_blacklist = ['AdapteCCA', 'DRMKC'];
@@ -371,14 +346,6 @@ const applyConfig = (config) => {
       config.blocks.blocksConfig[block_id].group = 'site';
     }
   }
-
-  config.blocks.blocksConfig.nextCloudVideo = {
-    ...config.blocks.blocksConfig.nextCloudVideo,
-    whiteList: [
-      'https://cmshare.eea.europa.eu',
-      'https://shareit.eea.europa.eu',
-    ],
-  };
 
   config.blocks.groupBlocksOrder.push({ id: 'site', title: 'Site' });
 
