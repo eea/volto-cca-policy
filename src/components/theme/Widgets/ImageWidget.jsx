@@ -247,9 +247,7 @@ const UnconnectedImageInput = (props) => {
         }
 
         const dataUrl = await readBlobAsDataURL(blob);
-        const filenameFromUrl = getFilenameFromUrl(url, fallbackFilename);
-
-        setFileValueFromDataUrl(dataUrl, filenameFromUrl);
+        setFileValueFromDataUrl(dataUrl, fallbackFilename);
       } catch (e) {
         setError(intl.formatMessage(messages.imageImportFailed));
       } finally {

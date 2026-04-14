@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Bakgrunnsskjal fyrir viðburðinn er fáanlegt"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Aðlögunaraðferðir:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Aðlögunarupplýsingar"
 
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Aðlögunaraðferðir"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Aðlögunarvalkostur"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Aðlögunargreinar"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Viðbótarupplýsingar"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Kostir"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Líffræðileg svæði:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Bláir valkostir"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Styrkjandi getu og lífsstílshættir"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Dæmi um þennan valkost:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Tilfellarannsókn"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Framlag:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Samhæfingarsamvinna og tengslanet"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Útgáfudagur:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Lýsing"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Ókostir"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Aðilar í Austur-samstarfinu og samningsaðilar orkusamfélagsins"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Efnahags- og fjármál"
@@ -331,6 +343,11 @@ msgstr "Efnahags- og fjármál"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Hæfi til að fá styrki"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Viðburður"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Kannaðu meira á Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Fjármögnunarhvatatæki"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Fjármögnunaráætlun:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Fjármögnunartækifæri"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Farðu í ítarlega leit"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Stjórnarhættir og stofnana"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Stjórnarstig:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Grænir valkostir"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Gráir valkostir"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Leiðbeiningar"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Tegund hættu"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Heilsuáhrif"
@@ -464,11 +476,6 @@ msgstr "Hitaheilbrigðisviðvörunarkerfi (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC aðlögunarvalkostaflokkar:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC flokkar"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Hafa efni í geymslu"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Vísir"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Upplýsingar"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Upplýsinga- og vitundarvakning"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Upplýsingagátt"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Tryggingar og áhættuhlutdeild"
@@ -537,6 +542,11 @@ msgstr "Helstu samfélagskerfi"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Lykill Tegund Mál"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "Leitarorð:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Þekking og hegðunarbreyting"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Fjölþjóðlegt svæði:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Stjórn og áætlanagerð"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Sagan af verkefninu"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Verkfæri verkefnisins"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "National HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Náttúru byggðar lausnir og vistkerfi byggðar nálganir"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Nýtt"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Fréttir"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Stjörnuskoðunarfélagi"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Stofnun"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Samstarfsaðilar"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Líkamlegt og tæknilegt"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Stjórntæki"
@@ -816,20 +821,24 @@ msgstr "Útgáfuár"
 msgid "RAST step(s) of relevance"
 msgstr "RAST skref sem skipta máli"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Lesið allan texta aðlögunarvalkostsins"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Tilvísunarupplýsingar"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Tilvísunarupplýsingar"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Heimildir"
 
@@ -843,6 +852,11 @@ msgstr "Lönd svæðisins:"
 msgid "Regions"
 msgstr "Svæði"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Tengdar auðlindir"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Tengt efni:"
 msgid "Related documents and presentations"
 msgstr "Tengd skjöl og kynningar"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Viðeigandi stefnur ESB"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Viðeigandi samlegðaráhrif með mótvægisaðgerðum"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Skiptu um núverandi skrá"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Rannsóknar- og þekkingarverkefni"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Leitaðu í Climate-ADAPT gagnagrunninum"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Leitaðu að ESB sendinefndinni um aðlögun"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Leitaðu í auðlindaskrá Observatory..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Lausnir"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Árangur og takmarkandi þættir"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Tæknilegir valkostir"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Þessi hlutur hefur verið settur í geymslu vegna þess að innihald hans er úrelt. Þú getur samt fengið aðgang að því sem arfleifð."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Verkfæri"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Tegund hlutar"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Tegundir"
@@ -1039,6 +1057,11 @@ msgstr "Tegundir"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Er að uppfæra athugasemdir"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Myndband"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Myndbönd og hlaðvörp"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Vefur"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Vefsíða"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Vefsíður"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Vefsíður:"
@@ -1126,7 +1149,27 @@ msgstr "Sýna meira"
 msgid "exclusion_of_liability.title"
 msgstr "Undanþága frá ábyrgð"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Opinberlega birtar upplýsingar frá stjórnvöldum eru aðeins tiltækar á ensku"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

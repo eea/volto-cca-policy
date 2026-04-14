@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Galimas renginio foninis dokumentas"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Prisitaikymo būdai:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Adaptacijos detalės"
 
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Prisitaikymo būdai"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Prisitaikymo galimybė"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Prisitaikymo sektoriai"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Papildoma informacija"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Privalumai"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Biogeografiniai regionai:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Mėlynos parinktys"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Gebėjimų stiprinimas ir gyvenimo būdo praktika"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Su šia parinktimi susijusių atvejų tyrimai:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Atvejo tyrimas"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Bendraautoris:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinavimo bendradarbiavimas ir tinklai"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Išleidimo data:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Aprašymas"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Trūkumai"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Rytų partnerystės nariai ir Energijos bendrijos susitariančiosios šalys"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Ekonomika ir finansai"
@@ -331,6 +343,11 @@ msgstr "Ekonomika ir finansai"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Tinkamas gauti finansavimą"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Įvykis"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Sužinokite daugiau apie Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Finansavimo skatinimo priemonės"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Finansavimo programa:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Finansavimo galimybė"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Eikite į išplėstinę paiešką"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Valdymas ir institucinis"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Valdymo lygis:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Žalios parinktys"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Pilkos spalvos parinktys"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Gairės"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Pavojaus tipas"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Poveikis sveikatai"
@@ -464,11 +476,6 @@ msgstr "Perspėjimo apie žalą sveikatai sistemos (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC pritaikymo parinkčių kategorijos:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC kategorijos"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Įtraukti archyvuotą turinį"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Rodiklis"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Informacija"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informacija ir sąmoningumo didinimas"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Informacijos portalas"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Draudimas ir rizikos pasidalijimo priemonės"
@@ -537,6 +542,11 @@ msgstr "Pagrindinės bendruomenės sistemos"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Rakto tipo priemonė"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "Raktiniai žodžiai:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Žinių ir elgesio pokyčiai"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-tarptautinis regionas:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Valdymas ir planavimas"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Misijos istorija"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Misijos įrankis"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "Nacionalinis HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Gamta pagrįsti sprendimai ir ekosistemomis pagrįsti metodai"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Nauja"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Naujienos"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Observatorijos partneris"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Organizacija"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Partneriai"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fizinis ir technologinis"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Politikos priemonės"
@@ -816,20 +821,24 @@ msgstr "Leidybos metai"
 msgid "RAST step(s) of relevance"
 msgstr "RAST veiksmas (-ai)."
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Perskaitykite visą adaptacijos varianto tekstą"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Nuoroda informacija"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Nuorodinė informacija"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Nuorodos"
 
@@ -843,6 +852,11 @@ msgstr "Regiono šalys:"
 msgid "Regions"
 msgstr "Regionai"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Susiję ištekliai"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Susijęs turinys:"
 msgid "Related documents and presentations"
 msgstr "Susiję dokumentai ir pristatymai"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Susijusios ES politikos kryptys"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Atitinkama sinergija su švelninimu"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Pakeiskite esamą failą"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Tyrimų ir žinių projektas"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Ieškokite Climate-ADAPT duomenų bazėje"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Ieškokite ES prisitaikymo prie misijos"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Ieškoti Observatorijos išteklių kataloge..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Sprendimai"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Sėkmė ir ribojantys veiksniai"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Technologinės galimybės"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Šis objektas buvo suarchyvuotas, nes jo turinys pasenęs. Vis tiek galite jį pasiekti kaip palikimą."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Įrankis"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Prekės tipas"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Tipai"
@@ -1039,6 +1057,11 @@ msgstr "Tipai"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Pastabų atnaujinimas"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Vaizdo įrašas"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Vaizdo įrašai ir tinklalaidės"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Žiniatinklis"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Tinklalapis"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Tinklalapiai"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Svetainės:"
@@ -1126,7 +1149,27 @@ msgstr "Rodyti daugiau"
 msgid "exclusion_of_liability.title"
 msgstr "Atsakomybės atmetimas"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Oficialiai skelbiama vyriausybės informacija pateikiama tik anglų kalba."
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""
