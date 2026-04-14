@@ -411,9 +411,19 @@ iframe {
   }
 }
 
-.image-upload-widget {
+div.image-upload-widget {
   .help {
     text-align: left;
+  }
+
+  .image-upload-widget-image {
+    max-width: 200px !important;
+  }
+
+  .image-upload-widget-toolbar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
 }
 
