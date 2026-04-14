@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Un document de fond pentru eveniment este disponibil"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,9 +31,9 @@ msgid "Adaptation Approaches:"
 msgstr "Abordări de adaptare:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
-msgstr "Detalii de adaptare"
+msgstr "Detalii despre adaptare"
 
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Abordări de adaptare"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Opțiune de adaptare"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Sectoare de adaptare"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Detalii suplimentare"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Avantaje"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Regiunile biogeografice:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Opțiuni albastre"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Consolidarea capacităților și practici de stil de viață"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Studii de caz legate de această opțiune:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Studiu de caz"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Contributor:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Coordonare cooperare și rețele"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Data lansării:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Descriere"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Dezavantaje"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Membrii Parteneriatului Estic și părțile contractante ale Comunității Energiei"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Economic și Finanțe"
@@ -331,6 +343,11 @@ msgstr "Economic și Finanțe"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Eligibil pentru a primi finanțare"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Eveniment"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Explorați mai multe despre Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Instrumente de stimulare a finanțării"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Program de finanțare:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Oportunitate de finanțare"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Accesați căutarea avansată"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Guvernare și instituțional"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Nivel de guvernare:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Opțiuni verzi"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Opțiuni gri"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Ghid"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Tip de pericol"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Impactul asupra sănătății"
@@ -464,11 +476,6 @@ msgstr "Sisteme de avertizare pentru sănătatea căldurii (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "Categorii de opțiuni de adaptare IPCC:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "categorii IPCC"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Includeți conținut arhivat"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Indicator"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informare și conștientizare"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Portal de informații"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Instrumente de asigurare și partajare a riscurilor"
@@ -537,6 +542,11 @@ msgstr "Sisteme comunitare cheie"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Măsură tip cheie"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "Cuvinte cheie:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Cunoașterea și schimbarea comportamentală"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Regiunea macro-transnațională:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Management și planificare"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Povestea misiunii"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Instrumentul misiunii"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "HHAP național"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Soluții bazate pe natură și abordări bazate pe ecosistem"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Nou"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Știri"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Partener observator"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Organizație"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Parteneri"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fizice și tehnologice"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Instrumente de politică"
@@ -816,20 +821,24 @@ msgstr "Anul publicării"
 msgid "RAST step(s) of relevance"
 msgstr "Pasul(e) relevant(i) RAST"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Citiți textul integral al opțiunii de adaptare"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Informații de referință"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Informații de referință"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Referințe"
 
@@ -843,6 +852,11 @@ msgstr "Țările regiunii:"
 msgid "Regions"
 msgstr "Regiunile"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Resurse conexe"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Conținut înrudit:"
 msgid "Related documents and presentations"
 msgstr "Documente și prezentări aferente"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Politicile UE relevante"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Sinergii relevante cu măsurile de atenuare"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Înlocuiți fișierul existent"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Proiect de cercetare și cunoaștere"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Căutați în baza de date Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Căutați în Misiunea UE pentru adaptare"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Căutați în Catalogul de resurse ale Observatorului..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Soluții"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Succesul și factorii limitatori"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Opțiuni tehnologice"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Acest obiect a fost arhivat deoarece conținutul său este depășit. Îl puteți accesa în continuare ca moștenire."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Instrument"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Tipul articolului"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Tipuri"
@@ -1039,6 +1057,11 @@ msgstr "Tipuri"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Note de actualizare"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Video"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Videoclipuri și podcasturi"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Web"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Pagina web"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Site-uri web"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Site-uri web:"
@@ -1126,7 +1149,27 @@ msgstr "Afișează mai multe"
 msgid "exclusion_of_liability.title"
 msgstr "Excluderea răspunderii"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Informațiile guvernamentale raportate oficial sunt disponibile doar în limba engleză"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

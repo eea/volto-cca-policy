@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Az esemény háttérdokumentuma elérhető"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,9 +31,9 @@ msgid "Adaptation Approaches:"
 msgstr "Alkalmazkodási módok:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
-msgstr "Az adaptáció részletei"
+msgstr "Adaptációs részletek"
 
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Alkalmazkodási megközelítések"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Alkalmazkodási lehetőség"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Alkalmazkodási ágazatok"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "További részletek"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Előnyök"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Biogeográfiai régiók:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Kék opciók"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Kapacitásépítési képességek és életmód gyakorlatok"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Esettanulmányok ehhez a lehetőséghez:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Esettanulmány"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Hozzájáruló:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinációs együttműködés és hálózatok"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Megjelenés dátuma:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Leírás"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Hátrányok"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "a keleti partnerség tagjai és az Energiaközösség szerződő felei"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Gazdaság és pénzügyek"
@@ -331,6 +343,11 @@ msgstr "Gazdaság és pénzügyek"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Támogatásra jogosult"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Esemény"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Fedezzen fel többet a Climate-ADAPT-ről"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Finanszírozási ösztönző eszközök"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Finanszírozási program:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Finanszírozási lehetőség"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Ugrás a speciális kereséshez"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Irányítási és intézményi"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Kormányzási szint:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Zöld opciók"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Szürke lehetőségek"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Útmutatás"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Veszély típusa"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Egészségügyi hatások"
@@ -464,11 +476,6 @@ msgstr "Hőre figyelmeztető rendszerek (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC adaptációs opciók kategóriái:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC kategóriák"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Tartalmazza az archivált tartalmat"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Mutató"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Tájékoztatás és figyelemfelkeltés"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Információs portál"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Biztosítási és kockázatmegosztási eszközök"
@@ -537,6 +542,11 @@ msgstr "Kulcsfontosságú közösségi rendszerek"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Kulcstípus Mérték"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "Kulcsszavak:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Tudás és viselkedés változás"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-transznacionális régió:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Irányítás és tervezés"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Missziós történet"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Missziós eszköz"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "Országos HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Természet alapú megoldások és ökoszisztéma alapú megközelítések"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Új"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Hírek"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Obszervatórium partnere"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Szervezet"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Partnerek"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fizikai és technológiai"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Szakpolitikai eszközök"
@@ -816,20 +821,24 @@ msgstr "Megjelenés éve"
 msgid "RAST step(s) of relevance"
 msgstr "A releváns RAST lépés(ek)."
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Olvassa el az adaptációs opció teljes szövegét"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Referencia információ"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Referencia információ"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Hivatkozások"
 
@@ -843,6 +852,11 @@ msgstr "A régió országai:"
 msgid "Regions"
 msgstr "Régiók"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Kapcsolódó források"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Kapcsolódó tartalom:"
 msgid "Related documents and presentations"
 msgstr "Kapcsolódó dokumentumok és prezentációk"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Kapcsolódó uniós politikák"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Releváns szinergiák az enyhülést szolgáltokkal"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Cserélje le a meglévő fájlt"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Kutatási és tudásprojekt"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Keresés a Climate-ADAPT adatbázisban"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Keresés az EU alkalmazkodással foglalkozó missziójában"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Keresés az Obszervatórium forráskatalógusában..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Megoldások"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Siker és korlátozó tényezők"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Technológiai lehetőségek"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Ezt az objektumot archiválták, mert a tartalma elavult. Továbbra is hozzáférhet örökségként."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Eszköz"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Az elem típusa"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Típusok"
@@ -1039,6 +1057,11 @@ msgstr "Típusok"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Jegyzetek frissítése"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Videó"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Videók és podcastok"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Web"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Weboldal"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Weboldalak"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Weboldalak:"
@@ -1126,7 +1149,27 @@ msgstr "Mutass többet"
 msgid "exclusion_of_liability.title"
 msgstr "Felelősség kizárása"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "A hivatalos kormányzati információk csak angol nyelven érhetők el."
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

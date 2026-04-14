@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "K dispozici je podkladový dokument akce"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,9 +31,9 @@ msgid "Adaptation Approaches:"
 msgstr "Adaptační přístupy:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
-msgstr "Podrobnosti o adaptaci"
+msgstr "Detaily adaptace"
 
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Adaptační přístupy"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Možnost adaptace"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Adaptační sektory"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Další podrobnosti"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Výhody"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Biogeografické oblasti:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Modré možnosti"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Posilování kapacit a postupy životního stylu"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Případové studie související s touto možností:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Případová studie"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Přispěvatel:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Koordinační spolupráce a sítě"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Datum vydání:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Popis"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Nevýhody"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Členové východního partnerství a smluvní strany Energetického společenství"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Ekonomika a finance"
@@ -331,6 +343,11 @@ msgstr "Ekonomika a finance"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Způsobilé k získání finančních prostředků"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Událost"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Prozkoumejte více na Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Financování motivačních nástrojů"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Program financování:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Možnost financování"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Přejděte na pokročilé vyhledávání"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Správa a institucionální"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Úroveň správy:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Zelené možnosti"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Šedé možnosti"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Pokyny"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Typ nebezpečí"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Zdravotní dopady"
@@ -464,11 +476,6 @@ msgstr "Tepelné varovné systémy (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "Kategorie možností přizpůsobení IPCC:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "kategorie IPCC"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Zahrnout archivovaný obsah"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Ukazatel"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Zvyšování informovanosti a povědomí"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Informační portál"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Nástroje pojištění a sdílení rizik"
@@ -537,6 +542,11 @@ msgstr "Klíčové komunitní systémy"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Měření typu klíče"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "klíčová slova:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Změna znalostí a chování"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-nadnárodní region:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Řízení a plánování"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Příběh mise"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Nástroj mise"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "Národní HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Řešení založená na přírodě a přístupy založené na ekosystému"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Nový"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Novinky"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Partner observatoře"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Organizace"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Partneři"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fyzikální a technologické"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Nástroje politiky"
@@ -816,20 +821,24 @@ msgstr "Rok vydání"
 msgid "RAST step(s) of relevance"
 msgstr "Relevantní krok(y) RAST"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Přečtěte si celý text možnosti adaptace"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Referenční informace"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Referenční informace"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Reference"
 
@@ -843,6 +852,11 @@ msgstr "Země regionu:"
 msgid "Regions"
 msgstr "Regiony"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Související zdroje"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Související obsah:"
 msgid "Related documents and presentations"
 msgstr "Související dokumenty a prezentace"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Relevantní politiky EU"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Relevantní synergie se zmírňováním dopadů"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Nahradit existující soubor"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Výzkumný a znalostní projekt"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Prohledejte databázi Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Hledejte misi EU pro přizpůsobení"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Prohledejte katalog zdrojů observatoře..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Řešení"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Úspěch a limitující faktory"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Technologické možnosti"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Tento objekt byl archivován, protože jeho obsah je zastaralý. Stále k němu můžete přistupovat jako ke starší verzi."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Nástroj"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Typ položky"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Typy"
@@ -1039,6 +1057,11 @@ msgstr "Typy"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Aktualizace poznámek"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Video"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Videa a podcasty"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Web"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Webová stránka"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "webové stránky"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "webové stránky:"
@@ -1126,7 +1149,27 @@ msgstr "Zobrazit více"
 msgid "exclusion_of_liability.title"
 msgstr "Vyloučení odpovědnosti"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Oficiálně hlášené vládní informace jsou k dispozici pouze v angličtině."
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

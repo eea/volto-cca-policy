@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Cur Chuige Oiriúnaithe:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Sonraí Oiriúnaithe"
 
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Cur chuige oiriúnaithe"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Rogha oiriúnaithe"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Earnálacha oiriúnú"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Sonraí Breise"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Buntáistí"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Réigiúin bhithgheografacha:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Roghanna gorm"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Tógáil cumais cumasú agus cleachtais stíl mhaireachtála"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Cás-staidéir a bhaineann leis an rogha seo:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Staidéar cáis"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Ranníocóir:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Comhar comhordaithe agus líonraí"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Dáta eisiúna:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Cur síos"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Míbhuntáistí"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Baill Chomhpháirtíocht an Oirthir agus Páirtithe Conarthacha an Chomhphobail Fuinnimh"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Eacnamaíoch agus Airgeadais"
@@ -331,6 +343,11 @@ msgstr "Eacnamaíoch agus Airgeadais"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Incháilithe chun maoiniú a fháil"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Imeacht"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Ionstraimí dreasachta maoinithe"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Clár Maoinithe:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Deis maoinithe"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Téigh chuig cuardach casta"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Rialachas agus Institiúideach"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Leibhéal rialachais:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Roghanna glasa"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Roghanna liath"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Treoir"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Cineál Guaise"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Tionchair Sláinte"
@@ -464,11 +476,6 @@ msgstr "Córais rabhaidh sláinte teasa (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "Catagóirí roghanna oiriúnaithe IPCC:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "Catagóirí IPCC"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Cuir ábhar cartlainne san áireamh"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Táscaire"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Eolas"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Ardú faisnéise agus feasachta"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Tairseach faisnéise"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Ionstraimí árachais agus comhroinnte riosca"
@@ -537,6 +542,11 @@ msgstr "Príomhchórais Phobail"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Beart Cineál Eochair"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "Eochairfhocail:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Athrú eolais agus iompraíochta"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Réigiún Macra-Trasnáisiúnta:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Bainistíocht agus pleanáil"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Scéal misin"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Uirlis misin"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "HHAP Náisiúnta"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Réitigh Dúlra agus cuir chuige atá bunaithe ar an Éiceachóras"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Nua"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Nuacht"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Comhpháirtí réadlainne"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Eagraíocht"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Comhpháirtithe"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fisiciúil agus teicneolaíochta"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Ionstraimí Beartais"
@@ -816,20 +821,24 @@ msgstr "Bliain foilsitheoireachta"
 msgid "RAST step(s) of relevance"
 msgstr "Céim(eanna) RAST ábhartha"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Léigh téacs iomlán an rogha oiriúnaithe"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Eolas Tagartha"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Eolas tagartha"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Tagairtí"
 
@@ -843,6 +852,11 @@ msgstr "Tíortha an Réigiúin:"
 msgid "Regions"
 msgstr "Réigiúin"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Acmhainní Gaolmhara"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Ábhar gaolmhar:"
 msgid "Related documents and presentations"
 msgstr "Doiciméid ghaolmhara agus cur i láthair"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Beartais ábhartha an AE"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Sinéirgí ábhartha le maolú"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Ionadaigh an comhad atá ann cheana"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Tionscadal taighde agus eolais"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Cuardaigh an bunachar sonraí Climate-ADAPT"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Cuardaigh Misean an AE um Oiriúnú"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Cuardaigh an Chatalóg Acmhainní Réadlann..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Réitigh"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Fachtóirí ratha agus teorannacha"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Roghanna teicneolaíochta"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Cuireadh an réad seo sa chartlann toisc go bhfuil a inneachar as dáta. Is féidir leat rochtain a fháil air mar oidhreacht fós."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Uirlis"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Cineál míre"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Cineálacha"
@@ -1039,6 +1057,11 @@ msgstr "Cineálacha"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Nótaí á nuashonrú"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Físeán"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Físeáin agus podchraoltaí"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Gréasán"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Leathanach gréasáin"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Láithreáin Ghréasáin"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Láithreáin Ghréasáin:"
@@ -1126,7 +1149,27 @@ msgstr "Taispeáin níos mó"
 msgid "exclusion_of_liability.title"
 msgstr "Eisiamh dliteanais"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Níl faisnéis rialtais a tuairiscíodh go hoifigiúil ar fáil ach i mBéarla"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Et bakgrunnsdokument for arrangementet er tilgjengelig"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Tilpasningsmetoder:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Tilpasningsdetaljer"
 
@@ -51,7 +52,7 @@ msgid "Adaptation approaches"
 msgstr "Tilpasningstilnærminger"
 
 #. Default: "Adaptation option"
-#: messages copy
+#: messages
 msgid "Adaptation option"
 msgstr "Tilpassingsalternativ"
 
@@ -67,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Tilpasningssektorer"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Ytterligere detaljer"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Fordeler"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -93,13 +98,16 @@ msgid "Biogeographical regions:"
 msgstr "Biogeografiske regioner:"
 
 #. Default: "Blue options"
-#: messages copy
 #: messages
 msgid "Blue options"
 msgstr "Blauwe opties"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
-#: messages copy
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
 msgstr "Capaciteitsopbouw, empowerment en levensstijlpraktijken"
@@ -125,7 +133,7 @@ msgid "Case studies related to this option:"
 msgstr "Kasusstudier relatert til dette alternativet:"
 
 #. Default: "Case study"
-#: messages copy
+#: messages
 msgid "Case study"
 msgstr "Casestudie"
 
@@ -208,7 +216,6 @@ msgid "Contributor:"
 msgstr "Bidragsyter:"
 
 #. Default: "Coordination cooperation and networks"
-#: messages copy
 #: messages
 msgid "Coordination cooperation and networks"
 msgstr "Coördinatie, samenwerking en netwerken"
@@ -247,9 +254,15 @@ msgid "Date of release:"
 msgstr "Utgivelsesdato:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Beskrivelse"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Ulemper"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -322,7 +335,6 @@ msgid "Eastern Parnership Members and Energy Community Contracting Parties"
 msgstr "Leden van het Oostelijk Partnerschap en contractpartijen van de Energiegemeenschap"
 
 #. Default: "Economic and Finance"
-#: messages copy
 #: messages
 msgid "Economic and Finance"
 msgstr "Economie en Financiën"
@@ -331,6 +343,11 @@ msgstr "Economie en Financiën"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Kvalifisert til å motta midler"
+
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Hendelse"
 
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
@@ -343,7 +360,6 @@ msgid "Explore more on Climate-ADAPT"
 msgstr "Utforsk mer på Climate-ADAPT"
 
 #. Default: "Financing incentive instruments"
-#: messages copy
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Financiering van stimuleringsinstrumenten"
@@ -371,7 +387,7 @@ msgid "Funding Programme:"
 msgstr "Finansieringsprogram:"
 
 #. Default: "Funding oportunity"
-#: messages copy
+#: messages
 msgid "Funding oportunity"
 msgstr "Finansieringsmulegheit"
 
@@ -396,7 +412,6 @@ msgid "Go to advanced search"
 msgstr "Gå til avansert søk"
 
 #. Default: "Governance and Institutional"
-#: messages copy
 #: messages
 msgid "Governance and Institutional"
 msgstr "Bestuur en institutionele"
@@ -407,19 +422,17 @@ msgid "Governance level:"
 msgstr "Styringsnivå:"
 
 #. Default: "Green options"
-#: messages copy
 #: messages
 msgid "Green options"
 msgstr "Groene opties"
 
 #. Default: "Grey options"
-#: messages copy
 #: messages
 msgid "Grey options"
 msgstr "Grijze opties"
 
 #. Default: "Guidance"
-#: messages copy
+#: messages
 msgid "Guidance"
 msgstr "Rettleiing"
 
@@ -434,7 +447,6 @@ msgid "Hazard Type"
 msgstr "Faretype"
 
 #. Default: "Health Impacts"
-#: messages copy
 #: messages
 msgid "Health Impacts"
 msgstr "Gezondheidseffecten"
@@ -464,11 +476,6 @@ msgstr "Varmehelsevarslingssystemer (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC-tilpasningsalternativkategorier:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC-kategorier"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -491,7 +498,7 @@ msgid "Include archived content"
 msgstr "Ta med arkivert innhold"
 
 #. Default: "Indicator"
-#: messages copy
+#: messages
 msgid "Indicator"
 msgstr "Indikator"
 
@@ -506,18 +513,16 @@ msgid "Info"
 msgstr "Info"
 
 #. Default: "Information and awareness raising"
-#: messages copy
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informatie en bewustwording"
 
 #. Default: "Information portal"
-#: messages copy
+#: messages
 msgid "Information portal"
 msgstr "Informasjonsportal"
 
 #. Default: "Insurance and risk sharing instruments"
-#: messages copy
 #: messages
 msgid "Insurance and risk sharing instruments"
 msgstr "Verzekerings- en risicodelingsinstrumenten"
@@ -537,6 +542,11 @@ msgstr "Nøkkelsamfunnssystemer"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Nøkkeltype Mål"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -559,7 +569,6 @@ msgid "Keywords:"
 msgstr "Nøkkelord:"
 
 #. Default: "Knowledge and behavioural change"
-#: messages copy
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Kennis en gedragsverandering"
@@ -647,18 +656,17 @@ msgid "Macro-Transnational region:"
 msgstr "Makro-transnasjonal region:"
 
 #. Default: "Management and planning"
-#: messages copy
 #: messages
 msgid "Management and planning"
 msgstr "Management en planning"
 
 #. Default: "Mission story"
-#: messages copy
+#: messages
 msgid "Mission story"
 msgstr "Misjonshistorie"
 
 #. Default: "Mission tool"
-#: messages copy
+#: messages
 msgid "Mission tool"
 msgstr "Misjonsverktøy"
 
@@ -673,7 +681,6 @@ msgid "National HHAP"
 msgstr "Nasjonal HHAP"
 
 #. Default: "Nature based Solutions and Ecosystem based approaches"
-#: messages copy
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen"
@@ -684,7 +691,7 @@ msgid "New"
 msgstr "Ny"
 
 #. Default: "News"
-#: messages copy
+#: messages
 msgid "News"
 msgstr "Nyhende"
 
@@ -724,7 +731,7 @@ msgid "Observatory partner"
 msgstr "Observatoriepartner"
 
 #. Default: "Organisation"
-#: messages copy
+#: messages
 msgid "Organisation"
 msgstr "Organisasjon"
 
@@ -754,13 +761,11 @@ msgid "Partners"
 msgstr "Partnere"
 
 #. Default: "Physical and technological"
-#: messages copy
 #: messages
 msgid "Physical and technological"
 msgstr "Fysiek en technologisch"
 
 #. Default: "Policy Instruments"
-#: messages copy
 #: messages
 msgid "Policy Instruments"
 msgstr "Beleidsinstrumenten"
@@ -816,20 +821,24 @@ msgstr "Publiseringsår"
 msgid "RAST step(s) of relevance"
 msgstr "RAST trinn(er) av relevans"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Les hele teksten til tilpasningsalternativet"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Referanseinformasjon"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Referanseinformasjon"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Referanser"
 
@@ -843,6 +852,11 @@ msgstr "Regionens land:"
 msgid "Regions"
 msgstr "Regioner"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Relaterte ressurser"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -853,33 +867,40 @@ msgstr "Relatert innhold:"
 msgid "Related documents and presentations"
 msgstr "Relaterte dokumenter og presentasjoner"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Relevant EU-politikk"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Relevante synergier med avbøtende tiltak"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Erstatt eksisterende fil"
 
 #. Default: "Research and knowledge project"
-#: messages copy
+#: messages
 msgid "Research and knowledge project"
-msgstr ""
+msgstr "Forsknings- og kunnskapsprosjekt"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
-#: messages copy
 #: messages
 msgid "Search the Climate-ADAPT database"
 msgstr "Søk i Climate-ADAPT-databasen"
 
 #. Default: "Search the EU Mission on Adaptation"
 #: index
-#: messages copy
 #: messages
 msgid "Search the EU Mission on Adaptation"
 msgstr "Søk i EUs misjon for tilpasning"
 
 #. Default: "Search the Observatory Resource Catalogue..."
 #: index
-#: messages copy
 #: messages
 msgid "Search the Observatory Resource Catalogue..."
 msgstr "Søk i Observatory Resource Catalogue..."
@@ -937,7 +958,6 @@ msgid "Solutions"
 msgstr "Løsninger"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -977,7 +997,6 @@ msgid "Success and limiting factors"
 msgstr "Suksess og begrensende faktorer"
 
 #. Default: "Technological options"
-#: messages copy
 #: messages
 msgid "Technological options"
 msgstr "Technologische opties"
@@ -1008,7 +1027,7 @@ msgid "This object has been archived because its content is outdated. You can st
 msgstr "Dit object is gearchiveerd omdat de inhoud ervan verouderd is. U kunt het nog steeds als verouderd object raadplegen."
 
 #. Default: "Tool"
-#: messages copy
+#: messages
 msgid "Tool"
 msgstr "Verktøy"
 
@@ -1030,7 +1049,6 @@ msgid "Type of item"
 msgstr "Type vare"
 
 #. Default: "Types"
-#: messages copy
 #: messages
 msgid "Types"
 msgstr "Typen"
@@ -1039,6 +1057,11 @@ msgstr "Typen"
 #: components/theme/Views/CaseStudyView
 msgid "Updating notes"
 msgstr "Oppdatering av notater"
+
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1051,7 +1074,7 @@ msgid "Video"
 msgstr "Video"
 
 #. Default: "Videos and podcasts"
-#: messages copy
+#: messages
 msgid "Videos and podcasts"
 msgstr "Videoar og podkastar"
 
@@ -1071,17 +1094,17 @@ msgid "Web"
 msgstr "Web"
 
 #. Default: "Webpage"
-#: messages copy
+#: messages
 msgid "Webpage"
 msgstr "Nettside"
 
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Nettsteder"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Nettsteder:"
@@ -1126,7 +1149,27 @@ msgstr "Vis mer"
 msgid "exclusion_of_liability.title"
 msgstr "Ansvarsfraskrivelse"
 
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
+
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Offisielt rapportert myndighetsinformasjon er kun tilgjengelig på engelsk"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""
