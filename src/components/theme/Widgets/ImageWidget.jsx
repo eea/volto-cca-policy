@@ -484,7 +484,7 @@ const UnconnectedImageInput = (props) => {
 export const ImageInput = withObjectBrowser(UnconnectedImageInput);
 
 const ImageUploadWidget = (props) => {
-  if (props.block) {
+  if (props.block && props.widget === 'attachedimage') {
     let sanitizedProps = { ...props };
     if (typeof props.value === 'object' && props.value !== null) {
       if (props.value.download) {
