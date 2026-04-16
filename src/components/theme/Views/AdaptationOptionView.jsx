@@ -273,7 +273,7 @@ function AdaptationOptionView(props) {
                       .filter((it) => it?.url && it?.title)
                       .map((it, index, arr) => (
                         <React.Fragment key={it.id || it.url}>
-                          <UniversalLink href={it.url} openInNewTab>
+                          <UniversalLink href={it.url}>
                             {it.title}
                           </UniversalLink>
                           {index < arr.length - 1 && ', '}
