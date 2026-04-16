@@ -441,3 +441,15 @@ div.image-upload-widget {
     font-size: 15px !important;
   }
 }
+
+#field-relevant_eu_policies {
+  .react-select__menu {
+    .ReactVirtualized__Grid {
+      width: 100% !important;
+    }
+
+    .ReactVirtualized__Grid__innerScrollContainer {
+      max-width: none !important;
+    }
+  }
+}
