@@ -1071,7 +1071,7 @@ msgstr "Vartotojo reikalavimai"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Vaizdo įrašas"
+msgstr "Vaizdo įrašai ir tinklalaidės"
 
 #. Default: "Videos and podcasts"
 #: messages

@@ -1071,7 +1071,7 @@ msgstr "Requisitos del usuario"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Vídeos y pódcasts"
 
 #. Default: "Videos and podcasts"
 #: messages
