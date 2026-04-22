@@ -411,9 +411,19 @@ iframe {
   }
 }
 
-.image-upload-widget {
+div.image-upload-widget {
   .help {
     text-align: left;
+  }
+
+  .image-upload-widget-image {
+    max-width: 200px !important;
+  }
+
+  .image-upload-widget-toolbar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
 }
 
@@ -421,13 +431,25 @@ iframe {
   padding: 0.7rem;
   margin-top: 0 !important;
   margin-bottom: 1.5em !important;
-  background-color: #f9f9f9;
+  background-color: @ccaYellowColor;
   box-shadow:
-    0px 0px 0px 1px #d2d2d2 inset,
+    0px 0px 0px 1px #e1d098 inset,
     0px 0px 0px 0px rgba(0, 0, 0, 0);
 
   p,
   p .small-text {
     font-size: 15px !important;
+  }
+}
+
+#field-relevant_eu_policies {
+  .react-select__menu {
+    .ReactVirtualized__Grid {
+      width: 100% !important;
+    }
+
+    .ReactVirtualized__Grid__innerScrollContainer {
+      max-width: none !important;
+    }
   }
 }

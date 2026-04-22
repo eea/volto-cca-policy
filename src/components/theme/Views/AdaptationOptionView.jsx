@@ -11,12 +11,64 @@ import {
   AccordionList,
   PortalMessage,
   ShareInfoButton,
+  ImageGallery,
 } from '@eeacms/volto-cca-policy/components';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import { Container, Grid, Image } from 'semantic-ui-react';
+import { Container, Grid, Image, Icon } from 'semantic-ui-react';
 import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
 import { UniversalLink } from '@plone/volto/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
+
+const PhotoGallery = ({ content }) => {
+  const { cca_adaptation_gallery } = content;
+
+  const [open, setOpen] = React.useState(false);
+  const [slideIndex, setSlideIndex] = React.useState(0);
+
+  const handleTitleClick = () => {
+    setSlideIndex(0);
+    setOpen(true);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleTitleClick();
+    }
+  };
+
+  return (
+    <>
+      {cca_adaptation_gallery && cca_adaptation_gallery.length > 0 && (
+        <div className="case-study-gallery">
+          <div
+            className="gallery-title"
+            tabIndex={0}
+            role="button"
+            onClick={handleTitleClick}
+            onKeyDown={handleKeyDown}
+          >
+            <span>
+              <FormattedMessage
+                id="Adaptation Option illustrations"
+                defaultMessage="Adaptation Option illustrations"
+              />
+            </span>
+            <span> ({cca_adaptation_gallery.length}) </span>
+            <Icon className="ri-image-fill" />
+          </div>
+          <ImageGallery
+            items={cca_adaptation_gallery}
+            propOpen={open}
+            setPropOpen={setOpen}
+            propSlideIndex={slideIndex}
+            setPropSlideIndex={setSlideIndex}
+          />
+        </div>
+      )}
+    </>
+  );
+};
 
 function AdaptationOptionView(props) {
   const intl = useIntl();
@@ -39,6 +91,7 @@ function AdaptationOptionView(props) {
     implementation_time,
     related_case_studies,
     show_related_resources,
+    cca_adaptation_gallery,
     stakeholder_participation,
     relevant_eu_policies_items,
   } = content;
@@ -220,7 +273,7 @@ function AdaptationOptionView(props) {
                       .filter((it) => it?.url && it?.title)
                       .map((it, index, arr) => (
                         <React.Fragment key={it.id || it.url}>
-                          <UniversalLink href={it.url} openInNewTab>
+                          <UniversalLink href={it.url}>
                             {it.title}
                           </UniversalLink>
                           {index < arr.length - 1 && ', '}
@@ -293,12 +346,14 @@ function AdaptationOptionView(props) {
               computer={4}
               className="col-right"
             >
-              {image && (
-                <Image
-                  src={content.image?.scales?.large?.download}
-                  className="preview-image"
-                />
-              )}
+              <PhotoGallery {...props} />
+              {!cca_adaptation_gallery?.length &&
+                image?.scales?.large?.download && (
+                  <Image
+                    src={image?.scales?.large?.download}
+                    className="preview-image"
+                  />
+                )}
               <ContentMetadata
                 {...props}
                 related_case_studies={related_case_studies}

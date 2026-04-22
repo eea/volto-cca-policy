@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import loadable from '@loadable/component';
 import useLinkEditor from '@plone/volto/components/manage/AnchorPlugin/useLinkEditor';
 import withObjectBrowser from '@plone/volto/components/manage/Sidebar/ObjectBrowser';
+import NativeImageWidget from '@plone/volto/components/manage/Widgets/ImageWidget';
 
 import {
   flattenToAppURL,
@@ -247,9 +248,7 @@ const UnconnectedImageInput = (props) => {
         }
 
         const dataUrl = await readBlobAsDataURL(blob);
-        const filenameFromUrl = getFilenameFromUrl(url, fallbackFilename);
-
-        setFileValueFromDataUrl(dataUrl, filenameFromUrl);
+        setFileValueFromDataUrl(dataUrl, fallbackFilename);
       } catch (e) {
         setError(intl.formatMessage(messages.imageImportFailed));
       } finally {
@@ -484,10 +483,28 @@ const UnconnectedImageInput = (props) => {
 
 export const ImageInput = withObjectBrowser(UnconnectedImageInput);
 
-const ImageUploadWidget = (props) => (
-  <FormFieldWrapper {...props} className="image-upload-widget">
-    <ImageInput {...props} />
-  </FormFieldWrapper>
-);
+const ImageUploadWidget = (props) => {
+  if (props.block && props.widget === 'attachedimage') {
+    let sanitizedProps = { ...props };
+    if (typeof props.value === 'object' && props.value !== null) {
+      if (props.value.download) {
+        // Plone image metadata object -> extract base URL
+        sanitizedProps.value = props.value.download.split('/@@images/')[0];
+      } else if (props.value['@id']) {
+        // Linked object reference
+        sanitizedProps.value = props.value['@id'];
+      } else {
+        // Base64 dict payload -> clear to prevent crash
+        sanitizedProps.value = '';
+      }
+    }
+    return <NativeImageWidget {...sanitizedProps} />;
+  }
+  return (
+    <FormFieldWrapper {...props} className="image-upload-widget">
+      <ImageInput {...props} />
+    </FormFieldWrapper>
+  );
+};
 
 export default ImageUploadWidget;
