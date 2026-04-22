@@ -1071,7 +1071,7 @@ msgstr "Požiadavky používateľov"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videá a podcasty"
 
 #. Default: "Videos and podcasts"
 #: messages
