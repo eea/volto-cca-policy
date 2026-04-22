@@ -1071,7 +1071,7 @@ msgstr "Потребителски изисквания"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "видео"
+msgstr "Видеоклипове и подкасти"
 
 #. Default: "Videos and podcasts"
 #: messages

@@ -1071,7 +1071,7 @@ msgstr "Lietotāju prasības"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Video un podkāsti"
 
 #. Default: "Videos and podcasts"
 #: messages
