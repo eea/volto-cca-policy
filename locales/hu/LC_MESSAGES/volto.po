@@ -1071,7 +1071,7 @@ msgstr "Felhasználói követelmények"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Videó"
+msgstr "Videók és podcastok"
 
 #. Default: "Videos and podcasts"
 #: messages
