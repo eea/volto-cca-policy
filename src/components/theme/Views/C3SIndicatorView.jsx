@@ -4,14 +4,16 @@ import {
   HTMLField,
   BannerTitle,
   LogoWrapper,
+  ContentMetadata,
 } from '@eeacms/volto-cca-policy/helpers';
 import {
-  Container,
-  Accordion,
   Icon,
-  Segment,
+  Grid,
   Image,
   Button,
+  Segment,
+  Container,
+  Accordion,
 } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
@@ -228,99 +230,137 @@ function C3SIndicatorView(props) {
 
       <Container className="">
         <PortalMessage content={content} />
-        <LogoWrapper logo={logo}>
-          <h2>
-            <FormattedMessage
-              id="Background information"
-              defaultMessage="Background information"
-            />
-          </h2>
-          {logo && (
-            <Image
-              src={logo?.scales?.mini?.download}
-              alt={title}
-              className="db-logo"
-            />
-          )}
-        </LogoWrapper>
+        <Grid columns="12">
+          <Grid.Row>
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={8}
+              className="col-left"
+            >
+              <LogoWrapper logo={logo}>
+                <h2>
+                  <FormattedMessage
+                    id="Background information"
+                    defaultMessage="Background information"
+                  />
+                </h2>
+                {logo && (
+                  <Image
+                    src={logo?.scales?.mini?.download}
+                    alt={title}
+                    className="db-logo"
+                  />
+                )}
+              </LogoWrapper>
 
-        <Accordion id="background" key="background" className="secondary">
-          <Accordion.Title
-            role="button"
-            tabIndex={0}
-            active={activeAccordion[0]}
-            aria-expanded={activeAccordion[0]}
-            index={1}
-            onClick={(e) => handleAccordionClick(e, 0)}
-            onKeyDown={(e) => {
-              if (e.keyCode === 13 || e.keyCode === 32) {
-                e.preventDefault();
-                handleAccordionClick(e, 0);
-              }
-            }}
-          >
-            <span className="item-title">Background Information</span>
-            {activeAccordion[0] ? (
-              <Icon className="ri-arrow-up-s-line" />
-            ) : (
-              <Icon className="ri-arrow-down-s-line" />
-            )}
-          </Accordion.Title>
-          <Accordion.Content active={activeAccordion[0]}>
-            <HTMLField value={long_description} />
-          </Accordion.Content>
-        </Accordion>
-        <Accordion id="visualisation" key="visualisation" className="secondary">
-          <Accordion.Title
-            role="button"
-            tabIndex={0}
-            active={activeAccordion[1]}
-            aria-expanded={activeAccordion[1]}
-            index={1}
-            onClick={(e) => handleAccordionClick(e, 1)}
-            onKeyDown={(e) => {
-              if (e.keyCode === 13 || e.keyCode === 32) {
-                e.preventDefault();
-                handleAccordionClick(e, 1);
-              }
-            }}
-          >
-            <span className="item-title">Visualisation and Navigation</span>
-            {activeAccordion[1] ? (
-              <Icon className="ri-arrow-up-s-line" />
-            ) : (
-              <Icon className="ri-arrow-down-s-line" />
-            )}
-          </Accordion.Title>
-          <Accordion.Content active={activeAccordion[1]}>
-            <HTMLField value={definition_app} />
-          </Accordion.Content>
-        </Accordion>
-
-        <div className="c3s-buttons">
-          {showMode === 'normal' ? (
-            <a href="#details">
-              <Button primary onClick={(_e) => handleShowModeClick(_e, 'full')}>
-                <FormattedMessage id="Fullscreen" defaultMessage="Fullscreen" />
-              </Button>
-            </a>
-          ) : (
-            <Link to={window.location.pathname}>
-              <Button
-                primary
-                onClick={(_e) => handleShowModeClick(_e, 'normal')}
+              <Accordion id="background" key="background" className="secondary">
+                <Accordion.Title
+                  role="button"
+                  tabIndex={0}
+                  active={activeAccordion[0]}
+                  aria-expanded={activeAccordion[0]}
+                  index={1}
+                  onClick={(e) => handleAccordionClick(e, 0)}
+                  onKeyDown={(e) => {
+                    if (e.keyCode === 13 || e.keyCode === 32) {
+                      e.preventDefault();
+                      handleAccordionClick(e, 0);
+                    }
+                  }}
+                >
+                  <span className="item-title">Background Information</span>
+                  {activeAccordion[0] ? (
+                    <Icon className="ri-arrow-up-s-line" />
+                  ) : (
+                    <Icon className="ri-arrow-down-s-line" />
+                  )}
+                </Accordion.Title>
+                <Accordion.Content active={activeAccordion[0]}>
+                  <HTMLField value={long_description} />
+                </Accordion.Content>
+              </Accordion>
+              <Accordion
+                id="visualisation"
+                key="visualisation"
+                className="secondary"
               >
-                <FormattedMessage
-                  id="Exit fullscreen"
-                  defaultMessage="Exit fullscreen"
-                />
-              </Button>
-            </Link>
-          )}
-        </div>
+                <Accordion.Title
+                  role="button"
+                  tabIndex={0}
+                  active={activeAccordion[1]}
+                  aria-expanded={activeAccordion[1]}
+                  index={1}
+                  onClick={(e) => handleAccordionClick(e, 1)}
+                  onKeyDown={(e) => {
+                    if (e.keyCode === 13 || e.keyCode === 32) {
+                      e.preventDefault();
+                      handleAccordionClick(e, 1);
+                    }
+                  }}
+                >
+                  <span className="item-title">
+                    Visualisation and Navigation
+                  </span>
+                  {activeAccordion[1] ? (
+                    <Icon className="ri-arrow-up-s-line" />
+                  ) : (
+                    <Icon className="ri-arrow-down-s-line" />
+                  )}
+                </Accordion.Title>
+                <Accordion.Content active={activeAccordion[1]}>
+                  <HTMLField value={definition_app} />
+                </Accordion.Content>
+              </Accordion>
+
+              <div className="c3s-buttons">
+                {showMode === 'normal' ? (
+                  <a href="#details">
+                    <Button
+                      primary
+                      onClick={(_e) => handleShowModeClick(_e, 'full')}
+                    >
+                      <FormattedMessage
+                        id="Fullscreen"
+                        defaultMessage="Fullscreen"
+                      />
+                    </Button>
+                  </a>
+                ) : (
+                  <Link to={window.location.pathname}>
+                    <Button
+                      primary
+                      onClick={(_e) => handleShowModeClick(_e, 'normal')}
+                    >
+                      <FormattedMessage
+                        id="Exit fullscreen"
+                        defaultMessage="Exit fullscreen"
+                      />
+                    </Button>
+                  </Link>
+                )}
+              </div>
+            </Grid.Column>
+
+            <Grid.Column
+              mobile={12}
+              tablet={12}
+              computer={4}
+              className="col-right"
+            >
+              <ContentMetadata {...props} />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Container>
 
-      <div className={showMode === 'full' ? 'page-document' : 'ui container'}>
+      <div
+        className={
+          showMode === 'full'
+            ? 'page-document'
+            : 'ui container visualisation-wrapper'
+        }
+      >
         <div className="full">{!__SERVER__ && <Overview {...props} />}</div>
       </div>
       <Container>
