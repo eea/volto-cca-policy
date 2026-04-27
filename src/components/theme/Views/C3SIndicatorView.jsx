@@ -312,34 +312,6 @@ function C3SIndicatorView(props) {
                   <HTMLField value={definition_app} />
                 </Accordion.Content>
               </Accordion>
-
-              <div className="c3s-buttons">
-                {showMode === 'normal' ? (
-                  <a href="#details">
-                    <Button
-                      primary
-                      onClick={(_e) => handleShowModeClick(_e, 'full')}
-                    >
-                      <FormattedMessage
-                        id="Fullscreen"
-                        defaultMessage="Fullscreen"
-                      />
-                    </Button>
-                  </a>
-                ) : (
-                  <Link to={window.location.pathname}>
-                    <Button
-                      primary
-                      onClick={(_e) => handleShowModeClick(_e, 'normal')}
-                    >
-                      <FormattedMessage
-                        id="Exit fullscreen"
-                        defaultMessage="Exit fullscreen"
-                      />
-                    </Button>
-                  </Link>
-                )}
-              </div>
             </Grid.Column>
 
             <Grid.Column
@@ -352,15 +324,31 @@ function C3SIndicatorView(props) {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+
+        <div className="c3s-buttons">
+          {showMode === 'normal' ? (
+            <a href="#details">
+              <Button primary onClick={(_e) => handleShowModeClick(_e, 'full')}>
+                <FormattedMessage id="Fullscreen" defaultMessage="Fullscreen" />
+              </Button>
+            </a>
+          ) : (
+            <Link to={window.location.pathname}>
+              <Button
+                primary
+                onClick={(_e) => handleShowModeClick(_e, 'normal')}
+              >
+                <FormattedMessage
+                  id="Exit fullscreen"
+                  defaultMessage="Exit fullscreen"
+                />
+              </Button>
+            </Link>
+          )}
+        </div>
       </Container>
 
-      <div
-        className={
-          showMode === 'full'
-            ? 'page-document'
-            : 'ui container visualisation-wrapper'
-        }
-      >
+      <div className={showMode === 'full' ? 'page-document' : 'ui container'}>
         <div className="full">{!__SERVER__ && <Overview {...props} />}</div>
       </div>
       <Container>
