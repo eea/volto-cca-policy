@@ -1071,7 +1071,7 @@ msgstr "Brukerkrav"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videoar og podkastar"
 
 #. Default: "Videos and podcasts"
 #: messages

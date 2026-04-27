@@ -1071,7 +1071,7 @@ msgstr "Kasutaja nõuded"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videod ja podcastid"
 
 #. Default: "Videos and podcasts"
 #: messages

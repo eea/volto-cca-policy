@@ -1071,7 +1071,7 @@ msgstr "Kullanıcı gereksinimleri"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videolar ve podcast'ler"
 
 #. Default: "Videos and podcasts"
 #: messages
