@@ -516,6 +516,7 @@ export const EU_COUNTRIES = [
   'LT',
   'LU',
   'LV',
+  'MD',
   'ME',
   'MK',
   'MT',
