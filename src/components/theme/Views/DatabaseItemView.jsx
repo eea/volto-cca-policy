@@ -12,7 +12,11 @@ import {
   flourishDataprotection,
   getDataSrcFromEmbedCode,
 } from '@eeacms/volto-cca-policy/helpers/flourishUtils';
-import { VIDEO, INDICATOR, CONTENT_TYPE_LABELS } from '@eeacms/volto-cca-policy/constants';
+import {
+  VIDEO,
+  INDICATOR,
+  CONTENT_TYPE_LABELS,
+} from '@eeacms/volto-cca-policy/constants';
 import {
   HTMLField,
   ReferenceInfo,
