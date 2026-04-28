@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Plug } from '@plone/volto/components/manage/Pluggable';
 import { Modal, Button, Form, Message } from 'semantic-ui-react';
 import superagent from 'superagent';
+import { toast } from 'react-toastify';
+import { Toast } from '@plone/volto/components';
 import { flattenToAppURL, expandToBackendURL } from '@plone/volto/helpers';
 import { INDICATOR } from '@eeacms/volto-cca-policy/constants';
 
@@ -52,7 +54,17 @@ function CreateArchivedCopyButton(props) {
         .send({ title, id });
 
       const newUrl = flattenToAppURL(response.body['@id']);
-      window.location.href = newUrl;
+      setOpen(false);
+      setLoading(false);
+      setTitle('');
+      setId('');
+      toast.success(
+        <Toast
+          success
+          title="Archived copy created"
+          content={`The archived copy has been created. You can view it here: ${newUrl}`}
+        />,
+      );
     } catch (err) {
       const message =
         err.response?.body?.message ||
