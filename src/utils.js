@@ -110,6 +110,58 @@ const trimTrailingChars = (str) => {
   return str.substring(0, end);
 };
 
+const hasNestedBlockType = (node, targetType) => {
+  if (!node || typeof node !== 'object') return false;
+
+  if (node['@type'] === targetType) return true;
+
+  const candidates = [];
+
+  if (node.blocks && typeof node.blocks === 'object')
+    candidates.push(node.blocks);
+
+  if (node.data?.blocks && typeof node.data.blocks === 'object')
+    candidates.push(node.data.blocks);
+
+  for (const blocksDict of candidates) {
+    for (const key of Object.keys(blocksDict)) {
+      if (hasNestedBlockType(blocksDict[key], targetType)) return true;
+    }
+  }
+
+  return false;
+};
+
+export const getFilteredBlocks = (content, parentType, excludedNestedType) => {
+  const allBlocks = content.blocks || {};
+  const allLayoutItems = content.blocks_layout?.items || [];
+
+  const keptKeys = Object.keys(allBlocks).filter((key) => {
+    const block = allBlocks[key];
+    return (
+      block?.['@type'] === parentType &&
+      !hasNestedBlockType(block, excludedNestedType)
+    );
+  });
+
+  const keptBlocks = keptKeys.reduce((acc, key) => {
+    acc[key] = allBlocks[key];
+    return acc;
+  }, {});
+
+  const keptLayoutItems = allLayoutItems.filter((id) => keptKeys.includes(id));
+
+  return {
+    blocks: keptBlocks,
+    blocks_layout: {
+      ...content.blocks_layout,
+      items: keptLayoutItems,
+    },
+    keptKeys,
+    hasMatches: keptKeys.length > 0,
+  };
+};
+
 export const extractPlanNameAndURL = (text) => {
   if (!text) return { name: '', url: '' };
 

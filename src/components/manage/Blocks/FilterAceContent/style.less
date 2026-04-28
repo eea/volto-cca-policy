@@ -1,12 +1,104 @@
-.listing-wrapper {
-  margin-top: 1.5em;
-}
+@type: 'extra';
+@element: 'custom';
 
-.filter-title {
-  display: block;
-  margin: 0.7em 0 0.3em 0;
-  font-size: 16px;
-  font-weight: 600;
+@import (multiple, reference, optional) '../../theme.config';
+
+.filter-acecontent-block {
+  margin: 1.5em 0;
+
+  h5 {
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+  }
+
+  .react-select-container {
+    width: 100%;
+    max-width: 230px;
+    border: 1px solid #bcbec0;
+
+    .react-select__control {
+      min-height: auto;
+      border: none;
+    }
+
+    .react-select__value-container {
+      padding: 5px !important;
+    }
+
+    .react-select__menu {
+      border: 1px solid #bcbec0;
+      border-top: none;
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+
+    .react-select__indicator {
+      position: relative;
+      top: 4px;
+      right: 6px;
+    }
+  }
+
+  .ui.button.inverted.primary.view-btn {
+    margin-top: 1em;
+    margin-right: 0;
+  }
+
+  .listing-wrapper {
+    margin-top: 1.5em;
+  }
+
+  .filter-title {
+    display: block;
+    margin: 0.7em 0 0.3em 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &.simpleListing-view {
+    .simple-listing-item {
+      position: relative;
+      padding-left: 13px;
+      margin-bottom: 0.5em;
+      color: @linkColor;
+
+      &:before {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        color: @linkColor;
+        content: '\f105';
+        font-family: 'Icons', sans-serif;
+        font-size: 14px;
+      }
+    }
+
+    .simple-listing-link:hover .simple-listing-item {
+      color: @linkHoverColor;
+    }
+  }
+
+  &.simpleCards-view {
+    .react-select-container {
+      width: 100%;
+      max-width: none;
+    }
+
+    .ui.cards .u-card {
+      .image {
+        height: 120px !important;
+      }
+
+      .content {
+        padding: 0.7em;
+        padding-bottom: 1.2em;
+
+        .header {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 
 #key-type-measure {

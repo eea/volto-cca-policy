@@ -7,6 +7,7 @@ const FilterSchema = (data, macro_regions) => {
         title: 'Default',
         fields: [
           'title',
+          'button_label',
           'search_text',
           'origin_website',
           'search_type',
@@ -25,6 +26,9 @@ const FilterSchema = (data, macro_regions) => {
     properties: {
       title: {
         title: 'Block title',
+      },
+      button_label: {
+        title: 'Button label',
       },
       search_text: {
         title: 'Search text',

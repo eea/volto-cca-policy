@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Bakgrunnsskjal fyrir viðburðinn er fáanlegt"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Aðlögunaraðferðir:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Aðlögunarupplýsingar"
 
@@ -50,6 +51,11 @@ msgstr "Aðlögunarsvið"
 msgid "Adaptation approaches"
 msgstr "Aðlögunaraðferðir"
 
+#. Default: "Adaptation option"
+#: messages
+msgid "Adaptation option"
+msgstr "Aðlögunarvalkostur"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -62,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Aðlögunargreinar"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Viðbótarupplýsingar"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Kostir"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -92,6 +102,11 @@ msgstr "Líffræðileg svæði:"
 msgid "Blue options"
 msgstr "Bláir valkostir"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
@@ -116,6 +131,11 @@ msgstr "Dæmisögumyndir"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Dæmi um þennan valkost:"
+
+#. Default: "Case study"
+#: messages
+msgid "Case study"
+msgstr "Tilfellarannsókn"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -234,9 +254,15 @@ msgid "Date of release:"
 msgstr "Útgáfudagur:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Lýsing"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Ókostir"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -318,6 +344,11 @@ msgstr "Efnahags- og fjármál"
 msgid "Eligible to receive funding"
 msgstr "Hæfi til að fá styrki"
 
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Viðburður"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -354,6 +385,11 @@ msgstr "Fjármögnunaráætlun"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Fjármögnunaráætlun:"
+
+#. Default: "Funding oportunity"
+#: messages
+msgid "Funding oportunity"
+msgstr "Fjármögnunartækifæri"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
@@ -395,6 +431,11 @@ msgstr "Grænir valkostir"
 msgid "Grey options"
 msgstr "Gráir valkostir"
 
+#. Default: "Guidance"
+#: messages
+msgid "Guidance"
+msgstr "Leiðbeiningar"
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
@@ -435,11 +476,6 @@ msgstr "Hitaheilbrigðisviðvörunarkerfi (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC aðlögunarvalkostaflokkar:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC flokkar"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -461,6 +497,11 @@ msgstr "Mikilvægi og mikilvægi aðlögunar"
 msgid "Include archived content"
 msgstr "Hafa efni í geymslu"
 
+#. Default: "Indicator"
+#: messages
+msgid "Indicator"
+msgstr "Vísir"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -475,6 +516,11 @@ msgstr "Upplýsingar"
 #: messages
 msgid "Information and awareness raising"
 msgstr "Upplýsinga- og vitundarvakning"
+
+#. Default: "Information portal"
+#: messages
+msgid "Information portal"
+msgstr "Upplýsingagátt"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -496,6 +542,11 @@ msgstr "Helstu samfélagskerfi"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Lykill Tegund Mál"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -609,6 +660,16 @@ msgstr "Fjölþjóðlegt svæði:"
 msgid "Management and planning"
 msgstr "Stjórn og áætlanagerð"
 
+#. Default: "Mission story"
+#: messages
+msgid "Mission story"
+msgstr "Sagan af verkefninu"
+
+#. Default: "Mission tool"
+#: messages
+msgid "Mission tool"
+msgstr "Verkfæri verkefnisins"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -628,6 +689,11 @@ msgstr "Náttúru byggðar lausnir og vistkerfi byggðar nálganir"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Nýtt"
+
+#. Default: "News"
+#: messages
+msgid "News"
+msgstr "Fréttir"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -663,6 +729,11 @@ msgstr "Framlög stjörnustöðva:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Stjörnuskoðunarfélagi"
+
+#. Default: "Organisation"
+#: messages
+msgid "Organisation"
+msgstr "Stofnun"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -750,20 +821,24 @@ msgstr "Útgáfuár"
 msgid "RAST step(s) of relevance"
 msgstr "RAST skref sem skipta máli"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Lesið allan texta aðlögunarvalkostsins"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Tilvísunarupplýsingar"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Tilvísunarupplýsingar"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Heimildir"
 
@@ -777,6 +852,11 @@ msgstr "Lönd svæðisins:"
 msgid "Regions"
 msgstr "Svæði"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Tengdar auðlindir"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -787,10 +867,25 @@ msgstr "Tengt efni:"
 msgid "Related documents and presentations"
 msgstr "Tengd skjöl og kynningar"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Viðeigandi stefnur ESB"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Viðeigandi samlegðaráhrif með mótvægisaðgerðum"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Skiptu um núverandi skrá"
+
+#. Default: "Research and knowledge project"
+#: messages
+msgid "Research and knowledge project"
+msgstr "Rannsóknar- og þekkingarverkefni"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -863,7 +958,6 @@ msgid "Solutions"
 msgstr "Lausnir"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -932,6 +1026,11 @@ msgstr "Dagsetningin vísar til þess augnabliks þegar hluturinn hefur verið �
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Þessi hlutur hefur verið settur í geymslu vegna þess að innihald hans er úrelt. Þú getur samt fengið aðgang að því sem arfleifð."
 
+#. Default: "Tool"
+#: messages
+msgid "Tool"
+msgstr "Verkfæri"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -959,6 +1058,11 @@ msgstr "Tegundir"
 msgid "Updating notes"
 msgstr "Er að uppfæra athugasemdir"
 
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
@@ -967,7 +1071,12 @@ msgstr "Kröfur notenda"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Myndband"
+msgstr "Myndbönd og hlaðvörp"
+
+#. Default: "Videos and podcasts"
+#: messages
+msgid "Videos and podcasts"
+msgstr "Myndbönd og hlaðvörp"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -984,13 +1093,18 @@ msgstr "Farðu á ytri vefsíðu"
 msgid "Web"
 msgstr "Vefur"
 
+#. Default: "Webpage"
+#: messages
+msgid "Webpage"
+msgstr "Vefsíða"
+
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Vefsíður"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Vefsíður:"
@@ -1006,36 +1120,56 @@ msgid "Where"
 msgstr "Hvar"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "Vélþýðing getur gefið þér grunnmynd af efninu á tungumáli sem þú skilur. Hún er fullkomlega sjálfvirk og felur ekki í sér neina mannlega íhlutun. Gæði og nákvæmni vélþýðinga getur verið mjög mismunandi eftir textum og milli mismunandi tungumálapara. Framkvæmdastjórn Evrópusambandsins ábyrgist ekki nákvæmni og ber enga ábyrgð á hugsanlegum villum. Sumt efni (eins og myndir, myndbönd, skrár o.s.frv.) er hugsanlega ekki hægt að þýða vegna tæknilegra takmarkana kerfisins."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Ekki nota rafræna þýðingu til að þýða löggjöf ESB. Áreiðanleg útgáfa á 24 opinberum tungumálum er aðgengileg á <link_eurlex>Eur-Lex</link_eurlex>. Sjá einnig <link_languagepolicy>tungumálastefnu Evrópu</link_languagepolicy> og <link_legalnotice>lagalega tilkynningu</link_legalnotice> (inniheldur persónuverndarstefnu og höfundarréttartilkynningu)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Þessi þýðing er búin til með eTranslation, vélþýðingartóli frá framkvæmdastjórn Evrópusambandsins."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Sýna minna"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Sýna meira"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Undanþága frá ábyrgð"
+
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
 
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Opinberlega birtar upplýsingar frá stjórnvöldum eru aðeins tiltækar á ensku"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

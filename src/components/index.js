@@ -6,9 +6,11 @@ export { default as ShareInfoButton } from './theme/ShareInfoButton/ShareInfoBut
 export { default as ASTNavigation } from './theme/ASTNavigation/ASTNavigation';
 export { default as RedirectToLogin } from './theme/RedirectToLogin/RedirectToLogin';
 export { default as MissionSignatoryProfileView } from './theme/MissionSignatoryProfile/MissionSignatoryProfileView';
+export { default as AccordionList } from './theme/AccordionList/AccordionList';
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';
+export { default as ImageWidget } from './theme/Widgets/ImageWidget';
 
 // Manage
 export { default as CreateArchivedCopyButton } from './manage/CreateArchivedCopyButton/CreateArchivedCopyButton';

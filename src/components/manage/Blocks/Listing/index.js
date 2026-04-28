@@ -3,6 +3,8 @@ import IndicatorCardsListingView from './IndicatorCardsListingView';
 import EventCardsListingView from './EventCardsListingView';
 import DropdownListingView from './DropdownListingView';
 import EventAccordionListingView from './EventAccordionListingView';
+import SimpleCardsListingView from './SimpleCardsListingView';
+import SimpleItemListingView from './SimpleItemListingView';
 
 export default function installListing(config) {
   config.blocks.blocksConfig.listing = {
@@ -48,6 +50,20 @@ export default function installListing(config) {
         id: 'eventAccordion',
         title: 'Event Accordion',
         template: EventAccordionListingView,
+        isDefault: false,
+        fullobjects: true,
+      },
+      {
+        id: 'simpleListing',
+        title: 'Listing',
+        template: SimpleItemListingView,
+        isDefault: false,
+        fullobjects: true,
+      },
+      {
+        id: 'simpleCards',
+        title: 'Cards',
+        template: SimpleCardsListingView,
         isDefault: false,
         fullobjects: true,
       },

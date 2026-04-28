@@ -229,6 +229,14 @@ const PhotoGallery = ({ content }) => {
     setSlideIndex(0);
     setOpen(true);
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleTitleClick();
+    }
+  };
+
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
@@ -238,7 +246,7 @@ const PhotoGallery = ({ content }) => {
             tabIndex={0}
             role="button"
             onClick={handleTitleClick}
-            onKeyDown={handleTitleClick}
+            onKeyDown={handleKeyDown}
           >
             <span>
               <FormattedMessage

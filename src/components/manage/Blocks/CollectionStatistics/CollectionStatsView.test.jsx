@@ -7,6 +7,21 @@ import { Provider } from 'react-intl-redux';
 import CollectionStatsView from './CollectionStatsView';
 import config from '@plone/volto/registry';
 import applyConfig from './index';
+import {
+  ADAPTATION_OPTION,
+  CASE_STUDY,
+  GUIDANCE,
+  INDICATOR,
+  INFORMATION_PORTAL,
+  ORGANISATION,
+  ACE_PROJECT,
+  PUBLICATION_REPORT,
+  TOOL,
+  VIDEO,
+  C3S_INDICATOR,
+  NEWS_ITEM,
+  EVENT,
+} from '@eeacms/volto-cca-policy/constants';
 
 const mockStore = configureStore();
 
@@ -62,19 +77,19 @@ describe('CollectionStatsView', () => {
       querystats: {
         'id-1': {
           items: {
-            Event: 82,
-            'News Item': 116,
-            'eea.climateadapt.aceproject': 60,
-            'eea.climateadapt.adaptationoption': 1,
-            'eea.climateadapt.c3sindicator': 9,
-            'eea.climateadapt.casestudy': 32,
-            'eea.climateadapt.guidancedocument': 21,
-            'eea.climateadapt.indicator': 14,
-            'eea.climateadapt.informationportal': 27,
-            'eea.climateadapt.organisation': 22,
-            'eea.climateadapt.publicationreport': 187,
-            'eea.climateadapt.tool': 14,
-            'eea.climateadapt.video': 17,
+            [EVENT]: 82,
+            [NEWS_ITEM]: 116,
+            [ACE_PROJECT]: 60,
+            [ADAPTATION_OPTION]: 1,
+            [C3S_INDICATOR]: 9,
+            [CASE_STUDY]: 32,
+            [GUIDANCE]: 21,
+            [INDICATOR]: 14,
+            [INFORMATION_PORTAL]: 27,
+            [ORGANISATION]: 22,
+            [PUBLICATION_REPORT]: 187,
+            [TOOL]: 14,
+            [VIDEO]: 17,
           },
         },
       },

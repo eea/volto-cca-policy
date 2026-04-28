@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Um documento de referência para o evento está disponível"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Abordagens de adaptação:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Detalhes da adaptação"
 
@@ -50,6 +51,11 @@ msgstr "Setores de Adaptação"
 msgid "Adaptation approaches"
 msgstr "Abordagens de adaptação"
 
+#. Default: "Adaptation option"
+#: messages
+msgid "Adaptation option"
+msgstr "Opção de adaptação"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -62,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Setores de adaptação"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Detalhes Adicionais"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Vantagens"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -92,6 +102,11 @@ msgstr "Regiões biogeográficas:"
 msgid "Blue options"
 msgstr "Opções azuis"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
@@ -116,6 +131,11 @@ msgstr "Ilustrações de estudo de caso"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Estudos de caso relacionados a esta opção:"
+
+#. Default: "Case study"
+#: messages
+msgid "Case study"
+msgstr "Estudo de caso"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -234,9 +254,15 @@ msgid "Date of release:"
 msgstr "Data de lançamento:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Descrição"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Desvantagens"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -318,6 +344,11 @@ msgstr "Economia e Finanças"
 msgid "Eligible to receive funding"
 msgstr "Elegível para receber financiamento"
 
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Evento"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -354,6 +385,11 @@ msgstr "Programa de Financiamento"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Programa de Financiamento:"
+
+#. Default: "Funding oportunity"
+#: messages
+msgid "Funding oportunity"
+msgstr "Oportunidade de financiamento"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
@@ -395,6 +431,11 @@ msgstr "Opções verdes"
 msgid "Grey options"
 msgstr "Opções em cinza"
 
+#. Default: "Guidance"
+#: messages
+msgid "Guidance"
+msgstr "Orientação"
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
@@ -435,11 +476,6 @@ msgstr "Sistemas de alerta sanitário de calor (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "Categorias de opções de adaptação do IPCC:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "Categorias do IPCC"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -461,6 +497,11 @@ msgstr "Importância e Relevância da Adaptação"
 msgid "Include archived content"
 msgstr "Incluir conteúdo arquivado"
 
+#. Default: "Indicator"
+#: messages
+msgid "Indicator"
+msgstr "Indicador"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -475,6 +516,11 @@ msgstr "Informações"
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informação e conscientização"
+
+#. Default: "Information portal"
+#: messages
+msgid "Information portal"
+msgstr "Portal de informação"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -496,6 +542,11 @@ msgstr "Principais sistemas comunitários"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Medida de tipo chave"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -609,6 +660,16 @@ msgstr "Região Macrotransnacional:"
 msgid "Management and planning"
 msgstr "Gestão e planejamento"
 
+#. Default: "Mission story"
+#: messages
+msgid "Mission story"
+msgstr "História da missão"
+
+#. Default: "Mission tool"
+#: messages
+msgid "Mission tool"
+msgstr "Ferramenta da missão"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -628,6 +689,11 @@ msgstr "Soluções baseadas na natureza e abordagens baseadas em ecossistemas"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Novo"
+
+#. Default: "News"
+#: messages
+msgid "News"
+msgstr "Notícias"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -663,6 +729,11 @@ msgstr "Contribuições do Observatório:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Parceiro do observatório"
+
+#. Default: "Organisation"
+#: messages
+msgid "Organisation"
+msgstr "Organização"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -750,20 +821,24 @@ msgstr "Ano de publicação"
 msgid "RAST step(s) of relevance"
 msgstr "Etapa(s) RAST de relevância"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Leia o texto completo da opção de adaptação."
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Informações de referência"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Informações de referência"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Referências"
 
@@ -777,6 +852,11 @@ msgstr "Países da região:"
 msgid "Regions"
 msgstr "Regiões"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Recursos relacionados"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -787,10 +867,25 @@ msgstr "Conteúdo relacionado:"
 msgid "Related documents and presentations"
 msgstr "Documentos e apresentações relacionados"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Políticas relevantes da UE"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Sinergias relevantes com a mitigação"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Substituir arquivo existente"
+
+#. Default: "Research and knowledge project"
+#: messages
+msgid "Research and knowledge project"
+msgstr "Projeto de pesquisa e conhecimento"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -863,7 +958,6 @@ msgid "Solutions"
 msgstr "Soluções"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -932,6 +1026,11 @@ msgstr "A data refere-se ao momento em que o item foi preparado ou atualizado po
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Este objeto foi arquivado porque seu conteúdo está desatualizado. Você ainda pode acessá-lo como legado."
 
+#. Default: "Tool"
+#: messages
+msgid "Tool"
+msgstr "Ferramenta"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -959,6 +1058,11 @@ msgstr "Tipos"
 msgid "Updating notes"
 msgstr "Atualizando notas"
 
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
@@ -967,7 +1071,12 @@ msgstr "Requisitos do usuário"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Vídeo"
+msgstr "Vídeos e podcasts"
+
+#. Default: "Videos and podcasts"
+#: messages
+msgid "Videos and podcasts"
+msgstr "Vídeos e podcasts"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -984,13 +1093,18 @@ msgstr "Visite o site externo"
 msgid "Web"
 msgstr "Rede"
 
+#. Default: "Webpage"
+#: messages
+msgid "Webpage"
+msgstr "Página web"
+
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Sites"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Sites:"
@@ -1006,36 +1120,56 @@ msgid "Where"
 msgstr "Onde"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "A tradução automática pode fornecer uma ideia geral do conteúdo em um idioma que você compreende. É um processo totalmente automatizado, sem intervenção humana. A qualidade e a precisão da tradução automática podem variar significativamente de um texto para outro e entre diferentes pares de idiomas. A Comissão Europeia não garante a exatidão e não se responsabiliza por eventuais erros. Alguns conteúdos (como imagens, vídeos, arquivos, etc.) podem não ser traduzidos devido às limitações técnicas do sistema."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Não utilize o eTranslation para traduzir a legislação da UE. Versões autênticas nos 24 idiomas oficiais estão disponíveis no <link_eurlex>Eur-Lex</link_eurlex>. Consulte também a <link_languagepolicy>Política linguística da Europa</link_languagepolicy> e o <link_legalnotice>Aviso legal</link_legalnotice> (que inclui a política de privacidade e o aviso de direitos autorais)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Esta tradução foi gerada pelo eTranslation, uma ferramenta de tradução automática fornecida pela Comissão Europeia."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Mostrar menos"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Mostrar mais"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Exclusão de responsabilidade"
+
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
 
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "As informações governamentais oficialmente divulgadas estão disponíveis apenas em inglês."
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

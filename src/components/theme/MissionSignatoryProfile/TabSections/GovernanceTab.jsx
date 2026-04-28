@@ -2,7 +2,7 @@ import { Tab } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
-import AccordionList from '../AccordionList';
+import { AccordionList } from '@eeacms/volto-cca-policy/components';
 import StatisticSection from '../StatisticSection';
 
 const GovernanceTab = ({ result, general_text }) => {

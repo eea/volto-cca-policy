@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Sündmuse taustadokument on saadaval"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Kohanemisviisid:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Kohanemise üksikasjad"
 
@@ -50,6 +51,11 @@ msgstr "Kohanemissektorid"
 msgid "Adaptation approaches"
 msgstr "Kohanemise lähenemisviisid"
 
+#. Default: "Adaptation option"
+#: messages
+msgid "Adaptation option"
+msgstr "Kohanemisvõimalus"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -62,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Kohanemissektorid"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Täiendavad üksikasjad"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Eelised"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -92,6 +102,11 @@ msgstr "Biogeograafilised piirkonnad:"
 msgid "Blue options"
 msgstr "Sinised valikud"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
@@ -116,6 +131,11 @@ msgstr "Juhtumianalüüsi illustratsioonid"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Selle valikuga seotud juhtumiuuringud:"
+
+#. Default: "Case study"
+#: messages
+msgid "Case study"
+msgstr "Juhtumiuuring"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -234,9 +254,15 @@ msgid "Date of release:"
 msgstr "Väljalaskmise kuupäev:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Kirjeldus"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Puudused"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -318,6 +344,11 @@ msgstr "Majandus ja rahandus"
 msgid "Eligible to receive funding"
 msgstr "Abikõlblik rahastuse saamiseks"
 
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Sündmus"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -354,6 +385,11 @@ msgstr "Rahastamisprogramm"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Rahastamisprogramm:"
+
+#. Default: "Funding oportunity"
+#: messages
+msgid "Funding oportunity"
+msgstr "Rahastamisvõimalus"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
@@ -395,6 +431,11 @@ msgstr "Rohelised valikud"
 msgid "Grey options"
 msgstr "Hallid valikud"
 
+#. Default: "Guidance"
+#: messages
+msgid "Guidance"
+msgstr "Juhised"
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
@@ -435,11 +476,6 @@ msgstr "Kuuma tervise hoiatussüsteemid (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC kohanemisvalikute kategooriad:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC kategooriad"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -461,6 +497,11 @@ msgstr "Kohanemise tähtsus ja asjakohasus"
 msgid "Include archived content"
 msgstr "Kaasake arhiveeritud sisu"
 
+#. Default: "Indicator"
+#: messages
+msgid "Indicator"
+msgstr "Näitaja"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -475,6 +516,11 @@ msgstr "Info"
 #: messages
 msgid "Information and awareness raising"
 msgstr "Teave ja teadlikkuse tõstmine"
+
+#. Default: "Information portal"
+#: messages
+msgid "Information portal"
+msgstr "Infoportaal"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -496,6 +542,11 @@ msgstr "Peamised kogukonnasüsteemid"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Võtmetüübi mõõt"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -609,6 +660,16 @@ msgstr "Makro-rahvusvaheline piirkond:"
 msgid "Management and planning"
 msgstr "Juhtimine ja planeerimine"
 
+#. Default: "Mission story"
+#: messages
+msgid "Mission story"
+msgstr "Missiooni lugu"
+
+#. Default: "Mission tool"
+#: messages
+msgid "Mission tool"
+msgstr "Missiooni tööriist"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -628,6 +689,11 @@ msgstr "Looduspõhised lahendused ja ökosüsteemipõhised lähenemisviisid"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Uus"
+
+#. Default: "News"
+#: messages
+msgid "News"
+msgstr "Uudised"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -663,6 +729,11 @@ msgstr "Observatooriumi kaastööd:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Vaatluskeskuse partner"
+
+#. Default: "Organisation"
+#: messages
+msgid "Organisation"
+msgstr "Organisatsioon"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -750,20 +821,24 @@ msgstr "Ilmumisaasta"
 msgid "RAST step(s) of relevance"
 msgstr "asjakohased RAST-etapid"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Loe kohandamisvõimaluse täisteksti"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Viiteteave"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Viiteteave"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Viited"
 
@@ -777,6 +852,11 @@ msgstr "Piirkonna riigid:"
 msgid "Regions"
 msgstr "Piirkonnad"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Seotud ressursid"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -787,10 +867,25 @@ msgstr "Seotud sisu:"
 msgid "Related documents and presentations"
 msgstr "Seotud dokumendid ja esitlused"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Asjakohased ELi poliitikad"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Asjakohased sünergiad leevendusmeetmetega"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Asenda olemasolev fail"
+
+#. Default: "Research and knowledge project"
+#: messages
+msgid "Research and knowledge project"
+msgstr "Teadus- ja teadmusprojekt"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -863,7 +958,6 @@ msgid "Solutions"
 msgstr "Lahendused"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -932,6 +1026,11 @@ msgstr "Kuupäev viitab hetkele, mil üksust on koostanud või ajakohastanud kaa
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "See objekt on arhiveeritud, kuna selle sisu on aegunud. Saate sellele endiselt pärandina juurde pääseda."
 
+#. Default: "Tool"
+#: messages
+msgid "Tool"
+msgstr "Tööriist"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -959,6 +1058,11 @@ msgstr "Tüübid"
 msgid "Updating notes"
 msgstr "Märkmete värskendamine"
 
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
@@ -967,7 +1071,12 @@ msgstr "Kasutaja nõuded"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videod ja podcastid"
+
+#. Default: "Videos and podcasts"
+#: messages
+msgid "Videos and podcasts"
+msgstr "Videod ja podcastid"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -984,13 +1093,18 @@ msgstr "Külastage välist veebisaiti"
 msgid "Web"
 msgstr "Veeb"
 
+#. Default: "Webpage"
+#: messages
+msgid "Webpage"
+msgstr "Veebileht"
+
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Veebisaidid"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Veebisaidid:"
@@ -1006,36 +1120,56 @@ msgid "Where"
 msgstr "Kus"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "Masintõlge annab teile sisust põhilise ettekujutuse teile arusaadavas keeles. See on täielikult automatiseeritud ega hõlma inimese sekkumist. Masintõlke kvaliteet ja täpsus võivad tekstiti ja keelepaaride vahel oluliselt erineda. Euroopa Komisjon ei garanteeri täpsust ega vastuta võimalike vigade eest. Mõnda sisu (nt pilte, videoid, faile jne) ei pruugita süsteemi tehniliste piirangute tõttu tõlkida."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Ärge kasutage ELi õigusaktide tõlkimiseks e-tõlget. Autentsed versioonid 24 ametlikus keeles on saadaval aadressil <link_eurlex>Eur-Lex</link_eurlex>. Vaadake ka <link_languagepolicy>Europa keelepoliitikat</link_languagepolicy> ja <link_legalnotice>õigusalast teadet</link_legalnotice> (sisaldab privaatsuspoliitikat ja autoriõiguse teatist)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Selle tõlke on loonud Euroopa Komisjoni pakutav masintõlke tööriist eTranslation."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Näita vähem"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Näita rohkem"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Vastutuse välistamine"
+
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
 
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Ametlikult edastatud valitsuse teave on saadaval ainult inglise keeles"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

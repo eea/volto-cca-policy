@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Popratni dokument za događaj je dostupan"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,7 +31,7 @@ msgid "Adaptation Approaches:"
 msgstr "Pristupi prilagodbe:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
 msgstr "Detalji adaptacije"
 
@@ -50,6 +51,11 @@ msgstr "Sektori adaptacije"
 msgid "Adaptation approaches"
 msgstr "Pristupi prilagodbe"
 
+#. Default: "Adaptation option"
+#: messages
+msgid "Adaptation option"
+msgstr "Opcija prilagodbe"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -62,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Sektori prilagodbe"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Dodatni detalji"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Prednosti"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -92,6 +102,11 @@ msgstr "Biogeografske regije:"
 msgid "Blue options"
 msgstr "Plave opcije"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
@@ -116,6 +131,11 @@ msgstr "Ilustracije studije slučaja"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studije slučaja vezane uz ovu opciju:"
+
+#. Default: "Case study"
+#: messages
+msgid "Case study"
+msgstr "Studija slučaja"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -234,9 +254,15 @@ msgid "Date of release:"
 msgstr "Datum izdavanja:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Opis"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Nedostaci"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -318,6 +344,11 @@ msgstr "Gospodarstvo i financije"
 msgid "Eligible to receive funding"
 msgstr "Ispunjava uvjete za primanje sredstava"
 
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Događaj"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -354,6 +385,11 @@ msgstr "Program financiranja"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Program financiranja:"
+
+#. Default: "Funding oportunity"
+#: messages
+msgid "Funding oportunity"
+msgstr "Mogućnost financiranja"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
@@ -395,6 +431,11 @@ msgstr "Zelene opcije"
 msgid "Grey options"
 msgstr "Sive opcije"
 
+#. Default: "Guidance"
+#: messages
+msgid "Guidance"
+msgstr "Smjernice"
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
@@ -435,11 +476,6 @@ msgstr "Sustavi upozorenja na zdravlje zbog vrućine (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC kategorije opcija prilagodbe:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "IPCC kategorije"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -461,6 +497,11 @@ msgstr "Važnost i relevantnost prilagodbe"
 msgid "Include archived content"
 msgstr "Uključi arhivirani sadržaj"
 
+#. Default: "Indicator"
+#: messages
+msgid "Indicator"
+msgstr "Pokazatelj"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -475,6 +516,11 @@ msgstr "Info"
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informiranje i podizanje svijesti"
+
+#. Default: "Information portal"
+#: messages
+msgid "Information portal"
+msgstr "Informacijski portal"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -496,6 +542,11 @@ msgstr "Ključni sustavi zajednice"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Ključna vrsta mjerenja"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -609,6 +660,16 @@ msgstr "Makro-transnacionalna regija:"
 msgid "Management and planning"
 msgstr "Upravljanje i planiranje"
 
+#. Default: "Mission story"
+#: messages
+msgid "Mission story"
+msgstr "Priča o misiji"
+
+#. Default: "Mission tool"
+#: messages
+msgid "Mission tool"
+msgstr "Alat misije"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -628,6 +689,11 @@ msgstr "Rješenja temeljena na prirodi i pristupi temeljeni na ekosustavima"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Novi"
+
+#. Default: "News"
+#: messages
+msgid "News"
+msgstr "Vijesti"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -663,6 +729,11 @@ msgstr "Doprinosi Zvjezdarnice:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner zvjezdarnice"
+
+#. Default: "Organisation"
+#: messages
+msgid "Organisation"
+msgstr "Organizacija"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -750,20 +821,24 @@ msgstr "Godina izdavanja"
 msgid "RAST step(s) of relevance"
 msgstr "RAST korak(i) relevantnosti"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Pročitajte cijeli tekst opcije prilagodbe"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Referentne informacije"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Referentne informacije"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Reference"
 
@@ -777,6 +852,11 @@ msgstr "Zemlje regije:"
 msgid "Regions"
 msgstr "regije"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Povezani resursi"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -787,10 +867,25 @@ msgstr "Povezani sadržaj:"
 msgid "Related documents and presentations"
 msgstr "Povezani dokumenti i prezentacije"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Relevantne politike EU-a"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Relevantne sinergije s ublažavanjem"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Zamijenite postojeću datoteku"
+
+#. Default: "Research and knowledge project"
+#: messages
+msgid "Research and knowledge project"
+msgstr "Projekt istraživanja i znanja"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -863,7 +958,6 @@ msgid "Solutions"
 msgstr "Rješenja"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -932,6 +1026,11 @@ msgstr "Datum se odnosi na trenutak u kojem je stavka pripremljena ili ažuriran
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Ovaj objekt je arhiviran jer je njegov sadržaj zastario. I dalje mu možete pristupiti kao ostavštini."
 
+#. Default: "Tool"
+#: messages
+msgid "Tool"
+msgstr "Alat"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -959,6 +1058,11 @@ msgstr "Vrste"
 msgid "Updating notes"
 msgstr "Ažuriranje bilješki"
 
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
@@ -967,7 +1071,12 @@ msgstr "Zahtjevi korisnika"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videozapisi i podcasti"
+
+#. Default: "Videos and podcasts"
+#: messages
+msgid "Videos and podcasts"
+msgstr "Videozapisi i podcasti"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -984,13 +1093,18 @@ msgstr "Posjetite vanjsku web stranicu"
 msgid "Web"
 msgstr "Web"
 
+#. Default: "Webpage"
+#: messages
+msgid "Webpage"
+msgstr "Web-stranica"
+
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "web stranice"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "web stranice:"
@@ -1006,36 +1120,56 @@ msgid "Where"
 msgstr "Gdje"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "Strojno prevođenje može vam dati osnovnu ideju o sadržaju na jeziku koji razumijete. Potpuno je automatizirano i ne uključuje ljudsku intervenciju. Kvaliteta i točnost strojnog prevođenja mogu se značajno razlikovati od jednog teksta do drugog i između različitih jezičnih parova. Europska komisija ne jamči točnost i ne preuzima odgovornost za moguće pogreške. Neki sadržaji (kao što su slike, videozapisi, datoteke itd.) možda se neće prevesti zbog tehničkih ograničenja sustava."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Ne koristite eTranslation za prevođenje zakonodavstva EU-a. Autentične verzije na 24 službena jezika dostupne su na <link_eurlex>Eur-Lexu</link_eurlex>. Pogledajte i <link_languagepolicy>jezičnu politiku Europe</link_languagepolicy> i <link_legalnotice>pravnu obavijest</link_legalnotice> (uključuje politiku privatnosti i obavijest o autorskim pravima)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Ovaj prijevod generira eTranslation, alat za strojno prevođenje koji je osigurala Europska komisija."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Prikaži manje"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Prikaži više"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Isključenje odgovornosti"
+
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
 
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Službeno objavljene vladine informacije dostupne su samo na engleskom jeziku"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""

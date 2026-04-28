@@ -12,6 +12,75 @@ const messages = defineMessages({
     id: 'Search the EU Mission on Adaptation',
     defaultMessage: 'Search the EU Mission on Adaptation',
   },
+  // rest of site
+  phNews: {
+    id: 'News',
+    defaultMessage: 'News',
+  },
+  phOrganisation: {
+    id: 'Organisation',
+    defaultMessage: 'Organisation',
+  },
+  phTool: {
+    id: 'Tool',
+    defaultMessage: 'Tool',
+  },
+  phIndicator: {
+    id: 'Indicator',
+    defaultMessage: 'Indicator',
+  },
+  phMissionStory: {
+    id: 'Mission story',
+    defaultMessage: 'Mission story',
+  },
+  phAdaptationOption: {
+    id: 'Adaptation option',
+    defaultMessage: 'Adaptation option',
+  },
+  phVideosAndPodcasts: {
+    id: 'Videos and podcasts',
+    defaultMessage: 'Videos and podcasts',
+  },
+  phMissionTool: {
+    id: 'Mission tool',
+    defaultMessage: 'Mission tool',
+  },
+  phCaseStudy: {
+    id: 'Case study',
+    defaultMessage: 'Case study',
+  },
+  phGuidance: {
+    id: 'Guidance',
+    defaultMessage: 'Guidance',
+  },
+  phInformationPortal: {
+    id: 'Information portal',
+    defaultMessage: 'Information portal',
+  },
+  phFundingOportunity: {
+    id: 'Funding oportunity',
+    defaultMessage: 'Funding oportunity',
+  },
+  phProjectsAces: {
+    id: 'Research and knowledge project',
+    defaultMessage: 'Research and knowledge project',
+  },
+  phWebapge: {
+    id: 'Webpage',
+    defaultMessage: 'Webpage',
+  },
+  phAdapDetails: {
+    id: 'Adaptation Details',
+    defaultMessage: 'Adaptation Details',
+  },
+  phEvent: {
+    id: 'Event',
+    defaultMessage: 'Event',
+  },
+  phResearchAndKnowledgeProject: {
+    id: 'Research and knowledge project',
+    defaultMessage: 'Research and knowledge project',
+  },
 });
 
 export const messagesList = defineMessages({

@@ -17,6 +17,7 @@ msgid "A background document for the event is available"
 msgstr "Dokument ta' sfond għall-avveniment huwa disponibbli"
 
 #. Default: "Adaptation Approaches"
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
 #: search/health_observatory/facets-health
 #: search/mission_all/facets-all
@@ -30,9 +31,9 @@ msgid "Adaptation Approaches:"
 msgstr "Approċċi ta' Adattament:"
 
 #. Default: "Adaptation Details"
-#: components/theme/Views/AdaptationOptionView
+#: messages
 msgid "Adaptation Details"
-msgstr "Dettalji ta' Adattament"
+msgstr "Dettalji tal-Adattament"
 
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
@@ -50,6 +51,11 @@ msgstr "Setturi ta' Adattament"
 msgid "Adaptation approaches"
 msgstr "Approċċi ta' adattament"
 
+#. Default: "Adaptation option"
+#: messages
+msgid "Adaptation option"
+msgstr "Għażla ta' adattament"
+
 #. Default: "Adaptation options"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
@@ -62,10 +68,14 @@ msgid "Adaptation sectors"
 msgstr "Setturi ta' adattament"
 
 #. Default: "Additional Details"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
 msgstr "Dettalji Addizzjonali"
+
+#. Default: "Advantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Advantages"
+msgstr "Vantaġġi"
 
 #. Default: "Agenda and supporting documents"
 #: components/theme/Views/CcaEventView
@@ -92,6 +102,11 @@ msgstr "Reġjuni bijoġeografiċi:"
 msgid "Blue options"
 msgstr "Għażliet blu"
 
+#. Default: "Browse the site, drop an image, or use a URL"
+#: components/theme/Widgets/ImageWidget
+msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
 #. Default: "Capacity building empowering and lifestyle practices"
 #: messages
 msgid "Capacity building empowering and lifestyle practices"
@@ -116,6 +131,11 @@ msgstr "Illustrazzjonijiet ta' Studju ta' Każijiet"
 #: helpers/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studji ta’ każijiet relatati ma’ din l-għażla:"
+
+#. Default: "Case study"
+#: messages
+msgid "Case study"
+msgstr "Studju tal-każ"
 
 #. Default: "Category"
 #: components/theme/Views/AdaptationOptionView
@@ -234,9 +254,15 @@ msgid "Date of release:"
 msgstr "Data tar-rilaxx:"
 
 #. Default: "Description"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Description"
 msgstr "Deskrizzjoni"
+
+#. Default: "Disadvantages"
+#: components/theme/Views/AdaptationOptionView
+msgid "Disadvantages"
+msgstr "Żvantaġġi"
 
 #. Default: "Disclaimer"
 #: components/theme/Views/C3SIndicatorView
@@ -318,6 +344,11 @@ msgstr "Ekonomiku u Finanzi"
 msgid "Eligible to receive funding"
 msgstr "Eliġibbli biex tirċievi finanzjament"
 
+#. Default: "Event"
+#: messages
+msgid "Event"
+msgstr "Avveniment"
+
 #. Default: "Exit fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Exit fullscreen"
@@ -354,6 +385,11 @@ msgstr "Programm ta' Finanzjament"
 #: helpers/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Programm ta' Finanzjament:"
+
+#. Default: "Funding oportunity"
+#: messages
+msgid "Funding oportunity"
+msgstr "Opportunità ta' finanzjament"
 
 #. Default: "Geographic characterisation:"
 #: helpers/ContentMetadata
@@ -395,6 +431,11 @@ msgstr "Għażliet ħodor"
 msgid "Grey options"
 msgstr "Għażliet griżi"
 
+#. Default: "Guidance"
+#: messages
+msgid "Guidance"
+msgstr "Gwida"
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
@@ -435,11 +476,6 @@ msgstr "Sistemi ta’ twissija tas-saħħa tas-sħana (HHWS)"
 msgid "IPCC adaptation options categories:"
 msgstr "Kategoriji tal-għażliet tal-adattament tal-IPCC:"
 
-#. Default: "IPCC categories"
-#: components/theme/Views/AdaptationOptionView
-msgid "IPCC categories"
-msgstr "Kategoriji tal-IPCC"
-
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
@@ -461,6 +497,11 @@ msgstr "Importanza u Rilevanza tal-Adattament"
 msgid "Include archived content"
 msgstr "Inkludi kontenut arkivjat"
 
+#. Default: "Indicator"
+#: messages
+msgid "Indicator"
+msgstr "Indikatur"
+
 #. Default: "Indicators"
 #: components/manage/Blocks/ECDEIndicators/ECDEIndicatorsView
 msgid "Indicators"
@@ -475,6 +516,11 @@ msgstr "Info"
 #: messages
 msgid "Information and awareness raising"
 msgstr "Informazzjoni u tqajjim ta' kuxjenza"
+
+#. Default: "Information portal"
+#: messages
+msgid "Information portal"
+msgstr "Portal tal-informazzjoni"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -496,6 +542,11 @@ msgstr "Sistemi Ewlenin tal-Komunità"
 #: search/cca/facets
 msgid "Key Type Measure"
 msgstr "Miżura tat-Tip Ewlenin"
+
+#. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+#: helpers/ContentMetadata
+msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
+msgstr ""
 
 #. Default: "Key Type Measures:"
 #: helpers/ContentMetadata
@@ -609,6 +660,16 @@ msgstr "Reġjun Makro-Transnazzjonali:"
 msgid "Management and planning"
 msgstr "Ġestjoni u ppjanar"
 
+#. Default: "Mission story"
+#: messages
+msgid "Mission story"
+msgstr "Storja tal-missjoni"
+
+#. Default: "Mission tool"
+#: messages
+msgid "Mission tool"
+msgstr "Għodda tal-missjoni"
+
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
@@ -628,6 +689,11 @@ msgstr "Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosi
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Ġdid"
+
+#. Default: "News"
+#: messages
+msgid "News"
+msgstr "Aħbarijiet"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -663,6 +729,11 @@ msgstr "Kontribuzzjonijiet tal-Osservatorju:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Imsieħeb tal-osservatorju"
+
+#. Default: "Organisation"
+#: messages
+msgid "Organisation"
+msgstr "Organizzazzjoni"
 
 #. Default: "Organisation Documents"
 #: helpers/Utils
@@ -750,20 +821,24 @@ msgstr "Sena tal-pubblikazzjoni"
 msgid "RAST step(s) of relevance"
 msgstr "Pass(i) RAST ta' rilevanza"
 
+#. Default: "Read the full text of the adaptation option"
+#: components/theme/Views/AdaptationOptionView
+msgid "Read the full text of the adaptation option"
+msgstr "Aqra t-test sħiħ tal-għażla ta' adattament"
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
 msgstr "Informazzjoni ta' Referenza"
 
 #. Default: "Reference information"
-#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Reference information"
 msgstr "Informazzjoni ta' referenza"
 
 #. Default: "References"
+#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "References"
 msgstr "Referenzi"
 
@@ -777,6 +852,11 @@ msgstr "Pajjiżi tar-reġjun:"
 msgid "Regions"
 msgstr "Reġjuni"
 
+#. Default: "Related Resources"
+#: components/theme/Views/AdaptationOptionView
+msgid "Related Resources"
+msgstr "Riżorsi Relatati"
+
 #. Default: "Related content:"
 #: helpers/Utils
 msgid "Related content:"
@@ -787,10 +867,25 @@ msgstr "Kontenut relatat:"
 msgid "Related documents and presentations"
 msgstr "Dokumenti u preżentazzjonijiet relatati"
 
+#. Default: "Relevant EU policies"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant EU policies"
+msgstr "Politiki rilevanti tal-UE"
+
+#. Default: "Relevant synergies with mitigation"
+#: components/theme/Views/AdaptationOptionView
+msgid "Relevant synergies with mitigation"
+msgstr "Sinerġiji rilevanti mal-mitigazzjoni"
+
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Ibdel il-fajl eżistenti"
+
+#. Default: "Research and knowledge project"
+#: messages
+msgid "Research and knowledge project"
+msgstr "Proġett ta' riċerka u għarfien"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -863,7 +958,6 @@ msgid "Solutions"
 msgstr "Soluzzjonijiet"
 
 #. Default: "Source"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 #: helpers/Utils
 msgid "Source"
@@ -932,6 +1026,11 @@ msgstr "Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat je
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Dan l-oġġett ġie arkivjat minħabba li l-kontenut tiegħu huwa skadut. Xorta tista' taċċessah bħala wirt."
 
+#. Default: "Tool"
+#: messages
+msgid "Tool"
+msgstr "Għodda"
+
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
 #: components/Result/HealthHorizontalCardItem
@@ -959,6 +1058,11 @@ msgstr "Tipi"
 msgid "Updating notes"
 msgstr "Aġġornament noti"
 
+#. Default: "Uploading image"
+#: components/theme/Widgets/ImageWidget
+msgid "Uploading image"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
@@ -967,7 +1071,12 @@ msgstr "Rekwiżiti tal-utent"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Vidjows u podcasts"
+
+#. Default: "Videos and podcasts"
+#: messages
+msgid "Videos and podcasts"
+msgstr "Vidjows u podcasts"
 
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
@@ -984,13 +1093,18 @@ msgstr "Żur il-websajt esterna"
 msgid "Web"
 msgstr "Web"
 
+#. Default: "Webpage"
+#: messages
+msgid "Webpage"
+msgstr "Paġna web"
+
 #. Default: "Websites"
-#: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Websites"
 msgstr "Websajts"
 
 #. Default: "Websites:"
+#: components/theme/Views/AdaptationOptionView
 #: helpers/Utils
 msgid "Websites:"
 msgstr "Websajts:"
@@ -1006,36 +1120,56 @@ msgid "Where"
 msgstr "Fejn"
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption"
 msgstr "It-traduzzjoni awtomatika tista’ tagħtik idea bażika tal-kontenut f’lingwa li tifhem. Hija kompletament awtomatizzata u ma tinvolvi l-ebda intervent uman. Il-kwalità u l-eżattezza tat-traduzzjoni awtomatika jistgħu jvarjaw b’mod sinifikanti minn test għal ieħor u bejn pari ta’ lingwi differenti. Il-Kummissjoni Ewropea ma tiggarantixxix l-eżattezza u ma taċċetta l-ebda responsabbiltà għal żbalji possibbli. Xi kontenut (bħal stampi, vidjows, fajls, eċċ.) jista’ ma jiġix tradott minħabba l-limitazzjonijiet tekniċi tas-sistema."
 
 #. Default: "Don’t use eTranslation to translate EU legislation. Authentic versions in the 24 official languages are available on <link_eurlex>Eur-Lex</link_eurlex>. See also the <link_languagepolicy>Europa language policy</link_languagepolicy> and <link_legalnotice>legal notice</link_legalnotice> (includes privacy policy and copyright notice)."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.desciption_with_links"
 msgstr "Tużax eTranslation biex tittraduċi l-leġiżlazzjoni tal-UE. Verżjonijiet awtentiċi fl-24 lingwa uffiċjali huma disponibbli fuq <link_eurlex>Eur-Lex</link_eurlex>. Ara wkoll il-<link_languagepolicy>politika lingwistika Europa</link_languagepolicy> u l-<link_legalnotice>avviż legali</link_legalnotice> (jinkludi l-politika tal-privatezza u l-avviż tad-drittijiet tal-awtur)."
 
 #. Default: "This translation is generated by eTranslation, a machine translation tool provided by the European Commission."
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.short_desc"
 msgstr "Din it-traduzzjoni hija ġġenerata minn eTranslation, għodda ta’ traduzzjoni awtomatika pprovduta mill-Kummissjoni Ewropea."
 
 #. Default: "Show less"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_less"
 msgstr "Uri inqas"
 
 #. Default: "Show more"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.show_more"
 msgstr "Uri aktar"
 
 #. Default: "Exclusion of liability"
-#: components/manage/Blocks/CountryMapProfile/OLView
+#: components/theme/TranslationDisclaimer/TranslationInfo
 msgid "exclusion_of_liability.title"
 msgstr "Esklużjoni tar-responsabbiltà"
+
+#. Default: "Could not import the selected image."
+#: components/theme/Widgets/ImageWidget
+msgid "imageImportFailed"
+msgstr ""
+
+#. Default: "Enter a URL to an image"
+#: components/theme/Widgets/ImageWidget
+msgid "linkAnImage"
+msgstr ""
 
 #. Default: "Officially reported governmental information is only available in English"
 #: components/manage/Blocks/CountryProfileDetail/View
 msgid "officiallyInEnglish"
 msgstr "Informazzjoni governattiva rrappurtata uffiċjalment hija disponibbli biss bl-Ingliż"
+
+#. Default: "Pick an existing image"
+#: components/theme/Widgets/ImageWidget
+msgid "pickAnImage"
+msgstr ""
+
+#. Default: "Upload an image from your computer"
+#: components/theme/Widgets/ImageWidget
+msgid "uploadAnImage"
+msgstr ""
