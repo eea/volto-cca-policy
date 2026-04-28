@@ -4,7 +4,7 @@ import { Plug } from '@plone/volto/components/manage/Pluggable';
 import { Modal, Button, Form, Message } from 'semantic-ui-react';
 import superagent from 'superagent';
 import { flattenToAppURL, expandToBackendURL } from '@plone/volto/helpers';
-import { INDICATOR } from '@eeacms/volto-cca-policy/helpers/Constants';
+import { INDICATOR } from '@eeacms/volto-cca-policy/constants';
 
 function CreateArchivedCopyButton(props) {
   const { content, token } = props;
