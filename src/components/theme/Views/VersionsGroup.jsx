@@ -45,9 +45,7 @@ function VersionsGroup({ content }) {
   }
 
   // Sort by creation date ascending
-  archivedVersions.sort(
-    (a, b) => new Date(a.created) - new Date(b.created),
-  );
+  archivedVersions.sort((a, b) => new Date(a.created) - new Date(b.created));
 
   // Build the full version list: latest first, then archived copies
   const versions = [];
@@ -61,10 +59,7 @@ function VersionsGroup({ content }) {
   return (
     <div className="versions-group">
       <h5>
-        <FormattedMessage
-          id="Versions"
-          defaultMessage="Versions"
-        />
+        <FormattedMessage id="Versions" defaultMessage="Versions" />
       </h5>
       <ul>
         {versions.map((version) => {
@@ -79,11 +74,7 @@ function VersionsGroup({ content }) {
                     <span>
                       {' '}
                       (
-                      <FormattedMessage
-                        id="latest"
-                        defaultMessage="latest"
-                      />
-                      )
+                      <FormattedMessage id="latest" defaultMessage="latest" />)
                     </span>
                   )}
                 </strong>
@@ -94,11 +85,7 @@ function VersionsGroup({ content }) {
                     <span>
                       {' '}
                       (
-                      <FormattedMessage
-                        id="latest"
-                        defaultMessage="latest"
-                      />
-                      )
+                      <FormattedMessage id="latest" defaultMessage="latest" />)
                     </span>
                   )}
                 </Link>
