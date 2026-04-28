@@ -9,3 +9,6 @@ export { default as MissionSignatoryProfileView } from './theme/MissionSignatory
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';
+
+// Manage
+export { default as CreateArchivedCopyButton } from './manage/CreateArchivedCopyButton/CreateArchivedCopyButton';
