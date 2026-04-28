@@ -38,7 +38,10 @@ describe('ArchivedVersionNotice', () => {
       '@type': 'Document',
       review_state: 'archived',
       relatedItems: [
-        { '@id': 'http://localhost:3000/another-archived', review_state: 'archived' },
+        {
+          '@id': 'http://localhost:3000/another-archived',
+          review_state: 'archived',
+        },
       ],
     };
     const { container } = render(
@@ -72,7 +75,12 @@ describe('ArchivedVersionNotice', () => {
         </MemoryRouter>
       </Provider>,
     );
-    expect(container.querySelector('.archived-version-notice')).toBeInTheDocument();
-    expect(container.querySelector('a')).toHaveAttribute('href', '/my-indicator');
+    expect(
+      container.querySelector('.archived-version-notice'),
+    ).toBeInTheDocument();
+    expect(container.querySelector('a')).toHaveAttribute(
+      'href',
+      '/my-indicator',
+    );
   });
 });
