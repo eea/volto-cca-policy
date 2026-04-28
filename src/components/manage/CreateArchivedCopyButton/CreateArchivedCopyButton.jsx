@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Plug } from '@plone/volto/components/manage/Pluggable';
 import { Modal, Button, Form, Message } from 'semantic-ui-react';
 import superagent from 'superagent';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL, expandToBackendURL } from '@plone/volto/helpers';
 import { INDICATOR } from '@eeacms/volto-cca-policy/helpers/Constants';
 
 function CreateArchivedCopyButton(props) {
@@ -44,9 +44,9 @@ function CreateArchivedCopyButton(props) {
     setError(null);
 
     try {
-      const path = flattenToAppURL(contentId);
+      const url = expandToBackendURL(contentId);
       const response = await superagent
-        .post(`${path}/@create-archived-copy`)
+        .post(`${url}/@create-archived-copy`)
         .set('Accept', 'application/json')
         .set('Content-Type', 'application/json')
         .send({ title, id });
