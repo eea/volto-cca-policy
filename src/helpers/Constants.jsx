@@ -58,7 +58,7 @@ export const ACE_COUNTRIES = {
   IE: 'Ireland',
   ES: 'Spain',
   ME: 'Montenegro',
-  MD: 'Moldova, Republic of',
+  MD: 'Republic of Moldova',
   MC: 'Monaco',
   IL: 'Israel',
   RS: 'Serbia',
