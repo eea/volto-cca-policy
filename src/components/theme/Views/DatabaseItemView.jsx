@@ -155,7 +155,7 @@ const BottomInfo = (props) => {
 
       <ContentRelatedItems {...props} />
       <PublishedModifiedInfo {...props} />
-      <VersionsGroup {...props} />
+      {/* <VersionsGroup {...props} /> */}
       <ShareInfoButton {...props} />
     </>
   );
