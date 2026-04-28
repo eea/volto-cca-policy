@@ -32,6 +32,10 @@ import {
   ExternalLink,
   BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
+import {
+  ArchivedVersionNotice,
+  VersionsGroup,
+} from '@eeacms/volto-cca-policy/components';
 
 const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
@@ -151,6 +155,7 @@ const BottomInfo = (props) => {
 
       <ContentRelatedItems {...props} />
       <PublishedModifiedInfo {...props} />
+      <VersionsGroup {...props} />
       <ShareInfoButton {...props} />
     </>
   );
@@ -194,6 +199,7 @@ const DatabaseItemView = (props) => {
       />
 
       <Container>
+        {type === INDICATOR && <ArchivedVersionNotice content={content} />}
         <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
