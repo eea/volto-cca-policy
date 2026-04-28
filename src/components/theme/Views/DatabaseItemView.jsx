@@ -12,7 +12,7 @@ import {
   flourishDataprotection,
   getDataSrcFromEmbedCode,
 } from '@eeacms/volto-cca-policy/helpers/flourishUtils';
-import { VIDEO, CONTENT_TYPE_LABELS } from '@eeacms/volto-cca-policy/constants';
+import { VIDEO, INDICATOR, CONTENT_TYPE_LABELS } from '@eeacms/volto-cca-policy/constants';
 import {
   HTMLField,
   ReferenceInfo,
@@ -26,7 +26,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   ArchivedVersionNotice,
-  VersionsGroup,
+  // VersionsGroup, // commented out - relatedItems already shows versions
 } from '@eeacms/volto-cca-policy/components';
 
 const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
