@@ -299,7 +299,9 @@ const DatabaseItemView = (props) => {
           )}
         </Grid>
 
-        {type === INDICATOR && <ArchivedVersionListing content={content} />}
+        {type === INDICATOR && content?.review_state !== 'archived' && (
+          <ArchivedVersionListing content={content} />
+        )}
       </Container>
     </div>
   );
