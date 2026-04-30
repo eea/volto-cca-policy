@@ -7,8 +7,8 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 function ArchivedVersionNotice({ content }) {
   if (content?.review_state !== 'archived') return null;
 
-  const relatedItems = content?.relatedItems || [];
-  const latestVersion = relatedItems.find(
+  const archivedVersions = content?.archived_versions || [];
+  const latestVersion = archivedVersions.find(
     (item) => item.review_state === 'published',
   );
 

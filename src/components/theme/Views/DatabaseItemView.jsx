@@ -30,6 +30,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import {
   ArchivedVersionNotice,
+  ArchivedVersionListing,
   // VersionsGroup, // commented out - relatedItems already shows versions
 } from '@eeacms/volto-cca-policy/components';
 
@@ -297,6 +298,8 @@ const DatabaseItemView = (props) => {
             </>
           )}
         </Grid>
+
+        {type === INDICATOR && <ArchivedVersionListing content={content} />}
       </Container>
     </div>
   );
