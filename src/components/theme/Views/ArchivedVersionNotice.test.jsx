@@ -21,7 +21,7 @@ describe('ArchivedVersionNotice', () => {
     const content = {
       '@type': 'Document',
       review_state: 'published',
-      relatedItems: [],
+      archived_versions: [],
     };
     const { container } = render(
       <Provider store={store}>
@@ -37,13 +37,14 @@ describe('ArchivedVersionNotice', () => {
     const content = {
       '@type': 'Document',
       review_state: 'archived',
-      relatedItems: [
+      archived_versions: [
         {
           '@id': 'http://localhost:3000/another-archived',
           review_state: 'archived',
         },
       ],
     };
+
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -51,6 +52,7 @@ describe('ArchivedVersionNotice', () => {
         </MemoryRouter>
       </Provider>,
     );
+
     expect(container.innerHTML).toBe('');
   });
 
@@ -60,7 +62,7 @@ describe('ArchivedVersionNotice', () => {
       '@type': 'Indicator',
       review_state: 'archived',
       title: 'My Indicator (Archived)',
-      relatedItems: [
+      archived_versions: [
         {
           '@id': 'http://localhost:3000/my-indicator',
           review_state: 'published',
@@ -68,6 +70,7 @@ describe('ArchivedVersionNotice', () => {
         },
       ],
     };
+
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
@@ -75,6 +78,7 @@ describe('ArchivedVersionNotice', () => {
         </MemoryRouter>
       </Provider>,
     );
+
     expect(
       container.querySelector('.archived-version-notice'),
     ).toBeInTheDocument();
