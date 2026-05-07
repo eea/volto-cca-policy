@@ -5,8 +5,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isEqual } from 'lodash';
 import { compose } from 'redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { defineMessages, injectIntl } from 'react-intl';
 import {
   Container as SemanticContainer,
   Segment,
@@ -15,22 +17,17 @@ import {
   Label,
   Icon,
 } from 'semantic-ui-react';
-import { defineMessages, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import { getSchema } from '@plone/volto/actions';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
-
 import {
   hasBlocksData,
   getBaseUrl,
   addAppURL,
   Helmet,
 } from '@plone/volto/helpers';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { isEqual } from 'lodash';
 
 const messages = defineMessages({
   rssFeed: {
@@ -46,10 +43,10 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const DefaultView = (props) => {
-  const { content, location } = props;
-  const path = getBaseUrl(location?.pathname || '');
   const dispatch = useDispatch();
+  const { content, location } = props;
   const { views } = config.widgets;
+  const path = getBaseUrl(location?.pathname || '');
   const contentSchema = useSelector((state) => state.schema?.schema);
   const [visible, setVisible] = React.useState(false);
   const [, copy] = useClipboard(`${addAppURL(path)}/rss.xml`);
