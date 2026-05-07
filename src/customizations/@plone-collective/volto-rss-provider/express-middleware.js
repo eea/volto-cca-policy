@@ -1,7 +1,7 @@
 import express from 'express';
 import superagent from 'superagent';
 import RSS from 'rss';
-import { findBlocks, toPublicURL, flattenToAppURL } from '@plone/volto/helpers';
+import { findBlocks, toPublicURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 /**
