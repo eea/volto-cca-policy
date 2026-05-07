@@ -26,7 +26,6 @@ import {
   hasBlocksData,
   getBaseUrl,
   addAppURL,
-  findBlocks,
   Helmet,
 } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,7 +52,7 @@ const DefaultView = (props) => {
   const { views } = config.widgets;
   const contentSchema = useSelector((state) => state.schema?.schema);
   const [visible, setVisible] = React.useState(false);
-  const [copied, copy, setCopied] = useClipboard(`${addAppURL(path)}/rss.xml`);
+  const [, copy] = useClipboard(`${addAppURL(path)}/rss.xml`);
   const fieldsetsToExclude = [
     'categorization',
     'dates',
