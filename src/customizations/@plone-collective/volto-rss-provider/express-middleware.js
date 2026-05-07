@@ -65,9 +65,11 @@ async function getRssFeedData(apiPath, APISUFIX, req, settings) {
 
     if (queryData?.sort_order !== null) {
       if (typeof queryData.sort_order === 'boolean') {
-        queryData.sort_order = queryData.sort_order
-          ? 'descending'
-          : 'ascending';
+        queryData.sort_order = queryData.sort_order ? 'reverse' : 'ascending';
+      }
+
+      if (queryData.sort_order === 'descending') {
+        queryData.sort_order = 'reverse';
       }
     }
 
