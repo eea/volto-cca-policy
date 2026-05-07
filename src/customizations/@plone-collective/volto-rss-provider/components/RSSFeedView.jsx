@@ -5,7 +5,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import superagent from 'superagent';
 import { compose } from 'redux';
 
 import {
@@ -14,6 +13,7 @@ import {
   Button,
   Grid,
   Label,
+  Icon,
 } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
@@ -81,12 +81,6 @@ const DefaultView = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const listingBlock = findBlocks(content.blocks, 'listing');
-  const listing = useSelector(
-    (state) =>
-      state.querystringsearch?.subrequests?.[`${content.UID}-${listingBlock}`],
-  );
-
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
@@ -106,12 +100,14 @@ const DefaultView = (props) => {
         />
         <Segment>
           <Button
+            primary
             onClick={() => {
               copy();
               setVisible(true);
             }}
           >
-            Copy Feed link
+            <Icon className="ri-rss-fill" />
+            RSS Feed
           </Button>
           {visible && (
             <p>
@@ -126,7 +122,9 @@ const DefaultView = (props) => {
               </a>
             </p>
           )}
-          <RenderBlocks {...props} path={path} />
+          <div style={{ marginTop: '2em' }}>
+            <RenderBlocks {...props} path={path} />
+          </div>
         </Segment>
       </Container>
     ) : (
