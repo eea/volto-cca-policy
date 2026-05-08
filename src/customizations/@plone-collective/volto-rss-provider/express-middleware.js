@@ -294,6 +294,15 @@ function make_rssMiddleware() {
       res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
       res.send(xml);
     } catch (err) {
+      console.error('[RSS] Failed', {
+        path: req.path,
+        apiPath,
+        status: err.response?.status,
+        message: err.message,
+        responseBody: err.response?.body,
+        responseText: err.response?.text,
+        stack: err.stack,
+      });
       if (err.response && err.response.status === 401) {
         // Handle unauthorized errors
         res.status(401).json({
