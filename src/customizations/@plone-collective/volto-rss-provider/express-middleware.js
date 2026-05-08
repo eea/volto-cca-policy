@@ -42,7 +42,7 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
     )
     .accept('json');
 
-  const authToken = req.universalCookies.get('auth_token');
+  const authToken = req.universalCookies?.get?.('auth_token');
   if (authToken) {
     request.set('Authorization', `Bearer ${authToken}`);
   }
@@ -174,6 +174,21 @@ function safeDate(value) {
   return d;
 }
 
+function resolveImageUrl(download, itemUrl, publicURL, apiPath) {
+  if (!download || !itemUrl) return undefined;
+
+  try {
+    const base = itemUrl.endsWith('/') ? itemUrl : `${itemUrl}/`;
+    return normalizeFeedURL(
+      new URL(download, base).toString(),
+      publicURL,
+      apiPath,
+    );
+  } catch {
+    return undefined;
+  }
+}
+
 /**
  * Creates an Express middleware for generating an RSS feed using the listing block of the
  * rss_feed content type.
@@ -218,7 +233,7 @@ function make_rssMiddleware() {
         query,
         apiPath,
         APISUFFIX,
-        req.universalCookies.get('auth_token'),
+        req.universalCookies?.get?.('auth_token'),
       );
       const feedOptions = {
         title: truncateText(title, max_title_length),
@@ -238,20 +253,28 @@ function make_rssMiddleware() {
         let enclosure = undefined;
 
         const imageData = item.image_scales?.[item.image_field]?.[0];
-        const previewDownload = imageData?.scales?.preview?.download;
+        const previewScale = imageData?.scales?.preview;
+        const imageDownload = previewScale?.download || imageData?.download;
+        const imageSize = previewScale?.size || imageData?.size;
+        const imageType =
+          previewScale?.['content-type'] || imageData?.['content-type'];
 
-        if (previewDownload && imageData.size && imageData['content-type']) {
+        const imageUrl = resolveImageUrl(
+          imageDownload,
+          link,
+          settings.publicURL,
+          apiPath,
+        );
+
+        const numericImageSize = Number(imageSize);
+
+        if (imageUrl && Number.isFinite(numericImageSize) && imageType) {
           enclosure = {
-            url: normalizeFeedURL(
-              new URL(previewDownload, link).toString(),
-              settings.publicURL,
-              apiPath,
-            ),
-            type: imageData['content-type'],
-            size: imageData.size,
+            url: imageUrl,
+            type: imageType,
+            size: numericImageSize,
           };
         }
-
         feed.item({
           title: truncateText(item.title, max_title_length),
           description: truncateText(
