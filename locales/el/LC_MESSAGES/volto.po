@@ -1071,7 +1071,7 @@ msgstr "Απαιτήσεις χρήστη"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Βίντεο"
+msgstr "Βίντεο και podcast"
 
 #. Default: "Videos and podcasts"
 #: messages

@@ -11,3 +11,11 @@ export { default as AccordionList } from './theme/AccordionList/AccordionList';
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';
 export { default as ImageWidget } from './theme/Widgets/ImageWidget';
+
+// Manage
+export { default as CreateArchivedCopyButton } from './manage/CreateArchivedCopyButton/CreateArchivedCopyButton';
+
+// Views
+export { default as ArchivedVersionListing } from './theme/Views/ArchivedVersionListing';
+export { default as ArchivedVersionNotice } from './theme/Views/ArchivedVersionNotice';
+export { default as VersionsGroup } from './theme/Views/VersionsGroup';

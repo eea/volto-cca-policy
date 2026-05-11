@@ -1071,7 +1071,7 @@ msgstr "Zahtjevi korisnika"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Video"
+msgstr "Videozapisi i podcasti"
 
 #. Default: "Videos and podcasts"
 #: messages

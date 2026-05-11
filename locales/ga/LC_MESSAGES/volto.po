@@ -1071,7 +1071,7 @@ msgstr "Riachtanais úsáideora"
 #. Default: "Videos and podcasts"
 #: search/vocabulary
 msgid "Video"
-msgstr "Físeán"
+msgstr "Físeáin agus podchraoltaí"
 
 #. Default: "Videos and podcasts"
 #: messages
