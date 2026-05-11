@@ -33,14 +33,15 @@ import config from '@plone/volto/registry';
  * @throws Will throw an error if no query data is found in the listing block or if the request fails.
  */
 async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
-  const request = superagent
-    .get(
-      `${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}${req.path.replace(
-        '/rss.xml',
-        '',
-      )}`,
-    )
-    .accept('json');
+  const url = `${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}${req.path.replace(
+    '/rss.xml',
+    '',
+  )}`;
+
+  // eslint-disable-next-line no-console
+  console.error('[RSS] Fetching feed data from:', url);
+
+  const request = superagent.get(url).accept('json');
 
   const authToken = req.universalCookies?.get?.('auth_token');
   if (authToken) {
@@ -294,13 +295,12 @@ function make_rssMiddleware() {
       res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
       res.send(xml);
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error('[RSS] Failed', {
         path: req.path,
         apiPath,
-        status: err.response?.status,
+        APISUFFIX,
         message: err.message,
-        responseBody: err.response?.body,
-        responseText: err.response?.text,
         stack: err.stack,
       });
       if (err.response && err.response.status === 401) {
