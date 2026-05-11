@@ -106,7 +106,7 @@ export default function MenuStrategiesPlansGoals(props) {
           across key sectors.
         </p>
       </Callout>
-      <h2>Adaptation governance overview</h2>
+      <h2 id="overview">Adaptation governance overview</h2>
       <p>
         This section outlines the country’s approach to climate adaptation,
         including its strategic priorities, key challenges, stakeholder
@@ -114,7 +114,7 @@ export default function MenuStrategiesPlansGoals(props) {
         frameworks.
       </p>
       <AccordionList elements={elements} />
-      <h2>Adaptation actions and measures</h2>
+      <h2 id="measures">Adaptation actions and measures</h2>
       <p>
         This section provides an overview of the adaptation actions and measures
         reported by the country. The measures are grouped by sector to reflect

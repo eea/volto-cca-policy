@@ -80,7 +80,7 @@ export default function MenuGoodPractices(props) {
   return (
     <>
       <div>
-        <h2>Cooperation and experience</h2>
+        <h2 id="cooperation">Cooperation and experience</h2>
         <p>
           This section presents the country's cooperation activities, including
           scientific collaboration, international partnerships and policy-level
@@ -101,7 +101,7 @@ export default function MenuGoodPractices(props) {
           }}
         />
       </div>
-      <h2>Good practices and lessons learnt</h2>
+      <h2 id="good_practices">Good practices and lessons learnt</h2>
       <div className="styled-dividerBlock tertiary has--theme--tertiary styled">
         <div className="ui fitted divider tertiary divider-spacing-s"></div>
       </div>

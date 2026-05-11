@@ -123,7 +123,7 @@ export default function MenuProfile(props) {
   })();
   return (
     <div className="cp2026">
-      <h2>Adaptation policies</h2>
+      <h2 id="adaptation_policies">Adaptation policies</h2>
       <h3>National framework</h3>
       {adaptationPolicies.map((adaptation, index) => (
         <Grid columns="12" className="cpBgGray">
@@ -162,11 +162,13 @@ export default function MenuProfile(props) {
           </Grid.Column>
         </Grid>
       ))}
-      <h3>Data and climate services</h3>
+      <h3 id="climate_services">Data and climate services</h3>
       <ListDiv elements={dataAndClimateServices} />
-      <h3>Monitoring and reporting</h3>
+      <h3 id="monitoring_reporting">Monitoring and reporting</h3>
       <ListDiv elements={monitoringAndReportingData} />
-      <h3>Adaptation knowledge portals and platforms</h3>
+      <h3 id="adaptation_knowledge">
+        Adaptation knowledge portals and platforms
+      </h3>
       <Grid columns="12">
         {portalsAndPlatforms.map((website, index) => (
           <Grid.Column mobile={12} tablet={12} computer={6}>
@@ -192,7 +194,7 @@ export default function MenuProfile(props) {
           </Grid.Column>
         ))}
       </Grid>
-      <h3>Key publications</h3>
+      <h3 id="key_publications">Key publications</h3>
       <Grid columns="12">
         {portalsPublications.map((website, index) => (
           <Grid.Column mobile={12} tablet={12} computer={6}>
@@ -217,7 +219,7 @@ export default function MenuProfile(props) {
           </Grid.Column>
         ))}
       </Grid>
-      <h3>Contact</h3>
+      <h3 id="contact">Contact</h3>
       <Grid columns="12">
         {contactData.map((data, index) => (
           <Grid.Column mobile={12} tablet={12} computer={6}>
