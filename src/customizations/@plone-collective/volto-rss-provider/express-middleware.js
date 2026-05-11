@@ -36,11 +36,13 @@ import config from '@plone/volto/registry';
 function getApiBase(apiPath, APISUFFIX) {
   const normalizedApiPath = apiPath.replace(/\/+$/, '');
 
-  if (!APISUFFIX || normalizedApiPath.endsWith(APISUFFIX)) {
+  if (!APISUFFIX || normalizedApiPath.endsWith(APISUFFIX.replace(/^\/+/, ''))) {
     return normalizedApiPath;
   }
 
-  return `${normalizedApiPath}${APISUFFIX}`;
+  return `${normalizedApiPath}${
+    APISUFFIX.startsWith('/') ? APISUFFIX : `/${APISUFFIX}`
+  }`;
 }
 
 async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
@@ -48,70 +50,81 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
   const url = `${apiBase}${req.path.replace('/rss.xml', '')}`;
 
   // eslint-disable-next-line no-console
-  console.error('[RSS] Fetching feed data from:', url);
+  console.log('[RSS] Fetching feed data from:', url);
 
-  const request = superagent.get(url).accept('json');
+  try {
+    const request = superagent.get(url).accept('json');
 
-  const authToken = req.universalCookies?.get?.('auth_token');
-  if (authToken) {
-    request.set('Authorization', `Bearer ${authToken}`);
-  }
-
-  const response = await request;
-  const json = response.body;
-  const listingBlocks = findBlocks(json.blocks, 'listing');
-  const listingBlockId = Array.isArray(listingBlocks)
-    ? listingBlocks[0]
-    : listingBlocks;
-
-  const queryData = listingBlockId
-    ? json.blocks?.[listingBlockId]?.querystring
-    : null;
-  const language = json.language?.token ?? 'en';
-  const description = json.description ?? 'A Volto RSS Feed';
-  const title = json.title;
-  const subjects = json.subjects;
-  const date = json.effective;
-  const max_description_length = json.max_description_length;
-  const max_title_length = json.max_title_length;
-  if (!queryData) {
-    throw new Error('No query data found in listing block');
-  }
-
-  const normalizedQueryData = { ...queryData };
-
-  if (normalizedQueryData.sort_order != null) {
-    if (typeof normalizedQueryData.sort_order === 'boolean') {
-      normalizedQueryData.sort_order = normalizedQueryData.sort_order
-        ? 'reverse'
-        : 'ascending';
+    const authToken = req.universalCookies?.get?.('auth_token');
+    if (authToken) {
+      request.set('Authorization', `Bearer ${authToken}`);
     }
 
-    if (normalizedQueryData.sort_order === 'descending') {
-      normalizedQueryData.sort_order = 'reverse';
+    const response = await request;
+    const json = response.body;
+
+    const listingBlocks = findBlocks(json.blocks, 'listing');
+    const listingBlockId = Array.isArray(listingBlocks)
+      ? listingBlocks[0]
+      : listingBlocks;
+
+    const queryData = listingBlockId
+      ? json.blocks?.[listingBlockId]?.querystring
+      : null;
+    const language = json.language?.token ?? 'en';
+    const description = json.description ?? 'A Volto RSS Feed';
+    const title = json.title;
+    const subjects = json.subjects;
+    const date = json.effective;
+    const max_description_length = json.max_description_length;
+    const max_title_length = json.max_title_length;
+    if (!queryData) {
+      throw new Error('No query data found in listing block');
     }
+
+    const normalizedQueryData = { ...queryData };
+
+    if (normalizedQueryData.sort_order != null) {
+      if (typeof normalizedQueryData.sort_order === 'boolean') {
+        normalizedQueryData.sort_order = normalizedQueryData.sort_order
+          ? 'reverse'
+          : 'ascending';
+      }
+
+      if (normalizedQueryData.sort_order === 'descending') {
+        normalizedQueryData.sort_order = 'reverse';
+      }
+    }
+
+    const query = {
+      ...normalizedQueryData,
+      ...(!normalizedQueryData.b_size && {
+        b_size: settings.defaultPageSize,
+      }),
+      query: normalizedQueryData?.query,
+      metadata_fields: '_all',
+      b_start: 0,
+    };
+
+    return {
+      query,
+      language,
+      description,
+      title,
+      subjects,
+      date,
+      max_description_length,
+      max_title_length,
+    };
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error('[RSS] Error in getRssFeedData:', {
+      url,
+      message: err.message,
+      status: err.status,
+    });
+    throw err;
   }
-
-  const query = {
-    ...normalizedQueryData,
-    ...(!normalizedQueryData.b_size && {
-      b_size: settings.defaultPageSize,
-    }),
-    query: normalizedQueryData?.query,
-    metadata_fields: '_all',
-    b_start: 0,
-  };
-
-  return {
-    query,
-    language,
-    description,
-    title,
-    subjects,
-    date,
-    max_description_length,
-    max_title_length,
-  };
 }
 
 /**
@@ -131,18 +144,26 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
  */
 async function fetchListingItems(query, apiPath, APISUFFIX, authToken) {
   const apiBase = getApiBase(apiPath, __DEVELOPMENT__ ? '' : APISUFFIX);
+  const url = `${apiBase}/@querystring-search`;
 
-  const request = superagent
-    .post(`${apiBase}/@querystring-search`)
-    .send(query)
-    .accept('json');
+  try {
+    const request = superagent.post(url).send(query).accept('json');
 
-  if (authToken) {
-    request.set('Authorization', `Bearer ${authToken}`);
+    if (authToken) {
+      request.set('Authorization', `Bearer ${authToken}`);
+    }
+
+    const response = await request;
+    return response.body?.items || [];
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error('[RSS] Error in fetchListingItems:', {
+      url,
+      message: err.message,
+      status: err.status,
+    });
+    throw err;
   }
-
-  const response = await request;
-  return response.body.items || [];
 }
 
 function normalizeFeedURL(url, publicURL, apiPath) {
@@ -182,7 +203,7 @@ function truncateText(text = '', maxLength) {
 function safeDate(value) {
   if (!value) return undefined;
   const d = new Date(value);
-  if (Number.isNaN(d.getTime()) || d.getTime() <= 0) return undefined;
+  if (Number.isNaN(d.getTime())) return undefined;
   return d;
 }
 
@@ -218,6 +239,7 @@ function make_rssMiddleware() {
   const host = process.env.HOST || 'localhost';
   const port = process.env.PORT || '3000';
   const ProdapiPath = `http://${host}:${port}`;
+
   if (settings.internalApiPath && __SERVER__) {
     apiPath = settings.internalApiPath;
   } else if (__DEVELOPMENT__ && settings.devProxyToApiPath) {
@@ -225,6 +247,7 @@ function make_rssMiddleware() {
   } else {
     apiPath = settings.apiPath;
   }
+
   if (apiPath === '') {
     apiPath = ProdapiPath;
   }
@@ -307,11 +330,13 @@ function make_rssMiddleware() {
       res.send(xml);
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error('[RSS] Failed', {
+      console.error('[RSS] Failed to generate RSS feed', {
         path: req.path,
         apiPath,
         APISUFFIX,
         message: err.message,
+        status: err.status,
+        response: err.response?.body,
         stack: err.stack,
       });
       if (err.response && err.response.status === 401) {
