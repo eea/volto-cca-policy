@@ -32,11 +32,20 @@ import config from '@plone/volto/registry';
  * @return {Object} An object containing the query data, language, description, and title of the rss_feed.
  * @throws Will throw an error if no query data is found in the listing block or if the request fails.
  */
+
+function getApiBase(apiPath, APISUFFIX) {
+  const normalizedApiPath = apiPath.replace(/\/+$/, '');
+
+  if (!APISUFFIX || normalizedApiPath.endsWith(APISUFFIX)) {
+    return normalizedApiPath;
+  }
+
+  return `${normalizedApiPath}${APISUFFIX}`;
+}
+
 async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
-  const url = `${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}${req.path.replace(
-    '/rss.xml',
-    '',
-  )}`;
+  const apiBase = getApiBase(apiPath, __DEVELOPMENT__ ? '' : APISUFFIX);
+  const url = `${apiBase}${req.path.replace('/rss.xml', '')}`;
 
   // eslint-disable-next-line no-console
   console.error('[RSS] Fetching feed data from:', url);
@@ -121,8 +130,10 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
  * @throws Will throw an error if the request fails.
  */
 async function fetchListingItems(query, apiPath, APISUFFIX, authToken) {
+  const apiBase = getApiBase(apiPath, __DEVELOPMENT__ ? '' : APISUFFIX);
+
   const request = superagent
-    .post(`${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}/@querystring-search`)
+    .post(`${apiBase}/@querystring-search`)
     .send(query)
     .accept('json');
 
