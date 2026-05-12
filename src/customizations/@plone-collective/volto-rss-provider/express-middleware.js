@@ -169,20 +169,12 @@ function make_rssMiddleware() {
   const { settings } = config;
   const APISUFFIX = settings.legacyTraverse ? '' : '/++api++';
   let apiPath = '';
-  const host = process.env.HOST || 'localhost';
-  const port = process.env.PORT || '3000';
-  const ProdapiPath = `http://${host}:${port}`;
-
   if (settings.internalApiPath && __SERVER__) {
     apiPath = settings.internalApiPath;
   } else if (__DEVELOPMENT__ && settings.devProxyToApiPath) {
     apiPath = settings.devProxyToApiPath;
   } else {
     apiPath = settings.apiPath;
-  }
-
-  if (apiPath === '') {
-    apiPath = ProdapiPath;
   }
 
   async function rssMiddleware(req, res, next) {
