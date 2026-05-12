@@ -1,8 +1,9 @@
 import express from 'express';
 import superagent from 'superagent';
 import RSS from 'rss';
-import { findBlocks } from '@plone/volto/helpers';
+import { findBlocks, toPublicURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
 
 /**
  * Retrieves the query data (search criteria) used by the listing block of the rss_feed content type
@@ -33,76 +34,68 @@ import config from '@plone/volto/registry';
  * @throws Will throw an error if no query data is found in the listing block or if the request fails.
  */
 async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
-  const url = `${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}${req.path.replace(
-    '/rss.xml',
-    '',
-  )}`;
+  try {
+    const request = superagent
+      .get(
+        `${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}${req.path.replace(
+          '/rss.xml',
+          '',
+        )}`,
+      )
+      .accept('json')
+      .use(addHeadersFactory(req));
 
-  // eslint-disable-next-line no-console
-  console.error('[RSS] Fetching feed data from:', url);
-
-  const request = superagent.get(url).accept('json');
-
-  const authToken = req.universalCookies?.get?.('auth_token');
-  if (authToken) {
-    request.set('Authorization', `Bearer ${authToken}`);
-  }
-
-  const response = await request;
-  const json = response.body;
-  const listingBlocks = findBlocks(json.blocks, 'listing');
-  const listingBlockId = Array.isArray(listingBlocks)
-    ? listingBlocks[0]
-    : listingBlocks;
-
-  const queryData = listingBlockId
-    ? json.blocks?.[listingBlockId]?.querystring
-    : null;
-  const language = json.language?.token ?? 'en';
-  const description = json.description ?? 'A Volto RSS Feed';
-  const title = json.title;
-  const subjects = json.subjects;
-  const date = json.effective;
-  const max_description_length = json.max_description_length;
-  const max_title_length = json.max_title_length;
-  if (!queryData) {
-    throw new Error('No query data found in listing block');
-  }
-
-  const normalizedQueryData = { ...queryData };
-
-  if (normalizedQueryData.sort_order != null) {
-    if (typeof normalizedQueryData.sort_order === 'boolean') {
-      normalizedQueryData.sort_order = normalizedQueryData.sort_order
-        ? 'reverse'
-        : 'ascending';
+    const authToken = req.universalCookies?.get?.('auth_token');
+    if (authToken) {
+      request.set('Authorization', `Bearer ${authToken}`);
     }
 
-    if (normalizedQueryData.sort_order === 'descending') {
-      normalizedQueryData.sort_order = 'reverse';
+    const response = await request;
+    const json = JSON.parse(JSON.stringify(response.body));
+    const listingBlock = findBlocks(json.blocks, 'listing');
+    const queryData = json.blocks?.[listingBlock]?.querystring;
+    const language = json.language?.token ?? 'en';
+    const description = json.description ?? 'A Volto RSS Feed';
+    const title = json.title;
+    const subjects = json.subjects;
+    const date = json.effective;
+    const max_description_length = json.max_description_length;
+    const max_title_length = json.max_title_length;
+    if (!queryData) {
+      throw new Error('No query data found in listing block');
     }
+
+    if (queryData?.sort_order != null) {
+      if (typeof queryData.sort_order === 'boolean') {
+        queryData.sort_order = queryData.sort_order
+          ? 'descending'
+          : 'ascending';
+      }
+    }
+
+    const query = {
+      ...queryData,
+      ...(!queryData.b_size && {
+        b_size: settings.defaultPageSize,
+      }),
+      query: queryData?.query,
+      metadata_fields: '_all',
+      b_start: 0,
+    };
+
+    return {
+      query,
+      language,
+      description,
+      title,
+      subjects,
+      date,
+      max_description_length,
+      max_title_length,
+    };
+  } catch (err) {
+    throw err;
   }
-
-  const query = {
-    ...normalizedQueryData,
-    ...(!normalizedQueryData.b_size && {
-      b_size: settings.defaultPageSize,
-    }),
-    query: normalizedQueryData?.query,
-    metadata_fields: '_all',
-    b_start: 0,
-  };
-
-  return {
-    query,
-    language,
-    description,
-    title,
-    subjects,
-    date,
-    max_description_length,
-    max_title_length,
-  };
 }
 
 /**
@@ -120,39 +113,22 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
  * @return {Array} An array of items that match the query criteria.
  * @throws Will throw an error if the request fails.
  */
-async function fetchListingItems(query, apiPath, APISUFFIX, authToken) {
-  const request = superagent
-    .post(`${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}/@querystring-search`)
-    .send(query)
-    .accept('json');
-
-  if (authToken) {
-    request.set('Authorization', `Bearer ${authToken}`);
-  }
-
-  const response = await request;
-  return response.body.items || [];
-}
-
-function normalizeFeedURL(url, publicURL, apiPath) {
-  if (!url) return publicURL;
-
+async function fetchListingItems(query, apiPath, APISUFFIX, authToken, req) {
   try {
-    const parsedUrl = new URL(url, publicURL);
+    const request = superagent
+      .post(`${apiPath}${__DEVELOPMENT__ ? '' : APISUFFIX}/@querystring-search`)
+      .send(query)
+      .accept('json')
+      .use(addHeadersFactory(req));
 
-    if (apiPath) {
-      const apiOrigin = new URL(apiPath).origin;
-      const publicOrigin = new URL(publicURL).origin;
-
-      if (parsedUrl.origin === apiOrigin) {
-        parsedUrl.protocol = new URL(publicOrigin).protocol;
-        parsedUrl.host = new URL(publicOrigin).host;
-      }
+    if (authToken) {
+      request.set('Authorization', `Bearer ${authToken}`);
     }
 
-    return parsedUrl.toString();
-  } catch {
-    return url;
+    const response = await request;
+    return response.body?.items || [];
+  } catch (err) {
+    throw err;
   }
 }
 
@@ -166,28 +142,6 @@ function normalizeFeedURL(url, publicURL, apiPath) {
 function truncateText(text = '', maxLength) {
   if (!maxLength || typeof text !== 'string') return text || '';
   return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
-}
-
-function safeDate(value) {
-  if (!value) return undefined;
-  const d = new Date(value);
-  if (Number.isNaN(d.getTime()) || d.getTime() <= 0) return undefined;
-  return d;
-}
-
-function resolveImageUrl(download, itemUrl, publicURL, apiPath) {
-  if (!download || !itemUrl) return undefined;
-
-  try {
-    const base = itemUrl.endsWith('/') ? itemUrl : `${itemUrl}/`;
-    return normalizeFeedURL(
-      new URL(download, base).toString(),
-      publicURL,
-      apiPath,
-    );
-  } catch {
-    return undefined;
-  }
 }
 
 /**
@@ -204,18 +158,12 @@ function make_rssMiddleware() {
   const { settings } = config;
   const APISUFFIX = settings.legacyTraverse ? '' : '/++api++';
   let apiPath = '';
-  const host = process.env.HOST || 'localhost';
-  const port = process.env.PORT || '3000';
-  const ProdapiPath = `http://${host}:${port}`;
   if (settings.internalApiPath && __SERVER__) {
     apiPath = settings.internalApiPath;
   } else if (__DEVELOPMENT__ && settings.devProxyToApiPath) {
     apiPath = settings.devProxyToApiPath;
   } else {
     apiPath = settings.apiPath;
-  }
-  if (apiPath === '') {
-    apiPath = ProdapiPath;
   }
 
   async function rssMiddleware(req, res, next) {
@@ -235,46 +183,48 @@ function make_rssMiddleware() {
         apiPath,
         APISUFFIX,
         req.universalCookies?.get?.('auth_token'),
+        req,
       );
       const feedOptions = {
         title: truncateText(title, max_title_length),
         description: truncateText(description, max_description_length),
-        feed_url: normalizeFeedURL(req.path, settings.publicURL, apiPath),
+        feed_url: `${settings.publicURL}${req.path}`,
         site_url: settings.publicURL,
         generator: 'RSS Feed Generator',
         language: language,
-        pubDate: safeDate(date),
+        pubDate: new Date(date),
         categories: subjects || [],
       };
 
       const feed = new RSS(feedOptions);
 
       items.forEach((item) => {
-        const link = normalizeFeedURL(item.getURL, settings.publicURL, apiPath);
+        let link = toPublicURL(item['getURL']);
         let enclosure = undefined;
+        if (
+          item.image_field &&
+          item.image_scales &&
+          item.image_scales[item.image_field] &&
+          item.image_scales[item.image_field].length > 0
+        ) {
+          const imageData = item.image_scales[item.image_field][0];
+          const scales = imageData.scales || {};
+          const scale =
+            scales.preview ||
+            scales.large ||
+            scales.teaser ||
+            Object.values(scales)[0];
 
-        const imageData = item.image_scales?.[item.image_field]?.[0];
-        const previewScale = imageData?.scales?.preview;
-        const imageDownload = previewScale?.download || imageData?.download;
-        const imageSize = previewScale?.size || imageData?.size;
-        const imageType =
-          previewScale?.['content-type'] || imageData?.['content-type'];
-
-        const imageUrl = resolveImageUrl(
-          imageDownload,
-          link,
-          settings.publicURL,
-          apiPath,
-        );
-
-        const numericImageSize = Number(imageSize);
-
-        if (imageUrl && Number.isFinite(numericImageSize) && imageType) {
-          enclosure = {
-            url: imageUrl,
-            type: imageType,
-            size: numericImageSize,
-          };
+          if (scale && scale.download) {
+            const imageUrl = `${link}/${scale.download}`;
+            const mimeType = item['content-type'];
+            const originalSize = imageData.size;
+            enclosure = {
+              url: imageUrl,
+              type: mimeType,
+              size: originalSize,
+            };
+          }
         }
         feed.item({
           title: truncateText(item.title, max_title_length),
@@ -284,7 +234,7 @@ function make_rssMiddleware() {
           ),
           url: link,
           guid: item.UID,
-          date: safeDate(item.effective || item.created || item.modified),
+          date: new Date(item.effective),
           author: item.listCreators?.join(', '),
           categories: item.Subject ? item.Subject : [],
           enclosure: enclosure || undefined,
@@ -295,14 +245,6 @@ function make_rssMiddleware() {
       res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
       res.send(xml);
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error('[RSS] Failed', {
-        path: req.path,
-        apiPath,
-        APISUFFIX,
-        message: err.message,
-        stack: err.stack,
-      });
       if (err.response && err.response.status === 401) {
         // Handle unauthorized errors
         res.status(401).json({
@@ -335,7 +277,7 @@ function make_rssMiddleware() {
 export default function makeMiddlewares() {
   const middleware = express.Router();
   middleware.use(express.urlencoded({ extended: true }));
-  middleware.get('**/rss.xml', make_rssMiddleware());
+  middleware.all('**/rss.xml', make_rssMiddleware());
 
   middleware.id = 'rss-middleware';
 
