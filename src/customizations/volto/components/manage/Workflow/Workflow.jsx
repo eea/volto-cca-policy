@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
@@ -129,6 +129,10 @@ const customSelectStyles = {
     boxShadow: 'none',
     borderBottom: '2px solid #b8c6c8',
   }),
+  menuList: (styles, state) => ({
+    ...styles,
+    maxHeight: '400px',
+  }),
   indicatorSeparator: (styles) => ({
     ...styles,
     width: null,
@@ -219,8 +223,29 @@ const Workflow = (props) => {
     dispatch(getContent(pathname));
   }, [dispatch, pathname, loaded]);
 
+  const executeTransition = useCallback(
+    (selectedOption) => {
+      if (selectedOption?.url) {
+        dispatch(transitionWorkflow(flattenToAppURL(selectedOption.url)));
+        toast.success(
+          <Toast
+            success
+            title={intl.formatMessage(messages.messageUpdated)}
+            content=""
+          />,
+        );
+      }
+    },
+    [dispatch, intl],
+  );
+
   useEffect(() => {
-    if (showWarningModal && linkintegrityLoaded && linkintegrityInfo) {
+    if (
+      showWarningModal &&
+      linkintegrityLoaded &&
+      linkintegrityInfo &&
+      linkintegrityInfo[0]?.['@id'] === content?.['@id']
+    ) {
       const breaches = linkintegrityInfo.flatMap((result) => result.breaches);
       if (breaches.length === 0) {
         executeTransition(pendingOption);
@@ -228,7 +253,14 @@ const Workflow = (props) => {
         setPendingOption(null);
       }
     }
-  }, [linkintegrityLoaded, linkintegrityInfo, showWarningModal, pendingOption]);
+  }, [
+    linkintegrityLoaded,
+    linkintegrityInfo,
+    showWarningModal,
+    pendingOption,
+    content,
+    executeTransition,
+  ]);
 
   const transition = (selectedOption) => {
     const isPrivateTransition =
@@ -243,17 +275,6 @@ const Workflow = (props) => {
     } else {
       executeTransition(selectedOption);
     }
-  };
-
-  const executeTransition = (selectedOption) => {
-    dispatch(transitionWorkflow(flattenToAppURL(selectedOption.url)));
-    toast.success(
-      <Toast
-        success
-        title={intl.formatMessage(messages.messageUpdated)}
-        content=""
-      />,
-    );
   };
 
   const { Placeholder } = props.reactSelect.components;
@@ -306,10 +327,14 @@ const Workflow = (props) => {
       </FormFieldWrapper>
       <WorkflowLinkIntegrityModal
         open={showWarningModal}
-        onCancel={() => setShowWarningModal(false)}
+        onCancel={() => {
+          setShowWarningModal(false);
+          setPendingOption(null);
+        }}
         onOk={() => {
           executeTransition(pendingOption);
           setShowWarningModal(false);
+          setPendingOption(null);
         }}
       />
     </>
