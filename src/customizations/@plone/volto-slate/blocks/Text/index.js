@@ -129,8 +129,8 @@ export default function installTextBlock(config) {
       return override_toc && level
         ? [parseInt(level.slice(1)), entry_text]
         : config.settings.slate.topLevelTargetElements.includes(type)
-        ? [parseInt(type.slice(1)), plaintext]
-        : null;
+          ? [parseInt(type.slice(1)), plaintext]
+          : null;
     },
   };
 
