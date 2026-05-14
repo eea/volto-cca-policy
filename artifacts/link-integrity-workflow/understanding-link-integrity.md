@@ -92,9 +92,10 @@ The feature was implemented in the `volto-cca-policy` add-on on a dedicated bran
 ### Logic Summary
 - **Trigger**: When the user selects a "Private" transition in the workflow dropdown.
 - **Verification**: The `linkIntegrityCheck` action is dispatched for the current object's UID.
+- **Race Condition Prevention**: The system explicitly waits for the `linkIntegrity.loaded` state to be true before deciding whether to auto-proceed or show the modal. This prevents transitions from executing prematurely due to stale or initial empty state.
 - **Interaction**:
-    - If no incoming links exist, the transition proceeds immediately.
-    - If incoming links are found, a modal appears showing the list of referencing pages.
+    - If no incoming links exist (`breaches.length === 0`), the transition proceeds automatically once the check is loaded.
+    - If incoming links are found, the `WorkflowLinkIntegrityModal` displays the list of referencing pages.
     - The user can either "Cancel" the transition or select "Change state anyway" to proceed.
 
 ## User Story: Testing the Link Integrity Warning
