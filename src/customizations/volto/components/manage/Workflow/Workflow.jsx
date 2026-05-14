@@ -187,6 +187,7 @@ function useWorkflow() {
   const linkintegrityLoading = useSelector(
     (state) => state.linkIntegrity?.loading,
   );
+  const linkintegrityError = useSelector((state) => state.linkIntegrity?.error);
 
   return {
     loaded,
@@ -197,6 +198,7 @@ function useWorkflow() {
     linkintegrityInfo,
     linkintegrityLoaded,
     linkintegrityLoading,
+    linkintegrityError,
   };
 }
 
@@ -211,6 +213,7 @@ const Workflow = (props) => {
     linkintegrityInfo,
     linkintegrityLoaded,
     linkintegrityLoading,
+    linkintegrityError,
   } = useWorkflow();
   const content = useSelector((state) => state.content?.data, shallowEqual);
   const { pathname } = props;
@@ -240,22 +243,30 @@ const Workflow = (props) => {
   );
 
   useEffect(() => {
-    if (
-      showWarningModal &&
-      linkintegrityLoaded &&
-      linkintegrityInfo &&
-      linkintegrityInfo[0]?.['@id'] === content?.['@id']
-    ) {
-      const breaches = linkintegrityInfo.flatMap((result) => result.breaches);
-      if (breaches.length === 0) {
+    if (showWarningModal) {
+      if (linkintegrityError) {
+        // If the check fails, we shouldn't block the user forever. Proceed with transition.
         executeTransition(pendingOption);
         setShowWarningModal(false);
         setPendingOption(null);
+      } else if (
+        linkintegrityLoaded &&
+        linkintegrityInfo &&
+        flattenToAppURL(linkintegrityInfo[0]?.['@id']) ===
+          flattenToAppURL(content?.['@id'])
+      ) {
+        const breaches = linkintegrityInfo.flatMap((result) => result.breaches);
+        if (breaches.length === 0) {
+          executeTransition(pendingOption);
+          setShowWarningModal(false);
+          setPendingOption(null);
+        }
       }
     }
   }, [
     linkintegrityLoaded,
     linkintegrityInfo,
+    linkintegrityError,
     showWarningModal,
     pendingOption,
     content,
