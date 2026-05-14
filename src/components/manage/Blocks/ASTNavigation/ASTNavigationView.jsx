@@ -1,10 +1,16 @@
 import loadable from '@loadable/component';
 
-const ASTLogoMap = loadable(() =>
-  import('@eeacms/volto-cca-policy/components/theme/ASTNavigation/ASTLogoMap'),
+const ASTLogoMap = loadable(
+  () =>
+    import(
+      '@eeacms/volto-cca-policy/components/theme/ASTNavigation/ASTLogoMap'
+    ),
 );
-const UASTLogoMap = loadable(() =>
-  import('@eeacms/volto-cca-policy/components/theme/ASTNavigation/UASTLogoMap'),
+const UASTLogoMap = loadable(
+  () =>
+    import(
+      '@eeacms/volto-cca-policy/components/theme/ASTNavigation/UASTLogoMap'
+    ),
 );
 
 export default function ASTNavigationView(props) {

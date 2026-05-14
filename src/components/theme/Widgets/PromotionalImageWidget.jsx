@@ -104,8 +104,8 @@ const FileWidget = (props) => {
   const imgsrc = value?.download
     ? `${flattenToAppURL(value?.download)}?id=${Date.now()}`
     : value?.data
-    ? `data:${value['content-type']};${value.encoding},${value.data}`
-    : null;
+      ? `data:${value['content-type']};${value.encoding},${value.data}`
+      : null;
 
   /**
    * Drop handler
