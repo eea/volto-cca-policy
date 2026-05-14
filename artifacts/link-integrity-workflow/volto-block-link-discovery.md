@@ -4,50 +4,57 @@ When a content item is saved in Plone, the system needs to know which other inte
 
 For traditional Plone, this meant parsing HTML in `RichText` fields. For Volto, the content is stored as JSON blocks, requiring a recursive discovery mechanism.
 
-## The Foundation: `visit_blocks`
-Discovery starts with a recursive generator in `plone.restapi` called `visit_blocks`. It walks the entire tree of blocks, including nested ones, by delegating the discovery of "children" to multiple `IBlockVisitor` subscribers.
+## Sub-block Storage and Discovery
 
-### How Sub-blocks are Stored and Discovered
-There are three main patterns for storing sub-blocks in Volto:
+Sub-blocks are stored in the JSON data of a parent block using one of two primary patterns. The Plone backend uses a recursive generator called `visit_blocks` (defined in `plone.restapi.blocks`) to walk this tree.
 
-1. **Dictionary Mapping (`blocks`)**:
-   - **Pattern**: `block["blocks"]` or `block["data"]["blocks"]` is a dictionary where keys are UUIDs and values are block data.
-   - **Visitor**: `plone.restapi.blocks.NestedBlocksVisitor` handles these. It yields the `.values()` of these dictionaries.
+### 1. Dictionary Mapping (Key-Value)
+This is the standard Volto pattern for container-like blocks.
+- **Storage Pattern**: A dictionary where keys are UUIDs and values are the sub-block data.
+- **Common Keys**: `blocks` or `data["blocks"]`.
+- **Discovery**: `plone.restapi.blocks.NestedBlocksVisitor` is registered for these keys. It yields each value in the dictionary.
 
-2. **Sequential Lists**:
-   - **Pattern**: `block["columns"]`, `block["slides"]`, or `block["hrefList"]` are lists of block data objects.
-   - **Visitor**: `plone.volto.transforms.NestedBlocksVisitor` handles these core Volto layout keys.
+### 2. Sequential Lists
+This pattern is used by layout-oriented blocks where the order is strictly positional.
+- **Storage Pattern**: A simple list of block data objects.
+- **Core Volto Keys**: `columns`, `slides`, `hrefList`.
+- **Discovery**: `plone.volto.transforms.NestedBlocksVisitor` handles these keys. It iterates through the list and yields each block.
 
-3. **Recursive Children (Slate)**:
-   - **Pattern**: Slate blocks (rich text) store content as a tree of nodes, where each node can have a `children` list. 
-   - **Visitor**: `plone.restapi.blocks.NestedBlocksVisitor` also has special logic for `__somersault__` (plate) blocks to walk these children.
+### 3. Recursive Discovery Logic
+The `visit_blocks` function uses `IBlockVisitor` subscribers to find children. When a visitor yields a sub-block, `visit_blocks` immediately recurses into that sub-block. This ensures that a block tree of any depth (e.g., a Grid containing Columns containing Teasers) is fully flattened during the discovery phase.
 
-## Link Extraction: `IBlockFieldLinkIntegrityRetriever`
-Once `visit_blocks` has identified a specific block data object, the system looks for `IBlockFieldLinkIntegrityRetriever` subscribers to extract internal links from that block's fields.
+## Internal Link Extraction
 
-### Key Fields Used for Linking
-The backend recognizes several fields as potential sources for internal links. A link is identified as internal if it contains the string `resolveuid/`.
+Once a block is discovered, the `BlocksRetriever` (in `plone.restapi.blocks_linkintegrity`) uses `IBlockFieldLinkIntegrityRetriever` subscribers to find internal links within that specific block's fields.
 
-1. **Generic Link Fields**:
-   - **Fields**: `url`, `href`, `preview_image`.
-   - **Implementation**: `GenericBlockLinksRetriever` (in `plone.restapi`).
-   - **Logic**: It automatically checks these keys in *any* block type. It can even find links inside nested lists or dictionaries assigned to these keys.
+### Automatic Link Detection (The Generic Retriever)
+The `GenericBlockLinksRetriever` provides a "zero-configuration" discovery for most custom blocks. It automatically scans the following fields if they contain the `resolveuid/` pattern:
+- `url`
+- `href`
+- `preview_image`
 
-2. **Slate (Rich Text) Links**:
-   - **Implementation**: `SlateBlockLinksRetriever` (in `plone.restapi`).
-   - **Logic**: It deep-walks the Slate JSON tree. It looks for nodes of type `a` or `link`.
-   - **Specific Path**: It extracts the UID from `data.link.internal.internal_link[0]["@id"]` or `data.url`.
+**Note**: If a block uses custom field names for links (e.g., `source`, `target`, `link_to`), they will **NOT** be caught by the generic retriever unless they are specifically registered.
 
-3. **DraftJS (Old Text) Links**:
-   - **Implementation**: `TextBlockLinksRetriever` (in `plone.restapi`).
-   - **Logic**: It parses the `entityMap` looking for `LINK` entities and extracts their `url` or `href` data.
+### Complex Data Extraction
+Some blocks store links deep within complex JSON structures rather than simple top-level strings. These require specialized retrievers:
+
+1. **Slate Blocks (Rich Text)**:
+   - Uses `SlateBlockLinksRetriever`.
+   - Recursively walks the Slate node tree.
+   - Extracts UIDs from `data.link.internal.internal_link[0]["@id"]` and `data.url`.
+
+2. **DraftJS Blocks (Legacy Text)**:
+   - Uses `TextBlockLinksRetriever`.
+   - Parses the `entityMap` for `LINK` entities.
+   - Extracts data from `url` and `href` keys within the entity data.
 
 ## Redundancy and Reliability
-In `plone.volto`, there is an additional `NestedBlockLinkRetriever` (registered for `block_type = None`). This serves as a fail-safe that manually triggers link extraction on the `columns`, `hrefList`, and `slides` keys, ensuring that even if the primary visitor missed something, the link integrity system will still catch it.
+To ensure maximum reliability, `plone.volto` includes a `NestedBlockLinkRetriever` (registered with `block_type = None`). This serves as a fail-safe that manually walks the `columns`, `hrefList`, and `slides` keys to trigger link extraction, providing a second layer of defense for nested layouts.
 
 ## Summary for Developers
-To ensure a custom block supports link integrity:
-- **Use standard keys**: Store your main link in a field named `url` or `href`.
-- **Use standard nesting**: If your block contains sub-blocks, store them in a dictionary under the key `blocks`.
-- **Custom implementation**: If you must use custom keys, register a new `IBlockFieldLinkIntegrityRetriever` for your `@type` in the backend. 
-- **Internal links**: Always store internal links using the `resolveuid/<UID>` format (Volto's `UniversalLink` and `ObjectBrowser` widgets do this by default). 
+To ensure a custom block is correctly tracked by the link integrity system:
+
+1.  **Field Naming**: Prefer naming your link fields `url` or `href` to benefit from the generic retriever.
+2.  **Nesting**: If your block contains sub-blocks, store them in a dictionary under the key `blocks`.
+3.  **Link Format**: Always store internal links using the `resolveuid/<UID>` format.
+4.  **Custom Retrievers**: If you must use unique field names or storage patterns, register a custom `IBlockFieldLinkIntegrityRetriever` adapter for your block's `@type` in the backend.
