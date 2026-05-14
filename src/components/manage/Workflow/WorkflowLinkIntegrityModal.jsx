@@ -95,8 +95,8 @@ const WorkflowLinkIntegrityModal = (props) => {
 
   // If no breaches, we shouldn't even be here, but just in case
   if (brokenReferences === 0 && open) {
-     onOk();
-     return null;
+    onOk();
+    return null;
   }
 
   return (
@@ -130,10 +130,7 @@ const WorkflowLinkIntegrityModal = (props) => {
                 ),
               }}
             />
-            <BrokenLinksList
-              intl={intl}
-              breaches={breaches}
-            />
+            <BrokenLinksList intl={intl} breaches={breaches} />
           </div>
         }
         onCancel={onCancel}
