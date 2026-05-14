@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { defineMessages, useIntl } from 'react-intl';
 
 import { FormFieldWrapper, Icon, Toast } from '@plone/volto/components';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import {
   flattenToAppURL,
   getWorkflowOptions,
@@ -168,6 +169,9 @@ function useWorkflow() {
     shallowEqual,
   );
   const loaded = useSelector((state) => state.workflow.transition.loaded);
+  const transitionLoading = useSelector(
+    (state) => state.workflow.transition.loading,
+  );
   const currentStateValue = useSelector(
     (state) => getCurrentStateMapping(state.workflow.currentState),
     shallowEqual,
@@ -176,14 +180,19 @@ function useWorkflow() {
   const linkintegrityLoaded = useSelector(
     (state) => state.linkIntegrity?.loaded,
   );
+  const linkintegrityLoading = useSelector(
+    (state) => state.linkIntegrity?.loading,
+  );
 
   return {
     loaded,
+    transitionLoading,
     history,
     transitions,
     currentStateValue,
     linkintegrityInfo,
     linkintegrityLoaded,
+    linkintegrityLoading,
   };
 }
 
@@ -192,10 +201,12 @@ const Workflow = (props) => {
   const dispatch = useDispatch();
   const {
     loaded,
+    transitionLoading,
     transitions,
     currentStateValue,
     linkintegrityInfo,
     linkintegrityLoaded,
+    linkintegrityLoading,
   } = useWorkflow();
   const content = useSelector((state) => state.content?.data, shallowEqual);
   const { pathname } = props;
@@ -256,11 +267,19 @@ const Workflow = (props) => {
         intl={intl}
         {...props}
       >
+        <Dimmer active={transitionLoading} inverted>
+          <Loader size="small" />
+        </Dimmer>
         <Select
           name="state-select"
           className="react-select-container"
           classNamePrefix="react-select"
-          isDisabled={!content.review_state || transitions.length === 0}
+          isDisabled={
+            !content.review_state ||
+            transitions.length === 0 ||
+            transitionLoading ||
+            (showWarningModal && linkintegrityLoading)
+          }
           options={uniqBy(
             transitions.map((transition) => getWorkflowOptions(transition)),
             'label',
