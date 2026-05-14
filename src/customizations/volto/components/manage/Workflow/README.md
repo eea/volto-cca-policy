@@ -15,6 +15,7 @@ By shadowing this component, we can intercept transitions that might hide conten
 3.  **State Management**: Added local state (`showWarningModal`, `pendingOption`) to handle the asynchronous check and the confirmation flow.
 4.  **Confirmation Modal**: Integrated `WorkflowLinkIntegrityModal` which displays the list of pages that would have broken links.
 5.  **Auto-proceed**: Added an `useEffect` that automatically executes the transition if the link integrity check returns zero breaches.
+6.  **Activity Indicators**: Added `Dimmer` and `Loader` components from `semantic-ui-react` to provide visual feedback while the link integrity check is loading and during the workflow transition execution.
 
 ## Reference
 
