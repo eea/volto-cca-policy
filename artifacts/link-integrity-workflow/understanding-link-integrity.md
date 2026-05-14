@@ -97,24 +97,43 @@ The feature was implemented in the `volto-cca-policy` add-on on a dedicated bran
     - If incoming links are found, a modal appears showing the list of referencing pages.
     - The user can either "Cancel" the transition or select "Change state anyway" to proceed.
 
-## Example API Call
-```http
-GET /path/to/object/@linkintegrity?uids=<UID>
-```
-Response:
-```json
-[
-  {
-    "@id": "http://localhost:3000/page-to-be-private",
-    "title": "Target Page",
-    "breaches": [
-      {
-        "@id": "http://localhost:3000/source-page",
-        "title": "Source Page",
-        "uid": "..."
-      }
-    ],
-    "items_total": 0
-  }
-]
-```
+## User Story: Testing the Link Integrity Warning
+
+### Description
+As a Content Editor, I want to be warned when I am about to make a page private if other pages are linking to it, so that I can avoid creating broken links for visitors.
+
+### Acceptance Criteria
+1.  **Positive Case (Breaches Found)**: 
+    - Given a "Target Page" that is published.
+    - Given a "Source Page" that contains a link to "Target Page".
+    - When I go to "Target Page" and select "Make Private" (or "Reject" / "Retract") from the state dropdown.
+    - Then I should see a "Checking references..." loading indicator.
+    - Then I should see a warning modal titled "Warning: Potential broken links".
+    - Then the modal should list "Source Page" as an item that will have a broken link.
+    - When I click "Cancel", the modal should close and the page should remain "Published".
+    - When I click "Change state anyway", the modal should close and the page should transition to "Private".
+
+2.  **Negative Case (No Breaches)**:
+    - Given a "Target Page" that is published and has NO incoming links.
+    - When I select "Make Private" from the state dropdown.
+    - Then I should see a brief "Checking references..." indicator.
+    - Then the page should transition to "Private" immediately without showing a warning modal.
+
+### Test Procedure
+1.  **Setup Content**:
+    - Create a page named "Linked Page" and Publish it.
+    - Create another page named "Referencing Page". 
+    - In "Referencing Page", add a Text block and insert an internal link to "Linked Page". Publish "Referencing Page".
+2.  **Verify Warning**:
+    - Navigate to "Linked Page".
+    - Open the state dropdown in the toolbar.
+    - Select "Make Private".
+    - **Observe**: The "Checking references..." dimmer should appear briefly.
+    - **Verify**: The warning modal should appear listing "Referencing Page".
+3.  **Test Cancellation**:
+    - Click "Cancel" in the modal.
+    - **Verify**: The page is still in "Published" state.
+4.  **Test Confirmation**:
+    - Select "Make Private" again.
+    - Click "Change state anyway" in the modal.
+    - **Verify**: The page state changes to "Private" and a success toast appears.
