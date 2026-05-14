@@ -173,15 +173,30 @@ function useWorkflow() {
     shallowEqual,
   );
   const linkintegrityInfo = useSelector((state) => state.linkIntegrity?.result);
+  const linkintegrityLoaded = useSelector(
+    (state) => state.linkIntegrity?.loaded,
+  );
 
-  return { loaded, history, transitions, currentStateValue, linkintegrityInfo };
+  return {
+    loaded,
+    history,
+    transitions,
+    currentStateValue,
+    linkintegrityInfo,
+    linkintegrityLoaded,
+  };
 }
 
 const Workflow = (props) => {
   const intl = useIntl();
   const dispatch = useDispatch();
-  const { loaded, transitions, currentStateValue, linkintegrityInfo } =
-    useWorkflow();
+  const {
+    loaded,
+    transitions,
+    currentStateValue,
+    linkintegrityInfo,
+    linkintegrityLoaded,
+  } = useWorkflow();
   const content = useSelector((state) => state.content?.data, shallowEqual);
   const { pathname } = props;
 
@@ -194,14 +209,15 @@ const Workflow = (props) => {
   }, [dispatch, pathname, loaded]);
 
   useEffect(() => {
-    if (showWarningModal && linkintegrityInfo) {
+    if (showWarningModal && linkintegrityLoaded && linkintegrityInfo) {
       const breaches = linkintegrityInfo.flatMap((result) => result.breaches);
       if (breaches.length === 0) {
         executeTransition(pendingOption);
         setShowWarningModal(false);
+        setPendingOption(null);
       }
     }
-  }, [linkintegrityInfo, showWarningModal, pendingOption]);
+  }, [linkintegrityLoaded, linkintegrityInfo, showWarningModal, pendingOption]);
 
   const transition = (selectedOption) => {
     const isPrivateTransition =
