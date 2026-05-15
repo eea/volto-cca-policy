@@ -101,9 +101,7 @@ describe('WorkflowLinkIntegrityModal', () => {
       screen.getByText('Warning: Potential broken links'),
     ).toBeInTheDocument();
     expect(screen.getByText('Source Page 1')).toBeInTheDocument();
-    expect(
-      screen.getByText('Change state anyway'),
-    ).toBeInTheDocument();
+    expect(screen.getByText('Change state anyway')).toBeInTheDocument();
     expect(screen.getByText('Cancel')).toBeInTheDocument();
   });
 
