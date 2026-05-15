@@ -1,7 +1,8 @@
 import express from 'express';
 import superagent from 'superagent';
 import RSS from 'rss';
-import { findBlocks, toPublicURL } from '@plone/volto/helpers';
+import { findBlocks } from '@plone/volto/helpers/Blocks/Blocks';
+import { toPublicURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
 

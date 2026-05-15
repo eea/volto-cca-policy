@@ -14,12 +14,13 @@ import {
   Label,
 } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
-import { getSchema } from '@plone/volto/actions';
+import { getSchema } from '@plone/volto/actions/schema/schema';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 
-import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useDispatch, useSelector } from 'react-redux';
-import { RenderBlocks } from '@plone/volto/components';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import ContextNavigation from '@plone/volto/components/theme/Navigation/ContextNavigation';
 import {
   BannerTitle,

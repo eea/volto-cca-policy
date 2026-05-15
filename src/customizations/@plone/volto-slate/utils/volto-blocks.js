@@ -5,7 +5,7 @@ import {
   changeBlock,
   getBlocksFieldname,
   getBlocksLayoutFieldname,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Blocks/Blocks';
 import { Transforms, Editor, Node, Text, Path } from 'slate';
 import { serializeNodesToText } from '@plone/volto-slate/editor/render';
 import { omit } from 'lodash';

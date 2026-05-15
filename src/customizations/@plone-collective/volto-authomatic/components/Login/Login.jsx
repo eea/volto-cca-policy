@@ -17,12 +17,15 @@ import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import qs from 'query-string';
 import { useCookies } from 'react-cookie';
 
-import { Helmet } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import config from '@plone/volto/registry';
-import { Icon } from '@plone/volto/components';
-import { login, resetLoginRequest } from '@plone/volto/actions';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import {
+  login,
+  resetLoginRequest,
+} from '@plone/volto/actions/userSession/userSession';
 import { toast } from 'react-toastify';
-import { Toast } from '@plone/volto/components';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
 import aheadSVG from '@plone/volto/icons/ahead.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
 
