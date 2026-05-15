@@ -130,7 +130,7 @@ const WorkflowLinkIntegrityModal = (props) => {
         }
         onCancel={onCancel}
         onConfirm={onOk}
-        size="medium"
+        size="small"
       />
     )
   );
