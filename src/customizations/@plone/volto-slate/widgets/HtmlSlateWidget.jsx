@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 import ReactDOMServer from 'react-dom/server';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';

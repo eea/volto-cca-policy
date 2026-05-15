@@ -3,7 +3,7 @@
  * @module reducers/navigation/navigation
  */
 
-import { map } from 'lodash';
+import map from 'lodash/map';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 

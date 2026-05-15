@@ -28,7 +28,7 @@ import {
   PortalMessage,
 } from '@eeacms/volto-cca-policy/components';
 
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 /**
  * Component to display the default view.

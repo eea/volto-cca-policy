@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { compose } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, injectIntl } from 'react-intl';

@@ -8,7 +8,7 @@ import {
   Transition,
 } from 'semantic-ui-react';
 
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
