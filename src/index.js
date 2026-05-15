@@ -1,7 +1,7 @@
 import { defineMessages, FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
-import { Sitemap } from '@plone/volto/components';
+import Sitemap from '@plone/volto/components/theme/Sitemap/Sitemap';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import SelectAutoCompleteWidget from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
 import {
