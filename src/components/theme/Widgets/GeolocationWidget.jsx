@@ -5,7 +5,7 @@ import config from '@plone/volto/registry';
 
 import { injectIntl } from 'react-intl';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
-import MapContainer from './GeolocationWidgetMapContainer';
+import MapContainer from '@eeacms/volto-cca-policy/components/theme/Widgets/GeolocationWidgetMapContainer';
 
 const defaultValue = {
   latitude: 55.6761,

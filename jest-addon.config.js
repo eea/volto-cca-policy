@@ -26,6 +26,7 @@ module.exports = {
     '!src/**/*.d.ts',
   ],
   moduleNameMapper: {
+    '^node:crypto$': '<rootDir>/src/addons/volto-cca-policy/jest-node-crypto-mock.js',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '@plone-collective/volto-authomatic/(.*)$':
       '<rootDir>/node_modules/@plone-collective/volto-authomatic/src/$1',
