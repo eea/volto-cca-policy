@@ -16,7 +16,7 @@ import {
   ADAPTATION_OPTION,
   // CONTENT_TYPE_LABELS,
 } from '@eeacms/volto-cca-policy/constants';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   default_info_tooltip: {

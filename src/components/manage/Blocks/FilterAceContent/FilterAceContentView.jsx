@@ -2,7 +2,7 @@ import React from 'react';
 import loadable from '@loadable/component';
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 import { useSelector, useDispatch } from 'react-redux';
-import { getVocabulary } from '@plone/volto/actions';
+import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 import { OTHER_REGIONS } from '@eeacms/volto-cca-policy/helpers';
 import { Link } from 'react-router-dom';
 import {

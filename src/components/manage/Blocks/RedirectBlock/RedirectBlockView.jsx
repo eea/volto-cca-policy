@@ -1,7 +1,7 @@
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 export function RedirectBlockDetails({ data, token }) {
   return token ? (

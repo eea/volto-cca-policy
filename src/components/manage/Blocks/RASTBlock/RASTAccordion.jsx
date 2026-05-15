@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 import RASTAccordionContent from './RASTAccordionContent';
 

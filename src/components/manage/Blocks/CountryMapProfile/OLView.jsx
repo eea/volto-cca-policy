@@ -17,7 +17,7 @@ import { useCountriesMetadata } from './hooks';
 import Filter from './Filter';
 import withResponsiveContainer from '../withResponsiveContainer';
 import withVisibilitySensor from '../withVisibilitySensor';
-import { addAppURL } from '@plone/volto/helpers';
+import { addAppURL } from '@plone/volto/helpers/Url/Url';
 
 import './styles.less';
 

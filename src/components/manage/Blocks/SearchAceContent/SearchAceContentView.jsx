@@ -1,6 +1,6 @@
 import { List, Icon, ListItem, ListContent, ListIcon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useIntl, FormattedMessage } from 'react-intl';
 
 export default function SearchAceContentView(props) {

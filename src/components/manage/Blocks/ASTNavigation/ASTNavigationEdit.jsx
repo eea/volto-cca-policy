@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { BlockDataForm, SidebarPortal } from '@plone/volto/components';
+import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import ASTNavigationView from './ASTNavigationView';
 import schema from './schema';

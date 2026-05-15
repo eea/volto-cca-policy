@@ -4,8 +4,11 @@ import { Plug } from '@plone/volto/components/manage/Pluggable';
 import { Modal, Button, Form, Message } from 'semantic-ui-react';
 import superagent from 'superagent';
 import { toast } from 'react-toastify';
-import { Toast } from '@plone/volto/components';
-import { flattenToAppURL, expandToBackendURL } from '@plone/volto/helpers';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import {
+  flattenToAppURL,
+  expandToBackendURL,
+} from '@plone/volto/helpers/Url/Url';
 import { INDICATOR } from '@eeacms/volto-cca-policy/constants';
 
 function CreateArchivedCopyButton(props) {

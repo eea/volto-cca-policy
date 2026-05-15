@@ -7,13 +7,11 @@ import useLinkEditor from '@plone/volto/components/manage/AnchorPlugin/useLinkEd
 import withObjectBrowser from '@plone/volto/components/manage/Sidebar/ObjectBrowser';
 import NativeImageWidget from '@plone/volto/components/manage/Widgets/ImageWidget';
 
-import {
-  flattenToAppURL,
-  isInternalURL,
-  validateFileUploadSize,
-} from '@plone/volto/helpers';
+import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
+import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
 import { readAsDataURL } from 'promise-file-reader';
-import { FormFieldWrapper, Icon } from '@plone/volto/components';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import deleteSVG from '@plone/volto/icons/delete.svg';

@@ -1,4 +1,4 @@
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import cx from 'classnames';
 
 export const isAdaptationSupportToolURL = (url) => {

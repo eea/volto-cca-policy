@@ -20,7 +20,7 @@ import { Interactions } from './Interactions';
 import Filter from './Filter';
 import { Grid } from 'semantic-ui-react';
 import { useCountriesMetadata } from './hooks';
-import { addAppURL } from '@plone/volto/helpers';
+import { addAppURL } from '@plone/volto/helpers/Url/Url';
 
 import './styles.less';
 

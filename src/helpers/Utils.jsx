@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { expandToBackendURL } from '@plone/volto/helpers';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Link } from 'react-router-dom';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
@@ -11,7 +11,7 @@ import {
   Label,
   Button,
 } from 'semantic-ui-react';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import config from '@plone/volto/registry';
 import {
   CASE_STUDY,

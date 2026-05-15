@@ -4,7 +4,7 @@ import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { Dropdown, Image } from 'semantic-ui-react';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
