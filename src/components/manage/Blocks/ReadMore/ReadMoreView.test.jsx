@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import ReadMoreView from './ReadMoreView';
 
 describe('ReadMoreView', () => {
+  /* eslint-disable no-console */
   const originalError = console.error;
   beforeAll(() => {
     console.error = jest.fn((...args) => {
@@ -13,6 +14,7 @@ describe('ReadMoreView', () => {
   afterAll(() => {
     console.error = originalError;
   });
+  /* eslint-enable no-console */
 
   it('renders with default labels and toggles on click', () => {
     const data = {
