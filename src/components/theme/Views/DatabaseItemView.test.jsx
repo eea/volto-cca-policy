@@ -44,11 +44,11 @@ describe('DatabaseItemView', () => {
       contributions: [
         {
           title: 'Contributor 1',
-          url: '/',
+          url: '/contributor-1',
         },
         {
           title: 'Contributor 2',
-          url: '/',
+          url: '/contributor-2',
         },
       ],
     };
