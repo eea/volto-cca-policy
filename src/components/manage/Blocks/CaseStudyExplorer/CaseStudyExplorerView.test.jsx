@@ -22,7 +22,7 @@ jest.mock('./utils', () => ({
   getFilters: jest.fn(),
 }));
 
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   addAppURL: jest.fn((url) => url),
 }));
 

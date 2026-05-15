@@ -29,11 +29,8 @@ jest.mock('react-toastify', () => ({
   toast: { success: jest.fn(), error: jest.fn() },
 }));
 
-jest.mock('@plone/volto/components', () => ({
-  Toast: () => null,
-}));
-
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/components/manage/Toast/Toast', () => () => null);
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   flattenToAppURL: (url) => url.replace('http://localhost:3000', ''),
   expandToBackendURL: (url) =>
     url.replace('http://localhost:3000', 'http://localhost:8080/Plone'),

@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import ArchivedVersionListing from './ArchivedVersionListing';
 
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   flattenToAppURL: (url) => url.replace('http://localhost:3000', ''),
 }));
 
