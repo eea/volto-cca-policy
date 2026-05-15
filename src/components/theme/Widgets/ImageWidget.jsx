@@ -12,6 +12,7 @@ import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/Form
 import { readAsDataURL } from 'promise-file-reader';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import deleteSVG from '@plone/volto/icons/delete.svg';
@@ -429,7 +430,7 @@ const UnconnectedImageInput = (props) => {
       )}
       {error && <Message negative>{error}</Message>}
       {previewSrc ? (
-        <img className={props.className} src={previewSrc} alt="" />
+        <Image className={props.className} src={previewSrc} alt="" />
       ) : (
         <Message warning>
           Existing value found, but no image preview could be resolved.
@@ -468,7 +469,7 @@ const UnconnectedImageInput = (props) => {
                 </Dimmer>
               )}
               {error && <Message negative>{error}</Message>}
-              <img src={imageBlockSVG} alt="" className="placeholder" />
+              <Image src={imageBlockSVG} alt="" className="placeholder" />
               <p>{intl.formatMessage(messages.addImage)}</p>
               {toolbar}
             </Message>
