@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { openlayers as ol } from '@eeacms/volto-openlayers-map';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import {
   euCountryNames as euCountryNamesRaw,
   tooltipStyle,
@@ -28,13 +28,15 @@ import './styles.less';
 //   'https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/cntrg.json';
 
 const View = (props) => {
-  const { geofeatures, projection } = props;
+  const { geofeatures, projection, ol } = props;
 
   const highlight = React.useRef();
   const [stateHighlight, setStateHighlight] = React.useState();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const styles = React.useMemo(() => makeStyles(highlight), [stateHighlight]);
+  const styles = React.useMemo(
+    () => makeStyles(highlight, ol),
+    [stateHighlight, ol], // eslint-disable-line react-hooks/exhaustive-deps
+  );
   const tooltipRef = React.useRef();
   const [tileWMSSources, setTileWMSSources] = React.useState();
   const [euCountriesSource, setEuCountriessource] = React.useState();
@@ -124,7 +126,7 @@ const View = (props) => {
 
     const euSource = new ol.source.Vector({ features: filtered });
     setEuCountriessource(euSource);
-  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames]);
+  }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames, ol]);
 
   return (
     <div>
@@ -186,8 +188,9 @@ const View = (props) => {
 };
 
 export default compose(
-  withGeoJsonData(),
   clientOnly,
+  withGeoJsonData(),
   withResponsiveContainer('countryMapHeatIndex'),
   withVisibilitySensor(),
+  withOpenLayers,
 )(View);
