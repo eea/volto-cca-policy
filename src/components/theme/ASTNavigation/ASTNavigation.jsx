@@ -3,11 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { searchContent } from '@plone/volto/actions/search/search';
 import { useLocation } from 'react-router-dom';
 import ASTAccordion from './ASTAccordion';
-import {
-  isAdaptationSupportToolURL,
-  isUrbanAdaptationSupportToolURL,
-} from './utils';
 import './styles.less';
+
+const isAdaptationSupportToolURL = (url) => {
+  return url.indexOf('/knowledge/tools/adaptation-support-tool') > -1;
+};
+
+const isUrbanAdaptationSupportToolURL = (url) => {
+  return url.indexOf('/knowledge/tools/urban-ast') > -1;
+};
 
 const ASTNavigation = (props) => {
   const dispatch = useDispatch();
