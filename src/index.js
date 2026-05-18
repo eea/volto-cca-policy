@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import { defineMessages, FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
