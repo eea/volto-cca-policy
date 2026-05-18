@@ -49,7 +49,10 @@ export default function CountryTabPane(props) {
         }
         if (element.type === 'table') {
           return (
-            <div dangerouslySetInnerHTML={{ __html: element.value }}></div>
+            <div
+              key={indexKey}
+              dangerouslySetInnerHTML={{ __html: element.value }}
+            ></div>
           );
         }
 
@@ -59,7 +62,12 @@ export default function CountryTabPane(props) {
             _html_value += element.value[i];
           }
           // return <table>{_html_value}</table>;
-          return <div dangerouslySetInnerHTML={{ __html: _html_value }}></div>;
+          return (
+            <div
+              key={indexKey}
+              dangerouslySetInnerHTML={{ __html: _html_value }}
+            ></div>
+          );
         }
         return null;
       })}
