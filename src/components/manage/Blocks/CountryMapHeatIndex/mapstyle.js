@@ -1,4 +1,3 @@
-
 // const flagRenderer = ({ stroke, fill }) => (pixelCoordinates, state) => {
 //   const context = state.context;
 //   const geometry = state.geometry.clone();
