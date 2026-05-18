@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import { eea_languages } from '@eeacms/volto-cca-policy/constants';
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
@@ -186,8 +188,6 @@ export const language = {
   isMulti: true,
   default: (options) => {
     const { language } = options || {};
-    // console.log('options', options);
-
     return {
       values: [language || 'en'],
       type: 'any',
@@ -197,40 +197,3 @@ export const language = {
   sortOn: 'custom',
   sortOnCustomLabel: 'Alphabetical',
 };
-
-// [
-//     'de',
-//     'en',
-//     'es',
-//     'fr',
-//     'it',
-//     'pl',
-//     // 'ar',
-//     // 'bg',
-//     // 'bs',
-//     // 'cs',
-//     // 'da',
-//     // 'el',
-//     // 'et',
-//     // 'fi',
-//     // 'ga',
-//     // 'hr',
-//     // 'hu',
-//     // 'is',
-//     // 'lt',
-//     // 'lv',
-//     // 'mk',
-//     // 'mt',
-//     // 'nl',
-//     // 'no',
-//     // 'pt',
-//     // 'ro',
-//     // 'ru',
-//     // 'sh',
-//     // 'sk',
-//     // 'sl',
-//     // 'sq',
-//     // 'sr',
-//     // 'sv',
-//     // 'tr',
-//   ]
