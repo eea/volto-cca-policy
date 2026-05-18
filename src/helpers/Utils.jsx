@@ -181,11 +181,11 @@ export const ReferenceInfo = (props) => {
             <FormattedMessage id="Contributor:" defaultMessage="Contributor:" />
           </h5>
           {contributor_list
-            .map((item) => (
-              <>
+            .map((item, contributorIndex) => (
+              <React.Fragment key={`contributor-${contributorIndex}`}>
                 {item.title}
                 <br />
-              </>
+              </React.Fragment>
             ))
             .sort()}
           {other_contributor}

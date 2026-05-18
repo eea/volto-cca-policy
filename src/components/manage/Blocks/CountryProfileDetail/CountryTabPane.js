@@ -24,7 +24,7 @@ export default function CountryTabPane(props) {
         if (element.type === 'accordeon') {
           return element.value.map((accordion, index) => {
             return (
-              <Accordion className="secondary">
+              <Accordion className="secondary" key={`${indexKey}_${index}`}>
                 <Accordion.Title
                   role="button"
                   tabIndex={0}
