@@ -2,9 +2,6 @@ import { Fragment } from 'react';
 import { Popup, Segment } from 'semantic-ui-react';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
-  ACE_COUNTRIES,
-  BIOREGIONS,
-  SUBNATIONAL_REGIONS,
   MetadataItemList,
   LinkedMetadataItemList,
 } from '@eeacms/volto-cca-policy/helpers';
@@ -14,6 +11,9 @@ import {
   INDICATOR,
   PUBLICATION_REPORT,
   ADAPTATION_OPTION,
+  ACE_COUNTRIES,
+  BIOREGIONS,
+  SUBNATIONAL_REGIONS,
   // CONTENT_TYPE_LABELS,
 } from '@eeacms/volto-cca-policy/constants';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';

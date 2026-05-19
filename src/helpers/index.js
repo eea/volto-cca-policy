@@ -1,4 +1,4 @@
-import { OBSERVATORY_PARTNERS } from './Constants';
+import { OBSERVATORY_PARTNERS } from '@eeacms/volto-cca-policy/constants';
 export {
   HTMLField,
   ExternalLink,
@@ -16,13 +16,6 @@ export {
   LinkedMetadataItemList,
 } from './Utils';
 export { default as ContentMetadata } from './ContentMetadata';
-export {
-  ACE_COUNTRIES,
-  BIOREGIONS,
-  OTHER_REGIONS,
-  SUBNATIONAL_REGIONS,
-  EU_COUNTRIES,
-} from './Constants';
 export { default as clientOnly } from './clientOnly';
 
 export const capitalizeFirstLetter = (str) =>

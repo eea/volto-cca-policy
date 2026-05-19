@@ -75,11 +75,11 @@ export default function LanguageSwitch({ history }) {
     });
 
   const euLanguages = eea.languages.filter(
-    (item) => eea.non_eu_langs.indexOf(item.code) === -1,
+    (item) => eea.NON_EU_LANGS.indexOf(item.code) === -1,
   );
 
   const nonEuLanguages = eea.languages.filter(
-    (item) => eea.non_eu_langs.indexOf(item.code) !== -1,
+    (item) => eea.NON_EU_LANGS.indexOf(item.code) !== -1,
   );
 
   return (

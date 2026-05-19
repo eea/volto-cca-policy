@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 
-import { eea_languages } from '@eeacms/volto-cca-policy/constants';
+import { EEA_LANGUAGES } from '@eeacms/volto-cca-policy/constants';
 import { booleanFacet } from '@eeacms/search';
 import { getTodayWithTime } from './utils';
 
@@ -193,7 +193,7 @@ export const language = {
       type: 'any',
     };
   },
-  facetValues: eea_languages.map(({ code }) => code),
+  facetValues: EEA_LANGUAGES.map(({ code }) => code),
   sortOn: 'custom',
   sortOnCustomLabel: 'Alphabetical',
 };

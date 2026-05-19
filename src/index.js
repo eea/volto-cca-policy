@@ -39,8 +39,8 @@ import {
   MISSION_SIGNATORY_PROFILE,
   NEWS_ITEM,
   EVENT,
-  eea_languages,
-  non_eu_langs,
+  EEA_LANGUAGES,
+  NON_EU_LANGS,
 } from '@eeacms/volto-cca-policy/constants';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
@@ -164,8 +164,8 @@ const applyConfig = (config) => {
   // EEA customizations
   config.settings.eea = {
     ...(config.settings.eea || {}),
-    languages: eea_languages,
-    non_eu_langs,
+    languages: EEA_LANGUAGES,
+    NON_EU_LANGS,
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,
