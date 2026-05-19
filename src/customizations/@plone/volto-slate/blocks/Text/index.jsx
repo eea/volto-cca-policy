@@ -1,5 +1,4 @@
 import React from 'react';
-import redraft from 'redraft';
 import TextBlockView from '@plone/volto-slate/blocks/Text/TextBlockView';
 import TextBlockEdit from '@plone/volto-slate/blocks/Text/TextBlockEdit';
 import TextBlockSchema from '@plone/volto-slate/blocks/Text/TextBlockSchema';
@@ -131,24 +130,6 @@ export default function installTextBlock(config) {
         : config.settings.slate.topLevelTargetElements.includes(type)
           ? [parseInt(type.slice(1)), plaintext]
           : null;
-    },
-  };
-
-  // Make draft js compatible with ToC
-  config.blocks.blocksConfig.text = {
-    ...config.blocks.blocksConfig.text,
-    restricted: true,
-    tocEntry: (block = {}) => {
-      const draft = redraft(
-        block.text,
-        config.settings.richtextViewSettings.ToHTMLRenderers,
-        config.settings.richtextViewSettings.ToHTMLOptions,
-      );
-      const type = draft?.[0]?.[0]?.type;
-
-      return config.settings.slate.topLevelTargetElements.includes(type)
-        ? [parseInt(type.slice(1)), block.text.blocks[0].text]
-        : null;
     },
   };
 
