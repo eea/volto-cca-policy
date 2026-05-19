@@ -8,6 +8,12 @@ import { Provider } from 'react-intl-redux';
 
 import Spotlight from './Spotlight';
 
+jest.mock('@eeacms/volto-tabs-block/hocs', () => ({
+  withScrollToTarget: (WrappedComponent) => (props) => (
+    <WrappedComponent {...props} scrollToTarget={jest.fn()} />
+  ),
+}));
+
 const mockStore = configureStore();
 
 describe('Filter', () => {
