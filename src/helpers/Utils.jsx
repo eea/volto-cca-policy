@@ -182,7 +182,7 @@ export const ReferenceInfo = (props) => {
           </h5>
           {contributor_list
             .map((item, contributorIndex) => (
-              <React.Fragment key={`contributor-${contributorIndex}`}>
+              <React.Fragment key={item.title}>
                 {item.title}
                 <br />
               </React.Fragment>
