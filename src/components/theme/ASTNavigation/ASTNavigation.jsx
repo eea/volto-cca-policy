@@ -6,11 +6,11 @@ import ASTAccordion from './ASTAccordion';
 import './styles.less';
 
 const isAdaptationSupportToolURL = (url) => {
-  return url.indexOf('/knowledge/tools/adaptation-support-tool') > -1;
+  return url.includes('/knowledge/tools/adaptation-support-tool');
 };
 
 const isUrbanAdaptationSupportToolURL = (url) => {
-  return url.indexOf('/knowledge/tools/urban-ast') > -1;
+  return url.includes('/knowledge/tools/urban-ast');
 };
 
 const ASTNavigation = (props) => {
