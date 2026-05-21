@@ -411,6 +411,7 @@ module.exports = {
     'config\\.[jt]sx?$',
   ],
   moduleNameMapper: {
+    '^node:crypto$': '<rootDir>/src/addons/volto-cca-policy/jest-node-crypto-mock.js',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '@plone/volto/cypress': '<rootDir>/node_modules/@plone/volto/cypress',
     '@plone/volto/babel': '<rootDir>/node_modules/@plone/volto/babel',

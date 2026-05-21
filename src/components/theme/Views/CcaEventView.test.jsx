@@ -64,7 +64,10 @@ test('renders an event view component with all props', () => {
           subjects: ['Guillotina', 'Volto'],
           whole_day: false,
           agenda_files: {},
-          background_documents: {},
+          background_documents: {
+            download: 'http://localhost:8080/Plone/my-page/background.pdf',
+            filename: 'background.pdf',
+          },
         }}
       />
     </Provider>,
@@ -85,7 +88,10 @@ test('renders an event view component with only required props', () => {
           start: '2019-06-23T15:20:00+00:00',
           subjects: [],
           agenda_files: {},
-          background_documents: {},
+          background_documents: {
+            download: 'http://localhost:8080/Plone/my-page/background.pdf',
+            filename: 'background.pdf',
+          },
         }}
       />
     </Provider>,
@@ -106,7 +112,10 @@ test('renders an event view component without links to api in the text', () => {
           start: '2019-06-23T15:20:00+00:00',
           subjects: [],
           agenda_files: {},
-          background_documents: {},
+          background_documents: {
+            download: 'http://localhost:8080/Plone/my-page/background.pdf',
+            filename: 'background.pdf',
+          },
           text: {
             data: `<p>Hello World!</p><p>This is an <a href="${settings.apiPath}/foo/bar">internal link</a> and a <a href="${settings.apiPath}/foo/baz">second link</a></p>`,
           },

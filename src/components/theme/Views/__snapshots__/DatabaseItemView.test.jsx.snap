@@ -69,7 +69,7 @@ exports[`DatabaseItemView should render the component 1`] = `
               role="listitem"
             >
               <a
-                href="/"
+                href="/contributor-1"
                 onClick={[Function]}
               >
                 Contributor 1
@@ -81,7 +81,7 @@ exports[`DatabaseItemView should render the component 1`] = `
               role="listitem"
             >
               <a
-                href="/"
+                href="/contributor-2"
                 onClick={[Function]}
               >
                 Contributor 2

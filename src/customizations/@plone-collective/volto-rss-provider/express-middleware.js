@@ -94,12 +94,6 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
       max_title_length,
     };
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error('[RSS] Error in getRssFeedData:', {
-      url: req.url,
-      message: err.message,
-      status: err.status,
-    });
     throw err;
   }
 }
@@ -134,11 +128,6 @@ async function fetchListingItems(query, apiPath, APISUFFIX, authToken, req) {
     const response = await request;
     return response.body?.items || [];
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error('[RSS] Error in fetchListingItems:', {
-      message: err.message,
-      status: err.status,
-    });
     throw err;
   }
 }
@@ -256,16 +245,6 @@ function make_rssMiddleware() {
       res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
       res.send(xml);
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error('[RSS] Failed to generate RSS feed', {
-        path: req.path,
-        apiPath,
-        APISUFFIX,
-        message: err.message,
-        status: err.status,
-        response: err.response?.body,
-        stack: err.stack,
-      });
       if (err.response && err.response.status === 401) {
         // Handle unauthorized errors
         res.status(401).json({

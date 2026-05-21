@@ -1,5 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import ArchivedVersionListing from './ArchivedVersionListing';
@@ -21,16 +22,21 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
   ),
 }));
 
+const renderWithIntl = (ui) =>
+  render(
+    <IntlProvider locale="en">
+      <MemoryRouter>{ui}</MemoryRouter>
+    </IntlProvider>,
+  );
+
 describe('ArchivedVersionListing', () => {
   it('returns null when there are no archived versions', () => {
     const content = {
       archived_versions: [],
     };
 
-    const { container } = render(
-      <MemoryRouter>
-        <ArchivedVersionListing content={content} />
-      </MemoryRouter>,
+    const { container } = renderWithIntl(
+      <ArchivedVersionListing content={content} />,
     );
 
     expect(container.innerHTML).toBe('');
@@ -39,10 +45,8 @@ describe('ArchivedVersionListing', () => {
   it('returns null when archived_versions is missing', () => {
     const content = {};
 
-    const { container } = render(
-      <MemoryRouter>
-        <ArchivedVersionListing content={content} />
-      </MemoryRouter>,
+    const { container } = renderWithIntl(
+      <ArchivedVersionListing content={content} />,
     );
 
     expect(container.innerHTML).toBe('');
@@ -62,11 +66,7 @@ describe('ArchivedVersionListing', () => {
       ],
     };
 
-    render(
-      <MemoryRouter>
-        <ArchivedVersionListing content={content} />
-      </MemoryRouter>,
-    );
+    renderWithIntl(<ArchivedVersionListing content={content} />);
 
     expect(
       screen.getByText('Previous versions of this indicator'),
@@ -92,11 +92,7 @@ describe('ArchivedVersionListing', () => {
       ],
     };
 
-    render(
-      <MemoryRouter>
-        <ArchivedVersionListing content={content} />
-      </MemoryRouter>,
-    );
+    renderWithIntl(<ArchivedVersionListing content={content} />);
 
     expect(screen.getByText('/indicator-v1')).toHaveAttribute(
       'href',
