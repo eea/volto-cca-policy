@@ -9,6 +9,7 @@ import {
   TranslationDisclaimer,
   RedirectToLogin,
   MissionSignatoryProfileView,
+  CreateArchivedCopyButton,
   ImageWidget,
 } from '@eeacms/volto-cca-policy/components';
 
@@ -508,6 +509,10 @@ const applyConfig = (config) => {
     {
       match: '',
       component: TranslationDisclaimer,
+    },
+    {
+      match: '',
+      component: CreateArchivedCopyButton,
     },
     {
       match: {
