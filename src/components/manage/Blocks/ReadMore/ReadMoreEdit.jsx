@@ -1,5 +1,5 @@
 import React from 'react';
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
 import ReadMoreView from './ReadMoreView';
 import schema from './schema';

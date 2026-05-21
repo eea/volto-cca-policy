@@ -8,10 +8,16 @@ import EventCardsListingView from './EventCardsListingView';
 
 const mockStore = configureStore();
 
-jest.mock('@plone/volto/components', () => ({
-  ConditionalLink: ({ children }) => <div>{children}</div>,
-  UniversalLink: ({ children }) => <button>{children}</button>,
-}));
+jest.mock(
+  '@plone/volto/components/manage/ConditionalLink/ConditionalLink',
+  () =>
+    ({ children }) => <div>{children}</div>,
+);
+jest.mock(
+  '@plone/volto/components/manage/UniversalLink/UniversalLink',
+  () =>
+    ({ children }) => <button>{children}</button>,
+);
 
 jest.mock('@plone/volto/components/theme/View/EventDatesInfo', () => ({
   When: () => <span>EventDatesInfo</span>,

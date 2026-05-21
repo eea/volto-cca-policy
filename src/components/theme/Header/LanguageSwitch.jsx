@@ -1,10 +1,10 @@
 import React from 'react';
-import { find } from 'lodash';
+import find from 'lodash/find';
 import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { Dropdown, Image } from 'semantic-ui-react';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Header } from '@eeacms/volto-eea-design-system/ui';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
@@ -75,11 +75,11 @@ export default function LanguageSwitch({ history }) {
     });
 
   const euLanguages = eea.languages.filter(
-    (item) => eea.non_eu_langs.indexOf(item.code) === -1,
+    (item) => !eea.NON_EU_LANGS.includes(item.code),
   );
 
-  const nonEuLanguages = eea.languages.filter(
-    (item) => eea.non_eu_langs.indexOf(item.code) !== -1,
+  const nonEuLanguages = eea.languages.filter((item) =>
+    eea.NON_EU_LANGS.includes(item.code),
   );
 
   return (

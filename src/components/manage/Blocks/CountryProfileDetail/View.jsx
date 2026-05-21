@@ -48,7 +48,7 @@ export default function View(props) {
       {dataJson.top_accordeon ? (
         <div className="top-accordion">
           {dataJson.top_accordeon.map((accordion, index) => (
-            <Accordion className="secondary">
+            <Accordion className="secondary" key={accordion.title}>
               <Accordion.Title
                 role="button"
                 tabIndex={0}

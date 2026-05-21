@@ -15,9 +15,11 @@ import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 import { useCountriesMetadata } from './hooks';
 import Filter from './Filter';
-import withResponsiveContainer from '../withResponsiveContainer';
-import withVisibilitySensor from '../withVisibilitySensor';
-import { addAppURL } from '@plone/volto/helpers';
+import {
+  withResponsiveContainer,
+  withVisibilitySensor,
+} from '@eeacms/volto-cca-policy/hocs';
+import { addAppURL } from '@plone/volto/helpers/Url/Url';
 
 import './styles.less';
 

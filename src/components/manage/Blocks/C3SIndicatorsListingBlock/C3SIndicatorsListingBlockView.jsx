@@ -1,5 +1,5 @@
 import React from 'react';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 export default function C3SIndicatorsListingBlockView(props) {
   const { metadata, properties, mode = 'view' } = props;

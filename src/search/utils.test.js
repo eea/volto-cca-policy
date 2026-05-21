@@ -1,5 +1,5 @@
 import { getTodayWithTime } from './utils';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('getTodayWithTime', () => {
   it('should return the current date in UTC format', () => {

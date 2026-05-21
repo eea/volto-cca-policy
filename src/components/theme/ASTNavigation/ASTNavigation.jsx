@@ -1,13 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchContent } from '@plone/volto/actions';
+import { searchContent } from '@plone/volto/actions/search/search';
 import { useLocation } from 'react-router-dom';
 import ASTAccordion from './ASTAccordion';
-import {
-  isAdaptationSupportToolURL,
-  isUrbanAdaptationSupportToolURL,
-} from './utils';
 import './styles.less';
+
+const isAdaptationSupportToolURL = (url) => {
+  return url.includes('/knowledge/tools/adaptation-support-tool');
+};
+
+const isUrbanAdaptationSupportToolURL = (url) => {
+  return url.includes('/knowledge/tools/urban-ast');
+};
 
 const ASTNavigation = (props) => {
   const dispatch = useDispatch();

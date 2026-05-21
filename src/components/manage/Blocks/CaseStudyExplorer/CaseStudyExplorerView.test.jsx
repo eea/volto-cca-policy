@@ -2,7 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { Provider } from 'react-intl-redux';
 import CaseStudyExplorerView from './CaseStudyExplorerView';
 import { useCases } from './hooks';
@@ -22,7 +22,7 @@ jest.mock('./utils', () => ({
   getFilters: jest.fn(),
 }));
 
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   addAppURL: jest.fn((url) => url),
 }));
 

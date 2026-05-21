@@ -4,7 +4,7 @@ import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import { HTMLField, SubjectTags } from '@eeacms/volto-cca-policy/helpers';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const DescriptionText = ({ content }) => {
   return (

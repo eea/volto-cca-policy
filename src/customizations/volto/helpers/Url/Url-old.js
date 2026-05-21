@@ -3,7 +3,8 @@
  * @module helpers/Url
  */
 
-import { last, memoize } from 'lodash';
+import last from 'lodash/last';
+import memoize from 'lodash/memoize';
 import {
   urlRegex,
   telRegex,

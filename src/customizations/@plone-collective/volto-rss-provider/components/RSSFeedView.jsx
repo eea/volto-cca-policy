@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { compose } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -18,16 +18,13 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
-import { getSchema } from '@plone/volto/actions';
+import { getSchema } from '@plone/volto/actions/schema/schema';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
-import {
-  hasBlocksData,
-  getBaseUrl,
-  addAppURL,
-  Helmet,
-} from '@plone/volto/helpers';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
+import { getBaseUrl, addAppURL } from '@plone/volto/helpers/Url/Url';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 
 const messages = defineMessages({
   rssFeed: {

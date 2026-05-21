@@ -1,7 +1,7 @@
 import React from 'react';
 import superagent from 'superagent';
 import { Dropdown, Grid } from 'semantic-ui-react';
-import { searchContent } from '@plone/volto/actions';
+import { searchContent } from '@plone/volto/actions/search/search';
 import ECDEIndicator from './ECDEIndicator';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
