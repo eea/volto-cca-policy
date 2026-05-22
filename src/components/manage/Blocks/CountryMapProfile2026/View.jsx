@@ -19,9 +19,9 @@ import {
   withResponsiveContainer,
   withVisibilitySensor,
 } from '@eeacms/volto-cca-policy/hocs';
-import { addAppURL } from '@plone/volto/helpers';
+import { addAppURL } from '@plone/volto/helpers/Url/Url';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-// import { Image } from '@plone/volto/components';
+import VoltoImage from '@plone/volto/components/theme/Image/Image';
 
 import './styles.less';
 
@@ -232,7 +232,7 @@ const View = (props) => {
                 <div className="header-top">
                   <div className="country-title">
                     {flagUrl && (
-                      <img
+                      <VoltoImage
                         src={flagUrl}
                         alt={selectedCountry}
                         className="panel-flag"
