@@ -2,7 +2,6 @@ import CircleGray from './circle-gray.svg';
 import CircleGreen from './circle-green.svg';
 import CirclePurple from './circle-purple.svg';
 import CircleRed from './circle-red.svg';
-import { Image } from '@plone/volto/components';
 
 export default function StatusCircle(props) {
   const statusValue = props.statusValue;
@@ -28,7 +27,7 @@ export default function StatusCircle(props) {
   }
   return (
     <>
-      <Image
+      <img
         src={statusIcon}
         alt="Status"
         style={{ width: '24px', height: '24px' }}

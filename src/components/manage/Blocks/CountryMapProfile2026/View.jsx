@@ -15,8 +15,8 @@ import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 import { useCountriesMetadata } from './hooks';
 // import Filter from './Filter';
-import withResponsiveContainer from '@eeacms/volto-cca-policy/components/manage/Blocks/withResponsiveContainer';
-import withVisibilitySensor from '@eeacms/volto-cca-policy/components/manage/Blocks/withVisibilitySensor';
+import withResponsiveContainer from '../withResponsiveContainer';
+import withVisibilitySensor from '../withVisibilitySensor';
 
 import { addAppURL } from '@plone/volto/helpers';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
