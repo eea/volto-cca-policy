@@ -2,7 +2,7 @@ import CircleGray from './circle-gray.svg';
 import CircleGreen from './circle-green.svg';
 import CirclePurple from './circle-purple.svg';
 import CircleRed from './circle-red.svg';
-import { Image } from '@plone/volto/components';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 export default function StatusCircle(props) {
   const statusValue = props.statusValue;
