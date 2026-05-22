@@ -21,6 +21,7 @@ import {
 } from '@eeacms/volto-cca-policy/hocs';
 import { addAppURL } from '@plone/volto/helpers';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
+// import { Image } from '@plone/volto/components';
 
 import './styles.less';
 

@@ -7,7 +7,7 @@ export default function AccordionList(props) {
   return (
     <>
       {elements.map((accordion, index) => (
-        <Accordion className="secondary">
+        <Accordion key={index} className="secondary">
           <Accordion.Title
             role="button"
             tabIndex={0}

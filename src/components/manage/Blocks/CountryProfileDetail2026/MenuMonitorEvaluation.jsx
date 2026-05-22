@@ -140,7 +140,7 @@ export default function MenuMonitorEvaluation(props) {
         }
         h2Counter += 1;
         return (
-          <>
+          <React.Fragment key={element.id}>
             <h2 id={element.id}>
               {h2Counter}. {element.Title}
             </h2>
@@ -148,7 +148,7 @@ export default function MenuMonitorEvaluation(props) {
               <p>{element.Description}</p>
               <AccordionList elements={element.items} />
             </div>
-          </>
+          </React.Fragment>
         );
       })}
     </>
