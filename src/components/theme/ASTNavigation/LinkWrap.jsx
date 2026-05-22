@@ -1,13 +1,6 @@
-import { UniversalLink } from '@plone/volto/components';
+import React from 'react';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import cx from 'classnames';
-
-export const isAdaptationSupportToolURL = (url) => {
-  return url.indexOf('/knowledge/tools/adaptation-support-tool') > -1;
-};
-
-export const isUrbanAdaptationSupportToolURL = (url) => {
-  return url.indexOf('/knowledge/tools/urban-ast') > -1;
-};
 
 export const LinkWrap = ({ item, pathname, children, className }) => {
   const substeps = item?.items || [];
@@ -29,3 +22,5 @@ export const LinkWrap = ({ item, pathname, children, className }) => {
     <g>{children}</g>
   );
 };
+
+export default LinkWrap;

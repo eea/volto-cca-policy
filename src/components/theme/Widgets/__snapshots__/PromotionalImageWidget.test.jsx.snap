@@ -76,6 +76,10 @@ exports[`FileWidget renders a file widget component with value 1`] = `
               />
             </button>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+          />
         </div>
       </div>
     </div>
@@ -152,6 +156,10 @@ exports[`FileWidget renders a file widget component with value in raw data 1`] =
               />
             </button>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+          />
         </div>
       </div>
     </div>
@@ -217,6 +225,10 @@ exports[`FileWidget renders an empty file widget component 1`] = `
           </div>
           <div
             class="field-file-name"
+          />
+          <div
+            aria-atomic="true"
+            aria-live="polite"
           />
         </div>
       </div>

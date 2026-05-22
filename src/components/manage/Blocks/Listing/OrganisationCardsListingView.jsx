@@ -7,6 +7,8 @@ import {
   Card,
 } from 'semantic-ui-react';
 
+import Image from '@plone/volto/components/theme/Image/Image';
+
 import './styles.less';
 
 const OrganisationCardsListingView = ({ items }) => {
@@ -18,7 +20,7 @@ const OrganisationCardsListingView = ({ items }) => {
             <CardHeader>
               <div className="image">
                 <div className="img-container">
-                  <img
+                  <Image
                     src={item['@id'] + '/@@images/logo/preview'}
                     alt={item.title}
                     className="ui image"

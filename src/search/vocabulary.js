@@ -1,4 +1,4 @@
-import { eea_languages } from '@eeacms/volto-cca-policy/constants';
+import { EEA_LANGUAGES } from '@eeacms/volto-cca-policy/constants';
 import { defineMessages } from 'react-intl';
 
 defineMessages({
@@ -35,6 +35,6 @@ export const vocab = {
   },
   language: Object.assign(
     {},
-    ...eea_languages.map(({ name, code }) => ({ [code]: name })),
+    ...EEA_LANGUAGES.map(({ name, code }) => ({ [code]: name })),
   ),
 };

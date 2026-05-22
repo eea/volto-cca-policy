@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { ConditionalLink } from '@plone/volto/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 const SimpleItemListingView = ({ items, isEditMode }) => {
   return (

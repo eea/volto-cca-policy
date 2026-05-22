@@ -1,6 +1,6 @@
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { render, waitFor } from '@testing-library/react';
 import { Provider } from 'react-intl-redux';
 import { BrokenLinksComponent } from './BrokenLinks';

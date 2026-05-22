@@ -2,25 +2,29 @@ import { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { uniqBy } from 'lodash';
+import uniqBy from 'lodash/uniqBy';
 import { toast } from 'react-toastify';
 import { defineMessages, useIntl } from 'react-intl';
 
-import { FormFieldWrapper, Icon, Toast } from '@plone/volto/components';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { Dimmer, Loader } from 'semantic-ui-react';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import {
-  flattenToAppURL,
   getWorkflowOptions,
   getCurrentStateMapping,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Workflows/Workflows';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 import {
   getContent,
+  linkIntegrityCheck,
+} from '@plone/volto/actions/content/content';
+import {
   getWorkflow,
   transitionWorkflow,
-  linkIntegrityCheck,
-} from '@plone/volto/actions';
+} from '@plone/volto/actions/workflow/workflow';
 import WorkflowLinkIntegrityModal from '@eeacms/volto-cca-policy/components/manage/Workflow/WorkflowLinkIntegrityModal';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import upSVG from '@plone/volto/icons/up-key.svg';
@@ -152,8 +156,8 @@ const customSelectStyles = {
     color: state.isSelected
       ? '#007bc1'
       : state.isFocused
-      ? '#4a4a4a'
-      : 'inherit',
+        ? '#4a4a4a'
+        : 'inherit',
     ':active': {
       backgroundColor: null,
     },

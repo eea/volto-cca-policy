@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConditionalLink } from '@plone/volto/components';
-import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 import './styles.less';
 

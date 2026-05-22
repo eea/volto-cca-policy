@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { defineMessages, useIntl, FormattedMessage } from 'react-intl';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Confirm, Dimmer, Loader, Table } from 'semantic-ui-react';
 
 const messages = defineMessages({

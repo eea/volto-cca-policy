@@ -9,7 +9,7 @@ import {
 } from './utils';
 
 import { injectIntl } from 'react-intl';
-import { FormFieldWrapper } from '@plone/volto/components';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 
 const SelectElement = (props) => {
   const { element, handleSelect } = props;

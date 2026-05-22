@@ -45,9 +45,11 @@ jest.mock('@plone/volto/components/theme/View/RenderBlocks', () => () => (
   <div data-testid="render-blocks" />
 ));
 
-jest.mock('@plone/volto/components', () => ({
-  UniversalLink: ({ href, children }) => <a href={href}>{children}</a>,
-}));
+jest.mock(
+  '@plone/volto/components/manage/UniversalLink/UniversalLink',
+  () =>
+    ({ href, children }) => <a href={href}>{children}</a>,
+);
 
 jest.mock('semantic-ui-react', () => ({
   ...jest.requireActual('semantic-ui-react'),
