@@ -278,7 +278,7 @@ const PanesHazardContent = ({ data }) => {
             <span className="fw-light">Future status</span>
           </Grid.Column>
           {Object.entries(data.AC).map(([hazardType, values]) => (
-            <>
+            <React.Fragment key={hazardType}>
               <Grid.Column
                 mobile={12}
                 tablet={12}
@@ -303,7 +303,7 @@ const PanesHazardContent = ({ data }) => {
               >
                 <StatusCircle statusValue={values.future} />
               </Grid.Column>
-            </>
+            </React.Fragment>
           ))}
         </Grid>
       </div>
@@ -340,7 +340,7 @@ const PanesHazardContent = ({ data }) => {
             <span className="fw-light">Future status</span>
           </Grid.Column>
           {Object.entries(data.CH).map(([hazardType, values]) => (
-            <>
+            <React.Fragment key={hazardType}>
               <Grid.Column
                 mobile={12}
                 tablet={12}
@@ -365,7 +365,7 @@ const PanesHazardContent = ({ data }) => {
               >
                 <StatusCircle statusValue={values.future} />
               </Grid.Column>
-            </>
+            </React.Fragment>
           ))}
         </Grid>
       </div>

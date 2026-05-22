@@ -126,7 +126,7 @@ export default function MenuProfile(props) {
       <h2 id="adaptation_policies">Adaptation policies</h2>
       <h3>National framework</h3>
       {adaptationPolicies.map((adaptation, index) => (
-        <Grid columns="12" className="cpBgGray">
+        <Grid key={index} columns="12" className="cpBgGray">
           <Grid.Column
             mobile={12}
             tablet={12}
@@ -171,7 +171,7 @@ export default function MenuProfile(props) {
       </h3>
       <Grid columns="12">
         {portalsAndPlatforms.map((website, index) => (
-          <Grid.Column mobile={12} tablet={12} computer={6}>
+          <Grid.Column key={index} mobile={12} tablet={12} computer={6}>
             <p>
               <b>{website.Title}</b>
             </p>
@@ -197,7 +197,7 @@ export default function MenuProfile(props) {
       <h3 id="key_publications">Key publications</h3>
       <Grid columns="12">
         {portalsPublications.map((website, index) => (
-          <Grid.Column mobile={12} tablet={12} computer={6}>
+          <Grid.Column key={index} mobile={12} tablet={12} computer={6}>
             <p>
               <b>{website.Publisher}</b>
             </p>
@@ -222,7 +222,7 @@ export default function MenuProfile(props) {
       <h3 id="contact">Contact</h3>
       <Grid columns="12">
         {contactData.map((data, index) => (
-          <Grid.Column mobile={12} tablet={12} computer={6}>
+          <Grid.Column key={index} mobile={12} tablet={12} computer={6}>
             <p>
               <b>{data.Organisation}</b>
             </p>
@@ -272,8 +272,8 @@ const ListDiv = ({ elements }) => {
                 <b>{categoryData.category}</b>
               </p>
             )}
-            {categoryData.elements.map((element) => (
-              <Grid columns="12">
+            {categoryData.elements.map((element, idx) => (
+              <Grid key={idx} columns="12">
                 <Grid.Column
                   mobile={9}
                   tablet={9}
