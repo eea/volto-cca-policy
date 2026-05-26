@@ -84,7 +84,10 @@ const WorkflowLinkIntegrityModal = (props) => {
         cancelButton={intl.formatMessage(messages.cancel)}
         header={intl.formatMessage(messages.confirmHeader)}
         content={
-          <div className="content" style={{ minHeight: loading ? '100px' : 'auto' }}>
+          <div
+            className="content"
+            style={{ minHeight: loading ? '100px' : 'auto' }}
+          >
             <Dimmer active={loading} inverted>
               <Loader indeterminate size="massive">
                 {intl.formatMessage(messages.loading)}
