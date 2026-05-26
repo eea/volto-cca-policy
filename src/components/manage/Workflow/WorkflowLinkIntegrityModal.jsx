@@ -93,8 +93,8 @@ const WorkflowLinkIntegrityModal = (props) => {
             {!loading && brokenReferences > 0 && (
               <>
                 <FormattedMessage
-                  id="Changing the state of this item will break {brokenReferences} {variation} to it."
-                  defaultMessage="Changing the state of this item will break {brokenReferences} {variation} to it."
+                  id="By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+                  defaultMessage="By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
                   values={{
                     brokenReferences: <span>{brokenReferences}</span>,
                     variation: (
