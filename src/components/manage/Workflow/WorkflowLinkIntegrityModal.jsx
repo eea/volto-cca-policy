@@ -71,61 +71,52 @@ const WorkflowLinkIntegrityModal = (props) => {
     }
   }, [linkintegrityInfo]);
 
-  // If we are still loading, show the dimmer
-  if (loading && open) {
-    return (
+  const showModal = open && (loading || brokenReferences > 0);
+
+  return (
+    showModal && (
       <Confirm
-        open={open}
+        open={showModal}
+        confirmButton={{
+          content: intl.formatMessage(messages.confirmAction),
+          disabled: loading,
+        }}
+        cancelButton={intl.formatMessage(messages.cancel)}
         header={intl.formatMessage(messages.confirmHeader)}
         content={
-          <div className="content">
-            <Dimmer active inverted>
+          <div className="content" style={{ minHeight: loading ? '100px' : 'auto' }}>
+            <Dimmer active={loading} inverted>
               <Loader indeterminate size="massive">
                 {intl.formatMessage(messages.loading)}
               </Loader>
             </Dimmer>
-            <div style={{ minHeight: '100px' }} />
-          </div>
-        }
-        onCancel={onCancel}
-        onConfirm={() => {}}
-      />
-    );
-  }
-
-  return (
-    open &&
-    brokenReferences > 0 && (
-      <Confirm
-        open={open}
-        confirmButton={intl.formatMessage(messages.confirmAction)}
-        cancelButton={intl.formatMessage(messages.cancel)}
-        header={intl.formatMessage(messages.confirmHeader)}
-        content={
-          <div className="content">
-            <FormattedMessage
-              id="Changing the state of this item will break {brokenReferences} {variation} to it."
-              defaultMessage="Changing the state of this item will break {brokenReferences} {variation} to it."
-              values={{
-                brokenReferences: <span>{brokenReferences}</span>,
-                variation: (
-                  <span>
-                    {brokenReferences === 1 ? (
-                      <FormattedMessage
-                        id="reference"
-                        defaultMessage="reference"
-                      />
-                    ) : (
-                      <FormattedMessage
-                        id="references"
-                        defaultMessage="references"
-                      />
-                    )}
-                  </span>
-                ),
-              }}
-            />
-            <BrokenLinksList intl={intl} breaches={breaches} />
+            {!loading && brokenReferences > 0 && (
+              <>
+                <FormattedMessage
+                  id="Changing the state of this item will break {brokenReferences} {variation} to it."
+                  defaultMessage="Changing the state of this item will break {brokenReferences} {variation} to it."
+                  values={{
+                    brokenReferences: <span>{brokenReferences}</span>,
+                    variation: (
+                      <span>
+                        {brokenReferences === 1 ? (
+                          <FormattedMessage
+                            id="reference"
+                            defaultMessage="reference"
+                          />
+                        ) : (
+                          <FormattedMessage
+                            id="references"
+                            defaultMessage="references"
+                          />
+                        )}
+                      </span>
+                    ),
+                  }}
+                />
+                <BrokenLinksList intl={intl} breaches={breaches} />
+              </>
+            )}
           </div>
         }
         onCancel={onCancel}
