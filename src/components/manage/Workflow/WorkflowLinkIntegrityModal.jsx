@@ -93,9 +93,10 @@ const WorkflowLinkIntegrityModal = (props) => {
   );
 
   useEffect(() => {
+    const container = containerRef.current;
     return () => {
-      if (containerRef.current && containerRef.current.parentNode) {
-        containerRef.current.parentNode.removeChild(containerRef.current);
+      if (container && container.parentNode) {
+        container.parentNode.removeChild(container);
       }
     };
   }, []);
@@ -123,16 +124,13 @@ const WorkflowLinkIntegrityModal = (props) => {
 
   useEffect(() => {
     if (show) {
+      const container = containerRef.current;
       document.addEventListener('keydown', handleKeyDown);
       // capture=true: fires before any bubbling listeners on ancestors
-      containerRef.current.addEventListener('mousedown', handleMousedown, true);
+      container.addEventListener('mousedown', handleMousedown, true);
       return () => {
         document.removeEventListener('keydown', handleKeyDown);
-        containerRef.current?.removeEventListener(
-          'mousedown',
-          handleMousedown,
-          true,
-        );
+        container.removeEventListener('mousedown', handleMousedown, true);
       };
     }
   }, [show, handleKeyDown, handleMousedown]);
@@ -145,7 +143,12 @@ const WorkflowLinkIntegrityModal = (props) => {
         className="li-modal-backdrop"
         role="presentation"
         tabIndex={-1}
-        onClick={onCancel}
+        onClick={(e) => {
+          // Only cancel when clicking the backdrop itself, not children
+          if (e.target === e.currentTarget) {
+            onCancel();
+          }
+        }}
         onKeyDown={(e) => {
           if (e.key === 'Escape') {
             e.preventDefault();
@@ -160,7 +163,6 @@ const WorkflowLinkIntegrityModal = (props) => {
           role="dialog"
           aria-modal="true"
           aria-labelledby="li-modal-title"
-          onClick={(e) => e.stopPropagation()}
           data-testid="li-modal-dialog"
         >
           <div className="li-modal-header">
