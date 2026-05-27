@@ -55,7 +55,7 @@ describe('WorkflowLinkIntegrityModal', () => {
     expect(screen.getByText('Checking references...')).toBeInTheDocument();
   });
 
-  it('auto-proceeds when no breaches are found', () => {
+  it('renders nothing when no breaches are found (auto-proceed handled by parent)', () => {
     const store = makeStore({
       result: [{ breaches: [], '@id': 'http://localhost:8080/Plone/target' }],
       loaded: true,
@@ -68,11 +68,10 @@ describe('WorkflowLinkIntegrityModal', () => {
       />,
       store,
     );
-    // brokenReferences === 0 so the Confirm dialog is not rendered
     expect(container.innerHTML).toBe('');
   });
 
-  it('shows warning modal with breach list when breaches are found', () => {
+  it('shows warning dialog with breach list when breaches are found', () => {
     const store = makeStore({
       result: [
         {
@@ -141,7 +140,6 @@ describe('WorkflowLinkIntegrityModal', () => {
       />,
       store,
     );
-    // Both breaches come from the same source, so brokenReferences === 1
     expect(screen.getByText('Source Page')).toBeInTheDocument();
     expect(screen.getByText('Target 1')).toBeInTheDocument();
     expect(screen.getByText('Target 2')).toBeInTheDocument();
