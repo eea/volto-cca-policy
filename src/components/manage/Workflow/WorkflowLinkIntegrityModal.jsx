@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
@@ -82,18 +82,20 @@ const WorkflowLinkIntegrityModal = (props) => {
 
   // Create a dedicated mount container attached to document.body so the
   // modal renders outside the toolbar dropdown's stacking context.
-  const containerRef = useRef(null);
+  // Initialized synchronously (not in useEffect) so it is available on
+  // the first render — important for tests and to avoid a flicker.
+  const containerRef = useRef(
+    (() => {
+      const el = document.createElement('div');
+      document.body.appendChild(el);
+      return el;
+    })(),
+  );
 
   useEffect(() => {
-    if (!containerRef.current) {
-      containerRef.current = document.createElement('div');
-      document.body.appendChild(containerRef.current);
-    }
     return () => {
-      // Clean up only if this component created the container
       if (containerRef.current && containerRef.current.parentNode) {
         containerRef.current.parentNode.removeChild(containerRef.current);
-        containerRef.current = null;
       }
     };
   }, []);
@@ -135,22 +137,34 @@ const WorkflowLinkIntegrityModal = (props) => {
     }
   }, [show, handleKeyDown, handleMousedown]);
 
-  if (!show || !containerRef.current) return null;
+  if (!show) return null;
 
   return createPortal(
     <>
       <div
         className="li-modal-backdrop"
+        role="presentation"
+        tabIndex={-1}
         onClick={onCancel}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            e.preventDefault();
+            e.stopPropagation();
+            onCancel();
+          }
+        }}
         data-testid="li-modal-backdrop"
       >
         <div
           className="li-modal-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="li-modal-title"
           onClick={(e) => e.stopPropagation()}
           data-testid="li-modal-dialog"
         >
           <div className="li-modal-header">
-            <span className="li-modal-title">
+            <span className="li-modal-title" id="li-modal-title">
               {intl.formatMessage(messages.confirmHeader)}
             </span>
           </div>
