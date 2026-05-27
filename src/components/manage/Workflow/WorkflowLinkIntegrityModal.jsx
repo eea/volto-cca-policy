@@ -126,7 +126,11 @@ const WorkflowLinkIntegrityModal = (props) => {
       containerRef.current.addEventListener('mousedown', handleMousedown, true);
       return () => {
         document.removeEventListener('keydown', handleKeyDown);
-        containerRef.current?.removeEventListener('mousedown', handleMousedown, true);
+        containerRef.current?.removeEventListener(
+          'mousedown',
+          handleMousedown,
+          true,
+        );
       };
     }
   }, [show, handleKeyDown, handleMousedown]);
@@ -135,7 +139,11 @@ const WorkflowLinkIntegrityModal = (props) => {
 
   return createPortal(
     <>
-      <div className="li-modal-backdrop" onClick={onCancel} data-testid="li-modal-backdrop">
+      <div
+        className="li-modal-backdrop"
+        onClick={onCancel}
+        data-testid="li-modal-backdrop"
+      >
         <div
           className="li-modal-dialog"
           onClick={(e) => e.stopPropagation()}
@@ -163,9 +171,18 @@ const WorkflowLinkIntegrityModal = (props) => {
                     defaultMessage="By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
                     values={{
                       brokenReferences: <strong>{brokenReferences}</strong>,
-                      variation: brokenReferences === 1
-                        ? <FormattedMessage id="reference" defaultMessage="reference" />
-                        : <FormattedMessage id="references" defaultMessage="references" />,
+                      variation:
+                        brokenReferences === 1 ? (
+                          <FormattedMessage
+                            id="reference"
+                            defaultMessage="reference"
+                          />
+                        ) : (
+                          <FormattedMessage
+                            id="references"
+                            defaultMessage="references"
+                          />
+                        ),
                     }}
                   />
                 </p>
@@ -231,7 +248,9 @@ const BrokenLinksList = ({ intl, breaches }) => {
                     <li key={target['@id']}>
                       <Link
                         to={flattenToAppURL(target['@id'])}
-                        title={intl.formatMessage(messages.navigate_to_this_item)}
+                        title={intl.formatMessage(
+                          messages.navigate_to_this_item,
+                        )}
                       >
                         {target.title}
                       </Link>
