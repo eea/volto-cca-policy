@@ -427,21 +427,6 @@ div.image-upload-widget {
   }
 }
 
-.info-section {
-  padding: 0.7rem;
-  margin-top: 0 !important;
-  margin-bottom: 1.5em !important;
-  background-color: @ccaYellowColor;
-  box-shadow:
-    0px 0px 0px 1px #e1d098 inset,
-    0px 0px 0px 0px rgba(0, 0, 0, 0);
-
-  p,
-  p .small-text {
-    font-size: 15px !important;
-  }
-}
-
 #field-relevant_eu_policies {
   .react-select__menu {
     .ReactVirtualized__Grid {
