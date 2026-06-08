@@ -11,26 +11,12 @@ const ccaConfig = {
   ...views,
 };
 
+/*
+ We define our own runtime_mappings in cca_build_runtime_mappings
+ */
 export const clusters = {
   name: 'op_cluster',
-  // field: 'objectProvides',
-  clusters: [
-    {
-      name: 'Climate-ADAPT',
-      icon: { name: 'file text' },
-      values: ['climate'],
-    },
-    {
-      name: 'Health Observatory',
-      icon: { name: 'compass' },
-      values: ['observatory'],
-    },
-    {
-      name: 'Mission Portal',
-      icon: { name: 'compass' },
-      values: ['mission'],
-    },
-  ].map((cluster) => ({
+  clusters: [].map((cluster) => ({
     ...cluster,
     defaultResultView: 'ClusterHorizontalCardItem',
   })),
@@ -41,9 +27,10 @@ cca_build_runtime_mappings['op_cluster'] = {
   type: 'keyword',
   script: {
     source:
-      "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)){emit('Health Observatory')}}}}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
+      "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)){emit('Health Observatory')}}}}",
   },
 };
+// "def objectProvides = ['Adaptation option','Case study','Guidance','Video','Indicator','Information portal','Organisation','Publication reference','Research and knowledge project','Video','Tool'];def vals = doc['objectProvides'];for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)) {emit('Climate-ADAPT')}}}emit('_all_');if (doc['cca_include_in_search_observatory'][0]) {for (defVal in objectProvides) {for (objVal in vals) {if (objVal.contains(defVal)){emit('Health Observatory')}}}}  if (doc['cca_include_in_mission.keyword'][0].toString() == 'true') {emit('Mission Portal')} else {if (doc['id.keyword'].length==1) { if(doc['id.keyword'][0].toString().contains('climate-adapt.eea.europa.eu/en/mission')) {emit('Mission Portal')}}}",
 
 export default function installMainSearch(config) {
   const envConfig = ccaConfig;
