@@ -6,14 +6,14 @@ import { FormattedMessage } from 'react-intl';
 import './styles.less';
 
 export default function View(props) {
-  // const dataJson = JSON.parse(
-  //   props?.properties['@components']?.countryprofile?.html,
-  // );
-  const dataJson = props?.properties['@components']?.countryprofile?.html || {};
+  const dataJson =
+    props?.properties?.['@components']?.countryprofile?.html || {};
+
   const [activePanes, setActivePanes] = React.useState({});
   const isNonEN = props?.properties?.language !== 'en';
 
   const panes = [];
+
   if (dataJson?.menu) {
     dataJson.menu.forEach((element, index) => {
       panes.push({
@@ -22,10 +22,10 @@ export default function View(props) {
           <TabPane>
             <CountryTabPane
               _index={index}
-              contents={dataJson.content[index]}
+              contents={dataJson.content?.[index]}
               activePanes={activePanes}
               setActivePanes={setActivePanes}
-            ></CountryTabPane>
+            />
           </TabPane>
         ),
       });
@@ -42,9 +42,11 @@ export default function View(props) {
           />
         </Message>
       )}
+
       {dataJson.message_top ? (
         <div className="eea callout">{dataJson.message_top}</div>
       ) : null}
+
       {dataJson.top_accordeon ? (
         <div className="top-accordion">
           {dataJson.top_accordeon.map((accordion, index) => (
@@ -52,25 +54,27 @@ export default function View(props) {
               <Accordion.Title
                 role="button"
                 tabIndex={0}
-                active={activePanes['_' + index] || false}
-                onClick={(e) => {
-                  const temp = JSON.parse(JSON.stringify(activePanes));
-                  let val = temp['_' + index] || false;
-                  temp['_' + index] = !val;
-                  setActivePanes(temp);
+                active={activePanes[`_${index}`] || false}
+                onClick={() => {
+                  setActivePanes({
+                    ...activePanes,
+                    [`_${index}`]: !(activePanes[`_${index}`] || false),
+                  });
                 }}
               >
                 <span className="item-title">{accordion.title}</span>
                 <Icon className="ri-arrow-down-s-line" />
               </Accordion.Title>
+
               <Accordion.Content
-                active={activePanes['_' + index] || false}
+                active={activePanes[`_${index}`] || false}
                 dangerouslySetInnerHTML={{ __html: accordion.value }}
-              ></Accordion.Content>
+              />
             </Accordion>
           ))}
         </div>
       ) : null}
+
       <Tab
         className="secondary menu"
         panes={panes}
@@ -85,6 +89,7 @@ export default function View(props) {
           tabIndex: 0,
         }}
       />
+
       {dataJson.updated ? (
         <p>Reported updated until: {dataJson.updated}</p>
       ) : null}
