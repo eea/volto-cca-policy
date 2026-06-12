@@ -1,6 +1,6 @@
 import cx from 'classnames';
-import { ConditionalLink } from '@plone/volto/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { getVoltoStyles } from '@eeacms/volto-listing-block/schema-utils';
 
 const getStyles = (props) => {

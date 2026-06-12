@@ -1,11 +1,11 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import ArchivedVersionListing from './ArchivedVersionListing';
 
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   flattenToAppURL: (url) => url.replace('http://localhost:3000', ''),
 }));
 

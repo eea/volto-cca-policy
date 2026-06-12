@@ -3,7 +3,7 @@ import {
   BIOREGIONS,
   SUBNATIONAL_REGIONS,
   EU_COUNTRIES,
-} from '@eeacms/volto-cca-policy/helpers';
+} from '@eeacms/volto-cca-policy/constants';
 
 export const WIDGET_COUNTRIES = Object.entries(ACE_COUNTRIES)
   .map(([code, name]) => ({

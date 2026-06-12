@@ -4,20 +4,21 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { map } from 'lodash';
+import map from 'lodash/map';
 import { defineMessages, useIntl } from 'react-intl';
 import { Form as UiForm, Menu, Segment } from 'semantic-ui-react';
 import { Provider } from 'react-intl-redux';
-import { Form, Field } from '@plone/volto/components';
+import Form from '@plone/volto/components/manage/Form/Form';
+import Field from '@plone/volto/components/manage/Form/Field';
 import config from '@plone/volto/registry';
 import configureStore from '@plone/volto/store';
+import Api from '@plone/volto/helpers/Api/Api';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import langmap from '@plone/volto/helpers/LanguageMap/LanguageMap';
 import {
-  Api,
-  flattenToAppURL,
-  langmap,
   toGettextLang,
   toReactIntlLang,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Utils/Utils';
 import { createBrowserHistory } from 'history';
 const messages = defineMessages({
   document: {

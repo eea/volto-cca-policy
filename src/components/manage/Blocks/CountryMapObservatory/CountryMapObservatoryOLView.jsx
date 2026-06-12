@@ -12,9 +12,10 @@ import {
   getImageUrl,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
-
-import withResponsiveContainer from '../withResponsiveContainer';
-import withVisibilitySensor from '../withVisibilitySensor';
+import {
+  withResponsiveContainer,
+  withVisibilitySensor,
+} from '@eeacms/volto-cca-policy/hocs';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { useEffect } from 'react';
 import { Container, Input, List } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { expandToBackendURL } from '@plone/volto/helpers';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Link } from 'react-router-dom';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import {
@@ -11,7 +11,7 @@ import {
   Label,
   Button,
 } from 'semantic-ui-react';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import config from '@plone/volto/registry';
 import {
   CASE_STUDY,
@@ -181,11 +181,11 @@ export const ReferenceInfo = (props) => {
             <FormattedMessage id="Contributor:" defaultMessage="Contributor:" />
           </h5>
           {contributor_list
-            .map((item) => (
-              <>
+            .map((item, contributorIndex) => (
+              <React.Fragment key={item.title}>
                 {item.title}
                 <br />
-              </>
+              </React.Fragment>
             ))
             .sort()}
           {other_contributor}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { Container, Segment } from 'semantic-ui-react';
-import { isCmsUi } from '@plone/volto/helpers';
+import { isCmsUi } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 import LanguagePreference from './LanguagePreference';

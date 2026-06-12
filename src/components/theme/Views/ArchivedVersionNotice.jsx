@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Message } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 function ArchivedVersionNotice({ content }) {
   if (content?.review_state !== 'archived') return null;

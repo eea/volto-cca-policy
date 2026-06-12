@@ -1,6 +1,6 @@
 import { Text, Transforms, Element, Node, Path } from 'slate'; // Editor,
 import config from '@plone/volto/registry';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 const hasNoText = (node) => {
   const texts = Array.from(Node.texts(node));

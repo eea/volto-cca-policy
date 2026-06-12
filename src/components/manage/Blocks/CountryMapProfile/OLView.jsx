@@ -15,9 +15,11 @@ import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
 import { useCountriesMetadata } from './hooks';
 import Filter from './Filter';
-import withResponsiveContainer from '../withResponsiveContainer';
-import withVisibilitySensor from '../withVisibilitySensor';
-import { addAppURL } from '@plone/volto/helpers';
+import {
+  withResponsiveContainer,
+  withVisibilitySensor,
+} from '@eeacms/volto-cca-policy/hocs';
+import { addAppURL } from '@plone/volto/helpers/Url/Url';
 
 import './styles.less';
 
@@ -92,15 +94,6 @@ const View = (props) => {
   }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames, ol]);
 
   const baseUrl = props.path || props.location?.pathname || '';
-
-  // const onFeatureClick = React.useCallback(
-  //   (feature) => {
-  //     const country = feature.get('na');
-  //     // history.push(`${baseUrl}/${country.toLowerCase()}`);
-  //   },
-  //   [baseUrl, history],
-  // );
-  // console.log('thematicMapMode', thematicMapMode);
   return (
     <div className="ol-country-map">
       <Grid columns="12">

@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import { defineMessages, FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
-import { Sitemap } from '@plone/volto/components';
+import Sitemap from '@plone/volto/components/theme/Sitemap/Sitemap';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import SelectAutoCompleteWidget from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
 import {
@@ -37,8 +39,8 @@ import {
   MISSION_SIGNATORY_PROFILE,
   NEWS_ITEM,
   EVENT,
-  eea_languages,
-  non_eu_langs,
+  EEA_LANGUAGES,
+  NON_EU_LANGS,
 } from '@eeacms/volto-cca-policy/constants';
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
@@ -119,8 +121,8 @@ const applyConfig = (config) => {
   ];
 
   if (!config.settings.loadables.reactTable)
-    config.settings.loadables.reactTable = loadable.lib(() =>
-      import('@tanstack/react-table'),
+    config.settings.loadables.reactTable = loadable.lib(
+      () => import('@tanstack/react-table'),
     );
 
   config.settings.dateLocale = 'en-gb';
@@ -162,8 +164,8 @@ const applyConfig = (config) => {
   // EEA customizations
   config.settings.eea = {
     ...(config.settings.eea || {}),
-    languages: eea_languages,
-    non_eu_langs,
+    languages: EEA_LANGUAGES,
+    NON_EU_LANGS,
     headerOpts: {
       ...(config.settings.eea?.headerOpts || {}),
       logo: ccaLogo,

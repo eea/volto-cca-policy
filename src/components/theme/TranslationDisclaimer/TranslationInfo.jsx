@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Icon, Button } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const TranslationInfo = (props) => {
   const { defaultLanguage, currentLanguage } = props;

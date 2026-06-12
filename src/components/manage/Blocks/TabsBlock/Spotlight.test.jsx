@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 import { render } from '@testing-library/react';
 import React from 'react';
@@ -7,6 +7,12 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';
 
 import Spotlight from './Spotlight';
+
+jest.mock('@eeacms/volto-tabs-block/hocs', () => ({
+  withScrollToTarget: (WrappedComponent) => (props) => (
+    <WrappedComponent {...props} scrollToTarget={jest.fn()} />
+  ),
+}));
 
 const mockStore = configureStore();
 

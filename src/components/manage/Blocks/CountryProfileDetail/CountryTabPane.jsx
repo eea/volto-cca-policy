@@ -24,7 +24,7 @@ export default function CountryTabPane(props) {
         if (element.type === 'accordeon') {
           return element.value.map((accordion, index) => {
             return (
-              <Accordion className="secondary">
+              <Accordion className="secondary" key={`${indexKey}_${index}`}>
                 <Accordion.Title
                   role="button"
                   tabIndex={0}
@@ -49,7 +49,10 @@ export default function CountryTabPane(props) {
         }
         if (element.type === 'table') {
           return (
-            <div dangerouslySetInnerHTML={{ __html: element.value }}></div>
+            <div
+              key={indexKey}
+              dangerouslySetInnerHTML={{ __html: element.value }}
+            ></div>
           );
         }
 
@@ -58,8 +61,12 @@ export default function CountryTabPane(props) {
           for (let i = 0; i < element.value.length; i++) {
             _html_value += element.value[i];
           }
-          // return <table>{_html_value}</table>;
-          return <div dangerouslySetInnerHTML={{ __html: _html_value }}></div>;
+          return (
+            <div
+              key={indexKey}
+              dangerouslySetInnerHTML={{ __html: _html_value }}
+            ></div>
+          );
         }
         return null;
       })}

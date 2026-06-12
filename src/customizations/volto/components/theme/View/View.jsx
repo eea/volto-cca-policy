@@ -12,22 +12,21 @@ import { Portal } from 'react-portal';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
 
-import {
-  ContentMetadataTags,
-  Comments,
-  Tags,
-  Toolbar,
-} from '@plone/volto/components';
+import ContentMetadataTags from '@plone/volto/components/theme/ContentMetadataTags/ContentMetadataTags';
+import Comments from '@plone/volto/components/theme/Comments/Comments';
+import Tags from '@plone/volto/components/theme/Tags/Tags';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
 import { AlternateHrefLangs } from '@plone/volto/components/theme/AlternateHrefLangs/AlternateHrefLangs';
-import { listActions, getContent } from '@plone/volto/actions';
+import { listActions } from '@plone/volto/actions/actions/actions';
+import { getContent } from '@plone/volto/actions/content/content';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import {
-  BodyClass,
   getBaseUrl,
   flattenToAppURL,
-  getLayoutFieldname,
-  hasApiExpander,
   isInternalURL,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Url/Url';
+import { getLayoutFieldname } from '@plone/volto/helpers/Content/Content';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 
 import config from '@plone/volto/registry';
 

@@ -8,11 +8,13 @@ import SimpleItemListingView from './SimpleItemListingView';
 
 const mockStore = configureStore();
 
-jest.mock('@plone/volto/components', () => ({
-  ConditionalLink: ({ children }) => <div>{children}</div>,
-}));
+jest.mock(
+  '@plone/volto/components/manage/ConditionalLink/ConditionalLink',
+  () =>
+    ({ children }) => <div>{children}</div>,
+);
 
-jest.mock('@plone/volto/helpers', () => ({
+jest.mock('@plone/volto/helpers/Url/Url', () => ({
   getBaseUrl: (id) => id,
 }));
 

@@ -16,7 +16,7 @@ import {
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { Container, Grid, Image, Icon } from 'semantic-ui-react';
 import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 const PhotoGallery = ({ content }) => {

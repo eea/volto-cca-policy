@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkWrap } from './utils';
+import { LinkWrap } from './LinkWrap';
 
 export default function UASTLogoMap(props) {
   const { pathname, items, href } = props;
