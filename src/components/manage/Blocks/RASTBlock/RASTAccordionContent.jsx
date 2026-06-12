@@ -2,9 +2,9 @@ import React from 'react';
 import { List } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { compose } from 'redux';
-import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContent } from '@plone/volto/actions';
+import { getContent } from '@plone/volto/actions/content/content';
 
 import cx from 'classnames';
 

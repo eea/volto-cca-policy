@@ -1,4 +1,4 @@
-import { expandToBackendURL } from '@plone/volto/helpers';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable';
 import React from 'react';
 import {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Icon, Accordion, Button } from 'semantic-ui-react';
-import { ConditionalLink } from '@plone/volto/components';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { When } from '@plone/volto/components/theme/View/EventDatesInfo';
 
 import './styles.less';

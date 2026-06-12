@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Icon } from 'semantic-ui-react';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 export default function FeatureDisplay({ feature, onClose }) {
   return feature ? (
@@ -30,7 +31,7 @@ export default function FeatureDisplay({ feature, onClose }) {
       {feature.image && (
         <span className="img">
           <center>
-            <img src={feature.image} alt={feature.title} />
+            <Image src={feature.image} alt={feature.title} />
           </center>
         </span>
       )}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useIntl, defineMessages } from 'react-intl';
 
 import './styles.less';

@@ -1,5 +1,9 @@
 import { Plug } from '@plone/volto/components/manage/Pluggable';
-import { getBaseUrl, toPublicURL, addAppURL } from '@plone/volto/helpers';
+import {
+  getBaseUrl,
+  toPublicURL,
+  addAppURL,
+} from '@plone/volto/helpers/Url/Url';
 
 const button = (id, title, label, destination) => (
   <button

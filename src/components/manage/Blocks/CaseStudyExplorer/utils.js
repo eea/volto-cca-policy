@@ -23,7 +23,6 @@ export function getFeatures(cases, ol) {
       },
       false,
     );
-    //return new Feature({ labelPoint: point, index: index });
     return point;
   });
 }
@@ -45,35 +44,16 @@ export function filterCases(cases, activeFilters) {
       impacts: false,
     };
 
-    // activeFilters.sectors.forEach((filter) => {
-    //   if (_case.properties.sectors.includes(',' + filter + ','))
-    //     flag.sectors = true;
-    // });
     flag.sectors = activeFilters.sectors.every((sub) =>
       _case.properties.sectors.includes(sub),
     );
-
-    // ADAPTATION APPROACHES
-    // activeFilters.elements.forEach((filter) => {
-    //   if (_case.properties.elements.includes(',' + filter + ','))
-    //     flag.elements = true;
-    // });
     flag.elements = activeFilters.elements.every((sub) =>
       _case.properties.elements.includes(sub),
     );
 
-    // activeFilters.impacts.forEach((filter) => {
-    //   if (_case.properties.impacts.includes(',' + filter + ','))
-    //     flag.impacts = true;
-    // });
     flag.impacts = activeFilters.impacts.every((sub) =>
       _case.properties.impacts.includes(sub),
     );
-
-    // activeFilters.measures.forEach((filter) => {
-    //   if (_case.properties.ktms.includes(',' + filter + ','))
-    //     flag.measures = true;
-    // });
     flag.measures = activeFilters.measures.every((sub) =>
       _case.properties.ktms.includes(sub),
     );
@@ -121,16 +101,6 @@ export function getFilters(cases) {
         _filters.elements[elementKeys[i + 1]] = elementNames[i];
       }
     }
-
-    // let ktmKeys = _case.properties.ktms.split(',');
-    // let ktmNames = _case.properties.impacts_str.split(',');
-    // for (let i = 0; i < ktmKeys.length; i++) {
-    //   if (!_filters.ktms.hasOwnProperty(ktmKeys[i])) {
-    //     _filters.ktms[ktmKeys[i]] = 1;
-    //   }
-    // }
   }
-  // console.log('getFilters:', _filters);
-
   return _filters;
 }

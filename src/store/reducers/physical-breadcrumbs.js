@@ -1,5 +1,5 @@
-import { map } from 'lodash';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import map from 'lodash/map';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { GET_PHYSICAL_BREADCRUMBS } from '../constants';
 

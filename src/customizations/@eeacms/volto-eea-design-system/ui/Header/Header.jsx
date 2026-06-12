@@ -16,7 +16,7 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
 
-import { isInternalURL } from '@plone/volto/helpers';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 Header.propTypes = {

@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.less';
 import ContextNavigation from './ContextNavigation';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContent } from '@plone/volto/actions';
+import { getContent } from '@plone/volto/actions/content/content';
 
 function useChildren(location) {
   const dispatch = useDispatch();

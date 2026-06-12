@@ -1,7 +1,7 @@
 import React from 'react';
 import { List } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 

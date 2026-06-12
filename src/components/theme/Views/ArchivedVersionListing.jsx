@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { AccordionList } from '@eeacms/volto-cca-policy/components';
 
 function ArchivedVersionListing({ content }) {

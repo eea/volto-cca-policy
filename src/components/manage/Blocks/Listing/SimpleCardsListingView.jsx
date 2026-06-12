@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardContent,
 } from 'semantic-ui-react';
-import { ConditionalLink } from '@plone/volto/components';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 
 import './styles.less';
 
