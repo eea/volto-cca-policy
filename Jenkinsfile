@@ -13,7 +13,6 @@ pipeline {
     BACKEND_PROFILES = "eea.kitkat:testing plone.app.multilingual:default"
     BACKEND_ADDONS = "plone.app.multilingual"
     CURRENT_VOLTO = "18-yarn"
-    // PREVIOUS_VOLTO = "17"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 
@@ -285,92 +284,6 @@ pipeline {
             }
           }
         }
-
-        // stage('Volto 17') {
-        //   agent {
-        //     node {
-        //       label 'integration'
-        //     }
-        //   }
-        //   when {
-        //     allOf {
-        //       environment name: 'SKIP_TESTS', value: ''
-        //       expression {
-        //         return !!env.PREVIOUS_VOLTO?.trim()
-        //       }
-        //     }
-        //   }
-        //   stages {
-        //     stage('Build test image') {
-        //       steps {
-        //         sh '''docker build --pull --build-arg="VOLTO_VERSION=$PREVIOUS_VOLTO" --build-arg="ADDON_NAME=$NAMESPACE/$GIT_NAME"  --build-arg="ADDON_PATH=$GIT_NAME" . -t $IMAGE_NAME-frontend-previous'''
-        //       }
-        //     }
-
-        //     stage('Unit tests') {
-        //       steps {
-        //         script {
-        //           try {
-        //             sh '''docker run --name="$IMAGE_NAME-volto-previous" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend-previous test-ci'''
-        //             sh '''rm -rf xunit-reports-previous'''
-        //             sh '''mkdir -p xunit-reports-previous'''
-        //             sh '''docker cp $IMAGE_NAME-volto-previous:/app/junit.xml xunit-reports-previous/'''
-        //           } finally {
-        //             catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-        //               junit testResults: 'xunit-reports-previous/junit.xml', allowEmptyResults: true
-        //             }
-        //             sh script: '''docker rm -v $IMAGE_NAME-volto-previous''', returnStatus: true
-        //           }
-        //         }
-        //       }
-        //     }
-
-        //     stage('Integration tests') {
-        //       steps {
-        //         script {
-        //           try {
-        //             sh '''docker run --pull always --rm -d --name="$IMAGE_NAME-plone-previous" -e SITE="Plone" -e PROFILES="$BACKEND_PROFILES" -e ADDONS="$BACKEND_ADDONS" eeacms/plone-backend'''
-        //             sh '''docker run -d --shm-size=4g --link $IMAGE_NAME-plone-previous:plone --name="$IMAGE_NAME-cypress-previous" -e "RAZZLE_INTERNAL_API_PATH=http://plone:8080/Plone" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend-previous start-ci'''
-        //             frontend = sh script: '''docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress-previous make check-ci''', returnStatus: true
-        //             if (frontend != 0) {
-        //               sh '''docker logs $IMAGE_NAME-cypress-previous; exit 1'''
-        //             }
-        //             sh '''timeout -s 9 1800 docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress-previous make cypress-ci'''
-        //           } finally {
-        //             try {
-        //               if (frontend == 0) {
-        //                 sh '''rm -rf cypress-videos-previous cypress-results-previous cypress-coverage-previous cypress-screenshots-previous'''
-        //                 sh '''mkdir -p cypress-videos-previous cypress-results-previous cypress-coverage-previous cypress-screenshots-previous'''
-        //                 videos = sh script: '''docker cp $IMAGE_NAME-cypress-previous:/app/src/addons/$GIT_NAME/cypress/videos cypress-videos-previous/''', returnStatus: true
-        //                 sh '''docker cp $IMAGE_NAME-cypress-previous:/app/src/addons/$GIT_NAME/cypress/reports cypress-results-previous/'''
-        //                 screenshots = sh script: '''docker cp $IMAGE_NAME-cypress-previous:/app/src/addons/$GIT_NAME/cypress/screenshots cypress-screenshots-previous''', returnStatus: true
-
-        //                 archiveArtifacts artifacts: 'cypress-screenshots-previous/**', fingerprint: true, allowEmptyArchive: true
-
-        //                 if (videos == 0) {
-        //                   sh '''for file in $(find cypress-results-previous -name *.xml); do if [ $(grep -E 'failures="[1-9].*"' $file | wc -l) -eq 0 ]; then testname=$(grep -E 'file=.*failures="0"' $file | sed 's#.* file=".*\\/\\(.*\\.[jsxt]\\+\\)" time.*#\\1#' );  rm -f cypress-videos-previous/videos/$testname.mp4; fi; done'''
-        //                   archiveArtifacts artifacts: 'cypress-videos-previous/**/*.mp4', fingerprint: true, allowEmptyArchive: true
-        //                 }
-        //               }
-        //             } finally {
-        //               catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-        //                 junit testResults: 'cypress-results-previous/**/*.xml', allowEmptyResults: true
-        //               }
-        //               catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-        //                 sh '''docker logs $IMAGE_NAME-cypress-previous'''
-        //               }
-        //               sh script: "docker stop $IMAGE_NAME-cypress-previous", returnStatus: true
-        //               sh script: "docker stop $IMAGE_NAME-plone-previous", returnStatus: true
-        //               sh script: "docker rm -v $IMAGE_NAME-plone-previous", returnStatus: true
-        //               sh script: "docker rm -v $IMAGE_NAME-cypress-previous", returnStatus: true
-        //             }
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
-    
       }
       post {
         always {
