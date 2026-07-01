@@ -47,6 +47,9 @@ import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
+import NavigatorCatalogueCardItem from './components/Result/NavigatorCatalogue/NavigatorCatalogueCardItem';
+// import NavigatorCatalogueResults from './components/Result/NavigatorCatalogue/NavigatorCatalogueResults';
+// import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
 
 import { langRedirection } from './store/middleware';
 
@@ -415,6 +418,15 @@ const applyConfig = (config) => {
   config.settings.searchlib.resolve.ClusterHorizontalCardItem = {
     component: ClusterHorizontalCardItem,
   };
+  config.settings.searchlib.resolve.NavigatorCatalogueCardItem = {
+    component: NavigatorCatalogueCardItem,
+  };
+  // config.settings.searchlib.resolve.NavigatorCatalogueResults = {
+  //   component: NavigatorCatalogueResults,
+  // };
+  // config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
+  //   component: NavigatorCatalogueContentView,
+  // };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
