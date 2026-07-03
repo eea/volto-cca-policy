@@ -7,7 +7,7 @@ import facets from './facets';
 import views from './views';
 
 const navigatorCatalogueConfig = {
-  title: 'ClimateAdapt Health',
+  title: 'Navigator Catalogue',
   ...views,
 };
 
@@ -58,17 +58,17 @@ export default function installNavigatorCatalogueSearch(config) {
       ],
     },
   });
-  navigatorCatalogueSearch.contentSectionsParams = {
-    enable: true,
-    sectionFacetsField: 'op_cluster',
-    sections: clusters.clusters,
-    clusterMapping: Object.assign(
-      {},
-      ...clusters.clusters.map(({ name, values }) =>
-        Object.assign({}, ...values.map((v) => ({ [v]: name }))),
-      ),
-    ),
-  };
+  // navigatorCatalogueSearch.contentSectionsParams = {
+  //   enable: true,
+  //   sectionFacetsField: 'op_cluster',
+  //   sections: clusters.clusters,
+  //   clusterMapping: Object.assign(
+  //     {},
+  //     ...clusters.clusters.map(({ name, values }) =>
+  //       Object.assign({}, ...values.map((v) => ({ [v]: name }))),
+  //     ),
+  //   ),
+  // };
   navigatorCatalogueSearch.permanentFilters.push({
     terms: {
       objectProvides: ['Tool'],
@@ -77,6 +77,8 @@ export default function installNavigatorCatalogueSearch(config) {
 
   navigatorCatalogueSearch.facets = facets;
   navigatorCatalogueSearch.views = views;
+  navigatorCatalogueSearch.contentBodyComponent =
+    'NavigatorCatalogueContentView';
 
   if (typeof window !== 'undefined') {
     config.searchui.navigatorCatalogueSearch.host =

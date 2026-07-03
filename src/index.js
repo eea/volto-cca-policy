@@ -48,8 +48,8 @@ import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageW
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
 import NavigatorCatalogueCardItem from './components/Result/NavigatorCatalogue/NavigatorCatalogueCardItem';
-// import NavigatorCatalogueResults from './components/Result/NavigatorCatalogue/NavigatorCatalogueResults';
-// import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
+import NavigatorCatalogueMapView from './components/Result/NavigatorCatalogue/NavigatorCatalogueMapView';
+import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
 
 import { langRedirection } from './store/middleware';
 
@@ -421,12 +421,12 @@ const applyConfig = (config) => {
   config.settings.searchlib.resolve.NavigatorCatalogueCardItem = {
     component: NavigatorCatalogueCardItem,
   };
-  // config.settings.searchlib.resolve.NavigatorCatalogueResults = {
-  //   component: NavigatorCatalogueResults,
-  // };
-  // config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
-  //   component: NavigatorCatalogueContentView,
-  // };
+  config.settings.searchlib.resolve.NavigatorCatalogueMapView = {
+    component: NavigatorCatalogueMapView,
+  };
+  config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
+    component: NavigatorCatalogueContentView,
+  };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
