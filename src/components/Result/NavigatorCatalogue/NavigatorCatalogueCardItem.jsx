@@ -10,14 +10,6 @@ const asArray = (value) => {
   return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
 };
 
-const getStepNumbers = (result) => {
-  const values = asArray(result.cca_rast_steps);
-  return values
-    .map((value) => `${value}`.match(/0?([1-6])/))
-    .filter(Boolean)
-    .map((match) => Number(match[1]));
-};
-
 const TagGroup = ({ values, type }) => {
   const visible = values.slice(0, 3);
   const hidden = values.slice(3);
@@ -58,25 +50,27 @@ const TagGroup = ({ values, type }) => {
   );
 };
 
-const CycleSteps = ({ selected }) => (
-  <div className="navigator-catalogue-cycle">
-    <span className="cycle-label">Cycle</span>
-    {[1, 2, 3, 4, 5, 6].map((step) => (
-      <span
-        key={step}
-        className={`cycle-step ${selected.includes(step) ? 'active' : ''}`}
-      >
-        {`${step}`.padStart(2, '0')}
-      </span>
-    ))}
-  </div>
-);
+const CycleElements = ({ values }) => {
+  const visible = values.slice(0, 3);
+
+  return (
+    <div className="navigator-catalogue-cycle-elements">
+      <span className="cycle-elements-label">Cycle</span>
+      {visible.map((value, index) => (
+        <span key={`cycle-element-${index}`} className="cycle-element">
+          {value}
+        </span>
+      ))}
+    </div>
+  );
+};
+
+const cycleElementPlaceholders = ['[Cycle]'];
 
 const NavigatorCatalogueCardItem = (props) => {
   const { result } = props;
   const sectors = asArray(result.cca_adaptation_sectors);
   const hazards = asArray(result.cca_climate_impacts);
-  const selectedSteps = getStepNumbers(result);
 
   return (
     <div className="navigator-catalogue-item">
@@ -108,8 +102,8 @@ const NavigatorCatalogueCardItem = (props) => {
 
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
-            <CycleSteps selected={selectedSteps} />
-            <span className="catalogue-licence">Licence - {'[Licence]'}</span>
+            <CycleElements values={cycleElementPlaceholders} />
+            <span className="catalogue-licence">License - {'[Licence]'}</span>
           </div>
 
           <div className="catalogue-actions">
