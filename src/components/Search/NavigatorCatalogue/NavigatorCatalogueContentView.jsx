@@ -1,20 +1,27 @@
 import React from 'react';
 import { Sorting } from '@elastic/react-search-ui';
-import { Icon, Menu } from 'semantic-ui-react';
-import Paging from '@eeacms/search/components/Paging/Paging';
+import { Grid, Icon, Menu } from 'semantic-ui-react';
+import { defineMessages, useIntl } from 'react-intl';
+import { useAtomValue } from 'jotai';
+
 import ResultsPerPageSelector from '@eeacms/search/components/ResultsPerPageSelector/ResultsPerPageSelector';
+import Paging from '@eeacms/search/components/Paging/Paging';
 import {
   ActiveFilterList,
   AnswerBox,
   Component,
   DownloadButton,
   DropdownFacetsList,
+  SectionTabs,
   SortingDropdownWithLabel,
 } from '@eeacms/search/components';
-import { useAppConfig, useViews } from '@eeacms/search/lib/hocs';
-import { defineMessages, useIntl } from 'react-intl';
+import { NoResults } from '@eeacms/search/components/Result/NoResults';
+import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
+import { loadingFamily } from '@eeacms/search/state';
+import registry from '@eeacms/search/registry';
 
 const NAVIGATOR_VIEW_IDS = ['listing', 'map'];
+
 const messages = defineMessages({
   'Title a-z': {
     id: 'Title a-z',
@@ -39,88 +46,128 @@ const messages = defineMessages({
 });
 
 const NavigatorCatalogueContentView = (props) => {
-  const { appConfig, registry } = useAppConfig();
-  const { children, wasInteracted } = props;
-  const { activeViewId, setActiveViewId } = useViews();
-  const { showFacets, showSorting, sortOptions, resultViews } = appConfig;
+  const { appConfig, children, current, wasInteracted } = props;
+  const { sortOptions, resultViews } = appConfig;
+  const views = useViews();
+  const searchContext = useSearchContext();
   const intl = useIntl();
-  const translatedSortOptions = sortOptions.map((item) => ({
+
+  const { showFilters, showFacets, showClusters, showSorting } = appConfig;
+
+  const navigatorResultViews = NAVIGATOR_VIEW_IDS.map((id) =>
+    resultViews.find((view) => view.id === id),
+  ).filter(Boolean);
+
+  const activeNavigatorViewId = NAVIGATOR_VIEW_IDS.includes(views.activeViewId)
+    ? views.activeViewId
+    : navigatorResultViews[0]?.id;
+
+  React.useEffect(() => {
+    if (activeNavigatorViewId && views.activeViewId !== activeNavigatorViewId) {
+      views.setActiveViewId(activeNavigatorViewId);
+    }
+  }, [activeNavigatorViewId, views]);
+
+  const listingViewDef = resultViews.find(
+    (view) => view.id === activeNavigatorViewId,
+  );
+
+  const ResultViewComponent =
+    registry.resolve[listingViewDef?.factories.view]?.component;
+
+  const layoutMode =
+    activeNavigatorViewId === 'horizontalCard' ? 'fixed' : 'fullwidth';
+
+  const { wasSearched } = searchContext;
+
+  const loadingAtom = loadingFamily(appConfig.appName);
+  const isLoading = useAtomValue(loadingAtom);
+
+  const showPaging = appConfig.showLandingPage === false ? true : wasInteracted;
+
+  const sortOptions2 = sortOptions.map((item) => ({
     ...item,
     name: messages[item.name?.id]
       ? intl.formatMessage(messages[item.name.id])
       : item.name,
   }));
-  const navigatorResultViews = NAVIGATOR_VIEW_IDS.map((id) =>
-    resultViews.find((view) => view.id === id),
-  ).filter(Boolean);
-  const activeNavigatorViewId = NAVIGATOR_VIEW_IDS.includes(activeViewId)
-    ? activeViewId
-    : navigatorResultViews[0]?.id;
 
-  React.useEffect(() => {
-    if (activeNavigatorViewId && activeViewId !== activeNavigatorViewId) {
-      setActiveViewId(activeNavigatorViewId);
-    }
-  }, [activeNavigatorViewId, activeViewId, setActiveViewId]);
-
-  const listingViewDef = resultViews.find(
-    (view) => view.id === activeNavigatorViewId,
-  );
-  if (!listingViewDef) return null;
-
-  const ResultViewComponent =
-    registry.resolve[listingViewDef.factories.view].component;
+  if (!ResultViewComponent) return null;
 
   return (
     <>
-      {appConfig.showFilters && <ActiveFilterList />}
-      {appConfig.enableNLP ? <AnswerBox /> : ''}
-      <div className="navigator-catalogue-above-results">
-        <Menu pointing secondary className="navigator-view-tabs">
-          {navigatorResultViews.map((view) => (
-            <Menu.Item
-              key={view.id}
-              active={activeNavigatorViewId === view.id}
-              onClick={() => setActiveViewId(view.id)}
-            >
-              {view.icon && <Icon name={view.icon} />}
-              {view.title}
-            </Menu.Item>
-          ))}
-        </Menu>
-      </div>
-      {(showFacets || showSorting) && (
-        <div className="above-results">
-          <div className="above-left">
-            {showFacets && <DropdownFacetsList />}
-          </div>
-          <div className="above-right">
-            {showSorting && (
-              <>
-                <Component factoryName="SecondaryFacetsList" {...props} />
-                <Sorting
-                  label={''}
-                  sortOptions={translatedSortOptions}
-                  view={SortingDropdownWithLabel}
-                />
-              </>
-            )}
-          </div>
-        </div>
+      {appConfig.mode === 'edit' && (
+        <div>Active filters are always shown in edit mode</div>
       )}
 
-      <ResultViewComponent>{children}</ResultViewComponent>
+      {(showFilters || appConfig.mode === 'edit') && <ActiveFilterList />}
 
-      <div className="row">
-        <div className="search-body-footer">
-          <div className="prev-next-paging">
-            {wasInteracted ? <Paging /> : null}
-          </div>
-          <ResultsPerPageSelector />
-          <div>
-            <DownloadButton appConfig={appConfig} />
-          </div>
+      {showClusters && <SectionTabs />}
+
+      <div className={`results-layout ${layoutMode}`}>
+        <div className="navigator-catalogue-above-results">
+          <Menu pointing secondary className="navigator-view-tabs">
+            {navigatorResultViews.map((view) => (
+              <Menu.Item
+                key={view.id}
+                active={activeNavigatorViewId === view.id}
+                onClick={() => views.setActiveViewId(view.id)}
+              >
+                {view.icon && <Icon className={view.icon} />}
+                {view.title}
+              </Menu.Item>
+            ))}
+          </Menu>
         </div>
+
+        {(showFacets || showSorting) && (
+          <div className="above-results">
+            <div className="above-left">
+              {showFacets && <DropdownFacetsList />}
+            </div>
+
+            <div className="above-right">
+              {showSorting && (
+                <>
+                  <Component factoryName="SecondaryFacetsList" {...props} />
+                  <Sorting
+                    label=""
+                    sortOptions={sortOptions2}
+                    view={SortingDropdownWithLabel}
+                  />
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
+        {children.length === 0 && !isLoading && wasSearched && <NoResults />}
+
+        {current === 1 && appConfig.mode !== 'edit' ? <AnswerBox /> : ''}
+
+        <ResultViewComponent>{children}</ResultViewComponent>
+
+        {children.length > 0 && (
+          <div className="search-body-footer">
+            <Grid columns={2}>
+              <Grid.Column>
+                <ResultsPerPageSelector />
+              </Grid.Column>
+              <Grid.Column textAlign="right" />
+            </Grid>
+
+            <Grid centered>
+              <Grid.Column textAlign="center">
+                <div className="prev-next-paging">
+                  {!!showPaging && <Paging />}
+                </div>
+                <div>
+                  <DownloadButton appConfig={appConfig} />
+                </div>
+              </Grid.Column>
+            </Grid>
+          </div>
+        )}
       </div>
     </>
   );

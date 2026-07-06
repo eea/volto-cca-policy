@@ -3,7 +3,7 @@ const viewsCatalogue = {
     {
       id: 'listing',
       title: 'List view',
-      icon: 'bars',
+      icon: 'ri-list-check',
       render: null,
       isDefault: true,
       factories: {
@@ -14,7 +14,7 @@ const viewsCatalogue = {
     {
       id: 'map',
       title: 'Map view',
-      icon: 'map',
+      icon: 'ri-map-2-line',
       render: null,
       isDefault: false,
       factories: {
