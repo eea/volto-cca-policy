@@ -1,7 +1,13 @@
 import React from 'react';
+import { useAtom } from 'jotai';
 import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
+import {
+  compareToolsAtom,
+  getCompareToolId,
+  getCompareToolTitle,
+} from './CompareToolsPanel';
 
 const asArray = (value) => {
   if (!value) return [];
@@ -69,8 +75,30 @@ const cycleElementPlaceholders = ['[Cycle]'];
 
 const NavigatorCatalogueCardItem = (props) => {
   const { result } = props;
+  const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const sectors = asArray(result.cca_adaptation_sectors);
   const hazards = asArray(result.cca_climate_impacts);
+  const compareTool = {
+    id: getCompareToolId(result),
+    title: getCompareToolTitle(result),
+  };
+  const isSelectedForCompare = selectedTools.some(
+    (tool) => tool.id === compareTool.id,
+  );
+
+  const onCompareChange = (event, { checked }) => {
+    setSelectedTools((tools) => {
+      if (!checked) {
+        return tools.filter((tool) => tool.id !== compareTool.id);
+      }
+
+      if (tools.some((tool) => tool.id === compareTool.id)) {
+        return tools;
+      }
+
+      return [...tools, compareTool];
+    });
+  };
 
   return (
     <div className="navigator-catalogue-item">
@@ -108,7 +136,10 @@ const NavigatorCatalogueCardItem = (props) => {
 
           <div className="catalogue-actions">
             <label className="catalogue-compare">
-              <Checkbox />
+              <Checkbox
+                checked={isSelectedForCompare}
+                onChange={onCompareChange}
+              />
               <span>Compare</span>
             </label>
             <ExternalLink className="ui button primary icon" href={result.href}>

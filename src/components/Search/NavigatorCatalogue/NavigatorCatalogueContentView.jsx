@@ -19,6 +19,7 @@ import { NoResults } from '@eeacms/search/components/Result/NoResults';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { loadingFamily } from '@eeacms/search/state';
 import registry from '@eeacms/search/registry';
+import { CompareToolsPanel } from '../../Result/NavigatorCatalogue/CompareToolsPanel';
 
 const NAVIGATOR_VIEW_IDS = ['listing', 'map'];
 
@@ -146,6 +147,7 @@ const NavigatorCatalogueContentView = (props) => {
         {current === 1 && appConfig.mode !== 'edit' ? <AnswerBox /> : ''}
 
         <ResultViewComponent>{children}</ResultViewComponent>
+        <CompareToolsPanel />
 
         {children.length > 0 && (
           <div className="search-body-footer">
