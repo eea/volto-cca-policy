@@ -47,8 +47,8 @@ import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
 import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
-import NavigatorCatalogueCardItem from './components/Result/NavigatorCatalogue/NavigatorCatalogueCardItem';
-import NavigatorCatalogueMapView from './components/Result/NavigatorCatalogue/NavigatorCatalogueMapView';
+import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
+import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
 
 import { langRedirection } from './store/middleware';

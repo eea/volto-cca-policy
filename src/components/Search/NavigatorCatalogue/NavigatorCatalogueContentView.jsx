@@ -19,7 +19,7 @@ import { NoResults } from '@eeacms/search/components/Result/NoResults';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { loadingFamily } from '@eeacms/search/state';
 import registry from '@eeacms/search/registry';
-import { CompareToolsPanel } from '../../Result/NavigatorCatalogue/CompareToolsPanel';
+import { CompareToolsPanel } from './CompareToolsPanel';
 
 const NAVIGATOR_VIEW_IDS = ['listing', 'map'];
 
