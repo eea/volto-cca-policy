@@ -307,7 +307,7 @@ body.searchlib-page .searchlib-block {
   }
 
   .catalogue-taxonomy,
-  .navigator-catalogue-chips,
+  .navigator-catalogue-tags,
   .catalogue-item-footer,
   .catalogue-meta,
   .catalogue-actions,
@@ -321,11 +321,11 @@ body.searchlib-page .searchlib-block {
     gap: 0.5rem;
   }
 
-  .navigator-catalogue-chips {
+  .navigator-catalogue-tags {
     gap: 0.35rem;
   }
 
-  .catalogue-chip {
+  .catalogue-tag {
     display: inline-flex;
     min-height: 24px;
     align-items: center;
@@ -456,5 +456,30 @@ body.searchlib-page .searchlib-block {
     .catalogue-actions {
       justify-content: flex-start;
     }
+  }
+}
+
+.catalogue-tag-popup.ui.popup {
+  max-width: 18rem;
+  color: #344b5a;
+  font-size: 0.85rem;
+  line-height: 1.35;
+
+  .catalogue-tag-tooltip-title {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #526b7c;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  ul {
+    padding-left: 1rem;
+    margin: 0;
+  }
+
+  li + li {
+    margin-top: 0.25rem;
   }
 }

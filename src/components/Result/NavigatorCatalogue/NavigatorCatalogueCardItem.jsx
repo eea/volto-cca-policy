@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Icon } from 'semantic-ui-react';
+import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 
@@ -18,19 +18,41 @@ const getStepNumbers = (result) => {
     .map((match) => Number(match[1]));
 };
 
-const ChipGroup = ({ values, type }) => {
+const TagGroup = ({ values, type }) => {
   const visible = values.slice(0, 3);
+  const hidden = values.slice(3);
   const remaining = values.length - visible.length;
+  const hiddenLabel = hidden.join(', ');
 
   return (
-    <div className="navigator-catalogue-chips">
+    <div className="navigator-catalogue-tags">
       {visible.map((value) => (
-        <span key={`${type}-${value}`} className={`catalogue-chip ${type}`}>
+        <span key={`${type}-${value}`} className={`catalogue-tag ${type}`}>
           {value}
         </span>
       ))}
       {remaining > 0 && (
-        <span className={`catalogue-chip ${type} more`}>+ {remaining}</span>
+        <Popup
+          className="catalogue-tag-popup"
+          content={
+            <div className="catalogue-tag-tooltip">
+              <ul>
+                {hidden.map((value) => (
+                  <li key={`${type}-hidden-${value}`}>{value}</li>
+                ))}
+              </ul>
+            </div>
+          }
+          position="bottom left"
+          trigger={
+            <span
+              className={`catalogue-tag ${type} more`}
+              aria-label={`Additional ${type} values: ${hiddenLabel}`}
+            >
+              + {remaining}
+            </span>
+          }
+        />
       )}
     </div>
   );
@@ -80,8 +102,8 @@ const NavigatorCatalogueCardItem = (props) => {
         </p>
 
         <div className="catalogue-taxonomy">
-          <ChipGroup values={sectors} type="sector" />
-          <ChipGroup values={hazards} type="hazard" />
+          <TagGroup values={sectors} type="sector" />
+          <TagGroup values={hazards} type="hazard" />
         </div>
 
         <div className="catalogue-item-footer">

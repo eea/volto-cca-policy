@@ -47,6 +47,13 @@ export default function installNavigatorCatalogueSearch(config) {
 
   const { navigatorCatalogueSearch } = config.searchui;
 
+  navigatorCatalogueSearch.showClusters = false;
+
+  navigatorCatalogueSearch.contentSectionsParams = {
+    ...navigatorCatalogueSearch.contentSectionsParams,
+    enable: false,
+  };
+
   navigatorCatalogueSearch.permanentFilters.push({
     bool: {
       must_not: [
@@ -58,17 +65,7 @@ export default function installNavigatorCatalogueSearch(config) {
       ],
     },
   });
-  // navigatorCatalogueSearch.contentSectionsParams = {
-  //   enable: true,
-  //   sectionFacetsField: 'op_cluster',
-  //   sections: clusters.clusters,
-  //   clusterMapping: Object.assign(
-  //     {},
-  //     ...clusters.clusters.map(({ name, values }) =>
-  //       Object.assign({}, ...values.map((v) => ({ [v]: name }))),
-  //     ),
-  //   ),
-  // };
+
   navigatorCatalogueSearch.permanentFilters.push({
     terms: {
       objectProvides: ['Tool'],
