@@ -510,11 +510,6 @@ const applyConfig = (config) => {
       path: `*/navigator-catalogue/compare`,
       component: NavigatorCatalogueCompareView,
     },
-    {
-      path: `/compare`,
-      component: NavigatorCatalogueCompareView,
-    },
-
     ...(config.addonRoutes || []),
   ];
 
