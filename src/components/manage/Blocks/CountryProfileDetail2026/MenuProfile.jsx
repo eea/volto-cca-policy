@@ -2,8 +2,10 @@ import { Grid } from 'semantic-ui-react';
 import './styles.less';
 
 import StatusCircle from './StatusCircle';
+import { truncate } from 'lodash';
 
 export default function MenuProfile(props) {
+  const countryName = props?.countryName;
   const dataJsonString = props.dataJson;
   const dataJson = JSON.parse(dataJsonString);
   const adaptationPolicies = dataJson['Legal_Policies']['AdaptationPolicies']
@@ -17,6 +19,12 @@ export default function MenuProfile(props) {
     .map((item) => ({
       ...item,
       Status: item.Status.match(/\(([^)]+)\)/)?.[1] ?? item.Status,
+    }))
+    .map((item) => ({
+      ...item,
+      Status: item.Status.includes('-')
+        ? item.Status.split('-')[1]
+        : item.Status,
     }));
   const dataAndClimateServices = [
     {
@@ -61,38 +69,39 @@ export default function MenuProfile(props) {
       elements: [],
     },
     {
-      category: 'Governance regulation adaptation reporting',
+      category: 'Reporting on adaptation under the Governance Regulation',
       elements: [
         {
-          Title: 'National climate change adaptation planning and strategies',
+          Title:
+            '[2021] National climate change adaptation planning and strategies',
           LinkName: '2021 Art. 19',
           Link: 'https://reportnet.europa.eu/public/dataflow/110',
           Status: 'Adopted',
         },
         {
-          Title: 'Decarbonisation adaptation progress reporting (2023)',
-          LinkName: '2023 Art. 17',
-          Link: 'https://reportnet.europa.eu/public/dataflow/897',
-          Status: 'Adopted',
-        },
-        {
           Title:
-            'National climate change adaptation planning and strategies (2023)',
+            '[2023] National climate change adaptation planning and strategies',
           LinkName: '2023 Art. 19',
           Link: 'https://reportnet.europa.eu/public/dataflow/895',
           Status: 'Adopted',
         },
         {
-          Title: 'Annex III Decarbonisation - Adaptation dataflow (2025)',
-          LinkName: '2025 Art. 17',
-          Link: 'https://reportnet.europa.eu/public/dataflow/1444',
+          Title:
+            '[2025] National climate change adaptation planning and strategies',
+          LinkName: '2025 Art. 19',
+          Link: 'https://reportnet.europa.eu/public/dataflow/1455',
           Status: 'Adopted',
         },
         {
-          Title:
-            'National climate change adaptation planning and strategies (2025)',
-          LinkName: '2025 Art. 19',
-          Link: 'https://reportnet.europa.eu/public/dataflow/1455',
+          Title: '[2023] Annex III Decarbonisation – Adaptation ',
+          LinkName: '2023 Art. 17',
+          Link: 'https://reportnet.europa.eu/public/dataflow/897',
+          Status: 'Adopted',
+        },
+        {
+          Title: '[2025] Annex III Decarbonisation – Adaptation',
+          LinkName: '2025 Art. 17',
+          Link: 'https://reportnet.europa.eu/public/dataflow/1444',
           Status: 'Adopted',
         },
       ],
@@ -123,8 +132,21 @@ export default function MenuProfile(props) {
   })();
   return (
     <div className="cp2026">
-      <h2 id="adaptation_policies">Adaptation policies</h2>
-      <h3>National framework</h3>
+      <h2 id="adaptation_policies">Summary</h2>
+      <p>
+        This section provides an overview of key adaptation policies, climate
+        data and services, knowledge portals and platforms and key publications.
+        It also includes links to the datasets and contact information.
+      </p>
+      <p>
+        The Climate projections and services table shows the availability of
+        modelled climate data, including nationally used climate scenarios where
+        relevant. The <strong>Meteorological services</strong> table provides
+        information on where climate monitoring data can be accessed. Both
+        tables indicate the status of each service and include details on how to
+        access it.
+      </p>
+      <h3>Adaptation policies</h3>
       {adaptationPolicies.map((adaptation, index) => (
         <Grid key={index} columns="12" className="cpBgGray">
           <Grid.Column
@@ -163,9 +185,9 @@ export default function MenuProfile(props) {
         </Grid>
       ))}
       <h3 id="climate_services">Data and climate services</h3>
-      <ListDiv elements={dataAndClimateServices} />
+      <ListDiv elements={dataAndClimateServices} showStatus={true} />
       <h3 id="monitoring_reporting">Monitoring and reporting</h3>
-      <ListDiv elements={monitoringAndReportingData} />
+      <ListDiv elements={monitoringAndReportingData} showStatus={false} />
       <h3 id="adaptation_knowledge">
         Adaptation knowledge portals and platforms
       </h3>
@@ -246,21 +268,38 @@ export default function MenuProfile(props) {
         ))}
       </Grid>
       <div className="noticeBackGround">
-        <p>
-          <strong>Disclaimer:</strong>The information presented in these pages
-          is based on the reporting according to 'Regulation (EU) 2018/1999 on
-          the Governance of the Energy Union and Climate Action'. For
-          Liechtenstein and Norway, the information presented is based on the
-          reporting according to 'Regulation (EU) No 525/2013 on a mechanism for
-          monitoring and reporting greenhouse gas emissions and for reporting
-          other information relevant to climate change'.
-        </p>
+        {[
+          'Albania',
+          'Bosnia and Herzegovina',
+          'Georgia',
+          'Kosovo',
+          'Moldova',
+          'Montenegro',
+          'North Macedonia',
+          'Georgia',
+          'Serbia',
+          'Ukraine',
+        ].includes(countryName) ? (
+          <p>
+            <strong>Disclaimer:</strong>The information presented on these pages
+            is based on the reporting according to the adapted Regulation (EU)
+            2018/1999 on the Governance of the Energy Union and Climate Action,
+            as incorporated and adapted by the Energy Community Ministerial
+            Council decision 2021/14/mc-enc.
+          </p>
+        ) : (
+          <p>
+            <strong>Disclaimer:</strong>The information presented on these pages
+            is based on the reporting according to the Regulation (EU) 2018/1999
+            on the Governance of the Energy Union and Climate Action.
+          </p>
+        )}
       </div>
     </div>
   );
 }
 
-const ListDiv = ({ elements }) => {
+const ListDiv = ({ elements, showStatus = true }) => {
   return (
     <div>
       {elements
@@ -297,14 +336,16 @@ const ListDiv = ({ elements }) => {
                     </span>
                   </div>
                 </Grid.Column>
-                <Grid.Column
-                  mobile={3}
-                  tablet={3}
-                  computer={3}
-                  className="col-left font-weight-6"
-                >
-                  <StatusCircle statusValue={element.Status} />
-                </Grid.Column>
+                {showStatus && (
+                  <Grid.Column
+                    mobile={3}
+                    tablet={3}
+                    computer={3}
+                    className="col-left font-weight-6"
+                  >
+                    <StatusCircle statusValue={element.Status} />
+                  </Grid.Column>
+                )}
               </Grid>
             ))}
           </div>

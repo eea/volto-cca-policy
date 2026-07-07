@@ -1,3 +1,4 @@
+import StatisticStories from 'addons/volto-eea-design-system/src/ui/Statistic/Statistic.stories';
 import CircleGray from './circle-gray.svg';
 import CircleGreen from './circle-green.svg';
 import CirclePurple from './circle-purple.svg';
@@ -19,7 +20,7 @@ export default function StatusCircle(props) {
     case 'established':
       statusIcon = CirclePurple;
       break;
-    case 'What':
+    case 'what':
     case 'significantly increasing':
       statusIcon = CircleRed;
       break;

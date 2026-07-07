@@ -28,7 +28,7 @@ const STATIC_MENU_LABELS = [
   'National circumstances',
   'Assessment and key affected sectors',
   'Legal and policy framework',
-  'Strategies, plans and goals',
+  'Strategies and plans',
   'Monitoring and evaluation',
   'Good practices, cooperation and synergies',
   'Sub national adaptation',
@@ -55,7 +55,7 @@ const SUBMENUS = {
     { label: 'Key affected sectors', href: 'key_affected_sectors' },
   ],
 
-  'Strategies, plans and goals': [
+  'Strategies and plans': [
     { label: 'Adaptation governance overview', href: 'overview' },
     { label: 'Adaptation actions and measures', href: '#measures' },
   ],
@@ -156,7 +156,7 @@ export default function CountryProfileDetail2026View(props) {
       STATIC_MENU_LABELS.forEach((label, index) => {
         const Component = STATIC_MENU_COMPONENTS[index];
         const content = Component ? (
-          <Component dataJson={dataJson} />
+          <Component dataJson={dataJson} countryName={countryName} />
         ) : (
           `Content ${index}`
         );
@@ -203,6 +203,7 @@ export default function CountryProfileDetail2026View(props) {
         className="secondary menu"
         panes={panes}
         activeIndex={activeIndex}
+        countryName={countryName}
         onTabChange={handleTabChange}
         grid={{ paneWidth: 9, tabWidth: 3 }}
         menu={{

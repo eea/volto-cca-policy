@@ -48,13 +48,13 @@ export default function MenuLegalPolicy(props) {
     <>
       <Callout>
         <p>
-          This section outlines{' '}
-          <strong>
-            the institutional arrangements and governance at the national level
-          </strong>
-          . It summarizes how institutions coordinate action and how national
-          strategies contribute to achieving climate resilience in line with EU
-          Mission objectives.
+          This section outlines the legal and policy frameworks, regulations,
+          institutional arrangements and governance structures that support
+          national climate adaptation. It summarises how institutions coordinate
+          action, how adaptation policies are planned, implemented, monitored,
+          evaluated and revised, and how climate impacts and resilience are
+          integrated into environmental assessment procedures and disaster risk
+          management frameworks.
         </p>
       </Callout>
       <AccordionList elements={elements} />

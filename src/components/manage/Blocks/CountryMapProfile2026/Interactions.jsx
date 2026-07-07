@@ -28,38 +28,38 @@ export const Interactions = ({
         return;
       }
 
-      if (
-        countries_metadata.length > 0 &&
-        feature &&
-        [
-          'Bosnia and Herzegovina',
-          'Montenegro',
-          'Albania',
-          'North Macedonia',
-          'Kosovo',
-        ].includes(feature.get('na'))
-      ) {
-        map.getTargetElement().style.cursor = 'pointer';
-        let countryName = feature.get('na');
-        const flag = feature.get('flag').src;
-        let tooltipContent =
-          'No data reported through the reporting mechanism of the adapted Governance Regulation for the Energy Community\'s Contracting Parties. More information is available <a href="https://www.energy-community.org/">here</a>.';
-        if (countryName === 'Kosovo') {
-          tooltipContent =
-            tooltipContent +
-            '<hr>This designation is without prejudice to positions on status, and is in line with UNSCR 1244/99 and the ICJ opinion on Kosovo Declaration of Independence';
-        }
-        let tooltipContentDiv = `
-          <div class="country-tooltip">
-            <div id="country-name">
-              <h3>${countryName}</h3>
-              <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
-            </div>
-            <div class="tooltip-content"><span>${tooltipContent}</span> ABC</div>
-          </div>`;
+      // if (
+      //   countries_metadata.length > 0 &&
+      //   feature &&
+      //   [
+      //     'Bosnia and Herzegovina',
+      //     'Montenegro',
+      //     'Albania',
+      //     'North Macedonia',
+      //     'Kosovo',
+      //   ].includes(feature.get('na'))
+      // ) {
+      //   map.getTargetElement().style.cursor = 'pointer';
+      //   let countryName = feature.get('na');
+      //   const flag = feature.get('flag').src;
+      //   let tooltipContent =
+      //     'No data reported through the reporting mechanism of the adapted Governance Regulation for the Energy Community\'s Contracting Parties. More information is available <a href="https://www.energy-community.org/">here</a>.';
+      //   if (countryName === 'Kosovo') {
+      //     tooltipContent =
+      //       tooltipContent +
+      //       '<hr>This designation is without prejudice to positions on status, and is in line with UNSCR 1244/99 and the ICJ opinion on Kosovo Declaration of Independence';
+      //   }
+      //   let tooltipContentDiv = `
+      //     <div class="country-tooltip">
+      //       <div id="country-name">
+      //         <h3>${countryName}</h3>
+      //         <img class="tooltip-country-flag" src="${flag}" height="33" width="54">
+      //       </div>
+      //       <div class="tooltip-content"><span>${tooltipContent}</span> ABC</div>
+      //     </div>`;
 
-        setTooltipVisibility(node, tooltipContentDiv, evt, true);
-      }
+      //   // setTooltipVisibility(node, tooltipContentDiv, evt, true);
+      // }
       if (
         countries_metadata.length > 0 &&
         feature &&

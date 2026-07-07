@@ -95,31 +95,24 @@ export default function MenuStrategiesPlansGoals(props) {
     <>
       <Callout>
         <p>
-          This section provides an overview of the country’s
-          <strong>
-            {' '}
-            climate change adaptation strategy and its implementation
-          </strong>
-          . It summarizes strategic priorities, governance processes, and how
-          adaptation is integrated into sectoral planning. Where available, it
-          also presents actions and measures that support climate resilience
-          across key sectors.
+          This section summarises national adaptation strategies, policies,
+          plans and goals, including key priorities, challenges, gaps and
+          barriers to adaptation. Where available, it also outlines planned
+          adaptation actions and measures, as well as broader national efforts
+          to advance climate resilience.
         </p>
       </Callout>
       <h2 id="overview">Adaptation governance overview</h2>
       <p>
-        This section outlines the country’s approach to climate adaptation,
-        including its strategic priorities, key challenges, stakeholder
-        processes, and how adaptation is embedded across policies and planning
-        frameworks.
+        Governance approach to climate adaptation, including strategic
+        priorities, key challenges, stakeholder processes and how adaptation is
+        embedded across policies and planning frameworks.
       </p>
       <AccordionList elements={elements} />
       <h2 id="measures">Adaptation actions and measures</h2>
       <p>
-        This section provides an overview of the adaptation actions and measures
-        reported by the country. The measures are grouped by sector to reflect
-        the areas most affected by climate change and the corresponding
-        responses.
+        Overview of reported adaptation actions and measures. The measures are
+        grouped by sector to reflect the areas most affected by climate change.
       </p>
       <Tab
         className="secondary menu"

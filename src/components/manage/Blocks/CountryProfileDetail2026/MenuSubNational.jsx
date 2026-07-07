@@ -79,13 +79,11 @@ export default function MenuSubNational(props) {
     <>
       <Callout>
         <p>
-          This section presents examples of good practices reported by the
-          country, together with cooperation activities that support climate
-          adaptation. It highlights{' '}
-          <strong>
-            practical experience, lessons learnt and collaborative efforts at
-            national, regional and international levels.
-          </strong>
+          This section summarises sub-national adaptation governance, including
+          institutional arrangements, regional and local strategies, stakeholder
+          engagement and the implementation of planned actions. It also
+          highlights cooperation, good practices, synergies, lessons learnt and
+          practical experience at national, regional and international levels.
         </p>
       </Callout>
       <div className="grayBackGround">
@@ -97,10 +95,9 @@ export default function MenuSubNational(props) {
           <div className="ui hidden divider divider-spacing-s"></div>
         </div>
         <p>
-          This section provides an overview of governance structures and
-          institutional arrangements at sub-national level, including how local
-          and regional authorities organize, coordinate and implement adaptation
-          actions.
+          Overview of governance structures and institutional arrangements at
+          the sub-national level, including how local and regional authorities
+          organize, coordinate and implement adaptation actions.
         </p>
         <AccordionList elements={elementsSubNational} />
       </div>
@@ -113,9 +110,9 @@ export default function MenuSubNational(props) {
           <div className="ui hidden divider divider-spacing-s"></div>
         </div>
         <p>
-          This section presents selected good practices and lessons learnt
-          reported by the country. The number and type of practices may vary
-          depending on national experience, priorities and reporting status.
+          Overview of selected good practices and lessons learnt reported by the
+          country. The number and type of practices may vary depending on
+          national experience, priorities and reporting status.
         </p>
         {elementsGoodPractics.length > 0 ? (
           <AccordionList elements={elementsGoodPractics} />
