@@ -466,6 +466,72 @@ body.searchlib-page .searchlib-block {
   }
 }
 
+.compare-tool-header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-size: 15px;
+
+  .compare-tool-title {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.compare-tool-actions {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+
+  .ui.button {
+    margin: 0;
+  }
+
+  .ui.icon.button {
+    min-width: 0;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .compare-tool-clear.ui.button {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+}
+
+.ui.button.icon.compare-tool-open {
+  .icon {
+    margin-left: 0.35rem !important;
+  }
+}
+
+.navigator-catalogue-compare-view {
+  .ui.table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .ui.table th:first-child,
+  .ui.table td:first-child {
+    width: 180px;
+  }
+
+  .ui.table th:not(:first-child),
+  .ui.table td:not(:first-child) {
+    overflow-wrap: anywhere;
+  }
+}
+
+.navigator-catalogue-compare-view {
+  overflow-x: auto;
+}
+
 .catalogue-tag-popup.ui.popup {
   max-width: 18rem;
   color: #344b5a;

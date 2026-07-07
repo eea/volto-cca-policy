@@ -1,17 +1,49 @@
 import React from 'react';
 import { atom, useAtom } from 'jotai';
+import { Link } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 
 export const compareToolsAtom = atom([]);
 
-export const getCompareToolId = (result) =>
-  result.href || result.id || result['@id'] || result.title || '';
+export const getCompareToolEsId = (result) =>
+  result._original?._id ||
+  result._result?._meta?._id ||
+  result._result?.id ||
+  '';
+
+export const getCompareToolId = (result) => {
+  return (
+    getCompareToolEsId(result) ||
+    result.href ||
+    result.id ||
+    result['@id'] ||
+    result.title ||
+    ''
+  );
+};
 
 export const getCompareToolTitle = (result) => result.title || '[Tool name]';
 
+const getCompareUrl = (tools) => {
+  const params = new URLSearchParams();
+
+  tools.forEach((tool) => {
+    if (tool.esId) {
+      params.append('id', tool.esId);
+    }
+  });
+
+  const query = params.toString();
+  return query
+    ? `/navigator-catalogue/compare?${query}`
+    : '/navigator-catalogue/compare';
+};
+
 export const CompareToolsPanel = () => {
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
-  const isReadyToCompare = selectedTools.length >= 2;
+  const selectedToolsWithEsId = selectedTools.filter((tool) => tool.esId);
+  const isReadyToCompare = selectedToolsWithEsId.length >= 2;
+  const compareUrl = getCompareUrl(selectedTools);
 
   if (selectedTools.length === 0) return null;
 
@@ -35,14 +67,13 @@ export const CompareToolsPanel = () => {
           {selectedTools.map((tool) => (
             <div key={tool.id} className="compare-panel-tool">
               <span className="compare-panel-tool-title">{tool.title}</span>
-              <button
-                type="button"
+              <Button
                 className="compare-panel-tool-clear"
                 aria-label={`Remove ${tool.title}`}
                 onClick={() => removeTool(tool.id)}
               >
                 <Icon className="ri-close-line" />
-              </button>
+              </Button>
             </div>
           ))}
         </div>
@@ -54,6 +85,8 @@ export const CompareToolsPanel = () => {
             </div>
           )}
           <Button
+            as={isReadyToCompare ? Link : undefined}
+            to={isReadyToCompare ? compareUrl : undefined}
             primary
             icon
             fluid

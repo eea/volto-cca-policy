@@ -5,6 +5,7 @@ import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import {
   compareToolsAtom,
+  getCompareToolEsId,
   getCompareToolId,
   getCompareToolTitle,
 } from './CompareToolsPanel';
@@ -80,7 +81,9 @@ const NavigatorCatalogueCardItem = (props) => {
   const hazards = asArray(result.cca_climate_impacts);
   const compareTool = {
     id: getCompareToolId(result),
+    esId: getCompareToolEsId(result),
     title: getCompareToolTitle(result),
+    href: result.href,
   };
   const isSelectedForCompare = selectedTools.some(
     (tool) => tool.id === compareTool.id,

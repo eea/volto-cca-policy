@@ -50,6 +50,7 @@ import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCard
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
+import NavigatorCatalogueCompareView from './components/Search/NavigatorCatalogue/NavigatorCatalogueCompareView';
 
 import { langRedirection } from './store/middleware';
 
@@ -505,6 +506,14 @@ const applyConfig = (config) => {
       path: `/broken-links`,
       component: BrokenLinks,
     },
+    {
+      path: `*/navigator-catalogue/compare`,
+      component: NavigatorCatalogueCompareView,
+    },
+    {
+      path: `/compare`,
+      component: NavigatorCatalogueCompareView,
+    },
 
     ...(config.addonRoutes || []),
   ];
@@ -512,6 +521,8 @@ const applyConfig = (config) => {
   config.settings.nonContentRoutes = [
     ...config.settings.nonContentRoutes,
     '/broken-links',
+    '/compare',
+    '/navigator-catalogue/compare',
   ];
 
   config.settings.appExtras = [
