@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   euCountryNames,
-  setTooltipVisibility,
+  // setTooltipVisibility,
   getClosestFeatureToCoordinate,
 } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';

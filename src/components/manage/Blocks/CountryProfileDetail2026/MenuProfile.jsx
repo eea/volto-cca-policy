@@ -2,7 +2,7 @@ import { Grid } from 'semantic-ui-react';
 import './styles.less';
 
 import StatusCircle from './StatusCircle';
-import { truncate } from 'lodash';
+// import { truncate } from 'lodash';
 
 export default function MenuProfile(props) {
   const countryName = props?.countryName;

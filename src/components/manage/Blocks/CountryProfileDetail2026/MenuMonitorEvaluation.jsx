@@ -120,7 +120,6 @@ export default function MenuMonitorEvaluation(props) {
       });
     }
   }
-  let h2Counter = 0;
   return (
     <>
       <Callout>

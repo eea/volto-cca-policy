@@ -59,8 +59,8 @@ const View = (props) => {
       { key: 'none', value: '', text: 'Select a country' },
       ...euCountryNames
         .filter((name) => name && !name.startsWith('United Kingdom'))
-        .filter((name) => name && name != 'Moldova')
-        .filter((name) => name && name != 'Bosnia-Herzegovina')
+        .filter((name) => name && name !== 'Moldova')
+        .filter((name) => name && name !== 'Bosnia-Herzegovina')
         .map((name) => ({
           key: name,
           value: name === 'Moldova, Republic of' ? 'Moldova' : name,
