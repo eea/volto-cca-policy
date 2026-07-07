@@ -116,13 +116,30 @@ const getImageFilename = (value) => {
 };
 
 const parseDataURL = (dataUrl) => {
-  const fields = dataUrl?.match(/^data:(.*);(.*),(.*)$/);
-  if (!fields) return null;
+  const DATA_URL_PREFIX = 'data:';
+
+  if (typeof dataUrl !== 'string' || !dataUrl.startsWith(DATA_URL_PREFIX)) {
+    return null;
+  }
+
+  const start = DATA_URL_PREFIX.length;
+  const dataSeparator = dataUrl.indexOf(',', start);
+
+  if (dataSeparator === -1) return null;
+
+  const encodingSeparator = dataUrl.lastIndexOf(';', dataSeparator);
+
+  if (encodingSeparator < start) return null;
+
+  const contentType = dataUrl.slice(start, encodingSeparator);
+  const encoding = dataUrl.slice(encodingSeparator + 1, dataSeparator);
+
+  if (!contentType || !encoding) return null;
 
   return {
-    'content-type': fields[1],
-    encoding: fields[2],
-    data: fields[3],
+    'content-type': contentType,
+    encoding,
+    data: dataUrl.slice(dataSeparator + 1),
   };
 };
 

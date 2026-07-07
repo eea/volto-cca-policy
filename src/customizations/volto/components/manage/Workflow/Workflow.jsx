@@ -224,6 +224,7 @@ const Workflow = (props) => {
 
   const [showWarningModal, setShowWarningModal] = useState(false);
   const [pendingOption, setPendingOption] = useState(null);
+  const [transitionTriggered, setTransitionTriggered] = useState(false);
 
   useEffect(() => {
     dispatch(getWorkflow(pathname));
@@ -233,6 +234,7 @@ const Workflow = (props) => {
   const executeTransition = useCallback(
     (selectedOption) => {
       if (selectedOption?.url) {
+        setTransitionTriggered(true);
         dispatch(transitionWorkflow(flattenToAppURL(selectedOption.url)));
         toast.success(
           <Toast
@@ -247,7 +249,7 @@ const Workflow = (props) => {
   );
 
   useEffect(() => {
-    if (showWarningModal) {
+    if (showWarningModal && !transitionTriggered) {
       if (linkintegrityError) {
         // If the check fails, we shouldn't block the user forever. Proceed with transition.
         executeTransition(pendingOption);
@@ -273,6 +275,7 @@ const Workflow = (props) => {
     linkintegrityError,
     showWarningModal,
     pendingOption,
+    transitionTriggered,
     content,
     executeTransition,
   ]);
@@ -285,6 +288,7 @@ const Workflow = (props) => {
 
     if (isPrivateTransition) {
       setPendingOption(selectedOption);
+      setTransitionTriggered(false);
       dispatch(linkIntegrityCheck([content.UID]));
       setShowWarningModal(true);
     } else {
@@ -345,6 +349,7 @@ const Workflow = (props) => {
         onCancel={() => {
           setShowWarningModal(false);
           setPendingOption(null);
+          setTransitionTriggered(false);
         }}
         onOk={() => {
           executeTransition(pendingOption);

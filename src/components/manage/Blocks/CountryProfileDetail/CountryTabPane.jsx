@@ -61,7 +61,6 @@ export default function CountryTabPane(props) {
           for (let i = 0; i < element.value.length; i++) {
             _html_value += element.value[i];
           }
-          // return <table>{_html_value}</table>;
           return (
             <div
               key={indexKey}

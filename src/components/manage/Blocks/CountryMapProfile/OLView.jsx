@@ -94,15 +94,6 @@ const View = (props) => {
   }, [geofeatures, countries_metadata, thematicMapMode, euCountryNames, ol]);
 
   const baseUrl = props.path || props.location?.pathname || '';
-
-  // const onFeatureClick = React.useCallback(
-  //   (feature) => {
-  //     const country = feature.get('na');
-  //     // history.push(`${baseUrl}/${country.toLowerCase()}`);
-  //   },
-  //   [baseUrl, history],
-  // );
-  // console.log('thematicMapMode', thematicMapMode);
   return (
     <div className="ol-country-map">
       <Grid columns="12">

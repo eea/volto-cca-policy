@@ -1,7 +1,6 @@
 import worldSVG from '@plone/volto/icons/world.svg';
 import Edit from './Edit';
 import View from './View';
-// import { blockAvailableInMission } from '@eeacms/volto-cca-policy/utils';
 
 export default function installCountryProfileDetailBlock(config) {
   config.blocks.blocksConfig.countryProfileDetail = {
