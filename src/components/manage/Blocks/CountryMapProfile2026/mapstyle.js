@@ -83,8 +83,17 @@ export const makeStyles = (highlight, selectedCountry, ol) => {
       'SK',
       'TR',
     ];
-    const countriesCoopereting = ['RS', 'BA', 'MK', 'ME', 'AL', 'XK'];
-    const countriesEastern = ['UA', 'MO', 'MD', 'GE'];
+    const countriesCoopereting = [
+      'UA',
+      'MD',
+      'RS',
+      'BA',
+      'MK',
+      'ME',
+      'AL',
+      'XK',
+    ];
+    const countriesEastern = ['MO', 'GE'];
     const countriesEEAMemberCountries = ['IS', 'NO', 'CH', 'LI', 'TR'];
     if (countriesEEAMemberCountries.includes(countryCode)) {
       return new ol.style.Fill({ color: '#50B0A4' });

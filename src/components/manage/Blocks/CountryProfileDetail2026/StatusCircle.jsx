@@ -19,7 +19,7 @@ export default function StatusCircle(props) {
     case 'established':
       statusIcon = CirclePurple;
       break;
-    case 'What':
+    case 'what':
     case 'significantly increasing':
       statusIcon = CircleRed;
       break;

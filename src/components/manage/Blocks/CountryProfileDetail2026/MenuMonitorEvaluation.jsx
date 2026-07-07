@@ -10,28 +10,28 @@ export default function MenuMonitorEvaluation(props) {
       Title: 'Monitoring, reporting and evaluation (MRE)',
       id: 'mre',
       Description:
-        "This section explains the country's formal approach to MRE, including the frameworks, legal basic and specific processes that guide implementation.",
+        'National MRE approaches, including their legal basis, indicators, methodologies and processes for tracking adaptation implementation and progress.',
       items: [],
     },
     StateOfPlay: {
       Title: 'State of play',
       id: 'state_play',
       Description:
-        'A summary of the current status of MRE activities, including the indicators used, data sources, ad ongoing monitoring efforts across different sectors.',
+        'Information on the current status of MRE activities, including indicators, data sources and ongoing monitoring across sectors. It also reviews progress in implementing planned actions and measures, including the disbursement of funding to strengthen climate resilience, adaptation-related spending in disaster risk management and, where available, the share of sectoral spending used to support climate adaptation.',
       items: [],
     },
     ProgressOnAdaptation: {
       Title: 'Progress on adaptation',
       id: 'progress',
       Description:
-        'This section highlights key achievements, outcomes from adaptation efforts',
+        'Overview of key achievements and outcomes from adaptation efforts, including progress in reducing climate impacts, vulnerabilities and risks, increasing adaptive capacity, meeting adaptation priorities and addressing barriers.',
       items: [],
     },
     StepsToReview: {
-      Title: 'Steps to review',
+      Title: 'Policy review process',
       id: 'steps_review',
       Description:
-        "This section explains the country's formal approach to MRE, including the frameworks, legal basic and specific processes that guide implementation.",
+        'Overview of the steps taken to review and update vulnerability and risk assessments, as well as national adaptation policies, strategies, plans and measures.',
       items: [],
     },
   };
@@ -120,7 +120,6 @@ export default function MenuMonitorEvaluation(props) {
       });
     }
   }
-  let h2Counter = 0;
   return (
     <>
       <Callout>
@@ -130,20 +129,17 @@ export default function MenuMonitorEvaluation(props) {
             summarizes national progress on climate change adaptation
           </strong>
           , including key actions, funding, and monitoring efforts. It provides
-          an overview of how each country strengthens resilience and integrates
-          adaptation across sectors and governance levels.
+          an overview of how countries strengthen resilience and integrate
+          adaptation across sectors and governance levels..
         </p>
       </Callout>
       {Object.entries(elements).map(([key, element]) => {
         if (element.items.length === 0) {
           return '';
         }
-        h2Counter += 1;
         return (
           <React.Fragment key={element.id}>
-            <h2 id={element.id}>
-              {h2Counter}. {element.Title}
-            </h2>
+            <h2 id={element.id}>{element.Title}</h2>
             <div>
               <p>{element.Description}</p>
               <AccordionList elements={element.items} />

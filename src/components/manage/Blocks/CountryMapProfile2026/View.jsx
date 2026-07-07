@@ -59,9 +59,11 @@ const View = (props) => {
       { key: 'none', value: '', text: 'Select a country' },
       ...euCountryNames
         .filter((name) => name && !name.startsWith('United Kingdom'))
+        .filter((name) => name && name !== 'Moldova')
+        .filter((name) => name && name !== 'Bosnia-Herzegovina')
         .map((name) => ({
           key: name,
-          value: name,
+          value: name === 'Moldova, Republic of' ? 'Moldova' : name,
           text: name,
         }))
         .sort((a, b) => a.text.localeCompare(b.text)),
@@ -163,20 +165,20 @@ const View = (props) => {
       <Callout>
         <p>
           Explore insights on Europe's climate adaptation progress. In 2025, EU
-          Member States, EEA Member Countries and Energy Community Contracting
+          Member States, EEA member countries and Energy Community Contracting
           Parties submitted their reports under Article 19 of the Regulation
           (EU) 2018/1999 on the Governance of the Energy Union and Climate
           Action and the adapted Governance Regulation (2018/1999) as
           incorporated and adapted by the Energy Community Ministerial Council
           decision 2021/14/mc-enc. Requirements are outlined in Annex I of the
-          Implementing Regulation (2020/1208) and the Energy Community adapted
-          Implementing Regulation (2020/1208).
+          Implementing Regulation (2020/1208) and its adapted version for the
+          Energy Community.
         </p>
       </Callout>
       <h2>Climate-ADAPT country profiles</h2>
       <p>
         Explore each country's National Adaptation Strategy (NAS) and National
-        Adaptation Plan (NAP) status, or click “View country profile” to see all
+        Adaptation Plan (NAP) status or click "View country profile" to see all
         adaptation policies and actions.
       </p>
       <Grid columns={2} stackable className="country-selectors">
@@ -238,7 +240,10 @@ const View = (props) => {
                         className="panel-flag"
                       />
                     )}
-                    <h3>{selectedCountry}</h3>
+                    <h3>
+                      {selectedCountry}
+                      {['Kosovo'].includes(selectedCountry) && <>*</>}
+                    </h3>
                   </div>
                   <a
                     href={`/en/countries-regions/countries/${selectedCountry.toLowerCase()}`}
@@ -266,6 +271,33 @@ const View = (props) => {
                   </Grid.Column>
                 </Grid>
               </div>
+              {[
+                'Bosnia and Herzegovina',
+                'Montenegro',
+                'Albania',
+                'North Macedonia',
+                'Kosovo',
+              ].includes(selectedCountry) && (
+                <div className="panel-content">
+                  <hr />
+                  <p>
+                    No data reported through the reporting mechanism of the
+                    adapted Governance Regulation for the Energy Community's
+                    Contracting Parties. More information is available{' '}
+                    <a href="https://www.energy-community.org/">here</a>.
+                  </p>
+                  {['Kosovo'].includes(selectedCountry) && (
+                    <>
+                      <hr />
+                      <p>
+                        * This designation is without prejudice to positions on
+                        status, and is in line with UNSCR 1244/99 and the ICJ
+                        opinion on Kosovo Declaration of Independence.
+                      </p>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           )}
 
@@ -281,16 +313,16 @@ const View = (props) => {
               <div className="map-legend-items">
                 <div className="legend-item">
                   <span className="country-eea-eu-member legend-box"></span>
-                  <span>EU Member States and EEA Member Countries</span>
+                  <span>EU Member States and EEA member countries</span>
                 </div>
                 <div className="legend-item">
                   <span className="country-eea-member legend-box"></span>
-                  <span>EU Member Countries</span>
+                  <span>EU member countries</span>
                 </div>
                 <div className="legend-item">
                   <span className="country-eea-coopereting legend-box"></span>
                   <span>
-                    EEA Cooperating Countries and Energy Community Contracting
+                    EEA cooperating countries and Energy Community Contracting
                     Parties
                   </span>
                 </div>
@@ -346,7 +378,7 @@ const View = (props) => {
         <Grid.Column mobile={4} tablet={4} computer={4} className="col-left">
           <h3>21</h3>
           <p>
-            Countries adopted
+            Countries with an adopted
             <br />
             National Adaptation Strategy (NAS)
           </p>
@@ -354,7 +386,7 @@ const View = (props) => {
         <Grid.Column mobile={4} tablet={4} computer={4} className="col-left">
           <h3>18</h3>
           <p>
-            Countries adopted
+            Countries with an adopted
             <br />
             National Adaptation Plan (NAP)
           </p>
@@ -380,7 +412,7 @@ const View = (props) => {
           <tr>
             <td>
               <span className="country-eea-eu-member legend-box"></span>EU
-              Member States and EEA Member Countries
+              Member States and EEA member countries
             </td>
             <td>Mandatory reporting</td>
             <td>
@@ -389,16 +421,16 @@ const View = (props) => {
           </tr>
           <tr>
             <td>
-              <span className="country-eea-member legend-box"></span>EU Member
-              Countries
+              <span className="country-eea-member legend-box"></span>EU member
+              countries
             </td>
             <td>Voluntary reporting</td>
-            <td>Reporting on a voluntary basis.</td>
+            <td>Reporting on a voluntary basis</td>
           </tr>
           <tr>
             <td>
               <span className="country-eea-coopereting legend-box"></span>EEA
-              Cooperating Countries and Energy Community Contracting Parties
+              cooperating countries and Energy Community Contracting Parties
               <br />
               <span className="country-eastern legend-box"></span>Energy
               Community Contracting Parties
@@ -406,7 +438,7 @@ const View = (props) => {
             <td>Mandatory reporting</td>
             <td>
               Required to report under the adapted Governance Regulation
-              (2018/1999).
+              (2018/1999)
             </td>
           </tr>
         </tbody>

@@ -29,10 +29,13 @@ export default function MenuNationalCircumstances(props) {
     <>
       <Callout>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Nunc ac velit felis fermentum
-          pretium vulputate sapien eleifend. Amet dolor ultricies laoreet sed.
-          Ut semper lacinia nisl aliquet aenean gravida. Quam lectus viverra eu
-          enim a lorem sed vestibulum. Suspendisse a dictum eu venenatis mattis.
+          This section provides an overview of the national circumstances that
+          shape climate adaptation needs and priorities, including current and
+          projected climate impacts, vulnerabilities, risks and adaptive
+          capacity. It covers the biogeophysical characteristics, demographic
+          conditions and economic and infrastructural factors that are relevant
+          to the design, planning and implementation of effective adaptation
+          actions.
         </p>
       </Callout>
       <AccordionList elements={elements} />

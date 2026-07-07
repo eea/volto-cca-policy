@@ -126,7 +126,6 @@ export default function MenuProfile(props) {
       .sort((a, b) => a.localeCompare(b)),
     ...panesKeys.filter((item) => item.toLowerCase() === 'other'),
   ];
-
   Object.entries(resultPanesKeys).forEach(([key, data]) => {
     let keyElements = [];
     Object.entries(dataJson?.Key_Affected_Sectors ?? []).forEach(
@@ -203,6 +202,14 @@ export default function MenuProfile(props) {
   });
   return (
     <>
+      <p>
+        This section summarises observed and future climate hazards, key
+        affected sectors and the assessment of likelihood, exposure,
+        vulnerability, adaptive capacity and potential future impacts. It also
+        outlines the climate monitoring, modelling, projections, scenarios and
+        services that support risk assessment, including relevant methods,
+        tools, uncertainties and challenges.
+      </p>
       <h2 id="hazard_assessment">Hazard assessment</h2>
       <Tab
         className="secondary menu"
@@ -223,8 +230,11 @@ export default function MenuProfile(props) {
       <h2 id="key_affected_sectors">Key affected sectors</h2>
       <Tab
         className="secondary menu"
-        panes={panesKeys}
+        panes={panesKeys.filter(
+          (item) => typeof item === 'object' && item !== null,
+        )}
         grid={{ paneWidth: 8, tabWidth: 4 }}
+        defaultActiveIndex={0}
         menu={{
           tabular: true,
           vertical: true,
@@ -232,7 +242,7 @@ export default function MenuProfile(props) {
           pointing: true,
           fluid: true,
           className: 'secondary',
-          tabIndex: 0,
+          tabIndex: 1,
         }}
       />
     </>
@@ -392,7 +402,7 @@ const KeyAffectedSectorContent = ({ rating, assestment }) => {
       <p>
         <strong>Assessment</strong>
       </p>
-      {assestment}
+      <p>{assestment}</p>
     </>
   );
 };

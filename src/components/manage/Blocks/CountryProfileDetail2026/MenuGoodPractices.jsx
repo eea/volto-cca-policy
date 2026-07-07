@@ -14,9 +14,8 @@ export default function MenuGoodPractices(props) {
           <>
             <Callout>
               <p>
-                This section shows the country’s involvement in international
-                and regional cooperation frameworks that support climate
-                adaptation
+                Overview of the country’s involvement in international and
+                regional cooperation frameworks that support climate adaptation.
               </p>
             </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
@@ -34,9 +33,8 @@ export default function MenuGoodPractices(props) {
           <>
             <Callout>
               <p>
-                This section highlights cooperation in research, knowledge
-                exchange, and scientific activities related to climate
-                adaptation.
+                Overview of cooperation in research, knowledge exchange and
+                scientific activities related to climate adaptation.
               </p>
             </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
@@ -54,8 +52,8 @@ export default function MenuGoodPractices(props) {
           <>
             <Callout>
               <p>
-                This section summarizes collaboration on policy development,
-                governance, and shared adaptation initiatives.
+                Overview of collaboration on policy development, governance and
+                shared adaptation initiatives.
               </p>
             </Callout>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
@@ -79,12 +77,17 @@ export default function MenuGoodPractices(props) {
   });
   return (
     <>
+      <p>
+        This section highlights examples of national adaptation good practices
+        as well as cooperation activities that support knowledge exchange,
+        coordination and synergies at national and international levels.
+      </p>
       <div>
         <h2 id="cooperation">Cooperation and experience</h2>
         <p>
-          This section presents the country's cooperation activities, including
-          scientific collaboration, international partnerships and policy-level
-          synergies that support climate adaptation.
+          Overview of cooperation activities, including scientific
+          collaboration, international partnerships and policy-level synergies
+          that support climate adaptation.
         </p>
         <Tab
           className="secondary menu"
@@ -106,9 +109,9 @@ export default function MenuGoodPractices(props) {
         <div className="ui fitted divider tertiary divider-spacing-s"></div>
       </div>
       <p>
-        This section presents selected good practices and lessons learnt
-        reported by the country. The number and type of practices may vary
-        depending on national experience, priorities and reporting status.
+        Overview of reported good practices and lessons learnt. The number and
+        type of practices may vary depending on national experience and
+        priorities.
       </p>
       <AccordionList elements={elements} />
     </>
