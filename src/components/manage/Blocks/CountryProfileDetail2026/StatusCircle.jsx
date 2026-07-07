@@ -1,4 +1,3 @@
-// import StatisticStories from 'addons/volto-eea-design-system/src/ui/Statistic/Statistic.stories';
 import CircleGray from './circle-gray.svg';
 import CircleGreen from './circle-green.svg';
 import CirclePurple from './circle-purple.svg';
