@@ -8,7 +8,6 @@ import ResultsPerPageSelector from '@eeacms/search/components/ResultsPerPageSele
 import Paging from '@eeacms/search/components/Paging/Paging';
 import {
   ActiveFilterList,
-  AnswerBox,
   Component,
   DownloadButton,
   DropdownFacetsList,
@@ -47,7 +46,7 @@ const messages = defineMessages({
 });
 
 const NavigatorCatalogueContentView = (props) => {
-  const { appConfig, children, current, wasInteracted } = props;
+  const { appConfig, children, wasInteracted } = props;
   const { sortOptions, resultViews } = appConfig;
   const views = useViews();
   const searchContext = useSearchContext();
@@ -143,8 +142,6 @@ const NavigatorCatalogueContentView = (props) => {
         )}
 
         {children.length === 0 && !isLoading && wasSearched && <NoResults />}
-
-        {current === 1 && appConfig.mode !== 'edit' ? <AnswerBox /> : ''}
 
         <ResultViewComponent>{children}</ResultViewComponent>
         <CompareToolsPanel />
