@@ -238,7 +238,10 @@ const NavigatorCatalogueCompareView = () => {
                             <Icon className="ri-external-link-line" />
                           </ExternalLink>
                         )}
-                        <Button className="icon compare-tool-clear">
+                        <Button
+                          className="icon compare-tool-clear"
+                          onClick={() => removeTool(tool.id)}
+                        >
                           <Icon className="ri-close-line" />
                         </Button>
                       </div>
