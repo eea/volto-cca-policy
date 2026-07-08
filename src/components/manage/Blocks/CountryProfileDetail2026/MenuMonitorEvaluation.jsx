@@ -122,7 +122,7 @@ export default function MenuMonitorEvaluation(props) {
   }
   return (
     <>
-      <Callout>
+      <Callout className="eea callout gray">
         <p>
           This section{' '}
           <strong>

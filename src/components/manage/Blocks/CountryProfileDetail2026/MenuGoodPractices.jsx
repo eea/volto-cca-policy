@@ -12,7 +12,7 @@ export default function MenuGoodPractices(props) {
         menuItem: 'International frameworks',
         render: () => (
           <>
-            <Callout>
+            <Callout className="eea callout gray">
               <p>
                 Overview of the country’s involvement in international and
                 regional cooperation frameworks that support climate adaptation.
@@ -31,7 +31,7 @@ export default function MenuGoodPractices(props) {
         menuItem: 'Science',
         render: () => (
           <>
-            <Callout>
+            <Callout className="eea callout gray">
               <p>
                 Overview of cooperation in research, knowledge exchange and
                 scientific activities related to climate adaptation.
@@ -50,7 +50,7 @@ export default function MenuGoodPractices(props) {
         menuItem: 'Policy',
         render: () => (
           <>
-            <Callout>
+            <Callout className="eea callout gray">
               <p>
                 Overview of collaboration on policy development, governance and
                 shared adaptation initiatives.
