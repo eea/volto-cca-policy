@@ -47,6 +47,14 @@ const messages = defineMessages({
     id: 'Open tool',
     defaultMessage: 'Open tool',
   },
+  backToResults: {
+    id: 'Back to results',
+    defaultMessage: 'Back to results',
+  },
+  exportTable: {
+    id: 'Export table',
+    defaultMessage: 'Export table',
+  },
   usability: {
     id: 'Usability',
     defaultMessage: 'Usability',
@@ -196,11 +204,27 @@ const NavigatorCatalogueCompareView = () => {
       <BodyClass className="navigator-catalogue-compare-page" />
 
       <Container>
-        <h1>
-          {intl.formatMessage(messages.comparingTools, {
-            count: visibleToolsCount,
-          })}
-        </h1>
+        <div className="compare-page-header">
+          <h1>
+            {intl.formatMessage(messages.comparingTools, {
+              count: visibleToolsCount,
+            })}
+          </h1>
+
+          <div className="compare-page-actions">
+            <Button
+              className="primary inverted icon"
+              onClick={() => history.push('/navigator-catalogue')}
+            >
+              <Icon className="ri-arrow-left-line" />
+              {intl.formatMessage(messages.backToResults)}
+            </Button>
+            <Button className="primary inverted">
+              <Icon className="ri-download-2-line" />
+              {intl.formatMessage(messages.exportTable)}
+            </Button>
+          </div>
+        </div>
 
         {ids.length === 0 && (
           <Message>{intl.formatMessage(messages.noToolsSelected)}</Message>

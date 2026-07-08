@@ -506,6 +506,31 @@ body.searchlib-page .searchlib-block {
 }
 
 .navigator-catalogue-compare-view {
+  .compare-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .compare-page-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  @media only screen and (max-width: @largestMobileScreen) {
+    .compare-page-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .compare-page-actions {
+      align-self: flex-end;
+    }
+  }
+
   .ui.table {
     width: 100%;
     table-layout: fixed;
