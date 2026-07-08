@@ -106,7 +106,7 @@ const NavigatorCatalogueCardItem = (props) => {
   return (
     <div className="navigator-catalogue-item">
       <div className="catalogue-item-icon" aria-hidden="true">
-        <Icon name="file outline" />
+        <Icon name="ri-file-line" />
       </div>
 
       <div className="catalogue-item-main">
@@ -146,7 +146,7 @@ const NavigatorCatalogueCardItem = (props) => {
               <span>Compare</span>
             </label>
             <ExternalLink className="ui button primary icon" href={result.href}>
-              View tool <Icon name="arrow right" />
+              View tool <Icon className="ri-arrow-right-line" />
             </ExternalLink>
           </div>
         </div>

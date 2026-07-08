@@ -89,16 +89,13 @@ export const CompareToolsPanel = () => {
             to={isReadyToCompare ? compareUrl : undefined}
             primary
             icon
-            fluid
-            labelPosition="left"
             className="compare-panel-submit"
             disabled={!isReadyToCompare}
           >
             <Icon className="ri-layout-column-line" />
-            Compare selected tools
+            <span>Compare selected tools</span>
           </Button>
           <Button
-            type="button"
             className="compare-panel-clear-all"
             onClick={() => setSelectedTools([])}
           >

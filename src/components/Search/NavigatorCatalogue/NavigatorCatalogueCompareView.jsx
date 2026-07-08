@@ -29,15 +29,6 @@ const asArray = (value) => {
 const getToolField = (tool, field) =>
   tool.result?.[field] || tool.result?._result?.[field];
 
-const compareFields = [
-  {
-    id: 'sector',
-    label: 'Sector',
-    getValue: (tool) =>
-      asArray(getToolField(tool, 'cca_adaptation_sectors')).join(', '),
-  },
-];
-
 const getCompareIds = (search) => {
   const params = new URLSearchParams(search);
   return [...new Set(params.getAll('id').filter(Boolean))];
@@ -206,16 +197,113 @@ const NavigatorCatalogueCompareView = () => {
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {compareFields.map((field) => (
-                <Table.Row key={field.id}>
-                  <Table.Cell>{field.label}</Table.Cell>
-                  {visibleTools.map((tool) => (
-                    <Table.Cell key={`${field.id}-${tool.id}`}>
-                      {field.getValue(tool)}
-                    </Table.Cell>
-                  ))}
-                </Table.Row>
-              ))}
+              <Table.Row>
+                <Table.Cell>
+                  <div className="compare-criteria">
+                    <div className="compare-criteria-title">Usability</div>
+                    <div className="compare-criteria-helper">
+                      2 lines about what usability means
+                    </div>
+                  </div>
+                </Table.Cell>
+                {visibleTools.map((tool) => (
+                  <Table.Cell key={`usability-${tool.id}`}>
+                    <div className="usability-value">Moderate</div>
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>
+                  <div className="compare-criteria">
+                    <div className="compare-criteria-title">Functionality</div>
+                    <div className="compare-criteria-helper">
+                      2 lines about what functionality means
+                    </div>
+                  </div>
+                </Table.Cell>
+                {visibleTools.map((tool) => (
+                  <Table.Cell key={`functionality-${tool.id}`}>
+                    <div
+                      className="compare-functionality-dots"
+                      aria-label="3 out of 6"
+                    >
+                      {[0, 1, 2, 3, 4, 5].map((dot) => (
+                        <span
+                          key={dot}
+                          className={`compare-functionality-dot${
+                            dot < 3 ? ' filled' : ''
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span>functionality score detail</span>
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>
+                  <div className="compare-criteria">
+                    <div className="compare-criteria-title">Spatial scale</div>
+                    <div className="compare-criteria-helper">
+                      2 lines about what spatial scale means
+                    </div>
+                  </div>
+                </Table.Cell>
+                {visibleTools.map((tool) => (
+                  <Table.Cell key={`spatial-scale-${tool.id}`}>
+                    Spatial scale data
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>
+                  <div className="compare-criteria">
+                    <div className="compare-criteria-title">Output type</div>
+                    <div className="compare-criteria-helper">
+                      2 lines about what output type means
+                    </div>
+                  </div>
+                </Table.Cell>
+                {visibleTools.map((tool) => (
+                  <Table.Cell key={`output-type-${tool.id}`}>
+                    Output type data
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>
+                  <div className="compare-criteria">
+                    <div className="compare-criteria-title">
+                      Adaptation support cycle step
+                    </div>
+                    <div className="compare-criteria-helper">
+                      2 lines about what adaptation support cycle step means
+                    </div>
+                  </div>
+                </Table.Cell>
+                {visibleTools.map((tool) => (
+                  <Table.Cell key={`adaptation-support-cycle-step-${tool.id}`}>
+                    Adaptation support cycle step data
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>
+                  <div className="compare-criteria">
+                    <div className="compare-criteria-title">Sector</div>
+                    <div className="compare-criteria-helper">
+                      2 lines about what sector means
+                    </div>
+                  </div>
+                </Table.Cell>
+                {visibleTools.map((tool) => (
+                  <Table.Cell key={`sector-${tool.id}`}>
+                    {asArray(getToolField(tool, 'cca_adaptation_sectors')).join(
+                      ', ',
+                    )}
+                  </Table.Cell>
+                ))}
+              </Table.Row>
             </Table.Body>
           </Table>
         )}
