@@ -389,7 +389,7 @@ const KeyAffectedSectorContent = ({ rating, assestment }) => {
       <Grid columns="12">
         <Grid.Column mobile={12} tablet={12} computer={8} className="col-right">
           <p>
-            <strong>Rating</strong>
+            <strong class="color_blue">Rating</strong>
           </p>
         </Grid.Column>
         <Grid.Column mobile={12} tablet={12} computer={4} className="col-right">
@@ -400,7 +400,7 @@ const KeyAffectedSectorContent = ({ rating, assestment }) => {
       </Grid>
       <br />
       <p>
-        <strong>Assessment</strong>
+        <strong class="color_blue">Assessment</strong>
       </p>
       <p>{assestment}</p>
     </>

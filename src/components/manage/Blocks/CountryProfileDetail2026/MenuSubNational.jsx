@@ -77,7 +77,7 @@ export default function MenuSubNational(props) {
   });
   return (
     <>
-      <Callout>
+      <Callout className="eea callout gray">
         <p>
           This section summarises sub-national adaptation governance, including
           institutional arrangements, regional and local strategies, stakeholder

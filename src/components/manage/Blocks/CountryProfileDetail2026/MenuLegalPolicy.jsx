@@ -46,7 +46,7 @@ export default function MenuLegalPolicy(props) {
   }
   return (
     <>
-      <Callout>
+      <Callout className="eea callout gray">
         <p>
           This section outlines the legal and policy frameworks, regulations,
           institutional arrangements and governance structures that support
