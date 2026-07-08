@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAtom } from 'jotai';
 import { Checkbox, Icon, Popup } from 'semantic-ui-react';
+import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import {
@@ -10,6 +11,33 @@ import {
   getCompareToolTitle,
 } from './CompareToolsPanel';
 
+const messages = defineMessages({
+  sector: {
+    id: 'Sector',
+    defaultMessage: 'Sector',
+  },
+  hazard: {
+    id: 'Hazard',
+    defaultMessage: 'Hazard',
+  },
+  cycle: {
+    id: 'Cycle',
+    defaultMessage: 'Cycle',
+  },
+  license: {
+    id: 'License',
+    defaultMessage: 'License',
+  },
+  compare: {
+    id: 'Compare',
+    defaultMessage: 'Compare',
+  },
+  viewTool: {
+    id: 'View tool',
+    defaultMessage: 'View tool',
+  },
+});
+
 const asArray = (value) => {
   if (!value) return [];
   const raw = value.raw !== undefined ? value.raw : value;
@@ -17,11 +45,10 @@ const asArray = (value) => {
   return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
 };
 
-const TagGroup = ({ values, type }) => {
+const TagGroup = ({ intl, typeLabel, values, type }) => {
   const visible = values.slice(0, 3);
   const hidden = values.slice(3);
   const remaining = values.length - visible.length;
-  const hiddenLabel = hidden.join(', ');
 
   return (
     <div className="navigator-catalogue-tags">
@@ -44,12 +71,7 @@ const TagGroup = ({ values, type }) => {
           }
           position="bottom left"
           trigger={
-            <span
-              className={`catalogue-tag ${type} more`}
-              aria-label={`Additional ${type} values: ${hiddenLabel}`}
-            >
-              + {remaining}
-            </span>
+            <span className={`catalogue-tag ${type} more`}>+ {remaining}</span>
           }
         />
       )}
@@ -57,12 +79,14 @@ const TagGroup = ({ values, type }) => {
   );
 };
 
-const CycleElements = ({ values }) => {
+const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
 
   return (
     <div className="navigator-catalogue-cycle-elements">
-      <span className="cycle-elements-label">Cycle</span>
+      <span className="cycle-elements-label">
+        {intl.formatMessage(messages.cycle)}
+      </span>
       {visible.map((value, index) => (
         <span key={`cycle-element-${index}`} className="cycle-element">
           {value}
@@ -72,19 +96,21 @@ const CycleElements = ({ values }) => {
   );
 };
 
-const cycleElementPlaceholders = ['[Cycle]'];
-
 const NavigatorCatalogueCardItem = (props) => {
   const { result } = props;
+  const intl = useIntl();
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const sectors = asArray(result.cca_adaptation_sectors);
   const hazards = asArray(result.cca_climate_impacts);
+  const sectorLabel = intl.formatMessage(messages.sector);
+  const hazardLabel = intl.formatMessage(messages.hazard);
   const compareTool = {
     id: getCompareToolId(result),
     esId: getCompareToolEsId(result),
     title: getCompareToolTitle(result),
     href: result.href,
   };
+  const cycleElementPlaceholders = ['[Cycle]'];
   const isSelectedForCompare = selectedTools.some(
     (tool) => tool.id === compareTool.id,
   );
@@ -127,14 +153,26 @@ const NavigatorCatalogueCardItem = (props) => {
         </p>
 
         <div className="catalogue-taxonomy">
-          <TagGroup values={sectors} type="sector" />
-          <TagGroup values={hazards} type="hazard" />
+          <TagGroup
+            intl={intl}
+            typeLabel={sectorLabel}
+            values={sectors}
+            type="sector"
+          />
+          <TagGroup
+            intl={intl}
+            typeLabel={hazardLabel}
+            values={hazards}
+            type="hazard"
+          />
         </div>
 
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
-            <CycleElements values={cycleElementPlaceholders} />
-            <span className="catalogue-licence">License - {'[Licence]'}</span>
+            <CycleElements intl={intl} values={cycleElementPlaceholders} />
+            <span className="catalogue-licence">
+              {intl.formatMessage(messages.license)} - [Licence]
+            </span>
           </div>
 
           <div className="catalogue-actions">
@@ -143,10 +181,11 @@ const NavigatorCatalogueCardItem = (props) => {
                 checked={isSelectedForCompare}
                 onChange={onCompareChange}
               />
-              <span>Compare</span>
+              <span>{intl.formatMessage(messages.compare)}</span>
             </label>
             <ExternalLink className="ui button primary icon" href={result.href}>
-              View tool <Icon className="ri-arrow-right-line" />
+              {intl.formatMessage(messages.viewTool)}
+              <Icon className="ri-arrow-right-line" />
             </ExternalLink>
           </div>
         </div>

@@ -43,6 +43,18 @@ const messages = defineMessages({
     id: 'Relevance',
     defaultMessage: 'Relevance',
   },
+  'List view': {
+    id: 'List view',
+    defaultMessage: 'List view',
+  },
+  'Map view': {
+    id: 'Map view',
+    defaultMessage: 'Map view',
+  },
+  activeFiltersEditMode: {
+    id: 'Active filters are always shown in edit mode',
+    defaultMessage: 'Active filters are always shown in edit mode',
+  },
 });
 
 const NavigatorCatalogueContentView = (props) => {
@@ -97,7 +109,7 @@ const NavigatorCatalogueContentView = (props) => {
   return (
     <>
       {appConfig.mode === 'edit' && (
-        <div>Active filters are always shown in edit mode</div>
+        <div>{intl.formatMessage(messages.activeFiltersEditMode)}</div>
       )}
 
       {(showFilters || appConfig.mode === 'edit') && <ActiveFilterList />}
@@ -114,7 +126,9 @@ const NavigatorCatalogueContentView = (props) => {
                 onClick={() => views.setActiveViewId(view.id)}
               >
                 {view.icon && <Icon className={view.icon} />}
-                {view.title}
+                {messages[view.title]
+                  ? intl.formatMessage(messages[view.title])
+                  : view.title}
               </Menu.Item>
             ))}
           </Menu>

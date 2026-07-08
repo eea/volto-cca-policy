@@ -2,8 +2,32 @@ import React from 'react';
 import { atom, useAtom } from 'jotai';
 import { Link } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
+import { defineMessages, useIntl } from 'react-intl';
 
 export const compareToolsAtom = atom([]);
+
+const messages = defineMessages({
+  compareTools: {
+    id: 'Compare tools',
+    defaultMessage: 'Compare tools',
+  },
+  removeTool: {
+    id: 'Remove {title}',
+    defaultMessage: 'Remove {title}',
+  },
+  readyToCompare: {
+    id: 'Ready to compare',
+    defaultMessage: 'Ready to compare',
+  },
+  compareSelectedTools: {
+    id: 'Compare selected tools',
+    defaultMessage: 'Compare selected tools',
+  },
+  clearAll: {
+    id: 'Clear all',
+    defaultMessage: 'Clear all',
+  },
+});
 
 export const getCompareToolEsId = (result) =>
   result._original?._id ||
@@ -22,7 +46,7 @@ export const getCompareToolId = (result) => {
   );
 };
 
-export const getCompareToolTitle = (result) => result.title || '[Tool name]';
+export const getCompareToolTitle = (result) => result.title || '';
 
 const getCompareUrl = (tools) => {
   const params = new URLSearchParams();
@@ -40,6 +64,7 @@ const getCompareUrl = (tools) => {
 };
 
 export const CompareToolsPanel = () => {
+  const intl = useIntl();
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const selectedToolsWithEsId = selectedTools.filter((tool) => tool.esId);
   const isReadyToCompare = selectedToolsWithEsId.length >= 2;
@@ -55,7 +80,7 @@ export const CompareToolsPanel = () => {
     <div className="catalogue-compare-panel" aria-live="polite">
       <div className="compare-panel-header">
         <h2>
-          Compare tools
+          {intl.formatMessage(messages.compareTools)}
           {/* <span className="compare-panel-count">
             &lt;{selectedTools.length}&gt;
           </span> */}
@@ -69,7 +94,9 @@ export const CompareToolsPanel = () => {
               <span className="compare-panel-tool-title">{tool.title}</span>
               <Button
                 className="compare-panel-tool-clear"
-                aria-label={`Remove ${tool.title}`}
+                aria-label={intl.formatMessage(messages.removeTool, {
+                  title: tool.title,
+                })}
                 onClick={() => removeTool(tool.id)}
               >
                 <Icon className="ri-close-line" />
@@ -81,7 +108,8 @@ export const CompareToolsPanel = () => {
         <div className="compare-panel-actions">
           {isReadyToCompare && (
             <div className="compare-panel-status ready">
-              <Icon className="ri-check-line" /> Ready to compare
+              <Icon className="ri-check-line" />{' '}
+              {intl.formatMessage(messages.readyToCompare)}
             </div>
           )}
           <Button
@@ -93,13 +121,13 @@ export const CompareToolsPanel = () => {
             disabled={!isReadyToCompare}
           >
             <Icon className="ri-layout-column-line" />
-            <span>Compare selected tools</span>
+            <span>{intl.formatMessage(messages.compareSelectedTools)}</span>
           </Button>
           <Button
             className="compare-panel-clear-all"
             onClick={() => setSelectedTools([])}
           >
-            Clear all
+            {intl.formatMessage(messages.clearAll)}
           </Button>
         </div>
       </div>

@@ -15,9 +15,63 @@ import config from '@plone/volto/registry';
 import { applyConfigurationSchema, rebind } from '@eeacms/search';
 import { fetchResult } from '@eeacms/search/lib/hocs/useResult';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
+import { defineMessages, useIntl } from 'react-intl';
 import { compareToolsAtom } from './CompareToolsPanel';
 
 const appName = 'navigatorCatalogueSearch';
+
+const messages = defineMessages({
+  compareTools: {
+    id: 'Compare tools',
+    defaultMessage: 'Compare tools',
+  },
+  comparingTools: {
+    id: 'Comparing {count} {count, plural, one {tool} other {tools}}',
+    defaultMessage:
+      'Comparing {count} {count, plural, one {tool} other {tools}}',
+  },
+  noToolsSelected: {
+    id: 'No tools were selected for comparison. Select at least two tools from the Navigator Catalogue.',
+    defaultMessage:
+      'No tools were selected for comparison. Select at least two tools from the Navigator Catalogue.',
+  },
+  toolsSkipped: {
+    id: 'Some selected tools could not be loaded and were skipped.',
+    defaultMessage: 'Some selected tools could not be loaded and were skipped.',
+  },
+  criteria: {
+    id: 'Criteria',
+    defaultMessage: 'Criteria',
+  },
+  openTool: {
+    id: 'Open tool',
+    defaultMessage: 'Open tool',
+  },
+  usability: {
+    id: 'Usability',
+    defaultMessage: 'Usability',
+  },
+  functionality: {
+    id: 'Functionality',
+    defaultMessage: 'Functionality',
+  },
+  spatialScale: {
+    id: 'Spatial scale',
+    defaultMessage: 'Spatial scale',
+  },
+  outputType: {
+    id: 'Output type',
+    defaultMessage: 'Output type',
+  },
+  adaptationSupportCycleStep: {
+    id: 'Adaptation support cycle step',
+    defaultMessage: 'Adaptation support cycle step',
+  },
+  sector: {
+    id: 'Sector',
+    defaultMessage: 'Sector',
+  },
+});
 
 const asArray = (value) => {
   if (!value) return [];
@@ -71,6 +125,7 @@ const getTools = async (ids, appConfig, registry) => {
 };
 
 const NavigatorCatalogueCompareView = () => {
+  const intl = useIntl();
   const history = useHistory();
   const location = useLocation();
   const [, setSelectedTools] = useAtom(compareToolsAtom);
@@ -137,35 +192,35 @@ const NavigatorCatalogueCompareView = () => {
 
   return (
     <div className="navigator-catalogue-compare-view">
-      <Helmet title="Compare tools" />
+      <Helmet title={intl.formatMessage(messages.compareTools)} />
       <BodyClass className="navigator-catalogue-compare-page" />
 
       <Container>
         <h1>
-          Comparing {visibleToolsCount}{' '}
-          {visibleToolsCount === 1 ? 'tool' : 'tools'}
+          {intl.formatMessage(messages.comparingTools, {
+            count: visibleToolsCount,
+          })}
         </h1>
 
         {ids.length === 0 && (
-          <Message>
-            No tools were selected for comparison. Select at least two tools
-            from the Navigator Catalogue.
-          </Message>
+          <Message>{intl.formatMessage(messages.noToolsSelected)}</Message>
         )}
 
         {isLoading && <Loader active inline="centered" />}
 
         {!isLoading && failedTools.length > 0 && (
-          <Message warning>
-            Some selected tools could not be loaded and were skipped.
-          </Message>
+          <Message warning>{intl.formatMessage(messages.toolsSkipped)}</Message>
         )}
 
         {!isLoading && visibleTools.length > 0 && (
           <Table celled>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>CRITERIA</Table.HeaderCell>
+                <Table.HeaderCell>
+                  <span className="compare-criteria-label">
+                    {intl.formatMessage(messages.criteria)}
+                  </span>
+                </Table.HeaderCell>
                 {visibleTools.map((tool) => (
                   <Table.HeaderCell key={tool.id}>
                     <div className="compare-tool-header">
@@ -179,15 +234,11 @@ const NavigatorCatalogueCompareView = () => {
                             className="ui button secondary icon compare-tool-open"
                             href={tool.href}
                           >
-                            Open tool
+                            {intl.formatMessage(messages.openTool)}
                             <Icon className="ri-external-link-line" />
                           </ExternalLink>
                         )}
-                        <Button
-                          className="icon compare-tool-clear"
-                          aria-label={`Remove ${tool.title} from comparison`}
-                          onClick={() => removeTool(tool.id)}
-                        >
+                        <Button className="icon compare-tool-clear">
                           <Icon className="ri-close-line" />
                         </Button>
                       </div>
@@ -200,7 +251,9 @@ const NavigatorCatalogueCompareView = () => {
               <Table.Row>
                 <Table.Cell>
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">Usability</div>
+                    <div className="compare-criteria-title">
+                      {intl.formatMessage(messages.usability)}
+                    </div>
                     <div className="compare-criteria-helper">
                       2 lines about what usability means
                     </div>
@@ -215,7 +268,9 @@ const NavigatorCatalogueCompareView = () => {
               <Table.Row>
                 <Table.Cell>
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">Functionality</div>
+                    <div className="compare-criteria-title">
+                      {intl.formatMessage(messages.functionality)}
+                    </div>
                     <div className="compare-criteria-helper">
                       2 lines about what functionality means
                     </div>
@@ -223,10 +278,7 @@ const NavigatorCatalogueCompareView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`functionality-${tool.id}`}>
-                    <div
-                      className="compare-functionality-dots"
-                      aria-label="3 out of 6"
-                    >
+                    <div className="compare-functionality-dots">
                       {[0, 1, 2, 3, 4, 5].map((dot) => (
                         <span
                           key={dot}
@@ -243,7 +295,9 @@ const NavigatorCatalogueCompareView = () => {
               <Table.Row>
                 <Table.Cell>
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">Spatial scale</div>
+                    <div className="compare-criteria-title">
+                      {intl.formatMessage(messages.spatialScale)}
+                    </div>
                     <div className="compare-criteria-helper">
                       2 lines about what spatial scale means
                     </div>
@@ -258,7 +312,9 @@ const NavigatorCatalogueCompareView = () => {
               <Table.Row>
                 <Table.Cell>
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">Output type</div>
+                    <div className="compare-criteria-title">
+                      {intl.formatMessage(messages.outputType)}
+                    </div>
                     <div className="compare-criteria-helper">
                       2 lines about what output type means
                     </div>
@@ -274,7 +330,7 @@ const NavigatorCatalogueCompareView = () => {
                 <Table.Cell>
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
-                      Adaptation support cycle step
+                      {intl.formatMessage(messages.adaptationSupportCycleStep)}
                     </div>
                     <div className="compare-criteria-helper">
                       2 lines about what adaptation support cycle step means
@@ -290,7 +346,9 @@ const NavigatorCatalogueCompareView = () => {
               <Table.Row>
                 <Table.Cell>
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">Sector</div>
+                    <div className="compare-criteria-title">
+                      {intl.formatMessage(messages.sector)}
+                    </div>
                     <div className="compare-criteria-helper">
                       2 lines about what sector means
                     </div>
