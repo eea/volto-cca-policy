@@ -95,6 +95,14 @@ const getCompareIds = (search) => {
   return [...new Set(params.getAll('id').filter(Boolean))];
 };
 
+const getReturnURL = (search) => {
+  const returnURL = new URLSearchParams(search).get('return_url');
+
+  return returnURL?.startsWith('/') && !returnURL.startsWith('//')
+    ? returnURL
+    : '';
+};
+
 const getToolTitle = (result, fallback) => {
   if (!result?._result?._meta?.found) {
     return fallback;
@@ -147,6 +155,10 @@ const NavigatorCatalogueCompareView = () => {
     [registry.searchui],
   );
   const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
+  const backURL =
+    location.state?.returnURL ||
+    getReturnURL(location.search) ||
+    landingPageURL;
   const [tools, setTools] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -196,6 +208,7 @@ const NavigatorCatalogueCompareView = () => {
       pathname: location.pathname,
       search: params.toString() ? `?${params.toString()}` : '',
       hash: location.hash,
+      state: location.state,
     });
   };
 
@@ -215,7 +228,7 @@ const NavigatorCatalogueCompareView = () => {
           <div className="compare-page-actions">
             <Button
               className="primary inverted icon"
-              onClick={() => history.push(landingPageURL)}
+              onClick={() => history.push(backURL)}
             >
               <Icon className="ri-arrow-left-line" />
               {intl.formatMessage(messages.backToResults)}

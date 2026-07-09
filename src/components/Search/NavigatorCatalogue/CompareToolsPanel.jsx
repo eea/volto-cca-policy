@@ -1,7 +1,7 @@
 import React from 'react';
 import { atom, useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { getComparePageURL } from './utils';
@@ -50,7 +50,12 @@ export const getCompareToolId = (result) => {
 
 export const getCompareToolTitle = (result) => result.title || '';
 
-const getCompareUrl = (tools, appConfig, currentLang = 'en') => {
+const getCompareLocation = (
+  tools,
+  appConfig,
+  currentLang = 'en',
+  returnURL,
+) => {
   const params = new URLSearchParams();
 
   tools.forEach((tool) => {
@@ -62,21 +67,37 @@ const getCompareUrl = (tools, appConfig, currentLang = 'en') => {
   const query = params.toString();
   const path = getComparePageURL(appConfig, currentLang);
 
-  return query ? `${path}?${query}` : path;
+  return {
+    pathname: path,
+    search: query ? `?${query}` : '',
+    state: { returnURL },
+  };
 };
 
 export const CompareToolsPanel = ({ appConfig }) => {
   const intl = useIntl();
+  const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale);
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const selectedToolsWithEsId = selectedTools.filter((tool) => tool.esId);
   const isReadyToCompare = selectedToolsWithEsId.length >= 2;
-  const compareUrl = getCompareUrl(selectedTools, appConfig, currentLang);
 
   if (selectedTools.length === 0) return null;
 
   const removeTool = (toolId) => {
     setSelectedTools((tools) => tools.filter((tool) => tool.id !== toolId));
+  };
+
+  const compareTools = () => {
+    const returnURL = [
+      window.location.pathname,
+      window.location.search,
+      window.location.hash,
+    ].join('');
+
+    history.push(
+      getCompareLocation(selectedTools, appConfig, currentLang, returnURL),
+    );
   };
 
   return (
@@ -116,12 +137,11 @@ export const CompareToolsPanel = ({ appConfig }) => {
             </div>
           )}
           <Button
-            as={isReadyToCompare ? Link : undefined}
-            to={isReadyToCompare ? compareUrl : undefined}
             primary
             icon
             className="compare-panel-submit"
             disabled={!isReadyToCompare}
+            onClick={compareTools}
           >
             <Icon className="ri-layout-column-line" />
             <span>{intl.formatMessage(messages.compareSelectedTools)}</span>
