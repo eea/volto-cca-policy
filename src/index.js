@@ -516,7 +516,6 @@ const applyConfig = (config) => {
   config.settings.nonContentRoutes = [
     ...config.settings.nonContentRoutes,
     '/broken-links',
-    '/compare',
     '/navigator-catalogue/compare',
   ];
 
