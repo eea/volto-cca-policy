@@ -28,6 +28,19 @@ export const downloadCsv = (filename, rows) => {
   URL.revokeObjectURL(url);
 };
 
+export const getLocalizedLandingPageURL = (appConfig, currentLang = 'en') => {
+  const lang = currentLang || 'en';
+  const landingPageURL = appConfig?.landingPageURL || '/en/navigator';
+
+  return landingPageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
+};
+
+export const getComparePageURL = (appConfig, currentLang = 'en') => {
+  const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
+
+  return `${landingPageURL.replace(/\/$/, '')}/compare`;
+};
+
 export const exportComparisonTable = (tools, getToolField) => {
   const rows = [
     ['Criteria', ...tools.map((tool) => tool.title)],

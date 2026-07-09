@@ -158,7 +158,7 @@ const NavigatorCatalogueContentView = (props) => {
         {children.length === 0 && !isLoading && wasSearched && <NoResults />}
 
         <ResultViewComponent>{children}</ResultViewComponent>
-        <CompareToolsPanel />
+        <CompareToolsPanel appConfig={appConfig} />
 
         {children.length > 0 && (
           <div className="search-body-footer">

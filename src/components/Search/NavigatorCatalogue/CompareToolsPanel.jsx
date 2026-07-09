@@ -1,8 +1,10 @@
 import React from 'react';
 import { atom, useAtom } from 'jotai';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
+import { getComparePageURL } from './utils';
 
 export const compareToolsAtom = atom([]);
 
@@ -48,7 +50,7 @@ export const getCompareToolId = (result) => {
 
 export const getCompareToolTitle = (result) => result.title || '';
 
-const getCompareUrl = (tools) => {
+const getCompareUrl = (tools, appConfig, currentLang = 'en') => {
   const params = new URLSearchParams();
 
   tools.forEach((tool) => {
@@ -58,17 +60,18 @@ const getCompareUrl = (tools) => {
   });
 
   const query = params.toString();
-  return query
-    ? `/navigator-catalogue/compare?${query}`
-    : '/navigator-catalogue/compare';
+  const path = getComparePageURL(appConfig, currentLang);
+
+  return query ? `${path}?${query}` : path;
 };
 
-export const CompareToolsPanel = () => {
+export const CompareToolsPanel = ({ appConfig }) => {
   const intl = useIntl();
+  const currentLang = useSelector((state) => state.intl.locale);
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const selectedToolsWithEsId = selectedTools.filter((tool) => tool.esId);
   const isReadyToCompare = selectedToolsWithEsId.length >= 2;
-  const compareUrl = getCompareUrl(selectedTools);
+  const compareUrl = getCompareUrl(selectedTools, appConfig, currentLang);
 
   if (selectedTools.length === 0) return null;
 

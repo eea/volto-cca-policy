@@ -8,6 +8,7 @@ import views from './views';
 
 const navigatorCatalogueConfig = {
   title: 'Navigator Catalogue',
+  landingPageURL: '/en/navigator',
   ...views,
 };
 
@@ -27,9 +28,12 @@ export const clusters = {
 };
 
 export default function installNavigatorCatalogueSearch(config) {
-  const envConfig = process.env.RAZZLE_ENV_CONFIG
-    ? JSON.parse(process.env.RAZZLE_ENV_CONFIG)
-    : navigatorCatalogueConfig;
+  const envConfig = {
+    ...navigatorCatalogueConfig,
+    ...(process.env.RAZZLE_ENV_CONFIG
+      ? JSON.parse(process.env.RAZZLE_ENV_CONFIG)
+      : {}),
+  };
 
   const pjson = require('@eeacms/volto-cca-policy/../package.json');
 

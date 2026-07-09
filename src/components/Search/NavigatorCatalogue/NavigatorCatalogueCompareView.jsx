@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAtom } from 'jotai';
+import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import {
   Container,
@@ -17,7 +18,11 @@ import { fetchResult } from '@eeacms/search/lib/hocs/useResult';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import { defineMessages, useIntl } from 'react-intl';
 import { compareToolsAtom } from './CompareToolsPanel';
-import { asArray, exportComparisonTable } from './utils';
+import {
+  asArray,
+  exportComparisonTable,
+  getLocalizedLandingPageURL,
+} from './utils';
 
 const appName = 'navigatorCatalogueSearch';
 
@@ -130,6 +135,7 @@ const NavigatorCatalogueCompareView = () => {
   const intl = useIntl();
   const history = useHistory();
   const location = useLocation();
+  const currentLang = useSelector((state) => state.intl.locale);
   const [, setSelectedTools] = useAtom(compareToolsAtom);
   const ids = React.useMemo(
     () => getCompareIds(location.search),
@@ -140,6 +146,7 @@ const NavigatorCatalogueCompareView = () => {
     () => applyConfigurationSchema(rebind(registry.searchui[appName])),
     [registry.searchui],
   );
+  const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
   const [tools, setTools] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -208,7 +215,7 @@ const NavigatorCatalogueCompareView = () => {
           <div className="compare-page-actions">
             <Button
               className="primary inverted icon"
-              onClick={() => history.push('/navigator-catalogue')}
+              onClick={() => history.push(landingPageURL)}
             >
               <Icon className="ri-arrow-left-line" />
               {intl.formatMessage(messages.backToResults)}

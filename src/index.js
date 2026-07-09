@@ -507,7 +507,7 @@ const applyConfig = (config) => {
       component: BrokenLinks,
     },
     {
-      path: `*/navigator-catalogue/compare`,
+      path: `*/navigator/compare`,
       component: NavigatorCatalogueCompareView,
     },
     ...(config.addonRoutes || []),
@@ -516,7 +516,7 @@ const applyConfig = (config) => {
   config.settings.nonContentRoutes = [
     ...config.settings.nonContentRoutes,
     '/broken-links',
-    '/navigator-catalogue/compare',
+    '/navigator/compare',
   ];
 
   config.settings.appExtras = [
