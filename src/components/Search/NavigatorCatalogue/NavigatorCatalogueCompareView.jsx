@@ -17,6 +17,7 @@ import { fetchResult } from '@eeacms/search/lib/hocs/useResult';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import { defineMessages, useIntl } from 'react-intl';
 import { compareToolsAtom } from './CompareToolsPanel';
+import { asArray, exportComparisonTable } from './utils';
 
 const appName = 'navigatorCatalogueSearch';
 
@@ -80,13 +81,6 @@ const messages = defineMessages({
     defaultMessage: 'Sector',
   },
 });
-
-const asArray = (value) => {
-  if (!value) return [];
-  const raw = value.raw !== undefined ? value.raw : value;
-  if (!raw) return [];
-  return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
-};
 
 const getToolField = (tool, field) =>
   tool.result?.[field] || tool.result?._result?.[field];
@@ -205,11 +199,11 @@ const NavigatorCatalogueCompareView = () => {
 
       <Container>
         <div className="compare-page-header">
-          <h1>
+          <h2>
             {intl.formatMessage(messages.comparingTools, {
               count: visibleToolsCount,
             })}
-          </h1>
+          </h2>
 
           <div className="compare-page-actions">
             <Button
@@ -219,7 +213,11 @@ const NavigatorCatalogueCompareView = () => {
               <Icon className="ri-arrow-left-line" />
               {intl.formatMessage(messages.backToResults)}
             </Button>
-            <Button className="primary inverted">
+            <Button
+              className="primary inverted"
+              disabled={visibleTools.length === 0}
+              onClick={() => exportComparisonTable(visibleTools, getToolField)}
+            >
               <Icon className="ri-download-2-line" />
               {intl.formatMessage(messages.exportTable)}
             </Button>
@@ -255,7 +253,7 @@ const NavigatorCatalogueCompareView = () => {
                       <div className="compare-tool-actions">
                         {tool.href && (
                           <ExternalLink
-                            className="ui button secondary icon compare-tool-open"
+                            className="ui button primary icon compare-tool-open"
                             href={tool.href}
                           >
                             {intl.formatMessage(messages.openTool)}
