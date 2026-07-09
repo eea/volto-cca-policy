@@ -6,6 +6,7 @@ import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { getComparePageURL } from './utils';
 
+export const MAX_COMPARE_TOOLS = 4;
 export const compareToolsAtom = atom([]);
 
 const messages = defineMessages({
@@ -24,6 +25,10 @@ const messages = defineMessages({
   compareSelectedTools: {
     id: 'Compare selected tools',
     defaultMessage: 'Compare selected tools',
+  },
+  addTool: {
+    id: 'Add a tool',
+    defaultMessage: 'Add a tool',
   },
   clearAll: {
     id: 'Clear all',
@@ -58,7 +63,7 @@ const getCompareLocation = (
 ) => {
   const params = new URLSearchParams();
 
-  tools.forEach((tool) => {
+  tools.slice(0, MAX_COMPARE_TOOLS).forEach((tool) => {
     if (tool.esId) {
       params.append('id', tool.esId);
     }
@@ -81,6 +86,7 @@ export const CompareToolsPanel = ({ appConfig }) => {
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const selectedToolsWithEsId = selectedTools.filter((tool) => tool.esId);
   const isReadyToCompare = selectedToolsWithEsId.length >= 2;
+  const emptySlots = MAX_COMPARE_TOOLS - selectedTools.length;
 
   if (selectedTools.length === 0) return null;
 
@@ -105,9 +111,9 @@ export const CompareToolsPanel = ({ appConfig }) => {
       <div className="compare-panel-header">
         <h2>
           {intl.formatMessage(messages.compareTools)}
-          {/* <span className="compare-panel-count">
-            &lt;{selectedTools.length}&gt;
-          </span> */}
+          <span className="compare-panel-count">
+            {selectedTools.length}/{MAX_COMPARE_TOOLS}
+          </span>
         </h2>
       </div>
 
@@ -125,6 +131,15 @@ export const CompareToolsPanel = ({ appConfig }) => {
               >
                 <Icon className="ri-close-line" />
               </Button>
+            </div>
+          ))}
+          {Array.from({ length: emptySlots }).map((_, index) => (
+            <div
+              key={`compare-placeholder-${index}`}
+              className="compare-panel-tool placeholder"
+            >
+              <Icon className="ri-add-line" />
+              <span>{intl.formatMessage(messages.addTool)}</span>
             </div>
           ))}
         </div>

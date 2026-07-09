@@ -5,6 +5,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import {
+  MAX_COMPARE_TOOLS,
   compareToolsAtom,
   getCompareToolEsId,
   getCompareToolId,
@@ -114,6 +115,8 @@ const NavigatorCatalogueCardItem = (props) => {
   const isSelectedForCompare = selectedTools.some(
     (tool) => tool.id === compareTool.id,
   );
+  const isCompareLimitReached =
+    selectedTools.length >= MAX_COMPARE_TOOLS && !isSelectedForCompare;
 
   const onCompareChange = (event, { checked }) => {
     setSelectedTools((tools) => {
@@ -122,6 +125,10 @@ const NavigatorCatalogueCardItem = (props) => {
       }
 
       if (tools.some((tool) => tool.id === compareTool.id)) {
+        return tools;
+      }
+
+      if (tools.length >= MAX_COMPARE_TOOLS) {
         return tools;
       }
 
@@ -179,6 +186,7 @@ const NavigatorCatalogueCardItem = (props) => {
             <label className="catalogue-compare">
               <Checkbox
                 checked={isSelectedForCompare}
+                disabled={isCompareLimitReached}
                 onChange={onCompareChange}
               />
               <span>{intl.formatMessage(messages.compare)}</span>

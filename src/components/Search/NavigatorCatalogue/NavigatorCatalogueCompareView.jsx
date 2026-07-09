@@ -17,7 +17,7 @@ import { applyConfigurationSchema, rebind } from '@eeacms/search';
 import { fetchResult } from '@eeacms/search/lib/hocs/useResult';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import { defineMessages, useIntl } from 'react-intl';
-import { compareToolsAtom } from './CompareToolsPanel';
+import { MAX_COMPARE_TOOLS, compareToolsAtom } from './CompareToolsPanel';
 import {
   asArray,
   exportComparisonTable,
@@ -92,7 +92,10 @@ const getToolField = (tool, field) =>
 
 const getCompareIds = (search) => {
   const params = new URLSearchParams(search);
-  return [...new Set(params.getAll('id').filter(Boolean))];
+  return [...new Set(params.getAll('id').filter(Boolean))].slice(
+    0,
+    MAX_COMPARE_TOOLS,
+  );
 };
 
 const getReturnURL = (search) => {
