@@ -36,14 +36,19 @@ const messages = defineMessages({
     defaultMessage:
       'Comparing {count} {count, plural, one {tool} other {tools}}',
   },
-  noToolsSelected: {
-    id: 'No tools were selected for comparison. Select at least two tools from the Navigator Catalogue.',
+  notEnoughTools: {
+    id: 'At least two valid tools are required for comparison. Select tools from the Navigator Catalogue.',
     defaultMessage:
-      'No tools were selected for comparison. Select at least two tools from the Navigator Catalogue.',
+      'At least two valid tools are required for comparison. Select tools from the Navigator Catalogue.',
   },
   toolsSkipped: {
     id: 'Some selected tools could not be loaded and were skipped.',
     defaultMessage: 'Some selected tools could not be loaded and were skipped.',
+  },
+  allToolsFailed: {
+    id: 'The selected tools could not be loaded. Return to the Navigator Catalogue and select them again.',
+    defaultMessage:
+      'The selected tools could not be loaded. Return to the Navigator Catalogue and select them again.',
   },
   criteria: {
     id: 'Criteria',
@@ -178,7 +183,7 @@ const NavigatorCatalogueCompareView = () => {
       }
     };
 
-    if (ids.length) {
+    if (ids.length >= 2) {
       loadTools();
     } else {
       setTools([]);
@@ -193,6 +198,20 @@ const NavigatorCatalogueCompareView = () => {
   const failedTools = tools.filter((tool) => tool.error);
   const visibleTools = tools.filter((tool) => !tool.error);
   const visibleToolsCount = visibleTools.length;
+  const hasLoadedRequestedTools = tools.length === ids.length;
+  const hasEnoughTools = visibleToolsCount >= 2;
+  const allRequestedToolsFailed =
+    ids.length >= 2 &&
+    hasLoadedRequestedTools &&
+    failedTools.length === ids.length;
+  const someRequestedToolsFailed =
+    failedTools.length > 0 && !allRequestedToolsFailed;
+  const showNotEnoughTools =
+    ids.length < 2 ||
+    (!isLoading &&
+      hasLoadedRequestedTools &&
+      !hasEnoughTools &&
+      !allRequestedToolsFailed);
 
   const removeTool = (toolId) => {
     const params = new URLSearchParams(location.search);
@@ -238,7 +257,7 @@ const NavigatorCatalogueCompareView = () => {
             </Button>
             <Button
               className="primary inverted"
-              disabled={visibleTools.length === 0}
+              disabled={!hasEnoughTools}
               onClick={() => exportComparisonTable(visibleTools, getToolField)}
             >
               <Icon className="ri-download-2-line" />
@@ -247,17 +266,21 @@ const NavigatorCatalogueCompareView = () => {
           </div>
         </div>
 
-        {ids.length === 0 && (
-          <Message>{intl.formatMessage(messages.noToolsSelected)}</Message>
+        {showNotEnoughTools && (
+          <Message>{intl.formatMessage(messages.notEnoughTools)}</Message>
         )}
 
         {isLoading && <Loader active inline="centered" />}
 
-        {!isLoading && failedTools.length > 0 && (
+        {!isLoading && allRequestedToolsFailed && (
+          <Message error>{intl.formatMessage(messages.allToolsFailed)}</Message>
+        )}
+
+        {!isLoading && someRequestedToolsFailed && (
           <Message warning>{intl.formatMessage(messages.toolsSkipped)}</Message>
         )}
 
-        {!isLoading && visibleTools.length > 0 && (
+        {!isLoading && hasEnoughTools && (
           <Table celled>
             <Table.Header>
               <Table.Row>

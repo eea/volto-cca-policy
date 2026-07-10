@@ -88,7 +88,7 @@ const NavigatorCatalogueContentView = (props) => {
     registry.resolve[listingViewDef?.factories.view]?.component;
 
   const layoutMode =
-    activeNavigatorViewId === 'horizontalCard' ? 'fixed' : 'fullwidth';
+    activeNavigatorViewId === 'listing' ? 'fixed' : 'fullwidth';
 
   const { wasSearched } = searchContext;
 
