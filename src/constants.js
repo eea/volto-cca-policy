@@ -241,6 +241,7 @@ export const EU_COUNTRIES = [
   'SI',
   'SK',
   'TR',
+  'UA',
   'XK',
   'GB',
 ];
