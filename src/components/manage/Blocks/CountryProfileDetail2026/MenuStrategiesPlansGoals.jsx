@@ -93,7 +93,7 @@ export default function MenuStrategiesPlansGoals(props) {
   });
   return (
     <>
-      <Callout>
+      <Callout className="eea callout gray">
         <p>
           This section summarises national adaptation strategies, policies,
           plans and goals, including key priorities, challenges, gaps and

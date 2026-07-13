@@ -27,7 +27,7 @@ export default function MenuNationalCircumstances(props) {
   }
   return (
     <>
-      <Callout>
+      <Callout className="eea callout gray">
         <p>
           This section provides an overview of the national circumstances that
           shape climate adaptation needs and priorities, including current and

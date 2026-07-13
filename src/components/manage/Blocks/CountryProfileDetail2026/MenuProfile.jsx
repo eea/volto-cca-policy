@@ -8,6 +8,7 @@ export default function MenuProfile(props) {
   const countryName = props?.countryName;
   const dataJsonString = props.dataJson;
   const dataJson = JSON.parse(dataJsonString);
+  // console.log('dataJson', dataJson);
   const adaptationPolicies = dataJson['Legal_Policies']['AdaptationPolicies']
     .map(({ Type, Link, Title, Status }) => ({
       TitleBold: Type?.includes(':') ? Type.split(':')[1].trim() : Type,
@@ -28,7 +29,7 @@ export default function MenuProfile(props) {
     }));
   const dataAndClimateServices = [
     {
-      category: '',
+      category: 'Meteorological observations',
       elements: (dataJson?.National_Circumstances?.Meteo_observation ?? []).map(
         ({ Name, WebLink, Status }) => ({
           TitleBold: 'Meteorological observations',
@@ -110,6 +111,7 @@ export default function MenuProfile(props) {
   const contactData =
     dataJson?.Contact?.Contact_General ??
     dataJson?.Contact?.[0]?.Contact_General;
+
   let portalsAndPlatforms = (() => {
     const contact = dataJson?.Contact;
 
@@ -121,6 +123,8 @@ export default function MenuProfile(props) {
       .flatMap((c) => c?.Website ?? [])
       .filter((w) => w?.Type === 'Website');
   })();
+
+  // console.log('portalsAndPlatforms', portalsAndPlatforms);
   let portalsPublications = (() => {
     const contact = dataJson?.Contact;
 
@@ -185,7 +189,11 @@ export default function MenuProfile(props) {
         </Grid>
       ))}
       <h3 id="climate_services">Data and climate services</h3>
-      <ListDiv elements={dataAndClimateServices} showStatus={true} />
+      <ListDiv
+        elements={dataAndClimateServices}
+        showStatus={true}
+        showTitle={false}
+      />
       <h3 id="monitoring_reporting">Monitoring and reporting</h3>
       <ListDiv elements={monitoringAndReportingData} showStatus={false} />
       <h3 id="adaptation_knowledge">
@@ -299,7 +307,7 @@ export default function MenuProfile(props) {
   );
 }
 
-const ListDiv = ({ elements, showStatus = true }) => {
+const ListDiv = ({ elements, showStatus = true, showTitle = true }) => {
   return (
     <div>
       {elements
@@ -321,10 +329,12 @@ const ListDiv = ({ elements, showStatus = true }) => {
                   observati
                   className="col-left"
                 >
-                  <p>
-                    {element?.TitleBold && <b>{element.TitleBold}</b>}
-                    {element?.Title && <>{element.Title}</>}
-                  </p>
+                  {showTitle && (
+                    <p>
+                      {element?.TitleBold && <b>{element.TitleBold}</b>}
+                      {element?.Title && <>{element.Title}</>}
+                    </p>
+                  )}
 
                   <div className="item secondary">
                     <i
