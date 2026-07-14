@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Checkbox, Icon, Message } from 'semantic-ui-react';
+import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
@@ -107,21 +107,28 @@ const NavigatorGuideContentView = ({ appConfig }) => {
           <h3>{step.title}</h3>
           {step.description && <p>{step.description}</p>}
 
-          <div className="navigator-guide-options">
-            {options.map((option) => (
-              <label key={option.value} className="navigator-guide-option">
-                <Checkbox
-                  checked={selectedValues.includes(option.value)}
-                  onChange={() => toggleValue(option.value)}
-                />
-                <span>{option.value}</span>
-                <small>{option.count}</small>
-              </label>
-            ))}
-            {!isLoading && options.length === 0 && (
-              <Message>No options are available for this step.</Message>
-            )}
-          </div>
+          {isLoading ? (
+            <div className="navigator-guide-options-loading">
+              <Loader active inline />
+            </div>
+          ) : (
+            <div className="navigator-guide-options">
+              {options.length > 0 ? (
+                options.map((option) => (
+                  <label key={option.value} className="navigator-guide-option">
+                    <Checkbox
+                      checked={selectedValues.includes(option.value)}
+                      onChange={() => toggleValue(option.value)}
+                    />
+                    <span>{option.value}</span>
+                    <small>{option.count}</small>
+                  </label>
+                ))
+              ) : (
+                <Message>No options are available for this step.</Message>
+              )}
+            </div>
+          )}
 
           <div className="navigator-guide-actions">
             <Button
