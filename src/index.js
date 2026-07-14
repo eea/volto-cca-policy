@@ -51,6 +51,8 @@ import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/N
 import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
 import NavigatorCatalogueCompareView from './components/Search/NavigatorCatalogue/NavigatorCatalogueCompareView';
+import NavigatorGuideLayout from './components/Search/NavigatorGuide/NavigatorGuideLayout';
+import NavigatorGuideContentView from './components/Search/NavigatorGuide/NavigatorGuideContentView';
 
 import { langRedirection } from './store/middleware';
 
@@ -427,6 +429,12 @@ const applyConfig = (config) => {
   };
   config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
     component: NavigatorCatalogueContentView,
+  };
+  config.settings.searchlib.resolve.NavigatorGuideLayout = {
+    component: NavigatorGuideLayout,
+  };
+  config.settings.searchlib.resolve.NavigatorGuideContentView = {
+    component: NavigatorGuideContentView,
   };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;

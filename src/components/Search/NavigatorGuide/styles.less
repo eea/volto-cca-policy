@@ -1,0 +1,131 @@
+.navigator-guide-search {
+  .navigator-guide-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .navigator-guide-eyebrow,
+  .navigator-guide-preview-label {
+    color: #289588;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .navigator-guide-layout {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 3fr) minmax(16rem, 1fr);
+  }
+
+  .navigator-guide-wizard,
+  .navigator-guide-preview {
+    padding: 1rem;
+    border: 1px solid #d7dee5;
+  }
+
+  .navigator-guide-progress,
+  .navigator-guide-actions,
+  .navigator-guide-step-meta,
+  .navigator-guide-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navigator-guide-progress {
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+
+    button {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      border: 0;
+      background: transparent;
+      gap: 0.5rem;
+
+      span {
+        display: inline-flex;
+        width: 2rem;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #d9dde1;
+      }
+
+      &.active span {
+        background: #006d9c;
+        color: #fff;
+      }
+    }
+  }
+
+  .navigator-guide-preview-provider {
+    color: #7d8f9d;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .navigator-guide-preview-result {
+    color: inherit;
+  }
+
+  .navigator-guide-options {
+    display: grid;
+    margin: 1.5rem 0;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navigator-guide-option {
+    padding: 0.8rem;
+    border: 1px solid #d7dee5;
+    gap: 0.75rem;
+    border-radius: 0.25rem;
+
+    > span {
+      flex: 1;
+    }
+
+    .checkbox {
+      margin: 0 !important;
+    }
+  }
+
+  .navigator-guide-actions {
+    padding-top: 1.25rem;
+    border-top: 1px solid #d7dee5;
+
+    > div {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  .navigator-guide-preview {
+    align-self: start;
+  }
+
+  .navigator-guide-result-count strong {
+    margin-right: 0.5rem;
+    color: #006d9c;
+    font-size: 2.5rem;
+  }
+
+  .navigator-guide-preview-results > div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    border-top: 1px dashed #cbd4dc;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .navigator-guide-layout,
+    .navigator-guide-options {
+      grid-template-columns: 1fr;
+    }
+  }
+}
