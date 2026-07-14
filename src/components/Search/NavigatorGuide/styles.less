@@ -1,3 +1,8 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
 .navigator-guide-search {
   .navigator-guide-header {
     margin-bottom: 2rem;
@@ -43,25 +48,35 @@
       flex: 1;
       align-items: center;
       gap: 0.5rem;
+      font-size: 14px;
+      font-weight: 500;
 
       span {
         display: inline-flex;
         width: 2rem;
         height: 2rem;
+        font-weight: 700;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
         background: #d9dde1;
+
+        i.icon {
+          margin: 0;
+        }
       }
 
       &.active span {
-        background: #006d9c;
+        background: @primaryColor;
         color: #fff;
       }
 
-      &.completed span {
-        background: #289588;
-        color: #fff;
+      &.completed {
+        color: #289588;
+        span {
+          background: #289588;
+          color: #fff;
+        }
       }
     }
   }
@@ -127,7 +142,7 @@
 
   .navigator-guide-result-count strong {
     margin-right: 0.5rem;
-    color: #006d9c;
+    color: @primaryColor;
     font-size: 2.5rem;
   }
 
