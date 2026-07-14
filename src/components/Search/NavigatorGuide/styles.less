@@ -39,8 +39,17 @@
     justify-content: space-between;
   }
 
+  .navigator-guide-step-meta {
+    color: #7d8f9d;
+    font-size: 13px;
+  }
+
+  .navigator-guide-step-number {
+    font-weight: 500;
+  }
+
   .navigator-guide-progress {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     gap: 1rem;
 
     .navigator-guide-progress-step {
@@ -79,6 +88,21 @@
         }
       }
     }
+  }
+
+  .navigator-guide-progress-bar {
+    height: 0.375rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #c5c7c9;
+  }
+
+  .navigator-guide-progress-bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: @primaryColor;
+    transition: width 200ms ease;
   }
 
   .navigator-guide-preview-provider {

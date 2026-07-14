@@ -97,11 +97,24 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               </div>
             ))}
           </div>
+          <div
+            className="navigator-guide-progress-bar"
+            role="progressbar"
+            aria-label="Navigator guide progress"
+            aria-valuemin="1"
+            aria-valuemax={steps.length}
+            aria-valuenow={activeStep + 1}
+          >
+            <div
+              className="navigator-guide-progress-bar-fill"
+              style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+            />
+          </div>
 
           <div className="navigator-guide-step-meta">
-            <strong>
+            <span className="navigator-guide-step-number">
               Step {activeStep + 1} of {steps.length}
-            </strong>
+            </span>
             <span>Select all that apply</span>
           </div>
           <h3>{step.title}</h3>
