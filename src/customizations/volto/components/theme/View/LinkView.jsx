@@ -39,7 +39,7 @@ class LinkView extends Component {
    */
   static defaultProps = {
     content: null,
-    token: null,
+    token: null, //betterleaks:allow
   };
 
   componentDidMount() {
