@@ -9,14 +9,3 @@
     outline: none;
   }
 }
-
-.ui.basic.primary.button,
-.ui.basic.secondary.button {
-  box-shadow: none !important;
-
-  &:hover,
-  &:active {
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-}

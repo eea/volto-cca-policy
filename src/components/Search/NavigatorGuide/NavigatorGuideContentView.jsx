@@ -128,7 +128,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             <div className="navigator-guide-options">
               {options.length > 0 ? (
                 options.map((option) => (
-                  <label key={option.value} className="navigator-guide-option">
+                  <label
+                    key={option.value}
+                    className={`navigator-guide-option${
+                      selectedValues.includes(option.value) ? ' selected' : ''
+                    }`}
+                  >
                     <Checkbox
                       checked={selectedValues.includes(option.value)}
                       onChange={() => toggleValue(option.value)}
@@ -145,13 +150,16 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
           <div className="navigator-guide-actions">
             <Button
+              className="icon"
               disabled={activeStep === 0}
               onClick={() => setActiveStep((value) => value - 1)}
             >
               <Icon className="ri-arrow-left-line" /> Back
             </Button>
             <div>
-              <Button onClick={showResults}>Skip to results</Button>
+              <Button className="primary inverted" onClick={showResults}>
+                Skip to results
+              </Button>
               <Button
                 className="primary icon"
                 onClick={() =>
