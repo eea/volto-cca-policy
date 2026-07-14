@@ -38,12 +38,10 @@
     margin-bottom: 1.5rem;
     gap: 1rem;
 
-    button {
+    .navigator-guide-progress-step {
       display: flex;
       flex: 1;
       align-items: center;
-      border: 0;
-      background: transparent;
       gap: 0.5rem;
 
       span {
@@ -58,6 +56,11 @@
 
       &.active span {
         background: #006d9c;
+        color: #fff;
+      }
+
+      &.completed span {
+        background: #289588;
         color: #fff;
       }
     }

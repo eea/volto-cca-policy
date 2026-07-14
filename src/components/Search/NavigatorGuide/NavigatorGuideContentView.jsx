@@ -80,15 +80,21 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         <section className="navigator-guide-wizard">
           <div className="navigator-guide-progress">
             {steps.map((item, index) => (
-              <button
-                type="button"
+              <div
                 key={item.id}
-                className={index === activeStep ? 'active' : ''}
-                onClick={() => setActiveStep(index)}
+                className={`navigator-guide-progress-step${
+                  index === activeStep ? ' active' : ''
+                }${index < activeStep ? ' completed' : ''}`}
               >
-                <span>{index + 1}</span>
+                <span>
+                  {index < activeStep ? (
+                    <Icon className="ri-check-line" />
+                  ) : (
+                    index + 1
+                  )}
+                </span>
                 {item.label}
-              </button>
+              </div>
             ))}
           </div>
 
