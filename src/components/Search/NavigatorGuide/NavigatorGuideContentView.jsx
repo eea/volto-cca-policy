@@ -1,10 +1,12 @@
 import React from 'react';
+import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
+import { navigatorGuideStepAtom } from '../../../state';
 
 import './styles.less';
 
@@ -28,13 +30,25 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     totalResults,
   } = searchContext;
   const steps = guideSteps;
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
+  const activeStep =
+    Number.isInteger(storedActiveStep) &&
+    storedActiveStep >= 0 &&
+    storedActiveStep < steps.length
+      ? storedActiveStep
+      : 0;
   const step = steps[activeStep];
   const selectedValues =
     (filters || []).find((filter) => filter.field === step?.field)?.values ||
     [];
   const options = getFacetOptions(facets, step?.field);
   const isLastStep = activeStep === steps.length - 1;
+
+  React.useEffect(() => {
+    if (storedActiveStep !== activeStep) {
+      setActiveStep(activeStep);
+    }
+  }, [activeStep, setActiveStep, storedActiveStep]);
 
   const toggleValue = (value) => {
     if (selectedValues.includes(value)) {

@@ -12,7 +12,7 @@ const navigatorGuideConfig = {
   alwaysSearchOnInitialLoad: true,
   resultsPerPage: previewResultsLimit,
   previewResultsLimit,
-  trackUrlState: false,
+  trackUrlState: true,
   showLandingPage: false,
   layoutComponent: 'NavigatorGuideLayout',
   contentBodyComponent: 'NavigatorGuideContentView',
