@@ -16,6 +16,11 @@ const getFacetOptions = (facets, field) =>
     count,
   }));
 
+const isStepSelected = (filters, field) =>
+  (filters || []).some(
+    (filter) => filter.field === field && filter.values?.length,
+  );
+
 const NavigatorGuideContentView = ({ appConfig }) => {
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale || 'en');
@@ -101,7 +106,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                 }${index < activeStep ? ' completed' : ''}`}
               >
                 <span>
-                  {index < activeStep ? (
+                  {isStepSelected(filters, item.field) ? (
                     <Icon className="ri-check-line" />
                   ) : (
                     index + 1
