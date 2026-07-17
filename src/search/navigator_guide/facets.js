@@ -5,19 +5,11 @@ import {
   language,
 } from './../common';
 
-const englishLanguage = {
-  ...language,
-  default: {
-    values: ['en'],
-    type: 'any',
-  },
-};
-
 const facets = [
   cca_adaptation_sectors,
   cca_climate_impacts,
   geographic_countries,
-  englishLanguage,
+  language,
 ];
 
 export default facets;
