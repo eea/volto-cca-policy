@@ -212,28 +212,26 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             <div className="navigator-guide-options-loading">
               <Loader active inline />
             </div>
-          ) : (
+          ) : options.length > 0 ? (
             <div className="navigator-guide-options">
-              {options.length > 0 ? (
-                options.map((option) => (
-                  <label
-                    key={option.value}
-                    className={`navigator-guide-option${
-                      selectedValues.includes(option.value) ? ' selected' : ''
-                    }`}
-                  >
-                    <Checkbox
-                      checked={selectedValues.includes(option.value)}
-                      onChange={() => toggleValue(option.value)}
-                    />
-                    <span>{option.value}</span>
-                    <small>{option.count}</small>
-                  </label>
-                ))
-              ) : (
-                <Message>{intl.formatMessage(messages.noOptions)}</Message>
-              )}
+              {options.map((option) => (
+                <label
+                  key={option.value}
+                  className={`navigator-guide-option${
+                    selectedValues.includes(option.value) ? ' selected' : ''
+                  }`}
+                >
+                  <Checkbox
+                    checked={selectedValues.includes(option.value)}
+                    onChange={() => toggleValue(option.value)}
+                  />
+                  <span>{option.value}</span>
+                  <small>{option.count}</small>
+                </label>
+              ))}
             </div>
+          ) : (
+            <Message>{intl.formatMessage(messages.noOptions)}</Message>
           )}
 
           <div className="navigator-guide-actions">
