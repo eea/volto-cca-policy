@@ -61,6 +61,11 @@ const messages = defineMessages({
     id: 'Live preview · results based on your selection',
     defaultMessage: 'Live preview · results based on your selection',
   },
+  previewEmpty: {
+    id: 'Navigator Guide preview empty state',
+    defaultMessage:
+      'Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box.',
+  },
   toolsMatch: {
     id: '{count, plural, one {tool matches} other {tools match}}',
     defaultMessage: '{count, plural, one {tool matches} other {tools match}}',
@@ -110,6 +115,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     [];
   const options = getFacetOptions(facets, step?.field);
   const isLastStep = activeStep === steps.length - 1;
+  const hasSelections = steps.some(({ field }) =>
+    isStepSelected(filters, field),
+  );
 
   React.useEffect(() => {
     if (storedActiveStep !== activeStep) {
@@ -283,29 +291,40 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               count: totalResults || 0,
             })}
           </div>
-          <div className="navigator-guide-preview-results">
-            {(results || [])
-              .slice(0, appConfig.previewResultsLimit)
-              .map((result) => (
-                <div key={result._original?._id || result.href}>
-                  <small className="navigator-guide-preview-provider">
-                    [Provider]
-                  </small>
-                  <a
-                    href={result.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="navigator-guide-preview-result"
-                  >
-                    <h5>{result.title}</h5>
-                  </a>
-                </div>
-              ))}
-          </div>
-          <Button className="primary icon inverted fluid" onClick={showResults}>
-            {intl.formatMessage(messages.seeAllMatchingTools)}
-            <Icon className="ri-arrow-right-line" />
-          </Button>
+          {hasSelections ? (
+            <>
+              <div className="navigator-guide-preview-results">
+                {(results || [])
+                  .slice(0, appConfig.previewResultsLimit)
+                  .map((result) => (
+                    <div key={result._original?._id || result.href}>
+                      <small className="navigator-guide-preview-provider">
+                        [Provider]
+                      </small>
+                      <a
+                        href={result.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="navigator-guide-preview-result"
+                      >
+                        <h5>{result.title}</h5>
+                      </a>
+                    </div>
+                  ))}
+              </div>
+              <Button
+                className="primary icon inverted fluid"
+                onClick={showResults}
+              >
+                {intl.formatMessage(messages.seeAllMatchingTools)}
+                <Icon className="ri-arrow-right-line" />
+              </Button>
+            </>
+          ) : (
+            <p className="navigator-guide-preview-empty">
+              {intl.formatMessage(messages.previewEmpty)}
+            </p>
+          )}
         </aside>
       </div>
     </div>
