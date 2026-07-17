@@ -152,8 +152,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         <div className="navigator-guide-eyebrow">
           {intl.formatMessage(messages.guideMe)}
         </div>
-        <h2>{intl.formatMessage(messages.findTheRightTool)}</h2>
-        <p>{intl.formatMessage(messages.introduction)}</p>
+        <h2>
+          {appConfig.headline || intl.formatMessage(messages.findTheRightTool)}
+        </h2>
+        <p>
+          {appConfig.subheadline || intl.formatMessage(messages.introduction)}
+        </p>
       </header>
 
       <div className="navigator-guide-layout">
