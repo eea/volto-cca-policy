@@ -2,6 +2,7 @@ import React from 'react';
 import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
@@ -9,6 +10,66 @@ import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
 
 import './styles.less';
+
+const messages = defineMessages({
+  noSteps: {
+    id: 'No Navigator Guide steps are configured.',
+    defaultMessage: 'No Navigator Guide steps are configured.',
+  },
+  guideMe: {
+    id: 'Guide me',
+    defaultMessage: 'Guide me',
+  },
+  findTheRightTool: {
+    id: 'Find the right tool',
+    defaultMessage: 'Find the right tool',
+  },
+  introduction: {
+    id: 'Navigator Guide introduction',
+    defaultMessage:
+      'Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point.',
+  },
+  stepProgress: {
+    id: 'Step {current} of {total}',
+    defaultMessage: 'Step {current} of {total}',
+  },
+  selectAllThatApply: {
+    id: 'Select all that apply',
+    defaultMessage: 'Select all that apply',
+  },
+  noOptions: {
+    id: 'No options are available for this step.',
+    defaultMessage: 'No options are available for this step.',
+  },
+  back: {
+    id: 'Back',
+    defaultMessage: 'Back',
+  },
+  skipToResults: {
+    id: 'Skip to results',
+    defaultMessage: 'Skip to results',
+  },
+  seeResults: {
+    id: 'See results',
+    defaultMessage: 'See results',
+  },
+  nextStep: {
+    id: 'Next step',
+    defaultMessage: 'Next step',
+  },
+  livePreview: {
+    id: 'Live preview · results based on your selection',
+    defaultMessage: 'Live preview · results based on your selection',
+  },
+  toolsMatch: {
+    id: '{count, plural, one {tool matches} other {tools match}}',
+    defaultMessage: '{count, plural, one {tool matches} other {tools match}}',
+  },
+  seeAllMatchingTools: {
+    id: 'See all matching tools',
+    defaultMessage: 'See all matching tools',
+  },
+});
 
 const getFacetOptions = (facets, field) =>
   (facets?.[field]?.[0]?.data || []).map(({ value, count }) => ({
@@ -22,6 +83,7 @@ const isStepSelected = (filters, field) =>
   );
 
 const NavigatorGuideContentView = ({ appConfig }) => {
+  const intl = useIntl();
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale || 'en');
   const searchContext = useSearchContext();
@@ -81,18 +143,17 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   };
 
   if (!step) {
-    return <Message warning>No Navigator Guide steps are configured.</Message>;
+    return <Message warning>{intl.formatMessage(messages.noSteps)}</Message>;
   }
 
   return (
     <div className="navigator-guide-search">
       <header className="navigator-guide-header">
-        <div className="navigator-guide-eyebrow">Guide me</div>
-        <h2>Find the right tool</h2>
-        <p>
-          Answer a few guided questions. The catalogue on the right narrows as
-          you go - you can skip to the results at any point.
-        </p>
+        <div className="navigator-guide-eyebrow">
+          {intl.formatMessage(messages.guideMe)}
+        </div>
+        <h2>{intl.formatMessage(messages.findTheRightTool)}</h2>
+        <p>{intl.formatMessage(messages.introduction)}</p>
       </header>
 
       <div className="navigator-guide-layout">
@@ -112,14 +173,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                     index + 1
                   )}
                 </span>
-                {item.label}
+                {intl.formatMessage(item.label)}
               </div>
             ))}
           </div>
           <div
             className="navigator-guide-progress-bar"
             role="progressbar"
-            aria-label="Navigator guide progress"
             aria-valuemin="1"
             aria-valuemax={steps.length}
             aria-valuenow={activeStep + 1}
@@ -132,12 +192,15 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
           <div className="navigator-guide-step-meta">
             <span className="navigator-guide-step-number">
-              Step {activeStep + 1} of {steps.length}
+              {intl.formatMessage(messages.stepProgress, {
+                current: activeStep + 1,
+                total: steps.length,
+              })}
             </span>
-            <span>Select all that apply</span>
+            <span>{intl.formatMessage(messages.selectAllThatApply)}</span>
           </div>
-          <h3>{step.title}</h3>
-          {step.description && <p>{step.description}</p>}
+          <h3>{intl.formatMessage(step.title)}</h3>
+          {step.description && <p>{intl.formatMessage(step.description)}</p>}
 
           {isLoading ? (
             <div className="navigator-guide-options-loading">
@@ -162,7 +225,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                   </label>
                 ))
               ) : (
-                <Message>No options are available for this step.</Message>
+                <Message>{intl.formatMessage(messages.noOptions)}</Message>
               )}
             </div>
           )}
@@ -173,11 +236,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               disabled={activeStep === 0}
               onClick={() => setActiveStep((value) => value - 1)}
             >
-              <Icon className="ri-arrow-left-line" /> Back
+              <Icon className="ri-arrow-left-line" />
+              {intl.formatMessage(messages.back)}
             </Button>
             <div>
               <Button className="primary inverted" onClick={showResults}>
-                Skip to results
+                {intl.formatMessage(messages.skipToResults)}
               </Button>
               <Button
                 className="primary icon"
@@ -187,7 +251,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                     : setActiveStep((value) => value + 1)
                 }
               >
-                {isLastStep ? 'See results' : 'Next step'}
+                {intl.formatMessage(
+                  isLastStep ? messages.seeResults : messages.nextStep,
+                )}
                 <Icon className="ri-arrow-right-line" />
               </Button>
             </div>
@@ -196,10 +262,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
         <aside className="navigator-guide-preview">
           <div className="navigator-guide-preview-label">
-            Live preview · results based on your selection
+            {intl.formatMessage(messages.livePreview)}
           </div>
           <div className="navigator-guide-result-count">
-            <strong>{isLoading ? '…' : totalResults || 0}</strong> tools match
+            <strong>{isLoading ? '…' : totalResults || 0}</strong>{' '}
+            {intl.formatMessage(messages.toolsMatch, {
+              count: totalResults || 0,
+            })}
           </div>
           <div className="navigator-guide-preview-results">
             {(results || [])
@@ -221,7 +290,8 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               ))}
           </div>
           <Button className="primary icon inverted fluid" onClick={showResults}>
-            See all matching tools <Icon className="ri-arrow-right-line" />
+            {intl.formatMessage(messages.seeAllMatchingTools)}
+            <Icon className="ri-arrow-right-line" />
           </Button>
         </aside>
       </div>
