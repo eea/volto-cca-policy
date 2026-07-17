@@ -164,23 +164,32 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         <section className="navigator-guide-wizard">
           <div className="navigator-guide-progress">
             {steps.map((item, index) => (
-              <Button
-                key={item.id}
-                className={`navigator-guide-progress-step${
-                  index === activeStep ? ' active' : ''
-                }${index < activeStep ? ' completed' : ''}`}
-                aria-current={index === activeStep ? 'step' : undefined}
-                onClick={() => setActiveStep(index)}
-              >
-                <span>
-                  {isStepSelected(filters, item.field) ? (
-                    <Icon className="ri-check-line" />
-                  ) : (
-                    index + 1
-                  )}
-                </span>
-                {intl.formatMessage(item.label)}
-              </Button>
+              <React.Fragment key={item.id}>
+                <Button
+                  className={`navigator-guide-progress-step${
+                    index === activeStep ? ' active' : ''
+                  }${index < activeStep ? ' completed' : ''}`}
+                  aria-current={index === activeStep ? 'step' : undefined}
+                  onClick={() => setActiveStep(index)}
+                >
+                  <span>
+                    {isStepSelected(filters, item.field) ? (
+                      <Icon className="ri-check-line" />
+                    ) : (
+                      index + 1
+                    )}
+                  </span>
+                  {intl.formatMessage(item.label)}
+                </Button>
+                {index < steps.length - 1 && (
+                  <span
+                    className={`navigator-guide-progress-connector${
+                      index < activeStep ? ' completed' : ''
+                    }`}
+                    aria-hidden="true"
+                  />
+                )}
+              </React.Fragment>
             ))}
           </div>
           <div
