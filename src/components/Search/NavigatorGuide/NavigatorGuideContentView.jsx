@@ -164,11 +164,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         <section className="navigator-guide-wizard">
           <div className="navigator-guide-progress">
             {steps.map((item, index) => (
-              <div
+              <Button
                 key={item.id}
                 className={`navigator-guide-progress-step${
                   index === activeStep ? ' active' : ''
                 }${index < activeStep ? ' completed' : ''}`}
+                aria-current={index === activeStep ? 'step' : undefined}
+                onClick={() => setActiveStep(index)}
               >
                 <span>
                   {isStepSelected(filters, item.field) ? (
@@ -178,7 +180,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                   )}
                 </span>
                 {intl.formatMessage(item.label)}
-              </div>
+              </Button>
             ))}
           </div>
           <div
