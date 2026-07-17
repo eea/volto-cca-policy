@@ -45,7 +45,8 @@
     "d3-array": "^2.12.1",
     "jotai": "^1.6.0",
     "query-string": "7.1.0",
-    "react-visibility-sensor": "5.1.1"
+    "react-visibility-sensor": "5.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "7.24.7",
