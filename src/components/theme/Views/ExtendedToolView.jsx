@@ -51,10 +51,6 @@ const ExtendedToolView = (props) => {
     strengths_and_possible_limitations,
   } = content;
 
-  {
-    tool_available_english ? 'English' : tool_available_language;
-  }
-
   let tool_available_language_list = [];
   if (tool_available_english) {
     tool_available_language_list.push('English');
