@@ -275,26 +275,28 @@ function GeoChar(props) {
 
   return (
     <div className="geochar">
-      {rendered.map(
-        (section, index) =>
-          section.value && (
-            <Fragment key={index}>
-              {section.title && (
-                <h5>{intl.formatMessage(messages[section.title])}</h5>
-              )}
-              <p>
-                {section.value
-                  .map((countryName) =>
-                    intl.formatMessage({
-                      id: countryName,
-                      defaultMessage: countryName,
-                    }),
-                  )
-                  .join(', ')}
-              </p>
-            </Fragment>
-          ),
-      )}
+      {rendered
+        .filter((item) => item.title !== null)
+        .map(
+          (section, index) =>
+            section.value && (
+              <Fragment key={index}>
+                {section.title && (
+                  <h5>{intl.formatMessage(messages[section.title])}</h5>
+                )}
+                <p>
+                  {section.value
+                    .map((countryName) =>
+                      intl.formatMessage({
+                        id: countryName,
+                        defaultMessage: countryName,
+                      }),
+                    )
+                    .join(', ')}
+                </p>
+              </Fragment>
+            ),
+        )}
     </div>
   );
 }
