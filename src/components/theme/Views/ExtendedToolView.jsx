@@ -1,41 +1,17 @@
-import React from 'react';
-import { PrivacyProtection } from '@eeacms/volto-embed';
-import { Container, Divider, Grid } from 'semantic-ui-react';
-import {
-  ShareInfoButton,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
-import { fixEmbedURL } from '@eeacms/volto-cca-policy/helpers';
-import {
-  buildFlourishUrl,
-  flourishDataprotection,
-  getDataSrcFromEmbedCode,
-} from '@eeacms/volto-cca-policy/helpers/flourishUtils';
-import {
-  INDICATOR,
-  CONTENT_TYPE_LABELS,
-} from '@eeacms/volto-cca-policy/constants';
+import { Container, Grid } from 'semantic-ui-react';
+import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import {
   HTMLField,
-  ReferenceInfo,
   ContentMetadata,
-  PublishedModifiedInfo,
   ItemLogo,
-  ContentRelatedItems,
   DocumentsList,
   ExternalLink,
-  BannerTitle,
 } from '@eeacms/volto-cca-policy/helpers';
-import {
-  ArchivedVersionNotice,
-  ArchivedVersionListing,
-  // VersionsGroup, // commented out - relatedItems already shows versions
-} from '@eeacms/volto-cca-policy/components';
-import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
+import config from '@plone/volto/registry';
 
 const ExtendedToolView = (props) => {
   const { content } = props;
-  const type = content['@type'];
   const {
     title,
     acronym,
@@ -67,9 +43,9 @@ const ExtendedToolView = (props) => {
     temporality_of_data,
     spatial_resolution,
     underlying_data_maintenance,
-    nature_based_solution,
-    just_resilience,
-    cost_benefit_ratio,
+    // nature_based_solution,
+    // just_resilience,
+    // cost_benefit_ratio,
     accessibility_and_usability,
     functionality,
     strengths_and_possible_limitations,
@@ -88,12 +64,7 @@ const ExtendedToolView = (props) => {
   }
 
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
-  const subtitle = CONTENT_TYPE_LABELS[type] ?? '';
-  const hasVisualization = !!content?.map_graphs?.length;
-  const isFullWidthVisualization =
-    hasVisualization && content?.map_graphs_full_width;
-  console.log('extended tool props', props);
-  console.log('accessibility_and_usability', accessibility_and_usability);
+
   const messages = defineMessages({
     yes: { id: 'YES', defaultMessage: 'YES' },
     no: { id: 'NO', defaultMessage: 'NO' },
@@ -197,10 +168,30 @@ const ExtendedToolView = (props) => {
     hyperlink: { id: 'Tool hyperlink', defaultMessage: 'Tool hyperlink' },
   });
   const intl = useIntl();
-  console.log('content', content);
+  const {
+    blocks: { blocksConfig },
+  } = config;
+  const TitleBlockView = blocksConfig?.title?.view;
+  const titleBlockData = { ...content, title: item_title, image: '' };
 
   return (
     <div className="db-item-view">
+      <TitleBlockView
+        {...props}
+        data={{
+          '@type': 'title',
+          info: [{ description: '' }],
+          hideContentType: true,
+          hideCreationDate: true,
+          hideModificationDate: true,
+          hidePublishingDate: true,
+          hideDownloadButton: false,
+          hideShareButton: false,
+          subtitle: 'Tool',
+        }}
+        metadata={titleBlockData}
+        properties={titleBlockData}
+      />
       <Container>
         <PortalMessage content={content} />
         <Grid columns="12">
