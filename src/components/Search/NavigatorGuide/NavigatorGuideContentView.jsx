@@ -282,14 +282,21 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         </section>
 
         <aside className="navigator-guide-preview">
-          <div className="navigator-guide-preview-label">
-            {intl.formatMessage(messages.livePreview)}
+          <div className="navigator-guide-preview-header">
+            <Icon className="ri-stack-line" />
+            <div className="navigator-guide-preview-label">
+              {intl.formatMessage(messages.livePreview)}
+            </div>
           </div>
           <div className="navigator-guide-result-count">
-            <strong>{isLoading ? '…' : totalResults || 0}</strong>{' '}
-            {intl.formatMessage(messages.toolsMatch, {
-              count: totalResults || 0,
-            })}
+            <span className="navigator-guide-result-count">
+              {isLoading ? '…' : totalResults || 0}
+            </span>
+            <p>
+              {intl.formatMessage(messages.toolsMatch, {
+                count: totalResults || 0,
+              })}
+            </p>
           </div>
           {hasSelections ? (
             <>
