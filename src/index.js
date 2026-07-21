@@ -18,6 +18,7 @@ import {
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
+import ExtendedToolView from './components/theme/Views/ExtendedToolView';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
@@ -33,6 +34,7 @@ import {
   ACE_PROJECT,
   PUBLICATION_REPORT,
   TOOL,
+  EXTENDED_TOOL,
   VIDEO,
   C3S_INDICATOR,
   CCA_EVENT,
@@ -357,6 +359,7 @@ const applyConfig = (config) => {
     [EVENT]: EventView,
     [CCA_EVENT]: CcaEventView,
     [TOOL]: DatabaseItemView,
+    [EXTENDED_TOOL]: ExtendedToolView,
     [INDICATOR]: DatabaseItemView,
     [ORGANISATION]: DatabaseItemView,
     [GUIDANCE]: DatabaseItemView,

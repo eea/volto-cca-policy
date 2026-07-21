@@ -7,6 +7,7 @@ export const ORGANISATION = 'eea.climateadapt.organisation';
 export const ACE_PROJECT = 'eea.climateadapt.aceproject';
 export const PUBLICATION_REPORT = 'eea.climateadapt.publicationreport';
 export const TOOL = 'eea.climateadapt.tool';
+export const EXTENDED_TOOL = 'eea.climateadapt.extendedtool';
 export const VIDEO = 'eea.climateadapt.video';
 export const C3S_INDICATOR = 'eea.climateadapt.c3sindicator';
 export const MISSION_SIGNATORY_PROFILE = 'mission_signatory_profile';
