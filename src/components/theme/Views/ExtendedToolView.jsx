@@ -9,10 +9,10 @@ import {
   ItemLogo,
   DocumentsList,
   ExternalLink,
+  useCompareTools,
 } from '@eeacms/volto-cca-policy/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
-import { useCompareTools } from '@eeacms/volto-cca-policy/components/theme/CompareTools/CompareToolsPanel';
 
 const ExtendedToolView = (props) => {
   const { content } = props;

@@ -17,6 +17,11 @@ export {
 } from './Utils';
 export { default as ContentMetadata } from './ContentMetadata';
 export { default as clientOnly } from './clientOnly';
+export {
+  getCompareToolTitle,
+  getCompareToolUid,
+  useCompareTools,
+} from '../components/theme/CompareTools/utils';
 
 export const capitalizeFirstLetter = (str) =>
   str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();

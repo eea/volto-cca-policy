@@ -16,7 +16,7 @@ import Api from '@plone/volto/helpers/Api/Api';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import { defineMessages, useIntl } from 'react-intl';
-import { MAX_COMPARE_TOOLS, compareToolsAtom } from './CompareToolsPanel';
+import { MAX_COMPARE_TOOLS, compareToolsAtom } from './utils';
 import {
   asArray,
   exportComparisonTable,
