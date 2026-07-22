@@ -14,7 +14,7 @@ import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import Api from '@plone/volto/helpers/Api/Api';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { defineMessages, useIntl } from 'react-intl';
 import { MAX_COMPARE_TOOLS, compareToolsAtom } from './utils';
 import {
@@ -305,13 +305,13 @@ const CompareToolsView = () => {
                       </div>
                       <div className="compare-tool-actions">
                         {tool.href && (
-                          <ExternalLink
+                          <UniversalLink
                             className="ui button primary icon compare-tool-open"
                             href={tool.href}
                           >
                             {intl.formatMessage(messages.openTool)}
                             <Icon className="ri-external-link-line" />
-                          </ExternalLink>
+                          </UniversalLink>
                         )}
                         <Button
                           className="icon compare-tool-clear"
