@@ -22,6 +22,12 @@ jest.mock('semantic-ui-react', () => ({
   ...jest.requireActual('semantic-ui-react'),
 }));
 
+jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  CompareToolsPanel: jest.requireActual('../CompareTools/CompareToolsPanel')
+    .CompareToolsPanel,
+  PortalMessage: jest.requireActual('../PortalMessage/PortalMessage').default,
+}));
+
 jest.mock('@eeacms/volto-embed', () => {
   return {
     PrivacyProtection: jest.fn(({ children }) => <div>{children}</div>),
