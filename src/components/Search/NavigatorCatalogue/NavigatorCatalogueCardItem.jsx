@@ -7,7 +7,7 @@ import {
   getCompareToolTitle,
   getCompareToolUid,
   useCompareTools,
-} from './CompareToolsPanel';
+} from '@eeacms/volto-cca-policy/components/theme/CompareTools/CompareToolsPanel';
 
 const messages = defineMessages({
   sector: {

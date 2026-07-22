@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import { getComparePageURL } from './utils';
+import { getComparePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 export const MAX_COMPARE_TOOLS = 4;
 export const compareToolsAtom = atom([]);

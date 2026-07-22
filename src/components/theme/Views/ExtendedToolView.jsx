@@ -1,5 +1,8 @@
 import { Button, Container, Grid, Icon } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+import {
+  CompareToolsPanel,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
 import {
   HTMLField,
   ContentMetadata,
@@ -9,10 +12,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
-import {
-  CompareToolsPanel,
-  useCompareTools,
-} from '../../Search/NavigatorCatalogue/CompareToolsPanel';
+import { useCompareTools } from '@eeacms/volto-cca-policy/components/theme/CompareTools/CompareToolsPanel';
 
 const ExtendedToolView = (props) => {
   const { content } = props;

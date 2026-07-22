@@ -21,7 +21,7 @@ import {
   asArray,
   exportComparisonTable,
   getLocalizedLandingPageURL,
-} from './utils';
+} from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
   compareTools: {
@@ -157,7 +157,7 @@ const getTools = async (uids, currentLang) => {
   return tools;
 };
 
-const NavigatorCatalogueCompareView = () => {
+const CompareToolsView = () => {
   const intl = useIntl();
   const history = useHistory();
   const location = useLocation();
@@ -448,4 +448,4 @@ const NavigatorCatalogueCompareView = () => {
   );
 };
 
-export default NavigatorCatalogueCompareView;
+export default CompareToolsView;

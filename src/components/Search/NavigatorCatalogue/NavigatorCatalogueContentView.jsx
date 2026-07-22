@@ -18,7 +18,7 @@ import { NoResults } from '@eeacms/search/components/Result/NoResults';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { loadingFamily } from '@eeacms/search/state';
 import registry from '@eeacms/search/registry';
-import { CompareToolsPanel } from './CompareToolsPanel';
+import { CompareToolsPanel } from '@eeacms/volto-cca-policy/components';
 
 const NAVIGATOR_VIEW_IDS = ['listing', 'map'];
 

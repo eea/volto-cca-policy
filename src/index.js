@@ -13,6 +13,7 @@ import {
   MissionSignatoryProfileView,
   CreateArchivedCopyButton,
   ImageWidget,
+  CompareToolsView,
 } from '@eeacms/volto-cca-policy/components';
 
 import CcaEventView from './components/theme/Views/CcaEventView';
@@ -52,7 +53,6 @@ import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCard
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
-import NavigatorCatalogueCompareView from './components/Search/NavigatorCatalogue/NavigatorCatalogueCompareView';
 import NavigatorGuideLayout from './components/Search/NavigatorGuide/NavigatorGuideLayout';
 import NavigatorGuideContentView from './components/Search/NavigatorGuide/NavigatorGuideContentView';
 
@@ -519,7 +519,7 @@ const applyConfig = (config) => {
     },
     {
       path: `*/navigator/compare`,
-      component: NavigatorCatalogueCompareView,
+      component: CompareToolsView,
     },
     ...(config.addonRoutes || []),
   ];
