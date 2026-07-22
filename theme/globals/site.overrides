@@ -5,6 +5,7 @@
 @import './observatory.less';
 @import './views.less';
 @import './search.less';
+@import './comparison.less';
 @import './blocks.less';
 @import './print.less';
 

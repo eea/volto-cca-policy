@@ -1,0 +1,335 @@
+.searchapp-navigatorCatalogueSearch .catalogue-compare {
+  display: inline-flex;
+  min-height: 35px;
+  align-items: center;
+  padding: 0 0.75rem;
+  border: 1px solid #c8d6df;
+  border-radius: 17px;
+  color: #30495b;
+  font-weight: 700;
+  gap: 0.45rem;
+
+  .ui.checkbox {
+    margin: 0;
+  }
+}
+
+.catalogue-compare-panel {
+  position: fixed;
+  z-index: 1000;
+  top: 7rem;
+  right: 1.5rem;
+  overflow: hidden;
+  width: min(320px, calc(100vw - 2rem));
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(29, 53, 69, 0.18);
+
+  .ui.button {
+    margin: 0 !important;
+  }
+
+  .compare-panel-content {
+    padding: 1rem;
+  }
+
+  .compare-panel-header {
+    padding: 1rem;
+    background-color: #0a3d61;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      gap: 1rem;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    color: #30495b;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .compare-panel-count {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid #fff;
+    border-radius: 13px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .compare-panel-tools {
+    display: grid;
+    margin-bottom: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .compare-panel-tool {
+    display: flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.55rem 0.65rem;
+    border: 1px solid #d7e2ea;
+    border-radius: 4px;
+    background: #f7fafc;
+    gap: 0.75rem;
+
+    &.placeholder {
+      justify-content: flex-start;
+      border-style: dashed;
+      background: #fff;
+      color: #7b8d9a;
+      font-size: 13px;
+
+      i.icon {
+        display: inline-flex;
+        width: 22px;
+        height: 22px;
+        align-items: center;
+        justify-content: center;
+        border: 1px dashed #d7e2ea;
+        border-radius: 4px;
+        margin: 0 !important;
+        color: #7c8a96;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .compare-panel-tool-title {
+    min-width: 0;
+    color: #30495b;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .ui.button.compare-panel-tool-clear {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    min-height: 28px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    border: 0;
+    border-radius: 50%;
+    margin: 0 !important;
+    background: transparent;
+    box-shadow: none;
+    color: #607482;
+    line-height: 1;
+
+    i.icon {
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0 !important;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    &:hover,
+    &:focus {
+      background: #e8f0f5;
+      box-shadow: none;
+      color: #30495b;
+    }
+  }
+
+  .compare-panel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .compare-panel-status {
+    font-weight: 500;
+    text-align: center;
+
+    &.ready {
+      color: #289588;
+    }
+  }
+
+  .ui.button.compare-panel-submit {
+    margin: 0;
+
+    i.icon {
+      margin-right: 0.4rem !important;
+      font-size: 1.15rem;
+    }
+  }
+
+  .compare-panel-clear-all {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: @linkColor;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.extended-tool-compare-action {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.5rem 0;
+
+  .ui.button {
+    margin: 0 !important;
+  }
+}
+
+.compare-tool-header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .catalogue-provider {
+    color: @secondaryColor;
+    font-size: 14px;
+  }
+
+  .compare-tool-title {
+    display: -webkit-box;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40px;
+    -webkit-box-orient: vertical;
+    font-size: 18px;
+    -webkit-line-clamp: 2;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+  }
+}
+
+.compare-tool-actions {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+
+  .ui.icon.button {
+    flex: 1 1 auto;
+    margin: 0;
+  }
+
+  .compare-tool-clear.ui.button {
+    flex: 0 0 auto;
+  }
+}
+
+.ui.button.icon.compare-tool-open .icon {
+  margin-left: 0.5rem !important;
+}
+
+.navigator-catalogue-compare-view {
+  overflow-x: auto;
+
+  .compare-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .compare-page-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ui.table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .ui.table th:first-child,
+  .ui.table td:first-child {
+    width: 180px;
+  }
+
+  .ui.table th:not(:first-child),
+  .ui.table td:not(:first-child) {
+    overflow-wrap: anywhere;
+  }
+
+  .compare-criteria-title {
+    font-weight: 700;
+  }
+
+  .compare-criteria-helper {
+    margin-top: 0.35rem;
+    color: #667985;
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .compare-functionality-dots {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.45rem;
+    gap: 0.35rem;
+  }
+
+  .compare-functionality-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid @secondaryColor;
+    border-radius: 50%;
+
+    &.filled {
+      background: @secondaryColor;
+    }
+  }
+
+  .usability-value {
+    color: @secondaryColor;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .compare-criteria-label {
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .catalogue-compare-panel {
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .navigator-catalogue-compare-view {
+    .compare-page-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .compare-page-actions {
+      align-self: flex-end;
+    }
+  }
+}

@@ -12,9 +12,8 @@ import {
 } from 'semantic-ui-react';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
-import config from '@plone/volto/registry';
-import { applyConfigurationSchema, rebind } from '@eeacms/search';
-import { fetchResult } from '@eeacms/search/lib/hocs/useResult';
+import Api from '@plone/volto/helpers/Api/Api';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import { defineMessages, useIntl } from 'react-intl';
 import { MAX_COMPARE_TOOLS, compareToolsAtom } from './CompareToolsPanel';
@@ -23,8 +22,6 @@ import {
   exportComparisonTable,
   getLocalizedLandingPageURL,
 } from './utils';
-
-const appName = 'navigatorCatalogueSearch';
 
 const messages = defineMessages({
   compareTools: {
@@ -92,12 +89,22 @@ const messages = defineMessages({
   },
 });
 
-const getToolField = (tool, field) =>
-  tool.result?.[field] || tool.result?._result?.[field];
+const getToolField = (tool, field) => {
+  const fieldAliases = {
+    cca_adaptation_sectors: 'sectors',
+  };
 
-const getCompareIds = (search) => {
+  return (
+    tool.result?.[field] ||
+    tool.result?.[fieldAliases[field]] ||
+    tool.result?._result?.[field]
+  );
+};
+
+const getCompareUids = (search) => {
   const params = new URLSearchParams(search);
-  return [...new Set(params.getAll('id').filter(Boolean))].slice(
+
+  return [...new Set(params.getAll('uid').filter(Boolean))].slice(
     0,
     MAX_COMPARE_TOOLS,
   );
@@ -111,33 +118,36 @@ const getReturnURL = (search) => {
     : '';
 };
 
-const getToolTitle = (result, fallback) => {
-  if (!result?._result?._meta?.found) {
-    return fallback;
-  }
+const getToolTitle = (result, fallback) => result?.title || fallback;
 
-  return result.title || result._result?.title?.raw || fallback;
+const getToolHref = (result) => result?.['@id'] || '';
+
+const fetchContentByUid = async (uid, currentLang) => {
+  const api = new Api();
+  const searchResult = await api.get(`/${currentLang}/@search`, {
+    params: { UID: uid, b_size: 1 },
+  });
+  const itemUrl = searchResult?.items?.[0]?.['@id'];
+
+  return itemUrl ? api.get(flattenToAppURL(itemUrl)) : null;
 };
 
-const getToolHref = (result) =>
-  result?.href || result?.['@id'] || result?._result?.href?.raw || '';
-
-const getTools = async (ids, appConfig, registry) => {
+const getTools = async (uids, currentLang) => {
   const tools = await Promise.all(
-    ids.map(async (id) => {
+    uids.map(async (uid) => {
       try {
-        const result = await fetchResult(id, appConfig, registry);
+        const result = await fetchContentByUid(uid, currentLang);
         return {
-          id,
-          title: getToolTitle(result, id),
+          id: uid,
+          title: getToolTitle(result, uid),
           href: getToolHref(result),
           result,
-          error: !result?._result?._meta?.found,
+          error: !result,
         };
       } catch (error) {
         return {
-          id,
-          title: id,
+          id: uid,
+          title: uid,
           error: true,
         };
       }
@@ -154,13 +164,12 @@ const NavigatorCatalogueCompareView = () => {
   const currentLang = useSelector((state) => state.intl.locale);
   const [, setSelectedTools] = useAtom(compareToolsAtom);
   const ids = React.useMemo(
-    () => getCompareIds(location.search),
+    () => getCompareUids(location.search),
     [location.search],
   );
-  const registry = config.settings.searchlib;
   const appConfig = React.useMemo(
-    () => applyConfigurationSchema(rebind(registry.searchui[appName])),
-    [registry.searchui],
+    () => ({ landingPageURL: '/en/navigator' }),
+    [],
   );
   const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
   const backURL =
@@ -175,7 +184,7 @@ const NavigatorCatalogueCompareView = () => {
 
     const loadTools = async () => {
       setIsLoading(true);
-      const results = await getTools(ids, appConfig, registry);
+      const results = await getTools(ids, currentLang);
 
       if (!ignore) {
         setTools(results);
@@ -193,7 +202,7 @@ const NavigatorCatalogueCompareView = () => {
     return () => {
       ignore = true;
     };
-  }, [ids, appConfig, registry]);
+  }, [ids, currentLang]);
 
   const failedTools = tools.filter((tool) => tool.error);
   const visibleTools = tools.filter((tool) => !tool.error);
@@ -215,15 +224,13 @@ const NavigatorCatalogueCompareView = () => {
 
   const removeTool = (toolId) => {
     const params = new URLSearchParams(location.search);
-    const remainingIds = ids.filter((id) => id !== toolId);
+    const remainingIds = ids.filter((uid) => uid !== toolId);
 
-    params.delete('id');
-    remainingIds.forEach((id) => params.append('id', id));
+    params.delete('uid');
+    remainingIds.forEach((uid) => params.append('uid', uid));
 
     setSelectedTools((selectedTools) =>
-      selectedTools.filter(
-        (tool) => tool.id !== toolId && tool.esId !== toolId,
-      ),
+      selectedTools.filter((tool) => tool.uid !== toolId),
     );
 
     history.push({

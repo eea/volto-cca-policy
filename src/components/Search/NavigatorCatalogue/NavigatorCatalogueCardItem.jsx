@@ -1,15 +1,12 @@
 import React from 'react';
-import { useAtom } from 'jotai';
 import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import {
-  MAX_COMPARE_TOOLS,
-  compareToolsAtom,
-  getCompareToolEsId,
-  getCompareToolId,
   getCompareToolTitle,
+  getCompareToolUid,
+  useCompareTools,
 } from './CompareToolsPanel';
 
 const messages = defineMessages({
@@ -100,40 +97,21 @@ const CycleElements = ({ intl, values }) => {
 const NavigatorCatalogueCardItem = (props) => {
   const { result } = props;
   const intl = useIntl();
-  const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const sectors = asArray(result.cca_adaptation_sectors);
   const hazards = asArray(result.cca_climate_impacts);
   const sectorLabel = intl.formatMessage(messages.sector);
   const hazardLabel = intl.formatMessage(messages.hazard);
   const compareTool = {
-    id: getCompareToolId(result),
-    esId: getCompareToolEsId(result),
+    uid: getCompareToolUid(result),
     title: getCompareToolTitle(result),
     href: result.href,
   };
   const cycleElementPlaceholders = ['[Cycle]'];
-  const isSelectedForCompare = selectedTools.some(
-    (tool) => tool.id === compareTool.id,
-  );
-  const isCompareLimitReached =
-    selectedTools.length >= MAX_COMPARE_TOOLS && !isSelectedForCompare;
+  const { isSelected, isLimitReached, setSelected } =
+    useCompareTools(compareTool);
 
   const onCompareChange = (event, { checked }) => {
-    setSelectedTools((tools) => {
-      if (!checked) {
-        return tools.filter((tool) => tool.id !== compareTool.id);
-      }
-
-      if (tools.some((tool) => tool.id === compareTool.id)) {
-        return tools;
-      }
-
-      if (tools.length >= MAX_COMPARE_TOOLS) {
-        return tools;
-      }
-
-      return [...tools, compareTool];
-    });
+    setSelected(checked);
   };
 
   return (
@@ -185,8 +163,8 @@ const NavigatorCatalogueCardItem = (props) => {
           <div className="catalogue-actions">
             <label className="catalogue-compare">
               <Checkbox
-                checked={isSelectedForCompare}
-                disabled={isCompareLimitReached}
+                checked={isSelected}
+                disabled={isLimitReached || !compareTool.uid}
                 onChange={onCompareChange}
               />
               <span>{intl.formatMessage(messages.compare)}</span>

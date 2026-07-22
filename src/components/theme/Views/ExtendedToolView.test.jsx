@@ -5,6 +5,7 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-intl-redux';
 import ExtendedToolView from './ExtendedToolView';
 import renderer from 'react-test-renderer';
+import { act } from 'react-test-renderer';
 import config from '@plone/volto/registry';
 
 config.blocks = {
@@ -70,5 +71,47 @@ describe('ExtendedToolView', () => {
     );
     const json = component.toJSON();
     expect(json).toMatchSnapshot();
+  });
+
+  it('adds the tool and opens the comparison panel', () => {
+    const store = mockStore({
+      userSession: { token: '1234' },
+      intl: { locale: 'en', messages: {} },
+    });
+    let component;
+
+    act(() => {
+      component = renderer.create(
+        <Provider store={store}>
+          <MemoryRouter>
+            <ExtendedToolView
+              content={{
+                '@id': '/en/metadata/tools/example-tool',
+                UID: '4217ecbfd1314df7baa6fa8a304327d6',
+                external_id: '#129',
+                geochars: 'null',
+                title: 'Example tool',
+              }}
+            />
+          </MemoryRouter>
+        </Provider>,
+      );
+    });
+
+    const addButton = component.root.findAll(
+      (node) => node.props['aria-pressed'] === false && node.props.onClick,
+    )[0];
+
+    act(() => addButton.props.onClick());
+
+    const renderedText = JSON.stringify(component.toJSON());
+    expect(renderedText).toContain('Add to comparison');
+    expect(renderedText).toContain('Compare tools');
+    expect(renderedText).toContain('Example tool');
+    expect(
+      component.root.findAll(
+        (node) => node.props['aria-pressed'] === true && node.props.disabled,
+      ),
+    ).toHaveLength(1);
   });
 });

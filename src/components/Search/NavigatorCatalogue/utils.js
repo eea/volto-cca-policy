@@ -2,7 +2,11 @@ export const asArray = (value) => {
   if (!value) return [];
   const raw = value.raw !== undefined ? value.raw : value;
   if (!raw) return [];
-  return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
+  const values = Array.isArray(raw)
+    ? raw.filter(Boolean)
+    : [raw].filter(Boolean);
+
+  return values.map((value) => value?.title || value?.token || value);
 };
 
 export const arrayFieldToString = (value) => asArray(value).join(', ');

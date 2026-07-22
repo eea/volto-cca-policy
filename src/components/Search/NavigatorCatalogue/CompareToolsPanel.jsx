@@ -36,24 +36,48 @@ const messages = defineMessages({
   },
 });
 
-export const getCompareToolEsId = (result) =>
-  result._original?._id ||
-  result._result?._meta?._id ||
-  result._result?.id ||
-  '';
+const getRawValue = (value) =>
+  value?.raw !== undefined ? value.raw : value || '';
 
-export const getCompareToolId = (result) => {
-  return (
-    getCompareToolEsId(result) ||
-    result.href ||
-    result.id ||
-    result['@id'] ||
-    result.title ||
-    ''
-  );
-};
+export const getCompareToolUid = (result) =>
+  getRawValue(result.cca_uid || result.UID || result._result?.cca_uid);
 
 export const getCompareToolTitle = (result) => result.title || '';
+
+export const useCompareTools = (compareTool) => {
+  const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
+  const isSelected = selectedTools.some(
+    (tool) => tool.uid === compareTool?.uid,
+  );
+  const isLimitReached =
+    selectedTools.length >= MAX_COMPARE_TOOLS && !isSelected;
+
+  const setSelected = (selected) => {
+    if (!compareTool?.uid) return;
+
+    setSelectedTools((tools) => {
+      if (!selected) {
+        return tools.filter((tool) => tool.uid !== compareTool.uid);
+      }
+
+      if (
+        tools.some((tool) => tool.uid === compareTool.uid) ||
+        tools.length >= MAX_COMPARE_TOOLS
+      ) {
+        return tools;
+      }
+
+      return [...tools, compareTool];
+    });
+  };
+
+  return {
+    isSelected,
+    isLimitReached,
+    setSelected,
+    toggle: () => setSelected(!isSelected),
+  };
+};
 
 const getCompareLocation = (
   tools,
@@ -64,8 +88,8 @@ const getCompareLocation = (
   const params = new URLSearchParams();
 
   tools.slice(0, MAX_COMPARE_TOOLS).forEach((tool) => {
-    if (tool.esId) {
-      params.append('id', tool.esId);
+    if (tool.uid) {
+      params.append('uid', tool.uid);
     }
   });
 
@@ -79,19 +103,20 @@ const getCompareLocation = (
   };
 };
 
-export const CompareToolsPanel = ({ appConfig }) => {
+export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
   const intl = useIntl();
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale);
+  const appConfig = suppliedAppConfig || { landingPageURL: '/en/navigator' };
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
-  const selectedToolsWithEsId = selectedTools.filter((tool) => tool.esId);
-  const isReadyToCompare = selectedToolsWithEsId.length >= 2;
+  const resolvableSelectedTools = selectedTools.filter((tool) => tool.uid);
+  const isReadyToCompare = resolvableSelectedTools.length >= 2;
   const emptySlots = MAX_COMPARE_TOOLS - selectedTools.length;
 
   if (selectedTools.length === 0) return null;
 
-  const removeTool = (toolId) => {
-    setSelectedTools((tools) => tools.filter((tool) => tool.id !== toolId));
+  const removeTool = (toolUid) => {
+    setSelectedTools((tools) => tools.filter((tool) => tool.uid !== toolUid));
   };
 
   const compareTools = () => {
@@ -120,14 +145,14 @@ export const CompareToolsPanel = ({ appConfig }) => {
       <div className="compare-panel-content">
         <div className="compare-panel-tools">
           {selectedTools.map((tool) => (
-            <div key={tool.id} className="compare-panel-tool">
+            <div key={tool.uid} className="compare-panel-tool">
               <span className="compare-panel-tool-title">{tool.title}</span>
               <Button
                 className="compare-panel-tool-clear"
                 aria-label={intl.formatMessage(messages.removeTool, {
                   title: tool.title,
                 })}
-                onClick={() => removeTool(tool.id)}
+                onClick={() => removeTool(tool.uid)}
               >
                 <Icon className="ri-close-line" />
               </Button>

@@ -1,4 +1,4 @@
-import { Container, Grid } from 'semantic-ui-react';
+import { Button, Container, Grid, Icon } from 'semantic-ui-react';
 import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import {
   HTMLField,
@@ -9,6 +9,10 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
+import {
+  CompareToolsPanel,
+  useCompareTools,
+} from '../../Search/NavigatorCatalogue/CompareToolsPanel';
 
 const ExtendedToolView = (props) => {
   const { content } = props;
@@ -60,6 +64,12 @@ const ExtendedToolView = (props) => {
   }
 
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
+  const compareTool = {
+    uid: content.UID,
+    title,
+    href: content['@id'],
+  };
+  const { isSelected, isLimitReached, toggle } = useCompareTools(compareTool);
 
   const messages = defineMessages({
     yes: { id: 'YES', defaultMessage: 'YES' },
@@ -162,6 +172,10 @@ const ExtendedToolView = (props) => {
       defaultMessage: 'Underlying data maintenance',
     },
     hyperlink: { id: 'Tool hyperlink', defaultMessage: 'Tool hyperlink' },
+    addToComparison: {
+      id: 'Add to comparison',
+      defaultMessage: 'Add to comparison',
+    },
   });
   const intl = useIntl();
   const {
@@ -189,6 +203,21 @@ const ExtendedToolView = (props) => {
         properties={titleBlockData}
       />
       <Container>
+        {content.UID && (
+          <div className="extended-tool-compare-action">
+            <Button
+              primary
+              icon
+              disabled={isSelected || isLimitReached}
+              aria-pressed={isSelected}
+              onClick={toggle}
+            >
+              <Icon className="ri-add-line" />
+              <span>{intl.formatMessage(messages.addToComparison)}</span>
+            </Button>
+          </div>
+        )}
+        <CompareToolsPanel />
         <PortalMessage content={content} />
         <Grid columns="12">
           <Grid.Row>
