@@ -112,7 +112,6 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
           )}
           <Button
             primary
-            icon
             className="compare-panel-submit"
             disabled={!isReadyToCompare}
             onClick={compareTools}

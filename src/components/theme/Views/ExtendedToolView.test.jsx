@@ -96,6 +96,7 @@ describe('ExtendedToolView', () => {
                 UID: '4217ecbfd1314df7baa6fa8a304327d6',
                 external_id: '#129',
                 geochars: 'null',
+                hyperlink: 'https://example.com/tool',
                 title: 'Example tool',
               }}
             />
@@ -104,6 +105,14 @@ describe('ExtendedToolView', () => {
       );
     });
 
+    const openToolLink = component.root.find(
+      (node) =>
+        node.type === 'a' &&
+        node.props.href === 'https://example.com/tool' &&
+        node.props.target === '_blank',
+    );
+    expect(openToolLink).toBeDefined();
+
     const addButton = component.root.findAll(
       (node) => node.props['aria-pressed'] === false && node.props.onClick,
     )[0];
@@ -111,6 +120,7 @@ describe('ExtendedToolView', () => {
     act(() => addButton.props.onClick());
 
     const renderedText = JSON.stringify(component.toJSON());
+    expect(renderedText).toContain('Open tool');
     expect(renderedText).toContain('Add to comparison');
     expect(renderedText).toContain('Compare tools');
     expect(renderedText).toContain('Example tool');

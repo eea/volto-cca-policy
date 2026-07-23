@@ -176,6 +176,10 @@ const ExtendedToolView = (props) => {
       id: 'Add to comparison',
       defaultMessage: 'Add to comparison',
     },
+    openTool: {
+      id: 'Open tool',
+      defaultMessage: 'Open tool',
+    },
   });
   const intl = useIntl();
   const {
@@ -203,18 +207,32 @@ const ExtendedToolView = (props) => {
         properties={titleBlockData}
       />
       <Container>
-        {content.UID && (
+        {hyperlink && (
           <div className="extended-tool-compare-action">
-            <Button
-              primary
-              icon
-              disabled={isSelected || isLimitReached}
-              aria-pressed={isSelected}
-              onClick={toggle}
-            >
-              <Icon className="ri-add-line" />
-              <span>{intl.formatMessage(messages.addToComparison)}</span>
-            </Button>
+            {hyperlink && (
+              <Button
+                as="a"
+                primary
+                href={hyperlink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className="ri-external-link-line" />
+                <span>{intl.formatMessage(messages.openTool)}</span>
+              </Button>
+            )}
+            {content.UID && (
+              <Button
+                primary
+                inverted
+                disabled={isSelected || isLimitReached}
+                aria-pressed={isSelected}
+                onClick={toggle}
+              >
+                <Icon className="ri-layout-column-line" />
+                <span>{intl.formatMessage(messages.addToComparison)}</span>
+              </Button>
+            )}
           </div>
         )}
         <CompareToolsPanel />
