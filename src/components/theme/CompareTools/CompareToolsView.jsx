@@ -20,6 +20,7 @@ import { MAX_COMPARE_TOOLS, compareToolsAtom } from './utils';
 import {
   asArray,
   exportComparisonTable,
+  formatFunctionalityScore,
   getLocalizedLandingPageURL,
 } from '../../Search/NavigatorCatalogue/utils';
 
@@ -101,12 +102,8 @@ const getToolField = (tool, field) => {
   );
 };
 
-const getFunctionalityScore = (tool) => {
-  const value = getToolField(tool, 'functionality');
-  const score = value === null || value === undefined ? NaN : Number(value);
-
-  return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';
-};
+const getToolFieldDisplay = (tool, field) =>
+  asArray(getToolField(tool, field)).join(', ') || '—';
 
 const getCompareUids = (search) => {
   const params = new URLSearchParams(search);
@@ -306,7 +303,9 @@ const CompareToolsView = () => {
                 {visibleTools.map((tool) => (
                   <Table.HeaderCell key={tool.id}>
                     <div className="compare-tool-header">
-                      <div className="catalogue-provider">{'[Provider]'}</div>
+                      <div className="catalogue-provider">
+                        {getToolFieldDisplay(tool, 'tool_provider')}
+                      </div>
                       <div className="compare-tool-title" title={tool.title}>
                         {tool.title}
                       </div>
@@ -339,14 +338,13 @@ const CompareToolsView = () => {
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.usability)}
                     </div>
-                    <div className="compare-criteria-helper">
-                      2 lines about what usability means
-                    </div>
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`usability-${tool.id}`}>
-                    <div className="usability-value">Moderate</div>
+                    <div className="usability-value">
+                      {getToolFieldDisplay(tool, 'accessibility_and_usability')}
+                    </div>
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -356,15 +354,14 @@ const CompareToolsView = () => {
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.functionality)}
                     </div>
-                    <div className="compare-criteria-helper">
-                      2 lines about what functionality means
-                    </div>
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`functionality-${tool.id}`}>
                     <div className="functionality-value">
-                      {getFunctionalityScore(tool)}
+                      {formatFunctionalityScore(
+                        getToolField(tool, 'functionality'),
+                      )}
                     </div>
                   </Table.Cell>
                 ))}
@@ -375,14 +372,11 @@ const CompareToolsView = () => {
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.spatialScale)}
                     </div>
-                    <div className="compare-criteria-helper">
-                      2 lines about what spatial scale means
-                    </div>
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`spatial-scale-${tool.id}`}>
-                    Spatial scale data
+                    {getToolFieldDisplay(tool, 'spatial_resolution')}
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -392,14 +386,11 @@ const CompareToolsView = () => {
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.outputType)}
                     </div>
-                    <div className="compare-criteria-helper">
-                      2 lines about what output type means
-                    </div>
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`output-type-${tool.id}`}>
-                    Output type data
+                    {getToolFieldDisplay(tool, 'type_of_outputs')}
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -409,14 +400,11 @@ const CompareToolsView = () => {
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.adaptationSupportCycleStep)}
                     </div>
-                    <div className="compare-criteria-helper">
-                      2 lines about what adaptation support cycle step means
-                    </div>
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`adaptation-support-cycle-step-${tool.id}`}>
-                    Adaptation support cycle step data
+                    {getToolFieldDisplay(tool, 'adaptation_support_cycle_step')}
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -426,16 +414,11 @@ const CompareToolsView = () => {
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.sector)}
                     </div>
-                    <div className="compare-criteria-helper">
-                      2 lines about what sector means
-                    </div>
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`sector-${tool.id}`}>
-                    {asArray(getToolField(tool, 'cca_adaptation_sectors')).join(
-                      ', ',
-                    )}
+                    {getToolFieldDisplay(tool, 'cca_adaptation_sectors')}
                   </Table.Cell>
                 ))}
               </Table.Row>

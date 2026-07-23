@@ -11,6 +11,12 @@ export const asArray = (value) => {
 
 export const arrayFieldToString = (value) => asArray(value).join(', ');
 
+export const formatFunctionalityScore = (value) => {
+  const score = value === null || value === undefined ? NaN : Number(value);
+
+  return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';
+};
+
 export const escapeCsvValue = (value) => {
   const stringValue = value === undefined || value === null ? '' : `${value}`;
   return `"${stringValue.replace(/"/g, '""')}"`;
@@ -48,13 +54,35 @@ export const getComparePageURL = (appConfig, currentLang = 'en') => {
 export const exportComparisonTable = (tools, getToolField) => {
   const rows = [
     ['Criteria', ...tools.map((tool) => tool.title)],
-    ['Usability', ...tools.map(() => 'Moderate')],
-    ['Functionality', ...tools.map(() => 'functionality score detail')],
-    ['Spatial scale', ...tools.map(() => 'Spatial scale data')],
-    ['Output type', ...tools.map(() => 'Output type data')],
+    [
+      'Usability',
+      ...tools.map((tool) =>
+        arrayFieldToString(getToolField(tool, 'accessibility_and_usability')),
+      ),
+    ],
+    [
+      'Functionality',
+      ...tools.map((tool) =>
+        formatFunctionalityScore(getToolField(tool, 'functionality')),
+      ),
+    ],
+    [
+      'Spatial scale',
+      ...tools.map((tool) =>
+        arrayFieldToString(getToolField(tool, 'spatial_resolution')),
+      ),
+    ],
+    [
+      'Output type',
+      ...tools.map((tool) =>
+        arrayFieldToString(getToolField(tool, 'type_of_outputs')),
+      ),
+    ],
     [
       'Adaptation support cycle step',
-      ...tools.map(() => 'Adaptation support cycle step data'),
+      ...tools.map((tool) =>
+        arrayFieldToString(getToolField(tool, 'adaptation_support_cycle_step')),
+      ),
     ],
     [
       'Sector',
