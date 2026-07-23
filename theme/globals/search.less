@@ -60,6 +60,7 @@ body.searchlib-page .searchlib-block {
 .searchapp-navigatorCatalogueSearch {
   --navigator-green: #118833;
   --navigator-border: #d7e2ea;
+  --navigator-selected-border: #80b9d8;
   --navigator-muted: #6d7f8f;
 
   .search-input,
@@ -158,6 +159,10 @@ body.searchlib-page .searchlib-block {
     background: #fff;
     gap: 1.15rem;
     grid-template-columns: 56px minmax(0, 1fr);
+
+    &.selected {
+      border: 2px solid var(--navigator-selected-border);
+    }
   }
 
   .catalogue-item-icon {
