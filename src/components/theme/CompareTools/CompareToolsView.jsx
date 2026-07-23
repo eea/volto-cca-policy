@@ -95,10 +95,17 @@ const getToolField = (tool, field) => {
   };
 
   return (
-    tool.result?.[field] ||
-    tool.result?.[fieldAliases[field]] ||
+    tool.result?.[field] ??
+    tool.result?.[fieldAliases[field]] ??
     tool.result?._result?.[field]
   );
+};
+
+const getFunctionalityScore = (tool) => {
+  const value = getToolField(tool, 'functionality');
+  const score = value === null || value === undefined ? NaN : Number(value);
+
+  return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';
 };
 
 const getCompareUids = (search) => {
@@ -356,17 +363,9 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`functionality-${tool.id}`}>
-                    <div className="compare-functionality-dots">
-                      {[0, 1, 2, 3, 4, 5].map((dot) => (
-                        <span
-                          key={dot}
-                          className={`compare-functionality-dot${
-                            dot < 3 ? ' filled' : ''
-                          }`}
-                        />
-                      ))}
+                    <div className="functionality-value">
+                      {getFunctionalityScore(tool)}
                     </div>
-                    <span>functionality score detail</span>
                   </Table.Cell>
                 ))}
               </Table.Row>
