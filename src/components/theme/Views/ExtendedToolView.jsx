@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Button, Container, Grid, Icon } from 'semantic-ui-react';
 import {
   CompareToolsPanel,
@@ -12,6 +13,7 @@ import {
 } from '@eeacms/volto-cca-policy/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
+import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
 
 const ExtendedToolView = (props) => {
@@ -180,8 +182,27 @@ const ExtendedToolView = (props) => {
       id: 'Open tool',
       defaultMessage: 'Open tool',
     },
+    share: {
+      id: 'Share',
+      defaultMessage: 'Share',
+    },
+    linkCopied: {
+      id: 'Link copied',
+      defaultMessage: 'Link copied',
+    },
   });
   const intl = useIntl();
+  const shareUrl = content['@id'];
+  const [isLinkCopied, copyShareUrl, setIsLinkCopied] = useClipboard(shareUrl);
+
+  useEffect(() => {
+    if (!isLinkCopied) return undefined;
+
+    const timeout = setTimeout(() => setIsLinkCopied(false), 6000);
+
+    return () => clearTimeout(timeout);
+  }, [isLinkCopied, setIsLinkCopied]);
+
   const {
     blocks: { blocksConfig },
   } = config;
@@ -233,6 +254,14 @@ const ExtendedToolView = (props) => {
                 <span>{intl.formatMessage(messages.addToComparison)}</span>
               </Button>
             )}
+            {/* <Button primary inverted onClick={copyShareUrl}>
+              <Icon className="ri-share-line" />
+              <span>
+                {intl.formatMessage(
+                  isLinkCopied ? messages.linkCopied : messages.share,
+                )}
+              </span>
+            </Button> */}
           </div>
         )}
         <CompareToolsPanel />
