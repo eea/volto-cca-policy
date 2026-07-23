@@ -223,6 +223,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  gap: 0.5em;
 
   .catalogue-provider {
     color: @secondaryColor;
@@ -233,12 +234,46 @@
     display: -webkit-box;
     overflow: hidden;
     width: 100%;
-    min-height: 40px;
     -webkit-box-orient: vertical;
     font-size: 18px;
     -webkit-line-clamp: 2;
     line-height: 1.25;
     text-overflow: ellipsis;
+  }
+}
+
+.compare-tool-title-row {
+  display: flex;
+  min-height: 40px;
+  min-width: 0;
+  align-items: center;
+  gap: 0.75rem;
+
+  .compare-tool-title {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+
+.compare-tool-icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce7ee;
+  border-radius: 4px;
+  background: #f5f9fb;
+  color: #7890a2;
+  font-size: 1.25rem;
+
+  i.icon {
+    width: auto;
+    height: auto;
+    margin: 0 !important;
+    line-height: 1;
   }
 }
 

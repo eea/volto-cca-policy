@@ -303,11 +303,13 @@ const CompareToolsView = () => {
                 {visibleTools.map((tool) => (
                   <Table.HeaderCell key={tool.id}>
                     <div className="compare-tool-header">
-                      <div className="catalogue-provider">
-                        {getToolFieldDisplay(tool, 'tool_provider')}
-                      </div>
-                      <div className="compare-tool-title" title={tool.title}>
-                        {tool.title}
+                      <div className="compare-tool-title-row">
+                        <div className="compare-tool-icon" aria-hidden="true">
+                          <Icon className="ri-file-line" />
+                        </div>
+                        <div className="compare-tool-title" title={tool.title}>
+                          {tool.title}
+                        </div>
                       </div>
                       <div className="compare-tool-actions">
                         {tool.href && (
