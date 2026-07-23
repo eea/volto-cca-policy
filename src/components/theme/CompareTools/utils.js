@@ -1,4 +1,5 @@
 import { atom, useAtom } from 'jotai';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getComparePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 export const MAX_COMPARE_TOOLS = 4;
@@ -11,6 +12,14 @@ export const getCompareToolUid = (result) =>
   getRawValue(result.cca_uid || result.UID || result._result?.cca_uid);
 
 export const getCompareToolTitle = (result) => result.title || '';
+
+export const getPathname = (url) => {
+  if (!url) return '';
+
+  const pathname = flattenToAppURL(url).split('#')[0].split('?')[0];
+
+  return pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+};
 
 export const useCompareTools = (compareTool) => {
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);

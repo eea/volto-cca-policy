@@ -67,7 +67,7 @@ export default function breadcrumbs(state = initialState, action = {}) {
         'breadcrumbs',
         getBaseUrl(flattenToAppURL(action.result['@id'])),
       );
-      if (!hasExpander) {
+      if (action.manual || !hasExpander) {
         return {
           ...state,
           error: null,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAtom } from 'jotai';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import {
   Container,
@@ -15,9 +15,10 @@ import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import Api from '@plone/volto/helpers/Api/Api';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { GET_BREADCRUMBS } from '@plone/volto/constants/ActionTypes';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
-import { MAX_COMPARE_TOOLS, compareToolsAtom } from './utils';
+import { MAX_COMPARE_TOOLS, compareToolsAtom, getPathname } from './utils';
 import {
   asArray,
   exportComparisonTable,
@@ -29,6 +30,10 @@ const messages = defineMessages({
   compareTools: {
     id: 'Compare tools',
     defaultMessage: 'Compare tools',
+  },
+  navigator: {
+    id: 'Navigator',
+    defaultMessage: 'Navigator',
   },
   comparingTools: {
     id: 'Comparing {count} {count, plural, one {tool} other {tools}}',
@@ -164,6 +169,7 @@ const getTools = async (uids, currentLang) => {
 
 const CompareToolsView = () => {
   const intl = useIntl();
+  const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
   const currentLang = useSelector((state) => state.intl.locale);
@@ -177,12 +183,47 @@ const CompareToolsView = () => {
     [],
   );
   const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
-  const backURL =
+  const compareToolsTitle = intl.formatMessage(messages.compareTools);
+  const returnURL =
     location.state?.returnURL ||
     getReturnURL(location.search) ||
     landingPageURL;
+  const backURL =
+    getPathname(returnURL) === getPathname(landingPageURL)
+      ? returnURL
+      : landingPageURL;
+  const breadcrumbParentTitle = intl.formatMessage(messages.navigator);
+  const breadcrumbParentURL = backURL;
   const [tools, setTools] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    dispatch({ type: `${GET_BREADCRUMBS}_PENDING` });
+    dispatch({
+      type: `${GET_BREADCRUMBS}_SUCCESS`,
+      manual: true,
+      result: {
+        root: `/${currentLang}`,
+        items: [
+          {
+            title: breadcrumbParentTitle,
+            '@id': breadcrumbParentURL,
+          },
+          {
+            title: compareToolsTitle,
+            '@id': location.pathname,
+          },
+        ],
+      },
+    });
+  }, [
+    breadcrumbParentTitle,
+    breadcrumbParentURL,
+    compareToolsTitle,
+    currentLang,
+    dispatch,
+    location.pathname,
+  ]);
 
   React.useEffect(() => {
     let ignore = false;
@@ -248,11 +289,9 @@ const CompareToolsView = () => {
 
   return (
     <div className="navigator-catalogue-compare-view">
-      <Helmet title={intl.formatMessage(messages.compareTools)} />
+      <Helmet title={compareToolsTitle} />
       <BodyClass className="navigator-catalogue-compare-page" />
-      <BannerTitle
-        content={{ title: intl.formatMessage(messages.compareTools) }}
-      />
+      <BannerTitle content={{ title: compareToolsTitle }} />
 
       <Container>
         <div className="compare-page-header">
