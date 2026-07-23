@@ -16,6 +16,7 @@ import Api from '@plone/volto/helpers/Api/Api';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { defineMessages, useIntl } from 'react-intl';
+import BannerTitle from '../BannerTitle/BannerTitle';
 import { MAX_COMPARE_TOOLS, compareToolsAtom } from './utils';
 import {
   asArray,
@@ -249,14 +250,17 @@ const CompareToolsView = () => {
     <div className="navigator-catalogue-compare-view">
       <Helmet title={intl.formatMessage(messages.compareTools)} />
       <BodyClass className="navigator-catalogue-compare-page" />
+      <BannerTitle
+        content={{ title: intl.formatMessage(messages.compareTools) }}
+      />
 
       <Container>
         <div className="compare-page-header">
-          <h2>
+          <h3>
             {intl.formatMessage(messages.comparingTools, {
               count: visibleToolsCount,
             })}
-          </h2>
+          </h3>
 
           <div className="compare-page-actions">
             <Button
