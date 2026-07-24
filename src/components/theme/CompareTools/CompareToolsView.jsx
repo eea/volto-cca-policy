@@ -12,13 +12,18 @@ import {
 } from 'semantic-ui-react';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
-import Api from '@plone/volto/helpers/Api/Api';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { GET_BREADCRUMBS } from '@plone/volto/constants/ActionTypes';
+import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
-import { MAX_COMPARE_TOOLS, compareToolsAtom, getPathname } from './utils';
+import {
+  MAX_COMPARE_TOOLS,
+  compareToolsAtom,
+  fetchResultsByUid,
+  getCompareToolUid,
+  getPathname,
+} from './utils';
 import {
   asArray,
   exportComparisonTable,
@@ -128,43 +133,36 @@ const getReturnURL = (search) => {
     : '';
 };
 
-const getToolTitle = (result, fallback) => result?.title || fallback;
+const getToolTitle = (result, fallback) =>
+  result?.title || result?._result?.title?.raw || fallback;
 
-const getToolHref = (result) => result?.['@id'] || '';
+const getToolHref = (result) => result?.href || result?._result?.id?.raw || '';
 
-const fetchContentByUid = async (uid, currentLang) => {
-  const api = new Api();
-  const searchResult = await api.get(`/${currentLang}/@search`, {
-    params: { UID: uid, b_size: 1 },
-  });
-  const itemUrl = searchResult?.items?.[0]?.['@id'];
+const getTools = async (uids, registry) => {
+  try {
+    const results = await fetchResultsByUid(uids, registry);
+    const resultsByUid = new Map(
+      results.map((result) => [getCompareToolUid(result), result]),
+    );
 
-  return itemUrl ? api.get(flattenToAppURL(itemUrl)) : null;
-};
+    return uids.map((uid) => {
+      const result = resultsByUid.get(uid);
 
-const getTools = async (uids, currentLang) => {
-  const tools = await Promise.all(
-    uids.map(async (uid) => {
-      try {
-        const result = await fetchContentByUid(uid, currentLang);
-        return {
-          id: uid,
-          title: getToolTitle(result, uid),
-          href: getToolHref(result),
-          result,
-          error: !result,
-        };
-      } catch (error) {
-        return {
-          id: uid,
-          title: uid,
-          error: true,
-        };
-      }
-    }),
-  );
-
-  return tools;
+      return {
+        id: uid,
+        title: getToolTitle(result, uid),
+        href: getToolHref(result),
+        result,
+        error: !result,
+      };
+    });
+  } catch {
+    return uids.map((uid) => ({
+      id: uid,
+      title: uid,
+      error: true,
+    }));
+  }
 };
 
 const CompareToolsView = () => {
@@ -178,10 +176,8 @@ const CompareToolsView = () => {
     () => getCompareUids(location.search),
     [location.search],
   );
-  const appConfig = React.useMemo(
-    () => ({ landingPageURL: '/en/navigator' }),
-    [],
-  );
+  const registry = config.settings.searchlib;
+  const appConfig = registry.searchui.navigatorCatalogueSearch;
   const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
   const compareToolsTitle = intl.formatMessage(messages.compareTools);
   const returnURL =
@@ -230,7 +226,7 @@ const CompareToolsView = () => {
 
     const loadTools = async () => {
       setIsLoading(true);
-      const results = await getTools(ids, currentLang);
+      const results = await getTools(ids, registry);
 
       if (!ignore) {
         setTools(results);
@@ -248,7 +244,7 @@ const CompareToolsView = () => {
     return () => {
       ignore = true;
     };
-  }, [ids, currentLang]);
+  }, [ids, registry]);
 
   const failedTools = tools.filter((tool) => tool.error);
   const visibleTools = tools.filter((tool) => !tool.error);

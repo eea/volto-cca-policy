@@ -1,9 +1,12 @@
 import { atom, useAtom } from 'jotai';
+import { applyConfigurationSchema, rebind } from '@eeacms/search';
+import runRequest from '@eeacms/search/lib/runRequest';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getComparePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 export const MAX_COMPARE_TOOLS = 4;
 export const compareToolsAtom = atom([]);
+const searchAppName = 'navigatorCatalogueSearch';
 
 const getRawValue = (value) =>
   value?.raw !== undefined ? value.raw : value || '';
@@ -78,4 +81,30 @@ export const getCompareLocation = (
     search: query ? `?${query}` : '',
     state: { returnURL },
   };
+};
+
+export const fetchResultsByUid = async (uids, registry) => {
+  const appConfig = applyConfigurationSchema(
+    rebind(registry.searchui[searchAppName]),
+  );
+  const response = await runRequest(
+    {
+      ...(appConfig.index_name ? { index: appConfig.index_name } : {}),
+      size: uids.length,
+      query: {
+        bool: {
+          minimum_should_match: 1,
+          should: [
+            { terms: { 'cca_uid.keyword': uids } },
+            { terms: { cca_uid: uids } },
+          ],
+        },
+      },
+    },
+    appConfig,
+  );
+  const hits = response.body?.hits?.hits || [];
+  const Model = registry.resolve[appConfig.resultItemModel.factory];
+
+  return hits.map((hit) => new Model(hit, appConfig));
 };
