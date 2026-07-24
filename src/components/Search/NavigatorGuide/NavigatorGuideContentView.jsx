@@ -70,6 +70,10 @@ const messages = defineMessages({
     id: '{count, plural, one {tool matches} other {tools match}}',
     defaultMessage: '{count, plural, one {tool matches} other {tools match}}',
   },
+  refinedBy: {
+    id: 'Refined by {criteria}',
+    defaultMessage: 'Refined by {criteria}',
+  },
   seeAllMatchingTools: {
     id: 'See all matching tools',
     defaultMessage: 'See all matching tools',
@@ -118,6 +122,11 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const hasSelections = steps.some(({ field }) =>
     isStepSelected(filters, field),
   );
+  const selectedStepLabels = steps
+    .filter(({ field }) => isStepSelected(filters, field))
+    .map(({ label }) =>
+      intl.formatMessage(label).toLocaleLowerCase(currentLang),
+    );
 
   React.useEffect(() => {
     if (storedActiveStep !== activeStep) {
@@ -298,6 +307,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               })}
             </p>
           </div>
+          {selectedStepLabels.length > 0 && (
+            <p className="navigator-guide-preview-refinements">
+              {intl.formatMessage(messages.refinedBy, {
+                criteria: selectedStepLabels.join(' · '),
+              })}
+            </p>
+          )}
           {hasSelections ? (
             <>
               <div className="navigator-guide-preview-results">
