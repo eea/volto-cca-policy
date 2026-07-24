@@ -316,7 +316,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             </div>
           </div>
           <div className="navigator-guide-result-count">
-            <span className="navigator-guide-result-count">
+            <span className="navigator-guide-result-count-value">
               {isLoading ? '…' : totalResults || 0}
             </span>
             <p>
