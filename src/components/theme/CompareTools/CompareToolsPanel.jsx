@@ -80,7 +80,7 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
         <div className="compare-panel-tools">
           {selectedTools.map((tool) => (
             <div key={tool.uid} className="compare-panel-tool">
-              <span className="compare-panel-tool-icon" aria-hidden="true">
+              <span className="navigator-tool-icon small" aria-hidden="true">
                 <Icon className="ri-file-line" />
               </span>
               <span className="compare-panel-tool-title">{tool.title}</span>

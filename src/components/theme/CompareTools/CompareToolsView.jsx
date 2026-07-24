@@ -343,7 +343,10 @@ const CompareToolsView = () => {
                   <Table.HeaderCell key={tool.id}>
                     <div className="compare-tool-header">
                       <div className="compare-tool-title-row">
-                        <div className="compare-tool-icon" aria-hidden="true">
+                        <div
+                          className="navigator-tool-icon medium"
+                          aria-hidden="true"
+                        >
                           <Icon className="ri-file-line" />
                         </div>
                         <div className="compare-tool-title" title={tool.title}>

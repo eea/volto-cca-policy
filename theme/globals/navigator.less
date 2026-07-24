@@ -8,6 +8,49 @@
 @navigatorIconBackgroundColor: #f5f9fb;
 @navigatorIconColor: #7890a2;
 
+.navigator-tool-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid @navigatorIconBorderColor;
+  border-radius: 4px;
+  background: @navigatorIconBackgroundColor;
+  color: @navigatorIconColor;
+
+  i.icon {
+    width: auto;
+    height: auto;
+    margin: 0 !important;
+    line-height: 1;
+  }
+
+  &.small {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+
+    i.icon {
+      font-size: 1rem;
+    }
+  }
+
+  &.medium {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 1.25rem;
+  }
+
+  &.large {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+    font-size: 1.65rem;
+  }
+}
+
 .searchapp-navigatorCatalogueSearch .catalogue-compare {
   display: inline-flex;
   align-items: center;
@@ -115,27 +158,6 @@
     font-weight: 700;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  .compare-panel-tool-icon {
-    display: inline-flex;
-    width: 28px;
-    height: 28px;
-    flex: 0 0 28px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid @navigatorIconBorderColor;
-    border-radius: 4px;
-    background: @navigatorIconBackgroundColor;
-    color: @navigatorIconColor;
-
-    i.icon {
-      width: auto;
-      height: auto;
-      margin: 0 !important;
-      font-size: 1rem;
-      line-height: 1;
-    }
   }
 
   .ui.button.compare-panel-tool-clear {
@@ -246,27 +268,6 @@
     width: auto;
     min-width: 0;
     flex: 1 1 auto;
-  }
-}
-
-.compare-tool-icon {
-  display: flex;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid @navigatorIconBorderColor;
-  border-radius: 4px;
-  background: @navigatorIconBackgroundColor;
-  color: @navigatorIconColor;
-  font-size: 1.25rem;
-
-  i.icon {
-    width: auto;
-    height: auto;
-    margin: 0 !important;
-    line-height: 1;
   }
 }
 
@@ -513,23 +514,6 @@
 
     &.selected {
       border: 2px solid #80b9d8;
-    }
-  }
-
-  .catalogue-item-icon {
-    display: flex;
-    width: 56px;
-    height: 56px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid @navigatorIconBorderColor;
-    border-radius: 4px;
-    background: @navigatorIconBackgroundColor;
-    color: @navigatorIconColor;
-    font-size: 1.65rem;
-
-    i.icon {
-      margin: 0;
     }
   }
 
@@ -825,11 +809,19 @@
   }
 
   .navigator-guide-preview-result {
-    gap: 0.5rem;
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     padding: 1rem 0;
     border-top: 1px dashed @navigatorDashedBorderColor;
+    gap: 0.75rem;
+  }
+
+  .navigator-guide-preview-result-content {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .navigator-guide-preview-result-title {

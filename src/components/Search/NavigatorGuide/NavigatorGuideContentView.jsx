@@ -342,34 +342,44 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       className="navigator-guide-preview-result"
                       key={result._original?._id || result.href}
                     >
-                      <small className="navigator-tool-provider">
-                        [Provider]
-                      </small>
-                      <a
-                        href={result.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="navigator-guide-preview-result-title"
+                      <div
+                        className="navigator-tool-icon medium"
+                        aria-hidden="true"
                       >
-                        <h5>{result.title}</h5>
-                      </a>
-                      {selectedPreviewTags.length > 0 && (
-                        <div className="navigator-guide-preview-tags">
-                          {visiblePreviewTags.map(({ label, type }, index) => (
-                            <span
-                              className={`navigator-tag ${type}`}
-                              key={`${type}-${label}-${index}`}
-                            >
-                              {label}
-                            </span>
-                          ))}
-                          {remainingPreviewTags > 0 && (
-                            <span className="navigator-guide-preview-tag-more">
-                              + {remainingPreviewTags}
-                            </span>
-                          )}
-                        </div>
-                      )}
+                        <Icon className="ri-stack-line" />
+                      </div>
+                      <div className="navigator-guide-preview-result-content">
+                        <small className="navigator-tool-provider">
+                          [Provider]
+                        </small>
+                        <a
+                          href={result.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="navigator-guide-preview-result-title"
+                        >
+                          <h5>{result.title}</h5>
+                        </a>
+                        {selectedPreviewTags.length > 0 && (
+                          <div className="navigator-guide-preview-tags">
+                            {visiblePreviewTags.map(
+                              ({ label, type }, index) => (
+                                <span
+                                  className={`navigator-tag ${type}`}
+                                  key={`${type}-${label}-${index}`}
+                                >
+                                  {label}
+                                </span>
+                              ),
+                            )}
+                            {remainingPreviewTags > 0 && (
+                              <span className="navigator-guide-preview-tag-more">
+                                + {remainingPreviewTags}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   ))}
               </div>
