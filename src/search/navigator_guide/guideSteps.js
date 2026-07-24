@@ -77,7 +77,7 @@ const guideSteps = [
     label: messages.adaptationStage,
     title: messages.adaptationStageQuestion,
     description: messages.adaptationStageDescription,
-    field: 'cca_adaptation_stages.keyword',
+    field: 'cca_adaptation_support_cycle_step.keyword',
     filterType: 'any',
   },
   {
@@ -85,7 +85,7 @@ const guideSteps = [
     label: messages.coverage,
     title: messages.coverageQuestion,
     description: messages.coverageDescription,
-    field: 'cca_spatial_coverage.keyword',
+    field: 'cca_geographical_scale.keyword',
     filterType: 'any',
   },
 ];

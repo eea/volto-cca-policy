@@ -350,7 +350,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       </div>
                       <div className="navigator-guide-preview-result-content">
                         <small className="navigator-tool-provider">
-                          [Provider]
+                          {result?._result?.tool_provider?.raw}
                         </small>
                         <a
                           href={result.href}

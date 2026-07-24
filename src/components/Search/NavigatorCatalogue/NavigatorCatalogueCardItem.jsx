@@ -151,7 +151,9 @@ const NavigatorCatalogueCardItem = (props) => {
 
       <div className="catalogue-item-main">
         <div className="catalogue-item-top">
-          <div className="navigator-tool-provider">{'[Provider]'}</div>
+          <div className="navigator-tool-provider">
+            {result?._result?.tool_provider?.raw}
+          </div>
           {formattedPublicationDate && (
             <span className="catalogue-date">{formattedPublicationDate}</span>
           )}
