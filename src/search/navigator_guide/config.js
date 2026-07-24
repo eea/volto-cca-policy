@@ -56,10 +56,16 @@ export default function installNavigatorGuideSearch(config) {
   });
 
   navigatorGuideSearch.permanentFilters.push({
-    terms: {
-      objectProvides: ['Tool'],
+    term: {
+      cluster_name: 'cca_navigator',
     },
   });
+
+  // navigatorGuideSearch.permanentFilters.push({
+  //   terms: {
+  //     objectProvides: ['Tool'],
+  //   },
+  // });
 
   if (typeof window !== 'undefined') {
     navigatorGuideSearch.host =

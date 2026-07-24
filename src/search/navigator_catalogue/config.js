@@ -59,6 +59,12 @@ export default function installNavigatorCatalogueSearch(config) {
   };
 
   navigatorCatalogueSearch.permanentFilters.push({
+    term: {
+      cluster_name: 'cca_navigator',
+    },
+  });
+
+  navigatorCatalogueSearch.permanentFilters.push({
     bool: {
       must_not: [
         {
@@ -70,11 +76,11 @@ export default function installNavigatorCatalogueSearch(config) {
     },
   });
 
-  navigatorCatalogueSearch.permanentFilters.push({
-    terms: {
-      objectProvides: ['Tool'],
-    },
-  });
+  // navigatorCatalogueSearch.permanentFilters.push({
+  //   terms: {
+  //     objectProvides: ['Extended Tool'],
+  //   },
+  // });
 
   navigatorCatalogueSearch.facets = facets;
   navigatorCatalogueSearch.views = views;
