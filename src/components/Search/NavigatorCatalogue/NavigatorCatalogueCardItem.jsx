@@ -99,7 +99,10 @@ const CycleElements = ({ intl, values }) => {
         {intl.formatMessage(messages.cycle)}
       </span>
       {visible.map((value, index) => (
-        <span key={`cycle-element-${index}`} className="cycle-element">
+        <span
+          key={`cycle-element-${index}`}
+          className="catalogue-tag cycle-element"
+        >
           {value}
         </span>
       ))}

@@ -9,8 +9,6 @@ import { useSearchContext } from '@eeacms/search/lib/hocs';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
 
-import './styles.less';
-
 const messages = defineMessages({
   noSteps: {
     id: 'No Navigator Guide steps are configured.',
@@ -91,6 +89,13 @@ const isStepSelected = (filters, field) =>
     (filter) => filter.field === field && filter.values?.length,
   );
 
+const previewTagTypes = {
+  sector: 'sector',
+  hazard: 'hazard',
+  adaptationStage: 'adaptation-stage',
+  coverage: 'coverage',
+};
+
 const NavigatorGuideContentView = ({ appConfig }) => {
   const intl = useIntl();
   const history = useHistory();
@@ -127,6 +132,19 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     .map(({ label }) =>
       intl.formatMessage(label).toLocaleLowerCase(currentLang),
     );
+  const selectedPreviewTags = steps.flatMap((item) => {
+    const values =
+      (filters || []).find((filter) => filter.field === item.field)?.values ||
+      [];
+
+    return values.map((value) => ({
+      label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
+      type: previewTagTypes[item.id],
+    }));
+  });
+  const visiblePreviewTags = selectedPreviewTags.slice(0, 3);
+  const remainingPreviewTags =
+    selectedPreviewTags.length - visiblePreviewTags.length;
 
   React.useEffect(() => {
     if (storedActiveStep !== activeStep) {
@@ -320,18 +338,36 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                 {(results || [])
                   .slice(0, appConfig.previewResultsLimit)
                   .map((result) => (
-                    <div key={result._original?._id || result.href}>
-                      <small className="navigator-guide-preview-provider">
-                        [Provider]
-                      </small>
+                    <div
+                      className="navigator-guide-preview-result"
+                      key={result._original?._id || result.href}
+                    >
+                      <small className="catalogue-provider">[Provider]</small>
                       <a
                         href={result.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="navigator-guide-preview-result"
+                        className="navigator-guide-preview-result-title"
                       >
                         <h5>{result.title}</h5>
                       </a>
+                      {selectedPreviewTags.length > 0 && (
+                        <div className="navigator-guide-preview-tags">
+                          {visiblePreviewTags.map(({ label, type }, index) => (
+                            <span
+                              className={`catalogue-tag ${type}`}
+                              key={`${type}-${label}-${index}`}
+                            >
+                              {label}
+                            </span>
+                          ))}
+                          {remainingPreviewTags > 0 && (
+                            <span className="navigator-guide-preview-tag-more">
+                              + {remainingPreviewTags}
+                            </span>
+                          )}
+                        </div>
+                      )}
                     </div>
                   ))}
               </div>
