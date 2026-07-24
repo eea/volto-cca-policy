@@ -99,6 +99,10 @@ const NavigatorCatalogueCardItem = (props) => {
   const intl = useIntl();
   const sectors = asArray(result.cca_adaptation_sectors);
   const hazards = asArray(result.cca_climate_impacts);
+  const licenseStatus = asArray(result.license_status)
+    .map((value) => value?.title)
+    .filter(Boolean)
+    .join(', ');
   const sectorLabel = intl.formatMessage(messages.sector);
   const hazardLabel = intl.formatMessage(messages.hazard);
   const compareTool = {
@@ -155,9 +159,11 @@ const NavigatorCatalogueCardItem = (props) => {
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
             <CycleElements intl={intl} values={cycleElementPlaceholders} />
-            <span className="catalogue-licence">
-              {intl.formatMessage(messages.license)} - [Licence]
-            </span>
+            {licenseStatus && (
+              <span className="catalogue-licence">
+                {intl.formatMessage(messages.license)}: {licenseStatus}
+              </span>
+            )}
           </div>
 
           <div className="catalogue-actions">
