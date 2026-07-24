@@ -43,6 +43,13 @@ const asArray = (value) => {
   return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
 };
 
+const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
+  day: '2-digit',
+  month: 'short',
+  year: '2-digit',
+  timeZone: 'UTC',
+});
+
 const TagGroup = ({ intl, typeLabel, values, type }) => {
   const visible = values.slice(0, 3);
   const hidden = values.slice(3);
@@ -103,6 +110,11 @@ const NavigatorCatalogueCardItem = (props) => {
     .map((value) => value?.title)
     .filter(Boolean)
     .join(', ');
+  const publicationDate =
+    result.publication_date?.raw || result.publication_date;
+  const formattedPublicationDate = publicationDate
+    ? publicationDateFormatter.format(new Date(publicationDate))
+    : '';
   const sectorLabel = intl.formatMessage(messages.sector);
   const hazardLabel = intl.formatMessage(messages.hazard);
   const compareTool = {
@@ -127,7 +139,9 @@ const NavigatorCatalogueCardItem = (props) => {
       <div className="catalogue-item-main">
         <div className="catalogue-item-top">
           <div className="catalogue-provider">{'[Provider]'}</div>
-          <span className="catalogue-id">[ID]</span>
+          {formattedPublicationDate && (
+            <span className="catalogue-date">{formattedPublicationDate}</span>
+          )}
         </div>
         <div className="catalogue-item-heading">
           <h3>
