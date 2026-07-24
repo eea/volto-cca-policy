@@ -26,6 +26,10 @@ const messages = defineMessages({
     id: 'License',
     defaultMessage: 'License',
   },
+  type: {
+    id: 'Type',
+    defaultMessage: 'Type',
+  },
   compare: {
     id: 'Compare',
     defaultMessage: 'Compare',
@@ -178,15 +182,19 @@ const NavigatorCatalogueCardItem = (props) => {
 
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
-            <CycleElements
-              intl={intl}
-              values={adaptationSupportCycleSteps}
-            />
+            <CycleElements intl={intl} values={adaptationSupportCycleSteps} />
+          </div>
+
+          <div className="catalogue-meta license-type">
             {licenseStatus && (
-              <span className="catalogue-licence">
+              <span className="catalogue-licence" title={licenseStatus}>
                 {intl.formatMessage(messages.license)}: {licenseStatus}
               </span>
             )}
+            {''}·{''}
+            <span className="catalogue-type">
+              {intl.formatMessage(messages.type)}: Tool
+            </span>
           </div>
 
           <div className="catalogue-actions">
