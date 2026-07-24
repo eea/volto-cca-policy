@@ -62,7 +62,7 @@ const TagGroup = ({ intl, typeLabel, values, type }) => {
   return (
     <div className="navigator-catalogue-tags">
       {visible.map((value) => (
-        <span key={`${type}-${value}`} className={`catalogue-tag ${type}`}>
+        <span key={`${type}-${value}`} className={`navigator-tag ${type}`}>
           {value}
         </span>
       ))}
@@ -80,7 +80,7 @@ const TagGroup = ({ intl, typeLabel, values, type }) => {
           }
           position="bottom left"
           trigger={
-            <span className={`catalogue-tag ${type} more`}>+ {remaining}</span>
+            <span className={`navigator-tag ${type} more`}>+ {remaining}</span>
           }
         />
       )}
@@ -101,7 +101,7 @@ const CycleElements = ({ intl, values }) => {
       {visible.map((value, index) => (
         <span
           key={`cycle-element-${index}`}
-          className="catalogue-tag cycle-element"
+          className="navigator-tag cycle-element"
         >
           {value}
         </span>
@@ -151,7 +151,7 @@ const NavigatorCatalogueCardItem = (props) => {
 
       <div className="catalogue-item-main">
         <div className="catalogue-item-top">
-          <div className="catalogue-provider">{'[Provider]'}</div>
+          <div className="navigator-tool-provider">{'[Provider]'}</div>
           {formattedPublicationDate && (
             <span className="catalogue-date">{formattedPublicationDate}</span>
           )}
@@ -190,11 +190,13 @@ const NavigatorCatalogueCardItem = (props) => {
 
           <div className="catalogue-meta license-type">
             {licenseStatus && (
-              <span className="catalogue-licence" title={licenseStatus}>
-                {intl.formatMessage(messages.license)}: {licenseStatus}
-              </span>
+              <>
+                <span className="catalogue-licence" title={licenseStatus}>
+                  {intl.formatMessage(messages.license)}: {licenseStatus}
+                </span>
+                <span aria-hidden="true">·</span>
+              </>
             )}
-            {''}·{''}
             <span className="catalogue-type">
               {intl.formatMessage(messages.type)}: Tool
             </span>

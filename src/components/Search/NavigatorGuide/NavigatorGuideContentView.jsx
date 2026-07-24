@@ -342,7 +342,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       className="navigator-guide-preview-result"
                       key={result._original?._id || result.href}
                     >
-                      <small className="catalogue-provider">[Provider]</small>
+                      <small className="navigator-tool-provider">
+                        [Provider]
+                      </small>
                       <a
                         href={result.href}
                         target="_blank"
@@ -355,7 +357,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                         <div className="navigator-guide-preview-tags">
                           {visiblePreviewTags.map(({ label, type }, index) => (
                             <span
-                              className={`catalogue-tag ${type}`}
+                              className={`navigator-tag ${type}`}
                               key={`${type}-${label}-${index}`}
                             >
                               {label}
