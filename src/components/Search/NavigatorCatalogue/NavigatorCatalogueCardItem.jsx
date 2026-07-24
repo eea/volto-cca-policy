@@ -178,10 +178,7 @@ const NavigatorCatalogueCardItem = (props) => {
 
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
-            <CycleElements
-              intl={intl}
-              values={adaptationSupportCycleSteps}
-            />
+            <CycleElements intl={intl} values={adaptationSupportCycleSteps} />
             {licenseStatus && (
               <span className="catalogue-licence">
                 {intl.formatMessage(messages.license)}: {licenseStatus}
