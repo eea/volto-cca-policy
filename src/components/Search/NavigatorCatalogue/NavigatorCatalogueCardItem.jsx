@@ -87,6 +87,8 @@ const TagGroup = ({ intl, typeLabel, values, type }) => {
 const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
 
+  if (!visible.length) return null;
+
   return (
     <div className="navigator-catalogue-cycle-elements">
       <span className="cycle-elements-label">
@@ -110,6 +112,11 @@ const NavigatorCatalogueCardItem = (props) => {
     .map((value) => value?.title)
     .filter(Boolean)
     .join(', ');
+  const adaptationSupportCycleSteps = asArray(
+    result.adaptation_support_cycle_step,
+  )
+    .map((value) => value?.title?.split(':')[0])
+    .filter(Boolean);
   const publicationDate =
     result.publication_date?.raw || result.publication_date;
   const formattedPublicationDate = publicationDate
@@ -122,7 +129,6 @@ const NavigatorCatalogueCardItem = (props) => {
     title: getCompareToolTitle(result),
     href: result.href,
   };
-  const cycleElementPlaceholders = ['[Cycle]'];
   const { isSelected, isLimitReached, setSelected } =
     useCompareTools(compareTool);
 
@@ -172,7 +178,10 @@ const NavigatorCatalogueCardItem = (props) => {
 
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
-            <CycleElements intl={intl} values={cycleElementPlaceholders} />
+            <CycleElements
+              intl={intl}
+              values={adaptationSupportCycleSteps}
+            />
             {licenseStatus && (
               <span className="catalogue-licence">
                 {intl.formatMessage(messages.license)}: {licenseStatus}
