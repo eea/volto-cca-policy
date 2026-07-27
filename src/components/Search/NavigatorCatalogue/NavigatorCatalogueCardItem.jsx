@@ -214,10 +214,7 @@ const NavigatorCatalogueCardItem = (props) => {
               />
               <span>{intl.formatMessage(messages.compare)}</span>
             </label>
-            <ExternalLink
-              href={result.href}
-              className="ui button primary icon inverted"
-            >
+            <ExternalLink href={result.href} className="ui button primary icon">
               {intl.formatMessage(messages.viewTool)}
               <Icon className="ri-arrow-right-line" />
             </ExternalLink>
