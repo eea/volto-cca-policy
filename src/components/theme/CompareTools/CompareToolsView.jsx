@@ -289,10 +289,7 @@ const CompareToolsView = () => {
           </h3>
 
           <div className="compare-page-actions">
-            <Button
-              className="primary inverted icon"
-              onClick={() => history.push(backURL)}
-            >
+            <Button onClick={() => history.push(backURL)}>
               <Icon className="ri-arrow-left-line" />
               {intl.formatMessage(messages.backToResults)}
             </Button>

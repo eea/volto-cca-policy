@@ -16,7 +16,7 @@
   box-sizing: border-box;
   border: 1px solid @navigatorIconBorderColor;
   border-radius: 4px;
-  background: @navigatorIconBackgroundColor;
+  background-color: #fff;
   color: @navigatorIconColor;
 
   i.icon {
@@ -125,27 +125,20 @@
     padding: 0.55rem 0.65rem;
     border: 1px solid @navigatorBorderColor;
     border-radius: 4px;
-    background: #f7fafc;
+    background-color: #f7fafc;
     gap: 0.75rem;
 
     &.placeholder {
       justify-content: flex-start;
+      background-color: #fff;
       border-style: dashed;
-      background: #fff;
-      color: #7b8d9a;
-      font-size: 13px;
 
-      i.icon {
-        display: inline-flex;
-        width: 22px;
-        height: 22px;
-        align-items: center;
-        justify-content: center;
-        border: 1px dashed @navigatorBorderColor;
-        border-radius: 4px;
-        margin: 0 !important;
-        color: @navigatorMetaTextColor;
-        font-size: 1rem;
+      .navigator-tool-icon {
+        border-style: dashed;
+      }
+
+      .compare-panel-tool-title {
+        font-weight: 400;
       }
     }
   }
@@ -371,7 +364,7 @@
 
   .usability-value,
   .functionality-value {
-    color: @secondaryColor;
+    color: @navigatorAccentColor;
     font-size: 20px;
     font-weight: 700;
   }

@@ -104,8 +104,12 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
               key={`compare-placeholder-${index}`}
               className="compare-panel-tool placeholder"
             >
-              <Icon className="ri-add-line" />
-              <span>{intl.formatMessage(messages.addTool)}</span>
+              <span className="navigator-tool-icon small" aria-hidden="true">
+                <Icon className="ri-add-line" />
+              </span>
+              <span className="compare-panel-tool-title">
+                {intl.formatMessage(messages.addTool)}
+              </span>
             </div>
           ))}
         </div>

@@ -280,7 +280,6 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
           <div className="navigator-guide-actions">
             <Button
-              className="icon"
               disabled={activeStep === 0}
               onClick={() => setActiveStep((value) => value - 1)}
             >
@@ -292,6 +291,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                 {intl.formatMessage(messages.skipToResults)}
               </Button>
               <Button
+                labelPosition="right"
                 className="primary icon"
                 onClick={() =>
                   isLastStep
@@ -388,7 +388,8 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                   ))}
               </div>
               <Button
-                className="primary icon inverted fluid"
+                labelPosition="right"
+                className="primary icon inverted"
                 onClick={showResults}
               >
                 {intl.formatMessage(messages.seeAllMatchingTools)}
