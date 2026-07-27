@@ -55,13 +55,14 @@ const ExtendedToolView = (props) => {
     strengths_and_possible_limitations,
   } = content;
 
-  let tool_available_language_list = [];
+  const availableLanguageValues = [];
   if (tool_available_english) {
-    tool_available_language_list.push('English');
+    availableLanguageValues.push('English');
   }
   if (tool_available_language) {
-    tool_available_language_list.push(tool_available_language);
+    availableLanguageValues.push(tool_available_language);
   }
+  const availableLanguageText = availableLanguageValues.join(', ');
 
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
   const compareTool = {
@@ -387,16 +388,20 @@ const ExtendedToolView = (props) => {
                       .join(', ')}
                   </>
                 )}
-              <h5>{intl.formatMessage(messages.tool_available_language)}</h5>
-              {tool_available_language_list.join(', ')}
+              {availableLanguageText && (
+                <>
+                  <h5>
+                    {intl.formatMessage(messages.tool_available_language)}
+                  </h5>
+                  {availableLanguageText}
+                </>
+              )}
               {type_of_outputs && type_of_outputs.length > 0 && (
                 <>
                   <h5>{intl.formatMessage(messages.type_of_outputs)}</h5>
                   {type_of_outputs.map((item) => item.title).join(', ')}
                 </>
               )}
-              <h5>{intl.formatMessage(messages.tool_available_language)}</h5>
-              {tool_available_english ? 'English' : tool_available_language}
               {temporality_of_data && temporality_of_data.length > 0 && (
                 <>
                   <h5>{intl.formatMessage(messages.temporality_of_data)}</h5>
