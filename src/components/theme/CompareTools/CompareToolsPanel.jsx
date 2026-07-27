@@ -23,6 +23,10 @@ const messages = defineMessages({
     id: 'Ready to compare',
     defaultMessage: 'Ready to compare',
   },
+  addAnotherTool: {
+    id: 'Add at least another tool',
+    defaultMessage: 'Add at least another tool',
+  },
   compareSelectedTools: {
     id: 'Compare selected tools',
     defaultMessage: 'Compare selected tools',
@@ -107,12 +111,18 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
         </div>
 
         <div className="compare-panel-actions">
-          {isReadyToCompare && (
-            <div className="compare-panel-status ready">
-              <Icon className="ri-check-line" />{' '}
-              {intl.formatMessage(messages.readyToCompare)}
-            </div>
-          )}
+          <div
+            className={`compare-panel-status ${
+              isReadyToCompare ? 'ready' : 'incomplete'
+            }`}
+          >
+            {isReadyToCompare && <Icon className="ri-check-line" />}
+            {intl.formatMessage(
+              isReadyToCompare
+                ? messages.readyToCompare
+                : messages.addAnotherTool,
+            )}
+          </div>
           <Button
             primary
             className="compare-panel-submit"
