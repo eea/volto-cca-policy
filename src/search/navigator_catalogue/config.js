@@ -76,12 +76,6 @@ export default function installNavigatorCatalogueSearch(config) {
     },
   });
 
-  // navigatorCatalogueSearch.permanentFilters.push({
-  //   terms: {
-  //     objectProvides: ['Extended Tool'],
-  //   },
-  // });
-
   navigatorCatalogueSearch.facets = facets;
   navigatorCatalogueSearch.views = views;
   navigatorCatalogueSearch.contentBodyComponent =

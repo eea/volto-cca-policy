@@ -92,8 +92,8 @@ describe('Compare Tools utilities', () => {
       getCompareLocation(
         tools,
         { landingPageURL: '/en/navigator' },
-        'ro',
         '/en/navigator?q=test',
+        'ro',
       ),
     ).toEqual({
       pathname: '/ro/navigator/compare',
@@ -101,7 +101,7 @@ describe('Compare Tools utilities', () => {
       state: { returnURL: '/en/navigator?q=test' },
     });
     expect(MAX_COMPARE_TOOLS).toBe(4);
-    expect(getCompareLocation([], {})).toEqual({
+    expect(getCompareLocation([], {}, undefined)).toEqual({
       pathname: '/en/navigator/compare',
       search: '',
       state: { returnURL: undefined },

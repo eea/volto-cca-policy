@@ -61,12 +61,6 @@ export default function installNavigatorGuideSearch(config) {
     },
   });
 
-  // navigatorGuideSearch.permanentFilters.push({
-  //   terms: {
-  //     objectProvides: ['Tool'],
-  //   },
-  // });
-
   if (typeof window !== 'undefined') {
     navigatorGuideSearch.host =
       process.env.RAZZLE_ES_PROXY_ADDR || getClientProxyAddress();

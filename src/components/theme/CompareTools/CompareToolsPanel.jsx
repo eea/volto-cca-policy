@@ -65,7 +65,7 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
     ].join('');
 
     history.push(
-      getCompareLocation(selectedTools, appConfig, currentLang, returnURL),
+      getCompareLocation(selectedTools, appConfig, returnURL, currentLang),
     );
   };
 

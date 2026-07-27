@@ -62,8 +62,8 @@ export const useCompareTools = (compareTool) => {
 export const getCompareLocation = (
   tools,
   appConfig,
-  currentLang = 'en',
   returnURL,
+  currentLang = 'en',
 ) => {
   const params = new URLSearchParams();
 

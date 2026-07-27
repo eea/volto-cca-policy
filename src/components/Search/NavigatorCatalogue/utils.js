@@ -13,7 +13,7 @@ export const arrayFieldToString = (value) => asArray(value).join(', ');
 
 export const formatFunctionalityScore = (value) => {
   const raw = value?.raw !== undefined ? value.raw : value;
-  const score = raw === null || raw === undefined ? NaN : Number(raw);
+  const score = raw === null || raw === undefined ? Number.NaN : Number(raw);
 
   return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';
 };
@@ -34,7 +34,7 @@ export const downloadCsv = (filename, rows) => {
   link.setAttribute('download', filename);
   document.body.appendChild(link);
   link.click();
-  document.body.removeChild(link);
+  link.remove();
 
   URL.revokeObjectURL(url);
 };

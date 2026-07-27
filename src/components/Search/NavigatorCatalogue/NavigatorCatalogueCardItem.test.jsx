@@ -10,8 +10,6 @@ import {
 } from '../../theme/CompareTools/utils';
 
 jest.mock('semantic-ui-react', () => {
-  const React = require('react');
-
   return {
     Checkbox: ({ checked, disabled, onChange }) => (
       <input
