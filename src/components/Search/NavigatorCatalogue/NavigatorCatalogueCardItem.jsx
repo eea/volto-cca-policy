@@ -146,7 +146,7 @@ const NavigatorCatalogueCardItem = (props) => {
   return (
     <div className={`navigator-catalogue-item${isSelected ? ' selected' : ''}`}>
       <div className="navigator-tool-icon large" aria-hidden="true">
-        <Icon name="ri-file-line" />
+        <Icon className="ri-file-line" />
       </div>
 
       <div className="catalogue-item-main">
