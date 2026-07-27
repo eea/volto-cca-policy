@@ -1,35 +1,35 @@
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
-  sector: {
-    id: 'Sector',
-    defaultMessage: 'Sector',
+  adaptationSectors: {
+    id: 'Adaptation Sectors',
+    defaultMessage: 'Adaptation Sectors',
   },
-  sectorQuestion: {
+  adaptationSectorsQuestion: {
     id: 'What sectors does your work focus on?',
     defaultMessage: 'What sectors does your work focus on?',
   },
-  sectorDescription: {
+  adaptationSectorsDescription: {
     id: 'Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections.',
     defaultMessage:
       'Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections.',
   },
-  hazard: {
-    id: 'Hazard',
-    defaultMessage: 'Hazard',
+  climateImpacts: {
+    id: 'Climate Impacts',
+    defaultMessage: 'Climate Impacts',
   },
-  hazardQuestion: {
+  climateImpactsQuestion: {
     id: 'Which climate hazard are you addressing?',
     defaultMessage: 'Which climate hazard are you addressing?',
   },
-  hazardDescription: {
+  climateImpactsDescription: {
     id: 'Choose one or more hazards relevant to your work. This narrows tools to those covering your risk.',
     defaultMessage:
       'Choose one or more hazards relevant to your work. This narrows tools to those covering your risk.',
   },
   adaptationStage: {
-    id: 'Adaptation stage',
-    defaultMessage: 'Adaptation stage',
+    id: 'Adaptation Stage',
+    defaultMessage: 'Adaptation Stage',
   },
   adaptationStageQuestion: {
     id: 'What stage of the adaptation stage are you working on?',
@@ -57,18 +57,18 @@ const messages = defineMessages({
 
 const guideSteps = [
   {
-    id: 'sector',
-    label: messages.sector,
-    title: messages.sectorQuestion,
-    description: messages.sectorDescription,
+    id: 'adaptationSectors',
+    label: messages.adaptationSectors,
+    title: messages.adaptationSectorsQuestion,
+    description: messages.adaptationSectorsDescription,
     field: 'cca_adaptation_sectors.keyword',
     filterType: 'all',
   },
   {
-    id: 'hazard',
-    label: messages.hazard,
-    title: messages.hazardQuestion,
-    description: messages.hazardDescription,
+    id: 'climateImpacts',
+    label: messages.climateImpacts,
+    title: messages.climateImpactsQuestion,
+    description: messages.climateImpactsDescription,
     field: 'cca_climate_impacts.keyword',
     filterType: 'any',
   },
@@ -80,14 +80,14 @@ const guideSteps = [
     field: 'cca_adaptation_support_cycle_step.keyword',
     filterType: 'any',
   },
-  {
-    id: 'coverage',
-    label: messages.coverage,
-    title: messages.coverageQuestion,
-    description: messages.coverageDescription,
-    field: 'cca_geographical_scale.keyword',
-    filterType: 'any',
-  },
+  // {
+  //   id: 'coverage',
+  //   label: messages.coverage,
+  //   title: messages.coverageQuestion,
+  //   description: messages.coverageDescription,
+  //   field: 'cca_geographical_scale.keyword',
+  //   filterType: 'any',
+  // },
 ];
 
 export default guideSteps;
