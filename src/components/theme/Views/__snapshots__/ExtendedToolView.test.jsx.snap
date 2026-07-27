@@ -59,6 +59,7 @@ exports[`ExtendedToolView should render the component 1`] = `
           <h5>
             Available language
           </h5>
+          
           <h5>
             Available language
           </h5>
