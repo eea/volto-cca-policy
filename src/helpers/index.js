@@ -1,6 +1,9 @@
 import { OBSERVATORY_PARTNERS } from '@eeacms/volto-cca-policy/constants';
 export {
   HTMLField,
+  TextField,
+  BooleanField,
+  VocabularyField,
   ExternalLink,
   PublishedModifiedInfo,
   LinksList,
