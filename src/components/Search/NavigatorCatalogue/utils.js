@@ -12,7 +12,8 @@ export const asArray = (value) => {
 export const arrayFieldToString = (value) => asArray(value).join(', ');
 
 export const formatFunctionalityScore = (value) => {
-  const score = value === null || value === undefined ? NaN : Number(value);
+  const raw = value?.raw !== undefined ? value.raw : value;
+  const score = raw === null || raw === undefined ? NaN : Number(raw);
 
   return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';
 };
@@ -69,19 +70,21 @@ export const exportComparisonTable = (tools, getToolField) => {
     [
       'Spatial scale',
       ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'spatial_resolution')),
+        arrayFieldToString(getToolField(tool, 'cca_geographical_scale')),
       ),
     ],
     [
       'Output type',
       ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'type_of_outputs')),
+        arrayFieldToString(getToolField(tool, 'cca_type_of_outputs')),
       ),
     ],
     [
       'Adaptation support cycle step',
       ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'adaptation_support_cycle_step')),
+        arrayFieldToString(
+          getToolField(tool, 'cca_adaptation_support_cycle_step'),
+        ),
       ),
     ],
     [

@@ -101,17 +101,8 @@ const messages = defineMessages({
   },
 });
 
-const getToolField = (tool, field) => {
-  const fieldAliases = {
-    cca_adaptation_sectors: 'sectors',
-  };
-
-  return (
-    tool.result?.[field] ??
-    tool.result?.[fieldAliases[field]] ??
-    tool.result?._result?.[field]
-  );
-};
+const getToolField = (tool, field) =>
+  tool.result?.[field] ?? tool.result?._result?.[field];
 
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
@@ -420,7 +411,7 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`spatial-scale-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'spatial_resolution')}
+                    {getToolFieldDisplay(tool, 'cca_geographical_scale')}
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -434,7 +425,7 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`output-type-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'type_of_outputs')}
+                    {getToolFieldDisplay(tool, 'cca_type_of_outputs')}
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -448,7 +439,10 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`adaptation-support-cycle-step-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'adaptation_support_cycle_step')}
+                    {getToolFieldDisplay(
+                      tool,
+                      'cca_adaptation_support_cycle_step',
+                    )}
                   </Table.Cell>
                 ))}
               </Table.Row>
