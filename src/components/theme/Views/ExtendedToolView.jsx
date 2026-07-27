@@ -5,20 +5,23 @@ import {
 } from '@eeacms/volto-cca-policy/components';
 import {
   HTMLField,
+  TextField,
+  BooleanField,
+  VocabularyField,
   ContentMetadata,
   ItemLogo,
   DocumentsList,
-  ExternalLink,
 } from '@eeacms/volto-cca-policy/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import { useCompareTools } from '../CompareTools/utils';
+import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
 
 const ExtendedToolView = (props) => {
-  const { content } = props;
+  const { content = {} } = props;
   const {
-    title,
-    acronym,
+    title = '',
+    acronym = '',
     long_description,
     tool_provider,
     public_private_mode,
@@ -63,6 +66,8 @@ const ExtendedToolView = (props) => {
     availableLanguageValues.push(tool_available_language);
   }
   const availableLanguageText = availableLanguageValues.join(', ');
+  const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
+  const hasCompareTool = Boolean(content.UID);
 
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
   const compareTool = {
@@ -85,8 +90,8 @@ const ExtendedToolView = (props) => {
       defaultMessage: 'Only online interactive support tool',
     },
     adaptation_cycle_step: {
-      id: 'Supports ≥1 adaptation cycle step ',
-      defaultMessage: 'Supports ≥1 adaptation cycle step ',
+      id: 'Supports ≥1 adaptation cycle step',
+      defaultMessage: 'Supports ≥1 adaptation cycle step',
     },
     updating_cycle_of_the_tool: {
       id: 'Updating cycle of the tool',
@@ -97,8 +102,8 @@ const ExtendedToolView = (props) => {
       defaultMessage: 'Language Accessibility',
     },
     free_access: {
-      id: 'Free [full or core functionality] access ',
-      defaultMessage: 'Free [full or core functionality] access ',
+      id: 'Free [full or core functionality] access',
+      defaultMessage: 'Free [full or core functionality] access',
     },
     place_of_implementation: {
       id: 'Place of implementation',
@@ -108,8 +113,8 @@ const ExtendedToolView = (props) => {
     data_sources: { id: 'Data sources', defaultMessage: 'Data sources' },
     license_status: { id: 'License status', defaultMessage: 'License status' },
     user_support_provisions: {
-      id: 'User support provisions ',
-      defaultMessage: 'User support provisions ',
+      id: 'User support provisions',
+      defaultMessage: 'User support provisions',
     },
     tool_validation_use: {
       id: 'Tool validation use',
@@ -172,7 +177,6 @@ const ExtendedToolView = (props) => {
       id: 'Underlying data maintenance',
       defaultMessage: 'Underlying data maintenance',
     },
-    hyperlink: { id: 'Tool hyperlink', defaultMessage: 'Tool hyperlink' },
     addToComparison: {
       id: 'Add to comparison',
       defaultMessage: 'Add to comparison',
@@ -195,7 +199,7 @@ const ExtendedToolView = (props) => {
   const {
     blocks: { blocksConfig },
   } = config;
-  const TitleBlockView = blocksConfig?.title?.view;
+  const TitleBlockView = blocksConfig?.title?.view || (() => null);
   const titleBlockData = { ...content, title: item_title, image: '' };
 
   return (
@@ -217,9 +221,9 @@ const ExtendedToolView = (props) => {
         properties={titleBlockData}
       />
       <Container>
-        {hyperlink && (
+        {(hasHyperlink || hasCompareTool) && (
           <div className="extended-tool-compare-action">
-            {hyperlink && (
+            {hasHyperlink && (
               <Button
                 as="a"
                 primary
@@ -231,7 +235,7 @@ const ExtendedToolView = (props) => {
                 <span>{intl.formatMessage(messages.openTool)}</span>
               </Button>
             )}
-            {content.UID && (
+            {hasCompareTool && (
               <Button
                 primary
                 inverted
@@ -258,198 +262,133 @@ const ExtendedToolView = (props) => {
               <ItemLogo {...props} />
 
               <HTMLField value={long_description} />
-              {tool_provider && tool_provider.length > 0 && (
-                <>
-                  <h4>{intl.formatMessage(messages.tool_provider)}</h4>
-                  <p>{tool_provider}</p>
-                </>
-              )}
-              {public_private_mode && public_private_mode.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.public_private_mode)}</h5>
-                  <p>{public_private_mode}</p>
-                </>
-              )}
+              <TextField
+                label={intl.formatMessage(messages.tool_provider)}
+                value={tool_provider}
+              />
+              <TextField
+                label={intl.formatMessage(messages.public_private_mode)}
+                value={public_private_mode}
+              />
               <HTMLField value={description} />
-              {coder_1 && coder_1.length > 0 && (
-                <>
-                  <h5>Coder1</h5>
-                  <p>{coder_1}</p>
-                </>
-              )}
-              {coder_2 && coder_2.length > 0 && (
-                <>
-                  <h5>Coder2</h5>
-                  <p>{coder_2}</p>
-                </>
-              )}
-              <h5>
-                {intl.formatMessage(messages.only_interactive_support_tool)}
-              </h5>
-              {only_interactive_support_tool
-                ? intl.formatMessage(messages.yes)
-                : intl.formatMessage(messages.no)}
-              <h5>{intl.formatMessage(messages.adaptation_cycle_step)}</h5>
-              {adaptation_cycle_step
-                ? intl.formatMessage(messages.yes)
-                : intl.formatMessage(messages.no)}
-              <h5>{intl.formatMessage(messages.updating_cycle_of_the_tool)}</h5>
-              {updating_cycle_of_the_tool
-                ? intl.formatMessage(messages.yes)
-                : intl.formatMessage(messages.no)}
-              <h5>{intl.formatMessage(messages.language_accessibility)}</h5>
-              {language_accessibility
-                ? intl.formatMessage(messages.yes)
-                : intl.formatMessage(messages.no)}
-              <h5>{intl.formatMessage(messages.free_access)}</h5>
-              {free_access
-                ? intl.formatMessage(messages.yes)
-                : intl.formatMessage(messages.no)}
-              {hyperlink && hyperlink.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.hyperlink)}</h5>
-                  <ExternalLink url={hyperlink} text={hyperlink} />
-                </>
-              )}
-              {intended_user_groups && intended_user_groups.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.intended_user_groups)}</h5>
-                  {intended_user_groups.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {place_of_implementation &&
-                place_of_implementation.length > 0 && (
-                  <>
-                    <h5>
-                      {intl.formatMessage(messages.place_of_implementation)}
-                    </h5>
-                    {place_of_implementation
-                      .map((item) => item.title)
-                      .join(', ')}
-                  </>
+              <TextField label="Coder1" value={coder_1} />
+              <TextField label="Coder2" value={coder_2} />
+              <BooleanField
+                label={intl.formatMessage(
+                  messages.only_interactive_support_tool,
                 )}
-              {type_of_data && type_of_data.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.type_of_data)}</h5>
-                  {type_of_data.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {data_sources && data_sources.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.data_sources)}</h5>
-                  {data_sources.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {license_status && license_status.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.license_status)}</h5>
-                  {license_status.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {user_support_provisions &&
-                user_support_provisions.length > 0 && (
-                  <>
-                    <h5>
-                      {intl.formatMessage(messages.user_support_provisions)}
-                    </h5>
-                    {user_support_provisions
-                      .map((item) => item.title)
-                      .join(', ')}
-                  </>
+                value={only_interactive_support_tool}
+                yesLabel={intl.formatMessage(messages.yes)}
+                noLabel={intl.formatMessage(messages.no)}
+              />
+              <BooleanField
+                label={intl.formatMessage(messages.adaptation_cycle_step)}
+                value={adaptation_cycle_step}
+                yesLabel={intl.formatMessage(messages.yes)}
+                noLabel={intl.formatMessage(messages.no)}
+              />
+              <BooleanField
+                label={intl.formatMessage(messages.updating_cycle_of_the_tool)}
+                value={updating_cycle_of_the_tool}
+                yesLabel={intl.formatMessage(messages.yes)}
+                noLabel={intl.formatMessage(messages.no)}
+              />
+              <BooleanField
+                label={intl.formatMessage(messages.language_accessibility)}
+                value={language_accessibility}
+                yesLabel={intl.formatMessage(messages.yes)}
+                noLabel={intl.formatMessage(messages.no)}
+              />
+              <BooleanField
+                label={intl.formatMessage(messages.free_access)}
+                value={free_access}
+                yesLabel={intl.formatMessage(messages.yes)}
+                noLabel={intl.formatMessage(messages.no)}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.intended_user_groups)}
+                values={intended_user_groups}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.place_of_implementation)}
+                values={place_of_implementation}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.type_of_data)}
+                values={type_of_data}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.data_sources)}
+                values={data_sources}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.license_status)}
+                values={license_status}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.user_support_provisions)}
+                values={user_support_provisions}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.tool_validation_use)}
+                values={tool_validation_use}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.number_of_users_tool)}
+                values={number_of_users_tool}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.tool_provider_mode)}
+                values={tool_provider_mode}
+              />
+              <VocabularyField
+                label={intl.formatMessage(
+                  messages.adaptation_support_cycle_step,
                 )}
-              {tool_validation_use && tool_validation_use.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.tool_validation_use)}</h5>
-                  {tool_validation_use.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {number_of_users_tool && number_of_users_tool.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.number_of_users_tool)}</h5>
-                  {number_of_users_tool.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {tool_provider_mode && tool_provider_mode.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.tool_provider_mode)}</h5>
-                  {tool_provider_mode.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {adaptation_support_cycle_step &&
-                adaptation_support_cycle_step.length > 0 && (
-                  <>
-                    <h5>
-                      {intl.formatMessage(
-                        messages.adaptation_support_cycle_step,
-                      )}
-                    </h5>
-                    {adaptation_support_cycle_step
-                      .map((item) => item.title)
-                      .join(', ')}
-                  </>
+                values={adaptation_support_cycle_step}
+              />
+              <TextField
+                label={intl.formatMessage(messages.tool_available_language)}
+                value={availableLanguageText}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.type_of_outputs)}
+                values={type_of_outputs}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.temporality_of_data)}
+                values={temporality_of_data}
+              />
+              <TextField
+                label={intl.formatMessage(messages.spatial_resolution)}
+                value={spatial_resolution}
+              />
+              <TextField
+                label={intl.formatMessage(messages.functionality)}
+                value={
+                  functionality === null || functionality === undefined
+                    ? null
+                    : formatFunctionalityScore(functionality)
+                }
+              />
+              <TextField
+                label={intl.formatMessage(messages.underlying_data_maintenance)}
+                value={underlying_data_maintenance}
+              />
+              <VocabularyField
+                label={intl.formatMessage(messages.accessibility_and_usability)}
+                values={
+                  accessibility_and_usability
+                    ? [accessibility_and_usability]
+                    : []
+                }
+              />
+              <TextField
+                label={intl.formatMessage(
+                  messages.strengths_and_possible_limitations,
                 )}
-              {availableLanguageText && (
-                <>
-                  <h5>
-                    {intl.formatMessage(messages.tool_available_language)}
-                  </h5>
-                  {availableLanguageText}
-                </>
-              )}
-              {type_of_outputs && type_of_outputs.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.type_of_outputs)}</h5>
-                  {type_of_outputs.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {temporality_of_data && temporality_of_data.length > 0 && (
-                <>
-                  <h5>{intl.formatMessage(messages.temporality_of_data)}</h5>
-                  {temporality_of_data.map((item) => item.title).join(', ')}
-                </>
-              )}
-              {spatial_resolution && spatial_resolution.length > 0 && (
-                <p>
-                  <strong>
-                    {intl.formatMessage(messages.spatial_resolution)}
-                  </strong>
-                  {spatial_resolution}
-                </p>
-              )}
-              <h5>{intl.formatMessage(messages.functionality)}</h5>
-              <p>{functionality}</p>
-              {underlying_data_maintenance && (
-                <>
-                  <p>
-                    <strong>
-                      {intl.formatMessage(messages.underlying_data_maintenance)}
-                    </strong>
-                  </p>
-                  <p>{underlying_data_maintenance}</p>
-                </>
-              )}
-              {accessibility_and_usability && (
-                <>
-                  <p>
-                    <strong>
-                      {intl.formatMessage(messages.accessibility_and_usability)}
-                    </strong>
-                  </p>
-                  <p>{accessibility_and_usability.title}</p>
-                </>
-              )}
-              {strengths_and_possible_limitations && (
-                <>
-                  <p>
-                    <strong>
-                      {intl.formatMessage(
-                        messages.strengths_and_possible_limitations,
-                      )}
-                    </strong>
-                  </p>
-                  <p>{strengths_and_possible_limitations}</p>
-                </>
-              )}
+                value={strengths_and_possible_limitations}
+              />
             </Grid.Column>
             <Grid.Column
               mobile={12}
