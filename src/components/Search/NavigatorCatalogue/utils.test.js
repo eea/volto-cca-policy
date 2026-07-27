@@ -67,7 +67,7 @@ describe('Navigator Catalogue utilities', () => {
 
   it('downloads CSV data and cleans up the temporary link', () => {
     const appendSpy = jest.spyOn(document.body, 'appendChild');
-    const removeSpy = jest.spyOn(document.body, 'removeChild');
+    const removeSpy = jest.spyOn(HTMLAnchorElement.prototype, 'remove');
 
     downloadCsv('comparison.csv', [
       ['Title', 'Tool'],
@@ -77,7 +77,7 @@ describe('Navigator Catalogue utilities', () => {
     expect(createObjectURL).toHaveBeenCalledTimes(1);
     expect(appendSpy).toHaveBeenCalledWith(expect.any(HTMLAnchorElement));
     expect(clickSpy).toHaveBeenCalledTimes(1);
-    expect(removeSpy).toHaveBeenCalledWith(expect.any(HTMLAnchorElement));
+    expect(removeSpy).toHaveBeenCalledTimes(1);
     expect(revokeObjectURL).toHaveBeenCalledWith('blob:test');
   });
 
