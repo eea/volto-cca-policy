@@ -18,6 +18,34 @@ const facets = [
     label: 'Adaptation Support Cycle Step',
     alwaysVisible: false,
   }),
+  multiTermFacet({
+    field: 'cca_intended_user_groups.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: 'User Groups',
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_type_of_outputs.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: 'Type of Outputs',
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_type_of_data.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: 'Type of Data',
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_license_status.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: 'License status',
+    alwaysVisible: false,
+  }),
 ];
 
 export default facets;
