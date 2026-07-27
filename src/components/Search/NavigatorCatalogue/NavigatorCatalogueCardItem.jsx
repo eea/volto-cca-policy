@@ -115,10 +115,11 @@ const NavigatorCatalogueCardItem = (props) => {
   const intl = useIntl();
   const sectors = asArray(result.cca_adaptation_sectors);
   const hazards = asArray(result.cca_climate_impacts);
-  const licenseStatus = asArray(result.license_status)
-    .map((value) => value?.title)
+  const licenseStatus = asArray(result.cca_license_status)
+    .map((value) => value?.title || value)
     .filter(Boolean)
     .join(', ');
+  const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = asArray(
     result.adaptation_support_cycle_step,
   )
@@ -151,8 +152,8 @@ const NavigatorCatalogueCardItem = (props) => {
 
       <div className="catalogue-item-main">
         <div className="catalogue-item-top">
-          <div className="navigator-tool-provider">
-            {result?._result?.tool_provider?.raw}
+          <div className="navigator-tool-provider" title={toolProvider}>
+            {toolProvider}
           </div>
           {formattedPublicationDate && (
             <span className="catalogue-date">{formattedPublicationDate}</span>

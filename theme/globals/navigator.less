@@ -522,6 +522,17 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
+
+    .navigator-tool-provider {
+      overflow: hidden;
+      max-width: 40rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .catalogue-date {
+      flex: 0 0 auto;
+    }
   }
 
   .catalogue-item-heading {
@@ -570,7 +581,7 @@
   .catalogue-licence {
     display: inline-block;
     overflow: hidden;
-    max-width: 240px;
+    max-width: 300px;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -822,13 +833,30 @@
     flex: 1 1 auto;
     flex-direction: column;
     gap: 0.5rem;
+
+    .navigator-tool-provider {
+      display: block;
+      overflow: hidden;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   .navigator-guide-preview-result-title {
+    overflow: hidden;
     color: inherit;
 
     h5 {
+      display: -webkit-box;
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      -webkit-box-orient: vertical;
       font-size: 16px;
+      -webkit-line-clamp: 2;
+      line-height: 1.4;
+      text-overflow: ellipsis;
     }
   }
 

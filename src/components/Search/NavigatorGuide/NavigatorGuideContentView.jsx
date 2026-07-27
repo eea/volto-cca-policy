@@ -349,7 +349,10 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                         <Icon className="ri-stack-line" />
                       </div>
                       <div className="navigator-guide-preview-result-content">
-                        <small className="navigator-tool-provider">
+                        <small
+                          className="navigator-tool-provider"
+                          title={result?._result?.tool_provider?.raw}
+                        >
                           {result?._result?.tool_provider?.raw}
                         </small>
                         <a
@@ -357,6 +360,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="navigator-guide-preview-result-title"
+                          title={result.title}
                         >
                           <h5>{result.title}</h5>
                         </a>
