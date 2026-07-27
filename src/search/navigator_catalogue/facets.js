@@ -28,6 +28,10 @@ const messages = defineMessages({
     id: 'License status',
     defaultMessage: 'License status',
   },
+  natureBasedSolution: {
+    id: 'Nature-based solution',
+    defaultMessage: 'Nature-based solution',
+  },
 });
 
 const facets = [
@@ -68,6 +72,13 @@ const facets = [
     isFilterable: false,
     isMulti: true,
     label: messages.licenseStatus,
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_nature_based_solution.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.natureBasedSolution,
     alwaysVisible: false,
   }),
 ];
