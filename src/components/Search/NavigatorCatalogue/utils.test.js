@@ -82,16 +82,24 @@ describe('Navigator Catalogue utilities', () => {
   });
 
   it('localizes catalogue and comparison URLs', () => {
-    expect(getLocalizedLandingPageURL(undefined)).toBe('/en/navigator');
+    expect(getLocalizedLandingPageURL(undefined)).toBe(
+      '/en/navigator/tool-catalogue',
+    );
     expect(
       getLocalizedLandingPageURL({ landingPageURL: '/en/tools' }, 'fr'),
     ).toBe('/fr/tools');
     expect(getLocalizedLandingPageURL({ landingPageURL: '/tools' }, '')).toBe(
       '/tools',
     );
-    expect(getComparePageURL({ landingPageURL: '/en/tools/' }, 'de')).toBe(
-      '/de/tools/compare',
-    );
+    expect(
+      getComparePageURL({ comparePageURL: '/en/tools/compare' }, 'de'),
+    ).toBe('/de/tools/compare');
+    expect(
+      getComparePageURL(
+        { landingPageURL: '/en/navigator/tool-catalogue' },
+        'de',
+      ),
+    ).toBe('/de/navigator/compare');
     expect(getComparePageURL()).toBe('/en/navigator/compare');
   });
 

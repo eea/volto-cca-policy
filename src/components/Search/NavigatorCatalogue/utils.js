@@ -41,15 +41,17 @@ export const downloadCsv = (filename, rows) => {
 
 export const getLocalizedLandingPageURL = (appConfig, currentLang = 'en') => {
   const lang = currentLang || 'en';
-  const landingPageURL = appConfig?.landingPageURL || '/en/navigator';
+  const landingPageURL =
+    appConfig?.landingPageURL || '/en/navigator/tool-catalogue';
 
   return landingPageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
 };
 
 export const getComparePageURL = (appConfig, currentLang = 'en') => {
-  const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
+  const lang = currentLang || 'en';
+  const comparePageURL = appConfig?.comparePageURL || '/en/navigator/compare';
 
-  return `${landingPageURL.replace(/\/$/, '')}/compare`;
+  return comparePageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
 };
 
 export const exportComparisonTable = (tools, getToolField) => {

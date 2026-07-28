@@ -67,7 +67,7 @@ describe('CompareToolsPanel', () => {
         { uid: 'one', title: 'Tool one' },
         { uid: 'two', title: 'Tool two' },
       ],
-      { landingPageURL: '/en/navigator' },
+      { landingPageURL: '/en/navigator/tool-catalogue' },
     );
 
     expect(screen.getByText('Ready to compare')).toHaveClass(

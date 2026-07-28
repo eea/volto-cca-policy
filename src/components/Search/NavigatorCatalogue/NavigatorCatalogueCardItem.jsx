@@ -160,11 +160,11 @@ const NavigatorCatalogueCardItem = (props) => {
           )}
         </div>
         <div className="catalogue-item-heading">
-          <h3>
+          <h4>
             <ExternalLink href={result.href} title={result.title}>
               {result.title || '[Tool name]'}
             </ExternalLink>
-          </h3>
+          </h4>
         </div>
 
         <p className="catalogue-description">

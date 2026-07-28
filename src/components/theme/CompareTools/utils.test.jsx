@@ -97,14 +97,14 @@ describe('Compare Tools utilities', () => {
     expect(
       getCompareLocation(
         tools,
-        { landingPageURL: '/en/navigator' },
-        '/en/navigator?q=test',
+        { landingPageURL: '/en/navigator/tool-catalogue' },
+        '/en/navigator/tool-catalogue?q=test',
         'ro',
       ),
     ).toEqual({
       pathname: '/ro/navigator/compare',
       search: '?uid=one&uid=two&uid=three',
-      state: { returnURL: '/en/navigator?q=test' },
+      state: { returnURL: '/en/navigator/tool-catalogue?q=test' },
     });
     expect(MAX_COMPARE_TOOLS).toBe(4);
     expect(getCompareLocation([], {}, undefined)).toEqual({

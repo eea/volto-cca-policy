@@ -16,7 +16,7 @@ const navigatorGuideConfig = {
   showLandingPage: false,
   layoutComponent: 'NavigatorGuideLayout',
   contentBodyComponent: 'NavigatorGuideContentView',
-  resultsPageURL: '/en/navigator',
+  resultsPageURL: '/en/navigator/tool-catalogue',
 };
 
 export default function installNavigatorGuideSearch(config) {

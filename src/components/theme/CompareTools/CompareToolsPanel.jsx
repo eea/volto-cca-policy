@@ -45,7 +45,9 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
   const intl = useIntl();
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale);
-  const appConfig = suppliedAppConfig || { landingPageURL: '/en/navigator' };
+  const appConfig = suppliedAppConfig || {
+    landingPageURL: '/en/navigator/tool-catalogue',
+  };
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const resolvableSelectedTools = selectedTools.filter((tool) => tool.uid);
   const isReadyToCompare = resolvableSelectedTools.length >= 2;

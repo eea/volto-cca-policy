@@ -8,7 +8,6 @@ import views from './views';
 
 const navigatorCatalogueConfig = {
   title: 'Navigator Catalogue',
-  landingPageURL: '/en/navigator',
   ...views,
 };
 
