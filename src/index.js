@@ -594,7 +594,7 @@ const applyConfig = (config) => {
 
   config.settings.themeColors = [
     ...config.settings.themeColors,
-    { value: 'green', title: 'EEA Green' },
+    { value: 'green', title: 'Green' },
   ];
 
   config.settings.matomoTrackerIdFn = (pathname) => {
