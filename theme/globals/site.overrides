@@ -5,6 +5,7 @@
 @import './observatory.less';
 @import './views.less';
 @import './search.less';
+@import './navigator.less';
 @import './blocks.less';
 @import './print.less';
 
@@ -110,6 +111,10 @@ p.has--clear--both:empty {
 // }
 
 // General styles
+
+small {
+  font-size: 80%;
+}
 
 .listing-body-dates:empty {
   margin-bottom: 0;

@@ -1,0 +1,15 @@
+.ui.medium.labels .label,
+.ui.medium.label {
+  border-color: @green;
+  background-color: @green;
+
+  &:hover {
+    border-color: @green;
+    background-color: @green;
+  }
+}
+
+.ui.label {
+  font-size: 14px;
+  line-height: inherit;
+}

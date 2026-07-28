@@ -38,8 +38,10 @@ module.exports = {
     '@package/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@root/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@plone/volto-quanta/(.*)$': '<rootDir>/src/addons/volto-quanta/src/$1',
-    '@eeacms/search/(.*)$': '<rootDir>/src/addons/volto-searchlib/searchlib/$1',
-    '@eeacms/search': '<rootDir>/src/addons/volto-searchlib/searchlib',
+    '^@eeacms/search/(.*)$':
+      '<rootDir>/node_modules/@eeacms/volto-searchlib/searchlib/$1',
+    '^@eeacms/search$':
+      '<rootDir>/node_modules/@eeacms/volto-searchlib/searchlib',
     '@eeacms/(.*?)/(.*)$': '<rootDir>/node_modules/@eeacms/$1/src/$2',
     '@plone/volto-slate$': voltoSlatePath,
     '@plone/volto-slate/(.*)$': `${voltoSlatePath}/$1`,
