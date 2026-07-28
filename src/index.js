@@ -455,6 +455,7 @@ const applyConfig = (config) => {
     { cssClass: 'large-text', label: 'Large text' },
     { cssClass: 'medium-text', label: 'Medium text' },
     { cssClass: 'small-text', label: 'Small text' },
+    { cssClass: 'green-text', label: 'Green text' },
   ];
 
   // TODO: fix in all languages
