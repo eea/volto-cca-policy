@@ -20,8 +20,6 @@ import {
   mapLegendItems,
 } from './utils';
 
-import './styles.less';
-
 const messages = defineMessages({
   toolAvailability: {
     id: '{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}',
@@ -247,9 +245,9 @@ const NavigatorCatalogueMapViewInner = (props) => {
         className="navigator-catalogue-map-legend"
         aria-label={intl.formatMessage(messages.toolsPerCountry)}
       >
-        <div className="legend-title">
+        <h4 className="legend-title">
           {intl.formatMessage(messages.toolsPerCountry)}
-        </div>
+        </h4>
         {mapLegendItems.map((item) => (
           <div key={item.label} className="legend-item">
             <span
