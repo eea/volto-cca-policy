@@ -16,6 +16,16 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Er is een achtergronddocument voor het evenement beschikbaar"
 
+#. Default: "Accessibility and usability"
+#: components/theme/Views/ExtendedToolView
+msgid "Accessibility and usability"
+msgstr ""
+
+#. Default: "Active filters are always shown in edit mode"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Active filters are always shown in edit mode"
+msgstr ""
+
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
@@ -35,6 +45,11 @@ msgstr "Aanpassingsbenaderingen:"
 msgid "Adaptation Details"
 msgstr "Aanpassingsdetails"
 
+#. Default: "Adaptation Option illustrations"
+#: components/theme/Views/AdaptationOptionView
+msgid "Adaptation Option illustrations"
+msgstr ""
+
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
@@ -43,8 +58,21 @@ msgstr "Aanpassingsopties geïmplementeerd in dit geval"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/navigator_guide/guideSteps
 msgid "Adaptation Sectors"
 msgstr "Aanpassingssectoren"
+
+#. Default: "Adaptation Stage"
+#: search/navigator_guide/guideSteps
+msgid "Adaptation Stage"
+msgstr ""
+
+#. Default: "Adaptation Support Cycle Step"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+#: search/navigator_guide/facets
+msgid "Adaptation Support Cycle Step"
+msgstr ""
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -67,6 +95,26 @@ msgstr "Aanpassingsmogelijkheden"
 msgid "Adaptation sectors"
 msgstr "Aanpassingssectoren"
 
+#. Default: "Adaptation support cycle step"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Adaptation support cycle step"
+msgstr ""
+
+#. Default: "Add a tool"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Add a tool"
+msgstr ""
+
+#. Default: "Add at least another tool"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Add at least another tool"
+msgstr ""
+
+#. Default: "Add to comparison"
+#: components/theme/Views/ExtendedToolView
+msgid "Add to comparison"
+msgstr ""
+
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
@@ -87,6 +135,26 @@ msgstr "Agenda en ondersteunende documenten"
 msgid "All time"
 msgstr "Altijd"
 
+#. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+#: components/theme/CompareTools/CompareToolsView
+msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+msgstr ""
+
+#. Default: "Available language"
+#: components/theme/Views/ExtendedToolView
+msgid "Available language"
+msgstr ""
+
+#. Default: "Back"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Back"
+msgstr ""
+
+#. Default: "Back to results"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Back to results"
+msgstr ""
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -105,6 +173,16 @@ msgstr "Blauwe opties"
 #. Default: "Browse the site, drop an image, or use a URL"
 #: components/theme/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
+#. Default: "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+msgstr ""
+
+#. Default: "Cancel"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Cancel"
 msgstr ""
 
 #. Default: "Capacity building empowering and lifestyle practices"
@@ -157,6 +235,11 @@ msgstr "Kies een bestand"
 msgid "Choose a region"
 msgstr "Kies een regio"
 
+#. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
+#: search/navigator_guide/guideSteps
+msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -167,9 +250,15 @@ msgstr "Kies thematische kaart:"
 msgid "City:"
 msgstr "Stad:"
 
+#. Default: "Clear all"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Clear all"
+msgstr ""
+
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/navigator_guide/guideSteps
 msgid "Climate Impacts"
 msgstr "Klimaateffecten"
 
@@ -199,6 +288,27 @@ msgstr "Casestudy's over klimaat-ADAPT"
 msgid "Climate-ADAPT page for this event"
 msgstr "Climate-ADAPT-pagina voor dit evenement"
 
+#. Default: "Compare"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Compare"
+msgstr ""
+
+#. Default: "Compare selected tools"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Compare selected tools"
+msgstr ""
+
+#. Default: "Compare tools"
+#: components/theme/CompareTools/CompareToolsPanel
+#: components/theme/CompareTools/CompareToolsView
+msgid "Compare tools"
+msgstr ""
+
+#. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
+msgstr ""
+
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
@@ -220,6 +330,11 @@ msgstr "Bijdrager:"
 msgid "Coordination cooperation and networks"
 msgstr "Coördinatie, samenwerking en netwerken"
 
+#. Default: "Cost-benefit ratio"
+#: components/theme/Views/ExtendedToolView
+msgid "Cost-benefit ratio"
+msgstr ""
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -237,6 +352,26 @@ msgstr "Landen"
 #: helpers/ContentMetadata
 msgid "Countries:"
 msgstr "Landen:"
+
+#. Default: "Coverage"
+#: search/navigator_guide/guideSteps
+msgid "Coverage"
+msgstr ""
+
+#. Default: "Criteria"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Criteria"
+msgstr ""
+
+#. Default: "Cycle"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Cycle"
+msgstr ""
+
+#. Default: "Data sources"
+#: components/theme/Views/ExtendedToolView
+msgid "Data sources"
+msgstr ""
 
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
@@ -359,20 +494,41 @@ msgstr "Volledig scherm afsluiten"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Ontdek meer over Climate-ADAPT"
 
+#. Default: "Export table"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Export table"
+msgstr ""
+
 #. Default: "Financing incentive instruments"
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Financiering van stimuleringsinstrumenten"
+
+#. Default: "Find the right tool"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Find the right tool"
+msgstr ""
 
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Voor meer zoekmogelijkheden"
 
+#. Default: "Free [full or core functionality] access"
+#: components/theme/Views/ExtendedToolView
+msgid "Free [full or core functionality] access"
+msgstr ""
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
 msgstr "Volledig scherm"
+
+#. Default: "Functionality"
+#: components/theme/CompareTools/CompareToolsView
+#: components/theme/Views/ExtendedToolView
+msgid "Functionality"
+msgstr ""
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -436,10 +592,20 @@ msgstr "Grijze opties"
 msgid "Guidance"
 msgstr "Leidraad"
 
+#. Default: "Guide me"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Guide me"
+msgstr ""
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS beschikbaar (klik op land voor meer informatie)"
+
+#. Default: "Hazard"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Hazard"
+msgstr ""
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -527,10 +693,20 @@ msgstr "Informatieportaal"
 msgid "Insurance and risk sharing instruments"
 msgstr "Verzekerings- en risicodelingsinstrumenten"
 
+#. Default: "Intended User Groups"
+#: components/theme/Views/ExtendedToolView
+msgid "Intended User Groups"
+msgstr ""
+
 #. Default: "Item from third parties"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Artikel van derden"
+
+#. Default: "Just resilience"
+#: components/theme/Views/ExtendedToolView
+msgid "Just resilience"
+msgstr ""
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -577,6 +753,11 @@ msgstr "Kennis en gedragsverandering"
 #: search/common
 msgid "Language"
 msgstr "Taal"
+
+#. Default: "Language Accessibility"
+#: components/theme/Views/ExtendedToolView
+msgid "Language Accessibility"
+msgstr ""
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
@@ -634,16 +815,42 @@ msgstr "Meer informatie"
 msgid "Legal aspects"
 msgstr "Juridische aspecten"
 
+#. Default: "License"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "License"
+msgstr ""
+
+#. Default: "License status"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+msgid "License status"
+msgstr ""
+
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Lifetime"
 msgstr "Levensduur"
 
+#. Default: "Link copied"
+#: components/theme/Views/ExtendedToolView
+msgid "Link copied"
+msgstr ""
+
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Links naar verdere informatie"
+
+#. Default: "List view"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "List view"
+msgstr ""
+
+#. Default: "Live preview · results based on your selection"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Live preview · results based on your selection"
+msgstr ""
 
 #. Default: "Looking for more information?"
 #: index
@@ -660,6 +867,11 @@ msgstr "Macro-transnationale regio:"
 msgid "Management and planning"
 msgstr "Management en planning"
 
+#. Default: "Map view"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Map view"
+msgstr ""
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -675,6 +887,11 @@ msgstr "Missie-instrument"
 msgid "Most useful for"
 msgstr "Meest nuttig voor"
 
+#. Default: "NO"
+#: components/theme/Views/ExtendedToolView
+msgid "NO"
+msgstr ""
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -685,25 +902,71 @@ msgstr "Nationale HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen"
 
+#. Default: "Nature-based solution"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+msgid "Nature-based solution"
+msgstr ""
+
+#. Default: "Navigate to this item"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Navigate to this item"
+msgstr ""
+
+#. Default: "Navigator"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Navigator"
+msgstr ""
+
+#. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Navigator Guide introduction"
+msgstr ""
+
+#. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Navigator Guide preview empty state"
+msgstr ""
+
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Nieuw"
+
+#. Default: "Newest"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Newest"
+msgstr ""
 
 #. Default: "News"
 #: messages
 msgid "News"
 msgstr "Nieuws"
 
+#. Default: "Next step"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Next step"
+msgstr ""
+
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
 msgstr "Geen HHAP"
 
+#. Default: "No Navigator Guide steps are configured."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "No Navigator Guide steps are configured."
+msgstr ""
+
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No information"
 msgstr "Geen informatie"
+
+#. Default: "No options are available for this step."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "No options are available for this step."
+msgstr ""
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -714,6 +977,11 @@ msgstr "Geen resultaten"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Niet-EU-talen"
+
+#. Default: "Number of users / uptake"
+#: components/theme/Views/ExtendedToolView
+msgid "Number of users / uptake"
+msgstr ""
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -729,6 +997,22 @@ msgstr "Observatoriumbijdragen:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Observatoriumpartner"
+
+#. Default: "Oldest"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Oldest"
+msgstr ""
+
+#. Default: "Only online interactive support tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Only online interactive support tool"
+msgstr ""
+
+#. Default: "Open tool"
+#: components/theme/CompareTools/CompareToolsView
+#: components/theme/Views/ExtendedToolView
+msgid "Open tool"
+msgstr ""
 
 #. Default: "Organisation"
 #: messages
@@ -750,6 +1034,11 @@ msgstr "Georganiseerd door EMA"
 msgid "Other regions"
 msgstr "Andere regio's"
 
+#. Default: "Output type"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Output type"
+msgstr ""
+
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
 msgid "Participation"
@@ -764,6 +1053,16 @@ msgstr "Partners"
 #: messages
 msgid "Physical and technological"
 msgstr "Fysiek en technologisch"
+
+#. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+#: search/navigator_guide/guideSteps
+msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+msgstr ""
+
+#. Default: "Place of implementation"
+#: components/theme/Views/ExtendedToolView
+msgid "Place of implementation"
+msgstr ""
 
 #. Default: "Policy Instruments"
 #: messages
@@ -785,10 +1084,20 @@ msgstr "Beleidscontext van de aanpassingsmaatregel"
 msgid "Practical information"
 msgstr "Praktische informatie"
 
+#. Default: "Previous versions of this indicator"
+#: components/theme/Views/ArchivedVersionListing
+msgid "Previous versions of this indicator"
+msgstr ""
+
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Projectinformatie"
+
+#. Default: "Public/private"
+#: components/theme/Views/ExtendedToolView
+msgid "Public/private"
+msgstr ""
 
 #. Default: "Publications and reports"
 #: search/vocabulary
@@ -826,6 +1135,11 @@ msgstr "Relevante RAST-stap(pen)."
 msgid "Read the full text of the adaptation option"
 msgstr "Lees de volledige tekst van de aanpassingsoptie."
 
+#. Default: "Ready to compare"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Ready to compare"
+msgstr ""
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
@@ -841,6 +1155,11 @@ msgstr "Referentie-informatie"
 #: components/theme/Views/CaseStudyView
 msgid "References"
 msgstr "Referenties"
+
+#. Default: "Refined by {criteria}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Refined by {criteria}"
+msgstr ""
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -867,6 +1186,11 @@ msgstr "Gerelateerde inhoud:"
 msgid "Related documents and presentations"
 msgstr "Gerelateerde documenten en presentaties"
 
+#. Default: "Relevance"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Relevance"
+msgstr ""
+
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
 msgid "Relevant EU policies"
@@ -876,6 +1200,11 @@ msgstr "Relevante EU-beleidsmaatregelen"
 #: components/theme/Views/AdaptationOptionView
 msgid "Relevant synergies with mitigation"
 msgstr "Relevante synergieën met risicobeperking"
+
+#. Default: "Remove {title}"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Remove {title}"
+msgstr ""
 
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
@@ -917,6 +1246,8 @@ msgstr "Secties"
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+#: components/theme/CompareTools/CompareToolsView
 msgid "Sector"
 msgstr "Sector"
 
@@ -924,6 +1255,11 @@ msgstr "Sector"
 #: helpers/ContentMetadata
 msgid "Sectors:"
 msgstr "Sectoren:"
+
+#. Default: "See all matching tools"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "See all matching tools"
+msgstr ""
 
 #. Default: "See less"
 #: helpers/Utils
@@ -934,6 +1270,11 @@ msgstr "Zie minder"
 #: helpers/Utils
 msgid "See more"
 msgstr "Zie meer"
+
+#. Default: "See results"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "See results"
+msgstr ""
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -946,16 +1287,36 @@ msgstr "Zie video buiten Climate-ADAPT"
 msgid "Select"
 msgstr "Selecteer"
 
+#. Default: "Select all that apply"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Select all that apply"
+msgstr ""
+
+#. Default: "Share"
+#: components/theme/Views/ExtendedToolView
+msgid "Share"
+msgstr ""
+
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
 msgid "Share your information"
 msgstr "Deel uw informatie"
 
+#. Default: "Skip to results"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Skip to results"
+msgstr ""
+
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
 msgstr "Oplossingen"
+
+#. Default: "Some selected tools could not be loaded and were skipped."
+#: components/theme/CompareTools/CompareToolsView
+msgid "Some selected tools could not be loaded and were skipped."
+msgstr ""
 
 #. Default: "Source"
 #: components/theme/Views/CaseStudyView
@@ -974,11 +1335,36 @@ msgstr "Bron van financiering"
 msgid "Source:"
 msgstr "Bron:"
 
+#. Default: "Spatial resolution"
+#: components/theme/Views/ExtendedToolView
+msgid "Spatial resolution"
+msgstr ""
+
+#. Default: "Spatial scale"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Spatial scale"
+msgstr ""
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Stakeholder participation"
 msgstr "Participatie van belanghebbenden"
+
+#. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
+#: search/navigator_guide/guideSteps
+msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
+msgstr ""
+
+#. Default: "Step {current} of {total}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Step {current} of {total}"
+msgstr ""
+
+#. Default: "Strengths and possible limitations of the tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Strengths and possible limitations of the tool"
+msgstr ""
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -996,10 +1382,20 @@ msgstr "Subnationaal of lokaal"
 msgid "Success and limiting factors"
 msgstr "Succes en beperkende factoren"
 
+#. Default: "Supports ≥1 adaptation cycle step"
+#: components/theme/Views/ExtendedToolView
+msgid "Supports ≥1 adaptation cycle step"
+msgstr ""
+
 #. Default: "Technological options"
 #: messages
 msgid "Technological options"
 msgstr "Technologische opties"
+
+#. Default: "Temporality of data"
+#: components/theme/Views/ExtendedToolView
+msgid "Temporality of data"
+msgstr ""
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1021,15 +1417,50 @@ msgstr "De datum verwijst naar de laatste publicatiedatum van het item"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "De datum verwijst naar het moment waarop het item door bijdragende deskundigen is voorbereid of bijgewerkt voor publicatie in Climate ADAPT."
 
+#. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
+#: components/theme/CompareTools/CompareToolsView
+msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
+msgstr ""
+
+#. Default: "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+#: search/navigator_guide/guideSteps
+msgid "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+msgstr ""
+
+#. Default: "These items will have broken links"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "These items will have broken links"
+msgstr ""
+
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Dit object is gearchiveerd omdat de inhoud ervan verouderd is. U kunt het nog steeds als verouderd object raadplegen."
 
+#. Default: "Title a-z"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Title a-z"
+msgstr ""
+
+#. Default: "Title z-a"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Title z-a"
+msgstr ""
+
 #. Default: "Tool"
 #: messages
 msgid "Tool"
 msgstr "Instrument"
+
+#. Default: "Tool provider"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool provider"
+msgstr ""
+
+#. Default: "Tool validation use"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool validation use"
+msgstr ""
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -1042,16 +1473,51 @@ msgstr "Onderwerpen:"
 msgid "Transnational regions"
 msgstr "Transnationale regio's"
 
+#. Default: "Type"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Type"
+msgstr ""
+
+#. Default: "Type of Data"
+#: search/navigator_catalogue/facets
+msgid "Type of Data"
+msgstr ""
+
+#. Default: "Type of Outputs"
+#: search/navigator_catalogue/facets
+msgid "Type of Outputs"
+msgstr ""
+
+#. Default: "Type of data"
+#: components/theme/Views/ExtendedToolView
+msgid "Type of data"
+msgstr ""
+
 #. Default: "Type of item"
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Soort artikel"
 
+#. Default: "Type of outputs"
+#: components/theme/Views/ExtendedToolView
+msgid "Type of outputs"
+msgstr ""
+
 #. Default: "Types"
 #: messages
 msgid "Types"
 msgstr "Typen"
+
+#. Default: "Underlying data maintenance"
+#: components/theme/Views/ExtendedToolView
+msgid "Underlying data maintenance"
+msgstr ""
+
+#. Default: "Updating cycle of the tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Updating cycle of the tool"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1063,10 +1529,30 @@ msgstr "Notities bijwerken"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Usability"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Usability"
+msgstr ""
+
+#. Default: "User Groups"
+#: search/navigator_catalogue/facets
+msgid "User Groups"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Gebruikersvereisten"
+
+#. Default: "User support provisions"
+#: components/theme/Views/ExtendedToolView
+msgid "User support provisions"
+msgstr ""
+
+#. Default: "Versions"
+#: components/theme/Views/VersionsGroup
+msgid "Versions"
+msgstr ""
 
 #. Default: "Videos and podcasts"
 #: search/vocabulary
@@ -1083,10 +1569,25 @@ msgstr "Video's en podcasts"
 msgid "View all contributions in the resource catalogue"
 msgstr "Bekijk alle bijdragen in de bronnencatalogus"
 
+#. Default: "View latest version"
+#: components/theme/Views/ArchivedVersionNotice
+msgid "View latest version"
+msgstr ""
+
+#. Default: "View tool"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "View tool"
+msgstr ""
+
 #. Default: "Visit external website"
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Bezoek externe website"
+
+#. Default: "Warning: Potential broken links"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Warning: Potential broken links"
+msgstr ""
 
 #. Default: "Web"
 #: helpers/Utils
@@ -1109,6 +1610,16 @@ msgstr "Websites"
 msgid "Websites:"
 msgstr "Websites:"
 
+#. Default: "What sectors does your work focus on?"
+#: search/navigator_guide/guideSteps
+msgid "What sectors does your work focus on?"
+msgstr ""
+
+#. Default: "What stage of the adaptation stage are you working on?"
+#: search/navigator_guide/guideSteps
+msgid "What stage of the adaptation stage are you working on?"
+msgstr ""
+
 #. Default: "When"
 #: helpers/Utils
 msgid "When"
@@ -1118,6 +1629,26 @@ msgstr "Wanneer"
 #: helpers/Utils
 msgid "Where"
 msgstr "Waar"
+
+#. Default: "Which climate hazard are you addressing?"
+#: search/navigator_guide/guideSteps
+msgid "Which climate hazard are you addressing?"
+msgstr ""
+
+#. Default: "Which spatial coverage do you need?"
+#: search/navigator_guide/guideSteps
+msgid "Which spatial coverage do you need?"
+msgstr ""
+
+#. Default: "YES"
+#: components/theme/Views/ExtendedToolView
+msgid "YES"
+msgstr ""
+
+#. Default: "You are viewing an archived version."
+#: components/theme/Views/ArchivedVersionNotice
+msgid "You are viewing an archived version."
+msgstr ""
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
 #: components/theme/TranslationDisclaimer/TranslationInfo
@@ -1154,6 +1685,21 @@ msgstr "Uitsluiting van aansprakelijkheid"
 msgid "imageImportFailed"
 msgstr ""
 
+#. Default: "latest"
+#: components/theme/Views/VersionsGroup
+msgid "latest"
+msgstr ""
+
+#. Default: "Change state anyway"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "link-integrity: Change state anyway"
+msgstr ""
+
+#. Default: "Checking references..."
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "link-integrity: loading references"
+msgstr ""
+
 #. Default: "Enter a URL to an image"
 #: components/theme/Widgets/ImageWidget
 msgid "linkAnImage"
@@ -1169,7 +1715,27 @@ msgstr "Officieel gerapporteerde overheidsinformatie is alleen beschikbaar in he
 msgid "pickAnImage"
 msgstr ""
 
+#. Default: "reference"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "reference"
+msgstr ""
+
+#. Default: "references"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "references"
+msgstr ""
+
+#. Default: "refers to"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "refers to"
+msgstr ""
+
 #. Default: "Upload an image from your computer"
 #: components/theme/Widgets/ImageWidget
 msgid "uploadAnImage"
+msgstr ""
+
+#. Default: "{count, plural, one {tool matches} other {tools match}}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "{count, plural, one {tool matches} other {tools match}}"
 msgstr ""

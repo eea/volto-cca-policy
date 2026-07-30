@@ -16,6 +16,16 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Un document de fond pentru eveniment este disponibil"
 
+#. Default: "Accessibility and usability"
+#: components/theme/Views/ExtendedToolView
+msgid "Accessibility and usability"
+msgstr ""
+
+#. Default: "Active filters are always shown in edit mode"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Active filters are always shown in edit mode"
+msgstr ""
+
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
@@ -35,6 +45,11 @@ msgstr "Abordări de adaptare:"
 msgid "Adaptation Details"
 msgstr "Detalii despre adaptare"
 
+#. Default: "Adaptation Option illustrations"
+#: components/theme/Views/AdaptationOptionView
+msgid "Adaptation Option illustrations"
+msgstr ""
+
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
@@ -43,8 +58,21 @@ msgstr "Opțiuni de adaptare implementate în acest caz"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/navigator_guide/guideSteps
 msgid "Adaptation Sectors"
 msgstr "Sectoarele de adaptare"
+
+#. Default: "Adaptation Stage"
+#: search/navigator_guide/guideSteps
+msgid "Adaptation Stage"
+msgstr ""
+
+#. Default: "Adaptation Support Cycle Step"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+#: search/navigator_guide/facets
+msgid "Adaptation Support Cycle Step"
+msgstr ""
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -67,6 +95,26 @@ msgstr "Opțiuni de adaptare"
 msgid "Adaptation sectors"
 msgstr "Sectoare de adaptare"
 
+#. Default: "Adaptation support cycle step"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Adaptation support cycle step"
+msgstr ""
+
+#. Default: "Add a tool"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Add a tool"
+msgstr ""
+
+#. Default: "Add at least another tool"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Add at least another tool"
+msgstr ""
+
+#. Default: "Add to comparison"
+#: components/theme/Views/ExtendedToolView
+msgid "Add to comparison"
+msgstr ""
+
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
@@ -87,6 +135,26 @@ msgstr "Ordinea de zi și documente justificative"
 msgid "All time"
 msgstr "Tot timpul"
 
+#. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+#: components/theme/CompareTools/CompareToolsView
+msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+msgstr ""
+
+#. Default: "Available language"
+#: components/theme/Views/ExtendedToolView
+msgid "Available language"
+msgstr ""
+
+#. Default: "Back"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Back"
+msgstr ""
+
+#. Default: "Back to results"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Back to results"
+msgstr ""
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -105,6 +173,16 @@ msgstr "Opțiuni albastre"
 #. Default: "Browse the site, drop an image, or use a URL"
 #: components/theme/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
+#. Default: "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+msgstr ""
+
+#. Default: "Cancel"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Cancel"
 msgstr ""
 
 #. Default: "Capacity building empowering and lifestyle practices"
@@ -157,6 +235,11 @@ msgstr "Alegeți un fișier"
 msgid "Choose a region"
 msgstr "Alegeți o regiune"
 
+#. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
+#: search/navigator_guide/guideSteps
+msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -167,9 +250,15 @@ msgstr "Alegeți harta tematică:"
 msgid "City:"
 msgstr "Oraş:"
 
+#. Default: "Clear all"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Clear all"
+msgstr ""
+
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/navigator_guide/guideSteps
 msgid "Climate Impacts"
 msgstr "Impactul asupra climei"
 
@@ -199,6 +288,27 @@ msgstr "Studii de caz Climate-ADAPT"
 msgid "Climate-ADAPT page for this event"
 msgstr "Pagina Climate-ADAPT pentru acest eveniment"
 
+#. Default: "Compare"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Compare"
+msgstr ""
+
+#. Default: "Compare selected tools"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Compare selected tools"
+msgstr ""
+
+#. Default: "Compare tools"
+#: components/theme/CompareTools/CompareToolsPanel
+#: components/theme/CompareTools/CompareToolsView
+msgid "Compare tools"
+msgstr ""
+
+#. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
+msgstr ""
+
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
@@ -220,6 +330,11 @@ msgstr "Contributor:"
 msgid "Coordination cooperation and networks"
 msgstr "Coordonare cooperare și rețele"
 
+#. Default: "Cost-benefit ratio"
+#: components/theme/Views/ExtendedToolView
+msgid "Cost-benefit ratio"
+msgstr ""
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -237,6 +352,26 @@ msgstr "Țări"
 #: helpers/ContentMetadata
 msgid "Countries:"
 msgstr "Țări:"
+
+#. Default: "Coverage"
+#: search/navigator_guide/guideSteps
+msgid "Coverage"
+msgstr ""
+
+#. Default: "Criteria"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Criteria"
+msgstr ""
+
+#. Default: "Cycle"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Cycle"
+msgstr ""
+
+#. Default: "Data sources"
+#: components/theme/Views/ExtendedToolView
+msgid "Data sources"
+msgstr ""
 
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
@@ -359,20 +494,41 @@ msgstr "Ieșiți din ecranul complet"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Explorați mai multe despre Climate-ADAPT"
 
+#. Default: "Export table"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Export table"
+msgstr ""
+
 #. Default: "Financing incentive instruments"
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Instrumente de stimulare a finanțării"
+
+#. Default: "Find the right tool"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Find the right tool"
+msgstr ""
 
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Pentru mai multe opțiuni de căutare"
 
+#. Default: "Free [full or core functionality] access"
+#: components/theme/Views/ExtendedToolView
+msgid "Free [full or core functionality] access"
+msgstr ""
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
 msgstr "Ecran complet"
+
+#. Default: "Functionality"
+#: components/theme/CompareTools/CompareToolsView
+#: components/theme/Views/ExtendedToolView
+msgid "Functionality"
+msgstr ""
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -436,10 +592,20 @@ msgstr "Opțiuni gri"
 msgid "Guidance"
 msgstr "Ghid"
 
+#. Default: "Guide me"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Guide me"
+msgstr ""
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS disponibil (faceți clic pe țară pentru mai multe informații)"
+
+#. Default: "Hazard"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Hazard"
+msgstr ""
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -527,10 +693,20 @@ msgstr "Portal de informații"
 msgid "Insurance and risk sharing instruments"
 msgstr "Instrumente de asigurare și partajare a riscurilor"
 
+#. Default: "Intended User Groups"
+#: components/theme/Views/ExtendedToolView
+msgid "Intended User Groups"
+msgstr ""
+
 #. Default: "Item from third parties"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Articol de la terți"
+
+#. Default: "Just resilience"
+#: components/theme/Views/ExtendedToolView
+msgid "Just resilience"
+msgstr ""
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -577,6 +753,11 @@ msgstr "Cunoașterea și schimbarea comportamentală"
 #: search/common
 msgid "Language"
 msgstr "Limbă"
+
+#. Default: "Language Accessibility"
+#: components/theme/Views/ExtendedToolView
+msgid "Language Accessibility"
+msgstr ""
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
@@ -634,16 +815,42 @@ msgstr "Află mai multe"
 msgid "Legal aspects"
 msgstr "Aspecte juridice"
 
+#. Default: "License"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "License"
+msgstr ""
+
+#. Default: "License status"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+msgid "License status"
+msgstr ""
+
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Lifetime"
 msgstr "Durata de viață"
 
+#. Default: "Link copied"
+#: components/theme/Views/ExtendedToolView
+msgid "Link copied"
+msgstr ""
+
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Link-uri către informații suplimentare"
+
+#. Default: "List view"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "List view"
+msgstr ""
+
+#. Default: "Live preview · results based on your selection"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Live preview · results based on your selection"
+msgstr ""
 
 #. Default: "Looking for more information?"
 #: index
@@ -660,6 +867,11 @@ msgstr "Regiunea macro-transnațională:"
 msgid "Management and planning"
 msgstr "Management și planificare"
 
+#. Default: "Map view"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Map view"
+msgstr ""
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -675,6 +887,11 @@ msgstr "Instrumentul misiunii"
 msgid "Most useful for"
 msgstr "Cel mai util pentru"
 
+#. Default: "NO"
+#: components/theme/Views/ExtendedToolView
+msgid "NO"
+msgstr ""
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -685,25 +902,71 @@ msgstr "HHAP național"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Soluții bazate pe natură și abordări bazate pe ecosistem"
 
+#. Default: "Nature-based solution"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+msgid "Nature-based solution"
+msgstr ""
+
+#. Default: "Navigate to this item"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Navigate to this item"
+msgstr ""
+
+#. Default: "Navigator"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Navigator"
+msgstr ""
+
+#. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Navigator Guide introduction"
+msgstr ""
+
+#. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Navigator Guide preview empty state"
+msgstr ""
+
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Nou"
+
+#. Default: "Newest"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Newest"
+msgstr ""
 
 #. Default: "News"
 #: messages
 msgid "News"
 msgstr "Știri"
 
+#. Default: "Next step"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Next step"
+msgstr ""
+
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
 msgstr "Nu HHAP"
 
+#. Default: "No Navigator Guide steps are configured."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "No Navigator Guide steps are configured."
+msgstr ""
+
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No information"
 msgstr "Nicio informație"
+
+#. Default: "No options are available for this step."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "No options are available for this step."
+msgstr ""
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -714,6 +977,11 @@ msgstr "Niciun rezultat"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Limbi non-UE"
+
+#. Default: "Number of users / uptake"
+#: components/theme/Views/ExtendedToolView
+msgid "Number of users / uptake"
+msgstr ""
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -729,6 +997,22 @@ msgstr "Contribuții observatorului:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partener observator"
+
+#. Default: "Oldest"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Oldest"
+msgstr ""
+
+#. Default: "Only online interactive support tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Only online interactive support tool"
+msgstr ""
+
+#. Default: "Open tool"
+#: components/theme/CompareTools/CompareToolsView
+#: components/theme/Views/ExtendedToolView
+msgid "Open tool"
+msgstr ""
 
 #. Default: "Organisation"
 #: messages
@@ -750,6 +1034,11 @@ msgstr "Organizat de AEE"
 msgid "Other regions"
 msgstr "Alte regiuni"
 
+#. Default: "Output type"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Output type"
+msgstr ""
+
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
 msgid "Participation"
@@ -764,6 +1053,16 @@ msgstr "Parteneri"
 #: messages
 msgid "Physical and technological"
 msgstr "Fizice și tehnologice"
+
+#. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+#: search/navigator_guide/guideSteps
+msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+msgstr ""
+
+#. Default: "Place of implementation"
+#: components/theme/Views/ExtendedToolView
+msgid "Place of implementation"
+msgstr ""
 
 #. Default: "Policy Instruments"
 #: messages
@@ -785,10 +1084,20 @@ msgstr "Contextul politic al măsurii de adaptare"
 msgid "Practical information"
 msgstr "Informații practice"
 
+#. Default: "Previous versions of this indicator"
+#: components/theme/Views/ArchivedVersionListing
+msgid "Previous versions of this indicator"
+msgstr ""
+
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informații despre proiect"
+
+#. Default: "Public/private"
+#: components/theme/Views/ExtendedToolView
+msgid "Public/private"
+msgstr ""
 
 #. Default: "Publications and reports"
 #: search/vocabulary
@@ -826,6 +1135,11 @@ msgstr "Pasul(e) relevant(i) RAST"
 msgid "Read the full text of the adaptation option"
 msgstr "Citiți textul integral al opțiunii de adaptare"
 
+#. Default: "Ready to compare"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Ready to compare"
+msgstr ""
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
@@ -841,6 +1155,11 @@ msgstr "Informații de referință"
 #: components/theme/Views/CaseStudyView
 msgid "References"
 msgstr "Referințe"
+
+#. Default: "Refined by {criteria}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Refined by {criteria}"
+msgstr ""
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -867,6 +1186,11 @@ msgstr "Conținut înrudit:"
 msgid "Related documents and presentations"
 msgstr "Documente și prezentări aferente"
 
+#. Default: "Relevance"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Relevance"
+msgstr ""
+
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
 msgid "Relevant EU policies"
@@ -876,6 +1200,11 @@ msgstr "Politicile UE relevante"
 #: components/theme/Views/AdaptationOptionView
 msgid "Relevant synergies with mitigation"
 msgstr "Sinergii relevante cu măsurile de atenuare"
+
+#. Default: "Remove {title}"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Remove {title}"
+msgstr ""
 
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
@@ -917,6 +1246,8 @@ msgstr "Secțiuni"
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+#: components/theme/CompareTools/CompareToolsView
 msgid "Sector"
 msgstr "Sector"
 
@@ -924,6 +1255,11 @@ msgstr "Sector"
 #: helpers/ContentMetadata
 msgid "Sectors:"
 msgstr "Sectoare:"
+
+#. Default: "See all matching tools"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "See all matching tools"
+msgstr ""
 
 #. Default: "See less"
 #: helpers/Utils
@@ -934,6 +1270,11 @@ msgstr "Vedeți mai puțin"
 #: helpers/Utils
 msgid "See more"
 msgstr "Vezi mai multe"
+
+#. Default: "See results"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "See results"
+msgstr ""
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -946,16 +1287,36 @@ msgstr "Vezi videoclipul în afara Climate-ADAPT"
 msgid "Select"
 msgstr "Selecta"
 
+#. Default: "Select all that apply"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Select all that apply"
+msgstr ""
+
+#. Default: "Share"
+#: components/theme/Views/ExtendedToolView
+msgid "Share"
+msgstr ""
+
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
 msgid "Share your information"
 msgstr "Partajați informațiile dvs"
 
+#. Default: "Skip to results"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Skip to results"
+msgstr ""
+
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
 msgstr "Soluții"
+
+#. Default: "Some selected tools could not be loaded and were skipped."
+#: components/theme/CompareTools/CompareToolsView
+msgid "Some selected tools could not be loaded and were skipped."
+msgstr ""
 
 #. Default: "Source"
 #: components/theme/Views/CaseStudyView
@@ -974,11 +1335,36 @@ msgstr "Sursa de finanțare"
 msgid "Source:"
 msgstr "Sursă:"
 
+#. Default: "Spatial resolution"
+#: components/theme/Views/ExtendedToolView
+msgid "Spatial resolution"
+msgstr ""
+
+#. Default: "Spatial scale"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Spatial scale"
+msgstr ""
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Stakeholder participation"
 msgstr "Participarea părților interesate"
+
+#. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
+#: search/navigator_guide/guideSteps
+msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
+msgstr ""
+
+#. Default: "Step {current} of {total}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Step {current} of {total}"
+msgstr ""
+
+#. Default: "Strengths and possible limitations of the tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Strengths and possible limitations of the tool"
+msgstr ""
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -996,10 +1382,20 @@ msgstr "Subnațional sau local"
 msgid "Success and limiting factors"
 msgstr "Succesul și factorii limitatori"
 
+#. Default: "Supports ≥1 adaptation cycle step"
+#: components/theme/Views/ExtendedToolView
+msgid "Supports ≥1 adaptation cycle step"
+msgstr ""
+
 #. Default: "Technological options"
 #: messages
 msgid "Technological options"
 msgstr "Opțiuni tehnologice"
+
+#. Default: "Temporality of data"
+#: components/theme/Views/ExtendedToolView
+msgid "Temporality of data"
+msgstr ""
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1021,15 +1417,50 @@ msgstr "Data se referă la ultima dată de publicare a articolului"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Data se referă la momentul în care articolul a fost pregătit sau actualizat de către experți contribuitori pentru a fi prezentat pentru publicare în Climate ADAPT"
 
+#. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
+#: components/theme/CompareTools/CompareToolsView
+msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
+msgstr ""
+
+#. Default: "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+#: search/navigator_guide/guideSteps
+msgid "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+msgstr ""
+
+#. Default: "These items will have broken links"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "These items will have broken links"
+msgstr ""
+
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Acest obiect a fost arhivat deoarece conținutul său este depășit. Îl puteți accesa în continuare ca moștenire."
 
+#. Default: "Title a-z"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Title a-z"
+msgstr ""
+
+#. Default: "Title z-a"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Title z-a"
+msgstr ""
+
 #. Default: "Tool"
 #: messages
 msgid "Tool"
 msgstr "Instrument"
+
+#. Default: "Tool provider"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool provider"
+msgstr ""
+
+#. Default: "Tool validation use"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool validation use"
+msgstr ""
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -1042,16 +1473,51 @@ msgstr "Subiecte:"
 msgid "Transnational regions"
 msgstr "Regiunile transnaționale"
 
+#. Default: "Type"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Type"
+msgstr ""
+
+#. Default: "Type of Data"
+#: search/navigator_catalogue/facets
+msgid "Type of Data"
+msgstr ""
+
+#. Default: "Type of Outputs"
+#: search/navigator_catalogue/facets
+msgid "Type of Outputs"
+msgstr ""
+
+#. Default: "Type of data"
+#: components/theme/Views/ExtendedToolView
+msgid "Type of data"
+msgstr ""
+
 #. Default: "Type of item"
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Tipul articolului"
 
+#. Default: "Type of outputs"
+#: components/theme/Views/ExtendedToolView
+msgid "Type of outputs"
+msgstr ""
+
 #. Default: "Types"
 #: messages
 msgid "Types"
 msgstr "Tipuri"
+
+#. Default: "Underlying data maintenance"
+#: components/theme/Views/ExtendedToolView
+msgid "Underlying data maintenance"
+msgstr ""
+
+#. Default: "Updating cycle of the tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Updating cycle of the tool"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1063,10 +1529,30 @@ msgstr "Note de actualizare"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Usability"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Usability"
+msgstr ""
+
+#. Default: "User Groups"
+#: search/navigator_catalogue/facets
+msgid "User Groups"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Cerințele utilizatorului"
+
+#. Default: "User support provisions"
+#: components/theme/Views/ExtendedToolView
+msgid "User support provisions"
+msgstr ""
+
+#. Default: "Versions"
+#: components/theme/Views/VersionsGroup
+msgid "Versions"
+msgstr ""
 
 #. Default: "Videos and podcasts"
 #: search/vocabulary
@@ -1083,10 +1569,25 @@ msgstr "Videoclipuri și podcasturi"
 msgid "View all contributions in the resource catalogue"
 msgstr "Vedeți toate contribuțiile în catalogul de resurse"
 
+#. Default: "View latest version"
+#: components/theme/Views/ArchivedVersionNotice
+msgid "View latest version"
+msgstr ""
+
+#. Default: "View tool"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "View tool"
+msgstr ""
+
 #. Default: "Visit external website"
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Vizitați site-ul extern"
+
+#. Default: "Warning: Potential broken links"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Warning: Potential broken links"
+msgstr ""
 
 #. Default: "Web"
 #: helpers/Utils
@@ -1109,6 +1610,16 @@ msgstr "Site-uri web"
 msgid "Websites:"
 msgstr "Site-uri web:"
 
+#. Default: "What sectors does your work focus on?"
+#: search/navigator_guide/guideSteps
+msgid "What sectors does your work focus on?"
+msgstr ""
+
+#. Default: "What stage of the adaptation stage are you working on?"
+#: search/navigator_guide/guideSteps
+msgid "What stage of the adaptation stage are you working on?"
+msgstr ""
+
 #. Default: "When"
 #: helpers/Utils
 msgid "When"
@@ -1118,6 +1629,26 @@ msgstr "Când"
 #: helpers/Utils
 msgid "Where"
 msgstr "Unde"
+
+#. Default: "Which climate hazard are you addressing?"
+#: search/navigator_guide/guideSteps
+msgid "Which climate hazard are you addressing?"
+msgstr ""
+
+#. Default: "Which spatial coverage do you need?"
+#: search/navigator_guide/guideSteps
+msgid "Which spatial coverage do you need?"
+msgstr ""
+
+#. Default: "YES"
+#: components/theme/Views/ExtendedToolView
+msgid "YES"
+msgstr ""
+
+#. Default: "You are viewing an archived version."
+#: components/theme/Views/ArchivedVersionNotice
+msgid "You are viewing an archived version."
+msgstr ""
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
 #: components/theme/TranslationDisclaimer/TranslationInfo
@@ -1154,6 +1685,21 @@ msgstr "Excluderea răspunderii"
 msgid "imageImportFailed"
 msgstr ""
 
+#. Default: "latest"
+#: components/theme/Views/VersionsGroup
+msgid "latest"
+msgstr ""
+
+#. Default: "Change state anyway"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "link-integrity: Change state anyway"
+msgstr ""
+
+#. Default: "Checking references..."
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "link-integrity: loading references"
+msgstr ""
+
 #. Default: "Enter a URL to an image"
 #: components/theme/Widgets/ImageWidget
 msgid "linkAnImage"
@@ -1169,7 +1715,27 @@ msgstr "Informațiile guvernamentale raportate oficial sunt disponibile doar în
 msgid "pickAnImage"
 msgstr ""
 
+#. Default: "reference"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "reference"
+msgstr ""
+
+#. Default: "references"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "references"
+msgstr ""
+
+#. Default: "refers to"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "refers to"
+msgstr ""
+
 #. Default: "Upload an image from your computer"
 #: components/theme/Widgets/ImageWidget
 msgid "uploadAnImage"
+msgstr ""
+
+#. Default: "{count, plural, one {tool matches} other {tools match}}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "{count, plural, one {tool matches} other {tools match}}"
 msgstr ""

@@ -1,159 +1,273 @@
 import React from 'react';
+import { compose } from 'redux';
+import { defineMessages, useIntl } from 'react-intl';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
+import { useMapContext } from '@eeacms/volto-openlayers-map/api';
+import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
+import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
+import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+import {
+  withResponsiveContainer,
+  withVisibilitySensor,
+} from '@eeacms/volto-cca-policy/hocs';
+
+import './styles.less';
+
+const messages = defineMessages({
+  toolsAvailable: {
+    id: 'tools available',
+    defaultMessage: 'tools available',
+  },
+  exploreTools: {
+    id: 'Explore tools',
+    defaultMessage: 'Explore tools',
+  },
+});
 
 /**
- * DEBUG: Task 1 verification — read country counts from facet data.
- * Once verified, replace with actual map rendering.
+ * Color scale for tool counts (EEA green tones)
  */
-const NavigatorCatalogueMapView = () => {
+const getColorForCount = (count) => {
+  if (count >= 10) return '#0a5c4e'; // darkest
+  if (count >= 7) return '#0d7a68';
+  if (count >= 4) return '#289588'; // base accent
+  if (count >= 1) return '#6fc4b8'; // light
+  return '#e8eded'; // none (very light gray-green)
+};
+
+/**
+ * Normalize country names between GeoJSON and facet data
+ */
+const normalizeCountryName = (name) => {
+  if (!name) return name;
+  const normalizer = {
+    Türkiye: 'Turkey',
+    'United Kingdom': 'United Kingdom',
+    'Czech Rep.': 'Czechia',
+    'Bosnia and Herz.': 'Bosnia and Herzegovina',
+  };
+  return normalizer[name] || name;
+};
+
+/**
+ * Click interaction component
+ */
+const CountryClickInteractions = ({ ol, countryCounts }) => {
+  const { map } = useMapContext();
+  const intl = useIntl();
+  const [tooltipData, setTooltipData] = React.useState(null);
+
+  React.useEffect(() => {
+    if (!map) return;
+
+    const handleClick = (evt) => {
+      if (evt.dragging) return;
+      const pixel = map.getEventPixel(evt.originalEvent);
+      const feature = map.forEachFeatureAtPixel(pixel, (f) => f);
+      if (!feature) {
+        setTooltipData(null);
+        return;
+      }
+
+      const name = feature.get('na');
+      const normalized = normalizeCountryName(name);
+      const count = countryCounts[normalized] || 0;
+
+      setTooltipData({
+        name: normalized,
+        count,
+        pixel: [evt.originalEvent.clientX, evt.originalEvent.clientY],
+        mapRect: map.getTargetElement().getBoundingClientRect(),
+      });
+    };
+
+    const handlePointerMove = (evt) => {
+      if (evt.dragging) return;
+      const pixel = map.getEventPixel(evt.originalEvent);
+      const feature = map.forEachFeatureAtPixel(pixel, (f) => f);
+      map.getTargetElement().style.cursor = feature ? 'pointer' : '';
+    };
+
+    map.on('singleclick', handleClick);
+    map.on('pointermove', handlePointerMove);
+
+    return () => {
+      map.un('singleclick', handleClick);
+      map.un('pointermove', handlePointerMove);
+    };
+  }, [map, countryCounts]);
+
+  // Render tooltip as a portal-like overlay
+  return (
+    <>
+      {tooltipData && (
+        <div
+          className="navigator-catalogue-map-tooltip"
+          style={{
+            left: `${tooltipData.pixel[0] - tooltipData.mapRect.left + 15}px`,
+            top: `${tooltipData.pixel[1] - tooltipData.mapRect.top - 10}px`,
+          }}
+        >
+          <div className="tooltip-header">
+            <strong>{tooltipData.name}</strong>
+          </div>
+          <div className="tooltip-body">
+            <span className="tooltip-count">
+              {tooltipData.count} {intl.formatMessage(messages.toolsAvailable)}
+            </span>
+          </div>
+          {tooltipData.count > 0 && (
+            <div className="tooltip-actions">
+              <button
+                className="ui button primary tiny"
+                onClick={() => {
+                  // TODO: apply country filter + switch to list view
+                }}
+              >
+                {intl.formatMessage(messages.exploreTools)} →
+              </button>
+            </div>
+          )}
+          <button
+            type="button"
+            className="tooltip-close"
+            onClick={() => setTooltipData(null)}
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
+
+/**
+ * Main map component (receives ol, geofeatures, projection from HOCs)
+ */
+const NavigatorCatalogueMapViewInner = (props) => {
+  const { geofeatures, projection, ol } = props;
   const searchContext = useSearchContext();
-  const { facets, results, totalResults, wasSearched } = searchContext || {};
 
-  // The geographic_countries facet field name
-  // Note: facets[field] returns an array [{ field, type, data: [...] }]
-  const countriesFacetArray = facets?.['cca_geographic_countries.keyword'];
-  const countriesFacet = Array.isArray(countriesFacetArray)
-    ? countriesFacetArray[0]
-    : countriesFacetArray;
-  const countryData = countriesFacet?.data || [];
+  // Build lookup: countryName -> count
+  const countryCounts = React.useMemo(() => {
+    const countriesFacetArray =
+      searchContext?.facets?.['cca_geographic_countries.keyword'];
+    const countriesFacet = Array.isArray(countriesFacetArray)
+      ? countriesFacetArray[0]
+      : countriesFacetArray;
+    const countryData = countriesFacet?.data || [];
 
-  // Sort by count descending for readability
-  const sortedCountries = [...countryData].sort((a, b) => b.count - a.count);
+    const counts = {};
+    countryData.forEach((entry) => {
+      counts[entry.value] = entry.count;
+    });
+    return counts;
+  }, [searchContext?.facets]);
+
+  const [tileWMSSources, setTileWMSSources] = React.useState(null);
+  const [euCountriesSource, setEuCountriesSource] = React.useState(null);
+
+  React.useEffect(() => {
+    // Tile layer
+    setTileWMSSources([
+      new ol.source.TileWMS({
+        url: 'https://gisco-services.ec.europa.eu/maps/service',
+        params: {
+          LAYERS: 'OSMBrightBackground',
+          TILED: true,
+        },
+        serverType: 'geoserver',
+        transition: 0,
+      }),
+    ]);
+
+    // Country vector layer with per-feature styles
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const filtered = features.filter((f) =>
+      euCountryNames.includes(f.get('na')),
+    );
+
+    // Apply style to each feature
+    filtered.forEach((feature) => {
+      const name = feature.get('na');
+      const normalized = normalizeCountryName(name);
+      const count = countryCounts[normalized] || 0;
+      const fillColor = getColorForCount(count);
+
+      feature.setStyle(
+        new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: '#ffffff',
+            width: 1,
+          }),
+          fill: new ol.style.Fill({
+            color: fillColor,
+          }),
+        }),
+      );
+    });
+
+    setEuCountriesSource(new ol.source.Vector({ features: filtered }));
+  }, [geofeatures, ol, countryCounts]);
+
+  if (!tileWMSSources || !euCountriesSource) {
+    return (
+      <div className="navigator-catalogue-map-loading">
+        <i className="icon loading" />
+        Loading map...
+      </div>
+    );
+  }
 
   return (
-    <div
-      className="navigator-catalogue-map-placeholder"
-      style={{
-        display: 'block',
-        padding: '2rem',
-        minHeight: '400px',
-        border: '1px dashed #cbd4dc',
-        margin: '1rem 0',
-      }}
-    >
-      <h3 style={{ marginTop: 0, color: '#0a3d61' }}>
-        Task 1: Facet Data Verification
-      </h3>
+    <div className="navigator-catalogue-map">
+      <Map
+        view={{
+          center: ol.proj.fromLonLat([10, 50], projection),
+          projection,
+          showFullExtent: true,
+          zoom: 4,
+        }}
+        pixelRatio={1}
+      >
+        <Controls attribution={false} />
+        <Layers>
+          <CountryClickInteractions ol={ol} countryCounts={countryCounts} />
+          <Layer.Vector source={euCountriesSource} zIndex={2} />
+          <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+        </Layers>
+      </Map>
 
-      <div style={{ marginBottom: '1rem' }}>
-        <strong>Search state:</strong>{' '}
-        {wasSearched ? 'Searched' : 'Not searched yet'}
+      {/* Legend */}
+      <div className="navigator-catalogue-map-legend">
+        <div className="legend-title">Tools per country</div>
+        {[
+          { label: '10+', color: '#0a5c4e' },
+          { label: '7–9', color: '#0d7a68' },
+          { label: '4–6', color: '#289588' },
+          { label: '1–3', color: '#6fc4b8' },
+          { label: 'None', color: '#e8eded' },
+        ].map((item) => (
+          <div key={item.label} className="legend-item">
+            <span
+              className="legend-color"
+              style={{ backgroundColor: item.color }}
+            />
+            <span>{item.label}</span>
+          </div>
+        ))}
       </div>
-
-      <div style={{ marginBottom: '1rem' }}>
-        <strong>totalResults:</strong> {totalResults ?? 'N/A'}
-      </div>
-
-      <div style={{ marginBottom: '1rem' }}>
-        <strong>results (current page):</strong> {results?.length ?? 0}
-      </div>
-
-      <div style={{ marginBottom: '1rem' }}>
-        <strong>facets keys:</strong>{' '}
-        {facets ? Object.keys(facets).join(', ') : 'N/A'}
-      </div>
-
-      <hr />
-
-      <h4>Raw facet object: cca_geographic_countries.keyword</h4>
-      <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
-        <pre
-          style={{
-            width: '100%',
-            maxWidth: '100%',
-            fontSize: '0.75rem',
-            overflowX: 'auto',
-            maxHeight: '400px',
-            background: '#f5f5f5',
-            padding: '1rem',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-            margin: 0,
-          }}
-        >
-          {JSON.stringify(countriesFacet, null, 2)}
-        </pre>
-      </div>
-
-      <h4>Full facets object keys + types</h4>
-      <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
-        <pre
-          style={{
-            width: '100%',
-            maxWidth: '100%',
-            fontSize: '0.75rem',
-            overflowX: 'auto',
-            maxHeight: '400px',
-            background: '#f5f5f5',
-            padding: '1rem',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-            margin: 0,
-          }}
-        >
-          {facets
-            ? Object.entries(facets)
-                .map(([key, val]) => {
-                  if (Array.isArray(val)) {
-                    return `"${key}": array[${val.length}] → ${JSON.stringify(val).slice(0, 200)}`;
-                  }
-                  return `"${key}": ${typeof val} → ${JSON.stringify(val).slice(0, 200)}`;
-                })
-                .join('\n')
-            : 'N/A'}
-        </pre>
-      </div>
-
-      <h4>
-        Countries (from facets[{'>'}]cca_geographic_countries.keyword{'<'}])
-      </h4>
-
-      {countryData.length === 0 ? (
-        <p style={{ color: '#999' }}>
-          No country facet data available yet. Check raw data above.
-        </p>
-      ) : (
-        <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-          <thead>
-            <tr style={{ borderBottom: '2px solid #0a3d61' }}>
-              <th style={{ textAlign: 'left', padding: '0.5rem' }}>Country</th>
-              <th style={{ textAlign: 'right', padding: '0.5rem' }}>Count</th>
-              <th style={{ textAlign: 'left', padding: '0.5rem' }}>Bucket</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedCountries.map((entry) => {
-              const count = entry.count || 0;
-              let bucket = 'none';
-              if (count >= 10) bucket = '10+';
-              else if (count >= 7) bucket = '7-9';
-              else if (count >= 4) bucket = '4-6';
-              else if (count >= 1) bucket = '1-3';
-
-              return (
-                <tr
-                  key={entry.value}
-                  style={{ borderBottom: '1px solid #e0e0e0' }}
-                >
-                  <td style={{ padding: '0.4rem 0.5rem' }}>{entry.value}</td>
-                  <td
-                    style={{
-                      textAlign: 'right',
-                      padding: '0.4rem 0.5rem',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    {count}
-                  </td>
-                  <td style={{ padding: '0.4rem 0.5rem' }}>{bucket}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      )}
     </div>
   );
 };
 
-export default NavigatorCatalogueMapView;
+export default compose(
+  clientOnly,
+  withGeoJsonData(),
+  withResponsiveContainer('navigatorCatalogueMap'),
+  withVisibilitySensor(),
+  withOpenLayers,
+)(NavigatorCatalogueMapViewInner);
