@@ -320,7 +320,8 @@
     table-layout: fixed;
 
     thead th,
-    tbody td {
+    tbody td,
+    tbody th {
       border-color: @navigatorBorderColor;
     }
 
@@ -335,15 +336,18 @@
       vertical-align: bottom;
     }
 
-    tbody td {
+    tbody td,
+    tbody th {
       min-height: 84px;
       padding: 1.35rem 1.25rem;
       line-height: 1.45;
       vertical-align: top;
       background: #fff;
+      font-weight: inherit;
+      text-align: left;
     }
 
-    tbody td:first-child {
+    tbody th:first-child {
       background: @navigatorCriteriaBackgroundColor;
     }
   }
@@ -686,6 +690,12 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   &.coverage {
     background: #ddd8f5;
     color: #51458a;
+  }
+
+  &.more {
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
   }
 }
 
