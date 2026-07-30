@@ -4,6 +4,7 @@
 project
 coverage
 logs
+artifacts/
 *.log
 npm-debug.log*
 .DS_Store
