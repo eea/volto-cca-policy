@@ -1,8 +1,17 @@
 .navigator-catalogue-map {
-  position: relative;
+  display: grid;
   width: 100%;
   height: 600px;
-  min-height: 500px;
+  min-height: 600px;
+  align-items: stretch;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 4fr) minmax(12rem, 1fr);
+
+  .navigator-catalogue-map-canvas {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+  }
 
   .ol-map {
     width: 100%;
@@ -86,15 +95,9 @@
 }
 
 .navigator-catalogue-map-legend {
-  position: absolute;
-  z-index: 100;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
+  align-self: start;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  font-size: 0.8rem;
+  font-size: 15px;
 
   .legend-title {
     margin-bottom: 0.5rem;
@@ -113,16 +116,20 @@
       width: 16px;
       height: 16px;
       flex-shrink: 0;
-      border: 1px solid #d7dee5;
-      border-radius: 2px;
     }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .navigator-catalogue-map {
-    height: 400px;
-    min-height: 350px;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+
+    .navigator-catalogue-map-canvas {
+      height: 400px;
+      min-height: 350px;
+    }
   }
 
   .navigator-catalogue-map-tooltip {
@@ -134,9 +141,7 @@
   }
 
   .navigator-catalogue-map-legend {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }

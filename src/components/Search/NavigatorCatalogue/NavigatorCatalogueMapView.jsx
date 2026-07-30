@@ -30,6 +30,10 @@ const messages = defineMessages({
     id: 'Explore tools',
     defaultMessage: 'Explore tools',
   },
+  toolsPerCountry: {
+    id: 'Tools per country',
+    defaultMessage: 'Tools per country',
+  },
 });
 
 /* istanbul ignore next */
@@ -124,6 +128,7 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
 /* istanbul ignore next */
 const NavigatorCatalogueMapViewInner = (props) => {
   const { geofeatures, projection, ol } = props;
+  const intl = useIntl();
   const searchContext = useSearchContext();
   const views = useViews();
 
@@ -203,30 +208,36 @@ const NavigatorCatalogueMapViewInner = (props) => {
 
   return (
     <div className="navigator-catalogue-map">
-      <Map
-        view={{
-          center: ol.proj.fromLonLat([10, 50], projection),
-          projection,
-          showFullExtent: true,
-          zoom: 4,
-        }}
-        pixelRatio={1}
-      >
-        <Controls attribution={false} />
-        <Layers>
-          <CountryClickInteractions
-            ol={ol}
-            countryCounts={countryCounts}
-            onExploreTools={handleExploreTools}
-          />
-          <Layer.Vector source={euCountriesSource} zIndex={2} />
-          <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
-        </Layers>
-      </Map>
+      <div className="navigator-catalogue-map-canvas">
+        <Map
+          view={{
+            center: ol.proj.fromLonLat([10, 50], projection),
+            projection,
+            showFullExtent: true,
+            zoom: 4,
+          }}
+          pixelRatio={1}
+        >
+          <Controls attribution={false} />
+          <Layers>
+            <CountryClickInteractions
+              ol={ol}
+              countryCounts={countryCounts}
+              onExploreTools={handleExploreTools}
+            />
+            <Layer.Vector source={euCountriesSource} zIndex={2} />
+            <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+          </Layers>
+        </Map>
+      </div>
 
-      {/* Legend */}
-      <div className="navigator-catalogue-map-legend">
-        <div className="legend-title">Tools per country</div>
+      <aside
+        className="navigator-catalogue-map-legend"
+        aria-label={intl.formatMessage(messages.toolsPerCountry)}
+      >
+        <div className="legend-title">
+          {intl.formatMessage(messages.toolsPerCountry)}
+        </div>
         {mapLegendItems.map((item) => (
           <div key={item.label} className="legend-item">
             <span
@@ -236,7 +247,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
             <span>{item.label}</span>
           </div>
         ))}
-      </div>
+      </aside>
     </div>
   );
 };
