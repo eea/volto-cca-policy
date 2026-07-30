@@ -54,7 +54,7 @@ const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'UTC',
 });
 
-const TagGroup = ({ intl, typeLabel, values, type }) => {
+const TagGroup = ({ typeLabel, values, type }) => {
   const visible = values.slice(0, 3);
   const hidden = values.slice(3);
   const remaining = values.length - visible.length;
@@ -80,7 +80,13 @@ const TagGroup = ({ intl, typeLabel, values, type }) => {
           }
           position="bottom left"
           trigger={
-            <span className={`navigator-tag ${type} more`}>+ {remaining}</span>
+            <button
+              type="button"
+              className={`navigator-tag ${type} more`}
+              aria-label={`${typeLabel}: ${hidden.join(', ')}`}
+            >
+              + {remaining}
+            </button>
           }
         />
       )}
@@ -172,18 +178,8 @@ const NavigatorCatalogueCardItem = (props) => {
         </p>
 
         <div className="catalogue-taxonomy">
-          <TagGroup
-            intl={intl}
-            typeLabel={sectorLabel}
-            values={sectors}
-            type="sector"
-          />
-          <TagGroup
-            intl={intl}
-            typeLabel={hazardLabel}
-            values={hazards}
-            type="hazard"
-          />
+          <TagGroup typeLabel={sectorLabel} values={sectors} type="sector" />
+          <TagGroup typeLabel={hazardLabel} values={hazards} type="hazard" />
         </div>
 
         <div className="catalogue-item-footer">

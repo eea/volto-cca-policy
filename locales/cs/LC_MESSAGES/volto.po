@@ -16,6 +16,16 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "K dispozici je podkladový dokument akce"
 
+#. Default: "Accessibility and usability"
+#: components/theme/Views/ExtendedToolView
+msgid "Accessibility and usability"
+msgstr ""
+
+#. Default: "Active filters are always shown in edit mode"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Active filters are always shown in edit mode"
+msgstr ""
+
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: search/cca/facets
@@ -35,6 +45,11 @@ msgstr "Adaptační přístupy:"
 msgid "Adaptation Details"
 msgstr "Detaily adaptace"
 
+#. Default: "Adaptation Option illustrations"
+#: components/theme/Views/AdaptationOptionView
+msgid "Adaptation Option illustrations"
+msgstr ""
+
 #. Default: "Adaptation Options Implemented In This Case"
 #: components/theme/Views/CaseStudyView
 msgid "Adaptation Options Implemented In This Case"
@@ -43,8 +58,21 @@ msgstr "Možnosti adaptace implementované v tomto případě"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
+#: search/navigator_guide/guideSteps
 msgid "Adaptation Sectors"
 msgstr "Adaptační sektory"
+
+#. Default: "Adaptation Stage"
+#: search/navigator_guide/guideSteps
+msgid "Adaptation Stage"
+msgstr ""
+
+#. Default: "Adaptation Support Cycle Step"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+#: search/navigator_guide/facets
+msgid "Adaptation Support Cycle Step"
+msgstr ""
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -67,6 +95,26 @@ msgstr "Možnosti adaptace"
 msgid "Adaptation sectors"
 msgstr "Adaptační sektory"
 
+#. Default: "Adaptation support cycle step"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Adaptation support cycle step"
+msgstr ""
+
+#. Default: "Add a tool"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Add a tool"
+msgstr ""
+
+#. Default: "Add at least another tool"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Add at least another tool"
+msgstr ""
+
+#. Default: "Add to comparison"
+#: components/theme/Views/ExtendedToolView
+msgid "Add to comparison"
+msgstr ""
+
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
 msgid "Additional Details"
@@ -87,6 +135,26 @@ msgstr "Agenda a podpůrné dokumenty"
 msgid "All time"
 msgstr "Celou dobu"
 
+#. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+#: components/theme/CompareTools/CompareToolsView
+msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+msgstr ""
+
+#. Default: "Available language"
+#: components/theme/Views/ExtendedToolView
+msgid "Available language"
+msgstr ""
+
+#. Default: "Back"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Back"
+msgstr ""
+
+#. Default: "Back to results"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Back to results"
+msgstr ""
+
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
@@ -105,6 +173,16 @@ msgstr "Modré možnosti"
 #. Default: "Browse the site, drop an image, or use a URL"
 #: components/theme/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
+msgstr ""
+
+#. Default: "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
+msgstr ""
+
+#. Default: "Cancel"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Cancel"
 msgstr ""
 
 #. Default: "Capacity building empowering and lifestyle practices"
@@ -157,6 +235,11 @@ msgstr "Vyberte soubor"
 msgid "Choose a region"
 msgstr "Vyberte oblast"
 
+#. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
+#: search/navigator_guide/guideSteps
+msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -167,9 +250,15 @@ msgstr "Vyberte si tematickou mapu:"
 msgid "City:"
 msgstr "Město:"
 
+#. Default: "Clear all"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Clear all"
+msgstr ""
+
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
+#: search/navigator_guide/guideSteps
 msgid "Climate Impacts"
 msgstr "Dopady klimatu"
 
@@ -199,6 +288,27 @@ msgstr "Případové studie Climate-ADAPT"
 msgid "Climate-ADAPT page for this event"
 msgstr "Stránka Climate-ADAPT pro tuto událost"
 
+#. Default: "Compare"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Compare"
+msgstr ""
+
+#. Default: "Compare selected tools"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Compare selected tools"
+msgstr ""
+
+#. Default: "Compare tools"
+#: components/theme/CompareTools/CompareToolsPanel
+#: components/theme/CompareTools/CompareToolsView
+msgid "Compare tools"
+msgstr ""
+
+#. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
+msgstr ""
+
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
@@ -220,6 +330,11 @@ msgstr "Přispěvatel:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinační spolupráce a sítě"
 
+#. Default: "Cost-benefit ratio"
+#: components/theme/Views/ExtendedToolView
+msgid "Cost-benefit ratio"
+msgstr ""
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -237,6 +352,26 @@ msgstr "země"
 #: helpers/ContentMetadata
 msgid "Countries:"
 msgstr "země:"
+
+#. Default: "Coverage"
+#: search/navigator_guide/guideSteps
+msgid "Coverage"
+msgstr ""
+
+#. Default: "Criteria"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Criteria"
+msgstr ""
+
+#. Default: "Cycle"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Cycle"
+msgstr ""
+
+#. Default: "Data sources"
+#: components/theme/Views/ExtendedToolView
+msgid "Data sources"
+msgstr ""
 
 #. Default: "Date of creation:"
 #: helpers/ContentMetadata
@@ -359,20 +494,46 @@ msgstr "Ukončete celou obrazovku"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Prozkoumejte více na Climate-ADAPT"
 
+#. Default: "Explore tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Explore tools"
+msgstr ""
+
+#. Default: "Export table"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Export table"
+msgstr ""
+
 #. Default: "Financing incentive instruments"
 #: messages
 msgid "Financing incentive instruments"
 msgstr "Financování motivačních nástrojů"
+
+#. Default: "Find the right tool"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Find the right tool"
+msgstr ""
 
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
 msgstr "Pro více možností vyhledávání"
 
+#. Default: "Free [full or core functionality] access"
+#: components/theme/Views/ExtendedToolView
+msgid "Free [full or core functionality] access"
+msgstr ""
+
 #. Default: "Fullscreen"
 #: components/theme/Views/C3SIndicatorView
 msgid "Fullscreen"
 msgstr "Celá obrazovka"
+
+#. Default: "Functionality"
+#: components/theme/CompareTools/CompareToolsView
+#: components/theme/Views/ExtendedToolView
+msgid "Functionality"
+msgstr ""
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -436,10 +597,20 @@ msgstr "Šedé možnosti"
 msgid "Guidance"
 msgstr "Pokyny"
 
+#. Default: "Guide me"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Guide me"
+msgstr ""
+
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "HHWS available (click on country for further information)"
 msgstr "HHWS k dispozici (klikněte na zemi pro další informace)"
+
+#. Default: "Hazard"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Hazard"
+msgstr ""
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -527,10 +698,20 @@ msgstr "Informační portál"
 msgid "Insurance and risk sharing instruments"
 msgstr "Nástroje pojištění a sdílení rizik"
 
+#. Default: "Intended User Groups"
+#: components/theme/Views/ExtendedToolView
+msgid "Intended User Groups"
+msgstr ""
+
 #. Default: "Item from third parties"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Položka od třetích stran"
+
+#. Default: "Just resilience"
+#: components/theme/Views/ExtendedToolView
+msgid "Just resilience"
+msgstr ""
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -577,6 +758,11 @@ msgstr "Změna znalostí a chování"
 #: search/common
 msgid "Language"
 msgstr "Jazyk"
+
+#. Default: "Language Accessibility"
+#: components/theme/Views/ExtendedToolView
+msgid "Language Accessibility"
+msgstr ""
 
 #. Default: "Language of the conference"
 #: components/theme/Views/CcaEventView
@@ -634,16 +820,42 @@ msgstr "Zjistěte více"
 msgid "Legal aspects"
 msgstr "Právní aspekty"
 
+#. Default: "License"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "License"
+msgstr ""
+
+#. Default: "License status"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+msgid "License status"
+msgstr ""
+
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Lifetime"
 msgstr "Celý život"
 
+#. Default: "Link copied"
+#: components/theme/Views/ExtendedToolView
+msgid "Link copied"
+msgstr ""
+
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
 msgid "Links to further information"
 msgstr "Odkazy na další informace"
+
+#. Default: "List view"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "List view"
+msgstr ""
+
+#. Default: "Live preview · results based on your selection"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Live preview · results based on your selection"
+msgstr ""
 
 #. Default: "Looking for more information?"
 #: index
@@ -660,6 +872,11 @@ msgstr "Makro-nadnárodní region:"
 msgid "Management and planning"
 msgstr "Řízení a plánování"
 
+#. Default: "Map view"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Map view"
+msgstr ""
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -675,6 +892,11 @@ msgstr "Nástroj mise"
 msgid "Most useful for"
 msgstr "Nejužitečnější pro"
 
+#. Default: "NO"
+#: components/theme/Views/ExtendedToolView
+msgid "NO"
+msgstr ""
+
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -685,25 +907,71 @@ msgstr "Národní HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Řešení založená na přírodě a přístupy založené na ekosystému"
 
+#. Default: "Nature-based solution"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+msgid "Nature-based solution"
+msgstr ""
+
+#. Default: "Navigate to this item"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Navigate to this item"
+msgstr ""
+
+#. Default: "Navigator"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Navigator"
+msgstr ""
+
+#. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Navigator Guide introduction"
+msgstr ""
+
+#. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Navigator Guide preview empty state"
+msgstr ""
+
 #. Default: "New"
 #: components/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Nový"
+
+#. Default: "Newest"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Newest"
+msgstr ""
 
 #. Default: "News"
 #: messages
 msgid "News"
 msgstr "Novinky"
 
+#. Default: "Next step"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Next step"
+msgstr ""
+
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No HHAP"
 msgstr "Žádný HHAP"
 
+#. Default: "No Navigator Guide steps are configured."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "No Navigator Guide steps are configured."
+msgstr ""
+
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "No information"
 msgstr "Žádné informace"
+
+#. Default: "No options are available for this step."
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "No options are available for this step."
+msgstr ""
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -714,6 +982,11 @@ msgstr "Žádné výsledky"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Jazyky mimo EU"
+
+#. Default: "Number of users / uptake"
+#: components/theme/Views/ExtendedToolView
+msgid "Number of users / uptake"
+msgstr ""
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -729,6 +1002,22 @@ msgstr "Příspěvky observatoře:"
 #: search/health_observatory/facets-health
 msgid "Observatory partner"
 msgstr "Partner observatoře"
+
+#. Default: "Oldest"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Oldest"
+msgstr ""
+
+#. Default: "Only online interactive support tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Only online interactive support tool"
+msgstr ""
+
+#. Default: "Open tool"
+#: components/theme/CompareTools/CompareToolsView
+#: components/theme/Views/ExtendedToolView
+msgid "Open tool"
+msgstr ""
 
 #. Default: "Organisation"
 #: messages
@@ -750,6 +1039,11 @@ msgstr "Pořádá EEA"
 msgid "Other regions"
 msgstr "Ostatní regiony"
 
+#. Default: "Output type"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Output type"
+msgstr ""
+
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
 msgid "Participation"
@@ -764,6 +1058,16 @@ msgstr "Partneři"
 #: messages
 msgid "Physical and technological"
 msgstr "Fyzikální a technologické"
+
+#. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+#: search/navigator_guide/guideSteps
+msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+msgstr ""
+
+#. Default: "Place of implementation"
+#: components/theme/Views/ExtendedToolView
+msgid "Place of implementation"
+msgstr ""
 
 #. Default: "Policy Instruments"
 #: messages
@@ -785,10 +1089,20 @@ msgstr "Politický kontext adaptačního opatření"
 msgid "Practical information"
 msgstr "Praktické informace"
 
+#. Default: "Previous versions of this indicator"
+#: components/theme/Views/ArchivedVersionListing
+msgid "Previous versions of this indicator"
+msgstr ""
+
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
 msgid "Project information"
 msgstr "Informace o projektu"
+
+#. Default: "Public/private"
+#: components/theme/Views/ExtendedToolView
+msgid "Public/private"
+msgstr ""
 
 #. Default: "Publications and reports"
 #: search/vocabulary
@@ -826,6 +1140,11 @@ msgstr "Relevantní krok(y) RAST"
 msgid "Read the full text of the adaptation option"
 msgstr "Přečtěte si celý text možnosti adaptace"
 
+#. Default: "Ready to compare"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Ready to compare"
+msgstr ""
+
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
 msgid "Reference Information"
@@ -841,6 +1160,11 @@ msgstr "Referenční informace"
 #: components/theme/Views/CaseStudyView
 msgid "References"
 msgstr "Reference"
+
+#. Default: "Refined by {criteria}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Refined by {criteria}"
+msgstr ""
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -867,6 +1191,11 @@ msgstr "Související obsah:"
 msgid "Related documents and presentations"
 msgstr "Související dokumenty a prezentace"
 
+#. Default: "Relevance"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Relevance"
+msgstr ""
+
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
 msgid "Relevant EU policies"
@@ -876,6 +1205,11 @@ msgstr "Relevantní politiky EU"
 #: components/theme/Views/AdaptationOptionView
 msgid "Relevant synergies with mitigation"
 msgstr "Relevantní synergie se zmírňováním dopadů"
+
+#. Default: "Remove {title}"
+#: components/theme/CompareTools/CompareToolsPanel
+msgid "Remove {title}"
+msgstr ""
 
 #. Default: "Replace existing file"
 #: components/theme/Widgets/PromotionalImageWidget
@@ -917,6 +1251,8 @@ msgstr "Sekce"
 
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+#: components/theme/CompareTools/CompareToolsView
 msgid "Sector"
 msgstr "Sektor"
 
@@ -924,6 +1260,11 @@ msgstr "Sektor"
 #: helpers/ContentMetadata
 msgid "Sectors:"
 msgstr "Sektory:"
+
+#. Default: "See all matching tools"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "See all matching tools"
+msgstr ""
 
 #. Default: "See less"
 #: helpers/Utils
@@ -934,6 +1275,11 @@ msgstr "Viz méně"
 #: helpers/Utils
 msgid "See more"
 msgstr "Zobrazit více"
+
+#. Default: "See results"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "See results"
+msgstr ""
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -946,16 +1292,36 @@ msgstr "Podívejte se na video mimo Climate-ADAPT"
 msgid "Select"
 msgstr "Vybrat"
 
+#. Default: "Select all that apply"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Select all that apply"
+msgstr ""
+
+#. Default: "Share"
+#: components/theme/Views/ExtendedToolView
+msgid "Share"
+msgstr ""
+
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 #: components/theme/ShareInfoButton/ShareInfoButton
 msgid "Share your information"
 msgstr "Podělte se o své informace"
 
+#. Default: "Skip to results"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Skip to results"
+msgstr ""
+
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
 msgstr "Řešení"
+
+#. Default: "Some selected tools could not be loaded and were skipped."
+#: components/theme/CompareTools/CompareToolsView
+msgid "Some selected tools could not be loaded and were skipped."
+msgstr ""
 
 #. Default: "Source"
 #: components/theme/Views/CaseStudyView
@@ -974,11 +1340,36 @@ msgstr "Zdroj financování"
 msgid "Source:"
 msgstr "Zdroj:"
 
+#. Default: "Spatial resolution"
+#: components/theme/Views/ExtendedToolView
+msgid "Spatial resolution"
+msgstr ""
+
+#. Default: "Spatial scale"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Spatial scale"
+msgstr ""
+
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
 msgid "Stakeholder participation"
 msgstr "Účast zúčastněných stran"
+
+#. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
+#: search/navigator_guide/guideSteps
+msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
+msgstr ""
+
+#. Default: "Step {current} of {total}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "Step {current} of {total}"
+msgstr ""
+
+#. Default: "Strengths and possible limitations of the tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Strengths and possible limitations of the tool"
+msgstr ""
 
 #. Default: "Sub Nationals:"
 #: helpers/ContentMetadata
@@ -996,10 +1387,20 @@ msgstr "Subnárodní nebo místní"
 msgid "Success and limiting factors"
 msgstr "Úspěch a limitující faktory"
 
+#. Default: "Supports ≥1 adaptation cycle step"
+#: components/theme/Views/ExtendedToolView
+msgid "Supports ≥1 adaptation cycle step"
+msgstr ""
+
 #. Default: "Technological options"
 #: messages
 msgid "Technological options"
 msgstr "Technologické možnosti"
+
+#. Default: "Temporality of data"
+#: components/theme/Views/ExtendedToolView
+msgid "Temporality of data"
+msgstr ""
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1021,15 +1422,50 @@ msgstr "Datum se vztahuje k poslednímu datu zveřejnění položky"
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Datum se vztahuje k okamžiku, kdy byla položka připravena nebo aktualizována přispívajícími odborníky, aby byla předložena ke zveřejnění v Climate ADAPT"
 
+#. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
+#: components/theme/CompareTools/CompareToolsView
+msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
+msgstr ""
+
+#. Default: "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+#: search/navigator_guide/guideSteps
+msgid "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+msgstr ""
+
+#. Default: "These items will have broken links"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "These items will have broken links"
+msgstr ""
+
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
 msgid "This object has been archived because its content is outdated. You can still access it as legacy."
 msgstr "Tento objekt byl archivován, protože jeho obsah je zastaralý. Stále k němu můžete přistupovat jako ke starší verzi."
 
+#. Default: "Title a-z"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Title a-z"
+msgstr ""
+
+#. Default: "Title z-a"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "Title z-a"
+msgstr ""
+
 #. Default: "Tool"
 #: messages
 msgid "Tool"
 msgstr "Nástroj"
+
+#. Default: "Tool provider"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool provider"
+msgstr ""
+
+#. Default: "Tool validation use"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool validation use"
+msgstr ""
 
 #. Default: "Topics:"
 #: components/Result/ClusterHorizontalCardItem
@@ -1042,16 +1478,51 @@ msgstr "témata:"
 msgid "Transnational regions"
 msgstr "Nadnárodní regiony"
 
+#. Default: "Type"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Type"
+msgstr ""
+
+#. Default: "Type of Data"
+#: search/navigator_catalogue/facets
+msgid "Type of Data"
+msgstr ""
+
+#. Default: "Type of Outputs"
+#: search/navigator_catalogue/facets
+msgid "Type of Outputs"
+msgstr ""
+
+#. Default: "Type of data"
+#: components/theme/Views/ExtendedToolView
+msgid "Type of data"
+msgstr ""
+
 #. Default: "Type of item"
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Typ položky"
 
+#. Default: "Type of outputs"
+#: components/theme/Views/ExtendedToolView
+msgid "Type of outputs"
+msgstr ""
+
 #. Default: "Types"
 #: messages
 msgid "Types"
 msgstr "Typy"
+
+#. Default: "Underlying data maintenance"
+#: components/theme/Views/ExtendedToolView
+msgid "Underlying data maintenance"
+msgstr ""
+
+#. Default: "Updating cycle of the tool"
+#: components/theme/Views/ExtendedToolView
+msgid "Updating cycle of the tool"
+msgstr ""
 
 #. Default: "Updating notes"
 #: components/theme/Views/CaseStudyView
@@ -1063,10 +1534,30 @@ msgstr "Aktualizace poznámek"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Usability"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Usability"
+msgstr ""
+
+#. Default: "User Groups"
+#: search/navigator_catalogue/facets
+msgid "User Groups"
+msgstr ""
+
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
 msgid "User requirements"
 msgstr "Požadavky uživatele"
+
+#. Default: "User support provisions"
+#: components/theme/Views/ExtendedToolView
+msgid "User support provisions"
+msgstr ""
+
+#. Default: "Versions"
+#: components/theme/Views/VersionsGroup
+msgid "Versions"
+msgstr ""
 
 #. Default: "Videos and podcasts"
 #: search/vocabulary
@@ -1083,10 +1574,25 @@ msgstr "Videa a podcasty"
 msgid "View all contributions in the resource catalogue"
 msgstr "Zobrazit všechny příspěvky v katalogu zdrojů"
 
+#. Default: "View latest version"
+#: components/theme/Views/ArchivedVersionNotice
+msgid "View latest version"
+msgstr ""
+
+#. Default: "View tool"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "View tool"
+msgstr ""
+
 #. Default: "Visit external website"
 #: helpers/Utils
 msgid "Visit external website"
 msgstr "Navštivte externí web"
+
+#. Default: "Warning: Potential broken links"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "Warning: Potential broken links"
+msgstr ""
 
 #. Default: "Web"
 #: helpers/Utils
@@ -1109,6 +1615,16 @@ msgstr "webové stránky"
 msgid "Websites:"
 msgstr "webové stránky:"
 
+#. Default: "What sectors does your work focus on?"
+#: search/navigator_guide/guideSteps
+msgid "What sectors does your work focus on?"
+msgstr ""
+
+#. Default: "What stage of the adaptation stage are you working on?"
+#: search/navigator_guide/guideSteps
+msgid "What stage of the adaptation stage are you working on?"
+msgstr ""
+
 #. Default: "When"
 #: helpers/Utils
 msgid "When"
@@ -1118,6 +1634,26 @@ msgstr "Když"
 #: helpers/Utils
 msgid "Where"
 msgstr "Kde"
+
+#. Default: "Which climate hazard are you addressing?"
+#: search/navigator_guide/guideSteps
+msgid "Which climate hazard are you addressing?"
+msgstr ""
+
+#. Default: "Which spatial coverage do you need?"
+#: search/navigator_guide/guideSteps
+msgid "Which spatial coverage do you need?"
+msgstr ""
+
+#. Default: "YES"
+#: components/theme/Views/ExtendedToolView
+msgid "YES"
+msgstr ""
+
+#. Default: "You are viewing an archived version."
+#: components/theme/Views/ArchivedVersionNotice
+msgid "You are viewing an archived version."
+msgstr ""
 
 #. Default: "Machine translation can give you a basic idea of the content in a language you understand. It is fully automated and involves no human intervention. The quality and accuracy of machine translation can vary significantly from one text to another and between different language pairs. The European Commission does not guarantee the accuracy and accepts no liability for possible errors. Some content (such as images, videos, files, etc.) may not be translated due to the technical limitations of the system."
 #: components/theme/TranslationDisclaimer/TranslationInfo
@@ -1154,6 +1690,21 @@ msgstr "Vyloučení odpovědnosti"
 msgid "imageImportFailed"
 msgstr ""
 
+#. Default: "latest"
+#: components/theme/Views/VersionsGroup
+msgid "latest"
+msgstr ""
+
+#. Default: "Change state anyway"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "link-integrity: Change state anyway"
+msgstr ""
+
+#. Default: "Checking references..."
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "link-integrity: loading references"
+msgstr ""
+
 #. Default: "Enter a URL to an image"
 #: components/theme/Widgets/ImageWidget
 msgid "linkAnImage"
@@ -1169,7 +1720,32 @@ msgstr "Oficiálně hlášené vládní informace jsou k dispozici pouze v angli
 msgid "pickAnImage"
 msgstr ""
 
+#. Default: "reference"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "reference"
+msgstr ""
+
+#. Default: "references"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "references"
+msgstr ""
+
+#. Default: "refers to"
+#: components/manage/Workflow/WorkflowLinkIntegrityModal
+msgid "refers to"
+msgstr ""
+
+#. Default: "tools available"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "tools available"
+msgstr ""
+
 #. Default: "Upload an image from your computer"
 #: components/theme/Widgets/ImageWidget
 msgid "uploadAnImage"
+msgstr ""
+
+#. Default: "{count, plural, one {tool matches} other {tools match}}"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+msgid "{count, plural, one {tool matches} other {tools match}}"
 msgstr ""

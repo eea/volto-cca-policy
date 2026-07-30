@@ -1,3 +1,59 @@
+/**
+ * Color scale for tool counts (EEA green tones)
+ * Used by the map view to color-code countries
+ */
+export const getColorForCount = (count) => {
+  if (count >= 10) return '#0a5c4e'; // darkest
+  if (count >= 7) return '#0d7a68';
+  if (count >= 4) return '#289588'; // base accent
+  if (count >= 1) return '#6fc4b8'; // light
+  return '#e8eded'; // none (very light gray-green)
+};
+
+/**
+ * Normalize country names between GeoJSON and facet data
+ */
+export const normalizeCountryName = (name) => {
+  if (!name) return name;
+  const normalizer = {
+    Türkiye: 'Turkey',
+    'United Kingdom': 'United Kingdom',
+    'Czech Rep.': 'Czechia',
+    'Bosnia and Herz.': 'Bosnia and Herzegovina',
+  };
+  return normalizer[name] || name;
+};
+
+/**
+ * Build a country -> count lookup from facet data
+ * @param {Object} facets - searchContext.facets
+ * @returns {Object} countryName -> count
+ */
+export const buildCountryCounts = (facets) => {
+  const countriesFacetArray = facets?.['cca_geographic_countries.keyword'];
+  const countriesFacet = Array.isArray(countriesFacetArray)
+    ? countriesFacetArray[0]
+    : countriesFacetArray;
+  const countryData = countriesFacet?.data || [];
+
+  const counts = {};
+  countryData.forEach((entry) => {
+    counts[entry.value] = entry.count;
+  });
+  return counts;
+};
+
+/**
+ * Legend items for the map view
+ */
+export const mapLegendItems = [
+  { label: '10+', color: '#0a5c4e' },
+  { label: '7–9', color: '#0d7a68' },
+  { label: '4–6', color: '#289588' },
+  { label: '1–3', color: '#6fc4b8' },
+  { label: 'None', color: '#e8eded' },
+];
+
 export const asArray = (value) => {
   if (!value) return [];
   const raw = value.raw !== undefined ? value.raw : value;
