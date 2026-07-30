@@ -320,7 +320,8 @@
     table-layout: fixed;
 
     thead th,
-    tbody td {
+    tbody td,
+    tbody th {
       border-color: @navigatorBorderColor;
     }
 
@@ -335,15 +336,18 @@
       vertical-align: bottom;
     }
 
-    tbody td {
+    tbody td,
+    tbody th {
       min-height: 84px;
       padding: 1.35rem 1.25rem;
       line-height: 1.45;
       vertical-align: top;
       background: #fff;
+      font-weight: inherit;
+      text-align: left;
     }
 
-    tbody td:first-child {
+    tbody th:first-child {
       background: @navigatorCriteriaBackgroundColor;
     }
   }
@@ -687,12 +691,22 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     background: #ddd8f5;
     color: #51458a;
   }
+
+  &.more {
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
 }
 
 .navigator-guide-search {
   .navigator-guide-header {
     margin-bottom: 2rem;
     text-align: center;
+
+    h2 {
+      margin-top: 0.5em;
+    }
   }
 
   .navigator-guide-preview-header {
@@ -705,10 +719,11 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
 
   .navigator-guide-eyebrow,
   .navigator-guide-preview-label {
-    font-size: 0.75rem;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: @navigatorAccentColor;
   }
 
   .navigator-guide-layout {

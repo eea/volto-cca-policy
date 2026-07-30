@@ -67,6 +67,10 @@ const messages = defineMessages({
     id: 'Open tool',
     defaultMessage: 'Open tool',
   },
+  removeTool: {
+    id: 'Remove {title} from comparison',
+    defaultMessage: 'Remove {title} from comparison',
+  },
   backToResults: {
     id: 'Back to results',
     defaultMessage: 'Back to results',
@@ -319,7 +323,7 @@ const CompareToolsView = () => {
         )}
 
         {!isLoading && hasEnoughTools && (
-          <Table celled>
+          <Table celled aria-label={compareToolsTitle} unstackable>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>
@@ -353,9 +357,12 @@ const CompareToolsView = () => {
                         )}
                         <Button
                           className="icon compare-tool-clear"
+                          aria-label={intl.formatMessage(messages.removeTool, {
+                            title: tool.title,
+                          })}
                           onClick={() => removeTool(tool.id)}
                         >
-                          <Icon className="ri-close-line" />
+                          <Icon className="ri-close-line" aria-hidden="true" />
                         </Button>
                       </div>
                     </div>
@@ -365,7 +372,7 @@ const CompareToolsView = () => {
             </Table.Header>
             <Table.Body>
               <Table.Row>
-                <Table.Cell>
+                <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.usability)}
@@ -381,7 +388,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
               <Table.Row>
-                <Table.Cell>
+                <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.functionality)}
@@ -399,7 +406,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
               <Table.Row>
-                <Table.Cell>
+                <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.spatialScale)}
@@ -413,7 +420,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
               <Table.Row>
-                <Table.Cell>
+                <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.outputType)}
@@ -427,7 +434,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
               <Table.Row>
-                <Table.Cell>
+                <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.adaptationSupportCycleStep)}
@@ -444,7 +451,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
               <Table.Row>
-                <Table.Cell>
+                <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
                       {intl.formatMessage(messages.sector)}
