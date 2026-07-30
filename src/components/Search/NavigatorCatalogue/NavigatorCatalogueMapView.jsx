@@ -1,5 +1,6 @@
 import React from 'react';
 import { compose } from 'redux';
+import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
@@ -33,6 +34,10 @@ const messages = defineMessages({
   toolsPerCountry: {
     id: 'Tools per country',
     defaultMessage: 'Tools per country',
+  },
+  close: {
+    id: 'Close',
+    defaultMessage: 'Close',
   },
 });
 
@@ -103,22 +108,23 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
           </div>
           {tooltipData.count > 0 && (
             <div className="tooltip-actions">
-              <button
-                className="ui button primary tiny"
+              <Button
+                labelPosition="right"
+                className="primary small icon"
                 onClick={() => onExploreTools(tooltipData.name)}
               >
-                {intl.formatMessage(messages.exploreTools)} →
-              </button>
+                {intl.formatMessage(messages.exploreTools)}
+                <Icon className="ri-arrow-right-line" />
+              </Button>
             </div>
           )}
-          <button
-            type="button"
+          <Button
             className="tooltip-close"
             onClick={() => setTooltipData(null)}
-            aria-label="Close"
+            aria-label={intl.formatMessage(messages.close)}
           >
-            ×
-          </button>
+            <Icon className="ri-close-line" aria-hidden="true" />
+          </Button>
         </div>
       )}
     </>
