@@ -169,7 +169,10 @@ const NavigatorCatalogueMapViewInner = (props) => {
     ]);
 
     // Country vector layer with per-feature styles
-    const features = new ol.format.GeoJSON().readFeatures(geofeatures);
+    const features = new ol.format.GeoJSON().readFeatures(geofeatures, {
+      dataProjection: 'EPSG:4326',
+      featureProjection: 'EPSG:3857',
+    });
     const filtered = features.filter((f) =>
       euCountryNames.includes(f.get('na')),
     );
@@ -184,7 +187,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
       feature.setStyle(
         new ol.style.Style({
           stroke: new ol.style.Stroke({
-            color: '#ffffff',
+            color: '#333333',
             width: 1,
           }),
           fill: new ol.style.Fill({
@@ -211,10 +214,10 @@ const NavigatorCatalogueMapViewInner = (props) => {
       <div className="navigator-catalogue-map-canvas">
         <Map
           view={{
-            center: ol.proj.fromLonLat([10, 50], projection),
+            center: ol.proj.fromLonLat([14.5, 57], projection),
             projection,
             showFullExtent: true,
-            zoom: 4,
+            zoom: 3.6,
           }}
           pixelRatio={1}
         >
@@ -255,7 +258,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
 /* istanbul ignore next */
 export default compose(
   clientOnly,
-  withGeoJsonData(),
+  withGeoJsonData(true),
   withResponsiveContainer('navigatorCatalogueMap'),
   withVisibilitySensor(),
   withOpenLayers,
