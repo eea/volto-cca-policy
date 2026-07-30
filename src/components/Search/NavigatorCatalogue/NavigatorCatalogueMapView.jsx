@@ -23,9 +23,10 @@ import {
 import './styles.less';
 
 const messages = defineMessages({
-  toolsAvailable: {
-    id: 'tools available',
-    defaultMessage: 'tools available',
+  toolAvailability: {
+    id: '{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}',
+    defaultMessage:
+      '{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}',
   },
   exploreTools: {
     id: 'Explore tools',
@@ -103,7 +104,9 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
           </div>
           <div className="tooltip-body">
             <span className="tooltip-count">
-              {tooltipData.count} {intl.formatMessage(messages.toolsAvailable)}
+              {intl.formatMessage(messages.toolAvailability, {
+                count: tooltipData.count,
+              })}
             </span>
           </div>
           {tooltipData.count > 0 && (
