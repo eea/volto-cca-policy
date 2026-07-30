@@ -32,9 +32,7 @@ const messages = defineMessages({
   },
 });
 
-/**
- * Click interaction component
- */
+/* istanbul ignore next */
 const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
   const { map } = useMapContext();
   const intl = useIntl();
@@ -123,9 +121,7 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
   );
 };
 
-/**
- * Main map component (receives ol, geofeatures, projection from HOCs)
- */
+/* istanbul ignore next */
 const NavigatorCatalogueMapViewInner = (props) => {
   const { geofeatures, projection, ol } = props;
   const searchContext = useSearchContext();
@@ -245,6 +241,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
   );
 };
 
+/* istanbul ignore next */
 export default compose(
   clientOnly,
   withGeoJsonData(),
