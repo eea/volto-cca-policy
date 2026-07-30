@@ -1,24 +1,12 @@
 import '@testing-library/jest-dom';
-
-/**
- * Tests for NavigatorCatalogueMapView utility functions.
- *
- * The full component is hard to test in isolation due to the
- * HOC chain (withOpenLayers, withGeoJsonData, withResponsiveContainer,
- * withVisibilitySensor, clientOnly) and OpenLayers dependencies.
- * The utility functions below are the pure logic that drives the map.
- */
+import {
+  getColorForCount,
+  normalizeCountryName,
+  buildCountryCounts,
+  mapLegendItems,
+} from './utils';
 
 describe('getColorForCount', () => {
-  // Reproduce the utility function for testing
-  const getColorForCount = (count) => {
-    if (count >= 10) return '#0a5c4e';
-    if (count >= 7) return '#0d7a68';
-    if (count >= 4) return '#289588';
-    if (count >= 1) return '#6fc4b8';
-    return '#e8eded';
-  };
-
   it('returns darkest green for 10+ tools', () => {
     expect(getColorForCount(10)).toBe('#0a5c4e');
     expect(getColorForCount(15)).toBe('#0a5c4e');
@@ -51,18 +39,6 @@ describe('getColorForCount', () => {
 });
 
 describe('normalizeCountryName', () => {
-  // Reproduce the utility function for testing
-  const normalizeCountryName = (name) => {
-    if (!name) return name;
-    const normalizer = {
-      Türkiye: 'Turkey',
-      'United Kingdom': 'United Kingdom',
-      'Czech Rep.': 'Czechia',
-      'Bosnia and Herz.': 'Bosnia and Herzegovina',
-    };
-    return normalizer[name] || name;
-  };
-
   it('normalizes Türkiye to Turkey', () => {
     expect(normalizeCountryName('Türkiye')).toBe('Turkey');
   });
@@ -90,47 +66,8 @@ describe('normalizeCountryName', () => {
   });
 });
 
-describe('countryCounts build logic', () => {
+describe('buildCountryCounts', () => {
   it('builds correct lookup from facet data array', () => {
-    const facetData = [
-      { value: 'Germany', count: 5 },
-      { value: 'Italy', count: 3 },
-      { value: 'France', count: 1 },
-    ];
-
-    const counts = {};
-    facetData.forEach((entry) => {
-      counts[entry.value] = entry.count;
-    });
-
-    expect(counts).toEqual({
-      Germany: 5,
-      Italy: 3,
-      France: 1,
-    });
-  });
-
-  it('handles empty facet data', () => {
-    const facetData = [];
-    const counts = {};
-    facetData.forEach((entry) => {
-      counts[entry.value] = entry.count;
-    });
-    expect(Object.keys(counts)).toHaveLength(0);
-  });
-
-  it('handles missing count values', () => {
-    const facetData = [{ value: 'Germany' }];
-    const counts = {};
-    facetData.forEach((entry) => {
-      counts[entry.value] = entry.count;
-    });
-    expect(counts.Germany).toBeUndefined();
-  });
-});
-
-describe('facet data extraction', () => {
-  it('extracts data from array-wrapped facet', () => {
     const facets = {
       'cca_geographic_countries.keyword': [
         {
@@ -139,65 +76,85 @@ describe('facet data extraction', () => {
           data: [
             { value: 'Germany', count: 5 },
             { value: 'Italy', count: 3 },
+            { value: 'France', count: 1 },
           ],
         },
       ],
     };
 
-    const array = facets['cca_geographic_countries.keyword'];
-    const facet = Array.isArray(array) ? array[0] : array;
-    const data = facet?.data || [];
+    const counts = buildCountryCounts(facets);
+    expect(counts).toEqual({
+      Germany: 5,
+      Italy: 3,
+      France: 1,
+    });
+  });
 
-    expect(data).toHaveLength(2);
-    expect(data[0].value).toBe('Germany');
-    expect(data[0].count).toBe(5);
+  it('handles empty facet data', () => {
+    const facets = {
+      'cca_geographic_countries.keyword': [
+        { field: 'cca_geographic_countries.keyword', data: [] },
+      ],
+    };
+    const counts = buildCountryCounts(facets);
+    expect(Object.keys(counts)).toHaveLength(0);
   });
 
   it('handles missing facet gracefully', () => {
     const facets = {};
-    const array = facets['cca_geographic_countries.keyword'];
-    const facet = Array.isArray(array) ? array[0] : array;
-    const data = facet?.data || [];
-
-    expect(data).toEqual([]);
+    const counts = buildCountryCounts(facets);
+    expect(counts).toEqual({});
   });
 
   it('handles undefined facets gracefully', () => {
-    const facets = undefined;
-    const array = facets?.['cca_geographic_countries.keyword'];
-    const facet = Array.isArray(array) ? array[0] : array;
-    const data = facet?.data || [];
+    const counts = buildCountryCounts(undefined);
+    expect(counts).toEqual({});
+  });
 
-    expect(data).toEqual([]);
+  it('handles null facets gracefully', () => {
+    const counts = buildCountryCounts(null);
+    expect(counts).toEqual({});
+  });
+
+  it('handles non-array facet value', () => {
+    const facets = {
+      'cca_geographic_countries.keyword': {
+        data: [{ value: 'Germany', count: 5 }],
+      },
+    };
+    const counts = buildCountryCounts(facets);
+    expect(counts).toEqual({ Germany: 5 });
+  });
+
+  it('handles missing count values', () => {
+    const facets = {
+      'cca_geographic_countries.keyword': [{ data: [{ value: 'Germany' }] }],
+    };
+    const counts = buildCountryCounts(facets);
+    expect(counts.Germany).toBeUndefined();
   });
 });
 
-describe('legend data', () => {
-  const legendItems = [
-    { label: '10+', color: '#0a5c4e' },
-    { label: '7–9', color: '#0d7a68' },
-    { label: '4–6', color: '#289588' },
-    { label: '1–3', color: '#6fc4b8' },
-    { label: 'None', color: '#e8eded' },
-  ];
-
+describe('mapLegendItems', () => {
   it('has 5 legend items', () => {
-    expect(legendItems).toHaveLength(5);
+    expect(mapLegendItems).toHaveLength(5);
   });
 
   it('colors match getColorForCount scale', () => {
-    const getColorForCount = (count) => {
-      if (count >= 10) return '#0a5c4e';
-      if (count >= 7) return '#0d7a68';
-      if (count >= 4) return '#289588';
-      if (count >= 1) return '#6fc4b8';
-      return '#e8eded';
-    };
+    expect(mapLegendItems[0].color).toBe(getColorForCount(10));
+    expect(mapLegendItems[1].color).toBe(getColorForCount(7));
+    expect(mapLegendItems[2].color).toBe(getColorForCount(4));
+    expect(mapLegendItems[3].color).toBe(getColorForCount(1));
+    expect(mapLegendItems[4].color).toBe(getColorForCount(0));
+  });
 
-    expect(legendItems[0].color).toBe(getColorForCount(10));
-    expect(legendItems[1].color).toBe(getColorForCount(7));
-    expect(legendItems[2].color).toBe(getColorForCount(4));
-    expect(legendItems[3].color).toBe(getColorForCount(1));
-    expect(legendItems[4].color).toBe(getColorForCount(0));
+  it('has correct labels', () => {
+    expect(mapLegendItems.map((item) => item.label)).toEqual([
+      '10+',
+      '7–9',
+      '4–6',
+      '1–3',
+      'None',
+    ]);
   });
 });

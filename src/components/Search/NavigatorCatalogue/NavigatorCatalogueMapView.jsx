@@ -12,6 +12,12 @@ import {
   withResponsiveContainer,
   withVisibilitySensor,
 } from '@eeacms/volto-cca-policy/hocs';
+import {
+  getColorForCount,
+  normalizeCountryName,
+  buildCountryCounts,
+  mapLegendItems,
+} from './utils';
 
 import './styles.less';
 
@@ -25,31 +31,6 @@ const messages = defineMessages({
     defaultMessage: 'Explore tools',
   },
 });
-
-/**
- * Color scale for tool counts (EEA green tones)
- */
-const getColorForCount = (count) => {
-  if (count >= 10) return '#0a5c4e'; // darkest
-  if (count >= 7) return '#0d7a68';
-  if (count >= 4) return '#289588'; // base accent
-  if (count >= 1) return '#6fc4b8'; // light
-  return '#e8eded'; // none (very light gray-green)
-};
-
-/**
- * Normalize country names between GeoJSON and facet data
- */
-const normalizeCountryName = (name) => {
-  if (!name) return name;
-  const normalizer = {
-    Türkiye: 'Turkey',
-    'United Kingdom': 'United Kingdom',
-    'Czech Rep.': 'Czechia',
-    'Bosnia and Herz.': 'Bosnia and Herzegovina',
-  };
-  return normalizer[name] || name;
-};
 
 /**
  * Click interaction component
@@ -164,20 +145,10 @@ const NavigatorCatalogueMapViewInner = (props) => {
   );
 
   // Build lookup: countryName -> count
-  const countryCounts = React.useMemo(() => {
-    const countriesFacetArray =
-      searchContext?.facets?.['cca_geographic_countries.keyword'];
-    const countriesFacet = Array.isArray(countriesFacetArray)
-      ? countriesFacetArray[0]
-      : countriesFacetArray;
-    const countryData = countriesFacet?.data || [];
-
-    const counts = {};
-    countryData.forEach((entry) => {
-      counts[entry.value] = entry.count;
-    });
-    return counts;
-  }, [searchContext?.facets]);
+  const countryCounts = React.useMemo(
+    () => buildCountryCounts(searchContext?.facets),
+    [searchContext?.facets],
+  );
 
   const [tileWMSSources, setTileWMSSources] = React.useState(null);
   const [euCountriesSource, setEuCountriesSource] = React.useState(null);
@@ -260,13 +231,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
       {/* Legend */}
       <div className="navigator-catalogue-map-legend">
         <div className="legend-title">Tools per country</div>
-        {[
-          { label: '10+', color: '#0a5c4e' },
-          { label: '7–9', color: '#0d7a68' },
-          { label: '4–6', color: '#289588' },
-          { label: '1–3', color: '#6fc4b8' },
-          { label: 'None', color: '#e8eded' },
-        ].map((item) => (
+        {mapLegendItems.map((item) => (
           <div key={item.label} className="legend-item">
             <span
               className="legend-color"
