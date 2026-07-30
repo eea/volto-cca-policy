@@ -494,6 +494,11 @@ msgstr "Volledig scherm afsluiten"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Ontdek meer over Climate-ADAPT"
 
+#. Default: "Explore tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Explore tools"
+msgstr ""
+
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
@@ -1728,6 +1733,11 @@ msgstr ""
 #. Default: "refers to"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "refers to"
+msgstr ""
+
+#. Default: "tools available"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "tools available"
 msgstr ""
 
 #. Default: "Upload an image from your computer"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
@@ -54,7 +54,7 @@ const normalizeCountryName = (name) => {
 /**
  * Click interaction component
  */
-const CountryClickInteractions = ({ ol, countryCounts }) => {
+const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
   const { map } = useMapContext();
   const intl = useIntl();
   const [tooltipData, setTooltipData] = React.useState(null);
@@ -122,9 +122,7 @@ const CountryClickInteractions = ({ ol, countryCounts }) => {
             <div className="tooltip-actions">
               <button
                 className="ui button primary tiny"
-                onClick={() => {
-                  // TODO: apply country filter + switch to list view
-                }}
+                onClick={() => onExploreTools(tooltipData.name)}
               >
                 {intl.formatMessage(messages.exploreTools)} →
               </button>
@@ -150,6 +148,20 @@ const CountryClickInteractions = ({ ol, countryCounts }) => {
 const NavigatorCatalogueMapViewInner = (props) => {
   const { geofeatures, projection, ol } = props;
   const searchContext = useSearchContext();
+  const views = useViews();
+
+  // Handler: replace country filter + switch to list view
+  const handleExploreTools = React.useCallback(
+    (countryName) => {
+      const field = 'cca_geographic_countries.keyword';
+      // Clear existing country filter, then set the new one
+      searchContext?.removeFilter(field);
+      searchContext?.addFilter(field, countryName, 'any');
+      // Switch to listing view
+      views.setActiveViewId('listing');
+    },
+    [searchContext, views],
+  );
 
   // Build lookup: countryName -> count
   const countryCounts = React.useMemo(() => {
@@ -235,7 +247,11 @@ const NavigatorCatalogueMapViewInner = (props) => {
       >
         <Controls attribution={false} />
         <Layers>
-          <CountryClickInteractions ol={ol} countryCounts={countryCounts} />
+          <CountryClickInteractions
+            ol={ol}
+            countryCounts={countryCounts}
+            onExploreTools={handleExploreTools}
+          />
           <Layer.Vector source={euCountriesSource} zIndex={2} />
           <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
         </Layers>

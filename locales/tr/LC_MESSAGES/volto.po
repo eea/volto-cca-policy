@@ -494,6 +494,11 @@ msgstr "Tam ekrandan çık"
 msgid "Explore more on Climate-ADAPT"
 msgstr "Climate-ADAPT hakkında daha fazlasını keşfedin"
 
+#. Default: "Explore tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Explore tools"
+msgstr ""
+
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
@@ -1728,6 +1733,11 @@ msgstr ""
 #. Default: "refers to"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "refers to"
+msgstr ""
+
+#. Default: "tools available"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "tools available"
 msgstr ""
 
 #. Default: "Upload an image from your computer"

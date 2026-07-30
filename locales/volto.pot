@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-07-30T08:49:17.134Z\n"
+"POT-Creation-Date: 2026-07-30T09:06:34.881Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -494,6 +494,11 @@ msgstr ""
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
+#. Default: "Explore tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Explore tools"
 msgstr ""
 
 #. Default: "Export table"
@@ -1730,6 +1735,11 @@ msgstr ""
 #. Default: "refers to"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "refers to"
+msgstr ""
+
+#. Default: "tools available"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "tools available"
 msgstr ""
 
 #. Default: "Upload an image from your computer"
