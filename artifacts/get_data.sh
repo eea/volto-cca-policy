@@ -1,0 +1,15 @@
+curl 'http://localhost:3000/_es/globalsearch/_search' \
+  -X POST \
+  -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0' \
+  -H 'Accept: application/json' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'Accept-Encoding: gzip, deflate, br, zstd' \
+  -H 'Content-Type: application/json' \
+  -H 'Origin: http://localhost:3000' \
+  -H 'Connection: keep-alive' \
+  -H 'Referer: http://localhost:3000/en/navigator?size=n_10_n&filters%5B0%5D%5Bfield%5D=language&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=en' \
+  -H 'Cookie: _pk_id.123.1fff=ed12aa17fd3cc765.1754921914.; __ac=NjE2NDZkNjk2ZTo2MzYzNjEyZDYxNjQ2ZDY5NmUzMzMzMzEzMQ%253D%253D; auth_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc4NTQ0MTAyOCwiZnVsbG5hbWUiOm51bGx9.LRrKHdx_N2YqSCoyBad52nfjmVdzaYD5ZkOI-9QbX2s' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  --data-raw '{"query":{"function_score":{"query":{"bool":{"must":[{"match_all":{}}],"filter":[{"bool":{"should":[{"term":{"language":"en"}}],"minimum_should_match":1}},{"term":{"hasWorkflowState":"published"}},{"constant_score":{"filter":{"bool":{"should":[{"bool":{"must_not":{"exists":{"field":"issued"}}}},{"range":{"issued.date":{"lte":"2026-07-30T10:52:50Z"}}}]}}}},{"term":{"cluster_name":"cca_navigator"}},{"bool":{"must_not":[{"term":{"seo_noindex.keyword":"true"}}]}},{"bool":{"must":[{"term":{"items_count_language":1}}]}}]}},"functions":[{"exp":{"issued.date":{"offset":"1800d","scale":"3600d"}}}],"score_mode":"sum"}},"aggs":{},"size":10,"runtime_mappings":{"op_cluster":{"type":"keyword","script":{"source":"emit(\\"_all_\\"); def clusters_settings = [[\\"name\\": \\"Tools\\", \\"values\\": [\\"Tool\\"]]]; def vals = doc[\'objectProvides\']; def clusters = [\'All\']; for (val in vals) { for (cs in clusters_settings) { if (cs.values.contains(val)) { emit(cs.name) } } }"}}},"_source":{"exclude":["embedding"]},"track_total_hits":true}'
