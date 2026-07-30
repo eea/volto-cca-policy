@@ -86,21 +86,27 @@ Enhance the Navigator Catalogue search with a functional **Map view** alongside 
 
 ## Implementation Plan (Iterative)
 
-### Phase 1: Data Access (Simplified)
-- ~~Task 1: Display all results without pagination~~ — **SKIPPED**. Country counts already available via existing facet aggregation.
-- **Task 1 (revised):** Verify we can read country counts from `searchContext.facets` in the map component
+### Phase 1: Data Access ✅ DONE
+- ~~Task 1: Display all results without pagination~~ — SKIPPED. Country counts already available via existing facet aggregation.
+- ✅ **Task 1 (revised):** Verified country counts readable from `searchContext.facets['cca_geographic_countries.keyword'].data`
 
-### Phase 2: Map Rendering
-- **Task 2:** Set up OpenLayers map with GeoJSON country boundaries (reuse `withGeoJsonData`)
-- **Task 3:** Implement color-coding based on tool counts (EEA green tones, 5-step)
+### Phase 2: Map Rendering ✅ DONE
+- ✅ **Task 2:** OpenLayers map with GeoJSON country boundaries (reused `withGeoJsonData`)
+- ✅ **Task 3:** Color-coding by tool count (EEA green tones, 5-step: 10+, 7-9, 4-6, 1-3, none)
 
-### Phase 3: Interactivity
-- **Task 4:** Add click interactions and popups (country name, count, "Explore tools" button)
-- **Task 5:** Implement filter synchronization — clicking "Explore tools" applies country filter + switches to list view
+### Phase 3: Interactivity ✅ DONE
+- ✅ **Task 4:** Click interactions + tooltip popup (country name, count, "Explore tools" button)
+- ✅ **Task 5:** Filter sync — "Explore tools" replaces country filter + switches to list view
+- ✅ Pagination hidden in map view
 
-### Phase 4: Polish
-- **Task 6:** Legend component, responsive design, loading states
-- **Task 7:** Accessibility, testing
+### Phase 4: Testing ✅ DONE
+- ✅ **Task 6:** 18 unit tests for utility functions (color scale, country name normalization, facet data extraction, legend)
+
+### Remaining (Nice-to-have)
+- Responsive design polish (mobile tooltip positioning, map height)
+- Loading state improvements
+- Accessibility (keyboard nav, screen reader support)
+- i18n for all strings (currently uses defineMessages but some strings are inline)
 
 ---
 
