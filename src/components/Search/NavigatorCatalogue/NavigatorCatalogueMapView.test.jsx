@@ -140,20 +140,20 @@ describe('mapLegendItems', () => {
     expect(mapLegendItems).toHaveLength(5);
   });
 
-  it('colors match getColorForCount scale', () => {
-    expect(mapLegendItems[0].color).toBe(getColorForCount(10));
-    expect(mapLegendItems[1].color).toBe(getColorForCount(7));
-    expect(mapLegendItems[2].color).toBe(getColorForCount(4));
-    expect(mapLegendItems[3].color).toBe(getColorForCount(1));
-    expect(mapLegendItems[4].color).toBe(getColorForCount(0));
+  it('uses the current legend color palette', () => {
+    expect(mapLegendItems[0].color).toBe('#0F6B3F');
+    expect(mapLegendItems[1].color).toBe('#007B6C');
+    expect(mapLegendItems[2].color).toBe('#84C79A');
+    expect(mapLegendItems[3].color).toBe('#C2E3CD');
+    expect(mapLegendItems[4].color).toBe('#E1E7DF');
   });
 
   it('has correct labels', () => {
     expect(mapLegendItems.map((item) => item.label)).toEqual([
-      '10+',
-      '7–9',
-      '4–6',
-      '1–3',
+      '10 or more',
+      '7 - 9',
+      '4 - 6',
+      '1 - 3',
       'None',
     ]);
   });
