@@ -47,11 +47,11 @@ export const buildCountryCounts = (facets) => {
  * Legend items for the map view
  */
 export const mapLegendItems = [
-  { label: '10+', color: '#0a5c4e' },
-  { label: '7–9', color: '#0d7a68' },
-  { label: '4–6', color: '#289588' },
-  { label: '1–3', color: '#6fc4b8' },
-  { label: 'None', color: '#e8eded' },
+  { label: '10 or more', color: '#0F6B3F' },
+  { label: '7 - 9', color: '#007B6C' },
+  { label: '4 - 6', color: '#84C79A' },
+  { label: '1 - 3', color: '#C2E3CD' },
+  { label: 'None', color: '#E1E7DF' },
 ];
 
 export const asArray = (value) => {
