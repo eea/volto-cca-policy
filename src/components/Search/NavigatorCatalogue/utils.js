@@ -12,7 +12,7 @@ export const mapColorScale = [
 
 export const getColorForCount = (count) =>
   mapColorScale.find(({ minimum }) => count >= minimum)?.color ||
-  mapColorScale[mapColorScale.length - 1].color;
+  mapColorScale.at(-1).color;
 
 /**
  * Normalize country names between GeoJSON and facet data
