@@ -13,11 +13,13 @@ import {
   MissionSignatoryProfileView,
   CreateArchivedCopyButton,
   ImageWidget,
+  CompareToolsView,
 } from '@eeacms/volto-cca-policy/components';
 
 import CcaEventView from './components/theme/Views/CcaEventView';
 import NewsItemView from './components/theme/Views/NewsItemView';
 import EventView from './components/theme/Views/EventView';
+import ExtendedToolView from './components/theme/Views/ExtendedToolView';
 import AdaptationOptionView from './components/theme/Views/AdaptationOptionView';
 import CaseStudyView from './components/theme/Views/CaseStudyView';
 import ProjectView from './components/theme/Views/ProjectView';
@@ -33,6 +35,7 @@ import {
   ACE_PROJECT,
   PUBLICATION_REPORT,
   TOOL,
+  EXTENDED_TOOL,
   VIDEO,
   C3S_INDICATOR,
   CCA_EVENT,
@@ -45,8 +48,13 @@ import {
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
-import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
-import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
+import HealthHorizontalCardItem from './components/Search/Result/HealthHorizontalCardItem';
+import ClusterHorizontalCardItem from './components/Search/Result/ClusterHorizontalCardItem';
+import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
+import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
+import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
+import NavigatorGuideLayout from './components/Search/NavigatorGuide/NavigatorGuideLayout';
+import NavigatorGuideContentView from './components/Search/NavigatorGuide/NavigatorGuideContentView';
 
 import { langRedirection } from './store/middleware';
 
@@ -357,6 +365,7 @@ const applyConfig = (config) => {
     [EVENT]: EventView,
     [CCA_EVENT]: CcaEventView,
     [TOOL]: DatabaseItemView,
+    [EXTENDED_TOOL]: ExtendedToolView,
     [INDICATOR]: DatabaseItemView,
     [ORGANISATION]: DatabaseItemView,
     [GUIDANCE]: DatabaseItemView,
@@ -415,6 +424,21 @@ const applyConfig = (config) => {
   config.settings.searchlib.resolve.ClusterHorizontalCardItem = {
     component: ClusterHorizontalCardItem,
   };
+  config.settings.searchlib.resolve.NavigatorCatalogueCardItem = {
+    component: NavigatorCatalogueCardItem,
+  };
+  config.settings.searchlib.resolve.NavigatorCatalogueMapView = {
+    component: NavigatorCatalogueMapView,
+  };
+  config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
+    component: NavigatorCatalogueContentView,
+  };
+  config.settings.searchlib.resolve.NavigatorGuideLayout = {
+    component: NavigatorGuideLayout,
+  };
+  config.settings.searchlib.resolve.NavigatorGuideContentView = {
+    component: NavigatorGuideContentView,
+  };
   // Custom widgets
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
@@ -431,6 +455,7 @@ const applyConfig = (config) => {
     { cssClass: 'large-text', label: 'Large text' },
     { cssClass: 'medium-text', label: 'Medium text' },
     { cssClass: 'small-text', label: 'Small text' },
+    { cssClass: 'green-text', label: 'Green text' },
   ];
 
   // TODO: fix in all languages
@@ -493,13 +518,17 @@ const applyConfig = (config) => {
       path: `/broken-links`,
       component: BrokenLinks,
     },
-
+    {
+      path: `*/navigator/compare`,
+      component: CompareToolsView,
+    },
     ...(config.addonRoutes || []),
   ];
 
   config.settings.nonContentRoutes = [
     ...config.settings.nonContentRoutes,
     '/broken-links',
+    '/navigator/compare',
   ];
 
   config.settings.appExtras = [
@@ -565,7 +594,7 @@ const applyConfig = (config) => {
 
   config.settings.themeColors = [
     ...config.settings.themeColors,
-    { value: 'green', title: 'EEA Green' },
+    { value: 'green', title: 'Green' },
   ];
 
   config.settings.matomoTrackerIdFn = (pathname) => {

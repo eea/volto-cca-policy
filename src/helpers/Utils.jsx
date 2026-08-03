@@ -62,6 +62,44 @@ export const HTMLField = ({ value, className }) => {
   );
 };
 
+export const TextField = ({ label, value }) => {
+  if (value === null || value === undefined || value === '') return null;
+
+  return (
+    <>
+      <h5>{label}</h5>
+      <p>{value}</p>
+    </>
+  );
+};
+
+export const BooleanField = ({ label, value, yesLabel, noLabel }) => (
+  <TextField label={label} value={value ? yesLabel : noLabel} />
+);
+
+export const VocabularyField = ({ label, values, asList }) => {
+  const items = values
+    ?.map((value) => value?.title || value?.token || value)
+    .filter(Boolean);
+
+  if (!items?.length) return null;
+
+  if (asList) {
+    return (
+      <>
+        <h5>{label}</h5>
+        <ul>
+          {items.map((item, index) => (
+            <li key={`${item}-${index}`}>{item}</li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+
+  return <TextField label={label} value={items.join(', ')} />;
+};
+
 export const ExternalLink = (props) => {
   let { url, text } = props;
 

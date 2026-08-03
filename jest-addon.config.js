@@ -26,7 +26,9 @@ module.exports = {
     '!src/**/*.d.ts',
   ],
   moduleNameMapper: {
-    '^node:crypto$': '<rootDir>/src/addons/volto-cca-policy/jest-node-crypto-mock.js',
+    '^uuid$': require.resolve('uuid'),
+    '^node:crypto$':
+      '<rootDir>/src/addons/volto-cca-policy/jest-node-crypto-mock.js',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '@plone-collective/volto-authomatic/(.*)$':
       '<rootDir>/node_modules/@plone-collective/volto-authomatic/src/$1',
@@ -36,8 +38,10 @@ module.exports = {
     '@package/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@root/(.*)$': '<rootDir>/node_modules/@plone/volto/src/$1',
     '@plone/volto-quanta/(.*)$': '<rootDir>/src/addons/volto-quanta/src/$1',
-    '@eeacms/search/(.*)$': '<rootDir>/src/addons/volto-searchlib/searchlib/$1',
-    '@eeacms/search': '<rootDir>/src/addons/volto-searchlib/searchlib',
+    '^@eeacms/search/(.*)$':
+      '<rootDir>/node_modules/@eeacms/volto-searchlib/searchlib/$1',
+    '^@eeacms/search$':
+      '<rootDir>/node_modules/@eeacms/volto-searchlib/searchlib',
     '@eeacms/(.*?)/(.*)$': '<rootDir>/node_modules/@eeacms/$1/src/$2',
     '@plone/volto-slate$': voltoSlatePath,
     '@plone/volto-slate/(.*)$': `${voltoSlatePath}/$1`,

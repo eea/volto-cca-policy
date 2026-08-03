@@ -7,6 +7,8 @@ export { default as ASTNavigation } from './theme/ASTNavigation/ASTNavigation';
 export { default as RedirectToLogin } from './theme/RedirectToLogin/RedirectToLogin';
 export { default as MissionSignatoryProfileView } from './theme/MissionSignatoryProfile/MissionSignatoryProfileView';
 export { default as AccordionList } from './theme/AccordionList/AccordionList';
+export { default as CompareToolsView } from './theme/CompareTools/CompareToolsView';
+export { CompareToolsPanel } from './theme/CompareTools/CompareToolsPanel';
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';

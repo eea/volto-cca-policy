@@ -46,7 +46,7 @@ async function getRssFeedData(apiPath, APISUFFIX, req, settings) {
       .accept('json')
       .use(addHeadersFactory(req));
 
-    const authToken = req.universalCookies?.get?.('auth_token');
+    const authToken = req.universalCookies?.get?.('auth_token'); //betterleaks:allow
     if (authToken) {
       request.set('Authorization', `Bearer ${authToken}`);
     }
