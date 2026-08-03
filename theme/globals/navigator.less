@@ -49,7 +49,7 @@
   box-sizing: border-box;
   border: 1px solid @navigatorIconBorderColor;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #f7f8fa;
   color: @navigatorIconColor;
 
   i.icon {
@@ -108,6 +108,10 @@
 
   .ui.button {
     margin: 0 !important;
+  }
+
+  .navigator-tool-icon {
+    background-color: #fff;
   }
 
   .compare-panel-content {
@@ -210,15 +214,12 @@
     }
   }
 
-  .ui.button.compare-panel-submit {
-    margin: 0;
-  }
-
-  .compare-panel-clear-all {
+  .ui.button.compare-panel-clear-all {
     padding: 0;
     margin: 0;
-    background: transparent;
-    color: @linkColor;
+    border: none;
+    background: none !important;
+    color: @primaryColor;
 
     &:hover,
     &:focus {
@@ -775,7 +776,6 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   min-height: 24px;
   align-items: center;
   padding: 0 0.45rem;
-  border-radius: 2px;
   font-weight: 500;
   font-size: 12px;
 
