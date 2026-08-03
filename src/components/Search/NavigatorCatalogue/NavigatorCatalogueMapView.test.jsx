@@ -8,33 +8,33 @@ import {
 
 describe('getColorForCount', () => {
   it('returns darkest green for 10+ tools', () => {
-    expect(getColorForCount(10)).toBe('#0a5c4e');
-    expect(getColorForCount(15)).toBe('#0a5c4e');
-    expect(getColorForCount(100)).toBe('#0a5c4e');
+    expect(getColorForCount(10)).toBe('#0F6B3F');
+    expect(getColorForCount(15)).toBe('#0F6B3F');
+    expect(getColorForCount(100)).toBe('#0F6B3F');
   });
 
   it('returns dark green for 7-9 tools', () => {
-    expect(getColorForCount(7)).toBe('#0d7a68');
-    expect(getColorForCount(8)).toBe('#0d7a68');
-    expect(getColorForCount(9)).toBe('#0d7a68');
+    expect(getColorForCount(7)).toBe('#007B6C');
+    expect(getColorForCount(8)).toBe('#007B6C');
+    expect(getColorForCount(9)).toBe('#007B6C');
   });
 
   it('returns base accent green for 4-6 tools', () => {
-    expect(getColorForCount(4)).toBe('#289588');
-    expect(getColorForCount(5)).toBe('#289588');
-    expect(getColorForCount(6)).toBe('#289588');
+    expect(getColorForCount(4)).toBe('#84C79A');
+    expect(getColorForCount(5)).toBe('#84C79A');
+    expect(getColorForCount(6)).toBe('#84C79A');
   });
 
   it('returns light green for 1-3 tools', () => {
-    expect(getColorForCount(1)).toBe('#6fc4b8');
-    expect(getColorForCount(2)).toBe('#6fc4b8');
-    expect(getColorForCount(3)).toBe('#6fc4b8');
+    expect(getColorForCount(1)).toBe('#C2E3CD');
+    expect(getColorForCount(2)).toBe('#C2E3CD');
+    expect(getColorForCount(3)).toBe('#C2E3CD');
   });
 
   it('returns lightest gray-green for 0 or falsy counts', () => {
-    expect(getColorForCount(0)).toBe('#e8eded');
-    expect(getColorForCount(null)).toBe('#e8eded');
-    expect(getColorForCount(undefined)).toBe('#e8eded');
+    expect(getColorForCount(0)).toBe('#E1E7DF');
+    expect(getColorForCount(null)).toBe('#E1E7DF');
+    expect(getColorForCount(undefined)).toBe('#E1E7DF');
   });
 });
 
