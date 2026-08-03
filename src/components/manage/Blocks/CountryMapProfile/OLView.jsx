@@ -2,13 +2,13 @@ import React from 'react';
 import { compose } from 'redux';
 import { Grid } from 'semantic-ui-react';
 import {
+  clientOnly,
   getImageUrl,
   tooltipStyle,
   adjustEuCountryNames,
   euCountryNamesIncludingEnergy as euCountryNamesRaw,
-} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+} from '@eeacms/volto-cca-policy/helpers';
+import { withGeoJsonData } from '@eeacms/volto-cca-policy/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';

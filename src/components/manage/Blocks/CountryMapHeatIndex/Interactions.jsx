@@ -4,7 +4,7 @@ import {
   euCountryNames,
   setTooltipVisibility,
   getClosestFeatureToCoordinate,
-} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+} from '@eeacms/volto-cca-policy/helpers';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
 export const Interactions = ({
