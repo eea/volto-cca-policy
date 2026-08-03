@@ -130,7 +130,9 @@ export default function MenuProfile(props) {
 
     if (!contact) return [];
 
-    const contactsArray = Array.isArray(contact) ? contact : [contact];
+    const contactsArray = Array.isArray(contact)
+      ? contact.slice(0, 1)
+      : [contact];
 
     return contactsArray.flatMap((c) => c?.Publications ?? []);
   })();
