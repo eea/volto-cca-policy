@@ -35,8 +35,8 @@ const messages = defineMessages({
     defaultMessage: 'Compare',
   },
   viewTool: {
-    id: 'View tool',
-    defaultMessage: 'View tool',
+    id: 'View',
+    defaultMessage: 'View',
   },
 });
 
