@@ -8,7 +8,6 @@ import {
   adjustEuCountryNames,
   euCountryNamesIncludingEnergy as euCountryNamesRaw,
 } from '@eeacms/volto-cca-policy/helpers';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';
@@ -18,6 +17,7 @@ import Filter from './Filter';
 import {
   withResponsiveContainer,
   withVisibilitySensor,
+  withGeoJsonData,
 } from '@eeacms/volto-cca-policy/hocs';
 import { addAppURL } from '@plone/volto/helpers/Url/Url';
 
