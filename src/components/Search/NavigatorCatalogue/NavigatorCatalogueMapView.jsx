@@ -6,11 +6,11 @@ import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/hocs';
 import { euCountryNames, clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import {
   withResponsiveContainer,
   withVisibilitySensor,
+  withGeoJsonData,
 } from '@eeacms/volto-cca-policy/hocs';
 import {
   getColorForCount,
