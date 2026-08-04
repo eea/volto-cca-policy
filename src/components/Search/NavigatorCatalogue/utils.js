@@ -55,21 +55,22 @@ export const mapLegendItems = mapColorScale.map(({ label, color }) => ({
   color,
 }));
 
-export const asArray = (value) => {
-  if (!value) return [];
-  const raw = value.raw !== undefined ? value.raw : value;
-  if (!raw) return [];
-  const values = Array.isArray(raw)
-    ? raw.filter(Boolean)
-    : [raw].filter(Boolean);
+const unwrapRawValue = (value) =>
+  value?.raw === undefined ? value : value.raw;
 
-  return values.map((value) => value?.title || value?.token || value);
+export const rawValueAsArray = (value) => {
+  const raw = unwrapRawValue(value);
+  if (!raw) return [];
+  return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
 };
+
+export const asArray = (value) =>
+  rawValueAsArray(value).map((value) => value?.title || value?.token || value);
 
 export const arrayFieldToString = (value) => asArray(value).join(', ');
 
 export const formatFunctionalityScore = (value) => {
-  const raw = value?.raw !== undefined ? value.raw : value;
+  const raw = unwrapRawValue(value);
   const score = raw === null || raw === undefined ? Number.NaN : Number(raw);
 
   return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';
