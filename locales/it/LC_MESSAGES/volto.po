@@ -288,6 +288,11 @@ msgstr "Casi di studio Climate-ADAPT"
 msgid "Climate-ADAPT page for this event"
 msgstr "Pagina Climate-ADAPT per questo evento"
 
+#. Default: "Close"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Close"
+msgstr ""
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -892,11 +897,6 @@ msgstr "Strumento della missione"
 msgid "Most useful for"
 msgstr "Molto utile per"
 
-#. Default: "NO"
-#: components/theme/Views/ExtendedToolView
-msgid "NO"
-msgstr ""
-
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "National HHAP"
@@ -934,7 +934,7 @@ msgid "Navigator Guide preview empty state"
 msgstr ""
 
 #. Default: "New"
-#: components/Result/ClusterHorizontalCardItem
+#: components/Search/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Nuovo"
 
@@ -951,6 +951,11 @@ msgstr "Notizie"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
+msgstr ""
+
+#. Default: "No"
+#: components/theme/Views/ExtendedToolView
+msgid "No"
 msgstr ""
 
 #. Default: "No HHAP"
@@ -1099,11 +1104,6 @@ msgstr ""
 msgid "Project information"
 msgstr "Informazioni sul progetto"
 
-#. Default: "Public/private"
-#: components/theme/Views/ExtendedToolView
-msgid "Public/private"
-msgstr ""
-
 #. Default: "Publications and reports"
 #: search/vocabulary
 msgid "Publication reference"
@@ -1209,6 +1209,11 @@ msgstr "Sinergie rilevanti con la mitigazione"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
+msgstr ""
+
+#. Default: "Remove {title} from comparison"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Remove {title} from comparison"
 msgstr ""
 
 #. Default: "Replace existing file"
@@ -1335,8 +1340,8 @@ msgid "Source of funding"
 msgstr "Fonte di finanziamento"
 
 #. Default: "Source:"
-#: components/Result/ClusterHorizontalCardItem
-#: components/Result/HealthHorizontalCardItem
+#: components/Search/Result/ClusterHorizontalCardItem
+#: components/Search/Result/HealthHorizontalCardItem
 msgid "Source:"
 msgstr "Fonte:"
 
@@ -1462,14 +1467,24 @@ msgstr "Strumento"
 msgid "Tool provider"
 msgstr ""
 
+#. Default: "Tool provider mode"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool provider mode"
+msgstr ""
+
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
 msgstr ""
 
+#. Default: "Tools per country"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Tools per country"
+msgstr ""
+
 #. Default: "Topics:"
-#: components/Result/ClusterHorizontalCardItem
-#: components/Result/HealthHorizontalCardItem
+#: components/Search/Result/ClusterHorizontalCardItem
+#: components/Search/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr "Argomenti:"
 
@@ -1569,6 +1584,11 @@ msgstr "Video e podcast"
 msgid "Videos and podcasts"
 msgstr "Video e podcast"
 
+#. Default: "View"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "View"
+msgstr ""
+
 #. Default: "View all contributions in the resource catalogue"
 #: helpers/Utils
 msgid "View all contributions in the resource catalogue"
@@ -1577,11 +1597,6 @@ msgstr "Visualizza tutti i contributi nel catalogo delle risorse"
 #. Default: "View latest version"
 #: components/theme/Views/ArchivedVersionNotice
 msgid "View latest version"
-msgstr ""
-
-#. Default: "View tool"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "View tool"
 msgstr ""
 
 #. Default: "Visit external website"
@@ -1645,9 +1660,9 @@ msgstr ""
 msgid "Which spatial coverage do you need?"
 msgstr ""
 
-#. Default: "YES"
+#. Default: "Yes"
 #: components/theme/Views/ExtendedToolView
-msgid "YES"
+msgid "Yes"
 msgstr ""
 
 #. Default: "You are viewing an archived version."
@@ -1735,14 +1750,14 @@ msgstr ""
 msgid "refers to"
 msgstr ""
 
-#. Default: "tools available"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
-msgid "tools available"
-msgstr ""
-
 #. Default: "Upload an image from your computer"
 #: components/theme/Widgets/ImageWidget
 msgid "uploadAnImage"
+msgstr ""
+
+#. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 msgstr ""
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
