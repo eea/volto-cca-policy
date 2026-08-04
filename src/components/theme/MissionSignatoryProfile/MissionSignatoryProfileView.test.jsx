@@ -12,8 +12,8 @@ jest.mock('./TabSections/AssessmentTab', () => () => (
 jest.mock('./TabSections/PlanningTab', () => () => <div>Mocked Planning</div>);
 jest.mock('./TabSections/ActionTab', () => () => <div>Mocked Action</div>);
 
-jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
-  BannerTitle: ({ children }) => <div>{children}</div>,
+jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  ContentBannerTitle: ({ children }) => <div>{children}</div>,
   HTMLField: ({ value }) => (
     <div dangerouslySetInnerHTML={{ __html: value?.data }} />
   ),

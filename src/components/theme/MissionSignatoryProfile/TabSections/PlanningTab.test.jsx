@@ -2,7 +2,17 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import PlanningTab from './PlanningTab';
 
-jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
+jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  AccordionList: ({ accordions }) => (
+    <div>
+      {accordions.map((item, index) => (
+        <div key={index}>
+          <div>{item.title}</div>
+          <div>{item.content}</div>
+        </div>
+      ))}
+    </div>
+  ),
   HTMLField: ({ value }) => (
     <div dangerouslySetInnerHTML={{ __html: value.data }} />
   ),

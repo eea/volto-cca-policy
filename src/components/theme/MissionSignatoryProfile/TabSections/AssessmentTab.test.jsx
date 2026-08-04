@@ -6,7 +6,17 @@ jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
   Callout: ({ children }) => <div>{children}</div>,
 }));
 
-jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
+jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  AccordionList: ({ accordions }) => (
+    <div>
+      {accordions.map((item, index) => (
+        <div key={index}>
+          <div>{item.title}</div>
+          <div>{item.content}</div>
+        </div>
+      ))}
+    </div>
+  ),
   HTMLField: ({ value }) => <div>{value.data}</div>,
 }));
 

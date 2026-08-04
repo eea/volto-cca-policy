@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, Container, Divider, Button, Icon } from 'semantic-ui-react';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
-import { BannerTitle, HTMLField } from '@eeacms/volto-cca-policy/helpers';
+import {
+  ContentBannerTitle,
+  HTMLField,
+} from '@eeacms/volto-cca-policy/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import GovernanceTab from './TabSections/GovernanceTab';
@@ -55,7 +58,7 @@ const MissionSignatoryProfileView = ({ content }) => {
 
   return (
     <Container>
-      <BannerTitle
+      <ContentBannerTitle
         content={{ ...content, image: signatoryData?.image }}
         data={{
           info: [{ description: '' }],

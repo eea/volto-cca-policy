@@ -1,15 +1,13 @@
 import React from 'react';
-import {
-  HTMLField,
-  ContentMetadata,
-  PublishedModifiedInfo,
-  ItemLogo,
-  ReferenceInfo,
-} from '@eeacms/volto-cca-policy/helpers';
 import { Container, Divider, Grid } from 'semantic-ui-react';
 import {
-  ShareInfoButton,
+  ContentMetadata,
+  HTMLField,
+  ItemLogo,
   PortalMessage,
+  PublishedModifiedInfo,
+  ReferenceInfo,
+  ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
 
 import { FormattedMessage } from 'react-intl';

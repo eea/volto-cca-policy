@@ -23,6 +23,9 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
       ))}
     </div>
   ),
+  HTMLField: ({ value }) => (
+    <div dangerouslySetInnerHTML={{ __html: value?.data }} />
+  ),
 }));
 
 describe('ActionTab', () => {

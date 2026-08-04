@@ -9,6 +9,9 @@ export { default as MissionSignatoryProfileView } from './theme/MissionSignatory
 export { default as AccordionList } from './theme/AccordionList/AccordionList';
 export { default as CompareToolsView } from './theme/CompareTools/CompareToolsView';
 export { CompareToolsPanel } from './theme/CompareTools/CompareToolsPanel';
+export * from './theme/ContentFields';
+export * from './theme/ContentView';
+export * from './theme/EventDetails';
 
 // Widgets
 export { default as RASTWidgetView } from './theme/Widgets/RASTWidgetView';

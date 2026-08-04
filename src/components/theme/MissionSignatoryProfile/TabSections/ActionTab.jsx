@@ -1,7 +1,6 @@
 import { Tab, Grid } from 'semantic-ui-react';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import { HTMLField } from '@eeacms/volto-cca-policy/helpers';
-import { AccordionList } from '@eeacms/volto-cca-policy/components';
+import { AccordionList, HTMLField } from '@eeacms/volto-cca-policy/components';
 import { formatTextToHTML, isEmpty } from '@eeacms/volto-cca-policy/utils';
 import NoDataReported from '../NoDataReported';
 import ItemsSection from '../ItemsSection';
