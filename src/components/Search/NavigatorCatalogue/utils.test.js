@@ -7,6 +7,7 @@ import {
   formatFunctionalityScore,
   getComparePageURL,
   getLocalizedLandingPageURL,
+  rawValueAsArray,
 } from './utils';
 
 describe('Navigator Catalogue utilities', () => {
@@ -40,6 +41,10 @@ describe('Navigator Catalogue utilities', () => {
   });
 
   it('normalizes raw, scalar, title, token, and empty values', () => {
+    expect(rawValueAsArray({ raw: ['One', null, { title: 'Two' }] })).toEqual([
+      'One',
+      { title: 'Two' },
+    ]);
     expect(asArray()).toEqual([]);
     expect(asArray({ raw: null })).toEqual([]);
     expect(asArray({ raw: ['One', null, { title: 'Two' }] })).toEqual([

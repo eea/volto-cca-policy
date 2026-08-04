@@ -10,10 +10,10 @@ import {
 import { useHistory } from 'react-router-dom';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/hocs';
 import {
   withResponsiveContainer,
   withVisibilitySensor,
+  withGeoJsonData,
 } from '@eeacms/volto-cca-policy/hocs';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';
