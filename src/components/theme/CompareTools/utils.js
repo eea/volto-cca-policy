@@ -1,11 +1,12 @@
-import { atom, useAtom } from 'jotai';
+import { useAtom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 import { applyConfigurationSchema, rebind } from '@eeacms/search';
 import runRequest from '@eeacms/search/lib/runRequest';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getComparePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 export const MAX_COMPARE_TOOLS = 4;
-export const compareToolsAtom = atom([]);
+export const compareToolsAtom = atomWithStorage('cca-compare-tools', []);
 const searchAppName = 'navigatorCatalogueSearch';
 
 const getRawValue = (value) =>

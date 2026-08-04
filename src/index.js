@@ -48,8 +48,8 @@ import {
 
 import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
-import HealthHorizontalCardItem from './components/Result/HealthHorizontalCardItem';
-import ClusterHorizontalCardItem from './components/Result/ClusterHorizontalCardItem';
+import HealthHorizontalCardItem from './components/Search/Result/HealthHorizontalCardItem';
+import ClusterHorizontalCardItem from './components/Search/Result/ClusterHorizontalCardItem';
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
@@ -455,6 +455,7 @@ const applyConfig = (config) => {
     { cssClass: 'large-text', label: 'Large text' },
     { cssClass: 'medium-text', label: 'Medium text' },
     { cssClass: 'small-text', label: 'Small text' },
+    { cssClass: 'green-text', label: 'Green text' },
   ];
 
   // TODO: fix in all languages
@@ -593,7 +594,7 @@ const applyConfig = (config) => {
 
   config.settings.themeColors = [
     ...config.settings.themeColors,
-    { value: 'green', title: 'EEA Green' },
+    { value: 'green', title: 'Green' },
   ];
 
   config.settings.matomoTrackerIdFn = (pathname) => {

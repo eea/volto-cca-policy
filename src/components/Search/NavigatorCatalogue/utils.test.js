@@ -7,6 +7,7 @@ import {
   formatFunctionalityScore,
   getComparePageURL,
   getLocalizedLandingPageURL,
+  rawValueAsArray,
 } from './utils';
 
 describe('Navigator Catalogue utilities', () => {
@@ -40,6 +41,10 @@ describe('Navigator Catalogue utilities', () => {
   });
 
   it('normalizes raw, scalar, title, token, and empty values', () => {
+    expect(rawValueAsArray({ raw: ['One', null, { title: 'Two' }] })).toEqual([
+      'One',
+      { title: 'Two' },
+    ]);
     expect(asArray()).toEqual([]);
     expect(asArray({ raw: null })).toEqual([]);
     expect(asArray({ raw: ['One', null, { title: 'Two' }] })).toEqual([
@@ -82,16 +87,24 @@ describe('Navigator Catalogue utilities', () => {
   });
 
   it('localizes catalogue and comparison URLs', () => {
-    expect(getLocalizedLandingPageURL(undefined)).toBe('/en/navigator');
+    expect(getLocalizedLandingPageURL(undefined)).toBe(
+      '/en/navigator/tool-catalogue',
+    );
     expect(
       getLocalizedLandingPageURL({ landingPageURL: '/en/tools' }, 'fr'),
     ).toBe('/fr/tools');
     expect(getLocalizedLandingPageURL({ landingPageURL: '/tools' }, '')).toBe(
       '/tools',
     );
-    expect(getComparePageURL({ landingPageURL: '/en/tools/' }, 'de')).toBe(
-      '/de/tools/compare',
-    );
+    expect(
+      getComparePageURL({ comparePageURL: '/en/tools/compare' }, 'de'),
+    ).toBe('/de/tools/compare');
+    expect(
+      getComparePageURL(
+        { landingPageURL: '/en/navigator/tool-catalogue' },
+        'de',
+      ),
+    ).toBe('/de/navigator/compare');
     expect(getComparePageURL()).toBe('/en/navigator/compare');
   });
 

@@ -24,11 +24,11 @@ const ExtendedToolView = (props) => {
     acronym = '',
     long_description,
     tool_provider,
-    public_private_mode,
+    // public_private_mode,
     hyperlink,
     description,
-    coder_1,
-    coder_2,
+    // coder_1,
+    // coder_2,
     only_interactive_support_tool,
     adaptation_cycle_step,
     updating_cycle_of_the_tool,
@@ -78,8 +78,8 @@ const ExtendedToolView = (props) => {
   const { isSelected, isLimitReached, toggle } = useCompareTools(compareTool);
 
   const messages = defineMessages({
-    yes: { id: 'YES', defaultMessage: 'YES' },
-    no: { id: 'NO', defaultMessage: 'NO' },
+    yes: { id: 'Yes', defaultMessage: 'Yes' },
+    no: { id: 'No', defaultMessage: 'No' },
     intended_user_groups: {
       id: 'Intended User Groups',
       defaultMessage: 'Intended User Groups',
@@ -125,8 +125,8 @@ const ExtendedToolView = (props) => {
       defaultMessage: 'Number of users / uptake',
     },
     tool_provider_mode: {
-      id: 'Tool provider',
-      defaultMessage: 'Tool provider',
+      id: 'Tool provider mode',
+      defaultMessage: 'Tool provider mode',
     },
     adaptation_support_cycle_step: {
       id: 'Adaptation Support Cycle Step',
@@ -165,10 +165,10 @@ const ExtendedToolView = (props) => {
       id: 'Strengths and possible limitations of the tool',
       defaultMessage: 'Strengths and possible limitations of the tool',
     },
-    public_private_mode: {
-      id: 'Public/private',
-      defaultMessage: 'Public/private',
-    },
+    // public_private_mode: {
+    //   id: 'Public/private',
+    //   defaultMessage: 'Public/private',
+    // },
     spatial_resolution: {
       id: 'Spatial resolution',
       defaultMessage: 'Spatial resolution',
@@ -266,13 +266,13 @@ const ExtendedToolView = (props) => {
                 label={intl.formatMessage(messages.tool_provider)}
                 value={tool_provider}
               />
-              <TextField
+              {/* <TextField
                 label={intl.formatMessage(messages.public_private_mode)}
                 value={public_private_mode}
-              />
+              /> */}
               <HTMLField value={description} />
-              <TextField label="Coder1" value={coder_1} />
-              <TextField label="Coder2" value={coder_2} />
+              {/* <TextField label="Coder1" value={coder_1} />
+              <TextField label="Coder2" value={coder_2} /> */}
               <BooleanField
                 label={intl.formatMessage(
                   messages.only_interactive_support_tool,
@@ -342,6 +342,7 @@ const ExtendedToolView = (props) => {
                 values={tool_provider_mode}
               />
               <VocabularyField
+                asList
                 label={intl.formatMessage(
                   messages.adaptation_support_cycle_step,
                 )}

@@ -112,6 +112,10 @@ p.has--clear--both:empty {
 
 // General styles
 
+small {
+  font-size: 80%;
+}
+
 .listing-body-dates:empty {
   margin-bottom: 0;
 }

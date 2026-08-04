@@ -115,6 +115,12 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(screen.getByText('Agriculture')).toBeInTheDocument();
     expect(screen.getByText('Energy')).toBeInTheDocument();
     expect(screen.getByText('Wildfires')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Sector: Energy' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Hazard: Wildfires' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('Step 1')).toBeInTheDocument();
     expect(screen.queryByText('Step 4')).not.toBeInTheDocument();
     expect(

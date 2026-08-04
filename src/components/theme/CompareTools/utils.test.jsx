@@ -6,7 +6,6 @@ import { applyConfigurationSchema, rebind } from '@eeacms/search';
 import runRequest from '@eeacms/search/lib/runRequest';
 import {
   MAX_COMPARE_TOOLS,
-  compareToolsAtom,
   fetchResultsByUid,
   getCompareLocation,
   getCompareToolTitle,
@@ -47,16 +46,23 @@ const CompareHarness = ({ tool }) => {
   );
 };
 
-const renderCompareHarness = (tool, initialTools = []) =>
-  render(
-    <JotaiProvider initialValues={[[compareToolsAtom, initialTools]]}>
+const renderCompareHarness = (tool, initialTools = []) => {
+  window.localStorage.setItem(
+    'cca-compare-tools',
+    JSON.stringify(initialTools),
+  );
+
+  return render(
+    <JotaiProvider>
       <CompareHarness tool={tool} />
     </JotaiProvider>,
   );
+};
 
 describe('Compare Tools utilities', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    window.localStorage.clear();
   });
 
   it('resolves comparison identifiers and titles from supported shapes', () => {
@@ -91,14 +97,14 @@ describe('Compare Tools utilities', () => {
     expect(
       getCompareLocation(
         tools,
-        { landingPageURL: '/en/navigator' },
-        '/en/navigator?q=test',
+        { landingPageURL: '/en/navigator/tool-catalogue' },
+        '/en/navigator/tool-catalogue?q=test',
         'ro',
       ),
     ).toEqual({
       pathname: '/ro/navigator/compare',
       search: '?uid=one&uid=two&uid=three',
-      state: { returnURL: '/en/navigator?q=test' },
+      state: { returnURL: '/en/navigator/tool-catalogue?q=test' },
     });
     expect(MAX_COMPARE_TOOLS).toBe(4);
     expect(getCompareLocation([], {}, undefined)).toEqual({
@@ -174,12 +180,18 @@ describe('Compare Tools utilities', () => {
 
     fireEvent.click(screen.getByText('Toggle'));
     expect(screen.getByTestId('selected')).toHaveTextContent('true');
+    expect(
+      JSON.parse(window.localStorage.getItem('cca-compare-tools')),
+    ).toEqual([{ uid: 'one', title: 'Tool one' }]);
 
     fireEvent.click(screen.getByText('Select'));
     expect(screen.getByTestId('selected')).toHaveTextContent('true');
 
     fireEvent.click(screen.getByText('Remove'));
     expect(screen.getByTestId('selected')).toHaveTextContent('false');
+    expect(
+      JSON.parse(window.localStorage.getItem('cca-compare-tools')),
+    ).toEqual([]);
   });
 
   it('does not add tools without an identifier', () => {

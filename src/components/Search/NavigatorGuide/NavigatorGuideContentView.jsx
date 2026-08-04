@@ -90,8 +90,8 @@ const isStepSelected = (filters, field) =>
   );
 
 const previewTagTypes = {
-  sector: 'sector',
-  hazard: 'hazard',
+  adaptationSectors: 'sector',
+  climateImpacts: 'hazard',
   adaptationStage: 'adaptation-stage',
   coverage: 'coverage',
 };
@@ -169,10 +169,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       allowedFields.has(field),
     );
     const query = new URLManager().stateToUrl({ filters: resultFilters });
-    const pathname = (appConfig.resultsPageURL || '/en/navigator').replace(
-      /^\/en(?=\/|$)/,
-      `/${currentLang}`,
-    );
+    const pathname = (
+      appConfig.resultsPageURL || '/en/navigator/tool-catalogue'
+    ).replace(/^\/en(?=\/|$)/, `/${currentLang}`);
 
     history.push({ pathname, search: query ? `?${query}` : '' });
   };

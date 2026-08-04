@@ -5,7 +5,6 @@ import { IntlProvider } from 'react-intl';
 import { Provider as JotaiProvider } from 'jotai';
 import { useHistory } from 'react-router-dom';
 import { CompareToolsPanel } from './CompareToolsPanel';
-import { compareToolsAtom } from './utils';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -17,20 +16,27 @@ jest.mock('react-router-dom', () => ({
   useHistory: jest.fn(),
 }));
 
-const renderPanel = (selectedTools, appConfig) =>
-  render(
+const renderPanel = (selectedTools, appConfig) => {
+  window.localStorage.setItem(
+    'cca-compare-tools',
+    JSON.stringify(selectedTools),
+  );
+
+  return render(
     <IntlProvider locale="en">
-      <JotaiProvider initialValues={[[compareToolsAtom, selectedTools]]}>
+      <JotaiProvider>
         <CompareToolsPanel appConfig={appConfig} />
       </JotaiProvider>
     </IntlProvider>,
   );
+};
 
 describe('CompareToolsPanel', () => {
   const push = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
+    window.localStorage.clear();
     useHistory.mockReturnValue({ push });
   });
 
@@ -61,7 +67,7 @@ describe('CompareToolsPanel', () => {
         { uid: 'one', title: 'Tool one' },
         { uid: 'two', title: 'Tool two' },
       ],
-      { landingPageURL: '/en/navigator' },
+      { landingPageURL: '/en/navigator/tool-catalogue' },
     );
 
     expect(screen.getByText('Ready to compare')).toHaveClass(

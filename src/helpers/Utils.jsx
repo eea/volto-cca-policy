@@ -77,18 +77,27 @@ export const BooleanField = ({ label, value, yesLabel, noLabel }) => (
   <TextField label={label} value={value ? yesLabel : noLabel} />
 );
 
-export const VocabularyField = ({ label, values }) => {
-  if (!values?.length) return null;
+export const VocabularyField = ({ label, values, asList }) => {
+  const items = values
+    ?.map((value) => value?.title || value?.token || value)
+    .filter(Boolean);
 
-  return (
-    <TextField
-      label={label}
-      value={values
-        .map((value) => value?.title || value?.token || value)
-        .filter(Boolean)
-        .join(', ')}
-    />
-  );
+  if (!items?.length) return null;
+
+  if (asList) {
+    return (
+      <>
+        <h5>{label}</h5>
+        <ul>
+          {items.map((item, index) => (
+            <li key={`${item}-${index}`}>{item}</li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+
+  return <TextField label={label} value={items.join(', ')} />;
 };
 
 export const ExternalLink = (props) => {
