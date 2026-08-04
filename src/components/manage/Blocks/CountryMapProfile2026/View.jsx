@@ -6,8 +6,8 @@ import {
   tooltipStyle,
   adjustEuCountryNames,
   euCountryNamesIncludingEnergy as euCountryNamesRaw,
-} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
+} from '@eeacms/volto-cca-policy/helpers/countryMap';
+import { withGeoJsonData } from '@eeacms/volto-cca-policy/hocs';
 import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
