@@ -1,19 +1,18 @@
 import React from 'react';
 import { compose } from 'redux';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
-
-import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import {
+  clientOnly,
   euCountryNames as euCountryNamesRaw,
   tooltipStyle,
   getImageUrl,
   adjustEuCountryNames,
-} from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
+} from '@eeacms/volto-cca-policy/helpers';
+import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
+import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import {
   withResponsiveContainer,
   withVisibilitySensor,
+  withGeoJsonData,
 } from '@eeacms/volto-cca-policy/hocs';
 import { makeStyles } from './mapstyle';
 import { Interactions } from './Interactions';

@@ -1,17 +1,21 @@
 import React from 'react';
 import { compose } from 'redux';
-import { Icon, Button } from 'semantic-ui-react';
+import { Icon, Button, Loader } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
-import { useMapContext } from '@eeacms/volto-openlayers-map/api';
-import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/helpers/country_map/hocs';
-import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+import {
+  Map,
+  Layer,
+  Layers,
+  Controls,
+  useMapContext,
+} from '@eeacms/volto-openlayers-map/api';
+import { euCountryNames, clientOnly } from '@eeacms/volto-cca-policy/helpers';
 import {
   withResponsiveContainer,
   withVisibilitySensor,
+  withGeoJsonData,
 } from '@eeacms/volto-cca-policy/hocs';
 import {
   getColorForCount,
@@ -210,8 +214,8 @@ const NavigatorCatalogueMapViewInner = (props) => {
   if (!tileWMSSources || !euCountriesSource) {
     return (
       <div className="navigator-catalogue-map-loading">
-        <i className="icon loading" />
-        Loading map...
+        <Loader active inline="centered" />
+        <span>Loading map...</span>
       </div>
     );
   }

@@ -35,11 +35,19 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
     </div>
   ),
 
-  VocabularyField: ({ label, values = [] }) =>
+  VocabularyField: ({ label, values = [], asList }) =>
     values.length > 0 ? (
       <div>
         <span>{label}</span>
-        <span>{values.join(', ')}</span>
+        {asList ? (
+          <ul>
+            {values.map((value, index) => (
+              <li key={`${value}-${index}`}>{value}</li>
+            ))}
+          </ul>
+        ) : (
+          <span>{values.join(', ')}</span>
+        )}
       </div>
     ) : null,
 
@@ -315,34 +323,32 @@ describe('ExtendedToolView', () => {
     expect(formatFunctionalityScore).not.toHaveBeenCalled();
   });
 
-  it('renders text fields', () => {
+  it('renders the supported text fields', () => {
     renderComponent({
       title: 'Climate Tool',
       tool_provider: 'Example Provider',
-      public_private_mode: 'Public',
       spatial_resolution: 'Regional',
       underlying_data_maintenance: 'Updated yearly',
       strengths_and_possible_limitations: 'Easy to use',
     });
 
     expect(screen.getByText('Example Provider')).toBeInTheDocument();
-    expect(screen.getByText('Public')).toBeInTheDocument();
     expect(screen.getByText('Regional')).toBeInTheDocument();
     expect(screen.getByText('Updated yearly')).toBeInTheDocument();
     expect(screen.getByText('Easy to use')).toBeInTheDocument();
   });
 
-  it('renders coder fields', () => {
+  it('does not render removed coder fields', () => {
     renderComponent({
       title: 'Climate Tool',
       coder_1: 'Coder One',
       coder_2: 'Coder Two',
     });
 
-    expect(screen.getByText('Coder1')).toBeInTheDocument();
-    expect(screen.getByText('Coder One')).toBeInTheDocument();
-    expect(screen.getByText('Coder2')).toBeInTheDocument();
-    expect(screen.getByText('Coder Two')).toBeInTheDocument();
+    expect(screen.queryByText('Coder1')).not.toBeInTheDocument();
+    expect(screen.queryByText('Coder One')).not.toBeInTheDocument();
+    expect(screen.queryByText('Coder2')).not.toBeInTheDocument();
+    expect(screen.queryByText('Coder Two')).not.toBeInTheDocument();
   });
 
   it('renders HTML descriptions', () => {
@@ -356,7 +362,7 @@ describe('ExtendedToolView', () => {
     expect(screen.getByText('Short tool description')).toBeInTheDocument();
   });
 
-  it('renders boolean fields with YES values', () => {
+  it('renders boolean fields with Yes values', () => {
     renderComponent({
       title: 'Climate Tool',
       only_interactive_support_tool: true,
@@ -366,10 +372,10 @@ describe('ExtendedToolView', () => {
       free_access: true,
     });
 
-    expect(screen.getAllByText('YES')).toHaveLength(5);
+    expect(screen.getAllByText('Yes')).toHaveLength(5);
   });
 
-  it('renders boolean fields with NO values', () => {
+  it('renders boolean fields with No values', () => {
     renderComponent({
       title: 'Climate Tool',
       only_interactive_support_tool: false,
@@ -379,7 +385,7 @@ describe('ExtendedToolView', () => {
       free_access: false,
     });
 
-    expect(screen.getAllByText('NO')).toHaveLength(5);
+    expect(screen.getAllByText('No')).toHaveLength(5);
   });
 
   it('renders vocabulary fields', () => {

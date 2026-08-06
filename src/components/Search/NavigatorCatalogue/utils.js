@@ -2,13 +2,17 @@
  * Color scale for tool counts (EEA green tones)
  * Used by the map view to color-code countries
  */
-export const getColorForCount = (count) => {
-  if (count >= 10) return '#0a5c4e'; // darkest
-  if (count >= 7) return '#0d7a68';
-  if (count >= 4) return '#289588'; // base accent
-  if (count >= 1) return '#6fc4b8'; // light
-  return '#e8eded'; // none (very light gray-green)
-};
+export const mapColorScale = [
+  { minimum: 10, label: '10 or more', color: '#0F6B3F' },
+  { minimum: 7, label: '7 - 9', color: '#007B6C' },
+  { minimum: 4, label: '4 - 6', color: '#84C79A' },
+  { minimum: 1, label: '1 - 3', color: '#C2E3CD' },
+  { minimum: 0, label: 'None', color: '#E1E7DF' },
+];
+
+export const getColorForCount = (count) =>
+  mapColorScale.find(({ minimum }) => count >= minimum)?.color ||
+  mapColorScale.at(-1).color;
 
 /**
  * Normalize country names between GeoJSON and facet data
@@ -46,29 +50,27 @@ export const buildCountryCounts = (facets) => {
 /**
  * Legend items for the map view
  */
-export const mapLegendItems = [
-  { label: '10+', color: '#0a5c4e' },
-  { label: '7–9', color: '#0d7a68' },
-  { label: '4–6', color: '#289588' },
-  { label: '1–3', color: '#6fc4b8' },
-  { label: 'None', color: '#e8eded' },
-];
+export const mapLegendItems = mapColorScale.map(({ label, color }) => ({
+  label,
+  color,
+}));
 
-export const asArray = (value) => {
-  if (!value) return [];
-  const raw = value.raw !== undefined ? value.raw : value;
+const unwrapRawValue = (value) =>
+  value?.raw === undefined ? value : value.raw;
+
+export const rawValueAsArray = (value) => {
+  const raw = unwrapRawValue(value);
   if (!raw) return [];
-  const values = Array.isArray(raw)
-    ? raw.filter(Boolean)
-    : [raw].filter(Boolean);
-
-  return values.map((value) => value?.title || value?.token || value);
+  return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
 };
+
+export const asArray = (value) =>
+  rawValueAsArray(value).map((value) => value?.title || value?.token || value);
 
 export const arrayFieldToString = (value) => asArray(value).join(', ');
 
 export const formatFunctionalityScore = (value) => {
-  const raw = value?.raw !== undefined ? value.raw : value;
+  const raw = unwrapRawValue(value);
   const score = raw === null || raw === undefined ? Number.NaN : Number(raw);
 
   return Number.isFinite(score) ? `${Math.min(6, Math.max(0, score))}/6` : '—';

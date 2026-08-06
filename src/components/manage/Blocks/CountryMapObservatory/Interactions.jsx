@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { euCountryNames } from '@eeacms/volto-cca-policy/helpers/country_map/countryMap';
+import { euCountryNames } from '@eeacms/volto-cca-policy/helpers';
 import { useMapContext } from '@eeacms/volto-openlayers-map/api';
 
 let highlight = null; // easy global

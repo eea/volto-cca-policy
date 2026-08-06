@@ -8,6 +8,7 @@ import {
   getCompareToolUid,
   useCompareTools,
 } from '../../theme/CompareTools/utils';
+import { rawValueAsArray } from './utils';
 
 const messages = defineMessages({
   sector: {
@@ -35,17 +36,10 @@ const messages = defineMessages({
     defaultMessage: 'Compare',
   },
   viewTool: {
-    id: 'View tool',
-    defaultMessage: 'View tool',
+    id: 'View',
+    defaultMessage: 'View',
   },
 });
-
-const asArray = (value) => {
-  if (!value) return [];
-  const raw = value.raw !== undefined ? value.raw : value;
-  if (!raw) return [];
-  return Array.isArray(raw) ? raw.filter(Boolean) : [raw].filter(Boolean);
-};
 
 const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
   day: '2-digit',
@@ -119,14 +113,14 @@ const CycleElements = ({ intl, values }) => {
 const NavigatorCatalogueCardItem = (props) => {
   const { result } = props;
   const intl = useIntl();
-  const sectors = asArray(result.cca_adaptation_sectors);
-  const hazards = asArray(result.cca_climate_impacts);
-  const licenseStatus = asArray(result.cca_license_status)
+  const sectors = rawValueAsArray(result.cca_adaptation_sectors);
+  const hazards = rawValueAsArray(result.cca_climate_impacts);
+  const licenseStatus = rawValueAsArray(result.cca_license_status)
     .map((value) => value?.title || value)
     .filter(Boolean)
     .join(', ');
   const toolProvider = result?._result?.tool_provider?.raw;
-  const adaptationSupportCycleSteps = asArray(
+  const adaptationSupportCycleSteps = rawValueAsArray(
     result.adaptation_support_cycle_step,
   )
     .map((value) => value?.title?.split(':')[0])
