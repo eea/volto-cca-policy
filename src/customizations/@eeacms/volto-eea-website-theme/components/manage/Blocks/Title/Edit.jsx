@@ -13,6 +13,7 @@ import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal'
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import View from '@eeacms/volto-eea-website-theme/components/manage/Blocks/Title/View';
 import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
+import { GUIDANCE, NEWS_ITEM } from '@eeacms/volto-cca-policy/constants';
 import schema from './schema';
 
 const messages = defineMessages({
@@ -21,6 +22,8 @@ const messages = defineMessages({
     defaultMessage: 'Type the title…',
   },
 });
+
+const HIDE_METADATA_BY_DEFAULT_TYPES = [GUIDANCE, NEWS_ITEM];
 
 function usePrevious(value) {
   const ref = useRef();
@@ -58,6 +61,9 @@ export const TitleBlockEdit = (props) => {
     detached,
     editable,
   } = props;
+
+  const onChangeBlock = props.onChangeBlock;
+
   const metadata = props.metadata || props.properties;
 
   const editor = useMemo(() => withReact(createEditor()), []);
@@ -66,6 +72,40 @@ export const TitleBlockEdit = (props) => {
   const disableNewBlocks = data.disableNewBlocks || detached;
 
   const text = metadata?.['title'] || '';
+
+  // Set metadata visibility defaults for specific content types.
+  const contentType = props?.contentType;
+
+  useEffect(() => {
+    if (!HIDE_METADATA_BY_DEFAULT_TYPES.includes(contentType)) {
+      return;
+    }
+
+    const defaults = {
+      hideContentType: true,
+      hideCreationDate: true,
+      hidePublishingDate: true,
+      hideModificationDate: true,
+    };
+
+    const missingDefaults = Object.entries(defaults).reduce(
+      (result, [key, value]) => {
+        if (data[key] === undefined) {
+          result[key] = value;
+        }
+
+        return result;
+      },
+      {},
+    );
+
+    if (Object.keys(missingDefaults).length > 0) {
+      onChangeBlock(block, {
+        ...data,
+        ...missingDefaults,
+      });
+    }
+  }, [contentType, data, block, onChangeBlock]);
 
   const handleChange = useCallback(
     (value) => {
