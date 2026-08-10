@@ -1,23 +1,15 @@
-export { default as clientOnly } from './clientOnly';
-
-export const capitalizeFirstLetter = (str) =>
-  str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+export { fixEmbedURL } from './embed';
+export { capitalizeFirstLetter } from './string';
 export {
-  addFilterParams,
-  makeAdvancedSearchQuery,
-  makeContributionsSearchQuery,
-} from './search';
-
-export const fixEmbedURL = (url, is_cmshare_video) => {
-  const suffix = '/download';
-
-  if (!is_cmshare_video) return url;
-
-  const base = url.split('?')[0];
-
-  if (base.endsWith(suffix)) return base;
-
-  return base + suffix;
-};
-
-export * from './countryMap';
+  adjustEuCountryNames,
+  euCountryNames,
+  euCountryNamesEnergy,
+  euCountryNamesIncludingEnergy,
+  getClosestFeatureToCoordinate,
+  getFocusCountriesFeature,
+  getFocusCountryNames,
+  getImageUrl,
+  removeTooltip,
+  setTooltipVisibility,
+  tooltipStyle,
+} from './countryMap';

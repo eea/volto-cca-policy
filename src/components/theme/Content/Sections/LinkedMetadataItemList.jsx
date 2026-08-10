@@ -1,7 +1,7 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { makeAdvancedSearchQuery } from '@eeacms/volto-cca-policy/helpers/search';
+import { makeAdvancedSearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 
 const LinkedMetadataItemList = (props) => {
   const { value, join_type, field, getSearchValue } = props; // contentType

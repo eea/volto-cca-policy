@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Button, Icon, List, ListItem } from 'semantic-ui-react';
 import { ACE_PROJECT, ORGANISATION } from '@eeacms/volto-cca-policy/constants';
-import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/helpers/search';
+import { makeContributionsSearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 import { HTMLField } from '../Fields';
 import LinksList from './LinksList';
 

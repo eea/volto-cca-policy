@@ -1,4 +1,4 @@
-export default function clientOnly(WrappedComponent) {
+export default function withClientOnly(WrappedComponent) {
   const WithClientWrappedComponent = (props) => {
     return __SERVER__ ? null : <WrappedComponent {...props} />;
   };
