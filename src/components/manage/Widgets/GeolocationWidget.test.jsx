@@ -10,7 +10,7 @@ import GeolocationWidget from './GeolocationWidget';
 global.__SERVER__ = false;
 
 jest.mock(
-  '@eeacms/volto-cca-policy/components/theme/Widgets/GeolocationWidgetMapContainer',
+  '@eeacms/volto-cca-policy/components/manage/Widgets/GeolocationWidgetMapContainer',
 );
 const mockStore = configureStore();
 

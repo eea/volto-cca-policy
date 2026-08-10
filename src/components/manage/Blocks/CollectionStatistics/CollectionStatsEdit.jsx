@@ -3,7 +3,7 @@ import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal'
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import Schema from './schema';
 import View from './CollectionStatsView';
-import TransparentOverlay from '../../TransparentOverlay';
+import TransparentOverlay from './TransparentOverlay';
 
 const Edit = (props) => {
   const schema = Schema(props.data);

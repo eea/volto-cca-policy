@@ -29,7 +29,9 @@ describe('FileWidget', () => {
       </Provider>,
     );
 
-    await waitFor(() => {});
+    await waitFor(() =>
+      expect(container.querySelector('.file-widget-dropzone')).not.toBeNull(),
+    );
     expect(container).toMatchSnapshot();
   });
   test('renders a file widget component with value', async () => {
@@ -57,7 +59,9 @@ describe('FileWidget', () => {
       </Provider>,
     );
 
-    await waitFor(() => {});
+    await waitFor(() =>
+      expect(container.querySelector('.file-widget-dropzone')).not.toBeNull(),
+    );
     expect(container).toMatchSnapshot();
   });
   test('renders a file widget component with value in raw data', async () => {
@@ -85,7 +89,9 @@ describe('FileWidget', () => {
       </Provider>,
     );
 
-    await waitFor(() => {});
+    await waitFor(() =>
+      expect(container.querySelector('.file-widget-dropzone')).not.toBeNull(),
+    );
     expect(container).toMatchSnapshot();
   });
 });
