@@ -187,7 +187,7 @@ const resolveSelectedImageUrl = (url, item, imageSize) => {
   return null;
 };
 
-export const ImageToolbar = ({ id, onChange }) => (
+const ImageToolbar = ({ id, onChange }) => (
   <div className="image-upload-widget-toolbar">
     <Button
       icon
@@ -497,7 +497,7 @@ const UnconnectedImageInput = (props) => {
   );
 };
 
-export const ImageInput = withObjectBrowser(UnconnectedImageInput);
+const ImageInput = withObjectBrowser(UnconnectedImageInput);
 
 const ImageUploadWidget = (props) => {
   if (props.block && props.widget === 'attachedimage') {
