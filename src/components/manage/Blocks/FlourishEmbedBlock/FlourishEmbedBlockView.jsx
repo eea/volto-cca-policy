@@ -10,6 +10,7 @@ import './style.less';
 const FlourishEmbedBlockView = ({ data, mode }) => {
   const isEditMode = mode === 'edit';
   const embed_code = data?.embed_code || '';
+  const height = data?.height || '980';
   const flourishPath = getDataSrcFromEmbedCode(embed_code);
   const flourishUrl = buildFlourishUrl(flourishPath);
 
@@ -26,7 +27,7 @@ const FlourishEmbedBlockView = ({ data, mode }) => {
       }}
     >
       <iframe
-        height="980"
+        height={height}
         width="100%"
         src={flourishUrl}
         title="Flourish visualization"
