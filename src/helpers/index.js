@@ -3,7 +3,6 @@ export { capitalizeFirstLetter } from './string';
 export {
   adjustEuCountryNames,
   euCountryNames,
-  euCountryNamesEnergy,
   euCountryNamesIncludingEnergy,
   getClosestFeatureToCoordinate,
   getFocusCountriesFeature,
