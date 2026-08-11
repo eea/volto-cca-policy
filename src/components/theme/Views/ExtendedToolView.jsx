@@ -1,17 +1,15 @@
 import { Button, Container, Grid, Icon } from 'semantic-ui-react';
 import {
-  CompareToolsPanel,
-  PortalMessage,
-} from '@eeacms/volto-cca-policy/components';
-import {
-  HTMLField,
-  TextField,
   BooleanField,
-  VocabularyField,
+  CompareToolsPanel,
   ContentMetadata,
-  ItemLogo,
   DocumentsList,
-} from '@eeacms/volto-cca-policy/helpers';
+  HTMLField,
+  ItemLogo,
+  PortalMessage,
+  TextField,
+  VocabularyField,
+} from '@eeacms/volto-cca-policy/components';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import { useCompareTools } from '../CompareTools/utils';

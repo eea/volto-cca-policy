@@ -2,12 +2,12 @@ import React from 'react';
 import { Grid, Container, Segment } from 'semantic-ui-react';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import {
-  SubjectTags,
   EventDetails,
   HTMLField,
-} from '@eeacms/volto-cca-policy/helpers';
+  PortalMessage,
+  SubjectTags,
+} from '@eeacms/volto-cca-policy/components';
 import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 
 function EventView(props) {
   const { content } = props;
