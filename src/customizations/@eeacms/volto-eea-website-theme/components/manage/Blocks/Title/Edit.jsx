@@ -14,7 +14,7 @@ import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import View from '@eeacms/volto-eea-website-theme/components/manage/Blocks/Title/View';
 import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
 import { GUIDANCE, NEWS_ITEM } from '@eeacms/volto-cca-policy/constants';
-import schema from './schema';
+import schema from '@eeacms/volto-eea-website-theme/components/manage/Blocks/Title/schema';
 
 const messages = defineMessages({
   title: {
@@ -23,7 +23,13 @@ const messages = defineMessages({
   },
 });
 
-const HIDE_METADATA_BY_DEFAULT_TYPES = [GUIDANCE, NEWS_ITEM];
+const CONTENT_TYPES = [GUIDANCE, NEWS_ITEM];
+const METADATA_VISIBILITY = {
+  hideContentType: true,
+  hideCreationDate: true,
+  hidePublishingDate: true,
+  hideModificationDate: true,
+};
 
 function usePrevious(value) {
   const ref = useRef();
@@ -52,6 +58,7 @@ export const TitleBlockEdit = (props) => {
     index,
     onChangeField,
     onSelectBlock,
+    onChangeBlock,
     onAddBlock,
     onFocusPreviousBlock,
     onFocusNextBlock,
@@ -61,8 +68,6 @@ export const TitleBlockEdit = (props) => {
     detached,
     editable,
   } = props;
-
-  const onChangeBlock = props.onChangeBlock;
 
   const metadata = props.metadata || props.properties;
 
@@ -74,21 +79,14 @@ export const TitleBlockEdit = (props) => {
   const text = metadata?.['title'] || '';
 
   // Set metadata visibility defaults for specific content types.
-  const contentType = props?.contentType;
+  const contentType = metadata?.['@type'] || props?.contentType;
 
   useEffect(() => {
-    if (!HIDE_METADATA_BY_DEFAULT_TYPES.includes(contentType)) {
+    if (!CONTENT_TYPES.includes(contentType)) {
       return;
     }
 
-    const defaults = {
-      hideContentType: true,
-      hideCreationDate: true,
-      hidePublishingDate: true,
-      hideModificationDate: true,
-    };
-
-    const missingDefaults = Object.entries(defaults).reduce(
+    const missingDefaults = Object.entries(METADATA_VISIBILITY).reduce(
       (result, [key, value]) => {
         if (data[key] === undefined) {
           result[key] = value;
