@@ -36,7 +36,7 @@ export const makeContributionsSearchQuery = ({ id } = {}) => {
   return `${base}?${params.toString()}`;
 };
 
-export const makeAdvancedSearchQuery = ({ field, value }) => {
+export const makeAdvancedSearchQuery = ({ field, value } = {}) => {
   const base = '/en/data-and-downloads/';
   const params = new URLSearchParams();
   params.set('size', 'n_10_n');

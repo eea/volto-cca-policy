@@ -36,5 +36,5 @@ export { default as RASTWidgetView } from './manage/Widgets/RASTWidgetView';
 export { default as ImageWidget } from './manage/Widgets/ImageWidget';
 
 // Manage
-export { default as CreateArchivedCopyButton } from './theme/CreateArchivedCopyButton/CreateArchivedCopyButton';
+export { default as CreateArchivedCopyButton } from './manage/CreateArchivedCopyButton/CreateArchivedCopyButton';
 export { default as WorkflowLinkIntegrityModal } from './manage/Workflow/WorkflowLinkIntegrityModal';

@@ -19,7 +19,7 @@ const messages = defineMessages({
 const GeographicMetadata = (props) => {
   const { content } = props;
   const { spatial_values, spatial_layer, geochars } = content;
-  const j = JSON.parse(geochars);
+  const j = geochars ? JSON.parse(geochars) : null;
   const intl = useIntl();
 
   if (j === null) {
