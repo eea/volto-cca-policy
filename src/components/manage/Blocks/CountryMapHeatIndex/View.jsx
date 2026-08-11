@@ -1,7 +1,6 @@
 import React from 'react';
 import { compose } from 'redux';
 import {
-  clientOnly,
   euCountryNames as euCountryNamesRaw,
   tooltipStyle,
   getImageUrl,
@@ -10,6 +9,7 @@ import {
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import {
+  withClientOnly,
   withResponsiveContainer,
   withVisibilitySensor,
   withGeoJsonData,
@@ -188,7 +188,7 @@ const View = (props) => {
 };
 
 export default compose(
-  clientOnly,
+  withClientOnly,
   withGeoJsonData(),
   withResponsiveContainer('countryMapHeatIndex'),
   withVisibilitySensor(),

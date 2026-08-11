@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import spinner from '@eeacms/volto-cca-policy/../theme//assets/images/spinner.svg';
 import {
-  HTMLField,
-  BannerTitle,
-  LogoWrapper,
+  ContentBannerTitle,
   ContentMetadata,
-} from '@eeacms/volto-cca-policy/helpers';
+  HTMLField,
+  LogoWrapper,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
 import {
   Icon,
   Grid,
@@ -15,7 +16,6 @@ import {
   Container,
   Accordion,
 } from 'semantic-ui-react';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
@@ -215,7 +215,7 @@ function C3SIndicatorView(props) {
 
   return (
     <div className="db-item-view c3sindicator-view">
-      <BannerTitle
+      <ContentBannerTitle
         content={{ ...content, image: '' }}
         data={{
           info: [{ description: '' }],

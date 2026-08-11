@@ -36,7 +36,7 @@ msgid "Adaptation Approaches"
 msgstr "Подходи за адаптация"
 
 #. Default: "Adaptation Approaches:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Adaptation Approaches:"
 msgstr "Подходи за адаптация:"
 
@@ -161,7 +161,7 @@ msgid "Background information"
 msgstr "Основна информация"
 
 #. Default: "Biogeographical regions:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Биогеографски региони:"
 
@@ -171,7 +171,7 @@ msgid "Blue options"
 msgstr "Сини опции"
 
 #. Default: "Browse the site, drop an image, or use a URL"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgid "Capacity building empowering and lifestyle practices"
 msgstr "Изграждане на капацитет, овластяване и практики за начин на живот"
 
 #. Default: "Case Studies Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Case Studies Documents"
 msgstr "Документи от казуси"
 
@@ -206,7 +206,7 @@ msgid "Case Study illustrations"
 msgstr "Илюстрации от казус"
 
 #. Default: "Case studies related to this option:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Казуси, свързани с тази опция:"
 
@@ -226,7 +226,7 @@ msgid "Challenges"
 msgstr "Предизвикателства"
 
 #. Default: "Choose a file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
 msgstr "Изберете файл"
 
@@ -246,7 +246,7 @@ msgid "Choose thematic map:"
 msgstr "Изберете тематична карта:"
 
 #. Default: "City:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "град:"
 
@@ -274,7 +274,7 @@ msgid "Climate impacts"
 msgstr "Въздействия на климата"
 
 #. Default: "Climate impacts:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Climate impacts:"
 msgstr "Климатични въздействия:"
 
@@ -287,6 +287,11 @@ msgstr "Казуси от Climate-ADAPT"
 #: components/manage/Blocks/Listing/EventCardsListingView
 msgid "Climate-ADAPT page for this event"
 msgstr "Climate-ADAPT страница за това събитие"
+
+#. Default: "Close"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Close"
+msgstr ""
 
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
@@ -321,7 +326,7 @@ msgid "Contact information for the Observatory"
 msgstr "Информация за връзка с обсерваторията"
 
 #. Default: "Contributor:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
 msgstr "Сътрудник:"
 
@@ -349,7 +354,7 @@ msgid "Countries"
 msgstr "Държави"
 
 #. Default: "Countries:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Държави:"
 
@@ -374,23 +379,23 @@ msgid "Data sources"
 msgstr ""
 
 #. Default: "Date of creation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
 msgstr "Дата на създаване:"
 
 #. Default: "Date of publication:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of publication:"
 msgstr "Дата на публикуване:"
 
 #. Default: "Date of release:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
 msgstr "Дата на издаване:"
 
 #. Default: "Description"
+#: components/theme/Content/Sections/ItemLogo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Description"
 msgstr "Описание"
 
@@ -405,12 +410,12 @@ msgid "Disclaimer"
 msgstr "Отказ от отговорност"
 
 #. Default: "Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Documents"
 msgstr "Документи"
 
 #. Default: "Download Event"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download Event"
 msgstr "Изтегляне на събитие"
 
@@ -420,27 +425,27 @@ msgid "Download the detailed agenda"
 msgstr "Изтеглете подробния дневен ред"
 
 #. Default: "Download this event in iCal format"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download this event in iCal format"
 msgstr "Изтеглете това събитие във формат iCal"
 
 #. Default: "Drop file here to replace the existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
 msgstr "Пуснете файла тук, за да замените съществуващия файл"
 
 #. Default: "Drop file here to upload a new file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
 msgstr "Пуснете файл тук, за да качите нов файл"
 
 #. Default: "Drop files here ..."
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
 msgstr "Пуснете файлове тук..."
 
 #. Default: "Duration:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
 msgstr "Продължителност:"
 
@@ -543,7 +548,7 @@ msgid "Funding Programme"
 msgstr "Програма за финансиране"
 
 #. Default: "Funding Programme:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Програма за финансиране:"
 
@@ -553,7 +558,7 @@ msgid "Funding oportunity"
 msgstr "Възможност за финансиране"
 
 #. Default: "Geographic characterisation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Географска характеристика:"
 
@@ -578,7 +583,7 @@ msgid "Governance and Institutional"
 msgstr "Управление и институционално"
 
 #. Default: "Governance level:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
 msgstr "Ниво на управление:"
 
@@ -623,7 +628,7 @@ msgid "Health Impacts"
 msgstr "Въздействия върху здравето"
 
 #. Default: "Health impact:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Health impact:"
 msgstr "Въздействие върху здравето:"
 
@@ -643,7 +648,7 @@ msgid "Heat health warning systems (HHWS)"
 msgstr "Системи за предупреждение за здравето при топлина (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "IPCC adaptation options categories:"
 msgstr "Категории опции за адаптиране на IPCC:"
 
@@ -679,7 +684,7 @@ msgid "Indicators"
 msgstr "Индикатори"
 
 #. Default: "Info"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Info"
 msgstr "Информация"
 
@@ -725,12 +730,12 @@ msgid "Key Type Measure"
 msgstr "Ключов тип мярка"
 
 #. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
 msgstr ""
 
 #. Default: "Key Type Measures:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures:"
 msgstr "Основен тип мерки:"
 
@@ -745,7 +750,7 @@ msgid "Key type measures"
 msgstr "Ключов тип мерки"
 
 #. Default: "Keywords:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Keywords:"
 msgstr "Ключови думи:"
 
@@ -863,7 +868,7 @@ msgid "Looking for more information?"
 msgstr "Търсите повече информация?"
 
 #. Default: "Macro-Transnational region:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Макро-транснационален регион:"
 
@@ -891,11 +896,6 @@ msgstr "Инструмент на мисията"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
 msgstr "Най-полезен за"
-
-#. Default: "NO"
-#: components/theme/Views/ExtendedToolView
-msgid "NO"
-msgstr ""
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -934,7 +934,7 @@ msgid "Navigator Guide preview empty state"
 msgstr ""
 
 #. Default: "New"
-#: components/Result/ClusterHorizontalCardItem
+#: components/Search/Result/ClusterHorizontalCardItem
 msgid "New"
 msgstr "Нов"
 
@@ -951,6 +951,11 @@ msgstr "Новини"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
+msgstr ""
+
+#. Default: "No"
+#: components/theme/Views/ExtendedToolView
+msgid "No"
 msgstr ""
 
 #. Default: "No HHAP"
@@ -994,7 +999,7 @@ msgid "Objectives of the adaptation measure"
 msgstr "Цели на мярката за адаптиране"
 
 #. Default: "Observatory Contributions:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Observatory Contributions:"
 msgstr "Принос на обсерваторията:"
 
@@ -1025,7 +1030,7 @@ msgid "Organisation"
 msgstr "Организация"
 
 #. Default: "Organisation Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Organisation Documents"
 msgstr "Организационни документи"
 
@@ -1090,7 +1095,7 @@ msgid "Practical information"
 msgstr "Практическа информация"
 
 #. Default: "Previous versions of this indicator"
-#: components/theme/Views/ArchivedVersionListing
+#: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
 msgstr ""
 
@@ -1099,18 +1104,13 @@ msgstr ""
 msgid "Project information"
 msgstr "Информация за проекта"
 
-#. Default: "Public/private"
-#: components/theme/Views/ExtendedToolView
-msgid "Public/private"
-msgstr ""
-
 #. Default: "Publications and reports"
 #: search/vocabulary
 msgid "Publication reference"
 msgstr "Справка на публикацията"
 
 #. Default: "Publications and Reports Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Publications and Reports Documents"
 msgstr "Публикации и доклади Документи"
 
@@ -1120,7 +1120,7 @@ msgid "Published"
 msgstr "Публикувано"
 
 #. Default: "Published in Climate-ADAPT"
-#: helpers/Utils
+#: components/theme/Content/Sections/PublishedModifiedInfo
 msgid "Published in Climate-ADAPT"
 msgstr "Публикувано в Climate-ADAPT"
 
@@ -1151,7 +1151,7 @@ msgid "Reference Information"
 msgstr "Справочна информация"
 
 #. Default: "Reference information"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Reference information"
 msgstr "Справочна информация"
 
@@ -1182,7 +1182,7 @@ msgid "Related Resources"
 msgstr "Свързани ресурси"
 
 #. Default: "Related content:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ContentRelatedItems
 msgid "Related content:"
 msgstr "Свързано съдържание:"
 
@@ -1211,8 +1211,13 @@ msgstr "Съответни синергии със смекчаването на
 msgid "Remove {title}"
 msgstr ""
 
+#. Default: "Remove {title} from comparison"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Remove {title} from comparison"
+msgstr ""
+
 #. Default: "Replace existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Замяна на съществуващ файл"
 
@@ -1257,7 +1262,7 @@ msgid "Sector"
 msgstr "Сектор"
 
 #. Default: "Sectors:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Sectors:"
 msgstr "Сектори:"
 
@@ -1267,12 +1272,12 @@ msgid "See all matching tools"
 msgstr ""
 
 #. Default: "See less"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See less"
 msgstr "Вижте по-малко"
 
 #. Default: "See more"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See more"
 msgstr "Вижте повече"
 
@@ -1304,7 +1309,7 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton
+#: components/theme/Content/Sections/ShareInfoButton
 msgid "Share your information"
 msgstr "Споделете вашата информация"
 
@@ -1324,8 +1329,8 @@ msgid "Some selected tools could not be loaded and were skipped."
 msgstr ""
 
 #. Default: "Source"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "Source"
 msgstr "Източник"
 
@@ -1335,8 +1340,8 @@ msgid "Source of funding"
 msgstr "Източник на финансиране"
 
 #. Default: "Source:"
-#: components/Result/ClusterHorizontalCardItem
-#: components/Result/HealthHorizontalCardItem
+#: components/Search/Result/ClusterHorizontalCardItem
+#: components/Search/Result/HealthHorizontalCardItem
 msgid "Source:"
 msgstr "източник:"
 
@@ -1372,7 +1377,7 @@ msgid "Strengths and possible limitations of the tool"
 msgstr ""
 
 #. Default: "Sub Nationals:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Субнационали:"
 
@@ -1408,17 +1413,17 @@ msgid "The Adaptation Support Tool - Getting started"
 msgstr "Инструментът за поддръжка на адаптация - Първи стъпки"
 
 #. Default: "The date refers to the date of release of the video"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the date of release of the video"
 msgstr "Датата се отнася за датата на пускане на видеоклипа"
 
 #. Default: "The date refers to the latest date of publication of the item"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Датата се отнася за последната дата на публикуване на артикула"
 
 #. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Датата се отнася до момента, в който елементът е бил подготвен или актуализиран от участващи експерти, за да бъде изпратен за публикуване в Climate ADAPT"
 
@@ -1462,14 +1467,24 @@ msgstr "Инструмент"
 msgid "Tool provider"
 msgstr ""
 
+#. Default: "Tool provider mode"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool provider mode"
+msgstr ""
+
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
 msgstr ""
 
+#. Default: "Tools per country"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Tools per country"
+msgstr ""
+
 #. Default: "Topics:"
-#: components/Result/ClusterHorizontalCardItem
-#: components/Result/HealthHorizontalCardItem
+#: components/Search/Result/ClusterHorizontalCardItem
+#: components/Search/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr "теми:"
 
@@ -1530,7 +1545,7 @@ msgid "Updating notes"
 msgstr "Актуализиране на бележки"
 
 #. Default: "Uploading image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
 
@@ -1555,7 +1570,7 @@ msgid "User support provisions"
 msgstr ""
 
 #. Default: "Versions"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "Versions"
 msgstr ""
 
@@ -1569,23 +1584,23 @@ msgstr "Видеоклипове и подкасти"
 msgid "Videos and podcasts"
 msgstr "Видеоклипове и подкасти"
 
+#. Default: "View"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "View"
+msgstr ""
+
 #. Default: "View all contributions in the resource catalogue"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "View all contributions in the resource catalogue"
 msgstr "Вижте всички приноси в каталога с ресурси"
 
 #. Default: "View latest version"
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "View latest version"
 msgstr ""
 
-#. Default: "View tool"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "View tool"
-msgstr ""
-
 #. Default: "Visit external website"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Visit external website"
 msgstr "Посетете външен уебсайт"
 
@@ -1595,7 +1610,7 @@ msgid "Warning: Potential broken links"
 msgstr ""
 
 #. Default: "Web"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Web"
 msgstr "Мрежа"
 
@@ -1610,8 +1625,8 @@ msgid "Websites"
 msgstr "уебсайтове"
 
 #. Default: "Websites:"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Websites:"
 msgstr "уебсайтове:"
 
@@ -1626,12 +1641,12 @@ msgid "What stage of the adaptation stage are you working on?"
 msgstr ""
 
 #. Default: "When"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "When"
 msgstr "Кога"
 
 #. Default: "Where"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Where"
 msgstr "Къде"
 
@@ -1645,13 +1660,13 @@ msgstr ""
 msgid "Which spatial coverage do you need?"
 msgstr ""
 
-#. Default: "YES"
+#. Default: "Yes"
 #: components/theme/Views/ExtendedToolView
-msgid "YES"
+msgid "Yes"
 msgstr ""
 
 #. Default: "You are viewing an archived version."
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "You are viewing an archived version."
 msgstr ""
 
@@ -1686,12 +1701,12 @@ msgid "exclusion_of_liability.title"
 msgstr "Изключване на отговорност"
 
 #. Default: "Could not import the selected image."
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "imageImportFailed"
 msgstr ""
 
 #. Default: "latest"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "latest"
 msgstr ""
 
@@ -1706,7 +1721,7 @@ msgid "link-integrity: loading references"
 msgstr ""
 
 #. Default: "Enter a URL to an image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "linkAnImage"
 msgstr ""
 
@@ -1716,7 +1731,7 @@ msgid "officiallyInEnglish"
 msgstr "Официално докладваната правителствена информация е достъпна само на английски език"
 
 #. Default: "Pick an existing image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "pickAnImage"
 msgstr ""
 
@@ -1735,14 +1750,14 @@ msgstr ""
 msgid "refers to"
 msgstr ""
 
-#. Default: "tools available"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
-msgid "tools available"
+#. Default: "Upload an image from your computer"
+#: components/manage/Widgets/ImageWidget
+msgid "uploadAnImage"
 msgstr ""
 
-#. Default: "Upload an image from your computer"
-#: components/theme/Widgets/ImageWidget
-msgid "uploadAnImage"
+#. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 msgstr ""
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"

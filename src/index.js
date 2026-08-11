@@ -46,8 +46,8 @@ import {
   NON_EU_LANGS,
 } from '@eeacms/volto-cca-policy/constants';
 
-import GeocharsWidget from './components/theme/Widgets/GeocharsWidget';
-import PromotionalImageWidget from './components/theme/Widgets/PromotionalImageWidget';
+import GeocharsWidget from './components/manage/Widgets/GeocharsWidget';
+import PromotionalImageWidget from './components/manage/Widgets/PromotionalImageWidget';
 import HealthHorizontalCardItem from './components/Search/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Search/Result/ClusterHorizontalCardItem';
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
@@ -71,7 +71,7 @@ import eeaWhiteLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import './slate-styles.less';
 import BrokenLinks from './components/theme/Views/BrokenLinks';
 
-import GeolocationWidget from './components/theme/Widgets/GeolocationWidget';
+import GeolocationWidget from './components/manage/Widgets/GeolocationWidget';
 // import MigrationButtons from './components/MigrationButtons';
 
 const getEnv = () => (typeof window !== 'undefined' ? window.env : process.env);

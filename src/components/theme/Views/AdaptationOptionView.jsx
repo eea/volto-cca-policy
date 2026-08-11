@@ -1,17 +1,15 @@
 import React, { useMemo } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import {
-  HTMLField,
-  ContentMetadata,
-  PublishedModifiedInfo,
-  BannerTitle,
-  LinksList,
-} from '@eeacms/volto-cca-policy/helpers';
-import {
   AccordionList,
-  PortalMessage,
-  ShareInfoButton,
+  ContentBannerTitle,
+  ContentMetadata,
+  HTMLField,
   ImageGallery,
+  LinksList,
+  PortalMessage,
+  PublishedModifiedInfo,
+  ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
 import { Container, Grid, Image, Icon } from 'semantic-ui-react';
@@ -221,7 +219,7 @@ function AdaptationOptionView(props) {
 
   return (
     <div className="db-item-view adaptation-option-view">
-      <BannerTitle
+      <ContentBannerTitle
         content={{ ...content, image: '' }}
         data={{
           info: [{ description: '' }],

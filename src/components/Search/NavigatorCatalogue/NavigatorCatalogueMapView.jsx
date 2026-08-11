@@ -11,8 +11,9 @@ import {
   Controls,
   useMapContext,
 } from '@eeacms/volto-openlayers-map/api';
-import { euCountryNames, clientOnly } from '@eeacms/volto-cca-policy/helpers';
+import { euCountryNames } from '@eeacms/volto-cca-policy/helpers';
 import {
+  withClientOnly,
   withResponsiveContainer,
   withVisibilitySensor,
   withGeoJsonData,
@@ -268,7 +269,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
 
 /* istanbul ignore next */
 export default compose(
-  clientOnly,
+  withClientOnly,
   withGeoJsonData(true),
   withResponsiveContainer('navigatorCatalogueMap'),
   withVisibilitySensor(),
