@@ -2,7 +2,6 @@ import { getBaseUrl } from '@eeacms/volto-cca-policy/utils';
 import React from 'react';
 import { compose } from 'redux';
 import {
-  clientOnly,
   euCountryNames,
   tooltipStyle,
   getImageUrl,
@@ -11,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import {
+  withClientOnly,
   withResponsiveContainer,
   withVisibilitySensor,
   withGeoJsonData,
@@ -127,7 +127,7 @@ const CountryMapObservatoryView = (props) => {
 };
 
 export default compose(
-  clientOnly,
+  withClientOnly,
   withGeoJsonData(),
   withResponsiveContainer('countryMapObservatory'),
   withVisibilitySensor(),

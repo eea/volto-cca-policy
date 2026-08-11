@@ -1,16 +1,14 @@
 import {
-  ImageGallery,
-  PortalMessage,
-  ShareInfoButton,
-} from '@eeacms/volto-cca-policy/components';
-import {
-  BannerTitle,
+  ContentBannerTitle,
   ContentMetadata,
   DocumentsList,
   HTMLField,
+  ImageGallery,
   LinksList,
+  PortalMessage,
   PublishedModifiedInfo,
-} from '@eeacms/volto-cca-policy/helpers';
+  ShareInfoButton,
+} from '@eeacms/volto-cca-policy/components';
 import React, { Fragment } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
@@ -360,7 +358,7 @@ function CaseStudyView(props) {
 
   return (
     <div className="db-item-view case-study-view">
-      <BannerTitle
+      <ContentBannerTitle
         content={{ ...content, image: '' }}
         data={{
           info: [{ description: '' }],

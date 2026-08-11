@@ -1,6 +1,3 @@
-// import React, { useEffect } from 'react';
-// import flags from './flags.js';
-
 export const euCountryNames = [
   'Austria',
   'Belgium',
@@ -38,7 +35,7 @@ export const euCountryNames = [
   'Turkey',
 ];
 
-export const euCountryNamesEnergy = [
+const euCountryNamesEnergy = [
   'Albania',
   'Bosnia-Herzegovina',
   'Bosnia and Herzegovina',

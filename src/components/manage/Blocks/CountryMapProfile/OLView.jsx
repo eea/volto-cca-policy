@@ -2,7 +2,6 @@ import React from 'react';
 import { compose } from 'redux';
 import { Grid } from 'semantic-ui-react';
 import {
-  clientOnly,
   getImageUrl,
   tooltipStyle,
   adjustEuCountryNames,
@@ -15,6 +14,7 @@ import { Interactions } from './Interactions';
 import { useCountriesMetadata } from './hooks';
 import Filter from './Filter';
 import {
+  withClientOnly,
   withResponsiveContainer,
   withVisibilitySensor,
   withGeoJsonData,
@@ -156,7 +156,7 @@ const View = (props) => {
 };
 
 export default compose(
-  clientOnly,
+  withClientOnly,
   withGeoJsonData(true),
   withResponsiveContainer('countryMapProfileBlock'),
   withVisibilitySensor(),
