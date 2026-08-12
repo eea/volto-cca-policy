@@ -11,7 +11,7 @@ import {
   VocabularyField,
 } from '@eeacms/volto-cca-policy/components';
 import { defineMessages, useIntl } from 'react-intl';
-import config from '@plone/volto/registry';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { useCompareTools } from '../CompareTools/utils';
 import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
 
@@ -19,14 +19,10 @@ const ExtendedToolView = (props) => {
   const { content = {} } = props;
   const {
     title = '',
-    acronym = '',
     long_description,
     tool_provider,
-    // public_private_mode,
     hyperlink,
     description,
-    // coder_1,
-    // coder_2,
     only_interactive_support_tool,
     adaptation_cycle_step,
     updating_cycle_of_the_tool,
@@ -48,13 +44,12 @@ const ExtendedToolView = (props) => {
     temporality_of_data,
     spatial_resolution,
     underlying_data_maintenance,
-    // nature_based_solution,
-    // just_resilience,
-    // cost_benefit_ratio,
     accessibility_and_usability,
     functionality,
     strengths_and_possible_limitations,
   } = content;
+
+  console.log('ExtendedToolView content:', content);
 
   const availableLanguageValues = [];
   if (tool_available_english) {
@@ -67,7 +62,7 @@ const ExtendedToolView = (props) => {
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
   const hasCompareTool = Boolean(content.UID);
 
-  const item_title = acronym ? title + ' (' + acronym + ')' : title;
+  // const item_title = acronym ? title + ' (' + acronym + ')' : title;
   const compareTool = {
     uid: content.UID,
     title,
@@ -163,10 +158,6 @@ const ExtendedToolView = (props) => {
       id: 'Strengths and possible limitations of the tool',
       defaultMessage: 'Strengths and possible limitations of the tool',
     },
-    // public_private_mode: {
-    //   id: 'Public/private',
-    //   defaultMessage: 'Public/private',
-    // },
     spatial_resolution: {
       id: 'Spatial resolution',
       defaultMessage: 'Spatial resolution',
@@ -194,59 +185,44 @@ const ExtendedToolView = (props) => {
   });
   const intl = useIntl();
 
-  const {
-    blocks: { blocksConfig },
-  } = config;
-  const TitleBlockView = blocksConfig?.title?.view || (() => null);
-  const titleBlockData = { ...content, title: item_title, image: '' };
-
   return (
     <div className="db-item-view">
-      <TitleBlockView
-        {...props}
-        data={{
-          '@type': 'title',
-          info: [{ description: '' }],
-          hideContentType: true,
-          hideCreationDate: true,
-          hideModificationDate: true,
-          hidePublishingDate: true,
-          hideDownloadButton: false,
-          hideShareButton: false,
-          subtitle: 'Tool',
-        }}
-        metadata={titleBlockData}
-        properties={titleBlockData}
-      />
+      <BodyClass className="extended-tool-view" />
       <Container>
-        {(hasHyperlink || hasCompareTool) && (
-          <div className="extended-tool-compare-action">
-            {hasHyperlink && (
-              <Button
-                as="a"
-                primary
-                href={hyperlink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon className="ri-external-link-line" />
-                <span>{intl.formatMessage(messages.openTool)}</span>
-              </Button>
-            )}
-            {hasCompareTool && (
-              <Button
-                primary
-                inverted
-                disabled={isSelected || isLimitReached}
-                aria-pressed={isSelected}
-                onClick={toggle}
-              >
-                <Icon className="ri-layout-column-line" />
-                <span>{intl.formatMessage(messages.addToComparison)}</span>
-              </Button>
-            )}
-          </div>
-        )}
+        <div className="extended-tool-header">
+          <p className="extended-tool-provider">{tool_provider}</p>
+          <h1 className="extended-tool-title">{title}</h1>
+          {(hasHyperlink || hasCompareTool) && (
+            <div className="extended-tool-compare-action">
+              {hasHyperlink && (
+                <Button
+                  as="a"
+                  icon
+                  primary
+                  href={hyperlink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  labelPosition="right"
+                >
+                  {intl.formatMessage(messages.openTool)}
+                  <Icon className="ri-external-link-line" />
+                </Button>
+              )}
+              {hasCompareTool && (
+                <Button
+                  primary
+                  inverted
+                  disabled={isSelected || isLimitReached}
+                  aria-pressed={isSelected}
+                  onClick={toggle}
+                >
+                  <Icon className="ri-layout-column-line" />
+                  {intl.formatMessage(messages.addToComparison)}
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
         <CompareToolsPanel />
         <PortalMessage content={content} />
         <Grid columns="12">
@@ -260,17 +236,7 @@ const ExtendedToolView = (props) => {
               <ItemLogo {...props} />
 
               <HTMLField value={long_description} />
-              <TextField
-                label={intl.formatMessage(messages.tool_provider)}
-                value={tool_provider}
-              />
-              {/* <TextField
-                label={intl.formatMessage(messages.public_private_mode)}
-                value={public_private_mode}
-              /> */}
               <HTMLField value={description} />
-              {/* <TextField label="Coder1" value={coder_1} />
-              <TextField label="Coder2" value={coder_2} /> */}
               <BooleanField
                 label={intl.formatMessage(
                   messages.only_interactive_support_tool,
