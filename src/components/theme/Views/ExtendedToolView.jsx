@@ -198,7 +198,7 @@ const ExtendedToolView = (props) => {
                 <Button
                   as="a"
                   icon
-                  primary
+                  secondary
                   href={hyperlink}
                   target="_blank"
                   rel="noopener noreferrer"
