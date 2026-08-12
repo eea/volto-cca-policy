@@ -6,10 +6,13 @@ import { IntlProvider } from 'react-intl';
 import ExtendedToolView from './ExtendedToolView';
 import { useCompareTools } from '../CompareTools/utils';
 import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
+import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 
 jest.mock('../CompareTools/utils', () => ({
   useCompareTools: jest.fn(),
 }));
+
+jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
   BooleanField: ({ label, value, yesLabel, noLabel }) => (
@@ -65,6 +68,8 @@ jest.mock('../../Search/NavigatorCatalogue/utils', () => ({
 }));
 
 const toggle = jest.fn();
+const copyShareUrl = jest.fn();
+const setIsLinkCopied = jest.fn();
 
 const renderComponent = (content = {}) =>
   render(
@@ -82,6 +87,7 @@ describe('ExtendedToolView', () => {
       isLimitReached: false,
       toggle,
     });
+    useClipboard.mockReturnValue([false, copyShareUrl, setIsLinkCopied]);
   });
 
   it('renders the title and acronym', () => {
@@ -150,6 +156,55 @@ describe('ExtendedToolView', () => {
     );
 
     expect(toggle).toHaveBeenCalledTimes(1);
+  });
+
+  it('copies the current page link when the share button is clicked', () => {
+    renderComponent({
+      UID: 'tool-uid',
+      '@id': '/tools/climate-tool',
+      title: 'Climate Tool',
+    });
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: /share/i,
+      }),
+    );
+
+    expect(useClipboard).toHaveBeenCalledWith('/tools/climate-tool');
+    expect(copyShareUrl).toHaveBeenCalledTimes(1);
+  });
+
+  it('shows confirmation after the link is copied', () => {
+    useClipboard.mockReturnValue([true, copyShareUrl, setIsLinkCopied]);
+
+    renderComponent({
+      UID: 'tool-uid',
+      '@id': '/tools/climate-tool',
+      title: 'Climate Tool',
+    });
+
+    expect(
+      screen.getByRole('button', {
+        name: /link copied/i,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it('resets the copied confirmation after six seconds', () => {
+    jest.useFakeTimers();
+    useClipboard.mockReturnValue([true, copyShareUrl, setIsLinkCopied]);
+
+    renderComponent({
+      UID: 'tool-uid',
+      '@id': '/tools/climate-tool',
+      title: 'Climate Tool',
+    });
+
+    jest.advanceTimersByTime(6000);
+
+    expect(setIsLinkCopied).toHaveBeenCalledWith(false);
+    jest.useRealTimers();
   });
 
   it('passes the correct tool data to useCompareTools', () => {

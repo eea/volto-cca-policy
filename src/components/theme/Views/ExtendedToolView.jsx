@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Button, Container, Grid, Icon } from 'semantic-ui-react';
 import {
   BooleanField,
@@ -12,6 +13,7 @@ import {
 } from '@eeacms/volto-cca-policy/components';
 import { defineMessages, useIntl } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
 import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
 
@@ -49,8 +51,6 @@ const ExtendedToolView = (props) => {
     strengths_and_possible_limitations,
   } = content;
 
-  console.log('ExtendedToolView content:', content);
-
   const availableLanguageValues = [];
   if (tool_available_english) {
     availableLanguageValues.push('English');
@@ -69,6 +69,16 @@ const ExtendedToolView = (props) => {
     href: content['@id'],
   };
   const { isSelected, isLimitReached, toggle } = useCompareTools(compareTool);
+  const shareUrl = content['@id'];
+  const [isLinkCopied, copyShareUrl, setIsLinkCopied] = useClipboard(shareUrl);
+
+  useEffect(() => {
+    if (!isLinkCopied) return undefined;
+
+    const timeout = setTimeout(() => setIsLinkCopied(false), 6000);
+
+    return () => clearTimeout(timeout);
+  }, [isLinkCopied, setIsLinkCopied]);
 
   const messages = defineMessages({
     yes: { id: 'Yes', defaultMessage: 'Yes' },
@@ -209,16 +219,24 @@ const ExtendedToolView = (props) => {
                 </Button>
               )}
               {hasCompareTool && (
-                <Button
-                  primary
-                  inverted
-                  disabled={isSelected || isLimitReached}
-                  aria-pressed={isSelected}
-                  onClick={toggle}
-                >
-                  <Icon className="ri-layout-column-line" />
-                  {intl.formatMessage(messages.addToComparison)}
-                </Button>
+                <>
+                  <Button
+                    primary
+                    inverted
+                    disabled={isSelected || isLimitReached}
+                    aria-pressed={isSelected}
+                    onClick={toggle}
+                  >
+                    <Icon className="ri-layout-column-line" />
+                    {intl.formatMessage(messages.addToComparison)}
+                  </Button>
+                  <Button primary inverted onClick={copyShareUrl}>
+                    <Icon className="ri-share-line" />
+                    {intl.formatMessage(
+                      isLinkCopied ? messages.linkCopied : messages.share,
+                    )}
+                  </Button>
+                </>
               )}
             </div>
           )}
