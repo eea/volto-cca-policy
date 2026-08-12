@@ -45,6 +45,10 @@ p.has--clear--both:empty {
   gap: 0 0.7em !important;
 }
 
+.header-actions .search-action {
+  background-color: @primaryColor;
+}
+
 // Fix item image size
 #main {
   .ui.items > .item > .image > img {

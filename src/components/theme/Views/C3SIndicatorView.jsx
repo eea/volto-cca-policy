@@ -254,7 +254,7 @@ function C3SIndicatorView(props) {
                 )}
               </LogoWrapper>
 
-              <Accordion id="background" key="background" className="secondary">
+              <Accordion id="background" key="background" className="primary">
                 <Accordion.Title
                   role="button"
                   tabIndex={0}
@@ -283,7 +283,7 @@ function C3SIndicatorView(props) {
               <Accordion
                 id="visualisation"
                 key="visualisation"
-                className="secondary"
+                className="primary"
               >
                 <Accordion.Title
                   role="button"
