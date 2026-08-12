@@ -7,8 +7,7 @@ import {
   adjustEuCountryNames,
   euCountryNamesIncludingEnergy as euCountryNamesRaw,
 } from '@eeacms/volto-cca-policy/helpers/countryMap';
-import { withGeoJsonData } from '@eeacms/volto-cca-policy/hocs';
-import { clientOnly } from '@eeacms/volto-cca-policy/helpers';
+import { withGeoJsonData, withClientOnly } from '@eeacms/volto-cca-policy/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import { Map, Layer, Layers, Controls } from '@eeacms/volto-openlayers-map/api';
 import { makeStyles } from './mapstyle';
@@ -448,7 +447,7 @@ const View = (props) => {
 };
 
 export default compose(
-  clientOnly,
+  withClientOnly,
   withGeoJsonData(true),
   withResponsiveContainer('countryMapProfileBlock'),
   withVisibilitySensor(),
