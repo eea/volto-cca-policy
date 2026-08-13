@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
-import { Button, Container, Grid, Icon } from 'semantic-ui-react';
+import { Button, Container, Grid, Icon, Segment } from 'semantic-ui-react';
 import {
-  BooleanField,
   CompareToolsPanel,
-  ContentMetadata,
-  DocumentsList,
   HTMLField,
   PortalMessage,
   TextField,
@@ -23,12 +20,6 @@ const ExtendedToolView = (props) => {
     long_description,
     tool_provider,
     hyperlink,
-    description,
-    only_interactive_support_tool,
-    adaptation_cycle_step,
-    updating_cycle_of_the_tool,
-    language_accessibility,
-    free_access,
     intended_user_groups,
     place_of_implementation,
     type_of_data,
@@ -37,10 +28,7 @@ const ExtendedToolView = (props) => {
     user_support_provisions,
     tool_validation_use,
     number_of_users_tool,
-    tool_provider_mode,
     adaptation_support_cycle_step,
-    tool_available_english,
-    tool_available_language,
     type_of_outputs,
     temporality_of_data,
     spatial_resolution,
@@ -50,14 +38,6 @@ const ExtendedToolView = (props) => {
     strengths_and_possible_limitations,
   } = content;
 
-  const availableLanguageValues = [];
-  if (tool_available_english) {
-    availableLanguageValues.push('English');
-  }
-  if (tool_available_language) {
-    availableLanguageValues.push(tool_available_language);
-  }
-  const availableLanguageText = availableLanguageValues.join(', ');
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
   const hasCompareTool = Boolean(content.UID);
 
@@ -79,32 +59,9 @@ const ExtendedToolView = (props) => {
   }, [isLinkCopied, setIsLinkCopied]);
 
   const messages = defineMessages({
-    yes: { id: 'Yes', defaultMessage: 'Yes' },
-    no: { id: 'No', defaultMessage: 'No' },
     intended_user_groups: {
       id: 'Intended User Groups',
       defaultMessage: 'Intended User Groups',
-    },
-    tool_provider: { id: 'Tool provider', defaultMessage: 'Tool provider' },
-    only_interactive_support_tool: {
-      id: 'Only online interactive support tool',
-      defaultMessage: 'Only online interactive support tool',
-    },
-    adaptation_cycle_step: {
-      id: 'Supports ≥1 adaptation cycle step',
-      defaultMessage: 'Supports ≥1 adaptation cycle step',
-    },
-    updating_cycle_of_the_tool: {
-      id: 'Updating cycle of the tool',
-      defaultMessage: 'Updating cycle of the tool',
-    },
-    language_accessibility: {
-      id: 'Language Accessibility',
-      defaultMessage: 'Language Accessibility',
-    },
-    free_access: {
-      id: 'Free [full or core functionality] access',
-      defaultMessage: 'Free [full or core functionality] access',
     },
     place_of_implementation: {
       id: 'Place of implementation',
@@ -125,17 +82,9 @@ const ExtendedToolView = (props) => {
       id: 'Number of users / uptake',
       defaultMessage: 'Number of users / uptake',
     },
-    tool_provider_mode: {
-      id: 'Tool provider mode',
-      defaultMessage: 'Tool provider mode',
-    },
     adaptation_support_cycle_step: {
       id: 'Adaptation Support Cycle Step',
       defaultMessage: 'Adaptation Support Cycle Step',
-    },
-    tool_available_language: {
-      id: 'Available language',
-      defaultMessage: 'Available language',
     },
     type_of_outputs: {
       id: 'Type of outputs',
@@ -144,18 +93,6 @@ const ExtendedToolView = (props) => {
     temporality_of_data: {
       id: 'Temporality of data',
       defaultMessage: 'Temporality of data',
-    },
-    nature_based_solution: {
-      id: 'Nature-based solution',
-      defaultMessage: 'Nature-based solution',
-    },
-    just_resilience: {
-      id: 'Just resilience',
-      defaultMessage: 'Just resilience',
-    },
-    cost_benefit_ratio: {
-      id: 'Cost-benefit ratio',
-      defaultMessage: 'Cost-benefit ratio',
     },
     accessibility_and_usability: {
       id: 'Accessibility and usability',
@@ -194,13 +131,14 @@ const ExtendedToolView = (props) => {
   const intl = useIntl();
 
   return (
-    <div className="db-item-view">
-      <BodyClass className="extended-tool-view" />
+    <div className="extended-tool-view">
+      <BodyClass className="extended-tool" />
       <Container>
         <div className="extended-tool-header">
           <p className="extended-tool-provider">{tool_provider}</p>
           <h1 className="extended-tool-title">{title}</h1>
-          {(hasHyperlink || hasCompareTool) && (
+          <HTMLField value={long_description} />
+          {hasHyperlink && (
             <div className="extended-tool-compare-action">
               {hasHyperlink && (
                 <Button
@@ -217,25 +155,23 @@ const ExtendedToolView = (props) => {
                 </Button>
               )}
               {hasCompareTool && (
-                <>
-                  <Button
-                    primary
-                    inverted
-                    disabled={isSelected || isLimitReached}
-                    aria-pressed={isSelected}
-                    onClick={toggle}
-                  >
-                    <Icon className="ri-layout-column-line" />
-                    {intl.formatMessage(messages.addToComparison)}
-                  </Button>
-                  <Button primary inverted onClick={copyShareUrl}>
-                    <Icon className="ri-share-line" />
-                    {intl.formatMessage(
-                      isLinkCopied ? messages.linkCopied : messages.share,
-                    )}
-                  </Button>
-                </>
+                <Button
+                  primary
+                  inverted
+                  disabled={isSelected || isLimitReached}
+                  aria-pressed={isSelected}
+                  onClick={toggle}
+                >
+                  <Icon className="ri-layout-column-line" />
+                  {intl.formatMessage(messages.addToComparison)}
+                </Button>
               )}
+              <Button primary inverted onClick={copyShareUrl}>
+                <Icon className="ri-share-line" />
+                {intl.formatMessage(
+                  isLinkCopied ? messages.linkCopied : messages.share,
+                )}
+              </Button>
             </div>
           )}
         </div>
@@ -249,40 +185,6 @@ const ExtendedToolView = (props) => {
               computer={8}
               className="col-left"
             >
-              <HTMLField value={long_description} />
-              <HTMLField value={description} />
-              <BooleanField
-                label={intl.formatMessage(
-                  messages.only_interactive_support_tool,
-                )}
-                value={only_interactive_support_tool}
-                yesLabel={intl.formatMessage(messages.yes)}
-                noLabel={intl.formatMessage(messages.no)}
-              />
-              <BooleanField
-                label={intl.formatMessage(messages.adaptation_cycle_step)}
-                value={adaptation_cycle_step}
-                yesLabel={intl.formatMessage(messages.yes)}
-                noLabel={intl.formatMessage(messages.no)}
-              />
-              <BooleanField
-                label={intl.formatMessage(messages.updating_cycle_of_the_tool)}
-                value={updating_cycle_of_the_tool}
-                yesLabel={intl.formatMessage(messages.yes)}
-                noLabel={intl.formatMessage(messages.no)}
-              />
-              <BooleanField
-                label={intl.formatMessage(messages.language_accessibility)}
-                value={language_accessibility}
-                yesLabel={intl.formatMessage(messages.yes)}
-                noLabel={intl.formatMessage(messages.no)}
-              />
-              <BooleanField
-                label={intl.formatMessage(messages.free_access)}
-                value={free_access}
-                yesLabel={intl.formatMessage(messages.yes)}
-                noLabel={intl.formatMessage(messages.no)}
-              />
               <VocabularyField
                 label={intl.formatMessage(messages.intended_user_groups)}
                 values={intended_user_groups}
@@ -316,19 +218,11 @@ const ExtendedToolView = (props) => {
                 values={number_of_users_tool}
               />
               <VocabularyField
-                label={intl.formatMessage(messages.tool_provider_mode)}
-                values={tool_provider_mode}
-              />
-              <VocabularyField
                 asList
                 label={intl.formatMessage(
                   messages.adaptation_support_cycle_step,
                 )}
                 values={adaptation_support_cycle_step}
-              />
-              <TextField
-                label={intl.formatMessage(messages.tool_available_language)}
-                value={availableLanguageText}
               />
               <VocabularyField
                 label={intl.formatMessage(messages.type_of_outputs)}
@@ -375,8 +269,7 @@ const ExtendedToolView = (props) => {
               computer={4}
               className="col-right"
             >
-              <ContentMetadata {...props} />
-              <DocumentsList {...props} />
+              <Segment></Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>

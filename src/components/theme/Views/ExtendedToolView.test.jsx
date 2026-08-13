@@ -15,15 +15,7 @@ jest.mock('../CompareTools/utils', () => ({
 jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
-  BooleanField: ({ label, value, yesLabel, noLabel }) => (
-    <div>
-      <span>{label}</span>
-      <span>{value ? yesLabel : noLabel}</span>
-    </div>
-  ),
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
-  ContentMetadata: () => <div data-testid="content-metadata" />,
-  DocumentsList: () => <div data-testid="documents-list" />,
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
   PortalMessage: () => <div data-testid="portal-message" />,
@@ -50,16 +42,6 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
         )}
       </div>
     ) : null,
-}));
-
-jest.mock('@plone/volto/registry', () => ({
-  blocks: {
-    blocksConfig: {
-      title: {
-        view: ({ metadata }) => <h1>{metadata.title}</h1>,
-      },
-    },
-  },
 }));
 
 jest.mock('../../Search/NavigatorCatalogue/utils', () => ({
@@ -133,6 +115,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     fireEvent.click(
@@ -149,6 +132,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     fireEvent.click(
@@ -168,6 +152,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     expect(
@@ -185,6 +170,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     jest.advanceTimersByTime(6000);
@@ -198,6 +184,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     expect(useCompareTools).toHaveBeenCalledWith({
@@ -218,6 +205,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     const button = screen.getByRole('button', {
@@ -238,6 +226,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     const button = screen.getByRole('button', {
@@ -258,6 +247,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     const button = screen.getByRole('button', {
@@ -272,6 +262,7 @@ describe('ExtendedToolView', () => {
   it('does not render the comparison button without a UID', () => {
     renderComponent({
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     expect(
@@ -279,46 +270,6 @@ describe('ExtendedToolView', () => {
         name: /add to comparison/i,
       }),
     ).not.toBeInTheDocument();
-  });
-
-  it('renders English and the additional available language', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: true,
-      tool_available_language: 'French',
-    });
-
-    expect(screen.getByText('English, French')).toBeInTheDocument();
-  });
-
-  it('renders only English when no additional language is provided', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: true,
-    });
-
-    expect(screen.getByText('English')).toBeInTheDocument();
-  });
-
-  it('renders only the additional language when English is unavailable', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: false,
-      tool_available_language: 'Romanian',
-    });
-
-    expect(screen.getByText('Romanian')).toBeInTheDocument();
-    expect(screen.queryByText(/English,/)).not.toBeInTheDocument();
-  });
-
-  it('does not render an available-language value when none exists', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: false,
-      tool_available_language: '',
-    });
-
-    expect(screen.queryByText('Available language')).not.toBeInTheDocument();
   });
 
   it('formats the functionality score', () => {
@@ -386,41 +337,13 @@ describe('ExtendedToolView', () => {
     expect(screen.queryByText('Coder Two')).not.toBeInTheDocument();
   });
 
-  it('renders HTML descriptions', () => {
+  it('renders the long HTML description', () => {
     renderComponent({
       title: 'Climate Tool',
       long_description: '<p>Long tool description</p>',
-      description: '<p>Short tool description</p>',
     });
 
     expect(screen.getByText('Long tool description')).toBeInTheDocument();
-    expect(screen.getByText('Short tool description')).toBeInTheDocument();
-  });
-
-  it('renders boolean fields with Yes values', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      only_interactive_support_tool: true,
-      adaptation_cycle_step: true,
-      updating_cycle_of_the_tool: true,
-      language_accessibility: true,
-      free_access: true,
-    });
-
-    expect(screen.getAllByText('Yes')).toHaveLength(5);
-  });
-
-  it('renders boolean fields with No values', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      only_interactive_support_tool: false,
-      adaptation_cycle_step: false,
-      updating_cycle_of_the_tool: false,
-      language_accessibility: false,
-      free_access: false,
-    });
-
-    expect(screen.getAllByText('No')).toHaveLength(5);
   });
 
   it('renders vocabulary fields', () => {
@@ -434,7 +357,6 @@ describe('ExtendedToolView', () => {
       user_support_provisions: ['Documentation'],
       tool_validation_use: ['Validated'],
       number_of_users_tool: ['More than 1,000'],
-      tool_provider_mode: ['Public provider'],
       adaptation_support_cycle_step: ['Assessing risks'],
       type_of_outputs: ['Maps'],
       temporality_of_data: ['Historical'],
@@ -448,7 +370,6 @@ describe('ExtendedToolView', () => {
     expect(screen.getByText('Documentation')).toBeInTheDocument();
     expect(screen.getByText('Validated')).toBeInTheDocument();
     expect(screen.getByText('More than 1,000')).toBeInTheDocument();
-    expect(screen.getByText('Public provider')).toBeInTheDocument();
     expect(screen.getByText('Assessing risks')).toBeInTheDocument();
     expect(screen.getByText('Maps')).toBeInTheDocument();
     expect(screen.getByText('Historical')).toBeInTheDocument();
@@ -470,7 +391,5 @@ describe('ExtendedToolView', () => {
 
     expect(screen.getByTestId('compare-tools-panel')).toBeInTheDocument();
     expect(screen.getByTestId('portal-message')).toBeInTheDocument();
-    expect(screen.getByTestId('content-metadata')).toBeInTheDocument();
-    expect(screen.getByTestId('documents-list')).toBeInTheDocument();
   });
 });
