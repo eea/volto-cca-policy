@@ -25,7 +25,6 @@ const ExtendedToolView = (props) => {
     hyperlink,
     intended_user_groups,
     place_of_implementation,
-    type_of_data,
     data_sources,
     license_status,
     user_support_provisions,
@@ -70,7 +69,6 @@ const ExtendedToolView = (props) => {
       id: 'Place of implementation',
       defaultMessage: 'Place of implementation',
     },
-    type_of_data: { id: 'Type of data', defaultMessage: 'Type of data' },
     data_sources: { id: 'Data sources', defaultMessage: 'Data sources' },
     license_status: { id: 'License status', defaultMessage: 'License status' },
     user_support_provisions: {
@@ -84,18 +82,6 @@ const ExtendedToolView = (props) => {
     number_of_users_tool: {
       id: 'Number of users / uptake',
       defaultMessage: 'Number of users / uptake',
-    },
-    adaptation_support_cycle_step: {
-      id: 'Adaptation Support Cycle Step',
-      defaultMessage: 'Adaptation Support Cycle Step',
-    },
-    type_of_outputs: {
-      id: 'Type of outputs',
-      defaultMessage: 'Type of outputs',
-    },
-    temporality_of_data: {
-      id: 'Temporality of data',
-      defaultMessage: 'Temporality of data',
     },
     accessibility_and_usability: {
       id: 'Accessibility and usability',
@@ -197,10 +183,6 @@ const ExtendedToolView = (props) => {
                 values={place_of_implementation}
               />
               <VocabularyField
-                label={intl.formatMessage(messages.type_of_data)}
-                values={type_of_data}
-              />
-              <VocabularyField
                 label={intl.formatMessage(messages.data_sources)}
                 values={data_sources}
               />
@@ -219,21 +201,6 @@ const ExtendedToolView = (props) => {
               <VocabularyField
                 label={intl.formatMessage(messages.number_of_users_tool)}
                 values={number_of_users_tool}
-              />
-              <VocabularyField
-                asList
-                label={intl.formatMessage(
-                  messages.adaptation_support_cycle_step,
-                )}
-                values={adaptation_support_cycle_step}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.type_of_outputs)}
-                values={type_of_outputs}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.temporality_of_data)}
-                values={temporality_of_data}
               />
               <TextField
                 label={intl.formatMessage(messages.spatial_resolution)}
@@ -273,27 +240,73 @@ const ExtendedToolView = (props) => {
               className="col-right"
             >
               <Segment className="metadata">
-                {climate_impacts?.length > 0 && (
-                  <>
+                <h3 className="metadata-header">Metadata</h3>
+                {adaptation_support_cycle_step?.length > 0 && (
+                  <div className="metadata-group adaptation-step">
                     <h5>
                       <FormattedMessage
-                        id="Climate impacts:"
-                        defaultMessage="Climate impacts:"
+                        id="Support of Adaptation Policy Cycle"
+                        defaultMessage="Support of Adaptation Policy Cycle"
                       />
                     </h5>
-                    <MetadataItemList value={climate_impacts} />
-                  </>
+                    <MetadataItemList value={adaptation_support_cycle_step} />
+                  </div>
                 )}
                 {sectors?.length > 0 && (
-                  <>
+                  <div className="metadata-group">
                     <h5>
                       <FormattedMessage
-                        id="Sectors:"
-                        defaultMessage="Sectors:"
+                        id="Adaptation sectors"
+                        defaultMessage="Adaptation sectors"
                       />
                     </h5>
-                    <MetadataItemList value={sectors} />
-                  </>
+                    <MetadataItemList asTags value={sectors} maxItems={3} />
+                  </div>
+                )}
+                {climate_impacts?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Climate impacts"
+                        defaultMessage="Climate impacts"
+                      />
+                    </h5>
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={climate_impacts}
+                    />
+                  </div>
+                )}
+                {type_of_outputs?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Type of outputs"
+                        defaultMessage="Type of outputs"
+                      />
+                    </h5>
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={type_of_outputs}
+                    />
+                  </div>
+                )}
+                {temporality_of_data?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Temporality of data"
+                        defaultMessage="Temporality of data"
+                      />
+                    </h5>
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={temporality_of_data}
+                    />
+                  </div>
                 )}
               </Segment>
             </Grid.Column>

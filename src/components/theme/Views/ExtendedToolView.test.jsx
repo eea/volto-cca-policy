@@ -19,7 +19,7 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
   MetadataItemList: ({ value = [] }) => (
-    <p>{value.map(({ title }) => title).join(', ')}</p>
+    <p>{value.map((item) => item.title || item).join(', ')}</p>
   ),
   PortalMessage: () => <div data-testid="portal-message" />,
   TextField: ({ label, value }) =>
@@ -354,7 +354,6 @@ describe('ExtendedToolView', () => {
       title: 'Climate Tool',
       intended_user_groups: ['Policy makers', 'Researchers'],
       place_of_implementation: ['Europe'],
-      type_of_data: ['Climate data'],
       data_sources: ['Satellite'],
       license_status: ['Open source'],
       user_support_provisions: ['Documentation'],
@@ -367,7 +366,6 @@ describe('ExtendedToolView', () => {
 
     expect(screen.getByText('Policy makers, Researchers')).toBeInTheDocument();
     expect(screen.getByText('Europe')).toBeInTheDocument();
-    expect(screen.getByText('Climate data')).toBeInTheDocument();
     expect(screen.getByText('Satellite')).toBeInTheDocument();
     expect(screen.getByText('Open source')).toBeInTheDocument();
     expect(screen.getByText('Documentation')).toBeInTheDocument();
@@ -387,21 +385,48 @@ describe('ExtendedToolView', () => {
     expect(screen.getByText('Easy to use')).toBeInTheDocument();
   });
 
-  it('renders climate impacts and sectors metadata', () => {
+  it('renders metadata except spatial coverage', () => {
     renderComponent({
       title: 'Climate Tool',
+      adaptation_support_cycle_step: [
+        { title: 'Step 2: Risk & vulnerability assessment' },
+      ],
       climate_impacts: [{ title: 'Drought' }, { title: 'Flooding' }],
       sectors: [{ title: 'Agriculture' }, { title: 'Health' }],
+      type_of_outputs: [{ title: 'Maps' }, { title: 'Charts' }],
+      temporality_of_data: [{ title: 'Historical' }, { title: 'Projections' }],
     });
 
     expect(
-      screen.getByRole('heading', { name: 'Climate impacts:' }),
+      screen.getByRole('heading', { name: 'Metadata' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: 'Support of Adaptation Policy Cycle',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Step 2: Risk & vulnerability assessment'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Climate impacts' }),
     ).toBeInTheDocument();
     expect(screen.getByText('Drought, Flooding')).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: 'Sectors:' }),
+      screen.getByRole('heading', { name: 'Adaptation sectors' }),
     ).toBeInTheDocument();
     expect(screen.getByText('Agriculture, Health')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Type of outputs' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Maps, Charts')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Temporality of data' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Historical, Projections')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { name: 'Spatial coverage' }),
+    ).not.toBeInTheDocument();
   });
 
   it('renders supporting components', () => {
