@@ -6,7 +6,6 @@ import {
   ContentMetadata,
   DocumentsList,
   HTMLField,
-  ItemLogo,
   PortalMessage,
   TextField,
   VocabularyField,
@@ -62,7 +61,6 @@ const ExtendedToolView = (props) => {
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
   const hasCompareTool = Boolean(content.UID);
 
-  // const item_title = acronym ? title + ' (' + acronym + ')' : title;
   const compareTool = {
     uid: content.UID,
     title,
@@ -251,8 +249,6 @@ const ExtendedToolView = (props) => {
               computer={8}
               className="col-left"
             >
-              <ItemLogo {...props} />
-
               <HTMLField value={long_description} />
               <HTMLField value={description} />
               <BooleanField

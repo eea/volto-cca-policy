@@ -90,20 +90,7 @@ describe('ExtendedToolView', () => {
     useClipboard.mockReturnValue([false, copyShareUrl, setIsLinkCopied]);
   });
 
-  it('renders the title and acronym', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      acronym: 'CT',
-    });
-
-    expect(
-      screen.getByRole('heading', {
-        name: 'Climate Tool (CT)',
-      }),
-    ).toBeInTheDocument();
-  });
-
-  it('renders the title without an acronym', () => {
+  it('renders the title', () => {
     renderComponent({
       title: 'Climate Tool',
     });
