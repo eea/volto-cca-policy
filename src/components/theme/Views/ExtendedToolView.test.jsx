@@ -420,7 +420,7 @@ describe('ExtendedToolView', () => {
       screen.getByRole('heading', { name: 'Metadata' }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: 'Geographic characterisation:' }),
+      screen.getByRole('heading', { name: 'Geographic coverage' }),
     ).toBeInTheDocument();
     expect(screen.getByTestId('geographic-metadata')).toHaveTextContent(
       'Global',
