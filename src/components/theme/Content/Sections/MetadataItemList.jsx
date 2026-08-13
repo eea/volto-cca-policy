@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 import { Popup } from 'semantic-ui-react';
 
 const MetadataItemList = (props) => {
-  const { value, join_type, asTags = false, maxItems } = props;
+  const { value, join_type, asList = false, asTags = false, maxItems } = props;
   const intl = useIntl();
 
   const items = value
@@ -11,6 +11,18 @@ const MetadataItemList = (props) => {
     .filter(Boolean);
 
   if (!items?.length) return null;
+
+  if (asList) {
+    return (
+      <ul className="metadata-list">
+        {items.map((item) => (
+          <li key={item}>
+            {intl.formatMessage({ id: item, defaultMessage: item })}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   const visibleItems = maxItems ? items.slice(0, maxItems) : items;
   const hiddenItems = items.slice(visibleItems.length);

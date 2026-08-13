@@ -3,6 +3,7 @@ export { default as ContentMetadata } from './ContentMetadata';
 export { default as ContentRelatedItems } from './ContentRelatedItems';
 export { default as DocumentsList } from './DocumentsList';
 export { default as EventDetails } from './EventDetails';
+export { default as GeographicMetadata } from './GeographicMetadata';
 export { default as ImageGallery } from './ImageGallery';
 export { default as ItemLogo, LogoWrapper } from './ItemLogo';
 export { default as LinksList, ExternalLink } from './LinksList';

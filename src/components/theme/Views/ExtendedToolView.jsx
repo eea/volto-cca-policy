@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Button, Container, Grid, Icon, Segment } from 'semantic-ui-react';
 import {
   CompareToolsPanel,
+  GeographicMetadata,
   HTMLField,
   MetadataItemList,
   PortalMessage,
@@ -21,6 +22,8 @@ const ExtendedToolView = (props) => {
     long_description,
     climate_impacts,
     sectors,
+    geochars,
+    spatial_layer,
     tool_provider,
     hyperlink,
     intended_user_groups,
@@ -33,12 +36,24 @@ const ExtendedToolView = (props) => {
     adaptation_support_cycle_step,
     type_of_outputs,
     temporality_of_data,
+    tool_available_english,
+    tool_available_language,
     spatial_resolution,
     underlying_data_maintenance,
     accessibility_and_usability,
     functionality,
     strengths_and_possible_limitations,
   } = content;
+
+  const availableLanguages = [
+    ...(tool_available_english ? ['English'] : []),
+    ...(Array.isArray(tool_available_language)
+      ? tool_available_language
+      : tool_available_language
+        ? [tool_available_language]
+        : []),
+  ];
+  const hasGeoChars = Boolean(geochars || spatial_layer?.length);
 
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
   const hasCompareTool = Boolean(content.UID);
@@ -61,10 +76,6 @@ const ExtendedToolView = (props) => {
   }, [isLinkCopied, setIsLinkCopied]);
 
   const messages = defineMessages({
-    intended_user_groups: {
-      id: 'Intended User Groups',
-      defaultMessage: 'Intended User Groups',
-    },
     place_of_implementation: {
       id: 'Place of implementation',
       defaultMessage: 'Place of implementation',
@@ -83,10 +94,6 @@ const ExtendedToolView = (props) => {
       id: 'Number of users / uptake',
       defaultMessage: 'Number of users / uptake',
     },
-    accessibility_and_usability: {
-      id: 'Accessibility and usability',
-      defaultMessage: 'Accessibility and usability',
-    },
     functionality: { id: 'Functionality', defaultMessage: 'Functionality' },
     strengths_and_possible_limitations: {
       id: 'Strengths and possible limitations of the tool',
@@ -99,22 +106,6 @@ const ExtendedToolView = (props) => {
     underlying_data_maintenance: {
       id: 'Underlying data maintenance',
       defaultMessage: 'Underlying data maintenance',
-    },
-    addToComparison: {
-      id: 'Add to comparison',
-      defaultMessage: 'Add to comparison',
-    },
-    openTool: {
-      id: 'Open tool',
-      defaultMessage: 'Open tool',
-    },
-    share: {
-      id: 'Share',
-      defaultMessage: 'Share',
-    },
-    linkCopied: {
-      id: 'Link copied',
-      defaultMessage: 'Link copied',
     },
   });
   const intl = useIntl();
@@ -139,7 +130,7 @@ const ExtendedToolView = (props) => {
                   rel="noopener noreferrer"
                   labelPosition="right"
                 >
-                  {intl.formatMessage(messages.openTool)}
+                  <FormattedMessage id="Open tool" defaultMessage="Open tool" />
                   <Icon className="ri-external-link-line" />
                 </Button>
               )}
@@ -152,13 +143,21 @@ const ExtendedToolView = (props) => {
                   onClick={toggle}
                 >
                   <Icon className="ri-layout-column-line" />
-                  {intl.formatMessage(messages.addToComparison)}
+                  <FormattedMessage
+                    id="Add to comparison"
+                    defaultMessage="Add to comparison"
+                  />
                 </Button>
               )}
               <Button primary inverted onClick={copyShareUrl}>
                 <Icon className="ri-share-line" />
-                {intl.formatMessage(
-                  isLinkCopied ? messages.linkCopied : messages.share,
+                {isLinkCopied ? (
+                  <FormattedMessage
+                    id="Link copied"
+                    defaultMessage="Link copied"
+                  />
+                ) : (
+                  <FormattedMessage id="Share" defaultMessage="Share" />
                 )}
               </Button>
             </div>
@@ -174,10 +173,6 @@ const ExtendedToolView = (props) => {
               computer={8}
               className="col-left"
             >
-              <VocabularyField
-                label={intl.formatMessage(messages.intended_user_groups)}
-                values={intended_user_groups}
-              />
               <VocabularyField
                 label={intl.formatMessage(messages.place_of_implementation)}
                 values={place_of_implementation}
@@ -218,14 +213,6 @@ const ExtendedToolView = (props) => {
                 label={intl.formatMessage(messages.underlying_data_maintenance)}
                 value={underlying_data_maintenance}
               />
-              <VocabularyField
-                label={intl.formatMessage(messages.accessibility_and_usability)}
-                values={
-                  accessibility_and_usability
-                    ? [accessibility_and_usability]
-                    : []
-                }
-              />
               <TextField
                 label={intl.formatMessage(
                   messages.strengths_and_possible_limitations,
@@ -241,6 +228,32 @@ const ExtendedToolView = (props) => {
             >
               <Segment className="metadata">
                 <h3 className="metadata-header">Metadata</h3>
+                {hasGeoChars && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Geographic characterisation:"
+                        defaultMessage="Geographic characterisation:"
+                      />
+                    </h5>
+                    <GeographicMetadata {...props} />
+                  </div>
+                )}
+                {intended_user_groups?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="User Group"
+                        defaultMessage="User Group"
+                      />
+                    </h5>
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={intended_user_groups}
+                    />
+                  </div>
+                )}
                 {adaptation_support_cycle_step?.length > 0 && (
                   <div className="metadata-group adaptation-step">
                     <h5>
@@ -249,7 +262,10 @@ const ExtendedToolView = (props) => {
                         defaultMessage="Support of Adaptation Policy Cycle"
                       />
                     </h5>
-                    <MetadataItemList value={adaptation_support_cycle_step} />
+                    <MetadataItemList
+                      asList
+                      value={adaptation_support_cycle_step}
+                    />
                   </div>
                 )}
                 {sectors?.length > 0 && (
@@ -305,6 +321,41 @@ const ExtendedToolView = (props) => {
                       asTags
                       maxItems={3}
                       value={temporality_of_data}
+                    />
+                  </div>
+                )}
+                {availableLanguages.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Language"
+                        defaultMessage="Language"
+                      />
+                    </h5>
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={availableLanguages}
+                    />
+                  </div>
+                )}
+
+                {accessibility_and_usability && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Accessibility and usability"
+                        defaultMessage="Accessibility and usability"
+                      />
+                    </h5>
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={
+                        Array.isArray(accessibility_and_usability)
+                          ? accessibility_and_usability
+                          : [accessibility_and_usability]
+                      }
                     />
                   </div>
                 )}

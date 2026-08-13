@@ -466,9 +466,16 @@ hr {
     }
   }
 
-  .adaptation-step p {
+  .adaptation-step .metadata-list {
+    padding: 0;
+    margin: 0;
     color: @secondaryColor;
     font-weight: 700;
+    list-style: none;
+
+    li + li {
+      margin-top: 0.4rem;
+    }
   }
 
   .metadata-tags {

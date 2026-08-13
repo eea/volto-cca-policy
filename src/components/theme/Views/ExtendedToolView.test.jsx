@@ -16,11 +16,24 @@ jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
+  GeographicMetadata: ({ content }) => (
+    <div data-testid="geographic-metadata">{content.spatial_layer}</div>
+  ),
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
-  MetadataItemList: ({ value = [] }) => (
-    <p>{value.map((item) => item.title || item).join(', ')}</p>
-  ),
+  MetadataItemList: ({ value = [], asList }) => {
+    const items = value.map((item) => item.title || item);
+
+    return asList ? (
+      <ul className="metadata-list">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    ) : (
+      <p>{items.join(', ')}</p>
+    );
+  },
   PortalMessage: () => <div data-testid="portal-message" />,
   TextField: ({ label, value }) =>
     value !== null && value !== undefined && value !== '' ? (
@@ -388,18 +401,30 @@ describe('ExtendedToolView', () => {
   it('renders metadata except spatial coverage', () => {
     renderComponent({
       title: 'Climate Tool',
+      spatial_layer: 'Global',
       adaptation_support_cycle_step: [
         { title: 'Step 2: Risk & vulnerability assessment' },
+        { title: 'Step 3: Identifying adaptation options' },
       ],
       climate_impacts: [{ title: 'Drought' }, { title: 'Flooding' }],
       sectors: [{ title: 'Agriculture' }, { title: 'Health' }],
       type_of_outputs: [{ title: 'Maps' }, { title: 'Charts' }],
       temporality_of_data: [{ title: 'Historical' }, { title: 'Projections' }],
+      tool_available_english: true,
+      tool_available_language: [{ title: 'French' }, 'Romanian'],
+      intended_user_groups: [{ title: 'Policy makers' }, 'Researchers'],
+      accessibility_and_usability: 'Easy to use',
     });
 
     expect(
       screen.getByRole('heading', { name: 'Metadata' }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Geographic characterisation:' }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('geographic-metadata')).toHaveTextContent(
+      'Global',
+    );
     expect(
       screen.getByRole('heading', {
         name: 'Support of Adaptation Policy Cycle',
@@ -407,6 +432,9 @@ describe('ExtendedToolView', () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText('Step 2: Risk & vulnerability assessment'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Step 3: Identifying adaptation options'),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: 'Climate impacts' }),
@@ -424,6 +452,18 @@ describe('ExtendedToolView', () => {
       screen.getByRole('heading', { name: 'Temporality of data' }),
     ).toBeInTheDocument();
     expect(screen.getByText('Historical, Projections')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Language' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('English, French, Romanian')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'User Group' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Policy makers, Researchers')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Accessibility and usability' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Easy to use')).toBeInTheDocument();
     expect(
       screen.queryByRole('heading', { name: 'Spatial coverage' }),
     ).not.toBeInTheDocument();

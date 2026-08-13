@@ -19,6 +19,16 @@ describe('MetadataItemList', () => {
     expect(screen.getByText('Flooding, Drought')).toBeInTheDocument();
   });
 
+  it('renders a plain stacked list', () => {
+    renderComponent({ value: ['Step one', 'Step two'], asList: true });
+
+    const list = screen.getByRole('list');
+    expect(list).toHaveClass('metadata-list');
+    expect(screen.getAllByRole('listitem')).toHaveLength(2);
+    expect(screen.getByText('Step one')).toBeInTheDocument();
+    expect(screen.getByText('Step two')).toBeInTheDocument();
+  });
+
   it('shows collapsed items in a popup on hover', async () => {
     renderComponent({
       value: ['One', 'Two', 'Three', 'Four', 'Five'],
