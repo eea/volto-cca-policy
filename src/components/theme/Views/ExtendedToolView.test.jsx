@@ -18,6 +18,9 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
+  MetadataItemList: ({ value = [] }) => (
+    <p>{value.map(({ title }) => title).join(', ')}</p>
+  ),
   PortalMessage: () => <div data-testid="portal-message" />,
   TextField: ({ label, value }) =>
     value !== null && value !== undefined && value !== '' ? (
@@ -382,6 +385,23 @@ describe('ExtendedToolView', () => {
     });
 
     expect(screen.getByText('Easy to use')).toBeInTheDocument();
+  });
+
+  it('renders climate impacts and sectors metadata', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      climate_impacts: [{ title: 'Drought' }, { title: 'Flooding' }],
+      sectors: [{ title: 'Agriculture' }, { title: 'Health' }],
+    });
+
+    expect(
+      screen.getByRole('heading', { name: 'Climate impacts:' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Drought, Flooding')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Sectors:' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Agriculture, Health')).toBeInTheDocument();
   });
 
   it('renders supporting components', () => {

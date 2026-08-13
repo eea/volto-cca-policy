@@ -3,11 +3,12 @@ import { Button, Container, Grid, Icon, Segment } from 'semantic-ui-react';
 import {
   CompareToolsPanel,
   HTMLField,
+  MetadataItemList,
   PortalMessage,
   TextField,
   VocabularyField,
 } from '@eeacms/volto-cca-policy/components';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
@@ -18,6 +19,8 @@ const ExtendedToolView = (props) => {
   const {
     title = '',
     long_description,
+    climate_impacts,
+    sectors,
     tool_provider,
     hyperlink,
     intended_user_groups,
@@ -269,7 +272,30 @@ const ExtendedToolView = (props) => {
               computer={4}
               className="col-right"
             >
-              <Segment></Segment>
+              <Segment className="metadata">
+                {climate_impacts?.length > 0 && (
+                  <>
+                    <h5>
+                      <FormattedMessage
+                        id="Climate impacts:"
+                        defaultMessage="Climate impacts:"
+                      />
+                    </h5>
+                    <MetadataItemList value={climate_impacts} />
+                  </>
+                )}
+                {sectors?.length > 0 && (
+                  <>
+                    <h5>
+                      <FormattedMessage
+                        id="Sectors:"
+                        defaultMessage="Sectors:"
+                      />
+                    </h5>
+                    <MetadataItemList value={sectors} />
+                  </>
+                )}
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>

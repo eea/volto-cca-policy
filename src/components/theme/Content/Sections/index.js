@@ -6,6 +6,7 @@ export { default as EventDetails } from './EventDetails';
 export { default as ImageGallery } from './ImageGallery';
 export { default as ItemLogo, LogoWrapper } from './ItemLogo';
 export { default as LinksList, ExternalLink } from './LinksList';
+export { default as MetadataItemList } from './MetadataItemList';
 export { default as PublishedModifiedInfo } from './PublishedModifiedInfo';
 export { default as ReferenceInfo } from './ReferenceInfo';
 export { default as ShareInfoButton } from './ShareInfoButton';
