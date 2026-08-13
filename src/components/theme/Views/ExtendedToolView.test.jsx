@@ -26,7 +26,6 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
   DocumentsList: () => <div data-testid="documents-list" />,
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
-  ItemLogo: () => <div data-testid="item-logo" />,
   PortalMessage: () => <div data-testid="portal-message" />,
   TextField: ({ label, value }) =>
     value !== null && value !== undefined && value !== '' ? (
@@ -469,7 +468,6 @@ describe('ExtendedToolView', () => {
       title: 'Climate Tool',
     });
 
-    expect(screen.getByTestId('item-logo')).toBeInTheDocument();
     expect(screen.getByTestId('compare-tools-panel')).toBeInTheDocument();
     expect(screen.getByTestId('portal-message')).toBeInTheDocument();
     expect(screen.getByTestId('content-metadata')).toBeInTheDocument();
