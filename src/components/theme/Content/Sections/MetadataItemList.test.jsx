@@ -19,6 +19,14 @@ describe('MetadataItemList', () => {
     expect(screen.getByText('Flooding, Drought')).toBeInTheDocument();
   });
 
+  it('renders comma-separated items inline', () => {
+    renderComponent({ value: ['Flooding', 'Drought'], asInline: true });
+
+    expect(screen.getByText('Flooding, Drought')).toHaveClass(
+      'metadata-inline',
+    );
+  });
+
   it('renders a plain stacked list', () => {
     renderComponent({ value: ['Step one', 'Step two'], asList: true });
 

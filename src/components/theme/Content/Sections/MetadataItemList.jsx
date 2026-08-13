@@ -1,9 +1,14 @@
-import React from 'react';
 import { useIntl } from 'react-intl';
 import { Popup } from 'semantic-ui-react';
 
 const MetadataItemList = (props) => {
-  const { value, join_type, asList = false, asTags = false, maxItems } = props;
+  const {
+    value,
+    asInline = false,
+    asList = false,
+    asTags = false,
+    maxItems,
+  } = props;
   const intl = useIntl();
 
   const items = value
@@ -14,13 +19,13 @@ const MetadataItemList = (props) => {
 
   if (asList) {
     return (
-      <ul className="metadata-list">
+      <div className="metadata-list" role="list">
         {items.map((item) => (
-          <li key={item}>
+          <div key={item} role="listitem">
             {intl.formatMessage({ id: item, defaultMessage: item })}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
 
@@ -65,37 +70,14 @@ const MetadataItemList = (props) => {
     );
   }
 
-  return (
-    <>
-      {join_type ? (
-        <>
-          {items.map((item, index) => (
-            <React.Fragment key={item}>
-              <span>
-                {intl.formatMessage({
-                  id: item,
-                  defaultMessage: item,
-                })}
-              </span>
-              {index !== items.length - 1 && (
-                <span dangerouslySetInnerHTML={{ __html: join_type }} />
-              )}
-            </React.Fragment>
-          ))}
-        </>
-      ) : (
-        <p>
-          {items
-            .map((item) =>
-              intl.formatMessage({
-                id: item,
-                defaultMessage: item,
-              }),
-            )
-            .join(', ')}
-        </p>
-      )}
-    </>
+  const text = items
+    .map((item) => intl.formatMessage({ id: item, defaultMessage: item }))
+    .join(', ');
+
+  return asInline ? (
+    <span className="metadata-inline">{text}</span>
+  ) : (
+    <p>{text}</p>
   );
 };
 

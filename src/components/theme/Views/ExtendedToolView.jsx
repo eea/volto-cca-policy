@@ -45,14 +45,12 @@ const ExtendedToolView = (props) => {
     strengths_and_possible_limitations,
   } = content;
 
-  const availableLanguages = [
-    ...(tool_available_english ? ['English'] : []),
-    ...(Array.isArray(tool_available_language)
-      ? tool_available_language
-      : tool_available_language
-        ? [tool_available_language]
-        : []),
-  ];
+  const availableLanguages = tool_available_english ? ['English'] : [];
+  if (Array.isArray(tool_available_language)) {
+    availableLanguages.push(...tool_available_language);
+  } else if (tool_available_language) {
+    availableLanguages.push(tool_available_language);
+  }
   const hasGeoChars = Boolean(geochars || spatial_layer?.length);
 
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
