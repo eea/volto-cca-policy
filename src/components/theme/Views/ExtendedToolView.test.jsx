@@ -16,7 +16,7 @@ jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
-  GeographicMetadata: ({ content }) => (
+  ExtendedToolGeographicMetadata: ({ content }) => (
     <div data-testid="geographic-metadata">{content.spatial_layer}</div>
   ),
   HTMLField: ({ value }) =>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Button, Container, Grid, Icon, Segment } from 'semantic-ui-react';
 import {
   CompareToolsPanel,
-  GeographicMetadata,
+  ExtendedToolGeographicMetadata,
   HTMLField,
   MetadataItemList,
   PortalMessage,
@@ -225,16 +225,16 @@ const ExtendedToolView = (props) => {
               className="col-right"
             >
               <Segment className="metadata">
-                <h3 className="metadata-header">Metadata</h3>
+                <h4 className="metadata-header">Metadata</h4>
                 {hasGeoChars && (
                   <div className="metadata-group">
                     <h5>
                       <FormattedMessage
-                        id="Geographic characterisation:"
-                        defaultMessage="Geographic characterisation:"
+                        id="Geographic coverage"
+                        defaultMessage="Geographic coverage"
                       />
                     </h5>
-                    <GeographicMetadata {...props} />
+                    <ExtendedToolGeographicMetadata content={content} />
                   </div>
                 )}
                 {intended_user_groups?.length > 0 && (
