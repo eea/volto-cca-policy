@@ -43,10 +43,17 @@ export const DOWNLOAD_FIELDS = [
   { field: 'cca_keywords', name: 'Keywords' },
   { field: 'cca_adaptation_sectors', name: 'Sectors' },
   { field: 'cca_climate_impacts', name: 'Climate impact' },
+  { field: 'cca_governance_level_list', name: 'Governance level' },
+  {
+    field: 'cca_geographic_characterisation',
+    name: 'Geographic characterization',
+  },
   {
     field: 'cca_geographic_transnational_region',
     name: 'Transnational regions',
   },
+  { field: 'cca_sub_nationals', name: 'Sub national regions' },
+  { field: 'cca_city', name: 'City' },
   { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
   { field: 'cca_funding_programme', name: 'Funding programme' },
   { field: 'cca_key_type_measure', name: 'Key type measure' },
