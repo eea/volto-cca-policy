@@ -5,7 +5,6 @@ import { IntlProvider } from 'react-intl';
 
 import ExtendedToolView from './ExtendedToolView';
 import { useCompareTools } from '../CompareTools/utils';
-import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 
 jest.mock('../CompareTools/utils', () => ({
@@ -35,33 +34,6 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
     );
   },
   PortalMessage: () => <div data-testid="portal-message" />,
-  TextField: ({ label, value }) =>
-    value !== null && value !== undefined && value !== '' ? (
-      <div>
-        <span>{label}</span>
-        <span>{String(value)}</span>
-      </div>
-    ) : null,
-
-  VocabularyField: ({ label, values = [], asList }) =>
-    values.length > 0 ? (
-      <div>
-        <span>{label}</span>
-        {asList ? (
-          <ul>
-            {values.map((value, index) => (
-              <li key={`${value}-${index}`}>{value}</li>
-            ))}
-          </ul>
-        ) : (
-          <span>{values.join(', ')}</span>
-        )}
-      </div>
-    ) : null,
-}));
-
-jest.mock('../../Search/NavigatorCatalogue/utils', () => ({
-  formatFunctionalityScore: jest.fn((value) => `Formatted score: ${value}`),
 }));
 
 const toggle = jest.fn();
@@ -288,56 +260,13 @@ describe('ExtendedToolView', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('formats the functionality score', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      functionality: 4,
-    });
-
-    expect(formatFunctionalityScore).toHaveBeenCalledWith(4);
-    expect(screen.getByText('Formatted score: 4')).toBeInTheDocument();
-  });
-
-  it('formats a functionality score of zero', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      functionality: 0,
-    });
-
-    expect(formatFunctionalityScore).toHaveBeenCalledWith(0);
-    expect(screen.getByText('Formatted score: 0')).toBeInTheDocument();
-  });
-
-  it('does not format an undefined functionality score', () => {
-    renderComponent({
-      title: 'Climate Tool',
-    });
-
-    expect(formatFunctionalityScore).not.toHaveBeenCalled();
-  });
-
-  it('does not format a null functionality score', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      functionality: null,
-    });
-
-    expect(formatFunctionalityScore).not.toHaveBeenCalled();
-  });
-
-  it('renders the supported text fields', () => {
+  it('renders the tool provider', () => {
     renderComponent({
       title: 'Climate Tool',
       tool_provider: 'Example Provider',
-      spatial_resolution: 'Regional',
-      underlying_data_maintenance: 'Updated yearly',
-      strengths_and_possible_limitations: 'Easy to use',
     });
 
     expect(screen.getByText('Example Provider')).toBeInTheDocument();
-    expect(screen.getByText('Regional')).toBeInTheDocument();
-    expect(screen.getByText('Updated yearly')).toBeInTheDocument();
-    expect(screen.getByText('Easy to use')).toBeInTheDocument();
   });
 
   it('does not render removed coder fields', () => {
@@ -362,31 +291,31 @@ describe('ExtendedToolView', () => {
     expect(screen.getByText('Long tool description')).toBeInTheDocument();
   });
 
-  it('renders vocabulary fields', () => {
+  it('does not render removed detail fields', () => {
     renderComponent({
       title: 'Climate Tool',
-      intended_user_groups: ['Policy makers', 'Researchers'],
       place_of_implementation: ['Europe'],
       data_sources: ['Satellite'],
       license_status: ['Open source'],
       user_support_provisions: ['Documentation'],
       tool_validation_use: ['Validated'],
       number_of_users_tool: ['More than 1,000'],
-      adaptation_support_cycle_step: ['Assessing risks'],
-      type_of_outputs: ['Maps'],
-      temporality_of_data: ['Historical'],
+      spatial_resolution: 'Regional',
+      functionality: 4,
+      underlying_data_maintenance: 'Updated yearly',
+      strengths_and_possible_limitations: 'Easy to use',
     });
 
-    expect(screen.getByText('Policy makers, Researchers')).toBeInTheDocument();
-    expect(screen.getByText('Europe')).toBeInTheDocument();
-    expect(screen.getByText('Satellite')).toBeInTheDocument();
-    expect(screen.getByText('Open source')).toBeInTheDocument();
-    expect(screen.getByText('Documentation')).toBeInTheDocument();
-    expect(screen.getByText('Validated')).toBeInTheDocument();
-    expect(screen.getByText('More than 1,000')).toBeInTheDocument();
-    expect(screen.getByText('Assessing risks')).toBeInTheDocument();
-    expect(screen.getByText('Maps')).toBeInTheDocument();
-    expect(screen.getByText('Historical')).toBeInTheDocument();
+    expect(screen.queryByText('Europe')).not.toBeInTheDocument();
+    expect(screen.queryByText('Satellite')).not.toBeInTheDocument();
+    expect(screen.queryByText('Open source')).not.toBeInTheDocument();
+    expect(screen.queryByText('Documentation')).not.toBeInTheDocument();
+    expect(screen.queryByText('Validated')).not.toBeInTheDocument();
+    expect(screen.queryByText('More than 1,000')).not.toBeInTheDocument();
+    expect(screen.queryByText('Regional')).not.toBeInTheDocument();
+    expect(screen.queryByText('4')).not.toBeInTheDocument();
+    expect(screen.queryByText('Updated yearly')).not.toBeInTheDocument();
+    expect(screen.queryByText('Easy to use')).not.toBeInTheDocument();
   });
 
   it('renders accessibility and usability as a vocabulary value', () => {
