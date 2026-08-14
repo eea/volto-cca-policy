@@ -34,6 +34,12 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
     );
   },
   PortalMessage: () => <div data-testid="portal-message" />,
+  TextField: ({ label, value }) => (
+    <>
+      <h5>{label}</h5>
+      <p>{value}</p>
+    </>
+  ),
 }));
 
 const toggle = jest.fn();
@@ -291,6 +297,25 @@ describe('ExtendedToolView', () => {
     expect(screen.getByText('Long tool description')).toBeInTheDocument();
   });
 
+  it('renders tool usage information in labelled rows', () => {
+    const { container } = renderComponent({
+      title: 'Climate Tool',
+      tool_input: '<p>A coastal location</p>',
+      tool_output: '<p>A hazard profile</p>',
+      use_it_to: '<p>Screen a coastline</p>',
+    });
+
+    expect(
+      screen.getByRole('heading', { name: 'What you can do with it' }),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelectorAll('.extended-tool-information-row'),
+    ).toHaveLength(3);
+    expect(screen.getByText('A coastal location')).toBeInTheDocument();
+    expect(screen.getByText('A hazard profile')).toBeInTheDocument();
+    expect(screen.getByText('Screen a coastline')).toBeInTheDocument();
+  });
+
   it('does not render removed detail fields', () => {
     renderComponent({
       title: 'Climate Tool',
@@ -300,7 +325,6 @@ describe('ExtendedToolView', () => {
       user_support_provisions: ['Documentation'],
       tool_validation_use: ['Validated'],
       number_of_users_tool: ['More than 1,000'],
-      spatial_resolution: 'Regional',
       functionality: 4,
       underlying_data_maintenance: 'Updated yearly',
       strengths_and_possible_limitations: 'Easy to use',
@@ -312,7 +336,6 @@ describe('ExtendedToolView', () => {
     expect(screen.queryByText('Documentation')).not.toBeInTheDocument();
     expect(screen.queryByText('Validated')).not.toBeInTheDocument();
     expect(screen.queryByText('More than 1,000')).not.toBeInTheDocument();
-    expect(screen.queryByText('Regional')).not.toBeInTheDocument();
     expect(screen.queryByText('4')).not.toBeInTheDocument();
     expect(screen.queryByText('Updated yearly')).not.toBeInTheDocument();
     expect(screen.queryByText('Easy to use')).not.toBeInTheDocument();
@@ -331,6 +354,7 @@ describe('ExtendedToolView', () => {
     renderComponent({
       title: 'Climate Tool',
       spatial_layer: 'Global',
+      spatial_resolution: 'Regional',
       adaptation_support_cycle_step: [
         { title: 'Step 2: Risk & vulnerability assessment' },
         { title: 'Step 3: Identifying adaptation options' },
@@ -354,6 +378,10 @@ describe('ExtendedToolView', () => {
     expect(screen.getByTestId('geographic-metadata')).toHaveTextContent(
       'Global',
     );
+    expect(
+      screen.getByRole('heading', { name: 'Spatial resolution' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Regional')).toBeInTheDocument();
     expect(
       screen.getByRole('heading', {
         name: 'Support of Adaptation Policy Cycle',
