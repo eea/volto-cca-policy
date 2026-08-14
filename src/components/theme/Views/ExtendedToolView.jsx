@@ -6,14 +6,11 @@ import {
   HTMLField,
   MetadataItemList,
   PortalMessage,
-  TextField,
-  VocabularyField,
 } from '@eeacms/volto-cca-policy/components';
-import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
-import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
 
 const ExtendedToolView = (props) => {
   const { content = {} } = props;
@@ -27,22 +24,12 @@ const ExtendedToolView = (props) => {
     tool_provider,
     hyperlink,
     intended_user_groups,
-    place_of_implementation,
-    data_sources,
-    license_status,
-    user_support_provisions,
-    tool_validation_use,
-    number_of_users_tool,
     adaptation_support_cycle_step,
     type_of_outputs,
     temporality_of_data,
     tool_available_english,
     tool_available_language,
-    spatial_resolution,
-    underlying_data_maintenance,
     accessibility_and_usability,
-    functionality,
-    strengths_and_possible_limitations,
   } = content;
 
   const availableLanguages = tool_available_english ? ['English'] : [];
@@ -73,41 +60,6 @@ const ExtendedToolView = (props) => {
     return () => clearTimeout(timeout);
   }, [isLinkCopied, setIsLinkCopied]);
 
-  const messages = defineMessages({
-    place_of_implementation: {
-      id: 'Place of implementation',
-      defaultMessage: 'Place of implementation',
-    },
-    data_sources: { id: 'Data sources', defaultMessage: 'Data sources' },
-    license_status: { id: 'License status', defaultMessage: 'License status' },
-    user_support_provisions: {
-      id: 'User support provisions',
-      defaultMessage: 'User support provisions',
-    },
-    tool_validation_use: {
-      id: 'Tool validation use',
-      defaultMessage: 'Tool validation use',
-    },
-    number_of_users_tool: {
-      id: 'Number of users / uptake',
-      defaultMessage: 'Number of users / uptake',
-    },
-    functionality: { id: 'Functionality', defaultMessage: 'Functionality' },
-    strengths_and_possible_limitations: {
-      id: 'Strengths and possible limitations of the tool',
-      defaultMessage: 'Strengths and possible limitations of the tool',
-    },
-    spatial_resolution: {
-      id: 'Spatial resolution',
-      defaultMessage: 'Spatial resolution',
-    },
-    underlying_data_maintenance: {
-      id: 'Underlying data maintenance',
-      defaultMessage: 'Underlying data maintenance',
-    },
-  });
-  const intl = useIntl();
-
   return (
     <div className="extended-tool-view">
       <BodyClass className="extended-tool" />
@@ -115,51 +67,6 @@ const ExtendedToolView = (props) => {
         <div className="extended-tool-header">
           <p className="extended-tool-provider">{tool_provider}</p>
           <h1 className="extended-tool-title">{title}</h1>
-          <HTMLField value={long_description} />
-          {hasHyperlink && (
-            <div className="extended-tool-compare-action">
-              {hasHyperlink && (
-                <Button
-                  as="a"
-                  icon
-                  secondary
-                  href={hyperlink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  labelPosition="right"
-                >
-                  <FormattedMessage id="Open tool" defaultMessage="Open tool" />
-                  <Icon className="ri-external-link-line" />
-                </Button>
-              )}
-              {hasCompareTool && (
-                <Button
-                  primary
-                  inverted
-                  disabled={isSelected || isLimitReached}
-                  aria-pressed={isSelected}
-                  onClick={toggle}
-                >
-                  <Icon className="ri-layout-column-line" />
-                  <FormattedMessage
-                    id="Add to comparison"
-                    defaultMessage="Add to comparison"
-                  />
-                </Button>
-              )}
-              <Button primary inverted onClick={copyShareUrl}>
-                <Icon className="ri-share-line" />
-                {isLinkCopied ? (
-                  <FormattedMessage
-                    id="Link copied"
-                    defaultMessage="Link copied"
-                  />
-                ) : (
-                  <FormattedMessage id="Share" defaultMessage="Share" />
-                )}
-              </Button>
-            </div>
-          )}
         </div>
         <CompareToolsPanel />
         <PortalMessage content={content} />
@@ -171,52 +78,54 @@ const ExtendedToolView = (props) => {
               computer={8}
               className="col-left"
             >
-              <VocabularyField
-                label={intl.formatMessage(messages.place_of_implementation)}
-                values={place_of_implementation}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.data_sources)}
-                values={data_sources}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.license_status)}
-                values={license_status}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.user_support_provisions)}
-                values={user_support_provisions}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.tool_validation_use)}
-                values={tool_validation_use}
-              />
-              <VocabularyField
-                label={intl.formatMessage(messages.number_of_users_tool)}
-                values={number_of_users_tool}
-              />
-              <TextField
-                label={intl.formatMessage(messages.spatial_resolution)}
-                value={spatial_resolution}
-              />
-              <TextField
-                label={intl.formatMessage(messages.functionality)}
-                value={
-                  functionality === null || functionality === undefined
-                    ? null
-                    : formatFunctionalityScore(functionality)
-                }
-              />
-              <TextField
-                label={intl.formatMessage(messages.underlying_data_maintenance)}
-                value={underlying_data_maintenance}
-              />
-              <TextField
-                label={intl.formatMessage(
-                  messages.strengths_and_possible_limitations,
-                )}
-                value={strengths_and_possible_limitations}
-              />
+              <HTMLField value={long_description} />
+              {hasHyperlink && (
+                <div className="extended-tool-compare-action">
+                  {hasHyperlink && (
+                    <Button
+                      as="a"
+                      icon
+                      secondary
+                      href={hyperlink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      labelPosition="right"
+                    >
+                      <FormattedMessage
+                        id="Open tool"
+                        defaultMessage="Open tool"
+                      />
+                      <Icon className="ri-external-link-line" />
+                    </Button>
+                  )}
+                  {hasCompareTool && (
+                    <Button
+                      primary
+                      inverted
+                      disabled={isSelected || isLimitReached}
+                      aria-pressed={isSelected}
+                      onClick={toggle}
+                    >
+                      <Icon className="ri-layout-column-line" />
+                      <FormattedMessage
+                        id="Add to comparison"
+                        defaultMessage="Add to comparison"
+                      />
+                    </Button>
+                  )}
+                  <Button primary inverted onClick={copyShareUrl}>
+                    <Icon className="ri-share-line" />
+                    {isLinkCopied ? (
+                      <FormattedMessage
+                        id="Link copied"
+                        defaultMessage="Link copied"
+                      />
+                    ) : (
+                      <FormattedMessage id="Share" defaultMessage="Share" />
+                    )}
+                  </Button>
+                </div>
+              )}
             </Grid.Column>
             <Grid.Column
               mobile={12}
