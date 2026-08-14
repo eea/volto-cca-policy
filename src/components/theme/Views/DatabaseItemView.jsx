@@ -3,8 +3,20 @@ import { FormattedMessage } from 'react-intl';
 import { PrivacyProtection } from '@eeacms/volto-embed';
 import { Container, Divider, Grid } from 'semantic-ui-react';
 import {
-  ShareInfoButton,
+  ArchivedVersionListing,
+  ArchivedVersionNotice,
+  ContentBannerTitle,
+  ContentMetadata,
+  ContentRelatedItems,
+  DocumentsList,
+  ExternalLink,
+  HTMLField,
+  ItemLogo,
   PortalMessage,
+  PublishedModifiedInfo,
+  ReferenceInfo,
+  ShareInfoButton,
+  // VersionsGroup, // commented out - relatedItems already shows versions
 } from '@eeacms/volto-cca-policy/components';
 import { fixEmbedURL } from '@eeacms/volto-cca-policy/helpers';
 import {
@@ -17,22 +29,6 @@ import {
   INDICATOR,
   CONTENT_TYPE_LABELS,
 } from '@eeacms/volto-cca-policy/constants';
-import {
-  HTMLField,
-  ReferenceInfo,
-  ContentMetadata,
-  PublishedModifiedInfo,
-  ItemLogo,
-  ContentRelatedItems,
-  DocumentsList,
-  ExternalLink,
-  BannerTitle,
-} from '@eeacms/volto-cca-policy/helpers';
-import {
-  ArchivedVersionNotice,
-  ArchivedVersionListing,
-  // VersionsGroup, // commented out - relatedItems already shows versions
-} from '@eeacms/volto-cca-policy/components';
 
 const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
@@ -171,7 +167,7 @@ const DatabaseItemView = (props) => {
 
   return (
     <div className="db-item-view">
-      <BannerTitle
+      <ContentBannerTitle
         content={{ ...content, image: '', title: item_title }}
         data={{
           info: [{ description: '' }],

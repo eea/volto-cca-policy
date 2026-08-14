@@ -36,7 +36,7 @@ msgid "Adaptation Approaches"
 msgstr "Adaptačné prístupy"
 
 #. Default: "Adaptation Approaches:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Adaptation Approaches:"
 msgstr "Adaptačné prístupy:"
 
@@ -161,7 +161,7 @@ msgid "Background information"
 msgstr "Základné informácie"
 
 #. Default: "Biogeographical regions:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Biogeografické oblasti:"
 
@@ -171,7 +171,7 @@ msgid "Blue options"
 msgstr "Modré možnosti"
 
 #. Default: "Browse the site, drop an image, or use a URL"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgid "Capacity building empowering and lifestyle practices"
 msgstr "Posilňovanie budovania kapacít a postupy životného štýlu"
 
 #. Default: "Case Studies Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Case Studies Documents"
 msgstr "Dokumenty prípadových štúdií"
 
@@ -206,7 +206,7 @@ msgid "Case Study illustrations"
 msgstr "Ilustrácie prípadovej štúdie"
 
 #. Default: "Case studies related to this option:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Prípadové štúdie súvisiace s touto možnosťou:"
 
@@ -226,7 +226,7 @@ msgid "Challenges"
 msgstr "Výzvy"
 
 #. Default: "Choose a file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
 msgstr "Vyberte súbor"
 
@@ -246,7 +246,7 @@ msgid "Choose thematic map:"
 msgstr "Vyberte si tematickú mapu:"
 
 #. Default: "City:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Mesto:"
 
@@ -274,7 +274,7 @@ msgid "Climate impacts"
 msgstr "Klimatické vplyvy"
 
 #. Default: "Climate impacts:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Climate impacts:"
 msgstr "Klimatické vplyvy:"
 
@@ -326,7 +326,7 @@ msgid "Contact information for the Observatory"
 msgstr "Kontaktné údaje na observatórium"
 
 #. Default: "Contributor:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
 msgstr "Prispievateľ:"
 
@@ -354,7 +354,7 @@ msgid "Countries"
 msgstr "krajiny"
 
 #. Default: "Countries:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Krajiny:"
 
@@ -379,23 +379,23 @@ msgid "Data sources"
 msgstr ""
 
 #. Default: "Date of creation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
 msgstr "Dátum vytvorenia:"
 
 #. Default: "Date of publication:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of publication:"
 msgstr "Dátum zverejnenia:"
 
 #. Default: "Date of release:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
 msgstr "Dátum vydania:"
 
 #. Default: "Description"
+#: components/theme/Content/Sections/ItemLogo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Description"
 msgstr "Popis"
 
@@ -410,12 +410,12 @@ msgid "Disclaimer"
 msgstr "Vylúčenie zodpovednosti"
 
 #. Default: "Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Documents"
 msgstr "dokumenty"
 
 #. Default: "Download Event"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download Event"
 msgstr "Stiahnuť udalosť"
 
@@ -425,27 +425,27 @@ msgid "Download the detailed agenda"
 msgstr "Stiahnite si podrobnú agendu"
 
 #. Default: "Download this event in iCal format"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download this event in iCal format"
 msgstr "Stiahnite si túto udalosť vo formáte iCal"
 
 #. Default: "Drop file here to replace the existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
 msgstr "Sem presuňte súbor, aby ste nahradili existujúci súbor"
 
 #. Default: "Drop file here to upload a new file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
 msgstr "Sem presuňte súbor a nahrajte nový súbor"
 
 #. Default: "Drop files here ..."
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
 msgstr "Sem presuňte súbory..."
 
 #. Default: "Duration:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
 msgstr "Trvanie:"
 
@@ -548,7 +548,7 @@ msgid "Funding Programme"
 msgstr "Program financovania"
 
 #. Default: "Funding Programme:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Program financovania:"
 
@@ -558,7 +558,7 @@ msgid "Funding oportunity"
 msgstr "Možnosť financovania"
 
 #. Default: "Geographic characterisation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Geografická charakteristika:"
 
@@ -583,7 +583,7 @@ msgid "Governance and Institutional"
 msgstr "Riadenie a inštitucionálne"
 
 #. Default: "Governance level:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
 msgstr "Úroveň riadenia:"
 
@@ -628,7 +628,7 @@ msgid "Health Impacts"
 msgstr "Vplyvy na zdravie"
 
 #. Default: "Health impact:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Health impact:"
 msgstr "Vplyv na zdravie:"
 
@@ -648,7 +648,7 @@ msgid "Heat health warning systems (HHWS)"
 msgstr "Tepelné varovné systémy (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "IPCC adaptation options categories:"
 msgstr "Kategórie možností prispôsobenia IPCC:"
 
@@ -684,7 +684,7 @@ msgid "Indicators"
 msgstr "Ukazovatele"
 
 #. Default: "Info"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Info"
 msgstr "Info"
 
@@ -730,12 +730,12 @@ msgid "Key Type Measure"
 msgstr "Opatrenie typu kľúča"
 
 #. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
 msgstr ""
 
 #. Default: "Key Type Measures:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures:"
 msgstr "Opatrenia typu kľúča:"
 
@@ -750,7 +750,7 @@ msgid "Key type measures"
 msgstr "Opatrenia kľúčového typu"
 
 #. Default: "Keywords:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Keywords:"
 msgstr "Kľúčové slová:"
 
@@ -868,7 +868,7 @@ msgid "Looking for more information?"
 msgstr "Hľadáte ďalšie informácie?"
 
 #. Default: "Macro-Transnational region:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Makro-nadnárodný región:"
 
@@ -999,7 +999,7 @@ msgid "Objectives of the adaptation measure"
 msgstr "Ciele adaptačného opatrenia"
 
 #. Default: "Observatory Contributions:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Observatory Contributions:"
 msgstr "Príspevky observatória:"
 
@@ -1030,7 +1030,7 @@ msgid "Organisation"
 msgstr "Organizácia"
 
 #. Default: "Organisation Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Organisation Documents"
 msgstr "Organizačné dokumenty"
 
@@ -1095,7 +1095,7 @@ msgid "Practical information"
 msgstr "Praktické informácie"
 
 #. Default: "Previous versions of this indicator"
-#: components/theme/Views/ArchivedVersionListing
+#: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "Publication reference"
 msgstr "Odkaz na publikáciu"
 
 #. Default: "Publications and Reports Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Publications and Reports Documents"
 msgstr "Dokumenty publikácií a správ"
 
@@ -1120,7 +1120,7 @@ msgid "Published"
 msgstr "Zverejnené"
 
 #. Default: "Published in Climate-ADAPT"
-#: helpers/Utils
+#: components/theme/Content/Sections/PublishedModifiedInfo
 msgid "Published in Climate-ADAPT"
 msgstr "Vydané v Climate-ADAPT"
 
@@ -1151,7 +1151,7 @@ msgid "Reference Information"
 msgstr "Referenčné informácie"
 
 #. Default: "Reference information"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Reference information"
 msgstr "Referenčné informácie"
 
@@ -1182,7 +1182,7 @@ msgid "Related Resources"
 msgstr "Súvisiace zdroje"
 
 #. Default: "Related content:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ContentRelatedItems
 msgid "Related content:"
 msgstr "Súvisiaci obsah:"
 
@@ -1217,7 +1217,7 @@ msgid "Remove {title} from comparison"
 msgstr ""
 
 #. Default: "Replace existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Nahradiť existujúci súbor"
 
@@ -1262,7 +1262,7 @@ msgid "Sector"
 msgstr "Sektor"
 
 #. Default: "Sectors:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Sectors:"
 msgstr "Sektory:"
 
@@ -1272,12 +1272,12 @@ msgid "See all matching tools"
 msgstr ""
 
 #. Default: "See less"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See less"
 msgstr "Vidieť menej"
 
 #. Default: "See more"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See more"
 msgstr "Zobraziť viac"
 
@@ -1309,7 +1309,7 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton
+#: components/theme/Content/Sections/ShareInfoButton
 msgid "Share your information"
 msgstr "Podeľte sa o svoje informácie"
 
@@ -1329,8 +1329,8 @@ msgid "Some selected tools could not be loaded and were skipped."
 msgstr ""
 
 #. Default: "Source"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "Source"
 msgstr "Zdroj"
 
@@ -1377,7 +1377,7 @@ msgid "Strengths and possible limitations of the tool"
 msgstr ""
 
 #. Default: "Sub Nationals:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Sub Nationals:"
 
@@ -1413,17 +1413,17 @@ msgid "The Adaptation Support Tool - Getting started"
 msgstr "Nástroj na podporu prispôsobenia – Začíname"
 
 #. Default: "The date refers to the date of release of the video"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the date of release of the video"
 msgstr "Dátum sa vzťahuje na dátum zverejnenia videa"
 
 #. Default: "The date refers to the latest date of publication of the item"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Dátum sa vzťahuje na posledný dátum uverejnenia položky"
 
 #. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Dátum sa vzťahuje na okamih, v ktorom bola položka pripravená alebo aktualizovaná prispievajúcimi odborníkmi, aby bola predložená na zverejnenie v Climate ADAPT"
 
@@ -1545,7 +1545,7 @@ msgid "Updating notes"
 msgstr "Aktualizácia poznámok"
 
 #. Default: "Uploading image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
 
@@ -1570,7 +1570,7 @@ msgid "User support provisions"
 msgstr ""
 
 #. Default: "Versions"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "Versions"
 msgstr ""
 
@@ -1590,17 +1590,17 @@ msgid "View"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "View all contributions in the resource catalogue"
 msgstr "Pozrite si všetky príspevky v katalógu zdrojov"
 
 #. Default: "View latest version"
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "View latest version"
 msgstr ""
 
 #. Default: "Visit external website"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Visit external website"
 msgstr "Navštívte externú webovú stránku"
 
@@ -1610,7 +1610,7 @@ msgid "Warning: Potential broken links"
 msgstr ""
 
 #. Default: "Web"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Web"
 msgstr "Web"
 
@@ -1625,8 +1625,8 @@ msgid "Websites"
 msgstr "Webové stránky"
 
 #. Default: "Websites:"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Websites:"
 msgstr "webové stránky:"
 
@@ -1641,12 +1641,12 @@ msgid "What stage of the adaptation stage are you working on?"
 msgstr ""
 
 #. Default: "When"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "When"
 msgstr "Kedy"
 
 #. Default: "Where"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Where"
 msgstr "Kde"
 
@@ -1666,7 +1666,7 @@ msgid "Yes"
 msgstr ""
 
 #. Default: "You are viewing an archived version."
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "You are viewing an archived version."
 msgstr ""
 
@@ -1701,12 +1701,12 @@ msgid "exclusion_of_liability.title"
 msgstr "Vylúčenie zodpovednosti"
 
 #. Default: "Could not import the selected image."
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "imageImportFailed"
 msgstr ""
 
 #. Default: "latest"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "latest"
 msgstr ""
 
@@ -1721,7 +1721,7 @@ msgid "link-integrity: loading references"
 msgstr ""
 
 #. Default: "Enter a URL to an image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "linkAnImage"
 msgstr ""
 
@@ -1731,7 +1731,7 @@ msgid "officiallyInEnglish"
 msgstr "Oficiálne hlásené vládne informácie sú dostupné iba v angličtine."
 
 #. Default: "Pick an existing image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "pickAnImage"
 msgstr ""
 
@@ -1751,7 +1751,7 @@ msgid "refers to"
 msgstr ""
 
 #. Default: "Upload an image from your computer"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "uploadAnImage"
 msgstr ""
 

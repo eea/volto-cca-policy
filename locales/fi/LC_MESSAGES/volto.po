@@ -36,7 +36,7 @@ msgid "Adaptation Approaches"
 msgstr "Sopeutumislähestymistavat"
 
 #. Default: "Adaptation Approaches:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Adaptation Approaches:"
 msgstr "Sopeutumismenetelmät:"
 
@@ -161,7 +161,7 @@ msgid "Background information"
 msgstr "Taustatietoja"
 
 #. Default: "Biogeographical regions:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Biomaantieteelliset alueet:"
 
@@ -171,7 +171,7 @@ msgid "Blue options"
 msgstr "Siniset vaihtoehdot"
 
 #. Default: "Browse the site, drop an image, or use a URL"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgid "Capacity building empowering and lifestyle practices"
 msgstr "Valmiuksien kehittäminen voimaannuttamista ja elämäntapakäytäntöjä"
 
 #. Default: "Case Studies Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Case Studies Documents"
 msgstr "Tapaustutkimusasiakirjat"
 
@@ -206,7 +206,7 @@ msgid "Case Study illustrations"
 msgstr "Tapaustutkimuksen kuvat"
 
 #. Default: "Case studies related to this option:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Tähän vaihtoehtoon liittyvät tapaustutkimukset:"
 
@@ -226,7 +226,7 @@ msgid "Challenges"
 msgstr "Haasteet"
 
 #. Default: "Choose a file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
 msgstr "Valitse tiedosto"
 
@@ -246,7 +246,7 @@ msgid "Choose thematic map:"
 msgstr "Valitse teemakartta:"
 
 #. Default: "City:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Kaupunki:"
 
@@ -274,7 +274,7 @@ msgid "Climate impacts"
 msgstr "Ilmaston vaikutukset"
 
 #. Default: "Climate impacts:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Climate impacts:"
 msgstr "Ilmaston vaikutukset:"
 
@@ -326,7 +326,7 @@ msgid "Contact information for the Observatory"
 msgstr "Observatorion yhteystiedot"
 
 #. Default: "Contributor:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
 msgstr "Osallistuja:"
 
@@ -354,7 +354,7 @@ msgid "Countries"
 msgstr "maat"
 
 #. Default: "Countries:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Maat:"
 
@@ -379,23 +379,23 @@ msgid "Data sources"
 msgstr ""
 
 #. Default: "Date of creation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
 msgstr "Luomispäivämäärä:"
 
 #. Default: "Date of publication:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of publication:"
 msgstr "Julkaisupäivä:"
 
 #. Default: "Date of release:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
 msgstr "Julkaisupäivä:"
 
 #. Default: "Description"
+#: components/theme/Content/Sections/ItemLogo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Description"
 msgstr "Kuvaus"
 
@@ -410,12 +410,12 @@ msgid "Disclaimer"
 msgstr "Vastuuvapauslauseke"
 
 #. Default: "Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Documents"
 msgstr "Asiakirjat"
 
 #. Default: "Download Event"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download Event"
 msgstr "Lataa tapahtuma"
 
@@ -425,27 +425,27 @@ msgid "Download the detailed agenda"
 msgstr "Lataa yksityiskohtainen esityslista"
 
 #. Default: "Download this event in iCal format"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download this event in iCal format"
 msgstr "Lataa tämä tapahtuma iCal-muodossa"
 
 #. Default: "Drop file here to replace the existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
 msgstr "Pudota tiedosto tähän korvataksesi olemassa olevan tiedoston"
 
 #. Default: "Drop file here to upload a new file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
 msgstr "Pudota tiedosto tähän ladataksesi uuden tiedoston"
 
 #. Default: "Drop files here ..."
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
 msgstr "Pudota tiedostot tähän..."
 
 #. Default: "Duration:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
 msgstr "Kesto:"
 
@@ -548,7 +548,7 @@ msgid "Funding Programme"
 msgstr "Rahoitusohjelma"
 
 #. Default: "Funding Programme:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Rahoitusohjelma:"
 
@@ -558,7 +558,7 @@ msgid "Funding oportunity"
 msgstr "Rahoitusmahdollisuus"
 
 #. Default: "Geographic characterisation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Maantieteellinen luonnehdinta:"
 
@@ -583,7 +583,7 @@ msgid "Governance and Institutional"
 msgstr "Hallinto ja institutionaalinen"
 
 #. Default: "Governance level:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
 msgstr "Hallintotaso:"
 
@@ -628,7 +628,7 @@ msgid "Health Impacts"
 msgstr "Terveysvaikutukset"
 
 #. Default: "Health impact:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Health impact:"
 msgstr "Terveysvaikutus:"
 
@@ -648,7 +648,7 @@ msgid "Heat health warning systems (HHWS)"
 msgstr "Lämpöterveysvaroitusjärjestelmät (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "IPCC adaptation options categories:"
 msgstr "IPCC:n mukautusvaihtoehtojen luokat:"
 
@@ -684,7 +684,7 @@ msgid "Indicators"
 msgstr "Indikaattorit"
 
 #. Default: "Info"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Info"
 msgstr "Tiedot"
 
@@ -730,12 +730,12 @@ msgid "Key Type Measure"
 msgstr "Avaintyypin mitta"
 
 #. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
 msgstr ""
 
 #. Default: "Key Type Measures:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures:"
 msgstr "Avaintyyppitoimenpiteet:"
 
@@ -750,7 +750,7 @@ msgid "Key type measures"
 msgstr "Avaintyyppiset toimenpiteet"
 
 #. Default: "Keywords:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Keywords:"
 msgstr "Avainsanat:"
 
@@ -868,7 +868,7 @@ msgid "Looking for more information?"
 msgstr "Etsitkö lisätietoja?"
 
 #. Default: "Macro-Transnational region:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Kansainvälinen makroalue:"
 
@@ -999,7 +999,7 @@ msgid "Objectives of the adaptation measure"
 msgstr "Sopeutumistoimenpiteen tavoitteet"
 
 #. Default: "Observatory Contributions:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Observatory Contributions:"
 msgstr "Observatorion panokset:"
 
@@ -1030,7 +1030,7 @@ msgid "Organisation"
 msgstr "Organisaatio"
 
 #. Default: "Organisation Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Organisation Documents"
 msgstr "Organisaation asiakirjat"
 
@@ -1095,7 +1095,7 @@ msgid "Practical information"
 msgstr "Käytännön tietoa"
 
 #. Default: "Previous versions of this indicator"
-#: components/theme/Views/ArchivedVersionListing
+#: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "Publication reference"
 msgstr "Julkaisuviite"
 
 #. Default: "Publications and Reports Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Publications and Reports Documents"
 msgstr "Julkaisut ja raporttiasiakirjat"
 
@@ -1120,7 +1120,7 @@ msgid "Published"
 msgstr "Julkaistu"
 
 #. Default: "Published in Climate-ADAPT"
-#: helpers/Utils
+#: components/theme/Content/Sections/PublishedModifiedInfo
 msgid "Published in Climate-ADAPT"
 msgstr "Julkaistu Climate-ADAPTissa"
 
@@ -1151,7 +1151,7 @@ msgid "Reference Information"
 msgstr "Viitetiedot"
 
 #. Default: "Reference information"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Reference information"
 msgstr "Viitetiedot"
 
@@ -1182,7 +1182,7 @@ msgid "Related Resources"
 msgstr "Aiheeseen liittyvät resurssit"
 
 #. Default: "Related content:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ContentRelatedItems
 msgid "Related content:"
 msgstr "Aiheeseen liittyvä sisältö:"
 
@@ -1217,7 +1217,7 @@ msgid "Remove {title} from comparison"
 msgstr ""
 
 #. Default: "Replace existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Korvaa olemassa oleva tiedosto"
 
@@ -1262,7 +1262,7 @@ msgid "Sector"
 msgstr "sektori"
 
 #. Default: "Sectors:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Sectors:"
 msgstr "Sektorit:"
 
@@ -1272,12 +1272,12 @@ msgid "See all matching tools"
 msgstr ""
 
 #. Default: "See less"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See less"
 msgstr "Katso vähemmän"
 
 #. Default: "See more"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See more"
 msgstr "Katso lisää"
 
@@ -1309,7 +1309,7 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton
+#: components/theme/Content/Sections/ShareInfoButton
 msgid "Share your information"
 msgstr "Jaa tietosi"
 
@@ -1329,8 +1329,8 @@ msgid "Some selected tools could not be loaded and were skipped."
 msgstr ""
 
 #. Default: "Source"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "Source"
 msgstr "Lähde"
 
@@ -1377,7 +1377,7 @@ msgid "Strengths and possible limitations of the tool"
 msgstr ""
 
 #. Default: "Sub Nationals:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subkansalaiset:"
 
@@ -1413,17 +1413,17 @@ msgid "The Adaptation Support Tool - Getting started"
 msgstr "Sopeutumistukityökalu - Aloitus"
 
 #. Default: "The date refers to the date of release of the video"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the date of release of the video"
 msgstr "Päivämäärä viittaa videon julkaisupäivään"
 
 #. Default: "The date refers to the latest date of publication of the item"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Päivämäärä viittaa viimeisimpään julkaisupäivään"
 
 #. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Päivämäärällä tarkoitetaan hetkeä, jolloin osallistuneet asiantuntijat ovat laatineet tai päivittäneet julkaisun Climate ADAPTissa julkaistavaksi."
 
@@ -1545,7 +1545,7 @@ msgid "Updating notes"
 msgstr "Päivitetään muistiinpanoja"
 
 #. Default: "Uploading image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
 
@@ -1570,7 +1570,7 @@ msgid "User support provisions"
 msgstr ""
 
 #. Default: "Versions"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "Versions"
 msgstr ""
 
@@ -1590,17 +1590,17 @@ msgid "View"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "View all contributions in the resource catalogue"
 msgstr "Näytä kaikki resurssiluettelossa olevat panokset"
 
 #. Default: "View latest version"
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "View latest version"
 msgstr ""
 
 #. Default: "Visit external website"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Visit external website"
 msgstr "Vieraile ulkoisella verkkosivustolla"
 
@@ -1610,7 +1610,7 @@ msgid "Warning: Potential broken links"
 msgstr ""
 
 #. Default: "Web"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Web"
 msgstr "Web"
 
@@ -1625,8 +1625,8 @@ msgid "Websites"
 msgstr "Verkkosivustot"
 
 #. Default: "Websites:"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Websites:"
 msgstr "Verkkosivustot:"
 
@@ -1641,12 +1641,12 @@ msgid "What stage of the adaptation stage are you working on?"
 msgstr ""
 
 #. Default: "When"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "When"
 msgstr "Kun"
 
 #. Default: "Where"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Where"
 msgstr "Jossa"
 
@@ -1666,7 +1666,7 @@ msgid "Yes"
 msgstr ""
 
 #. Default: "You are viewing an archived version."
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "You are viewing an archived version."
 msgstr ""
 
@@ -1701,12 +1701,12 @@ msgid "exclusion_of_liability.title"
 msgstr "Vastuun poissulkeminen"
 
 #. Default: "Could not import the selected image."
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "imageImportFailed"
 msgstr ""
 
 #. Default: "latest"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "latest"
 msgstr ""
 
@@ -1721,7 +1721,7 @@ msgid "link-integrity: loading references"
 msgstr ""
 
 #. Default: "Enter a URL to an image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "linkAnImage"
 msgstr ""
 
@@ -1731,7 +1731,7 @@ msgid "officiallyInEnglish"
 msgstr "Virallisesti raportoidut hallituksen tiedot ovat saatavilla vain englanniksi"
 
 #. Default: "Pick an existing image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "pickAnImage"
 msgstr ""
 
@@ -1751,7 +1751,7 @@ msgid "refers to"
 msgstr ""
 
 #. Default: "Upload an image from your computer"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "uploadAnImage"
 msgstr ""
 

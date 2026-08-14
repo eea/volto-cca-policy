@@ -36,7 +36,7 @@ msgid "Adaptation Approaches"
 msgstr "Abordagens de Adaptação"
 
 #. Default: "Adaptation Approaches:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Adaptation Approaches:"
 msgstr "Abordagens de adaptação:"
 
@@ -161,7 +161,7 @@ msgid "Background information"
 msgstr "Informações básicas"
 
 #. Default: "Biogeographical regions:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Regiões biogeográficas:"
 
@@ -171,7 +171,7 @@ msgid "Blue options"
 msgstr "Opções azuis"
 
 #. Default: "Browse the site, drop an image, or use a URL"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgid "Capacity building empowering and lifestyle practices"
 msgstr "Capacitação, práticas de empoderamento e estilo de vida"
 
 #. Default: "Case Studies Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Case Studies Documents"
 msgstr "Documentos de estudos de caso"
 
@@ -206,7 +206,7 @@ msgid "Case Study illustrations"
 msgstr "Ilustrações de estudo de caso"
 
 #. Default: "Case studies related to this option:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Estudos de caso relacionados a esta opção:"
 
@@ -226,7 +226,7 @@ msgid "Challenges"
 msgstr "Desafios"
 
 #. Default: "Choose a file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
 msgstr "Escolha um arquivo"
 
@@ -246,7 +246,7 @@ msgid "Choose thematic map:"
 msgstr "Escolha o mapa temático:"
 
 #. Default: "City:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Cidade:"
 
@@ -274,7 +274,7 @@ msgid "Climate impacts"
 msgstr "Impactos climáticos"
 
 #. Default: "Climate impacts:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Climate impacts:"
 msgstr "Impactos climáticos:"
 
@@ -326,7 +326,7 @@ msgid "Contact information for the Observatory"
 msgstr "Informações de contato do Observatório"
 
 #. Default: "Contributor:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
 msgstr "Contribuinte:"
 
@@ -354,7 +354,7 @@ msgid "Countries"
 msgstr "Países"
 
 #. Default: "Countries:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Países:"
 
@@ -379,23 +379,23 @@ msgid "Data sources"
 msgstr ""
 
 #. Default: "Date of creation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
 msgstr "Data de criação:"
 
 #. Default: "Date of publication:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of publication:"
 msgstr "Data de publicação:"
 
 #. Default: "Date of release:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
 msgstr "Data de lançamento:"
 
 #. Default: "Description"
+#: components/theme/Content/Sections/ItemLogo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Description"
 msgstr "Descrição"
 
@@ -410,12 +410,12 @@ msgid "Disclaimer"
 msgstr "Isenção de responsabilidade"
 
 #. Default: "Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Documents"
 msgstr "Documentos"
 
 #. Default: "Download Event"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download Event"
 msgstr "Baixar Evento"
 
@@ -425,27 +425,27 @@ msgid "Download the detailed agenda"
 msgstr "Baixe a agenda detalhada"
 
 #. Default: "Download this event in iCal format"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download this event in iCal format"
 msgstr "Baixe este evento no formato iCal"
 
 #. Default: "Drop file here to replace the existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
 msgstr "Solte o arquivo aqui para substituir o arquivo existente"
 
 #. Default: "Drop file here to upload a new file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
 msgstr "Solte o arquivo aqui para fazer upload de um novo arquivo"
 
 #. Default: "Drop files here ..."
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
 msgstr "Solte os arquivos aqui..."
 
 #. Default: "Duration:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
 msgstr "Duração:"
 
@@ -548,7 +548,7 @@ msgid "Funding Programme"
 msgstr "Programa de Financiamento"
 
 #. Default: "Funding Programme:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Programa de Financiamento:"
 
@@ -558,7 +558,7 @@ msgid "Funding oportunity"
 msgstr "Oportunidade de financiamento"
 
 #. Default: "Geographic characterisation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Caracterização geográfica:"
 
@@ -583,7 +583,7 @@ msgid "Governance and Institutional"
 msgstr "Governança e Institucional"
 
 #. Default: "Governance level:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
 msgstr "Nível de governança:"
 
@@ -628,7 +628,7 @@ msgid "Health Impacts"
 msgstr "Impactos na saúde"
 
 #. Default: "Health impact:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Health impact:"
 msgstr "Impacto na saúde:"
 
@@ -648,7 +648,7 @@ msgid "Heat health warning systems (HHWS)"
 msgstr "Sistemas de alerta sanitário de calor (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "IPCC adaptation options categories:"
 msgstr "Categorias de opções de adaptação do IPCC:"
 
@@ -684,7 +684,7 @@ msgid "Indicators"
 msgstr "Indicadores"
 
 #. Default: "Info"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Info"
 msgstr "Informações"
 
@@ -730,12 +730,12 @@ msgid "Key Type Measure"
 msgstr "Medida de tipo chave"
 
 #. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
 msgstr ""
 
 #. Default: "Key Type Measures:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures:"
 msgstr "Medidas de tipo chave:"
 
@@ -750,7 +750,7 @@ msgid "Key type measures"
 msgstr "Medidas de tipo chave"
 
 #. Default: "Keywords:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Keywords:"
 msgstr "Palavras-chave:"
 
@@ -868,7 +868,7 @@ msgid "Looking for more information?"
 msgstr "Procurando mais informações?"
 
 #. Default: "Macro-Transnational region:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Região Macrotransnacional:"
 
@@ -999,7 +999,7 @@ msgid "Objectives of the adaptation measure"
 msgstr "Objetivos da medida de adaptação"
 
 #. Default: "Observatory Contributions:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Observatory Contributions:"
 msgstr "Contribuições do Observatório:"
 
@@ -1030,7 +1030,7 @@ msgid "Organisation"
 msgstr "Organização"
 
 #. Default: "Organisation Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Organisation Documents"
 msgstr "Documentos da Organização"
 
@@ -1095,7 +1095,7 @@ msgid "Practical information"
 msgstr "Informações práticas"
 
 #. Default: "Previous versions of this indicator"
-#: components/theme/Views/ArchivedVersionListing
+#: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "Publication reference"
 msgstr "Referência da publicação"
 
 #. Default: "Publications and Reports Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Publications and Reports Documents"
 msgstr "Publicações e Relatórios Documentos"
 
@@ -1120,7 +1120,7 @@ msgid "Published"
 msgstr "Publicado"
 
 #. Default: "Published in Climate-ADAPT"
-#: helpers/Utils
+#: components/theme/Content/Sections/PublishedModifiedInfo
 msgid "Published in Climate-ADAPT"
 msgstr "Publicado em Clima-ADAPT"
 
@@ -1151,7 +1151,7 @@ msgid "Reference Information"
 msgstr "Informações de referência"
 
 #. Default: "Reference information"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Reference information"
 msgstr "Informações de referência"
 
@@ -1182,7 +1182,7 @@ msgid "Related Resources"
 msgstr "Recursos relacionados"
 
 #. Default: "Related content:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ContentRelatedItems
 msgid "Related content:"
 msgstr "Conteúdo relacionado:"
 
@@ -1217,7 +1217,7 @@ msgid "Remove {title} from comparison"
 msgstr ""
 
 #. Default: "Replace existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Substituir arquivo existente"
 
@@ -1262,7 +1262,7 @@ msgid "Sector"
 msgstr "Setor"
 
 #. Default: "Sectors:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Sectors:"
 msgstr "Setores:"
 
@@ -1272,12 +1272,12 @@ msgid "See all matching tools"
 msgstr ""
 
 #. Default: "See less"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See less"
 msgstr "Ver menos"
 
 #. Default: "See more"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See more"
 msgstr "Ver mais"
 
@@ -1309,7 +1309,7 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton
+#: components/theme/Content/Sections/ShareInfoButton
 msgid "Share your information"
 msgstr "Compartilhe suas informações"
 
@@ -1329,8 +1329,8 @@ msgid "Some selected tools could not be loaded and were skipped."
 msgstr ""
 
 #. Default: "Source"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "Source"
 msgstr "Fonte"
 
@@ -1377,7 +1377,7 @@ msgid "Strengths and possible limitations of the tool"
 msgstr ""
 
 #. Default: "Sub Nationals:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subnacionais:"
 
@@ -1413,17 +1413,17 @@ msgid "The Adaptation Support Tool - Getting started"
 msgstr "A Ferramenta de Apoio à Adaptação – Primeiros passos"
 
 #. Default: "The date refers to the date of release of the video"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the date of release of the video"
 msgstr "A data refere-se à data de lançamento do vídeo"
 
 #. Default: "The date refers to the latest date of publication of the item"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the latest date of publication of the item"
 msgstr "A data refere-se à última data de publicação do item"
 
 #. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "A data refere-se ao momento em que o item foi preparado ou atualizado por especialistas contribuintes para ser submetido para publicação no Climate ADAPT"
 
@@ -1545,7 +1545,7 @@ msgid "Updating notes"
 msgstr "Atualizando notas"
 
 #. Default: "Uploading image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
 
@@ -1570,7 +1570,7 @@ msgid "User support provisions"
 msgstr ""
 
 #. Default: "Versions"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "Versions"
 msgstr ""
 
@@ -1590,17 +1590,17 @@ msgid "View"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "View all contributions in the resource catalogue"
 msgstr "Veja todas as contribuições no catálogo de recursos"
 
 #. Default: "View latest version"
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "View latest version"
 msgstr ""
 
 #. Default: "Visit external website"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Visit external website"
 msgstr "Visite o site externo"
 
@@ -1610,7 +1610,7 @@ msgid "Warning: Potential broken links"
 msgstr ""
 
 #. Default: "Web"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Web"
 msgstr "Rede"
 
@@ -1625,8 +1625,8 @@ msgid "Websites"
 msgstr "Sites"
 
 #. Default: "Websites:"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Websites:"
 msgstr "Sites:"
 
@@ -1641,12 +1641,12 @@ msgid "What stage of the adaptation stage are you working on?"
 msgstr ""
 
 #. Default: "When"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "When"
 msgstr "Quando"
 
 #. Default: "Where"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Where"
 msgstr "Onde"
 
@@ -1666,7 +1666,7 @@ msgid "Yes"
 msgstr ""
 
 #. Default: "You are viewing an archived version."
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "You are viewing an archived version."
 msgstr ""
 
@@ -1701,12 +1701,12 @@ msgid "exclusion_of_liability.title"
 msgstr "Exclusão de responsabilidade"
 
 #. Default: "Could not import the selected image."
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "imageImportFailed"
 msgstr ""
 
 #. Default: "latest"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "latest"
 msgstr ""
 
@@ -1721,7 +1721,7 @@ msgid "link-integrity: loading references"
 msgstr ""
 
 #. Default: "Enter a URL to an image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "linkAnImage"
 msgstr ""
 
@@ -1731,7 +1731,7 @@ msgid "officiallyInEnglish"
 msgstr "As informações governamentais oficialmente divulgadas estão disponíveis apenas em inglês."
 
 #. Default: "Pick an existing image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "pickAnImage"
 msgstr ""
 
@@ -1751,7 +1751,7 @@ msgid "refers to"
 msgstr ""
 
 #. Default: "Upload an image from your computer"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "uploadAnImage"
 msgstr ""
 

@@ -2,11 +2,11 @@ import React from 'react';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 import { Grid, Container, Segment } from 'semantic-ui-react';
 import {
-  HTMLField,
-  EventDetails,
   DocumentsList,
-} from '@eeacms/volto-cca-policy/helpers';
-import { PortalMessage } from '@eeacms/volto-cca-policy/components';
+  EventDetails,
+  HTMLField,
+  PortalMessage,
+} from '@eeacms/volto-cca-policy/components';
 import { filterBlocks } from '@eeacms/volto-cca-policy/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 

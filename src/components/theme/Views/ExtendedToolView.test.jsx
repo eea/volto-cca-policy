@@ -12,14 +12,19 @@ jest.mock('../CompareTools/utils', () => ({
 }));
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  BooleanField: ({ label, value, yesLabel, noLabel }) => (
+    <div>
+      <span>{label}</span>
+      <span>{value ? yesLabel : noLabel}</span>
+    </div>
+  ),
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
-  PortalMessage: () => <div data-testid="portal-message" />,
-}));
-
-jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
+  ContentMetadata: () => <div data-testid="content-metadata" />,
+  DocumentsList: () => <div data-testid="documents-list" />,
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
-
+  ItemLogo: () => <div data-testid="item-logo" />,
+  PortalMessage: () => <div data-testid="portal-message" />,
   TextField: ({ label, value }) =>
     value !== null && value !== undefined && value !== '' ? (
       <div>
@@ -27,13 +32,6 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
         <span>{String(value)}</span>
       </div>
     ) : null,
-
-  BooleanField: ({ label, value, yesLabel, noLabel }) => (
-    <div>
-      <span>{label}</span>
-      <span>{value ? yesLabel : noLabel}</span>
-    </div>
-  ),
 
   VocabularyField: ({ label, values = [], asList }) =>
     values.length > 0 ? (
@@ -50,10 +48,6 @@ jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
         )}
       </div>
     ) : null,
-
-  ContentMetadata: () => <div data-testid="content-metadata" />,
-  ItemLogo: () => <div data-testid="item-logo" />,
-  DocumentsList: () => <div data-testid="documents-list" />,
 }));
 
 jest.mock('@plone/volto/registry', () => ({

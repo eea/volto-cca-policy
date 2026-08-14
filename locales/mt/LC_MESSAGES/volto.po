@@ -36,7 +36,7 @@ msgid "Adaptation Approaches"
 msgstr "Approċċi ta' Adattament"
 
 #. Default: "Adaptation Approaches:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Adaptation Approaches:"
 msgstr "Approċċi ta' Adattament:"
 
@@ -161,7 +161,7 @@ msgid "Background information"
 msgstr "Informazzjoni ta' sfond"
 
 #. Default: "Biogeographical regions:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Reġjuni bijoġeografiċi:"
 
@@ -171,7 +171,7 @@ msgid "Blue options"
 msgstr "Għażliet blu"
 
 #. Default: "Browse the site, drop an image, or use a URL"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Browse the site, drop an image, or type a URL"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgid "Capacity building empowering and lifestyle practices"
 msgstr "Il-bini tal-kapaċità li jagħti s-setgħa u l-prattiki tal-istil tal-ħajja"
 
 #. Default: "Case Studies Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Case Studies Documents"
 msgstr "Dokumenti ta' Studji ta' Każijiet"
 
@@ -206,7 +206,7 @@ msgid "Case Study illustrations"
 msgstr "Illustrazzjonijiet ta' Studju ta' Każijiet"
 
 #. Default: "Case studies related to this option:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Case studies related to this option:"
 msgstr "Studji ta’ każijiet relatati ma’ din l-għażla:"
 
@@ -226,7 +226,7 @@ msgid "Challenges"
 msgstr "Sfidi"
 
 #. Default: "Choose a file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
 msgstr "Agħżel fajl"
 
@@ -246,7 +246,7 @@ msgid "Choose thematic map:"
 msgstr "Agħżel il-mappa tematika:"
 
 #. Default: "City:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Belt:"
 
@@ -274,7 +274,7 @@ msgid "Climate impacts"
 msgstr "Impatti fuq il-klima"
 
 #. Default: "Climate impacts:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Climate impacts:"
 msgstr "Impatti fuq il-klima:"
 
@@ -326,7 +326,7 @@ msgid "Contact information for the Observatory"
 msgstr "Informazzjoni ta' kuntatt għall-Osservatorju"
 
 #. Default: "Contributor:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
 msgstr "Kontributur:"
 
@@ -354,7 +354,7 @@ msgid "Countries"
 msgstr "Pajjiżi"
 
 #. Default: "Countries:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Pajjiżi:"
 
@@ -379,23 +379,23 @@ msgid "Data sources"
 msgstr ""
 
 #. Default: "Date of creation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
 msgstr "Data tal-ħolqien:"
 
 #. Default: "Date of publication:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of publication:"
 msgstr "Data tal-pubblikazzjoni:"
 
 #. Default: "Date of release:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
 msgstr "Data tar-rilaxx:"
 
 #. Default: "Description"
+#: components/theme/Content/Sections/ItemLogo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Description"
 msgstr "Deskrizzjoni"
 
@@ -410,12 +410,12 @@ msgid "Disclaimer"
 msgstr "Ċaħda"
 
 #. Default: "Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Documents"
 msgstr "Dokumenti"
 
 #. Default: "Download Event"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download Event"
 msgstr "Niżżel Avveniment"
 
@@ -425,27 +425,27 @@ msgid "Download the detailed agenda"
 msgstr "Niżżel l-aġenda dettaljata"
 
 #. Default: "Download this event in iCal format"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Download this event in iCal format"
 msgstr "Niżżel dan l-avveniment fil-format iCal"
 
 #. Default: "Drop file here to replace the existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to replace the existing file"
 msgstr "Waqqa 'fajl hawn biex tissostitwixxi l-fajl eżistenti"
 
 #. Default: "Drop file here to upload a new file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop file here to upload a new file"
 msgstr "Waqqa 'fajl hawn biex ittella' fajl ġdid"
 
 #. Default: "Drop files here ..."
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Drop files here ..."
 msgstr "Waqqa 'fajls hawn..."
 
 #. Default: "Duration:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
 msgstr "Tul ta' żmien:"
 
@@ -548,7 +548,7 @@ msgid "Funding Programme"
 msgstr "Programm ta' Finanzjament"
 
 #. Default: "Funding Programme:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Funding Programme:"
 msgstr "Programm ta' Finanzjament:"
 
@@ -558,7 +558,7 @@ msgid "Funding oportunity"
 msgstr "Opportunità ta' finanzjament"
 
 #. Default: "Geographic characterisation:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Geographic characterisation:"
 msgstr "Karatterizzazzjoni ġeografika:"
 
@@ -583,7 +583,7 @@ msgid "Governance and Institutional"
 msgstr "Governanza u Istituzzjonali"
 
 #. Default: "Governance level:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
 msgstr "Livell ta' governanza:"
 
@@ -628,7 +628,7 @@ msgid "Health Impacts"
 msgstr "Impatti fuq is-Saħħa"
 
 #. Default: "Health impact:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Health impact:"
 msgstr "Impatt fuq is-saħħa:"
 
@@ -648,7 +648,7 @@ msgid "Heat health warning systems (HHWS)"
 msgstr "Sistemi ta’ twissija tas-saħħa tas-sħana (HHWS)"
 
 #. Default: "IPCC adaptation options categories:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "IPCC adaptation options categories:"
 msgstr "Kategoriji tal-għażliet tal-adattament tal-IPCC:"
 
@@ -684,7 +684,7 @@ msgid "Indicators"
 msgstr "Indikaturi"
 
 #. Default: "Info"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Info"
 msgstr "Info"
 
@@ -730,12 +730,12 @@ msgid "Key Type Measure"
 msgstr "Miżura tat-Tip Ewlenin"
 
 #. Default: "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures (KTMs) are a common approach for grouping and classifying climate change adaptation actions and measures, supporting harmonized reporting, comparability, and systematic analysis across adaptation policies and governance levels."
 msgstr ""
 
 #. Default: "Key Type Measures:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Key Type Measures:"
 msgstr "Miżuri tat-Tip Ewlenin:"
 
@@ -750,7 +750,7 @@ msgid "Key type measures"
 msgstr "Miżuri tat-tip ewlenin"
 
 #. Default: "Keywords:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Keywords:"
 msgstr "Kliem ewlieni:"
 
@@ -868,7 +868,7 @@ msgid "Looking for more information?"
 msgstr "Qed tfittex aktar informazzjoni?"
 
 #. Default: "Macro-Transnational region:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Reġjun Makro-Transnazzjonali:"
 
@@ -999,7 +999,7 @@ msgid "Objectives of the adaptation measure"
 msgstr "Għanijiet tal-miżura ta' adattament"
 
 #. Default: "Observatory Contributions:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Observatory Contributions:"
 msgstr "Kontribuzzjonijiet tal-Osservatorju:"
 
@@ -1030,7 +1030,7 @@ msgid "Organisation"
 msgstr "Organizzazzjoni"
 
 #. Default: "Organisation Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Organisation Documents"
 msgstr "Dokumenti ta' Organizzazzjoni"
 
@@ -1095,7 +1095,7 @@ msgid "Practical information"
 msgstr "Informazzjoni prattika"
 
 #. Default: "Previous versions of this indicator"
-#: components/theme/Views/ArchivedVersionListing
+#: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "Publication reference"
 msgstr "Referenza tal-pubblikazzjoni"
 
 #. Default: "Publications and Reports Documents"
-#: helpers/Utils
+#: components/theme/Content/Sections/DocumentsList
 msgid "Publications and Reports Documents"
 msgstr "Pubblikazzjonijiet u Rapporti Dokumenti"
 
@@ -1120,7 +1120,7 @@ msgid "Published"
 msgstr "Ippubblikat"
 
 #. Default: "Published in Climate-ADAPT"
-#: helpers/Utils
+#: components/theme/Content/Sections/PublishedModifiedInfo
 msgid "Published in Climate-ADAPT"
 msgstr "Ippubblikat fi Climate-ADAPT"
 
@@ -1151,7 +1151,7 @@ msgid "Reference Information"
 msgstr "Informazzjoni ta' Referenza"
 
 #. Default: "Reference information"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "Reference information"
 msgstr "Informazzjoni ta' referenza"
 
@@ -1182,7 +1182,7 @@ msgid "Related Resources"
 msgstr "Riżorsi Relatati"
 
 #. Default: "Related content:"
-#: helpers/Utils
+#: components/theme/Content/Sections/ContentRelatedItems
 msgid "Related content:"
 msgstr "Kontenut relatat:"
 
@@ -1217,7 +1217,7 @@ msgid "Remove {title} from comparison"
 msgstr ""
 
 #. Default: "Replace existing file"
-#: components/theme/Widgets/PromotionalImageWidget
+#: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Ibdel il-fajl eżistenti"
 
@@ -1262,7 +1262,7 @@ msgid "Sector"
 msgstr "Settur"
 
 #. Default: "Sectors:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/ContentMetadata
 msgid "Sectors:"
 msgstr "Setturi:"
 
@@ -1272,12 +1272,12 @@ msgid "See all matching tools"
 msgstr ""
 
 #. Default: "See less"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See less"
 msgstr "Ara inqas"
 
 #. Default: "See more"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "See more"
 msgstr "Ara aktar"
 
@@ -1309,7 +1309,7 @@ msgstr ""
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
-#: components/theme/ShareInfoButton/ShareInfoButton
+#: components/theme/Content/Sections/ShareInfoButton
 msgid "Share your information"
 msgstr "Aqsam l-informazzjoni tiegħek"
 
@@ -1329,8 +1329,8 @@ msgid "Some selected tools could not be loaded and were skipped."
 msgstr ""
 
 #. Default: "Source"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/CaseStudyView
-#: helpers/Utils
 msgid "Source"
 msgstr "Sors"
 
@@ -1377,7 +1377,7 @@ msgid "Strengths and possible limitations of the tool"
 msgstr ""
 
 #. Default: "Sub Nationals:"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Sub-Ċittadini:"
 
@@ -1413,17 +1413,17 @@ msgid "The Adaptation Support Tool - Getting started"
 msgstr "L-Għodda ta' Appoġġ għall-Adattament - Nibdew"
 
 #. Default: "The date refers to the date of release of the video"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the date of release of the video"
 msgstr "Id-data tirreferi għad-data tar-rilaxx tal-vidjo"
 
 #. Default: "The date refers to the latest date of publication of the item"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the latest date of publication of the item"
 msgstr "Id-data tirreferi għall-aħħar data tal-pubblikazzjoni tal-oġġett"
 
 #. Default: "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
-#: helpers/ContentMetadata
+#: components/theme/Content/Sections/PublicationDateInfo
 msgid "The date refers to the moment in which the item has been prepared or updated by contributing experts to be submitted for the publication in Climate ADAPT"
 msgstr "Id-data tirreferi għall-mument li fih l-oġġett ikun ġie ppreparat jew aġġornat minn esperti li jikkontribwixxu biex jiġi sottomess għall-pubblikazzjoni fi Climate ADAPT"
 
@@ -1545,7 +1545,7 @@ msgid "Updating notes"
 msgstr "Aġġornament noti"
 
 #. Default: "Uploading image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
 
@@ -1570,7 +1570,7 @@ msgid "User support provisions"
 msgstr ""
 
 #. Default: "Versions"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "Versions"
 msgstr ""
 
@@ -1590,17 +1590,17 @@ msgid "View"
 msgstr ""
 
 #. Default: "View all contributions in the resource catalogue"
-#: helpers/Utils
+#: components/theme/Content/Sections/ReferenceInfo
 msgid "View all contributions in the resource catalogue"
 msgstr "Ara l-kontribuzzjonijiet kollha fil-katalgu tar-riżorsi"
 
 #. Default: "View latest version"
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "View latest version"
 msgstr ""
 
 #. Default: "Visit external website"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Visit external website"
 msgstr "Żur il-websajt esterna"
 
@@ -1610,7 +1610,7 @@ msgid "Warning: Potential broken links"
 msgstr ""
 
 #. Default: "Web"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Web"
 msgstr "Web"
 
@@ -1625,8 +1625,8 @@ msgid "Websites"
 msgstr "Websajts"
 
 #. Default: "Websites:"
+#: components/theme/Content/Sections/ReferenceInfo
 #: components/theme/Views/AdaptationOptionView
-#: helpers/Utils
 msgid "Websites:"
 msgstr "Websajts:"
 
@@ -1641,12 +1641,12 @@ msgid "What stage of the adaptation stage are you working on?"
 msgstr ""
 
 #. Default: "When"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "When"
 msgstr "Meta"
 
 #. Default: "Where"
-#: helpers/Utils
+#: components/theme/Content/Sections/EventDetails
 msgid "Where"
 msgstr "Fejn"
 
@@ -1666,7 +1666,7 @@ msgid "Yes"
 msgstr ""
 
 #. Default: "You are viewing an archived version."
-#: components/theme/Views/ArchivedVersionNotice
+#: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
 msgid "You are viewing an archived version."
 msgstr ""
 
@@ -1701,12 +1701,12 @@ msgid "exclusion_of_liability.title"
 msgstr "Esklużjoni tar-responsabbiltà"
 
 #. Default: "Could not import the selected image."
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "imageImportFailed"
 msgstr ""
 
 #. Default: "latest"
-#: components/theme/Views/VersionsGroup
+#: components/theme/Content/Sections/Versioning/VersionsGroup
 msgid "latest"
 msgstr ""
 
@@ -1721,7 +1721,7 @@ msgid "link-integrity: loading references"
 msgstr ""
 
 #. Default: "Enter a URL to an image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "linkAnImage"
 msgstr ""
 
@@ -1731,7 +1731,7 @@ msgid "officiallyInEnglish"
 msgstr "Informazzjoni governattiva rrappurtata uffiċjalment hija disponibbli biss bl-Ingliż"
 
 #. Default: "Pick an existing image"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "pickAnImage"
 msgstr ""
 
@@ -1751,7 +1751,7 @@ msgid "refers to"
 msgstr ""
 
 #. Default: "Upload an image from your computer"
-#: components/theme/Widgets/ImageWidget
+#: components/manage/Widgets/ImageWidget
 msgid "uploadAnImage"
 msgstr ""
 

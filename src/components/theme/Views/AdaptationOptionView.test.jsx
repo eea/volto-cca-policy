@@ -19,22 +19,19 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
       ))}
     </div>
   ),
-  PortalMessage: () => <div data-testid="portal-message" />,
-  ShareInfoButton: () => <div data-testid="share-info" />,
-}));
-
-jest.mock('@eeacms/volto-cca-policy/helpers', () => ({
+  ContentBannerTitle: () => <div data-testid="banner-title" />,
+  ContentMetadata: () => <div data-testid="content-metadata" />,
   HTMLField: ({ value, className }) => (
     <div data-testid={className ? `html-${className}` : 'html-field'}>
       {value?.data ?? value ?? ''}
     </div>
   ),
-  ContentMetadata: () => <div data-testid="content-metadata" />,
-  PublishedModifiedInfo: () => <div data-testid="published-modified" />,
-  BannerTitle: () => <div data-testid="banner-title" />,
   LinksList: ({ value }) => (
     <div data-testid="links-list">{(value || []).join(',')}</div>
   ),
+  PortalMessage: () => <div data-testid="portal-message" />,
+  PublishedModifiedInfo: () => <div data-testid="published-modified" />,
+  ShareInfoButton: () => <div data-testid="share-info" />,
 }));
 
 jest.mock('@eeacms/volto-eea-design-system/ui', () => ({
