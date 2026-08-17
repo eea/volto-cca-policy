@@ -17,6 +17,58 @@ config.blocks = {
 
 const mockStore = configureStore();
 
+const baseContent = {
+  title: 'My DatabaseItemView',
+  long_description: {
+    'content-type': null,
+    data: '<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>',
+    encoding: 'utf-8',
+  },
+  publication_date: '2022-06-24',
+  geochars:
+    '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
+  keywords: ['keyword 1', 'keyword 2'],
+  websites: ['https://example.org/'],
+  contributions: [
+    {
+      title: 'Contributor 1',
+      url: '/contributor-1',
+    },
+    {
+      title: 'Contributor 2',
+      url: '/contributor-2',
+    },
+  ],
+};
+
+const visualizationEmbedCode =
+  '<div class="flourish-embed" data-src="visualisation/12345"></div>';
+
+const renderDatabaseItemView = (content = baseContent) => {
+  const store = mockStore({
+    userSession: { token: '1234' },
+    intl: {
+      locale: 'en',
+      messages: {},
+    },
+  });
+
+  return renderer.create(
+    <Provider store={store}>
+      <MemoryRouter>
+        <DatabaseItemView content={content} />
+      </MemoryRouter>
+    </Provider>,
+  );
+};
+
+const findColumnByClassName = (component, className) =>
+  component.root.findAll(
+    (node) =>
+      typeof node.props.className === 'string' &&
+      node.props.className.includes(className),
+  )[0];
+
 jest.mock('semantic-ui-react', () => ({
   ...jest.requireActual('semantic-ui-react'),
 }));
@@ -29,46 +81,54 @@ jest.mock('@eeacms/volto-embed', () => {
 
 describe('DatabaseItemView', () => {
   it('should render the component', () => {
-    const content = {
-      title: 'My DatabaseItemView',
-      long_description: {
-        'content-type': null,
-        data: '<p>Nam commodo suscipit quam. Praesent egestas neque eu enim. Quisque rutrum.</p>',
-        encoding: 'utf-8',
-      },
-      publication_date: '2022-06-24',
-      geochars:
-        '{\r\n "geoElements":{"element":"GLOBAL",\r\n "macrotrans":null,"biotrans":null,"countries":[],\r\n "subnational":[],"city":""}}',
-      keywords: ['keyword 1', 'keyword 2'],
-      websites: ['https://example.org/'],
-      contributions: [
-        {
-          title: 'Contributor 1',
-          url: '/contributor-1',
-        },
-        {
-          title: 'Contributor 2',
-          url: '/contributor-2',
-        },
-      ],
-    };
-
-    const store = mockStore({
-      userSession: { token: '1234' },
-      intl: {
-        locale: 'en',
-        messages: {},
-      },
-    });
-
-    const component = renderer.create(
-      <Provider store={store}>
-        <MemoryRouter>
-          <DatabaseItemView content={content} />
-        </MemoryRouter>
-      </Provider>,
-    );
+    const component = renderDatabaseItemView();
     const json = component.toJSON();
     expect(json).toMatchSnapshot();
+  });
+
+  it('renders the visualizations field in the left column by default', () => {
+    const component = renderDatabaseItemView({
+      ...baseContent,
+      map_graphs: visualizationEmbedCode,
+    });
+    const colLeft = findColumnByClassName(component, 'col-left');
+    const fullWidthColumns = component.root.findAll(
+      (node) => node.props.computer === 12,
+    );
+
+    expect(colLeft.findAllByType('iframe')).toHaveLength(1);
+    expect(component.root.findByType('iframe').props.src).toBe(
+      'https://flo.uri.sh/visualisation/12345/embed',
+    );
+    expect(fullWidthColumns).toHaveLength(0);
+  });
+
+  it('renders the visualizations field full width when enabled', () => {
+    const component = renderDatabaseItemView({
+      ...baseContent,
+      map_graphs: visualizationEmbedCode,
+      map_graphs_full_width: true,
+    });
+    const colLeft = findColumnByClassName(component, 'col-left');
+    const fullWidthColumn = component.root.findAll(
+      (node) => node.props.computer === 12,
+    )[0];
+
+    expect(colLeft.findAllByType('iframe')).toHaveLength(0);
+    expect(fullWidthColumn.findAllByType('iframe')).toHaveLength(1);
+  });
+
+  it('does not render a visualization when the visualizations field is empty', () => {
+    const component = renderDatabaseItemView({
+      ...baseContent,
+      map_graphs: '',
+      map_graphs_full_width: true,
+    });
+
+    expect(component.root.findAllByType('iframe')).toHaveLength(0);
+    const fullWidthColumns = component.root.findAll(
+      (node) => node.props.computer === 12,
+    );
+    expect(fullWidthColumns).toHaveLength(0);
   });
 });
