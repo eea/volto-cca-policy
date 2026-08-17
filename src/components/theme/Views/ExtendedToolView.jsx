@@ -12,6 +12,7 @@ import { FormattedMessage } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
+import RelatedTools from './RelatedTools';
 
 const ExtendedToolView = (props) => {
   const { content = {} } = props;
@@ -78,10 +79,8 @@ const ExtendedToolView = (props) => {
           <p className="extended-tool-provider">{tool_provider}</p>
           <h1 className="extended-tool-title">{title}</h1>
         </div>
-
         <CompareToolsPanel />
         <PortalMessage content={content} />
-
         <Grid columns="12">
           <Grid.Row>
             <Grid.Column
@@ -392,6 +391,7 @@ const ExtendedToolView = (props) => {
           </Grid.Row>
         </Grid>
       </Container>
+      <RelatedTools content={content} />
     </div>
   );
 };

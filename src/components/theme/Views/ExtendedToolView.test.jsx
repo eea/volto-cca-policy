@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import ExtendedToolView from './ExtendedToolView';
@@ -12,6 +12,12 @@ jest.mock('../CompareTools/utils', () => ({
 }));
 
 jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
+
+jest.mock(
+  '@plone/volto/components/manage/UniversalLink/UniversalLink',
+  () =>
+    ({ href, children }) => <a href={href}>{children}</a>,
+);
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
@@ -75,6 +81,67 @@ describe('ExtendedToolView', () => {
         name: 'Climate Tool',
       }),
     ).toBeInTheDocument();
+  });
+
+  it('renders related tools returned by the expander', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      sectors: [
+        { token: 'COASTAL', title: 'Coastal areas' },
+        { token: 'WATERMANAGEMENT', title: 'Water management' },
+      ],
+      climate_impacts: [{ token: 'DROUGHT', title: 'Droughts' }],
+      adaptation_support_cycle_step: [
+        { token: 'STEP_1', title: 'Step 1: Preparing the ground' },
+      ],
+      '@components': {
+        'related-tools': {
+          items: [
+            {
+              '@id': '/tools/coastal-planner',
+              title: 'Coastal planner',
+              tool_provider: 'Climate agency',
+              shared: {
+                sectors: ['COASTAL'],
+                climate_impacts: ['DROUGHT'],
+                adaptation_support_cycle_step: ['STEP_1'],
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    const section = screen
+      .getByRole('heading', { name: 'Related tools' })
+      .closest('.extended-tool-related');
+    const related = within(section);
+
+    expect(
+      related.getByText(/tools sharing a sector, hazard or cycle step/i),
+    ).toBeInTheDocument();
+    expect(related.getByText('Coastal areas')).toHaveClass('sector');
+    expect(related.getByText('Droughts')).toHaveClass('hazard');
+    expect(related.getByText('Step 1')).toHaveClass('adaptation-stage');
+    expect(related.queryByText('Water management')).not.toBeInTheDocument();
+    expect(
+      related.getByText('Same sector · Shared hazard · Same cycle step'),
+    ).toBeInTheDocument();
+    expect(related.getByRole('link', { name: /view/i })).toHaveAttribute(
+      'href',
+      '/tools/coastal-planner',
+    );
+  });
+
+  it('hides the related tools section when the expander returns no items', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      '@components': { 'related-tools': { items: [] } },
+    });
+
+    expect(
+      screen.queryByRole('heading', { name: 'Related tools' }),
+    ).not.toBeInTheDocument();
   });
 
   it('renders the open-tool button when a hyperlink is provided', () => {
