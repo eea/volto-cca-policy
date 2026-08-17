@@ -32,12 +32,16 @@ import {
 
 const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
-const MaybeFlourishVisualization = ({ content }) => {
-  const { map_graphs } = content;
+const getVisualizationEmbedCode = (visualization) =>
+  visualization?.embed_code || visualization?.map_graphs || '';
 
+const MaybeFlourishVisualization = ({ visualization }) => {
+  const embedCode = getVisualizationEmbedCode(visualization);
   // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
-  const flourishPath = getDataSrcFromEmbedCode(map_graphs);
+  const flourishPath = getDataSrcFromEmbedCode(embedCode);
   const flourishUrl = buildFlourishUrl(flourishPath);
+  const height = visualization?.height || '980';
+  const title = visualization?.title || 'Interactive or visual content';
 
   return !!flourishPath ? (
     <PrivacyProtection
@@ -47,10 +51,10 @@ const MaybeFlourishVisualization = ({ content }) => {
       }}
     >
       <iframe
-        height="980"
+        height={height}
         width="100%"
         src={flourishUrl}
-        title="Interactive or visual content"
+        title={title}
         className="flourish-embed-iframe"
         sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
       ></iframe>
@@ -73,10 +77,11 @@ function getFirstIframeSrc(htmlString) {
   }
 }
 
-const MaybeIframeVisualization = ({ content }) => {
-  const { map_graphs, map_graphs_height } = content;
-  const url = getFirstIframeSrc(map_graphs || '');
-  const height = map_graphs_height || 800;
+const MaybeIframeVisualization = ({ visualization }) => {
+  const embedCode = getVisualizationEmbedCode(visualization);
+  const url = getFirstIframeSrc(embedCode);
+  const height = visualization?.height || 800;
+  const title = visualization?.title || 'Interactive or visual content';
   const [isClient, setIsClient] = React.useState();
 
   React.useEffect(() => setIsClient(true), []);
@@ -94,12 +99,49 @@ const MaybeIframeVisualization = ({ content }) => {
         height={height}
         width="100%"
         src={url}
-        title="Interactive or visual content"
+        title={title}
         className="flourish-embed-iframe"
         sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
       ></iframe>
     </PrivacyProtection>
   );
+};
+
+const Visualization = ({ visualization }) => (
+  <>
+    {visualization?.title && <h2>{visualization.title}</h2>}
+    <MaybeFlourishVisualization visualization={visualization} />
+    <MaybeIframeVisualization visualization={visualization} />
+  </>
+);
+
+const Visualizations = ({ visualizations }) => (
+  <>
+    {visualizations.map((visualization, index) => (
+      <Visualization
+        key={`visualization-${index}`}
+        visualization={visualization}
+      />
+    ))}
+  </>
+);
+
+const getVisualizations = (content) => {
+  const visualizations = Array.isArray(content?.visualizations)
+    ? content.visualizations.filter((item) => item?.embed_code)
+    : [];
+
+  return content?.map_graphs
+    ? [
+        ...visualizations,
+        {
+          title: '',
+          embed_code: content.map_graphs,
+          height: content.map_graphs_height,
+          full_width: content.map_graphs_full_width,
+        },
+      ]
+    : visualizations;
 };
 
 const BottomInfo = (props) => {
@@ -157,9 +199,14 @@ const DatabaseItemView = (props) => {
   } = content;
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
   const subtitle = CONTENT_TYPE_LABELS[type] ?? '';
-  const hasVisualization = !!content?.map_graphs?.length;
-  const isFullWidthVisualization =
-    hasVisualization && content?.map_graphs_full_width;
+  const visualizations = getVisualizations(content);
+  const columnVisualizations = visualizations.filter(
+    (visualization) => !visualization.full_width,
+  );
+  const fullWidthVisualizations = visualizations.filter(
+    (visualization) => visualization.full_width,
+  );
+  const hasFullWidthVisualizations = !!fullWidthVisualizations.length;
 
   const is_cmshare_video = SHARE_EEA.some((domain) =>
     content?.embed_url?.includes(domain),
@@ -252,14 +299,11 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              {hasVisualization && !isFullWidthVisualization && (
-                <>
-                  <MaybeFlourishVisualization {...props} />
-                  <MaybeIframeVisualization {...props} />
-                </>
+              {!!columnVisualizations.length && (
+                <Visualizations visualizations={columnVisualizations} />
               )}
 
-              {!isFullWidthVisualization && <BottomInfo {...props} />}
+              {!hasFullWidthVisualizations && <BottomInfo {...props} />}
             </Grid.Column>
 
             <Grid.Column
@@ -273,12 +317,11 @@ const DatabaseItemView = (props) => {
             </Grid.Column>
           </Grid.Row>
 
-          {isFullWidthVisualization && (
+          {hasFullWidthVisualizations && (
             <>
               <Grid.Row>
                 <Grid.Column mobile={12} tablet={12} computer={12}>
-                  <MaybeFlourishVisualization {...props} />
-                  <MaybeIframeVisualization {...props} />
+                  <Visualizations visualizations={fullWidthVisualizations} />
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
