@@ -32,11 +32,8 @@ import {
 
 const SHARE_EEA = ['https://cmshare.eea.eu', 'shareit.eea.europa.eu'];
 
-const getVisualizationEmbedCode = (visualization) =>
-  visualization?.embed_code || visualization?.map_graphs || '';
-
 const MaybeFlourishVisualization = ({ visualization }) => {
-  const embedCode = getVisualizationEmbedCode(visualization);
+  const embedCode = visualization?.embed_code || '';
   // https://helpcenter.flourish.studio/hc/en-us/articles/8761537208463-How-to-embed-Flourish-charts-in-your-CMS
   const flourishPath = getDataSrcFromEmbedCode(embedCode);
   const flourishUrl = buildFlourishUrl(flourishPath);
@@ -78,7 +75,7 @@ function getFirstIframeSrc(htmlString) {
 }
 
 const MaybeIframeVisualization = ({ visualization }) => {
-  const embedCode = getVisualizationEmbedCode(visualization);
+  const embedCode = visualization?.embed_code || '';
   const url = getFirstIframeSrc(embedCode);
   const height = visualization?.height || 800;
   const title = visualization?.title || 'Interactive or visual content';
@@ -127,21 +124,9 @@ const Visualizations = ({ visualizations }) => (
 );
 
 const getVisualizations = (content) => {
-  const visualizations = Array.isArray(content?.visualizations)
+  return Array.isArray(content?.visualizations)
     ? content.visualizations.filter((item) => item?.embed_code)
     : [];
-
-  return content?.map_graphs
-    ? [
-        ...visualizations,
-        {
-          title: '',
-          embed_code: content.map_graphs,
-          height: content.map_graphs_height,
-          full_width: content.map_graphs_full_width,
-        },
-      ]
-    : visualizations;
 };
 
 const BottomInfo = (props) => {
