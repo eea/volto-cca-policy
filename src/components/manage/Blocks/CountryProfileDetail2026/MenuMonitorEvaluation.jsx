@@ -124,13 +124,10 @@ export default function MenuMonitorEvaluation(props) {
     <>
       <Callout className="eea callout gray">
         <p>
-          This section{' '}
-          <strong>
-            summarizes national progress on climate change adaptation
-          </strong>
-          , including key actions, funding, and monitoring efforts. It provides
-          an overview of how countries strengthen resilience and integrate
-          adaptation across sectors and governance levels..
+          This section summarises national progress on climate change
+          adaptation, including key actions, funding and monitoring efforts. It
+          provides an overview of how countries strengthen resilience and
+          integrate adaptation across sectors and governance levels.
         </p>
       </Callout>
       {Object.entries(elements).map(([key, element]) => {

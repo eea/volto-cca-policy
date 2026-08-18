@@ -12,12 +12,10 @@ export default function MenuGoodPractices(props) {
         menuItem: 'International frameworks',
         render: () => (
           <>
-            <Callout className="eea callout gray">
-              <p>
-                Overview of the country’s involvement in international and
-                regional cooperation frameworks that support climate adaptation.
-              </p>
-            </Callout>
+            <p>
+              Overview of the country’s involvement in international and
+              regional cooperation frameworks that support climate adaptation.
+            </p>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
             </div>
@@ -31,12 +29,10 @@ export default function MenuGoodPractices(props) {
         menuItem: 'Science',
         render: () => (
           <>
-            <Callout className="eea callout gray">
-              <p>
-                Overview of cooperation in research, knowledge exchange and
-                scientific activities related to climate adaptation.
-              </p>
-            </Callout>
+            <p>
+              Overview of cooperation in research, knowledge exchange and
+              scientific activities related to climate adaptation.
+            </p>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
             </div>
@@ -50,12 +46,10 @@ export default function MenuGoodPractices(props) {
         menuItem: 'Policy',
         render: () => (
           <>
-            <Callout className="eea callout gray">
-              <p>
-                Overview of collaboration on policy development, governance and
-                shared adaptation initiatives.
-              </p>
-            </Callout>
+            <p>
+              Overview of collaboration on policy development, governance and
+              shared adaptation initiatives.
+            </p>
             <div className="styled-dividerBlock secondary has--theme--secondary styled">
               <div className="ui divider secondary divider-spacing-s"></div>
             </div>
