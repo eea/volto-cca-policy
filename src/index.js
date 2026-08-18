@@ -48,6 +48,7 @@ import {
 
 import GeocharsWidget from './components/manage/Widgets/GeocharsWidget';
 import PromotionalImageWidget from './components/manage/Widgets/PromotionalImageWidget';
+import VisualizationsWidget from './components/manage/Widgets/VisualizationsWidget';
 import HealthHorizontalCardItem from './components/Search/Result/HealthHorizontalCardItem';
 import ClusterHorizontalCardItem from './components/Search/Result/ClusterHorizontalCardItem';
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
@@ -443,6 +444,7 @@ const applyConfig = (config) => {
   config.widgets.id.geochars = GeocharsWidget;
   config.widgets.id.geolocation = GeolocationWidget;
   config.widgets.id.promotional_image = PromotionalImageWidget;
+  config.widgets.id.visualizations = VisualizationsWidget;
   config.widgets.id.image = ImageWidget;
 
   if (config.widgets.views?.widget) {
