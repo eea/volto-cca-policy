@@ -75,10 +75,6 @@ const ExtendedToolView = (props) => {
       <BodyClass className="extended-tool" />
 
       <Container>
-        <div className="extended-tool-header">
-          <p className="extended-tool-provider">{tool_provider}</p>
-          <h1 className="extended-tool-title">{title}</h1>
-        </div>
         <CompareToolsPanel />
         <PortalMessage content={content} />
         <Grid columns="12">
@@ -89,6 +85,10 @@ const ExtendedToolView = (props) => {
               computer={8}
               className="col-left"
             >
+              <div className="extended-tool-header">
+                <p className="extended-tool-provider">{tool_provider}</p>
+                <h1 className="extended-tool-title">{title}</h1>
+              </div>
               <HTMLField value={long_description} />
 
               {hasHyperlink && (

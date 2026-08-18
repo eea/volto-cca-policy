@@ -83,16 +83,20 @@ describe('ExtendedToolView', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders related tools returned by the expander', () => {
+  it('renders related tools returned by the expander', async () => {
     renderComponent({
       title: 'Climate Tool',
       sectors: [
         { token: 'COASTAL', title: 'Coastal areas' },
         { token: 'WATERMANAGEMENT', title: 'Water management' },
       ],
-      climate_impacts: [{ token: 'DROUGHT', title: 'Droughts' }],
+      climate_impacts: [
+        { token: 'DROUGHT', title: 'Droughts' },
+        { token: 'WILDFIRES', title: 'Wildfires' },
+      ],
       adaptation_support_cycle_step: [
         { token: 'STEP_1', title: 'Step 1: Preparing the ground' },
+        { token: 'STEP_2', title: 'Step 2: Assessing risks' },
       ],
       '@components': {
         relatedtools: {
@@ -102,9 +106,9 @@ describe('ExtendedToolView', () => {
               title: 'Coastal planner',
               tool_provider: 'Climate agency',
               shared: {
-                sectors: ['COASTAL'],
-                climate_impacts: ['DROUGHT'],
-                adaptation_support_cycle_step: ['STEP_1'],
+                sectors: ['COASTAL', 'WATERMANAGEMENT'],
+                climate_impacts: ['DROUGHT', 'WILDFIRES'],
+                adaptation_support_cycle_step: ['STEP_1', 'STEP_2'],
               },
             },
           ],
@@ -123,13 +127,60 @@ describe('ExtendedToolView', () => {
     expect(related.getByText('Coastal areas')).toHaveClass('sector');
     expect(related.getByText('Droughts')).toHaveClass('hazard');
     expect(related.getByText('Step 1')).toHaveClass('adaptation-stage');
-    expect(related.queryByText('Water management')).not.toBeInTheDocument();
     expect(
-      related.getByText('Same sector · Shared hazard · Same cycle step'),
-    ).toBeInTheDocument();
+      [...section.querySelectorAll('.navigator-tag:not(.more)')].map(
+        (tag) => tag.textContent,
+      ),
+    ).toEqual(['Coastal areas', 'Droughts', 'Step 1']);
+    expect(related.queryByText('Water management')).not.toBeInTheDocument();
+    expect(related.queryByText('Wildfires')).not.toBeInTheDocument();
+    expect(related.queryByText('Step 2')).not.toBeInTheDocument();
+    const moreTags = related.getAllByRole('button');
+    expect(moreTags).toHaveLength(3);
+    expect(moreTags[0]).toHaveClass('sector', 'more');
+    expect(moreTags[0]).toHaveAccessibleName('Water management');
+    expect(moreTags[1]).toHaveClass('hazard', 'more');
+    expect(moreTags[1]).toHaveAccessibleName('Wildfires');
+    expect(moreTags[2]).toHaveClass('adaptation-stage', 'more');
+    expect(moreTags[2]).toHaveAccessibleName('Step 2: Assessing risks');
+    fireEvent.mouseOver(moreTags[0]);
+    expect(await screen.findByText('Water management')).toBeInTheDocument();
     expect(related.getByRole('link', { name: /view/i })).toHaveAttribute(
       'href',
       '/tools/coastal-planner',
+    );
+  });
+
+  it('shows one tag and a category-specific remainder for one category', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      sectors: [
+        { token: 'COASTAL', title: 'Coastal areas' },
+        { token: 'HEALTH', title: 'Health' },
+        { token: 'TRANSPORT', title: 'Transport' },
+        { token: 'WATERMANAGEMENT', title: 'Water management' },
+      ],
+      '@components': {
+        relatedtools: {
+          items: [
+            {
+              '@id': '/tools/coastal-planner',
+              title: 'Coastal planner',
+              shared: {
+                sectors: ['COASTAL', 'HEALTH', 'TRANSPORT', 'WATERMANAGEMENT'],
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    expect(screen.getByText('Coastal areas')).toHaveClass('sector');
+    expect(screen.queryByText('Health')).not.toBeInTheDocument();
+    expect(screen.queryByText('Transport')).not.toBeInTheDocument();
+    expect(screen.queryByText('Water management')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /health/i })).toHaveTextContent(
+      '+ 3',
     );
   });
 

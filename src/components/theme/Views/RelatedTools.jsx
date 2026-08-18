@@ -1,5 +1,5 @@
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { Icon, Container } from 'semantic-ui-react';
+import { Container, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -12,18 +12,6 @@ const messages = defineMessages({
     defaultMessage:
       'Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question.',
   },
-  sameSector: {
-    id: 'Same sector',
-    defaultMessage: 'Same sector',
-  },
-  sharedHazard: {
-    id: 'Shared hazard',
-    defaultMessage: 'Shared hazard',
-  },
-  sameCycleStep: {
-    id: 'Same cycle step',
-    defaultMessage: 'Same cycle step',
-  },
   view: {
     id: 'View',
     defaultMessage: 'View',
@@ -33,17 +21,23 @@ const messages = defineMessages({
 const TAXONOMY_FIELDS = {
   sectors: {
     type: 'sector',
-    reason: messages.sameSector,
   },
   climate_impacts: {
     type: 'hazard',
-    reason: messages.sharedHazard,
   },
   adaptation_support_cycle_step: {
     type: 'adaptation-stage',
-    reason: messages.sameCycleStep,
   },
 };
+
+const getSharedGroups = (item) =>
+  Object.entries(TAXONOMY_FIELDS)
+    .map(([field, config]) => ({
+      field,
+      type: config.type,
+      values: item.shared?.[field] || [],
+    }))
+    .filter(({ values }) => values.length);
 
 const getTaxonomyTitles = (content) =>
   Object.keys(TAXONOMY_FIELDS).reduce((titles, field) => {
@@ -75,19 +69,7 @@ const RelatedTools = ({ content }) => {
 
         <div className="extended-tool-related-list">
           {items.map((item) => {
-            const sharedValues = Object.entries(TAXONOMY_FIELDS).flatMap(
-              ([field, config]) =>
-                (item.shared?.[field] || []).map((token) => ({
-                  field,
-                  token,
-                  type: config.type,
-                })),
-            );
-            const visibleSharedValues = sharedValues.slice(0, 3);
-            const hiddenSharedValues = sharedValues.slice(3);
-            const reasons = Object.entries(TAXONOMY_FIELDS)
-              .filter(([field]) => item.shared?.[field]?.length)
-              .map(([, config]) => intl.formatMessage(config.reason));
+            const sharedGroups = getSharedGroups(item);
 
             return (
               <article className="extended-tool-related-card" key={item['@id']}>
@@ -109,41 +91,60 @@ const RelatedTools = ({ content }) => {
                     <Icon className="ri-file-line" />
                   </span>
                 </div>
-                {sharedValues.length > 0 && (
+                {sharedGroups.length > 0 && (
                   <div className="extended-tool-related-tags">
-                    {visibleSharedValues.map(({ field, token, type }) => {
-                      const title = taxonomyTitles[token] || token;
-                      const label =
+                    {sharedGroups.map(({ field, type, values }) => {
+                      const [visible, ...hidden] = values;
+                      const visibleTitle = taxonomyTitles[visible] || visible;
+                      const visibleLabel =
                         field === 'adaptation_support_cycle_step'
-                          ? title.split(':')[0]
-                          : title;
+                          ? visibleTitle.split(':')[0]
+                          : visibleTitle;
+                      const hiddenTitles = hidden.map(
+                        (token) => taxonomyTitles[token] || token,
+                      );
 
                       return (
                         <span
-                          className={`navigator-tag ${type}`}
-                          key={`${field}-${token}`}
+                          className="extended-tool-related-tag-group"
+                          key={field}
                         >
-                          {label}
+                          <span className={`navigator-tag ${type}`}>
+                            {visibleLabel}
+                          </span>
+                          {hidden.length > 0 && (
+                            <Popup
+                              className="catalogue-tag-popup"
+                              content={
+                                <div className="catalogue-tag-tooltip">
+                                  <ul>
+                                    {hiddenTitles.map((title, index) => (
+                                      <li key={`${field}-${hidden[index]}`}>
+                                        {title}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              }
+                              position="bottom left"
+                              trigger={
+                                <button
+                                  type="button"
+                                  className={`navigator-tag ${type} more`}
+                                  aria-label={hiddenTitles.join(', ')}
+                                >
+                                  + {hidden.length}
+                                </button>
+                              }
+                            />
+                          )}
                         </span>
                       );
                     })}
-                    {hiddenSharedValues.length > 0 && (
-                      <span
-                        className="navigator-tag more"
-                        title={hiddenSharedValues
-                          .map(({ token }) => taxonomyTitles[token] || token)
-                          .join(', ')}
-                      >
-                        + {hiddenSharedValues.length}
-                      </span>
-                    )}
                   </div>
                 )}
 
                 <div className="extended-tool-related-card-footer">
-                  {/* <span className="extended-tool-related-reason">
-                    {reasons.join(' · ')}
-                  </span> */}
                   <UniversalLink
                     href={item['@id']}
                     className="extended-tool-related-view"
