@@ -55,7 +55,7 @@ const getTaxonomyTitles = (content) =>
 
 const RelatedTools = ({ content }) => {
   const intl = useIntl();
-  const items = content?.['@components']?.['related-tools']?.items || [];
+  const items = content?.['@components']?.relatedtools?.items || [];
   if (!items.length) return null;
 
   const taxonomyTitles = getTaxonomyTitles(content);
@@ -141,9 +141,9 @@ const RelatedTools = ({ content }) => {
                 )}
 
                 <div className="extended-tool-related-card-footer">
-                  <span className="extended-tool-related-reason">
+                  {/* <span className="extended-tool-related-reason">
                     {reasons.join(' · ')}
-                  </span>
+                  </span> */}
                   <UniversalLink
                     href={item['@id']}
                     className="extended-tool-related-view"

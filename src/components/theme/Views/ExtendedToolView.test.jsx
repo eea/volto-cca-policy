@@ -95,7 +95,7 @@ describe('ExtendedToolView', () => {
         { token: 'STEP_1', title: 'Step 1: Preparing the ground' },
       ],
       '@components': {
-        'related-tools': {
+        relatedtools: {
           items: [
             {
               '@id': '/tools/coastal-planner',
@@ -136,7 +136,7 @@ describe('ExtendedToolView', () => {
   it('hides the related tools section when the expander returns no items', () => {
     renderComponent({
       title: 'Climate Tool',
-      '@components': { 'related-tools': { items: [] } },
+      '@components': { relatedtools: { items: [] } },
     });
 
     expect(

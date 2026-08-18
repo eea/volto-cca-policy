@@ -557,12 +557,6 @@ const applyConfig = (config) => {
     ...config.settings.apiExpanders,
     {
       match: {
-        path: /\/metadata\/tools\/[^/]+\/?$/,
-      },
-      GET_CONTENT: ['related-tools'],
-    },
-    {
-      match: {
         path: /\/policy-context\/country-profiles\/.+/,
       },
       GET_CONTENT: ['siblings'],
