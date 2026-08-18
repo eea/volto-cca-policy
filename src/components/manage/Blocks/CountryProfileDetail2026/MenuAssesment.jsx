@@ -202,14 +202,16 @@ export default function MenuProfile(props) {
   });
   return (
     <>
-      <p>
-        This section summarises observed and future climate hazards, key
-        affected sectors and the assessment of likelihood, exposure,
-        vulnerability, adaptive capacity and potential future impacts. It also
-        outlines the climate monitoring, modelling, projections, scenarios and
-        services that support risk assessment, including relevant methods,
-        tools, uncertainties and challenges.
-      </p>
+      <div class="eea callout gray">
+        <p>
+          This section summarises observed and future climate hazards, key
+          affected sectors and the assessment of likelihood, exposure,
+          vulnerability, adaptive capacity and potential future impacts. It also
+          outlines the climate monitoring, modelling, projections, scenarios and
+          services that support risk assessment, including relevant methods,
+          tools, uncertainties and challenges.
+        </p>
+      </div>
       <h2 id="hazard_assessment">Hazard assessment</h2>
       <Tab
         className="secondary menu"
