@@ -296,17 +296,17 @@ export default function MenuProfile(props) {
           'Ukraine',
         ].includes(countryName) ? (
           <p>
-            <strong>Disclaimer:</strong>The information presented on these pages
-            is based on the reporting according to the adapted Regulation (EU)
-            2018/1999 on the Governance of the Energy Union and Climate Action,
-            as incorporated and adapted by the Energy Community Ministerial
-            Council decision 2021/14/mc-enc.
+            <strong>Disclaimer:</strong> The information presented on these
+            pages is based on the reporting according to the adapted Regulation
+            (EU) 2018/1999 on the Governance of the Energy Union and Climate
+            Action, as incorporated and adapted by the Energy Community
+            Ministerial Council decision 2021/14/mc-enc.
           </p>
         ) : (
           <p>
-            <strong>Disclaimer:</strong>The information presented on these pages
-            is based on the reporting according to the Regulation (EU) 2018/1999
-            on the Governance of the Energy Union and Climate Action.
+            <strong>Disclaimer:</strong> The information presented on these
+            pages is based on the reporting according to the Regulation (EU)
+            2018/1999 on the Governance of the Energy Union and Climate Action.
           </p>
         )}
       </div>
