@@ -77,11 +77,13 @@ export default function MenuGoodPractices(props) {
   });
   return (
     <>
-      <p>
-        This section highlights examples of national adaptation good practices
-        as well as cooperation activities that support knowledge exchange,
-        coordination and synergies at national and international levels.
-      </p>
+      <div class="eea callout gray">
+        <p>
+          This section highlights examples of national adaptation good practices
+          as well as cooperation activities that support knowledge exchange,
+          coordination and synergies at national and international levels.
+        </p>
+      </div>
       <div>
         <h2 id="cooperation">Cooperation and experience</h2>
         <p>

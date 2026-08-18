@@ -117,7 +117,9 @@ export default function MenuProfile(props) {
 
     if (!contact) return [];
 
-    const contactsArray = Array.isArray(contact) ? contact : [contact];
+    const contactsArray = Array.isArray(contact)
+      ? contact.slice(0, 1)
+      : [contact];
 
     return contactsArray
       .flatMap((c) => c?.Website ?? [])
@@ -139,19 +141,22 @@ export default function MenuProfile(props) {
   return (
     <div className="cp2026">
       <h2 id="adaptation_policies">Summary</h2>
-      <p>
-        This section provides an overview of key adaptation policies, climate
-        data and services, knowledge portals and platforms and key publications.
-        It also includes links to the datasets and contact information.
-      </p>
-      <p>
-        The Climate projections and services table shows the availability of
-        modelled climate data, including nationally used climate scenarios where
-        relevant. The <strong>Meteorological services</strong> table provides
-        information on where climate monitoring data can be accessed. Both
-        tables indicate the status of each service and include details on how to
-        access it.
-      </p>
+      <div class="eea callout gray">
+        <p>
+          This section provides an overview of key adaptation policies, climate
+          data and services, knowledge portals and platforms and key
+          publications. It also includes links to the datasets and contact
+          information.
+        </p>
+        <p>
+          The Climate projections and services table shows the availability of
+          modelled climate data, including nationally used climate scenarios
+          where relevant. The <strong>Meteorological services</strong> table
+          provides information on where climate monitoring data can be accessed.
+          Both tables indicate the status of each service and include details on
+          how to access it.
+        </p>
+      </div>
       <h3>Adaptation policies</h3>
       {adaptationPolicies.map((adaptation, index) => (
         <Grid key={index} columns="12" className="cpBgGray">
