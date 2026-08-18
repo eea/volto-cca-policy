@@ -44,6 +44,14 @@ const baseContent = {
 const visualizationEmbedCode =
   '<div class="flourish-embed" data-src="visualisation/12345"></div>';
 
+const getVisualization = (overrides = {}) => ({
+  title: '',
+  embed_code: visualizationEmbedCode,
+  height: '',
+  full_width: false,
+  ...overrides,
+});
+
 const renderDatabaseItemView = (content = baseContent) => {
   const store = mockStore({
     userSession: { token: '1234' },
@@ -89,7 +97,7 @@ describe('DatabaseItemView', () => {
   it('renders the visualizations field in the left column by default', () => {
     const component = renderDatabaseItemView({
       ...baseContent,
-      map_graphs: visualizationEmbedCode,
+      visualizations: [getVisualization()],
     });
     const colLeft = findColumnByClassName(component, 'col-left');
     const fullWidthColumns = component.root.findAll(
@@ -106,8 +114,7 @@ describe('DatabaseItemView', () => {
   it('renders the visualizations field full width when enabled', () => {
     const component = renderDatabaseItemView({
       ...baseContent,
-      map_graphs: visualizationEmbedCode,
-      map_graphs_full_width: true,
+      visualizations: [getVisualization({ full_width: true })],
     });
     const colLeft = findColumnByClassName(component, 'col-left');
     const fullWidthColumn = component.root.findAll(
@@ -121,8 +128,7 @@ describe('DatabaseItemView', () => {
   it('does not render a visualization when the visualizations field is empty', () => {
     const component = renderDatabaseItemView({
       ...baseContent,
-      map_graphs: '',
-      map_graphs_full_width: true,
+      visualizations: [],
     });
 
     expect(component.root.findAllByType('iframe')).toHaveLength(0);
