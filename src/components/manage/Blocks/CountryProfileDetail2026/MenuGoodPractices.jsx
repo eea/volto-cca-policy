@@ -1,6 +1,6 @@
 import { Tab } from 'semantic-ui-react';
 import AccordionList from './AccordionList';
-import { Callout } from '@eeacms/volto-eea-design-system/ui';
+// import { Callout } from '@eeacms/volto-eea-design-system/ui';
 
 export default function MenuGoodPractices(props) {
   const dataJsonString = props.dataJson;
