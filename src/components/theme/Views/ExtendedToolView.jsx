@@ -44,7 +44,12 @@ const ExtendedToolView = (props) => {
   if (Array.isArray(tool_available_language)) {
     availableLanguages.push(...tool_available_language);
   } else if (tool_available_language) {
-    availableLanguages.push(tool_available_language);
+    availableLanguages.push(
+      ...tool_available_language
+        .split(',')
+        .map((language) => language.trim())
+        .filter(Boolean),
+    );
   }
 
   const hasGeoChars = Boolean(geochars || spatial_layer?.length);
@@ -91,56 +96,54 @@ const ExtendedToolView = (props) => {
               </div>
               <HTMLField value={long_description} />
 
-              {hasHyperlink && (
-                <div className="extended-tool-compare-action">
-                  {hasHyperlink && (
-                    <Button
-                      as="a"
-                      icon
-                      secondary
-                      href={hyperlink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      labelPosition="right"
-                    >
-                      <FormattedMessage
-                        id="Open tool"
-                        defaultMessage="Open tool"
-                      />
-                      <Icon className="ri-external-link-line" />
-                    </Button>
-                  )}
-
-                  {hasCompareTool && (
-                    <Button
-                      primary
-                      inverted
-                      disabled={isSelected || isLimitReached}
-                      aria-pressed={isSelected}
-                      onClick={toggle}
-                    >
-                      <Icon className="ri-layout-column-line" />
-                      <FormattedMessage
-                        id="Add to comparison"
-                        defaultMessage="Add to comparison"
-                      />
-                    </Button>
-                  )}
-
-                  <Button primary inverted onClick={copyShareUrl}>
-                    <Icon className="ri-share-line" />
-
-                    {isLinkCopied ? (
-                      <FormattedMessage
-                        id="Link copied"
-                        defaultMessage="Link copied"
-                      />
-                    ) : (
-                      <FormattedMessage id="Share" defaultMessage="Share" />
-                    )}
+              <div className="extended-tool-compare-action">
+                {hasHyperlink && (
+                  <Button
+                    as="a"
+                    icon
+                    secondary
+                    href={hyperlink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    labelPosition="right"
+                  >
+                    <FormattedMessage
+                      id="Open tool"
+                      defaultMessage="Open tool"
+                    />
+                    <Icon className="ri-external-link-line" />
                   </Button>
-                </div>
-              )}
+                )}
+
+                {hasCompareTool && (
+                  <Button
+                    primary
+                    inverted
+                    disabled={isSelected || isLimitReached}
+                    aria-pressed={isSelected}
+                    onClick={toggle}
+                  >
+                    <Icon className="ri-layout-column-line" />
+                    <FormattedMessage
+                      id="Add to comparison"
+                      defaultMessage="Add to comparison"
+                    />
+                  </Button>
+                )}
+
+                <Button primary inverted onClick={copyShareUrl}>
+                  <Icon className="ri-share-line" />
+
+                  {isLinkCopied ? (
+                    <FormattedMessage
+                      id="Link copied"
+                      defaultMessage="Link copied"
+                    />
+                  ) : (
+                    <FormattedMessage id="Share" defaultMessage="Share" />
+                  )}
+                </Button>
+              </div>
 
               {(tool_input || tool_output || use_it_to) && (
                 <section className="extended-tool-information">
