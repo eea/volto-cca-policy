@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 import { makeAdvancedSearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 
 const LinkedMetadataItemList = (props) => {
-  const { value, join_type, field, getSearchValue } = props; // contentType
+  const {
+    value,
+    asInline = false,
+    asList = false,
+    field,
+    getSearchValue,
+  } = props; // contentType
   const intl = useIntl();
 
   const resolveSearchValue = (item) => {
@@ -17,47 +23,45 @@ const LinkedMetadataItemList = (props) => {
     return intl.formatMessage({ id: label, defaultMessage: label });
   };
 
-  return value && value.length > 0 ? (
-    <>
-      {join_type ? (
-        <>
-          {value.map((item, index) => (
-            <React.Fragment key={resolveSearchValue(item)}>
-              <Link
-                to={makeAdvancedSearchQuery({
-                  field,
-                  value: resolveSearchValue(item),
-                  // contentType,
-                })}
-              >
-                {resolveLabel(item)}
-              </Link>
-              {index !== value.length - 1 && (
-                <span dangerouslySetInnerHTML={{ __html: join_type }} />
-              )}
-            </React.Fragment>
-          ))}
-        </>
-      ) : (
-        <p>
-          {value.map((item, index) => (
-            <React.Fragment key={resolveSearchValue(item)}>
-              <Link
-                to={makeAdvancedSearchQuery({
-                  field,
-                  value: resolveSearchValue(item),
-                  // contentType,
-                })}
-              >
-                {resolveLabel(item)}
-              </Link>
-              {index < value.length - 1 && ', '}
-            </React.Fragment>
-          ))}
-        </p>
-      )}
-    </>
-  ) : null;
+  if (!value?.length) return null;
+
+  const renderLink = (item) => (
+    <Link
+      key={resolveSearchValue(item)}
+      to={makeAdvancedSearchQuery({
+        field,
+        value: resolveSearchValue(item),
+        // contentType,
+      })}
+    >
+      {resolveLabel(item)}
+    </Link>
+  );
+
+  if (asList) {
+    return (
+      <div className="metadata-list" role="list">
+        {value.map((item) => (
+          <div key={resolveSearchValue(item)} role="listitem">
+            {renderLink(item)}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  const links = value.map((item, index) => (
+    <React.Fragment key={resolveSearchValue(item)}>
+      {renderLink(item)}
+      {index < value.length - 1 && ', '}
+    </React.Fragment>
+  ));
+
+  return asInline ? (
+    <span className="metadata-inline">{links}</span>
+  ) : (
+    <p>{links}</p>
+  );
 };
 
 export default LinkedMetadataItemList;

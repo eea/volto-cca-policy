@@ -2,8 +2,8 @@ import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   adaptationSectors: {
-    id: 'Adaptation Sectors',
-    defaultMessage: 'Adaptation Sectors',
+    id: 'Adaptation sectors',
+    defaultMessage: 'Adaptation sectors',
   },
   adaptationSectorsQuestion: {
     id: 'What sectors does your work focus on?',
@@ -14,22 +14,22 @@ const messages = defineMessages({
     defaultMessage:
       'Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections.',
   },
-  climateImpacts: {
-    id: 'Climate Impacts',
-    defaultMessage: 'Climate Impacts',
+  climateHazards: {
+    id: 'Climate hazards',
+    defaultMessage: 'Climate hazards',
   },
-  climateImpactsQuestion: {
+  climateHazardsQuestion: {
     id: 'Which climate hazard are you addressing?',
     defaultMessage: 'Which climate hazard are you addressing?',
   },
-  climateImpactsDescription: {
+  climateHazardsDescription: {
     id: 'Choose one or more hazards relevant to your work. This narrows tools to those covering your risk.',
     defaultMessage:
       'Choose one or more hazards relevant to your work. This narrows tools to those covering your risk.',
   },
   adaptationStage: {
-    id: 'Adaptation Stage',
-    defaultMessage: 'Adaptation Stage',
+    id: 'Adaptation stage',
+    defaultMessage: 'Adaptation stage',
   },
   adaptationStageQuestion: {
     id: 'What stage of the adaptation stage are you working on?',
@@ -65,10 +65,10 @@ const guideSteps = [
     filterType: 'all',
   },
   {
-    id: 'climateImpacts',
-    label: messages.climateImpacts,
-    title: messages.climateImpactsQuestion,
-    description: messages.climateImpactsDescription,
+    id: 'climateHazards',
+    label: messages.climateHazards,
+    title: messages.climateHazardsQuestion,
+    description: messages.climateHazardsDescription,
     field: 'cca_climate_impacts.keyword',
     filterType: 'any',
   },

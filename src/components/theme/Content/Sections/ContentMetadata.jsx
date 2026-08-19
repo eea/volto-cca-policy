@@ -101,7 +101,7 @@ const ContentMetadata = (props) => {
                   a.toLowerCase().localeCompare(b.toLowerCase()),
                 )}
                 // contentType={contentTypeLabel}
-                join_type=", "
+                asInline
               />
             ) : (
               <span>
@@ -239,10 +239,10 @@ const ContentMetadata = (props) => {
                 value={governance_level}
                 field="cca_governance_level_list.keyword"
                 // contentType={contentTypeLabel}
-                join_type="<br />"
+                asList
               />
             ) : (
-              <MetadataItemList value={governance_level} join_type="<br />" />
+              <MetadataItemList value={governance_level} asList />
             )}
           </>
         )}
