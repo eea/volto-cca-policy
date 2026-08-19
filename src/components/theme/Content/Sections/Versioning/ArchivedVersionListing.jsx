@@ -21,7 +21,7 @@ function ArchivedVersionListing({ content }) {
 
   return (
     <AccordionList
-      variation="secondary"
+      variation="primary"
       accordions={[
         {
           title: (

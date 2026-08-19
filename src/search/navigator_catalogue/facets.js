@@ -2,12 +2,15 @@ import { multiTermFacet } from '@eeacms/search';
 import { defineMessages } from 'react-intl';
 import {
   cca_adaptation_sectors,
-  cca_climate_impacts,
   geographic_countries,
   language,
 } from './../common';
 
 const messages = defineMessages({
+  climateHazards: {
+    id: 'Climate hazards',
+    defaultMessage: 'Climate hazards',
+  },
   adaptationSupportCycleStep: {
     id: 'Adaptation Support Cycle Step',
     defaultMessage: 'Adaptation Support Cycle Step',
@@ -36,7 +39,16 @@ const messages = defineMessages({
 
 const facets = [
   cca_adaptation_sectors,
-  cca_climate_impacts,
+  {
+    field: 'cca_climate_impacts.keyword',
+    factory: 'MultiTermFacet',
+    label: messages.climateHazards,
+    showInFacetsList: true,
+    filterType: 'any',
+    isFilterable: false,
+    show: 10000,
+    isMulti: true,
+  },
   geographic_countries,
   language,
   multiTermFacet({
