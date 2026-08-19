@@ -1,5 +1,4 @@
 @navigatorMetaTextColor: #7c8a96;
-@navigatorAccentColor: #289588;
 @navigatorInactiveColor: #bcbec0;
 @navigatorBorderColor: #d7dee5;
 @navigatorDashedBorderColor: #cbd4dc;
@@ -206,7 +205,7 @@
     text-align: center;
 
     &.ready {
-      color: @navigatorAccentColor;
+      color: @secondaryColor;
     }
 
     &.incomplete {
@@ -225,17 +224,6 @@
     &:focus {
       background-color: transparent;
     }
-  }
-}
-
-.extended-tool-compare-action {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1.5rem;
-  gap: 0.75rem;
-
-  .ui.button {
-    margin: 0 !important;
   }
 }
 
@@ -373,9 +361,33 @@
 
   .usability-value,
   .functionality-value {
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
     font-size: 20px;
     font-weight: 700;
+  }
+
+  .functionality-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .functionality-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid @primaryColor;
+    border-radius: 50%;
+
+    &.filled {
+      background-color: @primaryColor;
+    }
+  }
+
+  .compare-field-value-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
   .compare-criteria-label {
@@ -581,33 +593,6 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     padding: 1em;
   }
 
-  .navigator-view-tabs {
-    display: flex;
-    border-bottom: 1px solid @navigatorBorderColor;
-    margin-bottom: 1.2rem;
-    gap: 0;
-
-    button {
-      min-height: 46px;
-      padding: 0 1.15rem;
-      border: 0;
-      border-bottom: 3px solid transparent;
-      background: transparent;
-      color: #596f80;
-      cursor: pointer;
-      font-weight: 700;
-
-      &.active {
-        border-bottom-color: @secondaryColor;
-        color: @primaryColor;
-      }
-
-      i.icon {
-        margin-right: 0.45rem;
-      }
-    }
-  }
-
   .navigator-catalogue-item {
     display: grid;
     padding: 1.2rem;
@@ -707,7 +692,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   }
 
   .cycle-element {
-    background: @secondaryColor;
+    background: @primaryColor;
     color: #fff;
   }
 
@@ -783,7 +768,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   }
 
   &.adaptation-stage {
-    background: @secondaryColor;
+    background: @primaryColor;
     color: #fff;
   }
 
@@ -813,7 +798,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
     gap: 0.5rem;
   }
 
@@ -823,7 +808,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
   }
 
   .navigator-guide-layout {
@@ -891,19 +876,19 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       }
 
       &.active {
-        color: @secondaryColor;
+        color: @primaryColor;
 
         span {
-          background: @secondaryColor;
+          background: @primaryColor;
           color: #fff;
         }
       }
 
       &.completed {
-        color: @navigatorAccentColor;
+        color: @secondaryColor;
 
         span {
-          background: @navigatorAccentColor;
+          background: @secondaryColor;
           color: #fff;
         }
       }
@@ -915,7 +900,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       background: @navigatorInactiveColor;
 
       &.completed {
-        background: @navigatorAccentColor;
+        background: @secondaryColor;
       }
     }
   }
@@ -931,7 +916,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   .navigator-guide-progress-bar-fill {
     height: 100%;
     border-radius: inherit;
-    background: @secondaryColor;
+    background: @primaryColor;
     transition: width 200ms ease;
   }
 

@@ -1,70 +1,56 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import ExtendedToolView from './ExtendedToolView';
 import { useCompareTools } from '../CompareTools/utils';
-import { formatFunctionalityScore } from '../../Search/NavigatorCatalogue/utils';
+import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 
 jest.mock('../CompareTools/utils', () => ({
   useCompareTools: jest.fn(),
 }));
 
+jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
+
+jest.mock(
+  '@plone/volto/components/manage/UniversalLink/UniversalLink',
+  () =>
+    ({ href, children }) => <a href={href}>{children}</a>,
+);
+
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
-  BooleanField: ({ label, value, yesLabel, noLabel }) => (
-    <div>
-      <span>{label}</span>
-      <span>{value ? yesLabel : noLabel}</span>
-    </div>
-  ),
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
-  ContentMetadata: () => <div data-testid="content-metadata" />,
-  DocumentsList: () => <div data-testid="documents-list" />,
+  ExtendedToolGeographicMetadata: ({ content }) => (
+    <div data-testid="geographic-metadata">{content.spatial_layer}</div>
+  ),
   HTMLField: ({ value }) =>
     value ? <div dangerouslySetInnerHTML={{ __html: value }} /> : null,
-  ItemLogo: () => <div data-testid="item-logo" />,
-  PortalMessage: () => <div data-testid="portal-message" />,
-  TextField: ({ label, value }) =>
-    value !== null && value !== undefined && value !== '' ? (
-      <div>
-        <span>{label}</span>
-        <span>{String(value)}</span>
-      </div>
-    ) : null,
+  MetadataItemList: ({ value = [], asList }) => {
+    const items = value.map((item) => item.title || item);
 
-  VocabularyField: ({ label, values = [], asList }) =>
-    values.length > 0 ? (
-      <div>
-        <span>{label}</span>
-        {asList ? (
-          <ul>
-            {values.map((value, index) => (
-              <li key={`${value}-${index}`}>{value}</li>
-            ))}
-          </ul>
-        ) : (
-          <span>{values.join(', ')}</span>
-        )}
-      </div>
-    ) : null,
-}));
-
-jest.mock('@plone/volto/registry', () => ({
-  blocks: {
-    blocksConfig: {
-      title: {
-        view: ({ metadata }) => <h1>{metadata.title}</h1>,
-      },
-    },
+    return asList ? (
+      <ul className="metadata-list">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    ) : (
+      <p>{items.join(', ')}</p>
+    );
   },
-}));
-
-jest.mock('../../Search/NavigatorCatalogue/utils', () => ({
-  formatFunctionalityScore: jest.fn((value) => `Formatted score: ${value}`),
+  PortalMessage: () => <div data-testid="portal-message" />,
+  TextField: ({ label, value }) => (
+    <>
+      <h5>{label}</h5>
+      <p>{value}</p>
+    </>
+  ),
 }));
 
 const toggle = jest.fn();
+const copyShareUrl = jest.fn();
+const setIsLinkCopied = jest.fn();
 
 const renderComponent = (content = {}) =>
   render(
@@ -82,22 +68,10 @@ describe('ExtendedToolView', () => {
       isLimitReached: false,
       toggle,
     });
+    useClipboard.mockReturnValue([false, copyShareUrl, setIsLinkCopied]);
   });
 
-  it('renders the title and acronym', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      acronym: 'CT',
-    });
-
-    expect(
-      screen.getByRole('heading', {
-        name: 'Climate Tool (CT)',
-      }),
-    ).toBeInTheDocument();
-  });
-
-  it('renders the title without an acronym', () => {
+  it('renders the title', () => {
     renderComponent({
       title: 'Climate Tool',
     });
@@ -107,6 +81,118 @@ describe('ExtendedToolView', () => {
         name: 'Climate Tool',
       }),
     ).toBeInTheDocument();
+  });
+
+  it('renders related tools returned by the expander', async () => {
+    renderComponent({
+      title: 'Climate Tool',
+      sectors: [
+        { token: 'COASTAL', title: 'Coastal areas' },
+        { token: 'WATERMANAGEMENT', title: 'Water management' },
+      ],
+      climate_impacts: [
+        { token: 'DROUGHT', title: 'Droughts' },
+        { token: 'WILDFIRES', title: 'Wildfires' },
+      ],
+      adaptation_support_cycle_step: [
+        { token: 'STEP_1', title: 'Step 1: Preparing the ground' },
+        { token: 'STEP_2', title: 'Step 2: Assessing risks' },
+      ],
+      '@components': {
+        relatedtools: {
+          items: [
+            {
+              '@id': '/tools/coastal-planner',
+              title: 'Coastal planner',
+              tool_provider: 'Climate agency',
+              shared: {
+                sectors: ['COASTAL', 'WATERMANAGEMENT'],
+                climate_impacts: ['DROUGHT', 'WILDFIRES'],
+                adaptation_support_cycle_step: ['STEP_1', 'STEP_2'],
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    const section = screen
+      .getByRole('heading', { name: 'Related tools' })
+      .closest('.extended-tool-related');
+    const related = within(section);
+
+    expect(
+      related.getByText(/tools sharing a sector, hazard or cycle step/i),
+    ).toBeInTheDocument();
+    expect(related.getByText('Coastal areas')).toHaveClass('sector');
+    expect(related.getByText('Droughts')).toHaveClass('hazard');
+    expect(related.getByText('Step 1')).toHaveClass('adaptation-stage');
+    expect(
+      [...section.querySelectorAll('.navigator-tag:not(.more)')].map(
+        (tag) => tag.textContent,
+      ),
+    ).toEqual(['Coastal areas', 'Droughts', 'Step 1']);
+    expect(related.queryByText('Water management')).not.toBeInTheDocument();
+    expect(related.queryByText('Wildfires')).not.toBeInTheDocument();
+    expect(related.queryByText('Step 2')).not.toBeInTheDocument();
+    const moreTags = related.getAllByRole('button');
+    expect(moreTags).toHaveLength(3);
+    expect(moreTags[0]).toHaveClass('sector', 'more');
+    expect(moreTags[0]).toHaveAccessibleName('Water management');
+    expect(moreTags[1]).toHaveClass('hazard', 'more');
+    expect(moreTags[1]).toHaveAccessibleName('Wildfires');
+    expect(moreTags[2]).toHaveClass('adaptation-stage', 'more');
+    expect(moreTags[2]).toHaveAccessibleName('Step 2: Assessing risks');
+    fireEvent.mouseOver(moreTags[0]);
+    expect(await screen.findByText('Water management')).toBeInTheDocument();
+    expect(related.getByRole('link', { name: /view/i })).toHaveAttribute(
+      'href',
+      '/tools/coastal-planner',
+    );
+  });
+
+  it('shows one tag and a category-specific remainder for one category', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      sectors: [
+        { token: 'COASTAL', title: 'Coastal areas' },
+        { token: 'HEALTH', title: 'Health' },
+        { token: 'TRANSPORT', title: 'Transport' },
+        { token: 'WATERMANAGEMENT', title: 'Water management' },
+      ],
+      '@components': {
+        relatedtools: {
+          items: [
+            {
+              '@id': '/tools/coastal-planner',
+              title: 'Coastal planner',
+              shared: {
+                sectors: ['COASTAL', 'HEALTH', 'TRANSPORT', 'WATERMANAGEMENT'],
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    expect(screen.getByText('Coastal areas')).toHaveClass('sector');
+    expect(screen.queryByText('Health')).not.toBeInTheDocument();
+    expect(screen.queryByText('Transport')).not.toBeInTheDocument();
+    expect(screen.queryByText('Water management')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /health/i })).toHaveTextContent(
+      '+ 3',
+    );
+  });
+
+  it('hides the related tools section when the expander returns no items', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      '@components': { relatedtools: { items: [] } },
+    });
+
+    expect(
+      screen.queryByRole('heading', { name: 'Related tools' }),
+    ).not.toBeInTheDocument();
   });
 
   it('renders the open-tool button when a hyperlink is provided', () => {
@@ -141,6 +227,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     fireEvent.click(
@@ -152,11 +239,64 @@ describe('ExtendedToolView', () => {
     expect(toggle).toHaveBeenCalledTimes(1);
   });
 
+  it('copies the current page link when the share button is clicked', () => {
+    renderComponent({
+      UID: 'tool-uid',
+      '@id': '/tools/climate-tool',
+      title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
+    });
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: /share/i,
+      }),
+    );
+
+    expect(useClipboard).toHaveBeenCalledWith('/tools/climate-tool');
+    expect(copyShareUrl).toHaveBeenCalledTimes(1);
+  });
+
+  it('shows confirmation after the link is copied', () => {
+    useClipboard.mockReturnValue([true, copyShareUrl, setIsLinkCopied]);
+
+    renderComponent({
+      UID: 'tool-uid',
+      '@id': '/tools/climate-tool',
+      title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
+    });
+
+    expect(
+      screen.getByRole('button', {
+        name: /link copied/i,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it('resets the copied confirmation after six seconds', () => {
+    jest.useFakeTimers();
+    useClipboard.mockReturnValue([true, copyShareUrl, setIsLinkCopied]);
+
+    renderComponent({
+      UID: 'tool-uid',
+      '@id': '/tools/climate-tool',
+      title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
+    });
+
+    jest.advanceTimersByTime(6000);
+
+    expect(setIsLinkCopied).toHaveBeenCalledWith(false);
+    jest.useRealTimers();
+  });
+
   it('passes the correct tool data to useCompareTools', () => {
     renderComponent({
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     expect(useCompareTools).toHaveBeenCalledWith({
@@ -177,6 +317,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     const button = screen.getByRole('button', {
@@ -197,6 +338,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     const button = screen.getByRole('button', {
@@ -217,6 +359,7 @@ describe('ExtendedToolView', () => {
       UID: 'tool-uid',
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     const button = screen.getByRole('button', {
@@ -231,6 +374,7 @@ describe('ExtendedToolView', () => {
   it('does not render the comparison button without a UID', () => {
     renderComponent({
       title: 'Climate Tool',
+      hyperlink: 'https://example.com/tool',
     });
 
     expect(
@@ -240,96 +384,13 @@ describe('ExtendedToolView', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('renders English and the additional available language', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: true,
-      tool_available_language: 'French',
-    });
-
-    expect(screen.getByText('English, French')).toBeInTheDocument();
-  });
-
-  it('renders only English when no additional language is provided', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: true,
-    });
-
-    expect(screen.getByText('English')).toBeInTheDocument();
-  });
-
-  it('renders only the additional language when English is unavailable', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: false,
-      tool_available_language: 'Romanian',
-    });
-
-    expect(screen.getByText('Romanian')).toBeInTheDocument();
-    expect(screen.queryByText(/English,/)).not.toBeInTheDocument();
-  });
-
-  it('does not render an available-language value when none exists', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      tool_available_english: false,
-      tool_available_language: '',
-    });
-
-    expect(screen.queryByText('Available language')).not.toBeInTheDocument();
-  });
-
-  it('formats the functionality score', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      functionality: 4,
-    });
-
-    expect(formatFunctionalityScore).toHaveBeenCalledWith(4);
-    expect(screen.getByText('Formatted score: 4')).toBeInTheDocument();
-  });
-
-  it('formats a functionality score of zero', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      functionality: 0,
-    });
-
-    expect(formatFunctionalityScore).toHaveBeenCalledWith(0);
-    expect(screen.getByText('Formatted score: 0')).toBeInTheDocument();
-  });
-
-  it('does not format an undefined functionality score', () => {
-    renderComponent({
-      title: 'Climate Tool',
-    });
-
-    expect(formatFunctionalityScore).not.toHaveBeenCalled();
-  });
-
-  it('does not format a null functionality score', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      functionality: null,
-    });
-
-    expect(formatFunctionalityScore).not.toHaveBeenCalled();
-  });
-
-  it('renders the supported text fields', () => {
+  it('renders the tool provider', () => {
     renderComponent({
       title: 'Climate Tool',
       tool_provider: 'Example Provider',
-      spatial_resolution: 'Regional',
-      underlying_data_maintenance: 'Updated yearly',
-      strengths_and_possible_limitations: 'Easy to use',
     });
 
     expect(screen.getByText('Example Provider')).toBeInTheDocument();
-    expect(screen.getByText('Regional')).toBeInTheDocument();
-    expect(screen.getByText('Updated yearly')).toBeInTheDocument();
-    expect(screen.getByText('Easy to use')).toBeInTheDocument();
   });
 
   it('does not render removed coder fields', () => {
@@ -345,72 +406,57 @@ describe('ExtendedToolView', () => {
     expect(screen.queryByText('Coder Two')).not.toBeInTheDocument();
   });
 
-  it('renders HTML descriptions', () => {
+  it('renders the long HTML description', () => {
     renderComponent({
       title: 'Climate Tool',
       long_description: '<p>Long tool description</p>',
-      description: '<p>Short tool description</p>',
     });
 
     expect(screen.getByText('Long tool description')).toBeInTheDocument();
-    expect(screen.getByText('Short tool description')).toBeInTheDocument();
   });
 
-  it('renders boolean fields with Yes values', () => {
-    renderComponent({
+  it('renders tool usage information in labelled rows', () => {
+    const { container } = renderComponent({
       title: 'Climate Tool',
-      only_interactive_support_tool: true,
-      adaptation_cycle_step: true,
-      updating_cycle_of_the_tool: true,
-      language_accessibility: true,
-      free_access: true,
+      tool_input: '<p>A coastal location</p>',
+      tool_output: '<p>A hazard profile</p>',
+      use_it_to: '<p>Screen a coastline</p>',
     });
 
-    expect(screen.getAllByText('Yes')).toHaveLength(5);
+    expect(
+      screen.getByRole('heading', { name: 'What you can do with it' }),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelectorAll('.extended-tool-information-row'),
+    ).toHaveLength(3);
+    expect(screen.getByText('A coastal location')).toBeInTheDocument();
+    expect(screen.getByText('A hazard profile')).toBeInTheDocument();
+    expect(screen.getByText('Screen a coastline')).toBeInTheDocument();
   });
 
-  it('renders boolean fields with No values', () => {
+  it('does not render removed detail fields', () => {
     renderComponent({
       title: 'Climate Tool',
-      only_interactive_support_tool: false,
-      adaptation_cycle_step: false,
-      updating_cycle_of_the_tool: false,
-      language_accessibility: false,
-      free_access: false,
-    });
-
-    expect(screen.getAllByText('No')).toHaveLength(5);
-  });
-
-  it('renders vocabulary fields', () => {
-    renderComponent({
-      title: 'Climate Tool',
-      intended_user_groups: ['Policy makers', 'Researchers'],
       place_of_implementation: ['Europe'],
-      type_of_data: ['Climate data'],
       data_sources: ['Satellite'],
       license_status: ['Open source'],
       user_support_provisions: ['Documentation'],
       tool_validation_use: ['Validated'],
       number_of_users_tool: ['More than 1,000'],
-      tool_provider_mode: ['Public provider'],
-      adaptation_support_cycle_step: ['Assessing risks'],
-      type_of_outputs: ['Maps'],
-      temporality_of_data: ['Historical'],
+      functionality: 4,
+      underlying_data_maintenance: 'Updated yearly',
+      strengths_and_possible_limitations: 'Easy to use',
     });
 
-    expect(screen.getByText('Policy makers, Researchers')).toBeInTheDocument();
-    expect(screen.getByText('Europe')).toBeInTheDocument();
-    expect(screen.getByText('Climate data')).toBeInTheDocument();
-    expect(screen.getByText('Satellite')).toBeInTheDocument();
-    expect(screen.getByText('Open source')).toBeInTheDocument();
-    expect(screen.getByText('Documentation')).toBeInTheDocument();
-    expect(screen.getByText('Validated')).toBeInTheDocument();
-    expect(screen.getByText('More than 1,000')).toBeInTheDocument();
-    expect(screen.getByText('Public provider')).toBeInTheDocument();
-    expect(screen.getByText('Assessing risks')).toBeInTheDocument();
-    expect(screen.getByText('Maps')).toBeInTheDocument();
-    expect(screen.getByText('Historical')).toBeInTheDocument();
+    expect(screen.queryByText('Europe')).not.toBeInTheDocument();
+    expect(screen.queryByText('Satellite')).not.toBeInTheDocument();
+    expect(screen.queryByText('Open source')).not.toBeInTheDocument();
+    expect(screen.queryByText('Documentation')).not.toBeInTheDocument();
+    expect(screen.queryByText('Validated')).not.toBeInTheDocument();
+    expect(screen.queryByText('More than 1,000')).not.toBeInTheDocument();
+    expect(screen.queryByText('4')).not.toBeInTheDocument();
+    expect(screen.queryByText('Updated yearly')).not.toBeInTheDocument();
+    expect(screen.queryByText('Easy to use')).not.toBeInTheDocument();
   });
 
   it('renders accessibility and usability as a vocabulary value', () => {
@@ -422,15 +468,88 @@ describe('ExtendedToolView', () => {
     expect(screen.getByText('Easy to use')).toBeInTheDocument();
   });
 
+  it('renders metadata except spatial coverage', () => {
+    renderComponent({
+      title: 'Climate Tool',
+      spatial_layer: 'Global',
+      spatial_resolution: 'Regional',
+      adaptation_support_cycle_step: [
+        { title: 'Step 2: Risk & vulnerability assessment' },
+        { title: 'Step 3: Identifying adaptation options' },
+      ],
+      climate_impacts: [{ title: 'Drought' }, { title: 'Flooding' }],
+      sectors: [{ title: 'Agriculture' }, { title: 'Health' }],
+      type_of_outputs: [{ title: 'Maps' }, { title: 'Charts' }],
+      temporality_of_data: [{ title: 'Historical' }, { title: 'Projections' }],
+      tool_available_english: true,
+      tool_available_language: [{ title: 'French' }, 'Romanian'],
+      intended_user_groups: [{ title: 'Policy makers' }, 'Researchers'],
+      accessibility_and_usability: 'Easy to use',
+    });
+
+    expect(
+      screen.getByRole('heading', { name: 'Metadata' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Geographic coverage' }),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('geographic-metadata')).toHaveTextContent(
+      'Global',
+    );
+    expect(
+      screen.getByRole('heading', { name: 'Spatial resolution' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Regional')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        name: 'Support of Adaptation Policy Cycle',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Step 2: Risk & vulnerability assessment'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Step 3: Identifying adaptation options'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Climate hazards' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Drought, Flooding')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Adaptation sectors' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Agriculture, Health')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Type of outputs' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Maps, Charts')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Temporality of data' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Historical, Projections')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Language' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('English, French, Romanian')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'User Group' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Policy makers, Researchers')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Accessibility and usability' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Easy to use')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { name: 'Spatial coverage' }),
+    ).not.toBeInTheDocument();
+  });
+
   it('renders supporting components', () => {
     renderComponent({
       title: 'Climate Tool',
     });
 
-    expect(screen.getByTestId('item-logo')).toBeInTheDocument();
     expect(screen.getByTestId('compare-tools-panel')).toBeInTheDocument();
     expect(screen.getByTestId('portal-message')).toBeInTheDocument();
-    expect(screen.getByTestId('content-metadata')).toBeInTheDocument();
-    expect(screen.getByTestId('documents-list')).toBeInTheDocument();
   });
 });
