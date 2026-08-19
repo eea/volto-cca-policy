@@ -58,14 +58,8 @@ msgstr "Ebben az esetben megvalósított adaptációs lehetőségek"
 #. Default: "Adaptation Sectors"
 #: search/cca/facets
 #: search/common
-#: search/navigator_guide/guideSteps
 msgid "Adaptation Sectors"
 msgstr "Alkalmazkodási ágazatok"
-
-#. Default: "Adaptation Stage"
-#: search/navigator_guide/guideSteps
-msgid "Adaptation Stage"
-msgstr ""
 
 #. Default: "Adaptation Support Cycle Step"
 #: search/navigator_catalogue/facets
@@ -92,8 +86,14 @@ msgstr "Adaptációs lehetőségek"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 #: components/theme/Views/ExtendedToolView
+#: search/navigator_guide/guideSteps
 msgid "Adaptation sectors"
 msgstr "Alkalmazkodási ágazatok"
+
+#. Default: "Adaptation stage"
+#: search/navigator_guide/guideSteps
+msgid "Adaptation stage"
+msgstr ""
 
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
@@ -253,9 +253,15 @@ msgstr ""
 #. Default: "Climate Impacts"
 #: search/cca/facets
 #: search/common
-#: search/navigator_guide/guideSteps
 msgid "Climate Impacts"
 msgstr "Éghajlati hatások"
+
+#. Default: "Climate hazards"
+#: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
+msgid "Climate hazards"
+msgstr ""
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -265,7 +271,6 @@ msgstr "Éghajlati hatás"
 #. Default: "Climate impacts"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
-#: components/theme/Views/ExtendedToolView
 msgid "Climate impacts"
 msgstr "Éghajlati hatások"
 
@@ -683,6 +688,11 @@ msgstr "Tájékoztatás és figyelemfelkeltés"
 msgid "Information portal"
 msgstr "Információs portál"
 
+#. Default: "Input"
+#: components/theme/Views/ExtendedToolView
+msgid "Input"
+msgstr ""
+
 #. Default: "Insurance and risk sharing instruments"
 #: messages
 msgid "Insurance and risk sharing instruments"
@@ -998,6 +1008,11 @@ msgstr "Az EEA szervezésében"
 msgid "Other regions"
 msgstr "Más régiók"
 
+#. Default: "Output"
+#: components/theme/Views/ExtendedToolView
+msgid "Output"
+msgstr ""
+
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
@@ -1139,6 +1154,11 @@ msgstr "Kapcsolódó tartalom:"
 #: components/theme/Views/DatabaseItemView
 msgid "Related documents and presentations"
 msgstr "Kapcsolódó dokumentumok és prezentációk"
+
+#. Default: "Related tools"
+#: components/theme/Views/RelatedTools
+msgid "Related tools"
+msgstr ""
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1294,6 +1314,11 @@ msgstr "Finanszírozási forrás"
 msgid "Source:"
 msgstr "Forrás:"
 
+#. Default: "Spatial resolution"
+#: components/theme/Views/ExtendedToolView
+msgid "Spatial resolution"
+msgstr ""
+
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
@@ -1406,6 +1431,11 @@ msgstr "Eszköz"
 msgid "Tools per country"
 msgstr ""
 
+#. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
+#: components/theme/Views/RelatedTools
+msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
+msgstr ""
+
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem
 #: components/Search/Result/HealthHorizontalCardItem
@@ -1463,6 +1493,16 @@ msgstr ""
 msgid "Usability"
 msgstr ""
 
+#. Default: "Use it to"
+#: components/theme/Views/ExtendedToolView
+msgid "Use it to"
+msgstr ""
+
+#. Default: "Used in"
+#: components/theme/Views/ExtendedToolView
+msgid "Used in"
+msgstr ""
+
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
@@ -1495,6 +1535,7 @@ msgstr "Videók és podcastok"
 
 #. Default: "View"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+#: components/theme/Views/RelatedTools
 msgid "View"
 msgstr ""
 
@@ -1549,6 +1590,11 @@ msgstr ""
 msgid "What stage of the adaptation stage are you working on?"
 msgstr ""
 
+#. Default: "What you can do with it"
+#: components/theme/Views/ExtendedToolView
+msgid "What you can do with it"
+msgstr ""
+
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
 msgid "When"
@@ -1567,6 +1613,11 @@ msgstr ""
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
+msgstr ""
+
+#. Default: "Why is it relevant to climate adaptation"
+#: components/theme/Views/ExtendedToolView
+msgid "Why is it relevant to climate adaptation"
 msgstr ""
 
 #. Default: "You are viewing an archived version."

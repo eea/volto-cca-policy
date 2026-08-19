@@ -302,8 +302,8 @@ const ExtendedToolView = (props) => {
                   <div className="metadata-group">
                     <h5>
                       <FormattedMessage
-                        id="Climate impacts"
-                        defaultMessage="Climate impacts"
+                        id="Climate hazards"
+                        defaultMessage="Climate hazards"
                       />
                     </h5>
 
@@ -359,7 +359,7 @@ const ExtendedToolView = (props) => {
                     </h5>
 
                     <MetadataItemList
-                      asTags
+                      asInline
                       maxItems={3}
                       value={availableLanguages}
                     />
@@ -376,7 +376,7 @@ const ExtendedToolView = (props) => {
                     </h5>
 
                     <MetadataItemList
-                      asTags
+                      asInline
                       maxItems={3}
                       value={
                         Array.isArray(accessibility_and_usability)
