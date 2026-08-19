@@ -228,6 +228,23 @@ const ExtendedToolView = (props) => {
               <Segment className="metadata">
                 <h4 className="metadata-header">Metadata</h4>
 
+                {intended_user_groups?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="User Group"
+                        defaultMessage="User Group"
+                      />
+                    </h5>
+
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={intended_user_groups}
+                    />
+                  </div>
+                )}
+
                 {hasGeoChars && (
                   <div className="metadata-group">
                     <h5>
@@ -254,24 +271,6 @@ const ExtendedToolView = (props) => {
                     />
                   </div>
                 )}
-
-                {intended_user_groups?.length > 0 && (
-                  <div className="metadata-group">
-                    <h5>
-                      <FormattedMessage
-                        id="User Group"
-                        defaultMessage="User Group"
-                      />
-                    </h5>
-
-                    <MetadataItemList
-                      asTags
-                      maxItems={3}
-                      value={intended_user_groups}
-                    />
-                  </div>
-                )}
-
                 {adaptation_support_cycle_step?.length > 0 && (
                   <div className="metadata-group adaptation-step">
                     <h5>
