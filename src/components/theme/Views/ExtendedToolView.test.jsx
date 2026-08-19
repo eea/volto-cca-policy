@@ -512,7 +512,7 @@ describe('ExtendedToolView', () => {
       screen.getByText('Step 3: Identifying adaptation options'),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('heading', { name: 'Climate impacts' }),
+      screen.getByRole('heading', { name: 'Climate hazards' }),
     ).toBeInTheDocument();
     expect(screen.getByText('Drought, Flooding')).toBeInTheDocument();
     expect(
