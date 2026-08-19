@@ -111,6 +111,25 @@ const getToolField = (tool, field) =>
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
 
+const FunctionalityScore = ({ value }) => {
+  const label = formatFunctionalityScore(value);
+  const score = Number(label.split('/')[0]);
+
+  if (!Number.isFinite(score)) return <span>{label}</span>;
+
+  return (
+    <span className="functionality-dots" aria-label={label}>
+      {Array.from({ length: 6 }, (_, index) => (
+        <span
+          aria-hidden="true"
+          className={`functionality-dot${index < score ? ' filled' : ''}`}
+          key={index}
+        />
+      ))}
+    </span>
+  );
+};
+
 const getCompareUids = (search) => {
   const params = new URLSearchParams(search);
 
@@ -398,14 +417,14 @@ const CompareToolsView = () => {
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`functionality-${tool.id}`}>
                     <div className="functionality-value">
-                      {formatFunctionalityScore(
-                        getToolField(tool, 'functionality'),
-                      )}
+                      <FunctionalityScore
+                        value={getToolField(tool, 'functionality')}
+                      />
                     </div>
                   </Table.Cell>
                 ))}
               </Table.Row>
-              <Table.Row>
+              {/* <Table.Row>
                 <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
                     <div className="compare-criteria-title">
@@ -418,7 +437,7 @@ const CompareToolsView = () => {
                     {getToolFieldDisplay(tool, 'cca_geographical_scale')}
                   </Table.Cell>
                 ))}
-              </Table.Row>
+              </Table.Row> */}
               <Table.Row>
                 <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">

@@ -76,6 +76,7 @@ describe('CompareToolsView accessibility', () => {
         cca_uid: { raw: 'one' },
         title: 'Tool one',
         href: '/tool-one',
+        functionality: { raw: 4 },
       },
       {
         cca_uid: { raw: 'two' },
@@ -106,5 +107,10 @@ describe('CompareToolsView accessibility', () => {
         name: 'Remove Tool one from comparison',
       }),
     ).toBeInTheDocument();
+    const functionalityScore = screen.getByLabelText('4/6');
+    expect(functionalityScore.children).toHaveLength(6);
+    expect(
+      functionalityScore.querySelectorAll('.functionality-dot.filled'),
+    ).toHaveLength(4);
   });
 });

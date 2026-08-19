@@ -1,5 +1,4 @@
 @navigatorMetaTextColor: #7c8a96;
-@navigatorAccentColor: #289588;
 @navigatorInactiveColor: #bcbec0;
 @navigatorBorderColor: #d7dee5;
 @navigatorDashedBorderColor: #cbd4dc;
@@ -206,7 +205,7 @@
     text-align: center;
 
     &.ready {
-      color: @navigatorAccentColor;
+      color: @secondaryColor;
     }
 
     &.incomplete {
@@ -362,9 +361,27 @@
 
   .usability-value,
   .functionality-value {
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
     font-size: 20px;
     font-weight: 700;
+  }
+
+  .functionality-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .functionality-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid @primaryColor;
+    border-radius: 50%;
+
+    &.filled {
+      background-color: @primaryColor;
+    }
   }
 
   .compare-criteria-label {
@@ -775,7 +792,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
     gap: 0.5rem;
   }
 
@@ -785,7 +802,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
   }
 
   .navigator-guide-layout {
@@ -862,10 +879,10 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       }
 
       &.completed {
-        color: @navigatorAccentColor;
+        color: @secondaryColor;
 
         span {
-          background: @navigatorAccentColor;
+          background: @secondaryColor;
           color: #fff;
         }
       }
@@ -877,7 +894,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       background: @navigatorInactiveColor;
 
       &.completed {
-        background: @navigatorAccentColor;
+        background: @secondaryColor;
       }
     }
   }
