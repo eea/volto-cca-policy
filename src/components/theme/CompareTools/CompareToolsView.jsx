@@ -111,6 +111,20 @@ const getToolField = (tool, field) =>
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
 
+const FieldValueList = ({ value, label }) => {
+  const values = asArray(value);
+
+  return values.length ? (
+    <ul className="compare-field-value-list" aria-label={label}>
+      {values.map((item, index) => (
+        <li key={`${item}-${index}`}>{item}</li>
+      ))}
+    </ul>
+  ) : (
+    '—'
+  );
+};
+
 const FunctionalityScore = ({ value }) => {
   const label = formatFunctionalityScore(value);
   const score = Number(label.split('/')[0]);
@@ -462,10 +476,15 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`adaptation-support-cycle-step-${tool.id}`}>
-                    {getToolFieldDisplay(
-                      tool,
-                      'cca_adaptation_support_cycle_step',
-                    )}
+                    <FieldValueList
+                      label={intl.formatMessage(
+                        messages.adaptationSupportCycleStep,
+                      )}
+                      value={getToolField(
+                        tool,
+                        'cca_adaptation_support_cycle_step',
+                      )}
+                    />
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -479,7 +498,10 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`sector-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_adaptation_sectors')}
+                    <FieldValueList
+                      label={intl.formatMessage(messages.sector)}
+                      value={getToolField(tool, 'cca_adaptation_sectors')}
+                    />
                   </Table.Cell>
                 ))}
               </Table.Row>

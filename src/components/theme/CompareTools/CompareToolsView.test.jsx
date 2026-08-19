@@ -77,6 +77,12 @@ describe('CompareToolsView accessibility', () => {
         title: 'Tool one',
         href: '/tool-one',
         functionality: { raw: 4 },
+        cca_adaptation_support_cycle_step: {
+          raw: [{ title: 'Assessing risks' }, { title: 'Monitoring' }],
+        },
+        cca_adaptation_sectors: {
+          raw: [{ title: 'Agriculture' }, { title: 'Water management' }],
+        },
       },
       {
         cca_uid: { raw: 'two' },
@@ -112,5 +118,16 @@ describe('CompareToolsView accessibility', () => {
     expect(
       functionalityScore.querySelectorAll('.functionality-dot.filled'),
     ).toHaveLength(4);
+    const adaptationSteps = screen.getByRole('list', {
+      name: 'Adaptation support cycle step',
+    });
+    expect(adaptationSteps).toHaveClass('compare-field-value-list');
+    expect(adaptationSteps).toHaveTextContent('Assessing risks');
+    expect(adaptationSteps).toHaveTextContent('Monitoring');
+    expect(adaptationSteps.children).toHaveLength(2);
+    const sectors = screen.getByRole('list', { name: 'Sector' });
+    expect(sectors).toHaveTextContent('Agriculture');
+    expect(sectors).toHaveTextContent('Water management');
+    expect(sectors.children).toHaveLength(2);
   });
 });
