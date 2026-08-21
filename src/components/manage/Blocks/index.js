@@ -23,6 +23,7 @@ import installASTNavigation from './ASTNavigation';
 import installFlourishEmbedBlock from './FlourishEmbedBlock';
 import installDataConnectedEmbed from './DataConnectedEmbedBlock';
 import installCountryMapProfile from './CountryMapProfile';
+import installChatbotCatalogue from './ChatbotCatalogue';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -81,6 +82,7 @@ export default function installBlocks(config) {
     installTransRegionSelect,
     installCollectionStats,
     installTabsBlock,
+    installChatbotCatalogue,
     installListing,
     installRedirectBlock,
     installContentLinks,
