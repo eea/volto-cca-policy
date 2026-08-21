@@ -1,0 +1,146 @@
+// Rough styling for the CCA "catalogue" chatbot presentation.
+// Intentionally minimal for the first browser-test round; final styling
+// will use @eeacms/volto-design-tokens once the design is settled.
+
+.catalogue-chat {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .catalogue-chat-clear {
+    border: none;
+    margin-bottom: 8px;
+    background: none;
+    color: #0067b1;
+    cursor: pointer;
+    float: right;
+    font-size: 0.9em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:disabled {
+      color: #999;
+      cursor: not-allowed;
+    }
+  }
+
+  .catalogue-chat-conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .catalogue-chat-row {
+    display: flex;
+    gap: 10px;
+
+    &.user {
+      justify-content: flex-end;
+    }
+
+    &.assistant {
+      .circle {
+        display: flex;
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #0067b1;
+        color: white;
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  .catalogue-chat-user-message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #e5f1fb;
+    white-space: pre-wrap;
+  }
+
+  .catalogue-chat-assistant-content {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .catalogue-chat-sources {
+    margin-top: 12px;
+
+    .catalogue-chat-sources-heading {
+      margin: 0 0 8px;
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+
+  .catalogue-chat-cards {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .catalogue-chat-card {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    background: white;
+    gap: 6px;
+
+    &:hover {
+      border-color: #0067b1;
+    }
+
+    .catalogue-chat-card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+
+      .chat-citation {
+        cursor: default;
+      }
+    }
+
+    .catalogue-chat-card-title {
+      color: #0067b1;
+      font-weight: 600;
+      line-height: 1.3;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .catalogue-chat-card-blurb {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      color: #555;
+      font-size: 0.85em;
+      -webkit-line-clamp: 3;
+    }
+
+    .catalogue-chat-card-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 6px;
+      border-top: 1px solid #eee;
+      margin-top: auto;
+      color: #888;
+      font-size: 0.75em;
+    }
+  }
+}
