@@ -1,86 +1,17 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
-import loadable from '@loadable/component';
 import { Form } from 'semantic-ui-react';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable';
 
 import { useChatController } from '@eeacms/volto-eea-chatbot/ChatBlock/hooks';
-import { components as markdownComponents } from '@eeacms/volto-eea-chatbot/ChatBlock/components/markdown';
+import { RendererComponent } from '@eeacms/volto-eea-chatbot/ChatBlock/packets';
+import { BlinkingDot } from '@eeacms/volto-eea-chatbot/ChatBlock/components/BlinkingDot';
 import AutoResizeTextarea from '@eeacms/volto-eea-chatbot/ChatBlock/components/AutoResizeTextarea';
 import EmptyState from '@eeacms/volto-eea-chatbot/ChatBlock/components/EmptyState';
 import '@eeacms/volto-eea-chatbot/ChatBlock/style.less';
+import { EnhancedDocCard, InlineDocCard } from './DocumentCard';
+import { remarkCcaDocCards } from './docCards';
 import './catalogue-chat.less';
-
-const Markdown = loadable(() => import('react-markdown'));
-
-function formatDate(value) {
-  if (!value) return null;
-  const d = new Date(value);
-  if (Number.isNaN(d.getTime())) return null;
-  return d.toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: '2-digit',
-  });
-}
-
-/**
- * Rough document card in the style of the Navigator catalogue cards
- * (volto-cca-policy NavigatorCatalogueCardItem).
- *
- * NOTE: this rough version only shows the metadata Onyx sends
- * (title, blurb, date, type, link). The full catalogue metadata
- * (sectors, hazards, license, cycle, image) comes with the Plone REST
- * enrichment in the next iteration.
- */
-function DocumentCard({ source, index }) {
-  if (!source || typeof source !== 'object' || !source.semantic_identifier) {
-    return null;
-  }
-  const {
-    semantic_identifier: title,
-    blurb,
-    updated_at,
-    source_type,
-    link,
-  } = source;
-  const isWeb = source_type === 'web';
-
-  return (
-    <div className="catalogue-chat-card">
-      <div className="catalogue-chat-card-header">
-        {typeof index === 'number' && (
-          <span className="chat-citation">{index}</span>
-        )}
-        {isWeb ? (
-          <a
-            className="catalogue-chat-card-title"
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {title}
-          </a>
-        ) : (
-          <span className="catalogue-chat-card-title" title={title}>
-            {title}
-          </span>
-        )}
-      </div>
-      {blurb && <div className="catalogue-chat-card-blurb">{blurb}</div>}
-      <div className="catalogue-chat-card-footer">
-        <span className="catalogue-chat-card-type">
-          {isWeb ? 'Web' : 'Document'}
-        </span>
-        {updated_at && (
-          <span className="catalogue-chat-card-date">
-            {formatDate(updated_at)}
-          </span>
-        )}
-      </div>
-    </div>
-  );
-}
 
 function SourceCards({ message }) {
   const { citations = {}, documents = [] } = message;
@@ -107,7 +38,11 @@ function SourceCards({ message }) {
       </h4>
       <div className="catalogue-chat-cards">
         {sources.map((source, i) => (
-          <DocumentCard source={source} key={`${source.document_id}-${i}`} />
+          <EnhancedDocCard
+            source={source}
+            index={source.index}
+            key={`${source.document_id}-${i}`}
+          />
         ))}
       </div>
     </div>
@@ -122,23 +57,54 @@ function UserBubble({ message }) {
   );
 }
 
-function AssistantMessage({ message, libs, isLast, isStreaming }) {
-  const { remarkGfm } = libs;
+function AssistantMessage({ message, libs }) {
+  // Render through the chatbot core's RendererComponent (the same path the
+  // classic AIMessage uses) so the answer gets the progressive typewriter
+  // reveal, blinking cursor, citation rendering and an in-progress indicator
+  // while the assistant is still working (e.g. during the search-tool phase).
+  const [messageDisplayed, setMessageDisplayed] = useState(false);
+  const displayGroups = message.groupedPackets.filter((group) =>
+    message.displayPackets.includes(group.ind),
+  );
+
+  // Inline document cards: `![[doc: Title]]` markers in the answer text are
+  // converted by the remark plugin (docCards.js) into `cca-doc-card`
+  // elements, rendered with this component override.
+  const extraMarkdownComponents = useMemo(
+    () => ({
+      'cca-doc-card': ({ title }) => (
+        <InlineDocCard title={title} documents={message.documents} />
+      ),
+    }),
+    [message.documents],
+  );
+
   return (
     <div className="catalogue-chat-row assistant">
       <div className="circle assistant">CCA</div>
       <div className="catalogue-chat-assistant-content">
         {message.error ? (
           <div className="ui message negative">{message.error}</div>
+        ) : displayGroups.length === 0 ? (
+          <BlinkingDot addMargin />
         ) : (
-          <div className="message-text-content">
-            <Markdown
-              components={markdownComponents(message, undefined, [])}
-              remarkPlugins={remarkGfm ? [remarkGfm.default] : []}
+          displayGroups.map((group) => (
+            <RendererComponent
+              key={group.ind}
+              packets={group.packets}
+              onComplete={() => setMessageDisplayed(true)}
+              animate={!messageDisplayed}
+              stopPacketSeen={!!message.isComplete}
+              message={message}
+              libs={libs}
+              extraRemarkPlugins={[remarkCcaDocCards]}
+              extraMarkdownComponents={extraMarkdownComponents}
             >
-              {(message.message || '') + (isStreaming && isLast ? ' ▊' : '')}
-            </Markdown>
-          </div>
+              {({ content }) => (
+                <div className="message-text-wrapper">{content}</div>
+              )}
+            </RendererComponent>
+          ))
         )}
         {!message.error && <SourceCards message={message} />}
       </div>
@@ -203,11 +169,6 @@ function CatalogueChatView({
     setShowLandingPage(false);
   };
 
-  const lastAssistantIndex = messages.reduce(
-    (acc, m, i) => (m.type === 'assistant' ? i : acc),
-    -1,
-  );
-
   return (
     <div
       className="catalogue-chat chat-window"
@@ -231,16 +192,14 @@ function CatalogueChatView({
               New chat
             </button>
             <div className="catalogue-chat-conversation">
-              {messages.map((message, index) =>
+              {messages.map((message) =>
                 message.type === 'user' ? (
-                  <UserBubble key={message.messageId} message={message} />
+                  <UserBubble key={message.nodeId} message={message} />
                 ) : (
                   <AssistantMessage
-                    key={message.messageId}
+                    key={message.nodeId}
                     message={message}
                     libs={libs}
-                    isLast={index === lastAssistantIndex}
-                    isStreaming={isStreaming}
                   />
                 ),
               )}
