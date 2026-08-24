@@ -140,7 +140,6 @@ export default function MenuProfile(props) {
   })();
   return (
     <div className="cp2026">
-      <h2 id="adaptation_policies">Summary</h2>
       <div class="eea callout gray">
         <p>
           This section provides an overview of key adaptation policies, climate
@@ -151,10 +150,9 @@ export default function MenuProfile(props) {
         <p>
           The Climate projections and services table shows the availability of
           modelled climate data, including nationally used climate scenarios
-          where relevant. The <strong>Meteorological services</strong> table
-          provides information on where climate monitoring data can be accessed.
-          Both tables indicate the status of each service and include details on
-          how to access it.
+          where relevant. The Meteorological services table provides information
+          on where climate monitoring data can be accessed. Both tables indicate
+          the status of each service and include details on how to access it.
         </p>
       </div>
       <h3>Adaptation policies</h3>
