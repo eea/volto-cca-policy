@@ -6,10 +6,10 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
-import { getFacetOptions as getAllFacetOptions } from '@eeacms/search/components/SearchApp/useFacetsWithAllOptions';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions } from './utils';
+import useGuideFacetOptions from './useGuideFacetOptions';
 
 const messages = defineMessages({
   noSteps: {
@@ -113,7 +113,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     totalResults,
   } = searchContext;
   const steps = guideSteps;
-  const [allFacetOptions, setAllFacetOptions] = React.useState({});
+  const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
     Number.isInteger(storedActiveStep) &&
@@ -159,23 +159,6 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       setActiveStep(activeStep);
     }
   }, [activeStep, setActiveStep, storedActiveStep]);
-
-  React.useEffect(() => {
-    let isCurrent = true;
-    const stepFields = steps.map(({ field }) => field);
-
-    getAllFacetOptions(appConfig, stepFields)
-      .then((facetOptions) => {
-        if (isCurrent) setAllFacetOptions(facetOptions);
-      })
-      .catch(() => {
-        // Live facet options remain available if the supplementary request fails.
-      });
-
-    return () => {
-      isCurrent = false;
-    };
-  }, [appConfig, steps]);
 
   const toggleValue = (value) => {
     if (selectedValues.includes(value)) {

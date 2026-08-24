@@ -20,7 +20,7 @@ describe('Navigator Guide utilities', () => {
   });
 
   it('keeps a selected zero-count value enabled so it can be removed', () => {
-    expect(mergeGuideOptions(['Step 6'], [], ['Step 6'], true)).toEqual([
+    expect(mergeGuideOptions([], [], ['Step 6'], true)).toEqual([
       { value: 'Step 6', count: 0, disabled: false },
     ]);
   });
