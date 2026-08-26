@@ -106,7 +106,10 @@ function AssistantMessage({ message, libs }) {
             </RendererComponent>
           ))
         )}
+        {/* Hidden for now — the inline ![[doc: ...]] cards replace the
+            "Relevant documents" section. Uncomment to bring it back:
         {!message.error && <SourceCards message={message} />}
+        */}
       </div>
     </div>
   );

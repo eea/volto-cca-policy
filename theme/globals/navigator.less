@@ -571,28 +571,9 @@
   }
 }
 
-body.searchlib-page .searchapp-navigatorCatalogueSearch {
-  .back-link {
-    display: none;
-  }
-
-  .search-input,
-  .sui-search-box {
-    margin-bottom: 2rem;
-  }
-
-  .ui.right.sidebar {
-    background-color: #fff;
-    box-shadow: -4px 0 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .sidebar-wrapper {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    padding: 1em;
-  }
-
+// Shared styles for the Navigator catalogue card. Applied both in the
+// searchlib results page and in the CCA chatbot "catalogue" chat cards.
+.navigator-catalogue-card-styles() {
   .navigator-catalogue-item {
     display: grid;
     padding: 1.2rem;
@@ -723,6 +704,37 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       justify-content: flex-start;
     }
   }
+}
+
+body.searchlib-page .searchapp-navigatorCatalogueSearch {
+  .back-link {
+    display: none;
+  }
+
+  .search-input,
+  .sui-search-box {
+    margin-bottom: 2rem;
+  }
+
+  .ui.right.sidebar {
+    background-color: #fff;
+    box-shadow: -4px 0 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .sidebar-wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .navigator-catalogue-card-styles();
+}
+
+// The chatbot "catalogue" chat renders the same Navigator card outside the
+// searchlib results page, so apply the shared card styles there too.
+.catalogue-chat .catalogue-chat-navigator-card {
+  .navigator-catalogue-card-styles();
 }
 
 .navigator-tool-provider,
