@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 
 import NavigatorCatalogueCardItem from '@eeacms/volto-cca-policy/components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 import { ChatMessageContext } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
@@ -15,6 +15,23 @@ function formatDate(value) {
   });
 }
 
+// `InlineDocCard` rebuilds the `source` object on every render (the answer is
+// re-rendered on each streaming tick), so a plain `===` prop comparison would
+// never memoize. Compare the actual fields instead.
+function sourceEqual(prevSource, nextSource) {
+  return (
+    prevSource?.semantic_identifier === nextSource?.semantic_identifier &&
+    prevSource?.blurb === nextSource?.blurb &&
+    prevSource?.updated_at === nextSource?.updated_at &&
+    prevSource?.source_type === nextSource?.source_type &&
+    prevSource?.link === nextSource?.link
+  );
+}
+
+function sourcePropsEqual(prev, next) {
+  return prev.index === next.index && sourceEqual(prev.source, next.source);
+}
+
 /**
  * Rough document card in the style of the Navigator catalogue cards
  * (volto-cca-policy NavigatorCatalogueCardItem).
@@ -24,7 +41,7 @@ function formatDate(value) {
  * (sectors, hazards, license, cycle, image) comes with the Plone REST
  * enrichment in the next iteration.
  */
-export function DocumentCard({ source, index }) {
+const DocumentCard = memo(function DocumentCard({ source, index }) {
   if (!source || typeof source !== 'object' || !source.semantic_identifier) {
     return null;
   }
@@ -71,15 +88,20 @@ export function DocumentCard({ source, index }) {
       </div>
     </div>
   );
-}
+}, sourcePropsEqual);
 
 /**
  * Document card that upgrades itself: while it has only the Onyx-provided
  * fields it renders the basic `DocumentCard`; once the globalsearch ES
  * lookup (by document URL) resolves it re-renders as the full Navigator
  * catalogue card.
+ *
+ * Memoized: the answer markdown is re-rendered on every streaming tick, but
+ * the (already-shown, potentially heavy) card should only re-render when its
+ * own data changes, not on every tick. Its own basic→full upgrade is driven
+ * by internal state, which still re-renders it exactly once.
  */
-export function EnhancedDocCard({ source, index }) {
+const EnhancedDocCard = memo(function EnhancedDocCard({ source, index }) {
   const { result } = useCatalogueDoc(source?.link);
 
   if (result) {
@@ -90,7 +112,7 @@ export function EnhancedDocCard({ source, index }) {
     );
   }
   return <DocumentCard source={source} index={index} />;
-}
+}, sourcePropsEqual);
 
 /**
  * Inline document card, rendered in the message text where the assistant
