@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import NavigatorCatalogueCardItem from '@eeacms/volto-cca-policy/components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
+import { ChatMessageContext } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
 import { useCatalogueDoc } from './useCatalogueDoc';
 
 function formatDate(value) {
@@ -115,4 +116,18 @@ export function InlineDocCard({ title, documents = [] }) {
       <EnhancedDocCard source={source} />
     </div>
   );
+}
+
+/**
+ * Stable react-markdown component for the `cca-doc-card` element emitted by
+ * the `remarkCcaDocCards` plugin. It reads the owning message from
+ * `ChatMessageContext` (set by the core `ChatMessage`) to match the marker
+ * title against that message's cited documents.
+ *
+ * Kept as a top-level (stable) component type so react does not remount it
+ * on every render while the answer streams.
+ */
+export function CcaDocCard({ title }) {
+  const message = useContext(ChatMessageContext);
+  return <InlineDocCard title={title} documents={message?.documents} />;
 }
