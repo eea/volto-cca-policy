@@ -19,6 +19,11 @@ const searchAppName = 'navigatorCatalogueSearch';
  * same document).
  */
 const docCache = new Map();
+// Resolved values (Result | null) keyed by URL. Lets a card that has already
+// been fetched render the full card synchronously instead of flashing the
+// basic card first (repeat doc, remount, or a second message citing the same
+// URL).
+const resolvedCache = new Map();
 
 // The search app configs live on the searchlib registry's mutable `searchui`
 // part (see CompareTools/utils.js fetchResultsByUid for the same pattern).
@@ -33,10 +38,15 @@ function fetchCatalogueDoc(url) {
       url,
       appConfig
         ? fetchResult(url, appConfig, registry)
-            .then((result) =>
-              result && result.found !== false ? result : null,
-            )
-            .catch(() => null)
+            .then((result) => {
+              const value = result && result.found !== false ? result : null;
+              resolvedCache.set(url, value);
+              return value;
+            })
+            .catch(() => {
+              resolvedCache.set(url, null);
+              return null;
+            })
         : Promise.resolve(null),
     );
   }
@@ -44,11 +54,20 @@ function fetchCatalogueDoc(url) {
 }
 
 export function useCatalogueDoc(url) {
-  const [result, setResult] = useState(null);
+  // Start from the resolved cache (if any) so a known doc renders as the full
+  // card immediately, avoiding a basic→full flash on mount.
+  const [result, setResult] = useState(() =>
+    url && resolvedCache.has(url) ? resolvedCache.get(url) : null,
+  );
 
   useEffect(() => {
     if (!url) {
       setResult(null);
+      return undefined;
+    }
+    // Already resolved: stay in sync without an effect round-trip.
+    if (resolvedCache.has(url)) {
+      setResult(resolvedCache.get(url));
       return undefined;
     }
     let ignore = false;
