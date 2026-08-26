@@ -83,7 +83,12 @@
   }
 }
 
-.searchapp-navigatorCatalogueSearch .catalogue-compare {
+// The label+checkbox row is aligned via inline-flex. Needed both in the
+// searchlib results page and in the CCA chatbot "catalogue" chat cards
+// (see .catalogue-chat-navigator-card), otherwise the "Compare" text drops
+// out of line with the checkbox.
+.searchapp-navigatorCatalogueSearch .catalogue-compare,
+.catalogue-chat-navigator-card .catalogue-compare {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
