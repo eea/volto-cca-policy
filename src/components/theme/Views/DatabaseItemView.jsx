@@ -107,6 +107,9 @@ const MaybeIframeVisualization = ({ visualization }) => {
 const Visualization = ({ visualization }) => (
   <>
     {visualization?.title && <h2>{visualization.title}</h2>}
+    {visualization?.description && (
+      <p className="visualization-description">{visualization.description}</p>
+    )}
     <MaybeFlourishVisualization visualization={visualization} />
     <MaybeIframeVisualization visualization={visualization} />
   </>
