@@ -40,7 +40,7 @@ const defaultConfig = {
           ['@root', `${__dirname}/src`],
           ['~', `${__dirname}/src`],
         ],
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
       },
       'babel-plugin-root-import': {
         rootPathSuffix: 'src',
