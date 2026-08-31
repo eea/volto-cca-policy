@@ -46,6 +46,7 @@ const visualizationEmbedCode =
 
 const getVisualization = (overrides = {}) => ({
   title: '',
+  description: '',
   embed_code: visualizationEmbedCode,
   height: '',
   full_width: false,
@@ -123,6 +124,39 @@ describe('DatabaseItemView', () => {
 
     expect(colLeft.findAllByType('iframe')).toHaveLength(0);
     expect(fullWidthColumn.findAllByType('iframe')).toHaveLength(1);
+  });
+
+  it('renders visualization descriptions', () => {
+    const component = renderDatabaseItemView({
+      ...baseContent,
+      visualizations: [
+        getVisualization({ description: 'Visualization summary text.' }),
+      ],
+    });
+
+    expect(
+      component.root.findByProps({
+        className: 'visualization-description',
+      }).children,
+    ).toEqual(['Visualization summary text.']);
+  });
+
+  it('preserves visualization order when full-width and column items are mixed', () => {
+    const component = renderDatabaseItemView({
+      ...baseContent,
+      visualizations: [
+        getVisualization({ title: 'First', full_width: true }),
+        getVisualization({ title: 'Second' }),
+        getVisualization({ title: 'Third', full_width: true }),
+      ],
+    });
+
+    const headings = component.root
+      .findAllByType('h2')
+      .map((heading) => heading.children.join(''))
+      .filter((title) => ['First', 'Second', 'Third'].includes(title));
+
+    expect(headings).toEqual(['First', 'Second', 'Third']);
   });
 
   it('does not render a visualization when the visualizations field is empty', () => {
