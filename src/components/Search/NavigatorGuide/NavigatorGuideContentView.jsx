@@ -8,6 +8,8 @@ import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
+import { mergeGuideOptions } from './utils';
+import useGuideFacetOptions from './useGuideFacetOptions';
 
 const messages = defineMessages({
   noSteps: {
@@ -111,6 +113,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     totalResults,
   } = searchContext;
   const steps = guideSteps;
+  const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
     Number.isInteger(storedActiveStep) &&
@@ -122,11 +125,16 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const selectedValues =
     (filters || []).find((filter) => filter.field === step?.field)?.values ||
     [];
-  const options = getFacetOptions(facets, step?.field);
-  const isLastStep = activeStep === steps.length - 1;
   const hasSelections = steps.some(({ field }) =>
     isStepSelected(filters, field),
   );
+  const options = mergeGuideOptions(
+    allFacetOptions?.[step?.field],
+    getFacetOptions(facets, step?.field),
+    selectedValues,
+    hasSelections,
+  );
+  const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))
     .map(({ label }) =>
@@ -262,10 +270,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                   key={option.value}
                   className={`navigator-guide-option${
                     selectedValues.includes(option.value) ? ' selected' : ''
-                  }`}
+                  }${option.disabled ? ' disabled' : ''}`}
+                  aria-disabled={option.disabled || undefined}
                 >
                   <Checkbox
                     checked={selectedValues.includes(option.value)}
+                    disabled={option.disabled}
                     onChange={() => toggleValue(option.value)}
                   />
                   <span>{option.value}</span>
