@@ -1,8 +1,20 @@
 import React, { useContext, memo } from 'react';
 
 import NavigatorCatalogueCardItem from '@eeacms/volto-cca-policy/components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
-import { ChatMessageContext } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
+// The `ChatMessageContext` seam only exists in @eeacms/volto-eea-chatbot from
+// the release that follows the "block variations" work
+// (eea/volto-eea-chatbot#32). Environments that resolve the published ^4.0.0
+// package (e.g. the standalone CI build) don't have the named export, and a
+// static named import would make webpack fail the whole app build there. So
+// import the module namespace instead and degrade gracefully when the seam
+// is missing (the cards then fall back to the basic metadata card).
+import * as ChatBlockChat from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
 import { useCatalogueDoc } from './useCatalogueDoc';
+
+// Fall back to an inert context (default value `undefined`) when the seam is
+// absent, so `useContext` below is always called with a stable context object.
+const ChatMessageContext =
+  ChatBlockChat.ChatMessageContext || React.createContext(undefined);
 
 function formatDate(value) {
   if (!value) return null;
