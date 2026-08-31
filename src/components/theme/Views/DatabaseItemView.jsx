@@ -107,6 +107,9 @@ const MaybeIframeVisualization = ({ visualization }) => {
 const Visualization = ({ visualization }) => (
   <>
     {visualization?.title && <h2>{visualization.title}</h2>}
+    {visualization?.description && (
+      <p className="visualization-description">{visualization.description}</p>
+    )}
     <MaybeFlourishVisualization visualization={visualization} />
     <MaybeIframeVisualization visualization={visualization} />
   </>
@@ -128,6 +131,20 @@ const getVisualizations = (content) => {
     ? content.visualizations.filter((item) => item?.embed_code)
     : [];
 };
+
+const groupVisualizations = (visualizations) =>
+  visualizations.reduce((groups, visualization) => {
+    const fullWidth = !!visualization.full_width;
+    const lastGroup = groups[groups.length - 1];
+
+    if (lastGroup && lastGroup.fullWidth === fullWidth) {
+      lastGroup.items.push(visualization);
+    } else {
+      groups.push({ fullWidth, items: [visualization] });
+    }
+
+    return groups;
+  }, []);
 
 const BottomInfo = (props) => {
   const { content } = props;
@@ -185,13 +202,11 @@ const DatabaseItemView = (props) => {
   const item_title = acronym ? title + ' (' + acronym + ')' : title;
   const subtitle = CONTENT_TYPE_LABELS[type] ?? '';
   const visualizations = getVisualizations(content);
-  const columnVisualizations = visualizations.filter(
-    (visualization) => !visualization.full_width,
+  const visualizationGroups = groupVisualizations(visualizations);
+  const firstVisualizationGroup = visualizationGroups[0];
+  const hasFullWidthVisualizations = visualizationGroups.some(
+    (group) => group.fullWidth,
   );
-  const fullWidthVisualizations = visualizations.filter(
-    (visualization) => visualization.full_width,
-  );
-  const hasFullWidthVisualizations = !!fullWidthVisualizations.length;
 
   const is_cmshare_video = SHARE_EEA.some((domain) =>
     content?.embed_url?.includes(domain),
@@ -284,9 +299,12 @@ const DatabaseItemView = (props) => {
                 </>
               )}
 
-              {!!columnVisualizations.length && (
-                <Visualizations visualizations={columnVisualizations} />
-              )}
+              {firstVisualizationGroup &&
+                !firstVisualizationGroup.fullWidth && (
+                  <Visualizations
+                    visualizations={firstVisualizationGroup.items}
+                  />
+                )}
 
               {!hasFullWidthVisualizations && <BottomInfo {...props} />}
             </Grid.Column>
@@ -304,11 +322,22 @@ const DatabaseItemView = (props) => {
 
           {hasFullWidthVisualizations && (
             <>
-              <Grid.Row>
-                <Grid.Column mobile={12} tablet={12} computer={12}>
-                  <Visualizations visualizations={fullWidthVisualizations} />
-                </Grid.Column>
-              </Grid.Row>
+              {visualizationGroups.map((group, index) => {
+                if (index === 0 && !group.fullWidth) return null;
+
+                return (
+                  <Grid.Row key={`visualization-group-${index}`}>
+                    <Grid.Column
+                      mobile={12}
+                      tablet={12}
+                      computer={group.fullWidth ? 12 : 8}
+                      className={group.fullWidth ? undefined : 'col-left'}
+                    >
+                      <Visualizations visualizations={group.items} />
+                    </Grid.Column>
+                  </Grid.Row>
+                );
+              })}
               <Grid.Row>
                 <Grid.Column
                   mobile={12}
