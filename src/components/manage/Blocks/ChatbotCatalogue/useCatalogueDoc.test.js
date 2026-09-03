@@ -130,4 +130,20 @@ describe('useCatalogueDoc', () => {
     const { result } = renderHook(() => useCatalogueDoc(undefined));
     expect(result.current).toEqual({ result: null, loading: false });
   });
+
+  it('normalizes URLs before fetching from Elasticsearch', async () => {
+    fetchResult.mockResolvedValue({ found: true });
+    renderHook(() =>
+      useCatalogueDoc(
+        'http://cca.localhost/metadata/tools/climate-policy-radar/',
+      ),
+    );
+    await flushPromises();
+
+    expect(fetchResult).toHaveBeenCalledWith(
+      'https://climate-adapt.eea.europa.eu/en/metadata/tools/climate-policy-radar',
+      appConfig,
+      registry,
+    );
+  });
 });

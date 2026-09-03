@@ -1,4 +1,6 @@
 import React, { useContext, memo } from 'react';
+import { Icon } from 'semantic-ui-react';
+import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 
 import NavigatorCatalogueCardItem from '@eeacms/volto-cca-policy/components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 // The `ChatMessageContext` seam only exists in @eeacms/volto-eea-chatbot from
@@ -15,6 +17,41 @@ import { useCatalogueDoc } from './useCatalogueDoc';
 // absent, so `useContext` below is always called with a stable context object.
 const ChatMessageContext =
   ChatBlockChat.ChatMessageContext || React.createContext(undefined);
+
+/**
+ * Clean page titles returned from Onyx/scrapers that append pipeline/section suffixes,
+ * e.g. "Climate policy radar | Tools | Discover the key services...".
+ */
+export function cleanDocumentTitle(title) {
+  if (!title || typeof title !== 'string') return '';
+  const parts = title.split(/\s*\|\s*/);
+  return parts[0].trim() || title.trim();
+}
+
+/**
+ * Robust title matching between the assistant's marker and the message's cited documents.
+ * Tolerates case differences, clean vs noisy pipeline titles, and prefixes.
+ */
+export function matchesDocumentTitle(docTitle, searchTitle) {
+  if (!docTitle || !searchTitle) return false;
+  const d1 = docTitle.trim().toLowerCase();
+  const s1 = searchTitle.trim().toLowerCase();
+  if (d1 === s1) return true;
+
+  const dClean = cleanDocumentTitle(docTitle).toLowerCase();
+  const sClean = cleanDocumentTitle(searchTitle).toLowerCase();
+  if (dClean && sClean && dClean === sClean) return true;
+
+  if (d1.startsWith(sClean) || s1.startsWith(dClean)) return true;
+  if (
+    dClean &&
+    sClean &&
+    (dClean.includes(sClean) || sClean.includes(dClean))
+  ) {
+    return true;
+  }
+  return false;
+}
 
 function formatDate(value) {
   if (!value) return null;
@@ -45,58 +82,79 @@ function sourcePropsEqual(prev, next) {
 }
 
 /**
- * Rough document card in the style of the Navigator catalogue cards
- * (volto-cca-policy NavigatorCatalogueCardItem).
- *
- * NOTE: this rough version only shows the metadata Onyx sends
- * (title, blurb, date, type, link). The full catalogue metadata
- * (sectors, hazards, license, cycle, image) comes with the Plone REST
- * enrichment in the next iteration.
+ * Document card styled to match the Navigator catalogue cards
+ * (volto-cca-policy NavigatorCatalogueCardItem), used when full searchlib
+ * metadata is not yet loaded or for external/unindexed sources.
  */
 const DocumentCard = memo(function DocumentCard({ source, index }) {
   if (!source || typeof source !== 'object' || !source.semantic_identifier) {
     return null;
   }
   const {
-    semantic_identifier: title,
+    semantic_identifier: rawTitle,
     blurb,
     updated_at,
     source_type,
     link,
   } = source;
   const isWeb = source_type === 'web';
+  const title = cleanDocumentTitle(rawTitle);
+  const formattedDate = formatDate(updated_at);
+  const typeLabel = isWeb ? 'Web' : 'Document';
 
   return (
-    <div className="catalogue-chat-card">
-      <div className="catalogue-chat-card-header">
-        {typeof index === 'number' && (
-          <span className="chat-citation">{index}</span>
-        )}
-        {isWeb && link ? (
-          <a
-            className="catalogue-chat-card-title"
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {title}
-          </a>
-        ) : (
-          <span className="catalogue-chat-card-title" title={title}>
-            {title}
-          </span>
-        )}
-      </div>
-      {blurb && <div className="catalogue-chat-card-blurb">{blurb}</div>}
-      <div className="catalogue-chat-card-footer">
-        <span className="catalogue-chat-card-type">
-          {isWeb ? 'Web' : 'Document'}
-        </span>
-        {updated_at && (
-          <span className="catalogue-chat-card-date">
-            {formatDate(updated_at)}
-          </span>
-        )}
+    <div className="catalogue-chat-navigator-card">
+      <div className="navigator-catalogue-item">
+        <div className="navigator-tool-icon large" aria-hidden="true">
+          <Icon className="ri-file-line" />
+        </div>
+
+        <div className="catalogue-item-main">
+          <div className="catalogue-item-top">
+            <div className="navigator-tool-provider">
+              {typeof index === 'number' && (
+                <span className="chat-citation">{index} </span>
+              )}
+              {typeLabel}
+            </div>
+            {formattedDate && (
+              <span className="catalogue-date">{formattedDate}</span>
+            )}
+          </div>
+
+          <div className="catalogue-item-heading">
+            <h4>
+              {link ? (
+                <ExternalLink href={link} title={title}>
+                  {title}
+                </ExternalLink>
+              ) : (
+                <span title={title}>{title}</span>
+              )}
+            </h4>
+          </div>
+
+          {blurb && <p className="catalogue-description">{blurb}</p>}
+
+          <div className="catalogue-item-footer">
+            <div className="catalogue-meta license-type">
+              <span className="catalogue-type">Type: {typeLabel}</span>
+            </div>
+
+            <div className="catalogue-actions">
+              {link && (
+                <ExternalLink
+                  href={link}
+                  className="ui button primary icon"
+                  labelPosition="left"
+                >
+                  View
+                  <Icon className="ri-arrow-right-line" />
+                </ExternalLink>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -136,7 +194,7 @@ export function InlineDocCard({ title, documents = [] }) {
     (d) =>
       d.semantic_identifier &&
       title &&
-      d.semantic_identifier.trim().toLowerCase() === title.trim().toLowerCase(),
+      matchesDocumentTitle(d.semantic_identifier, title),
   );
   const source = {
     semantic_identifier: title,

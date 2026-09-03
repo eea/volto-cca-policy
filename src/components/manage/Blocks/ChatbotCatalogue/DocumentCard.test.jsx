@@ -99,6 +99,26 @@ describe('InlineDocCard', () => {
     expect(useCatalogueDoc).toHaveBeenCalledWith(doc.link);
   });
 
+  it('cleans pipeline title noise and matches cleanly', () => {
+    const noisyDoc = {
+      ...doc,
+      semantic_identifier:
+        'Climate policy radar | Tools | Discover the key services, thematic features and tools of Climate-ADAPT Climate-ADAPT',
+    };
+    render(
+      <InlineDocCard title="Climate policy radar" documents={[noisyDoc]} />,
+    );
+    expect(screen.getByText('Climate policy radar')).toBeInTheDocument();
+    expect(screen.getByText('The French NAS.')).toBeInTheDocument();
+  });
+
+  it('renders a View button when link is present', () => {
+    render(<InlineDocCard title="Some Web Source" documents={[webDoc]} />);
+    const viewButton = screen.getByRole('link', { name: 'View' });
+    expect(viewButton).toHaveAttribute('href', 'https://example.com/web');
+    expect(viewButton).toHaveClass('ui button primary icon');
+  });
+
   it('calls the lookup with the document link (or undefined) from the card', () => {
     useCatalogueDoc.mockReturnValue({ result: null, loading: true });
     render(<InlineDocCard title="No Match" documents={[]} />);
