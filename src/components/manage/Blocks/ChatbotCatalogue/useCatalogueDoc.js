@@ -25,13 +25,38 @@ const docCache = new Map();
 // URL).
 const resolvedCache = new Map();
 
+/**
+ * Normalize URLs so they match the globalsearch Elasticsearch index `_id`.
+ * In globalsearch, Climate-ADAPT tools use `https://climate-adapt.eea.europa.eu/en/...`
+ * without trailing slashes.
+ */
+export function normalizeCatalogueUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  let normalized = url.trim();
+  // Strip trailing slashes
+  normalized = normalized.replace(/\/+$/, '');
+  // Map localhost or cca.localhost to production domain used in the globalsearch index
+  normalized = normalized.replace(
+    /^https?:\/\/(?:cca\.localhost|localhost(?::\d+)?)/i,
+    'https://climate-adapt.eea.europa.eu',
+  );
+  // Ensure /en/ prefix for metadata or other paths in Climate-ADAPT
+  // e.g. https://climate-adapt.eea.europa.eu/metadata/... -> https://climate-adapt.eea.europa.eu/en/metadata/...
+  normalized = normalized.replace(
+    /^(https:\/\/climate-adapt\.eea\.europa\.eu)\/(?!en\/)([a-zA-Z0-9_-]+.*)$/i,
+    '$1/en/$2',
+  );
+  return normalized;
+}
+
 // The search app configs live on the searchlib registry's mutable `searchui`
 // part (see CompareTools/utils.js fetchResultsByUid for the same pattern).
 function getAppConfig() {
   return registry.searchui?.[searchAppName] || null;
 }
 
-function fetchCatalogueDoc(url) {
+function fetchCatalogueDoc(rawUrl) {
+  const url = normalizeCatalogueUrl(rawUrl);
   const appConfig = getAppConfig();
   if (!docCache.has(url)) {
     docCache.set(
@@ -53,7 +78,8 @@ function fetchCatalogueDoc(url) {
   return docCache.get(url);
 }
 
-export function useCatalogueDoc(url) {
+export function useCatalogueDoc(rawUrl) {
+  const url = normalizeCatalogueUrl(rawUrl);
   // Start from the resolved cache (if any) so a known doc renders as the full
   // card immediately, avoiding a basic→full flash on mount.
   const [result, setResult] = useState(() =>
