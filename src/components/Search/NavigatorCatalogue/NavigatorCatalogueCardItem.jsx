@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
+import Image from '@plone/volto/components/theme/Image/Image';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import {
@@ -9,6 +11,54 @@ import {
   useCompareTools,
 } from '../../theme/CompareTools/utils';
 import { rawValueAsArray } from './utils';
+
+export function getToolThumbnailUrl(result) {
+  if (!result) return null;
+
+  if (result.image === null || result.image === false) {
+    return null;
+  }
+
+  if (typeof result.image === 'string' && result.image) {
+    return flattenToAppURL(result.image);
+  }
+  if (result.image && typeof result.image === 'object') {
+    const scaleUrl =
+      result.image.scales?.thumb?.download ||
+      result.image.scales?.tile?.download ||
+      result.image.scales?.preview?.download ||
+      result.image.scales?.mini?.download ||
+      result.image.download;
+    if (scaleUrl) {
+      return flattenToAppURL(scaleUrl);
+    }
+  }
+
+  if (
+    typeof result.thumbUrl === 'string' &&
+    result.thumbUrl &&
+    !result.thumbUrl.includes('portal_depiction')
+  ) {
+    return flattenToAppURL(result.thumbUrl);
+  }
+
+  if (
+    result.image_preview &&
+    typeof result.image_preview.raw === 'string' &&
+    result.image_preview.raw
+  ) {
+    return flattenToAppURL(result.image_preview.raw);
+  }
+
+  const href =
+    result.href || result['@id'] || result.about?.raw || result.about;
+  if (href && typeof href === 'string') {
+    const cleanHref = flattenToAppURL(href).replace(/\/+$/, '');
+    return `${cleanHref}/@@images/image/thumb`;
+  }
+
+  return null;
+}
 
 const messages = defineMessages({
   sector: {
@@ -113,6 +163,15 @@ const CycleElements = ({ intl, values }) => {
 const NavigatorCatalogueCardItem = (props) => {
   const { result } = props;
   const intl = useIntl();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [hasImageError, setHasImageError] = useState(false);
+  const thumbUrl = getToolThumbnailUrl(result);
+
+  useEffect(() => {
+    setImageLoaded(false);
+    setHasImageError(false);
+  }, [thumbUrl]);
+
   const sectors = rawValueAsArray(result.cca_adaptation_sectors);
   const hazards = rawValueAsArray(result.cca_climate_impacts);
   const licenseStatus = rawValueAsArray(result.cca_license_status)
@@ -147,7 +206,20 @@ const NavigatorCatalogueCardItem = (props) => {
   return (
     <div className={`navigator-catalogue-item${isSelected ? ' selected' : ''}`}>
       <div className="navigator-tool-icon large" aria-hidden="true">
-        <Icon className="ri-file-line" />
+        {thumbUrl && !hasImageError ? (
+          <>
+            <Image
+              src={thumbUrl}
+              alt=""
+              style={imageLoaded ? undefined : { display: 'none' }}
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setHasImageError(true)}
+            />
+            {!imageLoaded && <Icon className="ri-file-line" />}
+          </>
+        ) : (
+          <Icon className="ri-file-line" />
+        )}
       </div>
 
       <div className="catalogue-item-main">
