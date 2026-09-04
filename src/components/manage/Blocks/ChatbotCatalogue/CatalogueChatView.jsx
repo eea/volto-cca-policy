@@ -2,13 +2,18 @@ import { ChatWindow } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
 
 import { CcaDocCard } from './DocumentCard';
 import { remarkCcaDocCards } from './docCards';
+import { remarkCcaNextSteps } from './nextSteps';
+import SuggestedNextSteps from './SuggestedNextSteps';
 import './catalogue-chat.less';
 
 // Stable object/component identity so react-markdown does not treat the
 // custom element as a new component type on every render.
 const extraMarkdownComponents = {
   'cca-doc-card': CcaDocCard,
+  'cca-suggested-next-steps': SuggestedNextSteps,
 };
+
+const extraRemarkPlugins = [remarkCcaDocCards, remarkCcaNextSteps];
 
 /**
  * The CCA "catalogue" presentation for the AI Chatbot block.
@@ -23,7 +28,8 @@ const extraMarkdownComponents = {
  *     catalogue cards instead.
  *  2. `extraRemarkPlugins` + `extraMarkdownComponents` — the
  *     `![[doc: Title]]` markers in the answer text (see `docCards.js`) are
- *     turned into inline Navigator-style catalogue cards (`CcaDocCard`).
+ *     turned into inline Navigator-style catalogue cards (`CcaDocCard`),
+ *     and "Suggested next steps" sections are turned into styled callout boxes.
  *
  * `ChatBlockView` renders this as `<Presentation persona {...blockData} />`,
  * so all block fields arrive as top-level props and are forwarded unchanged.
@@ -33,7 +39,7 @@ function CatalogueChatView(props) {
     <ChatWindow
       {...props}
       hideSourcesTab
-      extraRemarkPlugins={[remarkCcaDocCards]}
+      extraRemarkPlugins={extraRemarkPlugins}
       extraMarkdownComponents={extraMarkdownComponents}
     />
   );
