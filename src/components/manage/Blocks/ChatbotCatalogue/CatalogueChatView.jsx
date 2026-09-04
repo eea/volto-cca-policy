@@ -1,4 +1,6 @@
+import React from 'react';
 import { ChatWindow } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
+import { CompareToolsPanel } from '../../../theme/CompareTools/CompareToolsPanel';
 
 import { CcaDocCard } from './DocumentCard';
 import { remarkCcaDocCards } from './docCards';
@@ -31,17 +33,24 @@ const extraRemarkPlugins = [remarkCcaDocCards, remarkCcaNextSteps];
  *     turned into inline Navigator-style catalogue cards (`CcaDocCard`),
  *     and "Suggested next steps" sections are turned into styled callout boxes.
  *
+ * It also renders `<CompareToolsPanel />` so that when users activate the
+ * "Compare" checkbox on any document card, the floating comparison panel
+ * appears and allows navigating to the side-by-side comparison view.
+ *
  * `ChatBlockView` renders this as `<Presentation persona {...blockData} />`,
  * so all block fields arrive as top-level props and are forwarded unchanged.
  */
 function CatalogueChatView(props) {
   return (
-    <ChatWindow
-      {...props}
-      hideSourcesTab
-      extraRemarkPlugins={extraRemarkPlugins}
-      extraMarkdownComponents={extraMarkdownComponents}
-    />
+    <>
+      <ChatWindow
+        {...props}
+        hideSourcesTab
+        extraRemarkPlugins={extraRemarkPlugins}
+        extraMarkdownComponents={extraMarkdownComponents}
+      />
+      <CompareToolsPanel />
+    </>
   );
 }
 
