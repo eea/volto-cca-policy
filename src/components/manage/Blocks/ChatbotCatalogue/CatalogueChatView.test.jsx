@@ -17,6 +17,10 @@ jest.mock('@eeacms/volto-eea-chatbot/ChatBlock/chat', () => ({
   )),
 }));
 
+jest.mock('../../../theme/CompareTools/CompareToolsPanel', () => ({
+  CompareToolsPanel: jest.fn(() => <div data-testid="compare-tools-panel" />),
+}));
+
 describe('CatalogueChatView', () => {
   beforeEach(() => {
     ChatWindow.mockClear();
@@ -69,5 +73,10 @@ describe('CatalogueChatView', () => {
     const secondPlugins = ChatWindow.mock.calls[1][0].extraRemarkPlugins;
     expect(secondMd).toBe(firstMd);
     expect(secondPlugins).toBe(firstPlugins);
+  });
+
+  it('renders the CompareToolsPanel alongside the chat window', () => {
+    const { getByTestId } = render(<CatalogueChatView persona={{}} />);
+    expect(getByTestId('compare-tools-panel')).toBeInTheDocument();
   });
 });
