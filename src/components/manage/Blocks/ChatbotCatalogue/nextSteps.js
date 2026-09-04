@@ -9,7 +9,7 @@
  */
 
 export const NEXT_STEPS_HEADING_RE =
-  /^\s*(suggested\s+next\s+steps|next\s+steps|how\s+to\s+use(\s+(them|these|this|the\s+tools))?)\b/i;
+  /^(suggested\s+next\s+steps|next\s+steps|how\s+to\s+use(\s+(them|these|this|the\s+tools))?)\b/i;
 
 export function getNodeText(node) {
   if (!node) return '';
@@ -30,7 +30,7 @@ function transformContainer(children) {
   for (let i = 0; i < children.length; i += 1) {
     const node = children[i];
     if (isNextStepsHeading(node)) {
-      const rawTitle = getNodeText(node).trim().replace(/:\s*$/, '');
+      const rawTitle = getNodeText(node).trim().replace(/:$/, '').trim();
       const title = rawTitle || 'Suggested next steps';
 
       const collected = [];
