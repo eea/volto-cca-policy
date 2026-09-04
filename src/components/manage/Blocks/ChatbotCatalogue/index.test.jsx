@@ -41,4 +41,33 @@ describe('ChatbotCatalogue applyConfig', () => {
     const config = { blocks: { blocksConfig: {} } };
     expect(applyConfig(config)).toEqual(config);
   });
+
+  it('loosens the restricted check to allow Manager, Site Administrator, and Editor', () => {
+    const config = applyConfig(makeConfig());
+    const isRestricted = config.blocks.blocksConfig.eeaChatbot.restricted;
+
+    expect(isRestricted({ user: { roles: ['Manager'] } })).toBe(false);
+    expect(isRestricted({ user: { roles: ['Site Administrator'] } })).toBe(
+      false,
+    );
+    expect(isRestricted({ user: { roles: ['Editor'] } })).toBe(false);
+    expect(isRestricted({ user: { roles: ['Contributor'] } })).toBe(true);
+    expect(isRestricted({ user: { roles: ['Reader'] } })).toBe(true);
+    expect(isRestricted({ user: null })).toBe(false);
+  });
+
+  it('also updates danswerChat restricted if present', () => {
+    const baseConfig = {
+      blocks: {
+        blocksConfig: {
+          eeaChatbot: {},
+          danswerChat: {},
+        },
+      },
+    };
+    const config = applyConfig(baseConfig);
+    const isRestricted = config.blocks.blocksConfig.danswerChat.restricted;
+    expect(isRestricted({ user: { roles: ['Editor'] } })).toBe(false);
+    expect(isRestricted({ user: { roles: ['Contributor'] } })).toBe(true);
+  });
 });
