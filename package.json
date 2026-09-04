@@ -17,6 +17,7 @@
     "url": "git@github.com:eea/volto-cca-policy.git"
   },
   "addons": [
+    "@eeacms/volto-eea-chatbot",
     "@eeacms/volto-openlayers-map",
     "@eeacms/volto-slate-label",
     "@eeacms/volto-datablocks",
@@ -29,6 +30,7 @@
   ],
   "dependencies": {
     "@eeacms/volto-datablocks": "*",
+    "@eeacms/volto-eea-chatbot": "^4.1.0",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-embed": "*",
