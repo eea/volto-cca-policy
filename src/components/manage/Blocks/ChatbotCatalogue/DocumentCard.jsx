@@ -24,8 +24,9 @@ const ChatMessageContext =
  */
 export function cleanDocumentTitle(title) {
   if (!title || typeof title !== 'string') return '';
-  const parts = title.split(/\s*\|\s*/);
-  return parts[0].trim() || title.trim();
+  const pipeIndex = title.indexOf('|');
+  const firstPart = pipeIndex === -1 ? title : title.slice(0, pipeIndex);
+  return firstPart.trim() || title.trim();
 }
 
 /**

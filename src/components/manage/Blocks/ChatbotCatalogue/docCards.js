@@ -17,7 +17,7 @@
  *   ![[doc: France: National Adaptation Strategy]]
  */
 
-const DOC_MARKER_RE = /!\[\[\s*doc:\s*(.+?)\s*\]\]/g;
+const DOC_MARKER_RE = /!\[\[\s*doc:\s*([^\]\r\n]+)\]\]/g;
 
 function makeCardNode(title) {
   return {
@@ -62,7 +62,7 @@ export const remarkCcaDocCards = () => (tree) => {
           value: node.value.slice(last, match.index),
         });
       }
-      parts.push(makeCardNode(match[1]));
+      parts.push(makeCardNode(match[1].trim()));
       last = match.index + match[0].length;
     }
     if (last < node.value.length) {
