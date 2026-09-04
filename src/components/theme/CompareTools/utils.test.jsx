@@ -12,6 +12,7 @@ import {
   getCompareToolUid,
   getPathname,
   useCompareTools,
+  useHasMounted,
 } from './utils';
 
 jest.mock('@eeacms/search', () => ({
@@ -26,11 +27,12 @@ jest.mock('@plone/volto/helpers/Url/Url', () => ({
 }));
 
 const CompareHarness = ({ tool }) => {
-  const { isLimitReached, isSelected, setSelected, toggle } =
+  const { hasMounted, isLimitReached, isSelected, setSelected, toggle } =
     useCompareTools(tool);
 
   return (
     <>
+      <span data-testid="mounted">{String(hasMounted)}</span>
       <span data-testid="selected">{String(isSelected)}</span>
       <span data-testid="limit">{String(isLimitReached)}</span>
       <button type="button" onClick={toggle}>
@@ -213,5 +215,21 @@ describe('Compare Tools utilities', () => {
     expect(screen.getByTestId('limit')).toHaveTextContent('true');
     fireEvent.click(screen.getByText('Select'));
     expect(screen.getByTestId('selected')).toHaveTextContent('false');
+  });
+
+  it('exposes hasMounted state to safely coordinate client hydration', () => {
+    renderCompareHarness({ uid: 'one', title: 'Tool one' });
+
+    expect(screen.getByTestId('mounted')).toHaveTextContent('true');
+  });
+
+  it('tracks mounting status with useHasMounted', () => {
+    const MountedComponent = () => {
+      const mounted = useHasMounted();
+      return <div data-testid="mounted-flag">{String(mounted)}</div>;
+    };
+
+    render(<MountedComponent />);
+    expect(screen.getByTestId('mounted-flag')).toHaveTextContent('true');
   });
 });

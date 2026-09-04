@@ -8,6 +8,7 @@ import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
   getCompareLocation,
+  useHasMounted,
 } from './utils';
 
 const messages = defineMessages({
@@ -49,11 +50,16 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
     landingPageURL: '/en/navigator/tool-catalogue',
   };
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
-  const resolvableSelectedTools = selectedTools.filter((tool) => tool.uid);
-  const isReadyToCompare = resolvableSelectedTools.length >= 2;
-  const emptySlots = MAX_COMPARE_TOOLS - selectedTools.length;
+  const hasMounted = useHasMounted();
 
-  if (selectedTools.length === 0) return null;
+  const effectiveSelectedTools = hasMounted ? selectedTools : [];
+  const resolvableSelectedTools = effectiveSelectedTools.filter(
+    (tool) => tool.uid,
+  );
+  const isReadyToCompare = resolvableSelectedTools.length >= 2;
+  const emptySlots = MAX_COMPARE_TOOLS - effectiveSelectedTools.length;
+
+  if (!hasMounted || effectiveSelectedTools.length === 0) return null;
 
   const removeTool = (toolUid) => {
     setSelectedTools((tools) => tools.filter((tool) => tool.uid !== toolUid));
@@ -67,7 +73,12 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
     ].join('');
 
     history.push(
-      getCompareLocation(selectedTools, appConfig, returnURL, currentLang),
+      getCompareLocation(
+        effectiveSelectedTools,
+        appConfig,
+        returnURL,
+        currentLang,
+      ),
     );
   };
 
@@ -77,14 +88,14 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
         <h2>
           {intl.formatMessage(messages.compareTools)}
           <span className="compare-panel-count">
-            {selectedTools.length}/{MAX_COMPARE_TOOLS}
+            {effectiveSelectedTools.length}/{MAX_COMPARE_TOOLS}
           </span>
         </h2>
       </div>
 
       <div className="compare-panel-content">
         <div className="compare-panel-tools">
-          {selectedTools.map((tool) => (
+          {effectiveSelectedTools.map((tool) => (
             <div key={tool.uid} className="compare-panel-tool">
               <span className="navigator-tool-icon small" aria-hidden="true">
                 <Icon className="ri-file-line" />
