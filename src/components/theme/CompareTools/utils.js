@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { applyConfigurationSchema, rebind } from '@eeacms/search';
@@ -8,6 +9,16 @@ import { getComparePageURL } from '../../Search/NavigatorCatalogue/utils';
 export const MAX_COMPARE_TOOLS = 4;
 export const compareToolsAtom = atomWithStorage('cca-compare-tools', []);
 const searchAppName = 'navigatorCatalogueSearch';
+
+export const useHasMounted = () => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  return hasMounted;
+};
 
 const getRawValue = (value) =>
   value?.raw !== undefined ? value.raw : value || '';
@@ -27,11 +38,14 @@ export const getPathname = (url) => {
 
 export const useCompareTools = (compareTool) => {
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
-  const isSelected = selectedTools.some(
+  const hasMounted = useHasMounted();
+
+  const effectiveSelectedTools = hasMounted ? selectedTools : [];
+  const isSelected = effectiveSelectedTools.some(
     (tool) => tool.uid === compareTool?.uid,
   );
   const isLimitReached =
-    selectedTools.length >= MAX_COMPARE_TOOLS && !isSelected;
+    effectiveSelectedTools.length >= MAX_COMPARE_TOOLS && !isSelected;
 
   const setSelected = (selected) => {
     if (!compareTool?.uid) return;
@@ -57,6 +71,7 @@ export const useCompareTools = (compareTool) => {
     isLimitReached,
     setSelected,
     toggle: () => setSelected(!isSelected),
+    hasMounted,
   };
 };
 
