@@ -71,3 +71,66 @@
     font-size: 0.75em;
   }
 }
+
+// "Suggested next steps" callout box
+.cca-suggested-next-steps {
+  padding: 1rem 1.25rem;
+  border: 1px solid #dbe7e1;
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  background-color: #f4f9f7;
+
+  .cca-suggested-next-steps-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+
+    .icon {
+      margin: 0;
+      color: #008369;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .cca-suggested-next-steps-title {
+      color: #004b3b;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+  }
+
+  .cca-suggested-next-steps-content {
+    ol,
+    ul {
+      padding-left: 1.25rem;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+        color: #333;
+        line-height: 1.5;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        strong {
+          color: #111;
+          font-weight: 600;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+      color: #333;
+      line-height: 1.5;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
