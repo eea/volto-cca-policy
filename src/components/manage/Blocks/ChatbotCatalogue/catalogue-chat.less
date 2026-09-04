@@ -1,0 +1,136 @@
+// Styles for the inline document cards in the CCA "catalogue" chatbot
+// presentation. The rest of the chat layout (conversation, rows, user
+// bubbles, "New chat" button, streaming placeholder, ...) is provided by the
+// classic chatbot `style.less` because this variation reuses the classic
+// `ChatWindow`.
+
+.catalogue-chat-navigator-card {
+  width: 100%;
+
+  .navigator-catalogue-item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.catalogue-chat-card-inline {
+  margin: 8px 0;
+}
+
+// Basic fallback card, shown until the globalsearch `_doc` lookup (by URL)
+// resolves and upgrades it to the full Navigator card.
+.catalogue-chat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background: white;
+  gap: 6px;
+
+  &:hover {
+    border-color: #0067b1;
+  }
+
+  .catalogue-chat-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    .chat-citation {
+      cursor: default;
+    }
+  }
+
+  .catalogue-chat-card-title {
+    color: #0067b1;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .catalogue-chat-card-blurb {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    color: #555;
+    font-size: 0.85em;
+    -webkit-line-clamp: 3;
+  }
+
+  .catalogue-chat-card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+    color: #888;
+    font-size: 0.75em;
+  }
+}
+
+// "Suggested next steps" callout box
+.cca-suggested-next-steps {
+  padding: 1rem 1.25rem;
+  border: 1px solid #dbe7e1;
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  background-color: #f4f9f7;
+
+  .cca-suggested-next-steps-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+
+    .icon {
+      margin: 0;
+      color: #008369;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .cca-suggested-next-steps-title {
+      color: #004b3b;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+  }
+
+  .cca-suggested-next-steps-content {
+    ol,
+    ul {
+      padding-left: 1.25rem;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+        color: #333;
+        line-height: 1.5;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        strong {
+          color: #111;
+          font-weight: 600;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+      color: #333;
+      line-height: 1.5;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
