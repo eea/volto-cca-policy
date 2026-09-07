@@ -101,22 +101,48 @@ const messages = defineMessages({
   },
 });
 
+const CYCLE_STEP_OPTIONS = [
+  'Step 1: Preparing the Ground for Adaptation',
+  'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+  'Step 3: Identifying Adaptation Options',
+  'Step 4: Assessing and Prioritising Adaptation Options',
+  'Step 5: Implementation',
+  'Step 6: Monitoring and Evaluation (M&E)',
+];
+
 const getToolField = (tool, field) =>
   tool.result?.[field] ?? tool.result?._result?.[field];
 
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
 
-const MetadataTags = ({ value }) => {
-  const intl = useIntl();
-  const items = asArray(value)
-    .map((item) => item?.title || item?.token || item)
-    .filter(Boolean);
+const getMetadataItem = (item) => item?.title || item?.token || item;
 
-  return items.length ? (
+const getComparisonOptions = (tools, field) =>
+  [
+    ...new Set(
+      tools
+        .flatMap((tool) => asArray(getToolField(tool, field)))
+        .map(getMetadataItem)
+        .filter(Boolean),
+    ),
+  ].sort((first, second) => first.localeCompare(second));
+
+const MetadataTags = ({ value, options }) => {
+  const intl = useIntl();
+  const selectedItems = new Set(
+    asArray(value).map(getMetadataItem).filter(Boolean),
+  );
+
+  return options.length ? (
     <div className="metadata-tags">
-      {items.map((item, index) => (
-        <span className="metadata-tag" key={`${item}-${index}`}>
+      {options.map((item) => (
+        <span
+          className={`metadata-tag${
+            selectedItems.has(item) ? ' selected' : ''
+          }`}
+          key={item}
+        >
           {intl.formatMessage({ id: item, defaultMessage: item })}
         </span>
       ))}
@@ -126,13 +152,17 @@ const MetadataTags = ({ value }) => {
   );
 };
 
-const FieldValueList = ({ value, label }) => {
-  const values = asArray(value);
+const FieldValueList = ({ value, label, options }) => {
+  const selectedItems = new Set(
+    asArray(value).map(getMetadataItem).filter(Boolean),
+  );
 
-  return values.length ? (
+  return options.length ? (
     <ul className="compare-field-value-list" aria-label={label}>
-      {values.map((item, index) => (
-        <li key={`${item}-${index}`}>{item}</li>
+      {options.map((item) => (
+        <li className={selectedItems.has(item) ? 'selected' : ''} key={item}>
+          {item}
+        </li>
       ))}
     </ul>
   ) : (
@@ -184,6 +214,7 @@ const getToolHref = (result) => result?.href || result?._result?.id?.raw || '';
 const getTools = async (uids, registry) => {
   try {
     const results = await fetchResultsByUid(uids, registry);
+    const comparisonOptions = results.comparisonOptions || {};
     const resultsByUid = new Map(
       results.map((result) => [getCompareToolUid(result), result]),
     );
@@ -197,6 +228,7 @@ const getTools = async (uids, registry) => {
         href: getToolHref(result),
         result,
         error: !result,
+        comparisonOptions,
       };
     });
   } catch {
@@ -291,6 +323,18 @@ const CompareToolsView = () => {
 
   const failedTools = tools.filter((tool) => tool.error);
   const visibleTools = tools.filter((tool) => !tool.error);
+  const outputTypeOptions = getComparisonOptions(
+    visibleTools,
+    'cca_type_of_outputs',
+  );
+  const comparisonOptions = visibleTools[0]?.comparisonOptions || {};
+  const outputOptions =
+    comparisonOptions.cca_type_of_outputs?.length > 0
+      ? [...comparisonOptions.cca_type_of_outputs].sort((first, second) =>
+          first.localeCompare(second),
+        )
+      : outputTypeOptions;
+  const cycleOptions = CYCLE_STEP_OPTIONS;
   const visibleToolsCount = visibleTools.length;
   const hasLoadedRequestedTools = tools.length === ids.length;
   const hasEnoughTools = visibleToolsCount >= 2;
@@ -479,6 +523,7 @@ const CompareToolsView = () => {
                   <Table.Cell key={`output-type-${tool.id}`}>
                     <MetadataTags
                       value={getToolField(tool, 'cca_type_of_outputs')}
+                      options={outputOptions}
                     />
                   </Table.Cell>
                 ))}
@@ -501,6 +546,7 @@ const CompareToolsView = () => {
                         tool,
                         'cca_adaptation_support_cycle_step',
                       )}
+                      options={cycleOptions}
                     />
                   </Table.Cell>
                 ))}

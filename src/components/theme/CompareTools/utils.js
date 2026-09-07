@@ -116,11 +116,43 @@ export const fetchResultsByUid = async (uids, registry) => {
           ],
         },
       },
+      aggs: {
+        allOutputTypes: {
+          global: {},
+          aggs: {
+            values: {
+              terms: { field: 'cca_type_of_outputs.keyword', size: 10000 },
+            },
+          },
+        },
+        allCycleSteps: {
+          global: {},
+          aggs: {
+            values: {
+              terms: {
+                field: 'cca_adaptation_support_cycle_step.keyword',
+                size: 10000,
+              },
+            },
+          },
+        },
+      },
     },
     appConfig,
   );
   const hits = response.body?.hits?.hits || [];
   const Model = registry.resolve[appConfig.resultItemModel.factory];
+  const results = hits.map((hit) => new Model(hit, appConfig));
+  results.comparisonOptions = {
+    cca_type_of_outputs:
+      response.body?.aggregations?.allOutputTypes?.values?.buckets?.map(
+        (bucket) => bucket.key,
+      ) || [],
+    cca_adaptation_support_cycle_step:
+      response.body?.aggregations?.allCycleSteps?.values?.buckets?.map(
+        (bucket) => bucket.key,
+      ) || [],
+  };
 
-  return hits.map((hit) => new Model(hit, appConfig));
+  return results;
 };
