@@ -99,10 +99,6 @@ const messages = defineMessages({
     id: 'Adaptation support cycle step',
     defaultMessage: 'Adaptation support cycle step',
   },
-  sector: {
-    id: 'Sector',
-    defaultMessage: 'Sector',
-  },
 });
 
 const getToolField = (tool, field) =>
@@ -484,23 +480,6 @@ const CompareToolsView = () => {
                         tool,
                         'cca_adaptation_support_cycle_step',
                       )}
-                    />
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.sector)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`sector-${tool.id}`}>
-                    <FieldValueList
-                      label={intl.formatMessage(messages.sector)}
-                      value={getToolField(tool, 'cca_adaptation_sectors')}
                     />
                   </Table.Cell>
                 ))}
