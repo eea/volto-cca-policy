@@ -107,6 +107,25 @@ const getToolField = (tool, field) =>
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
 
+const MetadataTags = ({ value }) => {
+  const intl = useIntl();
+  const items = asArray(value)
+    .map((item) => item?.title || item?.token || item)
+    .filter(Boolean);
+
+  return items.length ? (
+    <div className="metadata-tags">
+      {items.map((item, index) => (
+        <span className="metadata-tag" key={`${item}-${index}`}>
+          {intl.formatMessage({ id: item, defaultMessage: item })}
+        </span>
+      ))}
+    </div>
+  ) : (
+    '—'
+  );
+};
+
 const FieldValueList = ({ value, label }) => {
   const values = asArray(value);
 
@@ -458,7 +477,9 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`output-type-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_type_of_outputs')}
+                    <MetadataTags
+                      value={getToolField(tool, 'cca_type_of_outputs')}
+                    />
                   </Table.Cell>
                 ))}
               </Table.Row>
