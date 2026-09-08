@@ -28,7 +28,7 @@ import {
   asArray,
   exportComparisonTable,
   formatFunctionalityScore,
-  getLocalizedLandingPageURL,
+  getNavigatorCataloguePageURL,
 } from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
@@ -220,8 +220,7 @@ const CompareToolsView = () => {
     [location.search],
   );
   const registry = config.settings.searchlib;
-  const appConfig = registry.searchui.navigatorCatalogueSearch;
-  const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
+  const landingPageURL = getNavigatorCataloguePageURL(currentLang);
   const compareToolsTitle = intl.formatMessage(messages.compareTools);
   const returnURL =
     location.state?.returnURL ||
