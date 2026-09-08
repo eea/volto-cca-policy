@@ -42,13 +42,10 @@ const messages = defineMessages({
   },
 });
 
-export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
+export const CompareToolsPanel = () => {
   const intl = useIntl();
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale);
-  const appConfig = suppliedAppConfig || {
-    landingPageURL: '/en/navigator/tool-catalogue',
-  };
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
   const hasMounted = useHasMounted();
 
@@ -73,12 +70,7 @@ export const CompareToolsPanel = ({ appConfig: suppliedAppConfig }) => {
     ].join('');
 
     history.push(
-      getCompareLocation(
-        effectiveSelectedTools,
-        appConfig,
-        returnURL,
-        currentLang,
-      ),
+      getCompareLocation(effectiveSelectedTools, returnURL, currentLang),
     );
   };
 

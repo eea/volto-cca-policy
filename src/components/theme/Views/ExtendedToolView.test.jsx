@@ -2,6 +2,8 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import ExtendedToolView from './ExtendedToolView';
 import { useCompareTools } from '../CompareTools/utils';
@@ -11,7 +13,17 @@ jest.mock('../CompareTools/utils', () => ({
   useCompareTools: jest.fn(),
 }));
 
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn(),
+}));
+
 jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: jest.fn(),
+}));
 
 jest.mock(
   '@plone/volto/components/manage/UniversalLink/UniversalLink',
@@ -51,6 +63,7 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
 const toggle = jest.fn();
 const copyShareUrl = jest.fn();
 const setIsLinkCopied = jest.fn();
+const push = jest.fn();
 
 const renderComponent = (content = {}) =>
   render(
@@ -69,6 +82,19 @@ describe('ExtendedToolView', () => {
       toggle,
     });
     useClipboard.mockReturnValue([false, copyShareUrl, setIsLinkCopied]);
+    useHistory.mockReturnValue({ push });
+    useSelector.mockReturnValue('en');
+  });
+
+  it.each(['en', 'fr'])('opens the Navigator Catalogue in %s', (locale) => {
+    useSelector.mockReturnValue(locale);
+    renderComponent({ title: 'Climate Tool' });
+
+    fireEvent.click(
+      screen.getByRole('button', { name: /check navigator catalogue/i }),
+    );
+
+    expect(push).toHaveBeenCalledWith(`/${locale}/navigator/tool-catalogue`);
   });
 
   it('renders the title', () => {

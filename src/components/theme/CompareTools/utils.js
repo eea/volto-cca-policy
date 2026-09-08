@@ -75,12 +75,7 @@ export const useCompareTools = (compareTool) => {
   };
 };
 
-export const getCompareLocation = (
-  tools,
-  appConfig,
-  returnURL,
-  currentLang = 'en',
-) => {
+export const getCompareLocation = (tools, returnURL, currentLang = 'en') => {
   const params = new URLSearchParams();
 
   tools.slice(0, MAX_COMPARE_TOOLS).forEach((tool) => {
@@ -90,7 +85,7 @@ export const getCompareLocation = (
   });
 
   const query = params.toString();
-  const path = getComparePageURL(appConfig, currentLang);
+  const path = getComparePageURL(currentLang);
 
   return {
     pathname: path,

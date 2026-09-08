@@ -97,19 +97,16 @@ export const downloadCsv = (filename, rows) => {
   URL.revokeObjectURL(url);
 };
 
-export const getLocalizedLandingPageURL = (appConfig, currentLang = 'en') => {
+export const getNavigatorCataloguePageURL = (currentLang = 'en') => {
   const lang = currentLang || 'en';
-  const landingPageURL =
-    appConfig?.landingPageURL || '/en/navigator/tool-catalogue';
 
-  return landingPageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
+  return `/${lang}/navigator/tool-catalogue`;
 };
 
-export const getComparePageURL = (appConfig, currentLang = 'en') => {
+export const getComparePageURL = (currentLang = 'en') => {
   const lang = currentLang || 'en';
-  const comparePageURL = appConfig?.comparePageURL || '/en/navigator/compare';
 
-  return comparePageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
+  return `/${lang}/navigator/compare`;
 };
 
 export const exportComparisonTable = (tools, getToolField) => {

@@ -6,7 +6,7 @@ import {
   exportComparisonTable,
   formatFunctionalityScore,
   getComparePageURL,
-  getLocalizedLandingPageURL,
+  getNavigatorCataloguePageURL,
   rawValueAsArray,
 } from './utils';
 
@@ -86,27 +86,16 @@ describe('Navigator Catalogue utilities', () => {
     expect(revokeObjectURL).toHaveBeenCalledWith('blob:test');
   });
 
-  it('localizes catalogue and comparison URLs', () => {
-    expect(getLocalizedLandingPageURL(undefined)).toBe(
-      '/en/navigator/tool-catalogue',
-    );
-    expect(
-      getLocalizedLandingPageURL({ landingPageURL: '/en/tools' }, 'fr'),
-    ).toBe('/fr/tools');
-    expect(getLocalizedLandingPageURL({ landingPageURL: '/tools' }, '')).toBe(
-      '/tools',
-    );
-    expect(
-      getComparePageURL({ comparePageURL: '/en/tools/compare' }, 'de'),
-    ).toBe('/de/tools/compare');
-    expect(
-      getComparePageURL(
-        { landingPageURL: '/en/navigator/tool-catalogue' },
-        'de',
-      ),
-    ).toBe('/de/navigator/compare');
-    expect(getComparePageURL()).toBe('/en/navigator/compare');
-  });
+  it.each([undefined, '', 'en', 'fr', 'de'])(
+    'builds catalogue and comparison URLs for locale %s',
+    (locale) => {
+      const lang = locale || 'en';
+      expect(getNavigatorCataloguePageURL(locale)).toBe(
+        `/${lang}/navigator/tool-catalogue`,
+      );
+      expect(getComparePageURL(locale)).toBe(`/${lang}/navigator/compare`);
+    },
+  );
 
   it('exports every comparison criterion', () => {
     const tools = [
