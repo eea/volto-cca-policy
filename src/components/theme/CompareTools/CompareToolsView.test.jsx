@@ -41,9 +41,7 @@ jest.mock('@plone/volto/registry', () => ({
     settings: {
       searchlib: {
         searchui: {
-          navigatorCatalogueSearch: {
-            landingPageURL: '/en/navigator/tool-catalogue',
-          },
+          navigatorCatalogueSearch: {},
         },
       },
     },

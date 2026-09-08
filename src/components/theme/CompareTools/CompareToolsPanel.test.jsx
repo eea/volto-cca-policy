@@ -3,12 +3,13 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { Provider as JotaiProvider } from 'jotai';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { CompareToolsPanel } from './CompareToolsPanel';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useSelector: (selector) => selector({ intl: { locale: 'en' } }),
+  useSelector: jest.fn(),
 }));
 
 jest.mock('react-router-dom', () => ({
@@ -16,7 +17,7 @@ jest.mock('react-router-dom', () => ({
   useHistory: jest.fn(),
 }));
 
-const renderPanel = (selectedTools, appConfig) => {
+const renderPanel = (selectedTools) => {
   window.localStorage.setItem(
     'cca-compare-tools',
     JSON.stringify(selectedTools),
@@ -25,7 +26,7 @@ const renderPanel = (selectedTools, appConfig) => {
   return render(
     <IntlProvider locale="en">
       <JotaiProvider>
-        <CompareToolsPanel appConfig={appConfig} />
+        <CompareToolsPanel />
       </JotaiProvider>
     </IntlProvider>,
   );
@@ -38,6 +39,8 @@ describe('CompareToolsPanel', () => {
     jest.clearAllMocks();
     window.localStorage.clear();
     useHistory.mockReturnValue({ push });
+    useSelector.mockReturnValue('en');
+    window.history.replaceState({}, '', '/');
   });
 
   it('does not render without selected tools', () => {
@@ -61,14 +64,17 @@ describe('CompareToolsPanel', () => {
     expect(screen.queryByText('Compare tools')).not.toBeInTheDocument();
   });
 
-  it('shows the ready state and opens the comparison page', () => {
-    renderPanel(
-      [
-        { uid: 'one', title: 'Tool one' },
-        { uid: 'two', title: 'Tool two' },
-      ],
-      { landingPageURL: '/en/navigator/tool-catalogue' },
+  it.each(['en', 'fr'])('opens the comparison page in %s', (locale) => {
+    useSelector.mockReturnValue(locale);
+    window.history.replaceState(
+      {},
+      '',
+      `/${locale}/navigator/tool-catalogue?q=water#results`,
     );
+    renderPanel([
+      { uid: 'one', title: 'Tool one' },
+      { uid: 'two', title: 'Tool two' },
+    ]);
 
     expect(screen.getByText('Ready to compare')).toHaveClass(
       'compare-panel-status',
@@ -78,9 +84,11 @@ describe('CompareToolsPanel', () => {
     fireEvent.click(screen.getByText('Compare selected tools'));
 
     expect(push).toHaveBeenCalledWith({
-      pathname: '/en/navigator/compare',
+      pathname: `/${locale}/navigator/compare`,
       search: '?uid=one&uid=two',
-      state: { returnURL: '/' },
+      state: {
+        returnURL: `/${locale}/navigator/tool-catalogue?q=water#results`,
+      },
     });
   });
 

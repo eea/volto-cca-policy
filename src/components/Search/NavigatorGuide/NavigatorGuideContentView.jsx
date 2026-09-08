@@ -10,6 +10,7 @@ import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions } from './utils';
 import useGuideFacetOptions from './useGuideFacetOptions';
+import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
   noSteps: {
@@ -177,9 +178,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       allowedFields.has(field),
     );
     const query = new URLManager().stateToUrl({ filters: resultFilters });
-    const pathname = (
-      appConfig.resultsPageURL || '/en/navigator/tool-catalogue'
-    ).replace(/^\/en(?=\/|$)/, `/${currentLang}`);
+    const pathname = getNavigatorCataloguePageURL(currentLang);
 
     history.push({ pathname, search: query ? `?${query}` : '' });
   };
