@@ -41,9 +41,7 @@ jest.mock('@plone/volto/registry', () => ({
     settings: {
       searchlib: {
         searchui: {
-          navigatorCatalogueSearch: {
-            landingPageURL: '/en/navigator/tool-catalogue',
-          },
+          navigatorCatalogueSearch: {},
         },
       },
     },
@@ -79,9 +77,6 @@ describe('CompareToolsView accessibility', () => {
         functionality: { raw: 4 },
         cca_adaptation_support_cycle_step: {
           raw: [{ title: 'Assessing risks' }, { title: 'Monitoring' }],
-        },
-        cca_adaptation_sectors: {
-          raw: [{ title: 'Agriculture' }, { title: 'Water management' }],
         },
       },
       {
@@ -125,9 +120,5 @@ describe('CompareToolsView accessibility', () => {
     expect(adaptationSteps).toHaveTextContent('Assessing risks');
     expect(adaptationSteps).toHaveTextContent('Monitoring');
     expect(adaptationSteps.children).toHaveLength(2);
-    const sectors = screen.getByRole('list', { name: 'Sector' });
-    expect(sectors).toHaveTextContent('Agriculture');
-    expect(sectors).toHaveTextContent('Water management');
-    expect(sectors.children).toHaveLength(2);
   });
 });

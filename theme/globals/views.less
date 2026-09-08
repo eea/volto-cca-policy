@@ -481,7 +481,6 @@ hr {
   }
 
   .metadata-header {
-    margin: 0;
     padding-bottom: 0.75rem;
     border-bottom: 1px dashed #dde3e9;
   }
@@ -517,28 +516,6 @@ hr {
     [role='listitem'] + [role='listitem'] {
       margin-top: 0.4rem;
     }
-  }
-
-  .metadata-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .metadata-tag {
-    padding: 0.35rem 0.75rem;
-    border: 1px solid #d5dde5;
-    border-radius: 2px;
-    color: #4c5a6b;
-    font-weight: 600;
-    line-height: 1.25;
-    font-size: 14px;
-  }
-
-  .metadata-tag-more {
-    background: transparent;
-    cursor: pointer;
-    font-family: inherit;
   }
 
   .extended-tool-related {
@@ -663,14 +640,6 @@ hr {
     gap: 1rem;
   }
 
-  // .extended-tool-related-reason {
-  //   padding: 0.3rem 0.6rem;
-  //   background: #e4f2d8;
-  //   color: #0a7b6c;
-  //   font-size: 12px;
-  //   font-weight: 500;
-  // }
-
   .extended-tool-related-view {
     display: inline-flex;
     align-items: center;
@@ -695,6 +664,28 @@ hr {
       padding: 1.5rem;
     }
   }
+}
+
+.metadata-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metadata-tag {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #d5dde5;
+  border-radius: 2px;
+  color: #4c5a6b;
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 14px;
+}
+
+.metadata-tag-more {
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .extended-tool {
