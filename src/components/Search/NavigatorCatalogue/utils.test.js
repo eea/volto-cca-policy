@@ -104,10 +104,8 @@ describe('Navigator Catalogue utilities', () => {
         values: {
           accessibility_and_usability: 'High',
           functionality: 5,
-          cca_geographical_scale: ['Local'],
           cca_type_of_outputs: ['Maps'],
           cca_adaptation_support_cycle_step: ['Step 1'],
-          cca_adaptation_sectors: ['Water'],
         },
       },
     ];
@@ -118,9 +116,7 @@ describe('Navigator Catalogue utilities', () => {
     expect(csv).toContain('"Criteria","Tool A"');
     expect(csv).toContain('"Usability","High"');
     expect(csv).toContain('"Functionality","5/6"');
-    expect(csv).toContain('"Spatial scale","Local"');
     expect(csv).toContain('"Output type","Maps"');
     expect(csv).toContain('"Adaptation support cycle step","Step 1"');
-    expect(csv).toContain('"Sector","Water"');
   });
 });

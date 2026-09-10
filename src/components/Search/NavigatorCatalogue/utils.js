@@ -125,12 +125,6 @@ export const exportComparisonTable = (tools, getToolField) => {
       ),
     ],
     [
-      'Spatial scale',
-      ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'cca_geographical_scale')),
-      ),
-    ],
-    [
       'Output type',
       ...tools.map((tool) =>
         arrayFieldToString(getToolField(tool, 'cca_type_of_outputs')),
@@ -142,12 +136,6 @@ export const exportComparisonTable = (tools, getToolField) => {
         arrayFieldToString(
           getToolField(tool, 'cca_adaptation_support_cycle_step'),
         ),
-      ),
-    ],
-    [
-      'Sector',
-      ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'cca_adaptation_sectors')),
       ),
     ],
   ];
