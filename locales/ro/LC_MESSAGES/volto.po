@@ -221,6 +221,11 @@ msgstr "Categorie"
 msgid "Challenges"
 msgstr "Provocări"
 
+#. Default: "Check Navigator Catalogue"
+#: components/theme/Views/ExtendedToolView
+msgid "Check Navigator Catalogue"
+msgstr ""
+
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
@@ -1242,7 +1247,6 @@ msgstr "Secțiuni"
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-#: components/theme/CompareTools/CompareToolsView
 msgid "Sector"
 msgstr "Sector"
 
