@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-08-19T09:34:02.521Z\n"
+"POT-Creation-Date: 2026-09-10T09:33:55.411Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -158,6 +158,7 @@ msgid "Background information"
 msgstr ""
 
 #. Default: "Biogeographical regions:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr ""
@@ -242,7 +243,14 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr ""
 
-#. Default: "City:"
+#. Default: "Cities:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Cities:"
+msgstr ""
+
+#. Default: "Cities:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr ""
@@ -352,6 +360,7 @@ msgid "Countries"
 msgstr ""
 
 #. Default: "Countries:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr ""
@@ -850,6 +859,7 @@ msgid "Looking for more information?"
 msgstr ""
 
 #. Default: "Macro-Transnational region:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr ""
@@ -1343,6 +1353,7 @@ msgid "Step {current} of {total}"
 msgstr ""
 
 #. Default: "Sub Nationals:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr ""
