@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-09-10T09:33:55.411Z\n"
+"POT-Creation-Date: 2026-09-10T10:00:02.129Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -243,13 +243,13 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr ""
 
-#. Default: "Cities:"
+#. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Cities:"
 msgstr ""
 
-#. Default: "Cities:"
+#. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
@@ -887,6 +887,12 @@ msgstr ""
 #. Default: "Most useful for"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
+msgstr ""
+
+#. Default: "Municipalities & other:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Municipalities & other:"
 msgstr ""
 
 #. Default: "National HHAP"
