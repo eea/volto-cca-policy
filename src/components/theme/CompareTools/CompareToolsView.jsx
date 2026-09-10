@@ -17,6 +17,7 @@ import { GET_BREADCRUMBS } from '@plone/volto/constants/ActionTypes';
 import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
+import ToolThumbnail from '../ToolThumbnail/ToolThumbnail';
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
@@ -28,7 +29,7 @@ import {
   asArray,
   exportComparisonTable,
   formatFunctionalityScore,
-  getLocalizedLandingPageURL,
+  getNavigatorCataloguePageURL,
 } from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
@@ -99,10 +100,6 @@ const messages = defineMessages({
     id: 'Adaptation support cycle step',
     defaultMessage: 'Adaptation support cycle step',
   },
-  sector: {
-    id: 'Sector',
-    defaultMessage: 'Sector',
-  },
 });
 
 const getToolField = (tool, field) =>
@@ -110,6 +107,25 @@ const getToolField = (tool, field) =>
 
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
+
+const MetadataTags = ({ value }) => {
+  const intl = useIntl();
+  const items = asArray(value)
+    .map((item) => item?.title || item?.token || item)
+    .filter(Boolean);
+
+  return items.length ? (
+    <div className="metadata-tags">
+      {items.map((item, index) => (
+        <span className="metadata-tag" key={`${item}-${index}`}>
+          {intl.formatMessage({ id: item, defaultMessage: item })}
+        </span>
+      ))}
+    </div>
+  ) : (
+    '—'
+  );
+};
 
 const FieldValueList = ({ value, label }) => {
   const values = asArray(value);
@@ -205,8 +221,7 @@ const CompareToolsView = () => {
     [location.search],
   );
   const registry = config.settings.searchlib;
-  const appConfig = registry.searchui.navigatorCatalogueSearch;
-  const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
+  const landingPageURL = getNavigatorCataloguePageURL(currentLang);
   const compareToolsTitle = intl.formatMessage(messages.compareTools);
   const returnURL =
     location.state?.returnURL ||
@@ -368,12 +383,7 @@ const CompareToolsView = () => {
                   <Table.HeaderCell key={tool.id}>
                     <div className="compare-tool-header">
                       <div className="compare-tool-title-row">
-                        <div
-                          className="navigator-tool-icon medium"
-                          aria-hidden="true"
-                        >
-                          <Icon className="ri-file-line" />
-                        </div>
+                        <ToolThumbnail result={tool.result} />
                         <div className="compare-tool-title" title={tool.title}>
                           {tool.title}
                         </div>
@@ -462,7 +472,9 @@ const CompareToolsView = () => {
                 </Table.Cell>
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`output-type-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_type_of_outputs')}
+                    <MetadataTags
+                      value={getToolField(tool, 'cca_type_of_outputs')}
+                    />
                   </Table.Cell>
                 ))}
               </Table.Row>
@@ -484,23 +496,6 @@ const CompareToolsView = () => {
                         tool,
                         'cca_adaptation_support_cycle_step',
                       )}
-                    />
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.sector)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`sector-${tool.id}`}>
-                    <FieldValueList
-                      label={intl.formatMessage(messages.sector)}
-                      value={getToolField(tool, 'cca_adaptation_sectors')}
                     />
                   </Table.Cell>
                 ))}

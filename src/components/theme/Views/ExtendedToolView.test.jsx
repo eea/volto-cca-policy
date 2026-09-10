@@ -2,6 +2,8 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import ExtendedToolView from './ExtendedToolView';
 import { useCompareTools } from '../CompareTools/utils';
@@ -11,7 +13,17 @@ jest.mock('../CompareTools/utils', () => ({
   useCompareTools: jest.fn(),
 }));
 
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn(),
+}));
+
 jest.mock('@plone/volto/hooks/clipboard/useClipboard', () => jest.fn());
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: jest.fn(),
+}));
 
 jest.mock(
   '@plone/volto/components/manage/UniversalLink/UniversalLink',
@@ -51,6 +63,7 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
 const toggle = jest.fn();
 const copyShareUrl = jest.fn();
 const setIsLinkCopied = jest.fn();
+const push = jest.fn();
 
 const renderComponent = (content = {}) =>
   render(
@@ -69,6 +82,19 @@ describe('ExtendedToolView', () => {
       toggle,
     });
     useClipboard.mockReturnValue([false, copyShareUrl, setIsLinkCopied]);
+    useHistory.mockReturnValue({ push });
+    useSelector.mockReturnValue('en');
+  });
+
+  it.each(['en', 'fr'])('opens the Navigator Catalogue in %s', (locale) => {
+    useSelector.mockReturnValue(locale);
+    renderComponent({ title: 'Climate Tool' });
+
+    fireEvent.click(
+      screen.getByRole('button', { name: /check navigator catalogue/i }),
+    );
+
+    expect(push).toHaveBeenCalledWith(`/${locale}/navigator/tool-catalogue`);
   });
 
   it('renders the title', () => {
@@ -195,6 +221,69 @@ describe('ExtendedToolView', () => {
     ).not.toBeInTheDocument();
   });
 
+  describe('related tool thumbnails', () => {
+    const renderRelatedTool = (fields = {}) => {
+      const { container } = renderComponent({
+        title: 'Climate Tool',
+        '@components': {
+          relatedtools: {
+            items: [
+              {
+                '@id': '/tools/coastal-planner',
+                title: 'Coastal planner',
+                ...fields,
+              },
+            ],
+          },
+        },
+      });
+      return container.querySelector(
+        '.extended-tool-related-card .navigator-tool-icon',
+      );
+    };
+
+    it('shows the uploaded thumbnail after loading', () => {
+      const thumbnail = renderRelatedTool({
+        image: {
+          scales: { thumb: { download: '/uploaded-related-thumb.jpg' } },
+        },
+      });
+      const img = thumbnail.querySelector('img');
+
+      expect(thumbnail).toHaveClass('medium');
+      expect(img).toHaveAttribute('src', '/uploaded-related-thumb.jpg');
+      expect(img).toHaveStyle({ display: 'none' });
+      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+
+      fireEvent.load(img);
+
+      expect(img).not.toHaveStyle({ display: 'none' });
+      expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    });
+
+    it('resolves the thumbnail from the related item URL and falls back on error', () => {
+      const thumbnail = renderRelatedTool();
+      const img = thumbnail.querySelector('img');
+
+      expect(img).toHaveAttribute(
+        'src',
+        '/tools/coastal-planner/@@images/image/thumb',
+      );
+
+      fireEvent.error(img);
+
+      expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    });
+
+    it.each([null, false])('shows the file icon for image: %s', (image) => {
+      const thumbnail = renderRelatedTool({ image });
+
+      expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    });
+  });
+
   it('renders the open-tool button when a hyperlink is provided', () => {
     renderComponent({
       title: 'Climate Tool',
@@ -297,12 +386,16 @@ describe('ExtendedToolView', () => {
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
       hyperlink: 'https://example.com/tool',
+      image: {
+        scales: { thumb: { download: '/uploaded-tool-thumb.jpg' } },
+      },
     });
 
     expect(useCompareTools).toHaveBeenCalledWith({
       uid: 'tool-uid',
       title: 'Climate Tool',
       href: '/tools/climate-tool',
+      image: '/uploaded-tool-thumb.jpg',
     });
   });
 
