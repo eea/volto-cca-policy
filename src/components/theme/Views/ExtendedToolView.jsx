@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Button, Container, Grid, Icon, Segment } from 'semantic-ui-react';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
   CompareToolsPanel,
   ExtendedToolGeographicMetadata,
@@ -12,6 +14,8 @@ import { FormattedMessage } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
+import { getToolThumbnailUrl } from '../ToolThumbnail/utils';
+import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 import RelatedTools from './RelatedTools';
 
 const ExtendedToolView = (props) => {
@@ -55,11 +59,14 @@ const ExtendedToolView = (props) => {
   const hasGeoChars = Boolean(geochars || spatial_layer?.length);
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
   const hasCompareTool = Boolean(content.UID);
+  const history = useHistory();
+  const currentLang = useSelector((state) => state.intl.locale);
 
   const compareTool = {
     uid: content.UID,
     title,
     href: content['@id'],
+    image: getToolThumbnailUrl(content),
   };
 
   const { isSelected, isLimitReached, toggle } = useCompareTools(compareTool);
@@ -74,6 +81,10 @@ const ExtendedToolView = (props) => {
 
     return () => clearTimeout(timeout);
   }, [isLinkCopied, setIsLinkCopied]);
+
+  const checkNavigatorCatalogue = () => {
+    history.push(getNavigatorCataloguePageURL(currentLang));
+  };
 
   return (
     <div className="extended-tool-view">
@@ -226,6 +237,17 @@ const ExtendedToolView = (props) => {
               className="col-right"
             >
               <Segment className="metadata">
+                <Button
+                  className="primary inverted"
+                  onClick={checkNavigatorCatalogue}
+                >
+                  <Icon className="ri-arrow-left-line" />
+                  <FormattedMessage
+                    id="Check Navigator Catalogue"
+                    defaultMessage="Check Navigator Catalogue"
+                  />
+                </Button>
+
                 <h4 className="metadata-header">Metadata</h4>
 
                 {intended_user_groups?.length > 0 && (

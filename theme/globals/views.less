@@ -481,7 +481,6 @@ hr {
   }
 
   .metadata-header {
-    margin: 0;
     padding-bottom: 0.75rem;
     border-bottom: 1px dashed #dde3e9;
   }
@@ -566,7 +565,8 @@ hr {
     justify-content: space-between;
     margin-bottom: 1em;
     gap: 0.5em;
-    > div {
+
+    > div:not(.navigator-tool-icon) {
       min-width: 0;
       flex: 1 1 auto;
     }
@@ -605,23 +605,6 @@ hr {
 
   .extended-tool-related-card-footer {
     justify-content: flex-end;
-  }
-
-  .extended-tool-related-icon {
-    display: inline-flex;
-    width: 32px;
-    height: 32px;
-    align-items: center;
-    flex: 0 0 auto;
-    justify-content: center;
-    border: 1px solid #d5dde5;
-    border-radius: 3px;
-    background: #f7f9fa;
-    color: #60758a;
-
-    .icon {
-      margin: 0;
-    }
   }
 
   .extended-tool-related-tags {

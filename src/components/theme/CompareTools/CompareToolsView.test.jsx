@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -41,9 +41,7 @@ jest.mock('@plone/volto/registry', () => ({
     settings: {
       searchlib: {
         searchui: {
-          navigatorCatalogueSearch: {
-            landingPageURL: '/en/navigator/tool-catalogue',
-          },
+          navigatorCatalogueSearch: {},
         },
       },
     },
@@ -58,7 +56,7 @@ jest.mock('./utils', () => ({
   getPathname: (url) => url?.split('?')[0] || '',
 }));
 
-describe('CompareToolsView accessibility', () => {
+describe('CompareToolsView', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     useAtom.mockReturnValue([[], jest.fn()]);
@@ -76,6 +74,9 @@ describe('CompareToolsView accessibility', () => {
         cca_uid: { raw: 'one' },
         title: 'Tool one',
         href: '/tool-one',
+        image: {
+          scales: { thumb: { download: '/uploaded-compare-thumb.jpg' } },
+        },
         functionality: { raw: 4 },
         cca_adaptation_support_cycle_step: {
           raw: [{ title: 'Assessing risks' }, { title: 'Monitoring' }],
@@ -85,6 +86,7 @@ describe('CompareToolsView accessibility', () => {
         cca_uid: { raw: 'two' },
         title: 'Tool two',
         href: '/tool-two',
+        image: null,
       },
     ]);
   });
@@ -122,5 +124,45 @@ describe('CompareToolsView accessibility', () => {
     expect(adaptationSteps).toHaveTextContent('Assessing risks');
     expect(adaptationSteps).toHaveTextContent('Monitoring');
     expect(adaptationSteps.children).toHaveLength(2);
+  });
+
+  it('shows the uploaded tool result image and keeps the file icon for a missing image', async () => {
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    const table = await screen.findByRole('table', { name: 'Compare tools' });
+    const [thumbnail, missingThumbnail] = table.querySelectorAll(
+      '.navigator-tool-icon',
+    );
+    const img = thumbnail.querySelector('img');
+
+    expect(thumbnail).toHaveClass('medium');
+    expect(img).toHaveAttribute('src', '/uploaded-compare-thumb.jpg');
+    expect(img).toHaveStyle({ display: 'none' });
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    expect(missingThumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(missingThumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+
+    fireEvent.load(img);
+
+    expect(img.style.display).toBe('');
+    expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+  });
+
+  it('falls back to the file icon when the image fails', async () => {
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    const table = await screen.findByRole('table', { name: 'Compare tools' });
+    const thumbnail = table.querySelector('.navigator-tool-icon');
+
+    fireEvent.error(thumbnail.querySelector('img'));
+
+    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
   });
 });

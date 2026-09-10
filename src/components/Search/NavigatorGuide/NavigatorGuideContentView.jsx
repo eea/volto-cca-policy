@@ -6,10 +6,12 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
+import ToolThumbnail from '../../theme/ToolThumbnail/ToolThumbnail';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions } from './utils';
 import useGuideFacetOptions from './useGuideFacetOptions';
+import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
   noSteps: {
@@ -177,9 +179,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       allowedFields.has(field),
     );
     const query = new URLManager().stateToUrl({ filters: resultFilters });
-    const pathname = (
-      appConfig.resultsPageURL || '/en/navigator/tool-catalogue'
-    ).replace(/^\/en(?=\/|$)/, `/${currentLang}`);
+    const pathname = getNavigatorCataloguePageURL(currentLang);
 
     history.push({ pathname, search: query ? `?${query}` : '' });
   };
@@ -351,12 +351,10 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       className="navigator-guide-preview-result"
                       key={result._original?._id || result.href}
                     >
-                      <div
-                        className="navigator-tool-icon medium"
-                        aria-hidden="true"
-                      >
-                        <Icon className="ri-stack-line" />
-                      </div>
+                      <ToolThumbnail
+                        result={result}
+                        fallbackIcon="ri-stack-line"
+                      />
                       <div className="navigator-guide-preview-result-content">
                         <small
                           className="navigator-tool-provider"
