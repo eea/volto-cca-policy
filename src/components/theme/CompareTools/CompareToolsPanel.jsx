@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
+import ToolThumbnail from '../ToolThumbnail/ToolThumbnail';
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
@@ -89,9 +90,7 @@ export const CompareToolsPanel = () => {
         <div className="compare-panel-tools">
           {effectiveSelectedTools.map((tool) => (
             <div key={tool.uid} className="compare-panel-tool">
-              <span className="navigator-tool-icon small" aria-hidden="true">
-                <Icon className="ri-file-line" />
-              </span>
+              <ToolThumbnail result={tool} size="small" />
               <span className="compare-panel-tool-title">{tool.title}</span>
               <Button
                 className="compare-panel-tool-clear"
