@@ -48,7 +48,7 @@ describe('ExtendedToolGeographicMetadata', () => {
         'Macro-Transnational region:Alpine Space, Danube Area' +
         'Biogeographical regions:Alpine' +
         'Sub Nationals:Prov. Antwerpen (BE)' +
-        'Cities:Brussels',
+        'Municipalities & other:Brussels',
     );
     expect(metadataEl).not.toHaveTextContent('Europe');
 
@@ -58,7 +58,7 @@ describe('ExtendedToolGeographicMetadata', () => {
     expect(titles[1]).toHaveTextContent('Macro-Transnational region:');
     expect(titles[2]).toHaveTextContent('Biogeographical regions:');
     expect(titles[3]).toHaveTextContent('Sub Nationals:');
-    expect(titles[4]).toHaveTextContent('Cities:');
+    expect(titles[4]).toHaveTextContent('Municipalities & other:');
 
     const tagContainers = screen.getAllByTestId('metadata-item-list');
     expect(tagContainers).toHaveLength(5);
@@ -85,7 +85,7 @@ describe('ExtendedToolGeographicMetadata', () => {
     expect(metadataEl).not.toHaveTextContent('Europe');
   });
 
-  it('renders city category as Cities without Europe prefix (e.g. Selected cities)', () => {
+  it('renders city category as Municipalities & other without Europe prefix (e.g. Selected cities)', () => {
     const { container } = renderComponent({
       geochars: JSON.stringify({
         geoElements: {
@@ -98,7 +98,9 @@ describe('ExtendedToolGeographicMetadata', () => {
     const metadataEl = container.querySelector(
       '.extended-tool-geographic-metadata',
     );
-    expect(metadataEl).toHaveTextContent('Cities:Selected cities');
+    expect(metadataEl).toHaveTextContent(
+      'Municipalities & other:Selected cities',
+    );
     expect(metadataEl).not.toHaveTextContent('Europe');
   });
 
