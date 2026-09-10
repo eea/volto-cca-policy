@@ -156,6 +156,7 @@ msgid "Background information"
 msgstr "Informazioni di base"
 
 #. Default: "Biogeographical regions:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Regioni biogeografiche:"
@@ -240,7 +241,14 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr "Scegli la mappa tematica:"
 
-#. Default: "City:"
+#. Default: "Cities:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Cities:"
+msgstr ""
+
+#. Default: "Cities:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Città:"
@@ -350,6 +358,7 @@ msgid "Countries"
 msgstr "Paesi"
 
 #. Default: "Countries:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Paesi:"
@@ -848,6 +857,7 @@ msgid "Looking for more information?"
 msgstr "Cerchi ulteriori informazioni?"
 
 #. Default: "Macro-Transnational region:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Regione macro-transnazionale:"
@@ -1341,6 +1351,7 @@ msgid "Step {current} of {total}"
 msgstr ""
 
 #. Default: "Sub Nationals:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Sottonazionali:"

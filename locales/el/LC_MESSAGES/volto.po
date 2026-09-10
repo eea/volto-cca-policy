@@ -156,6 +156,7 @@ msgid "Background information"
 msgstr "Πληροφορίες ιστορικού"
 
 #. Default: "Biogeographical regions:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Βιογεωγραφικές περιοχές:"
@@ -240,7 +241,14 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr "Επιλέξτε θεματικό χάρτη:"
 
-#. Default: "City:"
+#. Default: "Cities:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Cities:"
+msgstr ""
+
+#. Default: "Cities:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Πόλη:"
@@ -350,6 +358,7 @@ msgid "Countries"
 msgstr "χωρών"
 
 #. Default: "Countries:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Χώρες:"
@@ -848,6 +857,7 @@ msgid "Looking for more information?"
 msgstr "Ψάχνετε για περισσότερες πληροφορίες;"
 
 #. Default: "Macro-Transnational region:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Μακρο-διεθνική περιοχή:"
@@ -1341,6 +1351,7 @@ msgid "Step {current} of {total}"
 msgstr ""
 
 #. Default: "Sub Nationals:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Υποεθνικές:"
