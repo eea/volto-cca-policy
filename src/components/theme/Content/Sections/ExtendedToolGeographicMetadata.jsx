@@ -13,8 +13,12 @@ const messages = defineMessages({
   },
   'Countries:': { id: 'Countries:', defaultMessage: 'Countries:' },
   'Sub Nationals:': { id: 'Sub Nationals:', defaultMessage: 'Sub Nationals:' },
-  'Cities:': { id: 'Cities:', defaultMessage: 'Cities:' },
-  'City:': { id: 'City:', defaultMessage: 'Cities:' },
+  'Municipalities & other:': {
+    id: 'Municipalities & other:',
+    defaultMessage: 'Municipalities & other:',
+  },
+  'Cities:': { id: 'Cities:', defaultMessage: 'Municipalities & other:' },
+  'City:': { id: 'City:', defaultMessage: 'Municipalities & other:' },
 });
 
 const specificSectionKeys = [

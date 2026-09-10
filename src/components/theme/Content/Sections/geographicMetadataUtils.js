@@ -157,7 +157,7 @@ export function renderGeochar(geoElements, isObservatoryPage = false) {
     biotrans: 'Biogeographical regions:',
     countries: 'Countries:',
     subnational: 'Sub Nationals:',
-    city: 'Cities:',
+    city: 'Municipalities & other:',
   };
 
   if (isObservatoryPage) {

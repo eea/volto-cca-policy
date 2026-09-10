@@ -15,6 +15,10 @@ const messages = defineMessages({
   'Sub Nationals:': { id: 'Sub Nationals:', defaultMessage: 'Sub Nationals:' },
   'City:': { id: 'City:', defaultMessage: 'City:' },
   'Cities:': { id: 'Cities:', defaultMessage: 'Cities:' },
+  'Municipalities & other:': {
+    id: 'Municipalities & other:',
+    defaultMessage: 'Municipalities & other:',
+  },
 });
 
 const GeographicMetadata = (props) => {
