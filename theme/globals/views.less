@@ -240,29 +240,29 @@ hr {
 
 .translation-toast {
   position: fixed;
-  height: auto;
+  z-index: 10;
   bottom: -88px;
+  width: 100%;
+  width: 100%;
+  max-width: 1120px;
+  height: auto;
+  padding: 1em;
+  font-size: 0.9rem;
   -webkit-transition: bottom 350ms;
   -moz-transition: bottom 350ms;
   -o-transition: bottom 350ms;
   -ms-transition: bottom 350ms;
   transition: bottom 350ms;
-  width: 100%;
-  max-width: 1120px;
   user-select: none;
-  z-index: 10;
-  width: 100%;
-  padding: 1em;
-  font-size: 0.9rem;
 
   &.warning {
     background: @ccaYellowColor;
   }
 
   &.info {
-    background: #aee2f2;
     z-index: 11;
     height: 88px;
+    background: #aee2f2;
   }
 
   .ui.basic.button {
@@ -286,8 +286,8 @@ hr {
     border: none !important ;
     background: transparent !important;
     box-shadow: none !important;
-    outline: none !important;
     color: @primaryColor !important;
+    outline: none !important;
   }
 }
 
@@ -298,8 +298,9 @@ hr {
 @media only screen and (max-width: 768px) {
   .ui.container.toast-container {
     width: 100% !important;
-    margin-left: auto !important;
     margin-right: auto !important;
+    margin-left: auto !important;
+
     .ui.segment.basic {
       .header {
         flex-direction: row;
@@ -308,8 +309,8 @@ hr {
     }
 
     h5 {
-      font-size: 14px;
       margin-bottom: 0.3em;
+      font-size: 14px;
     }
 
     .translation-toast,
@@ -327,11 +328,11 @@ hr {
 }
 
 .disclaimer-box {
+  padding: 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
   margin: 2em 0;
   background-color: #fbfbfb;
-  padding: 15px;
-  border-radius: 4px;
-  border: 1px solid #e5e5e5;
 }
 
 .broken-links-table {
@@ -357,9 +358,9 @@ hr {
 
 .synergies-list {
   display: flex;
-  gap: 0.5em;
   align-items: center;
   margin-top: 0.5em;
+  gap: 0.5em;
 
   .ui.label {
     font-size: 12px;
@@ -382,17 +383,17 @@ hr {
   }
 
   .ui.image.preview-image {
-    height: 220px;
     width: 100%;
+    height: 220px;
   }
 
   .tabs-block .tabs .tab .column-grid .three.wide.computer.column {
     .block.call-to-action a {
       width: 100%;
       height: 100%;
-      margin-top: 0 !important;
       min-height: 57px;
       align-content: center;
+      margin-top: 0 !important;
     }
   }
 
@@ -444,9 +445,9 @@ hr {
 
   .extended-tool-information-row {
     display: grid;
+    margin-top: 1em;
     gap: 1rem;
     grid-template-columns: 6rem minmax(0, 1fr);
-    margin-top: 1em;
 
     & + & {
       margin-top: 0.75rem;
@@ -474,9 +475,9 @@ hr {
   }
 
   .ui.segment.metadata {
+    padding: 0 0 0 2.5rem;
     border: none;
     border-left: 1px solid #dde3e9;
-    padding: 0 0 0 2.5rem;
     box-shadow: none;
   }
 
@@ -515,6 +516,21 @@ hr {
 
     [role='listitem'] + [role='listitem'] {
       margin-top: 0.4rem;
+    }
+  }
+
+  .extended-tool-geographic-metadata {
+    .geographic-category {
+      & + .geographic-category {
+        margin-top: 0.85rem;
+      }
+    }
+
+    .geographic-category-title {
+      margin-bottom: 0.35rem;
+      color: #4c5a6b;
+      font-size: 0.8125rem;
+      font-weight: 600;
     }
   }
 
@@ -661,9 +677,9 @@ hr {
   border: 1px solid #d5dde5;
   border-radius: 2px;
   color: #4c5a6b;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.25;
-  font-size: 14px;
 }
 
 .navigator-catalogue-compare-view {

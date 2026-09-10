@@ -7,8 +7,14 @@ import ExtendedToolGeographicMetadata from './ExtendedToolGeographicMetadata';
 
 jest.mock('./MetadataItemList', () => ({
   __esModule: true,
-  default: ({ value = [] }) => (
-    <p>{value.map((item) => item.title || item.token || item).join(', ')}</p>
+  default: ({ value = [], asTags, maxItems }) => (
+    <div
+      data-testid="metadata-item-list"
+      data-astags={asTags ? 'true' : 'false'}
+      data-maxitems={maxItems}
+    >
+      {value.map((item) => item.title || item.token || item).join(', ')}
+    </div>
   ),
 }));
 
@@ -20,7 +26,7 @@ const renderComponent = (content) =>
   );
 
 describe('ExtendedToolGeographicMetadata', () => {
-  it('renders geochars in the Extended Tool design order', () => {
+  it('renders categories and tags in order without Europe prefix', () => {
     const { container } = renderComponent({
       geochars: JSON.stringify({
         geoElements: {
@@ -34,22 +40,113 @@ describe('ExtendedToolGeographicMetadata', () => {
       }),
     });
 
-    expect(
-      container.querySelector('.extended-tool-geographic-metadata'),
-    ).toHaveTextContent(
-      'Europe · Germany, France · Alpine Space, Danube Area · Alpine · Prov. Antwerpen (BE) · Brussels',
+    const metadataEl = container.querySelector(
+      '.extended-tool-geographic-metadata',
     );
-    expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+    expect(metadataEl).toHaveTextContent(
+      'Countries:Germany, France' +
+        'Macro-Transnational region:Alpine Space, Danube Area' +
+        'Biogeographical regions:Alpine' +
+        'Sub Nationals:Prov. Antwerpen (BE)' +
+        'Cities:Brussels',
+    );
+    expect(metadataEl).not.toHaveTextContent('Europe');
+
+    const titles = container.querySelectorAll('.geographic-category-title');
+    expect(titles).toHaveLength(5);
+    expect(titles[0]).toHaveTextContent('Countries:');
+    expect(titles[1]).toHaveTextContent('Macro-Transnational region:');
+    expect(titles[2]).toHaveTextContent('Biogeographical regions:');
+    expect(titles[3]).toHaveTextContent('Sub Nationals:');
+    expect(titles[4]).toHaveTextContent('Cities:');
+
+    const tagContainers = screen.getAllByTestId('metadata-item-list');
+    expect(tagContainers).toHaveLength(5);
+    tagContainers.forEach((tc) => {
+      expect(tc).toHaveAttribute('data-astags', 'true');
+      expect(tc).toHaveAttribute('data-maxitems', '3');
+    });
+  });
+
+  it('renders country category without Europe prefix (e.g. Portugal)', () => {
+    const { container } = renderComponent({
+      geochars: JSON.stringify({
+        geoElements: {
+          element: 'EUROPE',
+          countries: ['PT'],
+        },
+      }),
+    });
+
+    const metadataEl = container.querySelector(
+      '.extended-tool-geographic-metadata',
+    );
+    expect(metadataEl).toHaveTextContent('Countries:Portugal');
+    expect(metadataEl).not.toHaveTextContent('Europe');
+  });
+
+  it('renders city category as Cities without Europe prefix (e.g. Selected cities)', () => {
+    const { container } = renderComponent({
+      geochars: JSON.stringify({
+        geoElements: {
+          element: 'EUROPE',
+          city: 'Selected cities',
+        },
+      }),
+    });
+
+    const metadataEl = container.querySelector(
+      '.extended-tool-geographic-metadata',
+    );
+    expect(metadataEl).toHaveTextContent('Cities:Selected cities');
+    expect(metadataEl).not.toHaveTextContent('Europe');
+  });
+
+  it('renders element when no specific regions exist', () => {
+    const { container } = renderComponent({
+      geochars: JSON.stringify({
+        geoElements: {
+          element: 'EUROPE',
+        },
+      }),
+    });
+
+    const metadataEl = container.querySelector(
+      '.extended-tool-geographic-metadata',
+    );
+    expect(metadataEl).toHaveTextContent('Europe');
+    expect(
+      container.querySelector('.geographic-category-title'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('renders Global when element is GLOBAL and no specific regions exist', () => {
+    const { container } = renderComponent({
+      geochars: JSON.stringify({
+        geoElements: {
+          element: 'GLOBAL',
+        },
+      }),
+    });
+
+    const metadataEl = container.querySelector(
+      '.extended-tool-geographic-metadata',
+    );
+    expect(metadataEl).toHaveTextContent('Global');
+    expect(
+      container.querySelector('.geographic-category-title'),
+    ).not.toBeInTheDocument();
   });
 
   it('supports legacy spatial fields', () => {
     const { container } = renderComponent({
-      spatial_layer: 'Global',
+      spatial_layer: 'Countries',
       spatial_values: [{ token: 'France' }],
     });
 
-    expect(
-      container.querySelector('.extended-tool-geographic-metadata'),
-    ).toHaveTextContent('Global · France');
+    const metadataEl = container.querySelector(
+      '.extended-tool-geographic-metadata',
+    );
+    expect(metadataEl).toHaveTextContent('Countries:France');
   });
 });
