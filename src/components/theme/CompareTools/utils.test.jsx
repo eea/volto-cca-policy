@@ -70,9 +70,11 @@ describe('Compare Tools utilities', () => {
   it('resolves comparison identifiers and titles from supported shapes', () => {
     expect(getCompareToolUid({ cca_uid: { raw: 'cca-id' } })).toBe('cca-id');
     expect(getCompareToolUid({ UID: 'plone-id' })).toBe('plone-id');
-    expect(getCompareToolUid({ _result: { cca_uid: { raw: 'raw-id' } } })).toBe(
-      'raw-id',
-    );
+    expect(
+      getCompareToolUid({
+        _result: { cca_uid: { raw: 'raw-id' } },
+      }),
+    ).toBe('raw-id');
     expect(getCompareToolUid({})).toBe('');
     expect(getCompareToolTitle({ title: 'Tool title' })).toBe('Tool title');
     expect(getCompareToolTitle({})).toBe('');
@@ -101,9 +103,13 @@ describe('Compare Tools utilities', () => {
     ).toEqual({
       pathname: '/ro/navigator/compare',
       search: '?uid=one&uid=two&uid=three',
-      state: { returnURL: '/en/navigator/tool-catalogue?q=test' },
+      state: {
+        returnURL: '/en/navigator/tool-catalogue?q=test',
+      },
     });
+
     expect(MAX_COMPARE_TOOLS).toBe(4);
+
     expect(getCompareLocation([])).toEqual({
       pathname: '/en/navigator/compare',
       search: '',
@@ -118,22 +124,46 @@ describe('Compare Tools utilities', () => {
         this.config = config;
       }
     }
+
     const appConfig = {
       index_name: 'data_searchui',
       resultItemModel: { factory: 'resultModel' },
     };
+
     const registry = {
-      searchui: { navigatorCatalogueSearch: appConfig },
-      resolve: { resultModel: ResultModel },
+      searchui: {
+        navigatorCatalogueSearch: appConfig,
+      },
+      resolve: {
+        resultModel: ResultModel,
+      },
     };
+
     runRequest.mockResolvedValue({
-      body: { hits: { hits: [{ _id: 'one' }, { _id: 'two' }] } },
+      body: {
+        hits: {
+          hits: [{ _id: 'one' }, { _id: 'two' }],
+        },
+        aggregations: {
+          allOutputTypes: {
+            values: {
+              buckets: [{ key: 'Map' }, { key: 'Chart' }],
+            },
+          },
+          allCycleSteps: {
+            values: {
+              buckets: [{ key: 'Assess' }, { key: 'Plan' }],
+            },
+          },
+        },
+      },
     });
 
     const results = await fetchResultsByUid(['one', 'two'], registry);
 
     expect(rebind).toHaveBeenCalledWith(appConfig);
     expect(applyConfigurationSchema).toHaveBeenCalledWith(appConfig);
+
     expect(runRequest).toHaveBeenCalledWith(
       {
         index: 'data_searchui',
@@ -142,59 +172,127 @@ describe('Compare Tools utilities', () => {
           bool: {
             minimum_should_match: 1,
             should: [
-              { terms: { 'cca_uid.keyword': ['one', 'two'] } },
-              { terms: { cca_uid: ['one', 'two'] } },
+              {
+                terms: {
+                  'cca_uid.keyword': ['one', 'two'],
+                },
+              },
+              {
+                terms: {
+                  cca_uid: ['one', 'two'],
+                },
+              },
             ],
+          },
+        },
+        aggs: {
+          allOutputTypes: {
+            global: {},
+            aggs: {
+              values: {
+                terms: {
+                  field: 'cca_type_of_outputs.keyword',
+                  size: 10000,
+                },
+              },
+            },
+          },
+          allCycleSteps: {
+            global: {},
+            aggs: {
+              values: {
+                terms: {
+                  field: 'cca_adaptation_support_cycle_step.keyword',
+                  size: 10000,
+                },
+              },
+            },
           },
         },
       },
       appConfig,
     );
+
     expect(results).toHaveLength(2);
     expect(results[0]).toBeInstanceOf(ResultModel);
+    expect(results[1]).toBeInstanceOf(ResultModel);
+
+    expect(results.comparisonOptions).toEqual({
+      cca_type_of_outputs: ['Map', 'Chart'],
+      cca_adaptation_support_cycle_step: ['Assess', 'Plan'],
+    });
   });
 
   it('handles missing hits and configurations without an index', async () => {
     const registry = {
       searchui: {
         navigatorCatalogueSearch: {
-          resultItemModel: { factory: 'resultModel' },
+          resultItemModel: {
+            factory: 'resultModel',
+          },
         },
       },
-      resolve: { resultModel: class ResultModel {} },
+      resolve: {
+        resultModel: class ResultModel {},
+      },
     };
+
     runRequest.mockResolvedValue({});
 
-    await expect(fetchResultsByUid(['one'], registry)).resolves.toEqual([]);
+    const results = await fetchResultsByUid(['one'], registry);
+
+    expect(results).toHaveLength(0);
+
+    expect(results.comparisonOptions).toEqual({
+      cca_type_of_outputs: [],
+      cca_adaptation_support_cycle_step: [],
+    });
+
     expect(runRequest.mock.calls[0][0]).not.toHaveProperty('index');
   });
 
   it('adds, toggles, and removes a comparison tool', () => {
-    renderCompareHarness({ uid: 'one', title: 'Tool one' });
+    renderCompareHarness({
+      uid: 'one',
+      title: 'Tool one',
+    });
 
     expect(screen.getByTestId('selected')).toHaveTextContent('false');
     expect(screen.getByTestId('limit')).toHaveTextContent('false');
 
     fireEvent.click(screen.getByText('Toggle'));
+
     expect(screen.getByTestId('selected')).toHaveTextContent('true');
+
     expect(
       JSON.parse(window.localStorage.getItem('cca-compare-tools')),
-    ).toEqual([{ uid: 'one', title: 'Tool one' }]);
+    ).toEqual([
+      {
+        uid: 'one',
+        title: 'Tool one',
+      },
+    ]);
 
     fireEvent.click(screen.getByText('Select'));
+
     expect(screen.getByTestId('selected')).toHaveTextContent('true');
 
     fireEvent.click(screen.getByText('Remove'));
+
     expect(screen.getByTestId('selected')).toHaveTextContent('false');
+
     expect(
       JSON.parse(window.localStorage.getItem('cca-compare-tools')),
     ).toEqual([]);
   });
 
   it('does not add tools without an identifier', () => {
-    renderCompareHarness({ title: 'Missing UID' });
+    renderCompareHarness({
+      title: 'Missing UID',
+    });
 
     fireEvent.click(screen.getByText('Select'));
+
     expect(screen.getByTestId('selected')).toHaveTextContent('false');
   });
 
@@ -205,15 +303,26 @@ describe('Compare Tools utilities', () => {
         uid: `tool-${index}`,
       }),
     );
-    renderCompareHarness({ uid: 'extra' }, initialTools);
+
+    renderCompareHarness(
+      {
+        uid: 'extra',
+      },
+      initialTools,
+    );
 
     expect(screen.getByTestId('limit')).toHaveTextContent('true');
+
     fireEvent.click(screen.getByText('Select'));
+
     expect(screen.getByTestId('selected')).toHaveTextContent('false');
   });
 
   it('exposes hasMounted state to safely coordinate client hydration', () => {
-    renderCompareHarness({ uid: 'one', title: 'Tool one' });
+    renderCompareHarness({
+      uid: 'one',
+      title: 'Tool one',
+    });
 
     expect(screen.getByTestId('mounted')).toHaveTextContent('true');
   });
@@ -221,10 +330,12 @@ describe('Compare Tools utilities', () => {
   it('tracks mounting status with useHasMounted', () => {
     const MountedComponent = () => {
       const mounted = useHasMounted();
+
       return <div data-testid="mounted-flag">{String(mounted)}</div>;
     };
 
     render(<MountedComponent />);
+
     expect(screen.getByTestId('mounted-flag')).toHaveTextContent('true');
   });
 });
