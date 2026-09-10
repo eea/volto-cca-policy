@@ -14,6 +14,11 @@ const messages = defineMessages({
   'Countries:': { id: 'Countries:', defaultMessage: 'Countries:' },
   'Sub Nationals:': { id: 'Sub Nationals:', defaultMessage: 'Sub Nationals:' },
   'City:': { id: 'City:', defaultMessage: 'City:' },
+  'Cities:': { id: 'Cities:', defaultMessage: 'Cities:' },
+  'Municipalities & other:': {
+    id: 'Municipalities & other:',
+    defaultMessage: 'Municipalities & other:',
+  },
 });
 
 const GeographicMetadata = (props) => {
@@ -61,7 +66,11 @@ const GeographicMetadata = (props) => {
           section.value && (
             <Fragment key={index}>
               {section.title && (
-                <h5>{intl.formatMessage(messages[section.title])}</h5>
+                <h5>
+                  {messages[section.title]
+                    ? intl.formatMessage(messages[section.title])
+                    : section.title}
+                </h5>
               )}
               <p>
                 {section.value

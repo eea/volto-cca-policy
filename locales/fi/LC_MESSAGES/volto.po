@@ -156,6 +156,7 @@ msgid "Background information"
 msgstr "Taustatietoja"
 
 #. Default: "Biogeographical regions:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Biogeographical regions:"
 msgstr "Biomaantieteelliset alueet:"
@@ -220,6 +221,11 @@ msgstr "Luokka"
 msgid "Challenges"
 msgstr "Haasteet"
 
+#. Default: "Check Navigator Catalogue"
+#: components/theme/Views/ExtendedToolView
+msgid "Check Navigator Catalogue"
+msgstr ""
+
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
 msgid "Choose a file"
@@ -240,7 +246,14 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr "Valitse teemakartta:"
 
-#. Default: "City:"
+#. Default: "Municipalities & other:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Cities:"
+msgstr ""
+
+#. Default: "Municipalities & other:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
 msgstr "Kaupunki:"
@@ -350,6 +363,7 @@ msgid "Countries"
 msgstr "maat"
 
 #. Default: "Countries:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Countries:"
 msgstr "Maat:"
@@ -848,6 +862,7 @@ msgid "Looking for more information?"
 msgstr "Etsitkö lisätietoja?"
 
 #. Default: "Macro-Transnational region:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Kansainvälinen makroalue:"
@@ -876,6 +891,12 @@ msgstr "Missiotyökalu"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
 msgstr "Hyödyllisin"
+
+#. Default: "Municipalities & other:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Municipalities & other:"
+msgstr ""
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1226,7 +1247,6 @@ msgstr "Osat"
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-#: components/theme/CompareTools/CompareToolsView
 msgid "Sector"
 msgstr "sektori"
 
@@ -1341,6 +1361,7 @@ msgid "Step {current} of {total}"
 msgstr ""
 
 #. Default: "Sub Nationals:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subkansalaiset:"
