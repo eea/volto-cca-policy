@@ -76,6 +76,7 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_uid: { raw: 'tool-uid' },
       title: 'Climate planning tool',
       href: 'https://example.com/tool',
+      image: '/uploaded-tool-thumb.jpg',
       publication_date: { raw: '2026-07-24' },
       cca_adaptation_sectors: {
         raw: ['Agriculture', 'Water', 'Health', 'Energy'],
@@ -138,6 +139,7 @@ describe('NavigatorCatalogueCardItem', () => {
       uid: 'tool-uid',
       title: 'Climate planning tool',
       href: 'https://example.com/tool',
+      image: '/uploaded-tool-thumb.jpg',
     });
   });
 
@@ -169,5 +171,66 @@ describe('NavigatorCatalogueCardItem', () => {
 
     expect(screen.getByText('Water')).toBeInTheDocument();
     expect(screen.queryByText('License:')).not.toBeInTheDocument();
+  });
+
+  describe('thumbnail rendering and fallback', () => {
+    it('renders thumbnail image and smoothly transitions from placeholder on load', () => {
+      const { container } = renderCard({
+        title: 'Tool with image',
+        href: '/tools/my-tool',
+        image: { scales: { thumb: { download: '/uploaded-thumb.jpg' } } },
+      });
+
+      const img = container.querySelector('.navigator-tool-icon img');
+      expect(img).toBeInTheDocument();
+      expect(img).toHaveAttribute('src', '/uploaded-thumb.jpg');
+      expect(img.parentElement).toHaveClass('navigator-tool-icon', 'large');
+      expect(img).toHaveStyle({ display: 'none' });
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).toBeInTheDocument();
+
+      // Fire load event on image
+      fireEvent.load(img);
+
+      expect(img).not.toHaveStyle({ display: 'none' });
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('falls back to placeholder icon when image fails to load', () => {
+      const { container } = renderCard({
+        title: 'Tool with broken image',
+        href: '/tools/broken-tool',
+      });
+
+      const img = container.querySelector('.navigator-tool-icon img');
+      expect(img).toBeInTheDocument();
+
+      // Fire error event on image (e.g. 404 from backend)
+      fireEvent.error(img);
+
+      expect(
+        container.querySelector('.navigator-tool-icon img'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).toBeInTheDocument();
+    });
+
+    it('renders placeholder icon directly when item has no image or href', () => {
+      const { container } = renderCard({
+        title: 'Tool without image',
+        image: null,
+      });
+
+      expect(
+        container.querySelector('.navigator-tool-icon img'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).toBeInTheDocument();
+    });
   });
 });

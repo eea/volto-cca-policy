@@ -17,6 +17,7 @@ import { GET_BREADCRUMBS } from '@plone/volto/constants/ActionTypes';
 import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
+import ToolThumbnail from '../ToolThumbnail/ToolThumbnail';
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
@@ -382,12 +383,7 @@ const CompareToolsView = () => {
                   <Table.HeaderCell key={tool.id}>
                     <div className="compare-tool-header">
                       <div className="compare-tool-title-row">
-                        <div
-                          className="navigator-tool-icon medium"
-                          aria-hidden="true"
-                        >
-                          <Icon className="ri-file-line" />
-                        </div>
+                        <ToolThumbnail result={tool.result} />
                         <div className="compare-tool-title" title={tool.title}>
                           {tool.title}
                         </div>
