@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -69,7 +69,7 @@ describe('CompareToolsView', () => {
       hash: '',
       state: {},
     });
-    fetchResultsByUid.mockResolvedValue([
+    const results = [
       {
         cca_uid: { raw: 'one' },
         title: 'Tool one',
@@ -78,8 +78,14 @@ describe('CompareToolsView', () => {
           scales: { thumb: { download: '/uploaded-compare-thumb.jpg' } },
         },
         functionality: { raw: 4 },
+        cca_type_of_outputs: { raw: ['Maps and graphs'] },
         cca_adaptation_support_cycle_step: {
-          raw: [{ title: 'Assessing risks' }, { title: 'Monitoring' }],
+          raw: [
+            {
+              title:
+                'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+            },
+          ],
         },
       },
       {
@@ -88,7 +94,16 @@ describe('CompareToolsView', () => {
         href: '/tool-two',
         image: null,
       },
-    ]);
+    ];
+    results.comparisonOptions = {
+      cca_type_of_outputs: ['Reports and decision support', 'Maps and graphs'],
+      cca_adaptation_support_cycle_step: [
+        'Step 10: Additional step from the catalogue',
+        'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+        'Step 1: Preparing the Ground for Adaptation',
+      ],
+    };
+    fetchResultsByUid.mockResolvedValue(results);
   });
 
   it('labels the table, row headers, and remove actions', async () => {
@@ -117,13 +132,61 @@ describe('CompareToolsView', () => {
     expect(
       functionalityScore.querySelectorAll('.functionality-dot.filled'),
     ).toHaveLength(4);
-    const adaptationSteps = screen.getByRole('list', {
+    const cycleHeader = screen.getByRole('rowheader', {
       name: 'Adaptation support cycle step',
     });
-    expect(adaptationSteps).toHaveClass('compare-field-value-list');
-    expect(adaptationSteps).toHaveTextContent('Assessing risks');
-    expect(adaptationSteps).toHaveTextContent('Monitoring');
-    expect(adaptationSteps.children).toHaveLength(2);
+    expect(cycleHeader).toHaveAttribute('scope', 'rowgroup');
+    expect(cycleHeader).toHaveAttribute('rowspan', '3');
+    const cycleRows = within(cycleHeader.closest('tbody')).getAllByRole('row');
+    expect(cycleRows).toHaveLength(3);
+    expect(
+      within(cycleRows[2]).getAllByText(
+        'Step 10: Additional step from the catalogue',
+      ),
+    ).toHaveLength(2);
+    expect(
+      within(cycleRows[1]).getAllByText(
+        'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+      ),
+    ).toHaveLength(2);
+    expect(within(cycleRows[1]).getAllByLabelText('Available')).toHaveLength(1);
+    expect(
+      within(cycleRows[1]).getAllByLabelText('Not available'),
+    ).toHaveLength(1);
+    expect(
+      within(cycleRows[0]).getAllByLabelText('Not available'),
+    ).toHaveLength(2);
+    const outputRow = screen
+      .getByRole('rowheader', { name: 'Output type' })
+      .closest('tr');
+    expect(within(outputRow).getAllByText('Maps and graphs')).toHaveLength(2);
+    expect(within(outputRow).getAllByLabelText('Available')).toHaveLength(1);
+    expect(within(outputRow).getAllByLabelText('Not available')).toHaveLength(
+      1,
+    );
+  });
+
+  it('falls back to selected tool values when aggregations are empty', async () => {
+    const results = await fetchResultsByUid();
+    results.comparisonOptions = {};
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    await screen.findByRole('table', { name: 'Compare tools' });
+    const cycleHeader = screen.getByRole('rowheader', {
+      name: 'Adaptation support cycle step',
+    });
+    expect(cycleHeader).toHaveAttribute('rowspan', '1');
+    expect(
+      within(cycleHeader.closest('tbody')).getAllByText(
+        'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+      ),
+    ).toHaveLength(2);
+    expect(
+      screen.queryByText('Step 1: Preparing the Ground for Adaptation'),
+    ).not.toBeInTheDocument();
   });
 
   it('shows the uploaded tool result image and keeps the file icon for a missing image', async () => {
