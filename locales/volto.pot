@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-09-10T10:00:02.129Z\n"
+"POT-Creation-Date: 2026-09-10T10:01:51.744Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -221,6 +221,11 @@ msgstr ""
 #. Default: "Challenges"
 #: components/theme/Views/CaseStudyView
 msgid "Challenges"
+msgstr ""
+
+#. Default: "Check Navigator Catalogue"
+#: components/theme/Views/ExtendedToolView
+msgid "Check Navigator Catalogue"
 msgstr ""
 
 #. Default: "Choose a file"
@@ -1244,7 +1249,6 @@ msgstr ""
 #. Default: "Sector"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-#: components/theme/CompareTools/CompareToolsView
 msgid "Sector"
 msgstr ""
 
