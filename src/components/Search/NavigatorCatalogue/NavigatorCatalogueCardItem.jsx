@@ -3,6 +3,8 @@ import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
+import ToolThumbnail from '../../theme/ToolThumbnail/ToolThumbnail';
+import { getToolThumbnailUrl } from '../../theme/ToolThumbnail/utils';
 import {
   getCompareToolTitle,
   getCompareToolUid,
@@ -136,6 +138,7 @@ const NavigatorCatalogueCardItem = (props) => {
     uid: getCompareToolUid(result),
     title: getCompareToolTitle(result),
     href: result.href,
+    image: getToolThumbnailUrl(result),
   };
   const { isSelected, isLimitReached, setSelected } =
     useCompareTools(compareTool);
@@ -146,9 +149,7 @@ const NavigatorCatalogueCardItem = (props) => {
 
   return (
     <div className={`navigator-catalogue-item${isSelected ? ' selected' : ''}`}>
-      <div className="navigator-tool-icon large" aria-hidden="true">
-        <Icon className="ri-file-line" />
-      </div>
+      <ToolThumbnail result={result} size="large" />
 
       <div className="catalogue-item-main">
         <div className="catalogue-item-top">
