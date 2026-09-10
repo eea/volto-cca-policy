@@ -92,6 +92,14 @@ const messages = defineMessages({
     id: 'Spatial scale',
     defaultMessage: 'Spatial scale',
   },
+  available: {
+    id: 'Available',
+    defaultMessage: 'Available',
+  },
+  unavailable: {
+    id: 'Not available',
+    defaultMessage: 'Not available',
+  },
   outputType: {
     id: 'Output type',
     defaultMessage: 'Output type',
@@ -129,45 +137,54 @@ const getComparisonOptions = (tools, field) =>
     ),
   ].sort((first, second) => first.localeCompare(second));
 
-const MetadataTags = ({ value, options }) => {
+const ComparisonRows = ({ tools, field, label, options }) => {
   const intl = useIntl();
-  const selectedItems = new Set(
-    asArray(value).map(getMetadataItem).filter(Boolean),
+  const selectedItems = tools.map(
+    (tool) => new Set(asArray(getToolField(tool, field)).map(getMetadataItem)),
   );
 
-  return options.length ? (
-    <div className="metadata-tags">
-      {options.map((item) => (
-        <span
-          className={`metadata-tag${
-            selectedItems.has(item) ? ' selected' : ''
-          }`}
-          key={item}
-        >
-          {intl.formatMessage({ id: item, defaultMessage: item })}
-        </span>
+  return (
+    <Table.Body>
+      {(options.length ? options : [null]).map((item, index) => (
+        <Table.Row key={item || field}>
+          {index === 0 && (
+            <Table.Cell as="th" scope="rowgroup" rowSpan={options.length || 1}>
+              <div className="compare-criteria-title">{label}</div>
+            </Table.Cell>
+          )}
+          {tools.map((tool, toolIndex) =>
+            item ? (
+              <React.Fragment key={tool.id}>
+                <Table.Cell
+                  className={`compare-option-label${
+                    selectedItems[toolIndex].has(item) ? ' available' : ''
+                  }`}
+                >
+                  {intl.formatMessage({ id: item, defaultMessage: item })}
+                </Table.Cell>
+                <Table.Cell className="compare-option-status">
+                  {selectedItems[toolIndex].has(item) ? (
+                    <Icon
+                      className="ri-check-line"
+                      aria-label={intl.formatMessage(messages.available)}
+                    />
+                  ) : (
+                    <Icon
+                      className="ri-subtract-line"
+                      aria-label={intl.formatMessage(messages.unavailable)}
+                    />
+                  )}
+                </Table.Cell>
+              </React.Fragment>
+            ) : (
+              <Table.Cell key={tool.id} colSpan={2}>
+                —
+              </Table.Cell>
+            ),
+          )}
+        </Table.Row>
       ))}
-    </div>
-  ) : (
-    '—'
-  );
-};
-
-const FieldValueList = ({ value, label, options }) => {
-  const selectedItems = new Set(
-    asArray(value).map(getMetadataItem).filter(Boolean),
-  );
-
-  return options.length ? (
-    <ul className="compare-field-value-list" aria-label={label}>
-      {options.map((item) => (
-        <li className={selectedItems.has(item) ? 'selected' : ''} key={item}>
-          {item}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    '—'
+    </Table.Body>
   );
 };
 
@@ -416,6 +433,15 @@ const CompareToolsView = () => {
 
         {!isLoading && hasEnoughTools && (
           <Table celled aria-label={compareToolsTitle} unstackable>
+            <colgroup>
+              <col className="compare-criteria-column" />
+              {visibleTools.map((tool) => (
+                <React.Fragment key={tool.id}>
+                  <col />
+                  <col className="compare-status-column" />
+                </React.Fragment>
+              ))}
+            </colgroup>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>
@@ -424,7 +450,7 @@ const CompareToolsView = () => {
                   </span>
                 </Table.HeaderCell>
                 {visibleTools.map((tool) => (
-                  <Table.HeaderCell key={tool.id}>
+                  <Table.HeaderCell key={tool.id} colSpan={2}>
                     <div className="compare-tool-header">
                       <div className="compare-tool-title-row">
                         <ToolThumbnail result={tool.result} />
@@ -467,7 +493,7 @@ const CompareToolsView = () => {
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
-                  <Table.Cell key={`usability-${tool.id}`}>
+                  <Table.Cell key={`usability-${tool.id}`} colSpan={2}>
                     <div className="usability-value">
                       {getToolFieldDisplay(tool, 'accessibility_and_usability')}
                     </div>
@@ -483,7 +509,7 @@ const CompareToolsView = () => {
                   </div>
                 </Table.Cell>
                 {visibleTools.map((tool) => (
-                  <Table.Cell key={`functionality-${tool.id}`}>
+                  <Table.Cell key={`functionality-${tool.id}`} colSpan={2}>
                     <div className="functionality-value">
                       <FunctionalityScore
                         value={getToolField(tool, 'functionality')}
@@ -492,61 +518,19 @@ const CompareToolsView = () => {
                   </Table.Cell>
                 ))}
               </Table.Row>
-              {/* <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.spatialScale)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`spatial-scale-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_geographical_scale')}
-                  </Table.Cell>
-                ))}
-              </Table.Row> */}
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.outputType)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`output-type-${tool.id}`}>
-                    <MetadataTags
-                      value={getToolField(tool, 'cca_type_of_outputs')}
-                      options={outputOptions}
-                    />
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.adaptationSupportCycleStep)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`adaptation-support-cycle-step-${tool.id}`}>
-                    <FieldValueList
-                      label={intl.formatMessage(
-                        messages.adaptationSupportCycleStep,
-                      )}
-                      value={getToolField(
-                        tool,
-                        'cca_adaptation_support_cycle_step',
-                      )}
-                      options={cycleOptions}
-                    />
-                  </Table.Cell>
-                ))}
-              </Table.Row>
             </Table.Body>
+            <ComparisonRows
+              tools={visibleTools}
+              field="cca_type_of_outputs"
+              label={intl.formatMessage(messages.outputType)}
+              options={outputOptions}
+            />
+            <ComparisonRows
+              tools={visibleTools}
+              field="cca_adaptation_support_cycle_step"
+              label={intl.formatMessage(messages.adaptationSupportCycleStep)}
+              options={cycleOptions}
+            />
           </Table>
         )}
       </Container>
