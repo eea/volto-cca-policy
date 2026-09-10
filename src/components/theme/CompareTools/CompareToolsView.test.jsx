@@ -147,7 +147,7 @@ describe('CompareToolsView', () => {
 
     fireEvent.load(img);
 
-    expect(img).not.toHaveStyle({ display: 'none' });
+    expect(img.style.display).toBe('');
     expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
   });
 

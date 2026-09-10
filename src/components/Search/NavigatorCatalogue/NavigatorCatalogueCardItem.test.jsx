@@ -193,7 +193,7 @@ describe('NavigatorCatalogueCardItem', () => {
       // Fire load event on image
       fireEvent.load(img);
 
-      expect(img).not.toHaveStyle({ display: 'none' });
+      expect(img.style.display).toBe('');
       expect(
         container.querySelector('.navigator-tool-icon .ri-file-line'),
       ).not.toBeInTheDocument();
