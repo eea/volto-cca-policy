@@ -130,6 +130,37 @@ const getComparisonOptions = (tools, field) => {
   );
 };
 
+const getApplicableComparisonOptions = (tools, field) =>
+  [
+    ...new Set(
+      tools
+        .flatMap((tool) => asArray(getToolField(tool, field)))
+        .map(getMetadataItem)
+        .filter(Boolean),
+    ),
+  ].sort((first, second) =>
+    first.localeCompare(second, undefined, { numeric: true }),
+  );
+
+const getExportTools = (tools) => {
+  const comparisonOptions = {
+    ...(tools[0]?.comparisonOptions || {}),
+    cca_type_of_outputs: getApplicableComparisonOptions(
+      tools,
+      'cca_type_of_outputs',
+    ),
+    cca_adaptation_support_cycle_step: getApplicableComparisonOptions(
+      tools,
+      'cca_adaptation_support_cycle_step',
+    ),
+  };
+
+  return tools.map((tool) => ({
+    ...tool,
+    comparisonOptions,
+  }));
+};
+
 const ComparisonRows = ({ tools, field, label, options }) => {
   const intl = useIntl();
   const selectedItems = tools.map(
@@ -262,6 +293,7 @@ const CompareToolsView = () => {
     () => getCompareUids(location.search),
     [location.search],
   );
+
   const registry = config.settings.searchlib;
   const landingPageURL = getNavigatorCataloguePageURL(currentLang);
   const compareToolsTitle = intl.formatMessage(messages.compareTools);
@@ -341,6 +373,7 @@ const CompareToolsView = () => {
     visibleTools,
     'cca_adaptation_support_cycle_step',
   );
+
   const visibleToolsCount = visibleTools.length;
   const hasLoadedRequestedTools = tools.length === ids.length;
   const hasEnoughTools = visibleToolsCount >= 2;
@@ -395,10 +428,16 @@ const CompareToolsView = () => {
               <Icon className="ri-arrow-left-line" />
               {intl.formatMessage(messages.backToResults)}
             </Button>
+
             <Button
               className="primary inverted"
               disabled={!hasEnoughTools}
-              onClick={() => exportComparisonTable(visibleTools, getToolField)}
+              onClick={() =>
+                exportComparisonTable(
+                  getExportTools(visibleTools),
+                  getToolField,
+                )
+              }
             >
               <Icon className="ri-download-2-line" />
               {intl.formatMessage(messages.exportTable)}
@@ -431,6 +470,7 @@ const CompareToolsView = () => {
                 </React.Fragment>
               ))}
             </colgroup>
+
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>
@@ -438,15 +478,18 @@ const CompareToolsView = () => {
                     {intl.formatMessage(messages.criteria)}
                   </span>
                 </Table.HeaderCell>
+
                 {visibleTools.map((tool) => (
                   <Table.HeaderCell key={tool.id} colSpan={2}>
                     <div className="compare-tool-header">
                       <div className="compare-tool-title-row">
                         <ToolThumbnail result={tool.result} />
+
                         <div className="compare-tool-title" title={tool.title}>
                           {tool.title}
                         </div>
                       </div>
+
                       <div className="compare-tool-actions">
                         {tool.href && (
                           <UniversalLink
@@ -457,6 +500,7 @@ const CompareToolsView = () => {
                             <Icon className="ri-external-link-line" />
                           </UniversalLink>
                         )}
+
                         <Button
                           className="icon compare-tool-clear"
                           aria-label={intl.formatMessage(messages.removeTool, {
@@ -472,6 +516,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
             </Table.Header>
+
             <Table.Body>
               <Table.Row>
                 <Table.Cell as="th" scope="row">
@@ -481,6 +526,7 @@ const CompareToolsView = () => {
                     </div>
                   </div>
                 </Table.Cell>
+
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`usability-${tool.id}`} colSpan={2}>
                     <div className="usability-value">
@@ -489,6 +535,7 @@ const CompareToolsView = () => {
                   </Table.Cell>
                 ))}
               </Table.Row>
+
               <Table.Row>
                 <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
@@ -497,6 +544,7 @@ const CompareToolsView = () => {
                     </div>
                   </div>
                 </Table.Cell>
+
                 {visibleTools.map((tool) => (
                   <Table.Cell key={`functionality-${tool.id}`} colSpan={2}>
                     <div className="functionality-value">
@@ -508,12 +556,14 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
             </Table.Body>
+
             <ComparisonRows
               tools={visibleTools}
               field="cca_type_of_outputs"
               label={intl.formatMessage(messages.outputType)}
               options={outputOptions}
             />
+
             <ComparisonRows
               tools={visibleTools}
               field="cca_adaptation_support_cycle_step"
