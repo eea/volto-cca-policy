@@ -221,6 +221,69 @@ describe('ExtendedToolView', () => {
     ).not.toBeInTheDocument();
   });
 
+  describe('related tool thumbnails', () => {
+    const renderRelatedTool = (fields = {}) => {
+      const { container } = renderComponent({
+        title: 'Climate Tool',
+        '@components': {
+          relatedtools: {
+            items: [
+              {
+                '@id': '/tools/coastal-planner',
+                title: 'Coastal planner',
+                ...fields,
+              },
+            ],
+          },
+        },
+      });
+      return container.querySelector(
+        '.extended-tool-related-card .navigator-tool-icon',
+      );
+    };
+
+    it('shows the uploaded thumbnail after loading', () => {
+      const thumbnail = renderRelatedTool({
+        image: {
+          scales: { thumb: { download: '/uploaded-related-thumb.jpg' } },
+        },
+      });
+      const img = thumbnail.querySelector('img');
+
+      expect(thumbnail).toHaveClass('medium');
+      expect(img).toHaveAttribute('src', '/uploaded-related-thumb.jpg');
+      expect(img).toHaveStyle({ display: 'none' });
+      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+
+      fireEvent.load(img);
+
+      expect(img).not.toHaveStyle({ display: 'none' });
+      expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    });
+
+    it('resolves the thumbnail from the related item URL and falls back on error', () => {
+      const thumbnail = renderRelatedTool();
+      const img = thumbnail.querySelector('img');
+
+      expect(img).toHaveAttribute(
+        'src',
+        '/tools/coastal-planner/@@images/image/thumb',
+      );
+
+      fireEvent.error(img);
+
+      expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    });
+
+    it.each([null, false])('shows the file icon for image: %s', (image) => {
+      const thumbnail = renderRelatedTool({ image });
+
+      expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    });
+  });
+
   it('renders the open-tool button when a hyperlink is provided', () => {
     renderComponent({
       title: 'Climate Tool',
@@ -323,12 +386,16 @@ describe('ExtendedToolView', () => {
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
       hyperlink: 'https://example.com/tool',
+      image: {
+        scales: { thumb: { download: '/uploaded-tool-thumb.jpg' } },
+      },
     });
 
     expect(useCompareTools).toHaveBeenCalledWith({
       uid: 'tool-uid',
       title: 'Climate Tool',
       href: '/tools/climate-tool',
+      image: '/uploaded-tool-thumb.jpg',
     });
   });
 

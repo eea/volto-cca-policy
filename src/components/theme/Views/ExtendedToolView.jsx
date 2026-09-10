@@ -14,6 +14,7 @@ import { FormattedMessage } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
+import { getToolThumbnailUrl } from '../ToolThumbnail/utils';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 import RelatedTools from './RelatedTools';
 
@@ -65,6 +66,7 @@ const ExtendedToolView = (props) => {
     uid: content.UID,
     title,
     href: content['@id'],
+    image: getToolThumbnailUrl(content),
   };
 
   const { isSelected, isLimitReached, toggle } = useCompareTools(compareTool);

@@ -1,6 +1,7 @@
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Container, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
+import ToolThumbnail from '../ToolThumbnail/ToolThumbnail';
 
 const messages = defineMessages({
   relatedTools: {
@@ -84,12 +85,7 @@ const RelatedTools = ({ content }) => {
                       </UniversalLink>
                     </h4>
                   </div>
-                  <span
-                    className="extended-tool-related-icon"
-                    aria-hidden="true"
-                  >
-                    <Icon className="ri-file-line" />
-                  </span>
+                  <ToolThumbnail result={item} />
                 </div>
                 {sharedGroups.length > 0 && (
                   <div className="extended-tool-related-tags">

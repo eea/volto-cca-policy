@@ -101,4 +101,58 @@ describe('CompareToolsPanel', () => {
     fireEvent.click(screen.getByText('Clear all'));
     expect(screen.queryByText('Compare tools')).not.toBeInTheDocument();
   });
+
+  it('shows the selected tool thumbnail after loading and preserves empty slot icons', () => {
+    const { container } = renderPanel([
+      {
+        uid: 'one',
+        title: 'Tool one',
+        href: '/tools/one',
+        image: '/uploaded-tool-thumb.jpg',
+      },
+    ]);
+    const thumbnail = container.querySelector(
+      '.compare-panel-tool:not(.placeholder) .navigator-tool-icon',
+    );
+    const img = thumbnail.querySelector('img');
+
+    expect(thumbnail).toHaveClass('small');
+    expect(img).toHaveAttribute('src', '/uploaded-tool-thumb.jpg');
+    expect(img).toHaveStyle({ display: 'none' });
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    expect(
+      container.querySelectorAll('.placeholder .ri-add-line'),
+    ).toHaveLength(3);
+    expect(container.querySelector('.placeholder img')).not.toBeInTheDocument();
+
+    fireEvent.load(img);
+
+    expect(img).not.toHaveStyle({ display: 'none' });
+    expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+  });
+
+  it('uses the URL of an older saved selection and falls back on image error', () => {
+    const { container } = renderPanel([
+      { uid: 'one', title: 'Tool one', href: '/tools/one' },
+    ]);
+    const thumbnail = container.querySelector('.navigator-tool-icon');
+    const img = thumbnail.querySelector('img');
+
+    expect(img).toHaveAttribute('src', '/tools/one/@@images/image/thumb');
+
+    fireEvent.error(img);
+
+    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+  });
+
+  it.each([null, false])('shows the file icon for image: %s', (image) => {
+    const { container } = renderPanel([
+      { uid: 'one', title: 'Tool one', href: '/tools/one', image },
+    ]);
+    const thumbnail = container.querySelector('.navigator-tool-icon');
+
+    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+  });
 });
