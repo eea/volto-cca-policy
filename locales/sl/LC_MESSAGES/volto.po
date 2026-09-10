@@ -241,13 +241,13 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr "Izberite tematski zemljevid:"
 
-#. Default: "Cities:"
+#. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Cities:"
 msgstr ""
 
-#. Default: "Cities:"
+#. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
@@ -886,6 +886,12 @@ msgstr "Orodje misije"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
 msgstr "Najbolj uporaben za"
+
+#. Default: "Municipalities & other:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Municipalities & other:"
+msgstr ""
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter

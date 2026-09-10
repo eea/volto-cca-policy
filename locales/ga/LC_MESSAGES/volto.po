@@ -241,13 +241,13 @@ msgstr ""
 msgid "Choose thematic map:"
 msgstr "Roghnaigh mapa téamach:"
 
-#. Default: "Cities:"
+#. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Cities:"
 msgstr ""
 
-#. Default: "Cities:"
+#. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "City:"
@@ -886,6 +886,12 @@ msgstr "Uirlis misin"
 #: search/mission_tools/facets-tools
 msgid "Most useful for"
 msgstr "An chuid is mó úsáideach le haghaidh"
+
+#. Default: "Municipalities & other:"
+#: components/theme/Content/Sections/ExtendedToolGeographicMetadata
+#: components/theme/Content/Sections/GeographicMetadata
+msgid "Municipalities & other:"
+msgstr ""
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
