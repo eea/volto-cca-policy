@@ -22,7 +22,7 @@ describe('ToolThumbnail', () => {
 
       fireEvent.load(img);
 
-      expect(img).not.toHaveStyle({ display: 'none' });
+      expect(img.style.display).toBe('');
       expect(container.querySelector('.ri-file-line')).not.toBeInTheDocument();
     },
   );
