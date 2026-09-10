@@ -110,15 +110,6 @@ const messages = defineMessages({
   },
 });
 
-const CYCLE_STEP_OPTIONS = [
-  'Step 1: Preparing the Ground for Adaptation',
-  'Step 2: Assessing Climate Change Risks and Vulnerabilities',
-  'Step 3: Identifying Adaptation Options',
-  'Step 4: Assessing and Prioritising Adaptation Options',
-  'Step 5: Implementation',
-  'Step 6: Monitoring and Evaluation (M&E)',
-];
-
 const getToolField = (tool, field) =>
   tool.result?.[field] ?? tool.result?._result?.[field];
 
@@ -127,15 +118,17 @@ const getToolFieldDisplay = (tool, field) =>
 
 const getMetadataItem = (item) => item?.title || item?.token || item;
 
-const getComparisonOptions = (tools, field) =>
-  [
-    ...new Set(
-      tools
-        .flatMap((tool) => asArray(getToolField(tool, field)))
-        .map(getMetadataItem)
-        .filter(Boolean),
-    ),
-  ].sort((first, second) => first.localeCompare(second));
+const getComparisonOptions = (tools, field) => {
+  const fetchedOptions = tools[0]?.comparisonOptions?.[field];
+  const values = fetchedOptions?.length
+    ? fetchedOptions
+    : tools.flatMap((tool) => asArray(getToolField(tool, field)));
+
+  return [...new Set(values.map(getMetadataItem).filter(Boolean))].sort(
+    (first, second) =>
+      first.localeCompare(second, undefined, { numeric: true }),
+  );
+};
 
 const ComparisonRows = ({ tools, field, label, options }) => {
   const intl = useIntl();
@@ -340,18 +333,14 @@ const CompareToolsView = () => {
 
   const failedTools = tools.filter((tool) => tool.error);
   const visibleTools = tools.filter((tool) => !tool.error);
-  const outputTypeOptions = getComparisonOptions(
+  const outputOptions = getComparisonOptions(
     visibleTools,
     'cca_type_of_outputs',
   );
-  const comparisonOptions = visibleTools[0]?.comparisonOptions || {};
-  const outputOptions =
-    comparisonOptions.cca_type_of_outputs?.length > 0
-      ? [...comparisonOptions.cca_type_of_outputs].sort((first, second) =>
-          first.localeCompare(second),
-        )
-      : outputTypeOptions;
-  const cycleOptions = CYCLE_STEP_OPTIONS;
+  const cycleOptions = getComparisonOptions(
+    visibleTools,
+    'cca_adaptation_support_cycle_step',
+  );
   const visibleToolsCount = visibleTools.length;
   const hasLoadedRequestedTools = tools.length === ids.length;
   const hasEnoughTools = visibleToolsCount >= 2;
