@@ -62,13 +62,13 @@ msgid "Adaptation Sectors"
 msgstr "Prilagoditveni sektorji"
 
 #. Default: "Adaptation Support Cycle Step"
-#: search/navigator_catalogue/facets
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
 msgstr ""
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: search/navigator_catalogue/facets
 msgid "Adaptation approaches"
 msgstr "Prilagoditveni pristopi"
 
@@ -81,6 +81,11 @@ msgstr "Možnost prilagajanja"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
 msgstr "Možnosti prilagajanja"
+
+#. Default: "Adaptation policy cycle"
+#: search/navigator_catalogue/facets
+msgid "Adaptation policy cycle"
+msgstr ""
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -138,6 +143,11 @@ msgstr "Ves čas"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+msgstr ""
+
+#. Default: "Available"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Available"
 msgstr ""
 
 #. Default: "Back"
@@ -524,6 +534,11 @@ msgstr "Financiranje spodbujevalnih instrumentov"
 msgid "Find the right tool"
 msgstr ""
 
+#. Default: "Focus areas"
+#: search/navigator_catalogue/facets
+msgid "Focus areas"
+msgstr ""
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
@@ -660,6 +675,11 @@ msgstr "Kategorije možnosti prilagajanja IPCC:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Če imate dodatna vprašanja, se lahko obrnete"
+
+#. Default: "Implementation level"
+#: search/navigator_catalogue/facets
+msgid "Implementation level"
+msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
@@ -825,11 +845,6 @@ msgstr "Pravni vidiki"
 msgid "License"
 msgstr ""
 
-#. Default: "License status"
-#: search/navigator_catalogue/facets
-msgid "License status"
-msgstr ""
-
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -908,11 +923,6 @@ msgstr "Nacionalni HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Rešitve, ki temeljijo na naravi, in pristopi, ki temeljijo na ekosistemu"
 
-#. Default: "Nature-based solution"
-#: search/navigator_catalogue/facets
-msgid "Nature-based solution"
-msgstr ""
-
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Navigate to this item"
@@ -982,6 +992,11 @@ msgstr "Brez rezultatov"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Ne-EU jeziki"
+
+#. Default: "Not available"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Not available"
+msgstr ""
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1473,24 +1488,20 @@ msgstr "Transnacionalne regije"
 msgid "Type"
 msgstr ""
 
-#. Default: "Type of Data"
-#: search/navigator_catalogue/facets
-msgid "Type of Data"
-msgstr ""
-
-#. Default: "Type of Outputs"
-#: search/navigator_catalogue/facets
-msgid "Type of Outputs"
-msgstr ""
-
 #. Default: "Type of item"
 #: search/common
 #: search/mission_all/facets-all
 msgid "Type of item"
 msgstr "Vrsta artikla"
 
+#. Default: "Type of output"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Type of output"
+msgstr ""
+
 #. Default: "Type of outputs"
 #: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
 msgid "Type of outputs"
 msgstr ""
 
@@ -1527,11 +1538,6 @@ msgstr ""
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
-
-#. Default: "User Groups"
-#: search/navigator_catalogue/facets
-msgid "User Groups"
 msgstr ""
 
 #. Default: "User requirements"
