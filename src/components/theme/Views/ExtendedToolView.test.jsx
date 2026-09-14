@@ -574,7 +574,6 @@ describe('ExtendedToolView', () => {
       sectors: [{ title: 'Agriculture' }, { title: 'Health' }],
       type_of_outputs: [{ title: 'Maps' }, { title: 'Charts' }],
       temporality_of_data: [{ title: 'Historical' }, { title: 'Projections' }],
-      tool_available_english: true,
       tool_available_language: [{ title: 'French' }, 'Romanian'],
       intended_user_groups: [{ title: 'Policy makers' }, 'Researchers'],
       accessibility_and_usability: 'Easy to use',
@@ -623,7 +622,7 @@ describe('ExtendedToolView', () => {
     expect(
       screen.getByRole('heading', { name: 'Language' }),
     ).toBeInTheDocument();
-    expect(screen.getByText('English, French, Romanian')).toBeInTheDocument();
+    expect(screen.getByText('French, Romanian')).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: 'User Group' }),
     ).toBeInTheDocument();

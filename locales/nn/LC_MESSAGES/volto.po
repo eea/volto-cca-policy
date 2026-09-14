@@ -62,13 +62,13 @@ msgid "Adaptation Sectors"
 msgstr "Tilpasningssektorer"
 
 #. Default: "Adaptation Support Cycle Step"
-#: search/navigator_catalogue/facets
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
 msgstr ""
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: search/navigator_catalogue/facets
 msgid "Adaptation approaches"
 msgstr "Tilpasningstilnærminger"
 
@@ -81,6 +81,11 @@ msgstr "Tilpassingsalternativ"
 #: components/manage/Blocks/CaseStudyExplorer/FeatureDisplay
 msgid "Adaptation options"
 msgstr "Tilpasningsmuligheter"
+
+#. Default: "Adaptation policy cycle"
+#: search/navigator_catalogue/facets
+msgid "Adaptation policy cycle"
+msgstr ""
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -138,6 +143,11 @@ msgstr "Hele tiden"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
+msgstr ""
+
+#. Default: "Available"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Available"
 msgstr ""
 
 #. Default: "Back"
@@ -524,6 +534,11 @@ msgstr "Financiering van stimuleringsinstrumenten"
 msgid "Find the right tool"
 msgstr ""
 
+#. Default: "Focus areas"
+#: search/navigator_catalogue/facets
+msgid "Focus areas"
+msgstr ""
+
 #. Default: "For more search options"
 #: index
 msgid "For more search options"
@@ -660,6 +675,11 @@ msgstr "IPCC-tilpasningsalternativkategorier:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Hvis du har flere spørsmål kan du kontakte"
+
+#. Default: "Implementation level"
+#: search/navigator_catalogue/facets
+msgid "Implementation level"
+msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
@@ -825,11 +845,6 @@ msgstr "Juridiske aspekter"
 msgid "License"
 msgstr ""
 
-#. Default: "License status"
-#: search/navigator_catalogue/facets
-msgid "License status"
-msgstr ""
-
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -908,11 +923,6 @@ msgstr "Nasjonal HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen"
 
-#. Default: "Nature-based solution"
-#: search/navigator_catalogue/facets
-msgid "Nature-based solution"
-msgstr ""
-
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Navigate to this item"
@@ -982,6 +992,11 @@ msgstr "Ingen resultater"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Niet-EU-talen"
+
+#. Default: "Not available"
+#: components/theme/CompareTools/CompareToolsView
+msgid "Not available"
+msgstr ""
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1473,16 +1488,6 @@ msgstr "Transnasjonale regioner"
 msgid "Type"
 msgstr ""
 
-#. Default: "Type of Data"
-#: search/navigator_catalogue/facets
-msgid "Type of Data"
-msgstr ""
-
-#. Default: "Type of Outputs"
-#: search/navigator_catalogue/facets
-msgid "Type of Outputs"
-msgstr ""
-
 #. Default: "Type of item"
 #: search/common
 #: search/mission_all/facets-all
@@ -1490,7 +1495,9 @@ msgid "Type of item"
 msgstr "Type vare"
 
 #. Default: "Type of outputs"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
 msgid "Type of outputs"
 msgstr ""
 
@@ -1527,11 +1534,6 @@ msgstr ""
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
-
-#. Default: "User Groups"
-#: search/navigator_catalogue/facets
-msgid "User Groups"
 msgstr ""
 
 #. Default: "User requirements"

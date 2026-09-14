@@ -34,7 +34,6 @@ const ExtendedToolView = (props) => {
     adaptation_support_cycle_step,
     type_of_outputs,
     temporality_of_data,
-    tool_available_english,
     tool_available_language,
     accessibility_and_usability,
     tool_input,
@@ -44,17 +43,14 @@ const ExtendedToolView = (props) => {
     used_in,
   } = content;
 
-  const availableLanguages = tool_available_english ? ['English'] : [];
-  if (Array.isArray(tool_available_language)) {
-    availableLanguages.push(...tool_available_language);
-  } else if (tool_available_language) {
-    availableLanguages.push(
-      ...tool_available_language
-        .split(',')
-        .map((language) => language.trim())
-        .filter(Boolean),
-    );
-  }
+  const availableLanguages = Array.isArray(tool_available_language)
+    ? tool_available_language
+    : tool_available_language
+      ? tool_available_language
+          .split(',')
+          .map((language) => language.trim())
+          .filter(Boolean)
+      : [];
 
   const hasGeoChars = Boolean(geochars || spatial_layer?.length);
   const hasHyperlink = Boolean(hyperlink && hyperlink.length > 0);
@@ -293,6 +289,7 @@ const ExtendedToolView = (props) => {
                     />
                   </div>
                 )}
+
                 {adaptation_support_cycle_step?.length > 0 && (
                   <div className="metadata-group adaptation-step">
                     <h5>
@@ -415,6 +412,7 @@ const ExtendedToolView = (props) => {
           </Grid.Row>
         </Grid>
       </Container>
+
       <RelatedTools content={content} />
     </div>
   );

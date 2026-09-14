@@ -33,6 +33,10 @@ const messages = defineMessages({
     id: 'Type',
     defaultMessage: 'Type',
   },
+  typeOfOutput: {
+    id: 'Type of outputs',
+    defaultMessage: 'Type of outputs',
+  },
   compare: {
     id: 'Compare',
     defaultMessage: 'Compare',
@@ -117,7 +121,9 @@ const NavigatorCatalogueCardItem = (props) => {
   const intl = useIntl();
   const sectors = rawValueAsArray(result.cca_adaptation_sectors);
   const hazards = rawValueAsArray(result.cca_climate_impacts);
-  const licenseStatus = rawValueAsArray(result.cca_license_status)
+  const outputs = rawValueAsArray(result.cca_type_of_outputs);
+
+  const outputType = outputs
     .map((value) => value?.title || value)
     .filter(Boolean)
     .join(', ');
@@ -181,19 +187,15 @@ const NavigatorCatalogueCardItem = (props) => {
           <div className="catalogue-meta">
             <CycleElements intl={intl} values={adaptationSupportCycleSteps} />
           </div>
-
           <div className="catalogue-meta license-type">
-            {licenseStatus && (
+            {outputType && (
               <>
-                <span className="catalogue-licence" title={licenseStatus}>
-                  {intl.formatMessage(messages.license)}: {licenseStatus}
+                <span className="catalogue-output" title={outputType}>
+                  {intl.formatMessage(messages.typeOfOutput)}: {outputType}
                 </span>
                 <span aria-hidden="true">·</span>
               </>
             )}
-            <span className="catalogue-type">
-              {intl.formatMessage(messages.type)}: Tool
-            </span>
           </div>
 
           <div className="catalogue-actions">
