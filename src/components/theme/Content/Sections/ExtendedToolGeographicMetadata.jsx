@@ -1,14 +1,57 @@
-import { Fragment } from 'react';
+import { useIntl, defineMessages } from 'react-intl';
 import MetadataItemList from './MetadataItemList';
 import { renderGeochar } from './geographicMetadataUtils';
 
-const sectionOrder = [0, 3, 1, 2, 4, 5];
+const messages = defineMessages({
+  'Macro-Transnational region:': {
+    id: 'Macro-Transnational region:',
+    defaultMessage: 'Macro-Transnational region:',
+  },
+  'Biogeographical regions:': {
+    id: 'Biogeographical regions:',
+    defaultMessage: 'Biogeographical regions:',
+  },
+  'Countries:': { id: 'Countries:', defaultMessage: 'Countries:' },
+  'Sub Nationals:': { id: 'Sub Nationals:', defaultMessage: 'Sub Nationals:' },
+  'Municipalities & other:': {
+    id: 'Municipalities & other:',
+    defaultMessage: 'Municipalities & other:',
+  },
+  'Cities:': { id: 'Cities:', defaultMessage: 'Municipalities & other:' },
+  'City:': { id: 'City:', defaultMessage: 'Municipalities & other:' },
+});
+
+const specificSectionKeys = [
+  'countries',
+  'macrotrans',
+  'biotrans',
+  'subnational',
+  'city',
+];
 
 const getSections = (content) => {
   const { geochars, spatial_layer, spatial_values } = content;
 
   if (!geochars) {
-    return [spatial_layer ? [spatial_layer] : [], spatial_values || []];
+    if (spatial_values?.length) {
+      return [
+        {
+          key: 'spatial_values',
+          title: spatial_layer ? `${spatial_layer}:` : null,
+          value: spatial_values,
+        },
+      ];
+    }
+    if (spatial_layer) {
+      return [
+        {
+          key: 'spatial_layer',
+          title: null,
+          value: [spatial_layer],
+        },
+      ];
+    }
+    return [];
   }
 
   let parsedGeochars;
@@ -20,25 +63,47 @@ const getSections = (content) => {
 
   const renderedSections = renderGeochar(parsedGeochars?.geoElements) || [];
 
-  return sectionOrder.map((index) => renderedSections[index]?.value || []);
+  const specificSections = specificSectionKeys
+    .map((key) => renderedSections.find((section) => section.key === key))
+    .filter((section) => section?.value?.length);
+
+  if (specificSections.length > 0) {
+    return specificSections;
+  }
+
+  const elementSection = renderedSections.find(
+    (section) => section.key === 'element',
+  );
+  return elementSection?.value?.length ? [elementSection] : [];
 };
 
 const ExtendedToolGeographicMetadata = ({ content = {} }) => {
-  const sections = getSections(content).filter((values) => values?.length);
+  const intl = useIntl();
+  const sections = getSections(content);
 
   if (!sections.length) return null;
 
   return (
     <div className="extended-tool-geographic-metadata">
-      {sections.map((values, index) => (
-        <Fragment
-          key={values
-            .map((item) => item?.token || item?.title || item)
-            .join('-')}
+      {sections.map((section) => (
+        <div
+          className="geographic-category"
+          key={
+            section.key ||
+            section.title ||
+            (section.value && section.value[0]) ||
+            'geo'
+          }
         >
-          <MetadataItemList asInline value={values} />
-          {index < sections.length - 1 && ' · '}
-        </Fragment>
+          {section.title && (
+            <div className="geographic-category-title">
+              {messages[section.title]
+                ? intl.formatMessage(messages[section.title])
+                : section.title}
+            </div>
+          )}
+          <MetadataItemList asTags maxItems={3} value={section.value} />
+        </div>
       ))}
     </div>
   );
