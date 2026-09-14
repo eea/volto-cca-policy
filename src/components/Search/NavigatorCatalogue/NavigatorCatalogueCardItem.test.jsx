@@ -84,10 +84,11 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_climate_impacts: {
         raw: ['Drought', 'Flooding', 'Heat', 'Wildfires'],
       },
-      cca_license_status: {
+      cca_type_of_outputs: {
         raw: [
-          'Open data with attribution requirements',
-          { title: 'Restricted' },
+          'Maps and graphs',
+          'Reports and decision support',
+          'Datasets and indicators',
         ],
       },
       adaptation_support_cycle_step: {
@@ -125,11 +126,12 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(screen.getByText('Step 1')).toBeInTheDocument();
     expect(screen.queryByText('Step 4')).not.toBeInTheDocument();
     expect(
-      screen.getByTitle('Open data with attribution requirements, Restricted'),
+      screen.getByTitle(
+        'Maps and graphs, Reports and decision support, Datasets and indicators',
+      ),
     ).toHaveTextContent(
-      'License: Open data with attribution requirements, Restricted',
+      'Output: Maps and graphs, Reports and decision support, Datasets and indicators',
     );
-    expect(screen.getByText('Type: Tool')).toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText('compare'));
     expect(setSelected).toHaveBeenCalledWith(true);
