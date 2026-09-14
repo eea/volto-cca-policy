@@ -1494,12 +1494,8 @@ msgstr ""
 msgid "Type of item"
 msgstr ""
 
-#. Default: "Type of output"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "Type of output"
-msgstr ""
-
 #. Default: "Type of outputs"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"

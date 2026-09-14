@@ -130,7 +130,7 @@ describe('NavigatorCatalogueCardItem', () => {
         'Maps and graphs, Reports and decision support, Datasets and indicators',
       ),
     ).toHaveTextContent(
-      'Type of output: Maps and graphs, Reports and decision support, Datasets and indicators',
+      'Type of outputs: Maps and graphs, Reports and decision support, Datasets and indicators',
     );
 
     fireEvent.click(screen.getByLabelText('compare'));

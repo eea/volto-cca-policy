@@ -34,8 +34,8 @@ const messages = defineMessages({
     defaultMessage: 'Type',
   },
   typeOfOutput: {
-    id: 'Type of output',
-    defaultMessage: 'Type of output',
+    id: 'Type of outputs',
+    defaultMessage: 'Type of outputs',
   },
   compare: {
     id: 'Compare',
