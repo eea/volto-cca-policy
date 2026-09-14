@@ -12,28 +12,24 @@ const messages = defineMessages({
     defaultMessage: 'Climate hazards',
   },
   adaptationSupportCycleStep: {
-    id: 'Adaptation Support Cycle Step',
-    defaultMessage: 'Adaptation Support Cycle Step',
-  },
-  userGroups: {
-    id: 'User Groups',
-    defaultMessage: 'User Groups',
+    id: 'Adaptation policy cycle',
+    defaultMessage: 'Adaptation policy cycle',
   },
   typeOfOutputs: {
-    id: 'Type of Outputs',
-    defaultMessage: 'Type of Outputs',
+    id: 'Type of outputs',
+    defaultMessage: 'Type of outputs',
   },
-  typeOfData: {
-    id: 'Type of Data',
-    defaultMessage: 'Type of Data',
+  focusAreas: {
+    id: 'Focus areas',
+    defaultMessage: 'Focus areas',
   },
-  licenseStatus: {
-    id: 'License status',
-    defaultMessage: 'License status',
+  implementationLevel: {
+    id: 'Implementation level',
+    defaultMessage: 'Implementation level',
   },
-  natureBasedSolution: {
-    id: 'Nature-based solution',
-    defaultMessage: 'Nature-based solution',
+  adaptationApproaches: {
+    id: 'Adaptation approaches',
+    defaultMessage: 'Adaptation approaches',
   },
 });
 
@@ -59,13 +55,6 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_intended_user_groups.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: messages.userGroups,
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
     field: 'cca_type_of_outputs.keyword',
     isFilterable: false,
     isMulti: true,
@@ -73,24 +62,24 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_type_of_data.keyword',
+    field: 'cca_focus_areas.keyword',
     isFilterable: false,
     isMulti: true,
-    label: messages.typeOfData,
+    label: messages.focusAreas,
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_license_status.keyword',
+    field: 'cca_place_of_implementation.keyword',
     isFilterable: false,
     isMulti: true,
-    label: messages.licenseStatus,
+    label: messages.implementationLevel,
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_nature_based_solution.keyword',
+    field: 'cca_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: messages.natureBasedSolution,
+    label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
 ];
