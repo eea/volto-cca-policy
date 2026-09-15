@@ -189,12 +189,9 @@ const NavigatorCatalogueCardItem = (props) => {
           </div>
           <div className="catalogue-meta license-type">
             {outputType && (
-              <>
-                <span className="catalogue-output" title={outputType}>
-                  {intl.formatMessage(messages.typeOfOutput)}: {outputType}
-                </span>
-                <span aria-hidden="true">·</span>
-              </>
+              <span className="catalogue-output" title={outputType}>
+                {intl.formatMessage(messages.typeOfOutput)}: {outputType}
+              </span>
             )}
           </div>
 
