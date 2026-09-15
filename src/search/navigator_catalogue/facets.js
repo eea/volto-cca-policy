@@ -45,8 +45,21 @@ const facets = [
     show: 10000,
     isMulti: true,
   },
+  multiTermFacet({
+    field: 'cca_focus_areas.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.focusAreas,
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_place_of_implementation.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.implementationLevel,
+    alwaysVisible: false,
+  }),
   geographic_countries,
-  language,
   multiTermFacet({
     field: 'cca_adaptation_support_cycle_step.keyword',
     isFilterable: false,
@@ -62,26 +75,13 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_focus_areas.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: messages.focusAreas,
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_place_of_implementation.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: messages.implementationLevel,
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
     field: 'cca_elements.keyword',
     isFilterable: false,
     isMulti: true,
     label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
+  language,
 ];
 
 export default facets;
