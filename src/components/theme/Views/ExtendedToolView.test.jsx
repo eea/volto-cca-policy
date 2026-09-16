@@ -531,10 +531,8 @@ describe('ExtendedToolView', () => {
     renderComponent({
       title: 'Climate Tool',
       place_of_implementation: ['Europe'],
-      data_sources: ['Satellite'],
       license_status: ['Open source'],
       user_support_provisions: ['Documentation'],
-      tool_validation_use: ['Validated'],
       number_of_users_tool: ['More than 1,000'],
       functionality: 4,
       underlying_data_maintenance: 'Updated yearly',
@@ -542,10 +540,8 @@ describe('ExtendedToolView', () => {
     });
 
     expect(screen.queryByText('Europe')).not.toBeInTheDocument();
-    expect(screen.queryByText('Satellite')).not.toBeInTheDocument();
     expect(screen.queryByText('Open source')).not.toBeInTheDocument();
     expect(screen.queryByText('Documentation')).not.toBeInTheDocument();
-    expect(screen.queryByText('Validated')).not.toBeInTheDocument();
     expect(screen.queryByText('More than 1,000')).not.toBeInTheDocument();
     expect(screen.queryByText('4')).not.toBeInTheDocument();
     expect(screen.queryByText('Updated yearly')).not.toBeInTheDocument();
@@ -576,6 +572,23 @@ describe('ExtendedToolView', () => {
       temporality_of_data: [{ title: 'Historical' }, { title: 'Projections' }],
       tool_available_language: [{ title: 'French' }, 'Romanian'],
       intended_user_groups: [{ title: 'Policy makers' }, 'Researchers'],
+      data_sources: [
+        {
+          title: 'Public datasets from external providers',
+          token: 'PUBLIC_DATASETS',
+        },
+        {
+          title: 'Project-generated or processed datasets',
+          token: 'PROJECT_GENERATED',
+        },
+        { title: 'Mixed sources', token: 'MIXED_SOURCES' },
+      ],
+      tool_validation_use: [
+        {
+          title: 'Expert validation / reputable institution',
+          token: 'EXPERT_VALIDATION',
+        },
+      ],
       accessibility_and_usability: 'Easy to use',
     });
 
@@ -623,6 +636,20 @@ describe('ExtendedToolView', () => {
       screen.getByRole('heading', { name: 'Language' }),
     ).toBeInTheDocument();
     expect(screen.getByText('French, Romanian')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Data sources' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'Public datasets from external providers, Project-generated or processed datasets, Mixed sources',
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Tool validation use' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Expert validation / reputable institution'),
+    ).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: 'User Group' }),
     ).toBeInTheDocument();
