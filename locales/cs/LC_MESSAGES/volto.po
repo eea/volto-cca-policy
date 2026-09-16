@@ -393,6 +393,11 @@ msgstr ""
 msgid "Cycle"
 msgstr ""
 
+#. Default: "Data sources"
+#: components/theme/Views/ExtendedToolView
+msgid "Data sources"
+msgstr ""
+
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
@@ -1461,6 +1466,11 @@ msgstr ""
 #: messages
 msgid "Tool"
 msgstr "Nástroj"
+
+#. Default: "Tool validation use"
+#: components/theme/Views/ExtendedToolView
+msgid "Tool validation use"
+msgstr ""
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
