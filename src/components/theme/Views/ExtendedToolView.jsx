@@ -35,6 +35,8 @@ const ExtendedToolView = (props) => {
     type_of_outputs,
     temporality_of_data,
     tool_available_language,
+    data_sources,
+    tool_validation_use,
     accessibility_and_usability,
     tool_input,
     tool_output,
@@ -404,6 +406,40 @@ const ExtendedToolView = (props) => {
                           ? accessibility_and_usability
                           : [accessibility_and_usability]
                       }
+                    />
+                  </div>
+                )}
+
+                {data_sources?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Data sources"
+                        defaultMessage="Data sources"
+                      />
+                    </h5>
+
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={data_sources}
+                    />
+                  </div>
+                )}
+
+                {tool_validation_use?.length > 0 && (
+                  <div className="metadata-group">
+                    <h5>
+                      <FormattedMessage
+                        id="Tool validation use"
+                        defaultMessage="Tool validation use"
+                      />
+                    </h5>
+
+                    <MetadataItemList
+                      asTags
+                      maxItems={3}
+                      value={tool_validation_use}
                     />
                   </div>
                 )}
