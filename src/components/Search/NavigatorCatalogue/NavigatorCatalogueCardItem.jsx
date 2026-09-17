@@ -25,14 +25,6 @@ const messages = defineMessages({
     id: 'Cycle',
     defaultMessage: 'Cycle',
   },
-  license: {
-    id: 'License',
-    defaultMessage: 'License',
-  },
-  type: {
-    id: 'Type',
-    defaultMessage: 'Type',
-  },
   typeOfOutput: {
     id: 'Type of outputs',
     defaultMessage: 'Type of outputs',
@@ -54,9 +46,11 @@ const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'UTC',
 });
 
-const TagGroup = ({ typeLabel, values, type }) => {
-  const visible = values.slice(0, 3);
-  const hidden = values.slice(3);
+const TagGroup = ({ typeLabel, values, type, maxItems }) => {
+  const visible = Number.isFinite(maxItems)
+    ? values.slice(0, maxItems)
+    : values;
+  const hidden = Number.isFinite(maxItems) ? values.slice(maxItems) : [];
   const remaining = values.length - visible.length;
 
   return (
@@ -121,6 +115,7 @@ const NavigatorCatalogueCardItem = (props) => {
   const intl = useIntl();
   const sectors = rawValueAsArray(result.cca_adaptation_sectors);
   const hazards = rawValueAsArray(result.cca_climate_impacts);
+  const keywords = rawValueAsArray(result.cca_keywords);
   const outputs = rawValueAsArray(result.cca_type_of_outputs);
 
   const outputType = outputs
@@ -138,8 +133,6 @@ const NavigatorCatalogueCardItem = (props) => {
   const formattedPublicationDate = publicationDate
     ? publicationDateFormatter.format(new Date(publicationDate))
     : '';
-  const sectorLabel = intl.formatMessage(messages.sector);
-  const hazardLabel = intl.formatMessage(messages.hazard);
   const compareTool = {
     uid: getCompareToolUid(result),
     title: getCompareToolTitle(result),
@@ -179,8 +172,22 @@ const NavigatorCatalogueCardItem = (props) => {
         </p>
 
         <div className="catalogue-taxonomy">
-          <TagGroup typeLabel={sectorLabel} values={sectors} type="sector" />
-          <TagGroup typeLabel={hazardLabel} values={hazards} type="hazard" />
+          <TagGroup
+            typeLabel={intl.formatMessage(messages.sector)}
+            values={sectors}
+            type="sector"
+            maxItems={3}
+          />
+          <TagGroup
+            typeLabel={intl.formatMessage(messages.hazard)}
+            values={hazards}
+            type="hazard"
+            maxItems={3}
+          />
+        </div>
+
+        <div className="catalogue-keywords">
+          <TagGroup values={keywords} type="keyword" />
         </div>
 
         <div className="catalogue-item-footer">
