@@ -142,4 +142,111 @@ describe('remarkCcaDocCards', () => {
     expect(cards(result)).toEqual(['real']);
     expect(result.children[0].value).toBe('![[doc: not a text node]]');
   });
+
+  it('tolerates case variations, document keyword, optional exclamation, and spaces before colon', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'text',
+          value:
+            '![[Doc: Title One]] and ![[DOC: Title Two]] and ![[Document: Title Three]] and ![[doc : Title Four]] and [[doc: Title Five]] and ![[tool: Title Six]] and ![doc: Title Seven]',
+        },
+      ],
+    };
+    const result = applyPlugin(tree);
+    expect(cards(result)).toEqual([
+      'Title One',
+      'Title Two',
+      'Title Three',
+      'Title Four',
+      'Title Five',
+      'Title Six',
+      'Title Seven',
+    ]);
+  });
+
+  it('unwraps accidental code blocks containing markers and recommended tools heading', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'heading',
+          depth: 3,
+          children: [{ type: 'text', value: 'Recommended tools' }],
+        },
+        {
+          type: 'code',
+          lang: 'markdown',
+          value: '### Recommended tools\n![[doc: Urban AST]]\n![[doc: OPPLA]]',
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    // Heading should be deduplicated, and 2 cards should be rendered
+    const headings = result.children.filter((n) => n.type === 'heading');
+    expect(headings).toHaveLength(1);
+    expect(headings[0].children[0].value).toBe('Recommended tools');
+    expect(cards(result)).toEqual(['Urban AST', 'OPPLA']);
+  });
+
+  it('converts markers wrapped in inlineCode (backticks)', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: '![[doc: Backticked Tool]]',
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children[0].type).toBe('ccaDocCard');
+    expect(result.children[0].value).toBe('Backticked Tool');
+  });
+
+  it('unwraps lists that only contain document cards into standalone cards', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'list',
+          children: [
+            {
+              type: 'listItem',
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [{ type: 'text', value: '![[doc: Tool A]]' }],
+                },
+              ],
+            },
+            {
+              type: 'listItem',
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [{ type: 'text', value: '![[doc: Tool B]]' }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children).toHaveLength(2);
+    expect(result.children[0].type).toBe('ccaDocCard');
+    expect(result.children[0].value).toBe('Tool A');
+    expect(result.children[1].type).toBe('ccaDocCard');
+    expect(result.children[1].value).toBe('Tool B');
+  });
 });
