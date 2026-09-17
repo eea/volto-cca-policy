@@ -845,11 +845,6 @@ msgstr "További információ"
 msgid "Legal aspects"
 msgstr "Jogi szempontok"
 
-#. Default: "License"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "License"
-msgstr ""
-
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -1492,11 +1487,6 @@ msgstr "Témák:"
 #: search/cca/facets
 msgid "Transnational regions"
 msgstr "Transznacionális régiók"
-
-#. Default: "Type"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "Type"
-msgstr ""
 
 #. Default: "Type of item"
 #: search/common

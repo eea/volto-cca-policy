@@ -845,11 +845,6 @@ msgstr "Saperne di più"
 msgid "Legal aspects"
 msgstr "Aspetti legali"
 
-#. Default: "License"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "License"
-msgstr ""
-
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -1492,11 +1487,6 @@ msgstr "Argomenti:"
 #: search/cca/facets
 msgid "Transnational regions"
 msgstr "Regioni transnazionali"
-
-#. Default: "Type"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
-msgid "Type"
-msgstr ""
 
 #. Default: "Type of item"
 #: search/common
