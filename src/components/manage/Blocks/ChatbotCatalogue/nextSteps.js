@@ -8,29 +8,23 @@
  * (see CatalogueChatView and MessageTextRenderer).
  */
 
-export const NEXT_STEPS_HEADING_RE =
-  /^(suggested\s+next\s+steps|next\s+steps|how\s+to\s+use(\s+(them|these|this|the\s+tools))?)\b/i;
+import {
+  NEXT_STEPS_HEADING_RE,
+  getNodeText,
+  isNextStepsHeading,
+  parseMarkdownLines,
+} from './astUtils';
 
-export function getNodeText(node) {
-  if (!node) return '';
-  if (typeof node.value === 'string') return node.value;
-  if (Array.isArray(node.children)) {
-    return node.children.map(getNodeText).join('');
-  }
-  return '';
-}
-
-export function isNextStepsHeading(node) {
-  if (!node || node.type !== 'heading') return false;
-  const text = getNodeText(node).trim();
-  return NEXT_STEPS_HEADING_RE.test(text);
-}
+export { NEXT_STEPS_HEADING_RE, getNodeText, isNextStepsHeading };
 
 function transformContainer(children) {
   for (let i = 0; i < children.length; i += 1) {
     const node = children[i];
     if (isNextStepsHeading(node)) {
-      const rawTitle = getNodeText(node).trim().replace(/:$/, '').trim();
+      const rawTitle = getNodeText(node)
+        .trim()
+        .replace(/^[:\s#*]+|[:\s*]+$/g, '')
+        .trim();
       const title = rawTitle || 'Suggested next steps';
 
       const collected = [];
@@ -40,11 +34,19 @@ function transformContainer(children) {
         if (
           sibling.type === 'heading' ||
           sibling.type === 'thematicBreak' ||
-          sibling.type === 'ccaDocCard'
+          sibling.type === 'ccaDocCard' ||
+          (sibling.type !== 'code' && isNextStepsHeading(sibling))
         ) {
           break;
         }
-        collected.push(sibling);
+        if (sibling.type === 'code') {
+          // If sibling is an accidental code block, unwrap its lines into mdast nodes
+          const unwrapped = parseMarkdownLines(sibling.value);
+          const filtered = unwrapped.filter((n) => !isNextStepsHeading(n));
+          collected.push(...filtered);
+        } else {
+          collected.push(sibling);
+        }
         j += 1;
       }
 
@@ -60,7 +62,7 @@ function transformContainer(children) {
       };
 
       // Replace heading and all collected siblings with the container node
-      children.splice(i, 1 + collected.length, containerNode);
+      children.splice(i, 1 + (j - (i + 1)), containerNode);
     } else if (
       node.children &&
       Array.isArray(node.children) &&

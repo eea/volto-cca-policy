@@ -165,4 +165,73 @@ describe('remarkCcaNextSteps plugin', () => {
     expect(result.children[0].type).toBe('ccaNextSteps');
     expect(result.children[0].children).toHaveLength(0);
   });
+
+  it('unwraps a following code block containing list items into real list items', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'heading',
+          depth: 3,
+          children: [{ type: 'text', value: 'Suggested next steps' }],
+        },
+        {
+          type: 'code',
+          lang: 'markdown',
+          value:
+            '### Suggested next steps\n1. First action with **Tool A**\n2. Second action with **Tool B**',
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children).toHaveLength(1);
+    const container = result.children[0];
+    expect(container.type).toBe('ccaNextSteps');
+    expect(container.data.hProperties.title).toBe('Suggested next steps');
+    // Code block was unwrapped, duplicate heading filtered out, leaving list
+    expect(container.children).toHaveLength(1);
+    expect(container.children[0].type).toBe('list');
+    expect(container.children[0].children).toHaveLength(2);
+  });
+
+  it('transforms bold paragraph headings into ccaNextSteps container', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'strong',
+              children: [{ type: 'text', value: 'Suggested next steps:' }],
+            },
+          ],
+        },
+        {
+          type: 'list',
+          ordered: true,
+          children: [
+            {
+              type: 'listItem',
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [{ type: 'text', value: 'Step 1' }],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children).toHaveLength(1);
+    expect(result.children[0].type).toBe('ccaNextSteps');
+    expect(result.children[0].data.hProperties.title).toBe(
+      'Suggested next steps',
+    );
+    expect(result.children[0].children).toHaveLength(1);
+  });
 });
