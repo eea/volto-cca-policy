@@ -234,4 +234,52 @@ describe('remarkCcaNextSteps plugin', () => {
     );
     expect(result.children[0].children).toHaveLength(1);
   });
+
+  it('cleans stray leading asterisks from list items in ccaNextSteps container', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'heading',
+          depth: 3,
+          children: [{ type: 'text', value: 'Suggested next steps' }],
+        },
+        {
+          type: 'list',
+          ordered: true,
+          children: [
+            {
+              type: 'listItem',
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'text',
+                      value: '**Run a rapid screening with the ',
+                    },
+                    {
+                      type: 'strong',
+                      children: [{ type: 'text', value: 'Tool A' }],
+                    },
+                    {
+                      type: 'text',
+                      value: ' for risks',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children).toHaveLength(1);
+    const container = result.children[0];
+    const list = container.children[0];
+    const firstTextNode = list.children[0].children[0].children[0];
+    expect(firstTextNode.value).toBe('Run a rapid screening with the ');
+  });
 });

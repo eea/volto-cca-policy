@@ -19,7 +19,9 @@
 
 import {
   DOC_MARKER_RE,
+  cleanStrayLeadingAsterisks,
   deduplicateAdjacentHeadings,
+  normalizeCitationParagraphsToLists,
   parseMarkdownLines,
   shouldUnwrapCodeNode,
   unwrapCardLists,
@@ -131,6 +133,12 @@ export const remarkCcaDocCards = function () {
 
     // 5. Unwrap paragraphs that only contain ccaDocCard nodes
     unwrapCardParagraphs(tree.children);
+
+    // 6. Normalize citation paragraphs following lists into list items
+    normalizeCitationParagraphsToLists(tree.children);
+
+    // 7. Clean stray unclosed leading asterisks in list items and paragraphs
+    cleanStrayLeadingAsterisks(tree);
 
     return tree;
   };
