@@ -84,6 +84,9 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_climate_impacts: {
         raw: ['Drought', 'Flooding', 'Heat', 'Wildfires'],
       },
+      cca_keywords: {
+        raw: ['Planning', 'Risk assessment', 'Resilience', 'Adaptation'],
+      },
       cca_type_of_outputs: {
         raw: [
           'Maps and graphs',
@@ -123,6 +126,10 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(
       screen.getByRole('button', { name: 'Hazard: Wildfires' }),
     ).toBeInTheDocument();
+    expect(screen.getByText('Planning')).toBeInTheDocument();
+    expect(screen.getByText('Risk assessment')).toBeInTheDocument();
+    expect(screen.getByText('Resilience')).toBeInTheDocument();
+    expect(screen.getByText('Adaptation')).toBeInTheDocument();
     expect(screen.getByText('Step 1')).toBeInTheDocument();
     expect(screen.queryByText('Step 4')).not.toBeInTheDocument();
     expect(
