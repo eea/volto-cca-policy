@@ -56,13 +56,19 @@ export function matchesDocumentTitle(docTitle, searchTitle) {
 
 function formatDate(value) {
   if (!value) return null;
-  const d = new Date(value);
-  if (Number.isNaN(d.getTime())) return null;
-  return d.toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: '2-digit',
-  });
+  const raw = Array.isArray(value) ? value[0] : value;
+  if (!raw || typeof raw === 'object') return null;
+  try {
+    const d = new Date(raw);
+    if (Number.isNaN(d.getTime())) return null;
+    return d.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: '2-digit',
+    });
+  } catch {
+    return null;
+  }
 }
 
 // `InlineDocCard` rebuilds the `source` object on every render (the answer is
@@ -161,6 +167,33 @@ const DocumentCard = memo(function DocumentCard({ source, index }) {
   );
 }, sourcePropsEqual);
 
+export class DocCardErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'DocCard failed to render rich catalogue card, falling back to base card:',
+      error,
+      info,
+    );
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
+}
+
 /**
  * Document card that upgrades itself: while it has only the Onyx-provided
  * fields it renders the basic `DocumentCard`; once the globalsearch ES
@@ -177,9 +210,13 @@ const EnhancedDocCard = memo(function EnhancedDocCard({ source, index }) {
 
   if (result) {
     return (
-      <div className="catalogue-chat-navigator-card">
-        <NavigatorCatalogueCardItem result={result} />
-      </div>
+      <DocCardErrorBoundary
+        fallback={<DocumentCard source={source} index={index} />}
+      >
+        <div className="catalogue-chat-navigator-card">
+          <NavigatorCatalogueCardItem result={result} />
+        </div>
+      </DocCardErrorBoundary>
     );
   }
   return <DocumentCard source={source} index={index} />;

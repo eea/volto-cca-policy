@@ -146,4 +146,16 @@ describe('useCatalogueDoc', () => {
       registry,
     );
   });
+
+  it('normalizes relative URLs to full Climate-ADAPT URL with /en/ prefix', async () => {
+    fetchResult.mockResolvedValue({ found: true });
+    renderHook(() => useCatalogueDoc('/metadata/tools/relative-tool/'));
+    await flushPromises();
+
+    expect(fetchResult).toHaveBeenCalledWith(
+      'https://climate-adapt.eea.europa.eu/en/metadata/tools/relative-tool',
+      appConfig,
+      registry,
+    );
+  });
 });

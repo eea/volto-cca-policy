@@ -37,14 +37,18 @@ export function normalizeCatalogueUrl(url) {
   while (normalized.endsWith('/')) {
     normalized = normalized.slice(0, -1);
   }
+  const ccaDomain = 'https://climate-adapt.eea.europa.eu';
   // Map localhost or cca.localhost to production domain used in the globalsearch index
   normalized = normalized.replace(
     /^https?:\/\/(?:cca\.localhost|localhost(?::\d+)?)/i,
-    'https://climate-adapt.eea.europa.eu',
+    ccaDomain,
   );
+  // Prepend domain for relative URLs
+  if (normalized.startsWith('/') && !normalized.startsWith('//')) {
+    normalized = `${ccaDomain}${normalized}`;
+  }
   // Ensure /en/ prefix for metadata or other paths in Climate-ADAPT
   // e.g. https://climate-adapt.eea.europa.eu/metadata/... -> https://climate-adapt.eea.europa.eu/en/metadata/...
-  const ccaDomain = 'https://climate-adapt.eea.europa.eu';
   if (normalized.toLowerCase().startsWith(ccaDomain.toLowerCase())) {
     const path = normalized.slice(ccaDomain.length);
     if (path.startsWith('/') && !path.startsWith('/en/') && path !== '/en') {
