@@ -16,62 +16,6 @@
   margin: 8px 0;
 }
 
-// Basic fallback card, shown until the globalsearch `_doc` lookup (by URL)
-// resolves and upgrades it to the full Navigator card.
-.catalogue-chat-card {
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
-  border: 1px solid #d9d9d9;
-  border-radius: 6px;
-  background: white;
-  gap: 6px;
-
-  &:hover {
-    border-color: #0067b1;
-  }
-
-  .catalogue-chat-card-header {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-
-    .chat-citation {
-      cursor: default;
-    }
-  }
-
-  .catalogue-chat-card-title {
-    color: #0067b1;
-    font-weight: 600;
-    line-height: 1.3;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .catalogue-chat-card-blurb {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    color: #555;
-    font-size: 0.85em;
-    -webkit-line-clamp: 3;
-  }
-
-  .catalogue-chat-card-footer {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 6px;
-    border-top: 1px solid #eee;
-    margin-top: auto;
-    color: #888;
-    font-size: 0.75em;
-  }
-}
-
 // "Suggested next steps" callout box
 .cca-suggested-next-steps {
   padding: 1rem 1.25rem;
