@@ -78,7 +78,7 @@ export const formatFunctionalityScore = (value) => {
 
 export const escapeCsvValue = (value) => {
   const stringValue = value === undefined || value === null ? '' : `${value}`;
-  return `"${stringValue.replace(/"/g, '""')}"`;
+  return `"${stringValue.replaceAll('"', '""')}"`;
 };
 
 export const downloadCsv = (filename, rows) => {
