@@ -1,10 +1,16 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { ChatMessageContext } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
 import { useCatalogueDoc } from './useCatalogueDoc';
-import { CcaDocCard, InlineDocCard } from './DocumentCard';
+import {
+  CcaDocCard,
+  DocCardErrorBoundary,
+  InlineDocCard,
+  cleanDocumentTitle,
+  matchesDocumentTitle,
+} from './DocumentCard';
 
 jest.mock('@eeacms/volto-eea-chatbot/ChatBlock/chat', () => ({
   ChatMessageContext:
@@ -12,14 +18,20 @@ jest.mock('@eeacms/volto-eea-chatbot/ChatBlock/chat', () => ({
     require('react').createContext(null),
 }));
 
+let mockNavigatorShouldThrow = false;
+
 jest.mock(
   '@eeacms/volto-cca-policy/components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem',
-  () =>
-    ({ result }) => <div data-testid="navigator-card" />,
+  () => (props) => {
+    if (mockNavigatorShouldThrow) {
+      throw new RangeError('Invalid time value');
+    }
+    return <div data-testid="navigator-card" />;
+  },
 );
 
 jest.mock('./useCatalogueDoc', () => ({
-  useCatalogueDoc: jest.fn(() => ({ result: null, loading: true })),
+  useCatalogueDoc: jest.fn(() => ({ result: null, loading: false })),
 }));
 
 const doc = {
@@ -30,66 +42,75 @@ const doc = {
   link: 'https://example.com/france-nas',
 };
 
-const webDoc = {
-  semantic_identifier: 'Some Web Source',
-  blurb: 'A web page.',
-  updated_at: '2023-05-01T00:00:00Z',
-  source_type: 'web',
-  link: 'https://example.com/web',
-};
+describe('cleanDocumentTitle', () => {
+  it('strips pipe-separated suffixes', () => {
+    expect(
+      cleanDocumentTitle('Climate policy radar | Tools | Something else'),
+    ).toBe('Climate policy radar');
+  });
+
+  it('returns trimmed title when no pipe is present', () => {
+    expect(cleanDocumentTitle('  Some Title  ')).toBe('Some Title');
+  });
+
+  it('handles null and undefined gracefully', () => {
+    expect(cleanDocumentTitle(null)).toBe('');
+    expect(cleanDocumentTitle(undefined)).toBe('');
+    expect(cleanDocumentTitle(123)).toBe('');
+  });
+});
+
+describe('matchesDocumentTitle', () => {
+  it('matches identical titles', () => {
+    expect(matchesDocumentTitle('Same Title', 'Same Title')).toBe(true);
+  });
+
+  it('matches case-insensitively and with trimmed whitespace', () => {
+    expect(matchesDocumentTitle('  Title One  ', 'title one')).toBe(true);
+  });
+
+  it('matches noisy document titles with clean search titles', () => {
+    expect(
+      matchesDocumentTitle(
+        'Nature DEMO | Tools | Discover the key services',
+        'Nature DEMO',
+      ),
+    ).toBe(true);
+  });
+
+  it('returns false for non-matching or empty titles', () => {
+    expect(matchesDocumentTitle('Alpha', 'Beta')).toBe(false);
+    expect(matchesDocumentTitle(null, 'Beta')).toBe(false);
+    expect(matchesDocumentTitle('Alpha', '')).toBe(false);
+  });
+});
 
 describe('InlineDocCard', () => {
   beforeEach(() => {
     useCatalogueDoc.mockReset();
-    useCatalogueDoc.mockReturnValue({ result: null, loading: true });
+    useCatalogueDoc.mockReturnValue({ result: null, loading: false });
   });
 
-  it('renders a basic card with the marker title when no document matches', () => {
-    render(<InlineDocCard title="Unknown Title" documents={[doc]} />);
-    expect(screen.getByText('Unknown Title')).toBeInTheDocument();
-    expect(screen.getByText('Document')).toBeInTheDocument();
-    expect(screen.queryByText('The French NAS.')).not.toBeInTheDocument();
-  });
-
-  it('matches the title case-insensitively and enriches with the document metadata', () => {
-    render(
-      <InlineDocCard
-        title="  france: NATIONAL adaptation strategy  "
-        documents={[doc]}
-      />,
+  it('renders nothing when no document matches', () => {
+    const { container } = render(
+      <InlineDocCard title="Unknown Title" documents={[doc]} />,
     );
-    expect(screen.getByText('The French NAS.')).toBeInTheDocument();
-    expect(screen.getByText('01 May 23')).toBeInTheDocument();
+    expect(container.firstChild).toBeNull();
   });
 
-  it('renders the title as a link for web documents', () => {
-    render(<InlineDocCard title="Some Web Source" documents={[webDoc]} />);
-    const link = screen.getByRole('link', { name: 'Some Web Source' });
-    expect(link).toHaveAttribute('href', 'https://example.com/web');
-    expect(link).toHaveAttribute('target', '_blank');
-    expect(screen.getByText('Web')).toBeInTheDocument();
-  });
-
-  it('omits the date when updated_at is missing or invalid', () => {
-    const noDate = { ...doc, updated_at: undefined };
-    render(
-      <InlineDocCard title={doc.semantic_identifier} documents={[noDate]} />,
+  it('renders nothing when ES lookup returns empty (not found in ES)', () => {
+    useCatalogueDoc.mockReturnValue({
+      result: null,
+      loading: false,
+    });
+    const { container } = render(
+      <InlineDocCard title={doc.semantic_identifier} documents={[doc]} />,
     );
-    expect(screen.queryByText('01 May 23')).not.toBeInTheDocument();
-    cleanup();
-
-    const badDate = { ...doc, updated_at: 'not-a-date' };
-    render(
-      <InlineDocCard title={doc.semantic_identifier} documents={[badDate]} />,
-    );
-    expect(screen.queryByText('01 May 23')).not.toBeInTheDocument();
-    cleanup();
-
-    render(<InlineDocCard title={doc.semantic_identifier} documents={[]} />);
-    expect(screen.getByText(doc.semantic_identifier)).toBeInTheDocument();
+    expect(container.firstChild).toBeNull();
+    expect(screen.queryByTestId('navigator-card')).not.toBeInTheDocument();
   });
 
-  it('upgrades to the full Navigator card once the ES lookup resolves', () => {
+  it('renders the Navigator card once the ES lookup resolves with a document', () => {
     useCatalogueDoc.mockReturnValue({
       result: { found: true, uid: 'https://example.com/france-nas' },
       loading: false,
@@ -99,55 +120,123 @@ describe('InlineDocCard', () => {
     expect(useCatalogueDoc).toHaveBeenCalledWith(doc.link);
   });
 
-  it('cleans pipeline title noise and matches cleanly', () => {
+  it('matches title case-insensitively and renders card when ES lookup resolves', () => {
+    useCatalogueDoc.mockReturnValue({
+      result: { found: true, uid: 'https://example.com/france-nas' },
+      loading: false,
+    });
+    render(
+      <InlineDocCard
+        title="  france: NATIONAL adaptation strategy  "
+        documents={[doc]}
+      />,
+    );
+    expect(screen.getByTestId('navigator-card')).toBeInTheDocument();
+    expect(useCatalogueDoc).toHaveBeenCalledWith(doc.link);
+  });
+
+  it('cleans pipeline title noise and matches cleanly when ES lookup resolves', () => {
     const noisyDoc = {
       ...doc,
       semantic_identifier:
         'Climate policy radar | Tools | Discover the key services, thematic features and tools of Climate-ADAPT Climate-ADAPT',
     };
+    useCatalogueDoc.mockReturnValue({
+      result: { found: true, uid: doc.link },
+      loading: false,
+    });
     render(
       <InlineDocCard title="Climate policy radar" documents={[noisyDoc]} />,
     );
-    expect(screen.getByText('Climate policy radar')).toBeInTheDocument();
-    expect(screen.getByText('The French NAS.')).toBeInTheDocument();
+    expect(screen.getByTestId('navigator-card')).toBeInTheDocument();
+    expect(useCatalogueDoc).toHaveBeenCalledWith(doc.link);
   });
 
-  it('renders a View button when link is present', () => {
-    render(<InlineDocCard title="Some Web Source" documents={[webDoc]} />);
-    const viewButton = screen.getByRole('link', { name: 'View' });
-    expect(viewButton).toHaveAttribute('href', 'https://example.com/web');
-    expect(viewButton).toHaveClass('ui button primary icon');
-  });
-
-  it('calls the lookup with the document link (or undefined) from the card', () => {
-    useCatalogueDoc.mockReturnValue({ result: null, loading: true });
-    render(<InlineDocCard title="No Match" documents={[]} />);
+  it('calls useCatalogueDoc with undefined when no match is found, rendering nothing', () => {
+    const { container } = render(
+      <InlineDocCard title="No Match" documents={[]} />,
+    );
     expect(useCatalogueDoc).toHaveBeenCalledWith(undefined);
+    expect(container.firstChild).toBeNull();
   });
 });
 
 describe('CcaDocCard', () => {
-  it('matches the marker against the owning message documents via context', () => {
+  beforeEach(() => {
+    useCatalogueDoc.mockReset();
+    useCatalogueDoc.mockReturnValue({ result: null, loading: false });
+  });
+
+  it('matches the marker against owning message documents and renders when ES resolves', () => {
+    useCatalogueDoc.mockReturnValue({
+      result: { found: true, uid: doc.link },
+      loading: false,
+    });
     render(
       <ChatMessageContext.Provider value={{ documents: [doc] }}>
         <CcaDocCard title={doc.semantic_identifier} />
       </ChatMessageContext.Provider>,
     );
-    expect(screen.getByText('The French NAS.')).toBeInTheDocument();
+    expect(screen.getByTestId('navigator-card')).toBeInTheDocument();
   });
 
-  it('falls back to the basic card when the message context is absent', () => {
-    render(<CcaDocCard title={doc.semantic_identifier} />);
-    expect(screen.getByText(doc.semantic_identifier)).toBeInTheDocument();
-    expect(screen.queryByText('The French NAS.')).not.toBeInTheDocument();
+  it('renders nothing when message context is absent', () => {
+    const { container } = render(
+      <CcaDocCard title={doc.semantic_identifier} />,
+    );
+    expect(container.firstChild).toBeNull();
   });
 
-  it('falls back to the basic card when the message has no documents', () => {
-    render(
+  it('renders nothing when message has no documents', () => {
+    const { container } = render(
       <ChatMessageContext.Provider value={{ documents: [] }}>
         <CcaDocCard title={doc.semantic_identifier} />
       </ChatMessageContext.Provider>,
     );
-    expect(screen.queryByText('The French NAS.')).not.toBeInTheDocument();
+    expect(container.firstChild).toBeNull();
+  });
+
+  it('renders nothing when the rich catalogue card throws an error (caught by error boundary)', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    useCatalogueDoc.mockReturnValue({
+      result: { title: 'Crashing Tool' },
+      loading: false,
+    });
+
+    mockNavigatorShouldThrow = true;
+
+    try {
+      const { container } = render(
+        <ChatMessageContext.Provider value={{ documents: [doc] }}>
+          <CcaDocCard title={doc.semantic_identifier} />
+        </ChatMessageContext.Provider>,
+      );
+
+      expect(container.firstChild).toBeNull();
+      expect(warnSpy).toHaveBeenCalled();
+    } finally {
+      mockNavigatorShouldThrow = false;
+      warnSpy.mockRestore();
+    }
+  });
+});
+
+describe('DocCardErrorBoundary', () => {
+  it('renders custom fallback when provided and an error occurs', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const ThrowingComponent = () => {
+      throw new Error('Test error');
+    };
+
+    const { getByText } = render(
+      <DocCardErrorBoundary fallback={<div>Fallback Content</div>}>
+        <ThrowingComponent />
+      </DocCardErrorBoundary>,
+    );
+
+    expect(getByText('Fallback Content')).toBeInTheDocument();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 });
