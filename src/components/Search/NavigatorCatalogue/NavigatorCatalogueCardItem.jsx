@@ -105,7 +105,6 @@ const TagGroup = ({ typeLabel, values, type, maxItems }) => {
   );
 };
 
-
 const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
 
