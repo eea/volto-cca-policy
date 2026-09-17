@@ -17,7 +17,7 @@
  *   ![[doc: France: National Adaptation Strategy]]
  */
 
-const DOC_MARKER_RE = /!\[\[\s*doc:\s*([^\]\r\n]+)\]\]/g;
+const DOC_MARKER_RE = /!?\[\[\s*(?:doc|document)\s*:\s*([^\]\r\n]+)\]\]/gi;
 
 function makeCardNode(title) {
   return {

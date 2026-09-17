@@ -142,4 +142,25 @@ describe('remarkCcaDocCards', () => {
     expect(cards(result)).toEqual(['real']);
     expect(result.children[0].value).toBe('![[doc: not a text node]]');
   });
+
+  it('tolerates case variations, document keyword, optional exclamation, and spaces before colon', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'text',
+          value:
+            '![[Doc: Title One]] and ![[DOC: Title Two]] and ![[Document: Title Three]] and ![[doc : Title Four]] and [[doc: Title Five]]',
+        },
+      ],
+    };
+    const result = applyPlugin(tree);
+    expect(cards(result)).toEqual([
+      'Title One',
+      'Title Two',
+      'Title Three',
+      'Title Four',
+      'Title Five',
+    ]);
+  });
 });

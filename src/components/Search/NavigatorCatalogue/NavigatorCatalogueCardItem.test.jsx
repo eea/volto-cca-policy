@@ -182,6 +182,50 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(screen.queryByText('License:')).not.toBeInTheDocument();
   });
 
+  it('safely handles invalid, array, or malformed publication dates without throwing RangeError', () => {
+    // Malformed/invalid date string that would throw RangeError: Invalid time value
+    const { rerender } = renderCard({
+      title: 'Invalid date tool',
+      publication_date: 'N/A',
+    });
+    expect(screen.getByText('Invalid date tool')).toBeInTheDocument();
+    expect(screen.queryByText('N/A')).not.toBeInTheDocument();
+
+    // Array publication date
+    rerender(
+      <IntlProvider locale="en">
+        <NavigatorCatalogueCardItem
+          result={{
+            title: 'Array date tool',
+            publication_date: { raw: ['2026-07-24'] },
+          }}
+        />
+      </IntlProvider>,
+    );
+    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+
+    // Malformed object publication date
+    rerender(
+      <IntlProvider locale="en">
+        <NavigatorCatalogueCardItem
+          result={{
+            title: 'Object date tool',
+            publication_date: { raw: { invalid: true } },
+          }}
+        />
+      </IntlProvider>,
+    );
+    expect(screen.getByText('Object date tool')).toBeInTheDocument();
+  });
+
+  it('safely handles non-string adaptationSupportCycleSteps without throwing', () => {
+    renderCard({
+      title: 'Numeric cycle tool',
+      adaptation_support_cycle_step: { raw: [123, null, { title: 456 }] },
+    });
+    expect(screen.getByText('Numeric cycle tool')).toBeInTheDocument();
+  });
+
   describe('thumbnail rendering and fallback', () => {
     it('renders thumbnail image and smoothly transitions from placeholder on load', () => {
       const { container } = renderCard({

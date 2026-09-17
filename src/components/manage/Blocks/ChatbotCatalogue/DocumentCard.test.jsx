@@ -12,10 +12,16 @@ jest.mock('@eeacms/volto-eea-chatbot/ChatBlock/chat', () => ({
     require('react').createContext(null),
 }));
 
+let mockNavigatorShouldThrow = false;
+
 jest.mock(
   '@eeacms/volto-cca-policy/components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem',
-  () =>
-    ({ result }) => <div data-testid="navigator-card" />,
+  () => (props) => {
+    if (mockNavigatorShouldThrow) {
+      throw new RangeError('Invalid time value');
+    }
+    return <div data-testid="navigator-card" />;
+  },
 );
 
 jest.mock('./useCatalogueDoc', () => ({
@@ -149,5 +155,35 @@ describe('CcaDocCard', () => {
       </ChatMessageContext.Provider>,
     );
     expect(screen.queryByText('The French NAS.')).not.toBeInTheDocument();
+  });
+
+  it('degrades to fallback DocumentCard when the rich catalogue card throws an error', () => {
+    // Spy on console.warn to suppress expected error output in test logs
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    useCatalogueDoc.mockReturnValue({
+      result: { title: 'Crashing Tool' },
+      loading: false,
+    });
+
+    mockNavigatorShouldThrow = true;
+
+    try {
+      render(
+        <ChatMessageContext.Provider value={{ documents: [doc] }}>
+          <CcaDocCard title={doc.semantic_identifier} />
+        </ChatMessageContext.Provider>,
+      );
+
+      // The fallback DocumentCard should be rendered despite the error
+      expect(
+        screen.getByText('France: National Adaptation Strategy'),
+      ).toBeInTheDocument();
+      expect(screen.getByText('The French NAS.')).toBeInTheDocument();
+      expect(warnSpy).toHaveBeenCalled();
+    } finally {
+      mockNavigatorShouldThrow = false;
+      warnSpy.mockRestore();
+    }
   });
 });

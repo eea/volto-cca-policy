@@ -46,11 +46,26 @@ const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'UTC',
 });
 
-const TagGroup = ({ typeLabel, values, type, maxItems }) => {
-  const visible = Number.isFinite(maxItems)
-    ? values.slice(0, maxItems)
-    : values;
-  const hidden = Number.isFinite(maxItems) ? values.slice(maxItems) : [];
+const formatPublicationDate = (value) => {
+  if (!value) return '';
+  const raw =
+    typeof value === 'object' && value !== null && 'raw' in value
+      ? value.raw
+      : value;
+  const val = Array.isArray(raw) ? raw[0] : raw;
+  if (!val || typeof val === 'object') return '';
+  try {
+    const d = new Date(val);
+    if (Number.isNaN(d.getTime())) return '';
+    return publicationDateFormatter.format(d);
+  } catch {
+    return '';
+  }
+};
+
+const TagGroup = ({ typeLabel, values, type }) => {
+  const visible = values.slice(0, 3);
+  const hidden = values.slice(3);
   const remaining = values.length - visible.length;
 
   return (
@@ -111,7 +126,7 @@ const CycleElements = ({ intl, values }) => {
 };
 
 const NavigatorCatalogueCardItem = (props) => {
-  const { result } = props;
+  const { result = {} } = props;
   const intl = useIntl();
   const sectors = rawValueAsArray(result.cca_adaptation_sectors);
   const hazards = rawValueAsArray(result.cca_climate_impacts);
@@ -126,7 +141,10 @@ const NavigatorCatalogueCardItem = (props) => {
   const adaptationSupportCycleSteps = rawValueAsArray(
     result.adaptation_support_cycle_step,
   )
-    .map((value) => value?.title?.split(':')[0])
+    .map((value) => {
+      const title = value?.title || value;
+      return typeof title === 'string' ? title.split(':')[0] : title;
+    })
     .filter(Boolean);
   const publicationDate =
     result.publication_date?.raw || result.publication_date;
