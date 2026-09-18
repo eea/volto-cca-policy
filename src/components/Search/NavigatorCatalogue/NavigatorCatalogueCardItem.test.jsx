@@ -131,8 +131,9 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(screen.getByText('Resilience')).toBeInTheDocument();
     expect(screen.getByText('Adaptation')).toBeInTheDocument();
     expect(screen.getByText('Step 1')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Cycle: Step 4' }))
-      .toHaveTextContent('+ 1');
+    expect(
+      screen.getByRole('button', { name: 'Cycle: Step 4' }),
+    ).toHaveTextContent('+ 1');
     expect(screen.getByText('Step 4')).toBeInTheDocument();
     expect(
       screen.getByTitle(
