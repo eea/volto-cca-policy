@@ -1,7 +1,10 @@
 import {
   DOC_MARKER_RE,
+  cleanStrayLeadingAsterisks,
   deduplicateAdjacentHeadings,
+  isCitationText,
   isNextStepsHeading,
+  normalizeCitationParagraphsToLists,
   parseMarkdownLines,
   shouldUnwrapCodeNode,
   unwrapCardLists,
@@ -203,5 +206,209 @@ describe('unwrapCardLists', () => {
     expect(children[0].value).toBe('Tool 1');
     expect(children[1].type).toBe('ccaDocCard');
     expect(children[1].value).toBe('Tool 2');
+  });
+});
+
+describe('cleanStrayLeadingAsterisks', () => {
+  it('strips unmatched leading ** from paragraphs and list items preceding strong elements', () => {
+    const node = {
+      type: 'listItem',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: '**Run a rapid, multi-hazard screening with the ',
+            },
+            {
+              type: 'strong',
+              children: [
+                {
+                  type: 'text',
+                  value: 'Pathways2Resilience Climate Toolbox',
+                },
+              ],
+            },
+            {
+              type: 'text',
+              value: ' to identify climate threats.',
+            },
+          ],
+        },
+      ],
+    };
+
+    cleanStrayLeadingAsterisks(node);
+    const textNode = node.children[0].children[0];
+    expect(textNode.value).toBe(
+      'Run a rapid, multi-hazard screening with the ',
+    );
+  });
+
+  it('leaves paragraphs without leading ** untouched', () => {
+    const node = {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Normal text without asterisks',
+        },
+      ],
+    };
+
+    cleanStrayLeadingAsterisks(node);
+    expect(node.children[0].value).toBe('Normal text without asterisks');
+  });
+});
+
+describe('isCitationText', () => {
+  it('identifies citation markers', () => {
+    expect(isCitationText('[2] Pathways2Resilience Climate Toolbox')).toBe(
+      true,
+    );
+    expect(isCitationText('  [15] Multi-digit citation')).toBe(true);
+    expect(isCitationText('Normal paragraph text')).toBe(false);
+    expect(isCitationText('1. Numbered list item')).toBe(false);
+    expect(isCitationText(null)).toBe(false);
+  });
+});
+
+describe('normalizeCitationParagraphsToLists', () => {
+  it('appends newline-separated citation lines following a list as list items', () => {
+    const children = [
+      {
+        type: 'list',
+        ordered: false,
+        children: [
+          {
+            type: 'listItem',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The Greek Climate Change Adaptation Hub limitation',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            value:
+              '[2] Pathways2Resilience meta-tool\n[3] NATURE DEMO DST analysis\n[4] Greek Hub resilience audit',
+          },
+        ],
+      },
+    ];
+
+    normalizeCitationParagraphsToLists(children);
+    // Paragraph should be merged into list
+    expect(children).toHaveLength(1);
+    const list = children[0];
+    expect(list.type).toBe('list');
+    expect(list.children).toHaveLength(4);
+    expect(list.children[0].children[0].children[0].value).toBe(
+      'The Greek Climate Change Adaptation Hub limitation',
+    );
+    expect(list.children[1].children[0].children[0].value).toBe(
+      '[2] Pathways2Resilience meta-tool',
+    );
+    expect(list.children[2].children[0].children[0].value).toBe(
+      '[3] NATURE DEMO DST analysis',
+    );
+    expect(list.children[3].children[0].children[0].value).toBe(
+      '[4] Greek Hub resilience audit',
+    );
+  });
+
+  it('appends consecutive citation paragraphs to a preceding list', () => {
+    const children = [
+      {
+        type: 'list',
+        ordered: false,
+        children: [
+          {
+            type: 'listItem',
+            children: [
+              {
+                type: 'paragraph',
+                children: [{ type: 'text', value: 'Initial bullet' }],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: 'paragraph',
+        children: [{ type: 'text', value: '[2] Second item' }],
+      },
+      {
+        type: 'paragraph',
+        children: [{ type: 'text', value: '[3] Third item' }],
+      },
+    ];
+
+    normalizeCitationParagraphsToLists(children);
+    expect(children).toHaveLength(1);
+    expect(children[0].children).toHaveLength(3);
+  });
+
+  it('converts standalone citation paragraphs into a list', () => {
+    const children = [
+      {
+        type: 'paragraph',
+        children: [
+          {
+            type: 'text',
+            value: '[2] Item A\n[3] Item B',
+          },
+        ],
+      },
+    ];
+
+    normalizeCitationParagraphsToLists(children);
+    expect(children).toHaveLength(1);
+    expect(children[0].type).toBe('list');
+    expect(children[0].children).toHaveLength(2);
+  });
+
+  it('leaves non-citation paragraphs untouched', () => {
+    const children = [
+      {
+        type: 'paragraph',
+        children: [{ type: 'text', value: 'Regular paragraph' }],
+      },
+    ];
+
+    normalizeCitationParagraphsToLists(children);
+    expect(children).toHaveLength(1);
+    expect(children[0].type).toBe('paragraph');
+  });
+});
+
+describe('parseMarkdownLines enhancements', () => {
+  it('parses [2] marker lines as list items and cleans stray leading asterisks', () => {
+    const markdown =
+      '1. **Run a screening with the **Pathways2Resilience Toolbox** for risks\n[2] Citation line description';
+    const nodes = parseMarkdownLines(markdown);
+    expect(nodes).toHaveLength(2);
+    expect(nodes[0].type).toBe('list');
+    expect(nodes[0].ordered).toBe(true);
+    // Unmatched leading ** was cleaned, leaving the properly matched **Toolbox**
+    expect(nodes[0].children[0].children[0].children[0].value).toBe(
+      'Run a screening with the **Pathways2Resilience Toolbox** for risks',
+    );
+    expect(nodes[1].type).toBe('list');
+    expect(nodes[1].children[0].children[0].children[0].value).toBe(
+      'Citation line description',
+    );
   });
 });

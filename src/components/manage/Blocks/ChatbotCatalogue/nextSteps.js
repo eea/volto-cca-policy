@@ -10,6 +10,7 @@
 
 import {
   NEXT_STEPS_HEADING_RE,
+  cleanStrayLeadingAsterisks,
   getNodeText,
   isNextStepsHeading,
   parseMarkdownLines,
@@ -60,6 +61,9 @@ function transformContainer(children) {
         },
         children: collected,
       };
+
+      // Clean unclosed leading asterisks on list items inside container
+      cleanStrayLeadingAsterisks(containerNode);
 
       // Replace heading and all collected siblings with the container node
       children.splice(i, 1 + (j - (i + 1)), containerNode);
