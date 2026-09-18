@@ -1,10 +1,8 @@
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Container, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  TagOverflowPopup,
-  ToolThumbnail,
-} from '@eeacms/volto-cca-policy/components';
+import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 
 const messages = defineMessages({
   relatedTools: {
