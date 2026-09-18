@@ -886,6 +886,11 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     grid-template-columns: minmax(0, 3fr) minmax(16rem, 1fr);
   }
 
+  .navigator-guide-wizard {
+    display: flex;
+    flex-direction: column;
+  }
+
   .navigator-guide-wizard,
   .navigator-guide-preview {
     padding: 1rem;
@@ -1095,6 +1100,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   .navigator-guide-actions {
     padding-top: 1.25rem;
     border-top: 1px solid @navigatorBorderColor;
+    margin-top: auto;
 
     > div {
       display: flex;

@@ -94,7 +94,7 @@ describe('NavigatorCatalogueCardItem', () => {
           'Datasets and indicators',
         ],
       },
-      adaptation_support_cycle_step: {
+      cca_adaptation_support_cycle_step: {
         raw: [
           { title: 'Step 1: Preparing the ground' },
           { title: 'Step 2: Assessing risks' },

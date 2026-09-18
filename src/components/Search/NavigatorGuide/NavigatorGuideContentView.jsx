@@ -213,88 +213,94 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
       <div className="navigator-guide-layout">
         <section className="navigator-guide-wizard">
-          <div className="navigator-guide-progress">
-            {steps.map((item, index) => (
-              <React.Fragment key={item.id}>
-                <Button
-                  className={`navigator-guide-progress-step${
-                    index === activeStep ? ' active' : ''
-                  }${index < activeStep ? ' completed' : ''}`}
-                  aria-current={index === activeStep ? 'step' : undefined}
-                  onClick={() => setActiveStep(index)}
-                >
-                  <span>
-                    {isStepSelected(filters, item.field) ? (
-                      <Icon className="ri-check-line" />
-                    ) : (
-                      index + 1
+          <div className="navigator-guide-wizard-content">
+            <div className="navigator-guide-progress-wrapper">
+              <div className="navigator-guide-progress">
+                {steps.map((item, index) => (
+                  <React.Fragment key={item.id}>
+                    <Button
+                      className={`navigator-guide-progress-step${
+                        index === activeStep ? ' active' : ''
+                      }${index < activeStep ? ' completed' : ''}`}
+                      aria-current={index === activeStep ? 'step' : undefined}
+                      onClick={() => setActiveStep(index)}
+                    >
+                      <span>
+                        {isStepSelected(filters, item.field) ? (
+                          <Icon className="ri-check-line" />
+                        ) : (
+                          index + 1
+                        )}
+                      </span>
+                      {intl.formatMessage(item.label)}
+                    </Button>
+                    {index < steps.length - 1 && (
+                      <span
+                        className={`navigator-guide-progress-connector${
+                          index < activeStep ? ' completed' : ''
+                        }`}
+                        aria-hidden="true"
+                      />
                     )}
-                  </span>
-                  {intl.formatMessage(item.label)}
-                </Button>
-                {index < steps.length - 1 && (
-                  <span
-                    className={`navigator-guide-progress-connector${
-                      index < activeStep ? ' completed' : ''
-                    }`}
-                    aria-hidden="true"
-                  />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-          <div
-            className="navigator-guide-progress-bar"
-            role="progressbar"
-            aria-valuemin="1"
-            aria-valuemax={steps.length}
-            aria-valuenow={activeStep + 1}
-          >
-            <div
-              className="navigator-guide-progress-bar-fill"
-              style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
-            />
-          </div>
-
-          <div className="navigator-guide-step-meta">
-            <span className="navigator-guide-step-number">
-              {intl.formatMessage(messages.stepProgress, {
-                current: activeStep + 1,
-                total: steps.length,
-              })}
-            </span>
-            <span>{intl.formatMessage(messages.selectAllThatApply)}</span>
-          </div>
-          <h3>{intl.formatMessage(step.title)}</h3>
-          {step.description && <p>{intl.formatMessage(step.description)}</p>}
-
-          {isLoading ? (
-            <div className="navigator-guide-options-loading">
-              <Loader active inline />
+                  </React.Fragment>
+                ))}
+              </div>
+              <div
+                className="navigator-guide-progress-bar"
+                role="progressbar"
+                aria-valuemin="1"
+                aria-valuemax={steps.length}
+                aria-valuenow={activeStep + 1}
+              >
+                <div
+                  className="navigator-guide-progress-bar-fill"
+                  style={{
+                    width: `${((activeStep + 1) / steps.length) * 100}%`,
+                  }}
+                />
+              </div>
+              <div className="navigator-guide-step-meta">
+                <span className="navigator-guide-step-number">
+                  {intl.formatMessage(messages.stepProgress, {
+                    current: activeStep + 1,
+                    total: steps.length,
+                  })}
+                </span>
+                <span>{intl.formatMessage(messages.selectAllThatApply)}</span>
+              </div>
             </div>
-          ) : options.length > 0 ? (
-            <div className="navigator-guide-options">
-              {options.map((option) => (
-                <label
-                  key={option.value}
-                  className={`navigator-guide-option${
-                    selectedValues.includes(option.value) ? ' selected' : ''
-                  }${option.disabled ? ' disabled' : ''}`}
-                  aria-disabled={option.disabled || undefined}
-                >
-                  <Checkbox
-                    checked={selectedValues.includes(option.value)}
-                    disabled={option.disabled}
-                    onChange={() => toggleValue(option.value)}
-                  />
-                  <span>{option.value}</span>
-                  <small>{option.count}</small>
-                </label>
-              ))}
-            </div>
-          ) : (
-            <Message>{intl.formatMessage(messages.noOptions)}</Message>
-          )}
+
+            <h3>{intl.formatMessage(step.title)}</h3>
+            {step.description && <p>{intl.formatMessage(step.description)}</p>}
+
+            {isLoading ? (
+              <div className="navigator-guide-options-loading">
+                <Loader active inline />
+              </div>
+            ) : options.length > 0 ? (
+              <div className="navigator-guide-options">
+                {options.map((option) => (
+                  <label
+                    key={option.value}
+                    className={`navigator-guide-option${
+                      selectedValues.includes(option.value) ? ' selected' : ''
+                    }${option.disabled ? ' disabled' : ''}`}
+                    aria-disabled={option.disabled || undefined}
+                  >
+                    <Checkbox
+                      checked={selectedValues.includes(option.value)}
+                      disabled={option.disabled}
+                      onChange={() => toggleValue(option.value)}
+                    />
+                    <span>{option.value}</span>
+                    <small>{option.count}</small>
+                  </label>
+                ))}
+              </div>
+            ) : (
+              <Message>{intl.formatMessage(messages.noOptions)}</Message>
+            )}
+          </div>
 
           <div className="navigator-guide-actions">
             <Button
