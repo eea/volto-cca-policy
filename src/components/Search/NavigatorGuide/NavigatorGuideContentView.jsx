@@ -6,7 +6,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
-import ToolThumbnail from '../../theme/ToolThumbnail/ToolThumbnail';
+import { ToolThumbnail } from '@eeacms/volto-cca-policy/components';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions, sortAdaptationSteps } from './utils';

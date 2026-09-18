@@ -3,8 +3,10 @@ import { Checkbox, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
-import ToolThumbnail from '../../theme/ToolThumbnail/ToolThumbnail';
-import { TagOverflowPopup } from '@eeacms/volto-cca-policy/components';
+import {
+  TagOverflowPopup,
+  ToolThumbnail,
+} from '@eeacms/volto-cca-policy/components';
 import { getToolThumbnailUrl } from '../../theme/ToolThumbnail/utils';
 import {
   getCompareToolTitle,
