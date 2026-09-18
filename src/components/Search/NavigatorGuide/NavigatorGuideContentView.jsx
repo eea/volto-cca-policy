@@ -96,7 +96,7 @@ const isStepSelected = (filters, field) =>
 
 const previewTagTypes = {
   adaptationSectors: 'sector',
-  climateImpacts: 'hazard',
+  climateHazards: 'hazard',
   adaptationStage: 'adaptation-stage',
   coverage: 'coverage',
 };
