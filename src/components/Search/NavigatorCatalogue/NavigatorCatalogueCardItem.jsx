@@ -141,7 +141,7 @@ const NavigatorCatalogueCardItem = (props) => {
     .join(', ');
   const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = rawValueAsArray(
-    result.adaptation_support_cycle_step,
+    result.cca_adaptation_support_cycle_step,
   )
     .map((value) => {
       const title = value?.title || value;
