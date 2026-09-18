@@ -1,7 +1,8 @@
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { Container, Icon, Popup } from 'semantic-ui-react';
+import { Container, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import ToolThumbnail from '../ToolThumbnail/ToolThumbnail';
+import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 
 const messages = defineMessages({
   relatedTools: {
@@ -109,29 +110,10 @@ const RelatedTools = ({ content }) => {
                             {visibleLabel}
                           </span>
                           {hidden.length > 0 && (
-                            <Popup
-                              className="catalogue-tag-popup"
-                              content={
-                                <div className="catalogue-tag-tooltip">
-                                  <ul>
-                                    {hiddenTitles.map((title, index) => (
-                                      <li key={`${field}-${hidden[index]}`}>
-                                        {title}
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              }
-                              position="bottom left"
-                              trigger={
-                                <button
-                                  type="button"
-                                  className={`navigator-tag ${type} more`}
-                                  aria-label={hiddenTitles.join(', ')}
-                                >
-                                  + {hidden.length}
-                                </button>
-                              }
+                            <TagOverflowPopup
+                              items={hiddenTitles}
+                              className={`navigator-tag ${type} more`}
+                              ariaLabel={hiddenTitles.join(', ')}
                             />
                           )}
                         </span>

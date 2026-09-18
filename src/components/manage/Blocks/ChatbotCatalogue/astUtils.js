@@ -136,12 +136,20 @@ export function parseMarkdownLines(content) {
       continue;
     }
 
-    // List item: 1. Item or * Item or - Item
-    const listMatch = trimmed.match(/^(\d+\.|[*+-])\s+(.*)$/);
+    // List item: 1. Item or * Item or - Item or [2] Item
+    const listMatch = trimmed.match(/^(\d+\.|[*+-]|\[\d+\])\s+(.*)$/);
     if (listMatch) {
       flushParagraph();
       const isOrdered = /^\d+\./.test(listMatch[1]);
-      const itemText = listMatch[2].trim();
+      let itemText = listMatch[2].trim();
+
+      // Clean stray leading asterisks if odd number of asterisks
+      if (itemText.startsWith('**')) {
+        const count = (itemText.match(/\*\*/g) || []).length;
+        if (count % 2 === 1) {
+          itemText = itemText.replace(/^\*\*\s*/, '');
+        }
+      }
 
       const listItemNode = {
         type: 'listItem',
@@ -243,6 +251,124 @@ export function unwrapCardLists(children) {
         });
         children.splice(i, 1, ...extractedCards);
         i += extractedCards.length - 1;
+      }
+    }
+  }
+}
+
+/**
+ * Recursively cleans stray unclosed leading asterisks (`**`) from paragraphs
+ * and list items. CommonMark leaves unmatched asterisks as literal text in
+ * the first text node when the closing asterisks cannot be paired.
+ */
+export function cleanStrayLeadingAsterisks(node) {
+  if (!node) return;
+  if (node.type === 'paragraph' || node.type === 'listItem') {
+    if (Array.isArray(node.children)) {
+      const firstChild = node.children[0];
+      if (
+        firstChild?.type === 'text' &&
+        typeof firstChild.value === 'string' &&
+        /^\s*\*\*([^*]|$)/.test(firstChild.value)
+      ) {
+        firstChild.value = firstChild.value.replace(/^\s*\*\*\s*/, '');
+      }
+    }
+  }
+  if (Array.isArray(node.children)) {
+    node.children.forEach(cleanStrayLeadingAsterisks);
+  }
+}
+
+/**
+ * Checks if a string starts with a citation reference marker like `[2] Title`
+ */
+export function isCitationText(text) {
+  return typeof text === 'string' && /^\[\d+\]\s+/.test(text.trimStart());
+}
+
+/**
+ * Normalizes citation paragraphs following a list into list items so that
+ * reference lists like `[2] ... \n [3] ...` do not break out of an unordered
+ * or ordered list (such as under `### Limitations`). Also converts standalone
+ * citation paragraphs into lists.
+ */
+export function normalizeCitationParagraphsToLists(children) {
+  if (!Array.isArray(children)) return;
+
+  for (let i = 0; i < children.length; i += 1) {
+    const curr = children[i];
+
+    // Case 1: Existing list followed by citation paragraph(s)
+    if (curr.type === 'list' && Array.isArray(curr.children)) {
+      while (i + 1 < children.length) {
+        const next = children[i + 1];
+        if (!next || next.type !== 'paragraph') break;
+        const fullText = getNodeText(next).trim();
+        if (!isCitationText(fullText)) break;
+
+        // If single text node with multiple newline-separated lines
+        if (
+          Array.isArray(next.children) &&
+          next.children.length === 1 &&
+          next.children[0].type === 'text'
+        ) {
+          const lines = next.children[0].value
+            .split(/\r?\n/)
+            .filter((l) => l.trim());
+          if (lines.every(isCitationText)) {
+            lines.forEach((line) => {
+              curr.children.push({
+                type: 'listItem',
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [{ type: 'text', value: line.trim() }],
+                  },
+                ],
+              });
+            });
+            children.splice(i + 1, 1);
+            continue;
+          }
+        }
+
+        curr.children.push({
+          type: 'listItem',
+          children: [next],
+        });
+        children.splice(i + 1, 1);
+      }
+    } else if (curr.type === 'paragraph') {
+      // Case 2: Standalone citation paragraph not preceded by a list
+      const fullText = getNodeText(curr).trim();
+      if (isCitationText(fullText)) {
+        if (
+          Array.isArray(curr.children) &&
+          curr.children.length === 1 &&
+          curr.children[0].type === 'text'
+        ) {
+          const lines = curr.children[0].value
+            .split(/\r?\n/)
+            .filter((l) => l.trim());
+          if (lines.every(isCitationText)) {
+            const listItems = lines.map((line) => ({
+              type: 'listItem',
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [{ type: 'text', value: line.trim() }],
+                },
+              ],
+            }));
+            children.splice(i, 1, {
+              type: 'list',
+              ordered: false,
+              children: listItems,
+            });
+            i += listItems.length - 1;
+          }
+        }
       }
     }
   }
