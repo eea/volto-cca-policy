@@ -32,6 +32,7 @@ jest.mock(
 );
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
+  TagOverflowPopup: jest.requireActual('../TagOverflowPopup').default,
   CompareToolsPanel: () => <div data-testid="compare-tools-panel" />,
   ExtendedToolGeographicMetadata: ({ content }) => (
     <div data-testid="geographic-metadata">{content.spatial_layer}</div>
