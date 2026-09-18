@@ -169,3 +169,32 @@ describe('NavigatorGuideContentView adaptation steps', () => {
     ).toHaveTextContent('Step 1');
   });
 });
+
+describe('NavigatorGuideContentView climate hazards', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useAtom.mockReturnValue([1, jest.fn()]);
+    useSelector.mockReturnValue('en');
+    useHistory.mockReturnValue({ push: jest.fn() });
+    useGuideFacetOptions.mockReturnValue({});
+  });
+
+  it('uses the hazard tag style for a selected climate hazard', () => {
+    const { container } = renderGuide(
+      {
+        title: 'Guide tool',
+        href: '/tools/guide-tool',
+        cca_climate_impacts: { raw: ['Flooding'] },
+      },
+      {
+        filters: [
+          { field: 'cca_climate_impacts.keyword', values: ['Flooding'] },
+        ],
+      },
+    );
+
+    expect(
+      container.querySelector('.navigator-guide-preview-tags .hazard'),
+    ).toHaveTextContent('Flooding');
+  });
+});
