@@ -1,5 +1,5 @@
 import { useIntl } from 'react-intl';
-import { Popup } from 'semantic-ui-react';
+import { TagOverflowPopup } from '@eeacms/volto-cca-policy/components';
 
 const MetadataItemList = (props) => {
   const {
@@ -41,29 +41,12 @@ const MetadataItemList = (props) => {
           </span>
         ))}
         {hiddenItems.length > 0 && (
-          <Popup
-            className="catalogue-tag-popup"
-            content={
-              <div className="catalogue-tag-tooltip">
-                <ul>
-                  {hiddenItems.map((item) => (
-                    <li key={`hidden-${item}`}>
-                      {intl.formatMessage({ id: item, defaultMessage: item })}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            }
-            position="bottom left"
-            trigger={
-              <button
-                type="button"
-                className="metadata-tag metadata-tag-more"
-                aria-label={`Additional items: ${hiddenItems.join(', ')}`}
-              >
-                + {hiddenItems.length}
-              </button>
-            }
+          <TagOverflowPopup
+            items={hiddenItems.map((item) =>
+              intl.formatMessage({ id: item, defaultMessage: item }),
+            )}
+            className="metadata-tag metadata-tag-more"
+            ariaLabel={`Additional items: ${hiddenItems.join(', ')}`}
           />
         )}
       </div>
