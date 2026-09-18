@@ -21,6 +21,7 @@ const facets = [
   language,
   multiTermFacet({
     field: 'cca_adaptation_support_cycle_step.keyword',
+    filterType: 'all',
     isFilterable: false,
     isMulti: true,
     label: messages.adaptationSupportCycleStep,
