@@ -152,6 +152,22 @@ describe('NavigatorCatalogueCardItem', () => {
     });
   });
 
+  it('shows the cycle steps from the field used by the catalogue filter', () => {
+    renderCard({
+      title: 'Climate planning tool',
+      href: 'https://example.com/tool',
+      cca_adaptation_support_cycle_step: {
+        raw: ['Step 2: Assessing risks'],
+      },
+      adaptation_support_cycle_step: {
+        raw: [{ title: 'Step 1: Preparing the ground' }],
+      },
+    });
+
+    expect(screen.getByText('Step 2')).toBeInTheDocument();
+    expect(screen.queryByText('Step 1')).not.toBeInTheDocument();
+  });
+
   it('renders sparse results and disables comparison without a UID', () => {
     useCompareTools.mockReturnValue({
       isSelected: true,

@@ -78,7 +78,7 @@ const guideSteps = [
     title: messages.adaptationStageQuestion,
     description: messages.adaptationStageDescription,
     field: 'cca_adaptation_support_cycle_step.keyword',
-    filterType: 'any',
+    filterType: 'all',
   },
   // {
   //   id: 'coverage',

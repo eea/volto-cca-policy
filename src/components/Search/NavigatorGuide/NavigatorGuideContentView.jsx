@@ -9,7 +9,8 @@ import { useSearchContext } from '@eeacms/search/lib/hocs';
 import ToolThumbnail from '../../theme/ToolThumbnail/ToolThumbnail';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
-import { mergeGuideOptions } from './utils';
+import { mergeGuideOptions, sortAdaptationSteps } from './utils';
+import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 
@@ -130,31 +131,39 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const hasSelections = steps.some(({ field }) =>
     isStepSelected(filters, field),
   );
-  const options = mergeGuideOptions(
+  const mergedOptions = mergeGuideOptions(
     allFacetOptions?.[step?.field],
     getFacetOptions(facets, step?.field),
     selectedValues,
     hasSelections,
   );
+  const options =
+    step?.id === 'adaptationStage'
+      ? sortAdaptationSteps(mergedOptions)
+      : mergedOptions;
   const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))
     .map(({ label }) =>
       intl.formatMessage(label).toLocaleLowerCase(currentLang),
     );
-  const selectedPreviewTags = steps.flatMap((item) => {
-    const values =
-      (filters || []).find((filter) => filter.field === item.field)?.values ||
-      [];
+  const selectedPreviewTags = (result) =>
+    steps.flatMap((item) => {
+      const values =
+        (filters || []).find((filter) => filter.field === item.field)?.values ||
+        [];
 
-    return values.map((value) => ({
-      label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
-      type: previewTagTypes[item.id],
-    }));
-  });
-  const visiblePreviewTags = selectedPreviewTags.slice(0, 3);
-  const remainingPreviewTags =
-    selectedPreviewTags.length - visiblePreviewTags.length;
+      const resultValues = rawValueAsArray(
+        result[item.field.replace('.keyword', '')],
+      ).map((value) => value?.title || value);
+
+      return values
+        .filter((value) => resultValues.includes(value))
+        .map((value) => ({
+          label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
+          type: previewTagTypes[item.id],
+        }));
+    });
 
   React.useEffect(() => {
     if (storedActiveStep !== activeStep) {
@@ -346,53 +355,56 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               <div className="navigator-guide-preview-results">
                 {(results || [])
                   .slice(0, appConfig.previewResultsLimit)
-                  .map((result) => (
-                    <div
-                      className="navigator-guide-preview-result"
-                      key={result._original?._id || result.href}
-                    >
-                      <ToolThumbnail
-                        result={result}
-                        fallbackIcon="ri-stack-line"
-                      />
-                      <div className="navigator-guide-preview-result-content">
-                        <small
-                          className="navigator-tool-provider"
-                          title={result?._result?.tool_provider?.raw}
-                        >
-                          {result?._result?.tool_provider?.raw}
-                        </small>
-                        <a
-                          href={result.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="navigator-guide-preview-result-title"
-                          title={result.title}
-                        >
-                          <h5>{result.title}</h5>
-                        </a>
-                        {selectedPreviewTags.length > 0 && (
-                          <div className="navigator-guide-preview-tags">
-                            {visiblePreviewTags.map(
-                              ({ label, type }, index) => (
+                  .map((result) => {
+                    const tags = selectedPreviewTags(result);
+                    const visibleTags = tags.slice(0, 3);
+                    const remainingTags = tags.length - visibleTags.length;
+                    return (
+                      <div
+                        className="navigator-guide-preview-result"
+                        key={result._original?._id || result.href}
+                      >
+                        <ToolThumbnail
+                          result={result}
+                          fallbackIcon="ri-stack-line"
+                        />
+                        <div className="navigator-guide-preview-result-content">
+                          <small
+                            className="navigator-tool-provider"
+                            title={result?._result?.tool_provider?.raw}
+                          >
+                            {result?._result?.tool_provider?.raw}
+                          </small>
+                          <a
+                            href={result.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="navigator-guide-preview-result-title"
+                            title={result.title}
+                          >
+                            <h5>{result.title}</h5>
+                          </a>
+                          {tags.length > 0 && (
+                            <div className="navigator-guide-preview-tags">
+                              {visibleTags.map(({ label, type }, index) => (
                                 <span
                                   className={`navigator-tag ${type}`}
                                   key={`${type}-${label}-${index}`}
                                 >
                                   {label}
                                 </span>
-                              ),
-                            )}
-                            {remainingPreviewTags > 0 && (
-                              <span className="navigator-guide-preview-tag-more">
-                                + {remainingPreviewTags}
-                              </span>
-                            )}
-                          </div>
-                        )}
+                              ))}
+                              {remainingTags > 0 && (
+                                <span className="navigator-guide-preview-tag-more">
+                                  + {remainingTags}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
               </div>
               <Button
                 labelPosition="right"
