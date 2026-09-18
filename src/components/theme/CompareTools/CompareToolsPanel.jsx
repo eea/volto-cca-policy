@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Icon, Button } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import { ToolThumbnail } from '@eeacms/volto-cca-policy/components';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,

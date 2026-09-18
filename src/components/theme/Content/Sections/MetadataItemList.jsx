@@ -1,5 +1,5 @@
 import { useIntl } from 'react-intl';
-import { TagOverflowPopup } from '@eeacms/volto-cca-policy/components';
+import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
 
 const MetadataItemList = (props) => {
   const {

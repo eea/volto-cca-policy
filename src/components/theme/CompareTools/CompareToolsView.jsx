@@ -17,7 +17,7 @@ import { GET_BREADCRUMBS } from '@plone/volto/constants/ActionTypes';
 import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
-import { ToolThumbnail } from '@eeacms/volto-cca-policy/components';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
