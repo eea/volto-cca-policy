@@ -249,4 +249,76 @@ describe('remarkCcaDocCards', () => {
     expect(result.children[1].type).toBe('ccaDocCard');
     expect(result.children[1].value).toBe('Tool B');
   });
+
+  it('normalizes citation paragraphs following a list so they become list items', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'list',
+          ordered: false,
+          children: [
+            {
+              type: 'listItem',
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    { type: 'text', value: 'National context limitation' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value:
+                '[2] Pathways2Resilience Toolbox\n[3] NATURE DEMO DST analysis',
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children).toHaveLength(1);
+    expect(result.children[0].type).toBe('list');
+    expect(result.children[0].children).toHaveLength(3);
+    expect(result.children[0].children[1].children[0].children[0].value).toBe(
+      '[2] Pathways2Resilience Toolbox',
+    );
+    expect(result.children[0].children[2].children[0].children[0].value).toBe(
+      '[3] NATURE DEMO DST analysis',
+    );
+  });
+
+  it('cleans stray leading asterisks in list items and paragraphs', () => {
+    const tree = {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: '**Run a rapid screening with the ',
+            },
+            {
+              type: 'strong',
+              children: [{ type: 'text', value: 'Tool A' }],
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = applyPlugin(tree);
+    expect(result.children[0].children[0].value).toBe(
+      'Run a rapid screening with the ',
+    );
+  });
 });

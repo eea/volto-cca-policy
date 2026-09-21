@@ -1,5 +1,7 @@
 export { default as BannerTitle } from './theme/BannerTitle/BannerTitle';
 export { default as PortalMessage } from './theme/PortalMessage/PortalMessage';
+export { default as TagOverflowPopup } from './theme/TagOverflowPopup';
+export { default as ToolThumbnail } from './theme/ToolThumbnail/ToolThumbnail';
 export { default as TranslationDisclaimer } from './theme/TranslationDisclaimer/TranslationDisclaimer';
 export { default as ASTNavigation } from './theme/ASTNavigation/ASTNavigation';
 export { default as RedirectToLogin } from './theme/RedirectToLogin/RedirectToLogin';

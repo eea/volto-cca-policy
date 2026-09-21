@@ -1,9 +1,10 @@
 import React from 'react';
-import { Checkbox, Icon, Popup } from 'semantic-ui-react';
+import { Checkbox, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
-import ToolThumbnail from '../../theme/ToolThumbnail/ToolThumbnail';
+import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import { getToolThumbnailUrl } from '../../theme/ToolThumbnail/utils';
 import {
   getCompareToolTitle,
@@ -78,27 +79,10 @@ const TagGroup = ({ typeLabel, values, type, maxItems }) => {
         </span>
       ))}
       {remaining > 0 && (
-        <Popup
-          className="catalogue-tag-popup"
-          content={
-            <div className="catalogue-tag-tooltip">
-              <ul>
-                {hidden.map((value) => (
-                  <li key={`${type}-hidden-${value}`}>{value}</li>
-                ))}
-              </ul>
-            </div>
-          }
-          position="bottom left"
-          trigger={
-            <button
-              type="button"
-              className={`navigator-tag ${type} more`}
-              aria-label={`${typeLabel}: ${hidden.join(', ')}`}
-            >
-              + {remaining}
-            </button>
-          }
+        <TagOverflowPopup
+          items={hidden}
+          className={`navigator-tag ${type} more`}
+          ariaLabel={`${typeLabel}: ${hidden.join(', ')}`}
         />
       )}
     </div>
@@ -107,6 +91,7 @@ const TagGroup = ({ typeLabel, values, type, maxItems }) => {
 
 const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
+  const hidden = values.slice(3);
 
   if (!visible.length) return null;
 
@@ -123,6 +108,13 @@ const CycleElements = ({ intl, values }) => {
           {value}
         </span>
       ))}
+      {hidden.length > 0 && (
+        <TagOverflowPopup
+          items={hidden}
+          className="navigator-tag cycle-element more"
+          ariaLabel={`${intl.formatMessage(messages.cycle)}: ${hidden.join(', ')}`}
+        />
+      )}
     </div>
   );
 };
@@ -141,7 +133,7 @@ const NavigatorCatalogueCardItem = (props) => {
     .join(', ');
   const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = rawValueAsArray(
-    result.adaptation_support_cycle_step,
+    result.cca_adaptation_support_cycle_step,
   )
     .map((value) => {
       const title = value?.title || value;
