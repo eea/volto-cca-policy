@@ -3,7 +3,9 @@ import {
   getColorForCount,
   normalizeCountryName,
   buildCountryCounts,
+  filterCountryCounts,
   mapLegendItems,
+  setCountryFilter,
 } from './utils';
 
 describe('getColorForCount', () => {
@@ -132,6 +134,54 @@ describe('buildCountryCounts', () => {
     };
     const counts = buildCountryCounts(facets);
     expect(counts.Germany).toBeUndefined();
+  });
+});
+
+describe('setCountryFilter', () => {
+  it('replaces the current country selection', () => {
+    const searchContext = {
+      setFilter: jest.fn(),
+      addFilter: jest.fn(),
+      removeFilter: jest.fn(),
+    };
+
+    setCountryFilter(searchContext, 'Germany');
+
+    expect(searchContext.setFilter).toHaveBeenCalledWith(
+      'cca_geographic_countries.keyword',
+      'Germany',
+      'any',
+    );
+    expect(searchContext.addFilter).not.toHaveBeenCalled();
+    expect(searchContext.removeFilter).not.toHaveBeenCalled();
+  });
+});
+
+describe('filterCountryCounts', () => {
+  const countryCounts = { Spain: 3, France: 7, Germany: 5 };
+
+  it('shows all country counts without a country filter', () => {
+    expect(filterCountryCounts(countryCounts, [])).toEqual(countryCounts);
+  });
+
+  it('shows only countries selected in the country filter', () => {
+    expect(
+      filterCountryCounts(countryCounts, [
+        {
+          field: 'cca_geographic_countries.keyword',
+          values: ['Spain'],
+          type: 'any',
+        },
+      ]),
+    ).toEqual({ Spain: 3 });
+  });
+
+  it('ignores filters for other fields', () => {
+    expect(
+      filterCountryCounts(countryCounts, [
+        { field: 'cca_climate_impacts.keyword', values: ['Flooding'] },
+      ]),
+    ).toEqual(countryCounts);
   });
 });
 

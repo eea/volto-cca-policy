@@ -22,7 +22,9 @@ import {
   getColorForCount,
   normalizeCountryName,
   buildCountryCounts,
+  filterCountryCounts,
   mapLegendItems,
+  setCountryFilter,
 } from './utils';
 
 const messages = defineMessages({
@@ -147,10 +149,7 @@ const NavigatorCatalogueMapViewInner = (props) => {
   // Handler: replace country filter + switch to list view
   const handleExploreTools = React.useCallback(
     (countryName) => {
-      const field = 'cca_geographic_countries.keyword';
-      // Clear existing country filter, then set the new one
-      searchContext?.removeFilter(field);
-      searchContext?.addFilter(field, countryName, 'any');
+      setCountryFilter(searchContext, countryName);
       // Switch to listing view
       views.setActiveViewId('listing');
     },
@@ -159,8 +158,12 @@ const NavigatorCatalogueMapViewInner = (props) => {
 
   // Build lookup: countryName -> count
   const countryCounts = React.useMemo(
-    () => buildCountryCounts(searchContext?.facets),
-    [searchContext?.facets],
+    () =>
+      filterCountryCounts(
+        buildCountryCounts(searchContext?.facets),
+        searchContext?.filters,
+      ),
+    [searchContext?.facets, searchContext?.filters],
   );
 
   const [tileWMSSources, setTileWMSSources] = React.useState(null);

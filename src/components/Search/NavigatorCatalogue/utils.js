@@ -47,6 +47,28 @@ export const buildCountryCounts = (facets) => {
   return counts;
 };
 
+export const filterCountryCounts = (countryCounts, filters) => {
+  const selectedCountries =
+    filters?.find(({ field }) => field === 'cca_geographic_countries.keyword')
+      ?.values || [];
+
+  if (!selectedCountries.length) return countryCounts;
+
+  return Object.fromEntries(
+    selectedCountries
+      .filter((country) => countryCounts[country] !== undefined)
+      .map((country) => [country, countryCounts[country]]),
+  );
+};
+
+export const setCountryFilter = (searchContext, countryName) => {
+  searchContext?.setFilter(
+    'cca_geographic_countries.keyword',
+    countryName,
+    'any',
+  );
+};
+
 /**
  * Legend items for the map view
  */
