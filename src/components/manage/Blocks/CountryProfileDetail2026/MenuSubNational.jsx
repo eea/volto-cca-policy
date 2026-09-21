@@ -86,14 +86,8 @@ export default function MenuSubNational(props) {
           practical experience at national, regional and international levels.
         </p>
       </Callout>
-      <div className="grayBackGround">
+      <div>
         <h2>Sub-national governance and institutional arrangements</h2>
-        <div className="styled-dividerBlock secondary has--theme--secondary styled">
-          <div className="ui fitted divider secondary divider-spacing-s"></div>
-        </div>
-        <div className="styled-dividerBlock">
-          <div className="ui hidden divider divider-spacing-s"></div>
-        </div>
         <p>
           Overview of governance structures and institutional arrangements at
           the sub-national level, including how local and regional authorities
@@ -103,12 +97,6 @@ export default function MenuSubNational(props) {
       </div>
       <h2>Good practices and lessons learnt</h2>
       <div>
-        <div className="styled-dividerBlock secondary has--theme--secondary styled">
-          <div className="ui fitted divider secondary divider-spacing-s"></div>
-        </div>
-        <div className="styled-dividerBlock">
-          <div className="ui hidden divider divider-spacing-s"></div>
-        </div>
         <p>
           Overview of selected good practices and lessons learnt reported by the
           country. The number and type of practices may vary depending on
