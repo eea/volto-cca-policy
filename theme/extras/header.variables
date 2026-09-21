@@ -3,6 +3,8 @@
 -----------------------*/
 
 /* Search box */
-// @searchBoxBackgroundGradient  : linear-gradient(45deg, @primaryColor 12%, @secondaryColor 80%);
-@megaMenuBackgroundColor      : linear-gradient(13.69deg, @blue-5 1.17%, @secondaryColor 80%);
+@searchBoxBackgroundGradient  : linear-gradient(45deg, @blue-6 12%, @primaryColor 80%);
+@megaMenuBackgroundColor      : linear-gradient(13.69deg, @blue-6 1.17%, @primaryColor 80%);
 @mobileLogoMaxWidth: 200px;
+@mainMenuItemActiveColor: @primaryColor;
+@mainMenuItemActiveBorder: 4px solid @primaryColor;

@@ -78,7 +78,7 @@ export const formatFunctionalityScore = (value) => {
 
 export const escapeCsvValue = (value) => {
   const stringValue = value === undefined || value === null ? '' : `${value}`;
-  return `"${stringValue.replace(/"/g, '""')}"`;
+  return `"${stringValue.replaceAll('"', '""')}"`;
 };
 
 export const downloadCsv = (filename, rows) => {
@@ -97,19 +97,16 @@ export const downloadCsv = (filename, rows) => {
   URL.revokeObjectURL(url);
 };
 
-export const getLocalizedLandingPageURL = (appConfig, currentLang = 'en') => {
+export const getNavigatorCataloguePageURL = (currentLang = 'en') => {
   const lang = currentLang || 'en';
-  const landingPageURL =
-    appConfig?.landingPageURL || '/en/navigator/tool-catalogue';
 
-  return landingPageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
+  return `/${lang}/navigator/tool-catalogue`;
 };
 
-export const getComparePageURL = (appConfig, currentLang = 'en') => {
+export const getComparePageURL = (currentLang = 'en') => {
   const lang = currentLang || 'en';
-  const comparePageURL = appConfig?.comparePageURL || '/en/navigator/compare';
 
-  return comparePageURL.replace(/^\/en(?=\/|$)/, `/${lang}`);
+  return `/${lang}/navigator/compare`;
 };
 
 export const exportComparisonTable = (tools, getToolField) => {
@@ -128,12 +125,6 @@ export const exportComparisonTable = (tools, getToolField) => {
       ),
     ],
     [
-      'Spatial scale',
-      ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'cca_geographical_scale')),
-      ),
-    ],
-    [
       'Output type',
       ...tools.map((tool) =>
         arrayFieldToString(getToolField(tool, 'cca_type_of_outputs')),
@@ -145,12 +136,6 @@ export const exportComparisonTable = (tools, getToolField) => {
         arrayFieldToString(
           getToolField(tool, 'cca_adaptation_support_cycle_step'),
         ),
-      ),
-    ],
-    [
-      'Sector',
-      ...tools.map((tool) =>
-        arrayFieldToString(getToolField(tool, 'cca_adaptation_sectors')),
       ),
     ],
   ];

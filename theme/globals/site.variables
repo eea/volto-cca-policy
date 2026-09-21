@@ -8,8 +8,9 @@
     Brand Colors
 --------------------*/
 
-// @primaryColor: @green-6;
-@secondaryColor: #005c97;
+@primaryColor: #084C7E;
+@secondaryColor: #289588;
+
 @ccaGreenColor: #8a9c39;
 @ccaOrangeColor: #ef7000;
 @ccaYellowColor: #f3e2ab;

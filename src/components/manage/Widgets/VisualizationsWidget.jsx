@@ -7,6 +7,7 @@ import './visualizations.less';
 
 const emptyVisualization = {
   title: '',
+  description: '',
   embed_code: '',
   height: '',
   full_width: false,
@@ -43,6 +44,19 @@ const VisualizationsWidget = (props) => {
     );
   };
 
+  const moveItem = (index, direction) => {
+    const nextIndex = index + direction;
+
+    if (nextIndex < 0 || nextIndex >= visualizations.length) return;
+
+    const nextVisualizations = [...visualizations];
+    [nextVisualizations[index], nextVisualizations[nextIndex]] = [
+      nextVisualizations[nextIndex],
+      nextVisualizations[index],
+    ];
+    updateVisualizations(nextVisualizations);
+  };
+
   return (
     <FormFieldWrapper {...props}>
       <div className="visualizations-widget">
@@ -53,16 +67,30 @@ const VisualizationsWidget = (props) => {
           >
             <div className="visualizations-widget-item-header">
               <h4>Visualization {index + 1}</h4>
-              <Button
-                type="button"
-                basic
-                compact
-                negative
-                disabled={isDisabled}
-                onClick={() => deleteItem(index)}
-              >
-                Delete
-              </Button>
+              <Button.Group basic compact>
+                <Button
+                  type="button"
+                  disabled={isDisabled || index === 0}
+                  onClick={() => moveItem(index, -1)}
+                >
+                  Up
+                </Button>
+                <Button
+                  type="button"
+                  disabled={isDisabled || index === visualizations.length - 1}
+                  onClick={() => moveItem(index, 1)}
+                >
+                  Down
+                </Button>
+                <Button
+                  type="button"
+                  negative
+                  disabled={isDisabled}
+                  onClick={() => deleteItem(index)}
+                >
+                  Delete
+                </Button>
+              </Button.Group>
             </div>
 
             <Form.Field>
@@ -73,6 +101,19 @@ const VisualizationsWidget = (props) => {
                 disabled={isDisabled}
                 onChange={(event) =>
                   updateItem(index, 'title', event.target.value)
+                }
+              />
+            </Form.Field>
+
+            <Form.Field>
+              <label htmlFor={`${id}-${index}-description`}>Description</label>
+              <TextArea
+                id={`${id}-${index}-description`}
+                value={item.description || ''}
+                disabled={isDisabled}
+                rows={3}
+                onChange={(event) =>
+                  updateItem(index, 'description', event.target.value)
                 }
               />
             </Form.Field>

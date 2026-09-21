@@ -1,5 +1,7 @@
 export { default as BannerTitle } from './theme/BannerTitle/BannerTitle';
 export { default as PortalMessage } from './theme/PortalMessage/PortalMessage';
+export { default as TagOverflowPopup } from './theme/TagOverflowPopup';
+export { default as ToolThumbnail } from './theme/ToolThumbnail/ToolThumbnail';
 export { default as TranslationDisclaimer } from './theme/TranslationDisclaimer/TranslationDisclaimer';
 export { default as ASTNavigation } from './theme/ASTNavigation/ASTNavigation';
 export { default as RedirectToLogin } from './theme/RedirectToLogin/RedirectToLogin';
@@ -7,29 +9,8 @@ export { default as MissionSignatoryProfileView } from './theme/Views/MissionSig
 export { default as AccordionList } from './theme/AccordionList/AccordionList';
 export { default as CompareToolsView } from './theme/CompareTools/CompareToolsView';
 export { CompareToolsPanel } from './theme/CompareTools/CompareToolsPanel';
-export {
-  ArchivedVersionListing,
-  ArchivedVersionNotice,
-  BooleanField,
-  ContentBannerTitle,
-  ContentMetadata,
-  ContentRelatedItems,
-  DocumentsList,
-  EventDetails,
-  ExternalLink,
-  HTMLField,
-  ImageGallery,
-  ItemLogo,
-  LinksList,
-  LogoWrapper,
-  PublishedModifiedInfo,
-  ReferenceInfo,
-  ShareInfoButton,
-  SubjectTags,
-  TextField,
-  VersionsGroup,
-  VocabularyField,
-} from './theme/Content';
+export * from './theme/Content/Fields';
+export * from './theme/Content/Sections';
 
 // Widgets
 export { default as RASTWidgetView } from './manage/Widgets/RASTWidgetView';

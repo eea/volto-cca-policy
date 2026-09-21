@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { applyConfigurationSchema, rebind } from '@eeacms/search';
@@ -8,6 +9,16 @@ import { getComparePageURL } from '../../Search/NavigatorCatalogue/utils';
 export const MAX_COMPARE_TOOLS = 4;
 export const compareToolsAtom = atomWithStorage('cca-compare-tools', []);
 const searchAppName = 'navigatorCatalogueSearch';
+
+export const useHasMounted = () => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  return hasMounted;
+};
 
 const getRawValue = (value) =>
   value?.raw !== undefined ? value.raw : value || '';
@@ -27,11 +38,14 @@ export const getPathname = (url) => {
 
 export const useCompareTools = (compareTool) => {
   const [selectedTools, setSelectedTools] = useAtom(compareToolsAtom);
-  const isSelected = selectedTools.some(
+  const hasMounted = useHasMounted();
+
+  const effectiveSelectedTools = hasMounted ? selectedTools : [];
+  const isSelected = effectiveSelectedTools.some(
     (tool) => tool.uid === compareTool?.uid,
   );
   const isLimitReached =
-    selectedTools.length >= MAX_COMPARE_TOOLS && !isSelected;
+    effectiveSelectedTools.length >= MAX_COMPARE_TOOLS && !isSelected;
 
   const setSelected = (selected) => {
     if (!compareTool?.uid) return;
@@ -57,15 +71,11 @@ export const useCompareTools = (compareTool) => {
     isLimitReached,
     setSelected,
     toggle: () => setSelected(!isSelected),
+    hasMounted,
   };
 };
 
-export const getCompareLocation = (
-  tools,
-  appConfig,
-  returnURL,
-  currentLang = 'en',
-) => {
+export const getCompareLocation = (tools, returnURL, currentLang = 'en') => {
   const params = new URLSearchParams();
 
   tools.slice(0, MAX_COMPARE_TOOLS).forEach((tool) => {
@@ -75,7 +85,7 @@ export const getCompareLocation = (
   });
 
   const query = params.toString();
-  const path = getComparePageURL(appConfig, currentLang);
+  const path = getComparePageURL(currentLang);
 
   return {
     pathname: path,
@@ -101,11 +111,43 @@ export const fetchResultsByUid = async (uids, registry) => {
           ],
         },
       },
+      aggs: {
+        allOutputTypes: {
+          global: {},
+          aggs: {
+            values: {
+              terms: { field: 'cca_type_of_outputs.keyword', size: 10000 },
+            },
+          },
+        },
+        allCycleSteps: {
+          global: {},
+          aggs: {
+            values: {
+              terms: {
+                field: 'cca_adaptation_support_cycle_step.keyword',
+                size: 10000,
+              },
+            },
+          },
+        },
+      },
     },
     appConfig,
   );
   const hits = response.body?.hits?.hits || [];
   const Model = registry.resolve[appConfig.resultItemModel.factory];
+  const results = hits.map((hit) => new Model(hit, appConfig));
+  results.comparisonOptions = {
+    cca_type_of_outputs:
+      response.body?.aggregations?.allOutputTypes?.values?.buckets?.map(
+        (bucket) => bucket.key,
+      ) || [],
+    cca_adaptation_support_cycle_step:
+      response.body?.aggregations?.allCycleSteps?.values?.buckets?.map(
+        (bucket) => bucket.key,
+      ) || [],
+  };
 
-  return hits.map((hit) => new Model(hit, appConfig));
+  return results;
 };

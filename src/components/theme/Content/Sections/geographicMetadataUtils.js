@@ -91,6 +91,9 @@ function renderSubnational(value) {
 }
 
 function renderCity(value) {
+  if (!value) {
+    return null;
+  }
   if (Array.isArray(value)) {
     if (value.length === 0) {
       return null;
@@ -154,7 +157,7 @@ export function renderGeochar(geoElements, isObservatoryPage = false) {
     biotrans: 'Biogeographical regions:',
     countries: 'Countries:',
     subnational: 'Sub Nationals:',
-    city: 'City:',
+    city: 'Municipalities & other:',
   };
 
   if (isObservatoryPage) {
@@ -167,6 +170,7 @@ export function renderGeochar(geoElements, isObservatoryPage = false) {
     if (section !== undefined) {
       let rendered = renderSection(section, key);
       out[key] = out.push({
+        key,
         title: sectionTitles[key],
         value: rendered,
       });

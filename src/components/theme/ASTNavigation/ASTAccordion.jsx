@@ -116,7 +116,7 @@ const ASTAccordion = (props) => {
       {isUrbanAdaptationSupportTool && (
         <UASTLogoMap items={items} pathname={pathname} />
       )}
-      <Accordion className="secondary">
+      <Accordion className="primary">
         {Object.values(items).map((step, i) => {
           const isActiveStep = pathname === step['@id'];
           const isActiveSubStep = step['items'].some(

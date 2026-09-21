@@ -2,55 +2,69 @@ import { multiTermFacet } from '@eeacms/search';
 import { defineMessages } from 'react-intl';
 import {
   cca_adaptation_sectors,
-  cca_climate_impacts,
   geographic_countries,
   language,
 } from './../common';
 
 const messages = defineMessages({
-  adaptationSupportCycleStep: {
-    id: 'Adaptation Support Cycle Step',
-    defaultMessage: 'Adaptation Support Cycle Step',
+  climateHazards: {
+    id: 'Climate hazards',
+    defaultMessage: 'Climate hazards',
   },
-  userGroups: {
-    id: 'User Groups',
-    defaultMessage: 'User Groups',
+  adaptationSupportCycleStep: {
+    id: 'Adaptation policy cycle',
+    defaultMessage: 'Adaptation policy cycle',
   },
   typeOfOutputs: {
-    id: 'Type of Outputs',
-    defaultMessage: 'Type of Outputs',
+    id: 'Type of outputs',
+    defaultMessage: 'Type of outputs',
   },
-  typeOfData: {
-    id: 'Type of Data',
-    defaultMessage: 'Type of Data',
+  focusAreas: {
+    id: 'Focus areas',
+    defaultMessage: 'Focus areas',
   },
-  licenseStatus: {
-    id: 'License status',
-    defaultMessage: 'License status',
+  implementationLevel: {
+    id: 'Implementation level',
+    defaultMessage: 'Implementation level',
   },
-  natureBasedSolution: {
-    id: 'Nature-based solution',
-    defaultMessage: 'Nature-based solution',
+  adaptationApproaches: {
+    id: 'Adaptation approaches',
+    defaultMessage: 'Adaptation approaches',
   },
 });
 
 const facets = [
   cca_adaptation_sectors,
-  cca_climate_impacts,
+  {
+    field: 'cca_climate_impacts.keyword',
+    factory: 'MultiTermFacet',
+    label: messages.climateHazards,
+    showInFacetsList: true,
+    filterType: 'any',
+    isFilterable: false,
+    show: 10000,
+    isMulti: true,
+  },
+  multiTermFacet({
+    field: 'cca_focus_areas.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.focusAreas,
+    alwaysVisible: false,
+  }),
+  multiTermFacet({
+    field: 'cca_place_of_implementation.keyword',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.implementationLevel,
+    alwaysVisible: false,
+  }),
   geographic_countries,
-  language,
   multiTermFacet({
     field: 'cca_adaptation_support_cycle_step.keyword',
     isFilterable: false,
     isMulti: true,
     label: messages.adaptationSupportCycleStep,
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_intended_user_groups.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: messages.userGroups,
     alwaysVisible: false,
   }),
   multiTermFacet({
@@ -61,26 +75,13 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_type_of_data.keyword',
+    field: 'cca_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    label: messages.typeOfData,
+    label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
-  multiTermFacet({
-    field: 'cca_license_status.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: messages.licenseStatus,
-    alwaysVisible: false,
-  }),
-  multiTermFacet({
-    field: 'cca_nature_based_solution.keyword',
-    isFilterable: false,
-    isMulti: true,
-    label: messages.natureBasedSolution,
-    alwaysVisible: false,
-  }),
+  language,
 ];
 
 export default facets;

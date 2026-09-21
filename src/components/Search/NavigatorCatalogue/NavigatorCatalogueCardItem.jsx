@@ -1,8 +1,11 @@
 import React from 'react';
-import { Checkbox, Icon, Popup } from 'semantic-ui-react';
+import { Checkbox, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
+import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
+import { getToolThumbnailUrl } from '../../theme/ToolThumbnail/utils';
 import {
   getCompareToolTitle,
   getCompareToolUid,
@@ -23,13 +26,9 @@ const messages = defineMessages({
     id: 'Cycle',
     defaultMessage: 'Cycle',
   },
-  license: {
-    id: 'License',
-    defaultMessage: 'License',
-  },
-  type: {
-    id: 'Type',
-    defaultMessage: 'Type',
+  typeOfOutput: {
+    id: 'Type of outputs',
+    defaultMessage: 'Type of outputs',
   },
   compare: {
     id: 'Compare',
@@ -48,9 +47,28 @@ const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'UTC',
 });
 
-const TagGroup = ({ typeLabel, values, type }) => {
-  const visible = values.slice(0, 3);
-  const hidden = values.slice(3);
+const formatPublicationDate = (value) => {
+  if (!value) return '';
+  const raw =
+    typeof value === 'object' && value !== null && 'raw' in value
+      ? value.raw
+      : value;
+  const val = Array.isArray(raw) ? raw[0] : raw;
+  if (!val || typeof val === 'object') return '';
+  try {
+    const d = new Date(val);
+    if (Number.isNaN(d.getTime())) return '';
+    return publicationDateFormatter.format(d);
+  } catch {
+    return '';
+  }
+};
+
+const TagGroup = ({ typeLabel, values, type, maxItems }) => {
+  const visible = Number.isFinite(maxItems)
+    ? values.slice(0, maxItems)
+    : values;
+  const hidden = Number.isFinite(maxItems) ? values.slice(maxItems) : [];
   const remaining = values.length - visible.length;
 
   return (
@@ -61,27 +79,10 @@ const TagGroup = ({ typeLabel, values, type }) => {
         </span>
       ))}
       {remaining > 0 && (
-        <Popup
-          className="catalogue-tag-popup"
-          content={
-            <div className="catalogue-tag-tooltip">
-              <ul>
-                {hidden.map((value) => (
-                  <li key={`${type}-hidden-${value}`}>{value}</li>
-                ))}
-              </ul>
-            </div>
-          }
-          position="bottom left"
-          trigger={
-            <button
-              type="button"
-              className={`navigator-tag ${type} more`}
-              aria-label={`${typeLabel}: ${hidden.join(', ')}`}
-            >
-              + {remaining}
-            </button>
-          }
+        <TagOverflowPopup
+          items={hidden}
+          className={`navigator-tag ${type} more`}
+          ariaLabel={`${typeLabel}: ${hidden.join(', ')}`}
         />
       )}
     </div>
@@ -90,6 +91,7 @@ const TagGroup = ({ typeLabel, values, type }) => {
 
 const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
+  const hidden = values.slice(3);
 
   if (!visible.length) return null;
 
@@ -106,36 +108,46 @@ const CycleElements = ({ intl, values }) => {
           {value}
         </span>
       ))}
+      {hidden.length > 0 && (
+        <TagOverflowPopup
+          items={hidden}
+          className="navigator-tag cycle-element more"
+          ariaLabel={`${intl.formatMessage(messages.cycle)}: ${hidden.join(', ')}`}
+        />
+      )}
     </div>
   );
 };
 
 const NavigatorCatalogueCardItem = (props) => {
-  const { result } = props;
+  const { result = {} } = props;
   const intl = useIntl();
   const sectors = rawValueAsArray(result.cca_adaptation_sectors);
   const hazards = rawValueAsArray(result.cca_climate_impacts);
-  const licenseStatus = rawValueAsArray(result.cca_license_status)
+  const keywords = rawValueAsArray(result.cca_keywords);
+  const outputs = rawValueAsArray(result.cca_type_of_outputs);
+
+  const outputType = outputs
     .map((value) => value?.title || value)
     .filter(Boolean)
     .join(', ');
   const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = rawValueAsArray(
-    result.adaptation_support_cycle_step,
+    result.cca_adaptation_support_cycle_step,
   )
-    .map((value) => value?.title?.split(':')[0])
+    .map((value) => {
+      const title = value?.title || value;
+      return typeof title === 'string' ? title.split(':')[0] : title;
+    })
     .filter(Boolean);
   const publicationDate =
     result.publication_date?.raw || result.publication_date;
-  const formattedPublicationDate = publicationDate
-    ? publicationDateFormatter.format(new Date(publicationDate))
-    : '';
-  const sectorLabel = intl.formatMessage(messages.sector);
-  const hazardLabel = intl.formatMessage(messages.hazard);
+  const formattedPublicationDate = formatPublicationDate(publicationDate);
   const compareTool = {
     uid: getCompareToolUid(result),
     title: getCompareToolTitle(result),
     href: result.href,
+    image: getToolThumbnailUrl(result),
   };
   const { isSelected, isLimitReached, setSelected } =
     useCompareTools(compareTool);
@@ -146,9 +158,7 @@ const NavigatorCatalogueCardItem = (props) => {
 
   return (
     <div className={`navigator-catalogue-item${isSelected ? ' selected' : ''}`}>
-      <div className="navigator-tool-icon large" aria-hidden="true">
-        <Icon className="ri-file-line" />
-      </div>
+      <ToolThumbnail result={result} size="large" />
 
       <div className="catalogue-item-main">
         <div className="catalogue-item-top">
@@ -172,27 +182,34 @@ const NavigatorCatalogueCardItem = (props) => {
         </p>
 
         <div className="catalogue-taxonomy">
-          <TagGroup typeLabel={sectorLabel} values={sectors} type="sector" />
-          <TagGroup typeLabel={hazardLabel} values={hazards} type="hazard" />
+          <TagGroup
+            typeLabel={intl.formatMessage(messages.sector)}
+            values={sectors}
+            type="sector"
+            maxItems={3}
+          />
+          <TagGroup
+            typeLabel={intl.formatMessage(messages.hazard)}
+            values={hazards}
+            type="hazard"
+            maxItems={3}
+          />
+        </div>
+
+        <div className="catalogue-keywords">
+          <TagGroup values={keywords} type="keyword" />
         </div>
 
         <div className="catalogue-item-footer">
           <div className="catalogue-meta">
             <CycleElements intl={intl} values={adaptationSupportCycleSteps} />
           </div>
-
           <div className="catalogue-meta license-type">
-            {licenseStatus && (
-              <>
-                <span className="catalogue-licence" title={licenseStatus}>
-                  {intl.formatMessage(messages.license)}: {licenseStatus}
-                </span>
-                <span aria-hidden="true">·</span>
-              </>
+            {outputType && (
+              <span className="catalogue-output" title={outputType}>
+                {intl.formatMessage(messages.typeOfOutput)}: {outputType}
+              </span>
             )}
-            <span className="catalogue-type">
-              {intl.formatMessage(messages.type)}: Tool
-            </span>
           </div>
 
           <div className="catalogue-actions">
@@ -204,7 +221,11 @@ const NavigatorCatalogueCardItem = (props) => {
               />
               <span>{intl.formatMessage(messages.compare)}</span>
             </label>
-            <ExternalLink href={result.href} className="ui button primary icon">
+            <ExternalLink
+              href={result.href}
+              className="ui button primary icon"
+              labelPosition="left"
+            >
               {intl.formatMessage(messages.viewTool)}
               <Icon className="ri-arrow-right-line" />
             </ExternalLink>

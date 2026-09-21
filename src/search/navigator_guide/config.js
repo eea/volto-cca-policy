@@ -8,7 +8,6 @@ const previewResultsLimit = 3;
 
 const navigatorGuideConfig = {
   title: 'Navigator Guide',
-  landingPageURL: '/en/navigator',
   alwaysSearchOnInitialLoad: true,
   resultsPerPage: previewResultsLimit,
   previewResultsLimit,
@@ -16,7 +15,6 @@ const navigatorGuideConfig = {
   showLandingPage: false,
   layoutComponent: 'NavigatorGuideLayout',
   contentBodyComponent: 'NavigatorGuideContentView',
-  resultsPageURL: '/en/navigator/tool-catalogue',
 };
 
 export default function installNavigatorGuideSearch(config) {

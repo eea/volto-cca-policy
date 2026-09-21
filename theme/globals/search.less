@@ -5,8 +5,8 @@
 body.searchlib-page .searchlib-block {
   .ui.secondary.pointing.content-section-tabs.menu {
     .active.item .tab-icon .count {
-      border-color: @ccaGreenColor;
-      background-color: @ccaGreenColor;
+      border-color: @secondaryColor;
+      background-color: @secondaryColor;
     }
   }
 }
@@ -55,4 +55,84 @@ body.searchlib-page .searchlib-block {
 
 .active-filters .ui.card.term.active-term .card-header .clear-filters {
   top: -1px;
+}
+
+body.searchlib-page {
+  .searchlib-block {
+    button.ui.button.download-btn {
+      color: inherit !important;
+    }
+
+    .above-results .sorting .inline.dropdown > span {
+      color: @primaryColor;
+    }
+
+    .dropdown-facets-list {
+      .ui.button.sui-button {
+        color: @primaryColor !important;
+      }
+
+      .facet-title i.icon {
+        top: 0;
+      }
+
+      .dropdown-facet {
+        .ui.button.basic.facet-btn.active > .facet-title {
+          color: @secondaryColor !important;
+        }
+      }
+    }
+
+    .sui-search-box .search-input .terms-box {
+      input {
+        border-color: @primaryColor;
+      }
+
+      .terms-box-left {
+        border-color: @primaryColor;
+        .search-icon svg {
+          fill: @primaryColor !important;
+        }
+      }
+    }
+  }
+}
+
+#IncludeArchived {
+  position: relative;
+  top: -1px;
+
+  label {
+    padding-left: 2.1rem;
+
+    &:before {
+      position: absolute;
+      top: 8px;
+      width: 1.5rem;
+      height: 0.6rem !important;
+      background: #808080 !important;
+    }
+
+    &:after {
+      position: absolute;
+      top: 8px;
+      left: 0.08rem !important;
+      width: 0.6rem !important;
+      height: 0.6rem !important;
+      background: @white;
+    }
+  }
+
+  .checked {
+    label {
+      &:before {
+        background-color: @secondaryColor !important;
+        border-color: @secondaryColor !important;
+      }
+
+      &:after {
+        left: 0.8rem !important;
+      }
+    }
+  }
 }

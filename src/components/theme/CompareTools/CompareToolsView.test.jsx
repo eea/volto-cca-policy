@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -41,9 +41,7 @@ jest.mock('@plone/volto/registry', () => ({
     settings: {
       searchlib: {
         searchui: {
-          navigatorCatalogueSearch: {
-            landingPageURL: '/en/navigator/tool-catalogue',
-          },
+          navigatorCatalogueSearch: {},
         },
       },
     },
@@ -58,7 +56,7 @@ jest.mock('./utils', () => ({
   getPathname: (url) => url?.split('?')[0] || '',
 }));
 
-describe('CompareToolsView accessibility', () => {
+describe('CompareToolsView', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     useAtom.mockReturnValue([[], jest.fn()]);
@@ -71,18 +69,41 @@ describe('CompareToolsView accessibility', () => {
       hash: '',
       state: {},
     });
-    fetchResultsByUid.mockResolvedValue([
+    const results = [
       {
         cca_uid: { raw: 'one' },
         title: 'Tool one',
         href: '/tool-one',
+        image: {
+          scales: { thumb: { download: '/uploaded-compare-thumb.jpg' } },
+        },
+        functionality: { raw: 4 },
+        cca_type_of_outputs: { raw: ['Maps and graphs'] },
+        cca_adaptation_support_cycle_step: {
+          raw: [
+            {
+              title:
+                'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+            },
+          ],
+        },
       },
       {
         cca_uid: { raw: 'two' },
         title: 'Tool two',
         href: '/tool-two',
+        image: null,
       },
-    ]);
+    ];
+    results.comparisonOptions = {
+      cca_type_of_outputs: ['Reports and decision support', 'Maps and graphs'],
+      cca_adaptation_support_cycle_step: [
+        'Step 10: Additional step from the catalogue',
+        'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+        'Step 1: Preparing the Ground for Adaptation',
+      ],
+    };
+    fetchResultsByUid.mockResolvedValue(results);
   });
 
   it('labels the table, row headers, and remove actions', async () => {
@@ -106,5 +127,105 @@ describe('CompareToolsView accessibility', () => {
         name: 'Remove Tool one from comparison',
       }),
     ).toBeInTheDocument();
+    const functionalityScore = screen.getByLabelText('4/6');
+    expect(functionalityScore.children).toHaveLength(6);
+    expect(
+      functionalityScore.querySelectorAll('.functionality-dot.filled'),
+    ).toHaveLength(4);
+    const cycleHeader = screen.getByRole('rowheader', {
+      name: 'Adaptation support cycle step',
+    });
+    expect(cycleHeader).toHaveAttribute('scope', 'rowgroup');
+    expect(cycleHeader).toHaveAttribute('rowspan', '3');
+    const cycleRows = within(cycleHeader.closest('tbody')).getAllByRole('row');
+    expect(cycleRows).toHaveLength(3);
+    expect(
+      within(cycleRows[2]).getAllByText(
+        'Step 10: Additional step from the catalogue',
+      ),
+    ).toHaveLength(2);
+    expect(
+      within(cycleRows[1]).getAllByText(
+        'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+      ),
+    ).toHaveLength(2);
+    expect(within(cycleRows[1]).getAllByLabelText('Available')).toHaveLength(1);
+    expect(
+      within(cycleRows[1]).getAllByLabelText('Not available'),
+    ).toHaveLength(1);
+    expect(
+      within(cycleRows[0]).getAllByLabelText('Not available'),
+    ).toHaveLength(2);
+    const outputRow = screen
+      .getByRole('rowheader', { name: 'Output type' })
+      .closest('tr');
+    expect(within(outputRow).getAllByText('Maps and graphs')).toHaveLength(2);
+    expect(within(outputRow).getAllByLabelText('Available')).toHaveLength(1);
+    expect(within(outputRow).getAllByLabelText('Not available')).toHaveLength(
+      1,
+    );
+  });
+
+  it('falls back to selected tool values when aggregations are empty', async () => {
+    const results = await fetchResultsByUid();
+    results.comparisonOptions = {};
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    await screen.findByRole('table', { name: 'Compare tools' });
+    const cycleHeader = screen.getByRole('rowheader', {
+      name: 'Adaptation support cycle step',
+    });
+    expect(cycleHeader).toHaveAttribute('rowspan', '1');
+    expect(
+      within(cycleHeader.closest('tbody')).getAllByText(
+        'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+      ),
+    ).toHaveLength(2);
+    expect(
+      screen.queryByText('Step 1: Preparing the Ground for Adaptation'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('shows the uploaded tool result image and keeps the file icon for a missing image', async () => {
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    const table = await screen.findByRole('table', { name: 'Compare tools' });
+    const [thumbnail, missingThumbnail] = table.querySelectorAll(
+      '.navigator-tool-icon',
+    );
+    const img = thumbnail.querySelector('img');
+
+    expect(thumbnail).toHaveClass('medium');
+    expect(img).toHaveAttribute('src', '/uploaded-compare-thumb.jpg');
+    expect(img).toHaveStyle({ display: 'none' });
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    expect(missingThumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(missingThumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+
+    fireEvent.load(img);
+
+    expect(img.style.display).toBe('');
+    expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+  });
+
+  it('falls back to the file icon when the image fails', async () => {
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    const table = await screen.findByRole('table', { name: 'Compare tools' });
+    const thumbnail = table.querySelector('.navigator-tool-icon');
+
+    fireEvent.error(thumbnail.querySelector('img'));
+
+    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
   });
 });

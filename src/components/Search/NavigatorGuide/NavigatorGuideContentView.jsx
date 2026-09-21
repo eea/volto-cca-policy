@@ -6,8 +6,13 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
+import { mergeGuideOptions, sortAdaptationSteps } from './utils';
+import { rawValueAsArray } from '../NavigatorCatalogue/utils';
+import useGuideFacetOptions from './useGuideFacetOptions';
+import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
   noSteps: {
@@ -91,7 +96,7 @@ const isStepSelected = (filters, field) =>
 
 const previewTagTypes = {
   adaptationSectors: 'sector',
-  climateImpacts: 'hazard',
+  climateHazards: 'hazard',
   adaptationStage: 'adaptation-stage',
   coverage: 'coverage',
 };
@@ -111,6 +116,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     totalResults,
   } = searchContext;
   const steps = guideSteps;
+  const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
     Number.isInteger(storedActiveStep) &&
@@ -122,29 +128,42 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const selectedValues =
     (filters || []).find((filter) => filter.field === step?.field)?.values ||
     [];
-  const options = getFacetOptions(facets, step?.field);
-  const isLastStep = activeStep === steps.length - 1;
   const hasSelections = steps.some(({ field }) =>
     isStepSelected(filters, field),
   );
+  const mergedOptions = mergeGuideOptions(
+    allFacetOptions?.[step?.field],
+    getFacetOptions(facets, step?.field),
+    selectedValues,
+    hasSelections,
+  );
+  const options =
+    step?.id === 'adaptationStage'
+      ? sortAdaptationSteps(mergedOptions)
+      : mergedOptions;
+  const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))
     .map(({ label }) =>
       intl.formatMessage(label).toLocaleLowerCase(currentLang),
     );
-  const selectedPreviewTags = steps.flatMap((item) => {
-    const values =
-      (filters || []).find((filter) => filter.field === item.field)?.values ||
-      [];
+  const selectedPreviewTags = (result) =>
+    steps.flatMap((item) => {
+      const values =
+        (filters || []).find((filter) => filter.field === item.field)?.values ||
+        [];
 
-    return values.map((value) => ({
-      label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
-      type: previewTagTypes[item.id],
-    }));
-  });
-  const visiblePreviewTags = selectedPreviewTags.slice(0, 3);
-  const remainingPreviewTags =
-    selectedPreviewTags.length - visiblePreviewTags.length;
+      const resultValues = rawValueAsArray(
+        result[item.field.replace('.keyword', '')],
+      ).map((value) => value?.title || value);
+
+      return values
+        .filter((value) => resultValues.includes(value))
+        .map((value) => ({
+          label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
+          type: previewTagTypes[item.id],
+        }));
+    });
 
   React.useEffect(() => {
     if (storedActiveStep !== activeStep) {
@@ -169,9 +188,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       allowedFields.has(field),
     );
     const query = new URLManager().stateToUrl({ filters: resultFilters });
-    const pathname = (
-      appConfig.resultsPageURL || '/en/navigator/tool-catalogue'
-    ).replace(/^\/en(?=\/|$)/, `/${currentLang}`);
+    const pathname = getNavigatorCataloguePageURL(currentLang);
 
     history.push({ pathname, search: query ? `?${query}` : '' });
   };
@@ -196,86 +213,94 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
       <div className="navigator-guide-layout">
         <section className="navigator-guide-wizard">
-          <div className="navigator-guide-progress">
-            {steps.map((item, index) => (
-              <React.Fragment key={item.id}>
-                <Button
-                  className={`navigator-guide-progress-step${
-                    index === activeStep ? ' active' : ''
-                  }${index < activeStep ? ' completed' : ''}`}
-                  aria-current={index === activeStep ? 'step' : undefined}
-                  onClick={() => setActiveStep(index)}
-                >
-                  <span>
-                    {isStepSelected(filters, item.field) ? (
-                      <Icon className="ri-check-line" />
-                    ) : (
-                      index + 1
+          <div className="navigator-guide-wizard-content">
+            <div className="navigator-guide-progress-wrapper">
+              <div className="navigator-guide-progress">
+                {steps.map((item, index) => (
+                  <React.Fragment key={item.id}>
+                    <Button
+                      className={`navigator-guide-progress-step${
+                        index === activeStep ? ' active' : ''
+                      }${index < activeStep ? ' completed' : ''}`}
+                      aria-current={index === activeStep ? 'step' : undefined}
+                      onClick={() => setActiveStep(index)}
+                    >
+                      <span>
+                        {isStepSelected(filters, item.field) ? (
+                          <Icon className="ri-check-line" />
+                        ) : (
+                          index + 1
+                        )}
+                      </span>
+                      {intl.formatMessage(item.label)}
+                    </Button>
+                    {index < steps.length - 1 && (
+                      <span
+                        className={`navigator-guide-progress-connector${
+                          index < activeStep ? ' completed' : ''
+                        }`}
+                        aria-hidden="true"
+                      />
                     )}
-                  </span>
-                  {intl.formatMessage(item.label)}
-                </Button>
-                {index < steps.length - 1 && (
-                  <span
-                    className={`navigator-guide-progress-connector${
-                      index < activeStep ? ' completed' : ''
-                    }`}
-                    aria-hidden="true"
-                  />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-          <div
-            className="navigator-guide-progress-bar"
-            role="progressbar"
-            aria-valuemin="1"
-            aria-valuemax={steps.length}
-            aria-valuenow={activeStep + 1}
-          >
-            <div
-              className="navigator-guide-progress-bar-fill"
-              style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
-            />
-          </div>
-
-          <div className="navigator-guide-step-meta">
-            <span className="navigator-guide-step-number">
-              {intl.formatMessage(messages.stepProgress, {
-                current: activeStep + 1,
-                total: steps.length,
-              })}
-            </span>
-            <span>{intl.formatMessage(messages.selectAllThatApply)}</span>
-          </div>
-          <h3>{intl.formatMessage(step.title)}</h3>
-          {step.description && <p>{intl.formatMessage(step.description)}</p>}
-
-          {isLoading ? (
-            <div className="navigator-guide-options-loading">
-              <Loader active inline />
+                  </React.Fragment>
+                ))}
+              </div>
+              <div
+                className="navigator-guide-progress-bar"
+                role="progressbar"
+                aria-valuemin="1"
+                aria-valuemax={steps.length}
+                aria-valuenow={activeStep + 1}
+              >
+                <div
+                  className="navigator-guide-progress-bar-fill"
+                  style={{
+                    width: `${((activeStep + 1) / steps.length) * 100}%`,
+                  }}
+                />
+              </div>
+              <div className="navigator-guide-step-meta">
+                <span className="navigator-guide-step-number">
+                  {intl.formatMessage(messages.stepProgress, {
+                    current: activeStep + 1,
+                    total: steps.length,
+                  })}
+                </span>
+                <span>{intl.formatMessage(messages.selectAllThatApply)}</span>
+              </div>
             </div>
-          ) : options.length > 0 ? (
-            <div className="navigator-guide-options">
-              {options.map((option) => (
-                <label
-                  key={option.value}
-                  className={`navigator-guide-option${
-                    selectedValues.includes(option.value) ? ' selected' : ''
-                  }`}
-                >
-                  <Checkbox
-                    checked={selectedValues.includes(option.value)}
-                    onChange={() => toggleValue(option.value)}
-                  />
-                  <span>{option.value}</span>
-                  <small>{option.count}</small>
-                </label>
-              ))}
-            </div>
-          ) : (
-            <Message>{intl.formatMessage(messages.noOptions)}</Message>
-          )}
+
+            <h3>{intl.formatMessage(step.title)}</h3>
+            {step.description && <p>{intl.formatMessage(step.description)}</p>}
+
+            {isLoading ? (
+              <div className="navigator-guide-options-loading">
+                <Loader active inline />
+              </div>
+            ) : options.length > 0 ? (
+              <div className="navigator-guide-options">
+                {options.map((option) => (
+                  <label
+                    key={option.value}
+                    className={`navigator-guide-option${
+                      selectedValues.includes(option.value) ? ' selected' : ''
+                    }${option.disabled ? ' disabled' : ''}`}
+                    aria-disabled={option.disabled || undefined}
+                  >
+                    <Checkbox
+                      checked={selectedValues.includes(option.value)}
+                      disabled={option.disabled}
+                      onChange={() => toggleValue(option.value)}
+                    />
+                    <span>{option.value}</span>
+                    <small>{option.count}</small>
+                  </label>
+                ))}
+              </div>
+            ) : (
+              <Message>{intl.formatMessage(messages.noOptions)}</Message>
+            )}
+          </div>
 
           <div className="navigator-guide-actions">
             <Button
@@ -336,55 +361,56 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               <div className="navigator-guide-preview-results">
                 {(results || [])
                   .slice(0, appConfig.previewResultsLimit)
-                  .map((result) => (
-                    <div
-                      className="navigator-guide-preview-result"
-                      key={result._original?._id || result.href}
-                    >
+                  .map((result) => {
+                    const tags = selectedPreviewTags(result);
+                    const visibleTags = tags.slice(0, 3);
+                    const remainingTags = tags.length - visibleTags.length;
+                    return (
                       <div
-                        className="navigator-tool-icon medium"
-                        aria-hidden="true"
+                        className="navigator-guide-preview-result"
+                        key={result._original?._id || result.href}
                       >
-                        <Icon className="ri-stack-line" />
-                      </div>
-                      <div className="navigator-guide-preview-result-content">
-                        <small
-                          className="navigator-tool-provider"
-                          title={result?._result?.tool_provider?.raw}
-                        >
-                          {result?._result?.tool_provider?.raw}
-                        </small>
-                        <a
-                          href={result.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="navigator-guide-preview-result-title"
-                          title={result.title}
-                        >
-                          <h5>{result.title}</h5>
-                        </a>
-                        {selectedPreviewTags.length > 0 && (
-                          <div className="navigator-guide-preview-tags">
-                            {visiblePreviewTags.map(
-                              ({ label, type }, index) => (
+                        <ToolThumbnail
+                          result={result}
+                          fallbackIcon="ri-stack-line"
+                        />
+                        <div className="navigator-guide-preview-result-content">
+                          <small
+                            className="navigator-tool-provider"
+                            title={result?._result?.tool_provider?.raw}
+                          >
+                            {result?._result?.tool_provider?.raw}
+                          </small>
+                          <a
+                            href={result.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="navigator-guide-preview-result-title"
+                            title={result.title}
+                          >
+                            <h5>{result.title}</h5>
+                          </a>
+                          {tags.length > 0 && (
+                            <div className="navigator-guide-preview-tags">
+                              {visibleTags.map(({ label, type }, index) => (
                                 <span
                                   className={`navigator-tag ${type}`}
                                   key={`${type}-${label}-${index}`}
                                 >
                                   {label}
                                 </span>
-                              ),
-                            )}
-                            {remainingPreviewTags > 0 && (
-                              <span className="navigator-guide-preview-tag-more">
-                                + {remainingPreviewTags}
-                              </span>
-                            )}
-                          </div>
-                        )}
+                              ))}
+                              {remainingTags > 0 && (
+                                <span className="navigator-guide-preview-tag-more">
+                                  + {remainingTags}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
               </div>
               <Button
                 labelPosition="right"

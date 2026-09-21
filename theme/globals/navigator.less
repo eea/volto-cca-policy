@@ -1,5 +1,4 @@
 @navigatorMetaTextColor: #7c8a96;
-@navigatorAccentColor: #289588;
 @navigatorInactiveColor: #bcbec0;
 @navigatorBorderColor: #d7dee5;
 @navigatorDashedBorderColor: #cbd4dc;
@@ -51,6 +50,15 @@
   border-radius: 4px;
   background-color: #f7f8fa;
   color: @navigatorIconColor;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+  }
 
   i.icon {
     width: auto;
@@ -84,7 +92,12 @@
   }
 }
 
-.searchapp-navigatorCatalogueSearch .catalogue-compare {
+// The label+checkbox row is aligned via inline-flex. Needed both in the
+// searchlib results page and in the CCA chatbot "catalogue" chat cards
+// (see .catalogue-chat-navigator-card), otherwise the "Compare" text drops
+// out of line with the checkbox.
+.searchapp-navigatorCatalogueSearch .catalogue-compare,
+.catalogue-chat-navigator-card .catalogue-compare {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -206,7 +219,7 @@
     text-align: center;
 
     &.ready {
-      color: @navigatorAccentColor;
+      color: @secondaryColor;
     }
 
     &.incomplete {
@@ -225,17 +238,6 @@
     &:focus {
       background-color: transparent;
     }
-  }
-}
-
-.extended-tool-compare-action {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1.5rem;
-  gap: 0.75rem;
-
-  .ui.button {
-    margin: 0 !important;
   }
 }
 
@@ -357,13 +359,12 @@
     }
   }
 
-  .ui.celled.table th:first-child,
-  .ui.celled.table td:first-child {
+  .compare-criteria-column {
     width: 180px;
   }
 
   .ui.celled.table th:not(:first-child),
-  .ui.celled.table td:not(:first-child) {
+  .ui.celled.table td {
     overflow-wrap: anywhere;
   }
 
@@ -373,9 +374,69 @@
 
   .usability-value,
   .functionality-value {
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
     font-size: 20px;
     font-weight: 700;
+  }
+
+  .functionality-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .functionality-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid @primaryColor;
+    border-radius: 50%;
+
+    &.filled {
+      background-color: @primaryColor;
+    }
+  }
+
+  .compare-status-column {
+    width: 64px;
+  }
+
+  .ui.celled.table {
+    td.compare-option-label,
+    td.compare-option-status {
+      padding: 0.4rem 1.1rem;
+      vertical-align: middle;
+    }
+
+    td.compare-option-label {
+      border-left: 1px solid @navigatorBorderColor;
+
+      &.available {
+        color: @secondaryColor;
+        font-weight: 700;
+      }
+    }
+
+    td.compare-option-status {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      text-align: center;
+
+      i.icon.ri-check-line {
+        color: @secondaryColor;
+      }
+
+      i.icon {
+        margin: 0;
+        font-size: 24px;
+        line-height: 1;
+      }
+    }
+
+    tbody + tbody tr:first-child > th,
+    tbody + tbody tr:first-child > td {
+      border-top: 1px solid @navigatorBorderColor;
+    }
   }
 
   .compare-criteria-label {
@@ -559,55 +620,9 @@
   }
 }
 
-body.searchlib-page .searchapp-navigatorCatalogueSearch {
-  .back-link {
-    display: none;
-  }
-
-  .search-input,
-  .sui-search-box {
-    margin-bottom: 2rem;
-  }
-
-  .ui.right.sidebar {
-    background-color: #fff;
-    box-shadow: -4px 0 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .sidebar-wrapper {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    padding: 1em;
-  }
-
-  .navigator-view-tabs {
-    display: flex;
-    border-bottom: 1px solid @navigatorBorderColor;
-    margin-bottom: 1.2rem;
-    gap: 0;
-
-    button {
-      min-height: 46px;
-      padding: 0 1.15rem;
-      border: 0;
-      border-bottom: 3px solid transparent;
-      background: transparent;
-      color: #596f80;
-      cursor: pointer;
-      font-weight: 700;
-
-      &.active {
-        border-bottom-color: @secondaryColor;
-        color: @primaryColor;
-      }
-
-      i.icon {
-        margin-right: 0.45rem;
-      }
-    }
-  }
-
+// Shared styles for the Navigator catalogue card. Applied both in the
+// searchlib results page and in the CCA chatbot "catalogue" chat cards.
+.navigator-catalogue-card-styles() {
   .navigator-catalogue-item {
     display: grid;
     padding: 1.2rem;
@@ -662,6 +677,10 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     align-items: center;
   }
 
+  .catalogue-keywords {
+    margin-top: 0.5rem;
+  }
+
   .catalogue-taxonomy {
     gap: 0.5rem;
   }
@@ -684,16 +703,16 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     gap: 1rem;
   }
 
-  .catalogue-licence {
-    display: inline-block;
-    overflow: hidden;
-    max-width: 300px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
   .license-type {
     gap: 0.7em;
+  }
+
+  .catalogue-output {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 500px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .navigator-catalogue-cycle-elements {
@@ -707,7 +726,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   }
 
   .cycle-element {
-    background: @secondaryColor;
+    background: @primaryColor;
     color: #fff;
   }
 
@@ -738,6 +757,37 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       justify-content: flex-start;
     }
   }
+}
+
+body.searchlib-page .searchapp-navigatorCatalogueSearch {
+  .back-link {
+    display: none;
+  }
+
+  .search-input,
+  .sui-search-box {
+    margin-bottom: 2rem;
+  }
+
+  .ui.right.sidebar {
+    background-color: #fff;
+    box-shadow: -4px 0 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .sidebar-wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .navigator-catalogue-card-styles();
+}
+
+// The chatbot "catalogue" chat renders the same Navigator card outside the
+// searchlib results page, so apply the shared card styles there too.
+.catalogue-chat-navigator-card {
+  .navigator-catalogue-card-styles();
 }
 
 .navigator-tool-provider,
@@ -782,8 +832,12 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     color: #0a7b6c;
   }
 
+  &.keyword {
+    background: #efefef;
+  }
+
   &.adaptation-stage {
-    background: @secondaryColor;
+    background: @primaryColor;
     color: #fff;
   }
 
@@ -813,7 +867,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
     gap: 0.5rem;
   }
 
@@ -823,13 +877,18 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: @navigatorAccentColor;
+    color: @secondaryColor;
   }
 
   .navigator-guide-layout {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: minmax(0, 3fr) minmax(16rem, 1fr);
+  }
+
+  .navigator-guide-wizard {
+    display: flex;
+    flex-direction: column;
   }
 
   .navigator-guide-wizard,
@@ -891,19 +950,19 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       }
 
       &.active {
-        color: @secondaryColor;
+        color: @primaryColor;
 
         span {
-          background: @secondaryColor;
+          background: @primaryColor;
           color: #fff;
         }
       }
 
       &.completed {
-        color: @navigatorAccentColor;
+        color: @secondaryColor;
 
         span {
-          background: @navigatorAccentColor;
+          background: @secondaryColor;
           color: #fff;
         }
       }
@@ -915,7 +974,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       background: @navigatorInactiveColor;
 
       &.completed {
-        background: @navigatorAccentColor;
+        background: @secondaryColor;
       }
     }
   }
@@ -931,7 +990,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   .navigator-guide-progress-bar-fill {
     height: 100%;
     border-radius: inherit;
-    background: @secondaryColor;
+    background: @primaryColor;
     transition: width 200ms ease;
   }
 
@@ -943,12 +1002,16 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     gap: 0.75rem;
   }
 
+  .navigator-guide-preview-results {
+    margin-bottom: 1rem;
+  }
+
   .navigator-guide-preview-result-content {
     display: flex;
     min-width: 0;
     flex: 1 1 auto;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.2rem;
 
     .navigator-tool-provider {
       display: block;
@@ -1019,6 +1082,12 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       background: fade(@primaryColor, 5%);
     }
 
+    &.disabled {
+      background: #f5f5f5;
+      color: @navigatorInactiveColor;
+      opacity: 0.65;
+    }
+
     > span {
       flex: 1;
     }
@@ -1031,6 +1100,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   .navigator-guide-actions {
     padding-top: 1.25rem;
     border-top: 1px solid @navigatorBorderColor;
+    margin-top: auto;
 
     > div {
       display: flex;

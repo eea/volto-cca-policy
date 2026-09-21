@@ -2,4 +2,4 @@
             Page Banner
 *******************************/
 
-// @bannerBackgroundColor   : @secondaryColor;
+@bannerBackgroundColor   : @primaryColor;

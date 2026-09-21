@@ -76,6 +76,7 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_uid: { raw: 'tool-uid' },
       title: 'Climate planning tool',
       href: 'https://example.com/tool',
+      image: '/uploaded-tool-thumb.jpg',
       publication_date: { raw: '2026-07-24' },
       cca_adaptation_sectors: {
         raw: ['Agriculture', 'Water', 'Health', 'Energy'],
@@ -83,13 +84,17 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_climate_impacts: {
         raw: ['Drought', 'Flooding', 'Heat', 'Wildfires'],
       },
-      cca_license_status: {
+      cca_keywords: {
+        raw: ['Planning', 'Risk assessment', 'Resilience', 'Adaptation'],
+      },
+      cca_type_of_outputs: {
         raw: [
-          'Open data with attribution requirements',
-          { title: 'Restricted' },
+          'Maps and graphs',
+          'Reports and decision support',
+          'Datasets and indicators',
         ],
       },
-      adaptation_support_cycle_step: {
+      cca_adaptation_support_cycle_step: {
         raw: [
           { title: 'Step 1: Preparing the ground' },
           { title: 'Step 2: Assessing risks' },
@@ -121,14 +126,22 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(
       screen.getByRole('button', { name: 'Hazard: Wildfires' }),
     ).toBeInTheDocument();
+    expect(screen.getByText('Planning')).toBeInTheDocument();
+    expect(screen.getByText('Risk assessment')).toBeInTheDocument();
+    expect(screen.getByText('Resilience')).toBeInTheDocument();
+    expect(screen.getByText('Adaptation')).toBeInTheDocument();
     expect(screen.getByText('Step 1')).toBeInTheDocument();
-    expect(screen.queryByText('Step 4')).not.toBeInTheDocument();
     expect(
-      screen.getByTitle('Open data with attribution requirements, Restricted'),
+      screen.getByRole('button', { name: 'Cycle: Step 4' }),
+    ).toHaveTextContent('+ 1');
+    expect(screen.getByText('Step 4')).toBeInTheDocument();
+    expect(
+      screen.getByTitle(
+        'Maps and graphs, Reports and decision support, Datasets and indicators',
+      ),
     ).toHaveTextContent(
-      'License: Open data with attribution requirements, Restricted',
+      'Type of outputs: Maps and graphs, Reports and decision support, Datasets and indicators',
     );
-    expect(screen.getByText('Type: Tool')).toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText('compare'));
     expect(setSelected).toHaveBeenCalledWith(true);
@@ -138,7 +151,24 @@ describe('NavigatorCatalogueCardItem', () => {
       uid: 'tool-uid',
       title: 'Climate planning tool',
       href: 'https://example.com/tool',
+      image: '/uploaded-tool-thumb.jpg',
     });
+  });
+
+  it('shows the cycle steps from the field used by the catalogue filter', () => {
+    renderCard({
+      title: 'Climate planning tool',
+      href: 'https://example.com/tool',
+      cca_adaptation_support_cycle_step: {
+        raw: ['Step 2: Assessing risks'],
+      },
+      adaptation_support_cycle_step: {
+        raw: [{ title: 'Step 1: Preparing the ground' }],
+      },
+    });
+
+    expect(screen.getByText('Step 2')).toBeInTheDocument();
+    expect(screen.queryByText('Step 1')).not.toBeInTheDocument();
   });
 
   it('renders sparse results and disables comparison without a UID', () => {
@@ -169,5 +199,110 @@ describe('NavigatorCatalogueCardItem', () => {
 
     expect(screen.getByText('Water')).toBeInTheDocument();
     expect(screen.queryByText('License:')).not.toBeInTheDocument();
+  });
+
+  it('safely handles invalid, array, or malformed publication dates without throwing RangeError', () => {
+    // Malformed/invalid date string that would throw RangeError: Invalid time value
+    const { rerender } = renderCard({
+      title: 'Invalid date tool',
+      publication_date: 'N/A',
+    });
+    expect(screen.getByText('Invalid date tool')).toBeInTheDocument();
+    expect(screen.queryByText('N/A')).not.toBeInTheDocument();
+
+    // Array publication date
+    rerender(
+      <IntlProvider locale="en">
+        <NavigatorCatalogueCardItem
+          result={{
+            title: 'Array date tool',
+            publication_date: { raw: ['2026-07-24'] },
+          }}
+        />
+      </IntlProvider>,
+    );
+    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+
+    // Malformed object publication date
+    rerender(
+      <IntlProvider locale="en">
+        <NavigatorCatalogueCardItem
+          result={{
+            title: 'Object date tool',
+            publication_date: { raw: { invalid: true } },
+          }}
+        />
+      </IntlProvider>,
+    );
+    expect(screen.getByText('Object date tool')).toBeInTheDocument();
+  });
+
+  it('safely handles non-string adaptationSupportCycleSteps without throwing', () => {
+    renderCard({
+      title: 'Numeric cycle tool',
+      adaptation_support_cycle_step: { raw: [123, null, { title: 456 }] },
+    });
+    expect(screen.getByText('Numeric cycle tool')).toBeInTheDocument();
+  });
+
+  describe('thumbnail rendering and fallback', () => {
+    it('renders thumbnail image and smoothly transitions from placeholder on load', () => {
+      const { container } = renderCard({
+        title: 'Tool with image',
+        href: '/tools/my-tool',
+        image: { scales: { thumb: { download: '/uploaded-thumb.jpg' } } },
+      });
+
+      const img = container.querySelector('.navigator-tool-icon img');
+      expect(img).toBeInTheDocument();
+      expect(img).toHaveAttribute('src', '/uploaded-thumb.jpg');
+      expect(img.parentElement).toHaveClass('navigator-tool-icon', 'large');
+      expect(img).toHaveStyle({ display: 'none' });
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).toBeInTheDocument();
+
+      // Fire load event on image
+      fireEvent.load(img);
+
+      expect(img.style.display).toBe('');
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('falls back to placeholder icon when image fails to load', () => {
+      const { container } = renderCard({
+        title: 'Tool with broken image',
+        href: '/tools/broken-tool',
+      });
+
+      const img = container.querySelector('.navigator-tool-icon img');
+      expect(img).toBeInTheDocument();
+
+      // Fire error event on image (e.g. 404 from backend)
+      fireEvent.error(img);
+
+      expect(
+        container.querySelector('.navigator-tool-icon img'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).toBeInTheDocument();
+    });
+
+    it('renders placeholder icon directly when item has no image or href', () => {
+      const { container } = renderCard({
+        title: 'Tool without image',
+        image: null,
+      });
+
+      expect(
+        container.querySelector('.navigator-tool-icon img'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.navigator-tool-icon .ri-file-line'),
+      ).toBeInTheDocument();
+    });
   });
 });

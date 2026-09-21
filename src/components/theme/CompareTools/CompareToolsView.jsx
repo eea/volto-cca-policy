@@ -17,6 +17,7 @@ import { GET_BREADCRUMBS } from '@plone/volto/constants/ActionTypes';
 import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
+import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
@@ -28,7 +29,7 @@ import {
   asArray,
   exportComparisonTable,
   formatFunctionalityScore,
-  getLocalizedLandingPageURL,
+  getNavigatorCataloguePageURL,
 } from '../../Search/NavigatorCatalogue/utils';
 
 const messages = defineMessages({
@@ -91,6 +92,14 @@ const messages = defineMessages({
     id: 'Spatial scale',
     defaultMessage: 'Spatial scale',
   },
+  available: {
+    id: 'Available',
+    defaultMessage: 'Available',
+  },
+  unavailable: {
+    id: 'Not available',
+    defaultMessage: 'Not available',
+  },
   outputType: {
     id: 'Output type',
     defaultMessage: 'Output type',
@@ -99,10 +108,6 @@ const messages = defineMessages({
     id: 'Adaptation support cycle step',
     defaultMessage: 'Adaptation support cycle step',
   },
-  sector: {
-    id: 'Sector',
-    defaultMessage: 'Sector',
-  },
 });
 
 const getToolField = (tool, field) =>
@@ -110,6 +115,121 @@ const getToolField = (tool, field) =>
 
 const getToolFieldDisplay = (tool, field) =>
   asArray(getToolField(tool, field)).join(', ') || '—';
+
+const getMetadataItem = (item) => item?.title || item?.token || item;
+
+const getComparisonOptions = (tools, field) => {
+  const fetchedOptions = tools[0]?.comparisonOptions?.[field];
+  const values = fetchedOptions?.length
+    ? fetchedOptions
+    : tools.flatMap((tool) => asArray(getToolField(tool, field)));
+
+  return [...new Set(values.map(getMetadataItem).filter(Boolean))].sort(
+    (first, second) =>
+      first.localeCompare(second, undefined, { numeric: true }),
+  );
+};
+
+const getApplicableComparisonOptions = (tools, field) =>
+  [
+    ...new Set(
+      tools
+        .flatMap((tool) => asArray(getToolField(tool, field)))
+        .map(getMetadataItem)
+        .filter(Boolean),
+    ),
+  ].sort((first, second) =>
+    first.localeCompare(second, undefined, { numeric: true }),
+  );
+
+const getExportTools = (tools) => {
+  const comparisonOptions = {
+    ...(tools[0]?.comparisonOptions || {}),
+    cca_type_of_outputs: getApplicableComparisonOptions(
+      tools,
+      'cca_type_of_outputs',
+    ),
+    cca_adaptation_support_cycle_step: getApplicableComparisonOptions(
+      tools,
+      'cca_adaptation_support_cycle_step',
+    ),
+  };
+
+  return tools.map((tool) => ({
+    ...tool,
+    comparisonOptions,
+  }));
+};
+
+const ComparisonRows = ({ tools, field, label, options }) => {
+  const intl = useIntl();
+  const selectedItems = tools.map(
+    (tool) => new Set(asArray(getToolField(tool, field)).map(getMetadataItem)),
+  );
+
+  return (
+    <Table.Body>
+      {(options.length ? options : [null]).map((item, index) => (
+        <Table.Row key={item || field}>
+          {index === 0 && (
+            <Table.Cell as="th" scope="rowgroup" rowSpan={options.length || 1}>
+              <div className="compare-criteria-title">{label}</div>
+            </Table.Cell>
+          )}
+          {tools.map((tool, toolIndex) =>
+            item ? (
+              <React.Fragment key={tool.id}>
+                <Table.Cell
+                  className={`compare-option-label${
+                    selectedItems[toolIndex].has(item) ? ' available' : ''
+                  }`}
+                >
+                  {intl.formatMessage({ id: item, defaultMessage: item })}
+                </Table.Cell>
+                <Table.Cell className="compare-option-status">
+                  {selectedItems[toolIndex].has(item) ? (
+                    <Icon
+                      className="ri-check-line"
+                      aria-label={intl.formatMessage(messages.available)}
+                    />
+                  ) : (
+                    <Icon
+                      className="ri-subtract-line"
+                      aria-label={intl.formatMessage(messages.unavailable)}
+                    />
+                  )}
+                </Table.Cell>
+              </React.Fragment>
+            ) : (
+              <Table.Cell key={tool.id} colSpan={2}>
+                —
+              </Table.Cell>
+            ),
+          )}
+        </Table.Row>
+      ))}
+    </Table.Body>
+  );
+};
+
+const FunctionalityScore = ({ value }) => {
+  const label = formatFunctionalityScore(value);
+  const score = Number(label.split('/')[0]);
+
+  if (!Number.isFinite(score)) return <span>{label}</span>;
+
+  return (
+    <span className="functionality-dots" aria-label={label}>
+      {Array.from({ length: 6 }, (_, index) => (
+        <span
+          aria-hidden="true"
+          className={`functionality-dot${index < score ? ' filled' : ''}`}
+          key={index}
+        />
+      ))}
+    </span>
+  );
+};
 
 const getCompareUids = (search) => {
   const params = new URLSearchParams(search);
@@ -136,6 +256,7 @@ const getToolHref = (result) => result?.href || result?._result?.id?.raw || '';
 const getTools = async (uids, registry) => {
   try {
     const results = await fetchResultsByUid(uids, registry);
+    const comparisonOptions = results.comparisonOptions || {};
     const resultsByUid = new Map(
       results.map((result) => [getCompareToolUid(result), result]),
     );
@@ -149,6 +270,7 @@ const getTools = async (uids, registry) => {
         href: getToolHref(result),
         result,
         error: !result,
+        comparisonOptions,
       };
     });
   } catch {
@@ -171,9 +293,9 @@ const CompareToolsView = () => {
     () => getCompareUids(location.search),
     [location.search],
   );
+
   const registry = config.settings.searchlib;
-  const appConfig = registry.searchui.navigatorCatalogueSearch;
-  const landingPageURL = getLocalizedLandingPageURL(appConfig, currentLang);
+  const landingPageURL = getNavigatorCataloguePageURL(currentLang);
   const compareToolsTitle = intl.formatMessage(messages.compareTools);
   const returnURL =
     location.state?.returnURL ||
@@ -243,6 +365,15 @@ const CompareToolsView = () => {
 
   const failedTools = tools.filter((tool) => tool.error);
   const visibleTools = tools.filter((tool) => !tool.error);
+  const outputOptions = getComparisonOptions(
+    visibleTools,
+    'cca_type_of_outputs',
+  );
+  const cycleOptions = getComparisonOptions(
+    visibleTools,
+    'cca_adaptation_support_cycle_step',
+  );
+
   const visibleToolsCount = visibleTools.length;
   const hasLoadedRequestedTools = tools.length === ids.length;
   const hasEnoughTools = visibleToolsCount >= 2;
@@ -297,10 +428,16 @@ const CompareToolsView = () => {
               <Icon className="ri-arrow-left-line" />
               {intl.formatMessage(messages.backToResults)}
             </Button>
+
             <Button
               className="primary inverted"
               disabled={!hasEnoughTools}
-              onClick={() => exportComparisonTable(visibleTools, getToolField)}
+              onClick={() =>
+                exportComparisonTable(
+                  getExportTools(visibleTools),
+                  getToolField,
+                )
+              }
             >
               <Icon className="ri-download-2-line" />
               {intl.formatMessage(messages.exportTable)}
@@ -324,6 +461,16 @@ const CompareToolsView = () => {
 
         {!isLoading && hasEnoughTools && (
           <Table celled aria-label={compareToolsTitle} unstackable>
+            <colgroup>
+              <col className="compare-criteria-column" />
+              {visibleTools.map((tool) => (
+                <React.Fragment key={tool.id}>
+                  <col />
+                  <col className="compare-status-column" />
+                </React.Fragment>
+              ))}
+            </colgroup>
+
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>
@@ -331,20 +478,18 @@ const CompareToolsView = () => {
                     {intl.formatMessage(messages.criteria)}
                   </span>
                 </Table.HeaderCell>
+
                 {visibleTools.map((tool) => (
-                  <Table.HeaderCell key={tool.id}>
+                  <Table.HeaderCell key={tool.id} colSpan={2}>
                     <div className="compare-tool-header">
                       <div className="compare-tool-title-row">
-                        <div
-                          className="navigator-tool-icon medium"
-                          aria-hidden="true"
-                        >
-                          <Icon className="ri-file-line" />
-                        </div>
+                        <ToolThumbnail result={tool.result} />
+
                         <div className="compare-tool-title" title={tool.title}>
                           {tool.title}
                         </div>
                       </div>
+
                       <div className="compare-tool-actions">
                         {tool.href && (
                           <UniversalLink
@@ -355,6 +500,7 @@ const CompareToolsView = () => {
                             <Icon className="ri-external-link-line" />
                           </UniversalLink>
                         )}
+
                         <Button
                           className="icon compare-tool-clear"
                           aria-label={intl.formatMessage(messages.removeTool, {
@@ -370,6 +516,7 @@ const CompareToolsView = () => {
                 ))}
               </Table.Row>
             </Table.Header>
+
             <Table.Body>
               <Table.Row>
                 <Table.Cell as="th" scope="row">
@@ -379,14 +526,16 @@ const CompareToolsView = () => {
                     </div>
                   </div>
                 </Table.Cell>
+
                 {visibleTools.map((tool) => (
-                  <Table.Cell key={`usability-${tool.id}`}>
+                  <Table.Cell key={`usability-${tool.id}`} colSpan={2}>
                     <div className="usability-value">
                       {getToolFieldDisplay(tool, 'accessibility_and_usability')}
                     </div>
                   </Table.Cell>
                 ))}
               </Table.Row>
+
               <Table.Row>
                 <Table.Cell as="th" scope="row">
                   <div className="compare-criteria">
@@ -395,76 +544,32 @@ const CompareToolsView = () => {
                     </div>
                   </div>
                 </Table.Cell>
+
                 {visibleTools.map((tool) => (
-                  <Table.Cell key={`functionality-${tool.id}`}>
+                  <Table.Cell key={`functionality-${tool.id}`} colSpan={2}>
                     <div className="functionality-value">
-                      {formatFunctionalityScore(
-                        getToolField(tool, 'functionality'),
-                      )}
+                      <FunctionalityScore
+                        value={getToolField(tool, 'functionality')}
+                      />
                     </div>
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.spatialScale)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`spatial-scale-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_geographical_scale')}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.outputType)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`output-type-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_type_of_outputs')}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.adaptationSupportCycleStep)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`adaptation-support-cycle-step-${tool.id}`}>
-                    {getToolFieldDisplay(
-                      tool,
-                      'cca_adaptation_support_cycle_step',
-                    )}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell as="th" scope="row">
-                  <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.sector)}
-                    </div>
-                  </div>
-                </Table.Cell>
-                {visibleTools.map((tool) => (
-                  <Table.Cell key={`sector-${tool.id}`}>
-                    {getToolFieldDisplay(tool, 'cca_adaptation_sectors')}
                   </Table.Cell>
                 ))}
               </Table.Row>
             </Table.Body>
+
+            <ComparisonRows
+              tools={visibleTools}
+              field="cca_type_of_outputs"
+              label={intl.formatMessage(messages.outputType)}
+              options={outputOptions}
+            />
+
+            <ComparisonRows
+              tools={visibleTools}
+              field="cca_adaptation_support_cycle_step"
+              label={intl.formatMessage(messages.adaptationSupportCycleStep)}
+              options={cycleOptions}
+            />
           </Table>
         )}
       </Container>

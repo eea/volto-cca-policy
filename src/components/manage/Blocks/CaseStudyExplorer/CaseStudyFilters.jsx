@@ -77,7 +77,7 @@ export default function CaseStudyFilters(props) {
 
   return (
     <div className="casestudy-filters">
-      <Accordion exclusive={false} className="secondary">
+      <Accordion exclusive={false} className="primary">
         <Accordion.Title
           active={activeIndex.includes(0)}
           index={0}

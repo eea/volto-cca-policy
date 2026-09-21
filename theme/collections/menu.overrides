@@ -1,0 +1,7 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.secondary.menu {
+  --text-color: @primaryColorCSSVar;
+}
