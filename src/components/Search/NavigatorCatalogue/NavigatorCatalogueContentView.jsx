@@ -55,6 +55,16 @@ const messages = defineMessages({
     id: 'Active filters are always shown in edit mode',
     defaultMessage: 'Active filters are always shown in edit mode',
   },
+  toolsCount: {
+    id: '{count, plural, one {tool in the catalogue} other {tools in the catalogue}}',
+    defaultMessage:
+      '{count, plural, one {tool in the catalogue} other {tools in the catalogue}}',
+  },
+  toolsMatchSearch: {
+    id: '{count, plural, one {tool matches} other {tools match}} "{searchTerm}"',
+    defaultMessage:
+      '{count, plural, one {tool matches} other {tools match}} "{searchTerm}"',
+  },
 });
 
 const NavigatorCatalogueContentView = (props) => {
@@ -90,7 +100,7 @@ const NavigatorCatalogueContentView = (props) => {
   const layoutMode =
     activeNavigatorViewId === 'listing' ? 'fixed' : 'fullwidth';
 
-  const { wasSearched } = searchContext;
+  const { searchTerm, totalResults, wasSearched } = searchContext;
 
   const loadingAtom = loadingFamily(appConfig.appName);
   const isLoading = useAtomValue(loadingAtom);
@@ -117,6 +127,21 @@ const NavigatorCatalogueContentView = (props) => {
       {showClusters && <SectionTabs />}
 
       <div className={`results-layout ${layoutMode}`}>
+        {children.length > 0 && (
+          <div className="navigator-catalogue-result-count">
+            <span className="navigator-catalogue-result-count-value">
+              {totalResults || 0}
+            </span>{' '}
+            {intl.formatMessage(
+              searchTerm ? messages.toolsMatchSearch : messages.toolsCount,
+              {
+                count: totalResults || 0,
+                searchTerm,
+              },
+            )}
+          </div>
+        )}
+
         <div className="navigator-catalogue-above-results">
           <Menu pointing secondary className="navigator-view-tabs">
             {navigatorResultViews.map((view) => (
