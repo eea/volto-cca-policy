@@ -104,9 +104,9 @@ export default function MenuStrategiesPlansGoals(props) {
       </Callout>
       <h2 id="overview">Adaptation governance overview</h2>
       <p>
-        Governance approach to climate adaptation, including strategic
-        priorities, key challenges, stakeholder processes and how adaptation is
-        embedded across policies and planning frameworks.
+        Overview of climate adaptation governance, including strategic
+        priorities, key challenges, stakeholder engagement, and integration
+        across policies and planning frameworks.
       </p>
       <AccordionList elements={elements} />
       <h2 id="measures">Adaptation actions and measures</h2>
