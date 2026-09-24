@@ -117,6 +117,45 @@
   }
 }
 
+.navigator-geographic-facet {
+  min-width: 18rem;
+
+  .navigator-geographic-facet-direct-options {
+    padding: 0 0.6em;
+  }
+
+  .navigator-geographic-facet-group {
+    border-top: 1px solid @navigatorBorderColor;
+  }
+
+  .navigator-geographic-facet-group-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.6rem;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+
+    i.icon {
+      width: auto;
+      height: auto;
+      margin: 0 0 0 1rem;
+    }
+
+    &:hover,
+    &:focus {
+      background: @navigatorCriteriaBackgroundColor;
+    }
+  }
+}
+
 .catalogue-compare-panel {
   position: fixed;
   z-index: 1000;
