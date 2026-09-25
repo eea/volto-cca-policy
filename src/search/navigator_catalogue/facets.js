@@ -73,6 +73,7 @@ const facets = [
     isFilterable: false,
     isMulti: true,
     label: messages.geographicCoverage,
+    hideActiveFilters: true,
     alwaysVisible: true,
   }),
   multiTermFacet({

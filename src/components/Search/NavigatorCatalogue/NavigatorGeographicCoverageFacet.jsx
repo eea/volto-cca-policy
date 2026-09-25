@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react';
+import { Button, Card, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Term } from '@eeacms/search/components';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
@@ -106,6 +106,67 @@ const ExpandableFacetGroup = ({ field, id, label, options, onChange }) => {
   );
 };
 
+const NavigatorActiveFilters = ({ filters, onRemove }) => {
+  const intl = useIntl();
+  const geographicFields = [
+    CHARACTERISATION_FIELD,
+    TRANSNATIONAL_REGION_FIELD,
+    COUNTRIES_FIELD,
+  ];
+  const activeFilters = filters.filter(
+    ({ field, values }) =>
+      geographicFields.includes(field) && values?.length > 0,
+  );
+
+  if (!activeFilters.length) return null;
+
+  return (
+    <div className="active-filters">
+      <h5>Active filters:</h5>
+      <div className="facets-wrapper">
+        {activeFilters.flatMap(({ field, values, type }) =>
+          values.map((value, index) => (
+            <Card key={`${field}-${index}`} className="term active-term">
+              <Card.Content>
+                <Card.Header className="card-header">
+                  <Term
+                    term={intl.formatMessage({
+                      id: value,
+                      defaultMessage: value,
+                    })}
+                    field={field}
+                  />
+                  <Button
+                    className="clear-filters"
+                    onClick={() => onRemove(field, value, type)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter') {
+                        onRemove(field, value, type);
+                      }
+                    }}
+                  >
+                    <Icon name="close" role="button" />
+                  </Button>
+                </Card.Header>
+              </Card.Content>
+            </Card>
+          )),
+        )}
+      </div>
+      <Button
+        size="mini"
+        className="clear-btn"
+        content="Clear all"
+        onClick={() =>
+          activeFilters.forEach(({ field, values, type }) =>
+            values.forEach((value) => onRemove(field, value, type)),
+          )
+        }
+      />
+    </div>
+  );
+};
+
 const NavigatorGeographicCoverageFacet = ({
   className = '',
   onRemove,
@@ -113,7 +174,7 @@ const NavigatorGeographicCoverageFacet = ({
   options = [],
 }) => {
   const intl = useIntl();
-  const { addFilter, facets, filters, removeFilter } = useSearchContext();
+  const { addFilter, facets, filters = [], removeFilter } = useSearchContext();
   const transnationalOptions = getFacetOptions(
     facets,
     filters,
@@ -159,6 +220,10 @@ const NavigatorGeographicCoverageFacet = ({
         label={intl.formatMessage(messages.countries)}
         options={countryOptions}
         onChange={(option) => updateChildFilter(COUNTRIES_FIELD, option)}
+      />
+      <NavigatorActiveFilters
+        filters={filters}
+        onRemove={(field, value, type) => removeFilter(field, value, type)}
       />
     </fieldset>
   );
