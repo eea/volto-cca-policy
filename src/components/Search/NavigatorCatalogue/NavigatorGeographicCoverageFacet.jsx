@@ -33,11 +33,6 @@ export const getFacetOptions = (facets, filters, field) => {
     : [];
 };
 
-const sortOptions = (options) =>
-  [...options].sort((a, b) =>
-    valueAsText(a.value).localeCompare(valueAsText(b.value)),
-  );
-
 const FacetOption = ({ field, option, onChange }) => {
   const intl = useIntl();
   const value = valueAsText(option.value);
@@ -96,7 +91,7 @@ const ExpandableFacetGroup = ({ field, id, label, options, onChange }) => {
       </button>
       {isOpen && options.length > 0 && (
         <div id={id} className="sui-multi-checkbox-facet">
-          {sortOptions(options).map((option) => (
+          {options.map((option) => (
             <FacetOption
               key={valueAsText(option.value)}
               field={field}
@@ -135,7 +130,7 @@ const NavigatorGeographicCoverageFacet = ({
       className={`sui-facet searchlib-multiterm-facet navigator-geographic-facet ${className}`}
     >
       <div className="sui-multi-checkbox-facet navigator-geographic-facet-direct-options">
-        {sortOptions(options).map((option) => (
+        {options.map((option) => (
           <FacetOption
             key={valueAsText(option.value)}
             field={CHARACTERISATION_FIELD}

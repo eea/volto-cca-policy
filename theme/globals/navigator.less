@@ -120,10 +120,6 @@
 .navigator-geographic-facet {
   min-width: 18rem;
 
-  .navigator-geographic-facet-direct-options {
-    padding: 0 0.6em;
-  }
-
   .navigator-geographic-facet-group {
     border-top: 1px solid @navigatorBorderColor;
   }
@@ -133,14 +129,14 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 0.65rem 0.6rem;
+    padding: 0.65em 0.5em;
     border: 0;
     background: transparent;
     color: inherit;
     cursor: pointer;
     font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     text-align: left;
 
     i.icon {
@@ -148,11 +144,16 @@
       height: auto;
       margin: 0 0 0 1rem;
     }
+  }
 
-    &:hover,
-    &:focus {
-      background: @navigatorCriteriaBackgroundColor;
-    }
+  #navigator-geographic-countries {
+    column-count: 2;
+    column-gap: 1rem;
+  }
+
+  .sui-multi-checkbox-facet
+    .sui-multi-checkbox-facet__option-label:first-child {
+    margin-top: 0;
   }
 }
 
