@@ -139,6 +139,10 @@
     font-weight: 500;
     text-align: left;
 
+    &.active {
+      background: @navigatorCriteriaBackgroundColor;
+    }
+
     i.icon {
       width: auto;
       height: auto;
@@ -155,6 +159,11 @@
     .sui-multi-checkbox-facet__option-label:first-child {
     margin-top: 0;
   }
+}
+
+.navigator-geographic-facet-empty {
+  padding: 0.8em 0.5em;
+  font-size: 14px;
 }
 
 .catalogue-compare-panel {

@@ -16,6 +16,10 @@ const messages = defineMessages({
     defaultMessage: 'Macro-Transnational region',
   },
   countries: { id: 'Countries', defaultMessage: 'Countries' },
+  noOptionsAvailable: {
+    id: 'No options available',
+    defaultMessage: 'No options available',
+  },
 });
 
 const valueAsText = (value) =>
@@ -70,7 +74,14 @@ const FacetOption = ({ field, option, onChange }) => {
   );
 };
 
-const ExpandableFacetGroup = ({ field, id, label, options, onChange }) => {
+const ExpandableFacetGroup = ({
+  field,
+  id,
+  label,
+  options,
+  emptyMessage,
+  onChange,
+}) => {
   const hasSelection = options.some(({ selected }) => selected);
   const [isOpen, setIsOpen] = React.useState(hasSelection);
 
@@ -82,7 +93,9 @@ const ExpandableFacetGroup = ({ field, id, label, options, onChange }) => {
     <div className="navigator-geographic-facet-group">
       <button
         type="button"
-        className="navigator-geographic-facet-group-toggle"
+        className={`navigator-geographic-facet-group-toggle${
+          isOpen ? ' active' : ''
+        }`}
         aria-expanded={isOpen}
         aria-controls={id}
         onClick={() => setIsOpen((current) => !current)}
@@ -90,18 +103,23 @@ const ExpandableFacetGroup = ({ field, id, label, options, onChange }) => {
         <span>{label}</span>
         <Icon name={isOpen ? 'chevron up' : 'chevron down'} />
       </button>
-      {isOpen && options.length > 0 && (
-        <div id={id} className="sui-multi-checkbox-facet">
-          {options.map((option) => (
-            <FacetOption
-              key={valueAsText(option.value)}
-              field={field}
-              option={option}
-              onChange={onChange}
-            />
-          ))}
-        </div>
-      )}
+      {isOpen &&
+        (options.length > 0 ? (
+          <div id={id} className="sui-multi-checkbox-facet">
+            {options.map((option) => (
+              <FacetOption
+                key={valueAsText(option.value)}
+                field={field}
+                option={option}
+                onChange={onChange}
+              />
+            ))}
+          </div>
+        ) : (
+          <div id={id} className="navigator-geographic-facet-empty">
+            {emptyMessage}.
+          </div>
+        ))}
     </div>
   );
 };
@@ -209,6 +227,7 @@ const NavigatorGeographicCoverageFacet = ({
         field={TRANSNATIONAL_REGION_FIELD}
         id="navigator-geographic-transnational-regions"
         label={intl.formatMessage(messages.transnationalRegions)}
+        emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
         options={transnationalOptions}
         onChange={(option) =>
           updateChildFilter(TRANSNATIONAL_REGION_FIELD, option)
@@ -218,6 +237,7 @@ const NavigatorGeographicCoverageFacet = ({
         field={COUNTRIES_FIELD}
         id="navigator-geographic-countries"
         label={intl.formatMessage(messages.countries)}
+        emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
         options={countryOptions}
         onChange={(option) => updateChildFilter(COUNTRIES_FIELD, option)}
       />
