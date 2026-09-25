@@ -224,6 +224,14 @@ const NavigatorGeographicCoverageFacet = ({
         ))}
       </div>
       <ExpandableFacetGroup
+        field={COUNTRIES_FIELD}
+        id="navigator-geographic-countries"
+        label={intl.formatMessage(messages.countries)}
+        emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
+        options={countryOptions}
+        onChange={(option) => updateChildFilter(COUNTRIES_FIELD, option)}
+      />
+      <ExpandableFacetGroup
         field={TRANSNATIONAL_REGION_FIELD}
         id="navigator-geographic-transnational-regions"
         label={intl.formatMessage(messages.transnationalRegions)}
@@ -232,14 +240,6 @@ const NavigatorGeographicCoverageFacet = ({
         onChange={(option) =>
           updateChildFilter(TRANSNATIONAL_REGION_FIELD, option)
         }
-      />
-      <ExpandableFacetGroup
-        field={COUNTRIES_FIELD}
-        id="navigator-geographic-countries"
-        label={intl.formatMessage(messages.countries)}
-        emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
-        options={countryOptions}
-        onChange={(option) => updateChildFilter(COUNTRIES_FIELD, option)}
       />
       <NavigatorActiveFilters
         filters={filters}
