@@ -78,13 +78,15 @@ const facets = [
   multiTermFacet({
     field: 'cca_geographic_transnational_region.keyword',
     isFilterable: false,
+    isFilter: true,
     isMulti: true,
     label: messages.macroTransnationalRegion,
-    showInFacetsList: false,
+    showInFacetsList: true,
   }),
   {
     ...geographic_countries,
-    showInFacetsList: false,
+    isFilter: true,
+    showInFacetsList: true,
   },
   multiTermFacet({
     field: 'cca_adaptation_support_cycle_step.keyword',
