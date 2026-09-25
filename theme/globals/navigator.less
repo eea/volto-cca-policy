@@ -117,6 +117,55 @@
   }
 }
 
+.navigator-geographic-facet {
+  min-width: 18rem;
+
+  .navigator-geographic-facet-group {
+    border-top: 1px solid @navigatorBorderColor;
+  }
+
+  .navigator-geographic-facet-group-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65em 0.5em;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+
+    &.active {
+      background: @navigatorCriteriaBackgroundColor;
+    }
+
+    i.icon {
+      width: auto;
+      height: auto;
+      margin: 0 0 0 1rem;
+    }
+  }
+
+  #navigator-geographic-countries {
+    column-count: 2;
+    column-gap: 1rem;
+  }
+
+  .sui-multi-checkbox-facet
+    .sui-multi-checkbox-facet__option-label:first-child {
+    margin-top: 0;
+  }
+}
+
+.navigator-geographic-facet-empty {
+  padding: 0.8em 0.5em;
+  font-size: 14px;
+}
+
 .catalogue-compare-panel {
   position: fixed;
   z-index: 1000;
