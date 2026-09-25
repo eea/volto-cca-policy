@@ -47,6 +47,7 @@ const FacetOption = ({ field, option, onChange }) => {
         <input
           id={inputId}
           type="checkbox"
+          aria-label={value}
           className="sui-multi-checkbox-facet__checkbox"
           checked={Boolean(option.selected)}
           onChange={() => onChange(option)}
