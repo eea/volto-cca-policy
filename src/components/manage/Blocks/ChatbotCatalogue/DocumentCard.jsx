@@ -24,7 +24,8 @@ export function cleanDocumentTitle(title) {
   if (!title || typeof title !== 'string') return '';
   const pipeIndex = title.indexOf('|');
   const firstPart = pipeIndex === -1 ? title : title.slice(0, pipeIndex);
-  return firstPart.trim() || title.trim();
+  const normalizedTitle = title.replace(/\s+/g, ' ').trim();
+  return firstPart.replace(/\s+/g, ' ').trim() || normalizedTitle;
 }
 
 /**
@@ -33,8 +34,8 @@ export function cleanDocumentTitle(title) {
  */
 export function matchesDocumentTitle(docTitle, searchTitle) {
   if (!docTitle || !searchTitle) return false;
-  const d1 = docTitle.trim().toLowerCase();
-  const s1 = searchTitle.trim().toLowerCase();
+  const d1 = docTitle.replace(/\s+/g, ' ').trim().toLowerCase();
+  const s1 = searchTitle.replace(/\s+/g, ' ').trim().toLowerCase();
   if (d1 === s1) return true;
 
   const dClean = cleanDocumentTitle(docTitle).toLowerCase();

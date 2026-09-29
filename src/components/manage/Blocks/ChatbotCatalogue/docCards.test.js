@@ -45,6 +45,27 @@ describe('remarkCcaDocCards', () => {
     expect(cards(result)).toEqual(['Climate Action Plan']);
   });
 
+  it('normalizes line breaks in a catalogue title before parsing markdown', () => {
+    const markdown =
+      '![[doc: EFFIS \n- European Forest Fire Information System – Fire Hazard and Wildfire risk views.]]';
+    const parse = jest.fn((source) => ({
+      type: 'root',
+      children: [{ type: 'text', value: source }],
+    }));
+    const transform = remarkCcaDocCards.call({ parse });
+    const result = transform(
+      { type: 'root', children: [] },
+      { value: markdown },
+    );
+
+    expect(parse).toHaveBeenCalledWith(
+      '![[doc: EFFIS - European Forest Fire Information System – Fire Hazard and Wildfire risk views.]]',
+    );
+    expect(cards(result)).toEqual([
+      'EFFIS - European Forest Fire Information System – Fire Hazard and Wildfire risk views.',
+    ]);
+  });
+
   it('keeps text before and after a mid-sentence marker', () => {
     const tree = {
       type: 'root',
