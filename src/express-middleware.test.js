@@ -104,8 +104,7 @@ describe('express-middleware viewsMiddleware', () => {
     path: '/en/sandbox/jwt-probe/@@images/image/large',
     headers: {},
     universalCookies: {
-      //betterleaks:allow
-      get: (name) => (name === 'auth_token' ? authToken : undefined),
+      get: (name) => (name === 'auth_token' ? authToken : undefined), //betterleaks:allow
     },
   });
 
