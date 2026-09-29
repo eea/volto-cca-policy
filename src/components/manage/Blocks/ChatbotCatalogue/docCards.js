@@ -22,6 +22,7 @@ import {
   cleanStrayLeadingAsterisks,
   deduplicateAdjacentHeadings,
   normalizeCitationParagraphsToLists,
+  normalizeDocMarkerWhitespace,
   parseMarkdownLines,
   shouldUnwrapCodeNode,
   unwrapCardLists,
@@ -75,9 +76,17 @@ export const remarkCcaDocCards = function () {
   const parseFn =
     typeof this?.parse === 'function' ? (str) => this.parse(str) : null;
 
-  return (tree) => {
+  return (tree, file) => {
     if (!tree || !Array.isArray(tree.children)) {
       return tree;
+    }
+
+    const markdown = file?.value;
+    if (typeof markdown === 'string' && typeof parseFn === 'function') {
+      const normalizedMarkdown = normalizeDocMarkerWhitespace(markdown);
+      if (normalizedMarkdown !== markdown) {
+        tree = parseFn(normalizedMarkdown);
+      }
     }
 
     // 1. Pre-pass: unwrap code blocks that contain markdown sections or doc markers

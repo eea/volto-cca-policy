@@ -78,6 +78,15 @@ describe('matchesDocumentTitle', () => {
     ).toBe(true);
   });
 
+  it('matches a single-line marker title to a newline-bearing catalogue title', () => {
+    expect(
+      matchesDocumentTitle(
+        'EFFIS \n- European Forest Fire Information System – Fire Hazard and Wildfire risk views. | Tool catalogue',
+        'EFFIS - European Forest Fire Information System – Fire Hazard and Wildfire risk views.',
+      ),
+    ).toBe(true);
+  });
+
   it('returns false for non-matching or empty titles', () => {
     expect(matchesDocumentTitle('Alpha', 'Beta')).toBe(false);
     expect(matchesDocumentTitle(null, 'Beta')).toBe(false);
