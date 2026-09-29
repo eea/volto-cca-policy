@@ -79,10 +79,25 @@ describe('NavigatorGeographicCoverageFacet', () => {
 
     expect(screen.getByText('Global')).toBeInTheDocument();
     expect(screen.getByText('Europe')).toBeInTheDocument();
+    expect(onSelect).toHaveBeenCalledWith('Europe');
 
     fireEvent.click(screen.getByLabelText('Global'));
 
     expect(onSelect).toHaveBeenCalledWith('Global');
+  });
+
+  it('does not apply Europe when a geographic filter is already active', () => {
+    const { onSelect } = renderFacet({
+      filters: [
+        {
+          field: COUNTRIES_FIELD,
+          values: ['Germany'],
+          type: 'any',
+        },
+      ],
+    });
+
+    expect(onSelect).not.toHaveBeenCalled();
   });
 
   it('expands and filters Macro-Transnational region values', () => {

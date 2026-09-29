@@ -10,6 +10,12 @@ export const TRANSNATIONAL_REGION_FIELD =
   'cca_geographic_transnational_region.keyword';
 export const COUNTRIES_FIELD = 'cca_geographic_countries.keyword';
 
+const geographicFields = [
+  CHARACTERISATION_FIELD,
+  TRANSNATIONAL_REGION_FIELD,
+  COUNTRIES_FIELD,
+];
+
 const messages = defineMessages({
   transnationalRegions: {
     id: 'Macro-Transnational region',
@@ -126,11 +132,6 @@ const ExpandableFacetGroup = ({
 
 const NavigatorActiveFilters = ({ filters, onRemove }) => {
   const intl = useIntl();
-  const geographicFields = [
-    CHARACTERISATION_FIELD,
-    TRANSNATIONAL_REGION_FIELD,
-    COUNTRIES_FIELD,
-  ];
   const activeFilters = filters.filter(
     ({ field, values }) =>
       geographicFields.includes(field) && values?.length > 0,
@@ -199,6 +200,25 @@ const NavigatorGeographicCoverageFacet = ({
     TRANSNATIONAL_REGION_FIELD,
   );
   const countryOptions = getFacetOptions(facets, filters, COUNTRIES_FIELD);
+  const defaultSelectionInitialized = React.useRef(false);
+  const hasGeographicFilter = filters.some(
+    ({ field, values }) =>
+      geographicFields.includes(field) && values?.length > 0,
+  );
+
+  React.useEffect(() => {
+    if (defaultSelectionInitialized.current) return;
+
+    if (hasGeographicFilter) {
+      defaultSelectionInitialized.current = true;
+      return;
+    }
+
+    if (!options.some(({ value }) => valueAsText(value) === 'Europe')) return;
+
+    defaultSelectionInitialized.current = true;
+    onSelect('Europe');
+  }, [hasGeographicFilter, onSelect, options]);
 
   const updateChildFilter = (field, option) =>
     option.selected
