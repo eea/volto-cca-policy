@@ -99,10 +99,12 @@ describe('express-middleware viewsMiddleware', () => {
   const lastHandler = (layer) =>
     layer.route.stack[layer.route.stack.length - 1].handle;
 
+  // The value is a throwaway test token, not a real credential.
   const makeReq = ({ authToken } = {}) => ({
     path: '/en/sandbox/jwt-probe/@@images/image/large',
     headers: {},
     universalCookies: {
+      //betterleaks:allow
       get: (name) => (name === 'auth_token' ? authToken : undefined),
     },
   });
@@ -162,7 +164,7 @@ describe('express-middleware viewsMiddleware', () => {
       });
       superagent.get.mockReturnValue(request);
 
-      const req = makeReq({ authToken: 'jwt-token' });
+      const req = makeReq({ authToken: 'jwt-token' }); //betterleaks:allow
       const res = makeRes();
 
       await runHandler(lastHandler(findLayer('**/@@images/**')), req, res);
@@ -215,7 +217,7 @@ describe('express-middleware viewsMiddleware', () => {
       });
       superagent.get.mockReturnValue(request);
 
-      const req = makeReq({ authToken: 'jwt-token' });
+      const req = makeReq({ authToken: 'jwt-token' }); //betterleaks:allow
       const res = makeRes();
 
       // runHandler rejects when next(err) is called with an error
@@ -239,7 +241,7 @@ describe('express-middleware viewsMiddleware', () => {
       });
       superagent.get.mockReturnValue(request);
 
-      const req = makeReq({ authToken: 'jwt-token' });
+      const req = makeReq({ authToken: 'jwt-token' }); //betterleaks:allow
       const res = makeRes();
 
       await runHandler(lastHandler(layer), req, res);
