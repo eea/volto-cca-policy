@@ -4,7 +4,17 @@
  */
 
 export const DOC_MARKER_RE =
-  /!?\[\[?\s*(?:doc|document|tool|tools)\s*[:-]\s*([^\]\r\n]+)\]?\]/gi;
+  /!?\[\[?\s*(?:doc|document|tool|tools)\s*[:-]\s*([^\]]+)\]?\]/gi;
+
+export function normalizeDocMarkerWhitespace(markdown) {
+  if (typeof markdown !== 'string') return markdown;
+  DOC_MARKER_RE.lastIndex = 0;
+  const normalized = markdown.replace(DOC_MARKER_RE, (marker) =>
+    marker.replace(/\s+/g, ' '),
+  );
+  DOC_MARKER_RE.lastIndex = 0;
+  return normalized;
+}
 
 export const NEXT_STEPS_HEADING_RE =
   /^(suggested\s+next\s+steps|next\s+steps|recommended\s+next\s+steps|recommended\s+workflow|suggested\s+workflow|action\s+plan|how\s+to\s+use(\s+(them|these|this|the\s+tools))?|how\s+to\s+apply(\s+(them|these|this|the\s+tools))?|how\s+to\s+get\s+started|step-by-step\s+guidance)\b/i;
