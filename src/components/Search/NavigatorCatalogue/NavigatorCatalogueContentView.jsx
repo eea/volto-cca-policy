@@ -15,7 +15,11 @@ import {
   SortingDropdownWithLabel,
 } from '@eeacms/search/components';
 import { NoResults } from '@eeacms/search/components/Result/NoResults';
-import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
+import {
+  useSearchContext,
+  useSearchDriver,
+  useViews,
+} from '@eeacms/search/lib/hocs';
 import { loadingFamily } from '@eeacms/search/state';
 import registry from '@eeacms/search/registry';
 import { CompareToolsPanel } from '@eeacms/volto-cca-policy/components';
@@ -72,7 +76,12 @@ const NavigatorCatalogueContentView = (props) => {
   const { sortOptions, resultViews } = appConfig;
   const views = useViews();
   const searchContext = useSearchContext();
+  const driver = useSearchDriver();
+  const { searchTerm, sortField, sortDirection, totalResults, wasSearched } =
+    searchContext;
   const intl = useIntl();
+  const defaultSortApplied = React.useRef(false);
+  const previousSearchTerm = React.useRef(searchTerm);
 
   const { showFilters, showFacets, showClusters, showSorting } = appConfig;
 
@@ -90,6 +99,29 @@ const NavigatorCatalogueContentView = (props) => {
     }
   }, [activeNavigatorViewId, views]);
 
+  React.useEffect(() => {
+    if (!driver || defaultSortApplied.current) return;
+    defaultSortApplied.current = true;
+
+    if (sortField || sortDirection || !appConfig.defaultSort) return;
+
+    const [field, direction] = appConfig.defaultSort.split('|');
+    if (field && direction) driver.setSort(field, direction);
+  }, [appConfig.defaultSort, driver, sortDirection, sortField]);
+
+  React.useEffect(() => {
+    const hadSearchTerm = Boolean(previousSearchTerm.current?.trim());
+    const hasSearchTerm = Boolean(searchTerm?.trim());
+    previousSearchTerm.current = searchTerm;
+
+    if (!driver || !hadSearchTerm || hasSearchTerm || !appConfig.defaultSort) {
+      return;
+    }
+
+    const [field, direction] = appConfig.defaultSort.split('|');
+    if (field && direction) driver.setSort(field, direction);
+  }, [appConfig.defaultSort, driver, searchTerm]);
+
   const listingViewDef = resultViews.find(
     (view) => view.id === activeNavigatorViewId,
   );
@@ -99,8 +131,6 @@ const NavigatorCatalogueContentView = (props) => {
 
   const layoutMode =
     activeNavigatorViewId === 'listing' ? 'fixed' : 'fullwidth';
-
-  const { searchTerm, totalResults, wasSearched } = searchContext;
 
   const loadingAtom = loadingFamily(appConfig.appName);
   const isLoading = useAtomValue(loadingAtom);
@@ -113,6 +143,15 @@ const NavigatorCatalogueContentView = (props) => {
       ? intl.formatMessage(messages[item.name.id])
       : item.name,
   }));
+
+  const handleSortChange = (value) => {
+    const selectedOption = sortOptions2.find(
+      (option) => `${option.value}|||${option.direction}` === value,
+    );
+    if (selectedOption && driver) {
+      driver.setSort(selectedOption.value, selectedOption.direction);
+    }
+  };
 
   if (!ResultViewComponent) return null;
 
@@ -173,6 +212,7 @@ const NavigatorCatalogueContentView = (props) => {
                     label=""
                     sortOptions={sortOptions2}
                     view={SortingDropdownWithLabel}
+                    onChange={handleSortChange}
                   />
                 </>
               )}
