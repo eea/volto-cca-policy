@@ -103,11 +103,18 @@ const NavigatorCatalogueContentView = (props) => {
     if (!driver || defaultSortApplied.current) return;
     defaultSortApplied.current = true;
 
-    if (sortField || sortDirection || !appConfig.defaultSort) return;
+    if (
+      searchTerm?.trim() ||
+      sortField ||
+      sortDirection ||
+      !appConfig.defaultSort
+    ) {
+      return;
+    }
 
     const [field, direction] = appConfig.defaultSort.split('|');
     if (field && direction) driver.setSort(field, direction);
-  }, [appConfig.defaultSort, driver, sortDirection, sortField]);
+  }, [appConfig.defaultSort, driver, searchTerm, sortDirection, sortField]);
 
   React.useEffect(() => {
     const hadSearchTerm = Boolean(previousSearchTerm.current?.trim());
