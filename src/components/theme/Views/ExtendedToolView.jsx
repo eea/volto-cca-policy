@@ -219,9 +219,9 @@ const ExtendedToolView = (props) => {
 
               {used_in && (
                 <>
-                  <h4>
+                  <h3>
                     <FormattedMessage id="Used in" defaultMessage="Used in" />
-                  </h4>
+                  </h3>
 
                   <HTMLField value={used_in} />
                 </>
