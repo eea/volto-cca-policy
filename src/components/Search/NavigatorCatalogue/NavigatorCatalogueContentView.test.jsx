@@ -28,7 +28,6 @@ jest.mock('@elastic/react-search-ui', () => ({
 }));
 
 jest.mock('semantic-ui-react', () => {
-  const React = require('react');
   const Menu = ({ children }) => <nav>{children}</nav>;
   Menu.Item = ({ children }) => <button type="button">{children}</button>;
   return {
