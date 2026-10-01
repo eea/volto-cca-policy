@@ -1,6 +1,6 @@
 import { Popup } from 'semantic-ui-react';
 
-const TagOverflowPopup = ({ items, className, ariaLabel }) => {
+const TagOverflowPopup = ({ items, className, ariaLabel, title }) => {
   if (!items.length) return null;
 
   return (
@@ -17,7 +17,12 @@ const TagOverflowPopup = ({ items, className, ariaLabel }) => {
       }
       position="bottom left"
       trigger={
-        <button type="button" className={className} aria-label={ariaLabel}>
+        <button
+          type="button"
+          className={className}
+          aria-label={ariaLabel}
+          title={title}
+        >
           + {items.length}
         </button>
       }
