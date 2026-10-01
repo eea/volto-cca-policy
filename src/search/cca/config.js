@@ -16,7 +16,18 @@ const ccaConfig = {
  */
 export const clusters = {
   name: 'op_cluster',
-  clusters: [].map((cluster) => ({
+  clusters: [
+    {
+      name: 'Climate-ADAPT',
+      icon: { name: 'file text' },
+      values: ['climate'],
+    },
+    {
+      name: 'Health Observatory',
+      icon: { name: 'compass' },
+      values: ['observatory'],
+    },
+  ].map((cluster) => ({
     ...cluster,
     defaultResultView: 'ClusterHorizontalCardItem',
   })),
