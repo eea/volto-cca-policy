@@ -12,8 +12,8 @@ const messages = defineMessages({
     defaultMessage: 'Geographic coverage',
   },
   macroTransnationalRegion: {
-    id: 'Macro-Transnational region',
-    defaultMessage: 'Macro-Transnational region',
+    id: 'Transnational regions',
+    defaultMessage: 'Transnational regions',
   },
   climateHazards: {
     id: 'Climate hazards',
@@ -73,6 +73,8 @@ const facets = [
     isFilterable: false,
     isMulti: true,
     label: messages.geographicCoverage,
+    transnationalRegionsLabel: messages.macroTransnationalRegion,
+    countriesLabel: geographic_countries.label,
     hideActiveFilters: true,
     alwaysVisible: true,
   }),
