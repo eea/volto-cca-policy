@@ -106,6 +106,36 @@ describe('general utilities', () => {
     expect(result.hasMatches).toBe(true);
   });
 
+  it('returns no parent blocks when all are excluded or content is empty', () => {
+    expect(
+      getFilteredBlocks(
+        {
+          blocks: {
+            excluded: {
+              '@type': 'group',
+              blocks: { child: { '@type': 'map' } },
+            },
+          },
+          blocks_layout: { items: ['excluded', 'stale'] },
+        },
+        'group',
+        'map',
+      ),
+    ).toEqual({
+      blocks: {},
+      blocks_layout: { items: [] },
+      keptKeys: [],
+      hasMatches: false,
+    });
+
+    expect(getFilteredBlocks({}, 'group', 'map')).toEqual({
+      blocks: {},
+      blocks_layout: { items: [] },
+      keptKeys: [],
+      hasMatches: false,
+    });
+  });
+
   it('extracts plan links and normalizes common values', () => {
     expect(extractPlanNameAndURL()).toEqual({ name: '', url: '' });
     expect(

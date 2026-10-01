@@ -8,6 +8,7 @@ import views from './views';
 
 const navigatorCatalogueConfig = {
   title: 'Navigator Catalogue',
+  defaultSort: 'title.index|asc',
   ...views,
 };
 

@@ -50,8 +50,13 @@ const renderFacet = ({
   render(
     <IntlProvider locale="en">
       <NavigatorGeographicCoverageFacet
+        countriesLabel={{ id: 'Countries', defaultMessage: 'Countries' }}
         onRemove={onRemove}
         onSelect={onSelect}
+        transnationalRegionsLabel={{
+          id: 'Transnational regions',
+          defaultMessage: 'Transnational regions',
+        }}
         options={[
           { value: 'Global', count: 5, selected: false },
           { value: 'Europe', count: 8, selected: false },
@@ -89,7 +94,7 @@ describe('NavigatorGeographicCoverageFacet', () => {
     const { addFilter } = renderFacet();
 
     fireEvent.click(
-      screen.getByRole('button', { name: 'Macro-Transnational region' }),
+      screen.getByRole('button', { name: 'Transnational regions' }),
     );
     fireEvent.click(screen.getByLabelText('Outermost regions'));
 

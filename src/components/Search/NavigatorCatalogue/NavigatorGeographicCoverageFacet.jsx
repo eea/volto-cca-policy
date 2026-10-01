@@ -11,11 +11,6 @@ export const TRANSNATIONAL_REGION_FIELD =
 export const COUNTRIES_FIELD = 'cca_geographic_countries.keyword';
 
 const messages = defineMessages({
-  transnationalRegions: {
-    id: 'Macro-Transnational region',
-    defaultMessage: 'Macro-Transnational region',
-  },
-  countries: { id: 'Countries', defaultMessage: 'Countries' },
   noOptionsAvailable: {
     id: 'No options available',
     defaultMessage: 'No options available',
@@ -187,9 +182,11 @@ const NavigatorActiveFilters = ({ filters, onRemove }) => {
 
 const NavigatorGeographicCoverageFacet = ({
   className = '',
+  countriesLabel,
   onRemove,
   onSelect,
   options = [],
+  transnationalRegionsLabel,
 }) => {
   const intl = useIntl();
   const { addFilter, facets, filters = [], removeFilter } = useSearchContext();
@@ -226,7 +223,7 @@ const NavigatorGeographicCoverageFacet = ({
       <ExpandableFacetGroup
         field={COUNTRIES_FIELD}
         id="navigator-geographic-countries"
-        label={intl.formatMessage(messages.countries)}
+        label={intl.formatMessage(countriesLabel)}
         emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
         options={countryOptions}
         onChange={(option) => updateChildFilter(COUNTRIES_FIELD, option)}
@@ -234,7 +231,7 @@ const NavigatorGeographicCoverageFacet = ({
       <ExpandableFacetGroup
         field={TRANSNATIONAL_REGION_FIELD}
         id="navigator-geographic-transnational-regions"
-        label={intl.formatMessage(messages.transnationalRegions)}
+        label={intl.formatMessage(transnationalRegionsLabel)}
         emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
         options={transnationalOptions}
         onChange={(option) =>
