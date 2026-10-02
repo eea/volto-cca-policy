@@ -22,7 +22,7 @@ Climate-ADAPT Frontend Policy
 
 See [RELEASE.md](https://github.com/eea/volto-cca-policy/blob/master/RELEASE.md).
 
-## How to contribute
+## How to  contribute
 
 See [DEVELOP.md](https://github.com/eea/volto-cca-policy/blob/master/DEVELOP.md).
 
