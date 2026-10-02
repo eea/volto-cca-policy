@@ -83,7 +83,7 @@ jest.mock(
 );
 jest.mock(
   '@plone/volto/components/theme/Image/Image',
-  () => (props) => <img {...props} />,
+  () => (props) => <img {...props} alt="" />,
   { virtual: true },
 );
 jest.mock('semantic-ui-react', () => {
