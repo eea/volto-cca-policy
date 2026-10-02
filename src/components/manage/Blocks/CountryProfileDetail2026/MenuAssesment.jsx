@@ -301,13 +301,28 @@ const HazardStatusGrid = ({ hazards, chronic = false }) => {
       ))}
       {Object.entries(hazards).map(([hazardType, values]) => (
         <React.Fragment key={hazardType}>
-          <Grid.Column mobile={12} tablet={12} computer={5} className={cellClass}>
+          <Grid.Column
+            mobile={12}
+            tablet={12}
+            computer={5}
+            className={cellClass}
+          >
             {hazardType}
           </Grid.Column>
-          <Grid.Column mobile={12} tablet={12} computer={3} className={cellClass}>
+          <Grid.Column
+            mobile={12}
+            tablet={12}
+            computer={3}
+            className={cellClass}
+          >
             {values.observed}
           </Grid.Column>
-          <Grid.Column mobile={12} tablet={12} computer={4} className={cellClass}>
+          <Grid.Column
+            mobile={12}
+            tablet={12}
+            computer={4}
+            className={cellClass}
+          >
             <StatusCircle statusValue={values.future} />
           </Grid.Column>
         </React.Fragment>
