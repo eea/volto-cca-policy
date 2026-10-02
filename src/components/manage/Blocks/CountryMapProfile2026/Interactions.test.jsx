@@ -2,6 +2,8 @@ import React from 'react';
 import { render, act } from '@testing-library/react';
 import { Interactions } from './Interactions';
 
+import { getClosestFeatureToCoordinate } from '@eeacms/volto-cca-policy/helpers/countryMap';
+
 const mockView = { animate: jest.fn(), fit: jest.fn() };
 const mockMap = {
   getView: jest.fn(() => mockView),
@@ -28,8 +30,6 @@ jest.mock(
   }),
   { virtual: true },
 );
-
-import { getClosestFeatureToCoordinate } from '@eeacms/volto-cca-policy/helpers/countryMap';
 
 describe('CountryMapProfile2026 Interactions', () => {
   beforeEach(() => {
