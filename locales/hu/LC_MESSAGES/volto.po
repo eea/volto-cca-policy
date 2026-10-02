@@ -16,6 +16,16 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Az esemény háttérdokumentuma elérhető"
 
+#. Default: "About us"
+#: messages
+msgid "About us"
+msgstr ""
+
+#. Default: "Accessibility"
+#: messages
+msgid "Accessibility"
+msgstr ""
+
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
@@ -349,6 +359,11 @@ msgstr "Érintkezés"
 msgid "Contact information for the Observatory"
 msgstr "Az Obszervatórium elérhetőségei"
 
+#. Default: "Contact us"
+#: messages
+msgid "Contact us"
+msgstr ""
+
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
@@ -391,6 +406,11 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
+msgstr ""
+
+#. Default: "Dashboard"
+#: messages
+msgid "Dashboard"
 msgstr ""
 
 #. Default: "Data sources"
@@ -583,6 +603,7 @@ msgstr "Földrajzi jellemzés:"
 
 #. Default: "Geographic coverage"
 #: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
 msgid "Geographic coverage"
 msgstr ""
 
@@ -670,6 +691,11 @@ msgstr "Hőegészségügyi akciótervek (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Hőre figyelmeztető rendszerek (HHWS)"
+
+#. Default: "Help"
+#: messages
+msgid "Help"
+msgstr ""
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -845,6 +871,11 @@ msgstr "További információ"
 msgid "Legal aspects"
 msgstr "Jogi szempontok"
 
+#. Default: "Legal notice"
+#: messages
+msgid "Legal notice"
+msgstr ""
+
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -871,6 +902,11 @@ msgstr ""
 msgid "Live preview · results based on your selection"
 msgstr ""
 
+#. Default: "Login"
+#: messages
+msgid "Login"
+msgstr ""
+
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
@@ -881,6 +917,11 @@ msgstr "További információt keres?"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Makro-transznacionális régió:"
+
+#. Default: "Managed by"
+#: messages
+msgid "Managed by"
+msgstr ""
 
 #. Default: "Management and planning"
 #: messages
@@ -981,6 +1022,11 @@ msgstr "Nincs információ"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
+msgstr ""
+
+#. Default: "No options available"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "No options available"
 msgstr ""
 
 #. Default: "No results"
@@ -1097,6 +1143,11 @@ msgstr "Gyakorlati információk"
 #. Default: "Previous versions of this indicator"
 #: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
+msgstr ""
+
+#. Default: "Privacy statement"
+#: messages
+msgid "Privacy statement"
 msgstr ""
 
 #. Default: "Project information"
@@ -1317,6 +1368,11 @@ msgstr ""
 msgid "Share your information"
 msgstr "Ossza meg adatait"
 
+#. Default: "Sitemap"
+#: messages
+msgid "Sitemap"
+msgstr ""
+
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
@@ -1485,6 +1541,7 @@ msgstr "Témák:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/navigator_catalogue/facets
 msgid "Transnational regions"
 msgstr "Transznacionális régiók"
 
@@ -1738,7 +1795,17 @@ msgstr ""
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 msgstr ""
 
+#. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
+msgstr ""
+
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "{count, plural, one {tool matches} other {tools match}}"
+msgstr ""
+
+#. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
+msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 msgstr ""

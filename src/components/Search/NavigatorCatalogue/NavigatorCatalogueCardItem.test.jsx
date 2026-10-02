@@ -130,11 +130,21 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(screen.getByText('Risk assessment')).toBeInTheDocument();
     expect(screen.getByText('Resilience')).toBeInTheDocument();
     expect(screen.getByText('Adaptation')).toBeInTheDocument();
-    expect(screen.getByText('Step 1')).toBeInTheDocument();
+    expect(screen.getByText('Step 1')).toHaveAttribute(
+      'title',
+      'Step 1: Preparing the ground',
+    );
     expect(
-      screen.getByRole('button', { name: 'Cycle: Step 4' }),
+      screen.getByRole('button', {
+        name: 'Cycle: Step 4: Assessing options',
+      }),
     ).toHaveTextContent('+ 1');
-    expect(screen.getByText('Step 4')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: 'Cycle: Step 4: Assessing options',
+      }),
+    ).toHaveAttribute('title', 'Step 4: Assessing options');
+    expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
     expect(
       screen.getByTitle(
         'Maps and graphs, Reports and decision support, Datasets and indicators',

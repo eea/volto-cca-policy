@@ -7,6 +7,14 @@ import {
 } from './../common';
 
 const messages = defineMessages({
+  geographicCoverage: {
+    id: 'Geographic coverage',
+    defaultMessage: 'Geographic coverage',
+  },
+  macroTransnationalRegion: {
+    id: 'Transnational regions',
+    defaultMessage: 'Transnational regions',
+  },
   climateHazards: {
     id: 'Climate hazards',
     defaultMessage: 'Climate hazards',
@@ -59,7 +67,30 @@ const facets = [
     label: messages.implementationLevel,
     alwaysVisible: false,
   }),
-  geographic_countries,
+  multiTermFacet({
+    field: 'cca_geographic_characterisation.keyword',
+    factory: 'NavigatorGeographicCoverageFacet',
+    isFilterable: false,
+    isMulti: true,
+    label: messages.geographicCoverage,
+    transnationalRegionsLabel: messages.macroTransnationalRegion,
+    countriesLabel: geographic_countries.label,
+    hideActiveFilters: true,
+    alwaysVisible: true,
+  }),
+  multiTermFacet({
+    field: 'cca_geographic_transnational_region.keyword',
+    isFilterable: false,
+    isFilter: true,
+    isMulti: true,
+    label: messages.macroTransnationalRegion,
+    showInFacetsList: true,
+  }),
+  {
+    ...geographic_countries,
+    isFilter: true,
+    showInFacetsList: true,
+  },
   multiTermFacet({
     field: 'cca_adaptation_support_cycle_step.keyword',
     isFilterable: false,

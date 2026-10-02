@@ -13,6 +13,46 @@ const messages = defineMessages({
     defaultMessage: 'Search the EU Mission on Adaptation',
   },
   // rest of site
+  sitemap: {
+    id: 'Sitemap',
+    defaultMessage: 'Sitemap',
+  },
+  managedBy: {
+    id: 'Managed by',
+    defaultMessage: 'Managed by',
+  },
+  aboutUs: {
+    id: 'About us',
+    defaultMessage: 'About us',
+  },
+  contactUs: {
+    id: 'Contact us',
+    defaultMessage: 'Contact us',
+  },
+  help: {
+    id: 'Help',
+    defaultMessage: 'Help',
+  },
+  privacyStatement: {
+    id: 'Privacy statement',
+    defaultMessage: 'Privacy statement',
+  },
+  accessibility: {
+    id: 'Accessibility',
+    defaultMessage: 'Accessibility',
+  },
+  legalNotice: {
+    id: 'Legal notice',
+    defaultMessage: 'Legal notice',
+  },
+  dashboard: {
+    id: 'Dashboard',
+    defaultMessage: 'Dashboard',
+  },
+  login: {
+    id: 'Login',
+    defaultMessage: 'Login',
+  },
   phNews: {
     id: 'News',
     defaultMessage: 'News',

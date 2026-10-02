@@ -98,19 +98,23 @@ const CycleElements = ({ intl, values }) => {
       <span className="cycle-elements-label">
         {intl.formatMessage(messages.cycle)}
       </span>
-      {visible.map((value, index) => (
+      {visible.map(({ label, title }, index) => (
         <span
           key={`cycle-element-${index}`}
           className="navigator-tag cycle-element"
+          title={title}
         >
-          {value}
+          {label}
         </span>
       ))}
       {hidden.length > 0 && (
         <TagOverflowPopup
-          items={hidden}
+          items={hidden.map(({ title }) => title)}
           className="navigator-tag cycle-element more"
-          ariaLabel={`${intl.formatMessage(messages.cycle)}: ${hidden.join(', ')}`}
+          ariaLabel={`${intl.formatMessage(messages.cycle)}: ${hidden
+            .map(({ title }) => title)
+            .join(', ')}`}
+          title={hidden.map(({ title }) => title).join(', ')}
         />
       )}
     </div>
@@ -135,7 +139,9 @@ const NavigatorCatalogueCardItem = (props) => {
   )
     .map((value) => {
       const title = value?.title || value;
-      return typeof title === 'string' ? title.split(':')[0] : title;
+      return typeof title === 'string'
+        ? { title, label: title.split(':')[0] }
+        : null;
     })
     .filter(Boolean);
   const publicationDate =
