@@ -32,8 +32,8 @@ const messages = defineMessages({
     defaultMessage: 'Focus areas',
   },
   implementationLevel: {
-    id: 'Implementation level',
-    defaultMessage: 'Implementation level',
+    id: 'Governance level',
+    defaultMessage: 'Governance level',
   },
   adaptationApproaches: {
     id: 'Adaptation approaches',
