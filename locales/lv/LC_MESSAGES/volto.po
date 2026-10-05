@@ -627,6 +627,11 @@ msgstr "Dodieties uz izvērsto meklēšanu"
 msgid "Governance and Institutional"
 msgstr "Pārvaldība un institucionālais"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "IPCC adaptācijas iespēju kategorijas:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Ja jums ir vēl kādi jautājumi, varat sazināties"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView

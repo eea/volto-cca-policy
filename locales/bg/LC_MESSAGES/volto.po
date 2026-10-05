@@ -627,6 +627,11 @@ msgstr "Отидете на разширено търсене"
 msgid "Governance and Institutional"
 msgstr "Управление и институционално"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "Категории опции за адаптиране на IPCC:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Ако имате допълнителни въпроси можете да се свържете"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView

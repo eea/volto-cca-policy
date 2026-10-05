@@ -627,6 +627,11 @@ msgstr "Prejdite na rozšírené vyhľadávanie"
 msgid "Governance and Institutional"
 msgstr "Riadenie a inštitucionálne"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "Kategórie možností prispôsobenia IPCC:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Ak máte ďalšie otázky, môžete sa obrátiť"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView

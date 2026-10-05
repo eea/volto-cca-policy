@@ -627,6 +627,11 @@ msgstr "Mur fit-tfittxija avvanzata"
 msgid "Governance and Institutional"
 msgstr "Governanza u Istituzzjonali"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "Kategoriji tal-għażliet tal-adattament tal-IPCC:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Jekk għandek xi mistoqsijiet oħra tista' tikkuntattja"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView

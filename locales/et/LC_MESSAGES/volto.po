@@ -627,6 +627,11 @@ msgstr "Minge täpsemasse otsingusse"
 msgid "Governance and Institutional"
 msgstr "Juhtimine ja institutsionaalne"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "IPCC kohanemisvalikute kategooriad:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Kui teil on lisaküsimusi, võite ühendust võtta"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView

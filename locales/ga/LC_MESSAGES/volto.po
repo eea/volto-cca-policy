@@ -627,6 +627,11 @@ msgstr "Téigh chuig cuardach casta"
 msgid "Governance and Institutional"
 msgstr "Rialachas agus Institiúideach"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "Catagóirí roghanna oiriúnaithe IPCC:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Má tá aon cheist eile agat is féidir leat teagmháil a dhéanamh"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView

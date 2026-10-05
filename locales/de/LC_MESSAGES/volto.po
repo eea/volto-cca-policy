@@ -627,6 +627,11 @@ msgstr "Gehen Sie zur erweiterten Suche"
 msgid "Governance and Institutional"
 msgstr "Governance und institutionelle"
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -706,11 +711,6 @@ msgstr "Kategorien der IPCC-Anpassungsoptionen:"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
 msgstr "Wenn Sie weitere Fragen haben, können Sie sich an uns wenden"
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
-msgstr ""
 
 #. Default: "Implementation time"
 #: components/theme/Views/AdaptationOptionView
