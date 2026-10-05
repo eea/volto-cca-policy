@@ -9,6 +9,7 @@ import installFilterAceContent from './FilterAceContent';
 import installTransRegionSelect from './TransRegionSelect';
 import installCountryMapObservatory from './CountryMapObservatory';
 import installCountryProfileDetail from './CountryProfileDetail';
+import installCountryProfileDetail2026 from './CountryProfileDetail2026';
 import installListing from './Listing';
 import installRAST from './RASTBlock';
 import installC3SIndicatorsListingBlock from './C3SIndicatorsListingBlock';
@@ -23,6 +24,7 @@ import installASTNavigation from './ASTNavigation';
 import installFlourishEmbedBlock from './FlourishEmbedBlock';
 import installDataConnectedEmbed from './DataConnectedEmbedBlock';
 import installCountryMapProfile from './CountryMapProfile';
+import installCountryMapProfile2026 from './CountryMapProfile2026';
 import installChatbotCatalogue from './ChatbotCatalogue';
 
 export default function installBlocks(config) {
@@ -76,6 +78,7 @@ export default function installBlocks(config) {
     installCaseStudyExplorerBlock,
     installCountryMapObservatory,
     installCountryProfileDetail,
+    installCountryProfileDetail2026,
     installSearchAceContent,
     installRelevantAceContent,
     installFilterAceContent,
@@ -88,6 +91,7 @@ export default function installBlocks(config) {
     installContentLinks,
     installASTNavigation,
     installCountryMapProfile,
+    installCountryMapProfile2026,
     installFlourishEmbedBlock,
     installDataConnectedEmbed,
   )(config);
