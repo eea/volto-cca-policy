@@ -28,6 +28,18 @@ const profileData = {
         Status: 'Adopted - In force',
       },
       {
+        Type: 'Later group',
+        Link: '/later',
+        Title: 'Later group link',
+        Status: 'Empty () then (Established)',
+      },
+      {
+        Type: 'No group',
+        Link: '/no-group',
+        Title: 'No group link',
+        Status: 'Still pending',
+      },
+      {
         Type: 'Missing status',
         Link: '/missing',
         Title: 'Missing',
@@ -89,6 +101,8 @@ describe('MenuProfile', () => {
       />,
     );
     expect(screen.getByText('Strategy')).toBeInTheDocument();
+    expect(screen.getByText('Established')).toBeInTheDocument();
+    expect(screen.getByText('Still pending')).toBeInTheDocument();
     expect(screen.getByText('Weather data')).toBeInTheDocument();
     expect(screen.getByText('Climate service')).toBeInTheDocument();
     expect(screen.getAllByText('MRE report')).toHaveLength(2);
