@@ -16,6 +16,16 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "K dispozícii je podkladový dokument podujatia"
 
+#. Default: "About us"
+#: messages
+msgid "About us"
+msgstr ""
+
+#. Default: "Accessibility"
+#: messages
+msgid "Accessibility"
+msgstr ""
+
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
@@ -349,6 +359,11 @@ msgstr "Kontaktovať"
 msgid "Contact information for the Observatory"
 msgstr "Kontaktné údaje na observatórium"
 
+#. Default: "Contact us"
+#: messages
+msgid "Contact us"
+msgstr ""
+
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
 msgid "Contributor:"
@@ -391,6 +406,11 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
+msgstr ""
+
+#. Default: "Dashboard"
+#: messages
+msgid "Dashboard"
 msgstr ""
 
 #. Default: "Data sources"
@@ -583,6 +603,7 @@ msgstr "Geografická charakteristika:"
 
 #. Default: "Geographic coverage"
 #: components/theme/Views/ExtendedToolView
+#: search/navigator_catalogue/facets
 msgid "Geographic coverage"
 msgstr ""
 
@@ -670,6 +691,11 @@ msgstr "Akčné plány pre zdravie z tepla (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Tepelné varovné systémy (HHWS)"
+
+#. Default: "Help"
+#: messages
+msgid "Help"
+msgstr ""
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -845,6 +871,11 @@ msgstr "Zistite viac"
 msgid "Legal aspects"
 msgstr "Právne aspekty"
 
+#. Default: "Legal notice"
+#: messages
+msgid "Legal notice"
+msgstr ""
+
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -871,6 +902,11 @@ msgstr ""
 msgid "Live preview · results based on your selection"
 msgstr ""
 
+#. Default: "Login"
+#: messages
+msgid "Login"
+msgstr ""
+
 #. Default: "Looking for more information?"
 #: index
 msgid "Looking for more information?"
@@ -881,6 +917,11 @@ msgstr "Hľadáte ďalšie informácie?"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Macro-Transnational region:"
 msgstr "Makro-nadnárodný región:"
+
+#. Default: "Managed by"
+#: messages
+msgid "Managed by"
+msgstr ""
 
 #. Default: "Management and planning"
 #: messages
@@ -981,6 +1022,11 @@ msgstr "Žiadne informácie"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
+msgstr ""
+
+#. Default: "No options available"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "No options available"
 msgstr ""
 
 #. Default: "No results"
@@ -1097,6 +1143,11 @@ msgstr "Praktické informácie"
 #. Default: "Previous versions of this indicator"
 #: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
+msgstr ""
+
+#. Default: "Privacy statement"
+#: messages
+msgid "Privacy statement"
 msgstr ""
 
 #. Default: "Project information"
@@ -1317,6 +1368,11 @@ msgstr ""
 msgid "Share your information"
 msgstr "Podeľte sa o svoje informácie"
 
+#. Default: "Sitemap"
+#: messages
+msgid "Sitemap"
+msgstr ""
+
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
@@ -1485,6 +1541,7 @@ msgstr "témy:"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
+#: search/navigator_catalogue/facets
 msgid "Transnational regions"
 msgstr "Nadnárodné regióny"
 

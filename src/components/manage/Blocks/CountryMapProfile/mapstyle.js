@@ -29,13 +29,25 @@
 //   context.restore();
 // };
 
-export const makeStyles = (highlight, ol) => {
+export const makeStyles = (
+  highlight,
+  ol,
+  {
+    selectedCountry,
+    countriesCoopereting = ['RS', 'BA', 'MK', 'ME', 'AL', 'XK'],
+    countriesEastern = ['UA', 'MO', 'MD', 'GE'],
+  } = {},
+) => {
   const fill = new ol.style.Fill({ color: 'rgb(251,250,230, 0.8)' });
   const stroke = new ol.style.Stroke({
     // color: 'rgba(255,255,255,0.8)',
     color: '#333333',
     width: 1,
   });
+
+  const selectedStroke = selectedCountry
+    ? new ol.style.Stroke({ color: '#f69c35', width: 3 })
+    : null;
 
   const colored = new ol.style.Fill({
     color: 'rgb(138, 156, 58, 0.8)',
@@ -78,8 +90,6 @@ export const makeStyles = (highlight, ol) => {
       'SK',
       'TR',
     ];
-    const countriesCoopereting = ['RS', 'BA', 'MK', 'ME', 'AL', 'XK'];
-    const countriesEastern = ['UA', 'MO', 'MD', 'GE'];
     const countriesEEAMemberCountries = ['IS', 'NO', 'CH', 'LI', 'TR'];
     if (countriesEEAMemberCountries.includes(countryCode)) {
       return new ol.style.Fill({ color: '#50B0A4' });
@@ -123,5 +133,25 @@ export const makeStyles = (highlight, ol) => {
     },
   });
 
-  return { eucountriesStyle };
+  if (!selectedCountry) return { eucountriesStyle };
+
+  const highlightedCountryStyle = new ol.style.Style({
+    renderer: (pixelCoordinates, state) => {
+      const context = state.context;
+      const geometry = state.geometry.clone();
+      geometry.setCoordinates(pixelCoordinates);
+      const feature = state.feature;
+
+      if (feature.get('na') !== selectedCountry) return;
+
+      context.save();
+      const renderContext = ol.render.toContext(context, { pixelRatio: 1 });
+      renderContext.setFillStrokeStyle(getFillColor(feature), selectedStroke);
+      renderContext.drawGeometry(geometry);
+      context.clip();
+      context.restore();
+    },
+  });
+
+  return { eucountriesStyle, highlightedCountryStyle };
 };
