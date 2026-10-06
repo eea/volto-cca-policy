@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { useSearchContext, useSearchDriver } from '@eeacms/search/lib/hocs';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
@@ -106,6 +106,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale || 'en');
   const searchContext = useSearchContext();
+  const driver = useSearchDriver();
   const {
     addFilter,
     facets,
@@ -113,8 +114,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     isLoading,
     removeFilter,
     results,
+    searchTerm,
+    sortDirection,
+    sortField,
     totalResults,
   } = searchContext;
+  const defaultSortApplied = React.useRef(false);
   const steps = guideSteps;
   const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
@@ -170,6 +175,23 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       setActiveStep(activeStep);
     }
   }, [activeStep, setActiveStep, storedActiveStep]);
+
+  React.useEffect(() => {
+    if (!driver || defaultSortApplied.current) return;
+    defaultSortApplied.current = true;
+
+    if (
+      searchTerm?.trim() ||
+      sortField ||
+      sortDirection ||
+      !appConfig.defaultSort
+    ) {
+      return;
+    }
+
+    const [field, direction] = appConfig.defaultSort.split('|');
+    if (field && direction) driver.setSort(field, direction);
+  }, [appConfig.defaultSort, driver, searchTerm, sortDirection, sortField]);
 
   const toggleValue = (value) => {
     if (selectedValues.includes(value)) {
