@@ -9,7 +9,7 @@ import { useSearchContext, useSearchDriver } from '@eeacms/search/lib/hocs';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
-import { mergeGuideOptions, sortAdaptationSteps } from './utils';
+import { mergeGuideOptions, sortGuideOptions } from './utils';
 import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
@@ -142,10 +142,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     selectedValues,
     hasSelections,
   );
-  const options =
-    step?.id === 'adaptationStage'
-      ? sortAdaptationSteps(mergedOptions)
-      : mergedOptions;
+  const options = sortGuideOptions(mergedOptions, step?.id, currentLang);
   const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))
