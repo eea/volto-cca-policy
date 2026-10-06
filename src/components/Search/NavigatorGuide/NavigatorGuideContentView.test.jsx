@@ -106,6 +106,30 @@ describe('NavigatorGuideContentView thumbnails', () => {
   });
 });
 
+describe('NavigatorGuideContentView empty preview', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useAtom.mockReturnValue([0, jest.fn()]);
+    useSelector.mockReturnValue('en');
+    useHistory.mockReturnValue({ push: jest.fn() });
+    useGuideFacetOptions.mockReturnValue({});
+  });
+
+  it('hides the result count while the preview empty state is visible', () => {
+    const { container } = renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      { filters: [] },
+    );
+
+    expect(
+      container.querySelector('.navigator-guide-preview-empty'),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector('.navigator-guide-result-count'),
+    ).not.toBeInTheDocument();
+  });
+});
+
 describe('NavigatorGuideContentView sorting', () => {
   beforeEach(() => {
     jest.clearAllMocks();

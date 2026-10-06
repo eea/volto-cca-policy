@@ -358,16 +358,18 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               {intl.formatMessage(messages.livePreview)}
             </div>
           </div>
-          <div className="navigator-guide-result-count">
-            <span className="navigator-guide-result-count-value">
-              {isLoading ? '…' : totalResults || 0}
-            </span>
-            <p>
-              {intl.formatMessage(messages.toolsMatch, {
-                count: totalResults || 0,
-              })}
-            </p>
-          </div>
+          {hasSelections && (
+            <div className="navigator-guide-result-count">
+              <span className="navigator-guide-result-count-value">
+                {isLoading ? '…' : totalResults || 0}
+              </span>
+              <p>
+                {intl.formatMessage(messages.toolsMatch, {
+                  count: totalResults || 0,
+                })}
+              </p>
+            </div>
+          )}
           {selectedStepLabels.length > 0 && (
             <p className="navigator-guide-preview-refinements">
               {intl.formatMessage(messages.refinedBy, {
