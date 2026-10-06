@@ -16,6 +16,11 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
+#. Default: "About"
+#: messages
+msgid "About"
+msgstr ""
+
 #. Default: "About us"
 #: messages
 msgid "About us"
@@ -196,6 +201,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -351,6 +361,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr "Teagmháil"
 
@@ -538,6 +549,11 @@ msgstr "Scoir lánscáileán"
 #: index
 msgid "Explore more on Climate-ADAPT"
 msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
+msgstr ""
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -1143,6 +1159,11 @@ msgstr "Eolas praiticiúil"
 #. Default: "Previous versions of this indicator"
 #: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
+msgstr ""
+
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
 msgstr ""
 
 #. Default: "Privacy statement"
