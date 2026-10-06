@@ -25,7 +25,7 @@ import { injectIntl } from 'react-intl';
 import Error from '@plone/volto/error';
 
 import Breadcrumbs from '@plone/volto/components/theme/Breadcrumbs/Breadcrumbs';
-import Footer from '@plone/volto/components/theme/Footer/Footer';
+import Footer from '@eeacms/volto-cca-policy/components/theme/Footer/Footer';
 import Header from '@plone/volto/components/theme/Header/Header';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import OutdatedBrowser from '@plone/volto/components/theme/OutdatedBrowser/OutdatedBrowser';
