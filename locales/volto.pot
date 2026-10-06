@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-02T11:35:09.485Z\n"
+"POT-Creation-Date: 2026-10-05T12:39:21.856Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -629,6 +629,11 @@ msgstr ""
 msgid "Governance and Institutional"
 msgstr ""
 
+#. Default: "Governance level"
+#: search/navigator_catalogue/facets
+msgid "Governance level"
+msgstr ""
+
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Governance level:"
@@ -707,11 +712,6 @@ msgstr ""
 #. Default: "If you have any further questions you can contact"
 #: components/theme/Views/CcaEventView
 msgid "If you have any further questions you can contact"
-msgstr ""
-
-#. Default: "Implementation level"
-#: search/navigator_catalogue/facets
-msgid "Implementation level"
 msgstr ""
 
 #. Default: "Implementation time"
@@ -1490,9 +1490,9 @@ msgstr ""
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 msgstr ""
 
-#. Default: "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+#. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
-msgid "The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process."
+msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 msgstr ""
 
 #. Default: "These items will have broken links"
@@ -1667,9 +1667,9 @@ msgstr ""
 msgid "What sectors does your work focus on?"
 msgstr ""
 
-#. Default: "What stage of the adaptation stage are you working on?"
+#. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
-msgid "What stage of the adaptation stage are you working on?"
+msgid "What step of the adaptation support cycle are you working on?"
 msgstr ""
 
 #. Default: "What you can do with it"
