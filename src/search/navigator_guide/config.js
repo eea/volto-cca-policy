@@ -8,6 +8,7 @@ const previewResultsLimit = 3;
 
 const navigatorGuideConfig = {
   title: 'Navigator Guide',
+  defaultSort: 'title.index|asc',
   alwaysSearchOnInitialLoad: true,
   resultsPerPage: previewResultsLimit,
   previewResultsLimit,
