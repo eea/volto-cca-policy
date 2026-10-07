@@ -64,9 +64,11 @@ const formatPublicationDate = (value) => {
   }
 };
 
-const TagGroup = ({ typeLabel, values, type }) => {
-  const visible = values.slice(0, 3);
-  const hidden = values.slice(3);
+const TagGroup = ({ typeLabel, values, type, maxItems }) => {
+  const visible = Number.isFinite(maxItems)
+    ? values.slice(0, maxItems)
+    : values;
+  const hidden = Number.isFinite(maxItems) ? values.slice(maxItems) : [];
   const remaining = values.length - visible.length;
 
   return (
@@ -146,9 +148,7 @@ const NavigatorCatalogueCardItem = (props) => {
     .filter(Boolean);
   const publicationDate =
     result.publication_date?.raw || result.publication_date;
-  const formattedPublicationDate = publicationDate
-    ? publicationDateFormatter.format(new Date(publicationDate))
-    : '';
+  const formattedPublicationDate = formatPublicationDate(publicationDate);
   const compareTool = {
     uid: getCompareToolUid(result),
     title: getCompareToolTitle(result),
