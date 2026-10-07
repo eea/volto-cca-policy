@@ -354,6 +354,22 @@
   margin-left: 0.5rem !important;
 }
 
+.ui.popup.compare-criteria-popup {
+  max-width: min(450px, calc(100vw - 2rem));
+
+  .usability-tooltip-introduction {
+    margin-bottom: 0.65rem;
+  }
+
+  .usability-tooltip-level {
+    strong {
+      font-weight: 700;
+      text-transform: capitalize;
+      color: @secondaryColor;
+    }
+  }
+}
+
 .navigator-catalogue-compare-view {
   overflow-x: auto;
 
@@ -429,6 +445,20 @@
 
   .compare-criteria-title {
     font-weight: 500;
+  }
+
+  .compare-criteria-tooltip {
+    padding: 0;
+    border: 0;
+    margin-left: 0.4rem;
+    background: transparent;
+    color: @primaryColor;
+    cursor: pointer;
+    line-height: 1;
+
+    i.icon {
+      margin: 0;
+    }
   }
 
   .usability-value,
