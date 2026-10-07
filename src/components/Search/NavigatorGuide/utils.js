@@ -43,3 +43,10 @@ export const sortAdaptationSteps = (options) =>
     if (bStep) return 1;
     return a.value.localeCompare(b.value);
   });
+
+export const sortGuideOptions = (options, stepId, locale = 'en') =>
+  stepId === 'adaptationStage'
+    ? sortAdaptationSteps(options)
+    : [...options].sort((a, b) =>
+        a.value.localeCompare(b.value, locale, { sensitivity: 'base' }),
+      );

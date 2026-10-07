@@ -1,6 +1,12 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -210,8 +216,10 @@ describe('CompareToolsView', () => {
 
     fireEvent.load(img);
 
-    expect(img.style.display).toBe('');
-    expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(img.style.display).toBe('');
+      expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    });
   });
 
   it('falls back to the file icon when the image fails', async () => {

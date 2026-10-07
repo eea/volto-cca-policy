@@ -306,7 +306,7 @@ const View = (props) => {
               className="map-legend-label"
               onClick={() => setIsLegendExpanded(!isLegendExpanded)}
             >
-              Legend {isLegendExpanded ? '▲' : '▲'}
+              Legend {isLegendExpanded ? '▼' : '▲'}
             </button>
             {isLegendExpanded && (
               <div className="map-legend-items">

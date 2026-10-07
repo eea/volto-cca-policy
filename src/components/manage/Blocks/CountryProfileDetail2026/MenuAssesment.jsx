@@ -264,60 +264,7 @@ const PanesHazardContent = ({ data }) => {
         <div className="styled-dividerBlock">
           <div className="ui fitted divider divider-spacing-s"></div>
         </div>
-        <Grid columns="12">
-          <Grid.Column
-            mobile={12}
-            tablet={12}
-            computer={5}
-            className="col-right pb-0"
-          >
-            <span className="fw-light">Hazard type</span>
-          </Grid.Column>
-          <Grid.Column
-            mobile={12}
-            tablet={12}
-            computer={3}
-            className="col-right pb-0"
-          >
-            <span className="fw-light">Observed status</span>
-          </Grid.Column>
-          <Grid.Column
-            mobile={12}
-            tablet={12}
-            computer={4}
-            className="col-right pb-0"
-          >
-            <span className="fw-light">Future status</span>
-          </Grid.Column>
-          {Object.entries(data.AC).map(([hazardType, values]) => (
-            <React.Fragment key={hazardType}>
-              <Grid.Column
-                mobile={12}
-                tablet={12}
-                computer={5}
-                className="col-right pb-0"
-              >
-                {hazardType}
-              </Grid.Column>
-              <Grid.Column
-                mobile={12}
-                tablet={12}
-                computer={3}
-                className="col-right pb-0"
-              >
-                {values.observed}
-              </Grid.Column>
-              <Grid.Column
-                mobile={12}
-                tablet={12}
-                computer={4}
-                className="col-right pb-0"
-              >
-                <StatusCircle statusValue={values.future} />
-              </Grid.Column>
-            </React.Fragment>
-          ))}
-        </Grid>
+        <HazardStatusGrid hazards={data.AC} />
       </div>
       <div className="cpBgGray">
         <p>
@@ -326,62 +273,61 @@ const PanesHazardContent = ({ data }) => {
         <div className="styled-dividerBlock">
           <div className="ui fitted divider divider-spacing-s"></div>
         </div>
-        <Grid columns="12">
+        <HazardStatusGrid hazards={data.CH} chronic />
+      </div>
+    </>
+  );
+};
+
+const HazardStatusGrid = ({ hazards, chronic = false }) => {
+  const cellClass = chronic ? 'col-right pb-0 pt-1' : 'col-right pb-0';
+
+  return (
+    <Grid columns="12">
+      {[
+        ['Hazard type', 5],
+        ['Observed status', 3],
+        ['Future status', 4],
+      ].map(([label, width]) => (
+        <Grid.Column
+          key={label}
+          mobile={12}
+          tablet={12}
+          computer={width}
+          className="col-right pb-0"
+        >
+          <span className="fw-light">{label}</span>
+        </Grid.Column>
+      ))}
+      {Object.entries(hazards).map(([hazardType, values]) => (
+        <React.Fragment key={hazardType}>
           <Grid.Column
             mobile={12}
             tablet={12}
             computer={5}
-            className="col-right pb-0"
+            className={cellClass}
           >
-            <span className="fw-light">Hazard type</span>
+            {hazardType}
           </Grid.Column>
           <Grid.Column
             mobile={12}
             tablet={12}
             computer={3}
-            className="col-right pb-0"
+            className={cellClass}
           >
-            <span className="fw-light">Observed status</span>
+            {values.observed}
           </Grid.Column>
           <Grid.Column
             mobile={12}
             tablet={12}
             computer={4}
-            className="col-right pb-0"
+            className={cellClass}
           >
-            <span className="fw-light">Future status</span>
+            <StatusCircle statusValue={values.future} />
           </Grid.Column>
-          {Object.entries(data.CH).map(([hazardType, values]) => (
-            <React.Fragment key={hazardType}>
-              <Grid.Column
-                mobile={12}
-                tablet={12}
-                computer={5}
-                className="col-right pb-0 pt-1"
-              >
-                {hazardType}
-              </Grid.Column>
-              <Grid.Column
-                mobile={12}
-                tablet={12}
-                computer={3}
-                className="col-right pb-0 pt-1"
-              >
-                {values.observed}
-              </Grid.Column>
-              <Grid.Column
-                mobile={12}
-                tablet={12}
-                computer={4}
-                className="col-right pb-0 pt-1"
-              >
-                <StatusCircle statusValue={values.future} />
-              </Grid.Column>
-            </React.Fragment>
-          ))}
-        </Grid>
-      </div>
-    </>
+        </React.Fragment>
+      ))}
+    </Grid>
   );
 };
 

@@ -5,11 +5,11 @@ import { useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { useSearchContext, useSearchDriver } from '@eeacms/search/lib/hocs';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
 import guideSteps from '../../../search/navigator_guide/guideSteps';
 import { navigatorGuideStepAtom } from '../../../state';
-import { mergeGuideOptions, sortAdaptationSteps } from './utils';
+import { mergeGuideOptions, sortGuideOptions } from './utils';
 import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
@@ -106,6 +106,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const history = useHistory();
   const currentLang = useSelector((state) => state.intl.locale || 'en');
   const searchContext = useSearchContext();
+  const driver = useSearchDriver();
   const {
     addFilter,
     facets,
@@ -113,8 +114,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     isLoading,
     removeFilter,
     results,
+    searchTerm,
+    sortDirection,
+    sortField,
     totalResults,
   } = searchContext;
+  const defaultSortApplied = React.useRef(false);
   const steps = guideSteps;
   const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
@@ -137,10 +142,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     selectedValues,
     hasSelections,
   );
-  const options =
-    step?.id === 'adaptationStage'
-      ? sortAdaptationSteps(mergedOptions)
-      : mergedOptions;
+  const options = sortGuideOptions(mergedOptions, step?.id, currentLang);
   const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))
@@ -170,6 +172,23 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       setActiveStep(activeStep);
     }
   }, [activeStep, setActiveStep, storedActiveStep]);
+
+  React.useEffect(() => {
+    if (!driver || defaultSortApplied.current) return;
+    defaultSortApplied.current = true;
+
+    if (
+      searchTerm?.trim() ||
+      sortField ||
+      sortDirection ||
+      !appConfig.defaultSort
+    ) {
+      return;
+    }
+
+    const [field, direction] = appConfig.defaultSort.split('|');
+    if (field && direction) driver.setSort(field, direction);
+  }, [appConfig.defaultSort, driver, searchTerm, sortDirection, sortField]);
 
   const toggleValue = (value) => {
     if (selectedValues.includes(value)) {
@@ -339,16 +358,18 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               {intl.formatMessage(messages.livePreview)}
             </div>
           </div>
-          <div className="navigator-guide-result-count">
-            <span className="navigator-guide-result-count-value">
-              {isLoading ? '…' : totalResults || 0}
-            </span>
-            <p>
-              {intl.formatMessage(messages.toolsMatch, {
-                count: totalResults || 0,
-              })}
-            </p>
-          </div>
+          {hasSelections && (
+            <div className="navigator-guide-result-count">
+              <span className="navigator-guide-result-count-value">
+                {isLoading ? '…' : totalResults || 0}
+              </span>
+              <p>
+                {intl.formatMessage(messages.toolsMatch, {
+                  count: totalResults || 0,
+                })}
+              </p>
+            </div>
+          )}
           {selectedStepLabels.length > 0 && (
             <p className="navigator-guide-preview-refinements">
               {intl.formatMessage(messages.refinedBy, {

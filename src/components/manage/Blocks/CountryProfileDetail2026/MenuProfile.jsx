@@ -4,6 +4,23 @@ import './styles.less';
 import StatusCircle from './StatusCircle';
 // import { truncate } from 'lodash';
 
+const extractParenthesizedValue = (value) => {
+  let openingIndex = -1;
+
+  for (let index = 0; index < value.length; index += 1) {
+    if (value[index] === '(' && openingIndex === -1) {
+      openingIndex = index;
+    } else if (value[index] === ')' && openingIndex !== -1) {
+      if (index > openingIndex + 1) {
+        return value.slice(openingIndex + 1, index);
+      }
+      openingIndex = -1;
+    }
+  }
+
+  return value;
+};
+
 export default function MenuProfile(props) {
   const countryName = props?.countryName;
   const dataJsonString = props.dataJson;
@@ -19,7 +36,7 @@ export default function MenuProfile(props) {
     .filter((item) => typeof item.Status === 'string')
     .map((item) => ({
       ...item,
-      Status: item.Status.match(/\(([^)]+)\)/)?.[1] ?? item.Status,
+      Status: extractParenthesizedValue(item.Status),
     }))
     .map((item) => ({
       ...item,
