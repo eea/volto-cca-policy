@@ -19,17 +19,17 @@ msgstr "Er is een achtergronddocument voor het evenement beschikbaar"
 #. Default: "About"
 #: messages
 msgid "About"
-msgstr ""
+msgstr "Wat betreft"
 
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Over ons"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Toegankelijkheid"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -373,7 +373,7 @@ msgstr "Contactgegevens van het Observatorium"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Neem contact met ons op"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -422,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -553,7 +553,7 @@ msgstr "Ontdek meer over Climate-ADAPT"
 #. Default: "Explore our environmental information systems"
 #: messages
 msgid "Explore our environmental information systems"
-msgstr ""
+msgstr "Ontdek onze milieu-informatiesystemen"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -716,7 +716,7 @@ msgstr "Waarschuwingssystemen voor hittegezondheid (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -890,7 +890,7 @@ msgstr "Juridische aspecten"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Juridische kennisgeving"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -921,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Inloggen"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1169,7 +1169,7 @@ msgstr ""
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Privacyverklaring"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1392,7 +1392,7 @@ msgstr "Deel uw informatie"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Sitemap"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

@@ -19,17 +19,17 @@ msgstr "Un document de fond pentru eveniment este disponibil"
 #. Default: "About"
 #: messages
 msgid "About"
-msgstr ""
+msgstr "Despre"
 
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Despre noi"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Accesibilitate"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -373,7 +373,7 @@ msgstr "Informații de contact pentru Observator"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Contactați-ne"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -422,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Panou de control"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -553,7 +553,7 @@ msgstr "Explorați mai multe despre Climate-ADAPT"
 #. Default: "Explore our environmental information systems"
 #: messages
 msgid "Explore our environmental information systems"
-msgstr ""
+msgstr "Explorați sistemele noastre de informații despre mediu"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -716,7 +716,7 @@ msgstr "Sisteme de avertizare pentru sănătatea căldurii (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Ajutor"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -890,7 +890,7 @@ msgstr "Aspecte juridice"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Aviz juridic"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -921,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Autentificare"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1169,7 +1169,7 @@ msgstr ""
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Declarație de confidențialitate"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1392,7 +1392,7 @@ msgstr "Partajați informațiile dvs"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Harta site-ului"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

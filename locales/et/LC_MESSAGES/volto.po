@@ -19,17 +19,17 @@ msgstr "Sündmuse taustadokument on saadaval"
 #. Default: "About"
 #: messages
 msgid "About"
-msgstr ""
+msgstr "Umbes"
 
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Meist"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Juurdepääsetavus"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -373,7 +373,7 @@ msgstr "Tähetorni kontaktandmed"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Võtke meiega ühendust"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -422,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Töölaud"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -553,7 +553,7 @@ msgstr "Lisateavet Climate-ADAPT kohta"
 #. Default: "Explore our environmental information systems"
 #: messages
 msgid "Explore our environmental information systems"
-msgstr ""
+msgstr "Tutvuge meie keskkonnateabe süsteemidega"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -716,7 +716,7 @@ msgstr "Kuuma tervise hoiatussüsteemid (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Abi"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -890,7 +890,7 @@ msgstr "Õiguslikud aspektid"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Õigusteave"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -921,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Logi sisse"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1169,7 +1169,7 @@ msgstr ""
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Isikuandmete kaitse"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1392,7 +1392,7 @@ msgstr "Jagage oma teavet"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Sisukaart"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
