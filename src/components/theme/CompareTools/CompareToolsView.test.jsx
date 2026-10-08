@@ -1,6 +1,12 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -124,6 +130,16 @@ describe('CompareToolsView', () => {
     ).toHaveAttribute('scope', 'row');
     expect(
       screen.getByRole('button', {
+        name: 'This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed.',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: 'Number of adaptation support cycle steps supported, from 1 to 6 steps.',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
         name: 'Remove Tool one from comparison',
       }),
     ).toBeInTheDocument();
@@ -210,8 +226,10 @@ describe('CompareToolsView', () => {
 
     fireEvent.load(img);
 
-    expect(img.style.display).toBe('');
-    expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(img.style.display).toBe('');
+      expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    });
   });
 
   it('falls back to the file icon when the image fails', async () => {

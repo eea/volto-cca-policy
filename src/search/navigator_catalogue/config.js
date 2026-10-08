@@ -4,6 +4,7 @@ import { getClientProxyAddress } from './../utils';
 import { vocab } from './../vocabulary';
 
 import facets from './facets';
+import { geographicCoverageRuntimeMappings } from './geographicCoverage';
 import views from './views';
 
 const navigatorCatalogueConfig = {
@@ -46,7 +47,10 @@ export default function installNavigatorCatalogueSearch(config) {
     index_name: 'data_searchui',
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     vocab,
-    runtime_mappings: build_runtime_mappings(clusters),
+    runtime_mappings: {
+      ...build_runtime_mappings(clusters),
+      ...geographicCoverageRuntimeMappings,
+    },
   };
 
   const { navigatorCatalogueSearch } = config.searchui;

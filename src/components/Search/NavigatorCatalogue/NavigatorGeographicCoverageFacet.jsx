@@ -4,11 +4,11 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Term } from '@eeacms/search/components';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
 import { markSelectedFacetValuesFromFilters } from '@eeacms/search/lib/search/helpers';
-
-export const CHARACTERISATION_FIELD = 'cca_geographic_characterisation.keyword';
-export const TRANSNATIONAL_REGION_FIELD =
-  'cca_geographic_transnational_region.keyword';
-export const COUNTRIES_FIELD = 'cca_geographic_countries.keyword';
+import {
+  CHARACTERISATION_FIELD,
+  COUNTRIES_FIELD,
+  TRANSNATIONAL_REGION_FIELD,
+} from '../../../search/navigator_catalogue/geographicCoverage';
 
 const messages = defineMessages({
   noOptionsAvailable: {
@@ -196,29 +196,53 @@ const NavigatorGeographicCoverageFacet = ({
     TRANSNATIONAL_REGION_FIELD,
   );
   const countryOptions = getFacetOptions(facets, filters, COUNTRIES_FIELD);
+  const selectedDirectValues =
+    filters.find(({ field }) => field === CHARACTERISATION_FIELD)?.values || [];
 
-  const updateChildFilter = (field, option) =>
-    option.selected
-      ? removeFilter(field, option.value, 'any')
-      : addFilter(field, option.value, 'any');
+  const clearFilter = (field) => removeFilter(field, null, 'any');
+
+  const updateDirectFilter = (option) => {
+    if (option.selected) {
+      onRemove(option.value);
+      return;
+    }
+
+    clearFilter(COUNTRIES_FIELD);
+    clearFilter(TRANSNATIONAL_REGION_FIELD);
+    onSelect(option.value);
+  };
+
+  const updateChildFilter = (field, option) => {
+    if (option.selected) {
+      removeFilter(field, option.value, 'any');
+      return;
+    }
+
+    clearFilter(CHARACTERISATION_FIELD);
+    addFilter(field, option.value, 'any');
+  };
 
   return (
     <fieldset
       className={`sui-facet searchlib-multiterm-facet navigator-geographic-facet ${className}`}
     >
       <div className="sui-multi-checkbox-facet navigator-geographic-facet-direct-options">
-        {options.map((option) => (
-          <FacetOption
-            key={valueAsText(option.value)}
-            field={CHARACTERISATION_FIELD}
-            option={option}
-            onChange={(selectedOption) =>
-              selectedOption.selected
-                ? onRemove(selectedOption.value)
-                : onSelect(selectedOption.value)
-            }
-          />
-        ))}
+        {options.map((option) => {
+          const directOption = {
+            ...option,
+            selected:
+              option.selected || selectedDirectValues.includes(option.value),
+          };
+
+          return (
+            <FacetOption
+              key={valueAsText(option.value)}
+              field={CHARACTERISATION_FIELD}
+              option={directOption}
+              onChange={updateDirectFilter}
+            />
+          );
+        })}
       </div>
       <ExpandableFacetGroup
         field={COUNTRIES_FIELD}

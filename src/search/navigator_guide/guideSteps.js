@@ -32,13 +32,14 @@ const messages = defineMessages({
     defaultMessage: 'Adaptation stage',
   },
   adaptationStageQuestion: {
-    id: 'What stage of the adaptation stage are you working on?',
-    defaultMessage: 'What stage of the adaptation stage are you working on?',
+    id: 'What step of the adaptation support cycle are you working on?',
+    defaultMessage:
+      'What step of the adaptation support cycle are you working on?',
   },
   adaptationStageDescription: {
-    id: 'The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process.',
+    id: 'The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process.',
     defaultMessage:
-      'The steps follows the Climate-ADAPT Adaptation Support Tool cycle. Pick the stage(s) you need support for - we keep tools that help at thor points in the process.',
+      'The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process.',
   },
   coverage: {
     id: 'Coverage',

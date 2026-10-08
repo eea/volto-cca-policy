@@ -5,7 +5,7 @@ import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { useSearchContext, useSearchDriver } from '@eeacms/search/lib/hocs';
 import NavigatorGuideContentView from './NavigatorGuideContentView';
 import useGuideFacetOptions from './useGuideFacetOptions';
 
@@ -15,7 +15,10 @@ jest.mock('jotai', () => ({
 }));
 jest.mock('react-redux', () => ({ useSelector: jest.fn() }));
 jest.mock('react-router-dom', () => ({ useHistory: jest.fn() }));
-jest.mock('@eeacms/search/lib/hocs', () => ({ useSearchContext: jest.fn() }));
+jest.mock('@eeacms/search/lib/hocs', () => ({
+  useSearchContext: jest.fn(),
+  useSearchDriver: jest.fn(),
+}));
 jest.mock('./useGuideFacetOptions', () => ({
   __esModule: true,
   default: jest.fn(),
@@ -32,10 +35,19 @@ const renderGuide = (result, searchContext = {}) => {
   });
   return render(
     <IntlProvider locale="en">
-      <NavigatorGuideContentView appConfig={{ previewResultsLimit: 3 }} />
+      <NavigatorGuideContentView
+        appConfig={{
+          previewResultsLimit: 3,
+          defaultSort: 'title.index|asc',
+        }}
+      />
     </IntlProvider>,
   );
 };
+
+beforeEach(() => {
+  useSearchDriver.mockReturnValue(undefined);
+});
 
 describe('NavigatorGuideContentView thumbnails', () => {
   beforeEach(() => {
@@ -91,6 +103,64 @@ describe('NavigatorGuideContentView thumbnails', () => {
 
     expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
     expect(thumbnail.querySelector('.ri-stack-line')).toBeInTheDocument();
+  });
+});
+
+describe('NavigatorGuideContentView empty preview', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useAtom.mockReturnValue([0, jest.fn()]);
+    useSelector.mockReturnValue('en');
+    useHistory.mockReturnValue({ push: jest.fn() });
+    useGuideFacetOptions.mockReturnValue({});
+  });
+
+  it('hides the result count while the preview empty state is visible', () => {
+    const { container } = renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      { filters: [] },
+    );
+
+    expect(
+      container.querySelector('.navigator-guide-preview-empty'),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector('.navigator-guide-result-count'),
+    ).not.toBeInTheDocument();
+  });
+});
+
+describe('NavigatorGuideContentView sorting', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useAtom.mockReturnValue([0, jest.fn()]);
+    useSelector.mockReturnValue('en');
+    useHistory.mockReturnValue({ push: jest.fn() });
+    useGuideFacetOptions.mockReturnValue({});
+  });
+
+  it('starts with title A-Z when URL filters leave the sort unset', () => {
+    const driver = { setSort: jest.fn() };
+    useSearchDriver.mockReturnValue(driver);
+
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      { searchTerm: '', sortField: '', sortDirection: '' },
+    );
+
+    expect(driver.setSort).toHaveBeenCalledWith('title.index', 'asc');
+  });
+
+  it('preserves an active sort', () => {
+    const driver = { setSort: jest.fn() };
+    useSearchDriver.mockReturnValue(driver);
+
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      { sortField: 'title.index', sortDirection: 'desc' },
+    );
+
+    expect(driver.setSort).not.toHaveBeenCalled();
   });
 });
 

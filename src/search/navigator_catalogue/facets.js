@@ -5,6 +5,7 @@ import {
   geographic_countries,
   language,
 } from './../common';
+import { CHARACTERISATION_FIELD } from './geographicCoverage';
 
 const messages = defineMessages({
   geographicCoverage: {
@@ -32,8 +33,8 @@ const messages = defineMessages({
     defaultMessage: 'Focus areas',
   },
   implementationLevel: {
-    id: 'Implementation level',
-    defaultMessage: 'Implementation level',
+    id: 'Governance level',
+    defaultMessage: 'Governance level',
   },
   adaptationApproaches: {
     id: 'Adaptation approaches',
@@ -68,7 +69,7 @@ const facets = [
     alwaysVisible: false,
   }),
   multiTermFacet({
-    field: 'cca_geographic_characterisation.keyword',
+    field: CHARACTERISATION_FIELD,
     factory: 'NavigatorGeographicCoverageFacet',
     isFilterable: false,
     isMulti: true,

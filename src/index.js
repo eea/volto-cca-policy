@@ -3,6 +3,7 @@
 import { defineMessages, FormattedMessage } from 'react-intl';
 import loadable from '@loadable/component';
 import { compose } from 'redux';
+import { buildTermFacetAggregationRequest } from '@eeacms/search/lib/search';
 import Sitemap from '@plone/volto/components/theme/Sitemap/Sitemap';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import SelectAutoCompleteWidget from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
@@ -57,6 +58,7 @@ import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogu
 import NavigatorGeographicCoverageFacet from './components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet';
 import NavigatorGuideLayout from './components/Search/NavigatorGuide/NavigatorGuideLayout';
 import NavigatorGuideContentView from './components/Search/NavigatorGuide/NavigatorGuideContentView';
+import { getGeographicCoverageFacetValue } from './search/navigator_catalogue/geographicCoverage';
 
 import { langRedirection } from './store/middleware';
 
@@ -437,7 +439,9 @@ const applyConfig = (config) => {
   };
   config.settings.searchlib.resolve.NavigatorGeographicCoverageFacet = {
     ...config.settings.searchlib.resolve.MultiTermFacet,
+    buildRequest: buildTermFacetAggregationRequest,
     component: NavigatorGeographicCoverageFacet,
+    getValue: getGeographicCoverageFacetValue,
   };
   config.settings.searchlib.resolve.NavigatorGuideLayout = {
     component: NavigatorGuideLayout,

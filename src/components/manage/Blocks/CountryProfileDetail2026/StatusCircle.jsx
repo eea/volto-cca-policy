@@ -1,0 +1,40 @@
+import CircleGray from './circle-gray.svg';
+import CircleGreen from './circle-green.svg';
+import CirclePurple from './circle-purple.svg';
+import CircleRed from './circle-red.svg';
+import Image from '@plone/volto/components/theme/Image/Image';
+
+export default function StatusCircle(props) {
+  const statusValue = props.statusValue;
+  const statusPrint = statusValue
+    ? statusValue.charAt(0).toUpperCase() + statusValue.slice(1)
+    : '';
+  let statusIcon = '';
+  switch (statusValue.toLowerCase()) {
+    case 'adopted':
+    case 'uncertain / unknown':
+    case 'significantly decreasing':
+      statusIcon = CircleGreen;
+      break;
+    case 'established':
+      statusIcon = CirclePurple;
+      break;
+    case 'what':
+    case 'significantly increasing':
+      statusIcon = CircleRed;
+      break;
+    default:
+      statusIcon = CircleGray;
+  }
+  return (
+    <>
+      <Image
+        src={statusIcon}
+        alt="Status"
+        style={{ width: '24px', height: '24px' }}
+      />
+      &nbsp;
+      <span className="font-weight-6">{statusPrint}</span>
+    </>
+  );
+}
