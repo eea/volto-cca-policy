@@ -3,11 +3,12 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
-import NavigatorGeographicCoverageFacet, {
+import NavigatorGeographicCoverageFacet from './NavigatorGeographicCoverageFacet';
+import {
   CHARACTERISATION_FIELD,
   COUNTRIES_FIELD,
   TRANSNATIONAL_REGION_FIELD,
-} from './NavigatorGeographicCoverageFacet';
+} from '../../../search/navigator_catalogue/geographicCoverage';
 
 jest.mock('@eeacms/search/components', () => ({
   Term: ({ term }) => <>{term}</>,

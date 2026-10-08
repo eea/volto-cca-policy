@@ -10,8 +10,6 @@ import {
   TRANSNATIONAL_REGION_FIELD,
 } from '../../../search/navigator_catalogue/geographicCoverage';
 
-export { CHARACTERISATION_FIELD, COUNTRIES_FIELD, TRANSNATIONAL_REGION_FIELD };
-
 const messages = defineMessages({
   noOptionsAvailable: {
     id: 'No options available',
