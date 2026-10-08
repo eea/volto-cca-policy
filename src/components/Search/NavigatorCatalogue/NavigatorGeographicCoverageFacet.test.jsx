@@ -3,10 +3,12 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useSearchContext } from '@eeacms/search/lib/hocs';
-import NavigatorGeographicCoverageFacet, {
+import NavigatorGeographicCoverageFacet from './NavigatorGeographicCoverageFacet';
+import {
+  CHARACTERISATION_FIELD,
   COUNTRIES_FIELD,
   TRANSNATIONAL_REGION_FIELD,
-} from './NavigatorGeographicCoverageFacet';
+} from '../../../search/navigator_catalogue/geographicCoverage';
 
 jest.mock('@eeacms/search/components', () => ({
   Term: ({ term }) => <>{term}</>,
@@ -16,6 +18,7 @@ jest.mock('@eeacms/search/lib/hocs', () => ({
 }));
 
 const renderFacet = ({
+  detailedOptions = true,
   filters = [],
   onRemove = jest.fn(),
   onSelect = jest.fn(),
@@ -30,18 +33,22 @@ const renderFacet = ({
     facets: {
       [TRANSNATIONAL_REGION_FIELD]: [
         {
-          data: [
-            { value: 'Alpine Space', count: 3 },
-            { value: 'Outermost regions', count: 2 },
-          ],
+          data: detailedOptions
+            ? [
+                { value: 'Alpine Space', count: 3 },
+                { value: 'Outermost regions', count: 2 },
+              ]
+            : [],
         },
       ],
       [COUNTRIES_FIELD]: [
         {
-          data: [
-            { value: 'Germany', count: 4 },
-            { value: 'Spain', count: 2 },
-          ],
+          data: detailedOptions
+            ? [
+                { value: 'Germany', count: 4 },
+                { value: 'Spain', count: 2 },
+              ]
+            : [],
         },
       ],
     },
@@ -58,14 +65,8 @@ const renderFacet = ({
           defaultMessage: 'Transnational regions',
         }}
         options={[
-          { value: 'Global', count: 5, selected: false },
           { value: 'Europe', count: 8, selected: false },
-          {
-            value: 'Macro-Transnational region',
-            count: 4,
-            selected: false,
-          },
-          { value: 'Countries', count: 6, selected: false },
+          { value: 'Global', count: 5, selected: false },
         ]}
       />
     </IntlProvider>,
@@ -79,15 +80,37 @@ describe('NavigatorGeographicCoverageFacet', () => {
     jest.clearAllMocks();
   });
 
-  it('shows Globe and Europe as direct options and filters by the raw value', () => {
-    const { onSelect } = renderFacet();
+  it('shows Global and Europe as direct options', () => {
+    renderFacet();
 
-    expect(screen.getByText('Global')).toBeInTheDocument();
-    expect(screen.getByText('Europe')).toBeInTheDocument();
+    expect(
+      screen
+        .getAllByRole('checkbox')
+        .slice(0, 2)
+        .map((option) => option.getAttribute('aria-label')),
+    ).toEqual(['Europe', 'Global']);
+  });
 
-    fireEvent.click(screen.getByLabelText('Global'));
+  it('clears detailed coverage before selecting a direct scope', () => {
+    const { onSelect, removeFilter } = renderFacet({
+      filters: [
+        {
+          field: COUNTRIES_FIELD,
+          values: ['Germany'],
+          type: 'any',
+        },
+      ],
+    });
 
-    expect(onSelect).toHaveBeenCalledWith('Global');
+    fireEvent.click(screen.getByLabelText('Europe'));
+
+    expect(removeFilter).toHaveBeenCalledWith(COUNTRIES_FIELD, null, 'any');
+    expect(removeFilter).toHaveBeenCalledWith(
+      TRANSNATIONAL_REGION_FIELD,
+      null,
+      'any',
+    );
+    expect(onSelect).toHaveBeenCalledWith('Europe');
   });
 
   it('expands and filters Macro-Transnational region values', () => {
@@ -123,5 +146,48 @@ describe('NavigatorGeographicCoverageFacet', () => {
       'Germany',
       'any',
     );
+  });
+
+  it('shows empty detailed coverage groups while Europe is selected', () => {
+    const { onRemove } = renderFacet({
+      detailedOptions: false,
+      filters: [
+        {
+          field: CHARACTERISATION_FIELD,
+          values: ['Europe'],
+          type: 'any',
+        },
+      ],
+    });
+
+    expect(screen.getByLabelText('Europe')).toBeChecked();
+    fireEvent.click(screen.getByRole('button', { name: 'Countries' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Transnational regions' }),
+    );
+
+    expect(screen.getAllByText('No options available.')).toHaveLength(2);
+
+    fireEvent.click(screen.getByLabelText('Europe'));
+
+    expect(onRemove).toHaveBeenCalledWith('Europe');
+  });
+
+  it('keeps detailed coverage available when a country is selected', () => {
+    renderFacet({
+      filters: [
+        {
+          field: COUNTRIES_FIELD,
+          values: ['Germany'],
+          type: 'any',
+        },
+      ],
+    });
+
+    expect(screen.getByRole('button', { name: 'Countries' })).toBeEnabled();
+    expect(screen.getByLabelText('Germany')).toBeEnabled();
+    expect(
+      screen.getByRole('button', { name: 'Transnational regions' }),
+    ).toBeEnabled();
   });
 });
