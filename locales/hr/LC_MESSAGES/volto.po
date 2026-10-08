@@ -19,17 +19,17 @@ msgstr "Popratni dokument za događaj je dostupan"
 #. Default: "About"
 #: messages
 msgid "About"
-msgstr ""
+msgstr "Oko"
 
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "O nama"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Pristupačnost"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -373,7 +373,7 @@ msgstr "Kontakt podaci za Zvjezdarnicu"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Kontaktirajte nas"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -422,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Nadzorna ploča"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -553,7 +553,7 @@ msgstr "Istražite više na Climate-ADAPT"
 #. Default: "Explore our environmental information systems"
 #: messages
 msgid "Explore our environmental information systems"
-msgstr ""
+msgstr "Istražite naše informacijske sustave o okolišu"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -711,7 +711,7 @@ msgstr "Sustavi upozorenja na zdravlje zbog vrućine (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Pomoć"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -890,7 +890,7 @@ msgstr "Pravni aspekti"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Pravna obavijest"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -921,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Prijava"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1169,7 +1169,7 @@ msgstr ""
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Izjava o privatnosti"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1392,7 +1392,7 @@ msgstr "Podijelite svoje podatke"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Karta web-mjesta"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

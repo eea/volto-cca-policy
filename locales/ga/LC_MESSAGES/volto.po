@@ -24,12 +24,12 @@ msgstr ""
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Fúinn"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Inrochtaineacht"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -373,7 +373,7 @@ msgstr "Eolas teagmhála don Réadlann"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Déan teagmháil linn"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -422,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Painéal"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -553,7 +553,7 @@ msgstr "Déan tuilleadh iniúchta ar Aeráid-ADAPT"
 #. Default: "Explore our environmental information systems"
 #: messages
 msgid "Explore our environmental information systems"
-msgstr ""
+msgstr "Déan iniúchadh ar ár gcórais faisnéise comhshaoil"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -711,7 +711,7 @@ msgstr "Córais rabhaidh sláinte teasa (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Cabhair"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -890,7 +890,7 @@ msgstr "Gnéithe dlíthiúla"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Fógra dlíthiúil"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -921,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Logáil isteach"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1169,7 +1169,7 @@ msgstr ""
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Ráiteas príobháideachais"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1392,7 +1392,7 @@ msgstr "Roinn do chuid faisnéise"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Mapa suímh"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
