@@ -16,15 +16,20 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Tapahtuman taustadokumentti on saatavilla"
 
+#. Default: "About"
+#: messages
+msgid "About"
+msgstr "Noin"
+
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Tietoa meistä"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Saavutettavuus"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -196,6 +201,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -351,6 +361,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr "Ota yhteyttä"
 
@@ -362,7 +373,7 @@ msgstr "Observatorion yhteystiedot"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Ota yhteyttä"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -411,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Hallintapaneeli"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -538,6 +549,11 @@ msgstr "Poistu koko näytöstä"
 #: index
 msgid "Explore more on Climate-ADAPT"
 msgstr "Tutustu lisää Climate-ADAPTiin"
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
+msgstr "Tutustu ympäristötietojärjestelmiimme"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -700,7 +716,7 @@ msgstr "Lämpöterveysvaroitusjärjestelmät (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Ohje"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -874,7 +890,7 @@ msgstr "Oikeudelliset näkökohdat"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Oikeudellinen huomautus"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -905,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Kirjaudu sisään"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1145,10 +1161,15 @@ msgstr "Käytännön tietoa"
 msgid "Previous versions of this indicator"
 msgstr ""
 
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
+msgstr ""
+
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Tietosuojaseloste"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1371,7 +1392,7 @@ msgstr "Jaa tietosi"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Sivukartta"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

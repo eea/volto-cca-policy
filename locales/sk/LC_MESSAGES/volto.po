@@ -16,15 +16,20 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "K dispozícii je podkladový dokument podujatia"
 
+#. Default: "About"
+#: messages
+msgid "About"
+msgstr "O"
+
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "O nás"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Prístupnosť"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -196,6 +201,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -351,6 +361,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr "Kontaktovať"
 
@@ -362,7 +373,7 @@ msgstr "Kontaktné údaje na observatórium"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Kontaktujte nás"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -411,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Prehľad"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -538,6 +549,11 @@ msgstr "Ukončiť celú obrazovku"
 #: index
 msgid "Explore more on Climate-ADAPT"
 msgstr "Preskúmajte viac o Climate-ADAPT"
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
+msgstr "Preskúmajte naše environmentálne informačné systémy"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -700,7 +716,7 @@ msgstr "Tepelné varovné systémy (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Pomoc"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -874,7 +890,7 @@ msgstr "Právne aspekty"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Právne upozornenie"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -905,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Prihlásenie"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1145,10 +1161,15 @@ msgstr "Praktické informácie"
 msgid "Previous versions of this indicator"
 msgstr ""
 
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
+msgstr ""
+
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Vyhlásenie o ochrane osobných údajov"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1371,7 +1392,7 @@ msgstr "Podeľte sa o svoje informácie"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Mapa stránok"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

@@ -16,15 +16,20 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Un documento de antecedentes del evento está disponible."
 
+#. Default: "About"
+#: messages
+msgid "About"
+msgstr "Acerca de"
+
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Sobre nosotros"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Accesibilidad"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -196,6 +201,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -351,6 +361,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr "Contacto"
 
@@ -362,7 +373,7 @@ msgstr "Información de contacto del Observatorio"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Contáctenos"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -411,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Panel de control"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -538,6 +549,11 @@ msgstr "Salir de pantalla completa"
 #: index
 msgid "Explore more on Climate-ADAPT"
 msgstr "Explore más sobre Climate-ADAPT"
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
+msgstr "Explore nuestros sistemas de información medioambiental"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -700,7 +716,7 @@ msgstr "Sistemas de alerta sanitaria por calor (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Ayuda"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -874,7 +890,7 @@ msgstr "Aspectos legales"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Aviso legal"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -905,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Iniciar sesión"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1145,10 +1161,15 @@ msgstr "Información práctica"
 msgid "Previous versions of this indicator"
 msgstr ""
 
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
+msgstr ""
+
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Declaración de privacidad"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1371,7 +1392,7 @@ msgstr "Comparte tu información"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Mapa del sitio"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
