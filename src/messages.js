@@ -21,6 +21,14 @@ const messages = defineMessages({
     id: 'Managed by',
     defaultMessage: 'Managed by',
   },
+  exploreEnvironmentalInformationSystems: {
+    id: 'Explore our environmental information systems',
+    defaultMessage: 'Explore our environmental information systems',
+  },
+  about: {
+    id: 'About',
+    defaultMessage: 'About',
+  },
   aboutUs: {
     id: 'About us',
     defaultMessage: 'About us',
@@ -28,6 +36,14 @@ const messages = defineMessages({
   contactUs: {
     id: 'Contact us',
     defaultMessage: 'Contact us',
+  },
+  contact: {
+    id: 'Contact',
+    defaultMessage: 'Contact',
+  },
+  privacy: {
+    id: 'Privacy',
+    defaultMessage: 'Privacy',
   },
   help: {
     id: 'Help',
@@ -52,6 +68,10 @@ const messages = defineMessages({
   login: {
     id: 'Login',
     defaultMessage: 'Login',
+  },
+  cmsLogin: {
+    id: 'CMS Login',
+    defaultMessage: 'CMS Login',
   },
   phNews: {
     id: 'News',

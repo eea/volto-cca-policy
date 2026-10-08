@@ -16,15 +16,20 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Dokument ta' sfond għall-avveniment huwa disponibbli"
 
+#. Default: "About"
+#: messages
+msgid "About"
+msgstr "Madwar"
+
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Dwarna"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Aċċessibbiltà"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -196,6 +201,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -351,6 +361,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr "Kuntatt"
 
@@ -362,7 +373,7 @@ msgstr "Informazzjoni ta' kuntatt għall-Osservatorju"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Ikkuntattjana"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -411,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Panew tal-kontroll"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -538,6 +549,11 @@ msgstr "Ħruġ fullscreen"
 #: index
 msgid "Explore more on Climate-ADAPT"
 msgstr "Esplora aktar dwar Climate-ADAPT"
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
+msgstr "Esplora s-sistemi ta’ informazzjoni ambjentali tagħna"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -700,7 +716,7 @@ msgstr "Sistemi ta’ twissija tas-saħħa tas-sħana (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Għajnuna"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -874,7 +890,7 @@ msgstr "Aspetti legali"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Avviż legali"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -905,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Idħol"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1145,10 +1161,15 @@ msgstr "Informazzjoni prattika"
 msgid "Previous versions of this indicator"
 msgstr ""
 
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
+msgstr ""
+
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Dikjarazzjoni ta’ privatezza"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1371,7 +1392,7 @@ msgstr "Aqsam l-informazzjoni tiegħek"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Mappa tas-sit"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

@@ -16,15 +16,20 @@ msgstr ""
 msgid "A background document for the event is available"
 msgstr "Un document de fond pentru eveniment este disponibil"
 
+#. Default: "About"
+#: messages
+msgid "About"
+msgstr "Despre"
+
 #. Default: "About us"
 #: messages
 msgid "About us"
-msgstr ""
+msgstr "Despre noi"
 
 #. Default: "Accessibility"
 #: messages
 msgid "Accessibility"
-msgstr ""
+msgstr "Accesibilitate"
 
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
@@ -196,6 +201,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -351,6 +361,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr "Contact"
 
@@ -362,7 +373,7 @@ msgstr "Informații de contact pentru Observator"
 #. Default: "Contact us"
 #: messages
 msgid "Contact us"
-msgstr ""
+msgstr "Contactați-ne"
 
 #. Default: "Contributor:"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -411,7 +422,7 @@ msgstr ""
 #. Default: "Dashboard"
 #: messages
 msgid "Dashboard"
-msgstr ""
+msgstr "Panou de control"
 
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
@@ -538,6 +549,11 @@ msgstr "Ieșiți din ecranul complet"
 #: index
 msgid "Explore more on Climate-ADAPT"
 msgstr "Explorați mai multe despre Climate-ADAPT"
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
+msgstr "Explorați sistemele noastre de informații despre mediu"
 
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -700,7 +716,7 @@ msgstr "Sisteme de avertizare pentru sănătatea căldurii (HHWS)"
 #. Default: "Help"
 #: messages
 msgid "Help"
-msgstr ""
+msgstr "Ajutor"
 
 #. Default: "IPCC adaptation options categories:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -874,7 +890,7 @@ msgstr "Aspecte juridice"
 #. Default: "Legal notice"
 #: messages
 msgid "Legal notice"
-msgstr ""
+msgstr "Aviz juridic"
 
 #. Default: "Lifetime"
 #: components/theme/Views/AdaptationOptionView
@@ -905,7 +921,7 @@ msgstr ""
 #. Default: "Login"
 #: messages
 msgid "Login"
-msgstr ""
+msgstr "Autentificare"
 
 #. Default: "Looking for more information?"
 #: index
@@ -1145,10 +1161,15 @@ msgstr "Informații practice"
 msgid "Previous versions of this indicator"
 msgstr ""
 
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
+msgstr ""
+
 #. Default: "Privacy statement"
 #: messages
 msgid "Privacy statement"
-msgstr ""
+msgstr "Declarație de confidențialitate"
 
 #. Default: "Project information"
 #: components/theme/Views/ProjectView
@@ -1371,7 +1392,7 @@ msgstr "Partajați informațiile dvs"
 #. Default: "Sitemap"
 #: messages
 msgid "Sitemap"
-msgstr ""
+msgstr "Harta site-ului"
 
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView

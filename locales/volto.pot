@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-05T12:39:21.856Z\n"
+"POT-Creation-Date: 2026-10-06T09:46:21.313Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,6 +16,11 @@ msgstr ""
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
+msgstr ""
+
+#. Default: "About"
+#: messages
+msgid "About"
 msgstr ""
 
 #. Default: "About us"
@@ -198,6 +203,11 @@ msgstr ""
 msgid "By changing the state, we're not breaking references, but may break user experience for final Anonymous users. There are {brokenReferences} {variation} to this item:"
 msgstr ""
 
+#. Default: "CMS Login"
+#: messages
+msgid "CMS Login"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Cancel"
@@ -353,6 +363,7 @@ msgstr ""
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
 #: components/theme/Views/CcaEventView
+#: messages
 msgid "Contact"
 msgstr ""
 
@@ -539,6 +550,11 @@ msgstr ""
 #. Default: "Explore more on Climate-ADAPT"
 #: index
 msgid "Explore more on Climate-ADAPT"
+msgstr ""
+
+#. Default: "Explore our environmental information systems"
+#: messages
+msgid "Explore our environmental information systems"
 msgstr ""
 
 #. Default: "Explore tools"
@@ -1145,6 +1161,11 @@ msgstr ""
 #. Default: "Previous versions of this indicator"
 #: components/theme/Content/Sections/Versioning/ArchivedVersionListing
 msgid "Previous versions of this indicator"
+msgstr ""
+
+#. Default: "Privacy"
+#: messages
+msgid "Privacy"
 msgstr ""
 
 #. Default: "Privacy statement"
