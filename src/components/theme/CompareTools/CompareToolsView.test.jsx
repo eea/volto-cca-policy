@@ -130,6 +130,16 @@ describe('CompareToolsView', () => {
     ).toHaveAttribute('scope', 'row');
     expect(
       screen.getByRole('button', {
+        name: 'This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed.',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: 'Number of adaptation support cycle steps supported, from 1 to 6 steps.',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
         name: 'Remove Tool one from comparison',
       }),
     ).toBeInTheDocument();

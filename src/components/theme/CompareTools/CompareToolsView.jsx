@@ -7,6 +7,7 @@ import {
   Icon,
   Loader,
   Message,
+  Popup,
   Table,
   Button,
 } from 'semantic-ui-react';
@@ -84,9 +85,19 @@ const messages = defineMessages({
     id: 'Usability',
     defaultMessage: 'Usability',
   },
+  usabilityTooltip: {
+    id: 'This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed.',
+    defaultMessage:
+      'This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed.',
+  },
   functionality: {
     id: 'Functionality',
     defaultMessage: 'Functionality',
+  },
+  functionalityTooltip: {
+    id: 'Number of adaptation support cycle steps supported, from 1 to 6 steps.',
+    defaultMessage:
+      'Number of adaptation support cycle steps supported, from 1 to 6 steps.',
   },
   spatialScale: {
     id: 'Spatial scale',
@@ -231,6 +242,53 @@ const FunctionalityScore = ({ value }) => {
   );
 };
 
+const UsabilityTooltipContent = ({ text }) => {
+  const parts = text.match(
+    /^(.* with) low = (.*), moderate = (.*), high = (.*)$/,
+  );
+
+  if (!parts) return text;
+
+  const [, introduction, low, moderate, high] = parts;
+  const levels = [
+    ['low', low],
+    ['moderate', moderate],
+    ['high', high],
+  ];
+
+  return (
+    <div className="usability-tooltip-content">
+      <div className="usability-tooltip-introduction">{introduction}:</div>
+      {levels.map(([level, description]) => (
+        <div className="usability-tooltip-level" key={level}>
+          <strong>{level}</strong>
+          <span>{` = ${description}`}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const CriterionLabel = ({ label, tooltip, tooltipContent }) => (
+  <div className="compare-criteria-title">
+    <span>{label}</span>
+    <Popup
+      className="compare-criteria-popup"
+      content={tooltipContent || tooltip}
+      position="top left"
+      trigger={
+        <button
+          type="button"
+          className="compare-criteria-tooltip"
+          aria-label={tooltip}
+        >
+          <Icon className="ri-information-line" aria-hidden="true" />
+        </button>
+      }
+    />
+  </div>
+);
+
 const getCompareUids = (search) => {
   const params = new URLSearchParams(search);
 
@@ -297,6 +355,7 @@ const CompareToolsView = () => {
   const registry = config.settings.searchlib;
   const landingPageURL = getNavigatorCataloguePageURL(currentLang);
   const compareToolsTitle = intl.formatMessage(messages.compareTools);
+  const usabilityTooltip = intl.formatMessage(messages.usabilityTooltip);
   const returnURL =
     location.state?.returnURL ||
     getReturnURL(location.search) ||
@@ -519,11 +578,19 @@ const CompareToolsView = () => {
 
             <Table.Body>
               <Table.Row>
-                <Table.Cell as="th" scope="row">
+                <Table.Cell
+                  as="th"
+                  scope="row"
+                  aria-label={intl.formatMessage(messages.usability)}
+                >
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.usability)}
-                    </div>
+                    <CriterionLabel
+                      label={intl.formatMessage(messages.usability)}
+                      tooltip={usabilityTooltip}
+                      tooltipContent={
+                        <UsabilityTooltipContent text={usabilityTooltip} />
+                      }
+                    />
                   </div>
                 </Table.Cell>
 
@@ -537,11 +604,18 @@ const CompareToolsView = () => {
               </Table.Row>
 
               <Table.Row>
-                <Table.Cell as="th" scope="row">
+                <Table.Cell
+                  as="th"
+                  scope="row"
+                  aria-label={intl.formatMessage(messages.functionality)}
+                >
                   <div className="compare-criteria">
-                    <div className="compare-criteria-title">
-                      {intl.formatMessage(messages.functionality)}
-                    </div>
+                    <CriterionLabel
+                      label={intl.formatMessage(messages.functionality)}
+                      tooltip={intl.formatMessage(
+                        messages.functionalityTooltip,
+                      )}
+                    />
                   </div>
                 </Table.Cell>
 
