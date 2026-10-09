@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { Icon, Button, Loader } from 'semantic-ui-react';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { withOpenLayers } from '@eeacms/volto-openlayers-map';
 import {
@@ -22,7 +22,9 @@ import {
   getColorForCount,
   normalizeCountryName,
   buildCountryCounts,
+  clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
+  hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
 } from './utils';
@@ -44,6 +46,24 @@ const messages = defineMessages({
   close: {
     id: 'Close',
     defaultMessage: 'Close',
+  },
+  countrySelectionRequired: {
+    id: 'Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>.',
+    defaultMessage:
+      'Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>.',
+  },
+  clearGeographicCoverageFilters: {
+    id: 'Clear other geographic coverage filters to enable the map.',
+    defaultMessage:
+      'Clear other geographic coverage filters to enable the map.',
+  },
+  clearGeographicCoverageFiltersButton: {
+    id: 'Clear filters',
+    defaultMessage: 'Clear filters',
+  },
+  selectCountryForMap: {
+    id: 'Select a country to explore the map',
+    defaultMessage: 'Select a country to explore the map',
   },
 });
 
@@ -140,7 +160,7 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
 };
 
 /* istanbul ignore next */
-const NavigatorCatalogueMapViewInner = (props) => {
+const NavigatorCatalogueCountryMap = (props) => {
   const { geofeatures, projection, ol } = props;
   const intl = useIntl();
   const searchContext = useSearchContext();
@@ -266,6 +286,57 @@ const NavigatorCatalogueMapViewInner = (props) => {
           </div>
         ))}
       </aside>
+    </div>
+  );
+};
+
+const NavigatorCatalogueMapViewInner = (props) => {
+  const intl = useIntl();
+  const searchContext = useSearchContext();
+  const { filters } = searchContext;
+  const isMapDisabled = hasMapIncompatibleGeographicSelection(filters);
+
+  return (
+    <div
+      className={`navigator-catalogue-map-state${
+        isMapDisabled ? ' is-disabled' : ''
+      }`}
+      aria-disabled={isMapDisabled || undefined}
+    >
+      <div
+        className="navigator-catalogue-map-content"
+        aria-hidden={isMapDisabled || undefined}
+        inert={isMapDisabled ? '' : undefined}
+      >
+        <NavigatorCatalogueCountryMap {...props} />
+      </div>
+
+      {isMapDisabled && (
+        <div className="navigator-catalogue-map-overlay">
+          <div className="navigator-catalogue-map-notice" role="status">
+            <h4>{intl.formatMessage(messages.selectCountryForMap)}</h4>
+            <p>
+              <FormattedMessage
+                {...messages.countrySelectionRequired}
+                values={{ strong: (text) => <strong>{text}</strong> }}
+              />
+            </p>
+            <p>
+              <FormattedMessage {...messages.clearGeographicCoverageFilters} />
+            </p>
+            <Button
+              className="primary map-notice-clear-button"
+              onClick={() =>
+                clearMapIncompatibleGeographicFilters(searchContext)
+              }
+            >
+              {intl.formatMessage(
+                messages.clearGeographicCoverageFiltersButton,
+              )}
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
