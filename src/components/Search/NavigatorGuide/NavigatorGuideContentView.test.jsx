@@ -268,3 +268,70 @@ describe('NavigatorGuideContentView climate hazards', () => {
     ).toHaveTextContent('Flooding');
   });
 });
+
+describe('NavigatorGuideContentView actions', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useSelector.mockReturnValue('en');
+    useSearchDriver.mockReturnValue(undefined);
+    useGuideFacetOptions.mockReturnValue({
+      'cca_adaptation_sectors.keyword': ['Water'],
+    });
+  });
+
+  it('removes a selected option from the current step', () => {
+    const removeFilter = jest.fn();
+    useAtom.mockReturnValue([0, jest.fn()]);
+    useHistory.mockReturnValue({ push: jest.fn() });
+
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {
+        removeFilter,
+        facets: {
+          'cca_adaptation_sectors.keyword': [
+            { data: [{ value: 'Water', count: 4 }] },
+          ],
+        },
+      },
+    );
+
+    fireEvent.click(screen.getByText('Water'));
+
+    expect(removeFilter).toHaveBeenCalledWith(
+      'cca_adaptation_sectors.keyword',
+      'Water',
+      'all',
+    );
+  });
+
+  it('opens catalogue results with only supported Guide filters', () => {
+    const history = { push: jest.fn() };
+    useAtom.mockReturnValue([0, jest.fn()]);
+    useHistory.mockReturnValue(history);
+
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {
+        filters: [
+          {
+            field: 'cca_adaptation_sectors.keyword',
+            values: ['Water'],
+            type: 'all',
+          },
+          { field: 'unrelated.keyword', values: ['Ignored'], type: 'any' },
+        ],
+      },
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Skip to results' }));
+
+    expect(history.push).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pathname: '/en/navigator/tool-catalogue',
+        search: expect.any(String),
+      }),
+    );
+    expect(history.push.mock.calls[0][0].search).not.toContain('unrelated');
+  });
+});

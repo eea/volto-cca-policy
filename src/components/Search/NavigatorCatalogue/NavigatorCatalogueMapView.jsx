@@ -22,10 +22,13 @@ import {
   getColorForCount,
   normalizeCountryName,
   buildCountryCounts,
+  clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
+  hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
 } from './utils';
+import NavigatorCatalogueMapState from './NavigatorCatalogueMapState';
 
 const messages = defineMessages({
   toolAvailability: {
@@ -140,7 +143,7 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
 };
 
 /* istanbul ignore next */
-const NavigatorCatalogueMapViewInner = (props) => {
+const NavigatorCatalogueCountryMap = (props) => {
   const { geofeatures, projection, ol } = props;
   const intl = useIntl();
   const searchContext = useSearchContext();
@@ -267,6 +270,22 @@ const NavigatorCatalogueMapViewInner = (props) => {
         ))}
       </aside>
     </div>
+  );
+};
+
+const NavigatorCatalogueMapViewInner = (props) => {
+  const searchContext = useSearchContext();
+  const isMapDisabled = hasMapIncompatibleGeographicSelection(
+    searchContext.filters,
+  );
+
+  return (
+    <NavigatorCatalogueMapState
+      isMapDisabled={isMapDisabled}
+      onClear={() => clearMapIncompatibleGeographicFilters(searchContext)}
+    >
+      <NavigatorCatalogueCountryMap {...props} />
+    </NavigatorCatalogueMapState>
   );
 };
 

@@ -3,7 +3,9 @@ import {
   getColorForCount,
   normalizeCountryName,
   buildCountryCounts,
+  clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
+  hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
 } from './utils';
@@ -182,6 +184,92 @@ describe('filterCountryCounts', () => {
         { field: 'cca_climate_impacts.keyword', values: ['Flooding'] },
       ]),
     ).toEqual(countryCounts);
+  });
+});
+
+describe('hasMapIncompatibleGeographicSelection', () => {
+  it('allows no geographic selection and country selections', () => {
+    expect(hasMapIncompatibleGeographicSelection()).toBe(false);
+    expect(hasMapIncompatibleGeographicSelection([])).toBe(false);
+    expect(
+      hasMapIncompatibleGeographicSelection([
+        {
+          field: 'cca_geographic_countries.keyword',
+          values: [],
+          type: 'any',
+        },
+      ]),
+    ).toBe(false);
+    expect(
+      hasMapIncompatibleGeographicSelection([
+        {
+          field: 'cca_geographic_countries.keyword',
+          values: ['Germany'],
+          type: 'any',
+        },
+      ]),
+    ).toBe(false);
+  });
+
+  it('rejects Global, Europe, and transnational selections', () => {
+    expect(
+      hasMapIncompatibleGeographicSelection([
+        {
+          field: 'cca_navigator_geographic_scope',
+          values: ['Global', 'Europe'],
+          type: 'any',
+        },
+        {
+          field: 'cca_geographic_transnational_region.keyword',
+          values: ['Alpine Space'],
+          type: 'any',
+        },
+      ]),
+    ).toBe(true);
+  });
+});
+
+describe('clearMapIncompatibleGeographicFilters', () => {
+  it('clears only map-incompatible geographic filters', () => {
+    const searchContext = {
+      filters: [
+        {
+          field: 'cca_navigator_geographic_scope',
+          values: ['Europe'],
+          type: 'any',
+        },
+        {
+          field: 'cca_geographic_transnational_region.keyword',
+          values: ['Alpine Space'],
+          type: 'any',
+        },
+        {
+          field: 'cca_geographic_countries.keyword',
+          values: ['Germany'],
+          type: 'any',
+        },
+        {
+          field: 'cca_climate_impacts.keyword',
+          values: ['Flooding'],
+          type: 'any',
+        },
+      ],
+      removeFilter: jest.fn(),
+    };
+
+    clearMapIncompatibleGeographicFilters(searchContext);
+
+    expect(searchContext.removeFilter).toHaveBeenCalledTimes(2);
+    expect(searchContext.removeFilter).toHaveBeenCalledWith(
+      'cca_navigator_geographic_scope',
+      null,
+      'any',
+    );
+    expect(searchContext.removeFilter).toHaveBeenCalledWith(
+      'cca_geographic_transnational_region.keyword',
+      null,
+      'any',
+    );
   });
 });
 
