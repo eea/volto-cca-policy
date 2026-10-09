@@ -12,6 +12,7 @@ import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import CompareToolsView from './CompareToolsView';
+import { exportComparisonTable } from '../../Search/NavigatorCatalogue/utils';
 import { fetchResultsByUid } from './utils';
 
 jest.mock('jotai', () => ({
@@ -60,6 +61,11 @@ jest.mock('./utils', () => ({
   fetchResultsByUid: jest.fn(),
   getCompareToolUid: (result) => result.cca_uid?.raw || '',
   getPathname: (url) => url?.split('?')[0] || '',
+}));
+
+jest.mock('../../Search/NavigatorCatalogue/utils', () => ({
+  ...jest.requireActual('../../Search/NavigatorCatalogue/utils'),
+  exportComparisonTable: jest.fn(),
 }));
 
 describe('CompareToolsView', () => {
@@ -245,5 +251,58 @@ describe('CompareToolsView', () => {
 
     expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
     expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+  });
+
+  it('removes a tool from the selection and URL', async () => {
+    const setSelectedTools = jest.fn();
+    const history = { push: jest.fn() };
+    useAtom.mockReturnValue([[], setSelectedTools]);
+    useHistory.mockReturnValue(history);
+
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    await screen.findByRole('table', { name: 'Compare tools' });
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Remove Tool one from comparison',
+      }),
+    );
+
+    const updateSelection = setSelectedTools.mock.calls[0][0];
+    expect(updateSelection([{ uid: 'one' }, { uid: 'two' }])).toEqual([
+      { uid: 'two' },
+    ]);
+    expect(history.push).toHaveBeenCalledWith({
+      pathname: '/en/navigator/compare',
+      search: '?uid=two',
+      hash: '',
+      state: {},
+    });
+  });
+
+  it('exports comparison data with only applicable table options', async () => {
+    render(
+      <IntlProvider locale="en">
+        <CompareToolsView />
+      </IntlProvider>,
+    );
+    await screen.findByRole('table', { name: 'Compare tools' });
+
+    fireEvent.click(screen.getByRole('button', { name: 'Export table' }));
+
+    expect(exportComparisonTable).toHaveBeenCalledTimes(1);
+    const [exportedTools] = exportComparisonTable.mock.calls[0];
+    expect(exportedTools[0].comparisonOptions).toEqual(
+      expect.objectContaining({
+        cca_type_of_outputs: ['Maps and graphs'],
+        cca_adaptation_support_cycle_step: [
+          'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+        ],
+      }),
+    );
   });
 });
