@@ -43,7 +43,7 @@ const NavigatorCatalogueMapState = ({ children, isMapDisabled, onClear }) => {
 
       {isMapDisabled && (
         <div className="navigator-catalogue-map-overlay">
-          <div className="navigator-catalogue-map-notice" role="status">
+          <div className="navigator-catalogue-map-notice">
             <h4>{intl.formatMessage(messages.selectCountryForMap)}</h4>
             <p>
               <FormattedMessage

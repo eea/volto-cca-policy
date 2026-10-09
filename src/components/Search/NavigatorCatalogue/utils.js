@@ -61,16 +61,16 @@ export const filterCountryCounts = (countryCounts, filters) => {
   );
 };
 
-const mapIncompatibleGeographicFields = [
+const mapIncompatibleGeographicFields = new Set([
   'cca_navigator_geographic_scope',
   'cca_geographic_transnational_region.keyword',
-];
+]);
 
 export const hasMapIncompatibleGeographicSelection = (filters) =>
   Boolean(
     filters?.find(
       ({ field, values }) =>
-        mapIncompatibleGeographicFields.includes(field) && values?.length > 0,
+        mapIncompatibleGeographicFields.has(field) && values?.length > 0,
     ),
   );
 
@@ -78,7 +78,7 @@ export const clearMapIncompatibleGeographicFilters = (searchContext) => {
   searchContext?.filters
     ?.filter(
       ({ field, values }) =>
-        mapIncompatibleGeographicFields.includes(field) && values?.length > 0,
+        mapIncompatibleGeographicFields.has(field) && values?.length > 0,
     )
     .forEach(({ field, type = 'any' }) =>
       searchContext.removeFilter(field, null, type),
