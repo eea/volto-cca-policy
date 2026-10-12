@@ -44,6 +44,10 @@ const messages = defineMessages({
     id: 'Tools per country',
     defaultMessage: 'Tools per country',
   },
+  fourOrMore: {
+    id: '4 or more',
+    defaultMessage: '4 or more',
+  },
   close: {
     id: 'Close',
     defaultMessage: 'Close',
@@ -263,9 +267,13 @@ const NavigatorCatalogueCountryMap = (props) => {
           <div key={item.label} className="legend-item">
             <span
               className="legend-color"
-              style={{ backgroundColor: item.color }}
+              style={{ '--legend-color': item.color }}
             />
-            <span>{item.label}</span>
+            <span>
+              {item.messageKey
+                ? intl.formatMessage(messages[item.messageKey])
+                : item.label}
+            </span>
           </div>
         ))}
       </aside>
