@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Term } from '@eeacms/search/components';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import { markSelectedFacetValuesFromFilters } from '@eeacms/search/lib/search/helpers';
 import {
   CHARACTERISATION_FIELD,
@@ -70,6 +70,7 @@ const FacetOption = ({ field, option, onChange }) => {
 };
 
 const ExpandableFacetGroup = ({
+  defaultOpen = false,
   field,
   id,
   label,
@@ -78,11 +79,11 @@ const ExpandableFacetGroup = ({
   onChange,
 }) => {
   const hasSelection = options.some(({ selected }) => selected);
-  const [isOpen, setIsOpen] = React.useState(hasSelection);
+  const [isOpen, setIsOpen] = React.useState(hasSelection || defaultOpen);
 
   React.useEffect(() => {
-    if (hasSelection) setIsOpen(true);
-  }, [hasSelection]);
+    if (hasSelection || defaultOpen) setIsOpen(true);
+  }, [defaultOpen, hasSelection]);
 
   return (
     <div className="navigator-geographic-facet-group">
@@ -119,16 +120,10 @@ const ExpandableFacetGroup = ({
   );
 };
 
-const NavigatorActiveFilters = ({ filters, onRemove }) => {
+const NavigatorActiveFilters = ({ fields, filters, onRemove }) => {
   const intl = useIntl();
-  const geographicFields = [
-    CHARACTERISATION_FIELD,
-    TRANSNATIONAL_REGION_FIELD,
-    COUNTRIES_FIELD,
-  ];
   const activeFilters = filters.filter(
-    ({ field, values }) =>
-      geographicFields.includes(field) && values?.length > 0,
+    ({ field, values }) => fields.includes(field) && values?.length > 0,
   );
 
   if (!activeFilters.length) return null;
@@ -190,6 +185,8 @@ const NavigatorGeographicCoverageFacet = ({
 }) => {
   const intl = useIntl();
   const { addFilter, facets, filters = [], removeFilter } = useSearchContext();
+  const { activeViewId } = useViews();
+  const isMapView = activeViewId === 'map';
   const transnationalOptions = getFacetOptions(
     facets,
     filters,
@@ -219,6 +216,7 @@ const NavigatorGeographicCoverageFacet = ({
     }
 
     clearFilter(CHARACTERISATION_FIELD);
+    if (isMapView) clearFilter(TRANSNATIONAL_REGION_FIELD);
     addFilter(field, option.value, 'any');
   };
 
@@ -226,25 +224,28 @@ const NavigatorGeographicCoverageFacet = ({
     <fieldset
       className={`sui-facet searchlib-multiterm-facet navigator-geographic-facet ${className}`}
     >
-      <div className="sui-multi-checkbox-facet navigator-geographic-facet-direct-options">
-        {options.map((option) => {
-          const directOption = {
-            ...option,
-            selected:
-              option.selected || selectedDirectValues.includes(option.value),
-          };
+      {!isMapView && (
+        <div className="sui-multi-checkbox-facet navigator-geographic-facet-direct-options">
+          {options.map((option) => {
+            const directOption = {
+              ...option,
+              selected:
+                option.selected || selectedDirectValues.includes(option.value),
+            };
 
-          return (
-            <FacetOption
-              key={valueAsText(option.value)}
-              field={CHARACTERISATION_FIELD}
-              option={directOption}
-              onChange={updateDirectFilter}
-            />
-          );
-        })}
-      </div>
+            return (
+              <FacetOption
+                key={valueAsText(option.value)}
+                field={CHARACTERISATION_FIELD}
+                option={directOption}
+                onChange={updateDirectFilter}
+              />
+            );
+          })}
+        </div>
+      )}
       <ExpandableFacetGroup
+        defaultOpen={isMapView}
         field={COUNTRIES_FIELD}
         id="navigator-geographic-countries"
         label={intl.formatMessage(countriesLabel)}
@@ -252,17 +253,24 @@ const NavigatorGeographicCoverageFacet = ({
         options={countryOptions}
         onChange={(option) => updateChildFilter(COUNTRIES_FIELD, option)}
       />
-      <ExpandableFacetGroup
-        field={TRANSNATIONAL_REGION_FIELD}
-        id="navigator-geographic-transnational-regions"
-        label={intl.formatMessage(transnationalRegionsLabel)}
-        emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
-        options={transnationalOptions}
-        onChange={(option) =>
-          updateChildFilter(TRANSNATIONAL_REGION_FIELD, option)
-        }
-      />
+      {!isMapView && (
+        <ExpandableFacetGroup
+          field={TRANSNATIONAL_REGION_FIELD}
+          id="navigator-geographic-transnational-regions"
+          label={intl.formatMessage(transnationalRegionsLabel)}
+          emptyMessage={intl.formatMessage(messages.noOptionsAvailable)}
+          options={transnationalOptions}
+          onChange={(option) =>
+            updateChildFilter(TRANSNATIONAL_REGION_FIELD, option)
+          }
+        />
+      )}
       <NavigatorActiveFilters
+        fields={[
+          CHARACTERISATION_FIELD,
+          TRANSNATIONAL_REGION_FIELD,
+          COUNTRIES_FIELD,
+        ]}
         filters={filters}
         onRemove={(field, value, type) => removeFilter(field, value, type)}
       />
