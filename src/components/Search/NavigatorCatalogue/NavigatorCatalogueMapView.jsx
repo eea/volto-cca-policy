@@ -22,10 +22,13 @@ import {
   getColorForCount,
   normalizeCountryName,
   buildCountryCounts,
+  clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
+  hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
 } from './utils';
+import NavigatorCatalogueMapState from './NavigatorCatalogueMapState';
 
 const messages = defineMessages({
   toolAvailability: {
@@ -40,6 +43,10 @@ const messages = defineMessages({
   toolsPerCountry: {
     id: 'Tools per country',
     defaultMessage: 'Tools per country',
+  },
+  fourOrMore: {
+    id: '4 or more',
+    defaultMessage: '4 or more',
   },
   close: {
     id: 'Close',
@@ -140,7 +147,7 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
 };
 
 /* istanbul ignore next */
-const NavigatorCatalogueMapViewInner = (props) => {
+const NavigatorCatalogueCountryMap = (props) => {
   const { geofeatures, projection, ol } = props;
   const intl = useIntl();
   const searchContext = useSearchContext();
@@ -260,13 +267,33 @@ const NavigatorCatalogueMapViewInner = (props) => {
           <div key={item.label} className="legend-item">
             <span
               className="legend-color"
-              style={{ backgroundColor: item.color }}
+              style={{ '--legend-color': item.color }}
             />
-            <span>{item.label}</span>
+            <span>
+              {item.messageKey
+                ? intl.formatMessage(messages[item.messageKey])
+                : item.label}
+            </span>
           </div>
         ))}
       </aside>
     </div>
+  );
+};
+
+const NavigatorCatalogueMapViewInner = (props) => {
+  const searchContext = useSearchContext();
+  const isMapDisabled = hasMapIncompatibleGeographicSelection(
+    searchContext.filters,
+  );
+
+  return (
+    <NavigatorCatalogueMapState
+      isMapDisabled={isMapDisabled}
+      onClear={() => clearMapIncompatibleGeographicFilters(searchContext)}
+    >
+      <NavigatorCatalogueCountryMap {...props} />
+    </NavigatorCatalogueMapState>
   );
 };
 

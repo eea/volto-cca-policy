@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import { useSearchContext } from '@eeacms/search/lib/hocs';
+import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
 import NavigatorGeographicCoverageFacet from './NavigatorGeographicCoverageFacet';
 import {
   CHARACTERISATION_FIELD,
@@ -15,9 +15,11 @@ jest.mock('@eeacms/search/components', () => ({
 }));
 jest.mock('@eeacms/search/lib/hocs', () => ({
   useSearchContext: jest.fn(),
+  useViews: jest.fn(),
 }));
 
 const renderFacet = ({
+  activeViewId = 'listing',
   detailedOptions = true,
   filters = [],
   onRemove = jest.fn(),
@@ -25,6 +27,8 @@ const renderFacet = ({
 } = {}) => {
   const addFilter = jest.fn();
   const removeFilter = jest.fn();
+
+  useViews.mockReturnValue({ activeViewId });
 
   useSearchContext.mockReturnValue({
     addFilter,
@@ -189,5 +193,65 @@ describe('NavigatorGeographicCoverageFacet', () => {
     expect(
       screen.getByRole('button', { name: 'Transnational regions' }),
     ).toBeEnabled();
+  });
+
+  it('shows only countries in the map view', () => {
+    renderFacet({ activeViewId: 'map' });
+
+    expect(screen.queryByLabelText('Europe')).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('Global')).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Countries' })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+    expect(screen.getByLabelText('Germany')).toBeVisible();
+    expect(
+      screen.queryByRole('button', { name: 'Transnational regions' }),
+    ).not.toBeInTheDocument();
+  });
+
+  it('clears hidden geographic filters when selecting a country on the map', () => {
+    const { addFilter, removeFilter } = renderFacet({
+      activeViewId: 'map',
+      filters: [
+        {
+          field: TRANSNATIONAL_REGION_FIELD,
+          values: ['Alpine Space'],
+          type: 'any',
+        },
+      ],
+    });
+
+    fireEvent.click(screen.getByLabelText('Germany'));
+
+    expect(removeFilter).toHaveBeenCalledWith(
+      CHARACTERISATION_FIELD,
+      null,
+      'any',
+    );
+    expect(removeFilter).toHaveBeenCalledWith(
+      TRANSNATIONAL_REGION_FIELD,
+      null,
+      'any',
+    );
+    expect(addFilter).toHaveBeenCalledWith(COUNTRIES_FIELD, 'Germany', 'any');
+  });
+
+  it('shows hidden active geographic filters in the map view', () => {
+    renderFacet({
+      activeViewId: 'map',
+      detailedOptions: false,
+      filters: [
+        {
+          field: CHARACTERISATION_FIELD,
+          values: ['Europe'],
+          type: 'any',
+        },
+      ],
+    });
+
+    expect(screen.queryByLabelText('Europe')).not.toBeInTheDocument();
+    expect(screen.getByText('Active filters:')).toBeInTheDocument();
+    expect(screen.getByText('Europe')).toBeInTheDocument();
   });
 });
