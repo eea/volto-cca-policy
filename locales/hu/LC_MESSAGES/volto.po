@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "4 or more"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "4 or more"
+msgstr ""
+
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
 msgid "A background document for the event is available"
@@ -291,6 +296,16 @@ msgstr "Város:"
 #. Default: "Clear all"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
+msgstr ""
+
+#. Default: "Clear filters"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
+msgid "Clear filters"
+msgstr ""
+
+#. Default: "Clear other geographic coverage filters to enable the map."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
+msgid "Clear other geographic coverage filters to enable the map."
 msgstr ""
 
 #. Default: "Climate Impacts"
@@ -949,6 +964,11 @@ msgstr "Irányítás és tervezés"
 msgid "Map view"
 msgstr ""
 
+#. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
+msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
+msgstr ""
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1058,6 +1078,11 @@ msgstr "EU-n kívüli nyelvek"
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
+msgstr ""
+
+#. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
+#: components/theme/CompareTools/CompareToolsView
+msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 msgstr ""
 
 #. Default: "Objectives of the adaptation measure"
@@ -1373,6 +1398,11 @@ msgstr "Lásd a videót a Climate-ADAPT-en kívül"
 msgid "Select"
 msgstr "Válassza ki"
 
+#. Default: "Select a country to explore the map"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
+msgid "Select a country to explore the map"
+msgstr ""
+
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Select all that apply"
@@ -1517,6 +1547,11 @@ msgstr ""
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "These items will have broken links"
+msgstr ""
+
+#. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
+#: components/theme/CompareTools/CompareToolsView
+msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 msgstr ""
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
