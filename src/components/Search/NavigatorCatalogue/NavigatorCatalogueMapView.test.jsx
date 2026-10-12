@@ -11,28 +11,23 @@ import {
 } from './utils';
 
 describe('getColorForCount', () => {
-  it('returns darkest green for 10+ tools', () => {
+  it('returns darkest green for 4 or more tools', () => {
+    expect(getColorForCount(4)).toBe('#0F6B3F');
     expect(getColorForCount(10)).toBe('#0F6B3F');
     expect(getColorForCount(15)).toBe('#0F6B3F');
     expect(getColorForCount(100)).toBe('#0F6B3F');
   });
 
-  it('returns dark green for 7-9 tools', () => {
-    expect(getColorForCount(7)).toBe('#007B6C');
-    expect(getColorForCount(8)).toBe('#007B6C');
-    expect(getColorForCount(9)).toBe('#007B6C');
+  it('returns dark green for 3 tools', () => {
+    expect(getColorForCount(3)).toBe('#007B6C');
   });
 
-  it('returns base accent green for 4-6 tools', () => {
-    expect(getColorForCount(4)).toBe('#84C79A');
-    expect(getColorForCount(5)).toBe('#84C79A');
-    expect(getColorForCount(6)).toBe('#84C79A');
+  it('returns base accent green for 2 tools', () => {
+    expect(getColorForCount(2)).toBe('#84C79A');
   });
 
-  it('returns light green for 1-3 tools', () => {
+  it('returns light green for 1 tool', () => {
     expect(getColorForCount(1)).toBe('#C2E3CD');
-    expect(getColorForCount(2)).toBe('#C2E3CD');
-    expect(getColorForCount(3)).toBe('#C2E3CD');
   });
 
   it('returns lightest gray-green for 0 or falsy counts', () => {
@@ -288,10 +283,10 @@ describe('mapLegendItems', () => {
 
   it('has correct labels', () => {
     expect(mapLegendItems.map((item) => item.label)).toEqual([
-      '10 or more',
-      '7 - 9',
-      '4 - 6',
-      '1 - 3',
+      '4 or more',
+      '3',
+      '2',
+      '1',
       'None',
     ]);
   });

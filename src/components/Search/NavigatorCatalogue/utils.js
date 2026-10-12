@@ -3,10 +3,15 @@
  * Used by the map view to color-code countries
  */
 export const mapColorScale = [
-  { minimum: 10, label: '10 or more', color: '#0F6B3F' },
-  { minimum: 7, label: '7 - 9', color: '#007B6C' },
-  { minimum: 4, label: '4 - 6', color: '#84C79A' },
-  { minimum: 1, label: '1 - 3', color: '#C2E3CD' },
+  {
+    minimum: 4,
+    label: '4 or more',
+    messageKey: 'fourOrMore',
+    color: '#0F6B3F',
+  },
+  { minimum: 3, label: '3', color: '#007B6C' },
+  { minimum: 2, label: '2', color: '#84C79A' },
+  { minimum: 1, label: '1', color: '#C2E3CD' },
   { minimum: 0, label: 'None', color: '#E1E7DF' },
 ];
 
@@ -96,10 +101,13 @@ export const setCountryFilter = (searchContext, countryName) => {
 /**
  * Legend items for the map view
  */
-export const mapLegendItems = mapColorScale.map(({ label, color }) => ({
-  label,
-  color,
-}));
+export const mapLegendItems = mapColorScale.map(
+  ({ label, messageKey, color }) => ({
+    label,
+    messageKey,
+    color,
+  }),
+);
 
 const unwrapRawValue = (value) =>
   value?.raw === undefined ? value : value.raw;
