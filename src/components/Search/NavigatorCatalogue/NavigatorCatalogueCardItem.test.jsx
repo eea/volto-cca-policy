@@ -76,7 +76,12 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_uid: { raw: 'tool-uid' },
       title: 'Climate planning tool',
       href: 'https://example.com/tool',
-      image: '/uploaded-tool-thumb.jpg',
+      tool_type: {
+        raw: {
+          token: 'CLIMATE_DATA_EXPLORER_ATLAS',
+          title: 'Climate data explorer / atlas',
+        },
+      },
       publication_date: { raw: '2026-07-24' },
       cca_adaptation_sectors: {
         raw: ['Agriculture', 'Water', 'Health', 'Energy'],
@@ -161,7 +166,10 @@ describe('NavigatorCatalogueCardItem', () => {
       uid: 'tool-uid',
       title: 'Climate planning tool',
       href: 'https://example.com/tool',
-      image: '/uploaded-tool-thumb.jpg',
+      tool_type: {
+        token: 'CLIMATE_DATA_EXPLORER_ATLAS',
+        title: 'Climate data explorer / atlas',
+      },
     });
   });
 
@@ -255,60 +263,38 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(screen.getByText('Numeric cycle tool')).toBeInTheDocument();
   });
 
-  describe('thumbnail rendering and fallback', () => {
-    it('renders thumbnail image and smoothly transitions from placeholder on load', () => {
+  describe('tool type icon rendering and fallback', () => {
+    it('renders the circle icon from the Elasticsearch tool type', () => {
       const { container } = renderCard({
-        title: 'Tool with image',
+        title: 'Tool with a category',
         href: '/tools/my-tool',
-        image: { scales: { thumb: { download: '/uploaded-thumb.jpg' } } },
+        tool_type: {
+          raw: {
+            token: 'HAZARD_RISK_MAP_VIEWER',
+            title: 'Hazard & risk map viewer',
+          },
+        },
       });
 
-      const img = container.querySelector('.navigator-tool-icon img');
-      expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute('src', '/uploaded-thumb.jpg');
-      expect(img.parentElement).toHaveClass('navigator-tool-icon', 'large');
-      expect(img).toHaveStyle({ display: 'none' });
+      const icon = container.querySelector('.navigator-tool-icon');
+      expect(icon).toHaveClass('large');
+      expect(icon).toHaveAttribute('title', 'Hazard & risk map viewer');
       expect(
-        container.querySelector('.navigator-tool-icon .ri-file-line'),
+        icon.querySelector('svg.navigator-tool-type-icon'),
       ).toBeInTheDocument();
-
-      // Fire load event on image
-      fireEvent.load(img);
-
-      expect(img.style.display).toBe('');
       expect(
         container.querySelector('.navigator-tool-icon .ri-file-line'),
       ).not.toBeInTheDocument();
     });
 
-    it('falls back to placeholder icon when image fails to load', () => {
+    it('keeps the placeholder when the item has no tool type', () => {
       const { container } = renderCard({
-        title: 'Tool with broken image',
-        href: '/tools/broken-tool',
-      });
-
-      const img = container.querySelector('.navigator-tool-icon img');
-      expect(img).toBeInTheDocument();
-
-      // Fire error event on image (e.g. 404 from backend)
-      fireEvent.error(img);
-
-      expect(
-        container.querySelector('.navigator-tool-icon img'),
-      ).not.toBeInTheDocument();
-      expect(
-        container.querySelector('.navigator-tool-icon .ri-file-line'),
-      ).toBeInTheDocument();
-    });
-
-    it('renders placeholder icon directly when item has no image or href', () => {
-      const { container } = renderCard({
-        title: 'Tool without image',
-        image: null,
+        title: 'Tool without category',
+        image: '/legacy-thumbnail.jpg',
       });
 
       expect(
-        container.querySelector('.navigator-tool-icon img'),
+        container.querySelector('.navigator-tool-icon svg'),
       ).not.toBeInTheDocument();
       expect(
         container.querySelector('.navigator-tool-icon .ri-file-line'),

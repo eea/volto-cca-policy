@@ -9,12 +9,13 @@ import {
   MetadataItemList,
   PortalMessage,
   TextField,
+  // ToolThumbnail,
 } from '@eeacms/volto-cca-policy/components';
 import { FormattedMessage } from 'react-intl';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import useClipboard from '@plone/volto/hooks/clipboard/useClipboard';
 import { useCompareTools } from '../CompareTools/utils';
-import { getToolThumbnailUrl } from '../ToolThumbnail/utils';
+import { getToolTypeIcon } from '@eeacms/volto-cca-policy/helpers/toolTypeIcons.js';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 import RelatedTools from './RelatedTools';
 
@@ -64,7 +65,7 @@ const ExtendedToolView = (props) => {
     uid: content.UID,
     title,
     href: content['@id'],
-    image: getToolThumbnailUrl(content),
+    tool_type: getToolTypeIcon(content),
   };
 
   const { isSelected, isLimitReached, toggle } = useCompareTools(compareTool);
@@ -100,8 +101,11 @@ const ExtendedToolView = (props) => {
               className="col-left"
             >
               <div className="extended-tool-header">
-                <p className="extended-tool-provider">{tool_provider}</p>
-                <h1 className="extended-tool-title">{title}</h1>
+                {/* <ToolThumbnail result={content} size="medium" /> */}
+                <div className="extended-tool-header-content">
+                  <p className="extended-tool-provider">{tool_provider}</p>
+                  <h1 className="extended-tool-title">{title}</h1>
+                </div>
               </div>
               <HTMLField value={long_description} />
 

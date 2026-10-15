@@ -1,29 +1,39 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import ToolThumbnail from './ToolThumbnail';
 
 describe('ToolThumbnail', () => {
-  it.each(['load', 'error'])(
-    'resets the %s state when the thumbnail URL changes',
-    (event) => {
-      const { container, rerender } = render(
-        <ToolThumbnail result={{ image: '/first.jpg' }} />,
-      );
-      fireEvent[event](container.querySelector('img'));
+  it('renders the circle icon with the category tooltip', () => {
+    const { container } = render(
+      <ToolThumbnail
+        result={{
+          tool_type: {
+            token: 'HAZARD_RISK_MAP_VIEWER',
+            title: 'Hazard & risk map viewer',
+          },
+        }}
+        size="large"
+      />,
+    );
 
-      rerender(<ToolThumbnail result={{ image: '/second.jpg' }} />);
+    const wrapper = container.querySelector('.navigator-tool-icon');
+    expect(wrapper).toHaveClass('navigator-tool-icon', 'large');
+    expect(wrapper).toHaveAttribute('title', 'Hazard & risk map viewer');
+    expect(
+      container.querySelector('svg.navigator-tool-type-icon'),
+    ).toBeInTheDocument();
+    expect(container.querySelector('.ri-file-line')).not.toBeInTheDocument();
+  });
 
-      const img = container.querySelector('img');
-      expect(img).toHaveAttribute('src', '/second.jpg');
-      expect(img).toHaveAttribute('alt', '');
-      expect(img).toHaveStyle({ display: 'none' });
-      expect(container.querySelector('.ri-file-line')).toBeInTheDocument();
+  it('uses the current placeholder when the tool has no category', () => {
+    const { container } = render(
+      <ToolThumbnail result={{ image: '/old-thumbnail.jpg' }} />,
+    );
 
-      fireEvent.load(img);
-
-      expect(img.style.display).toBe('');
-      expect(container.querySelector('.ri-file-line')).not.toBeInTheDocument();
-    },
-  );
+    const wrapper = container.querySelector('.navigator-tool-icon');
+    expect(wrapper).toHaveClass('tool-fallback-icon', 'medium');
+    expect(wrapper.querySelector('svg')).not.toBeInTheDocument();
+    expect(wrapper.querySelector('.ri-file-line')).toBeInTheDocument();
+  });
 });
