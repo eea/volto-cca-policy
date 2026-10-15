@@ -1,10 +1,10 @@
-import climateDataExplorerIcon from '../../../icons/navigator/01_climate-data-explorer_circle.svg';
-import hazardRiskMapViewerIcon from '../../../icons/navigator/02_hazard-risk-map-viewer_circle.svg';
-import monitoringEarlyWarningIcon from '../../../icons/navigator/03_monitoring-early-warning_circle.svg';
-import riskVulnerabilityAssessmentIcon from '../../../icons/navigator/04_risk-vulnerability-assessment_circle.svg';
-import planningDecisionSupportIcon from '../../../icons/navigator/05_planning-decision-support_circle.svg';
-import measuresKnowledgeLibraryIcon from '../../../icons/navigator/06_measures-knowledge-library_circle.svg';
-import selfAssessmentTrackingIcon from '../../../icons/navigator/07_self-assessment-tracking_circle.svg';
+import climateDataExplorerIcon from '../icons/navigator/01_climate-data-explorer_circle.svg';
+import hazardRiskMapViewerIcon from '../icons/navigator/02_hazard-risk-map-viewer_circle.svg';
+import monitoringEarlyWarningIcon from '../icons/navigator/03_monitoring-early-warning_circle.svg';
+import riskVulnerabilityAssessmentIcon from '../icons/navigator/04_risk-vulnerability-assessment_circle.svg';
+import planningDecisionSupportIcon from '../icons/navigator/05_planning-decision-support_circle.svg';
+import measuresKnowledgeLibraryIcon from '../icons/navigator/06_measures-knowledge-library_circle.svg';
+import selfAssessmentTrackingIcon from '../icons/navigator/07_self-assessment-tracking_circle.svg';
 
 export const TOOL_TYPE_ICONS = {
   CLIMATE_DATA_EXPLORER_ATLAS: climateDataExplorerIcon,

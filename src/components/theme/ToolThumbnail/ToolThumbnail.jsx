@@ -1,6 +1,6 @@
 import { Icon } from 'semantic-ui-react';
 import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
-import { getToolTypeIconIcon } from './utils';
+import { getToolTypeIconIcon } from '@eeacms/volto-cca-policy/helpers/toolTypeIcons.js';
 
 const ToolThumbnail = ({
   result,

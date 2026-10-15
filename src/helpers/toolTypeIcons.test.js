@@ -1,4 +1,8 @@
-import { getToolTypeIcon, getToolTypeIconIcon, TOOL_TYPE_ICONS } from './utils';
+import {
+  getToolTypeIcon,
+  getToolTypeIconIcon,
+  TOOL_TYPE_ICONS,
+} from './toolTypeIcons';
 
 describe('tool type icon utilities', () => {
   it.each([

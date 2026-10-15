@@ -58,6 +58,9 @@ jest.mock('@eeacms/volto-cca-policy/components', () => ({
       <p>{value}</p>
     </>
   ),
+  ToolThumbnail: ({ result }) => (
+    <div data-testid="extended-tool-icon">{result.tool_type?.title}</div>
+  ),
 }));
 
 const toggle = jest.fn();
@@ -221,7 +224,7 @@ describe('ExtendedToolView', () => {
     ).not.toBeInTheDocument();
   });
 
-  describe('related tool thumbnails', () => {
+  describe('related tool type icons', () => {
     const renderRelatedTool = (fields = {}) => {
       const { container } = renderComponent({
         title: 'Climate Tool',
@@ -242,44 +245,29 @@ describe('ExtendedToolView', () => {
       );
     };
 
-    it('shows the uploaded thumbnail after loading', () => {
+    it('shows the category circle icon and tooltip', () => {
       const thumbnail = renderRelatedTool({
-        image: {
-          scales: { thumb: { download: '/uploaded-related-thumb.jpg' } },
+        tool_type: {
+          token: 'MEASURES_KNOWLEDGE_LIBRARY',
+          title: 'Measures & knowledge library',
         },
       });
-      const img = thumbnail.querySelector('img');
 
       expect(thumbnail).toHaveClass('medium');
-      expect(img).toHaveAttribute('src', '/uploaded-related-thumb.jpg');
-      expect(img).toHaveStyle({ display: 'none' });
-      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
-
-      fireEvent.load(img);
-
-      expect(img).not.toHaveStyle({ display: 'none' });
+      expect(thumbnail).toHaveAttribute(
+        'title',
+        'Measures & knowledge library',
+      );
+      expect(
+        thumbnail.querySelector('svg.navigator-tool-type-icon'),
+      ).toBeInTheDocument();
       expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
     });
 
-    it('resolves the thumbnail from the related item URL and falls back on error', () => {
+    it('keeps the placeholder when a related tool has no category', () => {
       const thumbnail = renderRelatedTool();
-      const img = thumbnail.querySelector('img');
 
-      expect(img).toHaveAttribute(
-        'src',
-        '/tools/coastal-planner/@@images/image/thumb',
-      );
-
-      fireEvent.error(img);
-
-      expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
-      expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
-    });
-
-    it.each([null, false])('shows the file icon for image: %s', (image) => {
-      const thumbnail = renderRelatedTool({ image });
-
-      expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+      expect(thumbnail.querySelector('svg')).not.toBeInTheDocument();
       expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
     });
   });
@@ -386,8 +374,9 @@ describe('ExtendedToolView', () => {
       '@id': '/tools/climate-tool',
       title: 'Climate Tool',
       hyperlink: 'https://example.com/tool',
-      image: {
-        scales: { thumb: { download: '/uploaded-tool-thumb.jpg' } },
+      tool_type: {
+        token: 'PLANNING_DECISION_SUPPORT',
+        title: 'Planning & decision support',
       },
     });
 
@@ -395,7 +384,10 @@ describe('ExtendedToolView', () => {
       uid: 'tool-uid',
       title: 'Climate Tool',
       href: '/tools/climate-tool',
-      image: '/uploaded-tool-thumb.jpg',
+      tool_type: {
+        token: 'PLANNING_DECISION_SUPPORT',
+        title: 'Planning & decision support',
+      },
     });
   });
 

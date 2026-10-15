@@ -5,7 +5,7 @@ import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
-import { getToolTypeIcon } from '../../theme/ToolThumbnail/utils';
+import { getToolTypeIcon } from '@eeacms/volto-cca-policy/helpers/toolTypeIcons.js';
 import {
   getCompareToolTitle,
   getCompareToolUid,
