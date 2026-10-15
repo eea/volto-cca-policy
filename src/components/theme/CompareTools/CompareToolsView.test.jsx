@@ -1,12 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  within,
-} from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -86,8 +80,11 @@ describe('CompareToolsView', () => {
         cca_uid: { raw: 'one' },
         title: 'Tool one',
         href: '/tool-one',
-        image: {
-          scales: { thumb: { download: '/uploaded-compare-thumb.jpg' } },
+        tool_type: {
+          raw: {
+            token: 'SELF_ASSESSMENT_PROGRESS_TRACKING',
+            title: 'Self-assessment & progress tracking',
+          },
         },
         functionality: { raw: 4 },
         cca_type_of_outputs: { raw: ['Maps and graphs'] },
@@ -211,7 +208,7 @@ describe('CompareToolsView', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('shows the uploaded tool result image and keeps the file icon for a missing image', async () => {
+  it('shows the tool type icon and keeps the placeholder for a missing type', async () => {
     render(
       <IntlProvider locale="en">
         <CompareToolsView />
@@ -221,36 +218,18 @@ describe('CompareToolsView', () => {
     const [thumbnail, missingThumbnail] = table.querySelectorAll(
       '.navigator-tool-icon',
     );
-    const img = thumbnail.querySelector('img');
 
     expect(thumbnail).toHaveClass('medium');
-    expect(img).toHaveAttribute('src', '/uploaded-compare-thumb.jpg');
-    expect(img).toHaveStyle({ display: 'none' });
-    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
-    expect(missingThumbnail.querySelector('img')).not.toBeInTheDocument();
-    expect(missingThumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
-
-    fireEvent.load(img);
-
-    await waitFor(() => {
-      expect(img.style.display).toBe('');
-      expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
-    });
-  });
-
-  it('falls back to the file icon when the image fails', async () => {
-    render(
-      <IntlProvider locale="en">
-        <CompareToolsView />
-      </IntlProvider>,
+    expect(thumbnail).toHaveAttribute(
+      'title',
+      'Self-assessment & progress tracking',
     );
-    const table = await screen.findByRole('table', { name: 'Compare tools' });
-    const thumbnail = table.querySelector('.navigator-tool-icon');
-
-    fireEvent.error(thumbnail.querySelector('img'));
-
-    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
-    expect(thumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
+    expect(
+      thumbnail.querySelector('svg.navigator-tool-type-icon'),
+    ).toBeInTheDocument();
+    expect(thumbnail.querySelector('.ri-file-line')).not.toBeInTheDocument();
+    expect(missingThumbnail.querySelector('svg')).not.toBeInTheDocument();
+    expect(missingThumbnail.querySelector('.ri-file-line')).toBeInTheDocument();
   });
 
   it('removes a tool from the selection and URL', async () => {

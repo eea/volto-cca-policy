@@ -1,124 +1,73 @@
-import { getToolThumbnailUrl } from './utils';
+import { getToolTypeIcon, getToolTypeIconIcon, TOOL_TYPE_ICONS } from './utils';
 
-describe('getToolThumbnailUrl', () => {
-  it.each([null, false])(
-    'does not resolve other URLs when image is %s',
-    (image) => {
-      expect(
-        getToolThumbnailUrl({
-          image,
-          thumbUrl: '/thumb.jpg',
-          image_preview: { raw: '/preview.jpg' },
-          href: '/tools/tool',
-        }),
-      ).toBeNull();
-    },
-  );
+describe('tool type icon utilities', () => {
+  it.each([
+    ['CLIMATE_DATA_EXPLORER_ATLAS', 'Climate data explorer / atlas'],
+    ['HAZARD_RISK_MAP_VIEWER', 'Hazard & risk map viewer'],
+    ['MONITORING_EARLY_WARNING', 'Monitoring & early warning'],
+    ['RISK_VULNERABILITY_ASSESSMENT', 'Risk & vulnerability assessment'],
+    ['PLANNING_DECISION_SUPPORT', 'Planning & decision support'],
+    ['MEASURES_KNOWLEDGE_LIBRARY', 'Measures & knowledge library'],
+    [
+      'SELF_ASSESSMENT_PROGRESS_TRACKING',
+      'Self-assessment & progress tracking',
+    ],
+  ])('maps %s to its circle icon', (token, title) => {
+    expect(getToolTypeIconIcon({ tool_type: { token, title } })).toEqual({
+      token,
+      title,
+      icon: TOOL_TYPE_ICONS[token],
+    });
+  });
 
-  it.each(['thumb', 'tile', 'preview', 'mini'])(
-    'prefers the %s scale to the original download',
-    (scale) => {
-      expect(
-        getToolThumbnailUrl({
-          image: {
-            scales: { [scale]: { download: '/scaled.jpg' } },
-            download: '/original.jpg',
-          },
-          thumbUrl: '/thumb.jpg',
-        }),
-      ).toBe('/scaled.jpg');
-    },
-  );
-
-  it('uses the raw image preview before constructing a traversal URL', () => {
+  it('uses the token only for lookup and preserves the API title', () => {
     expect(
-      getToolThumbnailUrl({
-        thumbUrl: '/portal_depiction/tool/image_preview',
-        image_preview: { raw: '/preview.jpg' },
-        href: '/tools/tool',
+      getToolTypeIcon({
+        tool_type: {
+          token: 'HAZARD_RISK_MAP_VIEWER',
+          title: 'A changed category title',
+        },
       }),
-    ).toBe('/preview.jpg');
+    ).toEqual({
+      token: 'HAZARD_RISK_MAP_VIEWER',
+      title: 'A changed category title',
+    });
   });
 
-  it('returns null for empty or invalid results', () => {
-    expect(getToolThumbnailUrl(null)).toBeNull();
-    expect(getToolThumbnailUrl(undefined)).toBeNull();
-    expect(getToolThumbnailUrl({})).toBeNull();
-    expect(getToolThumbnailUrl({ image: null })).toBeNull();
-    expect(getToolThumbnailUrl({ image: false })).toBeNull();
-  });
-
-  it('resolves direct image string URL', () => {
+  it('reads the Elasticsearch raw title and token shape', () => {
     expect(
-      getToolThumbnailUrl({ image: '/metadata/tools/tool/image.png' }),
-    ).toBe('/metadata/tools/tool/image.png');
+      getToolTypeIcon({
+        raw: {
+          tool_type_title: 'Localized hazard map title',
+          tool_type_keyword: 'HAZARD_RISK_MAP_VIEWER',
+        },
+      }),
+    ).toEqual({
+      title: 'Localized hazard map title',
+      token: 'HAZARD_RISK_MAP_VIEWER',
+    });
   });
 
-  it('resolves image scales from Dexterity image field', () => {
+  it('reads array and internal Elasticsearch result shapes', () => {
     expect(
-      getToolThumbnailUrl({
-        image: {
-          scales: {
-            thumb: { download: '/image-128.jpeg' },
-            tile: { download: '/image-64.jpeg' },
+      getToolTypeIcon({
+        _result: {
+          raw: {
+            tool_type_title: ['Planning & decision support'],
+            tool_type_keyword: ['PLANNING_DECISION_SUPPORT'],
           },
         },
       }),
-    ).toBe('/image-128.jpeg');
-
-    expect(
-      getToolThumbnailUrl({
-        image: {
-          scales: {
-            tile: { download: '/image-64.jpeg' },
-          },
-        },
-      }),
-    ).toBe('/image-64.jpeg');
-
-    expect(
-      getToolThumbnailUrl({
-        image: {
-          download: '/image-original.jpeg',
-        },
-      }),
-    ).toBe('/image-original.jpeg');
+    ).toEqual({
+      title: 'Planning & decision support',
+      token: 'PLANNING_DECISION_SUPPORT',
+    });
   });
 
-  it('resolves thumbUrl when not portal_depiction fallback', () => {
-    expect(
-      getToolThumbnailUrl({
-        thumbUrl: '/custom-thumb.jpg',
-      }),
-    ).toBe('/custom-thumb.jpg');
-
-    // portal_depiction is ignored, falls back to href scale
-    expect(
-      getToolThumbnailUrl({
-        thumbUrl:
-          'https://www.eea.europa.eu/portal_depiction/tool/image_preview',
-        href: '/tools/sample-tool',
-      }),
-    ).toBe('/tools/sample-tool/@@images/image/thumb');
-  });
-
-  it('constructs scale traversal URL from href, @id, or about', () => {
-    expect(
-      getToolThumbnailUrl({
-        href: '/tools/sample-tool/',
-      }),
-    ).toBe('/tools/sample-tool/@@images/image/thumb');
-
-    expect(
-      getToolThumbnailUrl({
-        '@id': '/tools/sample-tool',
-      }),
-    ).toBe('/tools/sample-tool/@@images/image/thumb');
-
-    expect(
-      getToolThumbnailUrl({
-        about: { raw: '/tools/sample-tool' },
-      }),
-    ).toBe('/tools/sample-tool/@@images/image/thumb');
+  it('returns null for missing and unknown tool types', () => {
+    expect(getToolTypeIcon(null)).toBeNull();
+    expect(getToolTypeIcon({})).toBeNull();
+    expect(getToolTypeIcon({ tool_type: 'UNKNOWN' })).toBeNull();
+    expect(getToolTypeIconIcon({ image: '/old-thumbnail.jpg' })).toBeNull();
   });
 });

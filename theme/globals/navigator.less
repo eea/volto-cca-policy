@@ -46,18 +46,18 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid @navigatorIconBorderColor;
-  border-radius: 4px;
-  background-color: #f7f8fa;
   color: @navigatorIconColor;
   overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  &.tool-fallback-icon {
+    border: 1px solid @navigatorIconBorderColor;
+    border-radius: 50%;
+    background-color: #f7f8fa;
+  }
+
+  svg.navigator-tool-type-icon {
     display: block;
-    border-radius: inherit;
+    flex: 0 0 auto;
   }
 
   i.icon {
@@ -73,7 +73,7 @@
     flex-basis: 28px;
 
     i.icon {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -243,7 +243,7 @@
       border-style: dashed;
 
       .navigator-tool-icon {
-        border-style: dashed;
+        border: 1px dashed #dce7ee;
       }
 
       .compare-panel-tool-title {
@@ -829,7 +829,7 @@
 
   .catalogue-item-heading {
     h4 {
-      margin: 10px 0;
+      margin: 3px 0 10px 0;
 
       a {
         color: inherit;
