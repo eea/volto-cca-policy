@@ -58,50 +58,36 @@ describe('NavigatorGuideContentView thumbnails', () => {
     useGuideFacetOptions.mockReturnValue({});
   });
 
-  it('shows the uploaded result image after loading, with a stack icon while loading', () => {
+  it('shows the result tool type icon', () => {
     const { container } = renderGuide({
       title: 'Guide tool',
       href: '/tools/guide-tool',
-      image: { scales: { thumb: { download: '/uploaded-guide-thumb.jpg' } } },
+      tool_type: {
+        raw: {
+          token: 'MONITORING_EARLY_WARNING',
+          title: 'Monitoring & early warning',
+        },
+      },
     });
     const thumbnail = container.querySelector('.navigator-tool-icon');
-    const img = thumbnail.querySelector('img');
 
     expect(thumbnail).toHaveClass('medium');
-    expect(thumbnail).toHaveAttribute('aria-hidden', 'true');
-    expect(img).toHaveAttribute('src', '/uploaded-guide-thumb.jpg');
-    expect(img).toHaveStyle({ display: 'none' });
-    expect(thumbnail.querySelector('.ri-stack-line')).toBeInTheDocument();
-
-    fireEvent.load(img);
-
-    expect(img).not.toHaveStyle({ display: 'none' });
+    expect(thumbnail).toHaveAttribute('title', 'Monitoring & early warning');
+    expect(
+      thumbnail.querySelector('svg.navigator-tool-type-icon'),
+    ).toBeInTheDocument();
     expect(thumbnail.querySelector('.ri-stack-line')).not.toBeInTheDocument();
   });
 
-  it('falls back to the stack icon when the image fails', () => {
+  it('keeps the stack placeholder when the result has no tool type', () => {
     const { container } = renderGuide({
       title: 'Guide tool',
       href: '/tools/guide-tool',
-      image: '/broken.jpg',
+      image: '/legacy-thumbnail.jpg',
     });
     const thumbnail = container.querySelector('.navigator-tool-icon');
 
-    fireEvent.error(thumbnail.querySelector('img'));
-
-    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
-    expect(thumbnail.querySelector('.ri-stack-line')).toBeInTheDocument();
-  });
-
-  it.each([null, false])('shows the stack icon for image: %s', (image) => {
-    const { container } = renderGuide({
-      title: 'Guide tool',
-      href: '/tools/guide-tool',
-      image,
-    });
-    const thumbnail = container.querySelector('.navigator-tool-icon');
-
-    expect(thumbnail.querySelector('img')).not.toBeInTheDocument();
+    expect(thumbnail.querySelector('svg')).not.toBeInTheDocument();
     expect(thumbnail.querySelector('.ri-stack-line')).toBeInTheDocument();
   });
 });

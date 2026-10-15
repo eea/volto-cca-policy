@@ -410,13 +410,22 @@ hr {
 // Extended tool view
 .extended-tool-view {
   .extended-tool-header {
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+
+  .extended-tool-header-content {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   .extended-tool-provider {
     color: #7c8a96;
     font-size: 13px;
     font-weight: 700;
+    margin-bottom: 0;
     text-transform: uppercase;
   }
 
@@ -577,7 +586,7 @@ hr {
     min-height: 5.25rem;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     gap: 0.5em;
 
     > div:not(.navigator-tool-icon) {
@@ -603,6 +612,7 @@ hr {
       -webkit-line-clamp: 2;
       line-height: 1.35;
       text-overflow: ellipsis;
+      margin: 0;
 
       a {
         color: inherit;
