@@ -1,5 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Icon, Button, Loader } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
@@ -24,6 +26,8 @@ import {
   buildCountryCounts,
   clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
+  getEuropeanWideToolsSearchState,
+  getEuropeanWideToolsURL,
   hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
@@ -43,6 +47,10 @@ const messages = defineMessages({
   toolsPerCountry: {
     id: 'Tools per country',
     defaultMessage: 'Tools per country',
+  },
+  europeanWideTools: {
+    id: 'European-wide tools',
+    defaultMessage: 'European-wide tools',
   },
   fourOrMore: {
     id: '4 or more',
@@ -150,6 +158,7 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
 const NavigatorCatalogueCountryMap = (props) => {
   const { geofeatures, projection, ol } = props;
   const intl = useIntl();
+  const currentLang = useSelector((state) => state.intl.locale || 'en');
   const searchContext = useSearchContext();
   const views = useViews();
 
@@ -162,6 +171,14 @@ const NavigatorCatalogueCountryMap = (props) => {
     },
     [searchContext, views],
   );
+
+  const handleEuropeanWideTools = React.useCallback(() => {
+    views.setActiveViewId('listing');
+    searchContext.resetSearch({
+      ...getEuropeanWideToolsSearchState(currentLang),
+      resultsPerPage: searchContext.resultsPerPage,
+    });
+  }, [currentLang, searchContext, views]);
 
   // Build lookup: countryName -> count
   const countryCounts = React.useMemo(
@@ -260,8 +277,28 @@ const NavigatorCatalogueCountryMap = (props) => {
         className="navigator-catalogue-map-legend"
         aria-label={intl.formatMessage(messages.toolsPerCountry)}
       >
+        {/* <h4 className="european-wide-tools-link">
+          <Button
+            primary
+            as={Link}
+            to={getEuropeanWideToolsURL(currentLang)}
+            className="european-wide-tools-button"
+            onClick={handleEuropeanWideTools}
+          >
+            {intl.formatMessage(messages.europeanWideTools)}
+          </Button>
+        </h4> */}
+        <Button
+          primary
+          as={Link}
+          to={getEuropeanWideToolsURL(currentLang)}
+          className="european-wide-tools-button"
+          onClick={handleEuropeanWideTools}
+        >
+          {intl.formatMessage(messages.europeanWideTools)}
+        </Button>
         <h4 className="legend-title">
-          {intl.formatMessage(messages.toolsPerCountry)}
+          {intl.formatMessage(messages.toolsPerCountry)}:
         </h4>
         {mapLegendItems.map((item) => (
           <div key={item.label} className="legend-item">

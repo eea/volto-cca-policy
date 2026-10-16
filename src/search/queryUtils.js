@@ -1,6 +1,6 @@
 import { OBSERVATORY_PARTNERS } from '@eeacms/volto-cca-policy/constants';
 
-const addFilterParams = (params, filters) => {
+export const addFilterParams = (params, filters) => {
   filters.forEach((f, i) => {
     params.set(`filters[${i}][field]`, f.field);
     params.set(`filters[${i}][type]`, f.type);
