@@ -277,17 +277,6 @@ const NavigatorCatalogueCountryMap = (props) => {
         className="navigator-catalogue-map-legend"
         aria-label={intl.formatMessage(messages.toolsPerCountry)}
       >
-        {/* <h4 className="european-wide-tools-link">
-          <Button
-            primary
-            as={Link}
-            to={getEuropeanWideToolsURL(currentLang)}
-            className="european-wide-tools-button"
-            onClick={handleEuropeanWideTools}
-          >
-            {intl.formatMessage(messages.europeanWideTools)}
-          </Button>
-        </h4> */}
         <Button
           primary
           as={Link}

@@ -99,6 +99,9 @@ describe('NavigatorCatalogueCardItem', () => {
           'Datasets and indicators',
         ],
       },
+      cca_geographic_countries: {
+        raw: [{ title: 'Germany' }, 'France'],
+      },
       cca_adaptation_support_cycle_step: {
         raw: [
           { title: 'Step 1: Preparing the ground' },
@@ -150,13 +153,10 @@ describe('NavigatorCatalogueCardItem', () => {
       }),
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
-    expect(
-      screen.getByTitle(
-        'Maps and graphs, Reports and decision support, Datasets and indicators',
-      ),
-    ).toHaveTextContent(
-      'Type of outputs: Maps and graphs, Reports and decision support, Datasets and indicators',
+    expect(screen.getByTitle('Germany, France')).toHaveTextContent(
+      'Geographic coverage: Germany, France',
     );
+    expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText('compare'));
     expect(setSelected).toHaveBeenCalledWith(true);
@@ -187,6 +187,19 @@ describe('NavigatorCatalogueCardItem', () => {
 
     expect(screen.getByText('Step 2')).toBeInTheDocument();
     expect(screen.queryByText('Step 1')).not.toBeInTheDocument();
+  });
+
+  it('falls back to broad geographic coverage', () => {
+    renderCard({
+      title: 'European tool',
+      href: '/tool',
+      cca_navigator_geographic_scope: { raw: ['Europe'] },
+      cca_geographic_characterisation: { raw: ['Global'] },
+    });
+
+    expect(screen.getByTitle('Europe')).toHaveTextContent(
+      'Geographic coverage: Europe',
+    );
   });
 
   it('renders sparse results and disables comparison without a UID', () => {

@@ -26,9 +26,9 @@ const messages = defineMessages({
     id: 'Cycle',
     defaultMessage: 'Cycle',
   },
-  typeOfOutput: {
-    id: 'Type of outputs',
-    defaultMessage: 'Type of outputs',
+  geographicCoverage: {
+    id: 'Geographic coverage',
+    defaultMessage: 'Geographic coverage',
   },
   compare: {
     id: 'Compare',
@@ -62,6 +62,31 @@ const formatPublicationDate = (value) => {
   } catch {
     return '';
   }
+};
+
+const valuesAsText = (...values) =>
+  [
+    ...new Set(
+      values
+        .flatMap(rawValueAsArray)
+        .map((value) => value?.title || value?.token || value)
+        .filter((value) => typeof value === 'string' && value.trim()),
+    ),
+  ].join(', ');
+
+export const getGeographicCoverage = (result = {}) => {
+  const detailedCoverage = valuesAsText(
+    result.cca_geographic_transnational_region,
+    result.cca_geographic_countries,
+    result.cca_sub_nationals,
+    result.cca_city,
+  );
+
+  return (
+    detailedCoverage ||
+    valuesAsText(result.cca_navigator_geographic_scope) ||
+    valuesAsText(result.cca_geographic_characterisation)
+  );
 };
 
 const TagGroup = ({ typeLabel, values, type, maxItems }) => {
@@ -129,12 +154,7 @@ const NavigatorCatalogueCardItem = (props) => {
   const sectors = rawValueAsArray(result.cca_adaptation_sectors);
   const hazards = rawValueAsArray(result.cca_climate_impacts);
   const keywords = rawValueAsArray(result.cca_keywords);
-  const outputs = rawValueAsArray(result.cca_type_of_outputs);
-
-  const outputType = outputs
-    .map((value) => value?.title || value)
-    .filter(Boolean)
-    .join(', ');
+  const geographicCoverage = getGeographicCoverage(result);
   const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = rawValueAsArray(
     result.cca_adaptation_support_cycle_step,
@@ -210,10 +230,14 @@ const NavigatorCatalogueCardItem = (props) => {
           <div className="catalogue-meta">
             <CycleElements intl={intl} values={adaptationSupportCycleSteps} />
           </div>
-          <div className="catalogue-meta license-type">
-            {outputType && (
-              <span className="catalogue-output" title={outputType}>
-                {intl.formatMessage(messages.typeOfOutput)}: {outputType}
+          <div className="catalogue-meta geographic-coverage">
+            {geographicCoverage && (
+              <span
+                className="catalogue-geographic-coverage"
+                title={geographicCoverage}
+              >
+                {intl.formatMessage(messages.geographicCoverage)}:{' '}
+                {geographicCoverage}
               </span>
             )}
           </div>
