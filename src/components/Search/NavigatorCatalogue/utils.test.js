@@ -6,6 +6,8 @@ import {
   exportComparisonTable,
   formatFunctionalityScore,
   getComparePageURL,
+  getEuropeanWideToolsSearchState,
+  getEuropeanWideToolsURL,
   getNavigatorCataloguePageURL,
   rawValueAsArray,
 } from './utils';
@@ -96,6 +98,41 @@ describe('Navigator Catalogue utilities', () => {
       expect(getComparePageURL(locale)).toBe(`/${lang}/navigator/compare`);
     },
   );
+
+  it('builds the locale-aware European-wide tools URL', () => {
+    const url = new URL(getEuropeanWideToolsURL('de'), 'https://example.com');
+
+    expect(url.pathname).toBe('/de/navigator/tool-catalogue');
+    expect(url.searchParams.get('size')).toBe('n_10_n');
+    expect(url.searchParams.get('filters[0][field]')).toBe('language');
+    expect(url.searchParams.get('filters[0][type]')).toBe('any');
+    expect(url.searchParams.get('filters[0][values][0]')).toBe('de');
+    expect(url.searchParams.get('filters[1][field]')).toBe(
+      'cca_navigator_geographic_scope',
+    );
+    expect(url.searchParams.get('filters[1][type]')).toBe('any');
+    expect(url.searchParams.get('filters[1][values][0]')).toBe('Europe');
+    expect(url.searchParams.get('sort-field')).toBe('title.index');
+    expect(url.searchParams.get('sort-direction')).toBe('asc');
+  });
+
+  it('builds the live search state for European-wide tools', () => {
+    expect(getEuropeanWideToolsSearchState('de')).toEqual({
+      current: 1,
+      filters: [
+        { field: 'language', type: 'any', values: ['de'] },
+        {
+          field: 'cca_navigator_geographic_scope',
+          type: 'any',
+          values: ['Europe'],
+        },
+      ],
+      searchTerm: '',
+      sortField: 'title.index',
+      sortDirection: 'asc',
+      sortList: null,
+    });
+  });
 
   it('exports every comparison criterion', () => {
     const tools = [

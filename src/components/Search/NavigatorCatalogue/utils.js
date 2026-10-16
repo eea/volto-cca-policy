@@ -1,3 +1,5 @@
+import { addFilterParams } from '@eeacms/volto-cca-policy/search/queryUtils';
+
 /**
  * Color scale for tool counts (EEA green tones)
  * Used by the map view to color-code countries
@@ -155,6 +157,40 @@ export const getNavigatorCataloguePageURL = (currentLang = 'en') => {
   const lang = currentLang || 'en';
 
   return `/${lang}/navigator/tool-catalogue`;
+};
+
+export const getEuropeanWideToolsSearchState = (currentLang = 'en') => {
+  const lang = currentLang || 'en';
+
+  return {
+    current: 1,
+    filters: [
+      { field: 'language', type: 'any', values: [lang] },
+      {
+        field: 'cca_navigator_geographic_scope',
+        type: 'any',
+        values: ['Europe'],
+      },
+    ],
+    searchTerm: '',
+    sortField: 'title.index',
+    sortDirection: 'asc',
+    sortList: null,
+  };
+};
+
+export const getEuropeanWideToolsURL = (currentLang = 'en') => {
+  const lang = currentLang || 'en';
+  const { filters, sortDirection, sortField } =
+    getEuropeanWideToolsSearchState(lang);
+  const params = new URLSearchParams();
+
+  params.set('size', 'n_10_n');
+  addFilterParams(params, filters);
+  params.set('sort-field', sortField);
+  params.set('sort-direction', sortDirection);
+
+  return `${getNavigatorCataloguePageURL(lang)}?${params.toString()}`;
 };
 
 export const getComparePageURL = (currentLang = 'en') => {
