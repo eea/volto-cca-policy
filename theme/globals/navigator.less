@@ -668,25 +668,6 @@
   cursor: default;
   text-align: center;
 
-  // .map-notice-icon {
-  //   display: inline-flex;
-  //   width: 72px;
-  //   height: 72px;
-  //   align-items: center;
-  //   justify-content: center;
-  //   border-radius: 50%;
-  //   background: @secondaryColor;
-  //   color: #fff;
-
-  //   i.icon {
-  //     width: auto;
-  //     height: auto;
-  //     margin: 0 !important;
-  //     font-size: 2rem;
-  //     line-height: 1;
-  //   }
-  // }
-
   h4 {
     margin: 0 0 0.75rem;
   }
@@ -739,13 +720,13 @@
   }
 }
 
-.ui.button.european-wide-tools-button {
+.ui.button.primary.inverted.european-wide-tools-button {
   margin: 0 0 1rem !important;
-  width: 100%;
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 0.5rem 0.75rem;
+  padding-left: 1em !important;
+
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
 }
 
 .navigator-catalogue-map-legend {
@@ -779,11 +760,6 @@
     height: auto;
     min-height: 0;
     grid-template-columns: minmax(0, 1fr);
-
-    .navigator-catalogue-map-canvas {
-      height: 400px;
-      min-height: 350px;
-    }
   }
 
   .navigator-catalogue-map-tooltip {
