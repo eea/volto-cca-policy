@@ -279,12 +279,16 @@ const NavigatorCatalogueCountryMap = (props) => {
       >
         <Button
           primary
+          inverted
+          icon
+          labelPosition="right"
           as={Link}
           to={getEuropeanWideToolsURL(currentLang)}
           className="european-wide-tools-button"
           onClick={handleEuropeanWideTools}
         >
           {intl.formatMessage(messages.europeanWideTools)}
+          <Icon className="ri-arrow-right-line" />
         </Button>
         <h4 className="legend-title">
           {intl.formatMessage(messages.toolsPerCountry)}:
