@@ -36,8 +36,12 @@ export const makeContributionsSearchQuery = ({ id } = {}) => {
   return `${base}?${params.toString()}`;
 };
 
-export const makeAdvancedSearchQuery = ({ field, value } = {}) => {
-  const base = '/en/data-and-downloads/';
+export const makeAdvancedSearchQuery = ({
+  field,
+  value,
+  base = '/en/data-and-downloads/',
+  filterType = 'all',
+} = {}) => {
   const params = new URLSearchParams();
   params.set('size', 'n_10_n');
 
@@ -48,7 +52,7 @@ export const makeAdvancedSearchQuery = ({ field, value } = {}) => {
   ];
 
   if (field) {
-    filters.push({ field, values: [value], type: 'all' });
+    filters.push({ field, values: [value], type: filterType });
   }
 
   addFilterParams(params, filters);
@@ -62,3 +66,10 @@ export const makeAdvancedSearchQuery = ({ field, value } = {}) => {
 
   return `${base}?${params.toString()}`;
 };
+
+export const makeObservatorySearchQuery = (options = {}) =>
+  makeAdvancedSearchQuery({
+    ...options,
+    base: '/en/observatory/advanced-search',
+    filterType: 'any',
+  });

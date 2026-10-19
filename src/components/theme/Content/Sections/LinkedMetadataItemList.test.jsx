@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router-dom';
+import { makeObservatorySearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 
 import LinkedMetadataItemList from './LinkedMetadataItemList';
 
@@ -58,5 +59,23 @@ describe('LinkedMetadataItemList', () => {
 
     expect(params.get('filters[2][field]')).toBe('example.keyword');
     expect(params.get('filters[2][values][0]')).toBe('funding-token');
+  });
+
+  it('links raw health-impact values to the Observatory search', () => {
+    renderComponent({
+      value: ['-NONSPECIFIC-'],
+      field: 'cca_health_impacts.keyword',
+      queryBuilder: makeObservatorySearchQuery,
+    });
+
+    const link = screen.getByRole('link', { name: '-NONSPECIFIC-' });
+    const url = new URL(link.href);
+
+    expect(url.pathname).toBe('/en/observatory/advanced-search');
+    expect(url.searchParams.get('filters[2][field]')).toBe(
+      'cca_health_impacts.keyword',
+    );
+    expect(url.searchParams.get('filters[2][type]')).toBe('any');
+    expect(url.searchParams.get('filters[2][values][0]')).toBe('-NONSPECIFIC-');
   });
 });

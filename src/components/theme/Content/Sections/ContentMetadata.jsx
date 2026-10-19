@@ -1,6 +1,7 @@
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { Popup, Segment } from 'semantic-ui-react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { makeObservatorySearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 import {
   // CONTENT_TYPE_LABELS,
   GUIDANCE,
@@ -10,7 +11,6 @@ import {
 } from '@eeacms/volto-cca-policy/constants';
 import GeographicMetadata from './GeographicMetadata';
 import LinkedMetadataItemList from './LinkedMetadataItemList';
-import MetadataItemList from './MetadataItemList';
 import PublicationDateInfo from './PublicationDateInfo';
 
 const messages = defineMessages({
@@ -262,7 +262,12 @@ const ContentMetadata = (props) => {
                 defaultMessage="Health impact:"
               />
             </h5>
-            <MetadataItemList value={health_impacts} />
+            <LinkedMetadataItemList
+              value={health_impacts}
+              field="cca_health_impacts.keyword"
+              queryBuilder={makeObservatorySearchQuery}
+              // contentType={contentTypeLabel}
+            />
           </Segment>
         )}
     </>
