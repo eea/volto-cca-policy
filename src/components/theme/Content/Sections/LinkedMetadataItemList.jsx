@@ -9,8 +9,9 @@ const LinkedMetadataItemList = (props) => {
     asInline = false,
     asList = false,
     field,
+    // contentType,
     getSearchValue,
-  } = props; // contentType
+  } = props;
   const intl = useIntl();
 
   const resolveSearchValue = (item) => {

@@ -2,7 +2,7 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { Popup, Segment } from 'semantic-ui-react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import {
-  ADAPTATION_OPTION,
+  // CONTENT_TYPE_LABELS,
   GUIDANCE,
   INDICATOR,
   PUBLICATION_REPORT,
@@ -95,23 +95,13 @@ const ContentMetadata = (props) => {
             <h5>
               <FormattedMessage id="Keywords:" defaultMessage="Keywords:" />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={[...keywords].sort((a, b) =>
-                  a.toLowerCase().localeCompare(b.toLowerCase()),
-                )}
-                // contentType={contentTypeLabel}
-                asInline
-              />
-            ) : (
-              <span>
-                {[...keywords]
-                  .sort((a, b) =>
-                    a.toLowerCase().localeCompare(b.toLowerCase()),
-                  )
-                  .join(', ')}
-              </span>
-            )}
+            <LinkedMetadataItemList
+              value={[...keywords].sort((a, b) =>
+                a.toLowerCase().localeCompare(b.toLowerCase()),
+              )}
+              // contentType={contentTypeLabel}
+              asInline
+            />
           </>
         )}
 
@@ -136,16 +126,12 @@ const ContentMetadata = (props) => {
                 trigger={<i className="ri-question-fill"></i>}
               />
             </div>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={key_type_measures}
-                field="cca_key_type_measure.keyword"
-                // contentType={contentTypeLabel}
-                getSearchValue={(item) => item.token || item.title || item}
-              />
-            ) : (
-              <MetadataItemList value={key_type_measures} />
-            )}
+            <LinkedMetadataItemList
+              value={key_type_measures}
+              field="cca_key_type_measure.keyword"
+              // contentType={contentTypeLabel}
+              getSearchValue={(item) => item.token || item.title || item}
+            />
           </>
         )}
 
@@ -157,15 +143,11 @@ const ContentMetadata = (props) => {
                 defaultMessage="IPCC adaptation options categories:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={ipcc_category}
-                field="cca_ipcc_category.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={ipcc_category} />
-            )}
+            <LinkedMetadataItemList
+              value={ipcc_category}
+              field="cca_ipcc_category.keyword"
+              // contentType={contentTypeLabel}
+            />
           </>
         )}
 
@@ -177,15 +159,11 @@ const ContentMetadata = (props) => {
                 defaultMessage="Climate impacts:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={climate_impacts}
-                field="cca_climate_impacts.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={climate_impacts} />
-            )}
+            <LinkedMetadataItemList
+              value={climate_impacts}
+              field="cca_climate_impacts.keyword"
+              // contentType={contentTypeLabel}
+            />
           </>
         )}
 
@@ -197,15 +175,11 @@ const ContentMetadata = (props) => {
                 defaultMessage="Adaptation Approaches:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={elements}
-                field="cca_adaptation_elements.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={elements} />
-            )}
+            <LinkedMetadataItemList
+              value={elements}
+              field="cca_adaptation_elements.keyword"
+              // contentType={contentTypeLabel}
+            />
           </>
         )}
 
@@ -214,15 +188,11 @@ const ContentMetadata = (props) => {
             <h5>
               <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={sectors}
-                field="cca_adaptation_sectors.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={sectors} />
-            )}
+            <LinkedMetadataItemList
+              value={sectors}
+              field="cca_adaptation_sectors.keyword"
+              // contentType={contentTypeLabel}
+            />
           </>
         )}
 
@@ -234,16 +204,12 @@ const ContentMetadata = (props) => {
                 defaultMessage="Governance level:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={governance_level}
-                field="cca_governance_level_list.keyword"
-                // contentType={contentTypeLabel}
-                asList
-              />
-            ) : (
-              <MetadataItemList value={governance_level} asList />
-            )}
+            <LinkedMetadataItemList
+              value={governance_level}
+              field="cca_governance_level_list.keyword"
+              // contentType={contentTypeLabel}
+              asList
+            />
           </>
         )}
 
@@ -255,7 +221,12 @@ const ContentMetadata = (props) => {
                 defaultMessage="Funding Programme:"
               />
             </h5>
-            <span>{funding_programme.title}</span>
+            <LinkedMetadataItemList
+              value={[funding_programme]}
+              field="cca_funding_programme.keyword"
+              // contentType={contentTypeLabel}
+              getSearchValue={(item) => item.token || item.title || item}
+            />
           </>
         )}
 

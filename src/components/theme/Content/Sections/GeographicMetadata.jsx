@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import LinkedMetadataItemList from './LinkedMetadataItemList';
 import { renderGeochar } from './geographicMetadataUtils';
 
 const messages = defineMessages({
@@ -21,6 +22,11 @@ const messages = defineMessages({
   },
 });
 
+const linkedSectionFields = {
+  macrotrans: 'cca_geographic_transnational_region.keyword',
+  countries: 'cca_geographic_countries.keyword',
+};
+
 const GeographicMetadata = (props) => {
   const { content } = props;
   const { spatial_values, spatial_layer, geochars } = content;
@@ -36,17 +42,11 @@ const GeographicMetadata = (props) => {
             <FormattedMessage id="Countries:" defaultMessage="Countries:" />
           </h5>
           {spatial_values && spatial_values.length > 0 && (
-            <p>
-              {spatial_values
-                .map((item) => item.token)
-                .map((token) =>
-                  intl.formatMessage({
-                    id: token,
-                    defaultMessage: token,
-                  }),
-                )
-                .join(', ')}
-            </p>
+            <LinkedMetadataItemList
+              value={spatial_values.map((item) => item.token)}
+              field="cca_geographic_countries.keyword"
+              // contentType={contentTypeLabel}
+            />
           )}
         </div>
       );
@@ -72,16 +72,24 @@ const GeographicMetadata = (props) => {
                     : section.title}
                 </h5>
               )}
-              <p>
-                {section.value
-                  .map((countryName) =>
-                    intl.formatMessage({
-                      id: countryName,
-                      defaultMessage: countryName,
-                    }),
-                  )
-                  .join(', ')}
-              </p>
+              {linkedSectionFields[section.key] ? (
+                <LinkedMetadataItemList
+                  value={section.value}
+                  field={linkedSectionFields[section.key]}
+                  // contentType={contentTypeLabel}
+                />
+              ) : (
+                <p>
+                  {section.value
+                    .map((countryName) =>
+                      intl.formatMessage({
+                        id: countryName,
+                        defaultMessage: countryName,
+                      }),
+                    )
+                    .join(', ')}
+                </p>
+              )}
             </Fragment>
           ),
       )}

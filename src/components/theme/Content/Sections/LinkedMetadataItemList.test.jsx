@@ -34,4 +34,29 @@ describe('LinkedMetadataItemList', () => {
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
     expect(screen.getAllByRole('link')).toHaveLength(2);
   });
+
+  it('uses a text search when linking a keyword', () => {
+    renderComponent({
+      value: ['Flood risk'],
+      field: undefined,
+    });
+
+    const params = new URL(screen.getByRole('link').href).searchParams;
+
+    expect(params.get('q')).toBe('Flood risk');
+    expect(params.has('filters[2][field]')).toBe(false);
+  });
+
+  it('can use a token for the search value and a title for the label', () => {
+    renderComponent({
+      value: [{ token: 'funding-token', title: 'Funding programme' }],
+      getSearchValue: (item) => item.token,
+    });
+
+    const link = screen.getByRole('link', { name: 'Funding programme' });
+    const params = new URL(link.href).searchParams;
+
+    expect(params.get('filters[2][field]')).toBe('example.keyword');
+    expect(params.get('filters[2][values][0]')).toBe('funding-token');
+  });
 });
