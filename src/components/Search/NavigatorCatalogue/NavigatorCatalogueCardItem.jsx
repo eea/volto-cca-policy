@@ -40,13 +40,6 @@ const messages = defineMessages({
   },
 });
 
-const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
-  day: '2-digit',
-  month: 'short',
-  year: '2-digit',
-  timeZone: 'UTC',
-});
-
 const formatPublicationDate = (value) => {
   if (!value) return '';
   const raw =
@@ -58,7 +51,7 @@ const formatPublicationDate = (value) => {
   try {
     const d = new Date(val);
     if (Number.isNaN(d.getTime())) return '';
-    return publicationDateFormatter.format(d);
+    return d.getFullYear();
   } catch {
     return '';
   }

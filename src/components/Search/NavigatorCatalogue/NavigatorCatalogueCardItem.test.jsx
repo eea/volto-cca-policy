@@ -124,7 +124,7 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(
       screen.getByText('A provider with a long official name'),
     ).toHaveAttribute('title', 'A provider with a long official name');
-    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+    expect(screen.getByText('2026')).toBeInTheDocument();
     expect(screen.getByText('Agriculture')).toBeInTheDocument();
     expect(screen.getByText('Energy')).toBeInTheDocument();
     expect(screen.getByText('Wildfires')).toBeInTheDocument();
@@ -252,7 +252,7 @@ describe('NavigatorCatalogueCardItem', () => {
         />
       </IntlProvider>,
     );
-    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+    expect(screen.getByText('2026')).toBeInTheDocument();
 
     // Malformed object publication date
     rerender(
