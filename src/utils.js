@@ -1,5 +1,27 @@
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
+/**
+ * The RAST section keeps its image assets in a subfolder named "images". That
+ * folder is content plumbing, not a step, so it must not be offered as one.
+ *
+ * Two things worth knowing before changing this:
+ *
+ * - Plone's "exclude from navigation" flag cannot be used as the discriminator.
+ *   In production every child of the RAST folder has it enabled - the section is
+ *   navigated through this block instead of the site navigation - so honouring
+ *   the flag would hide the whole section.
+ * - The match is on the slug, not the title. Titles are translated; slugs are
+ *   copied, and are identical in all 27 languages (verified against production).
+ */
+export const isImageAssetFolder = (item) => {
+  if (!item || item['@type'] !== 'Folder') {
+    return false;
+  }
+
+  const slug = (item['@id'] || '').replace(/\/+$/, '').split('/').pop();
+  return slug.toLowerCase() === 'images';
+};
+
 export const blockAvailableInMission = (properties, block) => {
   const missionBlocks = ['mkh_map', 'rastBlock'];
   const id = properties?.['@id'];
