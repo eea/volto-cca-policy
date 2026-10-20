@@ -153,8 +153,13 @@ describe('NavigatorCatalogueCardItem', () => {
       }),
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
+    expect(
+      screen.getByTitle(
+        'Defines the largest geographic extent for which the tool is relevant',
+      ),
+    ).toHaveTextContent('Geographic coverage: Germany, France');
     expect(screen.getByTitle('Germany, France')).toHaveTextContent(
-      'Geographic coverage: Germany, France',
+      'Germany, France',
     );
     expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
@@ -197,9 +202,12 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_geographic_characterisation: { raw: ['Global'] },
     });
 
-    expect(screen.getByTitle('Europe')).toHaveTextContent(
-      'Geographic coverage: Europe',
-    );
+    expect(
+      screen.getByTitle(
+        'Defines the largest geographic extent for which the tool is relevant',
+      ),
+    ).toHaveTextContent('Geographic coverage: Europe');
+    expect(screen.getByTitle('Europe')).toHaveTextContent('Europe');
   });
 
   it('renders sparse results and disables comparison without a UID', () => {

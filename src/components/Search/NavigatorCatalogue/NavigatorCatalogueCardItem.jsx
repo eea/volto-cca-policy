@@ -30,6 +30,11 @@ const messages = defineMessages({
     id: 'Geographic coverage',
     defaultMessage: 'Geographic coverage',
   },
+  geographicCoverageDescription: {
+    id: 'Defines the largest geographic extent for which the tool is relevant',
+    defaultMessage:
+      'Defines the largest geographic extent for which the tool is relevant',
+  },
   compare: {
     id: 'Compare',
     defaultMessage: 'Compare',
@@ -227,10 +232,12 @@ const NavigatorCatalogueCardItem = (props) => {
             {geographicCoverage && (
               <span
                 className="catalogue-geographic-coverage"
-                title={geographicCoverage}
+                title={intl.formatMessage(
+                  messages.geographicCoverageDescription,
+                )}
               >
                 {intl.formatMessage(messages.geographicCoverage)}:{' '}
-                {geographicCoverage}
+                <span title={geographicCoverage}>{geographicCoverage}</span>
               </span>
             )}
           </div>
