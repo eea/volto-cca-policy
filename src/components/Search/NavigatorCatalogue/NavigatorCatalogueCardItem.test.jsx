@@ -124,7 +124,7 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(
       screen.getByText('A provider with a long official name'),
     ).toHaveAttribute('title', 'A provider with a long official name');
-    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+    expect(screen.getByText('2026')).toBeInTheDocument();
     expect(screen.getByText('Agriculture')).toBeInTheDocument();
     expect(screen.getByText('Energy')).toBeInTheDocument();
     expect(screen.getByText('Wildfires')).toBeInTheDocument();
@@ -153,8 +153,13 @@ describe('NavigatorCatalogueCardItem', () => {
       }),
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
+    expect(
+      screen.getByTitle(
+        'Defines the largest geographic extent for which the tool is relevant',
+      ),
+    ).toHaveTextContent('Geographic coverage: Germany, France');
     expect(screen.getByTitle('Germany, France')).toHaveTextContent(
-      'Geographic coverage: Germany, France',
+      'Germany, France',
     );
     expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
@@ -197,9 +202,12 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_geographic_characterisation: { raw: ['Global'] },
     });
 
-    expect(screen.getByTitle('Europe')).toHaveTextContent(
-      'Geographic coverage: Europe',
-    );
+    expect(
+      screen.getByTitle(
+        'Defines the largest geographic extent for which the tool is relevant',
+      ),
+    ).toHaveTextContent('Geographic coverage: Europe');
+    expect(screen.getByTitle('Europe')).toHaveTextContent('Europe');
   });
 
   it('renders sparse results and disables comparison without a UID', () => {
@@ -252,7 +260,7 @@ describe('NavigatorCatalogueCardItem', () => {
         />
       </IntlProvider>,
     );
-    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+    expect(screen.getByText('2026')).toBeInTheDocument();
 
     // Malformed object publication date
     rerender(

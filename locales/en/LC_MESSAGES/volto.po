@@ -459,6 +459,11 @@ msgstr ""
 msgid "Date of release:"
 msgstr ""
 
+#. Default: "Defines the largest geographic extent for which the tool is relevant"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+msgid "Defines the largest geographic extent for which the tool is relevant"
+msgstr ""
+
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
 #: components/theme/Views/AdaptationOptionView
@@ -550,6 +555,11 @@ msgstr ""
 msgid "Eligible to receive funding"
 msgstr ""
 
+#. Default: "European-wide tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "European-wide tools"
+msgstr ""
+
 #. Default: "Event"
 #: messages
 msgid "Event"
@@ -633,6 +643,7 @@ msgid "Geographic characterisation:"
 msgstr ""
 
 #. Default: "Geographic coverage"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Geographic coverage"
@@ -1608,7 +1619,6 @@ msgid "Type of item"
 msgstr ""
 
 #. Default: "Type of outputs"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
