@@ -3,6 +3,7 @@ import { List } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { compose } from 'redux';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { isImageAssetFolder } from '@eeacms/volto-cca-policy/utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions/content/content';
 
@@ -27,7 +28,9 @@ const RASTAccordionContent = (props) => {
     <div>
       {items.length
         ? items
-            .filter((item) => item['@type'] === 'Folder')
+            .filter(
+              (item) => item['@type'] === 'Folder' && !isImageAssetFolder(item),
+            )
             .map((item) => {
               const active = item['@id'].endsWith(curent_location.pathname);
               return (
