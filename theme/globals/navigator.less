@@ -46,18 +46,18 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: 1px solid @navigatorIconBorderColor;
-  border-radius: 4px;
-  background-color: #f7f8fa;
   color: @navigatorIconColor;
   overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  &.tool-fallback-icon {
+    border: 1px solid @navigatorIconBorderColor;
+    border-radius: 50%;
+    background-color: #f7f8fa;
+  }
+
+  svg.navigator-tool-type-icon {
     display: block;
-    border-radius: inherit;
+    flex: 0 0 auto;
   }
 
   i.icon {
@@ -73,7 +73,7 @@
     flex-basis: 28px;
 
     i.icon {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -182,7 +182,7 @@
     margin: 0 !important;
   }
 
-  .navigator-tool-icon {
+  .navigator-tool-icon.tool-fallback-icon {
     background-color: #fff;
   }
 
@@ -235,7 +235,7 @@
     border: 1px solid @navigatorBorderColor;
     border-radius: 4px;
     background-color: #f7fafc;
-    gap: 0.75rem;
+    gap: 0.5em;
 
     &.placeholder {
       justify-content: flex-start;
@@ -243,7 +243,7 @@
       border-style: dashed;
 
       .navigator-tool-icon {
-        border-style: dashed;
+        border: 1px dashed #dce7ee;
       }
 
       .compare-panel-tool-title {
@@ -668,25 +668,6 @@
   cursor: default;
   text-align: center;
 
-  // .map-notice-icon {
-  //   display: inline-flex;
-  //   width: 72px;
-  //   height: 72px;
-  //   align-items: center;
-  //   justify-content: center;
-  //   border-radius: 50%;
-  //   background: @secondaryColor;
-  //   color: #fff;
-
-  //   i.icon {
-  //     width: auto;
-  //     height: auto;
-  //     margin: 0 !important;
-  //     font-size: 2rem;
-  //     line-height: 1;
-  //   }
-  // }
-
   h4 {
     margin: 0 0 0.75rem;
   }
@@ -739,6 +720,15 @@
   }
 }
 
+.ui.button.primary.inverted.european-wide-tools-button {
+  margin: 0 0 1rem !important;
+  padding-left: 1em !important;
+
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+}
+
 .navigator-catalogue-map-legend {
   font-size: 16px;
 
@@ -770,11 +760,6 @@
     height: auto;
     min-height: 0;
     grid-template-columns: minmax(0, 1fr);
-
-    .navigator-catalogue-map-canvas {
-      height: 400px;
-      min-height: 350px;
-    }
   }
 
   .navigator-catalogue-map-tooltip {
@@ -801,7 +786,7 @@
     border-radius: 4px;
     margin-bottom: 1.5rem;
     background: #fff;
-    gap: 1.15rem;
+    gap: 0.8em;
     grid-template-columns: 56px minmax(0, 1fr);
 
     &.selected {
@@ -815,13 +800,6 @@
     justify-content: space-between;
     gap: 1rem;
 
-    .navigator-tool-provider {
-      overflow: hidden;
-      max-width: 40rem;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
     .catalogue-date {
       flex: 0 0 auto;
     }
@@ -829,7 +807,7 @@
 
   .catalogue-item-heading {
     h4 {
-      margin: 10px 0;
+      margin: 3px 0 10px 0;
 
       a {
         color: inherit;
@@ -874,11 +852,11 @@
     gap: 1rem;
   }
 
-  .license-type {
+  .geographic-coverage {
     gap: 0.7em;
   }
 
-  .catalogue-output {
+  .catalogue-geographic-coverage {
     display: inline-block;
     overflow: hidden;
     max-width: 500px;
@@ -964,7 +942,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
 .navigator-tool-provider,
 .catalogue-date {
   color: @navigatorMetaTextColor;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -993,8 +971,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
   font-size: 12px;
   cursor: default;
 
-  &.sector,
-  &.more {
+  &.sector {
     background: #a1d8fd;
     color: #014d7d;
   }
@@ -1171,7 +1148,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     align-items: flex-start;
     padding: 1rem 0;
     border-top: 1px dashed @navigatorDashedBorderColor;
-    gap: 0.75rem;
+    gap: 0.5em;
   }
 
   .navigator-guide-preview-results {
@@ -1204,7 +1181,7 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
       width: 100%;
       margin: 0;
       -webkit-box-orient: vertical;
-      font-size: 16px;
+      font-size: 15px;
       -webkit-line-clamp: 2;
       line-height: 1.4;
       text-overflow: ellipsis;
