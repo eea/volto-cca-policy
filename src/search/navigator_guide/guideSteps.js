@@ -46,10 +46,6 @@ const messages = defineMessages({
     defaultMessage:
       'Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection.',
   },
-  geographicCoverageSelectionHint: {
-    id: 'Select all that apply within one category',
-    defaultMessage: 'Select all that apply within one category',
-  },
   broadCoverage: {
     id: 'European-wide and global',
     defaultMessage: 'European-wide and global',
@@ -65,11 +61,6 @@ const messages = defineMessages({
   other: {
     id: 'Other',
     defaultMessage: 'Other',
-  },
-  otherDescription: {
-    id: 'Tools that have not been assigned to any of the coverage entries above.',
-    defaultMessage:
-      'Tools that have not been assigned to any of the coverage entries above.',
   },
   adaptationStage: {
     id: 'Adaptation stage',
@@ -122,7 +113,6 @@ const guideSteps = [
     label: messages.geographicCoverage,
     title: messages.geographicCoverageQuestion,
     description: messages.geographicCoverageDescription,
-    selectionHint: messages.geographicCoverageSelectionHint,
     groups: [
       {
         id: 'broadCoverage',
@@ -150,7 +140,7 @@ const guideSteps = [
       {
         id: 'other',
         label: messages.other,
-        description: messages.otherDescription,
+        hideLabel: true,
         field: CHARACTERISATION_FIELD,
         filterType: 'any',
         options: [
@@ -170,14 +160,6 @@ const guideSteps = [
     field: 'cca_adaptation_support_cycle_step.keyword',
     filterType: 'all',
   },
-  // {
-  //   id: 'coverage',
-  //   label: messages.coverage,
-  //   title: messages.coverageQuestion,
-  //   description: messages.coverageDescription,
-  //   field: 'cca_geographical_scale.keyword',
-  //   filterType: 'any',
-  // },
 ];
 
 export const getGuideStepFields = (step) =>

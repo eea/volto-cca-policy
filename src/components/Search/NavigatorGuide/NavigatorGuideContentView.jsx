@@ -107,7 +107,6 @@ const previewTagTypes = {
   climateHazards: 'hazard',
   geographicCoverage: 'coverage',
   adaptationStage: 'adaptation-stage',
-  coverage: 'coverage',
 };
 
 const NavigatorGuideContentView = ({ appConfig }) => {
@@ -399,14 +398,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                     <fieldset
                       className="navigator-guide-option-group"
                       key={group.id}
-                      aria-label={
-                        group.hideLabel
-                          ? intl.formatMessage(group.label)
-                          : undefined
-                      }
+                      aria-label={intl.formatMessage(group.label)}
                     >
                       {!group.hideLabel && (
-                        <legend>{intl.formatMessage(group.label)}</legend>
+                        <h5 className="navigator-guide-option-group-title">
+                          {intl.formatMessage(group.label)}
+                        </h5>
                       )}
                       {group.description && (
                         <p className="navigator-guide-option-group-description">

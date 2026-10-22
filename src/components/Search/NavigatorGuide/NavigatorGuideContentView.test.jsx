@@ -290,16 +290,16 @@ describe('NavigatorGuideContentView geographic coverage', () => {
     expect(
       screen.getByRole('group', { name: 'Transnational regions' }),
     ).toBeVisible();
-    expect(screen.getByRole('group', { name: 'Other' })).toBeVisible();
+    const otherGroup = screen.getByRole('group', { name: 'Other' });
+    expect(otherGroup).toBeVisible();
+    expect(within(otherGroup).getAllByText('Other')).toHaveLength(1);
     expect(screen.queryByRole('button', { name: 'Countries' })).toBeNull();
+    expect(screen.getByText('Select all that apply')).toBeVisible();
     expect(
-      screen.getByText('Select all that apply within one category'),
-    ).toBeVisible();
-    expect(
-      screen.getByText(
+      screen.queryByText(
         'Tools that have not been assigned to any of the coverage entries above.',
       ),
-    ).toBeVisible();
+    ).not.toBeInTheDocument();
   });
 
   it('disables other coverage categories while keeping the active category enabled', () => {
@@ -368,7 +368,7 @@ describe('NavigatorGuideContentView geographic coverage', () => {
       { filters: [] },
     );
 
-    expect(screen.getAllByText('Other')).toHaveLength(2);
+    expect(screen.getAllByText('Other')).toHaveLength(1);
     expect(screen.queryByText('Others')).not.toBeInTheDocument();
   });
 });
