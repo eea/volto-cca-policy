@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
@@ -153,7 +153,7 @@ describe('NavigatorGuideContentView sorting', () => {
 describe('NavigatorGuideContentView adaptation steps', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    useAtom.mockReturnValue([2, jest.fn()]);
+    useAtom.mockReturnValue([3, jest.fn()]);
     useSelector.mockReturnValue('en');
     useHistory.mockReturnValue({ push: jest.fn() });
     useGuideFacetOptions.mockReturnValue({
@@ -223,6 +223,153 @@ describe('NavigatorGuideContentView adaptation steps', () => {
     expect(
       container.querySelector('.navigator-guide-preview-tags'),
     ).toHaveTextContent('Step 1');
+  });
+});
+
+describe('NavigatorGuideContentView geographic coverage', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useAtom.mockReturnValue([2, jest.fn()]);
+    useSelector.mockReturnValue('en');
+    useHistory.mockReturnValue({ push: jest.fn() });
+    useGuideFacetOptions.mockReturnValue({
+      cca_navigator_geographic_scope: ['Europe', 'Global', 'Others'],
+      'cca_geographic_countries.keyword': ['Germany', 'Spain'],
+      'cca_geographic_transnational_region.keyword': [
+        'Alpine Space',
+        'Baltic Sea Region',
+      ],
+    });
+  });
+
+  it('shows every coverage section without accordions', () => {
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {
+        filters: [],
+        facets: {
+          cca_navigator_geographic_scope: [
+            {
+              data: [
+                { value: 'Europe', count: 8 },
+                { value: 'Global', count: 5 },
+                { value: 'Others', count: 2 },
+              ],
+            },
+          ],
+          'cca_geographic_countries.keyword': [
+            {
+              data: [
+                { value: 'Germany', count: 4 },
+                { value: 'Spain', count: 3 },
+              ],
+            },
+          ],
+          'cca_geographic_transnational_region.keyword': [
+            {
+              data: [
+                { value: 'Alpine Space', count: 3 },
+                { value: 'Baltic Sea Region', count: 2 },
+              ],
+            },
+          ],
+        },
+      },
+    );
+
+    const broadCoverageGroup = screen.getByRole('group', {
+      name: 'European-wide and global',
+    });
+    expect(broadCoverageGroup).toBeVisible();
+    expect(
+      within(broadCoverageGroup).queryByText('European-wide and global'),
+    ).toBeNull();
+    expect(within(broadCoverageGroup).getByText('Europe')).toBeVisible();
+    expect(within(broadCoverageGroup).getByText('8')).toBeVisible();
+    expect(screen.getByRole('group', { name: 'Countries' })).toBeVisible();
+    expect(
+      screen.getByRole('group', { name: 'Transnational regions' }),
+    ).toBeVisible();
+    expect(screen.getByRole('group', { name: 'Other' })).toBeVisible();
+    expect(screen.queryByRole('button', { name: 'Countries' })).toBeNull();
+    expect(
+      screen.getByText('Select all that apply within one category'),
+    ).toBeVisible();
+    expect(
+      screen.getByText(
+        'Tools that have not been assigned to any of the coverage entries above.',
+      ),
+    ).toBeVisible();
+  });
+
+  it('disables other coverage categories while keeping the active category enabled', () => {
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {
+        filters: [
+          {
+            field: 'cca_navigator_geographic_scope',
+            values: ['Europe'],
+            type: 'any',
+          },
+        ],
+        facets: {
+          cca_navigator_geographic_scope: [
+            {
+              data: [
+                { value: 'Europe', count: 8 },
+                { value: 'Global', count: 5 },
+                { value: 'Others', count: 2 },
+              ],
+            },
+          ],
+          'cca_geographic_countries.keyword': [
+            { data: [{ value: 'Germany', count: 4 }] },
+          ],
+          'cca_geographic_transnational_region.keyword': [
+            { data: [{ value: 'Alpine Space', count: 3 }] },
+          ],
+        },
+      },
+    );
+
+    const broadCoverageGroup = screen.getByRole('group', {
+      name: 'European-wide and global',
+    });
+    const countriesGroup = screen.getByRole('group', { name: 'Countries' });
+    const transnationalGroup = screen.getByRole('group', {
+      name: 'Transnational regions',
+    });
+    const otherGroup = screen.getByRole('group', { name: 'Other' });
+
+    expect(
+      within(broadCoverageGroup).getByText('Europe').closest('label'),
+    ).not.toHaveAttribute('aria-disabled');
+    expect(
+      within(broadCoverageGroup).getByText('Global').closest('label'),
+    ).not.toHaveAttribute('aria-disabled');
+    expect(
+      within(countriesGroup).getByText('Germany').closest('label'),
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(
+      within(transnationalGroup).getByText('Alpine Space').closest('label'),
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(
+      within(otherGroup)
+        .getByText('Other', { selector: 'span' })
+        .closest('label'),
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(within(otherGroup).getByText('2')).toBeVisible();
+  });
+
+  it('labels the fallback option as Other', () => {
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      { filters: [] },
+    );
+
+    expect(screen.getAllByText('Other')).toHaveLength(2);
+    expect(screen.queryByText('Others')).not.toBeInTheDocument();
   });
 });
 

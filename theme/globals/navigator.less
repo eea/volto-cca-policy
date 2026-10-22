@@ -739,10 +739,11 @@
 }
 
 .navigator-catalogue-map-legend {
-  font-size: 16px;
+  margin-top: 1.5rem;
 
   .legend-title {
     margin-top: 0;
+    margin-bottom: 0.5rem;
   }
 
   .legend-item {
@@ -1237,6 +1238,45 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
     }
   }
 
+  .navigator-guide-option-groups {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+    gap: 1rem;
+  }
+
+  .navigator-guide-option-group {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid @navigatorBorderColor;
+    border-radius: 4px;
+    margin: 0;
+    // background: fade(@primaryColor, 2%);
+
+    legend {
+      padding: 0 0.4rem;
+      color: @secondaryColor;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    > .message {
+      margin: 0;
+    }
+  }
+
+  .navigator-guide-group-options {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navigator-guide-option-group-description {
+    margin: 0 0 0.75rem;
+    color: @navigatorMetaTextColor;
+    font-size: 0.875rem;
+  }
+
   .navigator-guide-options-loading {
     display: flex;
     min-height: 5rem;
@@ -1318,7 +1358,8 @@ body.searchlib-page .searchapp-navigatorCatalogueSearch {
 
   @media only screen and (max-width: 900px) {
     .navigator-guide-layout,
-    .navigator-guide-options {
+    .navigator-guide-options,
+    .navigator-guide-group-options {
       grid-template-columns: 1fr;
     }
   }
