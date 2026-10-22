@@ -175,7 +175,7 @@ const NavigatorCatalogueCountryMap = (props) => {
   const handleEuropeanWideTools = React.useCallback(() => {
     views.setActiveViewId('listing');
     searchContext.resetSearch({
-      ...getEuropeanWideToolsSearchState(currentLang),
+      ...getEuropeanWideToolsSearchState(currentLang, searchContext.filters),
       resultsPerPage: searchContext.resultsPerPage,
     });
   }, [currentLang, searchContext, views]);
@@ -283,7 +283,7 @@ const NavigatorCatalogueCountryMap = (props) => {
           icon
           labelPosition="right"
           as={Link}
-          to={getEuropeanWideToolsURL(currentLang)}
+          to={getEuropeanWideToolsURL(currentLang, searchContext.filters)}
           className="european-wide-tools-button"
           onClick={handleEuropeanWideTools}
         >

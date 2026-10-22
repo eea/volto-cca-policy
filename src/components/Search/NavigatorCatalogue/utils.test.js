@@ -134,6 +134,63 @@ describe('Navigator Catalogue utilities', () => {
     });
   });
 
+  it('preserves non-geographic filters for European-wide tools', () => {
+    const currentFilters = [
+      { field: 'language', type: 'any', values: ['en'] },
+      {
+        field: 'cca_adaptation_sectors.keyword',
+        type: 'any',
+        values: ['Water management'],
+      },
+      {
+        field: 'cca_climate_impacts.keyword',
+        type: 'any',
+        values: ['Flooding'],
+      },
+      {
+        field: 'cca_geographic_countries.keyword',
+        type: 'any',
+        values: ['Germany'],
+      },
+    ];
+
+    const state = getEuropeanWideToolsSearchState('de', currentFilters);
+
+    expect(state.filters).toEqual([
+      { field: 'language', type: 'any', values: ['de'] },
+      {
+        field: 'cca_adaptation_sectors.keyword',
+        type: 'any',
+        values: ['Water management'],
+      },
+      {
+        field: 'cca_climate_impacts.keyword',
+        type: 'any',
+        values: ['Flooding'],
+      },
+      {
+        field: 'cca_navigator_geographic_scope',
+        type: 'any',
+        values: ['Europe'],
+      },
+    ]);
+
+    const url = new URL(
+      getEuropeanWideToolsURL('de', currentFilters),
+      'https://example.com',
+    );
+    const fields = [...url.searchParams.entries()]
+      .filter(([key]) => key.endsWith('[field]'))
+      .map(([, value]) => value);
+
+    expect(fields).toEqual([
+      'language',
+      'cca_adaptation_sectors.keyword',
+      'cca_climate_impacts.keyword',
+      'cca_navigator_geographic_scope',
+    ]);
+  });
+
   it('exports every comparison criterion', () => {
     const tools = [
       {
