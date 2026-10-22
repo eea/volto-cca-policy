@@ -156,8 +156,22 @@ exports[`DatabaseItemView should render the component 1`] = `
             <h5>
               Keywords:
             </h5>
-            <span>
-              keyword 1, keyword 2
+            <span
+              className="metadata-inline"
+            >
+              <a
+                href="/en/data-and-downloads/?size=n_10_n&filters%5B0%5D%5Bfield%5D=issued.date&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=All+time&filters%5B1%5D%5Bfield%5D=language&filters%5B1%5D%5Btype%5D=any&filters%5B1%5D%5Bvalues%5D%5B0%5D=en&sort-field=issued.date&sort-direction=desc&q=keyword+1"
+                onClick={[Function]}
+              >
+                keyword 1
+              </a>
+              , 
+              <a
+                href="/en/data-and-downloads/?size=n_10_n&filters%5B0%5D%5Bfield%5D=issued.date&filters%5B0%5D%5Btype%5D=any&filters%5B0%5D%5Bvalues%5D%5B0%5D=All+time&filters%5B1%5D%5Bfield%5D=language&filters%5B1%5D%5Btype%5D=any&filters%5B1%5D%5Bvalues%5D%5B0%5D=en&sort-field=issued.date&sort-direction=desc&q=keyword+2"
+                onClick={[Function]}
+              >
+                keyword 2
+              </a>
             </span>
             <h5>
               Geographic characterisation:
