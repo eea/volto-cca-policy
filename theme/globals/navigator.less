@@ -581,7 +581,7 @@
   height: 600px;
   min-height: 600px;
   align-items: stretch;
-  gap: 1.5rem;
+  gap: 0.8em;
   grid-template-columns: minmax(0, 4fr) minmax(12rem, 1fr);
 
   .ol-map-wrapper,
@@ -720,9 +720,16 @@
   }
 }
 
-.ui.button.primary.inverted.european-wide-tools-button {
-  margin: 0 0 1rem !important;
+.geographic-tools-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.ui.button.primary.inverted.geographic-tools-button {
   padding-left: 1em !important;
+  margin: 0 !important;
 
   @media only screen and (min-width: 768px) {
     width: 100%;

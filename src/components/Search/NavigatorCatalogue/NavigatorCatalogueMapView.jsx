@@ -26,12 +26,13 @@ import {
   buildCountryCounts,
   clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
-  getEuropeanWideToolsSearchState,
-  getEuropeanWideToolsURL,
+  getGeographicToolsSearchState,
+  getGeographicToolsURL,
   hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
 } from './utils';
+import { GEOGRAPHIC_SCOPE_VALUES } from '../../../search/navigator_catalogue/geographicCoverage';
 import NavigatorCatalogueMapState from './NavigatorCatalogueMapState';
 
 const messages = defineMessages({
@@ -51,6 +52,18 @@ const messages = defineMessages({
   europeanWideTools: {
     id: 'European-wide tools',
     defaultMessage: 'European-wide tools',
+  },
+  globalTools: {
+    id: 'Global tools',
+    defaultMessage: 'Global tools',
+  },
+  transnationalRegions: {
+    id: 'Transnational regions',
+    defaultMessage: 'Transnational regions',
+  },
+  others: {
+    id: 'Others',
+    defaultMessage: 'Others',
   },
   fourOrMore: {
     id: '4 or more',
@@ -172,13 +185,39 @@ const NavigatorCatalogueCountryMap = (props) => {
     [searchContext, views],
   );
 
-  const handleEuropeanWideTools = React.useCallback(() => {
-    views.setActiveViewId('listing');
-    searchContext.resetSearch({
-      ...getEuropeanWideToolsSearchState(currentLang, searchContext.filters),
-      resultsPerPage: searchContext.resultsPerPage,
-    });
-  }, [currentLang, searchContext, views]);
+  const handleGeographicTools = React.useCallback(
+    (scope) => {
+      views.setActiveViewId('listing');
+      searchContext.resetSearch({
+        ...getGeographicToolsSearchState(
+          scope,
+          currentLang,
+          searchContext.filters,
+        ),
+        resultsPerPage: searchContext.resultsPerPage,
+      });
+    },
+    [currentLang, searchContext, views],
+  );
+
+  const geographicToolGroups = [
+    {
+      scope: GEOGRAPHIC_SCOPE_VALUES.europe,
+      message: messages.europeanWideTools,
+    },
+    {
+      scope: GEOGRAPHIC_SCOPE_VALUES.global,
+      message: messages.globalTools,
+    },
+    {
+      scope: GEOGRAPHIC_SCOPE_VALUES.transnational,
+      message: messages.transnationalRegions,
+    },
+    {
+      scope: GEOGRAPHIC_SCOPE_VALUES.others,
+      message: messages.others,
+    },
+  ];
 
   // Build lookup: countryName -> count
   const countryCounts = React.useMemo(
@@ -277,19 +316,28 @@ const NavigatorCatalogueCountryMap = (props) => {
         className="navigator-catalogue-map-legend"
         aria-label={intl.formatMessage(messages.toolsPerCountry)}
       >
-        <Button
-          primary
-          inverted
-          icon
-          labelPosition="right"
-          as={Link}
-          to={getEuropeanWideToolsURL(currentLang, searchContext.filters)}
-          className="european-wide-tools-button"
-          onClick={handleEuropeanWideTools}
-        >
-          {intl.formatMessage(messages.europeanWideTools)}
-          <Icon className="ri-arrow-right-line" />
-        </Button>
+        <div className="geographic-tools-buttons">
+          {geographicToolGroups.map(({ scope, message }) => (
+            <Button
+              key={scope}
+              primary
+              inverted
+              icon
+              labelPosition="right"
+              as={Link}
+              to={getGeographicToolsURL(
+                scope,
+                currentLang,
+                searchContext.filters,
+              )}
+              className="geographic-tools-button"
+              onClick={() => handleGeographicTools(scope)}
+            >
+              {intl.formatMessage(message)}
+              <Icon className="ri-arrow-right-line" />
+            </Button>
+          ))}
+        </div>
         <h4 className="legend-title">
           {intl.formatMessage(messages.toolsPerCountry)}:
         </h4>
