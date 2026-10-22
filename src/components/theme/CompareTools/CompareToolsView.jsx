@@ -277,11 +277,7 @@ const CriterionLabel = ({ label, tooltip, tooltipContent }) => (
       content={tooltipContent || tooltip}
       position="top left"
       trigger={
-        <button
-          type="button"
-          className="compare-criteria-tooltip"
-          aria-label={tooltip}
-        >
+        <button type="button" className="info-tooltip" aria-label={tooltip}>
           <Icon className="ri-information-line" aria-hidden="true" />
         </button>
       }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Icon } from 'semantic-ui-react';
+import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
@@ -11,7 +11,7 @@ import {
   getCompareToolUid,
   useCompareTools,
 } from '../../theme/CompareTools/utils';
-import { rawValueAsArray } from './utils';
+import { formatPublicationDate, rawValueAsArray, valuesAsText } from './utils';
 
 const messages = defineMessages({
   sector: {
@@ -44,33 +44,6 @@ const messages = defineMessages({
     defaultMessage: 'View',
   },
 });
-
-const formatPublicationDate = (value) => {
-  if (!value) return '';
-  const raw =
-    typeof value === 'object' && value !== null && 'raw' in value
-      ? value.raw
-      : value;
-  const val = Array.isArray(raw) ? raw[0] : raw;
-  if (!val || typeof val === 'object') return '';
-  try {
-    const d = new Date(val);
-    if (Number.isNaN(d.getTime())) return '';
-    return d.getFullYear();
-  } catch {
-    return '';
-  }
-};
-
-const valuesAsText = (...values) =>
-  [
-    ...new Set(
-      values
-        .flatMap(rawValueAsArray)
-        .map((value) => value?.title || value?.token || value)
-        .filter((value) => typeof value === 'string' && value.trim()),
-    ),
-  ].join(', ');
 
 export const getGeographicCoverage = (result = {}) => {
   const detailedCoverage = valuesAsText(
@@ -153,6 +126,9 @@ const NavigatorCatalogueCardItem = (props) => {
   const hazards = rawValueAsArray(result.cca_climate_impacts);
   const keywords = rawValueAsArray(result.cca_keywords);
   const geographicCoverage = getGeographicCoverage(result);
+  const geographicCoverageDescription = intl.formatMessage(
+    messages.geographicCoverageDescription,
+  );
   const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = rawValueAsArray(
     result.cca_adaptation_support_cycle_step,
@@ -230,14 +206,26 @@ const NavigatorCatalogueCardItem = (props) => {
           </div>
           <div className="catalogue-meta geographic-coverage">
             {geographicCoverage && (
-              <span
-                className="catalogue-geographic-coverage"
-                title={intl.formatMessage(
-                  messages.geographicCoverageDescription,
-                )}
-              >
-                {intl.formatMessage(messages.geographicCoverage)}:{' '}
-                <span title={geographicCoverage}>{geographicCoverage}</span>
+              <span className="catalogue-geographic-coverage">
+                {intl.formatMessage(messages.geographicCoverage)}
+                <Popup
+                  className="compare-criteria-popup"
+                  content={geographicCoverageDescription}
+                  position="top left"
+                  trigger={
+                    <button
+                      type="button"
+                      className="info-tooltip"
+                      aria-label={geographicCoverageDescription}
+                    >
+                      <Icon
+                        className="ri-information-line"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  }
+                />
+                : <span>{geographicCoverage}</span>
               </span>
             )}
           </div>

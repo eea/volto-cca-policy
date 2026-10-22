@@ -125,6 +125,33 @@ export const asArray = (value) =>
 
 export const arrayFieldToString = (value) => asArray(value).join(', ');
 
+export const valuesAsText = (...values) =>
+  [
+    ...new Set(
+      values
+        .flatMap(rawValueAsArray)
+        .map((value) => value?.title || value?.token || value)
+        .filter((value) => typeof value === 'string' && value.trim()),
+    ),
+  ].join(', ');
+
+export const formatPublicationDate = (value) => {
+  if (!value) return '';
+  const raw =
+    typeof value === 'object' && value !== null && 'raw' in value
+      ? value.raw
+      : value;
+  const val = Array.isArray(raw) ? raw[0] : raw;
+  if (!val || typeof val === 'object') return '';
+  try {
+    const date = new Date(val);
+    if (Number.isNaN(date.getTime())) return '';
+    return String(date.getFullYear());
+  } catch {
+    return '';
+  }
+};
+
 export const formatFunctionalityScore = (value) => {
   const raw = unwrapRawValue(value);
   const score = raw === null || raw === undefined ? Number.NaN : Number(raw);
@@ -159,13 +186,27 @@ export const getNavigatorCataloguePageURL = (currentLang = 'en') => {
   return `/${lang}/navigator/tool-catalogue`;
 };
 
-export const getEuropeanWideToolsSearchState = (currentLang = 'en') => {
+const europeanWideReplacedFilterFields = new Set([
+  'language',
+  'cca_navigator_geographic_scope',
+  'cca_geographic_transnational_region.keyword',
+  'cca_geographic_countries.keyword',
+]);
+
+export const getEuropeanWideToolsSearchState = (
+  currentLang = 'en',
+  currentFilters = [],
+) => {
   const lang = currentLang || 'en';
+  const preservedFilters = (currentFilters || []).filter(
+    ({ field }) => !europeanWideReplacedFilterFields.has(field),
+  );
 
   return {
     current: 1,
     filters: [
       { field: 'language', type: 'any', values: [lang] },
+      ...preservedFilters,
       {
         field: 'cca_navigator_geographic_scope',
         type: 'any',
@@ -179,10 +220,15 @@ export const getEuropeanWideToolsSearchState = (currentLang = 'en') => {
   };
 };
 
-export const getEuropeanWideToolsURL = (currentLang = 'en') => {
+export const getEuropeanWideToolsURL = (
+  currentLang = 'en',
+  currentFilters = [],
+) => {
   const lang = currentLang || 'en';
-  const { filters, sortDirection, sortField } =
-    getEuropeanWideToolsSearchState(lang);
+  const { filters, sortDirection, sortField } = getEuropeanWideToolsSearchState(
+    lang,
+    currentFilters,
+  );
   const params = new URLSearchParams();
 
   params.set('size', 'n_10_n');

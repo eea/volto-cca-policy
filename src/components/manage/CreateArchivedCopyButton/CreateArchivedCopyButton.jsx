@@ -110,16 +110,18 @@ function CreateArchivedCopyButton(props) {
           )}
           <Form>
             <Form.Field>
-              <label>Title</label>
+              <label htmlFor="archived-copy-title">Title</label>
               <input
+                id="archived-copy-title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Title of the archived copy"
               />
             </Form.Field>
             <Form.Field>
-              <label>ID</label>
+              <label htmlFor="archived-copy-id">ID</label>
               <input
+                id="archived-copy-id"
                 value={id}
                 onChange={(e) => setId(e.target.value)}
                 placeholder="ID of the archived copy"

@@ -136,13 +136,15 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const hasSelections = steps.some(({ field }) =>
     isStepSelected(filters, field),
   );
-  const mergedOptions = mergeGuideOptions(
-    allFacetOptions?.[step?.field],
-    getFacetOptions(facets, step?.field),
-    selectedValues,
-    hasSelections,
+  const options = sortGuideOptions(
+    mergeGuideOptions(
+      allFacetOptions?.[step?.field],
+      getFacetOptions(facets, step?.field),
+      selectedValues,
+      hasSelections,
+    ),
+    currentLang,
   );
-  const options = sortGuideOptions(mergedOptions, step?.id, currentLang);
   const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))
@@ -155,12 +157,14 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         (filters || []).find((filter) => filter.field === item.field)?.values ||
         [];
 
-      const resultValues = rawValueAsArray(
-        result[item.field.replace('.keyword', '')],
-      ).map((value) => value?.title || value);
+      const resultValues = new Set(
+        rawValueAsArray(result[item.field.replace('.keyword', '')]).map(
+          (value) => value?.title || value,
+        ),
+      );
 
       return values
-        .filter((value) => resultValues.includes(value))
+        .filter((value) => resultValues.has(value))
         .map((value) => ({
           label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
           type: previewTagTypes[item.id],

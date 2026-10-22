@@ -1,11 +1,6 @@
 import { multiTermFacet } from '@eeacms/search';
 import { defineMessages } from 'react-intl';
-import {
-  cca_adaptation_sectors,
-  cca_climate_impacts,
-  geographic_countries,
-  language,
-} from './../common';
+import { cca_adaptation_sectors, cca_climate_impacts } from './../common';
 
 const messages = defineMessages({
   adaptationSupportCycleStep: {
@@ -17,8 +12,6 @@ const messages = defineMessages({
 const facets = [
   cca_adaptation_sectors,
   cca_climate_impacts,
-  geographic_countries,
-  language,
   multiTermFacet({
     field: 'cca_adaptation_support_cycle_step.keyword',
     filterType: 'all',

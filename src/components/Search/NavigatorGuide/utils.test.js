@@ -1,8 +1,4 @@
-import {
-  mergeGuideOptions,
-  sortAdaptationSteps,
-  sortGuideOptions,
-} from './utils';
+import { mergeGuideOptions, sortGuideOptions } from './utils';
 
 describe('Navigator Guide utilities', () => {
   it('keeps unavailable values and marks them as disabled', () => {
@@ -42,45 +38,18 @@ describe('Navigator Guide utilities', () => {
     ]);
   });
 
-  it('keeps adaptation steps in numeric order regardless of match counts', () => {
+  it('sorts options alphabetically instead of by count', () => {
     const options = [
-      { value: 'Step 10: Review', count: 9 },
-      { value: 'Step 3: Plan', count: 20 },
-      { value: 'Step 1: Prepare', count: 1 },
-      { value: 'Step 2: Assess', count: 5 },
+      { value: 'Water', count: 12 },
+      { value: 'Agriculture', count: 2 },
+      { value: 'Biodiversity', count: 7 },
     ];
 
-    expect(sortAdaptationSteps(options).map(({ value }) => value)).toEqual([
-      'Step 1: Prepare',
-      'Step 2: Assess',
-      'Step 3: Plan',
-      'Step 10: Review',
+    expect(sortGuideOptions(options).map(({ value }) => value)).toEqual([
+      'Agriculture',
+      'Biodiversity',
+      'Water',
     ]);
-    expect(options[0].value).toBe('Step 10: Review');
-  });
-
-  it('sorts regular guide options alphabetically without mutating them', () => {
-    const options = [
-      { value: 'Water', count: 3 },
-      { value: 'Agriculture', count: 8 },
-      { value: 'Biodiversity', count: 5 },
-    ];
-
-    expect(
-      sortGuideOptions(options, 'adaptationSectors').map(({ value }) => value),
-    ).toEqual(['Agriculture', 'Biodiversity', 'Water']);
     expect(options[0].value).toBe('Water');
-  });
-
-  it('uses numeric cycle-step order for the adaptation stage', () => {
-    const options = [
-      { value: 'Step 10: Review', count: 3 },
-      { value: 'Step 2: Assess', count: 8 },
-      { value: 'Step 1: Prepare', count: 5 },
-    ];
-
-    expect(
-      sortGuideOptions(options, 'adaptationStage').map(({ value }) => value),
-    ).toEqual(['Step 1: Prepare', 'Step 2: Assess', 'Step 10: Review']);
   });
 });
