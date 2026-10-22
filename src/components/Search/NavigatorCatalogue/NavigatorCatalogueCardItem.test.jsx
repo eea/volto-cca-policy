@@ -154,13 +154,11 @@ describe('NavigatorCatalogueCardItem', () => {
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
     expect(
-      screen.getByTitle(
-        'Defines the largest geographic extent for which the tool is relevant',
-      ),
-    ).toHaveTextContent('Geographic coverage: Germany, France');
-    expect(screen.getByTitle('Germany, France')).toHaveTextContent(
-      'Germany, France',
-    );
+      screen.getByRole('button', {
+        name: 'Defines the largest geographic extent for which the tool is relevant',
+      }),
+    ).toHaveClass('info-tooltip');
+    expect(screen.getByText('Germany, France')).not.toHaveAttribute('title');
     expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText('compare'));
@@ -203,11 +201,11 @@ describe('NavigatorCatalogueCardItem', () => {
     });
 
     expect(
-      screen.getByTitle(
-        'Defines the largest geographic extent for which the tool is relevant',
-      ),
-    ).toHaveTextContent('Geographic coverage: Europe');
-    expect(screen.getByTitle('Europe')).toHaveTextContent('Europe');
+      screen.getByRole('button', {
+        name: 'Defines the largest geographic extent for which the tool is relevant',
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Europe')).not.toHaveAttribute('title');
   });
 
   it('renders sparse results and disables comparison without a UID', () => {

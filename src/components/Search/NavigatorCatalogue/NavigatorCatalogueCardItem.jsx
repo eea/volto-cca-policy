@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Icon } from 'semantic-ui-react';
+import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
@@ -153,6 +153,9 @@ const NavigatorCatalogueCardItem = (props) => {
   const hazards = rawValueAsArray(result.cca_climate_impacts);
   const keywords = rawValueAsArray(result.cca_keywords);
   const geographicCoverage = getGeographicCoverage(result);
+  const geographicCoverageDescription = intl.formatMessage(
+    messages.geographicCoverageDescription,
+  );
   const toolProvider = result?._result?.tool_provider?.raw;
   const adaptationSupportCycleSteps = rawValueAsArray(
     result.cca_adaptation_support_cycle_step,
@@ -230,14 +233,26 @@ const NavigatorCatalogueCardItem = (props) => {
           </div>
           <div className="catalogue-meta geographic-coverage">
             {geographicCoverage && (
-              <span
-                className="catalogue-geographic-coverage"
-                title={intl.formatMessage(
-                  messages.geographicCoverageDescription,
-                )}
-              >
-                {intl.formatMessage(messages.geographicCoverage)}:{' '}
-                <span title={geographicCoverage}>{geographicCoverage}</span>
+              <span className="catalogue-geographic-coverage">
+                {intl.formatMessage(messages.geographicCoverage)}
+                <Popup
+                  className="compare-criteria-popup"
+                  content={geographicCoverageDescription}
+                  position="top left"
+                  trigger={
+                    <button
+                      type="button"
+                      className="info-tooltip"
+                      aria-label={geographicCoverageDescription}
+                    >
+                      <Icon
+                        className="ri-information-line"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  }
+                />
+                : <span>{geographicCoverage}</span>
               </span>
             )}
           </div>
