@@ -98,6 +98,8 @@ const facets = [
     isMulti: true,
     label: messages.adaptationSupportCycleStep,
     alwaysVisible: false,
+    sortOn: 'value',
+    sortOrder: 'ascending',
   }),
   multiTermFacet({
     field: 'cca_type_of_outputs.keyword',
