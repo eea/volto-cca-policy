@@ -107,7 +107,7 @@ describe('CreateArchivedCopyButton', () => {
 
   it('opens modal when button is clicked', () => {
     const store = makeStore();
-    const { container, getByText } = renderWithProviders(
+    const { container, getByText, getByLabelText } = renderWithProviders(
       <CreateArchivedCopyButton />,
       store,
     );
@@ -115,6 +115,8 @@ describe('CreateArchivedCopyButton', () => {
     expect(getByText('Create an archived copy')).toBeInTheDocument();
     expect(getByText('Cancel')).toBeInTheDocument();
     expect(getByText('Create')).toBeInTheDocument();
+    expect(getByLabelText('Title')).toHaveAttribute('id', 'archived-copy-title');
+    expect(getByLabelText('ID')).toHaveAttribute('id', 'archived-copy-id');
   });
 
   it('closes modal on cancel', () => {
