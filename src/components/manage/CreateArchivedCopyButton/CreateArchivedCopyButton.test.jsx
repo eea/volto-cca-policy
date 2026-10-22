@@ -115,7 +115,10 @@ describe('CreateArchivedCopyButton', () => {
     expect(getByText('Create an archived copy')).toBeInTheDocument();
     expect(getByText('Cancel')).toBeInTheDocument();
     expect(getByText('Create')).toBeInTheDocument();
-    expect(getByLabelText('Title')).toHaveAttribute('id', 'archived-copy-title');
+    expect(getByLabelText('Title')).toHaveAttribute(
+      'id',
+      'archived-copy-title',
+    );
     expect(getByLabelText('ID')).toHaveAttribute('id', 'archived-copy-id');
   });
 
