@@ -11,7 +11,7 @@ import {
   getCompareToolUid,
   useCompareTools,
 } from '../../theme/CompareTools/utils';
-import { rawValueAsArray } from './utils';
+import { formatPublicationDate, rawValueAsArray, valuesAsText } from './utils';
 
 const messages = defineMessages({
   sector: {
@@ -44,33 +44,6 @@ const messages = defineMessages({
     defaultMessage: 'View',
   },
 });
-
-const formatPublicationDate = (value) => {
-  if (!value) return '';
-  const raw =
-    typeof value === 'object' && value !== null && 'raw' in value
-      ? value.raw
-      : value;
-  const val = Array.isArray(raw) ? raw[0] : raw;
-  if (!val || typeof val === 'object') return '';
-  try {
-    const d = new Date(val);
-    if (Number.isNaN(d.getTime())) return '';
-    return String(d.getFullYear());
-  } catch {
-    return '';
-  }
-};
-
-const valuesAsText = (...values) =>
-  [
-    ...new Set(
-      values
-        .flatMap(rawValueAsArray)
-        .map((value) => value?.title || value?.token || value)
-        .filter((value) => typeof value === 'string' && value.trim()),
-    ),
-  ].join(', ');
 
 export const getGeographicCoverage = (result = {}) => {
   const detailedCoverage = valuesAsText(

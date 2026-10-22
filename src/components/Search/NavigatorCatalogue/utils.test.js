@@ -5,11 +5,13 @@ import {
   escapeCsvValue,
   exportComparisonTable,
   formatFunctionalityScore,
+  formatPublicationDate,
   getComparePageURL,
   getEuropeanWideToolsSearchState,
   getEuropeanWideToolsURL,
   getNavigatorCataloguePageURL,
   rawValueAsArray,
+  valuesAsText,
 } from './utils';
 
 describe('Navigator Catalogue utilities', () => {
@@ -56,6 +58,23 @@ describe('Navigator Catalogue utilities', () => {
     expect(asArray({ token: 'TOKEN' })).toEqual(['TOKEN']);
     expect(asArray('Value')).toEqual(['Value']);
     expect(arrayFieldToString({ raw: ['One', 'Two'] })).toBe('One, Two');
+  });
+
+  it('extracts unique text values from metadata fields', () => {
+    expect(
+      valuesAsText(
+        { raw: ['Water', { title: 'Climate' }] },
+        { token: 'Water' },
+        null,
+      ),
+    ).toBe('Water, Climate');
+  });
+
+  it('formats valid publication dates as year strings and invalid dates as empty strings', () => {
+    expect(formatPublicationDate({ raw: ['2026-07-24'] })).toBe('2026');
+    expect(formatPublicationDate('N/A')).toBe('');
+    expect(formatPublicationDate({ raw: { invalid: true } })).toBe('');
+    expect(formatPublicationDate(null)).toBe('');
   });
 
   it('formats functionality scores and clamps invalid ranges', () => {
