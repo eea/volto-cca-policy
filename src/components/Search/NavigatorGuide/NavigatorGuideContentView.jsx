@@ -136,13 +136,15 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const hasSelections = steps.some(({ field }) =>
     isStepSelected(filters, field),
   );
-  const mergedOptions = mergeGuideOptions(
-    allFacetOptions?.[step?.field],
-    getFacetOptions(facets, step?.field),
-    selectedValues,
-    hasSelections,
+  const options = sortGuideOptions(
+    mergeGuideOptions(
+      allFacetOptions?.[step?.field],
+      getFacetOptions(facets, step?.field),
+      selectedValues,
+      hasSelections,
+    ),
+    currentLang,
   );
-  const options = sortGuideOptions(mergedOptions, step?.id, currentLang);
   const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
     .filter(({ field }) => isStepSelected(filters, field))

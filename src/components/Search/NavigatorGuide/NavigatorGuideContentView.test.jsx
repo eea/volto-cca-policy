@@ -164,7 +164,7 @@ describe('NavigatorGuideContentView adaptation steps', () => {
     });
   });
 
-  it('orders steps and requires every selected step', () => {
+  it('orders options alphabetically and requires every selected step', () => {
     const addFilter = jest.fn();
     renderGuide(
       { title: 'Guide tool', href: '/tools/guide-tool' },
