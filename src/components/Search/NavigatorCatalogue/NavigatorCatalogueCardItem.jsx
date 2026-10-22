@@ -56,7 +56,7 @@ const formatPublicationDate = (value) => {
   try {
     const d = new Date(val);
     if (Number.isNaN(d.getTime())) return '';
-    return d.getFullYear();
+    return String(d.getFullYear());
   } catch {
     return '';
   }

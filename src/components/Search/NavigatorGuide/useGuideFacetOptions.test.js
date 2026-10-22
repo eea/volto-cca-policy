@@ -48,11 +48,13 @@ describe('useGuideFacetOptions', () => {
       }),
     );
 
-    const { unmount } = renderHook(() =>
+    const { result, unmount } = renderHook(() =>
       useGuideFacetOptions(appConfig, steps),
     );
     unmount();
     resolveRequest({ sector: ['Energy'] });
     await flushPromises();
+
+    expect(result.current).toEqual({});
   });
 });
