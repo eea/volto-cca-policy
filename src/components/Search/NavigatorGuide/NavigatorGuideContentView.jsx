@@ -3,7 +3,14 @@ import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
-import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
+import {
+  Button,
+  Checkbox,
+  Icon,
+  Loader,
+  Message,
+  Progress,
+} from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext, useSearchDriver } from '@eeacms/search/lib/hocs';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
@@ -352,20 +359,15 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                   </React.Fragment>
                 ))}
               </div>
-              <div
+              <Progress
                 className="navigator-guide-progress-bar"
+                value={activeStep + 1}
+                total={steps.length}
                 role="progressbar"
                 aria-valuemin="1"
                 aria-valuemax={steps.length}
                 aria-valuenow={activeStep + 1}
-              >
-                <div
-                  className="navigator-guide-progress-bar-fill"
-                  style={{
-                    width: `${((activeStep + 1) / steps.length) * 100}%`,
-                  }}
-                />
-              </div>
+              />
               <div className="navigator-guide-step-meta">
                 <span className="navigator-guide-step-number">
                   {intl.formatMessage(messages.stepProgress, {
