@@ -13,6 +13,7 @@ import React, { Fragment } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import {
+  Button,
   Container,
   Divider,
   Grid,
@@ -185,24 +186,11 @@ const PhotoGallery = ({ content }) => {
     setOpen(true);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleTitleClick();
-    }
-  };
-
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
-        <div className="case-study-gallery">
-          <div
-            className="gallery-title"
-            tabIndex={0}
-            role="button"
-            onClick={handleTitleClick}
-            onKeyDown={handleKeyDown}
-          >
+        <div className="db-item-gallery">
+          <Button className="gallery-title" onClick={handleTitleClick}>
             <span>
               <FormattedMessage
                 id="Case Study illustrations"
@@ -211,7 +199,7 @@ const PhotoGallery = ({ content }) => {
             </span>
             <span> ({cca_gallery.length}) </span>
             <Icon className="ri-image-fill" />
-          </div>
+          </Button>
           <ImageGallery
             items={cca_gallery}
             propOpen={open}
