@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Icon } from 'semantic-ui-react';
+import { Button, Card, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Term } from '@eeacms/search/components';
 import { useSearchContext, useViews } from '@eeacms/search/lib/hocs';
@@ -11,6 +11,15 @@ import {
 } from '../../../search/navigator_catalogue/geographicCoverage';
 
 const messages = defineMessages({
+  aboutThisFilter: {
+    id: 'About this filter',
+    defaultMessage: 'About this filter',
+  },
+  geographicCoverageDescription: {
+    id: 'Defines the largest geographic extent for which the tool is relevant',
+    defaultMessage:
+      'Defines the largest geographic extent for which the tool is relevant',
+  },
   noOptionsAvailable: {
     id: 'No options available',
     defaultMessage: 'No options available',
@@ -187,6 +196,9 @@ const NavigatorGeographicCoverageFacet = ({
   const { addFilter, facets, filters = [], removeFilter } = useSearchContext();
   const { activeViewId } = useViews();
   const isMapView = activeViewId === 'map';
+  const geographicCoverageDescription = intl.formatMessage(
+    messages.geographicCoverageDescription,
+  );
   const transnationalOptions = getFacetOptions(
     facets,
     filters,
@@ -224,6 +236,23 @@ const NavigatorGeographicCoverageFacet = ({
     <fieldset
       className={`sui-facet searchlib-multiterm-facet navigator-geographic-facet ${className}`}
     >
+      <div className="navigator-geographic-facet-heading">
+        {/* <span>{intl.formatMessage(messages.aboutThisFilter)}</span> */}
+        <Popup
+          className="compare-criteria-popup navigator-geographic-facet-popup"
+          content={geographicCoverageDescription}
+          position="top left"
+          trigger={
+            <button
+              type="button"
+              className="info-tooltip"
+              aria-label={geographicCoverageDescription}
+            >
+              <Icon className="ri-information-line" aria-hidden="true" />
+            </button>
+          }
+        />
+      </div>
       {!isMapView && (
         <div className="sui-multi-checkbox-facet navigator-geographic-facet-direct-options">
           {options.map((option) => {

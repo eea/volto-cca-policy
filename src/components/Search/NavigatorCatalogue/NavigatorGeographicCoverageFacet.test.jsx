@@ -87,6 +87,12 @@ describe('NavigatorGeographicCoverageFacet', () => {
   it('shows Global and Europe as direct options', () => {
     renderFacet();
 
+    expect(screen.getByText('About this filter')).toBeVisible();
+    expect(
+      screen.getByRole('button', {
+        name: 'Defines the largest geographic extent for which the tool is relevant',
+      }),
+    ).toHaveClass('info-tooltip');
     expect(
       screen
         .getAllByRole('checkbox')
