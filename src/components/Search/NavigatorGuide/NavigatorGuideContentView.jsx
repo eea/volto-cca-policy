@@ -21,7 +21,7 @@ import { CHARACTERISATION_FIELD } from '../../../search/navigator_catalogue/geog
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions, sortGuideOptions } from './utils';
 import { rawValueAsArray } from '../NavigatorCatalogue/utils';
-import NavigatorCataloguePageActions from '../NavigatorCatalogue/NavigatorCataloguePageActions';
+import { NavigatorCataloguePageActions } from '@eeacms/volto-cca-policy/components';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 
