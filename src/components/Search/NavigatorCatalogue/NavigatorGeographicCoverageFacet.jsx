@@ -11,10 +11,6 @@ import {
 } from '../../../search/navigator_catalogue/geographicCoverage';
 
 const messages = defineMessages({
-  aboutThisFilter: {
-    id: 'About this filter',
-    defaultMessage: 'About this filter',
-  },
   geographicCoverageDescription: {
     id: 'Defines the largest geographic extent for which the tool is relevant',
     defaultMessage:
@@ -237,7 +233,6 @@ const NavigatorGeographicCoverageFacet = ({
       className={`sui-facet searchlib-multiterm-facet navigator-geographic-facet ${className}`}
     >
       <div className="navigator-geographic-facet-heading">
-        {/* <span>{intl.formatMessage(messages.aboutThisFilter)}</span> */}
         <Popup
           className="compare-criteria-popup navigator-geographic-facet-popup"
           content={geographicCoverageDescription}
