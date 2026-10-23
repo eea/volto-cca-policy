@@ -21,6 +21,7 @@ import { CHARACTERISATION_FIELD } from '../../../search/navigator_catalogue/geog
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions, sortGuideOptions } from './utils';
 import { rawValueAsArray } from '../NavigatorCatalogue/utils';
+import NavigatorCataloguePageActions from '../NavigatorCatalogue/NavigatorCataloguePageActions';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
 
@@ -315,7 +316,8 @@ const NavigatorGuideContentView = ({ appConfig }) => {
 
   return (
     <div className="navigator-guide-search">
-      <header className="navigator-guide-header">
+      <NavigatorCataloguePageActions />
+      <div className="navigator-guide-header">
         <div className="navigator-guide-eyebrow">
           {intl.formatMessage(messages.guideMe)}
         </div>
@@ -325,7 +327,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
         <p>
           {appConfig.subheadline || intl.formatMessage(messages.introduction)}
         </p>
-      </header>
+      </div>
 
       <div className="navigator-guide-layout">
         <section className="navigator-guide-wizard">

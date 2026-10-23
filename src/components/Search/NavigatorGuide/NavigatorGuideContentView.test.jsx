@@ -23,6 +23,9 @@ jest.mock('./useGuideFacetOptions', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
+jest.mock('../NavigatorCatalogue/NavigatorCataloguePageActions', () => () => (
+  <div className="navigator-catalogue-page-actions" />
+));
 
 const renderGuide = (result, searchContext = {}, appConfig = {}) => {
   useSearchContext.mockReturnValue({
@@ -90,6 +93,19 @@ describe('NavigatorGuideContentView thumbnails', () => {
 
     expect(thumbnail.querySelector('svg')).not.toBeInTheDocument();
     expect(thumbnail.querySelector('.ri-stack-line')).toBeInTheDocument();
+  });
+
+  it('shows the shared page actions above the guide header', () => {
+    const { container } = renderGuide({
+      title: 'Guide tool',
+      href: '/tools/guide-tool',
+    });
+    const actions = container.querySelector(
+      '.navigator-catalogue-page-actions',
+    );
+
+    expect(actions).toBeInTheDocument();
+    expect(actions.nextElementSibling).toHaveClass('navigator-guide-header');
   });
 
   it('hides any steps listed in the configuration', () => {
