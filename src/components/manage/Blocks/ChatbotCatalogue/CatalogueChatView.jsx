@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChatWindow } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
-import { NavigatorCataloguePageActions } from '@eeacms/volto-cca-policy/components';
+import NavigatorCataloguePageActions from '../../../Search/NavigatorCatalogue/NavigatorCataloguePageActions';
 
 import { CcaDocCard } from './DocumentCard';
 import { remarkCcaDocCards } from './docCards';

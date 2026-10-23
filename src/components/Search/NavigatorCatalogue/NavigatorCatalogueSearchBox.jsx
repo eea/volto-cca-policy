@@ -1,5 +1,5 @@
 import SearchBoxView from '@eeacms/search/components/SearchBox/SearchBoxView';
-import { NavigatorCataloguePageActions } from '@eeacms/volto-cca-policy/components';
+import NavigatorCataloguePageActions from './NavigatorCataloguePageActions';
 
 const NavigatorCatalogueSearchBox = (props) => (
   <>

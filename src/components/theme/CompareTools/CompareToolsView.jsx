@@ -19,7 +19,7 @@ import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
-import { NavigatorCataloguePageActions } from '@eeacms/volto-cca-policy/components';
+import NavigatorCataloguePageActions from '../../Search/NavigatorCatalogue/NavigatorCataloguePageActions';
 
 import {
   MAX_COMPARE_TOOLS,
