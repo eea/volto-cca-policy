@@ -3,11 +3,21 @@ import { useAtom } from 'jotai';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
-import { Button, Checkbox, Icon, Loader, Message } from 'semantic-ui-react';
+import {
+  Button,
+  Checkbox,
+  Icon,
+  Loader,
+  Message,
+  Progress,
+} from 'semantic-ui-react';
 import URLManager from '@elastic/search-ui/lib/cjs/URLManager';
 import { useSearchContext, useSearchDriver } from '@eeacms/search/lib/hocs';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
-import guideSteps from '../../../search/navigator_guide/guideSteps';
+import guideSteps, {
+  getGuideStepFields,
+} from '../../../search/navigator_guide/guideSteps';
+import { CHARACTERISATION_FIELD } from '../../../search/navigator_catalogue/geographicCoverage';
 import { navigatorGuideStepAtom } from '../../../state';
 import { mergeGuideOptions, sortGuideOptions } from './utils';
 import { rawValueAsArray } from '../NavigatorCatalogue/utils';
@@ -89,16 +99,21 @@ const getFacetOptions = (facets, field) =>
     count,
   }));
 
-const isStepSelected = (filters, field) =>
-  (filters || []).some(
-    (filter) => filter.field === field && filter.values?.length,
+const getSelectedValues = (filters, field) =>
+  (filters || []).find((filter) => filter.field === field)?.values || [];
+
+const isStepSelected = (filters, step) =>
+  getGuideStepFields(step).some((field) =>
+    (filters || []).some(
+      (filter) => filter.field === field && filter.values?.length,
+    ),
   );
 
 const previewTagTypes = {
   adaptationSectors: 'sector',
   climateHazards: 'hazard',
+  geographicCoverage: 'coverage',
   adaptationStage: 'adaptation-stage',
-  coverage: 'coverage',
 };
 
 const NavigatorGuideContentView = ({ appConfig }) => {
@@ -120,7 +135,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     totalResults,
   } = searchContext;
   const defaultSortApplied = React.useRef(false);
-  const steps = guideSteps;
+  const steps = guideSteps.filter(
+    ({ id }) => !appConfig.hiddenSteps?.includes(id),
+  );
   const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
@@ -130,12 +147,8 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       ? storedActiveStep
       : 0;
   const step = steps[activeStep];
-  const selectedValues =
-    (filters || []).find((filter) => filter.field === step?.field)?.values ||
-    [];
-  const hasSelections = steps.some(({ field }) =>
-    isStepSelected(filters, field),
-  );
+  const selectedValues = getSelectedValues(filters, step?.field);
+  const hasSelections = steps.some((item) => isStepSelected(filters, item));
   const options = sortGuideOptions(
     mergeGuideOptions(
       allFacetOptions?.[step?.field],
@@ -147,28 +160,35 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   );
   const isLastStep = activeStep === steps.length - 1;
   const selectedStepLabels = steps
-    .filter(({ field }) => isStepSelected(filters, field))
+    .filter((item) => isStepSelected(filters, item))
     .map(({ label }) =>
       intl.formatMessage(label).toLocaleLowerCase(currentLang),
     );
   const selectedPreviewTags = (result) =>
     steps.flatMap((item) => {
-      const values =
-        (filters || []).find((filter) => filter.field === item.field)?.values ||
-        [];
+      return getGuideStepFields(item).flatMap((field) => {
+        const values = getSelectedValues(filters, field);
+        const resultValues = new Set(
+          rawValueAsArray(result[field.replace('.keyword', '')]).map(
+            (value) => value?.title || value,
+          ),
+        );
 
-      const resultValues = new Set(
-        rawValueAsArray(result[item.field.replace('.keyword', '')]).map(
-          (value) => value?.title || value,
-        ),
-      );
-
-      return values
-        .filter((value) => resultValues.has(value))
-        .map((value) => ({
-          label: item.id === 'adaptationStage' ? value.split(':')[0] : value,
-          type: previewTagTypes[item.id],
-        }));
+        return values
+          .filter(
+            (value) =>
+              field === CHARACTERISATION_FIELD || resultValues.has(value),
+          )
+          .map((value) => ({
+            label:
+              item.id === 'adaptationStage'
+                ? value.split(':')[0]
+                : value === 'Others'
+                  ? 'Other'
+                  : value,
+            type: previewTagTypes[item.id],
+          }));
+      });
     });
 
   React.useEffect(() => {
@@ -202,10 +222,83 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     }
   };
 
+  const getGroupedSelectedValues = (group) => {
+    const values = getSelectedValues(filters, group.field);
+    const fixedOptionValues = (group.options || []).map(({ value }) => value);
+
+    return fixedOptionValues.length
+      ? values.filter((value) => fixedOptionValues.includes(value))
+      : values;
+  };
+
+  const activeGroupId = step.groups?.find(
+    (group) => getGroupedSelectedValues(group).length > 0,
+  )?.id;
+
+  const getGroupedOptions = (group) => {
+    const groupSelectedValues = getGroupedSelectedValues(group);
+    const fixedOptions = group.options || [];
+    const fixedOptionValues = fixedOptions.map(({ value }) => value);
+    const availableValues = fixedOptions.length
+      ? fixedOptionValues
+      : allFacetOptions?.[group.field];
+    const groupOptions = mergeGuideOptions(
+      availableValues,
+      getFacetOptions(facets, group.field),
+      groupSelectedValues.filter(
+        (value) => !fixedOptions.length || fixedOptionValues.includes(value),
+      ),
+      hasSelections,
+    );
+    const filteredOptions = fixedOptions.length
+      ? groupOptions.filter(({ value }) => fixedOptionValues.includes(value))
+      : groupOptions;
+    const labels = new Map(
+      fixedOptions.map(({ label, value }) => [value, label || value]),
+    );
+
+    return sortGuideOptions(filteredOptions, currentLang).map((option) => ({
+      ...option,
+      label: labels.get(option.value) || option.value,
+      disabled:
+        option.disabled || (activeGroupId && activeGroupId !== group.id),
+    }));
+  };
+
+  const toggleGroupedValue = (group, value) => {
+    const groupSelectedValues = getSelectedValues(filters, group.field);
+
+    if (groupSelectedValues.includes(value)) {
+      removeFilter(group.field, value, group.filterType);
+      return;
+    }
+
+    const clearedFields = new Set();
+    step.groups.forEach((otherGroup) => {
+      if (otherGroup.id === group.id) return;
+
+      if (otherGroup.field !== group.field) {
+        if (!clearedFields.has(otherGroup.field)) {
+          removeFilter(otherGroup.field, null, otherGroup.filterType);
+          clearedFields.add(otherGroup.field);
+        }
+        return;
+      }
+
+      (otherGroup.options || []).forEach((option) => {
+        if (groupSelectedValues.includes(option.value)) {
+          removeFilter(group.field, option.value, group.filterType);
+        }
+      });
+    });
+
+    addFilter(group.field, value, group.filterType);
+  };
+
   const showResults = () => {
     const allowedFields = new Set([
       'language',
-      ...steps.map(({ field }) => field),
+      ...steps.flatMap((item) => getGuideStepFields(item)),
     ]);
     const resultFilters = (filters || []).filter(({ field }) =>
       allowedFields.has(field),
@@ -249,7 +342,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       onClick={() => setActiveStep(index)}
                     >
                       <span>
-                        {isStepSelected(filters, item.field) ? (
+                        {isStepSelected(filters, item) ? (
                           <Icon className="ri-check-line" />
                         ) : (
                           index + 1
@@ -268,20 +361,15 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                   </React.Fragment>
                 ))}
               </div>
-              <div
+              <Progress
                 className="navigator-guide-progress-bar"
+                value={activeStep + 1}
+                total={steps.length}
                 role="progressbar"
                 aria-valuemin="1"
                 aria-valuemax={steps.length}
                 aria-valuenow={activeStep + 1}
-              >
-                <div
-                  className="navigator-guide-progress-bar-fill"
-                  style={{
-                    width: `${((activeStep + 1) / steps.length) * 100}%`,
-                  }}
-                />
-              </div>
+              />
               <div className="navigator-guide-step-meta">
                 <span className="navigator-guide-step-number">
                   {intl.formatMessage(messages.stepProgress, {
@@ -289,7 +377,11 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                     total: steps.length,
                   })}
                 </span>
-                <span>{intl.formatMessage(messages.selectAllThatApply)}</span>
+                <span>
+                  {intl.formatMessage(
+                    step.selectionHint || messages.selectAllThatApply,
+                  )}
+                </span>
               </div>
             </div>
 
@@ -299,6 +391,63 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             {isLoading ? (
               <div className="navigator-guide-options-loading">
                 <Loader active inline />
+              </div>
+            ) : step.groups?.length ? (
+              <div className="navigator-guide-option-groups">
+                {step.groups.map((group) => {
+                  const groupOptions = getGroupedOptions(group);
+                  const groupSelectedValues = getGroupedSelectedValues(group);
+
+                  return (
+                    <fieldset
+                      className="navigator-guide-option-group"
+                      key={group.id}
+                      aria-label={intl.formatMessage(group.label)}
+                    >
+                      {!group.hideLabel && (
+                        <h5 className="navigator-guide-option-group-title">
+                          {intl.formatMessage(group.label)}
+                        </h5>
+                      )}
+                      {group.description && (
+                        <p className="navigator-guide-option-group-description">
+                          {intl.formatMessage(group.description)}
+                        </p>
+                      )}
+                      {groupOptions.length > 0 ? (
+                        <div className="navigator-guide-group-options">
+                          {groupOptions.map((option) => (
+                            <label
+                              key={option.value}
+                              className={`navigator-guide-option${
+                                groupSelectedValues.includes(option.value)
+                                  ? ' selected'
+                                  : ''
+                              }${option.disabled ? ' disabled' : ''}`}
+                              aria-disabled={option.disabled || undefined}
+                            >
+                              <Checkbox
+                                checked={groupSelectedValues.includes(
+                                  option.value,
+                                )}
+                                disabled={option.disabled}
+                                onChange={() =>
+                                  toggleGroupedValue(group, option.value)
+                                }
+                              />
+                              <span>{option.label}</span>
+                              <small>{option.count}</small>
+                            </label>
+                          ))}
+                        </div>
+                      ) : (
+                        <Message>
+                          {intl.formatMessage(messages.noOptions)}
+                        </Message>
+                      )}
+                    </fieldset>
+                  );
+                })}
               </div>
             ) : options.length > 0 ? (
               <div className="navigator-guide-options">

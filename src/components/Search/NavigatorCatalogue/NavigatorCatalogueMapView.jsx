@@ -26,12 +26,13 @@ import {
   buildCountryCounts,
   clearMapIncompatibleGeographicFilters,
   filterCountryCounts,
-  getEuropeanWideToolsSearchState,
-  getEuropeanWideToolsURL,
+  getGeographicToolsSearchState,
+  getGeographicToolsURL,
   hasMapIncompatibleGeographicSelection,
   mapLegendItems,
   setCountryFilter,
 } from './utils';
+import { GEOGRAPHIC_SCOPE_VALUES } from '../../../search/navigator_catalogue/geographicCoverage';
 import NavigatorCatalogueMapState from './NavigatorCatalogueMapState';
 
 const messages = defineMessages({
@@ -52,6 +53,18 @@ const messages = defineMessages({
     id: 'European-wide tools',
     defaultMessage: 'European-wide tools',
   },
+  globalTools: {
+    id: 'Global tools',
+    defaultMessage: 'Global tools',
+  },
+  transnationalRegions: {
+    id: 'Transnational regions',
+    defaultMessage: 'Transnational regions',
+  },
+  others: {
+    id: 'Others',
+    defaultMessage: 'Others',
+  },
   fourOrMore: {
     id: '4 or more',
     defaultMessage: '4 or more',
@@ -61,6 +74,68 @@ const messages = defineMessages({
     defaultMessage: 'Close',
   },
 });
+
+const geographicToolGroups = [
+  {
+    scope: GEOGRAPHIC_SCOPE_VALUES.europe,
+    message: messages.europeanWideTools,
+  },
+  {
+    scope: GEOGRAPHIC_SCOPE_VALUES.global,
+    message: messages.globalTools,
+  },
+  {
+    scope: GEOGRAPHIC_SCOPE_VALUES.transnational,
+    message: messages.transnationalRegions,
+  },
+  {
+    scope: GEOGRAPHIC_SCOPE_VALUES.others,
+    message: messages.others,
+  },
+];
+
+const NavigatorCatalogueGeographicTools = () => {
+  const intl = useIntl();
+  const currentLang = useSelector((state) => state.intl.locale || 'en');
+  const searchContext = useSearchContext();
+  const views = useViews();
+
+  const handleGeographicTools = React.useCallback(
+    (scope) => {
+      views.setActiveViewId('listing');
+      searchContext.resetSearch({
+        ...getGeographicToolsSearchState(
+          scope,
+          currentLang,
+          searchContext.filters,
+        ),
+        resultsPerPage: searchContext.resultsPerPage,
+      });
+    },
+    [currentLang, searchContext, views],
+  );
+
+  return (
+    <div className="geographic-tools-buttons">
+      {geographicToolGroups.map(({ scope, message }) => (
+        <Button
+          key={scope}
+          primary
+          inverted
+          icon
+          labelPosition="right"
+          as={Link}
+          to={getGeographicToolsURL(scope, currentLang, searchContext.filters)}
+          className="geographic-tools-button"
+          onClick={() => handleGeographicTools(scope)}
+        >
+          {intl.formatMessage(message)}
+          <Icon className="ri-arrow-right-line" />
+        </Button>
+      ))}
+    </div>
+  );
+};
 
 /* istanbul ignore next */
 const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
@@ -156,9 +231,8 @@ const CountryClickInteractions = ({ ol, countryCounts, onExploreTools }) => {
 
 /* istanbul ignore next */
 const NavigatorCatalogueCountryMap = (props) => {
-  const { geofeatures, projection, ol } = props;
+  const { geofeatures, isMapDisabled, ol, onClear, projection } = props;
   const intl = useIntl();
-  const currentLang = useSelector((state) => state.intl.locale || 'en');
   const searchContext = useSearchContext();
   const views = useViews();
 
@@ -171,14 +245,6 @@ const NavigatorCatalogueCountryMap = (props) => {
     },
     [searchContext, views],
   );
-
-  const handleEuropeanWideTools = React.useCallback(() => {
-    views.setActiveViewId('listing');
-    searchContext.resetSearch({
-      ...getEuropeanWideToolsSearchState(currentLang, searchContext.filters),
-      resultsPerPage: searchContext.resultsPerPage,
-    });
-  }, [currentLang, searchContext, views]);
 
   // Build lookup: countryName -> count
   const countryCounts = React.useMemo(
@@ -250,62 +316,71 @@ const NavigatorCatalogueCountryMap = (props) => {
 
   return (
     <div className="navigator-catalogue-map">
-      <div className="navigator-catalogue-map-canvas">
-        <Map
-          view={{
-            center: ol.proj.fromLonLat([14.5, 57], projection),
-            projection,
-            showFullExtent: true,
-            zoom: 3.6,
-          }}
-          pixelRatio={1}
-        >
-          <Controls attribution={false} />
-          <Layers>
-            <CountryClickInteractions
-              ol={ol}
-              countryCounts={countryCounts}
-              onExploreTools={handleExploreTools}
-            />
-            <Layer.Vector source={euCountriesSource} zIndex={2} />
-            <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
-          </Layers>
-        </Map>
-      </div>
-
-      <aside
-        className="navigator-catalogue-map-legend"
-        aria-label={intl.formatMessage(messages.toolsPerCountry)}
+      <NavigatorCatalogueMapState
+        isMapDisabled={isMapDisabled}
+        onClear={onClear}
       >
-        <Button
-          primary
-          inverted
-          icon
-          labelPosition="right"
-          as={Link}
-          to={getEuropeanWideToolsURL(currentLang, searchContext.filters)}
-          className="european-wide-tools-button"
-          onClick={handleEuropeanWideTools}
+        <div className="navigator-catalogue-map-canvas">
+          <Map
+            view={{
+              center: ol.proj.fromLonLat([14.5, 57], projection),
+              projection,
+              showFullExtent: true,
+              zoom: 3.6,
+            }}
+            pixelRatio={1}
+          >
+            <Controls attribution={false} />
+            <Layers>
+              <CountryClickInteractions
+                ol={ol}
+                countryCounts={countryCounts}
+                onExploreTools={handleExploreTools}
+              />
+              <Layer.Vector source={euCountriesSource} zIndex={2} />
+              <Layer.Tile source={tileWMSSources[0]} zIndex={0} />
+            </Layers>
+          </Map>
+        </div>
+      </NavigatorCatalogueMapState>
+
+      <aside className="navigator-catalogue-map-sidebar">
+        <NavigatorCatalogueGeographicTools />
+        <div
+          className={`navigator-catalogue-map-legend-state${
+            isMapDisabled ? ' is-disabled' : ''
+          }`}
         >
-          {intl.formatMessage(messages.europeanWideTools)}
-          <Icon className="ri-arrow-right-line" />
-        </Button>
-        <h4 className="legend-title">
-          {intl.formatMessage(messages.toolsPerCountry)}:
-        </h4>
-        {mapLegendItems.map((item) => (
-          <div key={item.label} className="legend-item">
-            <span
-              className="legend-color"
-              style={{ '--legend-color': item.color }}
-            />
-            <span>
-              {item.messageKey
-                ? intl.formatMessage(messages[item.messageKey])
-                : item.label}
-            </span>
+          <div
+            className="navigator-catalogue-map-legend"
+            aria-label={intl.formatMessage(messages.toolsPerCountry)}
+            aria-hidden={isMapDisabled || undefined}
+            inert={isMapDisabled ? '' : undefined}
+          >
+            <h4 className="legend-title">
+              {intl.formatMessage(messages.toolsPerCountry)}:
+            </h4>
+            {mapLegendItems.map((item) => (
+              <div key={item.label} className="legend-item">
+                <span
+                  className="legend-color"
+                  style={{ '--legend-color': item.color }}
+                />
+                <span>
+                  {item.messageKey
+                    ? intl.formatMessage(messages[item.messageKey])
+                    : item.label}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
+          {isMapDisabled && (
+            <div
+              className="navigator-catalogue-map-legend-overlay"
+              aria-hidden="true"
+            />
+          )}
+        </div>
       </aside>
     </div>
   );
@@ -318,12 +393,11 @@ const NavigatorCatalogueMapViewInner = (props) => {
   );
 
   return (
-    <NavigatorCatalogueMapState
+    <NavigatorCatalogueCountryMap
+      {...props}
       isMapDisabled={isMapDisabled}
       onClear={() => clearMapIncompatibleGeographicFilters(searchContext)}
-    >
-      <NavigatorCatalogueCountryMap {...props} />
-    </NavigatorCatalogueMapState>
+    />
   );
 };
 

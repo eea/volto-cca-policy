@@ -35,6 +35,11 @@ describe('NavigatorCatalogueMapState', () => {
     expect(
       screen.getByText('Select a country to explore the map'),
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'Clear other geographic coverage filters to enable the map.',
+      ),
+    ).toBeInTheDocument();
 
     fireEvent.click(
       screen.getByRole('button', {

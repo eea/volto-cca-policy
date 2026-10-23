@@ -206,12 +206,12 @@ describe('hasMapIncompatibleGeographicSelection', () => {
     ).toBe(false);
   });
 
-  it('rejects Global, Europe, and transnational selections', () => {
+  it('rejects broad, other, and transnational selections', () => {
     expect(
       hasMapIncompatibleGeographicSelection([
         {
           field: 'cca_navigator_geographic_scope',
-          values: ['Global', 'Europe'],
+          values: ['Global', 'Europe', 'Transnational regions', 'Others'],
           type: 'any',
         },
         {

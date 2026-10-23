@@ -9,6 +9,8 @@ import {
   getComparePageURL,
   getEuropeanWideToolsSearchState,
   getEuropeanWideToolsURL,
+  getGeographicToolsSearchState,
+  getGeographicToolsURL,
   getNavigatorCataloguePageURL,
   rawValueAsArray,
   valuesAsText,
@@ -152,6 +154,28 @@ describe('Navigator Catalogue utilities', () => {
       sortList: null,
     });
   });
+
+  it.each(['Global', 'Transnational regions', 'Others'])(
+    'builds search state and URL for %s tools',
+    (scope) => {
+      const state = getGeographicToolsSearchState(scope, 'fr');
+      const url = new URL(
+        getGeographicToolsURL(scope, 'fr'),
+        'https://example.com',
+      );
+
+      expect(state.filters).toEqual([
+        { field: 'language', type: 'any', values: ['fr'] },
+        {
+          field: 'cca_navigator_geographic_scope',
+          type: 'any',
+          values: [scope],
+        },
+      ]);
+      expect(url.pathname).toBe('/fr/navigator/tool-catalogue');
+      expect(url.searchParams.get('filters[1][values][0]')).toBe(scope);
+    },
+  );
 
   it('preserves non-geographic filters for European-wide tools', () => {
     const currentFilters = [

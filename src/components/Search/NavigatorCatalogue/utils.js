@@ -1,4 +1,8 @@
 import { addFilterParams } from '@eeacms/volto-cca-policy/search/queryUtils';
+import {
+  CHARACTERISATION_FIELD,
+  GEOGRAPHIC_SCOPE_VALUES,
+} from '../../../search/navigator_catalogue/geographicCoverage';
 
 /**
  * Color scale for tool counts (EEA green tones)
@@ -186,20 +190,21 @@ export const getNavigatorCataloguePageURL = (currentLang = 'en') => {
   return `/${lang}/navigator/tool-catalogue`;
 };
 
-const europeanWideReplacedFilterFields = new Set([
+const geographicToolsReplacedFilterFields = new Set([
   'language',
-  'cca_navigator_geographic_scope',
+  CHARACTERISATION_FIELD,
   'cca_geographic_transnational_region.keyword',
   'cca_geographic_countries.keyword',
 ]);
 
-export const getEuropeanWideToolsSearchState = (
+export const getGeographicToolsSearchState = (
+  scope,
   currentLang = 'en',
   currentFilters = [],
 ) => {
   const lang = currentLang || 'en';
   const preservedFilters = (currentFilters || []).filter(
-    ({ field }) => !europeanWideReplacedFilterFields.has(field),
+    ({ field }) => !geographicToolsReplacedFilterFields.has(field),
   );
 
   return {
@@ -208,9 +213,9 @@ export const getEuropeanWideToolsSearchState = (
       { field: 'language', type: 'any', values: [lang] },
       ...preservedFilters,
       {
-        field: 'cca_navigator_geographic_scope',
+        field: CHARACTERISATION_FIELD,
         type: 'any',
-        values: ['Europe'],
+        values: [scope],
       },
     ],
     searchTerm: '',
@@ -220,12 +225,14 @@ export const getEuropeanWideToolsSearchState = (
   };
 };
 
-export const getEuropeanWideToolsURL = (
+export const getGeographicToolsURL = (
+  scope,
   currentLang = 'en',
   currentFilters = [],
 ) => {
   const lang = currentLang || 'en';
-  const { filters, sortDirection, sortField } = getEuropeanWideToolsSearchState(
+  const { filters, sortDirection, sortField } = getGeographicToolsSearchState(
+    scope,
     lang,
     currentFilters,
   );
@@ -238,6 +245,26 @@ export const getEuropeanWideToolsURL = (
 
   return `${getNavigatorCataloguePageURL(lang)}?${params.toString()}`;
 };
+
+export const getEuropeanWideToolsSearchState = (
+  currentLang = 'en',
+  currentFilters = [],
+) =>
+  getGeographicToolsSearchState(
+    GEOGRAPHIC_SCOPE_VALUES.europe,
+    currentLang,
+    currentFilters,
+  );
+
+export const getEuropeanWideToolsURL = (
+  currentLang = 'en',
+  currentFilters = [],
+) =>
+  getGeographicToolsURL(
+    GEOGRAPHIC_SCOPE_VALUES.europe,
+    currentLang,
+    currentFilters,
+  );
 
 export const getComparePageURL = (currentLang = 'en') => {
   const lang = currentLang || 'en';
