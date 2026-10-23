@@ -479,9 +479,7 @@ const CompareToolsView = () => {
               count: visibleToolsCount,
             })}
           </h3>
-
           <div className="compare-page-header-actions">
-            <NavigatorCataloguePageActions />
             <div className="compare-page-actions">
               <Button onClick={() => history.push(backURL)}>
                 <Icon className="ri-arrow-left-line" />
@@ -502,6 +500,7 @@ const CompareToolsView = () => {
                 {intl.formatMessage(messages.exportTable)}
               </Button>
             </div>
+            <NavigatorCataloguePageActions />
           </div>
         </div>
 
