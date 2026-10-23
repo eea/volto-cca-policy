@@ -131,6 +131,16 @@
 
 .navigator-geographic-facet {
   min-width: 18rem;
+  margin-top: -11px; // for info icon position
+
+  .navigator-geographic-facet-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: @secondaryColor;
+    font-weight: 700;
+    gap: 0.2rem;
+  }
 
   .navigator-geographic-facet-group {
     border-top: 1px solid @navigatorBorderColor;
@@ -380,6 +390,10 @@
       color: @secondaryColor;
     }
   }
+}
+
+.ui.popup.navigator-geographic-facet-popup {
+  z-index: 100000 !important;
 }
 
 .navigator-catalogue-compare-view {

@@ -154,10 +154,8 @@ describe('NavigatorCatalogueCardItem', () => {
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
     expect(
-      screen.getByRole('button', {
-        name: 'Defines the largest geographic extent for which the tool is relevant',
-      }),
-    ).toHaveClass('info-tooltip');
+      screen.queryByRole('button', { name: /largest geographic extent/ }),
+    ).not.toBeInTheDocument();
     expect(screen.getByText('Germany, France')).not.toHaveAttribute('title');
     expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
@@ -201,10 +199,8 @@ describe('NavigatorCatalogueCardItem', () => {
     });
 
     expect(
-      screen.getByRole('button', {
-        name: 'Defines the largest geographic extent for which the tool is relevant',
-      }),
-    ).toBeInTheDocument();
+      screen.queryByRole('button', { name: /largest geographic extent/ }),
+    ).not.toBeInTheDocument();
     expect(screen.getByText('Europe')).not.toHaveAttribute('title');
   });
 
