@@ -84,6 +84,7 @@ export default function installNavigatorCatalogueSearch(config) {
   navigatorCatalogueSearch.views = views;
   navigatorCatalogueSearch.contentBodyComponent =
     'NavigatorCatalogueContentView';
+  navigatorCatalogueSearch.searchBoxComponent = 'NavigatorCatalogueSearchBox';
 
   if (typeof window !== 'undefined') {
     config.searchui.navigatorCatalogueSearch.host =
