@@ -22,6 +22,7 @@ msgid "A background document for the event is available"
 msgstr "Az esemény háttérdokumentuma elérhető"
 
 #. Default: "About"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
 msgstr "Ról ről"
@@ -276,6 +277,11 @@ msgstr "Válasszon régiót"
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 msgstr ""
 
+#. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
+#: search/navigator_guide/guideSteps
+msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -410,6 +416,7 @@ msgstr "Költségek és előnyök"
 #: search/common
 #: search/mission_all/facets-all
 #: search/mission_funding/facets-funding
+#: search/navigator_guide/guideSteps
 msgid "Countries"
 msgstr "Országok"
 
@@ -460,7 +467,7 @@ msgid "Date of release:"
 msgstr "Megjelenés dátuma:"
 
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
 msgstr ""
 
@@ -555,6 +562,11 @@ msgstr "Gazdaság és pénzügyek"
 msgid "Eligible to receive funding"
 msgstr "Támogatásra jogosult"
 
+#. Default: "European-wide and global"
+#: search/navigator_guide/guideSteps
+msgid "European-wide and global"
+msgstr ""
+
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
@@ -588,6 +600,11 @@ msgstr ""
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
+msgstr ""
+
+#. Default: "FAQ"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
+msgid "FAQ"
 msgstr ""
 
 #. Default: "Financing incentive instruments"
@@ -646,6 +663,7 @@ msgstr "Földrajzi jellemzés:"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
 msgstr ""
 
@@ -658,6 +676,11 @@ msgstr "Földrajzi lépték"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Kezdő lépések"
+
+#. Default: "Global tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Global tools"
+msgstr ""
 
 #. Default: "Go to advanced search"
 #: index
@@ -1137,10 +1160,20 @@ msgstr "Szervezeti dokumentumok"
 msgid "Organised by EEA"
 msgstr "Az EEA szervezésében"
 
+#. Default: "Other"
+#: search/navigator_guide/guideSteps
+msgid "Other"
+msgstr ""
+
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
 msgstr "Más régiók"
+
+#. Default: "Other tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Other tools"
+msgstr ""
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
@@ -1609,8 +1642,14 @@ msgstr "Témák:"
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
 msgid "Transnational regions"
 msgstr "Transznacionális régiók"
+
+#. Default: "Transnational tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Transnational tools"
+msgstr ""
 
 #. Default: "Type of item"
 #: search/common
@@ -1754,6 +1793,11 @@ msgstr "Ahol"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
+msgstr ""
+
+#. Default: "Which geographic coverage do you need?"
+#: search/navigator_guide/guideSteps
+msgid "Which geographic coverage do you need?"
 msgstr ""
 
 #. Default: "Which spatial coverage do you need?"

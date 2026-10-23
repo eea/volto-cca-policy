@@ -55,6 +55,7 @@ import ClusterHorizontalCardItem from './components/Search/Result/ClusterHorizon
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
+import NavigatorCatalogueSearchBox from './components/Search/NavigatorCatalogue/NavigatorCatalogueSearchBox';
 import NavigatorGeographicCoverageFacet from './components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet';
 import NavigatorGuideLayout from './components/Search/NavigatorGuide/NavigatorGuideLayout';
 import NavigatorGuideContentView from './components/Search/NavigatorGuide/NavigatorGuideContentView';
@@ -436,6 +437,9 @@ const applyConfig = (config) => {
   };
   config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
     component: NavigatorCatalogueContentView,
+  };
+  config.settings.searchlib.resolve.NavigatorCatalogueSearchBox = {
+    component: NavigatorCatalogueSearchBox,
   };
   config.settings.searchlib.resolve.NavigatorGeographicCoverageFacet = {
     ...config.settings.searchlib.resolve.MultiTermFacet,
