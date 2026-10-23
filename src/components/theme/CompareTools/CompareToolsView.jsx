@@ -19,6 +19,8 @@ import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import BannerTitle from '../BannerTitle/BannerTitle';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
+import { NavigatorCataloguePageActions } from '@eeacms/volto-cca-policy/components';
+
 import {
   MAX_COMPARE_TOOLS,
   compareToolsAtom,
@@ -478,25 +480,28 @@ const CompareToolsView = () => {
             })}
           </h3>
 
-          <div className="compare-page-actions">
-            <Button onClick={() => history.push(backURL)}>
-              <Icon className="ri-arrow-left-line" />
-              {intl.formatMessage(messages.backToResults)}
-            </Button>
+          <div className="compare-page-header-actions">
+            <NavigatorCataloguePageActions />
+            <div className="compare-page-actions">
+              <Button onClick={() => history.push(backURL)}>
+                <Icon className="ri-arrow-left-line" />
+                {intl.formatMessage(messages.backToResults)}
+              </Button>
 
-            <Button
-              className="primary inverted"
-              disabled={!hasEnoughTools}
-              onClick={() =>
-                exportComparisonTable(
-                  getExportTools(visibleTools),
-                  getToolField,
-                )
-              }
-            >
-              <Icon className="ri-download-2-line" />
-              {intl.formatMessage(messages.exportTable)}
-            </Button>
+              <Button
+                className="primary inverted"
+                disabled={!hasEnoughTools}
+                onClick={() =>
+                  exportComparisonTable(
+                    getExportTools(visibleTools),
+                    getToolField,
+                  )
+                }
+              >
+                <Icon className="ri-download-2-line" />
+                {intl.formatMessage(messages.exportTable)}
+              </Button>
+            </div>
           </div>
         </div>
 

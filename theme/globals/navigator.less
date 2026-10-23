@@ -387,22 +387,51 @@
 
   .compare-page-header {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
     gap: 1rem;
+    margin-bottom: 2em;
 
-    h2 {
+    h3 {
       margin: 0;
+    }
+
+    .navigator-catalogue-page-actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1.3rem;
+      flex-wrap: nowrap;
+
+      .ui.button {
+        flex: 0 0 auto;
+        width: 184.391px;
+        min-width: max-content;
+        white-space: nowrap;
+      }
     }
   }
 
   .compare-page-actions {
     display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: 0.75rem;
+    justify-content: flex-start;
+    gap: 1.3rem;
+    flex-wrap: nowrap;
+
+    .ui.button {
+      margin: 0;
+    }
   }
+
+  // .compare-page-actions {
+  //   display: flex;
+  //   flex: 0 0 auto;
+  //   align-items: center;
+  //   gap: 1.3rem;
+
+  //   .ui.button {
+  //     margin: 0;
+  //   }
+  // }
 
   .ui.celled.table {
     width: 100%;
