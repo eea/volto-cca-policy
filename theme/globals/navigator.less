@@ -117,6 +117,18 @@
   }
 }
 
+.navigator-catalogue-page-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  gap: 1.3rem;
+
+  .ui.button {
+    margin: 0;
+    width: 170px;
+  }
+}
+
 .navigator-geographic-facet {
   min-width: 18rem;
 
@@ -377,11 +389,44 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
     gap: 1rem;
+    margin-bottom: 2em;
 
-    h2 {
+    h3 {
       margin: 0;
+    }
+  }
+
+  .compare-page-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 1.3rem;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+
+    .navigator-catalogue-page-actions {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+      margin-bottom: 0;
+      flex-wrap: nowrap;
+
+      .ui.button {
+        width: auto;
+      }
+
+      .ui.inverted.secondary.button {
+        box-shadow: 0px 0px 0px 2px @primaryColor inset !important;
+        color: @primaryColor;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: @primaryColor;
+          box-shadow: none !important;
+          color: #fff;
+        }
+      }
     }
   }
 
@@ -389,7 +434,12 @@
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.3rem;
+    flex-wrap: nowrap;
+
+    .ui.button {
+      margin: 0;
+    }
   }
 
   .ui.celled.table {
@@ -569,8 +619,9 @@
       align-items: flex-start;
     }
 
-    .compare-page-actions {
-      align-self: flex-end;
+    .compare-page-header-actions {
+      width: 100%;
+      justify-content: flex-start;
     }
   }
 }

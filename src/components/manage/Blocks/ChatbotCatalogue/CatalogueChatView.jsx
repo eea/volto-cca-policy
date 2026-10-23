@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChatWindow } from '@eeacms/volto-eea-chatbot/ChatBlock/chat';
+import NavigatorCataloguePageActions from '../../../Search/NavigatorCatalogue/NavigatorCataloguePageActions';
 
 import { CcaDocCard } from './DocumentCard';
 import { remarkCcaDocCards } from './docCards';
@@ -37,12 +38,15 @@ const extraRemarkPlugins = [remarkCcaDocCards, remarkCcaNextSteps];
  */
 function CatalogueChatView(props) {
   return (
-    <ChatWindow
-      {...props}
-      hideSourcesTab
-      extraRemarkPlugins={extraRemarkPlugins}
-      extraMarkdownComponents={extraMarkdownComponents}
-    />
+    <div className="catalogue-chat-view">
+      <NavigatorCataloguePageActions />
+      <ChatWindow
+        {...props}
+        hideSourcesTab
+        extraRemarkPlugins={extraRemarkPlugins}
+        extraMarkdownComponents={extraMarkdownComponents}
+      />
+    </div>
   );
 }
 
