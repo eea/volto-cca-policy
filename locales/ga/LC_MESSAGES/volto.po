@@ -22,6 +22,7 @@ msgid "A background document for the event is available"
 msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 
 #. Default: "About"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
 msgstr ""
@@ -466,7 +467,7 @@ msgid "Date of release:"
 msgstr "Dáta eisiúna:"
 
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
 msgstr ""
 
@@ -599,6 +600,11 @@ msgstr ""
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
+msgstr ""
+
+#. Default: "FAQ"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
+msgid "FAQ"
 msgstr ""
 
 #. Default: "Financing incentive instruments"
