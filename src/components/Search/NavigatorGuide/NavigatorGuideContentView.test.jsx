@@ -24,7 +24,7 @@ jest.mock('./useGuideFacetOptions', () => ({
   default: jest.fn(),
 }));
 
-const renderGuide = (result, searchContext = {}) => {
+const renderGuide = (result, searchContext = {}, appConfig = {}) => {
   useSearchContext.mockReturnValue({
     filters: [{ field: 'cca_adaptation_sectors.keyword', values: ['Water'] }],
     facets: {},
@@ -39,6 +39,7 @@ const renderGuide = (result, searchContext = {}) => {
         appConfig={{
           previewResultsLimit: 3,
           defaultSort: 'title.index|asc',
+          ...appConfig,
         }}
       />
     </IntlProvider>,
@@ -89,6 +90,28 @@ describe('NavigatorGuideContentView thumbnails', () => {
 
     expect(thumbnail.querySelector('svg')).not.toBeInTheDocument();
     expect(thumbnail.querySelector('.ri-stack-line')).toBeInTheDocument();
+  });
+
+  it('hides any steps listed in the configuration', () => {
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {},
+      { hiddenSteps: ['climateHazards', 'geographicCoverage'] },
+    );
+
+    expect(
+      screen.queryByRole('button', { name: /Climate hazards/ }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /Geographic coverage/ }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: '2 Adaptation stage' }),
+    ).toBeVisible();
+    expect(screen.getByRole('progressbar')).toHaveAttribute(
+      'aria-valuemax',
+      '2',
+    );
   });
 });
 

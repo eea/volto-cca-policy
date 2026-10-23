@@ -135,7 +135,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     totalResults,
   } = searchContext;
   const defaultSortApplied = React.useRef(false);
-  const steps = guideSteps;
+  const steps = guideSteps.filter(
+    ({ id }) => !appConfig.hiddenSteps?.includes(id),
+  );
   const allFacetOptions = useGuideFacetOptions(appConfig, steps);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =

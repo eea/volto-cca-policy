@@ -13,6 +13,7 @@ const navigatorGuideConfig = {
   alwaysSearchOnInitialLoad: true,
   resultsPerPage: previewResultsLimit,
   previewResultsLimit,
+  hiddenSteps: ['geographicCoverage'],
   trackUrlState: true,
   showLandingPage: false,
   layoutComponent: 'NavigatorGuideLayout',
