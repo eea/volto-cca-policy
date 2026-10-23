@@ -57,13 +57,13 @@ const messages = defineMessages({
     id: 'Global tools',
     defaultMessage: 'Global tools',
   },
-  transnationalRegions: {
-    id: 'Transnational regions',
-    defaultMessage: 'Transnational regions',
+  transnationalTools: {
+    id: 'Transnational tools',
+    defaultMessage: 'Transnational tools',
   },
-  others: {
-    id: 'Others',
-    defaultMessage: 'Others',
+  otherTools: {
+    id: 'Other tools',
+    defaultMessage: 'Other tools',
   },
   fourOrMore: {
     id: '4 or more',
@@ -86,11 +86,11 @@ const geographicToolGroups = [
   },
   {
     scope: GEOGRAPHIC_SCOPE_VALUES.transnational,
-    message: messages.transnationalRegions,
+    message: messages.transnationalTools,
   },
   {
     scope: GEOGRAPHIC_SCOPE_VALUES.others,
-    message: messages.others,
+    message: messages.otherTools,
   },
 ];
 
