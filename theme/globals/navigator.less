@@ -379,6 +379,19 @@
 .ui.popup.compare-criteria-popup {
   max-width: min(450px, calc(100vw - 2rem));
 
+  .cycle-tooltip-link {
+    display: inline-flex;
+    align-items: center;
+
+    i.icon {
+      margin: 0 0 0 0.35rem;
+    }
+
+    &:visited {
+      color: @linkColor;
+    }
+  }
+
   .usability-tooltip-introduction {
     margin-bottom: 0.65rem;
   }
@@ -960,8 +973,11 @@
   }
 
   .cycle-elements-label {
+    display: inline-flex;
+    align-items: center;
     margin-right: 0.35rem;
     font-weight: 800;
+    gap: 0.15rem;
     text-transform: uppercase;
   }
 

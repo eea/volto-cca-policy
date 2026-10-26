@@ -144,6 +144,24 @@ describe('NavigatorCatalogueCardItem', () => {
     );
     expect(
       screen.getByRole('button', {
+        name: 'Adaptation Support Cycle Step',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', {
+        name: 'Adaptation Support Cycle Step',
+      }),
+    ).toHaveAttribute(
+      'href',
+      'https://climate-adapt.eea.europa.eu/en/eu-adaptation/adaptation-context/adaptation-support-tool',
+    );
+    expect(
+      screen
+        .getByRole('link', { name: 'Adaptation Support Cycle Step' })
+        .querySelector('.ri-arrow-right-line'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
         name: 'Cycle: Step 4: Assessing options',
       }),
     ).toHaveTextContent('+ 1');

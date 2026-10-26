@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Icon } from 'semantic-ui-react';
+import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
@@ -25,6 +25,10 @@ const messages = defineMessages({
   cycle: {
     id: 'Cycle',
     defaultMessage: 'Cycle',
+  },
+  cycleTooltip: {
+    id: 'Adaptation Support Cycle Step',
+    defaultMessage: 'Adaptation Support Cycle Step',
   },
   geographicCoverage: {
     id: 'Geographic coverage',
@@ -83,6 +87,7 @@ const TagGroup = ({ typeLabel, values, type, maxItems }) => {
 const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
   const hidden = values.slice(3);
+  const tooltipLabel = intl.formatMessage(messages.cycleTooltip);
 
   if (!visible.length) return null;
 
@@ -90,6 +95,32 @@ const CycleElements = ({ intl, values }) => {
     <div className="navigator-catalogue-cycle-elements">
       <span className="cycle-elements-label">
         {intl.formatMessage(messages.cycle)}
+        <Popup
+          className="compare-criteria-popup"
+          content={
+            <a
+              className="cycle-tooltip-link"
+              href="https://climate-adapt.eea.europa.eu/en/eu-adaptation/adaptation-context/adaptation-support-tool"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {tooltipLabel}
+              <Icon className="ri-arrow-right-line" aria-hidden="true" />
+            </a>
+          }
+          hoverable
+          on={['hover', 'focus', 'click']}
+          position="top left"
+          trigger={
+            <button
+              type="button"
+              className="info-tooltip"
+              aria-label={tooltipLabel}
+            >
+              <Icon className="ri-information-line" aria-hidden="true" />
+            </button>
+          }
+        />
       </span>
       {visible.map(({ label, title }, index) => (
         <span
