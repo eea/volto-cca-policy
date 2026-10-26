@@ -414,7 +414,8 @@ const applyConfig = (config) => {
   config.settings.astNavigations = [
     {
       title: 'Urban adaptation support tool',
-      root_path: 'knowledge/tools/urban-ast',
+      root_path:
+        'transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
     },
     {
       title: 'Adaptation Suport Tool',

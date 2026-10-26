@@ -194,7 +194,8 @@ describe('ASTNavigation', () => {
   it('should dispatch searchContent for urban adaptation support tool', () => {
     const items = [
       {
-        '@id': '/en/knowledge/tools/urban-ast/step-1',
+        '@id':
+          '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast/step-1',
         title: 'Step 1',
       },
     ];
@@ -217,12 +218,17 @@ describe('ASTNavigation', () => {
 
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/en/knowledge/tools/urban-ast']}>
+        <MemoryRouter
+          initialEntries={[
+            '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
+          ]}
+        >
           <IntlProvider locale="en" messages={{}}>
             <ASTNavigation
               {...defaultProps}
               astNavigation={{
-                root_path: 'knowledge/tools/urban-ast',
+                root_path:
+                  'transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
               }}
             />
           </IntlProvider>
@@ -231,7 +237,7 @@ describe('ASTNavigation', () => {
     );
 
     expect(searchActions.searchContent).toHaveBeenCalledWith(
-      '/en/knowledge/tools/urban-ast',
+      '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
       {
         'path.depth': 1,
         portal_type: ['Folder'],

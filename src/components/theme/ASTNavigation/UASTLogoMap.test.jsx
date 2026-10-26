@@ -13,17 +13,20 @@ describe('UASTLogoMap', () => {
     const data = {
       items: {
         'step-1': {
-          '@id': '/en/knowledge/tools/urban-ast/step-1-0',
+          '@id':
+            '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast/step-1-0',
           title: 'Preparing the ground for adaptation',
           items: [
             {
-              '@id': '/en/knowledge/tools/urban-ast/step-1-1',
+              '@id':
+                '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast/step-1-1',
               title: '1.1 Obtaining political support for adaptation',
             },
           ],
         },
       },
-      pathname: '/en/knowledge/tools/urban-ast',
+      pathname:
+        '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
     };
 
     const store = mockStore({
