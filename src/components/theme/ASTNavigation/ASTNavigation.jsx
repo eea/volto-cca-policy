@@ -5,12 +5,12 @@ import { useLocation } from 'react-router-dom';
 import ASTAccordion from './ASTAccordion';
 import './styles.less';
 
-const isAdaptationSupportToolURL = (url) => {
-  return url.includes('/knowledge/tools/adaptation-support-tool');
+const isAdaptationSupportToolPath = (path) => {
+  return path.endsWith('/adaptation-support-tool');
 };
 
-const isUrbanAdaptationSupportToolURL = (url) => {
-  return url.includes('/knowledge/tools/urban-ast');
+const isUrbanAdaptationSupportToolPath = (path) => {
+  return path.endsWith('/urban-ast');
 };
 
 const ASTNavigation = (props) => {
@@ -21,9 +21,9 @@ const ASTNavigation = (props) => {
   const rootPath = `/${currentLanguage}/${root_path}`;
   const searchSubrequests = useSelector((state) => state.search.subrequests);
   const items = searchSubrequests?.ast?.items || [];
-  const isAdaptationSupportTool = isAdaptationSupportToolURL(rootPath);
+  const isAdaptationSupportTool = isAdaptationSupportToolPath(root_path);
   const isUrbanAdaptationSupportTool =
-    isUrbanAdaptationSupportToolURL(rootPath);
+    isUrbanAdaptationSupportToolPath(root_path);
 
   React.useEffect(() => {
     if (isAdaptationSupportTool) {
@@ -68,7 +68,6 @@ const ASTNavigation = (props) => {
         astItems={items}
         rootPath={rootPath}
         location={location}
-        currentLanguage={currentLanguage}
         isAdaptationSupportTool={isAdaptationSupportTool}
         isUrbanAdaptationSupportTool={isUrbanAdaptationSupportTool}
       />

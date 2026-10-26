@@ -26,12 +26,12 @@ jest.mock('./ASTAccordion', () => {
 describe('ASTNavigation', () => {
   const defaultProps = {
     astNavigation: {
-      root_path: 'knowledge/tools/adaptation-support-tool',
+      root_path: 'eu-adaptation/adaptation-context/adaptation-support-tool',
     },
   };
 
   const mockLocation = {
-    pathname: '/en/knowledge/tools/adaptation-support-tool',
+    pathname: '/en/eu-adaptation/adaptation-context/adaptation-support-tool',
   };
 
   beforeEach(() => {
@@ -41,11 +41,13 @@ describe('ASTNavigation', () => {
   it('should render the navigation wrapper with ASTAccordion when items exist', () => {
     const items = [
       {
-        '@id': '/en/knowledge/tools/adaptation-support-tool/step-1',
+        '@id':
+          '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-1',
         title: 'Step 1',
       },
       {
-        '@id': '/en/knowledge/tools/adaptation-support-tool/step-2',
+        '@id':
+          '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-2',
         title: 'Step 2',
       },
     ];
@@ -134,7 +136,8 @@ describe('ASTNavigation', () => {
   it('should dispatch searchContent for adaptation support tool', () => {
     const items = [
       {
-        '@id': '/en/knowledge/tools/adaptation-support-tool/step-1',
+        '@id':
+          '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-1',
         title: 'Step 1',
       },
     ];
@@ -158,13 +161,16 @@ describe('ASTNavigation', () => {
     render(
       <Provider store={store}>
         <MemoryRouter
-          initialEntries={['/en/knowledge/tools/adaptation-support-tool']}
+          initialEntries={[
+            '/en/eu-adaptation/adaptation-context/adaptation-support-tool',
+          ]}
         >
           <IntlProvider locale="en" messages={{}}>
             <ASTNavigation
               {...defaultProps}
               astNavigation={{
-                root_path: 'knowledge/tools/adaptation-support-tool',
+                root_path:
+                  'eu-adaptation/adaptation-context/adaptation-support-tool',
               }}
             />
           </IntlProvider>
@@ -173,7 +179,7 @@ describe('ASTNavigation', () => {
     );
 
     expect(searchActions.searchContent).toHaveBeenCalledWith(
-      '/en/knowledge/tools/adaptation-support-tool',
+      '/en/eu-adaptation/adaptation-context/adaptation-support-tool',
       {
         'path.depth': 1,
         portal_type: ['Folder'],
@@ -188,7 +194,8 @@ describe('ASTNavigation', () => {
   it('should dispatch searchContent for urban adaptation support tool', () => {
     const items = [
       {
-        '@id': '/en/knowledge/tools/urban-ast/step-1',
+        '@id':
+          '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast/step-1',
         title: 'Step 1',
       },
     ];
@@ -211,12 +218,17 @@ describe('ASTNavigation', () => {
 
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/en/knowledge/tools/urban-ast']}>
+        <MemoryRouter
+          initialEntries={[
+            '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
+          ]}
+        >
           <IntlProvider locale="en" messages={{}}>
             <ASTNavigation
               {...defaultProps}
               astNavigation={{
-                root_path: 'knowledge/tools/urban-ast',
+                root_path:
+                  'transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
               }}
             />
           </IntlProvider>
@@ -225,7 +237,7 @@ describe('ASTNavigation', () => {
     );
 
     expect(searchActions.searchContent).toHaveBeenCalledWith(
-      '/en/knowledge/tools/urban-ast',
+      '/en/transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
       {
         'path.depth': 1,
         portal_type: ['Folder'],
@@ -239,7 +251,8 @@ describe('ASTNavigation', () => {
   it('should pass correct props to ASTAccordion', () => {
     const items = [
       {
-        '@id': '/en/knowledge/tools/adaptation-support-tool/step-1',
+        '@id':
+          '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-1',
         title: 'Step 1',
       },
     ];
@@ -274,7 +287,8 @@ describe('ASTNavigation', () => {
   it('should handle different language locales', () => {
     const items = [
       {
-        '@id': '/fr/knowledge/tools/adaptation-support-tool/step-1',
+        '@id':
+          '/fr/eu-adaptation/adaptation-context/adaptation-support-tool/step-1',
         title: 'Étape 1',
       },
     ];
@@ -298,13 +312,16 @@ describe('ASTNavigation', () => {
     const { container } = render(
       <Provider store={store}>
         <MemoryRouter
-          initialEntries={['/fr/knowledge/tools/adaptation-support-tool']}
+          initialEntries={[
+            '/fr/eu-adaptation/adaptation-context/adaptation-support-tool',
+          ]}
         >
           <IntlProvider locale="fr" messages={{}}>
             <ASTNavigation
               {...defaultProps}
               astNavigation={{
-                root_path: 'knowledge/tools/adaptation-support-tool',
+                root_path:
+                  'eu-adaptation/adaptation-context/adaptation-support-tool',
               }}
             />
           </IntlProvider>
@@ -313,7 +330,7 @@ describe('ASTNavigation', () => {
     );
 
     expect(searchActions.searchContent).toHaveBeenCalledWith(
-      '/fr/knowledge/tools/adaptation-support-tool',
+      '/fr/eu-adaptation/adaptation-context/adaptation-support-tool',
       expect.any(Object),
       'ast',
     );
