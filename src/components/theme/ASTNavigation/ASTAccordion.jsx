@@ -33,7 +33,7 @@ const sortItems = (items) => {
   return sortedItems;
 };
 
-const groupItemsByStep = (object, isAST, isUAST, lang, intl) => {
+const groupItemsByStep = (object, isAST, isUAST, rootPath, intl) => {
   const grouped = {};
   const items = {};
 
@@ -75,11 +75,9 @@ const groupItemsByStep = (object, isAST, isUAST, lang, intl) => {
     items[key] = grouped[key];
   });
 
-  const astPath = 'knowledge/tools/adaptation-support-tool';
-
   if (Object.keys(items).length !== 0) {
     if (isAST) {
-      items['step-0']['@id'] = `/${lang}/${astPath}`;
+      items['step-0']['@id'] = rootPath;
       items['step-0'].title = intl.formatMessage(messages.ast_start_title);
     }
     if (isUAST) {
@@ -94,8 +92,8 @@ const ASTAccordion = (props) => {
   const intl = useIntl();
   const {
     astItems,
+    rootPath,
     location,
-    currentLanguage,
     isAdaptationSupportTool,
     isUrbanAdaptationSupportTool,
   } = props;
@@ -104,7 +102,7 @@ const ASTAccordion = (props) => {
     astItems,
     isAdaptationSupportTool,
     isUrbanAdaptationSupportTool,
-    currentLanguage,
+    rootPath,
     intl,
   );
 

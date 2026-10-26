@@ -418,7 +418,7 @@ const applyConfig = (config) => {
     },
     {
       title: 'Adaptation Suport Tool',
-      root_path: 'knowledge/tools/adaptation-support-tool',
+      root_path: 'eu-adaptation/adaptation-context/adaptation-support-tool',
     },
   ];
 
