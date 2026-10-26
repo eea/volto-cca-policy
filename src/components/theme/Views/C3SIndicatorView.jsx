@@ -366,7 +366,7 @@ function C3SIndicatorView(props) {
               href={
                 '/' +
                 currentLanguage +
-                '/knowledge/european-climate-data-explorer/disclaimer'
+                '/eu-adaptation/assessing-climate-risks/european-climate-data-explorer/disclaimer'
               }
             >
               <FormattedMessage id="Disclaimer" defaultMessage="Disclaimer" />
