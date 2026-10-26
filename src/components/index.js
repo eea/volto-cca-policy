@@ -9,6 +9,7 @@ export { default as MissionSignatoryProfileView } from './theme/Views/MissionSig
 export { default as AccordionList } from './theme/AccordionList/AccordionList';
 export { default as CompareToolsView } from './theme/CompareTools/CompareToolsView';
 export { CompareToolsPanel } from './theme/CompareTools/CompareToolsPanel';
+export { default as NavigatorCataloguePageActions } from './Search/NavigatorCatalogue/NavigatorCataloguePageActions';
 export * from './theme/Content/Fields';
 export * from './theme/Content/Sections';
 
