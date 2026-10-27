@@ -506,6 +506,18 @@ const applyConfig = (config) => {
       menuItemColumns: ['six wide column', 'six wide column'],
       menuItemChildrenListColumns: [3, 1],
     },
+    '/en/transnational-national-and-subnational-adaptation': {
+      menuItemColumns: [
+        'seven wide column',
+        'two wide column',
+        'three wide column',
+      ],
+      menuItemChildrenListColumns: [3, 1],
+    },
+    '/en/adaptation-in-sectors': {
+      menuItemColumns: ['six wide column', 'six wide column'],
+      menuItemChildrenListColumns: [3, 1],
+    },
   };
 
   // we won't need the listing for Folders
