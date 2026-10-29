@@ -26,14 +26,16 @@ function ItemIcon({ value, hoverValue, color, size }) {
       return `/${download}`;
     }
 
-    const url = selected?.['@id'] || selected?.linkHref || selected?.linkWithHash;
+    const url =
+      selected?.['@id'] || selected?.linkHref || selected?.linkWithHash;
     return typeof url === 'string' && url.startsWith('@@images/')
       ? `/${url}`
       : url;
   };
   value = getImageUrl(value);
   hoverValue = getImageUrl(hoverValue);
-  const isImage = (icon) => /^(https?:|\/|data:image\/|@@images\/)/i.test(icon || '');
+  const isImage = (icon) =>
+    /^(https?:|\/|data:image\/|@@images\/)/i.test(icon || '');
   return (
     <span
       className={`items-list-icon ${hoverValue ? 'has-hover-icon' : ''} ${color ? 'has-hover-color' : ''}`}
@@ -88,9 +90,7 @@ export default function View({ data = {}, id, mode }) {
       <div
         className={`items-list-items ${isColumnLayout ? 'is-columns' : 'is-inline'}`}
         style={
-          isColumnLayout
-            ? { '--items-list-columns': columnCount }
-            : undefined
+          isColumnLayout ? { '--items-list-columns': columnCount } : undefined
         }
       >
         {items.map((item, index) => {
@@ -117,20 +117,20 @@ export default function View({ data = {}, id, mode }) {
               : { href: selectedHref };
 
           if (isColumnLayout) {
-            const title = item.title && (
-              mode !== 'edit' && href ? (
-                <UniversalLink
-                  className="items-list-item-title"
-                  {...linkProps}
-                >
+            const title =
+              item.title &&
+              (mode !== 'edit' && href ? (
+                <UniversalLink className="items-list-item-title" {...linkProps}>
                   {item.title}
                 </UniversalLink>
               ) : (
                 <span className="items-list-item-title">{item.title}</span>
-              )
-            );
+              ));
             return (
-              <div className="items-list-item is-column-item" key={`${item.title}-${index}`}>
+              <div
+                className="items-list-item is-column-item"
+                key={`${item.title}-${index}`}
+              >
                 {title}
                 {item.description && (
                   <div className="items-list-item-description">

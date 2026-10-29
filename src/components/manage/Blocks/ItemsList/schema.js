@@ -6,7 +6,8 @@ const getPersistentImageUrl = (value) => {
   const selected = Array.isArray(value) ? value[0] : value;
   if (!selected || typeof selected !== 'object') return value;
 
-  const originalUrl = selected['@id'] || selected.linkHref || selected.linkWithHash;
+  const originalUrl =
+    selected['@id'] || selected.linkHref || selected.linkWithHash;
   const scaleUrl =
     selected.scales?.image?.download ||
     selected.image_scales?.image?.[0]?.download;

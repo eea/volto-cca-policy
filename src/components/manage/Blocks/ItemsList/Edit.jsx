@@ -14,7 +14,9 @@ export default function Edit(props) {
           block={block}
           title={schema.title}
           schema={schema}
-          onChangeField={(field, value) => onChangeBlock(block, { ...data, [field]: value })}
+          onChangeField={(field, value) =>
+            onChangeBlock(block, { ...data, [field]: value })
+          }
           onChangeBlock={onChangeBlock}
           formData={data}
         />
