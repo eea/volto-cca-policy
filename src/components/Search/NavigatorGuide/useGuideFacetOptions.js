@@ -2,7 +2,7 @@ import React from 'react';
 import { getFacetOptions } from '@eeacms/search/components/SearchApp/useFacetsWithAllOptions';
 import { getGuideStepFields } from '../../../search/navigator_guide/guideSteps';
 
-const useGuideFacetOptions = (appConfig, steps) => {
+const useGuideFacetOptions = (appConfig, steps, language = 'en') => {
   const [allFacetOptions, setAllFacetOptions] = React.useState({});
 
   React.useEffect(() => {
@@ -10,8 +10,15 @@ const useGuideFacetOptions = (appConfig, steps) => {
     const stepFields = [
       ...new Set(steps.flatMap((step) => getGuideStepFields(step))),
     ];
+    const languageConfig = {
+      ...appConfig,
+      permanentFilters: [
+        ...(appConfig.permanentFilters || []),
+        { term: { language } },
+      ],
+    };
 
-    getFacetOptions(appConfig, stepFields)
+    getFacetOptions(languageConfig, stepFields)
       .then((facetOptions) => {
         if (isCurrent) setAllFacetOptions(facetOptions);
       })
@@ -22,7 +29,7 @@ const useGuideFacetOptions = (appConfig, steps) => {
     return () => {
       isCurrent = false;
     };
-  }, [appConfig, steps]);
+  }, [appConfig, language, steps]);
 
   return allFacetOptions;
 };

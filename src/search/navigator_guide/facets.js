@@ -1,6 +1,10 @@
 import { multiTermFacet } from '@eeacms/search';
 import { defineMessages } from 'react-intl';
-import { cca_adaptation_sectors, cca_climate_impacts } from './../common';
+import {
+  cca_adaptation_sectors,
+  cca_climate_impacts,
+  language,
+} from './../common';
 import {
   CHARACTERISATION_FIELD,
   COUNTRIES_FIELD,
@@ -49,6 +53,7 @@ const facets = [
     label: messages.adaptationSupportCycleStep,
     alwaysVisible: false,
   }),
+  language,
 ];
 
 export default facets;
