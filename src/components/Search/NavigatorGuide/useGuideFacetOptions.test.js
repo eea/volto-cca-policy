@@ -31,16 +31,41 @@ describe('useGuideFacetOptions', () => {
     const facetOptions = { sector: ['Energy'], stage: ['Step 1'] };
     getFacetOptions.mockResolvedValue(facetOptions);
 
-    const { result } = renderHook(() => useGuideFacetOptions(appConfig, steps));
+    const { result } = renderHook(() =>
+      useGuideFacetOptions(appConfig, steps, 'en'),
+    );
     await flushPromises();
 
-    expect(getFacetOptions).toHaveBeenCalledWith(appConfig, [
-      'sector',
-      'coverage',
-      'country',
-      'stage',
-    ]);
+    expect(getFacetOptions).toHaveBeenCalledWith(
+      {
+        ...appConfig,
+        permanentFilters: [{ term: { language: 'en' } }],
+      },
+      ['sector', 'coverage', 'country', 'stage'],
+    );
     expect(result.current).toEqual(facetOptions);
+  });
+
+  it('keeps existing permanent filters and restricts options to the locale', async () => {
+    getFacetOptions.mockResolvedValue({ sector: ['Agriculture'] });
+    const configuredApp = {
+      facets: [],
+      permanentFilters: [{ term: { cluster_name: 'cca_navigator' } }],
+    };
+
+    renderHook(() => useGuideFacetOptions(configuredApp, steps, 'ro'));
+    await flushPromises();
+
+    expect(getFacetOptions).toHaveBeenCalledWith(
+      {
+        ...configuredApp,
+        permanentFilters: [
+          { term: { cluster_name: 'cca_navigator' } },
+          { term: { language: 'ro' } },
+        ],
+      },
+      ['sector', 'coverage', 'country', 'stage'],
+    );
   });
 
   it('keeps the fallback state when loading fails', async () => {

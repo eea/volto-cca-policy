@@ -125,7 +125,7 @@ hr {
     margin: 2em 0;
   }
 
-  .case-study-gallery {
+  .db-item-gallery {
     cursor: pointer;
 
     .preview-image {
@@ -133,11 +133,23 @@ hr {
       height: 250px;
     }
 
-    .gallery-title {
+    .ui.button.gallery-title {
+      display: block;
+      width: 100%;
       padding: 2px 4px;
       background-color: #f2c94c;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      margin: 0 !important;
       font-weight: bold;
       text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f2c94c;
+        color: inherit;
+      }
     }
   }
 
