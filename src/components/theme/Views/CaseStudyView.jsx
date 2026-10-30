@@ -250,7 +250,7 @@ const SectionContent = ({ sectionData, content }) => {
   };
 
   const section = content[sectionData.field];
-  for (var key in section) {
+  for (const key in section) {
     if (section[key] === '') {
       section[key] = '<p>-</p>';
     }
