@@ -16,9 +16,7 @@ const getImagePath = (value) => {
     selected.scales?.image?.download ||
     selected.image_scales?.image?.[0]?.download;
   if (!scaleUrl) {
-    return contentUrl
-      ? `${contentUrl.replace(/\/$/, '')}/@@images/image`
-      : '';
+    return contentUrl ? `${contentUrl.replace(/\/$/, '')}/@@images/image` : '';
   }
   if (/^(https?:|\/|data:)/i.test(scaleUrl)) return scaleUrl;
   return contentUrl
