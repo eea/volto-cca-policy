@@ -1,36 +1,5 @@
 import React from 'react';
-import ObjectBrowserWidget from '@plone/volto/components/manage/Widgets/ObjectBrowserWidget';
 import NumberWidget from '@plone/volto/components/manage/Widgets/NumberWidget';
-
-const getPersistentImageUrl = (value) => {
-  const selected = Array.isArray(value) ? value[0] : value;
-  if (!selected || typeof selected !== 'object') return value;
-
-  const originalUrl =
-    selected['@id'] || selected.linkHref || selected.linkWithHash;
-  const scaleUrl =
-    selected.scales?.image?.download ||
-    selected.image_scales?.image?.[0]?.download;
-  if (!originalUrl) return value;
-
-  let imageUrl = scaleUrl || `${originalUrl.replace(/\/$/, '')}/@@images/image`;
-  if (scaleUrl && !/^(https?:|\/|data:)/i.test(scaleUrl)) {
-    imageUrl = `${originalUrl.replace(/\/$/, '')}/${scaleUrl.replace(/^\//, '')}`;
-  }
-
-  // Store the complete rendition URL as @id. Plone's block serialization can
-  // discard scale metadata, while this URL remains sufficient for rendering.
-  return { '@id': imageUrl, title: selected.title };
-};
-
-const PersistentImageWidget = (props) => {
-  const handleChange = (id, value) =>
-    props.onChange(id, getPersistentImageUrl(value));
-  return React.createElement(ObjectBrowserWidget, {
-    ...props,
-    onChange: handleChange,
-  });
-};
 
 const ColumnsWidget = (props) =>
   props.objectvalue?.listing_mode === 'columns'
@@ -61,7 +30,7 @@ const Item = () => ({
     href: {
       widget: 'object_browser',
       mode: 'link',
-      title: 'Link',
+      title: 'HREF',
       description: 'Choose an existing content as source',
     },
     icon: {
@@ -83,7 +52,7 @@ const Item = () => ({
       ].map((name) => [name, name || 'None']),
     },
     custom_icon: {
-      widget: PersistentImageWidget,
+      widget: 'object_browser',
       mode: 'image',
       title: 'Custom icon',
       description: 'Choose an image to use as this item’s icon',
@@ -107,7 +76,7 @@ const Item = () => ({
       ].map((name) => [name, name || 'None']),
     },
     custom_hover_icon: {
-      widget: PersistentImageWidget,
+      widget: 'object_browser',
       mode: 'image',
       title: 'Custom hover icon',
       description: 'Choose an image to use as this item’s hover icon',

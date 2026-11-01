@@ -30,11 +30,19 @@
     &.is-column-item {
       display: flex;
       min-width: 0;
-      flex-direction: column;
+      flex-direction: row;
       align-items: flex-start;
       justify-content: flex-start;
       gap: 0.5rem;
     }
+  }
+
+  .items-list-item-content {
+    min-width: 0;
+  }
+
+  .items-list-item.is-column-item > .items-list-icon {
+    flex: 0 0 auto;
   }
 
   .items-list-item-title {

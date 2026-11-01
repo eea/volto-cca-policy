@@ -1,5 +1,6 @@
 import React from 'react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import VoltoImage from '@plone/volto/components/theme/Image/Image';
 import './styles.less';
 
 function ItemIcon({ value, hoverValue, color, size }) {
@@ -46,7 +47,7 @@ function ItemIcon({ value, hoverValue, color, size }) {
     >
       {value &&
         (isImage(value) ? (
-          <img src={value} alt="" />
+          <VoltoImage src={value} alt="" />
         ) : (
           <i
             className={value.startsWith('ri-') ? value : `ri-${value}`}
@@ -55,7 +56,7 @@ function ItemIcon({ value, hoverValue, color, size }) {
         ))}
       {hoverValue &&
         (isImage(hoverValue) ? (
-          <img className="hover-icon" src={hoverValue} alt="" />
+          <VoltoImage className="hover-icon" src={hoverValue} alt="" />
         ) : (
           <i
             className={`hover-icon ${hoverValue.startsWith('ri-') ? hoverValue : `ri-${hoverValue}`}`}
@@ -97,12 +98,18 @@ export default function View({ data = {}, id, mode }) {
           const icon = (
             <>
               {(item.icon ||
+                item.custom_icon_path ||
                 item.custom_icon ||
                 item.hover_icon ||
+                item.custom_hover_icon_path ||
                 item.custom_hover_icon) && (
                 <ItemIcon
-                  value={item.custom_icon || item.icon}
-                  hoverValue={item.custom_hover_icon || item.hover_icon}
+                  value={item.custom_icon_path || item.custom_icon || item.icon}
+                  hoverValue={
+                    item.custom_hover_icon_path ||
+                    item.custom_hover_icon ||
+                    item.hover_icon
+                  }
                   color={item.hover_color}
                   size={icon_size}
                 />
@@ -131,12 +138,15 @@ export default function View({ data = {}, id, mode }) {
                 className="items-list-item is-column-item"
                 key={`${item.title}-${index}`}
               >
-                {title}
-                {item.description && (
-                  <div className="items-list-item-description">
-                    {item.description}
-                  </div>
-                )}
+                {icon}
+                <div className="items-list-item-content">
+                  {title}
+                  {item.description && (
+                    <div className="items-list-item-description">
+                      {item.description}
+                    </div>
+                  )}
+                </div>
               </div>
             );
           }
