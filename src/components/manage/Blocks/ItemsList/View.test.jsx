@@ -68,7 +68,7 @@ describe('ItemsList View', () => {
       'data-src',
       '/icons/first-hover.svg',
     );
-    expect(screen.getByTestId('volto-image').parentElement).toHaveStyle({
+    expect(screen.getAllByTestId('volto-image')[0].parentElement).toHaveStyle({
       '--items-list-icon-size': '32px',
       '--items-list-hover-color': '#123456',
     });
