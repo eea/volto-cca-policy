@@ -3,7 +3,8 @@ jest.doMock('@plone/volto/components/manage/Widgets/NumberWidget', () => ({
   default: () => null,
 }));
 
-const NumberWidget = require('@plone/volto/components/manage/Widgets/NumberWidget').default;
+const NumberWidget =
+  require('@plone/volto/components/manage/Widgets/NumberWidget').default;
 const schema = require('./schema').default;
 
 describe('ItemsList schema', () => {
@@ -27,7 +28,9 @@ describe('ItemsList schema', () => {
   it('shows the number of columns only for the columns layout', () => {
     const { widget: ColumnsWidget } = schema.properties.columns;
 
-    expect(ColumnsWidget({ objectvalue: { listing_mode: 'inline' } })).toBeNull();
+    expect(
+      ColumnsWidget({ objectvalue: { listing_mode: 'inline' } }),
+    ).toBeNull();
     const columnsWidget = ColumnsWidget({
       objectvalue: { listing_mode: 'columns' },
     });

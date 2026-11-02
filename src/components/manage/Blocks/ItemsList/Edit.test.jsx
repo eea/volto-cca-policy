@@ -115,9 +115,7 @@ describe('ItemsList Edit', () => {
 
   it('passes non-item changes through unchanged', () => {
     const onChangeBlock = jest.fn();
-    render(
-      <Edit block="block-id" data={{}} onChangeBlock={onChangeBlock} />,
-    );
+    render(<Edit block="block-id" data={{}} onChangeBlock={onChangeBlock} />);
 
     fireEvent.click(screen.getByRole('button', { name: 'Change title' }));
     expect(onChangeBlock).toHaveBeenCalledWith('block-id', {

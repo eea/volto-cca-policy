@@ -50,7 +50,9 @@ describe('ItemsList View', () => {
       />,
     );
 
-    expect(screen.getByRole('heading', { name: 'Block title' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Block title' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('Intro')).toBeInTheDocument();
     expect(screen.getByText('Outro')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'First item' })).toHaveAttribute(
@@ -96,7 +98,9 @@ describe('ItemsList View', () => {
     expect(screen.getByText('Editable item').tagName).toBe('SPAN');
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
     expect(document.querySelector('.ri-home-line')).toBeInTheDocument();
-    expect(document.querySelector('.hover-icon.ri-home-fill')).toBeInTheDocument();
+    expect(
+      document.querySelector('.hover-icon.ri-home-fill'),
+    ).toBeInTheDocument();
     expect(document.querySelector('section')).toHaveClass('is-editing');
   });
 
@@ -117,7 +121,9 @@ describe('ItemsList View', () => {
 
     rerender(<View data={data} mode="edit" />);
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
-    expect(document.querySelector('.items-list-items')).toHaveClass('is-inline');
+    expect(document.querySelector('.items-list-items')).toHaveClass(
+      'is-inline',
+    );
   });
 
   it('supports the legacy object browser image value and an empty block', () => {
@@ -128,7 +134,9 @@ describe('ItemsList View', () => {
             {
               custom_icon: {
                 '@id': '/content/icon',
-                scales: { image: { download: '/content/icon/@@images/image.svg' } },
+                scales: {
+                  image: { download: '/content/icon/@@images/image.svg' },
+                },
               },
             },
           ],
