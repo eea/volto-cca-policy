@@ -117,7 +117,10 @@ describe('ItemsList View', () => {
       'href',
       '/linked',
     );
+    expect(screen.getByText('Linked item')).toHaveClass('items-list-item-title');
     expect(screen.getByTitle('Plain item')).toBeInTheDocument();
+    expect(screen.getByText('Plain item')).toHaveClass('items-list-item-title');
+    expect(document.querySelector('.items-list-item.is-inline-item')).toBeInTheDocument();
 
     rerender(<View data={data} mode="edit" />);
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
