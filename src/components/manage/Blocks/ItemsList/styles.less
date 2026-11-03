@@ -1,0 +1,124 @@
+.items-list-block {
+  .items-list-description {
+    margin: 1rem 0;
+  }
+
+  .items-list-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+
+    &.is-inline {
+      align-items: stretch;
+    }
+
+    &.is-columns {
+      display: grid;
+      align-items: stretch;
+      grid-template-columns: repeat(
+        var(--items-list-columns, 2),
+        minmax(0, 1fr)
+      );
+    }
+  }
+
+  .items-list-item {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    text-decoration: none;
+
+    &.is-column-item {
+      display: flex;
+      min-width: 0;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+  }
+
+  .items-list-item-content {
+    min-width: 0;
+  }
+
+  .items-list-item.is-inline-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    gap: 0.35rem;
+    text-align: center;
+    transition: background-color 150ms ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .items-list-item.is-column-item > .items-list-icon {
+    flex: 0 0 auto;
+  }
+
+  .items-list-item-title {
+    font-weight: 600;
+  }
+
+  .items-list-item-description {
+    width: 100%;
+  }
+
+  .items-list-icon {
+    position: relative;
+    display: inline-flex;
+    width: var(--items-list-icon-size, 48px);
+    height: var(--items-list-icon-size, 48px);
+    flex: 0 0 var(--items-list-icon-size, 48px);
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    font-size: var(--items-list-icon-size, 48px);
+    line-height: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    i {
+      line-height: 1;
+    }
+
+    .hover-icon {
+      display: none;
+    }
+  }
+
+  .items-list-item:hover .items-list-icon.has-hover-icon {
+    > :first-child:not(.hover-icon) {
+      display: none;
+    }
+    .hover-icon {
+      display: initial;
+    }
+  }
+
+  .items-list-item:hover .items-list-icon.has-hover-color {
+    color: var(--items-list-hover-color) !important;
+    i {
+      color: var(--items-list-hover-color) !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .items-list-block .items-list-items.is-columns {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
