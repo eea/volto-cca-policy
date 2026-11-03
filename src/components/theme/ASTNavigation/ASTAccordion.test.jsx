@@ -13,26 +13,31 @@ describe('ASTAccordion', () => {
     const data = {
       astItems: [
         {
-          '@id': '/en/knowledge/tools/adaptation-support-tool/step-0-0',
+          '@id':
+            '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-0-0',
           title: 'The Adaptation Support Tool - Getting started',
         },
         {
-          '@id': '/en/knowledge/tools/adaptation-support-tool/step-0-3',
+          '@id':
+            '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-0-3',
           title: 'Using the Adaptation Support Tool',
         },
         {
-          '@id': '/en/knowledge/tools/adaptation-support-tool/step-0-1',
+          '@id':
+            '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-0-1',
           title: 'Climate Impacts in Europe',
         },
         {
-          '@id': '/en/knowledge/tools/adaptation-support-tool/step-0-2',
+          '@id':
+            '/en/eu-adaptation/adaptation-context/adaptation-support-tool/step-0-2',
           title: 'Adaptation to climate change',
         },
       ],
       location: {
-        pathname: '/en/knowledge/tools/adaptation-support-tool',
+        pathname:
+          '/en/eu-adaptation/adaptation-context/adaptation-support-tool',
       },
-      currentLanguage: 'en',
+      rootPath: '/en/eu-adaptation/adaptation-context/adaptation-support-tool',
       isAdaptationSupportTool: jest.fn(),
       isUrbanAdaptationSupportTool: jest.fn(),
     };

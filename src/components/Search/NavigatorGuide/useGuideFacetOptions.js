@@ -1,12 +1,15 @@
 import React from 'react';
 import { getFacetOptions } from '@eeacms/search/components/SearchApp/useFacetsWithAllOptions';
+import { getGuideStepFields } from '../../../search/navigator_guide/guideSteps';
 
 const useGuideFacetOptions = (appConfig, steps) => {
   const [allFacetOptions, setAllFacetOptions] = React.useState({});
 
   React.useEffect(() => {
     let isCurrent = true;
-    const stepFields = steps.map(({ field }) => field);
+    const stepFields = [
+      ...new Set(steps.flatMap((step) => getGuideStepFields(step))),
+    ];
 
     getFacetOptions(appConfig, stepFields)
       .then((facetOptions) => {

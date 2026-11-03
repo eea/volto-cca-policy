@@ -3,6 +3,7 @@ import { mergeConfig } from '@eeacms/search';
 import { getClientProxyAddress } from './../utils';
 import { vocab } from './../vocabulary';
 import facets from './facets';
+import { geographicCoverageRuntimeMappings } from '../navigator_catalogue/geographicCoverage';
 
 const previewResultsLimit = 3;
 
@@ -12,6 +13,7 @@ const navigatorGuideConfig = {
   alwaysSearchOnInitialLoad: true,
   resultsPerPage: previewResultsLimit,
   previewResultsLimit,
+  hiddenSteps: ['geographicCoverage'],
   trackUrlState: true,
   showLandingPage: false,
   layoutComponent: 'NavigatorGuideLayout',
@@ -33,6 +35,9 @@ export default function installNavigatorGuideSearch(config) {
     host: process.env.RAZZLE_ES_PROXY_ADDR || 'http://localhost:3000',
     vocab,
     facets,
+    runtime_mappings: {
+      ...geographicCoverageRuntimeMappings,
+    },
   };
 
   const { navigatorGuideSearch } = config.searchui;

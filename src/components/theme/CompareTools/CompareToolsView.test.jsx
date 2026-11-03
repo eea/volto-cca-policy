@@ -28,6 +28,10 @@ jest.mock('@plone/volto/helpers/Helmet/Helmet', () => () => null);
 jest.mock('@plone/volto/helpers/BodyClass/BodyClass', () => () => null);
 jest.mock('../BannerTitle/BannerTitle', () => () => null);
 jest.mock(
+  '../../Search/NavigatorCatalogue/NavigatorCataloguePageActions',
+  () => () => <div className="navigator-catalogue-page-actions" />,
+);
+jest.mock(
   '@plone/volto/components/manage/UniversalLink/UniversalLink',
   () =>
     ({ children, href, ...props }) => (

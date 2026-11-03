@@ -11,7 +11,17 @@ const flushPromises = () => act(() => Promise.resolve());
 
 describe('useGuideFacetOptions', () => {
   const appConfig = { facets: [] };
-  const steps = [{ field: 'sector' }, { field: 'stage' }];
+  const steps = [
+    { field: 'sector' },
+    {
+      groups: [
+        { field: 'coverage' },
+        { field: 'country' },
+        { field: 'coverage' },
+      ],
+    },
+    { field: 'stage' },
+  ];
 
   beforeEach(() => {
     getFacetOptions.mockReset();
@@ -26,6 +36,8 @@ describe('useGuideFacetOptions', () => {
 
     expect(getFacetOptions).toHaveBeenCalledWith(appConfig, [
       'sector',
+      'coverage',
+      'country',
       'stage',
     ]);
     expect(result.current).toEqual(facetOptions);
@@ -48,11 +60,13 @@ describe('useGuideFacetOptions', () => {
       }),
     );
 
-    const { unmount } = renderHook(() =>
+    const { result, unmount } = renderHook(() =>
       useGuideFacetOptions(appConfig, steps),
     );
     unmount();
     resolveRequest({ sector: ['Energy'] });
     await flushPromises();
+
+    expect(result.current).toEqual({});
   });
 });

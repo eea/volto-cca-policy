@@ -144,6 +144,24 @@ describe('NavigatorCatalogueCardItem', () => {
     );
     expect(
       screen.getByRole('button', {
+        name: 'Adaptation Support Cycle Step',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', {
+        name: 'Adaptation Support Cycle Step',
+      }),
+    ).toHaveAttribute(
+      'href',
+      'https://climate-adapt.eea.europa.eu/en/eu-adaptation/adaptation-context/adaptation-support-tool',
+    );
+    expect(
+      screen
+        .getByRole('link', { name: 'Adaptation Support Cycle Step' })
+        .querySelector('.ri-arrow-right-line'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
         name: 'Cycle: Step 4: Assessing options',
       }),
     ).toHaveTextContent('+ 1');
@@ -154,13 +172,9 @@ describe('NavigatorCatalogueCardItem', () => {
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
     expect(
-      screen.getByTitle(
-        'Defines the largest geographic extent for which the tool is relevant',
-      ),
-    ).toHaveTextContent('Geographic coverage: Germany, France');
-    expect(screen.getByTitle('Germany, France')).toHaveTextContent(
-      'Germany, France',
-    );
+      screen.queryByRole('button', { name: /largest geographic extent/ }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('Germany, France')).not.toHaveAttribute('title');
     expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText('compare'));
@@ -203,11 +217,9 @@ describe('NavigatorCatalogueCardItem', () => {
     });
 
     expect(
-      screen.getByTitle(
-        'Defines the largest geographic extent for which the tool is relevant',
-      ),
-    ).toHaveTextContent('Geographic coverage: Europe');
-    expect(screen.getByTitle('Europe')).toHaveTextContent('Europe');
+      screen.queryByRole('button', { name: /largest geographic extent/ }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('Europe')).not.toHaveAttribute('title');
   });
 
   it('renders sparse results and disables comparison without a UID', () => {

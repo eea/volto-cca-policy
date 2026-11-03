@@ -55,6 +55,7 @@ import ClusterHorizontalCardItem from './components/Search/Result/ClusterHorizon
 import NavigatorCatalogueCardItem from './components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem';
 import NavigatorCatalogueMapView from './components/Search/NavigatorCatalogue/NavigatorCatalogueMapView';
 import NavigatorCatalogueContentView from './components/Search/NavigatorCatalogue/NavigatorCatalogueContentView';
+import NavigatorCatalogueSearchBox from './components/Search/NavigatorCatalogue/NavigatorCatalogueSearchBox';
 import NavigatorGeographicCoverageFacet from './components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet';
 import NavigatorGuideLayout from './components/Search/NavigatorGuide/NavigatorGuideLayout';
 import NavigatorGuideContentView from './components/Search/NavigatorGuide/NavigatorGuideContentView';
@@ -413,11 +414,12 @@ const applyConfig = (config) => {
   config.settings.astNavigations = [
     {
       title: 'Urban adaptation support tool',
-      root_path: 'knowledge/tools/urban-ast',
+      root_path:
+        'transnational-national-and-subnational-adaptation/regions-cities-and-towns/urban-ast',
     },
     {
       title: 'Adaptation Suport Tool',
-      root_path: 'knowledge/tools/adaptation-support-tool',
+      root_path: 'eu-adaptation/adaptation-context/adaptation-support-tool',
     },
   ];
 
@@ -436,6 +438,9 @@ const applyConfig = (config) => {
   };
   config.settings.searchlib.resolve.NavigatorCatalogueContentView = {
     component: NavigatorCatalogueContentView,
+  };
+  config.settings.searchlib.resolve.NavigatorCatalogueSearchBox = {
+    component: NavigatorCatalogueSearchBox,
   };
   config.settings.searchlib.resolve.NavigatorGeographicCoverageFacet = {
     ...config.settings.searchlib.resolve.MultiTermFacet,
@@ -498,6 +503,18 @@ const applyConfig = (config) => {
       menuItemChildrenListColumns: [2, 1, 1, 1],
     },
     '/en/observatory/topics': {
+      menuItemColumns: ['six wide column', 'six wide column'],
+      menuItemChildrenListColumns: [3, 1],
+    },
+    '/en/transnational-national-and-subnational-adaptation': {
+      menuItemColumns: [
+        'seven wide column',
+        'two wide column',
+        'three wide column',
+      ],
+      menuItemChildrenListColumns: [3, 1],
+    },
+    '/en/adaptation-in-sectors': {
       menuItemColumns: ['six wide column', 'six wide column'],
       menuItemChildrenListColumns: [3, 1],
     },

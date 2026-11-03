@@ -34,7 +34,7 @@ jest.mock('semantic-ui-react', () => {
     Grid: Object.assign(({ children }) => <div>{children}</div>, {
       Column: ({ children }) => <div>{children}</div>,
     }),
-    Icon: () => null,
+    Icon: ({ className }) => <i className={className} />,
     Menu,
   };
 });

@@ -1,5 +1,6 @@
 import {
   CHARACTERISATION_FIELD,
+  GEOGRAPHIC_SCOPE_VALUES,
   geographicCoverageRuntimeMappings,
   getGeographicCoverageFacetValue,
 } from './geographicCoverage';
@@ -20,6 +21,14 @@ describe('geographic coverage runtime mapping', () => {
     expect(mapping.script.source).toContain(
       "doc['cca_geographic_characterisation.keyword']",
     );
+    expect(mapping.script.source).toContain("emit('Transnational regions')");
+    expect(mapping.script.source).toContain("emit('Others')");
+    expect(GEOGRAPHIC_SCOPE_VALUES).toEqual({
+      europe: 'Europe',
+      global: 'Global',
+      transnational: 'Transnational regions',
+      others: 'Others',
+    });
   });
 });
 

@@ -14,7 +14,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
  *   copied, and are identical in all 27 languages (verified against production).
  */
 export const isImageAssetFolder = (item) => {
-  if (!item || item['@type'] !== 'Folder') {
+  if (item?.['@type'] !== 'Folder') {
     return false;
   }
 

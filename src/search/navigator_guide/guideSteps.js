@@ -1,4 +1,10 @@
 import { defineMessages } from 'react-intl';
+import {
+  CHARACTERISATION_FIELD,
+  COUNTRIES_FIELD,
+  GEOGRAPHIC_SCOPE_VALUES,
+  TRANSNATIONAL_REGION_FIELD,
+} from '../navigator_catalogue/geographicCoverage';
 
 const messages = defineMessages({
   adaptationSectors: {
@@ -26,6 +32,35 @@ const messages = defineMessages({
     id: 'Choose one or more hazards relevant to your work. This narrows tools to those covering your risk.',
     defaultMessage:
       'Choose one or more hazards relevant to your work. This narrows tools to those covering your risk.',
+  },
+  geographicCoverage: {
+    id: 'Geographic coverage',
+    defaultMessage: 'Geographic coverage',
+  },
+  geographicCoverageQuestion: {
+    id: 'Which geographic coverage do you need?',
+    defaultMessage: 'Which geographic coverage do you need?',
+  },
+  geographicCoverageDescription: {
+    id: 'Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection.',
+    defaultMessage:
+      'Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection.',
+  },
+  broadCoverage: {
+    id: 'European-wide and global',
+    defaultMessage: 'European-wide and global',
+  },
+  countries: {
+    id: 'Countries',
+    defaultMessage: 'Countries',
+  },
+  transnationalRegions: {
+    id: 'Transnational regions',
+    defaultMessage: 'Transnational regions',
+  },
+  other: {
+    id: 'Other',
+    defaultMessage: 'Other',
   },
   adaptationStage: {
     id: 'Adaptation stage',
@@ -74,6 +109,50 @@ const guideSteps = [
     filterType: 'any',
   },
   {
+    id: 'geographicCoverage',
+    label: messages.geographicCoverage,
+    title: messages.geographicCoverageQuestion,
+    description: messages.geographicCoverageDescription,
+    groups: [
+      {
+        id: 'broadCoverage',
+        label: messages.broadCoverage,
+        hideLabel: true,
+        field: CHARACTERISATION_FIELD,
+        filterType: 'any',
+        options: [
+          { value: GEOGRAPHIC_SCOPE_VALUES.europe },
+          { value: GEOGRAPHIC_SCOPE_VALUES.global },
+        ],
+      },
+      {
+        id: 'countries',
+        label: messages.countries,
+        field: COUNTRIES_FIELD,
+        filterType: 'any',
+      },
+      {
+        id: 'transnationalRegions',
+        label: messages.transnationalRegions,
+        field: TRANSNATIONAL_REGION_FIELD,
+        filterType: 'any',
+      },
+      {
+        id: 'other',
+        label: messages.other,
+        hideLabel: true,
+        field: CHARACTERISATION_FIELD,
+        filterType: 'any',
+        options: [
+          {
+            value: GEOGRAPHIC_SCOPE_VALUES.others,
+            label: 'Other',
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: 'adaptationStage',
     label: messages.adaptationStage,
     title: messages.adaptationStageQuestion,
@@ -81,14 +160,15 @@ const guideSteps = [
     field: 'cca_adaptation_support_cycle_step.keyword',
     filterType: 'all',
   },
-  // {
-  //   id: 'coverage',
-  //   label: messages.coverage,
-  //   title: messages.coverageQuestion,
-  //   description: messages.coverageDescription,
-  //   field: 'cca_geographical_scale.keyword',
-  //   filterType: 'any',
-  // },
 ];
+
+export const getGuideStepFields = (step) =>
+  [
+    ...new Set(
+      step?.groups?.length
+        ? step.groups.map(({ field }) => field)
+        : [step?.field],
+    ),
+  ].filter(Boolean);
 
 export default guideSteps;
