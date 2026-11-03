@@ -26,18 +26,12 @@ jobs:
       - name: Run Betterleaks
         id: betterleaks
         continue-on-error: true
-        uses: dortort/betterleaks-action@v0.1.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          scan-mode: dir
-          scan-path: .
-          config: .gitleaks.toml
-          report-format: json
-          report-path: betterleaks-report.json
-          redact: "true"
-          no-color: "true"
-          no-banner: "true"
-          fail-on-leak: "true"
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE:/repo" -w /repo \
+            ghcr.io/betterleaks/betterleaks:v1.8.1 \
+            dir . --config .gitleaks.toml \
+            --report-format json --report-path betterleaks-report.json \
+            --redact --no-color --no-banner
 
       - name: Upload Betterleaks report
         if: always()

@@ -26,6 +26,7 @@ import installDataConnectedEmbed from './DataConnectedEmbedBlock';
 import installCountryMapProfile from './CountryMapProfile';
 import installCountryMapProfile2026 from './CountryMapProfile2026';
 import installChatbotCatalogue from './ChatbotCatalogue';
+import installItemsList from './ItemsList';
 
 export default function installBlocks(config) {
   config.blocks.blocksConfig.title.restricted = false;
@@ -94,5 +95,6 @@ export default function installBlocks(config) {
     installCountryMapProfile2026,
     installFlourishEmbedBlock,
     installDataConnectedEmbed,
+    installItemsList,
   )(config);
 }
