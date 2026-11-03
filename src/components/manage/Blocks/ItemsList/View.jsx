@@ -151,10 +151,17 @@ export default function View({ data = {}, id, mode }) {
             );
           }
 
-          const content = icon;
+          const content = (
+            <>
+              {icon}
+              {item.title && (
+                <span className="items-list-item-title">{item.title}</span>
+              )}
+            </>
+          );
           return href && mode !== 'edit' ? (
             <UniversalLink
-              className="items-list-item"
+              className="items-list-item is-inline-item"
               {...linkProps}
               key={`${item.title}-${index}`}
               title={item.title || undefined}
@@ -164,7 +171,7 @@ export default function View({ data = {}, id, mode }) {
             </UniversalLink>
           ) : (
             <div
-              className="items-list-item"
+              className="items-list-item is-inline-item"
               key={`${item.title}-${index}`}
               title={item.title || undefined}
               aria-label={item.title || undefined}
