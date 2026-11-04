@@ -157,7 +157,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       getFacetOptions(facets, step?.field),
       selectedValues,
       hasSelections,
-    ),
+    ).map((option) => ({
+      ...option,
+      label:
+        step?.id === 'climateHazards'
+          ? formatClimateImpact(intl, option.value)
+          : option.value,
+    })),
     currentLang,
   );
   const isLastStep = activeStep === steps.length - 1;
@@ -469,11 +475,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       disabled={option.disabled}
                       onChange={() => toggleValue(option.value)}
                     />
-                    <span>
-                      {step.id === 'climateHazards'
-                        ? formatClimateImpact(intl, option.value)
-                        : option.value}
-                    </span>
+                    <span>{option.label}</span>
                     <small>{option.count}</small>
                   </label>
                 ))}
