@@ -120,7 +120,7 @@ msgstr "Aanpassingssectoren"
 #. Default: "Adaptation stage"
 #: search/navigator_guide/guideSteps
 msgid "Adaptation stage"
-msgstr ""
+msgstr "Aanpassingsfase"
 
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
@@ -175,7 +175,7 @@ msgstr ""
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
@@ -276,12 +276,12 @@ msgstr "Kies een regio"
 #. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 #: search/navigator_guide/guideSteps
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
-msgstr ""
+msgstr "Kies een of meer gevaren die relevant zijn voor uw werk. Dit beperkt de instrumenten tot de instrumenten die uw risico dekken."
 
 #. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
 #: search/navigator_guide/guideSteps
 msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
-msgstr ""
+msgstr "Kies het geografische gebied dat uw gereedschap moet bestrijken. Alle dekkingscategorieën blijven zichtbaar en het kiezen van een andere categorie vervangt de vorige geografische selectie."
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -326,7 +326,7 @@ msgstr "Klimaateffecten"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Climate hazards"
-msgstr ""
+msgstr "Klimaatgevaren"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -430,7 +430,7 @@ msgstr "Landen:"
 #. Default: "Coverage"
 #: search/navigator_guide/guideSteps
 msgid "Coverage"
-msgstr ""
+msgstr "Dekking"
 
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
@@ -566,7 +566,7 @@ msgstr "Komt in aanmerking voor financiering"
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
 msgid "European-wide and global"
-msgstr ""
+msgstr "Europees en mondiaal"
 
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -616,7 +616,7 @@ msgstr "Financiering van stimuleringsinstrumenten"
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
-msgstr ""
+msgstr "Vind het juiste hulpmiddel"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -666,7 +666,7 @@ msgstr "Geografische karakterisering:"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
-msgstr ""
+msgstr "Geografische dekking"
 
 #. Default: "Geographical scale"
 #: search/mission_tools/facets-tools
@@ -721,7 +721,7 @@ msgstr "Leidraad"
 #. Default: "Guide me"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Guide me"
-msgstr ""
+msgstr "Leid mij"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -966,7 +966,7 @@ msgstr ""
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
-msgstr ""
+msgstr "Live voorbeeld · resultaten op basis van uw selectie"
 
 #. Default: "Login"
 #: messages
@@ -1048,12 +1048,12 @@ msgstr ""
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide introduction"
-msgstr ""
+msgstr "Beantwoord een paar begeleide vragen. De catalogus aan de rechterkant wordt steeds smaller: u kunt op elk gewenst moment naar de resultaten gaan."
 
 #. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide preview empty state"
-msgstr ""
+msgstr "Begin met het selecteren van de categorieën die u interesseren. De tools die zijn gefilterd op de door u gekozen categorieën verschijnen in dit vak."
 
 #. Default: "New"
 #: components/Search/Result/ClusterHorizontalCardItem
@@ -1073,7 +1073,7 @@ msgstr "Nieuws"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
-msgstr ""
+msgstr "Volgende stap"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1083,7 +1083,7 @@ msgstr "Geen HHAP"
 #. Default: "No Navigator Guide steps are configured."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No Navigator Guide steps are configured."
-msgstr ""
+msgstr "Er zijn geen Navigator Guide-stappen geconfigureerd."
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1093,7 +1093,7 @@ msgstr "Geen informatie"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
-msgstr ""
+msgstr "Er zijn geen opties beschikbaar voor deze stap."
 
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
@@ -1164,7 +1164,7 @@ msgstr "Georganiseerd door EMA"
 #. Default: "Other"
 #: search/navigator_guide/guideSteps
 msgid "Other"
-msgstr ""
+msgstr "Anders"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1204,7 +1204,7 @@ msgstr "Fysiek en technologisch"
 #. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
 #: search/navigator_guide/guideSteps
 msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
-msgstr ""
+msgstr "Kies de niveaus waarop uw werk zich afspeelt. We houden tools bij waarvan de gegevens en begeleiding deze schaal bereiken."
 
 #. Default: "Policy Instruments"
 #: messages
@@ -1306,7 +1306,7 @@ msgstr "Referenties"
 #. Default: "Refined by {criteria}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Refined by {criteria}"
-msgstr ""
+msgstr "Gefilterd op {criteria}"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1415,7 +1415,7 @@ msgstr "Sectoren:"
 #. Default: "See all matching tools"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See all matching tools"
-msgstr ""
+msgstr "Bekijk alle bijpassende gereedschappen"
 
 #. Default: "See less"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1430,7 +1430,7 @@ msgstr "Zie meer"
 #. Default: "See results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See results"
-msgstr ""
+msgstr "Zie resultaten"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -1451,7 +1451,7 @@ msgstr ""
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Select all that apply"
-msgstr ""
+msgstr "Selecteer alles wat van toepassing is"
 
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
@@ -1472,7 +1472,7 @@ msgstr "Sitemap"
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
-msgstr ""
+msgstr "Ga naar resultaten"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1520,12 +1520,12 @@ msgstr "Participatie van belanghebbenden"
 #. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 #: search/navigator_guide/guideSteps
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
-msgstr ""
+msgstr "Start de rondleiding door een of meerdere sectoren te selecteren. Aan de rechterkant ziet u een voorbeeld van de beschikbare tools, gefilterd op basis van uw selecties."
 
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
-msgstr ""
+msgstr "Stap {current} van {total}"
 
 #. Default: "Sub Nationals:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
@@ -1587,7 +1587,7 @@ msgstr ""
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
 msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
-msgstr ""
+msgstr "De stappen volgen de cyclus van de Climate-ADAPT Adaptation Support Tool. Kies de stap of stappen waarvoor u ondersteuning nodig heeft. We beschikken over hulpmiddelen die u op die punten in het proces kunnen helpen."
 
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1769,12 +1769,12 @@ msgstr "Websites:"
 #. Default: "What sectors does your work focus on?"
 #: search/navigator_guide/guideSteps
 msgid "What sectors does your work focus on?"
-msgstr ""
+msgstr "Op welke sectoren richt uw werk zich?"
 
 #. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
 msgid "What step of the adaptation support cycle are you working on?"
-msgstr ""
+msgstr "Aan welke stap van de aanpassingsondersteuningscyclus werkt u?"
 
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
@@ -1794,17 +1794,17 @@ msgstr "Waar"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
-msgstr ""
+msgstr "Welk klimaatgevaar pakt u aan?"
 
 #. Default: "Which geographic coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which geographic coverage do you need?"
-msgstr ""
+msgstr "Welke geografische dekking heeft u nodig?"
 
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
-msgstr ""
+msgstr "Welke ruimtelijke dekking heeft u nodig?"
 
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
@@ -1914,7 +1914,7 @@ msgstr ""
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "{count, plural, one {tool matches} other {tools match}}"
-msgstr ""
+msgstr "{count, plural, one {bijpassend gereedschap} other {bijpassende gereedschappen}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
