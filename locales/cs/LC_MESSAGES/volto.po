@@ -83,6 +83,7 @@ msgid "Adaptation Sectors"
 msgstr "Adaptační sektory"
 
 #. Default: "Adaptation Support Cycle Step"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
 msgstr ""
