@@ -25,7 +25,7 @@ msgstr "Az esemény háttérdokumentuma elérhető"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Névjegy"
+msgstr "Rólunk"
 
 #. Default: "About us"
 #: messages
