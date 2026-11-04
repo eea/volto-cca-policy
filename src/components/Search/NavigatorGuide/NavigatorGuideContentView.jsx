@@ -187,9 +187,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                 ? value.split(':')[0]
                 : item.id === 'climateHazards'
                   ? formatClimateImpact(intl, value)
-                : value === 'Others'
-                  ? 'Other'
-                  : value,
+                  : value === 'Others'
+                    ? 'Other'
+                    : value,
             type: previewTagTypes[item.id],
           }));
       });
