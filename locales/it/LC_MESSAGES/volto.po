@@ -25,7 +25,7 @@ msgstr "È disponibile un documento di base per l'evento"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Chi siamo"
+msgstr "Informazioni"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #. Default: "Financing incentive instruments"
 #: messages

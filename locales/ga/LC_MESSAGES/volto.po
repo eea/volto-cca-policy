@@ -25,7 +25,7 @@ msgstr "Tá doiciméad cúlra don imeacht ar fáil"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr ""
+msgstr "Eolas"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "CCanna"
 
 #. Default: "Financing incentive instruments"
 #: messages

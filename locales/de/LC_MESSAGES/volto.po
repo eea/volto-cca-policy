@@ -25,7 +25,7 @@ msgstr "Ein Hintergrunddokument zur Veranstaltung liegt vor"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Über uns"
+msgstr "Über"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #. Default: "Financing incentive instruments"
 #: messages

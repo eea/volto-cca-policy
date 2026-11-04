@@ -25,7 +25,7 @@ msgstr "Popratni dokument za događaj je dostupan"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Oko"
+msgstr "Informacije"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "ČPP"
 
 #. Default: "Financing incentive instruments"
 #: messages

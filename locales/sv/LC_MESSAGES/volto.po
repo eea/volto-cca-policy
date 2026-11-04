@@ -25,7 +25,7 @@ msgstr "Ett bakgrundsdokument för evenemanget finns tillgängligt"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Handla om"
+msgstr "Om"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #. Default: "Financing incentive instruments"
 #: messages

@@ -25,7 +25,7 @@ msgstr "Sündmuse taustadokument on saadaval"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Umbes"
+msgstr "Teave"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "KKK"
 
 #. Default: "Financing incentive instruments"
 #: messages

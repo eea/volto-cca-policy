@@ -25,7 +25,7 @@ msgstr "Ir pieejams pasākuma fona dokuments"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Gandrīz"
+msgstr "Par"
 
 #. Default: "About us"
 #: messages
@@ -606,7 +606,7 @@ msgstr ""
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "BUJ"
 
 #. Default: "Financing incentive instruments"
 #: messages
