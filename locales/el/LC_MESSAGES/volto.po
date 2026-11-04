@@ -359,6 +359,16 @@ msgstr "Climate-ADAPT σελίδα για αυτήν την εκδήλωση"
 msgid "Close"
 msgstr ""
 
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Παράκτιες πλημμύρες / παλίρροιες καταιγίδας"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Ψυχρά κύματα / ακραίο ψύχος"
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -523,6 +533,11 @@ msgstr "Αποθέστε το αρχείο εδώ για να ανεβάσετε
 msgid "Drop files here ..."
 msgstr "Απόθεση αρχείων εδώ..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Ξηρασία"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -617,6 +632,11 @@ msgstr "Χρηματοδοτικά μέσα παροχής κινήτρων"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Βρείτε το κατάλληλο εργαλείο"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Πυρκαγιά / δασική πυρκαγιά"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -763,6 +783,11 @@ msgstr "Σχέδια δράσης για την υγεία της θερμότη
 msgid "Heat health warning systems (HHWS)"
 msgstr "Συστήματα προειδοποίησης υγείας για τη θερμότητα (HHWS)"
 
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Έντονες βροχοπτώσεις / ακραία βροχόπτωση"
+
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -874,6 +899,11 @@ msgstr "Λέξεις-κλειδιά:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Γνώση και αλλαγή συμπεριφοράς"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Κατολίσθηση"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1104,6 +1134,11 @@ msgstr ""
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Κανένα αποτέλεσμα"
+
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Μη ειδικό για συγκεκριμένο κίνδυνο"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1474,6 +1509,11 @@ msgstr "Χάρτης ιστότοπου"
 msgid "Skip to results"
 msgstr "Μετάβαση στα αποτελέσματα"
 
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Χιόνι / χιονοστιβάδες"
+
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1810,6 +1850,11 @@ msgstr "Ποια χωρική κάλυψη χρειάζεστε;"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr ""
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Άνεμος / καταιγίδα"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

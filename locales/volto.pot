@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-11-04T07:11:58.050Z\n"
+"POT-Creation-Date: 2026-11-04T16:02:41.217Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -361,6 +361,16 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr ""
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr ""
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -525,6 +535,11 @@ msgstr ""
 msgid "Drop files here ..."
 msgstr ""
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr ""
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -618,6 +633,11 @@ msgstr ""
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
+msgstr ""
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
 msgstr ""
 
 #. Default: "Focus areas"
@@ -765,6 +785,11 @@ msgstr ""
 msgid "Heat health warning systems (HHWS)"
 msgstr ""
 
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr ""
+
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -875,6 +900,11 @@ msgstr ""
 #. Default: "Knowledge and behavioural change"
 #: messages
 msgid "Knowledge and behavioural change"
+msgstr ""
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
 msgstr ""
 
 #. Default: "Language"
@@ -1105,6 +1135,11 @@ msgstr ""
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
+msgstr ""
+
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
 msgstr ""
 
 #. Default: "Non-EU Languages"
@@ -1476,6 +1511,11 @@ msgstr ""
 msgid "Skip to results"
 msgstr ""
 
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr ""
+
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1811,6 +1851,11 @@ msgstr ""
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
+msgstr ""
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
 msgstr ""
 
 #. Default: "You are viewing an archived version."

@@ -24,6 +24,7 @@ import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import NavigatorCataloguePageActions from '../NavigatorCatalogue/NavigatorCataloguePageActions';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
+import { formatClimateImpact } from '@eeacms/volto-cca-policy/messages';
 
 const messages = defineMessages({
   noSteps: {
@@ -184,6 +185,8 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             label:
               item.id === 'adaptationStage'
                 ? value.split(':')[0]
+                : item.id === 'climateHazards'
+                  ? formatClimateImpact(intl, value)
                 : value === 'Others'
                   ? 'Other'
                   : value,
@@ -466,7 +469,11 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       disabled={option.disabled}
                       onChange={() => toggleValue(option.value)}
                     />
-                    <span>{option.value}</span>
+                    <span>
+                      {step.id === 'climateHazards'
+                        ? formatClimateImpact(intl, option.value)
+                        : option.value}
+                    </span>
                     <small>{option.count}</small>
                   </label>
                 ))}
