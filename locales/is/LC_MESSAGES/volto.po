@@ -40,7 +40,7 @@ msgstr "Aðgengi"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Aðgengi og notagildi"
 
 #. Default: "Active filters"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
@@ -130,22 +130,22 @@ msgstr "Aðlögunarstig"
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Skref í stuðningsferli aðlögunar"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Bæta við tóli"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Bættu við að minnsta kosti einu tóli í viðbót"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Bæta við samanburð"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -170,12 +170,12 @@ msgstr "Alla tíð"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Að minnsta kosti tvö gild tól þarf til samanburðar. Veldu tól úr Navigator-skránni."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Tiltækt"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -185,7 +185,7 @@ msgstr "Til baka"
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Til baka í niðurstöður"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -266,7 +266,7 @@ msgstr "Áskoranir"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Skoða Navigator-skrána"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -383,18 +383,18 @@ msgstr "Bera saman"
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Bera saman valin tól"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Bera saman tól"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "Ber saman {count} tól"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -451,7 +451,7 @@ msgstr "Umfjöllun"
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Viðmið"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
@@ -466,7 +466,7 @@ msgstr "Stjórnborð"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Gagnaveitur"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -622,7 +622,7 @@ msgstr "Kanna verkfæri"
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Flytja út töflu"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
@@ -662,7 +662,7 @@ msgstr "Fullskjár"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Virkni"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -853,7 +853,7 @@ msgstr "Upplýsingagátt"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Inntak"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -987,7 +987,7 @@ msgstr "Ævi"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Tengill afritaður"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -1064,7 +1064,7 @@ msgstr "Notalegast fyrir"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Sveitarfélög og annað:"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1084,7 +1084,7 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1156,15 +1156,20 @@ msgstr "Ekki tiltekið hættusvið"
 msgid "Non-EU Languages"
 msgstr "Tungumál utan ESB"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Ekkert"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Ekki tiltækt"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Fjöldi studdra skrefa í stuðningsferli aðlögunar, frá 1 til 6."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1190,7 +1195,7 @@ msgstr "Elst"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Opna tól"
 
 #. Default: "Organisation"
 #: messages
@@ -1208,6 +1213,7 @@ msgid "Organised by EEA"
 msgstr "Skipulögð af EES"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
 msgstr "Annað"
@@ -1225,12 +1231,12 @@ msgstr "Önnur verkfæri"
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Úttak"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Tegund úttaks"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1331,7 +1337,7 @@ msgstr "Lesið allan texta aðlögunarvalkostsins"
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Tilbúið til samanburðar"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1402,12 +1408,12 @@ msgstr "Viðeigandi samlegðaráhrif með mótvægisaðgerðum"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "Fjarlægja {title}"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "Fjarlægja {title} úr samanburði"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -1502,7 +1508,7 @@ msgstr "Veldu allt sem á við"
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Deila"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1533,7 +1539,7 @@ msgstr "Lausnir"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Ekki tókst að hlaða sumum völdum tólum og var þeim sleppt."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1555,12 +1561,12 @@ msgstr "Heimild:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Rýmisupplausn"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Rýmislegur mælikvarði"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1598,7 +1604,7 @@ msgstr "Árangur og takmarkandi þættir"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Stuðningur við hringrás aðlögunarstefnu"
 
 #. Default: "Technological options"
 #: messages
@@ -1608,7 +1614,7 @@ msgstr "Tæknilegir valkostir"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Tímalegt umfang gagna"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1633,7 +1639,7 @@ msgstr "Dagsetningin vísar til þess augnabliks þegar hluturinn hefur verið �
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Ekki tókst að hlaða völdum tólum. Farðu aftur í Navigator-skrána og veldu þau aftur."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
@@ -1648,7 +1654,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Þetta sýnir hversu auðvelt er að skilja og túlka tólið og niðurstöður þess: lágt þýðir að þörf sé á mikilli sérþekkingu; miðlungs þýðir að nokkur tæknileg eða vísindaleg grunnþekking sé nauðsynleg; hátt þýðir að tólið sé notendavænt fyrir almenning og krefjist lítillar tæknikunnáttu."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1673,7 +1679,7 @@ msgstr "Verkfæri"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Notkun við staðfestingu tóls"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -1733,22 +1739,22 @@ msgstr ""
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Notagildi"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Nota til"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Notað í"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Notendahópur"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1830,7 +1836,7 @@ msgstr "Hvaða skref í aðlögunarstuðningslotunni ertu að vinna að?"
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Hvað þú getur gert með því"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1860,7 +1866,7 @@ msgstr "Hvaða landsvæðisþekju þarftu?"
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Hvers vegna það skiptir máli fyrir aðlögun að loftslagsbreytingum"
 
 #. Default: "Wind / storm"
 #: messages
@@ -1975,4 +1981,4 @@ msgstr "{count, plural, one {samsvarandi verkfæri} other {samsvarandi verkfæri
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {samsvarandi verkfæri} other {samsvarandi verkfæri}} "{searchTerm}""
+msgstr "{count, plural, one {samsvarandi verkfæri} other {samsvarandi verkfæri}} “{searchTerm}”"

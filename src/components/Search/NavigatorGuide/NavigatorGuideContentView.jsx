@@ -93,6 +93,10 @@ const messages = defineMessages({
     id: 'See all matching tools',
     defaultMessage: 'See all matching tools',
   },
+  other: {
+    id: 'Other',
+    defaultMessage: 'Other',
+  },
 });
 
 const getFacetOptions = (facets, field) =>
@@ -194,7 +198,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                 : item.id === 'climateHazards'
                   ? formatClimateImpact(intl, value)
                   : value === 'Others'
-                    ? 'Other'
+                    ? intl.formatMessage(messages.other)
                     : value,
             type: previewTagTypes[item.id],
           }));
@@ -264,7 +268,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       ? groupOptions.filter(({ value }) => fixedOptionValues.includes(value))
       : groupOptions;
     const labels = new Map(
-      fixedOptions.map(({ label, value }) => [value, label || value]),
+      fixedOptions.map(({ label, value }) => [
+        value,
+        label && typeof label !== 'string'
+          ? intl.formatMessage(label)
+          : label || value,
+      ]),
     );
 
     return sortGuideOptions(filteredOptions, currentLang).map((option) => ({

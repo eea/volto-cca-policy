@@ -40,7 +40,7 @@ msgstr "Inrochtaineacht"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Inrochtaineacht agus inúsáidteacht"
 
 #. Default: "Active filters"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
@@ -130,22 +130,22 @@ msgstr "Céim oiriúnaithe"
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Céim den timthriall tacaíochta oiriúnaithe"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Cuir uirlis leis"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Cuir uirlis amháin eile ar a laghad leis"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Cuir leis an gcomparáid"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -170,12 +170,12 @@ msgstr "An t-am ar fad"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Tá dhá uirlis bhailí ar a laghad ag teastáil chun comparáid a dhéanamh. Roghnaigh uirlisí ó Chatalóg Navigator."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Ar fáil"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -185,7 +185,7 @@ msgstr "Ar ais"
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Ar ais chuig na torthaí"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -266,7 +266,7 @@ msgstr "Dúshláin"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Féach ar Chatalóg Navigator"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -383,18 +383,18 @@ msgstr "Déan comparáid idir"
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Déan comparáid idir na huirlisí roghnaithe"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Déan comparáid idir uirlisí"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "Ag comparáid idir {count} {count, plural, one {uirlis} other {uirlisí}}"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -451,7 +451,7 @@ msgstr "Clúdach"
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Critéir"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
@@ -466,7 +466,7 @@ msgstr "Painéal"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Foinsí sonraí"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -622,7 +622,7 @@ msgstr "Déan iniúchadh ar uirlisí"
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Easpórtáil an tábla"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
@@ -662,7 +662,7 @@ msgstr "Lánscáileán"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Feidhmiúlacht"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -853,7 +853,7 @@ msgstr "Tairseach faisnéise"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Ionchur"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -987,7 +987,7 @@ msgstr "Saol"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Cóipeáladh an nasc"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -1064,7 +1064,7 @@ msgstr "An chuid is mó úsáideach le haghaidh"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Bardais agus eile:"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1084,7 +1084,7 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1156,15 +1156,20 @@ msgstr "Neamhshonrach do ghuaiseacha"
 msgid "Non-EU Languages"
 msgstr "Teangacha Neamh-AE"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Dada"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Níl ar fáil"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Líon na gcéimeanna den timthriall tacaíochta oiriúnaithe a dtacaítear leo, ó chéim amháin go sé chéim."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1190,7 +1195,7 @@ msgstr "Is sine"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Oscail an uirlis"
 
 #. Default: "Organisation"
 #: messages
@@ -1208,6 +1213,7 @@ msgid "Organised by EEA"
 msgstr "Arna eagrú ag EEA"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
 msgstr "Eile"
@@ -1225,12 +1231,12 @@ msgstr "Uirlisí eile"
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Aschur"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Cineál aschuir"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1331,7 +1337,7 @@ msgstr "Léigh téacs iomlán an rogha oiriúnaithe"
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Réidh le comparáid a dhéanamh"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1402,12 +1408,12 @@ msgstr "Sinéirgí ábhartha le maolú"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "Bain {title}"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "Bain {title} den chomparáid"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -1502,7 +1508,7 @@ msgstr "Roghnaigh gach a mbaineann"
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Roinn"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1533,7 +1539,7 @@ msgstr "Réitigh"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Níorbh fhéidir cuid de na huirlisí roghnaithe a lódáil agus fágadh ar lár iad."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1555,12 +1561,12 @@ msgstr "Foinse:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Taifeach spásúil"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Scála spásúil"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1598,7 +1604,7 @@ msgstr "Fachtóirí ratha agus teorannacha"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Tacaíocht don Timthriall Beartais Oiriúnaithe"
 
 #. Default: "Technological options"
 #: messages
@@ -1608,7 +1614,7 @@ msgstr "Roghanna teicneolaíochta"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Tréimhsiúlacht na sonraí"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1633,7 +1639,7 @@ msgstr "Tagraíonn an dáta don mhóimint ina bhfuil an mhír ullmhaithe nó nua
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Níorbh fhéidir na huirlisí roghnaithe a lódáil. Fill ar Chatalóg Navigator agus roghnaigh arís iad."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
@@ -1648,7 +1654,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Léiríonn sé seo cé chomh héasca is atá sé an uirlis agus a haschuir a thuiscint agus a léirmhíniú: ciallaíonn leibhéal íseal go bhfuil saineolas ardleibhéil ag teastáil; ciallaíonn leibhéal measartha go bhfuil roinnt eolais theicniúil nó eolaíoch roimh ré ag teastáil; agus ciallaíonn leibhéal ard go bhfuil an uirlis soláimhsithe don phobal i gcoitinne agus nach bhfuil ach fíorbheagán eolais theicniúil ag teastáil."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1673,7 +1679,7 @@ msgstr "Uirlis"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Úsáid chun an uirlis a bhailíochtú"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -1733,22 +1739,22 @@ msgstr ""
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Inúsáidteacht"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Úsáid é chun"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Úsáidtear in"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Grúpa úsáideoirí"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1830,7 +1836,7 @@ msgstr "Cén chéim den timthriall tacaíochta oiriúnaithe ar a bhfuil tú ag o
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Cad is féidir leat a dhéanamh leis"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1860,7 +1866,7 @@ msgstr "Cén clúdach spáis atá uait?"
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Cén fáth a bhfuil sé ábhartha don oiriúnú don athrú aeráide"
 
 #. Default: "Wind / storm"
 #: messages
@@ -1975,4 +1981,4 @@ msgstr "{count, plural, one {uirlis meaitseála} two {uirlis meaitseála} few {u
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {uirlis meaitseála} two {uirlis meaitseála} few {uirlisí meaitseála} many {uirlisí meaitseála} other {uirlisí meaitseála}} "{searchTerm}""
+msgstr "{count, plural, one {uirlis meaitseála} two {uirlis meaitseála} few {uirlisí meaitseála} many {uirlisí meaitseála} other {uirlisí meaitseála}} “{searchTerm}”"

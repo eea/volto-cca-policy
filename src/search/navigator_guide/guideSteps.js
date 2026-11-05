@@ -146,7 +146,7 @@ const guideSteps = [
         options: [
           {
             value: GEOGRAPHIC_SCOPE_VALUES.others,
-            label: 'Other',
+            label: messages.other,
           },
         ],
       },

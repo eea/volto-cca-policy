@@ -40,7 +40,7 @@ msgstr "Pristupačnost"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Pristupačnost i upotrebljivost"
 
 #. Default: "Active filters"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
@@ -130,22 +130,22 @@ msgstr "Faza prilagodbe"
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Korak ciklusa potpore prilagodbi"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Dodaj alat"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Dodajte barem još jedan alat"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Dodaj u usporedbu"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -170,12 +170,12 @@ msgstr "Sve vrijeme"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Za usporedbu su potrebna najmanje dva valjana alata. Odaberite alate iz kataloga Navigator."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Dostupno"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -185,7 +185,7 @@ msgstr "natrag"
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Natrag na rezultate"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -266,7 +266,7 @@ msgstr "Izazovi"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Pogledajte katalog Navigator"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -383,18 +383,18 @@ msgstr "Usporedi"
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Usporedite odabrane alate"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Usporedite alate"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "Uspoređuje se {count} alata"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -451,7 +451,7 @@ msgstr "Pokrivenost"
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Kriteriji"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
@@ -466,7 +466,7 @@ msgstr "Nadzorna ploča"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Izvori podataka"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -622,7 +622,7 @@ msgstr "Istražite alate"
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Izvezi tablicu"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
@@ -662,7 +662,7 @@ msgstr "Cijeli zaslon"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Funkcionalnost"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -853,7 +853,7 @@ msgstr "Informacijski portal"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Ulaz"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -987,7 +987,7 @@ msgstr "Životni vijek"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Veza je kopirana"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -1064,7 +1064,7 @@ msgstr "Najkorisnije za"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Općine i ostalo:"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1084,7 +1084,7 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1156,15 +1156,20 @@ msgstr "Nije vezano uz određenu opasnost"
 msgid "Non-EU Languages"
 msgstr "Jezici izvan EU"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Nema"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Nije dostupno"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Broj podržanih koraka ciklusa potpore prilagodbi, od 1 do 6."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1190,7 +1195,7 @@ msgstr "najstariji"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Otvori alat"
 
 #. Default: "Organisation"
 #: messages
@@ -1208,9 +1213,10 @@ msgid "Organised by EEA"
 msgstr "U organizaciji EEA"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
-msgstr "ostalo"
+msgstr "Ostalo"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1225,12 +1231,12 @@ msgstr "Ostali alati"
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Izlaz"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Vrsta izlaza"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1250,7 +1256,7 @@ msgstr "Fizičko-tehnološki"
 #. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
 #: search/navigator_guide/guideSteps
 msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
-msgstr "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
+msgstr "Odaberite razine na kojima se odvija vaš rad. Zadržavamo alate čiji podaci i smjernice obuhvaćaju te razine."
 
 #. Default: "Policy Instruments"
 #: messages
@@ -1331,7 +1337,7 @@ msgstr "Pročitajte cijeli tekst opcije prilagodbe"
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Spremno za usporedbu"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1402,12 +1408,12 @@ msgstr "Relevantne sinergije s ublažavanjem"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "Ukloni {title}"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "Ukloni {title} iz usporedbe"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -1502,7 +1508,7 @@ msgstr "Odaberite sve primjenjivo"
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Podijeli"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1533,7 +1539,7 @@ msgstr "Rješenja"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Neke odabrane alate nije bilo moguće učitati pa su preskočeni."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1555,12 +1561,12 @@ msgstr "Izvor:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Prostorna razlučivost"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Prostorno mjerilo"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1598,7 +1604,7 @@ msgstr "Uspjeh i ograničavajući faktori"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Potpora ciklusu politike prilagodbe"
 
 #. Default: "Technological options"
 #: messages
@@ -1608,7 +1614,7 @@ msgstr "Tehnološke mogućnosti"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Vremenska pokrivenost podataka"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1633,12 +1639,12 @@ msgstr "Datum se odnosi na trenutak u kojem je stavka pripremljena ili ažuriran
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Odabrane alate nije bilo moguće učitati. Vratite se u katalog Navigator i ponovno ih odaberite."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
 msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
-msgstr "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step or steps you need support for - we keep tools that help at those points in the process."
+msgstr "Koraci slijede ciklus Climate-ADAPT alata za potporu prilagodbi. Odaberite korak ili korake za koje vam je potrebna potpora – zadržavamo alate koji pomažu u tim točkama procesa."
 
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1648,7 +1654,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Ovo pokazuje koliko je lako razumjeti i tumačiti alat i njegove rezultate: niska razina znači da je potrebno napredno stručno znanje; umjerena znači da je potrebno određeno prethodno tehničko ili znanstveno znanje; visoka znači da je alat jednostavan za opću uporabu i zahtijeva minimalno tehničko znanje."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1673,7 +1679,7 @@ msgstr "Alat"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Upotreba za validaciju alata"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -1733,22 +1739,22 @@ msgstr ""
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Upotrebljivost"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Upotrijebite za"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Upotrijebljeno u"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Skupina korisnika"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1820,17 +1826,17 @@ msgstr "web stranice:"
 #. Default: "What sectors does your work focus on?"
 #: search/navigator_guide/guideSteps
 msgid "What sectors does your work focus on?"
-msgstr "What sectors does your work focus on?"
+msgstr "Na koje je sektore usmjeren vaš rad?"
 
 #. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
 msgid "What step of the adaptation support cycle are you working on?"
-msgstr "What step of the adaptation support cycle are you working on?"
+msgstr "Na kojem koraku ciklusa potpore prilagodbi radite?"
 
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Što možete učiniti s njim"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1845,22 +1851,22 @@ msgstr "Gdje"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
-msgstr "Which climate hazard are you addressing?"
+msgstr "Kojom se klimatskom opasnošću bavite?"
 
 #. Default: "Which geographic coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which geographic coverage do you need?"
-msgstr "Which geographic coverage do you need?"
+msgstr "Koji vam je geografski obuhvat potreban?"
 
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
-msgstr "Which spatial coverage do you need?"
+msgstr "Koji vam je prostorni obuhvat potreban?"
 
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Zašto je važno za prilagodbu klimatskim promjenama"
 
 #. Default: "Wind / storm"
 #: messages
@@ -1975,4 +1981,4 @@ msgstr "{count, plural, one {odgovarajući alat} few {odgovarajuća alata} other
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {odgovarajući alat} few {odgovarajuća alata} other {odgovarajućih alata}} "{searchTerm}""
+msgstr "{count, plural, one {odgovarajući alat} few {odgovarajuća alata} other {odgovarajućih alata}} “{searchTerm}”"

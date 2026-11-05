@@ -40,7 +40,7 @@ msgstr "Akadálymentesség"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Akadálymentesség és használhatóság"
 
 #. Default: "Active filters"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
@@ -130,22 +130,22 @@ msgstr "Adaptációs szakasz"
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Az alkalmazkodást támogató ciklus lépése"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Eszköz hozzáadása"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Adjon hozzá legalább még egy eszközt"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Hozzáadás az összehasonlításhoz"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -170,12 +170,12 @@ msgstr "Minden alkalommal"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Az összehasonlításhoz legalább két érvényes eszköz szükséges. Válasszon eszközöket a Navigator katalógusból."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Elérhető"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -185,7 +185,7 @@ msgstr "Vissza"
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Vissza az eredményekhez"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
@@ -266,7 +266,7 @@ msgstr "Kihívások"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "A Navigator katalógus megtekintése"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -383,18 +383,18 @@ msgstr "Hasonlítsa össze"
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Kiválasztott eszközök összehasonlítása"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Eszközök összehasonlítása"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "{count} eszköz összehasonlítása"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -451,7 +451,7 @@ msgstr "Lefedettség"
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Kritériumok"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
@@ -466,7 +466,7 @@ msgstr "Irányítópult"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Adatforrások"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -622,7 +622,7 @@ msgstr "Fedezze fel az eszközöket"
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Táblázat exportálása"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
@@ -662,7 +662,7 @@ msgstr "Teljes képernyő"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Funkcionalitás"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -853,7 +853,7 @@ msgstr "Információs portál"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Bemenet"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -987,7 +987,7 @@ msgstr "Élettartam"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "A hivatkozás másolva"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -1064,7 +1064,7 @@ msgstr "A leghasznosabb a számára"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Települések és egyéb:"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1084,7 +1084,7 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1156,15 +1156,20 @@ msgstr "Nem veszélyspecifikus"
 msgid "Non-EU Languages"
 msgstr "EU-n kívüli nyelvek"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Nincs"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Nem érhető el"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Az alkalmazkodást támogató ciklus támogatott lépéseinek száma 1 és 6 között."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1190,7 +1195,7 @@ msgstr "Legrégebbi"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Eszköz megnyitása"
 
 #. Default: "Organisation"
 #: messages
@@ -1208,6 +1213,7 @@ msgid "Organised by EEA"
 msgstr "Az EEA szervezésében"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
 msgstr "Egyéb"
@@ -1225,12 +1231,12 @@ msgstr "Egyéb eszközök"
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Kimenet"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Kimenet típusa"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1331,7 +1337,7 @@ msgstr "Olvassa el az adaptációs opció teljes szövegét"
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Összehasonlításra kész"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1402,12 +1408,12 @@ msgstr "Releváns szinergiák az enyhülést szolgáltokkal"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "{title} eltávolítása"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "{title} eltávolítása az összehasonlításból"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -1502,7 +1508,7 @@ msgstr "Válassza ki az összes megfelelőt"
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1533,7 +1539,7 @@ msgstr "Megoldások"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Néhány kiválasztott eszközt nem sikerült betölteni, ezért kimaradtak."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1555,12 +1561,12 @@ msgstr "Forrás:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Térbeli felbontás"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Térbeli lépték"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1598,7 +1604,7 @@ msgstr "Siker és korlátozó tényezők"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Az alkalmazkodási szakpolitikai ciklus támogatása"
 
 #. Default: "Technological options"
 #: messages
@@ -1608,7 +1614,7 @@ msgstr "Technológiai lehetőségek"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Az adatok időbelisége"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1633,7 +1639,7 @@ msgstr "A dátum arra a pillanatra vonatkozik, amikor az elemet a közreműköd�
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "A kiválasztott eszközöket nem sikerült betölteni. Térjen vissza a Navigator katalógusba, és válassza ki őket újra."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
@@ -1648,7 +1654,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Ez azt jelzi, mennyire könnyű megérteni és értelmezni az eszközt és annak eredményeit: az alacsony szint magas szintű szakértelmet igényel; a közepes némi előzetes műszaki vagy tudományos ismeretet; a magas pedig azt jelenti, hogy az eszköz a nagyközönség számára is könnyen használható, minimális műszaki ismerettel."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1673,7 +1679,7 @@ msgstr "Eszköz"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Az eszköz validálására való használat"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -1733,22 +1739,22 @@ msgstr ""
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Használhatóság"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Használja erre"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Felhasználva itt"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Felhasználói csoport"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1830,7 +1836,7 @@ msgstr "Az adaptációs támogatási ciklus melyik lépésén dolgozik?"
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Mire használhatja"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1860,7 +1866,7 @@ msgstr "Milyen térbeli lefedettségre van szüksége?"
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Miért fontos az éghajlatváltozáshoz való alkalmazkodás szempontjából"
 
 #. Default: "Wind / storm"
 #: messages
@@ -1975,4 +1981,4 @@ msgstr "{count, plural, one {megfelelő eszköz} other {megfelelő eszköz}}"
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {megfelelő eszköz} other {megfelelő eszköz}} "{searchTerm}""
+msgstr "{count, plural, one {megfelelő eszköz} other {megfelelő eszköz}} “{searchTerm}”"

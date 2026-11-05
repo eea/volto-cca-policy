@@ -69,6 +69,10 @@ const messages = defineMessages({
     id: '4 or more',
     defaultMessage: '4 or more',
   },
+  none: {
+    id: 'None',
+    defaultMessage: 'None',
+  },
   close: {
     id: 'Close',
     defaultMessage: 'Close',

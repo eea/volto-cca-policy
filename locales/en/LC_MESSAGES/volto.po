@@ -1156,6 +1156,11 @@ msgstr "Non hazard-specific"
 msgid "Non-EU Languages"
 msgstr ""
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr ""
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
@@ -1208,6 +1213,7 @@ msgid "Organised by EEA"
 msgstr ""
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
 msgstr ""
