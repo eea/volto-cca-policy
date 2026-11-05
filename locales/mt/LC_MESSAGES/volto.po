@@ -1975,4 +1975,4 @@ msgstr "{count, plural, one {għodda li taqbel} two {għodod li jaqblu} few {għ
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {għodda li taqbel} two {għodod li jaqblu} few {għodod li jaqblu} many {għodod li jaqblu} other {għodod li jaqblu}} \"{searchTerm}\""
+msgstr "{count, plural, one {għodda li taqbel} two {għodod li jaqblu} few {għodod li jaqblu} many {għodod li jaqblu} other {għodod li jaqblu}} "{searchTerm}""

@@ -1975,4 +1975,4 @@ msgstr "{count, plural, one {samsvarandi verkfæri} other {samsvarandi verkfæri
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {samsvarandi verkfæri} other {samsvarandi verkfæri}} \"{searchTerm}\""
+msgstr "{count, plural, one {samsvarandi verkfæri} other {samsvarandi verkfæri}} "{searchTerm}""

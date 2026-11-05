@@ -1975,4 +1975,4 @@ msgstr "{count, plural, one {zodpovedajúci nástroj} few {zodpovedajúce nástr
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr "{count, plural, one {zodpovedajúci nástroj} few {zodpovedajúce nástroje} many {zodpovedajúcich nástrojov} other {zodpovedajúcich nástrojov}} \"{searchTerm}\""
+msgstr "{count, plural, one {zodpovedajúci nástroj} few {zodpovedajúce nástroje} many {zodpovedajúcich nástrojov} other {zodpovedajúcich nástrojov}} "{searchTerm}""
