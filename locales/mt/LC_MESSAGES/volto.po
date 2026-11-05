@@ -1353,7 +1353,7 @@ msgstr "Dokumenti u preżentazzjonijiet relatati"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Għodod relatati"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Għodda għal kull pajjiż"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Għodod li jaqsmu ma’ din l-għodda settur, periklu jew pass fiċ-ċiklu — passi oħra utli għall-istess mistoqsija."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

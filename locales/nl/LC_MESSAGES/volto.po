@@ -1353,7 +1353,7 @@ msgstr "Gerelateerde documenten en presentaties"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Gerelateerde hulpmiddelen"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Gereedschap per land"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Hulpmiddelen die een sector, gevaar of cyclusstap delen met dit hulpmiddel — nuttige vervolgstappen voor dezelfde vraag."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

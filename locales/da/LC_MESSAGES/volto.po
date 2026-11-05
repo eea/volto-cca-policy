@@ -1353,7 +1353,7 @@ msgstr "Relaterede dokumenter og præsentationer"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Relaterede værktøjer"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Værktøjer pr. land"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Værktøjer, der deler sektor, fare eller cyklustrin med dette værktøj – nyttige næste skridt i forhold til samme spørgsmål."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

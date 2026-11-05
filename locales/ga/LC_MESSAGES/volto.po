@@ -1353,7 +1353,7 @@ msgstr "Doiciméid ghaolmhara agus cur i láthair"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Uirlisí gaolmhara"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Uirlisí in aghaidh na tíre"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Uirlisí a bhfuil earnáil, guais nó céim den timthriall i bpáirt acu leis an uirlis seo — céimeanna úsáideacha eile maidir leis an gceist chéanna."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

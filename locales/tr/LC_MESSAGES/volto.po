@@ -1353,7 +1353,7 @@ msgstr "İlgili belgeler ve sunumlar"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "İlgili araçlar"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Ülke başına araçlar"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Bu araçla sektör, tehlike veya döngü adımını paylaşan araçlar — aynı konu için yararlı sonraki adımlar."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

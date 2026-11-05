@@ -1353,7 +1353,7 @@ msgstr "Asiaan liittyvät asiakirjat ja esitykset"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Liittyvät työkalut"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Työkalut maittain"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Työkalut, joilla on tämän työkalun kanssa yhteinen sektori, vaara tai syklin vaihe – hyödyllisiä seuraavia vaiheita saman kysymyksen käsittelyyn."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

@@ -1353,7 +1353,7 @@ msgstr "Σχετικά έγγραφα και παρουσιάσεις"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Σχετικά εργαλεία"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Εργαλεία ανά χώρα"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Εργαλεία που μοιράζονται με αυτόν τον τομέα, κίνδυνο ή βήμα του κύκλου — χρήσιμα επόμενα βήματα για το ίδιο ερώτημα."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

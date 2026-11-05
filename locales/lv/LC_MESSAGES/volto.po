@@ -1353,7 +1353,7 @@ msgstr "Saistītie dokumenti un prezentācijas"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Saistītie rīki"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Rīki katrai valstij"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Rīki, kuriem ar šo rīku ir kopīga nozare, apdraudējums vai cikla posms, — noderīgi nākamie soļi tā paša jautājuma risināšanai."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

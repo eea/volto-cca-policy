@@ -1353,7 +1353,7 @@ msgstr "Tengd skjöl og kynningar"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Tengd verkfæri"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Verkfæri fyrir hvert land"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Verkfæri sem eiga geira, hættu eða skref í ferlinu sameiginlegt með þessu tóli — gagnleg næstu skref varðandi sömu spurningu."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

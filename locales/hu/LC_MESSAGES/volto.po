@@ -1353,7 +1353,7 @@ msgstr "Kapcsolódó dokumentumok és prezentációk"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Kapcsolódó eszközök"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Eszközök országonként"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Az eszközzel közös ágazattal, veszéllyel vagy cikluslépéssel rendelkező eszközök – hasznos további lépések ugyanahhoz a kérdéshez."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem

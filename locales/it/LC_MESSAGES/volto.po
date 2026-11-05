@@ -1353,7 +1353,7 @@ msgstr "Documenti e presentazioni correlati"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Strumenti correlati"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
@@ -1649,7 +1649,7 @@ msgstr "Strumenti per paese"
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Strumenti che condividono con questo strumento un settore, un rischio o una fase del ciclo: utili passi successivi per la stessa questione."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem
