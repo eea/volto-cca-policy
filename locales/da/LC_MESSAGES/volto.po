@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 eller flere"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -42,10 +42,15 @@ msgstr "Tilgængelighed"
 msgid "Accessibility and usability"
 msgstr ""
 
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Aktive filtre"
+
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Aktive filtre vises altid i redigeringstilstand"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -86,7 +91,7 @@ msgstr "Tilpasningssektorer"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Trin til tilpasningsstøttecyklus"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -107,7 +112,7 @@ msgstr "Tilpasningsmuligheder"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Tilpasningspolitisk cyklus"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -301,19 +306,20 @@ msgid "City:"
 msgstr "By:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Ryd alle"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Ryd filtre"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Ryd andre geografiske dækningsfiltre for at aktivere kortet."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -357,7 +363,7 @@ msgstr "Climate-ADAPT side for denne begivenhed"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
 #. Default: "Coastal flooding / storm surge"
 #: messages
@@ -372,7 +378,7 @@ msgstr "Kuldebølger / ekstrem kulde"
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Sammenlign"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
@@ -450,7 +456,7 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Cyklus"
 
 #. Default: "Dashboard"
 #: messages
@@ -480,7 +486,7 @@ msgstr "Udgivelsesdato:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Definerer den største geografiske udstrækning, som værktøjet er relevant for"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -586,7 +592,7 @@ msgstr "Europa-dækkende og globalt"
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "Værktøjer i hele Europa"
 
 #. Default: "Event"
 #: messages
@@ -611,7 +617,7 @@ msgstr "Udforsk vores miljøinformationssystemer"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Udforsk værktøjer"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
@@ -641,7 +647,7 @@ msgstr "Brand / naturbrand"
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Fokusområder"
 
 #. Default: "For more search options"
 #: index
@@ -701,7 +707,7 @@ msgstr "Kom godt i gang"
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Globale værktøjer"
 
 #. Default: "Go to advanced search"
 #: index
@@ -716,7 +722,7 @@ msgstr "Governance og institutionel"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Governance niveau"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -751,7 +757,7 @@ msgstr "HHWS tilgængelig (klik på land for yderligere information)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Fare"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -991,12 +997,17 @@ msgstr "Links til yderligere information"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Listevisning"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
 msgstr "Live preview · resultater baseret på dit valg"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Indlæser kort..."
 
 #. Default: "Login"
 #: messages
@@ -1027,12 +1038,12 @@ msgstr "Ledelse og planlægning"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Kortvisning"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Kortvisning er kun anvendelig, når lande er valgt i <strong>Geografisk dækning</strong>."
 
 #. Default: "Mission story"
 #: messages
@@ -1093,7 +1104,7 @@ msgstr "Ny"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Nyeste"
 
 #. Default: "News"
 #: messages
@@ -1128,7 +1139,7 @@ msgstr "Der er ingen tilgængelige muligheder for dette trin."
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Ingen tilgængelige muligheder"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1173,7 +1184,7 @@ msgstr "Observationspartner"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Ældste"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
@@ -1209,7 +1220,7 @@ msgstr "Andre regioner"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Andre værktøjer"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
@@ -1376,7 +1387,7 @@ msgstr ""
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Relevans"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1481,7 +1492,7 @@ msgstr "Vælge"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Vælg et land for at udforske kortet"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1647,12 +1658,12 @@ msgstr "Dette objekt er blevet arkiveret, fordi dets indhold er forældet. Du ka
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Titel a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Titel z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1667,7 +1678,7 @@ msgstr ""
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Værktøjer pr. land"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
@@ -1690,7 +1701,7 @@ msgstr "Transnationale regioner"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Transnationale værktøjer"
 
 #. Default: "Type of item"
 #: search/common
@@ -1702,7 +1713,7 @@ msgstr "Varetype"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Type af udgange"
 
 #. Default: "Types"
 #: messages
@@ -1763,7 +1774,7 @@ msgstr "Videoer og podcasts"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Vis"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1949,12 +1960,12 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Ingen værktøjer er tilgængelige} one {# værktøj er tilgængeligt} other {# værktøjer er tilgængelige}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {værktøj i kataloget} other {værktøjer i kataloget}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1964,4 +1975,4 @@ msgstr "{count, plural, one {matchende værktøj} other {matchende værktøjer}}
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {matchende værktøj} other {matchende værktøjer}} \"{searchTerm}\""

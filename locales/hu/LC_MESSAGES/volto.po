@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 vagy több"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -42,10 +42,15 @@ msgstr "Akadálymentesség"
 msgid "Accessibility and usability"
 msgstr ""
 
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Aktív szűrők"
+
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Az aktív szűrők mindig szerkesztési módban jelennek meg"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -86,7 +91,7 @@ msgstr "Alkalmazkodási ágazatok"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Adaptációs támogatási ciklus lépése"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -107,7 +112,7 @@ msgstr "Adaptációs lehetőségek"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Alkalmazkodási politika ciklusa"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -301,19 +306,20 @@ msgid "City:"
 msgstr "Város:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Minden törlése"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Szűrők törlése"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "A térkép engedélyezéséhez törölje a többi földrajzi lefedettségi szűrőt."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -357,7 +363,7 @@ msgstr "Climate-ADAPT oldal ehhez az eseményhez"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #. Default: "Coastal flooding / storm surge"
 #: messages
@@ -372,7 +378,7 @@ msgstr "Hideghullámok / szélsőséges hideg"
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Hasonlítsa össze"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
@@ -450,7 +456,7 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Ciklus"
 
 #. Default: "Dashboard"
 #: messages
@@ -480,7 +486,7 @@ msgstr "Megjelenés dátuma:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Meghatározza azt a legnagyobb földrajzi kiterjedést, amelyre az eszköz releváns"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -586,7 +592,7 @@ msgstr "Európa-szerte és globálisan"
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "Európa szerte használható eszközök"
 
 #. Default: "Event"
 #: messages
@@ -611,7 +617,7 @@ msgstr "Fedezze fel környezeti információs rendszereinket"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Fedezze fel az eszközöket"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
@@ -641,7 +647,7 @@ msgstr "Tűz / erdőtűz"
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Fókuszterületek"
 
 #. Default: "For more search options"
 #: index
@@ -701,7 +707,7 @@ msgstr "Kezdő lépések"
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Globális eszközök"
 
 #. Default: "Go to advanced search"
 #: index
@@ -716,7 +722,7 @@ msgstr "Irányítási és intézményi"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Kormányzási szint"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -751,7 +757,7 @@ msgstr "HHWS elérhető (további információért kattintson az országra)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Veszély"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -991,12 +997,17 @@ msgstr "Linkek további információkhoz"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Lista nézet"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
 msgstr "Élő előnézet · eredmények az Ön választása alapján"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Térkép betöltése..."
 
 #. Default: "Login"
 #: messages
@@ -1027,12 +1038,12 @@ msgstr "Irányítás és tervezés"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Térképnézet"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "A térképnézet csak akkor használható, ha országok vannak kiválasztva a <strong>Földrajzi lefedettség</strong> részben."
 
 #. Default: "Mission story"
 #: messages
@@ -1093,7 +1104,7 @@ msgstr "Új"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Legújabb"
 
 #. Default: "News"
 #: messages
@@ -1128,7 +1139,7 @@ msgstr "Ehhez a lépéshez nem állnak rendelkezésre opciók."
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Nem állnak rendelkezésre opciók"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1173,7 +1184,7 @@ msgstr "Obszervatórium partnere"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Legrégebbi"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
@@ -1209,7 +1220,7 @@ msgstr "Más régiók"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Egyéb eszközök"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
@@ -1376,7 +1387,7 @@ msgstr ""
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Relevancia"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1481,7 +1492,7 @@ msgstr "Válassza ki"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Válasszon országot a térkép felfedezéséhez"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1647,12 +1658,12 @@ msgstr "Ezt az objektumot archiválták, mert a tartalma elavult. Továbbra is h
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Cím a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Cím z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1667,7 +1678,7 @@ msgstr ""
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Eszközök országonként"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
@@ -1690,7 +1701,7 @@ msgstr "Transznacionális régiók"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Transznacionális eszközök"
 
 #. Default: "Type of item"
 #: search/common
@@ -1702,7 +1713,7 @@ msgstr "Az elem típusa"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "A kimenetek típusa"
 
 #. Default: "Types"
 #: messages
@@ -1763,7 +1774,7 @@ msgstr "Videók és podcastok"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Megtekintés"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1949,12 +1960,12 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Nem állnak rendelkezésre eszközök} one {# eszköz áll rendelkezésre} other {# eszköz áll rendelkezésre}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {eszköz a katalógusban} other {eszköz a katalógusban}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1964,4 +1975,4 @@ msgstr "{count, plural, one {megfelelő eszköz} other {megfelelő eszköz}}"
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {megfelelő eszköz} other {megfelelő eszköz}} \"{searchTerm}\""

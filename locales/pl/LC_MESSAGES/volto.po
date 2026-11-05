@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 lub więcej"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -42,10 +42,15 @@ msgstr "Dostępność"
 msgid "Accessibility and usability"
 msgstr ""
 
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Aktywne filtry"
+
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Aktywne filtry są zawsze wyświetlane w trybie edycji"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -86,7 +91,7 @@ msgstr "Sektory adaptacyjne"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Etap cyklu wsparcia adaptacji"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -107,7 +112,7 @@ msgstr "Opcje adaptacji"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Cykl polityki adaptacyjnej"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -301,19 +306,20 @@ msgid "City:"
 msgstr "Miasto:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Wyczyść wszystko"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Wyczyść filtry"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Wyczyść inne filtry zasięgu geograficznego, aby włączyć mapę."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -357,7 +363,7 @@ msgstr "Strona Climate-ADAPT poświęcona temu wydarzeniu"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Zamknij"
 
 #. Default: "Coastal flooding / storm surge"
 #: messages
@@ -372,7 +378,7 @@ msgstr "Fale chłodu / ekstremalne zimno"
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Porównaj"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
@@ -450,7 +456,7 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Cykl"
 
 #. Default: "Dashboard"
 #: messages
@@ -480,7 +486,7 @@ msgstr "Data wydania:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Określa największy zasięg geograficzny, dla którego narzędzie jest istotne"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -586,7 +592,7 @@ msgstr "Ogólnoeuropejskie i globalne"
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "narzędzia ogólnoeuropejskie"
 
 #. Default: "Event"
 #: messages
@@ -611,7 +617,7 @@ msgstr "Poznaj nasze systemy informacji o środowisku"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Przeglądaj narzędzia"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
@@ -641,7 +647,7 @@ msgstr "Pożar / pożar lasu"
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Obszary zainteresowania"
 
 #. Default: "For more search options"
 #: index
@@ -701,7 +707,7 @@ msgstr "Rozpoczęcie"
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Narzędzia globalne"
 
 #. Default: "Go to advanced search"
 #: index
@@ -716,7 +722,7 @@ msgstr "Zarządzanie i instytucje"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Poziom zarządzania"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -751,7 +757,7 @@ msgstr "Dostępny HHWS (kliknij kraj, aby uzyskać więcej informacji)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Zagrożenie"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -991,12 +997,17 @@ msgstr "Linki do dalszych informacji"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Widok listy"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
 msgstr "Podgląd na żywo · wyniki na podstawie Twojego wyboru"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Ładowanie mapy..."
 
 #. Default: "Login"
 #: messages
@@ -1027,12 +1038,12 @@ msgstr "Zarządzanie i planowanie"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Widok mapy"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Widok mapy ma zastosowanie tylko wtedy, gdy w <strong>Zasięgu geograficznym</strong> wybrano kraje."
 
 #. Default: "Mission story"
 #: messages
@@ -1093,7 +1104,7 @@ msgstr "Nowy"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Najnowszy"
 
 #. Default: "News"
 #: messages
@@ -1128,7 +1139,7 @@ msgstr "Dla tego kroku nie są dostępne żadne opcje."
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Brak dostępnych opcji"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1173,7 +1184,7 @@ msgstr "Partner obserwatorium"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Najstarszy"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
@@ -1209,7 +1220,7 @@ msgstr "Inne regiony"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Inne narzędzia"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
@@ -1376,7 +1387,7 @@ msgstr ""
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Trafność"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1481,7 +1492,7 @@ msgstr "Wybierać"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Wybierz kraj, aby przeglądać mapę"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1647,12 +1658,12 @@ msgstr "Ten obiekt został zarchiwizowany, ponieważ jego zawartość jest nieak
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Tytuł a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Tytuł z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1667,7 +1678,7 @@ msgstr ""
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Narzędzia według kraju"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
@@ -1690,7 +1701,7 @@ msgstr "Regiony transnarodowe"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Narzędzia transnarodowe"
 
 #. Default: "Type of item"
 #: search/common
@@ -1702,7 +1713,7 @@ msgstr "Typ przedmiotu"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Rodzaj wyjść"
 
 #. Default: "Types"
 #: messages
@@ -1763,7 +1774,7 @@ msgstr "Filmy i podcasty"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Zobacz"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1949,12 +1960,12 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Żadne narzędzia nie są dostępne} one {Dostępne jest # narzędzie} few {Dostępne są # narzędzia} many {Dostępnych jest # narzędzi} other {Dostępnych jest # narzędzi}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {narzędzie w katalogu} few {narzędzia w katalogu} many {narzędzi w katalogu} other {narzędzi w katalogu}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1964,4 +1975,4 @@ msgstr "{count, plural, one {pasujące narzędzie} few {pasujące narzędzia} ma
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {pasujące narzędzie} few {pasujące narzędzia} many {pasujących narzędzi} other {pasujących narzędzi}} \"{searchTerm}\""

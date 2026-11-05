@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 sau mai multe"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -42,10 +42,15 @@ msgstr "Accesibilitate"
 msgid "Accessibility and usability"
 msgstr ""
 
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Filtre active"
+
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Filtrele active sunt întotdeauna afișate în modul de editare"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -86,7 +91,7 @@ msgstr "Sectoarele de adaptare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Pasul ciclului de suport pentru adaptare"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -107,7 +112,7 @@ msgstr "Opțiuni de adaptare"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Ciclul politicii de adaptare"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -301,19 +306,20 @@ msgid "City:"
 msgstr "Oraş:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Șterge tot"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Ștergeți filtrele"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Ștergeți alte filtre de acoperire geografică pentru a activa harta."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -357,7 +363,7 @@ msgstr "Pagina Climate-ADAPT pentru acest eveniment"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Închide"
 
 #. Default: "Coastal flooding / storm surge"
 #: messages
@@ -372,7 +378,7 @@ msgstr "Valuri de frig / frig extrem"
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Comparați"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
@@ -450,7 +456,7 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Ciclu"
 
 #. Default: "Dashboard"
 #: messages
@@ -480,7 +486,7 @@ msgstr "Data lansării:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Definește cea mai mare întindere geografică pentru care instrumentul este relevant"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -586,7 +592,7 @@ msgstr "la nivel european și global"
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "instrumente la nivel european"
 
 #. Default: "Event"
 #: messages
@@ -611,7 +617,7 @@ msgstr "Explorați sistemele noastre de informații despre mediu"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Explorați instrumentele"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
@@ -641,7 +647,7 @@ msgstr "Incendiu / incendiu forestier"
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Zone de focalizare"
 
 #. Default: "For more search options"
 #: index
@@ -701,7 +707,7 @@ msgstr "Noțiuni de bază"
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Instrumente globale"
 
 #. Default: "Go to advanced search"
 #: index
@@ -716,7 +722,7 @@ msgstr "Guvernare și instituțional"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Nivel de guvernare"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -751,7 +757,7 @@ msgstr "HHWS disponibil (faceți clic pe țară pentru mai multe informații)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Pericol"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -991,12 +997,17 @@ msgstr "Link-uri către informații suplimentare"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Vizualizare listă"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
 msgstr "Previzualizare live · rezultate în funcție de selecția dvs"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Se încarcă harta..."
 
 #. Default: "Login"
 #: messages
@@ -1027,12 +1038,12 @@ msgstr "Management și planificare"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Vizualizare hartă"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Vizualizarea hărții este aplicabilă numai atunci când țările sunt selectate în <strong>Acoperire geografică</strong>."
 
 #. Default: "Mission story"
 #: messages
@@ -1093,7 +1104,7 @@ msgstr "Nou"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Cel mai nou"
 
 #. Default: "News"
 #: messages
@@ -1128,7 +1139,7 @@ msgstr "Nu sunt disponibile opțiuni pentru acest pas."
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Nu există opțiuni disponibile"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1173,7 +1184,7 @@ msgstr "Partener observator"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Cel mai vechi"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
@@ -1209,7 +1220,7 @@ msgstr "Alte regiuni"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Alte instrumente"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
@@ -1376,7 +1387,7 @@ msgstr ""
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Relevanța"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1481,7 +1492,7 @@ msgstr "Selecta"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Selectați o țară pentru a explora harta"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1647,12 +1658,12 @@ msgstr "Acest obiect a fost arhivat deoarece conținutul său este depășit. Î
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Titlul a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Titlul z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1667,7 +1678,7 @@ msgstr ""
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Instrumente pe țară"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
@@ -1690,7 +1701,7 @@ msgstr "Regiunile transnaționale"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Instrumente transnaționale"
 
 #. Default: "Type of item"
 #: search/common
@@ -1702,7 +1713,7 @@ msgstr "Tipul articolului"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Tipuri de rezultate"
 
 #. Default: "Types"
 #: messages
@@ -1763,7 +1774,7 @@ msgstr "Videoclipuri și podcasturi"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Vedeți"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1949,12 +1960,12 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Nu sunt disponibile instrumente} one {# instrument este disponibil} few {Sunt disponibile # instrumente} other {Sunt disponibile # instrumente}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {instrument în catalog} few {instrumente în catalog} other {instrumente în catalog}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1964,4 +1975,4 @@ msgstr "{count, plural, one {instrument potrivit} few {instrumente potrivite} ot
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {instrument potrivit} few {instrumente potrivite} other {instrumente potrivite}} \"{searchTerm}\""

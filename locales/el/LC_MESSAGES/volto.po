@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 ή περισσότερα"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -42,10 +42,15 @@ msgstr "Προσβασιμότητα"
 msgid "Accessibility and usability"
 msgstr ""
 
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Ενεργά φίλτρα"
+
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Τα ενεργά φίλτρα εμφανίζονται πάντα σε λειτουργία επεξεργασίας"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -86,7 +91,7 @@ msgstr "Τομείς Προσαρμογής"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Βήμα Κύκλου Υποστήριξης Προσαρμογής"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -107,7 +112,7 @@ msgstr "Επιλογές προσαρμογής"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Κύκλος πολιτικής προσαρμογής"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -301,19 +306,20 @@ msgid "City:"
 msgstr "Πόλη:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Εκκαθάριση όλων"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Καθαρίστε τα φίλτρα"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Διαγράψτε άλλα φίλτρα γεωγραφικής κάλυψης για να ενεργοποιήσετε τον χάρτη."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -357,7 +363,7 @@ msgstr "Climate-ADAPT σελίδα για αυτήν την εκδήλωση"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #. Default: "Coastal flooding / storm surge"
 #: messages
@@ -372,7 +378,7 @@ msgstr "Ψυχρά κύματα / ακραίο ψύχος"
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Συγκρίνετε"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
@@ -450,7 +456,7 @@ msgstr ""
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Κύκλος"
 
 #. Default: "Dashboard"
 #: messages
@@ -480,7 +486,7 @@ msgstr "Ημερομηνία κυκλοφορίας:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Καθορίζει τη μεγαλύτερη γεωγραφική έκταση για την οποία είναι σχετικό το εργαλείο"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -586,7 +592,7 @@ msgstr "πανευρωπαϊκή και παγκόσμια"
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "Πανευρωπαϊκά εργαλεία"
 
 #. Default: "Event"
 #: messages
@@ -611,7 +617,7 @@ msgstr "Εξερευνήστε τα συστήματα περιβαλλοντι�
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Εξερευνήστε εργαλεία"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
@@ -641,7 +647,7 @@ msgstr "Πυρκαγιά / δασική πυρκαγιά"
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Περιοχές εστίασης"
 
 #. Default: "For more search options"
 #: index
@@ -701,7 +707,7 @@ msgstr "Ξεκινώντας"
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Παγκόσμια εργαλεία"
 
 #. Default: "Go to advanced search"
 #: index
@@ -716,7 +722,7 @@ msgstr "Διακυβέρνηση και θεσμική"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Επίπεδο διακυβέρνησης"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -751,7 +757,7 @@ msgstr "Διαθέσιμο HHWS (κάντε κλικ στη χώρα για πε
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Κίνδυνος"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -991,12 +997,17 @@ msgstr "Σύνδεσμοι για περισσότερες πληροφορίε�
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Προβολή λίστας"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
 msgstr "Ζωντανή προεπισκόπηση · αποτελέσματα με βάση την επιλογή σας"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Φόρτωση χάρτη..."
 
 #. Default: "Login"
 #: messages
@@ -1027,12 +1038,12 @@ msgstr "Διαχείριση και προγραμματισμός"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Προβολή χάρτη"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Η προβολή χάρτη ισχύει μόνο όταν επιλέγονται χώρες στη <strong>Γεωγραφική κάλυψη</strong>."
 
 #. Default: "Mission story"
 #: messages
@@ -1093,7 +1104,7 @@ msgstr "Νέος"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Νεότερο"
 
 #. Default: "News"
 #: messages
@@ -1128,7 +1139,7 @@ msgstr "Δεν υπάρχουν διαθέσιμες επιλογές για α�
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Δεν υπάρχουν διαθέσιμες επιλογές"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1173,7 +1184,7 @@ msgstr "Συνεργάτης του Παρατηρητηρίου"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Το πιο παλιό"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
@@ -1209,7 +1220,7 @@ msgstr "Άλλες περιοχές"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Άλλα εργαλεία"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
@@ -1376,7 +1387,7 @@ msgstr ""
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Συνάφεια"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1481,7 +1492,7 @@ msgstr "Επιλέγω"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Επιλέξτε μια χώρα για να εξερευνήσετε τον χάρτη"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1647,12 +1658,12 @@ msgstr "Αυτό το αντικείμενο έχει αρχειοθετηθεί
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Τίτλος α-ζ"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Τίτλος z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1667,7 +1678,7 @@ msgstr ""
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Εργαλεία ανά χώρα"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
@@ -1690,7 +1701,7 @@ msgstr "Διακρατικές περιοχές"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Διακρατικά εργαλεία"
 
 #. Default: "Type of item"
 #: search/common
@@ -1702,7 +1713,7 @@ msgstr "Τύπος αντικειμένου"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Τύπος εξόδων"
 
 #. Default: "Types"
 #: messages
@@ -1763,7 +1774,7 @@ msgstr "Βίντεο και podcast"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Προβολή"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1949,12 +1960,12 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Δεν υπάρχουν διαθέσιμα εργαλεία} one {# εργαλείο είναι διαθέσιμο} other {Διατίθενται # εργαλεία}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {εργαλείο στον κατάλογο} other {εργαλεία στον κατάλογο}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
@@ -1964,4 +1975,4 @@ msgstr "{count, plural, one {εργαλείο που ταιριάζει} other {
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {εργαλείο που ταιριάζει} other {εργαλεία που ταιριάζουν}} \"{searchTerm}\""

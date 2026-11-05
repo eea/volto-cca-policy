@@ -73,6 +73,10 @@ const messages = defineMessages({
     id: 'Close',
     defaultMessage: 'Close',
   },
+  loadingMap: {
+    id: 'Loading map...',
+    defaultMessage: 'Loading map...',
+  },
 });
 
 const geographicToolGroups = [
@@ -309,7 +313,7 @@ const NavigatorCatalogueCountryMap = (props) => {
     return (
       <div className="navigator-catalogue-map-loading">
         <Loader active inline="centered" />
-        <span>Loading map...</span>
+        <span>{intl.formatMessage(messages.loadingMap)}</span>
       </div>
     );
   }

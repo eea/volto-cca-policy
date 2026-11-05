@@ -20,6 +20,14 @@ const messages = defineMessages({
     id: 'No options available',
     defaultMessage: 'No options available',
   },
+  activeFilters: {
+    id: 'Active filters',
+    defaultMessage: 'Active filters',
+  },
+  clearAll: {
+    id: 'Clear all',
+    defaultMessage: 'Clear all',
+  },
 });
 
 const valueAsText = (value) =>
@@ -135,7 +143,7 @@ const NavigatorActiveFilters = ({ fields, filters, onRemove }) => {
 
   return (
     <div className="active-filters">
-      <h5>Active filters:</h5>
+      <h5>{intl.formatMessage(messages.activeFilters)}:</h5>
       <div className="facets-wrapper">
         {activeFilters.flatMap(({ field, values, type }) =>
           values.map((value, index) => (
@@ -169,7 +177,7 @@ const NavigatorActiveFilters = ({ fields, filters, onRemove }) => {
       <Button
         size="mini"
         className="clear-btn"
-        content="Clear all"
+        content={intl.formatMessage(messages.clearAll)}
         onClick={() =>
           activeFilters.forEach(({ field, values, type }) =>
             values.forEach((value) => onRemove(field, value, type)),
