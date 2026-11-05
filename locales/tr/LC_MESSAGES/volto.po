@@ -365,16 +365,6 @@ msgstr "Bu etkinlik için İklim-ADAPT sayfası"
 msgid "Close"
 msgstr "Kapat"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Kıyı taşkınları / fırtına kabarması"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Soğuk hava dalgaları / aşırı soğuk"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Yeni bir dosya yüklemek için dosyayı buraya bırakın"
 msgid "Drop files here ..."
 msgstr "Dosyaları buraya bırakın..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Kuraklık"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Finansman teşvik araçları"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Doğru aracı bulun"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Yangın / orman yangını"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Isı sağlığı eylem planları (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Isı sağlığı uyarı sistemleri (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Şiddetli yağış / aşırı yağış"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Anahtar Kelimeler:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Bilgi ve davranış değişikliği"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Heyelan"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Seçenek yok"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Sonuç yok"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Belirli bir tehlikeye özgü değil"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Site haritası"
 msgid "Skip to results"
 msgstr "Sonuçlara atla"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Kar / çığ"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Hangi mekansal kapsama ihtiyacınız var?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "İklim değişikliğine uyum açısından neden önemlidir"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Rüzgâr / fırtına"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

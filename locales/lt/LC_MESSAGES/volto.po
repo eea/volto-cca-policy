@@ -365,16 +365,6 @@ msgstr "Šio įvykio puslapis „Climate-ADAPT“."
 msgid "Close"
 msgstr "Uždaryti"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Pakrančių potvyniai / audros patvanka"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Šalčio bangos / ekstremalus šaltis"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Nuvilkite failą čia, kad įkeltumėte naują failą"
 msgid "Drop files here ..."
 msgstr "Numeskite failus čia..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Sausra"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Finansavimo skatinimo priemonės"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Raskite tinkamą įrankį"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Gaisras / miško gaisras"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Šilumos sveikatos veiksmų planai (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Perspėjimo apie žalą sveikatai sistemos (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Stiprūs krituliai / ekstremalus lietus"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Raktiniai žodžiai:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Žinių ir elgesio pokyčiai"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Nuošliauža"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Nėra pasirinkimų"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Jokių rezultatų"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Nesusijęs su konkrečiu pavojumi"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Svetainės struktūra"
 msgid "Skip to results"
 msgstr "Pereiti prie rezultatų"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Sniegas / lavinos"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Kokios erdvinės aprėpties jums reikia?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Kodėl tai svarbu prisitaikant prie klimato kaitos"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Vėjas / audra"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

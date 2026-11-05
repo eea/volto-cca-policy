@@ -365,16 +365,6 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Coastal flooding / storm surge"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Cold waves / extreme cold"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr ""
 msgid "Drop files here ..."
 msgstr ""
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Drought"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr ""
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr ""
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Fire / wildfire"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr ""
 msgid "Heat health warning systems (HHWS)"
 msgstr ""
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Heavy precipitation / extreme rainfall"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr ""
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr ""
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Landslide"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr ""
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr ""
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Non hazard-specific"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Sitemap"
 msgid "Skip to results"
 msgstr ""
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Snow / Avalanche"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr ""
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr ""
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Wind / storm"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

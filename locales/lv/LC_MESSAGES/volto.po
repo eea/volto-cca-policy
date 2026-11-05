@@ -365,16 +365,6 @@ msgstr "Climate-ADAPT lapa šim pasākumam"
 msgid "Close"
 msgstr "Aizvērt"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Piekrastes plūdi / vētras uzplūdi"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Aukstuma viļņi / ekstremāls aukstums"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Nometiet failu šeit, lai augšupielādētu jaunu failu"
 msgid "Drop files here ..."
 msgstr "Nometiet failus šeit..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Sausums"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Finansēšanas stimulēšanas instrumenti"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Atrodiet pareizo rīku"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Ugunsgrēks / meža ugunsgrēks"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Siltuma veselības rīcības plāni (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Karstuma veselības brīdinājuma sistēmas (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Spēcīgi nokrišņi / ekstremāls lietus"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Atslēgvārdi:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Zināšanu un uzvedības maiņa"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Nogruvums"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Nav pieejamas nekādas opcijas"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Nav rezultātu"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Nav saistīts ar konkrētu apdraudējumu"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Vietnes karte"
 msgid "Skip to results"
 msgstr "Pāriet uz rezultātiem"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Sniegs / lavīnas"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Kāds telpiskais pārklājums jums ir nepieciešams?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Kāpēc tas ir svarīgi pielāgošanās klimata pārmaiņām kontekstā"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Vējš / vētra"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

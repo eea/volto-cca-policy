@@ -24,7 +24,6 @@ import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import NavigatorCataloguePageActions from '../NavigatorCatalogue/NavigatorCataloguePageActions';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
-import { formatClimateImpact } from '@eeacms/volto-cca-policy/messages';
 
 const messages = defineMessages({
   noSteps: {
@@ -161,13 +160,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       getFacetOptions(facets, step?.field),
       selectedValues,
       hasSelections,
-    ).map((option) => ({
-      ...option,
-      label:
-        step?.id === 'climateHazards'
-          ? formatClimateImpact(intl, option.value)
-          : option.value,
-    })),
+    ).map((option) => ({ ...option, label: option.value })),
     currentLang,
   );
   const isLastStep = activeStep === steps.length - 1;
@@ -195,11 +188,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             label:
               item.id === 'adaptationStage'
                 ? value.split(':')[0]
-                : item.id === 'climateHazards'
-                  ? formatClimateImpact(intl, value)
-                  : value === 'Others'
-                    ? intl.formatMessage(messages.other)
-                    : value,
+                : value === 'Others'
+                  ? intl.formatMessage(messages.other)
+                  : value,
             type: previewTagTypes[item.id],
           }));
       });

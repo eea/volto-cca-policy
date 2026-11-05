@@ -365,16 +365,6 @@ msgstr "Climate-ADAPT oldal ehhez az eseményhez"
 msgid "Close"
 msgstr "Bezárás"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Part menti árvizek / vihardagály"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Hideghullámok / szélsőséges hideg"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Új fájl feltöltéséhez húzza ide a fájlt"
 msgid "Drop files here ..."
 msgstr "Dobd ide a fájlokat..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Aszály"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Finanszírozási ösztönző eszközök"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Találja meg a megfelelő eszközt"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Tűz / erdőtűz"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Hőegészségügyi akciótervek (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Hőre figyelmeztető rendszerek (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Heves csapadék / szélsőséges esőzés"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Kulcsszavak:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Tudás és viselkedés változás"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Földcsuszamlás"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Nem állnak rendelkezésre opciók"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Nincs eredmény"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Nem veszélyspecifikus"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Oldaltérkép"
 msgid "Skip to results"
 msgstr "Ugrás az eredményekhez"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Hó / lavinák"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Milyen térbeli lefedettségre van szüksége?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Miért fontos az éghajlatváltozáshoz való alkalmazkodás szempontjából"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Szél / vihar"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

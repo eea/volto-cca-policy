@@ -365,16 +365,6 @@ msgstr "Pagina Climate-ADAPT per questo evento"
 msgid "Close"
 msgstr "Chiudi"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Inondazioni costiere / mareggiate"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Ondate di freddo / freddo estremo"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Rilascia il file qui per caricare un nuovo file"
 msgid "Drop files here ..."
 msgstr "Rilascia i file qui..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Siccità"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Strumenti di incentivazione finanziaria"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Trova lo strumento giusto"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Incendio / incendio boschivo"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Piani d'azione per la salute del calore (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Sistemi di allarme per la salute del calore (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Precipitazioni intense / piogge estreme"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Parole chiave:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Conoscenza e cambiamento comportamentale"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Frana"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Nessuna opzione disponibile"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Nessun risultato"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Non specifico per un pericolo"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Mappa del sito"
 msgid "Skip to results"
 msgstr "Passa ai risultati"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Neve / valanghe"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Di quale copertura spaziale hai bisogno?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Perché è rilevante per l’adattamento ai cambiamenti climatici"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Vento / tempesta"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

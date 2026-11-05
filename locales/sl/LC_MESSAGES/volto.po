@@ -365,16 +365,6 @@ msgstr "Stran Climate-ADAPT za ta dogodek"
 msgid "Close"
 msgstr "Zapri"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Obalne poplave / nevihtni valovi"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Hladni valovi / skrajni mraz"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Spustite datoteko sem, da naložite novo datoteko"
 msgid "Drop files here ..."
 msgstr "Spustite datoteke sem ..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Suša"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Financiranje spodbujevalnih instrumentov"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Poiščite pravo orodje"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Požar / gozdni požar"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Zdravstveni akcijski načrti za vročino (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Zdravstveni opozorilni sistemi zaradi vročine (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Močne padavine / ekstremne padavine"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Ključne besede:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Sprememba znanja in vedenja"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Zemeljski plaz"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Na voljo ni nobenih možnosti"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Brez rezultatov"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Ni specifično za posamezno nevarnost"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Zemljevid spletišča"
 msgid "Skip to results"
 msgstr "Preskoči na rezultate"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Sneg / snežni plazovi"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Katero prostorsko pokritost potrebujete?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Zakaj je pomembno za prilagajanje podnebnim spremembam"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Veter / nevihta"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

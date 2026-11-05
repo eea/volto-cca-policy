@@ -365,16 +365,6 @@ msgstr "Stránka Climate-ADAPT pro tuto událost"
 msgid "Close"
 msgstr "Zavřít"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Pobřežní záplavy / bouřkové přílivy"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Vlny chladu / extrémní chlad"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Přetažením souboru sem nahrajete nový soubor"
 msgid "Drop files here ..."
 msgstr "Sem přetáhněte soubory..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Sucho"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Financování motivačních nástrojů"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Najděte správný nástroj"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Požár / lesní požár"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Akční plány pro zdraví z horka (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Tepelné varovné systémy (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Silné srážky / extrémní srážky"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "klíčová slova:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Změna znalostí a chování"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Sesuv půdy"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Nejsou k dispozici žádné možnosti"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Žádné výsledky"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Bez konkrétního nebezpečí"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Mapa stránek"
 msgid "Skip to results"
 msgstr "Přejít na výsledky"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Sníh / laviny"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Jaké prostorové pokrytí potřebujete?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Proč je důležitý pro přizpůsobení se změně klimatu"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Vítr / bouře"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

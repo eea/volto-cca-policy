@@ -365,16 +365,6 @@ msgstr "Climate-ADAPT -sivu tälle tapahtumalle"
 msgid "Close"
 msgstr "Sulje"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Rannikkotulvat / myrskyvuoksi"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Kylmät aallot / äärimmäinen kylmyys"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Pudota tiedosto tähän ladataksesi uuden tiedoston"
 msgid "Drop files here ..."
 msgstr "Pudota tiedostot tähän..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Kuivuus"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Rahoituskannustinvälineet"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Löydä oikea työkalu"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Tulipalo / maastopalo"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Lämpöterveystoimintasuunnitelmat (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Lämpöterveysvaroitusjärjestelmät (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Runsaat sateet / äärimmäiset sateet"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Avainsanat:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Tieto ja käyttäytymisen muutos"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Maanvyörymä"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Ei vaihtoehtoja"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Ei tuloksia"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Ei tiettyyn vaaraan liittyvä"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Sivukartta"
 msgid "Skip to results"
 msgstr "Siirry tuloksiin"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Lumi / lumivyöryt"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Millaista aluepeittoa tarvitset?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Miksi se on tärkeä ilmastonmuutokseen sopeutumiselle"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Tuuli / myrsky"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

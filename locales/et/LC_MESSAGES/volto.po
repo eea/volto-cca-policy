@@ -365,16 +365,6 @@ msgstr "Selle sündmuse Climate-ADAPT leht"
 msgid "Close"
 msgstr "Sule"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Rannikualade üleujutused / tormitulv"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Külmalained / äärmuslik külm"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Uue faili üleslaadimiseks pukseerige fail siia"
 msgid "Drop files here ..."
 msgstr "Pukseeri failid siia..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Põud"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Finantseerimisstiimulid"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Leidke õige tööriist"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Tulekahju / maastikupõleng"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Soojuse tervise tegevuskavad (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Kuuma tervise hoiatussüsteemid (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Tugevad sademed / äärmuslik vihmasadu"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Märksõnad:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Teadmiste ja käitumise muutus"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Maalihe"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Valikud pole saadaval"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Tulemusi pole"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Ohupõhine määratlemata"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Sisukaart"
 msgid "Skip to results"
 msgstr "Jätke tulemuste juurde"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Lumi / laviinid"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Millist ruumilist katvust vajate?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Miks on see kliimamuutustega kohanemise seisukohalt oluline"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Tuul / torm"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

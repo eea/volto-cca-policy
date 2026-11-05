@@ -143,52 +143,6 @@ const messages = defineMessages({
   },
 });
 
-export const climateImpactMessages = defineMessages({
-  coastalFlooding: {
-    id: 'Coastal flooding / storm surge',
-    defaultMessage: 'Coastal flooding / storm surge',
-  },
-  coldWaves: {
-    id: 'Cold waves / extreme cold',
-    defaultMessage: 'Cold waves / extreme cold',
-  },
-  drought: {
-    id: 'Drought',
-    defaultMessage: 'Drought',
-  },
-  wildfire: {
-    id: 'Fire / wildfire',
-    defaultMessage: 'Fire / wildfire',
-  },
-  heavyPrecipitation: {
-    id: 'Heavy precipitation / extreme rainfall',
-    defaultMessage: 'Heavy precipitation / extreme rainfall',
-  },
-  landslide: {
-    id: 'Landslide',
-    defaultMessage: 'Landslide',
-  },
-  nonHazardSpecific: {
-    id: 'Non hazard-specific',
-    defaultMessage: 'Non hazard-specific',
-  },
-  snowAvalanche: {
-    id: 'Snow / Avalanche',
-    defaultMessage: 'Snow / Avalanche',
-  },
-  windStorm: {
-    id: 'Wind / storm',
-    defaultMessage: 'Wind / storm',
-  },
-});
-
-export const formatClimateImpact = (intl, value) => {
-  const message = Object.values(climateImpactMessages).find(
-    ({ id }) => id === value,
-  );
-  return message ? intl.formatMessage(message) : value;
-};
-
 export const messagesList = defineMessages({
   a1def: {
     id: 'Governance and Institutional',

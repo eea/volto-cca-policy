@@ -365,16 +365,6 @@ msgstr "Climate-ADAPT-side for denne hendelsen"
 msgid "Close"
 msgstr "Lukk"
 
-#. Default: "Coastal flooding / storm surge"
-#: messages
-msgid "Coastal flooding / storm surge"
-msgstr "Kystflaum / stormflo"
-
-#. Default: "Cold waves / extreme cold"
-#: messages
-msgid "Cold waves / extreme cold"
-msgstr "Kuldebølgjer / ekstrem kulde"
-
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -539,11 +529,6 @@ msgstr "Slipp fil her for å laste opp en ny fil"
 msgid "Drop files here ..."
 msgstr "Slipp filer her..."
 
-#. Default: "Drought"
-#: messages
-msgid "Drought"
-msgstr "Tørke"
-
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -638,11 +623,6 @@ msgstr "Financiering van stimuleringsinstrumenten"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Finn det rette verktøyet"
-
-#. Default: "Fire / wildfire"
-#: messages
-msgid "Fire / wildfire"
-msgstr "Brann / skogbrann"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -789,11 +769,6 @@ msgstr "Handlingsplaner for varmehelse (HHAP)"
 msgid "Heat health warning systems (HHWS)"
 msgstr "Varmehelsevarslingssystemer (HHWS)"
 
-#. Default: "Heavy precipitation / extreme rainfall"
-#: messages
-msgid "Heavy precipitation / extreme rainfall"
-msgstr "Kraftig nedbør / ekstrem nedbør"
-
 #. Default: "Help"
 #: messages
 msgid "Help"
@@ -905,11 +880,6 @@ msgstr "Nøkkelord:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Kennis en gedragsverandering"
-
-#. Default: "Landslide"
-#: messages
-msgid "Landslide"
-msgstr "Jordskred"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1145,11 +1115,6 @@ msgstr "Ingen tilgjengelige alternativer"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Ingen resultater"
-
-#. Default: "Non hazard-specific"
-#: messages
-msgid "Non hazard-specific"
-msgstr "Ikkje knytt til ein bestemt fare"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1526,11 +1491,6 @@ msgstr "Nettstadskart"
 msgid "Skip to results"
 msgstr "Hopp til resultata"
 
-#. Default: "Snow / Avalanche"
-#: messages
-msgid "Snow / Avalanche"
-msgstr "Snø / snøskred"
-
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1867,11 +1827,6 @@ msgstr "Kva romleg dekning treng du?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Kvifor det er relevant for klimatilpassing"
-
-#. Default: "Wind / storm"
-#: messages
-msgid "Wind / storm"
-msgstr "Vind / storm"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
