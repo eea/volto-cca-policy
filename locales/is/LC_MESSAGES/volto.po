@@ -365,6 +365,16 @@ msgstr "Climate-ADAPT síða fyrir þennan atburð"
 msgid "Close"
 msgstr "Loka"
 
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Flóð við strendur / stormflóð"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Kuldatíð / mikill kuldi"
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -529,6 +539,11 @@ msgstr "Slepptu skrá hér til að hlaða upp nýrri skrá"
 msgid "Drop files here ..."
 msgstr "Slepptu skrám hér ..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Þurrkar"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -623,6 +638,16 @@ msgstr "Fjármögnunarhvatatæki"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Finndu rétta tólið"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Eldur / gróðureldur"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Flóð"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -759,6 +784,11 @@ msgstr "Heilsuáhrif:"
 msgid "Health impacts"
 msgstr "Heilsuáhrif"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Hiti"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -768,6 +798,11 @@ msgstr "Aðgerðaráætlanir um hitaheilbrigði (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Hitaheilbrigðisviðvörunarkerfi (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Mikil úrkoma / úrhelli"
 
 #. Default: "Help"
 #: messages
@@ -880,6 +915,11 @@ msgstr "Leitarorð:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Þekking og hegðunarbreyting"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Skriða"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1115,6 +1155,11 @@ msgstr "Engir valkostir í boði"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Engar niðurstöður"
+
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Ekki bundið við tiltekna hættu"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1390,6 +1435,11 @@ msgstr "Skiptu um núverandi skrá"
 msgid "Research and knowledge project"
 msgstr "Rannsóknar- og þekkingarverkefni"
 
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Hækkun sjávarborðs"
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
 #: messages
@@ -1490,6 +1540,11 @@ msgstr "Veftré"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
 msgstr "Fara í niðurstöður"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Snjór / snjóflóð"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1827,6 +1882,11 @@ msgstr "Hvaða landsvæðisþekju þarftu?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Hvers vegna það skiptir máli fyrir aðlögun að loftslagsbreytingum"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Vindur / stormur"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

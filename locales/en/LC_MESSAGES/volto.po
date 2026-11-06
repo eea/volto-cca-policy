@@ -365,6 +365,16 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr ""
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr ""
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -529,6 +539,11 @@ msgstr ""
 msgid "Drop files here ..."
 msgstr ""
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr ""
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -622,6 +637,16 @@ msgstr ""
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
+msgstr ""
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr ""
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
 msgstr ""
 
 #. Default: "Focus areas"
@@ -759,6 +784,11 @@ msgstr ""
 msgid "Health impacts"
 msgstr ""
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr ""
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -767,6 +797,11 @@ msgstr ""
 #. Default: "Heat health warning systems (HHWS)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
+msgstr ""
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
 msgstr ""
 
 #. Default: "Help"
@@ -879,6 +914,11 @@ msgstr ""
 #. Default: "Knowledge and behavioural change"
 #: messages
 msgid "Knowledge and behavioural change"
+msgstr ""
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
 msgstr ""
 
 #. Default: "Language"
@@ -1114,6 +1154,11 @@ msgstr ""
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
+msgstr ""
+
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
 msgstr ""
 
 #. Default: "Non-EU Languages"
@@ -1390,6 +1435,11 @@ msgstr ""
 msgid "Research and knowledge project"
 msgstr ""
 
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr ""
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
 #: messages
@@ -1489,6 +1539,11 @@ msgstr "Sitemap"
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
+msgstr ""
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
 msgstr ""
 
 #. Default: "Solutions"
@@ -1826,6 +1881,11 @@ msgstr ""
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
+msgstr ""
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
 msgstr ""
 
 #. Default: "You are viewing an archived version."

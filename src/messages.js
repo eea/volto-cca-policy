@@ -222,4 +222,64 @@ export const messagesList = defineMessages({
   },
 });
 
+export const climateImpactMessages = defineMessages({
+  heat: {
+    id: 'Heat',
+    defaultMessage: 'Heat',
+  },
+  heavyPrecipitation: {
+    id: 'Heavy precipitation / extreme rainfall',
+    defaultMessage: 'Heavy precipitation / extreme rainfall',
+  },
+  flood: {
+    id: 'Flood',
+    defaultMessage: 'Flood',
+  },
+  drought: {
+    id: 'Drought',
+    defaultMessage: 'Drought',
+  },
+  windStorm: {
+    id: 'Wind / storm',
+    defaultMessage: 'Wind / storm',
+  },
+  coldWaves: {
+    id: 'Cold waves / extreme cold',
+    defaultMessage: 'Cold waves / extreme cold',
+  },
+  seaLevelRise: {
+    id: 'Sea level rise',
+    defaultMessage: 'Sea level rise',
+  },
+  wildfire: {
+    id: 'Fire / wildfire',
+    defaultMessage: 'Fire / wildfire',
+  },
+  coastalFlooding: {
+    id: 'Coastal flooding / storm surge',
+    defaultMessage: 'Coastal flooding / storm surge',
+  },
+  snowAvalanche: {
+    id: 'Snow / Avalanche',
+    defaultMessage: 'Snow / Avalanche',
+  },
+  nonHazardSpecific: {
+    id: 'Non hazard-specific',
+    defaultMessage: 'Non hazard-specific',
+  },
+  landslide: {
+    id: 'Landslide',
+    defaultMessage: 'Landslide',
+  },
+});
+
+const climateImpactMessagesById = Object.fromEntries(
+  Object.values(climateImpactMessages).map((message) => [message.id, message]),
+);
+
+export const formatClimateImpact = (intl, impact) => {
+  const message = climateImpactMessagesById[impact];
+  return message ? intl.formatMessage(message) : impact;
+};
+
 export default messages;

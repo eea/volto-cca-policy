@@ -365,6 +365,16 @@ msgstr "Klima-ADAPT paġna għal dan l-avveniment"
 msgid "Close"
 msgstr "Agħlaq"
 
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Għargħar kostali / mewġa ta’ maltemp"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Mewġiet ta’ kesħa / kesħa estrema"
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -529,6 +539,11 @@ msgstr "Waqqa 'fajl hawn biex ittella' fajl ġdid"
 msgid "Drop files here ..."
 msgstr "Waqqa 'fajls hawn..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Nixfa"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -623,6 +638,16 @@ msgstr "Strumenti ta' inċentiv ta' finanzjament"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Sib l-għodda t-tajba"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Nar / nirien fil-foresti"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Għargħar"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -759,6 +784,11 @@ msgstr "Impatt fuq is-saħħa:"
 msgid "Health impacts"
 msgstr "Impatti fuq is-saħħa"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Sħana"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -768,6 +798,11 @@ msgstr "Pjanijiet ta' azzjoni għas-saħħa tas-sħana (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Sistemi ta’ twissija tas-saħħa tas-sħana (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Preċipitazzjoni qawwija / xita estrema"
 
 #. Default: "Help"
 #: messages
@@ -880,6 +915,11 @@ msgstr "Kliem ewlieni:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Għarfien u bidla fl-imġieba"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Valanga tal-art"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1115,6 +1155,11 @@ msgstr "Ebda għażliet disponibbli"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Ebda riżultati"
+
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Mhux speċifiku għal periklu"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1390,6 +1435,11 @@ msgstr "Ibdel il-fajl eżistenti"
 msgid "Research and knowledge project"
 msgstr "Proġett ta' riċerka u għarfien"
 
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Żieda fil-livell tal-baħar"
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
 #: messages
@@ -1490,6 +1540,11 @@ msgstr "Mappa tas-sit"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
 msgstr "Aqbeż għar-riżultati"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Borra / valanga"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1827,6 +1882,11 @@ msgstr "Liema kopertura spazjali għandek bżonn?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Għaliex hija rilevanti għall-adattament għat-tibdil fil-klima"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Riħ / maltempata"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

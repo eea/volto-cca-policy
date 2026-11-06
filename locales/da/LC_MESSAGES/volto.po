@@ -365,6 +365,16 @@ msgstr "Climate-ADAPT side for denne begivenhed"
 msgid "Close"
 msgstr "Luk"
 
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Kystoversvømmelse / stormflod"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Kuldebølger / ekstrem kulde"
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -529,6 +539,11 @@ msgstr "Slip fil her for at uploade en ny fil"
 msgid "Drop files here ..."
 msgstr "Slip filer her..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Tørke"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -623,6 +638,16 @@ msgstr "Finansieringsincitamentsinstrumenter"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
 msgstr "Find det rigtige værktøj"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Brand / naturbrand"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Oversvømmelse"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
@@ -759,6 +784,11 @@ msgstr "Sundhedspåvirkning:"
 msgid "Health impacts"
 msgstr "Sundhedspåvirkninger"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Varme"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -768,6 +798,11 @@ msgstr "Heat Health Action Plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Varmesundhedsadvarselssystemer (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Kraftig nedbør / ekstrem regn"
 
 #. Default: "Help"
 #: messages
@@ -880,6 +915,11 @@ msgstr "Nøgleord:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Viden og adfærdsændring"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Jordskred"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -1115,6 +1155,11 @@ msgstr "Ingen tilgængelige muligheder"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Ingen resultater"
+
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Ikke knyttet til en bestemt fare"
 
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
@@ -1390,6 +1435,11 @@ msgstr "Erstat eksisterende fil"
 msgid "Research and knowledge project"
 msgstr "Forsknings- og vidensprojekt"
 
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Stigende havniveau"
+
 #. Default: "Search the Climate-ADAPT database"
 #: index
 #: messages
@@ -1490,6 +1540,11 @@ msgstr "Sitemap"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
 msgstr "Spring til resultater"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Sne / lavine"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1827,6 +1882,11 @@ msgstr "Hvilken rumlig dækning har du brug for?"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
 msgstr "Hvorfor det er relevant for klimatilpasning"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Vind / storm"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice

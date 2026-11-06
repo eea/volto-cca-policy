@@ -5,6 +5,7 @@ import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
+import { formatClimateImpact } from '@eeacms/volto-cca-policy/messages';
 import { getToolTypeIcon } from '@eeacms/volto-cca-policy/helpers/toolTypeIcons.js';
 import {
   getCompareToolTitle,
@@ -213,7 +214,12 @@ const NavigatorCatalogueCardItem = (props) => {
           />
           <TagGroup
             typeLabel={intl.formatMessage(messages.hazard)}
-            values={hazards}
+            values={hazards.map((hazard) =>
+              formatClimateImpact(
+                intl,
+                hazard?.title || hazard?.token || hazard,
+              ),
+            )}
             type="hazard"
             maxItems={3}
           />
