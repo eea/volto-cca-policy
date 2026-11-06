@@ -27,7 +27,12 @@ jest.mock('../NavigatorCatalogue/NavigatorCataloguePageActions', () => () => (
   <div className="navigator-catalogue-page-actions" />
 ));
 
-const renderGuide = (result, searchContext = {}, appConfig = {}) => {
+const renderGuide = (
+  result,
+  searchContext = {},
+  appConfig = {},
+  intlMessages,
+) => {
   useSearchContext.mockReturnValue({
     filters: [{ field: 'cca_adaptation_sectors.keyword', values: ['Water'] }],
     facets: {},
@@ -37,7 +42,7 @@ const renderGuide = (result, searchContext = {}, appConfig = {}) => {
     ...searchContext,
   });
   return render(
-    <IntlProvider locale="en">
+    <IntlProvider locale={intlMessages ? 'hu' : 'en'} messages={intlMessages}>
       <NavigatorGuideContentView
         appConfig={{
           previewResultsLimit: 3,
@@ -438,6 +443,27 @@ describe('NavigatorGuideContentView climate hazards', () => {
     expect(
       container.querySelector('.navigator-guide-preview-tags .hazard'),
     ).toHaveTextContent('Flooding');
+  });
+
+  it('translates climate hazard options and preview tags', () => {
+    useGuideFacetOptions.mockReturnValue({
+      'cca_climate_impacts.keyword': ['Heat'],
+    });
+
+    renderGuide(
+      {
+        title: 'Guide tool',
+        href: '/tools/guide-tool',
+        cca_climate_impacts: { raw: ['Heat'] },
+      },
+      {
+        filters: [{ field: 'cca_climate_impacts.keyword', values: ['Heat'] }],
+      },
+      {},
+      { Heat: 'Hőség' },
+    );
+
+    expect(screen.getAllByText('Hőség')).toHaveLength(2);
   });
 });
 

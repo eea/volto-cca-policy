@@ -69,9 +69,17 @@ const messages = defineMessages({
     id: '4 or more',
     defaultMessage: '4 or more',
   },
+  none: {
+    id: 'None',
+    defaultMessage: 'None',
+  },
   close: {
     id: 'Close',
     defaultMessage: 'Close',
+  },
+  loadingMap: {
+    id: 'Loading map...',
+    defaultMessage: 'Loading map...',
   },
 });
 
@@ -309,7 +317,7 @@ const NavigatorCatalogueCountryMap = (props) => {
     return (
       <div className="navigator-catalogue-map-loading">
         <Loader active inline="centered" />
-        <span>Loading map...</span>
+        <span>{intl.formatMessage(messages.loadingMap)}</span>
       </div>
     );
   }

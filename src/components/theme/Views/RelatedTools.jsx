@@ -3,6 +3,7 @@ import { Container, Icon } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
+import { formatToolVocabularyValue } from '@eeacms/volto-cca-policy/messages';
 
 const messages = defineMessages({
   relatedTools: {
@@ -92,14 +93,18 @@ const RelatedTools = ({ content }) => {
                   <div className="extended-tool-related-tags">
                     {sharedGroups.map(({ field, type, values }) => {
                       const [visible, ...hidden] = values;
-                      const visibleTitle = taxonomyTitles[visible] || visible;
+                      const titleForValue = (token) => {
+                        const title = taxonomyTitles[token] || token;
+                        return field === 'adaptation_support_cycle_step'
+                          ? formatToolVocabularyValue(intl, title)
+                          : title;
+                      };
+                      const visibleTitle = titleForValue(visible);
                       const visibleLabel =
                         field === 'adaptation_support_cycle_step'
                           ? visibleTitle.split(':')[0]
                           : visibleTitle;
-                      const hiddenTitles = hidden.map(
-                        (token) => taxonomyTitles[token] || token,
-                      );
+                      const hiddenTitles = hidden.map(titleForValue);
 
                       return (
                         <span

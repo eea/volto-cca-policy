@@ -52,9 +52,9 @@ jest.mock('../../theme/CompareTools/utils', () => ({
   useCompareTools: jest.fn(),
 }));
 
-const renderCard = (result) =>
+const renderCard = (result, { locale = 'en', messages } = {}) =>
   render(
-    <IntlProvider locale="en">
+    <IntlProvider locale={locale} messages={messages}>
       <NavigatorCatalogueCardItem result={result} />
     </IntlProvider>,
   );
@@ -190,6 +190,30 @@ describe('NavigatorCatalogueCardItem', () => {
         title: 'Climate data explorer / atlas',
       },
     });
+  });
+
+  it('translates climate hazards in the catalogue card', () => {
+    renderCard(
+      {
+        title: 'Climate planning tool',
+        cca_climate_impacts: {
+          raw: ['Heat', 'Heavy precipitation / extreme rainfall'],
+        },
+      },
+      {
+        locale: 'hu',
+        messages: {
+          Heat: 'Hőség',
+          'Heavy precipitation / extreme rainfall':
+            'Heves csapadék / szélsőséges esőzés',
+        },
+      },
+    );
+
+    expect(screen.getByText('Hőség')).toBeInTheDocument();
+    expect(
+      screen.getByText('Heves csapadék / szélsőséges esőzés'),
+    ).toBeInTheDocument();
   });
 
   it('shows the cycle steps from the field used by the catalogue filter', () => {
