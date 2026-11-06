@@ -192,6 +192,11 @@ msgstr "Обратно към резултатите"
 msgid "Background information"
 msgstr "Основна информация"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Примери за добри практики"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Climate-ADAPT страница за това събитие"
 msgid "Close"
 msgstr "Затвори"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Крайбрежни райони"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Сътрудник:"
 msgid "Coordination cooperation and networks"
 msgstr "Координационно сътрудничество и мрежи"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Съотношение разходи-ползи"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Табло"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Източници на данни"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Набори от данни и показатели"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "Страни-членки на ЕИП"
 msgid "EU Member States and EEA Member Countries"
 msgstr "Държави-членки на ЕС и страни-членки на ЕИП"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Най-отдалечени региони на ЕС"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Икономика и финанси"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Отговаря на условията за получаване на финансиране"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "европейски"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Географски мащаб"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Първи стъпки"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Глобален"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Инструменти за застраховане и споделян
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Артикул от трети страни"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Справедливост и устойчивост"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Изглед на карта"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Картографският изглед е приложим само когато са избрани държави в <strong>Географско покритие</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Карти и графики"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Инструмент на мисията"
 msgid "Most useful for"
 msgstr "Най-полезен за"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Планински райони"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Общини и други:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Описателни материали"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Национален"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Национален HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Решения, базирани на природата, и подходи, базирани на екосистеми"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Решения, базирани на природата"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Премахване на {title} от сравнението"
 msgid "Replace existing file"
 msgstr "Замяна на съществуващ файл"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Доклади и подкрепа за вземане на решения"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Участие на заинтересованите страни"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Започнете обиколката с екскурзовод, като изберете един или повече сектори. Вдясно ще започнете да виждате визуализация на наличните инструменти, филтрирани според вашите селекции."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Стъпка 1: Подготовка за адаптация"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Стъпка 2: Оценка на рисковете и уязвимостите, свързани с изменението на климата"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Стъпка 3: Определяне на възможностите за адаптация"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Стъпка 4: Оценка и приоритизиране на възможностите за адаптация"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Стъпка 5: Прилагане"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Стъпка 6: Мониторинг и оценка"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Стъпка {current} от {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Субнационали:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Поднационален"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Инструменти, споделящи с този инструме�
 msgid "Topics:"
 msgstr "теми:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Транснационален"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Актуализиране на бележки"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Градски райони"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

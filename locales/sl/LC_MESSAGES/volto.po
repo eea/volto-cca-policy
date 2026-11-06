@@ -192,6 +192,11 @@ msgstr "Nazaj na rezultate"
 msgid "Background information"
 msgstr "Informacije o ozadju"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Primeri dobre prakse"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Stran Climate-ADAPT za ta dogodek"
 msgid "Close"
 msgstr "Zapri"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Obalna območja"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Sodelavec:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinacijsko sodelovanje in mreže"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Razmerje med stroški in koristmi"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Nadzorna plošča"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Viri podatkov"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Podatkovni nizi in kazalniki"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "Države članice EGP"
 msgid "EU Member States and EEA Member Countries"
 msgstr "Države članice EU in države članice EGP"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Najbolj oddaljene regije EU"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Gospodarstvo in finance"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Upravičen do prejema sredstev"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "evropski"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Geografsko merilo"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Začetek"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globalno"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Instrumenti zavarovanja in delitve tveganja"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Predmet tretjih oseb"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Pravična odpornost"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Pogled zemljevida"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Pogled zemljevida je na voljo le, če so države izbrane v <strong>Geografski pokritosti</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Zemljevidi in grafi"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Orodje misije"
 msgid "Most useful for"
 msgstr "Najbolj uporaben za"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Gorska območja"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Občine in drugo:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Opisna besedila"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nacionalni"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Nacionalni HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Rešitve, ki temeljijo na naravi, in pristopi, ki temeljijo na ekosistemu"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Naravne rešitve"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Odstrani {title} iz primerjave"
 msgid "Replace existing file"
 msgstr "Zamenjajte obstoječo datoteko"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Poročila in podpora odločanju"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Sodelovanje deležnikov"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Vodeni pregled začnite tako, da izberete enega ali več sektorjev. Na desni strani se bo prikazal predogled razpoložljivih orodij, filtriranih glede na vaše izbire."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Korak 1: Priprava podlage za prilagajanje"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Korak 2: Ocena tveganj in ranljivosti zaradi podnebnih sprememb"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Korak 3: Opredelitev možnosti prilagajanja"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Korak 4: Ocena in določitev prednostnih možnosti prilagajanja"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Korak 5: Izvajanje"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Korak 6: Spremljanje in vrednotenje"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Korak {current} od {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subdržavljani:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnacionalno"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Orodja, ki imajo s tem orodjem skupen sektor, nevarnost ali korak cikla 
 msgid "Topics:"
 msgstr "Teme:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Nadnacionalno"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Posodabljanje zapiskov"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Mestna območja"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

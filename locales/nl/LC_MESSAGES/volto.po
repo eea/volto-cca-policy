@@ -192,6 +192,11 @@ msgstr "Terug naar resultaten"
 msgid "Background information"
 msgstr "Achtergrondinformatie"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Voorbeelden van beste praktijken"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Climate-ADAPT-pagina voor dit evenement"
 msgid "Close"
 msgstr "Sluiten"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Kustgebieden"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Bijdrager:"
 msgid "Coordination cooperation and networks"
 msgstr "Coördinatie, samenwerking en netwerken"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Kosten-batenverhouding"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Dashboard"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Gegevensbronnen"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Datasets en indicatoren"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "EER-lidstaten"
 msgid "EU Member States and EEA Member Countries"
 msgstr "EU-lidstaten en EER-lidstaten"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Ultraperifere gebieden van de EU"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Economie en Financiën"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Komt in aanmerking voor financiering"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Europese"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Geografische schaal"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Aan de slag"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Wereldwijd"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Verzekerings- en risicodelingsinstrumenten"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Artikel van derden"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Rechtvaardige veerkracht"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Kaartweergave"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Kaartweergave is alleen van toepassing als landen zijn geselecteerd in de <strong>Geografische dekking</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Kaarten en grafieken"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Missie-instrument"
 msgid "Most useful for"
 msgstr "Meest nuttig voor"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Berggebieden"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Gemeenten en overige:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Beschrijvende teksten"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nationaal"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Nationale HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Op de natuur gebaseerde oplossingen"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "{title} uit vergelijking verwijderen"
 msgid "Replace existing file"
 msgstr "Vervang bestaand bestand"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Rapporten en ondersteuning bij besluitvorming"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Participatie van belanghebbenden"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Start de rondleiding door een of meerdere sectoren te selecteren. Aan de rechterkant ziet u een voorbeeld van de beschikbare tools, gefilterd op basis van uw selecties."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Stap 1: De basis voor aanpassing voorbereiden"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Stap 2: Klimaatrisico's en kwetsbaarheden beoordelen"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Stap 3: Aanpassingsopties vaststellen"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Stap 4: Aanpassingsopties beoordelen en prioriteren"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Stap 5: Uitvoering"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Stap 6: Monitoring en evaluatie"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Stap {current} van {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subonderdanen:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnationaal"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Hulpmiddelen die een sector, gevaar of cyclusstap delen met dit hulpmidd
 msgid "Topics:"
 msgstr "Onderwerpen:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Transnationaal"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Notities bijwerken"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Stedelijke gebieden"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

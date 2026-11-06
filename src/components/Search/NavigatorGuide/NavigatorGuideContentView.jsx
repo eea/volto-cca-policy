@@ -24,7 +24,10 @@ import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import NavigatorCataloguePageActions from '../NavigatorCatalogue/NavigatorCataloguePageActions';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
-import { formatClimateImpact } from '@eeacms/volto-cca-policy/messages';
+import {
+  formatClimateImpact,
+  formatToolVocabularyValue,
+} from '@eeacms/volto-cca-policy/messages';
 
 const messages = defineMessages({
   noSteps: {
@@ -166,7 +169,9 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       label:
         step?.id === 'climateHazards'
           ? formatClimateImpact(intl, option.value)
-          : option.value,
+          : step?.id === 'adaptationStage'
+            ? formatToolVocabularyValue(intl, option.value)
+            : option.value,
     })),
     currentLang,
   );
@@ -196,7 +201,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
               item.id === 'climateHazards'
                 ? formatClimateImpact(intl, value)
                 : item.id === 'adaptationStage'
-                  ? value.split(':')[0]
+                  ? formatToolVocabularyValue(intl, value).split(':')[0]
                   : value === 'Others'
                     ? intl.formatMessage(messages.other)
                     : value,

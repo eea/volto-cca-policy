@@ -192,6 +192,11 @@ msgstr "Zpět na výsledky"
 msgid "Background information"
 msgstr "Základní informace"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Příklady osvědčených postupů"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Stránka Climate-ADAPT pro tuto událost"
 msgid "Close"
 msgstr "Zavřít"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Pobřežní oblasti"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Přispěvatel:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinační spolupráce a sítě"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Poměr nákladů a přínosů"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Přehled"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Zdroje dat"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Datové sady a ukazatele"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "Členské země EHP"
 msgid "EU Member States and EEA Member Countries"
 msgstr "Členské státy EU a členské země EHP"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Nejvzdálenější regiony EU"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Ekonomika a finance"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Způsobilé k získání finančních prostředků"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "evropský"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Zeměpisné měřítko"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Začínáme"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globální"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Nástroje pojištění a sdílení rizik"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Položka od třetích stran"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Spravedlivá odolnost"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Zobrazení mapy"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Zobrazení mapy lze použít pouze v případě, že jsou země vybrány v části <strong>Geografické pokrytí</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Mapy a grafy"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Nástroj mise"
 msgid "Most useful for"
 msgstr "Nejužitečnější pro"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Horské oblasti"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Obce a další:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Popisné texty"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Národní"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Národní HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Řešení založená na přírodě a přístupy založené na ekosystému"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Řešení založená na přírodě"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Odebrat {title} z porovnání"
 msgid "Replace existing file"
 msgstr "Nahradit existující soubor"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Zprávy a podpora rozhodování"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Účast zúčastněných stran"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Zahajte prohlídku s průvodcem výběrem jednoho nebo více sektorů. Vpravo se vám začne zobrazovat náhled dostupných nástrojů filtrovaných podle vašeho výběru."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Krok 1: Příprava podmínek pro adaptaci"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Krok 2: Posouzení rizik a zranitelnosti v souvislosti se změnou klimatu"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Krok 3: Určení možností adaptace"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Krok 4: Posouzení a stanovení priorit možností adaptace"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Krok 5: Provádění"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Krok 6: Monitorování a hodnocení"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Krok {current} z {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Sub Nationals:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnárodní"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Nástroje, které s tímto nástrojem sdílejí sektor, nebezpečí nebo
 msgid "Topics:"
 msgstr "témata:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Nadnárodní"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Aktualizace poznámek"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Městské oblasti"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

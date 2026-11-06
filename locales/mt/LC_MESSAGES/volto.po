@@ -192,6 +192,11 @@ msgstr "Lura għar-riżultati"
 msgid "Background information"
 msgstr "Informazzjoni ta' sfond"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Eżempji ta' prattiki tajbin"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Klima-ADAPT paġna għal dan l-avveniment"
 msgid "Close"
 msgstr "Agħlaq"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Żoni kostali"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Kontributur:"
 msgid "Coordination cooperation and networks"
 msgstr "Kooperazzjoni ta' koordinazzjoni u netwerks"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Proporzjon bejn l-ispiża u l-benefiċċju"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Panew tal-kontroll"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Sorsi tad-data"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Settijiet ta' dejta u indikaturi"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "Pajjiżi Membri taż-ŻEE"
 msgid "EU Member States and EEA Member Countries"
 msgstr "Stati Membri tal-UE u Pajjiżi Membri taż-ŻEE"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Reġjuni ultraperiferiċi tal-UE"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Ekonomiku u Finanzi"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Eliġibbli biex tirċievi finanzjament"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Ewropea"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Skala ġeografika"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Nibdew"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globali"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Assigurazzjoni u strumenti ta' qsim tar-riskju"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Oġġett minn terzi persuni"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Reżiljenza ġusta"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Veduta tal-mappa"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Il-veduta tal-mappa hija applikabbli biss meta jintgħażlu pajjiżi fil-<strong>Kopertura ġeografika</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Mapep u graffs"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Għodda tal-missjoni"
 msgid "Most useful for"
 msgstr "L-aktar utli għal"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Żoni tal-muntanji"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Muniċipalitajiet u oħrajn:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Narrattivi"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nazzjonali"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "HHAP Nazzjonali"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Soluzzjonijiet ibbażati fuq in-natura u approċċi bbażati fuq l-Ekosistema"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Soluzzjonijiet ibbażati fuq in-natura"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Neħħi {title} mit-tqabbil"
 msgid "Replace existing file"
 msgstr "Ibdel il-fajl eżistenti"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Rapporti u appoġġ għat-teħid tad-deċiżjonijiet"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Parteċipazzjoni tal-partijiet interessati"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Ibda l-mawra gwidata billi tagħżel settur wieħed jew aktar. Fuq il-lemin, tibda tara preview tal-għodda disponibbli, iffiltrata skont l-għażliet tiegħek."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Pass 1: Tħejjija għall-adattament"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Pass 2: Valutazzjoni tar-riskji u l-vulnerabbiltajiet tat-tibdil fil-klima"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Pass 3: Identifikazzjoni tal-għażliet ta' adattament"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Pass 4: Valutazzjoni u prijoritizzazzjoni tal-għażliet ta' adattament"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Pass 5: Implimentazzjoni"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Pass 6: Monitoraġġ u evalwazzjoni"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Pass {current} ta' {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Sub-Ċittadini:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnazzjonali"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Għodod li jaqsmu ma’ din l-għodda settur, periklu jew pass fiċ-ċik
 msgid "Topics:"
 msgstr "Suġġetti:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Transnazzjonali"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Aġġornament noti"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Żoni urbani"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

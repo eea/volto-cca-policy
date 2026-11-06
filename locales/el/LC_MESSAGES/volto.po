@@ -192,6 +192,11 @@ msgstr "Επιστροφή στα αποτελέσματα"
 msgid "Background information"
 msgstr "Πληροφορίες ιστορικού"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Παραδείγματα βέλτιστων πρακτικών"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Climate-ADAPT σελίδα για αυτήν την εκδήλωση"
 msgid "Close"
 msgstr "Κλείσιμο"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Παράκτιες περιοχές"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Συνεισφέρων:"
 msgid "Coordination cooperation and networks"
 msgstr "Συντονισμός συνεργασίας και δικτύων"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Σχέση κόστους-οφέλους"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Πίνακας ελέγχου"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Πηγές δεδομένων"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Σύνολα δεδομένων και δείκτες"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "χώρες μέλη του ΕΟΧ"
 msgid "EU Member States and EEA Member Countries"
 msgstr "κράτη μέλη της ΕΕ και χώρες μέλη του ΕΟΧ"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Εξόχως απόκεντρες περιοχές της ΕΕ"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Οικονομικών και Οικονομικών"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Δυνατότητα λήψης χρηματοδότησης"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "ευρωπαϊκός"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Γεωγραφική κλίμακα"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Ξεκινώντας"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Παγκόσμιο"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Μέσα ασφάλισης και επιμερισμού κινδύνο
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Είδος από τρίτους"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Δίκαιη ανθεκτικότητα"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Προβολή χάρτη"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Η προβολή χάρτη ισχύει μόνο όταν επιλέγονται χώρες στη <strong>Γεωγραφική κάλυψη</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Χάρτες και γραφήματα"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Εργαλείο της αποστολής"
 msgid "Most useful for"
 msgstr "Το πιο χρήσιμο για"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Ορεινές περιοχές"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Δήμοι και άλλα:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Αφηγηματικά κείμενα"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Εθνικός"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Εθνικό HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Λύσεις βασισμένες στη φύση και προσεγγίσεις με βάση το οικοσύστημα"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Λύσεις βασισμένες στη φύση"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Αφαίρεση του {title} από τη σύγκριση"
 msgid "Replace existing file"
 msgstr "Αντικατάσταση υπάρχοντος αρχείου"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Εκθέσεις και υποστήριξη λήψης αποφάσεων"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Συμμετοχή των ενδιαφερομένων"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Ξεκινήστε την ξενάγηση επιλέγοντας έναν ή περισσότερους τομείς. Στα δεξιά, θα αρχίσετε να βλέπετε μια προεπισκόπηση των διαθέσιμων εργαλείων, φιλτραρισμένα σύμφωνα με τις επιλογές σας."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Βήμα 1: Προετοιμασία του εδάφους για την προσαρμογή"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Βήμα 2: Αξιολόγηση των κινδύνων και των ευπαθειών της κλιματικής αλλαγής"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Βήμα 3: Προσδιορισμός επιλογών προσαρμογής"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Βήμα 4: Αξιολόγηση και ιεράρχηση επιλογών προσαρμογής"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Βήμα 5: Υλοποίηση"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Βήμα 6: Παρακολούθηση και αξιολόγηση"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Βήμα {current} του {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Υποεθνικές:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Υποεθνικό"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Εργαλεία που μοιράζονται με αυτόν τον τ
 msgid "Topics:"
 msgstr "Θέματα:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Διακρατικό"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Ενημέρωση σημειώσεων"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Αστικές περιοχές"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

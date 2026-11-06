@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: ru\n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Прибрежная зона"
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Городские районы"
+
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Горные районы"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Глобальный"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Европейский"
+
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Транснациональный"
+
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Наиболее удалённые регионы ЕС"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Национальный"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Субнациональный"
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Шаг 1: Подготовка основы для адаптации"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Шаг 2: Оценка климатических рисков и уязвимостей"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Шаг 3: Определение вариантов адаптации"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Шаг 4: Оценка и определение приоритетов вариантов адаптации"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Шаг 5: Реализация"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Шаг 6: Мониторинг и оценка"
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Карты и графики"
+
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Отчёты и поддержка принятия решений"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Наборы данных и показатели"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Описания"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Примеры передовой практики"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Природные решения"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Справедливая устойчивость"
+
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Соотношение затрат и выгод"

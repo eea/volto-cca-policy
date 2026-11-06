@@ -192,6 +192,11 @@ msgstr "Tilbake til resultata"
 msgid "Background information"
 msgstr "Bakgrunnsinformasjon"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Døme på beste praksis"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Climate-ADAPT-side for denne hendelsen"
 msgid "Close"
 msgstr "Lukk"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Kystområder"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Bidragsyter:"
 msgid "Coordination cooperation and networks"
 msgstr "Coördinatie, samenwerking en netwerken"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Kost–nytte-forhold"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Kontrollpanel"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Datakjelder"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Datasett og indikatorar"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "EER-lidstaten"
 msgid "EU Member States and EEA Member Countries"
 msgstr "EU-lidstaten en EER-lidstaten"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "EUs ytste regionar"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Economie en Financiën"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Kvalifisert til å motta midler"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "europeisk"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Geografisk skala"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Komme i gang"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globalt"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Verzekerings- en risicodelingsinstrumenten"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Vare fra tredjeparter"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Rettferdig motstandskraft"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Kartvisning"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Kartvisning er bare aktuelt når land er valgt i <strong>Geografisk dekning</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Kart og grafar"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Misjonsverktøy"
 msgid "Most useful for"
 msgstr "Mest nyttig for"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Fjellområder"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Kommunar og anna:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Skildringar"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nasjonal"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Nasjonal HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Op de natuur gebaseerde oplossingen en op ecosystemen gebaseerde benaderingen"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Naturbaserte løsninger"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Fjern {title} frå samanlikninga"
 msgid "Replace existing file"
 msgstr "Erstatt eksisterende fil"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Rapportar og avgjerdsstøtte"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Interessenters deltakelse"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Start den rettleidde gjennomgangen ved å velje éin eller fleire sektorar. Til høgre vil du sjå ei førehandsvising av dei tilgjengelege verktøya, filtrerte etter vala dine."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Steg 1: Førebu grunnlaget for tilpassing"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Steg 2: Vurdere risiko og sårbarheit knytt til klimaendringar"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Steg 3: Identifisere tilpassingsalternativ"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Steg 4: Vurdere og prioritere tilpassingsalternativ"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Steg 5: Gjennomføring"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Steg 6: Overvaking og evaluering"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Steg {current} av {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Sub Nationals:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnasjonalt"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Verktøy som deler sektor, fare eller steg i syklusen med dette verktøy
 msgid "Topics:"
 msgstr "Emner:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Transnasjonalt"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Oppdatering av notater"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Byområde"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

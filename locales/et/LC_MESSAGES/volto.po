@@ -192,6 +192,11 @@ msgstr "Tagasi tulemustesse"
 msgid "Background information"
 msgstr "Taustteave"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Hea tava näited"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Selle sündmuse Climate-ADAPT leht"
 msgid "Close"
 msgstr "Sule"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Rannikualad"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Panustaja:"
 msgid "Coordination cooperation and networks"
 msgstr "Koostöö ja võrgustikud"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Kulude ja tulude suhe"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Töölaud"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Andmeallikad"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Andmestikud ja näitajad"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "EMP liikmesriigid"
 msgid "EU Member States and EEA Member Countries"
 msgstr "EL liikmesriigid ja EMP liikmesriigid"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "ELi äärepoolseimad piirkonnad"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Majandus ja rahandus"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Abikõlblik rahastuse saamiseks"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "euroopalik"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Geograafiline ulatus"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Alustamine"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globaalne"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Kindlustus- ja riskijagamisvahendid"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Üksus kolmandatelt isikutelt"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Õiglane vastupanuvõime"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Kaardivaade"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Kaardivaade on rakendatav ainult siis, kui jaotises <strong>Geograafiline katvus</strong> on valitud riigid."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Kaardid ja graafikud"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Missiooni tööriist"
 msgid "Most useful for"
 msgstr "Kõige kasulikum"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Mägipiirkonnad"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Omavalitsused ja muu:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Kirjeldused"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Rahvuslik"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Riiklik HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Looduspõhised lahendused ja ökosüsteemipõhised lähenemisviisid"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Looduspõhised lahendused"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Eemalda {title} võrdlusest"
 msgid "Replace existing file"
 msgstr "Asenda olemasolev fail"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Aruanded ja otsustustugi"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Sidusrühmade osalemine"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Alustage giidiga ringkäiku, valides ühe või mitu sektorit. Paremal hakkate nägema saadaolevate tööriistade eelvaadet, mis on filtreeritud vastavalt teie valikutele."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "1. samm: kohanemiseks eelduste loomine"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "2. samm: kliimamuutuste riskide ja haavatavuse hindamine"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "3. samm: kohanemisvõimaluste kindlakstegemine"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "4. samm: kohanemisvõimaluste hindamine ja tähtsuse järjekorda seadmine"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "5. samm: rakendamine"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "6. samm: seire ja hindamine"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Samm {current} / {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subkodanikud:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Riigisisene"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Tööriistad, millel on selle tööriistaga ühine sektor, oht või tsü
 msgid "Topics:"
 msgstr "Teemad:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Riikidevaheline"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Märkmete värskendamine"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Linnapiirkonnad"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

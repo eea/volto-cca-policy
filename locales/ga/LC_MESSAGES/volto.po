@@ -192,6 +192,11 @@ msgstr "Ar ais chuig na torthaí"
 msgid "Background information"
 msgstr "Faisnéis chúlra"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Samplaí dea-chleachtais"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Leathanach Aeráide-ADAPT don imeacht seo"
 msgid "Close"
 msgstr "Dún"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Ceantair chósta"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Ranníocóir:"
 msgid "Coordination cooperation and networks"
 msgstr "Comhar comhordaithe agus líonraí"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Cóimheas costais is tairbhe"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Painéal"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Foinsí sonraí"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Tacair shonraí agus táscairí"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "Balltíortha LEE"
 msgid "EU Member States and EEA Member Countries"
 msgstr "Ballstáit an AE agus Ballstáit an LEE"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Réigiúin is forimeallaí an Aontais Eorpaigh"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Eacnamaíoch agus Airgeadais"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Incháilithe chun maoiniú a fháil"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Eorpach"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Scála geografach"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Ag tosnú"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Domhanda"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Ionstraimí árachais agus comhroinnte riosca"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Mír ó thríú páirtithe"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Athléimneacht chóir"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Amharc léarscáil"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Ní bhaineann amharc léarscáile ach amháin nuair a roghnaítear tíortha sa <strong>Clúdach geografach</strong>."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Léarscáileanna agus graif"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Uirlis misin"
 msgid "Most useful for"
 msgstr "An chuid is mó úsáideach le haghaidh"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Ceantair sléibhe"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Bardais agus eile:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Cuntais insinte"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Náisiúnta"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "HHAP Náisiúnta"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Réitigh Dúlra agus cuir chuige atá bunaithe ar an Éiceachóras"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Réitigh nádúr-bhunaithe"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Bain {title} den chomparáid"
 msgid "Replace existing file"
 msgstr "Ionadaigh an comhad atá ann cheana"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Tuarascálacha agus tacaíocht cinnteoireachta"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Rannpháirtíocht geallsealbhóirí"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Tosaigh an turas treoraithe trí earnáil amháin nó níos mó a roghnú. Ar dheis, tosóidh tú a fheiceáil réamhamharc ar na huirlisí atá ar fáil, scagtha de réir do roghanna."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Céim 1: An bunús don oiriúnú a ullmhú"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Céim 2: Rioscaí agus leochaileachtaí an athraithe aeráide a mheas"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Céim 3: Roghanna oiriúnaithe a shainaithint"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Céim 4: Roghanna oiriúnaithe a mheas agus a chur in ord tosaíochta"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Céim 5: Cur chun feidhme"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Céim 6: Faireachán agus meastóireacht"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Céim {current} de {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Fo-Náisiúnta:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Fo-náisiúnta"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Uirlisí a bhfuil earnáil, guais nó céim den timthriall i bpáirt acu
 msgid "Topics:"
 msgstr "Ábhair:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Trasnáisiúnta"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Nótaí á nuashonrú"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Limistéir uirbeacha"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

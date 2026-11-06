@@ -192,6 +192,11 @@ msgstr "Atpakaļ pie rezultātiem"
 msgid "Background information"
 msgstr "Fona informācija"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Labas prakses piemēri"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Climate-ADAPT lapa šim pasākumam"
 msgid "Close"
 msgstr "Aizvērt"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Piekrastes zonas"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Līdzstrādnieks:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinācijas sadarbība un tīkli"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Izmaksu un ieguvumu attiecība"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Informācijas panelis"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Datu avoti"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Datu kopas un rādītāji"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "EEZ dalībvalstis"
 msgid "EU Member States and EEA Member Countries"
 msgstr "ES dalībvalstis un EEZ dalībvalstis"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "ES tālākie reģioni"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Ekonomika un finanses"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Tiesības saņemt finansējumu"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Eiropas"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Ģeogrāfiskais mērogs"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Darba sākšana"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globāls"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Apdrošināšanas un riska dalīšanas instrumenti"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Prece no trešajām pusēm"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Taisnīga noturība"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Kartes skats"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Kartes skats ir piemērojams tikai tad, ja sadaļā <strong>Ģeogrāfiskais pārklājums</strong> ir atlasītas valstis."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Kartes un diagrammas"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Misijas rīks"
 msgid "Most useful for"
 msgstr "Visnoderīgākais priekš"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Kalnu apvidi"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Pašvaldības un citi:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Apraksti"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Valsts"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Valsts HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Dabā balstīti risinājumi un ekosistēmu pieejas"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Dabā balstīti risinājumi"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Noņemt {title} no salīdzinājuma"
 msgid "Replace existing file"
 msgstr "Aizstāt esošo failu"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Ziņojumi un atbalsts lēmumu pieņemšanai"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Ieinteresēto pušu līdzdalība"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Sāciet ceļvedi, izvēloties vienu vai vairākus sektorus. Labajā pusē jūs sāksit redzēt pieejamo rīku priekšskatījumu, kas filtrēts atbilstoši jūsu atlasei."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "1. solis: sagatavošanās pielāgošanās procesam"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "2. solis: klimata pārmaiņu risku un neaizsargātības novērtēšana"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "3. solis: pielāgošanās iespēju noteikšana"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "4. solis: pielāgošanās iespēju novērtēšana un prioritizēšana"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "5. solis: īstenošana"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "6. solis: uzraudzība un novērtēšana"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "{total} darbība {current}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subpilsoņi:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnacionāls"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Rīki, kuriem ar šo rīku ir kopīga nozare, apdraudējums vai cikla po
 msgid "Topics:"
 msgstr "Tēmas:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Transnacionāls"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Piezīmju atjaunināšana"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Pilsētu teritorijas"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

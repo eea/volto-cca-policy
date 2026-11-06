@@ -222,7 +222,17 @@ export const messagesList = defineMessages({
   },
 });
 
-export const climateImpactMessages = defineMessages({
+const messagesById = (messages) =>
+  Object.fromEntries(
+    Object.values(messages).map((message) => [message.id, message]),
+  );
+
+const formatMessageById = (intl, value, messageMap) => {
+  const message = messageMap[value];
+  return message ? intl.formatMessage(message) : value;
+};
+
+export const toolVocabularyMessages = defineMessages({
   heat: {
     id: 'Heat',
     defaultMessage: 'Heat',
@@ -271,15 +281,107 @@ export const climateImpactMessages = defineMessages({
     id: 'Landslide',
     defaultMessage: 'Landslide',
   },
+  coastalAreas: {
+    id: 'Coastal areas',
+    defaultMessage: 'Coastal areas',
+  },
+  urbanAreas: {
+    id: 'Urban areas',
+    defaultMessage: 'Urban areas',
+  },
+  mountainAreas: {
+    id: 'Mountain areas',
+    defaultMessage: 'Mountain areas',
+  },
+  global: {
+    id: 'Global',
+    defaultMessage: 'Global',
+  },
+  european: {
+    id: 'European',
+    defaultMessage: 'European',
+  },
+  transnational: {
+    id: 'Transnational',
+    defaultMessage: 'Transnational',
+  },
+  euOutermostRegions: {
+    id: 'EU Outermost regions',
+    defaultMessage: 'EU Outermost regions',
+  },
+  national: {
+    id: 'National',
+    defaultMessage: 'National',
+  },
+  subnational: {
+    id: 'Subnational',
+    defaultMessage: 'Subnational',
+  },
+  step1PreparingGround: {
+    id: 'Step 1: Preparing the Ground for Adaptation',
+    defaultMessage: 'Step 1: Preparing the Ground for Adaptation',
+  },
+  step2AssessingRisks: {
+    id: 'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+    defaultMessage:
+      'Step 2: Assessing Climate Change Risks and Vulnerabilities',
+  },
+  step3IdentifyingOptions: {
+    id: 'Step 3: Identifying Adaptation Options',
+    defaultMessage: 'Step 3: Identifying Adaptation Options',
+  },
+  step4AssessingOptions: {
+    id: 'Step 4: Assessing and Prioritising Adaptation Options',
+    defaultMessage: 'Step 4: Assessing and Prioritising Adaptation Options',
+  },
+  step5Implementation: {
+    id: 'Step 5: Implementation',
+    defaultMessage: 'Step 5: Implementation',
+  },
+  step6MonitoringEvaluation: {
+    id: 'Step 6: Monitoring and Evaluation (M&E)',
+    defaultMessage: 'Step 6: Monitoring and Evaluation (M&E)',
+  },
+  mapsAndGraphs: {
+    id: 'Maps and graphs',
+    defaultMessage: 'Maps and graphs',
+  },
+  reportsAndDecisionSupport: {
+    id: 'Reports and decision support',
+    defaultMessage: 'Reports and decision support',
+  },
+  datasetsAndIndicators: {
+    id: 'Datasets and indicators',
+    defaultMessage: 'Datasets and indicators',
+  },
+  narratives: {
+    id: 'Narratives',
+    defaultMessage: 'Narratives',
+  },
+  bestPracticeExamples: {
+    id: 'Best practice examples',
+    defaultMessage: 'Best practice examples',
+  },
+  natureBasedSolutions: {
+    id: 'Nature-based solutions',
+    defaultMessage: 'Nature-based solutions',
+  },
+  justResilience: {
+    id: 'Just resilience',
+    defaultMessage: 'Just resilience',
+  },
+  costBenefitRatio: {
+    id: 'Cost-benefit ratio',
+    defaultMessage: 'Cost-benefit ratio',
+  },
 });
 
-const climateImpactMessagesById = Object.fromEntries(
-  Object.values(climateImpactMessages).map((message) => [message.id, message]),
-);
+const toolVocabularyMessagesById = messagesById(toolVocabularyMessages);
 
-export const formatClimateImpact = (intl, impact) => {
-  const message = climateImpactMessagesById[impact];
-  return message ? intl.formatMessage(message) : impact;
-};
+export const formatToolVocabularyValue = (intl, value) =>
+  formatMessageById(intl, value, toolVocabularyMessagesById);
+
+export const formatClimateImpact = (intl, impact) =>
+  formatToolVocabularyValue(intl, impact);
 
 export default messages;

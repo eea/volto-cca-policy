@@ -192,6 +192,11 @@ msgstr "Grįžti į rezultatus"
 msgid "Background information"
 msgstr "Fono informacija"
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Gerosios praktikos pavyzdžiai"
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr "Šio įvykio puslapis „Climate-ADAPT“."
 msgid "Close"
 msgstr "Uždaryti"
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Pakrantės zonos"
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr "Bendraautoris:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinavimo bendradarbiavimas ir tinklai"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Sąnaudų ir naudos santykis"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -467,6 +482,11 @@ msgstr "Valdymo skydas"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
 msgstr "Duomenų šaltiniai"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Duomenų rinkiniai ir rodikliai"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -564,6 +584,11 @@ msgstr "EEE šalys narės"
 msgid "EU Member States and EEA Member Countries"
 msgstr "ES valstybės narės ir EEE šalys narės"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Atokiausi ES regionai"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -583,6 +608,11 @@ msgstr "Ekonomika ir finansai"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Tinkamas gauti finansavimą"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Europos"
 
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
@@ -708,6 +738,11 @@ msgstr "Geografinis mastelis"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Darbo pradžia"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Pasaulinis"
 
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
@@ -874,6 +909,11 @@ msgstr "Draudimas ir rizikos pasidalijimo priemonės"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Prekė iš trečiųjų šalių"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Teisingas atsparumas"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -1055,6 +1095,11 @@ msgstr "Žemėlapio vaizdas"
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr "Žemėlapio rodinys taikomas tik tada, kai <strong>Geografinė aprėptis</strong> pasirenkamos šalys."
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Žemėlapiai ir diagramos"
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,11 +1115,26 @@ msgstr "Misijos įrankis"
 msgid "Most useful for"
 msgstr "Labiausiai naudinga"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Kalnų vietovės"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
 msgstr "Savivaldybės ir kita:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Aprašomieji tekstai"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nacionalinis"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1085,6 +1145,11 @@ msgstr "Nacionalinis HHAP"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Gamta pagrįsti sprendimai ir ekosistemomis pagrįsti metodai"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Gamtiniai sprendimai"
 
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1430,6 +1495,11 @@ msgstr "Pašalinti {title} iš palyginimo"
 msgid "Replace existing file"
 msgstr "Pakeiskite esamą failą"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Ataskaitos ir sprendimų priėmimo parama"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr "Suinteresuotųjų šalių dalyvavimas"
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr "Pradėkite ekskursiją pasirinkdami vieną ar daugiau sektorių. Dešinėje pamatysite galimų įrankių peržiūrą, filtruotą pagal jūsų pasirinkimus."
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "1 etapas. Pasirengimas prisitaikymui"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "2 etapas. Klimato kaitos rizikos ir pažeidžiamumo vertinimas"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "3 etapas. Prisitaikymo galimybių nustatymas"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "4 etapas. Prisitaikymo galimybių vertinimas ir prioritetų nustatymas"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "5 etapas. Įgyvendinimas"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "6 etapas. Stebėsena ir vertinimas"
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1604,6 +1704,11 @@ msgstr "Žingsnis {current} iš {total}"
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subpiliečiai:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnacionalinis"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1712,6 +1817,11 @@ msgstr "Įrankiai, su šiuo įrankiu turintys bendrą sektorių, pavojų ar cikl
 msgid "Topics:"
 msgstr "Temos:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Tarpvalstybinis"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1750,6 +1860,11 @@ msgstr "Pastabų atnaujinimas"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
 msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Miesto teritorijos"
 
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView

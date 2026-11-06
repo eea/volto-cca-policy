@@ -192,6 +192,11 @@ msgstr ""
 msgid "Background information"
 msgstr ""
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr ""
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -365,6 +370,11 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr ""
+
 #. Default: "Coastal flooding / storm surge"
 #: messages
 msgid "Coastal flooding / storm surge"
@@ -423,6 +433,11 @@ msgstr ""
 msgid "Coordination cooperation and networks"
 msgstr ""
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr ""
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -466,6 +481,11 @@ msgstr "Dashboard"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
+msgstr ""
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
 msgstr ""
 
 #. Default: "Date of creation:"
@@ -564,6 +584,11 @@ msgstr ""
 msgid "EU Member States and EEA Member Countries"
 msgstr ""
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr ""
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -582,6 +607,11 @@ msgstr ""
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
+msgstr ""
+
+#. Default: "European"
+#: messages
+msgid "European"
 msgstr ""
 
 #. Default: "European-wide and global"
@@ -707,6 +737,11 @@ msgstr ""
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
+msgstr ""
+
+#. Default: "Global"
+#: messages
+msgid "Global"
 msgstr ""
 
 #. Default: "Global tools"
@@ -873,6 +908,11 @@ msgstr ""
 #. Default: "Item from third parties"
 #: search/cca/facets
 msgid "Item from third parties"
+msgstr ""
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
 msgstr ""
 
 #. Default: "Key Community Systems"
@@ -1055,6 +1095,11 @@ msgstr ""
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr ""
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr ""
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -1070,10 +1115,25 @@ msgstr ""
 msgid "Most useful for"
 msgstr ""
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr ""
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
+msgstr ""
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr ""
+
+#. Default: "National"
+#: messages
+msgid "National"
 msgstr ""
 
 #. Default: "National HHAP"
@@ -1084,6 +1144,11 @@ msgstr ""
 #. Default: "Nature based Solutions and Ecosystem based approaches"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr ""
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
 msgstr ""
 
 #. Default: "Navigate to this item"
@@ -1430,6 +1495,11 @@ msgstr ""
 msgid "Replace existing file"
 msgstr ""
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr ""
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
@@ -1594,6 +1664,36 @@ msgstr ""
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr ""
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr ""
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr ""
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr ""
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr ""
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr ""
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr ""
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1603,6 +1703,11 @@ msgstr ""
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
+msgstr ""
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
 msgstr ""
 
 #. Default: "Subnational or local"
@@ -1712,6 +1817,11 @@ msgstr ""
 msgid "Topics:"
 msgstr ""
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr ""
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
@@ -1749,6 +1859,11 @@ msgstr ""
 #. Default: "Uploading image"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
+msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
 msgstr ""
 
 #. Default: "Usability"
