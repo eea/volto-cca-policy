@@ -1052,7 +1052,7 @@ msgstr "Listevisning"
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
-msgstr "Live preview · resultater baseret på dit valg"
+msgstr "Livevisning · resultater baseret på dit valg"
 
 #. Default: "Loading map..."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView

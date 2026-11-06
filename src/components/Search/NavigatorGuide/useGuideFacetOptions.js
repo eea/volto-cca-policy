@@ -4,12 +4,13 @@ import { getGuideStepFields } from '../../../search/navigator_guide/guideSteps';
 
 const useGuideFacetOptions = (appConfig, steps, language = 'en') => {
   const [allFacetOptions, setAllFacetOptions] = React.useState({});
+  const stepFieldsKey = JSON.stringify([
+    ...new Set(steps.flatMap((step) => getGuideStepFields(step))),
+  ]);
 
   React.useEffect(() => {
     let isCurrent = true;
-    const stepFields = [
-      ...new Set(steps.flatMap((step) => getGuideStepFields(step))),
-    ];
+    const stepFields = JSON.parse(stepFieldsKey);
     const languageConfig = {
       ...appConfig,
       permanentFilters: [
@@ -17,6 +18,10 @@ const useGuideFacetOptions = (appConfig, steps, language = 'en') => {
         { term: { language } },
       ],
     };
+
+    setAllFacetOptions((current) =>
+      Object.keys(current).length ? {} : current,
+    );
 
     getFacetOptions(languageConfig, stepFields)
       .then((facetOptions) => {
@@ -29,7 +34,7 @@ const useGuideFacetOptions = (appConfig, steps, language = 'en') => {
     return () => {
       isCurrent = false;
     };
-  }, [appConfig, language, steps]);
+  }, [appConfig, language, stepFieldsKey]);
 
   return allFacetOptions;
 };

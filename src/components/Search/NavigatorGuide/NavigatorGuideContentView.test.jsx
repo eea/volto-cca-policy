@@ -113,6 +113,29 @@ describe('NavigatorGuideContentView thumbnails', () => {
     expect(actions.nextElementSibling).toHaveClass('navigator-guide-header');
   });
 
+  it('loads facet options in the language selected for the results', () => {
+    useSelector.mockReturnValue('da');
+
+    renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {
+        filters: [
+          { field: 'language', values: ['en'] },
+          {
+            field: 'cca_adaptation_sectors.keyword',
+            values: ['Water'],
+          },
+        ],
+      },
+    );
+
+    expect(useGuideFacetOptions).toHaveBeenCalledWith(
+      expect.any(Object),
+      expect.any(Array),
+      'en',
+    );
+  });
+
   it('hides any steps listed in the configuration', () => {
     renderGuide(
       { title: 'Guide tool', href: '/tools/guide-tool' },
