@@ -147,7 +147,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const steps = guideSteps.filter(
     ({ id }) => !appConfig.hiddenSteps?.includes(id),
   );
-  const allFacetOptions = useGuideFacetOptions(appConfig, steps, currentLang);
+  const resultsLanguage =
+    getSelectedValues(filters, 'language')[0] || currentLang;
+  const allFacetOptions = useGuideFacetOptions(
+    appConfig,
+    steps,
+    resultsLanguage,
+  );
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
     Number.isInteger(storedActiveStep) &&
