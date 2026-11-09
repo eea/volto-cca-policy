@@ -24,6 +24,10 @@ import { rawValueAsArray } from '../NavigatorCatalogue/utils';
 import NavigatorCataloguePageActions from '../NavigatorCatalogue/NavigatorCataloguePageActions';
 import useGuideFacetOptions from './useGuideFacetOptions';
 import { getNavigatorCataloguePageURL } from '../../Search/NavigatorCatalogue/utils';
+import {
+  formatClimateImpact,
+  formatToolVocabularyValue,
+} from '@eeacms/volto-cca-policy/messages';
 
 const messages = defineMessages({
   noSteps: {
@@ -92,6 +96,10 @@ const messages = defineMessages({
     id: 'See all matching tools',
     defaultMessage: 'See all matching tools',
   },
+  other: {
+    id: 'Other',
+    defaultMessage: 'Other',
+  },
 });
 
 const getFacetOptions = (facets, field) =>
@@ -131,6 +139,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     removeFilter,
     results,
     searchTerm,
+    setFilter,
     sortDirection,
     sortField,
     totalResults,
@@ -139,7 +148,18 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const steps = guideSteps.filter(
     ({ id }) => !appConfig.hiddenSteps?.includes(id),
   );
-  const allFacetOptions = useGuideFacetOptions(appConfig, steps);
+  const resultsLanguage = getSelectedValues(filters, 'language')[0];
+  const hasLanguageMismatch = Boolean(
+    resultsLanguage && resultsLanguage !== currentLang,
+  );
+
+  React.useEffect(() => {
+    if (hasLanguageMismatch) {
+      setFilter?.('language', currentLang, 'any');
+    }
+  }, [currentLang, hasLanguageMismatch, setFilter]);
+
+  const allFacetOptions = useGuideFacetOptions(appConfig, steps, currentLang);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
     Number.isInteger(storedActiveStep) &&
@@ -156,7 +176,15 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       getFacetOptions(facets, step?.field),
       selectedValues,
       hasSelections,
-    ),
+    ).map((option) => ({
+      ...option,
+      label:
+        step?.id === 'climateHazards'
+          ? formatClimateImpact(intl, option.value)
+          : step?.id === 'adaptationStage'
+            ? formatToolVocabularyValue(intl, option.value)
+            : option.value,
+    })),
     currentLang,
   );
   const isLastStep = activeStep === steps.length - 1;
@@ -182,11 +210,13 @@ const NavigatorGuideContentView = ({ appConfig }) => {
           )
           .map((value) => ({
             label:
-              item.id === 'adaptationStage'
-                ? value.split(':')[0]
-                : value === 'Others'
-                  ? 'Other'
-                  : value,
+              item.id === 'climateHazards'
+                ? formatClimateImpact(intl, value)
+                : item.id === 'adaptationStage'
+                  ? formatToolVocabularyValue(intl, value).split(':')[0]
+                  : value === 'Others'
+                    ? intl.formatMessage(messages.other)
+                    : value,
             type: previewTagTypes[item.id],
           }));
       });
@@ -255,7 +285,12 @@ const NavigatorGuideContentView = ({ appConfig }) => {
       ? groupOptions.filter(({ value }) => fixedOptionValues.includes(value))
       : groupOptions;
     const labels = new Map(
-      fixedOptions.map(({ label, value }) => [value, label || value]),
+      fixedOptions.map(({ label, value }) => [
+        value,
+        label && typeof label !== 'string'
+          ? intl.formatMessage(label)
+          : label || value,
+      ]),
     );
 
     return sortGuideOptions(filteredOptions, currentLang).map((option) => ({
@@ -390,7 +425,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             <h3>{intl.formatMessage(step.title)}</h3>
             {step.description && <p>{intl.formatMessage(step.description)}</p>}
 
-            {isLoading ? (
+            {isLoading || hasLanguageMismatch ? (
               <div className="navigator-guide-options-loading">
                 <Loader active inline />
               </div>
@@ -466,7 +501,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
                       disabled={option.disabled}
                       onChange={() => toggleValue(option.value)}
                     />
-                    <span>{option.value}</span>
+                    <span>{option.label}</span>
                     <small>{option.count}</small>
                   </label>
                 ))}
@@ -516,7 +551,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
           {hasSelections && (
             <div className="navigator-guide-result-count">
               <span className="navigator-guide-result-count-value">
-                {isLoading ? '…' : totalResults || 0}
+                {isLoading || hasLanguageMismatch ? '…' : totalResults || 0}
               </span>
               <p>
                 {intl.formatMessage(messages.toolsMatch, {

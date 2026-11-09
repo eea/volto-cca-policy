@@ -21,27 +21,27 @@ const LinkWrap = ({ item, children, isActive, className }) => {
   );
 };
 
+const getCurrentMenu = (activeMenu, skippedItems) => {
+  if (activeMenu === null || skippedItems.includes(activeMenu.toString())) {
+    return null;
+  }
+
+  const skippedItemsBeforeActive = skippedItems.filter(
+    (item) => item.length && item <= activeMenu,
+  ).length;
+
+  return activeMenu - skippedItemsBeforeActive;
+};
+
 export default function RASTMap(props) {
   const { path, pathname, activeMenu, skip_items } = props;
   const currentPath = path || pathname;
 
-  let data = skip_items.split(',');
+  const skippedItems = skip_items.split(',');
   const items = props.items.filter(
-    (_item, index) => !data.includes(index.toString()),
+    (_item, index) => !skippedItems.includes(index.toString()),
   );
-  let currentMenu = activeMenu;
-
-  if (activeMenu !== null) {
-    if (data.includes(activeMenu.toString())) {
-      currentMenu = null;
-    } else {
-      let activeMenuMinus = 0;
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].length && data[i] <= activeMenu) activeMenuMinus++;
-      }
-      currentMenu -= activeMenuMinus;
-    }
-  }
+  const currentMenu = getCurrentMenu(activeMenu, skippedItems);
 
   return (
     <div
@@ -344,7 +344,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[0]}
             pathname={currentPath}
-            isActive={currentMenu === 0 ? true : false}
+            isActive={currentMenu === 0}
             className="step-0"
           >
             <path
@@ -364,7 +364,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[1]}
             pathname={currentPath}
-            isActive={currentMenu === 1 ? true : false}
+            isActive={currentMenu === 1}
             className="step-1"
           >
             <path
@@ -384,7 +384,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[2]}
             pathname={currentPath}
-            isActive={currentMenu === 2 ? true : false}
+            isActive={currentMenu === 2}
             className="step-2"
           >
             <path
@@ -404,7 +404,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[3]}
             pathname={currentPath}
-            isActive={currentMenu === 3 ? true : false}
+            isActive={currentMenu === 3}
             className="step-3"
           >
             <path
@@ -424,7 +424,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[4]}
             pathname={currentPath}
-            isActive={currentMenu === 4 ? true : false}
+            isActive={currentMenu === 4}
             className="step-4"
           >
             <path
@@ -444,7 +444,7 @@ export default function RASTMap(props) {
           <LinkWrap
             item={items[5]}
             pathname={currentPath}
-            isActive={currentMenu === 5 ? true : false}
+            isActive={currentMenu === 5}
             className="step-5"
           >
             <path

@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 veya daha fazla"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -40,12 +40,17 @@ msgstr "Erişilebilirlik"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Erişilebilirlik ve kullanılabilirlik"
+
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Aktif filtreler"
 
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Etkin filtreler her zaman düzenleme modunda gösterilir"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -83,9 +88,10 @@ msgid "Adaptation Sectors"
 msgstr "Adaptasyon Sektörleri"
 
 #. Default: "Adaptation Support Cycle Step"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Adaptasyon Destek Döngüsü Adımı"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -106,7 +112,7 @@ msgstr "Adaptasyon seçenekleri"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Uyum politikası döngüsü"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -119,27 +125,27 @@ msgstr "Adaptasyon sektörleri"
 #. Default: "Adaptation stage"
 #: search/navigator_guide/guideSteps
 msgid "Adaptation stage"
-msgstr ""
+msgstr "Adaptasyon aşaması"
 
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Uyum desteği döngüsünün adımı"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Araç ekle"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "En az bir araç daha ekleyin"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Karşılaştırmaya ekle"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -164,27 +170,32 @@ msgstr "Tüm zamanlar"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Karşılaştırma için en az iki geçerli araç gerekir. Navigator Kataloğu'ndan araç seçin."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Mevcut"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Sonuçlara dön"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Arka plan bilgisi"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "En iyi uygulama örnekleri"
 
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
@@ -260,7 +271,7 @@ msgstr "Zorluklar"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Navigator Kataloğu'na göz atın"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -275,12 +286,12 @@ msgstr "Bir bölge seçin"
 #. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 #: search/navigator_guide/guideSteps
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
-msgstr ""
+msgstr "İşinizle ilgili bir veya daha fazla tehlikeyi seçin. Bu, araçları riskinizi karşılayanlara daraltır."
 
 #. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
 #: search/navigator_guide/guideSteps
 msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
-msgstr ""
+msgstr "Aracınızın kapsaması gereken coğrafi alanı seçin. Tüm kapsam kategorileri görünür durumda kalır ve farklı bir kategorinin seçilmesi önceki coğrafi seçimin yerine geçer."
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -300,19 +311,20 @@ msgid "City:"
 msgstr "Şehir:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Tümünü temizle"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Filtreleri temizle"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Haritayı etkinleştirmek için diğer coğrafi kapsam filtrelerini temizleyin."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -325,7 +337,7 @@ msgstr "İklim Etkileri"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Climate hazards"
-msgstr ""
+msgstr "İklim tehlikeleri"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -356,28 +368,43 @@ msgstr "Bu etkinlik için İklim-ADAPT sayfası"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Kıyı alanları"
+
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Kıyı taşkını / fırtına kabarması"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Soğuk hava dalgaları / aşırı soğuk"
 
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Karşılaştır"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Seçilen araçları karşılaştır"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Araçları karşılaştır"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "{count} araç karşılaştırılıyor"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -406,6 +433,11 @@ msgstr "Katkıda bulunan:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinasyon işbirliği ve ağlar"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Maliyet-fayda oranı"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -429,17 +461,17 @@ msgstr "Ülkeler:"
 #. Default: "Coverage"
 #: search/navigator_guide/guideSteps
 msgid "Coverage"
-msgstr ""
+msgstr "Kapsam"
 
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Kriterler"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Döngü"
 
 #. Default: "Dashboard"
 #: messages
@@ -449,7 +481,12 @@ msgstr "Kontrol paneli"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Veri kaynakları"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Veri kümeleri ve göstergeler"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -469,7 +506,7 @@ msgstr "Çıkış tarihi:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Aracın ilgili olduğu en geniş coğrafi kapsamı tanımlar"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -522,6 +559,11 @@ msgstr "Yeni bir dosya yüklemek için dosyayı buraya bırakın"
 msgid "Drop files here ..."
 msgstr "Dosyaları buraya bırakın..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Kuraklık"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -541,6 +583,11 @@ msgstr "AEA Üye Ülkeleri"
 #: components/manage/Blocks/CountryMapProfile/Filter
 msgid "EU Member States and EEA Member Countries"
 msgstr "AB Üye Devletleri ve AEA Üye Ülkeleri"
+
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "AB'nin en uzak bölgeleri"
 
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
@@ -562,15 +609,20 @@ msgstr "Ekonomi ve Finans"
 msgid "Eligible to receive funding"
 msgstr "Finansman almaya uygun"
 
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Avrupa"
+
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
 msgid "European-wide and global"
-msgstr ""
+msgstr "Avrupa çapında ve küresel"
 
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "Avrupa çapında araçlar"
 
 #. Default: "Event"
 #: messages
@@ -595,17 +647,17 @@ msgstr "Çevresel bilgi sistemlerimizi keşfedin"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Araçları keşfedin"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Tabloyu dışa aktar"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "SSS"
 
 #. Default: "Financing incentive instruments"
 #: messages
@@ -615,12 +667,22 @@ msgstr "Finansman teşvik araçları"
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
-msgstr ""
+msgstr "Doğru aracı bulun"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Yangın / orman yangını"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Sel"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Odaklanma alanları"
 
 #. Default: "For more search options"
 #: index
@@ -635,7 +697,7 @@ msgstr "Tam ekran"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "İşlevsellik"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -665,7 +727,7 @@ msgstr "Coğrafi karakterizasyon:"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
-msgstr ""
+msgstr "Coğrafi kapsam"
 
 #. Default: "Geographical scale"
 #: search/mission_tools/facets-tools
@@ -677,10 +739,15 @@ msgstr "Coğrafi ölçek"
 msgid "Getting started"
 msgstr "Başlarken"
 
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Küresel"
+
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Küresel araçlar"
 
 #. Default: "Go to advanced search"
 #: index
@@ -695,7 +762,7 @@ msgstr "Yönetişim ve Kurumsal"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Yönetişim düzeyi"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -720,7 +787,7 @@ msgstr "Rehberlik"
 #. Default: "Guide me"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Guide me"
-msgstr ""
+msgstr "Bana rehberlik et"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -730,7 +797,7 @@ msgstr "HHWS mevcut (daha fazla bilgi için ülkeye tıklayın)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Tehlike"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -752,6 +819,11 @@ msgstr "Sağlık etkisi:"
 msgid "Health impacts"
 msgstr "Sağlık etkileri"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Sıcaklık"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -761,6 +833,11 @@ msgstr "Isı sağlığı eylem planları (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Isı sağlığı uyarı sistemleri (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Şiddetli yağış / aşırı yağış"
 
 #. Default: "Help"
 #: messages
@@ -821,7 +898,7 @@ msgstr "Bilgi portalı"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Girdi"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -832,6 +909,11 @@ msgstr "Sigorta ve risk paylaşım araçları"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Üçüncü taraflardan gelen öğe"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Adil dayanıklılık"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -873,6 +955,11 @@ msgstr "Anahtar Kelimeler:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Bilgi ve davranış değişikliği"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Heyelan"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -950,7 +1037,7 @@ msgstr "Ömür boyu"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Bağlantı kopyalandı"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -960,12 +1047,17 @@ msgstr "Daha fazla bilgi için bağlantılar"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Liste görünümü"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
-msgstr ""
+msgstr "Canlı önizleme · seçiminize dayalı sonuçlar"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Harita yükleniyor..."
 
 #. Default: "Login"
 #: messages
@@ -996,12 +1088,17 @@ msgstr "Yönetim ve planlama"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Harita görünümü"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Harita görünümü yalnızca <strong>Coğrafi kapsam</strong>'da ülkeler seçildiğinde geçerlidir."
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Haritalar ve grafikler"
 
 #. Default: "Mission story"
 #: messages
@@ -1018,11 +1115,26 @@ msgstr "Misyon aracı"
 msgid "Most useful for"
 msgstr "Şunun için en yararlısı:"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Dağlık alanlar"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Belediyeler ve diğerleri:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Anlatılar"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Ulusal"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1034,6 +1146,11 @@ msgstr "Ulusal HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Doğa temelli çözümler ve ekosistem temelli yaklaşımlar"
 
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Doğa bazlı çözümler"
+
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Navigate to this item"
@@ -1042,17 +1159,17 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide introduction"
-msgstr ""
+msgstr "Birkaç rehberli soruyu yanıtlayın. Sağdaki katalog siz ilerledikçe daralır; istediğiniz zaman sonuçlara geçebilirsiniz."
 
 #. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide preview empty state"
-msgstr ""
+msgstr "İlginizi çeken kategorileri seçerek başlayın. Seçtiğiniz kategorilere göre filtrelenen araçlar bu kutuda görünecektir."
 
 #. Default: "New"
 #: components/Search/Result/ClusterHorizontalCardItem
@@ -1062,7 +1179,7 @@ msgstr "Yeni"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "En yeni"
 
 #. Default: "News"
 #: messages
@@ -1072,7 +1189,7 @@ msgstr "Haberler"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
-msgstr ""
+msgstr "Sonraki adım"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1082,7 +1199,7 @@ msgstr "HHAP yok"
 #. Default: "No Navigator Guide steps are configured."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No Navigator Guide steps are configured."
-msgstr ""
+msgstr "Hiçbir Gezgin Kılavuzu adımı yapılandırılmadı."
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1092,32 +1209,42 @@ msgstr "Bilgi yok"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
-msgstr ""
+msgstr "Bu adım için herhangi bir seçenek mevcut değildir."
 
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Seçenek yok"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Sonuç yok"
 
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Belirli bir tehlikeye özgü değil"
+
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "AB Dışı Diller"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Yok"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Kullanılamıyor"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Desteklenen uyum desteği döngüsü adımlarının sayısı, 1 ile 6 arasında."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1137,13 +1264,13 @@ msgstr "Gözlemevi ortağı"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "En eski"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Aracı aç"
 
 #. Default: "Organisation"
 #: messages
@@ -1161,9 +1288,10 @@ msgid "Organised by EEA"
 msgstr "AÇA tarafından düzenlenen"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1173,17 +1301,17 @@ msgstr "Diğer bölgeler"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Diğer araçlar"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Çıktı"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Çıktı türü"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1203,7 +1331,7 @@ msgstr "Fiziksel ve teknolojik"
 #. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
 #: search/navigator_guide/guideSteps
 msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
-msgstr ""
+msgstr "Çalışmanızın faaliyet gösterdiği seviyeleri seçin. Verileri ve rehberliği bu ölçeklere ulaşan araçları elimizde tutuyoruz."
 
 #. Default: "Policy Instruments"
 #: messages
@@ -1284,7 +1412,7 @@ msgstr "Uyarlama seçeneğinin tam metnini okuyun."
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Karşılaştırmaya hazır"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1305,7 +1433,7 @@ msgstr "Referanslar"
 #. Default: "Refined by {criteria}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Refined by {criteria}"
-msgstr ""
+msgstr "{criteria} tarafından filtrelendi"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1335,12 +1463,12 @@ msgstr "İlgili belgeler ve sunumlar"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "İlgili araçlar"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Alaka düzeyi"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1355,22 +1483,32 @@ msgstr "Risk azaltma ile ilgili sinerjiler"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "{title} öğesini kaldır"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "{title} öğesini karşılaştırmadan kaldır"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Mevcut dosyayı değiştir"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Raporlar ve karar desteği"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
 msgstr "Araştırma ve bilgi projesi"
+
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Deniz seviyesinin yükselmesi"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -1414,7 +1552,7 @@ msgstr "Sektörler:"
 #. Default: "See all matching tools"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See all matching tools"
-msgstr ""
+msgstr "Eşleşen tüm araçları görün"
 
 #. Default: "See less"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1429,7 +1567,7 @@ msgstr "Daha fazlasını gör"
 #. Default: "See results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See results"
-msgstr ""
+msgstr "Sonuçları görün"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -1445,17 +1583,17 @@ msgstr "Seçme"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Haritayı keşfetmek için bir ülke seçin"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Select all that apply"
-msgstr ""
+msgstr "Geçerli olanların tümünü seçin"
 
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Paylaş"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1471,7 +1609,12 @@ msgstr "Site haritası"
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
-msgstr ""
+msgstr "Sonuçlara atla"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Kar / çığ"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1481,7 +1624,7 @@ msgstr "Çözümler"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Seçilen bazı araçlar yüklenemedi ve atlandı."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1503,12 +1646,12 @@ msgstr "Kaynak:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Mekânsal çözünürlük"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Mekânsal ölçek"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1519,18 +1662,53 @@ msgstr "Paydaş katılımı"
 #. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 #: search/navigator_guide/guideSteps
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
-msgstr ""
+msgstr "Bir veya daha fazla sektörü seçerek rehberli turu başlatın. Sağ tarafta, seçimlerinize göre filtrelenmiş mevcut araçların bir önizlemesini görmeye başlayacaksınız."
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Adım 1: Uyum için zeminin hazırlanması"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Adım 2: İklim değişikliği risklerinin ve kırılganlıkların değerlendirilmesi"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Adım 3: Uyum seçeneklerinin belirlenmesi"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Adım 4: Uyum seçeneklerinin değerlendirilmesi ve önceliklendirilmesi"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Adım 5: Uygulama"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Adım 6: İzleme ve değerlendirme"
 
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
-msgstr ""
+msgstr "{total}'nun {current} adımı"
 
 #. Default: "Sub Nationals:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Alt Vatandaşlar:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Ulusal altı"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1546,7 +1724,7 @@ msgstr "Başarı ve sınırlayıcı faktörler"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Uyum politikası döngüsüne destek"
 
 #. Default: "Technological options"
 #: messages
@@ -1556,7 +1734,7 @@ msgstr "Teknolojik seçenekler"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Verilerin zamansallığı"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1581,12 +1759,12 @@ msgstr "Tarih, maddenin Climate ADAPT'ta yayınlanmak üzere katkıda bulunan uz
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Seçilen araçlar yüklenemedi. Navigator Kataloğu'na dönüp araçları yeniden seçin."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
 msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
-msgstr ""
+msgstr "Adımlar İklim-ADAPT Uyum Destek Aracı döngüsünü takip ediyor. Desteğe ihtiyaç duyduğunuz adımı veya adımları seçin; sürecin bu noktalarında yardımcı olacak araçları saklıyoruz."
 
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1596,7 +1774,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Bu, aracı ve çıktılarını anlamanın ve yorumlamanın ne kadar kolay olduğunu belirtir: düşük düzey, ileri düzey uzmanlık gerektiğini; orta düzey, önceden edinilmiş bazı teknik veya bilimsel bilgilerin gerektiğini; yüksek düzey ise aracın genel kullanıcılar için kolay olduğunu ve çok az teknik bilgi gerektirdiğini ifade eder."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1606,12 +1784,12 @@ msgstr "Bu nesne, içeriği güncel olmadığı için arşivlendi. Hâlâ eski s
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Başlık a'dan z'ye"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Başlık z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1621,23 +1799,28 @@ msgstr "Araç"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Aracı doğrulama amacıyla kullanım"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Ülke başına araçlar"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Bu araçla sektör, tehlike veya döngü adımını paylaşan araçlar — aynı konu için yararlı sonraki adımlar."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem
 #: components/Search/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr "Konular:"
+
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Ulusötesi"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -1649,7 +1832,7 @@ msgstr "Ulusötesi bölgeler"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Ulusötesi araçlar"
 
 #. Default: "Type of item"
 #: search/common
@@ -1661,7 +1844,7 @@ msgstr "Öğe türü"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Çıkış türü"
 
 #. Default: "Types"
 #: messages
@@ -1678,25 +1861,30 @@ msgstr "Notlar güncelleniyor"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Kentsel alanlar"
+
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Kullanılabilirlik"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Şunun için kullanın"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Kullanıldığı yer"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Kullanıcı grubu"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1722,7 +1910,7 @@ msgstr "Videolar ve podcast'ler"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Görüntüle"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1768,17 +1956,17 @@ msgstr "Web siteleri:"
 #. Default: "What sectors does your work focus on?"
 #: search/navigator_guide/guideSteps
 msgid "What sectors does your work focus on?"
-msgstr ""
+msgstr "Çalışmalarınız hangi sektörlere odaklanıyor?"
 
 #. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
 msgid "What step of the adaptation support cycle are you working on?"
-msgstr ""
+msgstr "Adaptasyon destek döngüsünün hangi adımı üzerinde çalışıyorsunuz?"
 
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Bununla neler yapabilirsiniz"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1793,22 +1981,27 @@ msgstr "Nerede"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
-msgstr ""
+msgstr "Hangi iklim tehlikesine değiniyorsunuz?"
 
 #. Default: "Which geographic coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which geographic coverage do you need?"
-msgstr ""
+msgstr "Hangi coğrafi kapsama ihtiyacınız var?"
 
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
-msgstr ""
+msgstr "Hangi mekansal kapsama ihtiyacınız var?"
 
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "İklim değişikliğine uyum açısından neden önemlidir"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Rüzgâr / fırtına"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
@@ -1903,19 +2096,19 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Hiçbir araç mevcut değil} one {# araç mevcut} other {# araç mevcut}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {katalogdaki araç} other {katalogdaki araç}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "{count, plural, one {tool matches} other {tools match}}"
-msgstr ""
+msgstr "{count, plural, one {eşleşen araç} other {eşleşen araç}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {eşleşen araç} other {eşleşen araç}} “{searchTerm}”"

@@ -31,5 +31,7 @@ export const mergeGuideOptions = (
 
 export const sortGuideOptions = (options, locale = 'en') =>
   [...options].sort((a, b) =>
-    a.value.localeCompare(b.value, locale, { sensitivity: 'base' }),
+    (a.label || a.value).localeCompare(b.label || b.value, locale, {
+      sensitivity: 'base',
+    }),
   );

@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 ar daugiau"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -40,12 +40,17 @@ msgstr "Prieinamumas"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Prieinamumas ir patogumas naudoti"
+
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Aktyvūs filtrai"
 
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Aktyvūs filtrai visada rodomi redagavimo režimu"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -83,9 +88,10 @@ msgid "Adaptation Sectors"
 msgstr "Prisitaikymo sektoriai"
 
 #. Default: "Adaptation Support Cycle Step"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Prisitaikymo palaikymo ciklo žingsnis"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -106,7 +112,7 @@ msgstr "Adaptacijos parinktys"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Prisitaikymo politikos ciklas"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -119,27 +125,27 @@ msgstr "Prisitaikymo sektoriai"
 #. Default: "Adaptation stage"
 #: search/navigator_guide/guideSteps
 msgid "Adaptation stage"
-msgstr ""
+msgstr "Prisitaikymo etapas"
 
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Prisitaikymo paramos ciklo etapas"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Pridėti įrankį"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Pridėkite bent dar vieną įrankį"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Pridėti prie palyginimo"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -164,27 +170,32 @@ msgstr "Visą laiką"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Norint palyginti reikia bent dviejų tinkamų įrankių. Pasirinkite įrankius iš „Navigator“ katalogo."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Prieinama"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Back"
-msgstr ""
+msgstr "Atgal"
 
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Grįžti į rezultatus"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Fono informacija"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Gerosios praktikos pavyzdžiai"
 
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
@@ -260,7 +271,7 @@ msgstr "Iššūkiai"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Peržiūrėti „Navigator“ katalogą"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -275,12 +286,12 @@ msgstr "Pasirinkite regioną"
 #. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 #: search/navigator_guide/guideSteps
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
-msgstr ""
+msgstr "Pasirinkite vieną ar daugiau pavojų, susijusių su jūsų darbu. Tai susiaurina priemones, skirtas tiems, kurie padengia jūsų riziką."
 
 #. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
 #: search/navigator_guide/guideSteps
 msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
-msgstr ""
+msgstr "Pasirinkite geografinę sritį, kurią turi apimti jūsų įrankis. Visos aprėpties kategorijos lieka matomos, o kitos kategorijos pasirinkimas pakeičia ankstesnį geografinį pasirinkimą."
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -300,19 +311,20 @@ msgid "City:"
 msgstr "Miestas:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Išvalyti viską"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Išvalyti filtrus"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Išvalykite kitus geografinės aprėpties filtrus, kad įgalintumėte žemėlapį."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -325,7 +337,7 @@ msgstr "Klimato poveikis"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Climate hazards"
-msgstr ""
+msgstr "Klimato keliami pavojai"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -356,28 +368,43 @@ msgstr "Šio įvykio puslapis „Climate-ADAPT“."
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Uždaryti"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Pakrantės zonos"
+
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Pakrančių užliejimas / audros patvanka"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Šalčio bangos / ekstremalus šaltis"
 
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Palyginti"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Palyginti pasirinktus įrankius"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Palyginti įrankius"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "Lyginami {count} įrankiai"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -406,6 +433,11 @@ msgstr "Bendraautoris:"
 msgid "Coordination cooperation and networks"
 msgstr "Koordinavimo bendradarbiavimas ir tinklai"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Sąnaudų ir naudos santykis"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -429,17 +461,17 @@ msgstr "Šalys:"
 #. Default: "Coverage"
 #: search/navigator_guide/guideSteps
 msgid "Coverage"
-msgstr ""
+msgstr "Aprėptis"
 
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Kriterijai"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Ciklas"
 
 #. Default: "Dashboard"
 #: messages
@@ -449,7 +481,12 @@ msgstr "Valdymo skydas"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Duomenų šaltiniai"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Duomenų rinkiniai ir rodikliai"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -469,7 +506,7 @@ msgstr "Išleidimo data:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Apibrėžia didžiausią geografinę apimtį, kuriai priemonė yra svarbi"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -522,6 +559,11 @@ msgstr "Nuvilkite failą čia, kad įkeltumėte naują failą"
 msgid "Drop files here ..."
 msgstr "Numeskite failus čia..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Sausra"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -541,6 +583,11 @@ msgstr "EEE šalys narės"
 #: components/manage/Blocks/CountryMapProfile/Filter
 msgid "EU Member States and EEA Member Countries"
 msgstr "ES valstybės narės ir EEE šalys narės"
+
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Atokiausi ES regionai"
 
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
@@ -562,15 +609,20 @@ msgstr "Ekonomika ir finansai"
 msgid "Eligible to receive funding"
 msgstr "Tinkamas gauti finansavimą"
 
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Europos"
+
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
 msgid "European-wide and global"
-msgstr ""
+msgstr "Europos masto ir pasaulinė"
 
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "Europos masto įrankiai"
 
 #. Default: "Event"
 #: messages
@@ -595,17 +647,17 @@ msgstr "Susipažinkite su mūsų aplinkos informacinėmis sistemomis"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Naršykite įrankius"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Eksportuoti lentelę"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "DUK"
 
 #. Default: "Financing incentive instruments"
 #: messages
@@ -615,12 +667,22 @@ msgstr "Finansavimo skatinimo priemonės"
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
-msgstr ""
+msgstr "Raskite tinkamą įrankį"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Gaisras / miško gaisras"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Potvynis"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Fokusavimo sritys"
 
 #. Default: "For more search options"
 #: index
@@ -635,7 +697,7 @@ msgstr "Visas ekranas"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Funkcionalumas"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -665,7 +727,7 @@ msgstr "Geografinė charakteristika:"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
-msgstr ""
+msgstr "Geografinė aprėptis"
 
 #. Default: "Geographical scale"
 #: search/mission_tools/facets-tools
@@ -677,10 +739,15 @@ msgstr "Geografinis mastelis"
 msgid "Getting started"
 msgstr "Darbo pradžia"
 
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Pasaulinis"
+
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Pasauliniai įrankiai"
 
 #. Default: "Go to advanced search"
 #: index
@@ -695,7 +762,7 @@ msgstr "Valdymas ir institucinis"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Valdymo lygis"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -720,7 +787,7 @@ msgstr "Gairės"
 #. Default: "Guide me"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Guide me"
-msgstr ""
+msgstr "Nurodykite mane"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -730,7 +797,7 @@ msgstr "Galimas HHWS (daugiau informacijos spustelėkite šalį)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Pavojus"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -752,6 +819,11 @@ msgstr "Poveikis sveikatai:"
 msgid "Health impacts"
 msgstr "Poveikis sveikatai"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Karštis"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -761,6 +833,11 @@ msgstr "Šilumos sveikatos veiksmų planai (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Perspėjimo apie žalą sveikatai sistemos (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Stiprūs krituliai / smarkus lietus"
 
 #. Default: "Help"
 #: messages
@@ -821,7 +898,7 @@ msgstr "Informacijos portalas"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Įvestis"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -832,6 +909,11 @@ msgstr "Draudimas ir rizikos pasidalijimo priemonės"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Prekė iš trečiųjų šalių"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Teisingas atsparumas"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -873,6 +955,11 @@ msgstr "Raktiniai žodžiai:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Žinių ir elgesio pokyčiai"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Nuošliauža"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -950,7 +1037,7 @@ msgstr "Visą gyvenimą"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Nuoroda nukopijuota"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -960,12 +1047,17 @@ msgstr "Nuorodos į daugiau informacijos"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Sąrašo vaizdas"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
-msgstr ""
+msgstr "Tiesioginė peržiūra · rezultatai pagal jūsų pasirinkimą"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Įkeliamas žemėlapis..."
 
 #. Default: "Login"
 #: messages
@@ -996,12 +1088,17 @@ msgstr "Valdymas ir planavimas"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Žemėlapio vaizdas"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Žemėlapio rodinys taikomas tik tada, kai <strong>Geografinė aprėptis</strong> pasirenkamos šalys."
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Žemėlapiai ir diagramos"
 
 #. Default: "Mission story"
 #: messages
@@ -1018,11 +1115,26 @@ msgstr "Misijos įrankis"
 msgid "Most useful for"
 msgstr "Labiausiai naudinga"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Kalnų vietovės"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Savivaldybės ir kita:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Aprašomieji tekstai"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nacionalinis"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1034,6 +1146,11 @@ msgstr "Nacionalinis HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Gamta pagrįsti sprendimai ir ekosistemomis pagrįsti metodai"
 
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Gamtiniai sprendimai"
+
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Navigate to this item"
@@ -1042,17 +1159,17 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide introduction"
-msgstr ""
+msgstr "Atsakykite į kelis vadovaujamus klausimus. Katalogas dešinėje siaurėja – bet kuriuo metu galite pereiti prie rezultatų."
 
 #. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide preview empty state"
-msgstr ""
+msgstr "Pradėkite pasirinkdami jus dominančias kategorijas. Šiame laukelyje bus rodomi įrankiai, filtruoti pagal pasirinktas kategorijas."
 
 #. Default: "New"
 #: components/Search/Result/ClusterHorizontalCardItem
@@ -1062,7 +1179,7 @@ msgstr "Nauja"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Naujausias"
 
 #. Default: "News"
 #: messages
@@ -1072,7 +1189,7 @@ msgstr "Naujienos"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
-msgstr ""
+msgstr "Kitas žingsnis"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1082,7 +1199,7 @@ msgstr "Nėra HHAP"
 #. Default: "No Navigator Guide steps are configured."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No Navigator Guide steps are configured."
-msgstr ""
+msgstr "Navigatoriaus vadovo žingsnių nesukonfigūruota."
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1092,32 +1209,42 @@ msgstr "Jokios informacijos"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
-msgstr ""
+msgstr "Šiam veiksmui nėra jokių parinkčių."
 
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Nėra pasirinkimų"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Jokių rezultatų"
 
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Nesusiję su konkrečiu pavojumi"
+
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Ne ES kalbos"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Nėra"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Neprieinama"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Palaikomų prisitaikymo paramos ciklo etapų skaičius nuo 1 iki 6."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1137,13 +1264,13 @@ msgstr "Observatorijos partneris"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Seniausias"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Atidaryti įrankį"
 
 #. Default: "Organisation"
 #: messages
@@ -1161,9 +1288,10 @@ msgid "Organised by EEA"
 msgstr "Organizuoja EEA"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
-msgstr ""
+msgstr "Kita"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1173,17 +1301,17 @@ msgstr "Kiti regionai"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Kiti įrankiai"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Išvestis"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Išvesties tipas"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1203,7 +1331,7 @@ msgstr "Fizinis ir technologinis"
 #. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
 #: search/navigator_guide/guideSteps
 msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
-msgstr ""
+msgstr "Pasirinkite lygius, kuriuose dirba jūsų darbas. Saugome įrankius, kurių duomenys ir nurodymai pasiekia tuos mastus."
 
 #. Default: "Policy Instruments"
 #: messages
@@ -1284,7 +1412,7 @@ msgstr "Perskaitykite visą adaptacijos varianto tekstą"
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Paruošta palyginti"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1305,7 +1433,7 @@ msgstr "Nuorodos"
 #. Default: "Refined by {criteria}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Refined by {criteria}"
-msgstr ""
+msgstr "Filtruota pagal {criteria}"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1335,12 +1463,12 @@ msgstr "Susiję dokumentai ir pristatymai"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Susiję įrankiai"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Aktualumas"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1355,22 +1483,32 @@ msgstr "Atitinkama sinergija su švelninimu"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "Pašalinti {title}"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "Pašalinti {title} iš palyginimo"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Pakeiskite esamą failą"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Ataskaitos ir sprendimų priėmimo parama"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
 msgstr "Tyrimų ir žinių projektas"
+
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Jūros lygio kilimas"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -1414,7 +1552,7 @@ msgstr "Sektoriai:"
 #. Default: "See all matching tools"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See all matching tools"
-msgstr ""
+msgstr "Peržiūrėkite visus atitinkamus įrankius"
 
 #. Default: "See less"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1429,7 +1567,7 @@ msgstr "Žiūrėti daugiau"
 #. Default: "See results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See results"
-msgstr ""
+msgstr "Žiūrėti rezultatus"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -1445,17 +1583,17 @@ msgstr "Pasirinkite"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Norėdami ištirti žemėlapį, pasirinkite šalį"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Select all that apply"
-msgstr ""
+msgstr "Pasirinkite viską, kas tinka"
 
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Bendrinti"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1471,7 +1609,12 @@ msgstr "Svetainės struktūra"
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
-msgstr ""
+msgstr "Pereiti prie rezultatų"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Sniegas / lavina"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1481,7 +1624,7 @@ msgstr "Sprendimai"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Kai kurių pasirinktų įrankių nepavyko įkelti, todėl jie praleisti."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1503,12 +1646,12 @@ msgstr "Šaltinis:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Erdvinė skiriamoji geba"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Erdvinis mastelis"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1519,18 +1662,53 @@ msgstr "Suinteresuotųjų šalių dalyvavimas"
 #. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 #: search/navigator_guide/guideSteps
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
-msgstr ""
+msgstr "Pradėkite ekskursiją pasirinkdami vieną ar daugiau sektorių. Dešinėje pamatysite galimų įrankių peržiūrą, filtruotą pagal jūsų pasirinkimus."
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "1 etapas. Pasirengimas prisitaikymui"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "2 etapas. Klimato kaitos rizikos ir pažeidžiamumo vertinimas"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "3 etapas. Prisitaikymo galimybių nustatymas"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "4 etapas. Prisitaikymo galimybių vertinimas ir prioritetų nustatymas"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "5 etapas. Įgyvendinimas"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "6 etapas. Stebėsena ir vertinimas"
 
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
-msgstr ""
+msgstr "Žingsnis {current} iš {total}"
 
 #. Default: "Sub Nationals:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subpiliečiai:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnacionalinis"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1546,7 +1724,7 @@ msgstr "Sėkmė ir ribojantys veiksniai"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Prisitaikymo politikos ciklo palaikymas"
 
 #. Default: "Technological options"
 #: messages
@@ -1556,7 +1734,7 @@ msgstr "Technologinės galimybės"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Duomenų laikinis aspektas"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1581,12 +1759,12 @@ msgstr "Data nurodo momentą, kai elementą parengė arba atnaujino prisidedanty
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Nepavyko įkelti pasirinktų įrankių. Grįžkite į „Navigator“ katalogą ir pasirinkite juos iš naujo."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
 msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
-msgstr ""
+msgstr "Veiksmai atliekami pagal Climate-ADAPT prisitaikymo palaikymo įrankio ciklą. Pasirinkite veiksmą ar veiksmus, kuriems reikia pagalbos – mes saugome įrankius, kurie padeda tais proceso taškais."
 
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1596,7 +1774,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Tai parodo, kaip lengva suprasti ir interpretuoti įrankį bei jo rezultatus: žemas lygis reiškia, kad reikia aukšto lygio ekspertinių žinių; vidutinis – kad reikia tam tikrų techninių ar mokslinių pradinių žinių; aukštas – kad įrankiu lengva naudotis plačiajai visuomenei ir reikia minimalių techninių žinių."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1606,12 +1784,12 @@ msgstr "Šis objektas buvo suarchyvuotas, nes jo turinys pasenęs. Vis tiek gali
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Pavadinimas a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Pavadinimas z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1621,23 +1799,28 @@ msgstr "Įrankis"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Naudojimas įrankiui patvirtinti"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Įrankiai pagal šalį"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Įrankiai, su šiuo įrankiu turintys bendrą sektorių, pavojų ar ciklo etapą – naudingi tolesni žingsniai sprendžiant tą patį klausimą."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem
 #: components/Search/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr "Temos:"
+
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Tarpvalstybinis"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -1649,7 +1832,7 @@ msgstr "Tarptautiniai regionai"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Tarptautinės priemonės"
 
 #. Default: "Type of item"
 #: search/common
@@ -1661,7 +1844,7 @@ msgstr "Prekės tipas"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Išėjimų tipas"
 
 #. Default: "Types"
 #: messages
@@ -1678,25 +1861,30 @@ msgstr "Pastabų atnaujinimas"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Miesto teritorijos"
+
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Patogumas naudoti"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Naudoti tam"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Naudojama"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Naudotojų grupė"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1722,7 +1910,7 @@ msgstr "Vaizdo įrašai ir tinklalaidės"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Žiūrėti"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1768,17 +1956,17 @@ msgstr "Svetainės:"
 #. Default: "What sectors does your work focus on?"
 #: search/navigator_guide/guideSteps
 msgid "What sectors does your work focus on?"
-msgstr ""
+msgstr "Į kokius sektorius orientuojatės jūsų darbe?"
 
 #. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
 msgid "What step of the adaptation support cycle are you working on?"
-msgstr ""
+msgstr "Kuriame adaptacijos paramos ciklo etape dirbate?"
 
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Ką galite su juo daryti"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1793,22 +1981,27 @@ msgstr "Kur"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
-msgstr ""
+msgstr "Į kokį klimato pavojų kalbate?"
 
 #. Default: "Which geographic coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which geographic coverage do you need?"
-msgstr ""
+msgstr "Kokios geografinės aprėpties jums reikia?"
 
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
-msgstr ""
+msgstr "Kokios erdvinės aprėpties jums reikia?"
 
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Kodėl tai svarbu prisitaikant prie klimato kaitos"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Vėjas / audra"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
@@ -1903,19 +2096,19 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Nėra jokių įrankių} one {Yra # įrankis} few {Yra # įrankiai} many {Yra # įrankiai} other {Yra # įrankiai}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {įrankis kataloge} few {įrankiai kataloge} many {įrankių kataloge} other {įrankių kataloge}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "{count, plural, one {tool matches} other {tools match}}"
-msgstr ""
+msgstr "{count, plural, one {tinkamas įrankis} few {tinkami įrankiai} other {tinkamų įrankių}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {tinkamas įrankis} few {tinkami įrankiai} other {tinkamų įrankių}} “{searchTerm}”"

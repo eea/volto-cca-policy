@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 ou mais"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -40,12 +40,17 @@ msgstr "Acessibilidade"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Acessibilidade e usabilidade"
+
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Filtros ativos"
 
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Os filtros ativos são sempre mostrados no modo de edição"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -83,9 +88,10 @@ msgid "Adaptation Sectors"
 msgstr "Setores de Adaptação"
 
 #. Default: "Adaptation Support Cycle Step"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Etapa do Ciclo de Apoio à Adaptação"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -106,7 +112,7 @@ msgstr "Opções de adaptação"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Ciclo de política de adaptação"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -119,27 +125,27 @@ msgstr "Setores de adaptação"
 #. Default: "Adaptation stage"
 #: search/navigator_guide/guideSteps
 msgid "Adaptation stage"
-msgstr ""
+msgstr "Estágio de adaptação"
 
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Etapa do ciclo de apoio à adaptação"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Adicionar uma ferramenta"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Adicione pelo menos mais uma ferramenta"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Adicionar à comparação"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -164,27 +170,32 @@ msgstr "Todo o tempo"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "São necessárias pelo menos duas ferramentas válidas para comparar. Selecione ferramentas no catálogo Navigator."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Disponível"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Back"
-msgstr ""
+msgstr "Voltar"
 
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Voltar aos resultados"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Informações básicas"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Exemplos de boas práticas"
 
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
@@ -260,7 +271,7 @@ msgstr "Desafios"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Consultar o catálogo Navigator"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -275,12 +286,12 @@ msgstr "Escolha uma região"
 #. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 #: search/navigator_guide/guideSteps
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
-msgstr ""
+msgstr "Escolha um ou mais perigos relevantes para o seu trabalho. Isso restringe as ferramentas àquelas que cobrem o seu risco."
 
 #. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
 #: search/navigator_guide/guideSteps
 msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
-msgstr ""
+msgstr "Escolha a área geográfica que sua ferramenta deve cobrir. Todas as categorias de cobertura permanecem visíveis e a escolha de uma categoria diferente substitui a seleção geográfica anterior."
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -300,19 +311,20 @@ msgid "City:"
 msgstr "Cidade:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Limpar tudo"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Limpar filtros"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Limpe outros filtros de cobertura geográfica para ativar o mapa."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -325,7 +337,7 @@ msgstr "Impactos climáticos"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Climate hazards"
-msgstr ""
+msgstr "Perigos climáticos"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -356,28 +368,43 @@ msgstr "Página Climate-ADAPT para este evento"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Áreas costeiras"
+
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Inundação costeira / sobrelevação de tempestade"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Vagas de frio / frio extremo"
 
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Comparar"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Comparar as ferramentas selecionadas"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Comparar ferramentas"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "A comparar {count} ferramentas"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -406,6 +433,11 @@ msgstr "Contribuinte:"
 msgid "Coordination cooperation and networks"
 msgstr "Coordenação, cooperação e redes"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Relação custo-benefício"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -429,17 +461,17 @@ msgstr "Países:"
 #. Default: "Coverage"
 #: search/navigator_guide/guideSteps
 msgid "Coverage"
-msgstr ""
+msgstr "Cobertura"
 
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Critérios"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Ciclo"
 
 #. Default: "Dashboard"
 #: messages
@@ -449,7 +481,12 @@ msgstr "Painel de controlo"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Fontes de dados"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Conjuntos de dados e indicadores"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -469,7 +506,7 @@ msgstr "Data de lançamento:"
 #. Default: "Defines the largest geographic extent for which the tool is relevant"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "Defines the largest geographic extent for which the tool is relevant"
-msgstr ""
+msgstr "Define a maior extensão geográfica para a qual a ferramenta é relevante"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -522,6 +559,11 @@ msgstr "Solte o arquivo aqui para fazer upload de um novo arquivo"
 msgid "Drop files here ..."
 msgstr "Solte os arquivos aqui..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Seca"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -541,6 +583,11 @@ msgstr "Países-Membros do EEE"
 #: components/manage/Blocks/CountryMapProfile/Filter
 msgid "EU Member States and EEA Member Countries"
 msgstr "Estados-Membros da UE e países membros do EEE"
+
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "Regiões ultraperiféricas da UE"
 
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
@@ -562,15 +609,20 @@ msgstr "Economia e Finanças"
 msgid "Eligible to receive funding"
 msgstr "Elegível para receber financiamento"
 
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "europeu"
+
 #. Default: "European-wide and global"
 #: search/navigator_guide/guideSteps
 msgid "European-wide and global"
-msgstr ""
+msgstr "A nível europeu e global"
 
 #. Default: "European-wide tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "European-wide tools"
-msgstr ""
+msgstr "Ferramentas a nível europeu"
 
 #. Default: "Event"
 #: messages
@@ -595,17 +647,17 @@ msgstr "Explore os nossos sistemas de informação ambiental"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Explorar ferramentas"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Exportar tabela"
 
 #. Default: "FAQ"
 #: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #. Default: "Financing incentive instruments"
 #: messages
@@ -615,12 +667,22 @@ msgstr "Instrumentos de incentivo ao financiamento"
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
-msgstr ""
+msgstr "Encontre a ferramenta certa"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Incêndio / incêndio florestal"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Inundação"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Áreas de foco"
 
 #. Default: "For more search options"
 #: index
@@ -635,7 +697,7 @@ msgstr "Tela cheia"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Funcionalidade"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -665,7 +727,7 @@ msgstr "Caracterização geográfica:"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
-msgstr ""
+msgstr "Cobertura geográfica"
 
 #. Default: "Geographical scale"
 #: search/mission_tools/facets-tools
@@ -677,10 +739,15 @@ msgstr "Escala geográfica"
 msgid "Getting started"
 msgstr "Começando"
 
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Global"
+
 #. Default: "Global tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Global tools"
-msgstr ""
+msgstr "Ferramentas globais"
 
 #. Default: "Go to advanced search"
 #: index
@@ -695,7 +762,7 @@ msgstr "Governança e Institucional"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Nível de governança"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -720,7 +787,7 @@ msgstr "Orientação"
 #. Default: "Guide me"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Guide me"
-msgstr ""
+msgstr "Guie-me"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -730,7 +797,7 @@ msgstr "HHWS disponível (clique no país para mais informações)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Perigo"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -752,6 +819,11 @@ msgstr "Impacto na saúde:"
 msgid "Health impacts"
 msgstr "Impactos na saúde"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Calor"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -761,6 +833,11 @@ msgstr "Planos de ação de saúde contra o calor (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Sistemas de alerta sanitário de calor (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Precipitação intensa / chuva extrema"
 
 #. Default: "Help"
 #: messages
@@ -821,7 +898,7 @@ msgstr "Portal de informação"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -832,6 +909,11 @@ msgstr "Instrumentos de seguro e partilha de riscos"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Artigo de terceiros"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Resiliência justa"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -873,6 +955,11 @@ msgstr "Palavras-chave:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Conhecimento e mudança comportamental"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Deslizamento de terras"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -950,7 +1037,7 @@ msgstr "Vida"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Ligação copiada"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -960,12 +1047,17 @@ msgstr "Links para mais informações"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Visualização de lista"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
-msgstr ""
+msgstr "Visualização ao vivo · resultados com base na sua seleção"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Carregando mapa..."
 
 #. Default: "Login"
 #: messages
@@ -996,12 +1088,17 @@ msgstr "Gestão e planejamento"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Visualização do mapa"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "A visualização do mapa só é aplicável quando os países são selecionados na <strong>Cobertura geográfica</strong>."
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Mapas e gráficos"
 
 #. Default: "Mission story"
 #: messages
@@ -1018,11 +1115,26 @@ msgstr "Ferramenta da missão"
 msgid "Most useful for"
 msgstr "Mais útil para"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Áreas montanhosas"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Municípios e outros:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Narrativas"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nacional"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1034,6 +1146,11 @@ msgstr "HHAP nacional"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Soluções baseadas na natureza e abordagens baseadas em ecossistemas"
 
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Soluções baseadas na natureza"
+
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Navigate to this item"
@@ -1042,17 +1159,17 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide introduction"
-msgstr ""
+msgstr "Responda a algumas perguntas guiadas. O catálogo à direita diminui conforme você avança - você pode pular para os resultados a qualquer momento."
 
 #. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide preview empty state"
-msgstr ""
+msgstr "Comece selecionando as categorias que lhe interessam. As ferramentas filtradas pelas categorias escolhidas aparecerão nesta caixa."
 
 #. Default: "New"
 #: components/Search/Result/ClusterHorizontalCardItem
@@ -1062,7 +1179,7 @@ msgstr "Novo"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Mais recente"
 
 #. Default: "News"
 #: messages
@@ -1072,7 +1189,7 @@ msgstr "Notícias"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
-msgstr ""
+msgstr "Próxima etapa"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1082,7 +1199,7 @@ msgstr "Não HHAP"
 #. Default: "No Navigator Guide steps are configured."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No Navigator Guide steps are configured."
-msgstr ""
+msgstr "Nenhuma etapa do Guia do Navegador está configurada."
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1092,32 +1209,42 @@ msgstr "Nenhuma informação"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
-msgstr ""
+msgstr "Nenhuma opção está disponível para esta etapa."
 
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Nenhuma opção disponível"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Nenhum resultado"
 
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Não específico de um perigo"
+
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Idiomas fora da UE"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Nenhum"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Indisponível"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Número de etapas do ciclo de apoio à adaptação suportadas, de 1 a 6."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1137,13 +1264,13 @@ msgstr "Parceiro do observatório"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Mais antigo"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Abrir ferramenta"
 
 #. Default: "Organisation"
 #: messages
@@ -1161,9 +1288,10 @@ msgid "Organised by EEA"
 msgstr "Organizado pela EEA"
 
 #. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
 #: search/navigator_guide/guideSteps
 msgid "Other"
-msgstr ""
+msgstr "Outro"
 
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1173,17 +1301,17 @@ msgstr "Outras regiões"
 #. Default: "Other tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Other tools"
-msgstr ""
+msgstr "Outras ferramentas"
 
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Saída"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Tipo de saída"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1203,7 +1331,7 @@ msgstr "Físico e tecnológico"
 #. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
 #: search/navigator_guide/guideSteps
 msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
-msgstr ""
+msgstr "Escolha os níveis em que seu trabalho opera. Mantemos ferramentas cujos dados e orientações atingem essas escalas."
 
 #. Default: "Policy Instruments"
 #: messages
@@ -1284,7 +1412,7 @@ msgstr "Leia o texto completo da opção de adaptação."
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Pronto para comparar"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1305,7 +1433,7 @@ msgstr "Referências"
 #. Default: "Refined by {criteria}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Refined by {criteria}"
-msgstr ""
+msgstr "Filtrado por {criteria}"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1335,12 +1463,12 @@ msgstr "Documentos e apresentações relacionados"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Ferramentas relacionadas"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Relevância"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1355,22 +1483,32 @@ msgstr "Sinergias relevantes com a mitigação"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "Remover {title}"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "Remover {title} da comparação"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Substituir arquivo existente"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Relatórios e apoio à decisão"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
 msgstr "Projeto de pesquisa e conhecimento"
+
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Subida do nível do mar"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -1414,7 +1552,7 @@ msgstr "Setores:"
 #. Default: "See all matching tools"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See all matching tools"
-msgstr ""
+msgstr "Veja todas as ferramentas correspondentes"
 
 #. Default: "See less"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1429,7 +1567,7 @@ msgstr "Ver mais"
 #. Default: "See results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See results"
-msgstr ""
+msgstr "Ver resultados"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -1445,17 +1583,17 @@ msgstr "Selecione"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Selecione um país para explorar o mapa"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Select all that apply"
-msgstr ""
+msgstr "Selecione todas as opções aplicáveis"
 
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Partilhar"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1471,7 +1609,12 @@ msgstr "Mapa do sítio"
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
-msgstr ""
+msgstr "Pular para os resultados"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Neve / avalanche"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1481,7 +1624,7 @@ msgstr "Soluções"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Não foi possível carregar algumas ferramentas selecionadas, que foram ignoradas."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1503,12 +1646,12 @@ msgstr "Fonte:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Resolução espacial"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Escala espacial"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1519,18 +1662,53 @@ msgstr "Participação das partes interessadas"
 #. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 #: search/navigator_guide/guideSteps
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
-msgstr ""
+msgstr "Inicie a visita guiada selecionando um ou mais setores. À direita, você começará a ver uma prévia das ferramentas disponíveis, filtradas de acordo com suas seleções."
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Etapa 1: Preparar as bases para a adaptação"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Etapa 2: Avaliar os riscos e as vulnerabilidades das alterações climáticas"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Etapa 3: Identificar opções de adaptação"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Etapa 4: Avaliar e estabelecer prioridades para as opções de adaptação"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Etapa 5: Implementação"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Etapa 6: Monitorização e avaliação"
 
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
-msgstr ""
+msgstr "Etapa {current} de {total}"
 
 #. Default: "Sub Nationals:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subnacionais:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnacional"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1546,7 +1724,7 @@ msgstr "Sucesso e fatores limitantes"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Apoio ao ciclo das políticas de adaptação"
 
 #. Default: "Technological options"
 #: messages
@@ -1556,7 +1734,7 @@ msgstr "Opções tecnológicas"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Temporalidade dos dados"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1581,12 +1759,12 @@ msgstr "A data refere-se ao momento em que o item foi preparado ou atualizado po
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Não foi possível carregar as ferramentas selecionadas. Regresse ao catálogo Navigator e selecione-as novamente."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
 msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
-msgstr ""
+msgstr "As etapas seguem o ciclo da Ferramenta de Apoio à Adaptação Climate-ADAPT. Escolha a etapa ou etapas para as quais você precisa de suporte - mantemos ferramentas que ajudam nesses pontos do processo."
 
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1596,7 +1774,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "Indica a facilidade de compreender e interpretar a ferramenta e os seus resultados: um nível baixo significa que é necessária experiência avançada; um nível moderado requer alguns conhecimentos técnicos ou científicos prévios; um nível alto significa que é fácil de utilizar pelo público em geral e exige conhecimentos técnicos mínimos."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1606,12 +1784,12 @@ msgstr "Este objeto foi arquivado porque seu conteúdo está desatualizado. Voc�
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Título a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Título z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1621,23 +1799,28 @@ msgstr "Ferramenta"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Utilização para validar a ferramenta"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Ferramentas por país"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Ferramentas que partilham um setor, perigo ou etapa do ciclo com esta ferramenta — próximos passos úteis para a mesma questão."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem
 #: components/Search/Result/HealthHorizontalCardItem
 msgid "Topics:"
 msgstr "Tópicos:"
+
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Transnacional"
 
 #. Default: "Transnational regions"
 #: search/cca/facets
@@ -1649,7 +1832,7 @@ msgstr "Regiões transnacionais"
 #. Default: "Transnational tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Transnational tools"
-msgstr ""
+msgstr "Ferramentas transnacionais"
 
 #. Default: "Type of item"
 #: search/common
@@ -1661,7 +1844,7 @@ msgstr "Tipo de item"
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Tipo de saídas"
 
 #. Default: "Types"
 #: messages
@@ -1678,25 +1861,30 @@ msgstr "Atualizando notas"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Zonas urbanas"
+
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Usabilidade"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Utilize para"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Utilizado em"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Grupo de utilizadores"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1722,7 +1910,7 @@ msgstr "Vídeos e podcasts"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1768,17 +1956,17 @@ msgstr "Sites:"
 #. Default: "What sectors does your work focus on?"
 #: search/navigator_guide/guideSteps
 msgid "What sectors does your work focus on?"
-msgstr ""
+msgstr "Em quais setores seu trabalho se concentra?"
 
 #. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
 msgid "What step of the adaptation support cycle are you working on?"
-msgstr ""
+msgstr "Em que etapa do ciclo de apoio à adaptação você está trabalhando?"
 
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "O que pode fazer com a ferramenta"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1793,22 +1981,27 @@ msgstr "Onde"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
-msgstr ""
+msgstr "Qual perigo climático você está abordando?"
 
 #. Default: "Which geographic coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which geographic coverage do you need?"
-msgstr ""
+msgstr "Qual cobertura geográfica você precisa?"
 
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
-msgstr ""
+msgstr "Qual cobertura espacial você precisa?"
 
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Porque é relevante para a adaptação às alterações climáticas"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Vento / tempestade"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
@@ -1903,19 +2096,19 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Nenhuma ferramenta está disponível} one {# ferramenta está disponível} other {# ferramentas estão disponíveis}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {ferramenta no catálogo} other {ferramentas no catálogo}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "{count, plural, one {tool matches} other {tools match}}"
-msgstr ""
+msgstr "{count, plural, one {ferramenta correspondente} other {ferramentas correspondentes}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {ferramenta correspondente} other {ferramentas correspondentes}} “{searchTerm}”"

@@ -5,6 +5,10 @@ import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
+import {
+  formatClimateImpact,
+  formatToolVocabularyValue,
+} from '@eeacms/volto-cca-policy/messages';
 import { getToolTypeIcon } from '@eeacms/volto-cca-policy/helpers/toolTypeIcons.js';
 import {
   getCompareToolTitle,
@@ -158,9 +162,13 @@ const NavigatorCatalogueCardItem = (props) => {
   )
     .map((value) => {
       const title = value?.title || value;
-      return typeof title === 'string'
-        ? { title, label: title.split(':')[0] }
-        : null;
+      if (typeof title !== 'string') return null;
+
+      const translatedTitle = formatToolVocabularyValue(intl, title);
+      return {
+        title: translatedTitle,
+        label: translatedTitle.split(':')[0],
+      };
     })
     .filter(Boolean);
   const publicationDate =
@@ -213,7 +221,12 @@ const NavigatorCatalogueCardItem = (props) => {
           />
           <TagGroup
             typeLabel={intl.formatMessage(messages.hazard)}
-            values={hazards}
+            values={hazards.map((hazard) =>
+              formatClimateImpact(
+                intl,
+                hazard?.title || hazard?.token || hazard,
+              ),
+            )}
             type="hazard"
             maxItems={3}
           />

@@ -27,7 +27,12 @@ jest.mock('../NavigatorCatalogue/NavigatorCataloguePageActions', () => () => (
   <div className="navigator-catalogue-page-actions" />
 ));
 
-const renderGuide = (result, searchContext = {}, appConfig = {}) => {
+const renderGuide = (
+  result,
+  searchContext = {},
+  appConfig = {},
+  intlMessages,
+) => {
   useSearchContext.mockReturnValue({
     filters: [{ field: 'cca_adaptation_sectors.keyword', values: ['Water'] }],
     facets: {},
@@ -37,7 +42,7 @@ const renderGuide = (result, searchContext = {}, appConfig = {}) => {
     ...searchContext,
   });
   return render(
-    <IntlProvider locale="en">
+    <IntlProvider locale={intlMessages ? 'hu' : 'en'} messages={intlMessages}>
       <NavigatorGuideContentView
         appConfig={{
           previewResultsLimit: 3,
@@ -106,6 +111,35 @@ describe('NavigatorGuideContentView thumbnails', () => {
 
     expect(actions).toBeInTheDocument();
     expect(actions.nextElementSibling).toHaveClass('navigator-guide-header');
+  });
+
+  it('normalizes a mismatched results language to the page locale', () => {
+    const setFilter = jest.fn();
+    useSelector.mockReturnValue('da');
+
+    const { container } = renderGuide(
+      { title: 'Guide tool', href: '/tools/guide-tool' },
+      {
+        filters: [
+          { field: 'language', values: ['en'] },
+          {
+            field: 'cca_adaptation_sectors.keyword',
+            values: ['Water'],
+          },
+        ],
+        setFilter,
+      },
+    );
+
+    expect(setFilter).toHaveBeenCalledWith('language', 'da', 'any');
+    expect(useGuideFacetOptions).toHaveBeenCalledWith(
+      expect.any(Object),
+      expect.any(Array),
+      'da',
+    );
+    expect(
+      container.querySelector('.navigator-guide-options-loading'),
+    ).toBeInTheDocument();
   });
 
   it('hides any steps listed in the configuration', () => {
@@ -438,6 +472,27 @@ describe('NavigatorGuideContentView climate hazards', () => {
     expect(
       container.querySelector('.navigator-guide-preview-tags .hazard'),
     ).toHaveTextContent('Flooding');
+  });
+
+  it('translates climate hazard options and preview tags', () => {
+    useGuideFacetOptions.mockReturnValue({
+      'cca_climate_impacts.keyword': ['Heat'],
+    });
+
+    renderGuide(
+      {
+        title: 'Guide tool',
+        href: '/tools/guide-tool',
+        cca_climate_impacts: { raw: ['Heat'] },
+      },
+      {
+        filters: [{ field: 'cca_climate_impacts.keyword', values: ['Heat'] }],
+      },
+      {},
+      { Heat: 'Hőség' },
+    );
+
+    expect(screen.getAllByText('Hőség')).toHaveLength(2);
   });
 });
 

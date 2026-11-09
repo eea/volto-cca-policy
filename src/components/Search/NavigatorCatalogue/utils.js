@@ -18,7 +18,12 @@ export const mapColorScale = [
   { minimum: 3, label: '3', color: '#007B6C' },
   { minimum: 2, label: '2', color: '#84C79A' },
   { minimum: 1, label: '1', color: '#C2E3CD' },
-  { minimum: 0, label: 'None', color: '#E1E7DF' },
+  {
+    minimum: 0,
+    label: 'None',
+    messageKey: 'none',
+    color: '#E1E7DF',
+  },
 ];
 
 export const getColorForCount = (count) =>
