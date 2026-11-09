@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: kl\n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Sinerissami sumiiffiit"
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Illoqarfittut sumiiffiit"
+
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Qaqqani sumiiffiit"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Nunarsuaq tamakkerlugu"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "Europami"
+
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Nunat akimorlugit"
+
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "EU-mi nunat ungasinnerpaat"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nunatsinni"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Nunap iluani immikkoortoq"
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Alloriarneq 1: naleqqussarnissamut piareersarneq"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Alloriarneq 2: silap pissusiata allanngoriartornerani aarlerinaatinik nalilersuineq"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Alloriarneq 3: naleqqussarnissamut periarfissanik nassaarneq"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Alloriarneq 4: naleqqussarnissamut periarfissanik nalilersuineq tulleriissaarinerlu"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Alloriarneq 5: piviusunngortitsineq"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Alloriarneq 6: nakkutiginninneq naliliinerlu"
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Nunap assingi titartakkallu"
+
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Nalunaarusiat aalajangiinermullu tapersiissutit"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Paasissutissat katersat uuttuutillu"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Oqaluttuat"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Iliuutsinik pitsaasunik assersuutit"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Pinngortitami tunngaveqartut aaqqiissutit"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Nalinginnaasumik pinngortitamut naleqqussarneq"
+
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Aningaasartuutit iluaqutillu imminnut naleqqiunnerat"

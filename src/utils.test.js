@@ -8,6 +8,7 @@ import {
   getFilteredBlocks,
   hasTypeOfBlock,
   isEmpty,
+  isImageAssetFolder,
   normalizeImageFileName,
 } from './utils';
 
@@ -36,6 +37,58 @@ describe('general utilities', () => {
         { id: 'rastBlock' },
       ),
     ).toBe(true);
+  });
+
+  it('recognises the image asset folders that must stay out of the RAST navigation', () => {
+    expect(
+      isImageAssetFolder({
+        '@type': 'Folder',
+        title: 'Images',
+        '@id': 'https://example.com/en/mission/rast/images',
+      }),
+    ).toBe(true);
+    // a trailing slash on the @id does not hide the folder
+    expect(
+      isImageAssetFolder({
+        '@type': 'Folder',
+        title: 'images',
+        '@id': 'https://example.com/en/mission/rast/images/',
+      }),
+    ).toBe(true);
+    // the slug decides: titles are translated, slugs are not
+    expect(
+      isImageAssetFolder({
+        '@type': 'Folder',
+        title: 'Images',
+        '@id': 'https://example.com/en/mission/rast/assets',
+      }),
+    ).toBe(false);
+    // real steps of the section stay visible
+    expect(
+      isImageAssetFolder({
+        '@type': 'Folder',
+        title: 'Step 1 Preparing the ground for adaptation',
+        '@id': 'https://example.com/en/mission/rast/step-1-preparing',
+      }),
+    ).toBe(false);
+    // only folders: a page called "Images" is a page
+    expect(
+      isImageAssetFolder({
+        '@type': 'Document',
+        title: 'Images',
+        '@id': 'https://example.com/en/mission/rast/images',
+      }),
+    ).toBe(false);
+    // exact match only
+    expect(
+      isImageAssetFolder({
+        '@type': 'Folder',
+        title: 'Images of Europe',
+        '@id': 'https://example.com/en/mission/images-of-europe',
+      }),
+    ).toBe(false);
+    expect(isImageAssetFolder(null)).toBe(false);
+    expect(isImageAssetFolder({ '@type': 'Folder' })).toBe(false);
   });
 
   it('resolves a block base URL from the supported properties', () => {

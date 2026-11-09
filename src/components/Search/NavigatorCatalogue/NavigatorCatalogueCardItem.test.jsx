@@ -52,9 +52,9 @@ jest.mock('../../theme/CompareTools/utils', () => ({
   useCompareTools: jest.fn(),
 }));
 
-const renderCard = (result) =>
+const renderCard = (result, { locale = 'en', messages } = {}) =>
   render(
-    <IntlProvider locale="en">
+    <IntlProvider locale={locale} messages={messages}>
       <NavigatorCatalogueCardItem result={result} />
     </IntlProvider>,
   );
@@ -124,7 +124,7 @@ describe('NavigatorCatalogueCardItem', () => {
     expect(
       screen.getByText('A provider with a long official name'),
     ).toHaveAttribute('title', 'A provider with a long official name');
-    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+    expect(screen.getByText('2026')).toBeInTheDocument();
     expect(screen.getByText('Agriculture')).toBeInTheDocument();
     expect(screen.getByText('Energy')).toBeInTheDocument();
     expect(screen.getByText('Wildfires')).toBeInTheDocument();
@@ -144,6 +144,24 @@ describe('NavigatorCatalogueCardItem', () => {
     );
     expect(
       screen.getByRole('button', {
+        name: 'Adaptation Support Cycle Step',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', {
+        name: 'Adaptation Support Cycle Step',
+      }),
+    ).toHaveAttribute(
+      'href',
+      'https://climate-adapt.eea.europa.eu/en/eu-adaptation/adaptation-context/adaptation-support-tool',
+    );
+    expect(
+      screen
+        .getByRole('link', { name: 'Adaptation Support Cycle Step' })
+        .querySelector('.ri-arrow-right-line'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
         name: 'Cycle: Step 4: Assessing options',
       }),
     ).toHaveTextContent('+ 1');
@@ -153,9 +171,10 @@ describe('NavigatorCatalogueCardItem', () => {
       }),
     ).toHaveAttribute('title', 'Step 4: Assessing options');
     expect(screen.getByText('Step 4: Assessing options')).toBeInTheDocument();
-    expect(screen.getByTitle('Germany, France')).toHaveTextContent(
-      'Geographic coverage: Germany, France',
-    );
+    expect(
+      screen.queryByRole('button', { name: /largest geographic extent/ }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('Germany, France')).not.toHaveAttribute('title');
     expect(screen.queryByText(/Type of outputs:/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByLabelText('compare'));
@@ -171,6 +190,30 @@ describe('NavigatorCatalogueCardItem', () => {
         title: 'Climate data explorer / atlas',
       },
     });
+  });
+
+  it('translates climate hazards in the catalogue card', () => {
+    renderCard(
+      {
+        title: 'Climate planning tool',
+        cca_climate_impacts: {
+          raw: ['Heat', 'Heavy precipitation / extreme rainfall'],
+        },
+      },
+      {
+        locale: 'hu',
+        messages: {
+          Heat: 'Hőség',
+          'Heavy precipitation / extreme rainfall':
+            'Heves csapadék / szélsőséges esőzés',
+        },
+      },
+    );
+
+    expect(screen.getByText('Hőség')).toBeInTheDocument();
+    expect(
+      screen.getByText('Heves csapadék / szélsőséges esőzés'),
+    ).toBeInTheDocument();
   });
 
   it('shows the cycle steps from the field used by the catalogue filter', () => {
@@ -197,9 +240,10 @@ describe('NavigatorCatalogueCardItem', () => {
       cca_geographic_characterisation: { raw: ['Global'] },
     });
 
-    expect(screen.getByTitle('Europe')).toHaveTextContent(
-      'Geographic coverage: Europe',
-    );
+    expect(
+      screen.queryByRole('button', { name: /largest geographic extent/ }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('Europe')).not.toHaveAttribute('title');
   });
 
   it('renders sparse results and disables comparison without a UID', () => {
@@ -252,7 +296,7 @@ describe('NavigatorCatalogueCardItem', () => {
         />
       </IntlProvider>,
     );
-    expect(screen.getByText('24 Jul 26')).toBeInTheDocument();
+    expect(screen.getByText('2026')).toBeInTheDocument();
 
     // Malformed object publication date
     rerender(

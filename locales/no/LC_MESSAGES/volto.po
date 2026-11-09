@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: no\n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Kystområder"
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Byområder"
+
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Fjellområder"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globalt"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "europeisk"
+
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Transnasjonalt"
+
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "EUs ytterste regioner"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Nasjonal"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Subnasjonalt"
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "Trinn 1: Forberede grunnlaget for klimatilpasning"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "Trinn 2: Vurdere klimarisiko og sårbarhet"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "Trinn 3: Identifisere tilpasningsalternativer"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "Trinn 4: Vurdere og prioritere tilpasningsalternativer"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "Trinn 5: Gjennomføring"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "Trinn 6: Overvåking og evaluering"
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Kart og grafer"
+
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Rapporter og beslutningsstøtte"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Datasett og indikatorer"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Beskrivelser"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Eksempler på beste praksis"
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Naturbaserte løsninger"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Rettferdig motstandskraft"
+
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Kost–nytte-forhold"

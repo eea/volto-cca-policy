@@ -3,6 +3,7 @@ import './styles.less';
 import ContextNavigation from './ContextNavigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent } from '@plone/volto/actions/content/content';
+import { isImageAssetFolder } from '@eeacms/volto-cca-policy/utils';
 
 function useChildren(location) {
   const dispatch = useDispatch();
@@ -11,9 +12,11 @@ function useChildren(location) {
     dispatch(action);
   }, [location, dispatch]);
 
+  // the folder endpoint lists every child, including the "images" asset
+  // folders - they are not pages and must not be offered as steps
   const items = useSelector((state) =>
     (state.content.subrequests?.[location]?.data?.items || []).filter(
-      (i) => i.review_state === 'published',
+      (i) => i.review_state === 'published' && !isImageAssetFolder(i),
     ),
   );
   return items;

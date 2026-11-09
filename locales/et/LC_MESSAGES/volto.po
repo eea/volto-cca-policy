@@ -14,7 +14,7 @@ msgstr ""
 #. Default: "4 or more"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "4 or more"
-msgstr ""
+msgstr "4 või rohkem"
 
 #. Default: "A background document for the event is available"
 #: components/theme/Views/CcaEventView
@@ -22,9 +22,10 @@ msgid "A background document for the event is available"
 msgstr "Sündmuse taustadokument on saadaval"
 
 #. Default: "About"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
-msgstr "Umbes"
+msgstr "Teave"
 
 #. Default: "About us"
 #: messages
@@ -39,12 +40,17 @@ msgstr "Juurdepääsetavus"
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
-msgstr ""
+msgstr "Juurdepääsetavus ja kasutatavus"
+
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
+msgstr "Aktiivsed filtrid"
 
 #. Default: "Active filters are always shown in edit mode"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Active filters are always shown in edit mode"
-msgstr ""
+msgstr "Aktiivsed filtrid kuvatakse alati redigeerimisrežiimis"
 
 #. Default: "Adaptation Approaches"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -82,9 +88,10 @@ msgid "Adaptation Sectors"
 msgstr "Kohanemissektorid"
 
 #. Default: "Adaptation Support Cycle Step"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
-msgstr ""
+msgstr "Kohanemise tugitsükli etapp"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -105,7 +112,7 @@ msgstr "Kohanemisvalikud"
 #. Default: "Adaptation policy cycle"
 #: search/navigator_catalogue/facets
 msgid "Adaptation policy cycle"
-msgstr ""
+msgstr "Kohanemispoliitika tsükkel"
 
 #. Default: "Adaptation sectors"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
@@ -118,27 +125,27 @@ msgstr "Kohanemissektorid"
 #. Default: "Adaptation stage"
 #: search/navigator_guide/guideSteps
 msgid "Adaptation stage"
-msgstr ""
+msgstr "Kohanemise etapp"
 
 #. Default: "Adaptation support cycle step"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Adaptation support cycle step"
-msgstr ""
+msgstr "Kohanemise tugitsükli etapp"
 
 #. Default: "Add a tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add a tool"
-msgstr ""
+msgstr "Lisa tööriist"
 
 #. Default: "Add at least another tool"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Add at least another tool"
-msgstr ""
+msgstr "Lisa vähemalt üks tööriist veel"
 
 #. Default: "Add to comparison"
 #: components/theme/Views/ExtendedToolView
 msgid "Add to comparison"
-msgstr ""
+msgstr "Lisa võrdlusse"
 
 #. Default: "Additional Details"
 #: components/theme/Views/CaseStudyView
@@ -163,27 +170,32 @@ msgstr "Kogu aeg"
 #. Default: "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
 #: components/theme/CompareTools/CompareToolsView
 msgid "At least two valid tools are required for comparison. Select tools from the Navigator Catalogue."
-msgstr ""
+msgstr "Võrdluseks on vaja vähemalt kahte kehtivat tööriista. Vali tööriistad Navigatori kataloogist."
 
 #. Default: "Available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Available"
-msgstr ""
+msgstr "Saadaval"
 
 #. Default: "Back"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Back"
-msgstr ""
+msgstr "Tagasi"
 
 #. Default: "Back to results"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Back to results"
-msgstr ""
+msgstr "Tagasi tulemustesse"
 
 #. Default: "Background information"
 #: components/theme/Views/C3SIndicatorView
 msgid "Background information"
 msgstr "Taustteave"
+
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr "Hea tava näited"
 
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
@@ -259,7 +271,7 @@ msgstr "Väljakutsed"
 #. Default: "Check Navigator Catalogue"
 #: components/theme/Views/ExtendedToolView
 msgid "Check Navigator Catalogue"
-msgstr ""
+msgstr "Vaata Navigatori kataloogi"
 
 #. Default: "Choose a file"
 #: components/manage/Widgets/PromotionalImageWidget
@@ -274,7 +286,12 @@ msgstr "Valige piirkond"
 #. Default: "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 #: search/navigator_guide/guideSteps
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
-msgstr ""
+msgstr "Valige üks või mitu oma tööga seotud ohtu. See kitsendab tööriistad nende jaoks, mis katavad teie riski."
+
+#. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
+#: search/navigator_guide/guideSteps
+msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
+msgstr "Valige geograafiline piirkond, mida teie tööriist peaks katma. Kõik katvuskategooriad jäävad nähtavaks ja teise kategooria valimine asendab eelmise geograafilise valiku."
 
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -294,19 +311,20 @@ msgid "City:"
 msgstr "Linn:"
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
-msgstr ""
+msgstr "Tühjenda kõik"
 
 #. Default: "Clear filters"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear filters"
-msgstr ""
+msgstr "Tühjenda filtrid"
 
 #. Default: "Clear other geographic coverage filters to enable the map."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Clear other geographic coverage filters to enable the map."
-msgstr ""
+msgstr "Kaardi lubamiseks tühjendage muud geograafilise katvuse filtrid."
 
 #. Default: "Climate Impacts"
 #: search/cca/facets
@@ -319,7 +337,7 @@ msgstr "Kliimamõjud"
 #: search/navigator_catalogue/facets
 #: search/navigator_guide/guideSteps
 msgid "Climate hazards"
-msgstr ""
+msgstr "Kliimaohud"
 
 #. Default: "Climate impact"
 #: components/manage/Blocks/FilterAceContent/FilterAceContentView
@@ -350,28 +368,43 @@ msgstr "Selle sündmuse Climate-ADAPT leht"
 #. Default: "Close"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Close"
-msgstr ""
+msgstr "Sule"
+
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr "Rannikualad"
+
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr "Rannikualade üleujutus / tormitulv"
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr "Külmalained / äärmuslik külm"
 
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
-msgstr ""
+msgstr "Võrdle"
 
 #. Default: "Compare selected tools"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Compare selected tools"
-msgstr ""
+msgstr "Võrdle valitud tööriistu"
 
 #. Default: "Compare tools"
 #: components/theme/CompareTools/CompareToolsPanel
 #: components/theme/CompareTools/CompareToolsView
 msgid "Compare tools"
-msgstr ""
+msgstr "Võrdle tööriistu"
 
 #. Default: "Comparing {count} {count, plural, one {tool} other {tools}}"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Comparing {count} {count, plural, one {tool} other {tools}}"
-msgstr ""
+msgstr "Võrdluses on {count} tööriista"
 
 #. Default: "Contact"
 #: components/theme/Views/CaseStudyView
@@ -400,6 +433,11 @@ msgstr "Panustaja:"
 msgid "Coordination cooperation and networks"
 msgstr "Koostöö ja võrgustikud"
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr "Kulude ja tulude suhe"
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -410,6 +448,7 @@ msgstr "Kulud ja tulud"
 #: search/common
 #: search/mission_all/facets-all
 #: search/mission_funding/facets-funding
+#: search/navigator_guide/guideSteps
 msgid "Countries"
 msgstr "Riigid"
 
@@ -422,17 +461,17 @@ msgstr "Riigid:"
 #. Default: "Coverage"
 #: search/navigator_guide/guideSteps
 msgid "Coverage"
-msgstr ""
+msgstr "Katvus"
 
 #. Default: "Criteria"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Criteria"
-msgstr ""
+msgstr "Kriteeriumid"
 
 #. Default: "Cycle"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Cycle"
-msgstr ""
+msgstr "Tsükkel"
 
 #. Default: "Dashboard"
 #: messages
@@ -442,7 +481,12 @@ msgstr "Töölaud"
 #. Default: "Data sources"
 #: components/theme/Views/ExtendedToolView
 msgid "Data sources"
-msgstr ""
+msgstr "Andmeallikad"
+
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr "Andmestikud ja näitajad"
 
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -458,6 +502,11 @@ msgstr "Avaldamise kuupäev:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
 msgstr "Väljalaskmise kuupäev:"
+
+#. Default: "Defines the largest geographic extent for which the tool is relevant"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Defines the largest geographic extent for which the tool is relevant"
+msgstr "Määrab suurima geograafilise ulatuse, mille jaoks tööriist on asjakohane"
 
 #. Default: "Description"
 #: components/theme/Content/Sections/ItemLogo
@@ -510,6 +559,11 @@ msgstr "Uue faili üleslaadimiseks pukseerige fail siia"
 msgid "Drop files here ..."
 msgstr "Pukseeri failid siia..."
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr "Põud"
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -530,6 +584,11 @@ msgstr "EMP liikmesriigid"
 msgid "EU Member States and EEA Member Countries"
 msgstr "EL liikmesriigid ja EMP liikmesriigid"
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr "ELi äärepoolseimad piirkonnad"
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -549,6 +608,21 @@ msgstr "Majandus ja rahandus"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
 msgstr "Abikõlblik rahastuse saamiseks"
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr "euroopalik"
+
+#. Default: "European-wide and global"
+#: search/navigator_guide/guideSteps
+msgid "European-wide and global"
+msgstr "üleeuroopaline ja globaalne"
+
+#. Default: "European-wide tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "European-wide tools"
+msgstr "üleeuroopalised tööriistad"
 
 #. Default: "Event"
 #: messages
@@ -573,12 +647,17 @@ msgstr "Tutvuge meie keskkonnateabe süsteemidega"
 #. Default: "Explore tools"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Explore tools"
-msgstr ""
+msgstr "Uurige tööriistu"
 
 #. Default: "Export table"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Export table"
-msgstr ""
+msgstr "Ekspordi tabel"
+
+#. Default: "FAQ"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
+msgid "FAQ"
+msgstr "KKK"
 
 #. Default: "Financing incentive instruments"
 #: messages
@@ -588,12 +667,22 @@ msgstr "Finantseerimisstiimulid"
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
-msgstr ""
+msgstr "Leidke õige tööriist"
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr "Tulekahju / maastikupõleng"
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
+msgstr "Üleujutus"
 
 #. Default: "Focus areas"
 #: search/navigator_catalogue/facets
 msgid "Focus areas"
-msgstr ""
+msgstr "Fookusalad"
 
 #. Default: "For more search options"
 #: index
@@ -608,7 +697,7 @@ msgstr "Täisekraan"
 #. Default: "Functionality"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Functionality"
-msgstr ""
+msgstr "Funktsionaalsus"
 
 #. Default: "Funding Programme"
 #: search/cca/facets
@@ -633,10 +722,12 @@ msgid "Geographic characterisation:"
 msgstr "Geograafiline iseloomustus:"
 
 #. Default: "Geographic coverage"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
-msgstr ""
+msgstr "Geograafiline katvus"
 
 #. Default: "Geographical scale"
 #: search/mission_tools/facets-tools
@@ -647,6 +738,16 @@ msgstr "Geograafiline ulatus"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
 msgstr "Alustamine"
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr "Globaalne"
+
+#. Default: "Global tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Global tools"
+msgstr "Globaalsed tööriistad"
 
 #. Default: "Go to advanced search"
 #: index
@@ -661,7 +762,7 @@ msgstr "Juhtimine ja institutsionaalne"
 #. Default: "Governance level"
 #: search/navigator_catalogue/facets
 msgid "Governance level"
-msgstr ""
+msgstr "Valitsemistase"
 
 #. Default: "Governance level:"
 #: components/theme/Content/Sections/ContentMetadata
@@ -686,7 +787,7 @@ msgstr "Juhised"
 #. Default: "Guide me"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Guide me"
-msgstr ""
+msgstr "Juhenda mind"
 
 #. Default: "HHWS available (click on country for further information)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -696,7 +797,7 @@ msgstr "HHWS on saadaval (lisateabe saamiseks klõpsake riigil)"
 #. Default: "Hazard"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Hazard"
-msgstr ""
+msgstr "Oht"
 
 #. Default: "Hazard Type"
 #: search/mission_stories/facets-stories
@@ -718,6 +819,11 @@ msgstr "Mõju tervisele:"
 msgid "Health impacts"
 msgstr "Mõju tervisele"
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr "Kuumus"
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -727,6 +833,11 @@ msgstr "Soojuse tervise tegevuskavad (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
 msgstr "Kuuma tervise hoiatussüsteemid (HHWS)"
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
+msgstr "Tugev sademete hulk / paduvihm"
 
 #. Default: "Help"
 #: messages
@@ -787,7 +898,7 @@ msgstr "Infoportaal"
 #. Default: "Input"
 #: components/theme/Views/ExtendedToolView
 msgid "Input"
-msgstr ""
+msgstr "Sisend"
 
 #. Default: "Insurance and risk sharing instruments"
 #: messages
@@ -798,6 +909,11 @@ msgstr "Kindlustus- ja riskijagamisvahendid"
 #: search/cca/facets
 msgid "Item from third parties"
 msgstr "Üksus kolmandatelt isikutelt"
+
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr "Õiglane vastupanuvõime"
 
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
@@ -839,6 +955,11 @@ msgstr "Märksõnad:"
 #: messages
 msgid "Knowledge and behavioural change"
 msgstr "Teadmiste ja käitumise muutus"
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
+msgstr "Maalihe"
 
 #. Default: "Language"
 #: components/theme/Views/ExtendedToolView
@@ -916,7 +1037,7 @@ msgstr "Eluaeg"
 #. Default: "Link copied"
 #: components/theme/Views/ExtendedToolView
 msgid "Link copied"
-msgstr ""
+msgstr "Link on kopeeritud"
 
 #. Default: "Links to further information"
 #: components/theme/Views/DatabaseItemView
@@ -926,12 +1047,17 @@ msgstr "Lingid lisateabele"
 #. Default: "List view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "List view"
-msgstr ""
+msgstr "Loendivaade"
 
 #. Default: "Live preview · results based on your selection"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Live preview · results based on your selection"
-msgstr ""
+msgstr "Reaalajas eelvaade · teie valikul põhinevad tulemused"
+
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr "Kaardi laadimine..."
 
 #. Default: "Login"
 #: messages
@@ -962,12 +1088,17 @@ msgstr "Juhtimine ja planeerimine"
 #. Default: "Map view"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Map view"
-msgstr ""
+msgstr "Kaardivaade"
 
 #. Default: "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
-msgstr ""
+msgstr "Kaardivaade on rakendatav ainult siis, kui jaotises <strong>Geograafiline katvus</strong> on valitud riigid."
+
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr "Kaardid ja graafikud"
 
 #. Default: "Mission story"
 #: messages
@@ -984,11 +1115,26 @@ msgstr "Missiooni tööriist"
 msgid "Most useful for"
 msgstr "Kõige kasulikum"
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr "Mägipiirkonnad"
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
-msgstr ""
+msgstr "Omavalitsused ja muu:"
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr "Kirjeldused"
+
+#. Default: "National"
+#: messages
+msgid "National"
+msgstr "Rahvuslik"
 
 #. Default: "National HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1000,6 +1146,11 @@ msgstr "Riiklik HHAP"
 msgid "Nature based Solutions and Ecosystem based approaches"
 msgstr "Looduspõhised lahendused ja ökosüsteemipõhised lähenemisviisid"
 
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
+msgstr "Looduspõhised lahendused"
+
 #. Default: "Navigate to this item"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
 msgid "Navigate to this item"
@@ -1008,17 +1159,17 @@ msgstr ""
 #. Default: "Navigator"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Navigator"
-msgstr ""
+msgstr "Navigator"
 
 #. Default: "Answer a few guided questions. The catalogue on the right narrows as you go - you can skip to the results at any point."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide introduction"
-msgstr ""
+msgstr "Vasta mõnele juhendatud küsimusele. Parempoolne kataloog kitseneb liikudes – saate igal hetkel tulemuste juurde hüpata."
 
 #. Default: "Start by selecting the categories that interest you. The tools filtered by your chosen categories will appear in this box."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Navigator Guide preview empty state"
-msgstr ""
+msgstr "Alustage teid huvitavate kategooriate valimisega. Selles kastis kuvatakse teie valitud kategooriate järgi filtreeritud tööriistad."
 
 #. Default: "New"
 #: components/Search/Result/ClusterHorizontalCardItem
@@ -1028,7 +1179,7 @@ msgstr "Uus"
 #. Default: "Newest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Newest"
-msgstr ""
+msgstr "Uusim"
 
 #. Default: "News"
 #: messages
@@ -1038,7 +1189,7 @@ msgstr "Uudised"
 #. Default: "Next step"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Next step"
-msgstr ""
+msgstr "Järgmine samm"
 
 #. Default: "No HHAP"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1048,7 +1199,7 @@ msgstr "Ei mingit HHAP-i"
 #. Default: "No Navigator Guide steps are configured."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No Navigator Guide steps are configured."
-msgstr ""
+msgstr "Navigaatori juhendi samme pole konfigureeritud."
 
 #. Default: "No information"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1058,32 +1209,42 @@ msgstr "Info puudub"
 #. Default: "No options are available for this step."
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "No options are available for this step."
-msgstr ""
+msgstr "Selle sammu jaoks pole valikuid saadaval."
 
 #. Default: "No options available"
 #: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 msgid "No options available"
-msgstr ""
+msgstr "Valikud pole saadaval"
 
 #. Default: "No results"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
 msgid "No results"
 msgstr "Tulemusi pole"
 
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr "Ohu liigiga mitteseotud"
+
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
 msgstr "Euroopa Liidu välised keeled"
 
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
+msgstr "Puudub"
+
 #. Default: "Not available"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Not available"
-msgstr ""
+msgstr "Pole saadaval"
 
 #. Default: "Number of adaptation support cycle steps supported, from 1 to 6 steps."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Number of adaptation support cycle steps supported, from 1 to 6 steps."
-msgstr ""
+msgstr "Kohanemise tugitsükli toetatud etappide arv vahemikus 1–6."
 
 #. Default: "Objectives of the adaptation measure"
 #: components/theme/Views/CaseStudyView
@@ -1103,13 +1264,13 @@ msgstr "Vaatluskeskuse partner"
 #. Default: "Oldest"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Oldest"
-msgstr ""
+msgstr "Vanim"
 
 #. Default: "Open tool"
 #: components/theme/CompareTools/CompareToolsView
 #: components/theme/Views/ExtendedToolView
 msgid "Open tool"
-msgstr ""
+msgstr "Ava tööriist"
 
 #. Default: "Organisation"
 #: messages
@@ -1126,20 +1287,31 @@ msgstr "Organisatsiooni dokumendid"
 msgid "Organised by EEA"
 msgstr "Korraldab EEA"
 
+#. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+#: search/navigator_guide/guideSteps
+msgid "Other"
+msgstr "Muu"
+
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
 msgstr "Muud piirkonnad"
 
+#. Default: "Other tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Other tools"
+msgstr "Muud tööriistad"
+
 #. Default: "Output"
 #: components/theme/Views/ExtendedToolView
 msgid "Output"
-msgstr ""
+msgstr "Väljund"
 
 #. Default: "Output type"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Output type"
-msgstr ""
+msgstr "Väljundi tüüp"
 
 #. Default: "Participation"
 #: components/theme/Views/CcaEventView
@@ -1159,7 +1331,7 @@ msgstr "Füüsiline ja tehnoloogiline"
 #. Default: "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
 #: search/navigator_guide/guideSteps
 msgid "Pick the levels your work operates at. We keep tools whose data and guidance reach those scales."
-msgstr ""
+msgstr "Valige tasemed, millel teie töö töötab. Säilitame tööriistu, mille andmed ja juhised jõuavad nendesse mõõtkavadesse."
 
 #. Default: "Policy Instruments"
 #: messages
@@ -1240,7 +1412,7 @@ msgstr "Loe kohandamisvõimaluse täisteksti"
 #. Default: "Ready to compare"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Ready to compare"
-msgstr ""
+msgstr "Võrdluseks valmis"
 
 #. Default: "Reference Information"
 #: components/theme/Views/CaseStudyView
@@ -1261,7 +1433,7 @@ msgstr "Viited"
 #. Default: "Refined by {criteria}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Refined by {criteria}"
-msgstr ""
+msgstr "Filtreeritud {criteria} järgi"
 
 #. Default: "Region's countries:"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
@@ -1291,12 +1463,12 @@ msgstr "Seotud dokumendid ja esitlused"
 #. Default: "Related tools"
 #: components/theme/Views/RelatedTools
 msgid "Related tools"
-msgstr ""
+msgstr "Seotud tööriistad"
 
 #. Default: "Relevance"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Relevance"
-msgstr ""
+msgstr "Asjakohasus"
 
 #. Default: "Relevant EU policies"
 #: components/theme/Views/AdaptationOptionView
@@ -1311,22 +1483,32 @@ msgstr "Asjakohased sünergiad leevendusmeetmetega"
 #. Default: "Remove {title}"
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Remove {title}"
-msgstr ""
+msgstr "Eemalda {title}"
 
 #. Default: "Remove {title} from comparison"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Remove {title} from comparison"
-msgstr ""
+msgstr "Eemalda {title} võrdlusest"
 
 #. Default: "Replace existing file"
 #: components/manage/Widgets/PromotionalImageWidget
 msgid "Replace existing file"
 msgstr "Asenda olemasolev fail"
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr "Aruanded ja otsustustugi"
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
 msgstr "Teadus- ja teadmusprojekt"
+
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
+msgstr "Meretaseme tõus"
 
 #. Default: "Search the Climate-ADAPT database"
 #: index
@@ -1370,7 +1552,7 @@ msgstr "Sektorid:"
 #. Default: "See all matching tools"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See all matching tools"
-msgstr ""
+msgstr "Vaadake kõiki sobivaid tööriistu"
 
 #. Default: "See less"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1385,7 +1567,7 @@ msgstr "Vaata rohkem"
 #. Default: "See results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "See results"
-msgstr ""
+msgstr "Vaata tulemusi"
 
 #. Default: "See video outside Climate-ADAPT"
 #: components/theme/Views/DatabaseItemView
@@ -1401,17 +1583,17 @@ msgstr "Valige"
 #. Default: "Select a country to explore the map"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapState
 msgid "Select a country to explore the map"
-msgstr ""
+msgstr "Kaardi uurimiseks valige riik"
 
 #. Default: "Select all that apply"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Select all that apply"
-msgstr ""
+msgstr "Valige kõik sobivad"
 
 #. Default: "Share"
 #: components/theme/Views/ExtendedToolView
 msgid "Share"
-msgstr ""
+msgstr "Jaga"
 
 #. Default: "Share your information"
 #: components/manage/Blocks/SearchAceContent/SearchAceContentView
@@ -1427,7 +1609,12 @@ msgstr "Sisukaart"
 #. Default: "Skip to results"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Skip to results"
-msgstr ""
+msgstr "Jätke tulemuste juurde"
+
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr "Lumi / laviin"
 
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
@@ -1437,7 +1624,7 @@ msgstr "Lahendused"
 #. Default: "Some selected tools could not be loaded and were skipped."
 #: components/theme/CompareTools/CompareToolsView
 msgid "Some selected tools could not be loaded and were skipped."
-msgstr ""
+msgstr "Mõnda valitud tööriista ei saanud laadida ja need jäeti vahele."
 
 #. Default: "Source"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1459,12 +1646,12 @@ msgstr "Allikas:"
 #. Default: "Spatial resolution"
 #: components/theme/Views/ExtendedToolView
 msgid "Spatial resolution"
-msgstr ""
+msgstr "Ruumiline lahutusvõime"
 
 #. Default: "Spatial scale"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Spatial scale"
-msgstr ""
+msgstr "Ruumiline mõõtkava"
 
 #. Default: "Stakeholder participation"
 #: components/theme/Views/AdaptationOptionView
@@ -1475,18 +1662,53 @@ msgstr "Sidusrühmade osalemine"
 #. Default: "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 #: search/navigator_guide/guideSteps
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
-msgstr ""
+msgstr "Alustage giidiga ringkäiku, valides ühe või mitu sektorit. Paremal hakkate nägema saadaolevate tööriistade eelvaadet, mis on filtreeritud vastavalt teie valikutele."
+
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr "1. samm: kohanemiseks eelduste loomine"
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr "2. samm: kliimamuutuste riskide ja haavatavuse hindamine"
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr "3. samm: kohanemisvõimaluste kindlakstegemine"
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr "4. samm: kohanemisvõimaluste hindamine ja tähtsuse järjekorda seadmine"
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr "5. samm: rakendamine"
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr "6. samm: seire ja hindamine"
 
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
-msgstr ""
+msgstr "Samm {current} / {total}"
 
 #. Default: "Sub Nationals:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
 msgstr "Subkodanikud:"
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
+msgstr "Riigisisene"
 
 #. Default: "Subnational or local"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
@@ -1502,7 +1724,7 @@ msgstr "Edu ja piiravad tegurid"
 #. Default: "Support of Adaptation Policy Cycle"
 #: components/theme/Views/ExtendedToolView
 msgid "Support of Adaptation Policy Cycle"
-msgstr ""
+msgstr "Kohanemispoliitika tsükli toetamine"
 
 #. Default: "Technological options"
 #: messages
@@ -1512,7 +1734,7 @@ msgstr "Tehnoloogilised võimalused"
 #. Default: "Temporality of data"
 #: components/theme/Views/ExtendedToolView
 msgid "Temporality of data"
-msgstr ""
+msgstr "Andmete ajaline ulatus"
 
 #. Default: "The Adaptation Support Tool - Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
@@ -1537,12 +1759,12 @@ msgstr "Kuupäev viitab hetkele, mil üksust on koostanud või ajakohastanud kaa
 #. Default: "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
 #: components/theme/CompareTools/CompareToolsView
 msgid "The selected tools could not be loaded. Return to the Navigator Catalogue and select them again."
-msgstr ""
+msgstr "Valitud tööriistu ei saanud laadida. Mine tagasi Navigatori kataloogi ja vali need uuesti."
 
 #. Default: "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
 #: search/navigator_guide/guideSteps
 msgid "The steps follow the Climate-ADAPT Adaptation Support Tool cycle. Pick the step(s) you need support for - we keep tools that help at those points in the process."
-msgstr ""
+msgstr "Toimingud järgivad Climate-ADAPT kohanemise tugitööriista tsüklit. Valige samm või sammud, mille jaoks vajate tuge – meil on tööriistad, mis aitavad protsessi nendes punktides."
 
 #. Default: "These items will have broken links"
 #: components/manage/Workflow/WorkflowLinkIntegrityModal
@@ -1552,7 +1774,7 @@ msgstr ""
 #. Default: "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
 #: components/theme/CompareTools/CompareToolsView
 msgid "This indicates how easy the tool and its outputs are to understand and interpret, with low = high-level expertise needed, moderate = some prior technical/scientific knowledge needed, high = general user-friendly, minimal technical knowledge needed."
-msgstr ""
+msgstr "See näitab, kui lihtne on tööriista ja selle väljundeid mõista ning tõlgendada: madal tase tähendab vajadust kõrgetasemeliste eksperditeadmiste järele; keskmine eeldab mõningaid tehnilisi või teaduslikke eelteadmisi; kõrge tähendab, et tööriist on üldkasutajale sobiv ja nõuab minimaalselt tehnilisi teadmisi."
 
 #. Default: "This object has been archived because its content is outdated. You can still access it as legacy."
 #: components/theme/PortalMessage/PortalMessage
@@ -1562,12 +1784,12 @@ msgstr "See objekt on arhiveeritud, kuna selle sisu on aegunud. Saate sellele en
 #. Default: "Title a-z"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title a-z"
-msgstr ""
+msgstr "Pealkiri a-z"
 
 #. Default: "Title z-a"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "Title z-a"
-msgstr ""
+msgstr "Pealkiri z-a"
 
 #. Default: "Tool"
 #: messages
@@ -1577,17 +1799,17 @@ msgstr "Tööriist"
 #. Default: "Tool validation use"
 #: components/theme/Views/ExtendedToolView
 msgid "Tool validation use"
-msgstr ""
+msgstr "Tööriista valideerimiseks kasutamine"
 
 #. Default: "Tools per country"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "Tools per country"
-msgstr ""
+msgstr "Tööriistad riigiti"
 
 #. Default: "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
 #: components/theme/Views/RelatedTools
 msgid "Tools sharing a sector, hazard or cycle step with this one — useful next steps for the same question."
-msgstr ""
+msgstr "Tööriistad, millel on selle tööriistaga ühine sektor, oht või tsükli etapp — kasulikud järgmised sammud sama küsimuse käsitlemisel."
 
 #. Default: "Topics:"
 #: components/Search/Result/ClusterHorizontalCardItem
@@ -1595,11 +1817,22 @@ msgstr ""
 msgid "Topics:"
 msgstr "Teemad:"
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr "Riikidevaheline"
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
 msgid "Transnational regions"
 msgstr "Rahvusvahelised piirkonnad"
+
+#. Default: "Transnational tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Transnational tools"
+msgstr "Rahvusvahelised tööriistad"
 
 #. Default: "Type of item"
 #: search/common
@@ -1608,11 +1841,10 @@ msgid "Type of item"
 msgstr "Kauba tüüp"
 
 #. Default: "Type of outputs"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
-msgstr ""
+msgstr "Väljundite tüüp"
 
 #. Default: "Types"
 #: messages
@@ -1629,25 +1861,30 @@ msgstr "Märkmete värskendamine"
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
+msgstr "Linnapiirkonnad"
+
 #. Default: "Usability"
 #: components/theme/CompareTools/CompareToolsView
 msgid "Usability"
-msgstr ""
+msgstr "Kasutatavus"
 
 #. Default: "Use it to"
 #: components/theme/Views/ExtendedToolView
 msgid "Use it to"
-msgstr ""
+msgstr "Kasuta seda järgmiseks"
 
 #. Default: "Used in"
 #: components/theme/Views/ExtendedToolView
 msgid "Used in"
-msgstr ""
+msgstr "Kasutusel"
 
 #. Default: "User Group"
 #: components/theme/Views/ExtendedToolView
 msgid "User Group"
-msgstr ""
+msgstr "Kasutajarühm"
 
 #. Default: "User requirements"
 #: search/mission_tools/facets-tools
@@ -1673,7 +1910,7 @@ msgstr "Videod ja podcastid"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/RelatedTools
 msgid "View"
-msgstr ""
+msgstr "Vaade"
 
 #. Default: "View all contributions in the resource catalogue"
 #: components/theme/Content/Sections/ReferenceInfo
@@ -1719,17 +1956,17 @@ msgstr "Veebisaidid:"
 #. Default: "What sectors does your work focus on?"
 #: search/navigator_guide/guideSteps
 msgid "What sectors does your work focus on?"
-msgstr ""
+msgstr "Millistele sektoritele teie töö keskendub?"
 
 #. Default: "What step of the adaptation support cycle are you working on?"
 #: search/navigator_guide/guideSteps
 msgid "What step of the adaptation support cycle are you working on?"
-msgstr ""
+msgstr "Millise kohanemise tugitsükli etapi kallal töötate?"
 
 #. Default: "What you can do with it"
 #: components/theme/Views/ExtendedToolView
 msgid "What you can do with it"
-msgstr ""
+msgstr "Mida sellega teha saab"
 
 #. Default: "When"
 #: components/theme/Content/Sections/EventDetails
@@ -1744,17 +1981,27 @@ msgstr "Kus"
 #. Default: "Which climate hazard are you addressing?"
 #: search/navigator_guide/guideSteps
 msgid "Which climate hazard are you addressing?"
-msgstr ""
+msgstr "Millise kliimaohuga te tegelete?"
+
+#. Default: "Which geographic coverage do you need?"
+#: search/navigator_guide/guideSteps
+msgid "Which geographic coverage do you need?"
+msgstr "Millist geograafilist katvust vajate?"
 
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
-msgstr ""
+msgstr "Millist ruumilist katvust vajate?"
 
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
-msgstr ""
+msgstr "Miks on see kliimamuutustega kohanemise seisukohalt oluline"
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
+msgstr "Tuul / torm"
 
 #. Default: "You are viewing an archived version."
 #: components/theme/Content/Sections/Versioning/ArchivedVersionNotice
@@ -1849,19 +2096,19 @@ msgstr ""
 #. Default: "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
 msgid "{count, plural, =0 {No tools available} one {# tool available} other {# tools available}}"
-msgstr ""
+msgstr "{count, plural, =0 {Tööriistu pole saadaval} one {Saadaval on # tööriist} other {Saadaval on # tööriista}}"
 
 #. Default: "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool in the catalogue} other {tools in the catalogue}}"
-msgstr ""
+msgstr "{count, plural, one {tööriist kataloogis} other {tööriista kataloogis}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "{count, plural, one {tool matches} other {tools match}}"
-msgstr ""
+msgstr "{count, plural, one {sobiv tööriist} other {sobivat tööriista}}"
 
 #. Default: "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueContentView
 msgid "{count, plural, one {tool matches} other {tools match}} \"{searchTerm}\""
-msgstr ""
+msgstr "{count, plural, one {sobiv tööriist} other {sobivat tööriista}} “{searchTerm}”"

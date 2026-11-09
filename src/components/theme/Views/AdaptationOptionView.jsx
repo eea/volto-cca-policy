@@ -12,7 +12,7 @@ import {
   ShareInfoButton,
 } from '@eeacms/volto-cca-policy/components';
 import { Callout } from '@eeacms/volto-eea-design-system/ui';
-import { Container, Grid, Image, Icon } from 'semantic-ui-react';
+import { Button, Container, Grid, Image, Icon } from 'semantic-ui-react';
 import { getFilteredBlocks } from '@eeacms/volto-cca-policy/utils';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
@@ -28,24 +28,11 @@ const PhotoGallery = ({ content }) => {
     setOpen(true);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleTitleClick();
-    }
-  };
-
   return (
     <>
       {cca_adaptation_gallery && cca_adaptation_gallery.length > 0 && (
-        <div className="case-study-gallery">
-          <div
-            className="gallery-title"
-            tabIndex={0}
-            role="button"
-            onClick={handleTitleClick}
-            onKeyDown={handleKeyDown}
-          >
+        <div className="db-item-gallery">
+          <Button className="gallery-title" onClick={handleTitleClick}>
             <span>
               <FormattedMessage
                 id="Adaptation Option illustrations"
@@ -54,7 +41,7 @@ const PhotoGallery = ({ content }) => {
             </span>
             <span> ({cca_adaptation_gallery.length}) </span>
             <Icon className="ri-image-fill" />
-          </div>
+          </Button>
           <ImageGallery
             items={cca_adaptation_gallery}
             propOpen={open}

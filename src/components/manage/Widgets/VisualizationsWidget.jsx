@@ -148,8 +148,9 @@ const VisualizationsWidget = (props) => {
               </Form.Field>
 
               <Form.Field className="visualizations-widget-layout">
-                <label>Layout</label>
+                <label htmlFor={`${id}-${index}-full-width`}>Layout</label>
                 <Checkbox
+                  id={`${id}-${index}-full-width`}
                   label="Full width"
                   checked={!!item.full_width}
                   disabled={isDisabled}

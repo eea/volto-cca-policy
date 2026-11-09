@@ -16,6 +16,10 @@ jest.mock('@eeacms/volto-eea-chatbot/ChatBlock/chat', () => ({
     />
   )),
 }));
+jest.mock(
+  '../../../Search/NavigatorCatalogue/NavigatorCataloguePageActions',
+  () => () => <div className="navigator-catalogue-page-actions" />,
+);
 
 describe('CatalogueChatView', () => {
   beforeEach(() => {

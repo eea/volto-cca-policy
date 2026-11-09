@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-12T08:25:29.939Z\n"
+"POT-Creation-Date: 2026-11-06T08:01:04.313Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -24,6 +24,7 @@ msgid "A background document for the event is available"
 msgstr ""
 
 #. Default: "About"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
 #: messages
 msgid "About"
 msgstr ""
@@ -41,6 +42,11 @@ msgstr ""
 #. Default: "Accessibility and usability"
 #: components/theme/Views/ExtendedToolView
 msgid "Accessibility and usability"
+msgstr ""
+
+#. Default: "Active filters"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Active filters"
 msgstr ""
 
 #. Default: "Active filters are always shown in edit mode"
@@ -84,6 +90,7 @@ msgid "Adaptation Sectors"
 msgstr ""
 
 #. Default: "Adaptation Support Cycle Step"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: search/navigator_guide/facets
 msgid "Adaptation Support Cycle Step"
 msgstr ""
@@ -187,6 +194,11 @@ msgstr ""
 msgid "Background information"
 msgstr ""
 
+#. Default: "Best practice examples"
+#: messages
+msgid "Best practice examples"
+msgstr ""
+
 #. Default: "Biogeographical regions:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
@@ -278,6 +290,11 @@ msgstr ""
 msgid "Choose one or more hazards relevant to your work. This narrows tools to those covering your risk."
 msgstr ""
 
+#. Default: "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
+#: search/navigator_guide/guideSteps
+msgid "Choose the geographic area your tool should cover. All coverage categories remain visible, and choosing a different category replaces the previous geographic selection."
+msgstr ""
+
 #. Default: "Choose thematic map:"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Choose thematic map:"
@@ -296,6 +313,7 @@ msgid "City:"
 msgstr ""
 
 #. Default: "Clear all"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
 #: components/theme/CompareTools/CompareToolsPanel
 msgid "Clear all"
 msgstr ""
@@ -354,6 +372,21 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+#. Default: "Coastal areas"
+#: messages
+msgid "Coastal areas"
+msgstr ""
+
+#. Default: "Coastal flooding / storm surge"
+#: messages
+msgid "Coastal flooding / storm surge"
+msgstr ""
+
+#. Default: "Cold waves / extreme cold"
+#: messages
+msgid "Cold waves / extreme cold"
+msgstr ""
+
 #. Default: "Compare"
 #: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 msgid "Compare"
@@ -402,6 +435,11 @@ msgstr ""
 msgid "Coordination cooperation and networks"
 msgstr ""
 
+#. Default: "Cost-benefit ratio"
+#: messages
+msgid "Cost-benefit ratio"
+msgstr ""
+
 #. Default: "Costs and benefits"
 #: components/theme/Views/AdaptationOptionView
 #: components/theme/Views/CaseStudyView
@@ -412,6 +450,7 @@ msgstr ""
 #: search/common
 #: search/mission_all/facets-all
 #: search/mission_funding/facets-funding
+#: search/navigator_guide/guideSteps
 msgid "Countries"
 msgstr ""
 
@@ -446,6 +485,11 @@ msgstr ""
 msgid "Data sources"
 msgstr ""
 
+#. Default: "Datasets and indicators"
+#: messages
+msgid "Datasets and indicators"
+msgstr ""
+
 #. Default: "Date of creation:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Date of creation:"
@@ -459,6 +503,11 @@ msgstr ""
 #. Default: "Date of release:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Date of release:"
+msgstr ""
+
+#. Default: "Defines the largest geographic extent for which the tool is relevant"
+#: components/Search/NavigatorCatalogue/NavigatorGeographicCoverageFacet
+msgid "Defines the largest geographic extent for which the tool is relevant"
 msgstr ""
 
 #. Default: "Description"
@@ -512,6 +561,11 @@ msgstr ""
 msgid "Drop files here ..."
 msgstr ""
 
+#. Default: "Drought"
+#: messages
+msgid "Drought"
+msgstr ""
+
 #. Default: "Duration:"
 #: components/theme/Content/Sections/ContentMetadata
 msgid "Duration:"
@@ -532,6 +586,11 @@ msgstr ""
 msgid "EU Member States and EEA Member Countries"
 msgstr ""
 
+#. Default: "EU Outermost regions"
+#: messages
+msgid "EU Outermost regions"
+msgstr ""
+
 #. Default: "EU funding"
 #: search/mission_funding/facets-funding
 msgid "EU funding"
@@ -550,6 +609,21 @@ msgstr ""
 #. Default: "Eligible to receive funding"
 #: search/mission_funding/facets-funding
 msgid "Eligible to receive funding"
+msgstr ""
+
+#. Default: "European"
+#: messages
+msgid "European"
+msgstr ""
+
+#. Default: "European-wide and global"
+#: search/navigator_guide/guideSteps
+msgid "European-wide and global"
+msgstr ""
+
+#. Default: "European-wide tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "European-wide tools"
 msgstr ""
 
 #. Default: "Event"
@@ -582,6 +656,11 @@ msgstr ""
 msgid "Export table"
 msgstr ""
 
+#. Default: "FAQ"
+#: components/Search/NavigatorCatalogue/NavigatorCataloguePageActions
+msgid "FAQ"
+msgstr ""
+
 #. Default: "Financing incentive instruments"
 #: messages
 msgid "Financing incentive instruments"
@@ -590,6 +669,16 @@ msgstr ""
 #. Default: "Find the right tool"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Find the right tool"
+msgstr ""
+
+#. Default: "Fire / wildfire"
+#: messages
+msgid "Fire / wildfire"
+msgstr ""
+
+#. Default: "Flood"
+#: messages
+msgid "Flood"
 msgstr ""
 
 #. Default: "Focus areas"
@@ -635,8 +724,10 @@ msgid "Geographic characterisation:"
 msgstr ""
 
 #. Default: "Geographic coverage"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
 msgid "Geographic coverage"
 msgstr ""
 
@@ -648,6 +739,16 @@ msgstr ""
 #. Default: "Getting started"
 #: components/theme/ASTNavigation/ASTAccordion
 msgid "Getting started"
+msgstr ""
+
+#. Default: "Global"
+#: messages
+msgid "Global"
+msgstr ""
+
+#. Default: "Global tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Global tools"
 msgstr ""
 
 #. Default: "Go to advanced search"
@@ -720,6 +821,11 @@ msgstr ""
 msgid "Health impacts"
 msgstr ""
 
+#. Default: "Heat"
+#: messages
+msgid "Heat"
+msgstr ""
+
 #. Default: "Heat health action plans (HHAP)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health action plans (HHAP)"
@@ -728,6 +834,11 @@ msgstr ""
 #. Default: "Heat health warning systems (HHWS)"
 #: components/manage/Blocks/CountryMapHeatIndex/Filter
 msgid "Heat health warning systems (HHWS)"
+msgstr ""
+
+#. Default: "Heavy precipitation / extreme rainfall"
+#: messages
+msgid "Heavy precipitation / extreme rainfall"
 msgstr ""
 
 #. Default: "Help"
@@ -801,6 +912,11 @@ msgstr ""
 msgid "Item from third parties"
 msgstr ""
 
+#. Default: "Just resilience"
+#: messages
+msgid "Just resilience"
+msgstr ""
+
 #. Default: "Key Community Systems"
 #: search/mission_stories/facets-stories
 msgid "Key Community Systems"
@@ -840,6 +956,11 @@ msgstr ""
 #. Default: "Knowledge and behavioural change"
 #: messages
 msgid "Knowledge and behavioural change"
+msgstr ""
+
+#. Default: "Landslide"
+#: messages
+msgid "Landslide"
 msgstr ""
 
 #. Default: "Language"
@@ -935,6 +1056,11 @@ msgstr ""
 msgid "Live preview · results based on your selection"
 msgstr ""
 
+#. Default: "Loading map..."
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Loading map..."
+msgstr ""
+
 #. Default: "Login"
 #: messages
 msgid "Login"
@@ -971,6 +1097,11 @@ msgstr ""
 msgid "Map view is only applicable when countries are selected in the <strong>Geographic coverage</strong>."
 msgstr ""
 
+#. Default: "Maps and graphs"
+#: messages
+msgid "Maps and graphs"
+msgstr ""
+
 #. Default: "Mission story"
 #: messages
 msgid "Mission story"
@@ -986,10 +1117,25 @@ msgstr ""
 msgid "Most useful for"
 msgstr ""
 
+#. Default: "Mountain areas"
+#: messages
+msgid "Mountain areas"
+msgstr ""
+
 #. Default: "Municipalities & other:"
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Municipalities & other:"
+msgstr ""
+
+#. Default: "Narratives"
+#: messages
+msgid "Narratives"
+msgstr ""
+
+#. Default: "National"
+#: messages
+msgid "National"
 msgstr ""
 
 #. Default: "National HHAP"
@@ -1000,6 +1146,11 @@ msgstr ""
 #. Default: "Nature based Solutions and Ecosystem based approaches"
 #: messages
 msgid "Nature based Solutions and Ecosystem based approaches"
+msgstr ""
+
+#. Default: "Nature-based solutions"
+#: messages
+msgid "Nature-based solutions"
 msgstr ""
 
 #. Default: "Navigate to this item"
@@ -1072,9 +1223,19 @@ msgstr ""
 msgid "No results"
 msgstr ""
 
+#. Default: "Non hazard-specific"
+#: messages
+msgid "Non hazard-specific"
+msgstr ""
+
 #. Default: "Non-EU Languages"
 #: components/theme/Header/LanguageSwitch
 msgid "Non-EU Languages"
+msgstr ""
+
+#. Default: "None"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "None"
 msgstr ""
 
 #. Default: "Not available"
@@ -1128,9 +1289,20 @@ msgstr ""
 msgid "Organised by EEA"
 msgstr ""
 
+#. Default: "Other"
+#: components/Search/NavigatorGuide/NavigatorGuideContentView
+#: search/navigator_guide/guideSteps
+msgid "Other"
+msgstr ""
+
 #. Default: "Other regions"
 #: components/manage/Blocks/TransRegionSelect/TransRegionSelectView
 msgid "Other regions"
+msgstr ""
+
+#. Default: "Other tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Other tools"
 msgstr ""
 
 #. Default: "Output"
@@ -1325,9 +1497,19 @@ msgstr ""
 msgid "Replace existing file"
 msgstr ""
 
+#. Default: "Reports and decision support"
+#: messages
+msgid "Reports and decision support"
+msgstr ""
+
 #. Default: "Research and knowledge project"
 #: messages
 msgid "Research and knowledge project"
+msgstr ""
+
+#. Default: "Sea level rise"
+#: messages
+msgid "Sea level rise"
 msgstr ""
 
 #. Default: "Search the Climate-ADAPT database"
@@ -1431,6 +1613,11 @@ msgstr ""
 msgid "Skip to results"
 msgstr ""
 
+#. Default: "Snow / Avalanche"
+#: messages
+msgid "Snow / Avalanche"
+msgstr ""
+
 #. Default: "Solutions"
 #: components/theme/Views/CaseStudyView
 msgid "Solutions"
@@ -1479,6 +1666,36 @@ msgstr ""
 msgid "Start the guided tour by selecting one or more sector. On the right, you will begin to see a preview of the available tools, filtered according to your selections."
 msgstr ""
 
+#. Default: "Step 1: Preparing the Ground for Adaptation"
+#: messages
+msgid "Step 1: Preparing the Ground for Adaptation"
+msgstr ""
+
+#. Default: "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+#: messages
+msgid "Step 2: Assessing Climate Change Risks and Vulnerabilities"
+msgstr ""
+
+#. Default: "Step 3: Identifying Adaptation Options"
+#: messages
+msgid "Step 3: Identifying Adaptation Options"
+msgstr ""
+
+#. Default: "Step 4: Assessing and Prioritising Adaptation Options"
+#: messages
+msgid "Step 4: Assessing and Prioritising Adaptation Options"
+msgstr ""
+
+#. Default: "Step 5: Implementation"
+#: messages
+msgid "Step 5: Implementation"
+msgstr ""
+
+#. Default: "Step 6: Monitoring and Evaluation (M&E)"
+#: messages
+msgid "Step 6: Monitoring and Evaluation (M&E)"
+msgstr ""
+
 #. Default: "Step {current} of {total}"
 #: components/Search/NavigatorGuide/NavigatorGuideContentView
 msgid "Step {current} of {total}"
@@ -1488,6 +1705,11 @@ msgstr ""
 #: components/theme/Content/Sections/ExtendedToolGeographicMetadata
 #: components/theme/Content/Sections/GeographicMetadata
 msgid "Sub Nationals:"
+msgstr ""
+
+#. Default: "Subnational"
+#: messages
+msgid "Subnational"
 msgstr ""
 
 #. Default: "Subnational or local"
@@ -1597,10 +1819,21 @@ msgstr ""
 msgid "Topics:"
 msgstr ""
 
+#. Default: "Transnational"
+#: messages
+msgid "Transnational"
+msgstr ""
+
 #. Default: "Transnational regions"
 #: search/cca/facets
 #: search/navigator_catalogue/facets
+#: search/navigator_guide/guideSteps
 msgid "Transnational regions"
+msgstr ""
+
+#. Default: "Transnational tools"
+#: components/Search/NavigatorCatalogue/NavigatorCatalogueMapView
+msgid "Transnational tools"
 msgstr ""
 
 #. Default: "Type of item"
@@ -1610,7 +1843,6 @@ msgid "Type of item"
 msgstr ""
 
 #. Default: "Type of outputs"
-#: components/Search/NavigatorCatalogue/NavigatorCatalogueCardItem
 #: components/theme/Views/ExtendedToolView
 #: search/navigator_catalogue/facets
 msgid "Type of outputs"
@@ -1629,6 +1861,11 @@ msgstr ""
 #. Default: "Uploading image"
 #: components/manage/Widgets/ImageWidget
 msgid "Uploading image"
+msgstr ""
+
+#. Default: "Urban areas"
+#: messages
+msgid "Urban areas"
 msgstr ""
 
 #. Default: "Usability"
@@ -1748,6 +1985,11 @@ msgstr ""
 msgid "Which climate hazard are you addressing?"
 msgstr ""
 
+#. Default: "Which geographic coverage do you need?"
+#: search/navigator_guide/guideSteps
+msgid "Which geographic coverage do you need?"
+msgstr ""
+
 #. Default: "Which spatial coverage do you need?"
 #: search/navigator_guide/guideSteps
 msgid "Which spatial coverage do you need?"
@@ -1756,6 +1998,11 @@ msgstr ""
 #. Default: "Why is it relevant to climate adaptation"
 #: components/theme/Views/ExtendedToolView
 msgid "Why is it relevant to climate adaptation"
+msgstr ""
+
+#. Default: "Wind / storm"
+#: messages
+msgid "Wind / storm"
 msgstr ""
 
 #. Default: "You are viewing an archived version."

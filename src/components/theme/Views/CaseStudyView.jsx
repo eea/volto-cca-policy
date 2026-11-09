@@ -13,6 +13,7 @@ import React, { Fragment } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import {
+  Button,
   Container,
   Divider,
   Grid,
@@ -97,113 +98,70 @@ const PrimaryPhoto = ({ content }) => {
   ) : null;
 };
 
+const createSection = (
+  field,
+  section,
+  title,
+  group,
+  type = 'HTMLField',
+  contentTitle,
+) => ({
+  type,
+  field,
+  section,
+  title,
+  ...(contentTitle ? { contentTitle } : {}),
+  group,
+});
+
 const dataDisplay = [
-  {
-    type: 'HTMLField',
-    field: 'challenges',
-    section: 'challenges_anchor',
-    title: 'Challenges',
-    group: 1,
-  },
-  {
-    type: 'HTMLField',
-    field: 'policy_legal_background',
-    section: 'policy_anchor',
-    title: 'Policy and legal background',
-    group: 1,
-  },
-  {
-    type: 'RelevanceItems',
-    field: 'relevance',
-    section: 'relevance_anchor',
-    title: 'Policy context of the adaptation measure',
-    group: 1,
-  },
-  {
-    type: 'HTMLField',
-    field: 'objectives',
-    section: 'objectives_anchor',
-    title: 'Objectives',
-    group: 1,
-  },
-  {
-    type: 'AdaptationOptionsItems',
-    field: 'adaptationoptions',
-    section: 'adapt_options_anchor',
-    title: 'Adaptation Options Implemented In This Case',
-    group: 1,
-  },
-  {
-    type: 'HTMLField',
-    field: 'solutions',
-    section: 'solutions_anchor',
-    title: 'Solutions',
-    group: 1,
-  },
-  {
-    type: 'HTMLField',
-    field: 'stakeholder_participation',
-    section: 'stake_holder_anchor',
-    title: 'Stakeholder participation',
-    group: 2,
-  },
-  {
-    type: 'HTMLField',
-    field: 'success_limitations',
-    section: 'success_limitations_anchor',
-    title: 'Success and Limiting Factors',
-    group: 2,
-  },
-  {
-    type: 'HTMLField',
-    field: 'cost_benefit',
-    section: 'cost_benefit_anchor',
-    title: 'Costs and Benefits',
-    group: 2,
-  },
-  {
-    type: 'HTMLField',
-    field: 'legal_aspects',
-    section: 'legal_aspects',
-    title: 'Legal Aspects',
-    group: 2,
-  },
-  {
-    type: 'HTMLField',
-    field: 'implementation_time',
-    section: 'implementation_time_anchor',
-    title: 'Implementation Time',
-    group: 2,
-  },
-  {
-    type: 'HTMLField',
-    field: 'lifetime',
-    section: 'life_time_anchor',
-    title: 'Life Time',
-    group: 2,
-  },
-  {
-    type: 'HTMLField',
-    field: 'contact',
-    section: 'contact',
-    title: 'Contact',
-    group: 3,
-  },
-  {
-    type: 'LinksList',
-    field: 'websites',
-    section: 'websites',
-    title: 'Websites',
-    group: 3,
-  },
-  {
-    type: 'HTMLField',
-    field: 'source',
-    section: 'source',
-    title: 'Source',
-    contentTitle: 'References', // override the title in content section
-    group: 3,
-  },
+  createSection('challenges', 'challenges_anchor', 'Challenges', 1),
+  createSection(
+    'policy_legal_background',
+    'policy_anchor',
+    'Policy and legal background',
+    1,
+  ),
+  createSection(
+    'relevance',
+    'relevance_anchor',
+    'Policy context of the adaptation measure',
+    1,
+    'RelevanceItems',
+  ),
+  createSection('objectives', 'objectives_anchor', 'Objectives', 1),
+  createSection(
+    'adaptationoptions',
+    'adapt_options_anchor',
+    'Adaptation Options Implemented In This Case',
+    1,
+    'AdaptationOptionsItems',
+  ),
+  createSection('solutions', 'solutions_anchor', 'Solutions', 1),
+  createSection(
+    'stakeholder_participation',
+    'stake_holder_anchor',
+    'Stakeholder participation',
+    2,
+  ),
+  createSection(
+    'success_limitations',
+    'success_limitations_anchor',
+    'Success and Limiting Factors',
+    2,
+  ),
+  createSection('cost_benefit', 'cost_benefit_anchor', 'Costs and Benefits', 2),
+  createSection('legal_aspects', 'legal_aspects', 'Legal Aspects', 2),
+  createSection(
+    'implementation_time',
+    'implementation_time_anchor',
+    'Implementation Time',
+    2,
+  ),
+  createSection('lifetime', 'life_time_anchor', 'Life Time', 2),
+  createSection('contact', 'contact', 'Contact', 3),
+  createSection('websites', 'websites', 'Websites', 3, 'LinksList'),
+  createSection('source', 'source', 'Source', 3, 'HTMLField', 'References'),
 ];
 
 const groups = {
@@ -228,24 +186,11 @@ const PhotoGallery = ({ content }) => {
     setOpen(true);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleTitleClick();
-    }
-  };
-
   return (
     <>
       {cca_gallery && cca_gallery.length > 0 && (
-        <div className="case-study-gallery">
-          <div
-            className="gallery-title"
-            tabIndex={0}
-            role="button"
-            onClick={handleTitleClick}
-            onKeyDown={handleKeyDown}
-          >
+        <div className="db-item-gallery">
+          <Button className="gallery-title" onClick={handleTitleClick}>
             <span>
               <FormattedMessage
                 id="Case Study illustrations"
@@ -254,7 +199,7 @@ const PhotoGallery = ({ content }) => {
             </span>
             <span> ({cca_gallery.length}) </span>
             <Icon className="ri-image-fill" />
-          </div>
+          </Button>
           <ImageGallery
             items={cca_gallery}
             propOpen={open}
@@ -305,7 +250,7 @@ const SectionContent = ({ sectionData, content }) => {
   };
 
   const section = content[sectionData.field];
-  for (var key in section) {
+  for (const key in section) {
     if (section[key] === '') {
       section[key] = '<p>-</p>';
     }

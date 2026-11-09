@@ -88,6 +88,11 @@ describe('NavigatorGeographicCoverageFacet', () => {
     renderFacet();
 
     expect(
+      screen.getByRole('button', {
+        name: 'Defines the largest geographic extent for which the tool is relevant',
+      }),
+    ).toHaveClass('info-tooltip');
+    expect(
       screen
         .getAllByRole('checkbox')
         .slice(0, 2)

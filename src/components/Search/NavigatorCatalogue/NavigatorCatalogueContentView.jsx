@@ -3,6 +3,7 @@ import { Sorting } from '@elastic/react-search-ui';
 import { Grid, Icon, Menu } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useAtomValue } from 'jotai';
+import { useSelector } from 'react-redux';
 
 import ResultsPerPageSelector from '@eeacms/search/components/ResultsPerPageSelector/ResultsPerPageSelector';
 import Paging from '@eeacms/search/components/Paging/Paging';
@@ -77,11 +78,28 @@ const NavigatorCatalogueContentView = (props) => {
   const views = useViews();
   const searchContext = useSearchContext();
   const driver = useSearchDriver();
-  const { searchTerm, sortField, sortDirection, totalResults, wasSearched } =
-    searchContext;
+  const {
+    filters,
+    searchTerm,
+    setFilter,
+    sortField,
+    sortDirection,
+    totalResults,
+    wasSearched,
+  } = searchContext;
   const intl = useIntl();
+  const currentLang = useSelector((state) => state.intl.locale || 'en');
   const defaultSortApplied = React.useRef(false);
   const previousSearchTerm = React.useRef(searchTerm);
+  const resultsLanguage = (filters || []).find(
+    ({ field }) => field === 'language',
+  )?.values?.[0];
+
+  React.useEffect(() => {
+    if (resultsLanguage && resultsLanguage !== currentLang) {
+      setFilter?.('language', currentLang, 'any');
+    }
+  }, [currentLang, resultsLanguage, setFilter]);
 
   const { showFilters, showFacets, showClusters, showSorting } = appConfig;
 

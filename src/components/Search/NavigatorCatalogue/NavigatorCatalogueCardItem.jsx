@@ -1,17 +1,21 @@
 import React from 'react';
-import { Checkbox, Icon } from 'semantic-ui-react';
+import { Checkbox, Icon, Popup } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import ExternalLink from '@eeacms/search/components/Result/ExternalLink';
 import ResultContext from '@eeacms/search/components/Result/ResultContext';
 import TagOverflowPopup from '@eeacms/volto-cca-policy/components/theme/TagOverflowPopup';
 import ToolThumbnail from '@eeacms/volto-cca-policy/components/theme/ToolThumbnail/ToolThumbnail';
+import {
+  formatClimateImpact,
+  formatToolVocabularyValue,
+} from '@eeacms/volto-cca-policy/messages';
 import { getToolTypeIcon } from '@eeacms/volto-cca-policy/helpers/toolTypeIcons.js';
 import {
   getCompareToolTitle,
   getCompareToolUid,
   useCompareTools,
 } from '../../theme/CompareTools/utils';
-import { rawValueAsArray } from './utils';
+import { formatPublicationDate, rawValueAsArray, valuesAsText } from './utils';
 
 const messages = defineMessages({
   sector: {
@@ -26,6 +30,10 @@ const messages = defineMessages({
     id: 'Cycle',
     defaultMessage: 'Cycle',
   },
+  cycleTooltip: {
+    id: 'Adaptation Support Cycle Step',
+    defaultMessage: 'Adaptation Support Cycle Step',
+  },
   geographicCoverage: {
     id: 'Geographic coverage',
     defaultMessage: 'Geographic coverage',
@@ -39,40 +47,6 @@ const messages = defineMessages({
     defaultMessage: 'View',
   },
 });
-
-const publicationDateFormatter = new Intl.DateTimeFormat('en-GB', {
-  day: '2-digit',
-  month: 'short',
-  year: '2-digit',
-  timeZone: 'UTC',
-});
-
-const formatPublicationDate = (value) => {
-  if (!value) return '';
-  const raw =
-    typeof value === 'object' && value !== null && 'raw' in value
-      ? value.raw
-      : value;
-  const val = Array.isArray(raw) ? raw[0] : raw;
-  if (!val || typeof val === 'object') return '';
-  try {
-    const d = new Date(val);
-    if (Number.isNaN(d.getTime())) return '';
-    return publicationDateFormatter.format(d);
-  } catch {
-    return '';
-  }
-};
-
-const valuesAsText = (...values) =>
-  [
-    ...new Set(
-      values
-        .flatMap(rawValueAsArray)
-        .map((value) => value?.title || value?.token || value)
-        .filter((value) => typeof value === 'string' && value.trim()),
-    ),
-  ].join(', ');
 
 export const getGeographicCoverage = (result = {}) => {
   const detailedCoverage = valuesAsText(
@@ -117,6 +91,7 @@ const TagGroup = ({ typeLabel, values, type, maxItems }) => {
 const CycleElements = ({ intl, values }) => {
   const visible = values.slice(0, 3);
   const hidden = values.slice(3);
+  const tooltipLabel = intl.formatMessage(messages.cycleTooltip);
 
   if (!visible.length) return null;
 
@@ -124,6 +99,32 @@ const CycleElements = ({ intl, values }) => {
     <div className="navigator-catalogue-cycle-elements">
       <span className="cycle-elements-label">
         {intl.formatMessage(messages.cycle)}
+        <Popup
+          className="compare-criteria-popup"
+          content={
+            <a
+              className="cycle-tooltip-link"
+              href="https://climate-adapt.eea.europa.eu/en/eu-adaptation/adaptation-context/adaptation-support-tool"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {tooltipLabel}
+              <Icon className="ri-arrow-right-line" aria-hidden="true" />
+            </a>
+          }
+          hoverable
+          on={['hover', 'focus', 'click']}
+          position="top left"
+          trigger={
+            <button
+              type="button"
+              className="info-tooltip"
+              aria-label={tooltipLabel}
+            >
+              <Icon className="ri-information-line" aria-hidden="true" />
+            </button>
+          }
+        />
       </span>
       {visible.map(({ label, title }, index) => (
         <span
@@ -161,9 +162,13 @@ const NavigatorCatalogueCardItem = (props) => {
   )
     .map((value) => {
       const title = value?.title || value;
-      return typeof title === 'string'
-        ? { title, label: title.split(':')[0] }
-        : null;
+      if (typeof title !== 'string') return null;
+
+      const translatedTitle = formatToolVocabularyValue(intl, title);
+      return {
+        title: translatedTitle,
+        label: translatedTitle.split(':')[0],
+      };
     })
     .filter(Boolean);
   const publicationDate =
@@ -216,7 +221,12 @@ const NavigatorCatalogueCardItem = (props) => {
           />
           <TagGroup
             typeLabel={intl.formatMessage(messages.hazard)}
-            values={hazards}
+            values={hazards.map((hazard) =>
+              formatClimateImpact(
+                intl,
+                hazard?.title || hazard?.token || hazard,
+              ),
+            )}
             type="hazard"
             maxItems={3}
           />
@@ -232,12 +242,9 @@ const NavigatorCatalogueCardItem = (props) => {
           </div>
           <div className="catalogue-meta geographic-coverage">
             {geographicCoverage && (
-              <span
-                className="catalogue-geographic-coverage"
-                title={geographicCoverage}
-              >
+              <span className="catalogue-geographic-coverage">
                 {intl.formatMessage(messages.geographicCoverage)}:{' '}
-                {geographicCoverage}
+                <span>{geographicCoverage}</span>
               </span>
             )}
           </div>

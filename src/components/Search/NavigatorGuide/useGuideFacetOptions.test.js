@@ -11,7 +11,17 @@ const flushPromises = () => act(() => Promise.resolve());
 
 describe('useGuideFacetOptions', () => {
   const appConfig = { facets: [] };
-  const steps = [{ field: 'sector' }, { field: 'stage' }];
+  const steps = [
+    { field: 'sector' },
+    {
+      groups: [
+        { field: 'coverage' },
+        { field: 'country' },
+        { field: 'coverage' },
+      ],
+    },
+    { field: 'stage' },
+  ];
 
   beforeEach(() => {
     getFacetOptions.mockReset();
@@ -21,14 +31,80 @@ describe('useGuideFacetOptions', () => {
     const facetOptions = { sector: ['Energy'], stage: ['Step 1'] };
     getFacetOptions.mockResolvedValue(facetOptions);
 
-    const { result } = renderHook(() => useGuideFacetOptions(appConfig, steps));
+    const { result } = renderHook(() =>
+      useGuideFacetOptions(appConfig, steps, 'en'),
+    );
     await flushPromises();
 
-    expect(getFacetOptions).toHaveBeenCalledWith(appConfig, [
-      'sector',
-      'stage',
-    ]);
+    expect(getFacetOptions).toHaveBeenCalledWith(
+      {
+        ...appConfig,
+        permanentFilters: [{ term: { language: 'en' } }],
+      },
+      ['sector', 'coverage', 'country', 'stage'],
+    );
     expect(result.current).toEqual(facetOptions);
+  });
+
+  it('keeps existing permanent filters and restricts options to the locale', async () => {
+    getFacetOptions.mockResolvedValue({ sector: ['Agriculture'] });
+    const configuredApp = {
+      facets: [],
+      permanentFilters: [{ term: { cluster_name: 'cca_navigator' } }],
+    };
+
+    renderHook(() => useGuideFacetOptions(configuredApp, steps, 'ro'));
+    await flushPromises();
+
+    expect(getFacetOptions).toHaveBeenCalledWith(
+      {
+        ...configuredApp,
+        permanentFilters: [
+          { term: { cluster_name: 'cca_navigator' } },
+          { term: { language: 'ro' } },
+        ],
+      },
+      ['sector', 'coverage', 'country', 'stage'],
+    );
+  });
+
+  it('does not refetch when only the steps array identity changes', async () => {
+    getFacetOptions.mockResolvedValue({ sector: ['Agriculture'] });
+
+    const { rerender } = renderHook(
+      ({ currentSteps }) => useGuideFacetOptions(appConfig, currentSteps, 'en'),
+      { initialProps: { currentSteps: steps } },
+    );
+    await flushPromises();
+    rerender({ currentSteps: [...steps] });
+    await flushPromises();
+
+    expect(getFacetOptions).toHaveBeenCalledTimes(1);
+  });
+
+  it('clears options from the previous language while reloading', async () => {
+    let resolveDanishRequest;
+    getFacetOptions
+      .mockResolvedValueOnce({ sector: ['Agriculture'] })
+      .mockReturnValueOnce(
+        new Promise((resolve) => {
+          resolveDanishRequest = resolve;
+        }),
+      );
+
+    const { result, rerender } = renderHook(
+      ({ language }) => useGuideFacetOptions(appConfig, steps, language),
+      { initialProps: { language: 'en' } },
+    );
+    await flushPromises();
+    expect(result.current).toEqual({ sector: ['Agriculture'] });
+
+    rerender({ language: 'da' });
+    expect(result.current).toEqual({});
+
+    resolveDanishRequest({ sector: ['Landbrug'] });
+    await flushPromises();
+    expect(result.current).toEqual({ sector: ['Landbrug'] });
   });
 
   it('keeps the fallback state when loading fails', async () => {
@@ -48,11 +124,13 @@ describe('useGuideFacetOptions', () => {
       }),
     );
 
-    const { unmount } = renderHook(() =>
+    const { result, unmount } = renderHook(() =>
       useGuideFacetOptions(appConfig, steps),
     );
     unmount();
     resolveRequest({ sector: ['Energy'] });
     await flushPromises();
+
+    expect(result.current).toEqual({});
   });
 });
