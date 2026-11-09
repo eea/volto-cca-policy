@@ -139,6 +139,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
     removeFilter,
     results,
     searchTerm,
+    setFilter,
     sortDirection,
     sortField,
     totalResults,
@@ -147,13 +148,18 @@ const NavigatorGuideContentView = ({ appConfig }) => {
   const steps = guideSteps.filter(
     ({ id }) => !appConfig.hiddenSteps?.includes(id),
   );
-  const resultsLanguage =
-    getSelectedValues(filters, 'language')[0] || currentLang;
-  const allFacetOptions = useGuideFacetOptions(
-    appConfig,
-    steps,
-    resultsLanguage,
+  const resultsLanguage = getSelectedValues(filters, 'language')[0];
+  const hasLanguageMismatch = Boolean(
+    resultsLanguage && resultsLanguage !== currentLang,
   );
+
+  React.useEffect(() => {
+    if (hasLanguageMismatch) {
+      setFilter?.('language', currentLang, 'any');
+    }
+  }, [currentLang, hasLanguageMismatch, setFilter]);
+
+  const allFacetOptions = useGuideFacetOptions(appConfig, steps, currentLang);
   const [storedActiveStep, setActiveStep] = useAtom(navigatorGuideStepAtom);
   const activeStep =
     Number.isInteger(storedActiveStep) &&
@@ -419,7 +425,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
             <h3>{intl.formatMessage(step.title)}</h3>
             {step.description && <p>{intl.formatMessage(step.description)}</p>}
 
-            {isLoading ? (
+            {isLoading || hasLanguageMismatch ? (
               <div className="navigator-guide-options-loading">
                 <Loader active inline />
               </div>
@@ -545,7 +551,7 @@ const NavigatorGuideContentView = ({ appConfig }) => {
           {hasSelections && (
             <div className="navigator-guide-result-count">
               <span className="navigator-guide-result-count-value">
-                {isLoading ? '…' : totalResults || 0}
+                {isLoading || hasLanguageMismatch ? '…' : totalResults || 0}
               </span>
               <p>
                 {intl.formatMessage(messages.toolsMatch, {

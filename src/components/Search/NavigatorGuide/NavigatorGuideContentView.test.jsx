@@ -113,10 +113,11 @@ describe('NavigatorGuideContentView thumbnails', () => {
     expect(actions.nextElementSibling).toHaveClass('navigator-guide-header');
   });
 
-  it('loads facet options in the language selected for the results', () => {
+  it('normalizes a mismatched results language to the page locale', () => {
+    const setFilter = jest.fn();
     useSelector.mockReturnValue('da');
 
-    renderGuide(
+    const { container } = renderGuide(
       { title: 'Guide tool', href: '/tools/guide-tool' },
       {
         filters: [
@@ -126,14 +127,19 @@ describe('NavigatorGuideContentView thumbnails', () => {
             values: ['Water'],
           },
         ],
+        setFilter,
       },
     );
 
+    expect(setFilter).toHaveBeenCalledWith('language', 'da', 'any');
     expect(useGuideFacetOptions).toHaveBeenCalledWith(
       expect.any(Object),
       expect.any(Array),
-      'en',
+      'da',
     );
+    expect(
+      container.querySelector('.navigator-guide-options-loading'),
+    ).toBeInTheDocument();
   });
 
   it('hides any steps listed in the configuration', () => {
