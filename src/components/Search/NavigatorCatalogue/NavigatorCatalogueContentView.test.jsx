@@ -2,6 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
+import { useSelector } from 'react-redux';
 import NavigatorCatalogueContentView from './NavigatorCatalogueContentView';
 import {
   useSearchContext,
@@ -43,6 +44,7 @@ jest.mock('jotai', () => ({
   ...jest.requireActual('jotai'),
   useAtomValue: () => false,
 }));
+jest.mock('react-redux', () => ({ useSelector: jest.fn() }));
 
 jest.mock(
   '@eeacms/search/components/ResultsPerPageSelector/ResultsPerPageSelector',
@@ -117,6 +119,7 @@ describe('NavigatorCatalogueContentView sorting', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    useSelector.mockReturnValue('en');
     driver = { setSort: jest.fn() };
     searchContext = {
       searchTerm: '',
@@ -137,6 +140,20 @@ describe('NavigatorCatalogueContentView sorting', () => {
     renderCatalogue();
 
     expect(driver.setSort).toHaveBeenCalledWith('title.index', 'asc');
+  });
+
+  it('normalizes a mismatched results language to the page locale', () => {
+    const setFilter = jest.fn();
+    useSelector.mockReturnValue('da');
+    searchContext = {
+      ...searchContext,
+      filters: [{ field: 'language', type: 'any', values: ['en'] }],
+      setFilter,
+    };
+
+    renderCatalogue();
+
+    expect(setFilter).toHaveBeenCalledWith('language', 'da', 'any');
   });
 
   it('preserves an active relevance sort', () => {
