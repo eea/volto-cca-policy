@@ -45,7 +45,6 @@ const GeographicMetadata = (props) => {
             <LinkedMetadataItemList
               value={spatial_values.map((item) => item.token)}
               field="cca_geographic_countries.keyword"
-              // contentType={contentTypeLabel}
             />
           )}
         </div>
@@ -76,7 +75,6 @@ const GeographicMetadata = (props) => {
                 <LinkedMetadataItemList
                   value={section.value}
                   field={linkedSectionFields[section.key]}
-                  // contentType={contentTypeLabel}
                 />
               ) : (
                 <p>
