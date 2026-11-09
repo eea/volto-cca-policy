@@ -3,7 +3,7 @@ import { Popup, Segment } from 'semantic-ui-react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { makeObservatorySearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 import {
-  // CONTENT_TYPE_LABELS,
+  ADAPTATION_OPTION,
   GUIDANCE,
   INDICATOR,
   PUBLICATION_REPORT,
@@ -11,6 +11,7 @@ import {
 } from '@eeacms/volto-cca-policy/constants';
 import GeographicMetadata from './GeographicMetadata';
 import LinkedMetadataItemList from './LinkedMetadataItemList';
+import MetadataItemList from './MetadataItemList';
 import PublicationDateInfo from './PublicationDateInfo';
 
 const messages = defineMessages({
@@ -47,8 +48,6 @@ const ContentMetadata = (props) => {
     include_in_observatory,
   } = content;
   const type = content['@type'];
-  // const contentTypeLabel = CONTENT_TYPE_LABELS[type];
-
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
   const dateTitles = {
@@ -96,11 +95,10 @@ const ContentMetadata = (props) => {
               <FormattedMessage id="Keywords:" defaultMessage="Keywords:" />
             </h5>
             <LinkedMetadataItemList
+              asInline
               value={[...keywords].sort((a, b) =>
                 a.toLowerCase().localeCompare(b.toLowerCase()),
               )}
-              // contentType={contentTypeLabel}
-              asInline
             />
           </>
         )}
@@ -129,7 +127,6 @@ const ContentMetadata = (props) => {
             <LinkedMetadataItemList
               value={key_type_measures}
               field="cca_key_type_measure.keyword"
-              // contentType={contentTypeLabel}
               getSearchValue={(item) => item.token || item.title || item}
             />
           </>
@@ -146,7 +143,6 @@ const ContentMetadata = (props) => {
             <LinkedMetadataItemList
               value={ipcc_category}
               field="cca_ipcc_category.keyword"
-              // contentType={contentTypeLabel}
             />
           </>
         )}
@@ -162,7 +158,6 @@ const ContentMetadata = (props) => {
             <LinkedMetadataItemList
               value={climate_impacts}
               field="cca_climate_impacts.keyword"
-              // contentType={contentTypeLabel}
             />
           </>
         )}
@@ -178,7 +173,6 @@ const ContentMetadata = (props) => {
             <LinkedMetadataItemList
               value={elements}
               field="cca_adaptation_elements.keyword"
-              // contentType={contentTypeLabel}
             />
           </>
         )}
@@ -191,7 +185,6 @@ const ContentMetadata = (props) => {
             <LinkedMetadataItemList
               value={sectors}
               field="cca_adaptation_sectors.keyword"
-              // contentType={contentTypeLabel}
             />
           </>
         )}
@@ -204,12 +197,15 @@ const ContentMetadata = (props) => {
                 defaultMessage="Governance level:"
               />
             </h5>
-            <LinkedMetadataItemList
-              value={governance_level}
-              field="cca_governance_level_list.keyword"
-              // contentType={contentTypeLabel}
-              asList
-            />
+            {type === ADAPTATION_OPTION ? (
+              <LinkedMetadataItemList
+                asList
+                value={governance_level}
+                field="cca_governance_level_list.keyword"
+              />
+            ) : (
+              <MetadataItemList value={governance_level} asList />
+            )}
           </>
         )}
 
@@ -224,7 +220,6 @@ const ContentMetadata = (props) => {
             <LinkedMetadataItemList
               value={[funding_programme]}
               field="cca_funding_programme.keyword"
-              // contentType={contentTypeLabel}
               getSearchValue={(item) => item.token || item.title || item}
             />
           </>
@@ -266,7 +261,6 @@ const ContentMetadata = (props) => {
               value={health_impacts}
               field="cca_health_impacts.keyword"
               queryBuilder={makeObservatorySearchQuery}
-              // contentType={contentTypeLabel}
             />
           </Segment>
         )}
