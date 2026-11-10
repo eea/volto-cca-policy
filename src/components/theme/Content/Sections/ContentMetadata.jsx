@@ -1,6 +1,7 @@
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { Popup, Segment } from 'semantic-ui-react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { makeObservatorySearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 import {
   ADAPTATION_OPTION,
   GUIDANCE,
@@ -47,8 +48,6 @@ const ContentMetadata = (props) => {
     include_in_observatory,
   } = content;
   const type = content['@type'];
-  // const contentTypeLabel = CONTENT_TYPE_LABELS[type];
-
   const hasGeoChars = geochars !== null || spatial_layer.length > 0;
 
   const dateTitles = {
@@ -95,23 +94,12 @@ const ContentMetadata = (props) => {
             <h5>
               <FormattedMessage id="Keywords:" defaultMessage="Keywords:" />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={[...keywords].sort((a, b) =>
-                  a.toLowerCase().localeCompare(b.toLowerCase()),
-                )}
-                // contentType={contentTypeLabel}
-                asInline
-              />
-            ) : (
-              <span>
-                {[...keywords]
-                  .sort((a, b) =>
-                    a.toLowerCase().localeCompare(b.toLowerCase()),
-                  )
-                  .join(', ')}
-              </span>
-            )}
+            <LinkedMetadataItemList
+              asInline
+              value={[...keywords].sort((a, b) =>
+                a.toLowerCase().localeCompare(b.toLowerCase()),
+              )}
+            />
           </>
         )}
 
@@ -136,16 +124,11 @@ const ContentMetadata = (props) => {
                 trigger={<i className="ri-question-fill"></i>}
               />
             </div>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={key_type_measures}
-                field="cca_key_type_measure.keyword"
-                // contentType={contentTypeLabel}
-                getSearchValue={(item) => item.token || item.title || item}
-              />
-            ) : (
-              <MetadataItemList value={key_type_measures} />
-            )}
+            <LinkedMetadataItemList
+              value={key_type_measures}
+              field="cca_key_type_measure.keyword"
+              getSearchValue={(item) => item.token || item.title || item}
+            />
           </>
         )}
 
@@ -157,15 +140,10 @@ const ContentMetadata = (props) => {
                 defaultMessage="IPCC adaptation options categories:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={ipcc_category}
-                field="cca_ipcc_category.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={ipcc_category} />
-            )}
+            <LinkedMetadataItemList
+              value={ipcc_category}
+              field="cca_ipcc_category.keyword"
+            />
           </>
         )}
 
@@ -177,15 +155,10 @@ const ContentMetadata = (props) => {
                 defaultMessage="Climate impacts:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={climate_impacts}
-                field="cca_climate_impacts.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={climate_impacts} />
-            )}
+            <LinkedMetadataItemList
+              value={climate_impacts}
+              field="cca_climate_impacts.keyword"
+            />
           </>
         )}
 
@@ -197,15 +170,10 @@ const ContentMetadata = (props) => {
                 defaultMessage="Adaptation Approaches:"
               />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={elements}
-                field="cca_adaptation_elements.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={elements} />
-            )}
+            <LinkedMetadataItemList
+              value={elements}
+              field="cca_adaptation_elements.keyword"
+            />
           </>
         )}
 
@@ -214,15 +182,10 @@ const ContentMetadata = (props) => {
             <h5>
               <FormattedMessage id="Sectors:" defaultMessage="Sectors:" />
             </h5>
-            {type === ADAPTATION_OPTION ? (
-              <LinkedMetadataItemList
-                value={sectors}
-                field="cca_adaptation_sectors.keyword"
-                // contentType={contentTypeLabel}
-              />
-            ) : (
-              <MetadataItemList value={sectors} />
-            )}
+            <LinkedMetadataItemList
+              value={sectors}
+              field="cca_adaptation_sectors.keyword"
+            />
           </>
         )}
 
@@ -236,10 +199,9 @@ const ContentMetadata = (props) => {
             </h5>
             {type === ADAPTATION_OPTION ? (
               <LinkedMetadataItemList
+                asList
                 value={governance_level}
                 field="cca_governance_level_list.keyword"
-                // contentType={contentTypeLabel}
-                asList
               />
             ) : (
               <MetadataItemList value={governance_level} asList />
@@ -255,7 +217,11 @@ const ContentMetadata = (props) => {
                 defaultMessage="Funding Programme:"
               />
             </h5>
-            <span>{funding_programme.title}</span>
+            <LinkedMetadataItemList
+              value={[funding_programme]}
+              field="cca_funding_programme.keyword"
+              getSearchValue={(item) => item.token || item.title || item}
+            />
           </>
         )}
 
@@ -291,7 +257,11 @@ const ContentMetadata = (props) => {
                 defaultMessage="Health impact:"
               />
             </h5>
-            <MetadataItemList value={health_impacts} />
+            <LinkedMetadataItemList
+              value={health_impacts}
+              field="cca_health_impacts.keyword"
+              queryBuilder={makeObservatorySearchQuery}
+            />
           </Segment>
         )}
     </>

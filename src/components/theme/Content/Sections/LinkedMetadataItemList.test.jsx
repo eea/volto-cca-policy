@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router-dom';
+import { makeObservatorySearchQuery } from '@eeacms/volto-cca-policy/search/queryUtils';
 
 import LinkedMetadataItemList from './LinkedMetadataItemList';
 
@@ -33,5 +34,48 @@ describe('LinkedMetadataItemList', () => {
     expect(screen.getByRole('list')).toHaveClass('metadata-list');
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
     expect(screen.getAllByRole('link')).toHaveLength(2);
+  });
+
+  it('uses a text search when linking a keyword', () => {
+    renderComponent({
+      value: ['Flood risk'],
+      field: undefined,
+    });
+
+    const params = new URL(screen.getByRole('link').href).searchParams;
+
+    expect(params.get('q')).toBe('Flood risk');
+    expect(params.has('filters[2][field]')).toBe(false);
+  });
+
+  it('can use a token for the search value and a title for the label', () => {
+    renderComponent({
+      value: [{ token: 'funding-token', title: 'Funding programme' }],
+      getSearchValue: (item) => item.token,
+    });
+
+    const link = screen.getByRole('link', { name: 'Funding programme' });
+    const params = new URL(link.href).searchParams;
+
+    expect(params.get('filters[2][field]')).toBe('example.keyword');
+    expect(params.get('filters[2][values][0]')).toBe('funding-token');
+  });
+
+  it('links raw health-impact values to the Observatory search', () => {
+    renderComponent({
+      value: ['-NONSPECIFIC-'],
+      field: 'cca_health_impacts.keyword',
+      queryBuilder: makeObservatorySearchQuery,
+    });
+
+    const link = screen.getByRole('link', { name: '-NONSPECIFIC-' });
+    const url = new URL(link.href);
+
+    expect(url.pathname).toBe('/en/observatory/advanced-search');
+    expect(url.searchParams.get('filters[2][field]')).toBe(
+      'cca_health_impacts.keyword',
+    );
+    expect(url.searchParams.get('filters[2][type]')).toBe('any');
+    expect(url.searchParams.get('filters[2][values][0]')).toBe('-NONSPECIFIC-');
   });
 });

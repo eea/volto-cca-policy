@@ -9,8 +9,10 @@ const LinkedMetadataItemList = (props) => {
     asInline = false,
     asList = false,
     field,
+    // contentType,
     getSearchValue,
-  } = props; // contentType
+    queryBuilder = makeAdvancedSearchQuery,
+  } = props;
   const intl = useIntl();
 
   const resolveSearchValue = (item) => {
@@ -28,7 +30,7 @@ const LinkedMetadataItemList = (props) => {
   const renderLink = (item) => (
     <Link
       key={resolveSearchValue(item)}
-      to={makeAdvancedSearchQuery({
+      to={queryBuilder({
         field,
         value: resolveSearchValue(item),
         // contentType,
