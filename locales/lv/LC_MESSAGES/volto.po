@@ -52,11 +52,6 @@ msgstr "Aktīvie filtri"
 msgid "Active filters are always shown in edit mode"
 msgstr "Aktīvie filtri vienmēr tiek rādīti rediģēšanas režīmā"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Adaptācijas detaļas"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

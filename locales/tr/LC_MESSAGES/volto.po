@@ -52,11 +52,6 @@ msgstr "Aktif filtreler"
 msgid "Active filters are always shown in edit mode"
 msgstr "Etkin filtreler her zaman düzenleme modunda gösterilir"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Uyarlama Ayrıntıları"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

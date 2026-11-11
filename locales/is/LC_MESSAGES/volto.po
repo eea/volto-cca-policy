@@ -52,11 +52,6 @@ msgstr "Virkar síur"
 msgid "Active filters are always shown in edit mode"
 msgstr "Virkar síur eru alltaf sýndar í breytingaham"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Aðlögunarupplýsingar"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

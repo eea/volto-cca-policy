@@ -52,11 +52,6 @@ msgstr "Aktiiviset suodattimet"
 msgid "Active filters are always shown in edit mode"
 msgstr "Aktiiviset suodattimet näkyvät aina muokkaustilassa"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Sopeutumisen tiedot"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

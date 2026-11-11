@@ -52,11 +52,6 @@ msgstr "Aktive Filter"
 msgid "Active filters are always shown in edit mode"
 msgstr "Aktive Filter werden immer im Bearbeitungsmodus angezeigt"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Anpassungsdetails"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

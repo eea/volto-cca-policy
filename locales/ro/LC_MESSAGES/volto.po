@@ -52,11 +52,6 @@ msgstr "Filtre active"
 msgid "Active filters are always shown in edit mode"
 msgstr "Filtrele active sunt întotdeauna afișate în modul de editare"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Detalii despre adaptare"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

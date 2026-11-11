@@ -129,10 +129,6 @@ const messages = defineMessages({
     id: 'Webpage',
     defaultMessage: 'Webpage',
   },
-  phAdapDetails: {
-    id: 'Adaptation Details',
-    defaultMessage: 'Adaptation Details',
-  },
   phEvent: {
     id: 'Event',
     defaultMessage: 'Event',

@@ -52,11 +52,6 @@ msgstr "Aktyvūs filtrai"
 msgid "Active filters are always shown in edit mode"
 msgstr "Aktyvūs filtrai visada rodomi redagavimo režimu"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Adaptacijos detalės"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"

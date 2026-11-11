@@ -52,11 +52,6 @@ msgstr "Ενεργά φίλτρα"
 msgid "Active filters are always shown in edit mode"
 msgstr "Τα ενεργά φίλτρα εμφανίζονται πάντα σε λειτουργία επεξεργασίας"
 
-#. Default: "Adaptation Details"
-#: messages
-msgid "Adaptation Details"
-msgstr "Λεπτομέρειες Προσαρμογής"
-
 #. Default: "Adaptation Option illustrations"
 #: components/theme/Views/AdaptationOptionView
 msgid "Adaptation Option illustrations"
