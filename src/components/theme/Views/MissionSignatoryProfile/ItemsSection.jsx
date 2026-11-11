@@ -17,7 +17,7 @@ const ItemsSection = ({ items, field, iconPath }) => {
           <Item key={index}>
             {item.Icon ? (
               <Image
-                src={`/en/mission/icons/signatory-reporting/${iconPath}/${normalizedIcon}/@@images/image`}
+                src={`/en/eu-adaptation/adaptation-context/eu-mission-on-adaptation/signatory-reporting/icons/${iconPath}/${normalizedIcon}/@@images/image`}
               />
             ) : (
               <Image size="small" src={defaultImage} />
