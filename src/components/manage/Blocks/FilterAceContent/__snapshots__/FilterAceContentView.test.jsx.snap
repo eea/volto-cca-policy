@@ -23,7 +23,7 @@ exports[`FilterAceContentView renders default variation and snapshot matches 1`]
     <span
       className="filter-title"
     >
-      Adaptation Approaches
+      Adaptation approaches
     </span>
     <div
       id="key-type-measure"
@@ -80,7 +80,7 @@ exports[`FilterAceContentView renders simpleCards variation (Grid branch) 1`] = 
           <span
             className="filter-title"
           >
-            Adaptation Approaches
+            Adaptation approaches
           </span>
           <div
             id="key-type-measure"

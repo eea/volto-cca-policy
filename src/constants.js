@@ -54,7 +54,7 @@ export const DOWNLOAD_FIELDS = [
   },
   { field: 'cca_sub_nationals', name: 'Sub national regions' },
   { field: 'cca_city', name: 'City' },
-  { field: 'cca_adaptation_elements', name: 'Adaptation Approaches' },
+  { field: 'cca_adaptation_elements', name: 'Adaptation approaches' },
   {
     field: 'cca_adaptation_options',
     name: 'Adaptation options used in this case',

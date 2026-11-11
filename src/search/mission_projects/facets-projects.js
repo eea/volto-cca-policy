@@ -17,8 +17,8 @@ const messages = defineMessages({
     defaultMessage: 'Funding Programme',
   },
   adaptationApproaches: {
-    id: 'Adaptation Approaches',
-    defaultMessage: 'Adaptation Approaches',
+    id: 'Adaptation approaches',
+    defaultMessage: 'Adaptation approaches',
   },
 });
 

@@ -52,20 +52,6 @@ msgstr "Aktive filtre"
 msgid "Active filters are always shown in edit mode"
 msgstr "Aktive filtre vises altid i redigeringstilstand"
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets
-#: search/health_observatory/facets-health
-#: search/mission_all/facets-all
-#: search/mission_projects/facets-projects
-msgid "Adaptation Approaches"
-msgstr "Tilpasningstilgange"
-
-#. Default: "Adaptation Approaches:"
-#: components/theme/Content/Sections/ContentMetadata
-msgid "Adaptation Approaches:"
-msgstr "Tilpasningsmetoder:"
-
 #. Default: "Adaptation Details"
 #: messages
 msgid "Adaptation Details"
@@ -95,9 +81,19 @@ msgstr "Trin til tilpasningsstøttecyklus"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 #: search/navigator_catalogue/facets
 msgid "Adaptation approaches"
 msgstr "Tilpasningstilgange"
+
+#. Default: "Adaptation approaches:"
+#: components/theme/Content/Sections/ContentMetadata
+msgid "Adaptation approaches:"
+msgstr "Tilpasningsmetoder:"
 
 #. Default: "Adaptation option"
 #: messages

@@ -1,7 +1,6 @@
 import globalSearchBaseConfig from '@eeacms/volto-globalsearch/config/global-search-base-config.js';
 import { multiTermFacet } from '@eeacms/search';
 import {
-  // objectProvides,
   language,
   geographic_countries,
   cca_climate_impacts,
@@ -16,8 +15,8 @@ const messages = defineMessages({
     defaultMessage: 'Type of item',
   },
   adaptationApproaches: {
-    id: 'Adaptation Approaches',
-    defaultMessage: 'Adaptation Approaches',
+    id: 'Adaptation approaches',
+    defaultMessage: 'Adaptation approaches',
   },
   countries: { id: 'Countries', defaultMessage: 'Countries' },
 });
@@ -49,7 +48,6 @@ globalFacets = globalFacets.concat(
     field: 'cca_adaptation_elements.keyword',
     isFilterable: false,
     isMulti: true,
-    // label: 'Adaptation Approaches',
     label: messages.adaptationApproaches,
     alwaysVisible: false,
   }),
@@ -74,20 +72,6 @@ facetsOrder = facetsOrder.concat(
   globalFacets.filter((f) => !facetsOrderList.includes(f.field)),
 );
 
-const facets = [
-  ...facetsOrder,
-  // cca_climate_impacts,
-  // cca_adaptation_sectors,
-  // multiTermFacet({
-  //   field: 'cca_adaptation_elements.keyword',
-  //   isFilterable: false,
-  //   isMulti: true,
-  //   label: 'Adaptation Approaches',
-  //   alwaysVisible: false,
-  // }),
-  // geographic_countries,
-  // language,
-  // objectProvides,
-];
+const facets = [...facetsOrder];
 
 export default facets;

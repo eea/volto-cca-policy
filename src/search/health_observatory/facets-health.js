@@ -9,8 +9,8 @@ import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   adaptationApproaches: {
-    id: 'Adaptation Approaches',
-    defaultMessage: 'Adaptation Approaches',
+    id: 'Adaptation approaches',
+    defaultMessage: 'Adaptation approaches',
   },
   healthImpacts: {
     id: 'Health impacts',

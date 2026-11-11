@@ -52,20 +52,6 @@ msgstr "Virkar síur"
 msgid "Active filters are always shown in edit mode"
 msgstr "Virkar síur eru alltaf sýndar í breytingaham"
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets
-#: search/health_observatory/facets-health
-#: search/mission_all/facets-all
-#: search/mission_projects/facets-projects
-msgid "Adaptation Approaches"
-msgstr "Aðlögunaraðferðir"
-
-#. Default: "Adaptation Approaches:"
-#: components/theme/Content/Sections/ContentMetadata
-msgid "Adaptation Approaches:"
-msgstr "Aðlögunaraðferðir:"
-
 #. Default: "Adaptation Details"
 #: messages
 msgid "Adaptation Details"
@@ -95,9 +81,19 @@ msgstr "Þrep aðlögunarstuðnings"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 #: search/navigator_catalogue/facets
 msgid "Adaptation approaches"
 msgstr "Aðlögunaraðferðir"
+
+#. Default: "Adaptation approaches:"
+#: components/theme/Content/Sections/ContentMetadata
+msgid "Adaptation approaches:"
+msgstr "Aðlögunaraðferðir:"
 
 #. Default: "Adaptation option"
 #: messages

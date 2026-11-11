@@ -166,8 +166,8 @@ const ContentMetadata = (props) => {
           <>
             <h5>
               <FormattedMessage
-                id="Adaptation Approaches:"
-                defaultMessage="Adaptation Approaches:"
+                id="Adaptation approaches:"
+                defaultMessage="Adaptation approaches:"
               />
             </h5>
             <LinkedMetadataItemList

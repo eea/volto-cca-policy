@@ -52,20 +52,6 @@ msgstr "Filtri attivi"
 msgid "Active filters are always shown in edit mode"
 msgstr "I filtri attivi vengono sempre visualizzati in modalità di modifica"
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets
-#: search/health_observatory/facets-health
-#: search/mission_all/facets-all
-#: search/mission_projects/facets-projects
-msgid "Adaptation Approaches"
-msgstr "Approcci di adattamento"
-
-#. Default: "Adaptation Approaches:"
-#: components/theme/Content/Sections/ContentMetadata
-msgid "Adaptation Approaches:"
-msgstr "Approcci di adattamento:"
-
 #. Default: "Adaptation Details"
 #: messages
 msgid "Adaptation Details"
@@ -95,9 +81,19 @@ msgstr "Fase del ciclo di supporto all'adattamento"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 #: search/navigator_catalogue/facets
 msgid "Adaptation approaches"
 msgstr "Approcci di adattamento"
+
+#. Default: "Adaptation approaches:"
+#: components/theme/Content/Sections/ContentMetadata
+msgid "Adaptation approaches:"
+msgstr "Approcci di adattamento:"
 
 #. Default: "Adaptation option"
 #: messages

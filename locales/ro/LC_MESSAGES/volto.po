@@ -52,20 +52,6 @@ msgstr "Filtre active"
 msgid "Active filters are always shown in edit mode"
 msgstr "Filtrele active sunt întotdeauna afișate în modul de editare"
 
-#. Default: "Adaptation Approaches"
-#: components/manage/Blocks/FilterAceContent/FilterAceContentView
-#: search/cca/facets
-#: search/health_observatory/facets-health
-#: search/mission_all/facets-all
-#: search/mission_projects/facets-projects
-msgid "Adaptation Approaches"
-msgstr "Abordări de adaptare"
-
-#. Default: "Adaptation Approaches:"
-#: components/theme/Content/Sections/ContentMetadata
-msgid "Adaptation Approaches:"
-msgstr "Abordări de adaptare:"
-
 #. Default: "Adaptation Details"
 #: messages
 msgid "Adaptation Details"
@@ -95,9 +81,19 @@ msgstr "Pasul ciclului de suport pentru adaptare"
 
 #. Default: "Adaptation approaches"
 #: components/manage/Blocks/CaseStudyExplorer/CaseStudyFilters
+#: components/manage/Blocks/FilterAceContent/FilterAceContentView
+#: search/cca/facets
+#: search/health_observatory/facets-health
+#: search/mission_all/facets-all
+#: search/mission_projects/facets-projects
 #: search/navigator_catalogue/facets
 msgid "Adaptation approaches"
 msgstr "Abordări de adaptare"
+
+#. Default: "Adaptation approaches:"
+#: components/theme/Content/Sections/ContentMetadata
+msgid "Adaptation approaches:"
+msgstr "Abordări de adaptare:"
 
 #. Default: "Adaptation option"
 #: messages

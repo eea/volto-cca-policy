@@ -269,8 +269,8 @@ function FiltersPanel({
 
       <span className="filter-title">
         <FormattedMessage
-          id="Adaptation Approaches"
-          defaultMessage="Adaptation Approaches"
+          id="Adaptation approaches"
+          defaultMessage="Adaptation approaches"
         />
       </span>
       <Select
