@@ -32,7 +32,7 @@ describe('ItemsSection', () => {
     const image = screen.getByRole('img');
     expect(image).toHaveAttribute(
       'src',
-      '/en/mission/icons/signatory-reporting/sector/solar/@@images/image',
+      '/en/eu-adaptation/adaptation-context/eu-mission-on-adaptation/signatory-reporting/icons/sector/solar/@@images/image',
     );
     expect(screen.getByText('Energy')).toBeInTheDocument();
   });
