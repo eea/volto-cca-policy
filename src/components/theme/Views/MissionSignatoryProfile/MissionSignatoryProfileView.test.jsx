@@ -80,7 +80,11 @@ describe('MissionSignatoryProfileView', () => {
   it('renders the reporting year in the banner metadata', () => {
     renderWithRouter(<MissionSignatoryProfileView content={content} />);
 
-    expect(screen.getByText('Reporting year: 2023')).toBeInTheDocument();
+    const reportingYear = screen.getByText('2023');
+    expect(reportingYear.tagName).toBe('STRONG');
+    expect(reportingYear.parentElement).toHaveTextContent(
+      'Reporting year: 2023',
+    );
   });
 
   it('falls back to the 2024 reporting year when it is unavailable', () => {
@@ -107,7 +111,11 @@ describe('MissionSignatoryProfileView', () => {
       <MissionSignatoryProfileView content={contentWithoutReportingYear} />,
     );
 
-    expect(screen.getByText('Reporting year: 2024')).toBeInTheDocument();
+    const reportingYear = screen.getByText('2024');
+    expect(reportingYear.tagName).toBe('STRONG');
+    expect(reportingYear.parentElement).toHaveTextContent(
+      'Reporting year: 2024',
+    );
   });
 
   it('switches tabs and renders corresponding content', () => {
