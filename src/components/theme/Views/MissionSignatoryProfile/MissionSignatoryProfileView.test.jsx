@@ -1,5 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 import '@testing-library/jest-dom';
 import MissionSignatoryProfileView from './MissionSignatoryProfileView';
 
@@ -13,7 +14,13 @@ jest.mock('./TabSections/PlanningTab', () => () => <div>Mocked Planning</div>);
 jest.mock('./TabSections/ActionTab', () => () => <div>Mocked Action</div>);
 
 jest.mock('@eeacms/volto-cca-policy/components', () => ({
-  ContentBannerTitle: ({ children }) => <div>{children}</div>,
+  ContentBannerTitle: ({ data }) => (
+    <div>
+      {data?.info?.map(({ description }, index) => (
+        <span key={index}>{description}</span>
+      ))}
+    </div>
+  ),
   HTMLField: ({ value }) => (
     <div dangerouslySetInnerHTML={{ __html: value?.data }} />
   ),
@@ -43,6 +50,7 @@ describe('MissionSignatoryProfileView', () => {
             {
               Back_To_Map_Link: 'Back to map',
               Country_Or_Area: 'Testland',
+              Reporting_Year: 2023,
             },
           ],
         },
@@ -53,7 +61,12 @@ describe('MissionSignatoryProfileView', () => {
     },
   };
 
-  const renderWithRouter = (ui) => render(<MemoryRouter>{ui}</MemoryRouter>);
+  const renderWithRouter = (ui) =>
+    render(
+      <IntlProvider locale="en">
+        <MemoryRouter>{ui}</MemoryRouter>
+      </IntlProvider>,
+    );
 
   it('renders tab labels and default content', () => {
     renderWithRouter(<MissionSignatoryProfileView content={content} />);
@@ -62,6 +75,47 @@ describe('MissionSignatoryProfileView', () => {
     expect(screen.getByText('Assessment')).toBeInTheDocument();
     expect(screen.getByText('Planning & Target')).toBeInTheDocument();
     expect(screen.getByText('Action')).toBeInTheDocument();
+  });
+
+  it('renders the reporting year in the banner metadata', () => {
+    renderWithRouter(<MissionSignatoryProfileView content={content} />);
+
+    const reportingYear = screen.getByText('2023');
+    expect(reportingYear.tagName).toBe('STRONG');
+    expect(reportingYear.parentElement).toHaveTextContent(
+      'Reporting year: 2023',
+    );
+  });
+
+  it('falls back to the 2024 reporting year when it is unavailable', () => {
+    const contentWithoutReportingYear = {
+      ...content,
+      '@components': {
+        ...content['@components'],
+        missionsignatoryprofile: {
+          ...content['@components'].missionsignatoryprofile,
+          result: {
+            ...content['@components'].missionsignatoryprofile.result,
+            general_text: [
+              {
+                Back_To_Map_Link: 'Back to map',
+                Country_Or_Area: 'Testland',
+              },
+            ],
+          },
+        },
+      },
+    };
+
+    renderWithRouter(
+      <MissionSignatoryProfileView content={contentWithoutReportingYear} />,
+    );
+
+    const reportingYear = screen.getByText('2024');
+    expect(reportingYear.tagName).toBe('STRONG');
+    expect(reportingYear.parentElement).toHaveTextContent(
+      'Reporting year: 2024',
+    );
   });
 
   it('switches tabs and renders corresponding content', () => {
