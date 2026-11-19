@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { defineMessages, useIntl } from 'react-intl';
 import { Tab, Container, Divider, Button, Icon } from 'semantic-ui-react';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import {
@@ -20,7 +21,17 @@ const tabRenderers = {
   Action_Label: (props) => <ActionTab {...props} />,
 };
 
+const messages = defineMessages({
+  reportingYear: {
+    id: 'Reporting year: {year}',
+    defaultMessage: 'Reporting year: {year}',
+  },
+});
+
+const DEFAULT_REPORTING_YEAR = 2024;
+
 const MissionSignatoryProfileView = ({ content }) => {
+  const intl = useIntl();
   const signatoryData =
     content?.['@components']?.missionsignatoryprofile?.result || {};
 
@@ -34,7 +45,9 @@ const MissionSignatoryProfileView = ({ content }) => {
     general_text = [{}],
   } = signatoryData;
 
-  const { Back_To_Map_Link, Country_Or_Area } = general_text?.[0] || {};
+  const { Back_To_Map_Link, Country_Or_Area, Reporting_Year } =
+    general_text?.[0] || {};
+  const reportingYear = Reporting_Year || DEFAULT_REPORTING_YEAR;
   const backToMapPath = flattenToAppURL(content?.parent?.['@id'] || '/');
 
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -61,7 +74,13 @@ const MissionSignatoryProfileView = ({ content }) => {
       <ContentBannerTitle
         content={{ ...content, image: signatoryData?.image }}
         data={{
-          info: [{ description: '' }],
+          info: [
+            {
+              description: intl.formatMessage(messages.reportingYear, {
+                year: reportingYear,
+              }),
+            },
+          ],
           hideContentType: true,
           hideCreationDate: true,
           hideModificationDate: true,
