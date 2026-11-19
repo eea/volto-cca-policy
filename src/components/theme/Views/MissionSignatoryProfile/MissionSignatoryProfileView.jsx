@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { defineMessages, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { Tab, Container, Divider, Button, Icon } from 'semantic-ui-react';
 import { formatTextToHTML } from '@eeacms/volto-cca-policy/utils';
 import {
@@ -21,17 +21,9 @@ const tabRenderers = {
   Action_Label: (props) => <ActionTab {...props} />,
 };
 
-const messages = defineMessages({
-  reportingYear: {
-    id: 'Reporting year: {year}',
-    defaultMessage: 'Reporting year: {year}',
-  },
-});
-
 const DEFAULT_REPORTING_YEAR = 2024;
 
 const MissionSignatoryProfileView = ({ content }) => {
-  const intl = useIntl();
   const signatoryData =
     content?.['@components']?.missionsignatoryprofile?.result || {};
 
@@ -76,9 +68,15 @@ const MissionSignatoryProfileView = ({ content }) => {
         data={{
           info: [
             {
-              description: intl.formatMessage(messages.reportingYear, {
-                year: reportingYear,
-              }),
+              description: (
+                <>
+                  <FormattedMessage
+                    id="Reporting year"
+                    defaultMessage="Reporting year"
+                  />
+                  : <strong>{reportingYear}</strong>
+                </>
+              ),
             },
           ],
           hideContentType: true,
